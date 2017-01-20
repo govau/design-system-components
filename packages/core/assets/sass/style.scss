@@ -1,13 +1,31 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Core module
+//
+// The core module comes with the following elements:
+// - variables
+//   - breakpoints
+//   - max width line length
+//   - colors
+// - mixins
+//   - media query
+//   - fontstyles
+//   - sr-only
+// - functions
+//   - space
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 @mixin uikit-core() {
-	//global vars
-	$uikit-core-media-xs: 480px !global;
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL VARIABLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	$uikit-core-media-xs: 480px !global; //media query breakpoints
 	$uikit-core-media-sm: 768px !global;
 	$uikit-core-media-md: 992px !global;
 	$uikit-core-media-lg: 1200px !global;
 
-	$uikit-core-maxwidth: 40em;
+	$uikit-core-maxwidth: 40em; //max width of text to avoid long lines
 
-	$uikit-core-colour-Hero: #115361 !global;
+	$uikit-core-colour-Hero: #115361 !global; //color variables (yes! the actual spelling doesn't have a u)
 	$uikit-core-colour-Primary: #880e48 !global;
 	$uikit-core-colour-Background: #f0f3f5 !global;
 	$uikit-core-colour-Border: #bebebe !global;
@@ -21,8 +39,7 @@
 	$uikit-core-colour-Warning: #f9c642 !global;
 	$uikit-core-colour-Info: #00bfe9 !global;
 
-	//tinting
-	$uikit-core-colour-Hero-90: mix(white, $uikit-core-colour-Hero, 10) !global;
+	$uikit-core-colour-Hero-90: mix(white, $uikit-core-colour-Hero, 10) !global; //tints of the colors
 	$uikit-core-colour-Hero-80: mix(white, $uikit-core-colour-Hero, 20) !global;
 	$uikit-core-colour-Hero-70: mix(white, $uikit-core-colour-Hero, 30) !global;
 	$uikit-core-colour-Hero-60: mix(white, $uikit-core-colour-Hero, 40) !global;
@@ -155,14 +172,18 @@
 	$uikit-core-colour-Info-5: mix(white, $uikit-core-colour-Info, 95) !global;
 }
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL MIXINS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * [media description]
- * @param  {[type]} $breakpoint [description]
- * @return {[type]}             [description]
+ * Create media queries and wraps the @content code inside of it
+ *
+ * @param  {keywords} $breakpoint - Either one of the following keywords: xs, sm, md, lg
+ * @return {string}               - The code passed in via @content wrapped inside a media query
  */
 @mixin uikit-core-media( $breakpoint ) {
 	@if type-of( $breakpoint ) != 'string' {
-		@error "I find your lack of logic... disturbing; the uikit-core-media mixin only takes a string!";
+		@error "You talking to me? the uikit-core-media mixin only takes a string!";
 	}
 
 	@if( $breakpoint == "xs" ) {
@@ -192,33 +213,14 @@
 
 
 /**
- * [space description]
- * @param  {[type]} $number [description]
- * @return {[type]}         [description]
- */
-@function uikit-core-space( $number ) {
-	@if type-of( $number ) != 'number' {
-		@error "I'm sorry Dave, I can't do that; the uikit-core-space function only takes a number!";
-	}
-
-	@if type-of( $number ) == 'number' and not unitless( $number ) {
-		$number: $number / ($number * 0 + 1);
-	}
-
-	$space: $number * 4;
-
-	@return #{ $space }em;
-}
-
-
-/**
- * [fontstyle description]
- * @param  {[type]} $size [description]
- * @return {[type]}       [description]
+ * Return the font style depending of the font size
+ *
+ * @param  {integer} $size - The font size in pixel
+ * @return {css}           - The css to render that font size
  */
 @mixin uikit-core-fontstyle( $size ) {
 	@if type-of( $size ) != 'number' {
-		@error "I'm giving it all she's got but: the uikit-core-fontstyle mixin only takes a number!";
+		@error "Captain I'm giving it all she's got but: the uikit-core-fontstyle mixin only takes a number!";
 	}
 
 	@if( $size >= 16 ) { //large font sizes
@@ -244,7 +246,7 @@
 
 
 /**
- * [sronly description]
+ * Hide an element from the screen but not a screen reader
  */
 @mixin uikit-core-sronly() {
 	position: absolute;
@@ -255,4 +257,25 @@
 	overflow: hidden;
 	clip: rect(0,0,0,0);
 	border: 0;
+}
+
+
+/**
+ * Return a space value based on 4 and the unit em
+ *
+ * @param  {number} $number - The space as a multiplier of 4
+ * @return {number}         - The space in em's
+ */
+@function uikit-core-space( $number ) {
+	@if type-of( $number ) != 'number' {
+		@error "I'm sorry Dave, I can't do that; the uikit-core-space function only takes a number!";
+	}
+
+	@if type-of( $number ) == 'number' and not unitless( $number ) {
+		$number: $number / ($number * 0 + 1);
+	}
+
+	$space: $number * 4;
+
+	@return #{ $space }em;
 }
