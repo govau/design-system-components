@@ -1,0 +1,6 @@
+@mixin uikit-core() {
+	$uikit-core-var: rebeccapurple !global; //global setting
+	$local-setting: hotpink; //local setting
+
+	// code here
+}
