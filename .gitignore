@@ -8,4 +8,5 @@ node_modules
 .idea
 validation-report.json
 validation-status.json
-yarn.lock
+*.css
+packages/*/dist/
