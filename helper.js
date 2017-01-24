@@ -1,6 +1,6 @@
 /***************************************************************************************************************************************************************
  *
- * TODO
+ * HELPER
  *
  **************************************************************************************************************************************************************/
 
@@ -16,9 +16,109 @@ const Chalk = require('chalk');
 const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBALS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Create a path if it doesn't exist
+ *
+ * @param  {string} dir - The path to be checked and created if not found
+ */
+const CreateDir = ( dir ) => {
+	const splitPath = dir.split('/');
+
+	splitPath.reduce( ( path, subPath ) => {
+		let currentPath;
+
+		if( subPath != '.' ) {
+			currentPath = `${ path }/${ subPath }`;
+
+			if( !Fs.existsSync( currentPath ) ){
+				Fs.mkdirSync( currentPath );
+			}
+		}
+		else {
+			currentPath = subPath;
+		}
+
+		return currentPath;
+	}, '');
+};
+
+
+/**
+ * Copy the temp folder to a destination and replace files inside
+ *
+ * @param  {string} source       - The temp folder path
+ * @param  {string} destination  - The path for where to copy the temp folder to
+ * @param  {object} replacements - The replacement object
+ */
+const CopyTemp = ( source, destination, replacements ) => {
+	CreateDir( destination );
+
+	const files = Fs.readdirSync( source ); //create target folder
+
+	for( let file of files ) {
+		if( !file.startsWith('.') ) { //don't copy hidden files
+			const current = Fs.lstatSync( Path.join( source, file ) );
+
+			if( current.isDirectory() ) {
+				CopyTemp( Path.join( source, file ), Path.join( destination, file ), replacements ); //call self
+			}
+			else {
+				CopyFile( Path.join( source, file ), Path.join( destination, file ) ); //copy file over
+
+				ReplaceFileContent( replacements, Path.join( destination, file ) ); //replace all placeholders
+			}
+		}
+	}
+};
+
+
+/**
+ * Copy a file
+ *
+ * @param  {string} source - The path to the file to move
+ * @param  {string} target - The path to move it to
+ */
+const CopyFile = ( source, target ) => {
+	if( !Fs.existsSync( source ) ) {
+		return false;
+	}
+
+	const data = Fs.readFileSync( source, 'utf-8');
+	Fs.writeFileSync( target, data );
+
+	HELPER.log.success(`Moved file to ${ Chalk.yellow( target ) }`);
+};
+
+
+/**
+ * Replace a string with a another globally in the file
+ *
+ * @param  {object} searchs  - What is replaced with what, Key = the text to be replaced, value = the replacement text.
+ * @param  {string} FileName - The file to be converted
+ */
+const ReplaceFileContent = ( searchs, fileName ) => {
+	let content = Fs.readFileSync( fileName, 'utf-8');
+
+	for( const replacing of Object.keys( searchs ) ) { //replace all searches
+		content = content.split( replacing ).join( searchs[ replacing ] ); //replacing globally without regex
+	}
+
+	Fs.writeFileSync( fileName, content, ( error ) => {
+		if( error ) {
+			HELPER.log.error(`Doh! ${ error }`);
+			return;
+		}
+	});
+
+	HELPER.log.success(`Replaced file strings inside ${ Chalk.yellow( fileName ) }`);
+};
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Constructor
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-const COMPILE = (() => { //constructor factory
+const HELPER = (() => { //constructor factory
 
 	return {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -26,6 +126,7 @@ const COMPILE = (() => { //constructor factory
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 		NAME: PKG.name,
 		VERSION: PKG.version,
+		TEMPLATES: Path.normalize(`${ __dirname }/.templates`),
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -55,9 +156,9 @@ const COMPILE = (() => { //constructor factory
 
 /***************************************************************************************************************************************************************
  *
- * MODULE
+ * COMPILE MODULE
  *
- * TODO
+ * Compile assets, move files from /scr/ to /dist/
  *
  **************************************************************************************************************************************************************/
 
@@ -70,79 +171,7 @@ const Postcss = require('postcss');
 const Sass = require('node-sass');
 
 
-COMPILE.all = (() => {
-	/**
-	 * PRIVATE
-	 * Create a path if it doesn't exist
-	 *
-	 * @param  {string} dir - The path to be checked and created if not found
-	 */
-	const CreateDir = ( dir ) => {
-		const splitPath = dir.split('/');
-
-		splitPath.reduce( ( path, subPath ) => {
-			let currentPath;
-
-			if( subPath != '.' ) {
-				currentPath = `${ path }/${ subPath }`;
-
-				if( !Fs.existsSync( currentPath ) ){
-					Fs.mkdirSync( currentPath );
-				}
-			}
-			else {
-				currentPath = subPath;
-			}
-
-			return currentPath;
-		}, '');
-	};
-
-
-	/**
-	 * PRIVATE
-	 * Copy a file
-	 *
-	 * @param  {string} source - The path to the file to move
-	 * @param  {string} target - The path to move it to
-	 */
-	const CopyFile = ( source, target ) => {
-		if( !Fs.existsSync( source ) ) {
-			return false;
-		}
-
-		const data = Fs.readFileSync( source, 'utf-8');
-		Fs.writeFileSync( target, data );
-
-		COMPILE.log.success(`Moved file to ${ Chalk.yellow( target ) }`);
-	};
-
-
-	/**
-	 * PRIVATE
-	 * Replace a string with a another globally in the file
-	 *
-	 * @param  {object} searchs  - What is replaced with what, Key = the text to be replaced, value = the replacement text.
-	 * @param  {string} FileName - The file to be converted
-	 */
-	const ReplaceFileContent = ( searchs, fileName ) => {
-		let content = Fs.readFileSync( fileName, 'utf-8');
-
-		for( const replacing of Object.keys( searchs ) ) { //replace all searches
-			content = content.split( replacing ).join( searchs[ replacing ] ); //replacing globally without regex
-		}
-
-		Fs.writeFileSync( fileName, content, ( error ) => {
-			if( error ) {
-				COMPILE.log.error(`Doh! ${ error }`);
-				return;
-			}
-		});
-
-		COMPILE.log.success(`Replaced file strings inside ${ Chalk.yellow( fileName ) }`);
-	};
-
-
+HELPER.compile = (() => {
 	/**
 	 * PRIVATE
 	 * Compile Sass code into CSS
@@ -159,7 +188,7 @@ COMPILE.all = (() => {
 
 		Fs.writeFileSync( css, compiled.css );
 
-		COMPILE.log.success(`Compiled Sass ${ Chalk.yellow( scss ) }`);
+		HELPER.log.success(`Compiled Sass ${ Chalk.yellow( scss ) }`);
 	};
 
 
@@ -183,7 +212,7 @@ COMPILE.all = (() => {
 
 			Fs.writeFileSync( file, prefixed.css );
 
-			COMPILE.log.success(`Autoprefixed file ${ Chalk.yellow( file ) }`);
+			HELPER.log.success(`Autoprefixed file ${ Chalk.yellow( file ) }`);
 		});
 	};
 
@@ -193,7 +222,7 @@ COMPILE.all = (() => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	return {
 		init: () => {
-			COMPILE.all.sass();
+			HELPER.compile.sass();
 		},
 
 		sass: () => {
@@ -206,8 +235,8 @@ COMPILE.all = (() => {
 
 			//3.replace strings inside new files in dist
 			const searches = {
-				'[replace-name]': COMPILE.NAME,
-				'[replace-version]': COMPILE.VERSION,
+				'[replace-name]': HELPER.NAME,
+				'[replace-version]': HELPER.VERSION,
 			};
 
 			ReplaceFileContent( searches, './dist/sass/globals.scss' );
@@ -235,6 +264,56 @@ COMPILE.all = (() => {
 
 /***************************************************************************************************************************************************************
  *
+ * SCAFFOLDING MODULE
+ *
+ * Create a new module fast
+ *
+ **************************************************************************************************************************************************************/
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Dependencies
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+const Inquirer = require('inquirer');
+
+
+HELPER.scaffolding = (() => {
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// PUBLIC METHODS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	return {
+		init: () => {
+			Inquirer.prompt([
+			{
+				type: 'input',
+				name: 'name',
+				message: `What's the name of the module?`
+			},
+			{
+				type: 'input',
+				name: 'description',
+				message: `What's the description of the module?`
+			},
+			]).then(( answers ) => {
+
+				const template = `${ HELPER.TEMPLATES }/new-module/`;
+				const destination = Path.normalize(`${ __dirname }/packages/${ answers.name }`);
+				const replacements = {
+					'[-replace-name-]': answers.name,
+					'[-replace-description-]': answers.description,
+					'[-replace-version-]': '0.1.0',
+				};
+
+				CopyTemp( template, destination, replacements ); //copy all files and replace placeholders inside of them
+
+			});
+		},
+	}
+
+})();
+
+
+/***************************************************************************************************************************************************************
+ *
  * MODULE
  *
  * Initiate application
@@ -249,24 +328,39 @@ const CFonts = require(`cfonts`);
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // SCRIPT INIT
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-COMPILE.init = () => {
-	CFonts.say(`Compiling module`, {
-		font: 'chrome',
-		space: false,
-		colors: ['red', 'magenta', 'blue'],
-	});
+HELPER.init = () => {
+	let path = '';
+	let headline = '';
 
-	CFonts.say(`... so you don't have to`, {
-		font: 'console',
-		space: false,
-	});
+	if( process.argv.indexOf( 'compile' ) !== -1 ) {
+		path = 'compile';
+		headline = 'Compiling module';
+	}
 
-	console.log(`\n`);
+	if( process.argv.indexOf( 'scaffolding' ) !== -1 ) {
+		path = 'scaffolding'
+		headline = 'Scaffolding module';
+	}
 
-	COMPILE.all.init();
+	if( path.length !== 0 ) {
+		CFonts.say( headline, {
+			font: 'chrome',
+			space: false,
+			colors: ['red', 'magenta', 'blue'],
+		});
+
+		CFonts.say(`... so you don't have to`, {
+			font: 'console',
+			space: false,
+		});
+
+		console.log(`\n`);
+
+		HELPER[ path ].init(); //run the module
+	}
 };
 
-COMPILE.init();
+HELPER.init();
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
