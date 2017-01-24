@@ -239,9 +239,8 @@ kbd {
  * Horizontal rule, used for paragraph-level thematic breaks.
  */
 hr {
+	border-top: 1px solid $uikit-core-colour-Border
 	border-color: $uikit-core-colour-Border;
-	border-style: solid;
-	border-bottom: none;
 	margin-top: uikit-core-space(1);
 	margin-bottom: uikit-core-space(1);
 }
@@ -252,7 +251,6 @@ hr {
 $class-slug: for !default
 
 @for $i from 1 through 6 {
-	h#{$i},
 	.display-#{$i} {
 		line-height: $uikit-core-leading / 1.142857143;//1.4
 	}
