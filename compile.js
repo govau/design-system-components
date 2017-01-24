@@ -216,7 +216,7 @@ COMPILE.all = (() => {
 			//4. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
 
-			// //5. autoprefixer
+			//5. autoprefixer
 			Autoprefix('./tests/site/style.css');
 		},
 
