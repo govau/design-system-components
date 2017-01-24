@@ -2,8 +2,12 @@
 	"devDependencies": {
 		"autoprefixer": "^6.7.0",
 		"cfonts": "^1.0.2",
+		"inquirer": "^3.0.0",
 		"lerna": "2.0.0-beta.32",
 		"node-sass": "^4.3.0",
 		"postcss": "^5.2.11"
+	},
+	"scripts": {
+		"scaffolding": "node helper.js scaffolding"
 	}
 }

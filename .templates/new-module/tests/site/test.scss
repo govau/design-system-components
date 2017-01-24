@@ -1,0 +1,4 @@
+@import '../../../core/dist/sass/module.scss';
+@import 'module.scss';
+@include versioning-check();
+
