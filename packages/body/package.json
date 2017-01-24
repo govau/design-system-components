@@ -15,7 +15,7 @@
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
 
-		"watch:sass": "node ../../compile.js && onchange 'src/**/*' 'tests/site/*.scss' -- node ../../compile.js -sass",
+		"watch:sass": "node ../../helper.js compile && onchange 'src/**/*' 'tests/site/*.scss' -- node ../../helper.js compile",
 		"serve": "browser-sync start --server --startPath 'tests/site' --files 'tests/site/*.html, tests/site/*.css, tests/site/*.js'",
 		"watch": "npm-run-all --parallel serve watch:*"
 	},
