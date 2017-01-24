@@ -35,12 +35,14 @@ $uikit-core-media-sm: 768px !global;
 $uikit-core-media-md: 992px !global;
 $uikit-core-media-lg: 1200px !global;
 
+$uikit-core-leading: 1.6;
+
 $uikit-core-maxwidth: 40em; //max width of text to avoid long lines
 
 $uikit-core-colour-Hero: #115361 !global; //color variables (yes! the actual spelling doesn't have a u)
 $uikit-core-colour-Primary: #880e48 !global;
 $uikit-core-colour-Background: #f0f3f5 !global;
-$uikit-core-colour-Border: #bebebe !global;
+$uikit-core-colour-Border: mix(black, #bebebe, 50) !global;
 $uikit-core-colour-Text: #313131 !global;
 $uikit-core-colour-Link: #5bcbe3 !global;
 $uikit-core-colour-Alpha: #e6efc2 !global;
@@ -273,12 +275,13 @@ $uikit-core-colour-Info-5: mix(white, $uikit-core-colour-Info, 95) !global;
 
 
 /**
- * Return a space value based on 4 and the unit em
+ * Return a space value based on the line-height and the unit em
  *
- * @param  {number} $number - The space as a multiplier of 4
- * @return {number}         - The space in em's
+ * @param  {number} $number - The space as a multiplier of line-height
+ * @param  {number} $number - The line-height [optional]
+ * @return {number}         - The space in ems
  */
-@function uikit-core-space( $number ) {
+@function uikit-core-space( $number, $line-height: $uikit-core-leading ) {
 	@if type-of( $number ) != 'number' {
 		@error "I'm sorry Dave, I can't do that; the uikit-core-space function only takes a number!";
 	}
@@ -287,7 +290,7 @@ $uikit-core-colour-Info-5: mix(white, $uikit-core-colour-Info, 95) !global;
 		$number: $number / ($number * 0 + 1);
 	}
 
-	$space: $number * 4;
+	$space: $number * $line-height;
 
 	@return #{ $space }em;
 }
