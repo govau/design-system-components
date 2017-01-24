@@ -6,6 +6,28 @@
 	color: $uikit-core-colour-Hero;
 }
 
-.red {
-	color: $uikit-core-colour-Border;
+body {
+	padding: uikit-core-space(4) uikit-core-space(2) uikit-core-space(2) uikit-core-space(2);
+	overflow-x: hidden;//For Opera apparently.
+	box-shadow:
+		inset $uikit-core-colour-Info-20 0 uikit-core-space(3) 0 0,
+		inset $uikit-core-colour-Info-20 0 0 0 uikit-core-space(1);
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: repeating-linear-gradient(
+			-45deg,
+			#222,
+			#222 10px,
+			#333 10px,
+			#333 20px
+		);
+		padding: uikit-core-space(0.5) uikit-core-space(2) uikit-core-space(0.5) uikit-core-space(1);
+		content: "📃 Test file";
+		font-family: $uikit-body-monospace;
+		color: white;
+	}
 }
