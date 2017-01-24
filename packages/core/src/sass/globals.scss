@@ -37,6 +37,8 @@ $uikit-core-media-lg: 1200px !global;
 
 $uikit-core-leading: 1.6;
 
+$uikit-core-font: 'Open Sans', Verdana, 'Bitstream Vera Sans', sans-serif;
+
 $uikit-core-maxwidth: 40em; //max width of text to avoid long lines
 
 $uikit-core-colour-Hero: #115361 !global; //color variables (yes! the actual spelling doesn't have a u)
@@ -238,7 +240,7 @@ $uikit-core-colour-Info-5: mix(white, $uikit-core-colour-Info, 95) !global;
 	}
 
 	@if( $size >= 16 ) { //large font sizes
-		font-family: 'Open Sans', Verdana, 'Bitstream Vera Sans', sans-serif;
+		font-family: $uikit-core-font;
 		font-weight: normal;
 	}
 
@@ -255,7 +257,7 @@ $uikit-core-colour-Info-5: mix(white, $uikit-core-colour-Info, 95) !global;
 		$size: 12px;
 	}
 
-	font-size: $size;
+	font-size: #{$size}px;
 }
 
 
