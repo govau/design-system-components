@@ -1,0 +1,11 @@
+@import '../../../core/dist/sass/module.scss';
+@import 'module.scss';
+@include versioning-check();
+
+.test {
+	color: $uikit-core-colour-Hero;
+}
+
+.red {
+	color: $uikit-core-colour-Border;
+}

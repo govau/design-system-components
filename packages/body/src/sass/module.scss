@@ -1,0 +1,95 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Body module
+//
+// Content:
+// - Body styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+@import 'globals.scss';
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// BODY STYLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+body {
+	line-height: $uikit-core-leading;
+}
+
+p,
+ul,
+ol,
+dt,
+dd {
+	margin-top: 0;
+	margin-bottom: uikit-core-space(1);
+}
+
+ul,
+ol {
+	padding-left: uikit-core-space(1);
+
+	li {
+	  margin-bottom: uikit-core-space(0.25);
+
+	  ul,
+	  ol {
+	    margin-top: uikit-core-space(0.25);
+			// margin-bottom: 0;
+	    margin-bottom: uikit-core-space(0.75);
+	  }
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+}
+
+
+/**
+ * Abbreviations/acronyms.
+ *
+ * This styling removes any custom casing (mixing of u&lc chars in the abbr).
+ *
+ * Todo: test font stack fallbacks with the font-size adj.
+ */
+abbr,
+abbr[title] {
+	font-size: 1.125em;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	letter-spacing: 1px;
+	text-decoration: none;
+	border-bottom-color: $uikit-core-colour-Border;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	cursor: help;
+}
+
+/**
+ * Code snippets and code blocks.
+ *
+ */
+code,
+kbd,
+pre {
+	font-family: $uikit-body-monospace;
+}
+
+pre {
+	font-size: 0.875em;
+}
+
+kbd {
+	display: inline-block;
+	font-size: 0.875em;
+	border: solid 1px $uikit-core-colour-Hero-50;
+	border-radius: $uikit-body-border-radius;
+	box-shadow: 0 1px 0 0 $uikit-core-colour-Info;
+	background-color: $uikit-core-colour-Background;
+	color: $uikit-core-colour-Beta;
+	text-align: center;
+	padding: 0 uikit-core-space(0.5);
+	margin: 0 2px;
+}
+
+dt {
+	font-weight: bold;
+}
