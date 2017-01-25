@@ -10,7 +10,6 @@
 //   - colors
 // - mixins
 //   - media query
-//   - fontstyles
 //   - sr-only
 // - functions
 //   - space
@@ -38,9 +37,10 @@ $uikit-media-lg: 1200px !global;
 $uikit-leading: 1.6;
 
 $uikit-font: 'Open Sans', Verdana, 'Bitstream Vera Sans', sans-serif;
-$uikit-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
+$uikit-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
+$uikit-font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
-$uikit-maxwidth: 40em; //max width of text to avoid long lines
+$uikit-maxwidth: 42em; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
 
 $uikit-colour-Hero: #115361 !global; //color variables (yes! the actual spelling doesn't have a u)
 $uikit-colour-Primary: #880e48 !global;
@@ -203,7 +203,7 @@ $uikit-border-radius: 3px;
  */
 @mixin uikit-media( $breakpoint ) {
 	@if type-of( $breakpoint ) != 'string' {
-		@error "You talking to me? the uikit-media mixin only takes a string!";
+		@error "Captain I'm giving it all she's got but: the uikit-media mixin only takes a string!";
 	}
 
 	@if( $breakpoint == "xs" ) {
@@ -229,39 +229,6 @@ $uikit-border-radius: 3px;
 			@content;
 		}
 	}
-}
-
-
-/**
- * Return the font style depending of the font size
- *
- * @param  {integer} $size - The font size in pixel
- * @return {css}           - The css to render that font size
- */
-@mixin uikit-fontstyle( $size ) {
-	@if type-of( $size ) != 'number' {
-		@error "Captain I'm giving it all she's got but: the uikit-fontstyle mixin only takes a number!";
-	}
-
-	@if( $size >= 16 ) { //large font sizes
-		font-family: $uikit-font;
-		font-weight: normal;
-	}
-
-	@if( $size < 16 ) { //small font sizes
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-		font-weight: normal;
-	}
-
-	@if( $size >= 48 ) { //max font size
-		$size: 48px;
-	}
-
-	@if( $size <= 12 ) { //min font size
-		$size: 12px;
-	}
-
-	font-size: #{$size}px;
 }
 
 
