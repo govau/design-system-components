@@ -10,3 +10,4 @@ validation-report.json
 validation-status.json
 *.css
 packages/*/dist/
+npm-debug.log
