@@ -2,16 +2,12 @@
 @import 'module.scss';
 @include versioning-check();
 
-.test {
-	color: $uikit-core-colour-Hero;
-}
-
 body {
-	padding: uikit-core-space(4) uikit-core-space(2) uikit-core-space(2) uikit-core-space(2);
+	padding: uikit-space(4) uikit-space(2) uikit-space(2) uikit-space(2);
 	overflow-x: hidden;//For Opera apparently.
 	box-shadow:
-		inset $uikit-core-colour-Info-20 0 uikit-core-space(3) 0 0,
-		inset $uikit-core-colour-Info-20 0 0 0 uikit-core-space(1);
+		inset $uikit-colour-Info-20 0 uikit-space(3) 0 0,
+		inset $uikit-colour-Info-20 0 0 0 uikit-space(1);
 
 	&:before {
 		position: absolute;
@@ -25,9 +21,9 @@ body {
 			#333 10px,
 			#333 20px
 		);
-		padding: uikit-core-space(0.5) uikit-core-space(2) uikit-core-space(0.5) uikit-core-space(1);
+		padding: uikit-space(0.5) uikit-space(2) uikit-space(0.5) uikit-space(1);
 		content: "📃 Test file";
-		font-family: $uikit-body-monospace;
+		font-family: $uikit-monospace;
 		color: white;
 	}
 }

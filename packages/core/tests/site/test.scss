@@ -1,6 +1,2 @@
 @import 'module.scss';
 @include versioning-check();
-
-.test {
-	color: $uikit-core-colour-Hero;
-}

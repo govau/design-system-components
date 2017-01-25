@@ -22,7 +22,7 @@
 // - keep styling to a minimum
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 body {
-	line-height: $uikit-core-leading;
+	line-height: $uikit-leading;
 }
 
 /**
@@ -30,12 +30,12 @@ body {
  */
 mark,
 ::selection {
-	background-color: $uikit-core-colour-Warning-60;
+	background-color: $uikit-colour-Warning-60;
 }
 
 mark {
 	padding: 0 2px;
-	border-radius: $uikit-body-border-radius;
+	border-radius: $uikit-border-radius;
 }
 
 
@@ -49,25 +49,25 @@ ol,
 dd,
 pre {
 	margin-top: 0;
-	margin-bottom: uikit-core-space(1);
+	margin-bottom: uikit-space(1);
 }
 
 ul,
 ol,
 dd {
 	margin-left: 0;
-	padding-left: uikit-core-space(1);
+	padding-left: uikit-space(1);
 }
 
 ul,
 ol {
 	li {
-		margin-bottom: uikit-core-space(0.25);
+		margin-bottom: uikit-space(0.25);
 
 		ul,
 		ol {
-			margin-top: uikit-core-space(0.25);
-			margin-bottom: uikit-core-space(0.5);
+			margin-top: uikit-space(0.25);
+			margin-bottom: uikit-space(0.5);
 		}
 	}
 
@@ -77,14 +77,14 @@ ol {
 }
 
 dl {
-	margin-bottom: uikit-core-space(1.25);
+	margin-bottom: uikit-space(1.25);
 	margin-left: 0;
 	padding-left: 0;
 
 	dt {
 		font-weight: bold;
-		margin-top: uikit-core-space(0.5);
-		margin-bottom: uikit-core-space(0.5);
+		margin-top: uikit-space(0.5);
+		margin-bottom: uikit-space(0.5);
 
 		&:first-of-type {
 			margin-top: 0;
@@ -114,7 +114,7 @@ strong {
  */
 small {
 	font-size: 0.875em;//14 from 16
-	color: $uikit-core-colour-Text-90;
+	color: $uikit-colour-Text-90;
 }
 
 
@@ -132,7 +132,7 @@ s {
  */
 del {
 	text-decoration: line-through;
-	color: $uikit-core-colour-Text-80;
+	color: $uikit-colour-Text-80;
 	//Idea: for `del`: switch to the opposite of the current sans/sans-serif style?
 }
 
@@ -171,7 +171,7 @@ abbr[title] {
 	text-transform: lowercase;
 	letter-spacing: 1px;
 	text-decoration: none;
-	border-bottom-color: $uikit-core-colour-Border;
+	border-bottom-color: $uikit-colour-Border;
 	border-bottom-style: dotted;
 	border-bottom-width: 1px;
 	cursor: help;
@@ -190,7 +190,7 @@ var {
 
 	sup,
 	sub {
-		font-family: $uikit-core-font;
+		font-family: $uikit-font;
 		font-style: normal;
 		padding: 0 1px;
 	}
@@ -203,7 +203,7 @@ var {
 code,
 kbd,
 pre {
-	font-family: $uikit-body-monospace;
+	font-family: $uikit-monospace;
 }
 
 
@@ -225,13 +225,13 @@ pre {
 kbd {
 	display: inline-block;
 	font-size: 0.875em;//14 from 16
-	border: solid 1px $uikit-core-colour-Hero-50;
-	border-radius: $uikit-body-border-radius;
-	box-shadow: 0 1px 0 0 $uikit-core-colour-Info;
-	background-color: $uikit-core-colour-Background;
-	color: $uikit-core-colour-Beta;
+	border: solid 1px $uikit-colour-Hero-50;
+	border-radius: $uikit-border-radius;
+	box-shadow: 0 1px 0 0 $uikit-colour-Info;
+	background-color: $uikit-colour-Background;
+	color: $uikit-colour-Beta;
 	text-align: center;
-	padding: 0 uikit-core-space(0.5);
+	padding: 0 uikit-space(0.5);
 	margin: 0 2px;
 }
 
@@ -239,32 +239,7 @@ kbd {
  * Horizontal rule, used for paragraph-level thematic breaks.
  */
 hr {
-	border-top: 1px solid $uikit-core-colour-Border
-	border-color: $uikit-core-colour-Border;
-	margin-top: uikit-core-space(1);
-	margin-bottom: uikit-core-space(1);
-}
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Proposed potential useful thing for the heading module?
-$class-slug: for !default
-
-@for $i from 1 through 6 {
-	.display-#{$i} {
-		line-height: $uikit-core-leading / 1.142857143;//1.4
-	}
-}
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// `.abstract` page/header/article lead-in
-/**
- * Abstract/introductions.
- */
-@mixin abstract {
-	font-size: 1.1875em;//19 from 16
-}
-
-.abstract {
-	@include abstract;
+	border-top: $uikit-border;
+	margin-top: uikit-space(1);
+	margin-bottom: uikit-space(1);
 }
