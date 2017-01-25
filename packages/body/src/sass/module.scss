@@ -3,15 +3,23 @@
 //
 // Content:
 // - Body styles
-//   - [add me when items are decided & ordering is determined]
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-@import 'globals.scss';
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// BODY STYLES
+//   - body
+//   - mark
+//   - ::selection (highlight colour)
+//   - paragraphs
+//   - sorted and unsorted lists
+//   - list items
+//   - definition lists
+//   - emphasis, bolding, etc.
+//   - editorial markup (eg. ins and del)
+//   - small
+//   - dfn
+//   - abbreviations (abbr)
+//   - variables (var) and nested indices (sup and sub)
+//   - pre-formatted text and nested code, kbd, samp
+//   - code
+//   - keyboard strokes (kbd)
+//   - horizontal rules
 //
 // Thinking: primarily we want to target these: https://w3c.github.io/html/textlevel-semantics.html
 //
@@ -20,6 +28,14 @@
 // - provide a vertical rhythm based on content size
 // - cater for a common and semantic nesting
 // - keep styling to a minimum
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import 'globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// BODY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 body {
 	line-height: $uikit-leading;
