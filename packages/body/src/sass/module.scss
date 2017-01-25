@@ -62,7 +62,7 @@ mark {
 p,
 ul,
 ol,
-dd,
+dl,
 pre {
 	margin-top: 0;
 	margin-bottom: uikit-space(1);
@@ -93,9 +93,9 @@ ol {
 }
 
 dl {
-	margin-bottom: uikit-space(1.25);
-	margin-left: 0;
-	padding-left: 0;
+	dd {
+		margin-bottom: uikit-space(1);
+	}
 
 	dt {
 		font-weight: bold;
@@ -202,7 +202,7 @@ abbr[title] {
 var {
 	padding: 0 1px;
 	font-style: italic;
-	font-family: serif;//Todo: create variable + move all font stacks into same module?
+	font-family: serif;//We want mathematical notation to use serif vars per convention.
 
 	sup,
 	sub {
