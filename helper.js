@@ -264,6 +264,75 @@ HELPER.compile = (() => {
 
 /***************************************************************************************************************************************************************
  *
+ * GENERATE MODULE
+ *
+ * Generate a json file with all current modules and their versions.
+ *
+ **************************************************************************************************************************************************************/
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Dependencies
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+HELPER.generate = (() => {
+	/**
+	 * PRIVATE
+	 * Get all folders within a given path
+	 *
+	 * @param  {string}  thisPath - The path that contains the desired folders
+	 * @param  {boolean} verbose  - Verbose flag either undefined or true
+	 *
+	 * @return {array}            - An array of names of each folder
+	 */
+	const GetFolders = ( thisPath, verbose ) => {
+		try {
+			return Fs.readdirSync( thisPath ).filter(
+				( thisFile ) => Fs.statSync(`${ thisPath }/${ thisFile }`).isDirectory()
+			);
+		}
+		catch( error ) {
+			return [];
+		}
+	};
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// PUBLIC METHODS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	return {
+		init: () => {
+			const packagesPath = Path.normalize(`${ __dirname }/packages/`);
+			const allModules = GetFolders( packagesPath );
+			let packageJson = {}; //each package.json
+			let uikitJson = {};   //the uikit.json object
+
+			//iterate over all packages
+			if( allModules !== undefined && allModules.length > 0 ) {
+				for( let module of allModules ) {
+					const pkgPath = Path.normalize(`${ packagesPath }/${ module }/package.json`);
+					packageJson = require( pkgPath ); //read the package.json
+
+					uikitJson[ packageJson.name ] = packageJson.version; //add to uikit.json
+				}
+			}
+
+			Fs.writeFile(`${ __dirname }/uikit.json`, JSON.stringify( uikitJson ), 'utf8', ( error ) => { //write file
+				if( error ) {
+					console.error( error );
+					return;
+				}
+
+				HELPER.log.success(`Written ${ Chalk.yellow('uikit.json') }`);
+			});
+		},
+	}
+
+})();
+
+
+/***************************************************************************************************************************************************************
+ *
  * SCAFFOLDING MODULE
  *
  * Create a new module fast
@@ -338,7 +407,7 @@ HELPER.init = () => {
 	}
 
 	if( process.argv.indexOf( 'scaffolding' ) !== -1 ) {
-		path = 'scaffolding'
+		path = 'scaffolding';
 		headline = 'Scaffolding module';
 	}
 
@@ -357,6 +426,10 @@ HELPER.init = () => {
 		console.log(`\n`);
 
 		HELPER[ path ].init(); //run the module
+
+		if( process.argv.indexOf( 'publish' ) !== -1 ) {
+			HELPER.generate.init();
+		}
 	}
 };
 
