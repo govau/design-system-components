@@ -58,7 +58,10 @@ mark {
 /**
  * Vertical spacing of common text elements.
  */
-// `dl` shouldn’t be missing here…
+p {
+	max-width: $uikit-maxwidth;
+}
+
 p,
 ul,
 ol,
