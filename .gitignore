@@ -11,3 +11,4 @@ validation-status.json
 *.css
 packages/*/dist/
 npm-debug.log
+lerna-debug.log
