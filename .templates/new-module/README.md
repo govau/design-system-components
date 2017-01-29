@@ -1,7 +1,7 @@
-[-replace-name-]
+@gov.au/[-replace-name-]
 ============
 
-> The core module all [gov.au UI-Kit modules](https://github.com/govau/uikit/) depend on.
+> [-replace-description-].
 
 
 ## Content
@@ -20,7 +20,7 @@
 
 
 ```shell
-npm install [-replace-name-] --save-dev
+npm install @gov.au/[-replace-name-] --save-dev
 ```
 
 
