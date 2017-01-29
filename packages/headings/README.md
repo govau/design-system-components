@@ -1,4 +1,4 @@
-Headings
+@gov.au/headings
 ============
 
 > Class styles for display headings.
@@ -20,7 +20,7 @@ Headings
 
 
 ```shell
-npm install headings --save-dev
+npm install @gov.au/headings --save-dev
 ```
 
 

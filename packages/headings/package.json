@@ -1,5 +1,5 @@
 {
-	"name": "headings",
+	"name": "@gov.au/headings",
 	"version": "0.1.0",
 	"description": "Class styles for display headings.",
 	"keywords": [
@@ -10,7 +10,10 @@
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
-		"design system"
+		"design system",
+		"headings",
+		"display",
+		"hierarchies"
 	],
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
