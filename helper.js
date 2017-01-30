@@ -313,7 +313,11 @@ HELPER.generate = (() => {
 					const pkgPath = Path.normalize(`${ packagesPath }/${ module }/package.json`);
 					packageJson = require( pkgPath ); //read the package.json
 
-					uikitJson[ packageJson.name ] = packageJson.version; //add to uikit.json
+					uikitJson[ packageJson.name ] = { //add to uikit.json
+						name: packageJson.name,
+						version: packageJson.version,
+						peerDependencies: packageJson.peerDependencies,
+					};
 				}
 			}
 
