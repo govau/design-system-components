@@ -166,7 +166,6 @@ const HELPER = (() => { //constructor factory
 // Dependencies
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const Autoprefixer = require('autoprefixer');
-const Exec = require('child_process').exec;
 const Postcss = require('postcss');
 const Sass = require('node-sass');
 
@@ -182,6 +181,7 @@ HELPER.compile = (() => {
 	const Sassify = ( scss, css ) => {
 		const compiled = Sass.renderSync({
 			file: scss,
+			indentType: 'tab',
 			includePaths: [ './dist/sass/' ],
 			outputStyle: 'compressed',
 		});
@@ -201,7 +201,7 @@ HELPER.compile = (() => {
 	const Autoprefix = ( file ) => {
 		const data = Fs.readFileSync( file, 'utf-8');
 
-		Postcss([ Autoprefixer ])
+		Postcss([ Autoprefixer({ browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ie 10'] }) ])
 			.process( data )
 			.then( ( prefixed ) => {
 				prefixed
@@ -210,9 +210,9 @@ HELPER.compile = (() => {
 						console.warn( warn.toString() );
 				});
 
-			Fs.writeFileSync( file, prefixed.css );
+				Fs.writeFileSync( file, prefixed.css );
 
-			HELPER.log.success(`Autoprefixed file ${ Chalk.yellow( file ) }`);
+				HELPER.log.success(`Autoprefixed file ${ Chalk.yellow( file ) }`);
 		});
 	};
 
