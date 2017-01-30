@@ -24,12 +24,15 @@
  */
 @for $i from 1 through 6 {
 	.display-#{$i} {
+		display: block;
 		line-height: $uikit-leading; //1.142857143;//1.4 from 16 (default: core)
 		margin-top: uikit-space( 1, 1 ); //1 unit at the new line-height (1.4 -- 1.4em)
 		margin-bottom: uikit-space( .5, 1 ); //1 unit at the new line-height (1.4 -- 0.7em)
 		font-size: 48 - (4 * ($i + 2)) + 0px;
+		font-weight: bold;
 	}
 }
+
 
 .display-3,
 .display-4,
