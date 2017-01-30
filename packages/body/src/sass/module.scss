@@ -4,22 +4,23 @@
 // Content:
 // - Body styles
 //   - body
+//   - anchor (a)
 //   - mark
 //   - ::selection (highlight colour)
 //   - paragraphs
 //   - sorted and unsorted lists
 //   - list items
-//   - definition lists
+//   - definition lists, terms and definitions
 //   - emphasis, bolding, etc.
 //   - editorial markup (eg. ins and del)
-//   - small
-//   - dfn
+//   - strong and small
+//   - first definition (dfn)
 //   - abbreviations (abbr)
 //   - variables (var) and nested indices (sup and sub)
 //   - pre-formatted text and nested code, kbd, samp
 //   - code
 //   - keyboard strokes (kbd)
-//   - horizontal rules
+//   - horizontal rules (hr)
 //
 // Thinking: primarily we want to target these: https://w3c.github.io/html/textlevel-semantics.html
 //
@@ -40,6 +41,20 @@
 body {
 	line-height: $uikit-leading;
 }
+
+
+a {
+	color: $uikit-colour-Text;
+	text-decoration: none;
+	border-bottom: solid 1px $uikit-colour-Link;
+	transition: background-color, border-color, color 0.1 ease-in-out;
+
+	&:hover,
+	&:focus {
+		background-color: $uikit-colour-Link;
+	}
+}
+
 
 /**
  * Text selection and `mark` styling.
