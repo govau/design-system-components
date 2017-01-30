@@ -1,7 +1,7 @@
-@gov.au/[-replace-name-]
+@gov.au/body
 ============
 
-> [-replace-description-].
+> Basic body styles for body HTML elements.
 
 
 ## Content
@@ -20,7 +20,7 @@
 
 
 ```shell
-npm install @gov.au/[-replace-name-] --save-dev
+npm install @gov.au/body --save-dev
 ```
 
 

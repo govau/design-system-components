@@ -1,7 +1,7 @@
-@gov.au/[-replace-name-]
+@gov.au/headings
 ============
 
-> [-replace-description-].
+> Class styles for display headings.
 
 
 ## Content
@@ -20,7 +20,7 @@
 
 
 ```shell
-npm install @gov.au/[-replace-name-] --save-dev
+npm install @gov.au/headings --save-dev
 ```
 
 
