@@ -1,0 +1,6 @@
+@import '../../../core/dist/sass/module.scss';
+@import '../../../../.templates/test-assets/style.scss';
+
+@import 'module.scss';
+@include versioning-check();
+
