@@ -20,45 +20,31 @@
 	width: 100%;
 	margin: 0;
 
-  @include uikit-media(sm) {
-    display: inline-block;
-  }
+	@include uikit-media(sm) {
+		display: inline-block;
+	}
 
-  ul {
-    margin: 0;
-    padding: uikit-space(0.25) 0 uikit-space(0.5);
-    list-style: none;
+	> .inline-links {
+		> li {
+			display: inline-block;
+			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
+			font-size: 14px;
 
-    li {
-      display: inline-block;
-      margin: 0;
-      padding: 0;
-      font-size: 14px;
+			&:not(:last-child):after {
+				margin: 0 uikit-space(0.5);
+				font-family: $uikit-font-system;
+				content: '>';
+				font-size: 12px;
+				color: $uikit-colour-Text-50;
+			}
+		}
+	}
 
-      &:not(:last-child) {
-        // @extend %icon-arrow-right;
-
-        margin-right: uikit-space(0.25);
-        padding-right: uikit-space(0.5);
-        background-repeat: no-repeat;
-        background-position: right;
-        // background-size: uikit-space(0.1) auto;
-      }
-    }
-  }
-
-  &.breadcrumbs--inverted {
-  //   //@include link-colours($link-inverted-colour, $link-inverted-colour--hover, $link-colour);
-	//
-  //   // background-color: transparent;
-  //   // color: $body-inverted-text-colour;
-	//
-  //   ul {
-  //     li:not(:last-child) {
-  //       // @extend %icon-arrow-right--white;
-	//
-  //       // color: $body-inverted-text-colour;
-  //     }
-  //   }
-  }
+	&.breadcrumbs--inverted {
+		> .inline-links--inverted {
+			> li {
+				color: invert($uikit-colour-Text);
+			}
+		}
+	}
 }
