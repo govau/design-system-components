@@ -1,6 +1,5 @@
-@import '../../../core/dist/sass/module.scss';
-@import '../../../../.templates/test-assets/style.scss';
+@import '../../../core/dist/sass/module.scss'; //dependency: core
+@import '../../../../.templates/test-assets/style.scss'; //test file stylesheet
 
 @import 'module.scss';
 @include versioning-check();
-
