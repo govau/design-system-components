@@ -273,6 +273,7 @@ kbd {
  * Horizontal rule, used for paragraph-level thematic breaks.
  */
 hr {
+	border: none;
 	border-top: $uikit-border;
 	margin-top: uikit-space(1);
 	margin-bottom: uikit-space(1);
