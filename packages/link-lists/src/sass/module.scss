@@ -26,11 +26,13 @@
 		margin: 0 uikit-space(0.25);
 	}
 
+	//anchor styles from body not coming across
+
 	&--inverted {
-		background-color: invert($uikit-colour-Background);
+		background-color: invert($uikit-colour-Background); //Prob. worth ammending body module’s colours?
 
 		a {
-			color: invert($uikit-colour-Text);
+			color: invert($uikit-colour-Text); //These may need to change once body’s anchor styles come through.
 
 			&:hover,
 			&:focus {
