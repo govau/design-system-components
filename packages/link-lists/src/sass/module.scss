@@ -14,8 +14,7 @@
 // Link-list styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.inline-links,
-.inline-links--inverted {
+.inline-links {
 	display: inline-block;
 	list-style-type: none;
 	margin: 0;
@@ -26,13 +25,11 @@
 		margin: 0 uikit-space(0.25);
 	}
 
-	//anchor styles from body not coming across
+	&.inline-links--inverted {
+		background-color: invert($uikit-colour-Background);
 
-	&--inverted {
-		background-color: invert($uikit-colour-Background); //Prob. worth ammending body module’s colours?
-
-		a {
-			color: invert($uikit-colour-Text); //These may need to change once body’s anchor styles come through.
+		> li > a {
+			color: invert($uikit-colour-Text);
 
 			&:hover,
 			&:focus {
