@@ -14,7 +14,9 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 $name: "[replace-name]";
 $version: "[replace-version]";
-$dependencies: (); //Dom to add a placeholder here.
+$dependencies: (
+	[replace-dependencies]
+);
 
 @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
 
