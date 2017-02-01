@@ -169,6 +169,7 @@ const HELPER = (() => { //constructor factory
 const Autoprefixer = require('autoprefixer');
 const Postcss = require('postcss');
 const Sass = require('node-sass');
+const Semver =  require('semver');
 
 
 HELPER.compile = (() => {
@@ -237,7 +238,7 @@ HELPER.compile = (() => {
 			//rethingiemajiging the peer dependencies for sass
 			let dependencies = [];
 			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
-				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ] }"),`);
+				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
 			}
 
 			//3.replace strings inside new files in dist
