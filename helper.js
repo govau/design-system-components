@@ -126,6 +126,7 @@ const HELPER = (() => { //constructor factory
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 		NAME: PKG.name,
 		VERSION: PKG.version,
+		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/.templates`),
 
 
@@ -233,10 +234,17 @@ HELPER.compile = (() => {
 			CopyFile('./src/sass/globals.scss', './dist/sass/globals.scss');
 			CopyFile('./src/sass/module.scss', './dist/sass/module.scss');
 
+			//rethingiemajiging the peer dependencies for sass
+			let dependencies = [];
+			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
+				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ] }"),`);
+			}
+
 			//3.replace strings inside new files in dist
 			const searches = {
 				'[replace-name]': HELPER.NAME,
 				'[replace-version]': HELPER.VERSION,
+				'[replace-dependencies]': dependencies.join(`\n\t`),
 			};
 
 			ReplaceFileContent( searches, './dist/sass/globals.scss' );
