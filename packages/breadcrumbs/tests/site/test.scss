@@ -1,4 +1,6 @@
 @import '../../../core/dist/sass/module.scss'; //dependency: core
+@import '../../../body/dist/sass/module.scss'; //dependency: core
+@import '../../../link-lists/dist/sass/module.scss'; //dependency: link-lists
 @import '../../../../.templates/test-assets/style.scss'; //test file stylesheet
 
 @import 'module.scss';
