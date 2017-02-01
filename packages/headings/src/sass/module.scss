@@ -15,7 +15,7 @@
 // HEADING/DISPLAY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * Generates .display-[1…6] classes for display headings.
+ * Generates .uikit-display-[1…6] classes for display headings.
  *
  * The magic number here reduces the leading for these heading displays, since
  * the body text leading is too large at heading/display sizes.
@@ -23,7 +23,7 @@
  * We also set the font-size automatically too. (:
  */
 @for $i from 1 through 6 {
-	.display-#{$i} {
+	.uikit-display-#{$i} {
 		display: block;
 		line-height: $uikit-leading; //1.142857143;//1.4 from 16 (default: core)
 		margin-top: uikit-space( 1, 1 ); //1 unit at the new line-height (1.4 -- 1.4em)
@@ -34,8 +34,8 @@
 }
 
 
-.display-3,
-.display-4,
-.display-5 {
+.uikit-display-3,
+.uikit-display-4,
+.uikit-display-5 {
 	font-weight: normal;
 }

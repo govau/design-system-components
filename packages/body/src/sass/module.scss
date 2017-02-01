@@ -61,7 +61,7 @@ a {
  */
 mark,
 ::selection {
-	background-color: $uikit-colour-Warning-60;
+	background-color: rgba( $uikit-colour-Warning-60, 0.5 );
 }
 
 mark {

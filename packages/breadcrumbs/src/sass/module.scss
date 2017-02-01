@@ -15,7 +15,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Breadcrumb styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.breadcrumbs {
+.uikit-breadcrumbs {
 	display: none;
 	width: 100%;
 	margin: 0;
@@ -24,7 +24,7 @@
 		display: inline-block;
 	}
 
-	> .inline-links {
+	> .uikit-inline-links {
 		> li {
 			display: inline-block;
 			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
@@ -40,8 +40,8 @@
 		}
 	}
 
-	&.breadcrumbs--inverted {
-		> .inline-links--inverted {
+	&.uikit-breadcrumbs--inverted {
+		> .uikit-inline-links--inverted {
 			> li {
 				color: invert($uikit-colour-Text);
 			}
