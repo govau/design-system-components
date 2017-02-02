@@ -39,7 +39,7 @@
 		"onchange": "^3.2.1"
 	},
 	"files": [
-		"dist/*"
+		"lib/*"
 	],
 	"engines": {
 		"node": ">=0.12.0",
