@@ -9,6 +9,6 @@ node_modules
 validation-report.json
 validation-status.json
 *.css
-packages/*/dist/
+packages/*/lib/
 npm-debug.log
 lerna-debug.log
