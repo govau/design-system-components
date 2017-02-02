@@ -1,0 +1,280 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Body module
+//
+// Content:
+// - Body styles
+//   - body
+//   - anchor (a)
+//   - mark
+//   - ::selection (highlight colour)
+//   - paragraphs
+//   - sorted and unsorted lists
+//   - list items
+//   - definition lists, terms and definitions
+//   - emphasis, bolding, etc.
+//   - editorial markup (eg. ins and del)
+//   - strong and small
+//   - first definition (dfn)
+//   - abbreviations (abbr)
+//   - variables (var) and nested indices (sup and sub)
+//   - pre-formatted text and nested code, kbd, samp
+//   - code
+//   - keyboard strokes (kbd)
+//   - horizontal rules (hr)
+//
+// Thinking: primarily we want to target these: https://w3c.github.io/html/textlevel-semantics.html
+//
+// From there:
+// - provide good, legible basics
+// - provide a vertical rhythm based on content size
+// - cater for a common and semantic nesting
+// - keep styling to a minimum
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import 'globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// BODY STYLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+body {
+	line-height: $uikit-leading;
+}
+
+
+a {
+	color: $uikit-colour-Text;
+	text-decoration: none;
+	border-bottom: solid 1px $uikit-colour-Link;
+	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
+
+	&:hover,
+	&:focus {
+		background-color: $uikit-colour-Link;
+	}
+}
+
+
+/**
+ * Text selection and `mark` styling.
+ */
+mark,
+::selection {
+	background-color: rgba( $uikit-colour-Warning-60, 0.5 );
+}
+
+mark {
+	padding: 0 2px;
+	border-radius: $uikit-border-radius;
+}
+
+
+/**
+ * Vertical spacing of common text elements.
+ */
+p {
+	max-width: $uikit-maxwidth;
+}
+
+p,
+ul,
+ol,
+dl,
+pre {
+	margin-top: 0;
+	margin-bottom: uikit-space(1);
+}
+
+ul,
+ol,
+dd {
+	margin-left: 0;
+	padding-left: uikit-space(1);
+}
+
+ul,
+ol {
+	li {
+		margin-bottom: uikit-space(0.25);
+
+		ul,
+		ol {
+			margin-top: uikit-space(0.25);
+			margin-bottom: uikit-space(0.5);
+		}
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+}
+
+dl {
+	dd {
+		margin-bottom: uikit-space(1);
+	}
+
+	dt {
+		font-weight: bold;
+		margin-top: uikit-space(0.5);
+		margin-bottom: uikit-space(0.5);
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+}
+
+
+/**
+ * Emphasis and alt. voice/mood/diff. from prose text.
+ */
+em,
+i {
+	font-style: italic;
+}
+
+/**
+ * Important (leaving `b` out for now (and `u` also)).
+ */
+strong {
+	font-weight: bold;
+}
+
+
+/**
+ * `small`: for less important information (not stylistic purposes).
+ */
+small {
+	font-size: 0.875em;//14 from 16
+	color: $uikit-colour-Text-90;
+}
+
+
+/**
+ * `s`: represents contents no longer accurate/relevant.
+ */
+s {
+	text-decoration: line-through;
+}
+
+
+/**
+ * `del` & `ins`: editorial markup.
+ *
+ */
+del {
+	text-decoration: line-through;
+	color: $uikit-colour-Text-80;
+	//Idea: for `del`: switch to the opposite of the current sans/sans-serif style?
+}
+
+ins {
+	text-decoration-line: underline;
+	text-decoration-style: dashed;//Waiting on Chrome.
+	//text-decoration-skip: ink;//Forward planning.
+}
+
+
+/**
+ * Defining definition of a term.
+ *
+ * The paragraph, description list group, or section that is the nearest
+ * ancestor of the `dfn` element must also contain the definition(s) for the term
+ * given by the `dfn` element.
+ *
+ * Note: `abbr` can be nested inside `dfn`.
+ */
+dfn {
+	font-style: normal;
+}
+
+
+/**
+ * Abbreviations/acronyms.
+ *
+ * This styling removes any custom casing (mixing of u&lc chars in the `abbr`).
+ *
+ * Todo: test font stack fallbacks with the font-size adj.
+ */
+abbr,
+abbr[title] {
+	font-size: 1.125em;//18 from 16
+	font-variant: small-caps;
+	text-transform: lowercase;
+	letter-spacing: 1px;
+	text-decoration: none;
+	border-bottom-color: $uikit-colour-Border;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
+	cursor: help;
+}
+
+
+/**
+ * Variables, eg. as used in mathematical expressions.
+ *
+ * We also provide semantic support for nested vars, and things like indices.
+ */
+var {
+	padding: 0 1px;
+	font-style: italic;
+	font-family: serif;//We want mathematical notation to use serif vars per convention.
+
+	sup,
+	sub {
+		font-family: $uikit-font;
+		font-style: normal;
+		padding: 0 1px;
+	}
+}
+
+
+/**
+ * Code snippets and code blocks.
+ */
+code,
+kbd,
+pre {
+	font-family: $uikit-font-monospace;
+}
+
+
+/**
+ * Pre-formatted text set by typographic characters.
+ */
+pre {
+	& code,
+	& samp,
+	& kbd {
+		font-size: 0.875em;//14 from 16
+	}
+}
+
+
+/**
+ * Keyboard strokes.
+ */
+kbd {
+	display: inline-block;
+	font-size: 0.875em;//14 from 16
+	border: solid 1px $uikit-colour-Hero-50;
+	border-radius: $uikit-border-radius;
+	box-shadow: 0 1px 0 0 $uikit-colour-Info;
+	background-color: $uikit-colour-Background;
+	color: $uikit-colour-Beta;
+	text-align: center;
+	padding: 0 uikit-space(0.5);
+	margin: 0 2px;
+}
+
+/**
+ * Horizontal rule, used for paragraph-level thematic breaks.
+ */
+hr {
+	border: none;
+	border-top: $uikit-border;
+	margin-top: uikit-space(1);
+	margin-bottom: uikit-space(1);
+}

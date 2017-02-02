@@ -4,7 +4,7 @@
 	"description": "Breadcrumbs help users understand where they are in the service and how they got there.",
 	"keywords": [
 		"uikit",
-		"uikit-module",
+		"pancake-module",
 		"scss",
 		"css",
 		"gov.au",
@@ -39,7 +39,7 @@
 		"onchange": "^3.2.1"
 	},
 	"files": [
-		"dist/*"
+		"lib/*"
 	],
 	"engines": {
 		"node": ">=0.12.0",

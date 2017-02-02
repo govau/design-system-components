@@ -1,0 +1,43 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// link-lists module
+// A simple list of inline links.
+//
+// Content:
+// - .inline-links, .inline-links--inverted
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import 'globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Link-list styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Block of inline links.
+ */
+.uikit-inline-links {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: uikit-space(0.5) 0;
+
+	> li {
+		display: inline-block;
+		margin: 0 uikit-space(0.25);
+	}
+
+	&.uikit-inline-links--inverted {
+		background-color: invert($uikit-colour-Background);
+
+		> li > a {
+			color: invert($uikit-colour-Text);
+
+			&:hover,
+			&:focus {
+				background-color: $uikit-colour-Link;
+				color: $uikit-colour-Text;
+			}
+		}
+	}
+}

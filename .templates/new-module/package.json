@@ -4,7 +4,7 @@
 	"description": "[-replace-description-]",
 	"keywords": [
 		"uikit",
-		"uikit-module",
+		"pancake-module",
 		"scss",
 		"css",
 		"gov.au",
@@ -35,7 +35,7 @@
 		"onchange": "^3.2.1"
 	},
 	"files": [
-		"dist/*"
+		"lib/*"
 	],
 	"engines": {
 		"node": ">=0.12.0",
