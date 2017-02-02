@@ -159,7 +159,7 @@ const HELPER = (() => { //constructor factory
  *
  * COMPILE MODULE
  *
- * Compile assets, move files from /scr/ to /dist/
+ * Compile assets, move files from /scr/ to /lib/
  *
  **************************************************************************************************************************************************************/
 
@@ -184,7 +184,7 @@ HELPER.compile = (() => {
 		const compiled = Sass.renderSync({
 			file: scss,
 			indentType: 'tab',
-			includePaths: [ './dist/sass/' ],
+			includePaths: [ './lib/sass/' ],
 			outputStyle: 'compressed',
 		});
 
@@ -229,11 +229,11 @@ HELPER.compile = (() => {
 
 		sass: () => {
 			//1. create path
-			CreateDir('./dist/sass/');
+			CreateDir('./lib/sass/');
 
 			//2. copy files
-			CopyFile('./src/sass/globals.scss', './dist/sass/globals.scss');
-			CopyFile('./src/sass/module.scss', './dist/sass/module.scss');
+			CopyFile('./src/sass/globals.scss', './lib/sass/globals.scss');
+			CopyFile('./src/sass/module.scss', './lib/sass/module.scss');
 
 			//rethingiemajiging the peer dependencies for sass
 			let dependencies = [];
@@ -241,15 +241,15 @@ HELPER.compile = (() => {
 				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
 			}
 
-			//3.replace strings inside new files in dist
+			//3.replace strings inside new files in lib
 			const searches = {
 				'[replace-name]': HELPER.NAME,
 				'[replace-version]': HELPER.VERSION,
 				'[replace-dependencies]': dependencies.join(`\n\t`),
 			};
 
-			ReplaceFileContent( searches, './dist/sass/globals.scss' );
-			ReplaceFileContent( searches, './dist/sass/module.scss' );
+			ReplaceFileContent( searches, './lib/sass/globals.scss' );
+			ReplaceFileContent( searches, './lib/sass/module.scss' );
 
 			//4. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
