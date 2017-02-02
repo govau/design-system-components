@@ -16,7 +16,7 @@
 /**
  * Block of inline links.
  */
-.inline-links {
+.uikit-inline-links {
 	display: inline-block;
 	list-style-type: none;
 	margin: 0;
@@ -27,7 +27,7 @@
 		margin: 0 uikit-space(0.25);
 	}
 
-	&.inline-links--inverted {
+	&.uikit-inline-links--inverted {
 		background-color: invert($uikit-colour-Background);
 
 		> li > a {
