@@ -26,9 +26,9 @@
 			position: absolute;
 			width: auto;
 			font-size: 21px;
-			top: uikit-space(1, 1);
-			left: uikit-space(1, 1);
-			padding: uikit-space(0.5, 1) uikit-space(0.75, 1);
+			top: uikit-space(0.5, $uikit-leading);
+			left: uikit-space(0.5, $uikit-leading);
+			padding: uikit-space(0.25, $uikit-leading) uikit-space(0.5, $uikit-leading);
 			color: $uikit-colour-Text;
 			background-color: $uikit-colour-Link;
 			text-decoration: none;
