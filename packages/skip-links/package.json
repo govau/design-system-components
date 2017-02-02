@@ -10,7 +10,11 @@
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
-		"design system"
+		"design system",
+    "tab links",
+    "skip links",
+    "skip-to",
+    "accessibility"
 	],
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
