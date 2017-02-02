@@ -10,7 +10,13 @@
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
-		"design system"
+		"design system",
+		"responsive",
+		"embed",
+		"iframe",
+		"video",
+		"object",
+		"image"
 	],
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
