@@ -16,28 +16,32 @@
 /**
  * Block of inline links.
  */
-.uikit-inline-links {
-	display: inline-block;
-	list-style-type: none;
-	margin: 0;
-	padding: uikit-space(0.5) 0;
+.uikit-body { //uikit body dependency specificity scoping
 
-	> li {
+	.uikit-inline-links {
 		display: inline-block;
-		margin: 0 uikit-space(0.25);
-	}
+		list-style-type: none;
+		margin: 0;
+		padding: uikit-space(0.5) 0;
 
-	&.uikit-inline-links--inverted {
-		background-color: invert($uikit-colour-Background);
+		> li {
+			display: inline-block;
+			margin: 0 uikit-space(0.25);
+		}
 
-		> li > a {
-			color: invert($uikit-colour-Text);
+		&.uikit-inline-links--inverted {
+			background-color: invert($uikit-colour-Background-20);
 
-			&:hover,
-			&:focus {
-				background-color: $uikit-colour-Link;
-				color: $uikit-colour-Text;
+			> li > a {
+				color: invert($uikit-colour-Text);
+
+				&:hover,
+				&:focus {
+					background-color: $uikit-colour-Link;
+					color: $uikit-colour-Text;
+				}
 			}
 		}
 	}
+
 }
