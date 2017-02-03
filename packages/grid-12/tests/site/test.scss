@@ -6,5 +6,19 @@
 @include versioning-check();
 
 .grids {
+	margin-top: 10px;
+	margin-bottom: 10px;
 	background-color: red;
+}
+
+.foo {
+	@include clearfix;
+
+	margin-top: $gutter;
+
+	&::after {
+		background-color: yellow;
+		padding: $gutter;
+		content: '#{$gutter}';
+	}
 }
