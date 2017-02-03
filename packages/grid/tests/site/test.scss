@@ -4,6 +4,12 @@
 @import 'module.scss';
 @include versioning-check();
 
+// We want to test that Neat works.
+//
+// The example is mobile-first, adding styles at the ‘sm’ and larger breakpoint.
+//
+// While Neat has its own media() mixin we will use the uikit-media() one defined in core.
+
 main {
 	@include outer-container;
 
