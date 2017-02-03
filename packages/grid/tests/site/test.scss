@@ -1,0 +1,25 @@
+@import '../../../core/lib/sass/module.scss'; //dependency: core
+@import '../../../../.templates/test-assets/style.scss'; //test file stylesheet
+
+@import 'module.scss';
+@include versioning-check();
+
+main {
+	@include outer-container;
+
+	article {
+		background-color: red;
+
+		@include uikit-media(sm) {
+			@include span-columns(8 of 12);
+		}
+	}
+
+	aside {
+		background-color: blue;
+
+		@include uikit-media(sm) {
+			@include span-columns(4 of 12);
+		}
+	}
+}
