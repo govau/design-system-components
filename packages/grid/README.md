@@ -1,7 +1,7 @@
-@gov.au/[-replace-name-]
+@gov.au/grid
 ============
 
-> [-replace-description-]
+> Provides Neat (Bourbon) grid system.
 
 
 ## Content
@@ -20,7 +20,7 @@
 
 
 ```shell
-npm install @gov.au/[-replace-name-] --save-dev
+npm install @gov.au/grid --save-dev
 ```
 
 
