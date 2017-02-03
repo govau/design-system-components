@@ -20,15 +20,18 @@ $dependencies: (
 
 @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
 
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
 $uikit-grid-12-columns: 12 !default;        //column amounts
 $uikit-grid-12-gutter-width: 24px !default; //gutter space
 
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Mixins
+// Mixins and grid class generation
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
  * Clearing floats
@@ -44,7 +47,11 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
 	}
 }
 
-// [converter] This is defined recursively in LESS, but Sass supports real loops
+
+/**
+ * Iterates through all 12 columns (≥2) to calculate the correct amount of left
+ * and right padding for each of the classes.
+ */
 @mixin uikit-grid-12-make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
 	@for $i from (1 + 1) through $uikit-grid-12-columns {
 		$list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
@@ -57,7 +64,10 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
 	}
 }
 
-// [converter] This is defined recursively in LESS, but Sass supports real loops
+
+/**
+ * Iterates through the columns to create a new list and then sets the float.
+ */
 @mixin uikit-grid-12-float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
 	@for $i from (1 + 1) through $uikit-grid-12-columns {
 		$list: "#{$list}, .col-#{$class}-#{$i}";
@@ -67,6 +77,11 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
 	}
 }
 
+
+/**
+ * Calculates the correct widths as a percentage based on the column count,
+ * column breakpoint class, and type (pull or offset).
+ */
 @mixin uikit-grid-12-calc-grid-column($index, $class, $type) {
 	@if ($type == width) and ($index > 0) {
 		.col-#{$class}-#{$index} {
@@ -100,14 +115,20 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
 	}
 }
 
-// [converter] This is defined recursively in LESS, but Sass supports real loops
+
+/**
+ * Calls the above mixins and combines them.
+ */
 @mixin uikit-grid-12-loop-grid-columns($columns, $class, $type) {
 	@for $i from 0 through $columns {
 		@include uikit-grid-12-calc-grid-column($i, $class, $type);
 	}
 }
 
-// Create grid for specific class
+
+/**
+ * Finally, we create the grid and all the necessary classes.
+ */
 @mixin uikit-grid-12-make-grid($class) {
 	@include uikit-grid-12-float-grid-columns($class);
 	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, width);

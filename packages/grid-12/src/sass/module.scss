@@ -11,13 +11,8 @@
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Implementation of the Bootstrap 3 grid using Neat (from grid module)
+// Implementation of the Bootstrap 3 grid
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-$bootstrap-sass-asset-helper: false !default;
-//
-// Variables
-// --------------------------------------------------
-
 .uikit-grid {
 	* {
 		box-sizing: border-box;
@@ -41,35 +36,35 @@ $bootstrap-sass-asset-helper: false !default;
 
 	.container,
 	.container-fluid {
+		@include uikit-grid-12-clearfix;
+
 		margin-right: auto;
 		margin-left: auto;
 		padding-left: floor( ( $uikit-grid-12-gutter-width / 2 ) );
 		padding-right: ceil( ( $uikit-grid-12-gutter-width / 2 ) );
-
-		@include uikit-grid-12-clearfix;
 	}
 
 	.row {
+		@include uikit-grid-12-clearfix;
+
 		margin-left: ceil( ( $uikit-grid-12-gutter-width / -2 ) );
 		margin-right: floor( ( $uikit-grid-12-gutter-width / -2 ) );
-
-		@include uikit-grid-12-clearfix;
 	}
 
 
 	@include uikit-grid-12-make-grid-columns;
 
-	@include uikit-grid-12-make-grid(xs);
+	@include uikit-grid-12-make-grid( xs );
 
 	@include uikit-media( sm ) {
-		@include uikit-grid-12-make-grid(sm);
+		@include uikit-grid-12-make-grid( sm );
 	}
 
 	@include uikit-media( md ) {
-		@include uikit-grid-12-make-grid(md);
+		@include uikit-grid-12-make-grid( md );
 	}
 
 	@include uikit-media( lg ) {
-		@include uikit-grid-12-make-grid(lg);
+		@include uikit-grid-12-make-grid( lg );
 	}
 }
