@@ -1,7 +1,7 @@
-@gov.au/grid
+@gov.au/grid-12
 ============
 
-> Provides Neat (Bourbon) grid system.
+> Implementation of the Bootstrap 3 grid.
 
 
 ## Content
@@ -20,7 +20,7 @@
 
 
 ```shell
-npm install @gov.au/grid --save-dev
+npm install @gov.au/grid-12 --save-dev
 ```
 
 

@@ -1,4 +1,4 @@
-@gov.au/grid CHANGELOG
+@gov.au/grid-12 CHANGELOG
 ======================
 
 > Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
