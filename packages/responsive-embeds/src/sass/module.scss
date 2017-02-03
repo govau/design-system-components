@@ -3,7 +3,8 @@
 // Caters for video/slideshow dimensions and aspect ratios across various viewports/widths
 //
 // Content:
-// - things
+// - Responsive video embeds
+// - Responsive image
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -20,10 +21,7 @@
 	padding: 0;
 	overflow: hidden;
 
-	.uikit-responsive-video--item,
-	iframe,
-	embed,
-	object {
+	> .uikit-responsive-video__item {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -32,11 +30,11 @@
 		border: 0;
 	}
 
-	&.uikit-responsive-video-16x9 {
+	&.uikit-responsive-video--16x9 {
 		padding-bottom: 56.25%; // 16/9
 	}
 
-	&.uikit-responsive-video-4x3 {
+	&.uikit-responsive-video--4x3 {
 		padding-bottom: 75%; // 4/3
 	}
 }
@@ -46,5 +44,5 @@
 // Responsive image
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-responsive-img {
-	width: 100%;
+	max-width: 100%;
 }
