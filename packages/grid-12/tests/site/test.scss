@@ -1,24 +1,26 @@
 @import '../../../core/lib/sass/module.scss'; //dependency: core
-@import '../../../grid/lib/sass/module.scss'; //dependency: grid
 @import '../../../../.templates/test-assets/style.scss'; //test file stylesheet
 
 @import 'module.scss';
 @include versioning-check();
 
 .grids {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	background-color: red;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: rgba(rebeccapurple, 0.2);
+	text-align: center;
+
+	> span {
+		display: block;
+		background-color: rgba(rebeccapurple, 0.7);
+	}
 }
 
-.foo {
-	@include clearfix;
+body {
+	padding-left: 0;
+	padding-right: 0;
+}
 
-	margin-top: $gutter;
-
-	&::after {
-		background-color: yellow;
-		padding: $gutter;
-		content: '#{$gutter}';
-	}
+h1 {
+	margin-left: 2em;
 }

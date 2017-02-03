@@ -24,34 +24,94 @@ $dependencies: (
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Boy it sure is quiet here.
-
+$uikit-grid-12-columns: 12 !default;        //column amounts
+$uikit-grid-12-gutter-width: 24px !default; //gutter space
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Mixins
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Create the grid for a given size
-//
-// This will loop over the number of columns and create a css class
-// for each. If it’s the last gride size, then let’s not add a float
-@mixin grid-core($size) {
-	@for $i from 1 through 12 {
-		.col-#{$size}-#{$i} {
-			// Ignore float for the largest grid size
-			@if $i < 12 {
-				float: left;
-			}
-			@include span-columns($i);
-		}
+/**
+ * Clearing floats
+ */
+@mixin uikit-grid-12-clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
 
-		// If it’s not the screen-xs, then let's add push and pull helper classes
-		@if $size != "xs" {
-			.col-#{$size}-push-#{$i} {
-				left: flex-grid($i, 12) + flex-gutter(12);
-			}
-			.col-#{$size}-pull-#{$i} {
-				right: flex-grid($i, 12) + flex-gutter(12);
-			}
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin uikit-grid-12-make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+	@for $i from (1 + 1) through $uikit-grid-12-columns {
+		$list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+	}
+	#{$list} {
+		position: relative;
+		min-height: 1px;
+		padding-left:  ceil(($uikit-grid-12-gutter-width / 2));
+		padding-right: floor(($uikit-grid-12-gutter-width / 2));
+	}
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin uikit-grid-12-float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+	@for $i from (1 + 1) through $uikit-grid-12-columns {
+		$list: "#{$list}, .col-#{$class}-#{$i}";
+	}
+	#{$list} {
+		float: left;
+	}
+}
+
+@mixin uikit-grid-12-calc-grid-column($index, $class, $type) {
+	@if ($type == width) and ($index > 0) {
+		.col-#{$class}-#{$index} {
+			width: percentage(($index / $uikit-grid-12-columns));
 		}
 	}
+	@if ($type == push) and ($index > 0) {
+		.col-#{$class}-push-#{$index} {
+			left: percentage(($index / $uikit-grid-12-columns));
+		}
+	}
+	@if ($type == push) and ($index == 0) {
+		.col-#{$class}-push-0 {
+			left: auto;
+		}
+	}
+	@if ($type == pull) and ($index > 0) {
+		.col-#{$class}-pull-#{$index} {
+			right: percentage(($index / $uikit-grid-12-columns));
+		}
+	}
+	@if ($type == pull) and ($index == 0) {
+		.col-#{$class}-pull-0 {
+			right: auto;
+		}
+	}
+	@if ($type == offset) {
+		.col-#{$class}-offset-#{$index} {
+			margin-left: percentage(($index / $uikit-grid-12-columns));
+		}
+	}
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin uikit-grid-12-loop-grid-columns($columns, $class, $type) {
+	@for $i from 0 through $columns {
+		@include uikit-grid-12-calc-grid-column($i, $class, $type);
+	}
+}
+
+// Create grid for specific class
+@mixin uikit-grid-12-make-grid($class) {
+	@include uikit-grid-12-float-grid-columns($class);
+	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, width);
+	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, pull);
+	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, push);
+	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, offset);
 }
