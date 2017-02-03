@@ -1,0 +1,57 @@
+/*! [replace-name] v[replace-version] */
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// grid-12 module globals
+// Implementation of the Bootstrap 3 grid.
+//
+// Content:
+// - Sass versioning
+// - Global variables: none so far
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SASS VERSIONING
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+$name: "[replace-name]";
+$version: "[replace-version]";
+$dependencies: (
+	[replace-dependencies]
+);
+
+@include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL VARIABLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Boy it sure is quiet here.
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Mixins
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Create the grid for a given size
+//
+// This will loop over the number of columns and create a css class
+// for each. If it’s the last gride size, then let’s not add a float
+@mixin grid-core($size) {
+	@for $i from 1 through 12 {
+		.col-#{$size}-#{$i} {
+			// Ignore float for the largest grid size
+			@if $i < 12 {
+				float: left;
+			}
+			@include span-columns($i);
+		}
+
+		// If it’s not the screen-xs, then let's add push and pull helper classes
+		@if $size != "xs" {
+			.col-#{$size}-push-#{$i} {
+				left: flex-grid($i, 12) + flex-gutter(12);
+			}
+			.col-#{$size}-pull-#{$i} {
+				right: flex-grid($i, 12) + flex-gutter(12);
+			}
+		}
+	}
+}
