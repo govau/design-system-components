@@ -1,0 +1,35 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// footer module
+// Footers help users who reach the bottom of a page without finding what they want.
+//
+// Content:
+// - sass-versioning
+// - globals
+// - normalize
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import 'globals.scss';
+
+.uikit-footer {
+	background-color: $uikit-colour-Background-20;
+	border-top: 6px solid $uikit-colour-Beta;
+	padding: uikit-space( 1 );
+}
+
+.uikit-footer__navgation {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	.uikit-inline-links {
+		> li {
+			display: block;
+		}
+	}
+}
+
+.uikit-footer__bottom {
+	border-top: $uikit-border;
+	padding: uikit-space( 0.5 ) 0;
+}
