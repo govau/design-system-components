@@ -15,36 +15,40 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Breadcrumb styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-breadcrumbs {
-	display: none;
-	width: 100%;
-	margin: 0;
+.uikit-body { //uikit body dependency specificity scoping via link-lists
 
-	@include uikit-media(sm) {
-		display: inline-block;
-	}
+	.uikit-breadcrumbs {
+		display: none;
+		width: 100%;
+		margin: 0;
 
-	> .uikit-inline-links {
-		> li {
+		@include uikit-media(sm) {
 			display: inline-block;
-			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
-			font-size: 14px;
-
-			&:not(:last-child):after {
-				margin: 0 uikit-space(0.5);
-				font-family: $uikit-font-system;
-				content: '>';
-				font-size: 12px;
-				color: $uikit-colour-Text-50;
-			}
 		}
-	}
 
-	&.uikit-breadcrumbs--inverted {
-		> .uikit-inline-links--inverted {
+		> .uikit-inline-links {
 			> li {
-				color: invert($uikit-colour-Text);
+				display: inline-block;
+				margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
+				font-size: 14px;
+
+				&:not(:last-child):after {
+					margin: 0 uikit-space(0.5);
+					font-family: $uikit-font-system;
+					content: '>';
+					font-size: 12px;
+					color: $uikit-colour-Text-50;
+				}
+			}
+		}
+
+		&.uikit-breadcrumbs--inverted {
+			> .uikit-inline-links--inverted {
+				> li {
+					color: invert($uikit-colour-Text);
+				}
 			}
 		}
 	}
+
 }
