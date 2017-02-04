@@ -3,33 +3,71 @@
 // Footers help users who reach the bottom of a page without finding what they want.
 //
 // Content:
-// - sass-versioning
-// - globals
-// - normalize
+// - Footer styles
+//   -Basic footer block styling
+//   - Footer `nav` navigation styling (supports up to 4 link blocks)
+//   - Footer bottom section styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 @import 'globals.scss';
 
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/**
+ * Basic footer block styling.
+ */
 .uikit-footer {
 	background-color: $uikit-colour-Background-20;
 	border-top: 6px solid $uikit-colour-Beta;
-	padding: uikit-space( 1 );
+	padding: uikit-space( 1 ) 0;
 }
 
-.uikit-footer__navgation {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+/**
+ * Footer `nav` navigation styling.
+ */
+.uikit-footer__navigation {
+	margin: 0 uikit-space( 1 ) uikit-space( 1 );
+	padding-bottom: uikit-space( 1 );
+	border-bottom: $uikit-border;
 
-	.uikit-inline-links {
-		> li {
-			display: block;
+	.uikit-footer__navigation__list {
+		padding-left: 0; //overrides: links-lists
+		list-style: none;
+
+		.uikit-footer__navigation__list-group {
+			margin: 0;
+
+			@include uikit-media( sm ) {
+				display: inline-block;
+				width: 48%;
+			}
+
+			@include uikit-media( md ) {
+				width: 24%;
+			}
+
+			> ul {
+				list-style: none;
+				padding-left: 0; //overrides: body
+
+				> li {
+					display: block;
+					margin-left: 0; //overrides: links-lists
+					margin-bottom: uikit-space( 0.25 );
+				}
+			}
 		}
 	}
 }
 
-.uikit-footer__bottom {
-	border-top: $uikit-border;
-	padding: uikit-space( 0.5 ) 0;
+/**
+ * Footer end section styling
+ */
+.uikit-footer__end {
+	margin: uikit-space( 2 ) uikit-space( 1 ) 0;
+	padding-bottom: uikit-space( 1 );
 }
