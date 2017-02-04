@@ -16,7 +16,6 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Footer styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 /**
  * Basic footer block styling.
  */
@@ -25,6 +24,7 @@
 	border-top: 6px solid $uikit-colour-Beta;
 	padding: uikit-space( 1 ) 0;
 }
+
 
 /**
  * Footer `nav` navigation styling.
@@ -64,8 +64,9 @@
 	}
 }
 
+
 /**
- * Footer end section styling
+ * Footer end section styling.
  */
 .uikit-footer__end {
 	margin: uikit-space( 2 ) uikit-space( 1 ) 0;
