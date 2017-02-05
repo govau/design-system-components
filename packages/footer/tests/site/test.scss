@@ -1,5 +1,6 @@
 @import '../../../core/lib/sass/module.scss'; //dependency: core
 @import '../../../body/lib/sass/module.scss'; //dependency: body
+@import '../../../link-lists/lib/sass/module.scss'; //including for test purposes; no dep.
 @import '../../../../.templates/test-assets/style.scss'; //test file stylesheet
 
 @import 'module.scss';
