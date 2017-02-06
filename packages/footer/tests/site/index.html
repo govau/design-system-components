@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Test: breadcrumbs</title>
+	<title>Test: footer</title>
 
 	<script type="text/javascript">
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
@@ -36,30 +36,108 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="uikit-body">
+<body class="uikit-body uikit-grid">
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
 
-	<h1>Test: breadcrumbs</h1>
+	<h1>Test: footer</h1>
 
-	<nav class="uikit-breadcrumbs" aria-label="breadcrumb">
-		<ul class="uikit-linklists uikit-linklists--inline">
-			<li><a href="#" title="Home">Home</a></li>
-			<li><a href="#" title="Menu1">Menu1</a></li>
-			<li>Menu2</li>
-		</ul>
-	</nav>
+	<h2>footer</h2>
+
+	<footer class="uikit-footer" role="contentinfo">
+		<nav class="uikit-footer__navigation">
+			<p>uikit-footer__navigation</p>
+		</nav>
+
+		<section class="uikit-footer__end">
+			<p>uikit-footer__end</p>
+		</section>
+	</footer>
+
+	<h2>footer with paragraph test</h2>
+
+	<footer class="uikit-footer" role="contentinfo">
+		<nav class="uikit-footer__navigation">
+			<p>uikit-footer__navigation</p>
+			<p>uikit-footer__navigation</p>
+			<p>uikit-footer__navigation</p>
+		</nav>
+
+		<section class="uikit-footer__end">
+			<p>uikit-footer__end</p>
+			<p>uikit-footer__end</p>
+		</section>
+	</footer>
 
 	<hr>
+	<h2>footer navigation only</h2>
 
-	<nav class="uikit-breadcrumbs uikit-breadcrumbs--inverted" aria-label="breadcrumb">
-		<ul class="uikit-linklists uikit-linklists--inline uikit-linklists--inverted">
-			<li><a href="#" title="Home">Home</a></li>
-			<li><a href="#" title="Menu1">Menu1</a></li>
-			<li>Menu2</li>
-		</ul>
-	</nav>
+	<footer class="uikit-footer" role="contentinfo">
+		<nav class="uikit-footer__navigation">
+			<p>uikit-footer__navigation</p>
+		</nav>
+	</footer>
+
+	<hr>
+	<h2>footer end only</h2>
+
+	<footer class="uikit-footer" role="contentinfo">
+		<section class="uikit-footer__end">
+			<p>uikit-footer__end</p>
+		</section>
+	</footer>
+
+	<hr>
+	<h2>footer with grid, link-lists and headings</h2>
+
+	<footer class="uikit-footer" role="contentinfo">
+		<nav class="uikit-footer__navigation row">
+			<div class="col-md-3 col-sm-6">
+				<h3 class="uikit-display-6">Section</h3>
+				<ul class="uikit-linklists">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-3 col-sm-6">
+				<h3 class="uikit-display-6">Section</h3>
+				<ul class="uikit-linklists">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-3 col-sm-6">
+				<h3 class="uikit-display-6">Section</h3>
+				<ul class="uikit-linklists">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-3 col-sm-6">
+				<h3 class="uikit-display-6">Section</h3>
+				<ul class="uikit-linklists">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<section class="uikit-footer__end">
+			<p>Footer text</p>
+
+			<img src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo">
+
+			<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
+		</section>
+	</footer>
 
 </body>
 </html>

@@ -1,7 +1,11 @@
 //dependencies
 @import '../../../core/lib/sass/_module.scss';
+@import '../../../body/lib/sass/_module.scss';
 
 //testing includes
+@import '../../../grid-12/lib/sass/_module.scss';
+@import '../../../link-lists/lib/sass/_module.scss';
+@import '../../../headings/lib/sass/_module.scss';
 
 //this module
 @import '_module.scss';

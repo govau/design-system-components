@@ -46,8 +46,8 @@ $uikit-maxwidth: 42em; //Answer to life, the universe, and everything (keeps thi
 
 $uikit-colour-Hero: #115361 !global; //color variables (yes! the actual spelling doesn't have a u)
 $uikit-colour-Primary: #880e48 !global;
-$uikit-colour-Background: mix(darken(#f0f3f5, 40), #f0f3f5, 50);
-$uikit-colour-Border: mix(black, #bebebe, 50) !global;
+$uikit-colour-Background: mix(darken(#f0f3f5, 40), #f0f3f5, 50) !global;
+$uikit-colour-Border: darken(#bbb, 40) !global;
 $uikit-colour-Text: #313131 !global;
 $uikit-colour-Link: #5bcbe3 !global;
 $uikit-colour-Alpha: #e6efc2 !global;
@@ -190,7 +190,7 @@ $uikit-colour-Info-20: mix(white, $uikit-colour-Info, 80) !global;
 $uikit-colour-Info-10: mix(white, $uikit-colour-Info, 90) !global;
 $uikit-colour-Info-5: mix(white, $uikit-colour-Info, 95) !global;
 
-$uikit-border: 1px solid $uikit-colour-Border;
+$uikit-borderize: 1px solid $uikit-colour-Border-40;
 $uikit-border-radius: 3px;
 
 
