@@ -11,10 +11,8 @@ deployment:
   development:
     branch: develop
     commands:
-      - ./scripts/cibuild.sh
-      - ./scripts/cideploy.sh -staging
+      - ./scripts/cideploy.sh --staging
   prod:
     branch: master
     commands:
-      - ./scripts/cibuild.sh
       - ./scripts/cideploy.sh
