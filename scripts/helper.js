@@ -459,7 +459,7 @@ HELPER.init = () => {
 
 	if( process.argv.indexOf( 'scaffolding' ) !== -1 ) {
 		path = 'scaffolding';
-		headline = `Scaffolding ${ PKG.name.substring( 8 ) }`;
+		headline = `Scaffolding new module }`;
 	}
 
 	if( path.length !== 0 ) {

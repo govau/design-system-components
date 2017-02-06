@@ -2,6 +2,7 @@
 
 # Exit immediately if any commands return non-zero
 set -e
+
 # download cf-cli and use to push
 curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
 sudo dpkg -i cf-cli_amd64.deb

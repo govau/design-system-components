@@ -9,7 +9,7 @@
 		"semver": "^5.3.0"
 	},
 	"scripts": {
-		"scaffolding": "node helper.js scaffolding",
+		"scaffolding": "node ./scripts/helper.js scaffolding",
 		"build": "lerna bootstrap"
 	}
 }

@@ -5,14 +5,16 @@ general:
 
 test:
   override:
-    - ./bin/cibuild.sh
+    - ./scripts/cibuild.sh
 
 deployment:
   development:
     branch: develop
     commands:
-      - ./bin/cideploy.sh -staging
+      - ./scripts/cibuild.sh
+      - ./scripts/cideploy.sh -staging
   prod:
     branch: master
     commands:
-      - ./bin/cideploy.sh
+      - ./scripts/cibuild.sh
+      - ./scripts/cideploy.sh
