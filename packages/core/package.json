@@ -25,7 +25,6 @@
 	"dependencies": {
 		"@gov.au/pancake": "latest",
 
-		"normalize.css": "5.0.0",
 		"sass-versioning": "^0.2.1"
 	},
 	"peerDependencies": {},

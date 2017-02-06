@@ -52,15 +52,15 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
  * Iterates through all 12 columns (≥2) to calculate the correct amount of left
  * and right padding for each of the classes.
  */
-@mixin uikit-grid-12-make-grid-columns($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
-	@for $i from (1 + 1) through $uikit-grid-12-columns {
+@mixin uikit-grid-12-make-grid-columns( $i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}" ) {
+	@for $i from ( 1 + 1 ) through $uikit-grid-12-columns {
 		$list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
 	}
 	#{$list} {
 		position: relative;
 		min-height: 1px;
-		padding-left:  ceil(($uikit-grid-12-gutter-width / 2));
-		padding-right: floor(($uikit-grid-12-gutter-width / 2));
+		padding-left:  ceil( ( $uikit-grid-12-gutter-width / 2 ) );
+		padding-right: floor( ( $uikit-grid-12-gutter-width / 2 ) );
 	}
 }
 
@@ -68,8 +68,8 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
 /**
  * Iterates through the columns to create a new list and then sets the float.
  */
-@mixin uikit-grid-12-float-grid-columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
-	@for $i from (1 + 1) through $uikit-grid-12-columns {
+@mixin uikit-grid-12-float-grid-columns( $class, $i: 1, $list: ".col-#{$class}-#{$i}" ) {
+	@for $i from ( 1 + 1 ) through $uikit-grid-12-columns {
 		$list: "#{$list}, .col-#{$class}-#{$i}";
 	}
 	#{$list} {
@@ -82,35 +82,35 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
  * Calculates the correct widths as a percentage based on the column count,
  * column breakpoint class, and type (pull or offset).
  */
-@mixin uikit-grid-12-calc-grid-column($index, $class, $type) {
-	@if ($type == width) and ($index > 0) {
+@mixin uikit-grid-12-calc-grid-column( $index, $class, $type ) {
+	@if ( $type == width ) and ( $index > 0 ) {
 		.col-#{$class}-#{$index} {
-			width: percentage(($index / $uikit-grid-12-columns));
+			width: percentage( ( $index / $uikit-grid-12-columns ) );
 		}
 	}
-	@if ($type == push) and ($index > 0) {
+	@if ( $type == push ) and ( $index > 0 ) {
 		.col-#{$class}-push-#{$index} {
-			left: percentage(($index / $uikit-grid-12-columns));
+			left: percentage( ( $index / $uikit-grid-12-columns ) );
 		}
 	}
-	@if ($type == push) and ($index == 0) {
+	@if ( $type == push ) and ( $index == 0 ) {
 		.col-#{$class}-push-0 {
 			left: auto;
 		}
 	}
-	@if ($type == pull) and ($index > 0) {
+	@if ($type == pull) and ( $index > 0 ) {
 		.col-#{$class}-pull-#{$index} {
-			right: percentage(($index / $uikit-grid-12-columns));
+			right: percentage( ( $index / $uikit-grid-12-columns ) );
 		}
 	}
-	@if ($type == pull) and ($index == 0) {
+	@if ($type == pull) and ( $index == 0 ) {
 		.col-#{$class}-pull-0 {
 			right: auto;
 		}
 	}
 	@if ($type == offset) {
 		.col-#{$class}-offset-#{$index} {
-			margin-left: percentage(($index / $uikit-grid-12-columns));
+			margin-left: percentage( ( $index / $uikit-grid-12-columns ) );
 		}
 	}
 }
@@ -119,9 +119,9 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
 /**
  * Calls the above mixins and combines them.
  */
-@mixin uikit-grid-12-loop-grid-columns($columns, $class, $type) {
+@mixin uikit-grid-12-loop-grid-columns( $columns, $class, $type ) {
 	@for $i from 0 through $columns {
-		@include uikit-grid-12-calc-grid-column($i, $class, $type);
+		@include uikit-grid-12-calc-grid-column( $i, $class, $type );
 	}
 }
 
@@ -129,10 +129,10 @@ $uikit-grid-12-gutter-width: 24px !default; //gutter space
 /**
  * Finally, we create the grid and all the necessary classes.
  */
-@mixin uikit-grid-12-make-grid($class) {
-	@include uikit-grid-12-float-grid-columns($class);
-	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, width);
-	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, pull);
-	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, push);
-	@include uikit-grid-12-loop-grid-columns($uikit-grid-12-columns, $class, offset);
+@mixin uikit-grid-12-make-grid( $class ) {
+	@include uikit-grid-12-float-grid-columns( $class );
+	@include uikit-grid-12-loop-grid-columns( $uikit-grid-12-columns, $class, width );
+	@include uikit-grid-12-loop-grid-columns( $uikit-grid-12-columns, $class, pull );
+	@include uikit-grid-12-loop-grid-columns( $uikit-grid-12-columns, $class, push );
+	@include uikit-grid-12-loop-grid-columns( $uikit-grid-12-columns, $class, offset );
 }
