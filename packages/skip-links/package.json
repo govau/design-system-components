@@ -1,17 +1,20 @@
 {
-	"name": "@gov.au/core",
+	"name": "@gov.au/skip-links",
 	"version": "0.1.0",
-	"description": "The core module all UI-Kit modules depend on",
+	"description": "Provide skip links to navigation and content.",
 	"keywords": [
 		"uikit",
-		"pancake-module",
+		"uikit-module",
 		"scss",
 		"css",
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
 		"design system",
-		"core"
+		"tab links",
+		"skip links",
+		"skip-to",
+		"accessibility"
 	],
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
@@ -25,10 +28,11 @@
 	"dependencies": {
 		"@gov.au/pancake": "latest",
 
-		"normalize.css": "5.0.0",
-		"sass-versioning": "^0.2.1"
+		"@gov.au/core": "^0.1.0"
 	},
-	"peerDependencies": {},
+	"peerDependencies": {
+		"@gov.au/core": "^0.1.0"
+	},
 	"devDependencies": {
 		"browser-sync": "^2.18.6",
 		"npm-run-all": "^4.0.1",

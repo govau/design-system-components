@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/core",
+	"name": "@gov.au/grid-12",
 	"version": "0.1.0",
-	"description": "The core module all UI-Kit modules depend on",
+	"description": "Implementation of the Bootstrap 3 grid.",
 	"keywords": [
 		"uikit",
 		"pancake-module",
@@ -11,7 +11,9 @@
 		"Commonwealth of Australia",
 		"design guide",
 		"design system",
-		"core"
+		"grid",
+		"grid-12",
+		"bootstrap"
 	],
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
@@ -25,10 +27,11 @@
 	"dependencies": {
 		"@gov.au/pancake": "latest",
 
-		"normalize.css": "5.0.0",
-		"sass-versioning": "^0.2.1"
+		"@gov.au/core": "^0.1.0"
 	},
-	"peerDependencies": {},
+	"peerDependencies": {
+		"@gov.au/core": "^0.1.0"
+	},
 	"devDependencies": {
 		"browser-sync": "^2.18.6",
 		"npm-run-all": "^4.0.1",

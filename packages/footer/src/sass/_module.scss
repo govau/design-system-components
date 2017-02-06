@@ -1,0 +1,42 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// footer module
+// Footers help users who reach the bottom of a page without finding what they want.
+//
+// Content:
+// - Footer styles
+//   -Basic footer block styling
+//   - Footer `nav` navigation styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Basic footer block styling.
+ */
+.uikit-footer {
+	background-color: $uikit-colour-Background-20;
+	border-top: 6px solid $uikit-colour-Beta;
+	padding: uikit-space( 1 );
+
+	p:last-child {
+		margin: 0;
+	}
+}
+
+
+/**
+ * Footer `nav` navigation styling.
+ */
+.uikit-footer__navigation {
+
+	+ .uikit-footer__end {
+		padding-top: uikit-space( 1 );
+		border-top: $uikit-borderize;
+		margin-top: uikit-space( 1 );
+	}
+}

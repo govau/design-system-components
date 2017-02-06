@@ -1,0 +1,37 @@
+//dependencies
+@import '../../../core/lib/sass/_module.scss';
+
+//testing includes
+
+//this module
+@import '_module.scss';
+
+//styling all test files
+@import '../../../../.templates/test-assets/_style.scss';
+
+//version check with sass-versioning
+@include versioning-check();
+
+
+.grids {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: rgba(rebeccapurple, 0.2);
+	text-align: center;
+
+	> span {
+		display: block;
+		background-color: rgba(rebeccapurple, 0.7);
+	}
+}
+
+// We’re undoing these test page styles in order to properly test the grid.
+body {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+// Same here.
+h1 {
+	margin-left: uikit-space(1);
+}
