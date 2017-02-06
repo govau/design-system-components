@@ -127,7 +127,7 @@ const HELPER = (() => { //constructor factory
 		NAME: PKG.name,
 		VERSION: PKG.version,
 		DEPENDENCIES: PKG.peerDependencies,
-		TEMPLATES: Path.normalize(`${ __dirname }/.templates`),
+		TEMPLATES: Path.normalize(`${ __dirname }/../.templates`),
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -311,7 +311,7 @@ HELPER.generate = (() => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	return {
 		init: () => {
-			const packagesPath = Path.normalize(`${ __dirname }/packages/`);
+			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
 			const allModules = GetFolders( packagesPath );
 
 			HELPER.generate.json( allModules );
@@ -324,7 +324,7 @@ HELPER.generate = (() => {
 		 * @param {array} allModules - An array of all modules
 		 */
 		json: ( allModules ) => {
-			const packagesPath = Path.normalize(`${ __dirname }/packages/`);
+			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
 			let packageJson = {}; //each package.json
 			let uikitJson = {};   //the uikit.json object
 
@@ -342,7 +342,7 @@ HELPER.generate = (() => {
 				}
 			}
 
-			Fs.writeFile(`${ __dirname }/uikit.json`, JSON.stringify( uikitJson ), 'utf8', ( error ) => { //write file
+			Fs.writeFile(`${ __dirname }/../uikit.json`, JSON.stringify( uikitJson ), 'utf8', ( error ) => { //write file
 				if( error ) {
 					console.error( error );
 					return;
@@ -356,7 +356,7 @@ HELPER.generate = (() => {
 		 * Write json file
 		 */
 		index: ( allModules ) => {
-			let index = Fs.readFileSync( `${ __dirname }/.templates/index/index.html`, 'utf-8') //this will be the index file
+			let index = Fs.readFileSync( `${ __dirname }/../.templates/index/index.html`, 'utf-8') //this will be the index file
 			let replacement = '';
 
 			//iterate over all packages
@@ -368,7 +368,7 @@ HELPER.generate = (() => {
 
 			index = index.replace('[-uikit-modules-]', replacement);
 
-			Fs.writeFile(`${ __dirname }/index.html`, index, 'utf8', ( error ) => { //write file
+			Fs.writeFile(`${ __dirname }/../index.html`, index, 'utf8', ( error ) => { //write file
 				if( error ) {
 					console.error( error );
 					return;
@@ -416,7 +416,7 @@ HELPER.scaffolding = (() => {
 			]).then(( answers ) => {
 
 				const template = `${ HELPER.TEMPLATES }/new-module/`;
-				const destination = Path.normalize(`${ __dirname }/packages/${ answers.name }`);
+				const destination = Path.normalize(`${ __dirname }/../packages/${ answers.name }`);
 				const replacements = {
 					'[-replace-name-]': answers.name,
 					'[-replace-description-]': answers.description,
