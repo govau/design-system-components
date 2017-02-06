@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import 'globals.scss';
+@import '_globals.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -21,7 +21,11 @@
 .uikit-footer {
 	background-color: $uikit-colour-Background-20;
 	border-top: 6px solid $uikit-colour-Beta;
-	padding: uikit-space( 1 ) uikit-space( 1 ) uikit-space( 2 );
+	padding: uikit-space( 1 );
+
+	p:last-child {
+		margin: 0;
+	}
 }
 
 
@@ -29,7 +33,10 @@
  * Footer `nav` navigation styling.
  */
 .uikit-footer__navigation {
-	padding-bottom: uikit-space( 1 );
-	border-bottom: $uikit-border-style;
-	margin-bottom: uikit-space( 1 );
+
+	+ .uikit-footer__end {
+		padding-top: uikit-space( 1 );
+		border-top: $uikit-borderize;
+		margin-top: uikit-space( 1 );
+	}
 }

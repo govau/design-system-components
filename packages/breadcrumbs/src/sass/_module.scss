@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import 'globals.scss';
+@import '_globals.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -22,18 +22,18 @@
 		width: 100%;
 		margin: 0;
 
-		@include uikit-media(sm) {
+		@include uikit-media( sm ) {
 			display: inline-block;
 		}
 
-		> .uikit-inline-links {
+		> .uikit-linklists {
 			> li {
 				display: inline-block;
 				margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
 				font-size: 14px;
 
 				&:not(:last-child):after {
-					margin: 0 uikit-space(0.5);
+					margin: 0 uikit-space( 0.5 );
 					font-family: $uikit-font-system;
 					content: '>';
 					font-size: 12px;
@@ -43,9 +43,9 @@
 		}
 
 		&.uikit-breadcrumbs--inverted {
-			> .uikit-inline-links--inverted {
+			> .uikit-linklists--inverted {
 				> li {
-					color: invert($uikit-colour-Text);
+					color: invert( $uikit-colour-Text );
 				}
 			}
 		}

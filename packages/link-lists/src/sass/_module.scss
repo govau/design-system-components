@@ -7,7 +7,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import 'globals.scss';
+@import '_globals.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -18,18 +18,26 @@
  */
 .uikit-body { //uikit body dependency specificity scoping
 
-	.uikit-inline-links {
-		display: inline-block;
+	.uikit-linklists {
+		display: block;
 		list-style-type: none;
 		margin: 0;
-		padding: uikit-space(0.5) 0;
+		padding: uikit-space(0.25) 0;
 
 		> li {
-			display: inline-block;
-			margin: 0 uikit-space(0.25);
+			display: block;
+			margin: uikit-space(0.25);
 		}
 
-		&.uikit-inline-links--inverted {
+		&.uikit-linklists--inline {
+			display: inline-block;
+
+			> li {
+				display: inline-block;
+			}
+		}
+
+		&.uikit-linklists--inverted {
 			background-color: invert($uikit-colour-Background-20);
 
 			> li > a {

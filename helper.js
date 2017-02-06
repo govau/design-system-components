@@ -232,8 +232,8 @@ HELPER.compile = (() => {
 			CreateDir('./lib/sass/');
 
 			//2. copy files
-			CopyFile('./src/sass/globals.scss', './lib/sass/globals.scss');
-			CopyFile('./src/sass/module.scss', './lib/sass/module.scss');
+			CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
+			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
 
 			//rethingiemajiging the peer dependencies for sass
 			let dependencies = [];
@@ -248,8 +248,8 @@ HELPER.compile = (() => {
 				'[replace-dependencies]': dependencies.join(`\n\t`),
 			};
 
-			ReplaceFileContent( searches, './lib/sass/globals.scss' );
-			ReplaceFileContent( searches, './lib/sass/module.scss' );
+			ReplaceFileContent( searches, './lib/sass/_globals.scss' );
+			ReplaceFileContent( searches, './lib/sass/_module.scss' );
 
 			//4. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
