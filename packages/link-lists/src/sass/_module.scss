@@ -22,11 +22,11 @@
 		display: block;
 		list-style-type: none;
 		margin: 0;
-		padding: uikit-space(0.25) 0;
+		padding: uikit-space( 0.25 ) 0;
 
 		> li {
 			display: block;
-			margin: uikit-space(0.25);
+			margin: uikit-space( 0.25 );
 		}
 
 		&.uikit-linklists--inline {
@@ -38,10 +38,10 @@
 		}
 
 		&.uikit-linklists--inverted {
-			background-color: invert($uikit-colour-Background-20);
+			background-color: invert( $uikit-colour-Background-20 );
 
 			> li > a {
-				color: invert($uikit-colour-Text);
+				color: invert( $uikit-colour-Text );
 
 				&:hover,
 				&:focus {
