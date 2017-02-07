@@ -3,20 +3,20 @@
 # Fail fast and be aware of exit codes
 set -eo pipefail
 
-echo "Listing current files"
+echo "\033[1;34mListing current files\033[0m"
 ls -lhaG
 
-echo "\nRemoving node_modules folder"
+echo "\033[1;34mRemoving node_modules folder\033[0m"
 rm -rf node_modules
 
-echo "\nInstalling lerna globally"
+echo "\033[1;34mInstalling lerna globally\033[0m"
 npm install lerna@2.0.0-beta.36 -g
 
-echo "\nInstalling npm modules"
+echo "\033[1;34mInstalling npm modules\033[0m"
 npm install
 
-echo "\nRebuilding node-sass because ... magic"
+echo "\033[1;34mRebuilding node-sass because ... magic\033[0m"
 npm rebuild node-sass
 
-echo "\nFinally run build"
+echo "\033[1;34mFinally run build\033[0m"
 npm run build
