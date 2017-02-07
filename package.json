@@ -11,7 +11,8 @@
 	},
 	"scripts": {
 		"scaffolding": "node ./scripts/helper.js scaffolding",
-		"build": "lerna init && lerna bootstrap",
+		"bootstrap": "lerna init && lerna bootstrap",
+		"build": "lerna run build",
 		"test": "echo \"No test specified yet\" && exit 0"
 	}
 }
