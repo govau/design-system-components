@@ -1,0 +1,5 @@
+node_modules/
+.templates/
+packages/*/lib/
+packages/*/src/
+packages/*/node_modules/
