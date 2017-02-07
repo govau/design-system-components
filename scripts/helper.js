@@ -157,6 +157,65 @@ const HELPER = (() => { //constructor factory
 
 /***************************************************************************************************************************************************************
  *
+ * PRECOMPILE MODULE
+ *
+ * Replace tags and move files from src/ to lib/
+ *
+ **************************************************************************************************************************************************************/
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Dependencies
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+HELPER.precompile = (() => {
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// PUBLIC METHODS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	return {
+		init: () => {
+			HELPER.precompile.sass();
+		},
+
+		sass: () => {
+			//1. create path
+			CreateDir('./lib/sass/');
+
+			//2. copy files
+			CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
+			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
+
+			//rethingiemajiging the peer dependencies for sass
+			let dependencies = [];
+			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
+				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
+			}
+
+			//3.replace strings inside new files in lib
+			const searches = {
+				'[replace-name]': HELPER.NAME,
+				'[replace-version]': HELPER.VERSION,
+				'[replace-dependencies]': dependencies.join(`\n\t`),
+			};
+
+			ReplaceFileContent( searches, './lib/sass/_globals.scss' );
+			ReplaceFileContent( searches, './lib/sass/_module.scss' );
+		},
+
+		js: () => {
+		},
+
+		img: () => {
+		},
+
+		svg: () => {
+		},
+	}
+
+})();
+
+
+/***************************************************************************************************************************************************************
+ *
  * COMPILE MODULE
  *
  * Compile assets, move files from /scr/ to /lib/
@@ -228,33 +287,10 @@ HELPER.compile = (() => {
 		},
 
 		sass: () => {
-			//1. create path
-			CreateDir('./lib/sass/');
-
-			//2. copy files
-			CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
-			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
-
-			//rethingiemajiging the peer dependencies for sass
-			let dependencies = [];
-			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
-				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
-			}
-
-			//3.replace strings inside new files in lib
-			const searches = {
-				'[replace-name]': HELPER.NAME,
-				'[replace-version]': HELPER.VERSION,
-				'[replace-dependencies]': dependencies.join(`\n\t`),
-			};
-
-			ReplaceFileContent( searches, './lib/sass/_globals.scss' );
-			ReplaceFileContent( searches, './lib/sass/_module.scss' );
-
-			//4. compile scss
+			//1. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
 
-			//5. autoprefixer
+			//2. autoprefixer
 			Autoprefix('./tests/site/style.css');
 		},
 
@@ -449,21 +485,9 @@ const CFonts = require(`cfonts`);
 // SCRIPT INIT
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 HELPER.init = () => {
-	let path = '';
-	let headline = '';
-
-	if( process.argv.indexOf( 'compile' ) !== -1 ) {
-		path = 'compile';
-		headline = `Compiling ${ PKG.name.substring( 8 ) }`;
-	}
 
 	if( process.argv.indexOf( 'scaffolding' ) !== -1 ) {
-		path = 'scaffolding';
-		headline = `Scaffolding new module }`;
-	}
-
-	if( path.length !== 0 ) {
-		CFonts.say( headline, {
+		CFonts.say( 'Scaffolding', {
 			font: 'chrome',
 			space: false,
 			colors: ['red', 'magenta', 'blue'],
@@ -475,12 +499,55 @@ HELPER.init = () => {
 		});
 
 		console.log(`\n`);
+		HELPER.scaffolding.init();
+	}
 
-		HELPER[ path ].init(); //run the module
+	if( process.argv.indexOf( 'precompile' ) !== -1 ) {
+		CFonts.say( `Precompile ${ PKG.name.substring( 8 ) }`, {
+			font: 'chrome',
+			space: false,
+			colors: ['red', 'magenta', 'blue'],
+		});
 
-		if( process.argv.indexOf( 'publish' ) !== -1 ) {
-			HELPER.generate.init();
-		}
+		CFonts.say(`... so you don't have to`, {
+			font: 'console',
+			space: false,
+		});
+
+		console.log(`\n`);
+		HELPER.precompile.init();
+	}
+
+	if( process.argv.indexOf( 'compile' ) !== -1 ) {
+		CFonts.say( `Compiling ${ PKG.name.substring( 8 ) }`, {
+			font: 'chrome',
+			space: false,
+			colors: ['red', 'magenta', 'blue'],
+		});
+
+		CFonts.say(`... so you don't have to`, {
+			font: 'console',
+			space: false,
+		});
+
+		console.log(`\n`);
+		HELPER.compile.init();
+	}
+
+	if( process.argv.indexOf( 'publish' ) !== -1 ) {
+		CFonts.say( 'Publishing', {
+			font: 'chrome',
+			space: false,
+			colors: ['red', 'magenta', 'blue'],
+		});
+
+		CFonts.say(`... so you don't have to`, {
+			font: 'console',
+			space: false,
+		});
+
+		console.log(`\n`);
+		HELPER.generate.init();
 	}
 };
 

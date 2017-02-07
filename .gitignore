@@ -12,4 +12,4 @@ validation-status.json
 packages/*/lib/
 npm-debug.log
 lerna-debug.log
-./index.html
+/index.html
