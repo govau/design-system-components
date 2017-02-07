@@ -15,6 +15,7 @@ dependencies:
     - cf -v
   override:
     - yarn
+    - yarn bootstrap
     - yarn build
   cache_directories:
     - ~/.cache/yarn
