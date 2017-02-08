@@ -1,47 +1,42 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// link-lists module
-// A simple list of inline links.
+// footer module
+// Footers help users who reach the bottom of a page without finding what they want.
 //
 // Content:
-// - .inline-links, .inline-links--inverted
+// - Footer styles
+//   -Basic footer block styling
+//   - Footer `nav` navigation styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import 'globals.scss';
+@import '_globals.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Link-list styles
+// Footer styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * Block of inline links.
+ * Basic footer block styling.
  */
-.uikit-body { //uikit body dependency specificity scoping
+.uikit-footer {
+	background-color: $uikit-colour-Background-20;
+	border-top: 6px solid $uikit-colour-Beta;
+	padding: uikit-space( 1 );
 
-	.uikit-inline-links {
-		display: inline-block;
-		list-style-type: none;
+	p:last-child {
 		margin: 0;
-		padding: uikit-space(0.5) 0;
-
-		> li {
-			display: inline-block;
-			margin: 0 uikit-space(0.25);
-		}
-
-		&.uikit-inline-links--inverted {
-			background-color: invert($uikit-colour-Background-20);
-
-			> li > a {
-				color: invert($uikit-colour-Text);
-
-				&:hover,
-				&:focus {
-					background-color: $uikit-colour-Link;
-					color: $uikit-colour-Text;
-				}
-			}
-		}
 	}
+}
 
+
+/**
+ * Footer `nav` navigation styling.
+ */
+.uikit-footer__navigation {
+
+	+ .uikit-footer__end {
+		padding-top: uikit-space( 1 );
+		border-top: $uikit-borderize;
+		margin-top: uikit-space( 1 );
+	}
 }

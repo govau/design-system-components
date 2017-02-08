@@ -1,7 +1,7 @@
 @gov.au/[-replace-name-]
 ============
 
-> [-replace-description-].
+> [-replace-description-]
 
 
 ## Content

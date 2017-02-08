@@ -32,17 +32,21 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import 'globals.scss';
+@import '_globals.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // BODY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-body {
+	margin: 0;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 	line-height: $uikit-leading;
-
+	font-family: sans-serif;
 
 	a {
+		-webkit-text-decoration-skip: objects;
 		color: $uikit-colour-Text;
 		text-decoration: none;
 		border-bottom: solid 1px $uikit-colour-Link;
@@ -82,25 +86,25 @@
 	dl,
 	pre {
 		margin-top: 0;
-		margin-bottom: uikit-space(1);
+		margin-bottom: uikit-space( 1 );
 	}
 
 	ul,
 	ol,
 	dd {
 		margin-left: 0;
-		padding-left: uikit-space(1);
+		padding-left: uikit-space( 1 );
 	}
 
 	ul,
 	ol {
 		> li {
-			margin-bottom: uikit-space(0.25);
+			margin-bottom: uikit-space( 0.25 );
 
 			> ul,
 			> ol {
-				margin-top: uikit-space(0.25);
-				margin-bottom: uikit-space(0.5);
+				margin-top: uikit-space( 0.25 );
+				margin-bottom: uikit-space( 0.5 );
 			}
 		}
 
@@ -111,13 +115,13 @@
 
 	dl {
 		> dd {
-			margin-bottom: uikit-space(1);
+			margin-bottom: uikit-space( 1 );
 		}
 
 		> dt {
 			font-weight: bold;
-			margin-top: uikit-space(0.5);
-			margin-bottom: uikit-space(0.5);
+			margin-top: uikit-space( 0.5 );
+			margin-bottom: uikit-space( 0.5 );
 
 			&:first-of-type {
 				margin-top: 0;
@@ -229,6 +233,22 @@
 		}
 	}
 
+	sub,
+	sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sub {
+		bottom: -0.25em;
+	}
+
+	sup {
+		top: -0.5em;
+	}
+
 
 	/**
 	 * Code snippets and code blocks.
@@ -264,7 +284,7 @@
 		background-color: $uikit-colour-Background-10;
 		color: $uikit-colour-Beta;
 		text-align: center;
-		padding: 0 uikit-space(0.5);
+		padding: 0 uikit-space( 0.5 );
 		margin: 0 2px;
 	}
 
@@ -272,8 +292,11 @@
 	 * Horizontal rule, used for paragraph-level thematic breaks.
 	 */
 	hr {
+		box-sizing: content-box;
+		height: 0;
+		overflow: visible;
 		border: none;
-		border-top: $uikit-border;
-		margin-bottom: uikit-space(1);
+		border-top: $uikit-borderize;
+		margin-bottom: uikit-space( 1 );
 	}
 }
