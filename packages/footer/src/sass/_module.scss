@@ -34,6 +34,12 @@
  */
 .uikit-footer__navigation {
 
+	.uikit-linklists {
+		> li {
+			margin-left: 0;
+		}
+	}
+
 	+ .uikit-footer__end {
 		padding-top: uikit-space( 1 );
 		border-top: $uikit-borderize;
