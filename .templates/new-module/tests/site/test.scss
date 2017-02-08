@@ -1,6 +1,14 @@
-@import '../../../core/dist/sass/module.scss';
-@import '../../../../.templates/test-assets/style.scss';
+//dependencies
+@import '../../../core/lib/sass/_module.scss';
 
-@import 'module.scss';
+//testing includes
+// @import '../../../body/lib/sass/_module.scss';
+
+//this module
+@import '_module.scss';
+
+//styling all test files
+@import '../../../../.templates/test-assets/_style.scss';
+
+//version check with sass-versioning
 @include versioning-check();
-

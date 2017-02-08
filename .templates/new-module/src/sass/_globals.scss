@@ -1,8 +1,8 @@
 /*! [replace-name] v[replace-version] */
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Headings module globals
-// Class styles for display headings.
+// [-replace-name-] module globals
+// [-replace-description-]
 //
 // Content:
 // - Sass versioning
@@ -15,7 +15,7 @@
 $name: "[replace-name]";
 $version: "[replace-version]";
 $dependencies: (
-	("@gov.au/core", "0.1.0"),
+	[replace-dependencies]
 );
 
 @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope

@@ -1,8 +1,8 @@
 /*! [replace-name] v[replace-version] */
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// [-replace-name-] module globals
-// [-replace-description-]
+// skip-links module globals
+// Provide skip links to navigation and content.
 //
 // Content:
 // - Sass versioning
@@ -14,7 +14,9 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 $name: "[replace-name]";
 $version: "[replace-version]";
-$dependencies: ();
+$dependencies: (
+	[replace-dependencies]
+);
 
 @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
 

@@ -4,27 +4,28 @@
 	"description": "The core module all UI-Kit modules depend on",
 	"keywords": [
 		"uikit",
-		"uikit-module",
+		"pancake-module",
 		"scss",
 		"css",
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
-		"design system"
+		"design system",
+		"core"
 	],
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
 
-		"prepublish": "node ../../helper.js compile publish",
-		"watch:sass": "node ../../helper.js compile && onchange 'src/**/*' 'tests/site/*.scss' -- node ../../helper.js compile",
+		"prepublish": "node ../../scripts/helper.js precompile publish",
+		"build": "node ../../scripts/helper.js compile",
+		"watch:sass": "npm run build && onchange 'src/**/*' 'tests/site/*.scss' -- npm run build",
 		"serve": "browser-sync start --server --startPath 'tests/site' --files 'tests/site/*.html, tests/site/*.css, tests/site/*.js'",
 		"watch": "npm-run-all --parallel serve watch:*"
 	},
 	"dependencies": {
 		"@gov.au/pancake": "latest",
 
-		"normalize.css": "5.0.0",
-		"sass-versioning": "^0.2.1"
+		"sass-versioning": "^0.2.2"
 	},
 	"peerDependencies": {},
 	"devDependencies": {
@@ -33,7 +34,7 @@
 		"onchange": "^3.2.1"
 	},
 	"files": [
-		"dist/*"
+		"lib/*"
 	],
 	"engines": {
 		"node": ">=0.12.0",

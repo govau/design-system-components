@@ -1,0 +1,70 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// grid-12 module
+// Implementation of the Bootstrap 3 grid.
+//
+// Content:
+// - stuff
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Implementation of the Bootstrap 3 grid
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-grid {
+	* {
+		box-sizing: border-box;
+	}
+	*:before,
+	*:after {
+		box-sizing: border-box;
+	}
+
+	.container {
+		@include uikit-media( sm ) {
+			width: ( $uikit-media-sm - $uikit-grid-12-gutter-width );
+		}
+		@include uikit-media( md ) {
+			width: ( $uikit-media-md - $uikit-grid-12-gutter-width );
+		}
+		@include uikit-media( lg ) {
+			width: ( $uikit-media-lg - $uikit-grid-12-gutter-width );
+		}
+	}
+
+	.container,
+	.container-fluid {
+		@include uikit-grid-12-clearfix;
+
+		margin-right: auto;
+		margin-left: auto;
+		padding-left: floor( ( $uikit-grid-12-gutter-width / 2 ) );
+		padding-right: ceil( ( $uikit-grid-12-gutter-width / 2 ) );
+	}
+
+	.row {
+		@include uikit-grid-12-clearfix;
+
+		margin-left: ceil( ( $uikit-grid-12-gutter-width / -2 ) );
+		margin-right: floor( ( $uikit-grid-12-gutter-width / -2 ) );
+	}
+
+
+	@include uikit-grid-12-make-grid-columns;
+
+	@include uikit-grid-12-make-grid( xs );
+
+	@include uikit-media( sm ) {
+		@include uikit-grid-12-make-grid( sm );
+	}
+
+	@include uikit-media( md ) {
+		@include uikit-grid-12-make-grid( md );
+	}
+
+	@include uikit-media( lg ) {
+		@include uikit-grid-12-make-grid( lg );
+	}
+}

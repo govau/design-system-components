@@ -1,10 +1,11 @@
 /*! [replace-name] v[replace-version] */
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Body module globals
+// link-lists module globals
+// A simple list of inline links.
 //
 // Content:
-// - SASS versioning
+// - Sass versioning
 // - Global variables: none so far
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -14,7 +15,7 @@
 $name: "[replace-name]";
 $version: "[replace-version]";
 $dependencies: (
-	("@gov.au/core", "0.1.0"),
+	[replace-dependencies]
 );
 
 @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope

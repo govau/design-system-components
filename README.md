@@ -1,7 +1,7 @@
 gov.au UI-Kit
 =============
 
-> TODO
+> The UI-Kit for the Australian Government.
 
 
 ## Content
@@ -15,6 +15,22 @@ gov.au UI-Kit
 
 
 ## Build
+
+To build the UI-Kit you have to install [lerna](https://github.com/lerna/lerna) globally and run.
+
+```shell
+yarn
+lerna init
+lerna bootstrap
+```
+
+To add a new module run the scaffolding helper:
+
+```shell
+npm run scaffolding
+```
+
+_After the you filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 
 
 **[⬆ back to top](#content)**

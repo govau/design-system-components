@@ -1,0 +1,37 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// skip-links module
+// Provide skip links to navigation and content.
+//
+// Content:
+// - Skip-to links
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Skip-to links
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-skip-to {
+	> a {
+		@include uikit-sronly;
+
+		&:active,
+		&:focus {
+			clip: auto;
+			height: auto;
+			margin: 0;
+			overflow: visible;
+			position: absolute;
+			width: auto;
+			font-size: 21px;
+			top: uikit-space( 0.5, $uikit-leading );
+			left: uikit-space( 0.5, $uikit-leading );
+			padding: uikit-space( 0.25, $uikit-leading ) uikit-space( 0.5, $uikit-leading );
+			color: $uikit-colour-Text;
+			background-color: $uikit-colour-Link;
+			text-decoration: none;
+		}
+	}
+}
