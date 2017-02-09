@@ -4,8 +4,9 @@
 //
 // Content:
 // - Header styles
-//   - logo style
-//     - site title style
+// - Logo container styling
+// - Logomark styling
+// - Logotype styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -24,33 +25,50 @@
 	border-bottom: 6px $uikit-colour-Border-40 solid;
 	margin-bottom: uikit-space( 1 );
 
-	/**
-	 * Image logo styling -- indented to be an anchor back to the homepage.
-	 */
-	.uikit-header__logo {
+
+}
+
+
+/**
+ * Logo container styling -- indented to be an anchor back to the homepage.
+ */
+.uikit-header__logo {
+	.uikit-body & {
 		border-bottom: none;
 
 		&:hover,
 		&:focus {
 			background-color: transparent;
 		}
+	}
+}
 
-		/**
-		 * Site title styling
-		 */
-		.uikit-header__logo__site-title {
-			display: inline-block;
-			position: absolute;
-			margin-left: uikit-space( 0.5 );
-			-webkit-text-decoration-skip: objects;
-			color: $uikit-colour-Text;
-			text-decoration: none;
-			transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
+/**
+ * Logomark styling
+ */
+.uikit-header__logo__mark {
+	display: inline-block;
 
-			&:hover,
-			&:focus {
-				background-color: $uikit-colour-Link;
-			}
-		}
+	&:hover,
+	&:focus {
+		background-color: transparent;
+	}
+}
+
+/**
+ * Logotype styling
+ */
+.uikit-header__logo__type {
+	display: inline-block;
+	position: absolute;
+	margin-left: uikit-space( 0.5 );
+	-webkit-text-decoration-skip: objects;
+	color: $uikit-colour-Text;
+	text-decoration: none;
+	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
+
+	&:hover,
+	&:focus {
+		background-color: $uikit-colour-Link;
 	}
 }
