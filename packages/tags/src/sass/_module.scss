@@ -23,17 +23,18 @@
 		padding: 0;
 		margin: 0 uikit-space( 0.25 ) uikit-space( 0.25 ) 0;
 	}
+}
 
-	.uikit-tags__item__link {
-		padding: 2px uikit-space( 0.25 );
-		border: 1px solid $uikit-colour-Beta-50;
-		border-radius: 2px;
-		color: $uikit-colour-Beta-80;
 
-		&:hover,
-		&:focus {
-			border-color: $uikit-colour-Link;
-			color: $uikit-colour-Text;
-		}
+.uikit-tags__item__link {
+	padding: 2px uikit-space( 0.25 );
+	border: 1px solid $uikit-colour-Beta-50;
+	border-radius: 2px;
+	color: $uikit-colour-Beta-80;
+
+	&:hover,
+	&:focus {
+		border-color: $uikit-colour-Link;
+		color: $uikit-colour-Text;
 	}
 }
