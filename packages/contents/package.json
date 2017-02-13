@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/grid-12",
+	"name": "@gov.au/contents",
 	"version": "0.1.0",
-	"description": "Implementation of the Bootstrap 3 grid.",
+	"description": "Use (a table of) contents links to help users scan and jump to contents of a page.",
 	"keywords": [
 		"uikit",
 		"pancake-module",
@@ -11,9 +11,10 @@
 		"Commonwealth of Australia",
 		"design guide",
 		"design system",
-		"grid",
-		"grid-12",
-		"bootstrap"
+		"table of contents",
+		"toc",
+		"contents",
+		"content index"
 	],
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
@@ -27,10 +28,12 @@
 	"dependencies": {
 		"@gov.au/pancake": "latest",
 
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": "^0.1.0",
+		"@gov.au/link-lists": "^0.1.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": "^0.1.0",
+		"@gov.au/link-lists": "^0.1.0"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.18.6",

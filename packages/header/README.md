@@ -1,36 +1,36 @@
-gov.au UI-Kit
-=============
+@gov.au/header
+============
 
-> The UI-Kit for the Australian Government.
+> Headers provide a consistent start to pages.
 
 
 ## Content
 
+* [Install](#install)
 * [Build](#build)
 * [Tests](#tests)
+* [Release History](#release-history)
 * [License](#license)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+## Install
+
+
+```shell
+npm install @gov.au/header --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ## Build
-
-To build the UI-Kit you have to install [lerna](https://github.com/lerna/lerna) globally and run.
-
-```shell
-yarn
-lerna init
-lerna bootstrap
-```
-
-To add a new module run the scaffolding helper:
-
-```shell
-npm run scaffolding
-```
-
-_After the you filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 
 
 **[⬆ back to top](#content)**
@@ -48,10 +48,21 @@ _After the you filled out all the blanks and added your dependencies into your p
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+## Release History
+
+* v0.1.0 - 💥 Initial version
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#content)**

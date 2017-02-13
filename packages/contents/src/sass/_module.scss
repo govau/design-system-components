@@ -1,11 +1,10 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// footer module
-// Footers help users who reach the bottom of a page without finding what they want.
+// contents module
+// Use (a table of) contents links to help users scan and jump to contents of a page.
 //
 // Content:
-// - Footer styles
-//   -Basic footer block styling
-//   - Footer `nav` navigation styling
+// - sass-versioning
+// - globals
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -13,36 +12,31 @@
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Footer styles
+// Contents links style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-/**
- * Basic footer block styling.
- */
-.uikit-footer {
-	background-color: $uikit-colour-Background-20;
-	border-top: 6px solid $uikit-colour-Beta;
-	padding: uikit-space( 1 );
+.uikit-contents-links {
+	margin: uikit-space( 2 ) 0;
+	border-left: uikit-space( 0.25 ) solid $uikit-colour-Background-30;
+	padding: 0 0 uikit-space( 0.5 ) uikit-space( 0.75);
 
-	p:last-child {
-		margin: 0;
+	.uikit-body & > ul,
+	.uikit-body & > ol {
+		list-style-type: none;
+		margin: uikit-space( 1 ) 0 0;
+		padding: 0;
+
+		> li {
+			margin-left: 0;
+			margin-bottom: uikit-space( 0.5 );
+			font-weight: bold;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 
-
-/**
- * Footer `nav` navigation styling.
- */
-.uikit-footer__navigation {
-
-	.uikit-linklists {
-		> li {
-			margin-left: 0;
-		}
-	}
-
-	+ .uikit-footer__end {
-		padding-top: uikit-space( 1 );
-		border-top: $uikit-borderize;
-		margin-top: uikit-space( 1 );
-	}
+.uikit-contents-links__heading {
+	color: $uikit-colour-Text-70;
 }
