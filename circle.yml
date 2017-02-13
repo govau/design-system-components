@@ -7,7 +7,6 @@ machine:
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
-
 dependencies:
   pre:
     - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
@@ -33,3 +32,14 @@ deployment:
       - cf login -a https://api.system.staging.digital.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
       - cf target -o $CF_ORG_STAGING -s $CF_SPACE_STAGING
       - cf push -f manifest.yml
+
+general:
+  artifacts:
+    - $CIRCLE_ARTIFACTS
+
+test:
+  post:
+    - find packages/ -name "node_modules" -exec rm -rf '{}' + #removing all node_modules/ folder
+    - find packages/ -name "lib" -exec rm -rf '{}' +          #removing all lib/ folders
+    - find packages/ -name "src" -exec rm -rf '{}' +          #removing all src/ folder
+    - mv * $CIRCLE_ARTIFACTS/                                 #moving all remaining files to $CIRCLE_ARTIFACTS
