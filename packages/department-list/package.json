@@ -1,0 +1,77 @@
+{
+	"name": "@gov.au/department-list",
+	"version": "0.1.0",
+	"description": "A navigation list style for listing many departments.",
+	"keywords": [
+		"uikit",
+		"pancake-module",
+		"scss",
+		"css",
+		"gov.au",
+		"Commonwealth of Australia",
+		"design guide",
+		"design system",
+		"list",
+		"departments",
+		"navigation",
+		"repeating"
+	],
+	"scripts": {
+		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
+
+		"prepublish": "node ../../scripts/helper.js precompile publish",
+		"build": "node ../../scripts/helper.js precompile compile",
+		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
+		"serve": "browser-sync start --server --startPath 'tests/site' --files 'tests/site/*.html, tests/site/*.css, tests/site/*.js'",
+		"watch": "npm-run-all --parallel serve watch:*"
+	},
+	"dependencies": {
+		"@gov.au/pancake": "latest",
+
+		"@gov.au/core": "^0.1.0",
+		"@gov.au/link-lists": "^0.1.0"
+	},
+	"peerDependencies": {
+		"@gov.au/core": "^0.1.0",
+		"@gov.au/link-lists": "^0.1.0"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.18.6",
+		"npm-run-all": "^4.0.1",
+		"onchange": "^3.2.1"
+	},
+	"files": [
+		"lib/*"
+	],
+	"engines": {
+		"node": ">=0.12.0",
+		"npm": "^3.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/govau/uikit.git"
+	},
+	"homepage": "http://guides.service.gov.au/design-guide/",
+	"bugs": {
+		"url": "https://github.com/govau/uikit/issues",
+		"email": "guides@digital.gov.au"
+	},
+	"author": {
+		"name": "Commonwealth of Australia, DTA",
+		"email": "guides@digital.gov.au",
+		"url": "https://www.dta.gov.au/"
+	},
+	"contributors": [
+		{
+			"name": "Dominik Wilkowski",
+			"email": "hi@dominik-wilkowski.com",
+			"url": "https://dominik-wilkowski.com/"
+		},
+		{
+			"name": "Simon Pascal Klein",
+			"email": "klepas@klepas.org",
+			"url": "http://klepas.org/"
+		}
+	],
+	"license": "MIT"
+}
