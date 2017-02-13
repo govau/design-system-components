@@ -33,6 +33,13 @@ deployment:
       - cf target -o $CF_ORG_STAGING -s $CF_SPACE_STAGING
       - cf push -f manifest.yml
 
+general:
+  artifacts:
+    - $CIRCLE_ARTIFACTS
+
 test:
   post:
-    - mv `\ls -1 packages/ | grep -v node_modules` $CIRCLE_ARTIFACTS/ #moving all packages to artifacts folder so we can see it
+    - find /Users/dominikwilkowski/Desktop/packages/ -name "node_modules" -exec rm -rf '{}' + #removing all node_modules/ folder
+    - find /Users/dominikwilkowski/Desktop/packages/ -name "lib" -exec rm -rf '{}' +          #removing all lib/ folders
+    - find /Users/dominikwilkowski/Desktop/packages/ -name "src" -exec rm -rf '{}' +          #removing all src/ folder
+    - mv . $CIRCLE_ARTIFACTS/                                                                 #moving all remaining files to $CIRCLE_ARTIFACTS
