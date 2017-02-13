@@ -1,5 +1,5 @@
 {
-	"name": "@gov.au/see-more-link",
+	"name": "@gov.au/more-link",
 	"version": "0.1.0",
 	"description": "Provide a see more/all link when there are too many items to show in the current context.",
 	"keywords": [
@@ -12,6 +12,7 @@
 		"design guide",
 		"design system",
 		"see more",
+		"more",
 		"link"
 	],
 	"scripts": {

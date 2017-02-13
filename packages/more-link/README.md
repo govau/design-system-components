@@ -1,4 +1,4 @@
-@gov.au/see-more-link
+@gov.au/more-link
 ============
 
 > Provide a see more/all link when there are too many items to show in the current context.
@@ -20,7 +20,7 @@
 
 
 ```shell
-npm install @gov.au/see-more-link --save-dev
+npm install @gov.au/more-link --save-dev
 ```
 
 
