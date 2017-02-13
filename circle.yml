@@ -42,4 +42,4 @@ test:
     - find . -name "node_modules" -exec rm -rf '{}' + #removing all node_modules/ folder
     - find . -name "lib" -exec rm -rf '{}' +          #removing all lib/ folders
     - find . -name "src" -exec rm -rf '{}' +          #removing all src/ folder
-    - mv * $CIRCLE_ARTIFACTS/                                 #moving all remaining files to $CIRCLE_ARTIFACTS
+    - cp * $CIRCLE_ARTIFACTS/                                 #moving all remaining files to $CIRCLE_ARTIFACTS
