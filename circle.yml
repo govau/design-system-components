@@ -1,45 +1,47 @@
 ---
 machine:
   node:
-    version: 7.4.0
+    version: 7.5.0 #keep this real
   timezone:
-    Australia/Sydney
+    Australia/Sydney #timezone is important
   environment:
-    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin" #need this for yarn
+
+general:
+  artifacts:
+    - $CIRCLE_ARTIFACTS #telling circle to do it's job / to enable artifacts
 
 dependencies:
   pre:
-    - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
-    - sudo dpkg -i cf-cli_amd64.deb
-    - cf -v
+    - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github' #getting the cf tool
+    - sudo dpkg -i cf-cli_amd64.deb #installing it
+    - cf -v                         #logging what we got
+    - sudo apt-get install tree     #install tree (soo much nicer)
   override:
-    - yarn
-    - yarn bootstrap
-    - yarn build
+    - yarn           #install dependencies
+    - yarn bootstrap #running bootstrap script -> install and link all dependencies via lerna
+    - yarn build     #running build script -> build all assets
   cache_directories:
-    - ~/.cache/yarn
+    - ~/.cache/yarn  #yarn needs this
+
+test:
+  post:
+    - find . -name "node_modules" -exec rm -rf '{}' + #removing all node_modules/ folder
+    - find . -name "lib" -exec rm -rf '{}' +          #removing all lib/ folders
+    - find . -name "src" -exec rm -rf '{}' +          #removing all src/ folder
+    - tree -C                                         #let's log what we got now
+    - cp -r * $CIRCLE_ARTIFACTS/                      #moving all remaining files to $CIRCLE_ARTIFACTS
 
 deployment:
   development:
-    branch: master
+    branch: master #only on master branch
     commands:
       - cf login -a https://api.system.staging.digital.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
       - cf target -o $CF_ORG_PROD -s $CF_SPACE_PROD
       - cf push -f manifest.yml
   production:
-    branch: develop
+    branch: develop #only develop branch
     commands:
       - cf login -a https://api.system.staging.digital.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
       - cf target -o $CF_ORG_STAGING -s $CF_SPACE_STAGING
       - cf push -f manifest.yml
-
-general:
-  artifacts:
-    - $CIRCLE_ARTIFACTS
-
-test:
-  post:
-    - find packages/ -name "node_modules" -exec rm -rf '{}' + #removing all node_modules/ folder
-    - find packages/ -name "lib" -exec rm -rf '{}' +          #removing all lib/ folders
-    - find packages/ -name "src" -exec rm -rf '{}' +          #removing all src/ folder
-    - mv * $CIRCLE_ARTIFACTS/                                 #moving all remaining files to $CIRCLE_ARTIFACTS
