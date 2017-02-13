@@ -1,0 +1,41 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// see-more-link module
+// Provide a see more/all link when there are too many items to show in the current context.
+//
+// Content:
+// - See more link styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// See more link styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-see-more {
+	display: inline-block;
+	position: relative;
+	font-size: 1.125em; // 18 from 16
+	margin-right: uikit-space( 1 );
+	font-weight: bold;
+
+	.uikit-body & {
+		color: $uikit-colour-Beta-80; //overrides body’s uikit-body a styling.
+	}
+
+	&::after {
+		content: '>';
+		display: block;
+		position: absolute;
+		top: 0;
+		right: -(uikit-space( 0.75 ));
+		font-family: $uikit-font-system;
+		color: $uikit-colour-Beta-60;
+	}
+
+	&:hover,
+	&:focus {
+		color: $uikit-colour-Text; //sets the hover back to what it used to be.
+	}
+}
