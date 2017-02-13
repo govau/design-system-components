@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Test: department-list</title>
+	<title>Test: strong-list</title>
 
 	<script type="text/javascript">
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
@@ -43,16 +43,20 @@
 
 	<a href="/">&larr; back to the module index</a>
 
-	<h1>Test: department-list</h1>
+	<h1>Test: strong-list</h1>
 
 	<p>Lorem ipsum dolor sit amet:</p>
 
-	<ul class="uikit-department-list uikit-linklists">
-		<li>
-			<a href="#"><span>Department of </span>Agriculture and Water Resources</a>
+	<ul class="uikit-strong-list uikit-linklists">
+		<li class="uikit-strong-list__item">
+			<a href="#">
+				<small class="uikit-strong-list__item__small">Department of </small>Agriculture and Water Resources
+			</a>
 		</li>
-		<li>
-			<a href="#"><span>Department of </span>Communications and the Arts</a>
+		<li class="uikit-strong-list__item">
+			<a href="#">
+				<small class="uikit-strong-list__item__small">Department of</small>Communications and the Arts
+			</a>
 		</li>
 	</ul>
 

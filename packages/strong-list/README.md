@@ -1,7 +1,7 @@
-@gov.au/department-list
+@gov.au/strong-list
 ============
 
-> A navigation list style for listing many departments.
+> A list style for emphasising parts of a list item, useful for repeating phrases across that list’s items. 
 
 
 ## Content
@@ -20,7 +20,7 @@
 
 
 ```shell
-npm install @gov.au/department-list --save-dev
+npm install @gov.au/strong-list --save-dev
 ```
 
 

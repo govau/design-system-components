@@ -1,4 +1,4 @@
-@gov.au/department-list CHANGELOG
+@gov.au/strong-list CHANGELOG
 ======================
 
 > Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
