@@ -16,8 +16,7 @@ dependencies:
     - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github' #getting the cf tool
     - sudo dpkg -i cf-cli_amd64.deb #installing it
     - cf -v                         #logging what we got
-    - tree -C
-    # - sudo apt-get install tree     #install tree (soo much better)
+    - sudo apt-get install tree     #install tree (soo much nicer)
   override:
     - yarn           #install dependencies
     - yarn bootstrap #running bootstrap script -> install and link all dependencies via lerna
