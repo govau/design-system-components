@@ -39,7 +39,7 @@ general:
 
 test:
   post:
-    - find /Users/dominikwilkowski/Desktop/packages/ -name "node_modules" -exec rm -rf '{}' + #removing all node_modules/ folder
-    - find /Users/dominikwilkowski/Desktop/packages/ -name "lib" -exec rm -rf '{}' +          #removing all lib/ folders
-    - find /Users/dominikwilkowski/Desktop/packages/ -name "src" -exec rm -rf '{}' +          #removing all src/ folder
-    - mv . $CIRCLE_ARTIFACTS/                                                                 #moving all remaining files to $CIRCLE_ARTIFACTS
+    - find packages/ -name "node_modules" -exec rm -rf '{}' + #removing all node_modules/ folder
+    - find packages/ -name "lib" -exec rm -rf '{}' +          #removing all lib/ folders
+    - find packages/ -name "src" -exec rm -rf '{}' +          #removing all src/ folder
+    - mv * $CIRCLE_ARTIFACTS/                                 #moving all remaining files to $CIRCLE_ARTIFACTS
