@@ -13,7 +13,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // See more link styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-see-more {
+.uikit-more-link {
 	display: inline-block;
 	position: relative;
 	font-size: 1.125em; // 18 from 16
@@ -30,6 +30,7 @@
 		position: absolute;
 		top: 0;
 		right: -(uikit-space( 0.75 ));
+		padding-left: (uikit-space( 0.75 ));
 		font-family: $uikit-font-system;
 		color: $uikit-colour-Beta-60;
 	}
