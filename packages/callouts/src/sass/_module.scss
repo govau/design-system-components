@@ -1,0 +1,93 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// callouts module
+// Use callouts to notify and alert users of important snippets of information.
+//
+// Content:
+// - Callout styling
+//   - Base callout placeholder selector
+//   - generic callout
+//   - --info variant
+//   - --calendar-event variant
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Callout styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Base callout placeholder selector.
+ */
+%base-callout {
+	margin: uikit-space( 1 ) uikit-space( 0.25 );
+	padding: uikit-space( 0.75 );
+	border-radius: 1px;
+	box-shadow: 0 0 8px $uikit-callout-box-shadow-colour;
+	max-width: $uikit-maxwidth;
+
+	.uikit-body & > p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+/**
+ * The generic callout.
+ */
+.uikit-callout {
+	@extend %base-callout;
+}
+
+
+/**
+ * An info version of the generic callout.
+ */
+.uikit-callout--info {
+	@extend %base-callout;
+
+	padding-left: uikit-space( 0.5 );
+	border-left: uikit-space( 0.25 ) solid $uikit-colour-Link;
+}
+
+
+/**
+ * The calendar event callout
+ */
+.uikit-callout--calendar-event {
+	@extend %base-callout;
+
+	// box-shadow: none;
+	padding-left: uikit-space( 0.5 );
+	border-left: uikit-space( 0.25 ) solid $uikit-colour-Hero;
+	background-color: $uikit-colour-Link-20;
+}
+
+.uikit-callout--calendar-event__lede,
+.uikit-callout--calendar-event__time,
+.uikit-callout--calendar-event__name {
+	display: block;
+}
+
+.uikit-callout--calendar-event__lede,
+.uikit-callout--calendar-event__name {
+	.uikit-body & {
+		margin-bottom: uikit-space( 0.5 ); //overrides body, depending on markup (eg. using `p`).
+	}
+}
+
+.uikit-callout--calendar-event__lede {
+	font-size: 17px;
+	font-weight: normal;
+}
+
+.uikit-callout--calendar-event__time,
+.uikit-callout--calendar-event__name {
+	font-size: 32px;
+	line-height: 1.4;
+}
+
+.uikit-callout--calendar-event__time {
+	font-weight: bold;
+}
