@@ -27,7 +27,7 @@
 	// This implementation still has issues:
 	// - there’s whitespace above/below (when the link text wraps lines) that cannot activate the link
 	// - there’s an overlap for some weird reason between the link and the after element.
-	&::after {
+	&:after {
 		content: '>';
 		display: block;
 		position: absolute;
