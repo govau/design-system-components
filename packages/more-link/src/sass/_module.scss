@@ -17,20 +17,24 @@
 	display: inline-block;
 	position: relative;
 	font-size: 1.125em; // 18 from 16
-	margin-right: uikit-space( 1 );
+	margin-bottom: uikit-space( 1 );
 	font-weight: bold;
 
 	.uikit-body & {
 		color: $uikit-colour-Beta-80; //overrides body’s uikit-body a styling.
 	}
 
+	// This implementation still has issues:
+	// - there’s whitespace above/below (when the link text wraps lines) that cannot activate the link
+	// - there’s an overlap for some weird reason between the link and the after element.
 	&::after {
 		content: '>';
 		display: block;
 		position: absolute;
-		top: 0;
-		right: -(uikit-space( 0.75 ));
-		padding-left: (uikit-space( 0.75 ));
+		top: 50%;
+		margin-top: -($uikit-leading / 2) * 1em;
+		right: -1em;
+		padding-left: 1em;
 		font-family: $uikit-font-system;
 		color: $uikit-colour-Beta-60;
 	}
