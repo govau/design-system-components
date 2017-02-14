@@ -6,8 +6,11 @@
 // Content:
 // - variables
 //   - breakpoints
-//   - max width line length
+//   - line-height (leading)
+//   - font stacks
+//   - max width line length (measure)
 //   - colours
+//   - border styles and vars
 // - mixins
 //   - media query
 //   - sr-only
@@ -31,19 +34,38 @@ $dependencies: (
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Breakpoints
+ */
 $uikit-media-xs: 576px !global; //media query breakpoints
 $uikit-media-sm: 768px !global;
 $uikit-media-md: 992px !global;
 $uikit-media-lg: 1200px !global;
 
+
+/**
+ * Line-height (‘leading’)
+ */
 $uikit-leading: 1.6;
 
+
+/**
+ * Font stacks
+ */
 $uikit-font: 'Open Sans', Verdana, 'Bitstream Vera Sans', sans-serif;
 $uikit-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
 $uikit-font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
+
+/**
+ * max-width for line lengths (the ‘measure’)
+ */
 $uikit-maxwidth: 42em; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
 
+
+/**
+ * Colours
+ */
 $uikit-colour-Hero: #115361 !global; //color variables (yes! the actual spelling doesn't have a u)
 $uikit-colour-Primary: #880e48 !global;
 $uikit-colour-Background: mix(darken(#f0f3f5, 40), #f0f3f5, 50) !global;
@@ -190,6 +212,10 @@ $uikit-colour-Info-20: mix(white, $uikit-colour-Info, 80) !global;
 $uikit-colour-Info-10: mix(white, $uikit-colour-Info, 90) !global;
 $uikit-colour-Info-5: mix(white, $uikit-colour-Info, 95) !global;
 
+
+/**
+ * Border vars and styles
+ */
 $uikit-borderize: 1px solid $uikit-colour-Border-40;
 $uikit-border-radius: 3px;
 $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
