@@ -15,22 +15,34 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 .uikit-strong-list {
+	&:before, //clear floats without obstructing the outline on focus
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
 
 	.uikit-body & > li {
+		float: left;
+		clear: both;
 		list-style: none;
 		margin-left: 0;
 		margin-bottom: uikit-space( 1 );
 	}
+}
 
-	.uikit-strong-list__item {
-		font-size: 28px;
-		font-weight: bold;
-		line-height: ($uikit-leading * 0.875); //ToDO: clean up magic numbers.
-	}
+.uikit-strong-list__item {
+	font-size: 28px;
+	font-weight: bold;
+	line-height: ($uikit-leading * 0.875); //TODO: clean up magic numbers.
+}
 
-	.uikit-strong-list__item__small {
+.uikit-strong-list__item__small {
+	.uikit-body & {
 		display: block;
-		font-size: 0.642em; //18 from 28
+		font-size: 18px;
 		color: $uikit-colour-Text;
 	}
 }
