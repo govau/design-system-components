@@ -22,7 +22,7 @@
 	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
 	border-left: uikit-space( 0.25 ) solid $uikit-colour-Link;
 	border-radius: 1px;
-	box-shadow: 0 0 8px $uikit-callout-box-shadow-colour;
+	box-shadow: 0 0 8px $uikit-box-shadow-colour;
 	max-width: $uikit-maxwidth;
 
 	.uikit-body & > p:last-child {
