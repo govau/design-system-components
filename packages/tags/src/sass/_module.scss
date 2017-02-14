@@ -4,6 +4,8 @@
 //
 // Content:
 // - Tag styles
+// - Tag heading style
+// - Tag item style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -13,11 +15,10 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Tag styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-tags,
 .uikit-tags__heading,
 .uikit-tags__item {
 	display: inline-block;
-	padding: 0;
-	color: $uikit-colour-Text-80;
 
 	.uikit-body & {
 		padding: 0;
@@ -26,15 +27,32 @@
 }
 
 
-.uikit-tags__item__link {
-	padding: 2px uikit-space( 0.25 );
+.uikit-tags__heading {
+	font-size: 16px;
+	color: $uikit-colour-Text-80;
+}
+
+
+.uikit-tags__item {
 	border: 1px solid $uikit-colour-Beta-50;
 	border-radius: 2px;
-	color: $uikit-colour-Beta-80;
+	color: $uikit-colour-Text-90;
 
-	&:hover,
-	&:focus {
-		border-color: $uikit-colour-Link;
-		color: $uikit-colour-Text;
+	.uikit-body & {
+		padding: 0 uikit-space( 0.25 );
+	}
+
+	> a {
+		margin: 0 -(uikit-space( 0.25 ));
+		padding: 0 uikit-space( 0.25 );
+		display: block;
+		border-bottom: none;
+		color: $uikit-colour-Text-90;
+
+		&:hover,
+		&:focus {
+			border-color: $uikit-colour-Link;
+			color: $uikit-colour-Text;
+		}
 	}
 }
