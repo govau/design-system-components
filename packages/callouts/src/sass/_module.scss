@@ -1,0 +1,74 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// callouts module
+// Use callouts to notify and alert users of important snippets of information.
+//
+// Content:
+// - Callout styling
+// - calendar-event variant
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Callout styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * The generic callout.
+ */
+.uikit-callout {
+	margin: uikit-space( 1 ) uikit-space( 0.25 );
+	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
+	border-left: uikit-space( 0.25 ) solid $uikit-colour-Link;
+	border-radius: 1px;
+	box-shadow: 0 0 8px $uikit-box-shadow-colour;
+	max-width: $uikit-maxwidth;
+
+	.uikit-body & > p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+/**
+ * The calendar event callout
+ */
+.uikit-callout--calendar-event {
+	border-left-color: $uikit-colour-Hero;
+	background-color: $uikit-colour-Link-20;
+}
+
+.uikit-callout--calendar-event__lede,
+.uikit-callout--calendar-event__time,
+.uikit-callout--calendar-event__name {
+	display: block; //overrides body, depending on markup (eg. using `p`).
+}
+
+.uikit-callout--calendar-event__lede,
+.uikit-callout--calendar-event__time,
+.uikit-callout--calendar-event__name {
+	.uikit-body & {
+		margin-bottom: uikit-space( 0.5 ); //overrides body, to allow for var. text markup.
+	}
+}
+
+.uikit-callout--calendar-event__lede {
+	font-size: 18px;
+}
+
+.uikit-callout--calendar-event__time,
+.uikit-callout--calendar-event__name {
+	font-size: 32px;
+	line-height: 1.4; //TODO: clean me up
+}
+
+.uikit-callout--calendar-event__time {
+	font-weight: bold;
+
+	@include uikit-media( xs ) {
+		.uikit-body & {
+			margin-bottom: uikit-space( 0 );
+		}
+	}
+}
