@@ -14,40 +14,42 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Breadcrumb styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-body { //uikit body dependency specificity scoping via link-lists
+.uikit-breadcrumbs {
+	display: none;
+	width: 100%;
+	margin: 0;
+	color: $uikit-colour-Text;
+	font-size: 14px;
+	font-family: $uikit-font-system;
 
-	.uikit-breadcrumbs {
-		display: none;
-		width: 100%;
-		margin: 0;
+	@include uikit-media( sm ) {
+		display: inline-block;
+	}
 
-		@include uikit-media( sm ) {
-			display: inline-block;
-		}
+	> .uikit-link-list {
+		> li {
+			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
 
-		> .uikit-linklists {
-			> li {
+			&:not(:last-child):after {
+				content: ' ';
 				display: inline-block;
-				margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
-				font-size: 14px;
-
-				&:not(:last-child):after {
-					margin: 0 uikit-space( 0.5 );
-					font-family: $uikit-font-system;
-					content: '>';
-					font-size: 12px;
-					color: $uikit-colour-Text-50;
-				}
-			}
-		}
-
-		&.uikit-breadcrumbs--inverted {
-			> .uikit-linklists--inverted {
-				> li {
-					color: invert( $uikit-colour-Text );
-				}
+				width: 0.4em;
+				height: 0.4em;
+				margin: 0 uikit-space( 0.5 );
+				border-top: 2px solid $uikit-colour-Border;
+				border-right: 2px solid $uikit-colour-Border;
+				transform: rotate( 45deg );
 			}
 		}
 	}
 
+	&.uikit-breadcrumbs--inverted {
+		color: invert( $uikit-colour-Text );
+
+		> .uikit-link-list {
+			> li:not(:last-child):after {
+				border-color: invert( $uikit-colour-Border );
+			}
+		}
+	}
 }

@@ -1,0 +1,17 @@
+//dependencies
+@import '../../../core/lib/sass/_module.scss';
+@import '../../../link-list/lib/sass/_module.scss';
+@import '../../../body/lib/sass/_module.scss'; //dependency via link-list
+
+//testing includes
+@import '../../../headings/lib/sass/_module.scss';
+
+
+//this module
+@import '_module.scss';
+
+//styling all test files
+@import '../../../../.templates/test-assets/_style.scss';
+
+//version check with sass-versioning
+@include versioning-check();
