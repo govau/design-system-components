@@ -43,7 +43,8 @@
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	line-height: $uikit-leading;
-	font-family: sans-serif;
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
 
 	a {
 		-webkit-text-decoration-skip: objects;
@@ -150,7 +151,7 @@
 	 * `small`: for less important information (not stylistic purposes).
 	 */
 	small {
-		font-size: 0.875em;//14 from 16
+		font-size: 87.5%;
 		color: $uikit-colour-Text-90;
 	}
 
@@ -203,7 +204,7 @@
 	 */
 	abbr,
 	abbr[title] {
-		font-size: 1.125em; //18 from 16
+		font-size: 18px;
 		font-variant: small-caps;
 		text-transform: lowercase;
 		letter-spacing: 1px;
@@ -267,7 +268,7 @@
 		code,
 		samp,
 		kbd {
-			font-size: 0.875em; //14 from 16
+			font-size: 14px;
 		}
 	}
 
@@ -277,12 +278,11 @@
 	 */
 	kbd {
 		display: inline-block;
-		font-size: 0.875em; //14 from 16
+		font-size: 14px;
 		border: solid 1px $uikit-colour-Hero-50;
 		border-radius: $uikit-border-radius;
 		box-shadow: 0 1px 0 0 $uikit-colour-Info;
 		background-color: $uikit-colour-Background-10;
-		color: $uikit-colour-Beta;
 		text-align: center;
 		padding: 0 uikit-space( 0.5 );
 		margin: 0 2px;

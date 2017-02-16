@@ -22,6 +22,8 @@
 	background-color: $uikit-colour-Background-20;
 	border-top: 6px solid $uikit-colour-Beta;
 	padding: uikit-space( 1 );
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
 
 	p:last-child {
 		margin: 0;
@@ -34,7 +36,7 @@
  */
 .uikit-footer__navigation {
 
-	.uikit-linklists {
+	.uikit-link-list {
 		> li {
 			margin-left: 0;
 		}
