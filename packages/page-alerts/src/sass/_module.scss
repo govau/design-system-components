@@ -1,0 +1,74 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// page-alerts module
+// Use page alerts to notify users of important information and state changes to the page.
+//
+// Content:
+// - Generic page alert styling
+// - Page alert error
+// - Page alert warning
+// - Page alert success
+// - Page alert info
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Page alert styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Generic page alert styling
+ */
+.uikit-page-alert {
+	position: relative;
+	margin: uikit-space( 1 ) 0;
+	padding: uikit-space( 1 ) uikit-space( 0.5 ) uikit-space( 0.5 ) uikit-space( 1 );
+	border: solid 2px $uikit-colour-Border;
+	border-left: solid uikit-space( 2.5 ) $uikit-colour-Border;
+	border-radius: $uikit-border-radius;
+	max-width: $uikit-maxwidth;
+
+	.uikit-body & > :first-child {
+		margin-top: 0; //Overrides body, and natively styled margins to keep the inset consistent.
+	}
+}
+
+
+/**
+ * Page alert error
+ */
+.uikit-page-alert--error {
+	border-color: $uikit-colour-Error;
+}
+
+
+/**
+ * Page alert warning
+ */
+.uikit-page-alert--warning {
+	border-color: $uikit-colour-Warning;
+}
+
+
+/**
+ * Page alert success
+ */
+.uikit-page-alert--success {
+	border-color: $uikit-colour-Success;
+}
+
+
+/**
+ * Page alert info
+ */
+.uikit-page-alert--info {
+	border-color: $uikit-colour-Link;
+}
+
+
+// This came out of a11y testing, and became a recommendation to add, but I’m
+// not sure if we should be adding it here?
+.uikit-page-alert__issue-number {
+	@include uikit-sronly;
+}
