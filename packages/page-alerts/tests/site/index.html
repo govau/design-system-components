@@ -36,7 +36,7 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="uikit-body">
+<body class="uikit-grid">
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
@@ -45,48 +45,158 @@
 
 	<h1>Test: page-alerts</h1>
 
-	<h2>Page alert, <code>--info</code> variant</h2>
+	<div class="row">
+		<div class="col-sm-6">
 
-	<div class="uikit-page-alert uikit-page-alert--info" role="alert">
-		<h3 class="uikit-display-5">Accessibility reading</h3>
-		<ol>
-			<li>The <a href="https://www.legislation.gov.au/Latest/C2016C00763">Disability Discrimination Act (1992)</a></li>
-			<li>The <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/">Web Content Accessibility Guidelines 2 (<abbr>WCAG</abbr>)</a></li>
-		</ol>
+			<h2><code>--info</code> variant</h2>
+
+			<div class="uikit-page-alerts uikit-page-alerts--info" role="alert">
+				<div class="uikit-page-alerts__icon">
+					<img class="uikit-responsive-media-img" src="http://placehold.it/22x22" alt="info icon">
+				</div>
+				<h3>Accessibility reading</h3>
+				<ol>
+					<li>The <a href="https://www.legislation.gov.au/Latest/C2016C00763">Disability Discrimination Act (1992)</a></li>
+					<li>The <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/">Web Content Accessibility Guidelines 2 (<abbr>WCAG</abbr>)</a></li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="uikit-body col-sm-6">
+
+			<h2><code>--info</code> variant, with <code>body</code></h2>
+
+			<div class="uikit-page-alerts uikit-page-alerts--info" role="alert">
+				<div class="uikit-page-alerts__icon">
+					<img class="uikit-responsive-media-img" src="http://placehold.it/22x22" alt="info icon">
+				</div>
+				<h3 class="uikit-display-5">Accessibility reading</h3>
+				<ol>
+					<li>The <a href="https://www.legislation.gov.au/Latest/C2016C00763">Disability Discrimination Act (1992)</a></li>
+					<li>The <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/">Web Content Accessibility Guidelines 2 (<abbr>WCAG</abbr>)</a></li>
+				</ol>
+			</div>
+		</div>
 	</div>
 
 	<hr>
-	<h2>Page alert, <code>--success</code> variant</h2>
 
-	<div class="uikit-page-alert uikit-page-alert--success" role="alert">
-		<p>Your immunisation appointment for <mark>August 7, 2017</mark> has been confirmed.</p>
-		<h3 class="uikit-display-5">What will happen next</h3>
-		<ul>
-			<li>You’ll receive an email to <strong>foo@bar.com</strong> with the appointment details for your reference.</li>
-			<li>2 days before your appointment we’ll send you a reminder via text message to <strong>0404 123 456</strong>.</li>
-		</ul>
+	<div class="row">
+		<div class="col-sm-6">
+			<h2><code>--success</code> variant</h2>
+
+			<div class="uikit-page-alerts uikit-page-alerts--success" role="alert">
+				<div class="uikit-page-alerts__icon">
+					<img class="uikit-responsive-media-img" src="http://placehold.it/22x22" alt="success icon">
+				</div>
+				<p>Your immunisation appointment for <mark>August 7, 2017</mark> has been confirmed.</p>
+				<h3>What will happen next</h3>
+				<ul>
+					<li>
+						You’ll receive an email to <strong>foo@bar.com</strong> with the appointment details for your reference.
+						<br>
+						<small>This is your current <a href="#">primary contact email address</a>.</small>
+					</li>
+					<li>
+						2 days before your appointment we’ll send you a reminder via text message to <strong>0404 123 456</strong>.
+						<br>
+						<small>This is your current <a href="#">primary contact phone number</a>.</small>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="uikit-body col-sm-6">
+			<h2><code>--success</code> variant, with <code>body</code></h2>
+
+			<div class="uikit-page-alerts uikit-page-alerts--success" role="alert">
+				<div class="uikit-page-alerts__icon">
+					<img class="uikit-responsive-media-img" src="http://placehold.it/22x22" alt="success icon">
+				</div>
+				<p>Your immunisation appointment for <mark>August 7, 2017</mark> has been confirmed.</p>
+				<h3 class="uikit-display-5">What will happen next</h3>
+				<ul>
+					<li>
+						You’ll receive an email to <strong>foo@bar.com</strong> with the appointment details for your reference.
+						<br>
+						<small>This is your current <a href="#">primary contact email address</a>.</small>
+					</li>
+					<li>
+						2 days before your appointment we’ll send you a reminder via text message to <strong>0404 123 456</strong>.
+						<br>
+						<small>This is your current <a href="#">primary contact phone number</a>.</small>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
 	<hr>
-	<h2>Page alert, <code>--warning</code> variant</h2>
 
-	<div class="uikit-page-alert uikit-page-alert--warning" role="alert">
-		<h3 class="uikit-display-4">Protect yourself against phone scams</h3>
-		<p>The <dfn><abbr title="Australian Tax Office">ATO</abbr><dfn> is warning the public to be aware of a phone scam that is again circulating where fraudsters are intimidating people into paying a fake tax debt over the phone.</p>
-		<p><strong>We will never contact you in person over the phone to make a payment</strong>.</p>
+	<div class="row">
+		<div class="col-sm-6">
+			<h2><code>--warning</code> variant</h2>
+
+			<div class="uikit-page-alerts uikit-page-alerts--warning" role="alert">
+				<div class="uikit-page-alerts__icon">
+					<img class="uikit-responsive-media-img" src="http://placehold.it/22x22" alt="warning icon">
+				</div>
+				<h3>Protect yourself against phone scams</h3>
+				<p>The <dfn><abbr title="Australian Tax Office">ATO</abbr></dfn> is warning the public to be aware of a phone scam that is again circulating where fraudsters are intimidating people into paying a fake tax debt over the phone.</p>
+				<p><strong>We will never contact you in person over the phone to make a payment</strong>.</p>
+			</div>
+		</div>
+
+		<div class="uikit-body col-sm-6">
+			<h2><code>--warning</code> variant, with <code>body</code></h2>
+
+			<div class="uikit-page-alerts uikit-page-alerts--warning" role="alert">
+				<div class="uikit-page-alerts__icon">
+					<img class="uikit-responsive-media-img" src="http://placehold.it/22x22" alt="warning icon">
+				</div>
+				<h3>Protect yourself against phone scams</h3>
+				<p>The <dfn><abbr title="Australian Tax Office">ATO</abbr></dfn> is warning the public to be aware of a phone scam that is again circulating where fraudsters are intimidating people into paying a fake tax debt over the phone.</p>
+				<p><strong>We will never contact you in person over the phone to make a payment</strong>.</p>
+			</div>
+		</div>
 	</div>
 
 	<hr>
-	<h2>Page alert, <code>--error</code> variant</h2>
 
-	<div class="uikit-page-alert uikit-page-alert--error" role="alert">
-		<span class="uikit-display-6">There were 3 errors found in the information you submitted</span>
-		<ol>
-			<li><a href="#">Please enter a valid licence number <span class="uikit-page-alert__issue-number">- Error 1 of 3</span></a></li>
-			<li><a href="#">Please enter a valid email address <span class="uikit-page-alert__issue-number">- Error 2 of 3</span></a></li>
-			<li><a href="#">First name is required <span class="uikit-page-alert__issue-number">- Error 3 of 3</span></a></li>
-		</ol>
+	<div class="row">
+		<div class="col-sm-6">
+			<h2><code>--error</code> variant</h2>
+
+			<div class="uikit-page-alerts uikit-page-alerts--error" role="alert">
+				<div class="uikit-page-alerts__icon">
+					<img class="uikit-responsive-media-img" src="http://placehold.it/22x22" alt="error icon">
+				</div>
+				<span>There were 3 errors found in the information you submitted</span>
+				<ol>
+					<li><a href="#">Please enter a valid licence number <span class="uikit-page-alerts__sronly">- Error 1 of 3</span></a></li>
+					<li><a href="#">Please enter a valid email address <span class="uikit-page-alerts__sronly">- Error 2 of 3</span></a></li>
+					<li><a href="#">First name is required <span class="uikit-page-alerts__sronly">- Error 3 of 3</span></a></li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="uikit-body col-sm-6">
+			<h2><code>--error</code> variant, with <code>body</code></h2>
+
+			<div class="uikit-page-alerts uikit-page-alerts--error" role="alert">
+				<div class="uikit-page-alerts__icon">
+					<img class="uikit-responsive-media-img" src="http://placehold.it/22x22" alt="error icon">
+				</div>
+				<span class="uikit-display-6">There were 3 errors found in the information you submitted</span>
+				<ol>
+					<li><a href="#">Please enter a valid licence number <span class="uikit-page-alerts__sronly">- Error 1 of 3</span></a></li>
+					<li><a href="#">Please enter a valid email address <span class="uikit-page-alerts__sronly">- Error 2 of 3</span></a></li>
+					<li><a href="#">First name is required <span class="uikit-page-alerts__sronly">- Error 3 of 3</span></a></li>
+				</ol>
+			</div>
+		</div>
 	</div>
+
 
 </body>
 </html>
