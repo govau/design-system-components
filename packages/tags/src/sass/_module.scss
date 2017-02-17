@@ -23,7 +23,6 @@
 	color: $uikit-colour-Text;
 	line-height: $uikit-leading;
 	margin-bottom: uikit-space( 0.25 );
-	// vertical-align: middle;
 
 	.uikit-body & {
 		margin-bottom: uikit-space( 0.25 );
@@ -32,7 +31,6 @@
 
 	> dt {
 		display: inline-block;
-		// vertical-align: middle;
 
 		.uikit-body & {
 			margin-bottom: uikit-space( 0.25 );
@@ -46,7 +44,6 @@
 	display: inline-block;
 	margin: 0 uikit-space( 0.25 ) uikit-space( 0.25 ) 0;
 	padding: 0 0.4em;
-	// vertical-align: middle;
 
 	.uikit-body & {
 		margin-bottom: uikit-space( 0.25 );
