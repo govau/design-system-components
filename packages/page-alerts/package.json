@@ -15,7 +15,9 @@
 		"page alert",
 		"notification",
 		"error",
-		"warning"
+		"warning",
+		"success",
+		"info"
 	],
 	"scripts": {
 		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
