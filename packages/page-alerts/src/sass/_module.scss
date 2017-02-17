@@ -23,9 +23,9 @@
 .uikit-page-alert {
 	position: relative;
 	margin: uikit-space( 1 ) 0;
-	padding: uikit-space( 1 ) uikit-space( 0.5 ) uikit-space( 0.5 ) uikit-space( 1 );
-	border: solid 2px $uikit-colour-Border;
-	border-left: solid uikit-space( 2.5 ) $uikit-colour-Border;
+	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
+	border: solid 3px $uikit-colour-Border;
+	border-left: solid uikit-space( 2 ) $uikit-colour-Border;
 	border-radius: $uikit-border-radius;
 	max-width: $uikit-maxwidth;
 
@@ -55,7 +55,7 @@
  * Page alert success
  */
 .uikit-page-alert--success {
-	border-color: $uikit-colour-Success;
+	border-color: $uikit-colour-Success-80;
 }
 
 
