@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -20,7 +21,25 @@
 
 
 ```shell
+yarn add @gov.au/grid-12
+```
+
+```shell
 npm install @gov.au/grid-12 --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+grid-12
+└─ core
 ```
 
 
@@ -40,6 +59,8 @@ npm install @gov.au/grid-12 --save-dev
 
 
 ## Tests
+
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests/site/
 
 
 **[⬆ back to top](#content)**

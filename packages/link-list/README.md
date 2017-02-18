@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -20,7 +21,27 @@
 
 
 ```shell
+yarn add @gov.au/link-list
+```
+
+```shell
 npm install @gov.au/link-list --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+link-list
+├─ core
+└─ body
+   └─ core
 ```
 
 
@@ -40,6 +61,8 @@ npm install @gov.au/link-list --save-dev
 
 
 ## Tests
+
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/link-list/tests/site/
 
 
 **[⬆ back to top](#content)**
