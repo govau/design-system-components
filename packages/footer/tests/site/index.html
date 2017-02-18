@@ -22,7 +22,7 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -36,10 +36,12 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="uikit-body uikit-grid">
+<body>
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
+
+	<a class="test-link" href="../../../../">&larr; back to the module index</a>
 
 	<h1>Test: footer</h1>
 
@@ -56,20 +58,22 @@
 	</footer>
 
 	<hr>
-	<h2>footer with paragraph test</h2>
+	<h2>footer with paragraph test and body</h2>
 
-	<footer class="uikit-footer" role="contentinfo">
-		<nav class="uikit-footer__navigation">
-			<p>uikit-footer__navigation</p>
-			<p>uikit-footer__navigation</p>
-			<p>uikit-footer__navigation</p>
-		</nav>
+	<div class="uikit-body">
+		<footer class="uikit-footer" role="contentinfo">
+			<nav class="uikit-footer__navigation">
+				<p>uikit-footer__navigation</p>
+				<p>uikit-footer__navigation</p>
+				<p>uikit-footer__navigation</p>
+			</nav>
 
-		<section class="uikit-footer__end">
-			<p>uikit-footer__end</p>
-			<p>uikit-footer__end</p>
-		</section>
-	</footer>
+			<section class="uikit-footer__end">
+				<p>uikit-footer__end</p>
+				<p>uikit-footer__end</p>
+			</section>
+		</footer>
+	</div>
 
 	<hr>
 	<h2>footer navigation only</h2>
@@ -90,55 +94,57 @@
 	</footer>
 
 	<hr>
-	<h2>footer with grid, link-lists, responsive-embeds and headings</h2>
+	<h2>footer with grid, link-list, responsive-embeds and headings</h2>
 
-	<footer class="uikit-footer" role="contentinfo">
-		<nav class="uikit-footer__navigation row">
-			<div class="col-md-3 col-sm-6">
-				<h3 class="uikit-display-6">Section</h3>
-				<ul class="uikit-linklists">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-				</ul>
-			</div>
+	<div class="uikit-grid uikit-body">
+		<footer class="uikit-footer" role="contentinfo">
+			<nav class="uikit-footer__navigation row">
+				<div class="col-md-3 col-sm-6">
+					<h3 class="uikit-display-6">Section</h3>
+					<ul class="uikit-link-list">
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+					</ul>
+				</div>
 
-			<div class="col-md-3 col-sm-6">
-				<h3 class="uikit-display-6">Section</h3>
-				<ul class="uikit-linklists">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-				</ul>
-			</div>
+				<div class="col-md-3 col-sm-6">
+					<h3 class="uikit-display-6">Section</h3>
+					<ul class="uikit-link-list">
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+					</ul>
+				</div>
 
-			<div class="col-md-3 col-sm-6">
-				<h3 class="uikit-display-6">Section</h3>
-				<ul class="uikit-linklists">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-				</ul>
-			</div>
+				<div class="col-md-3 col-sm-6">
+					<h3 class="uikit-display-6">Section</h3>
+					<ul class="uikit-link-list">
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+					</ul>
+				</div>
 
-			<div class="col-md-3 col-sm-6">
-				<h3 class="uikit-display-6">Section</h3>
-				<ul class="uikit-linklists">
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-				</ul>
-			</div>
-		</nav>
+				<div class="col-md-3 col-sm-6">
+					<h3 class="uikit-display-6">Section</h3>
+					<ul class="uikit-link-list">
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+					</ul>
+				</div>
+			</nav>
 
-		<section class="uikit-footer__end">
-			<p>Footer text</p>
+			<section class="uikit-footer__end">
+				<p>Footer text</p>
 
-			<img class="uikit-responsive-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo">
+				<img class="uikit-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo">
 
-			<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
-		</section>
-	</footer>
+				<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
+			</section>
+		</footer>
+	</div>
 
 </body>
 </html>

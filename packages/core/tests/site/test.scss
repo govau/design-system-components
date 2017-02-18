@@ -12,7 +12,7 @@
 @include versioning-check();
 
 html {
-	font-family: sans-serif; /* 1 */
+	font-family: $uikit-font-system;
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,11 +127,18 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .colorbox-wrapper {
 	overflow: hidden;
+
+	&.colorbox__8 .colorbox {
+		width: 12.5%;
+	}
+
+	&.colorbox__4 .colorbox {
+		width: 25%;
+	}
 }
 
 .colorbox {
 	float: left;
-	width: 12.5%;
 	text-align: center;
 	font-size: 12px;
 
@@ -786,6 +793,325 @@ html {
 
 		span:after {
 			content: "#{ $uikit-colour-Beta-5 }";
+		}
+	}
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// notification colors
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.colorbox__colour-Error {
+	background-color: $uikit-colour-Error;
+
+	> span:after {
+		content: "#{ $uikit-colour-Error }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-Error-90;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-Error-80;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-Error-70;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-Error-60;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-Error-50;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-Error-40;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-Error-30;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-Error-20;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-Error-10;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-Error-5;
+
+		span:after {
+			content: "#{ $uikit-colour-Error-5 }";
+		}
+	}
+}
+
+.colorbox__colour-Success {
+	background-color: $uikit-colour-Success;
+
+	> span:after {
+		content: "#{ $uikit-colour-Success }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-Success-90;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-Success-80;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-Success-70;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-Success-60;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-Success-50;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-Success-40;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-Success-30;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-Success-20;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-Success-10;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-Success-5;
+
+		span:after {
+			content: "#{ $uikit-colour-Success-5 }";
+		}
+	}
+}
+
+.colorbox__colour-Warning {
+	background-color: $uikit-colour-Warning;
+
+	> span:after {
+		content: "#{ $uikit-colour-Warning }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-Warning-90;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-Warning-80;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-Warning-70;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-Warning-60;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-Warning-50;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-Warning-40;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-Warning-30;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-Warning-20;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-Warning-10;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-Warning-5;
+
+		span:after {
+			content: "#{ $uikit-colour-Warning-5 }";
+		}
+	}
+}
+
+.colorbox__colour-Info {
+	background-color: $uikit-colour-Info;
+
+	> span:after {
+		content: "#{ $uikit-colour-Info }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-Info-90;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-Info-80;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-Info-70;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-Info-60;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-Info-50;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-Info-40;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-Info-30;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-Info-20;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-Info-10;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-Info-5;
+
+		span:after {
+			content: "#{ $uikit-colour-Info-5 }";
 		}
 	}
 }
