@@ -25,11 +25,15 @@
 .uikit-page-alerts {
 	position: relative;
 	margin: uikit-space( 1 ) 0;
-	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 ) 72px;
-	border: solid 2px $uikit-colour-Border;
-	border-left: uikit-space( 0.25 ) solid $uikit-colour-Border; //TODO: size in ems or not? callout border-left is also sized in ems
+	padding: uikit-space( 0.75 ) uikit-space( 0.5 ) uikit-space( 0.75 ) uikit-space( 0.5 );
+	border: solid 2px $uikit-colour-Info;
+	border-left: 72px solid $uikit-colour-Info;
 	border-radius: $uikit-border-radius;
 	max-width: $uikit-maxwidth;
+
+	:last-child {
+		margin-bottom: 0;
+	}
 }
 
 
@@ -41,26 +45,32 @@
  */
 .uikit-page-alerts__icon {
 	position: absolute;
-	height: 100%;
-	left: 0;
+	left: -72px;
+	width: 72px;
 	top: 0;
 	bottom: 0;
-	padding-left: 10px;
-	padding-top: 10px;
-	width: 48px;
-	background-color: $uikit-colour-Border;
 
 	> img,
 	> svg {
 		position: absolute;
-		width: 22px;
-		height: 22px;
+		top: 50%;
+		left: 50%;
+		margin: -12px 0 0 -12px;
+		width: 24px;
+		height: 24px;
 
-		// From ≥ xs the icon is centred in the alert window, else it nested at the
-		// top of the alert window, in case of long alerts in this small viewport.
-		@include uikit-media( xs ) {
-			top: calc(50% - 11px);
-		}
+		//If and when we introduce icon sizes
+		// .uikit-page-alerts__icon--sm& {
+		// 	width: 12px;
+		// 	height: 12px;
+		// 	margin: -6px 0 0 -6px;
+		// }
+
+		// .uikit-page-alerts__icon--lg& {
+		// 	width: 48px;
+		// 	height: 48px;
+		// 	margin: -24px 0 0 -24px;
+		// }
 	}
 }
 
@@ -70,10 +80,6 @@
  */
 .uikit-page-alerts--error {
 	border-color: $uikit-colour-Error;
-
-	.uikit-page-alerts__icon {
-		background-color: $uikit-colour-Error;
-	}
 }
 
 
@@ -82,10 +88,6 @@
  */
 .uikit-page-alerts--warning {
 	border-color: $uikit-colour-Warning;
-
-	.uikit-page-alerts__icon {
-		background-color: $uikit-colour-Warning;
-	}
 }
 
 
@@ -94,10 +96,6 @@
  */
 .uikit-page-alerts--success {
 	border-color: $uikit-colour-Success-80;
-
-	.uikit-page-alerts__icon {
-		background-color: $uikit-colour-Success-80;
-	}
 }
 
 
@@ -105,11 +103,7 @@
  * Page alert info.
  */
 .uikit-page-alerts--info {
-	border-color: $uikit-colour-Link;
-
-	.uikit-page-alerts__icon {
-		background-color: $uikit-colour-Link;
-	}
+	border-color: $uikit-colour-Info;
 }
 
 

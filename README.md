@@ -29,6 +29,7 @@ gov.au UI-Kit
 - [inpage-nav](http://uikit.apps.staging.digital.gov.au/packages/inpage-nav/tests/site/)
 - [keyword-list](http://uikit.apps.staging.digital.gov.au/packages/keyword-list/tests/site/)
 - [link-list](http://uikit.apps.staging.digital.gov.au/packages/link-list/tests/site/)
+- [page-alerts](http://uikit.apps.staging.digital.gov.au/packages/page-alerts/tests/site/)
 - [responsive-media](http://uikit.apps.staging.digital.gov.au/packages/responsive-media/tests/site/)
 - [skip-link](http://uikit.apps.staging.digital.gov.au/packages/skip-link/tests/site/)
 - [tags](http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/)
