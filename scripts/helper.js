@@ -166,14 +166,40 @@ const HELPER = (() => { //constructor factory
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Dependencies
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+const Treeify = require('treeify');
+
 
 HELPER.precompile = (() => {
+	/**
+	 * PRIVATE
+	 * Generate a dependency representation of a module inside an object by calling this function repeatedly
+	 *
+	 * @param  {string} name - The name of the module
+	 *
+	 * @return {object}      - An object of the dependency tree
+	 */
+	const GetDepTree = ( name ) => {
+		let tree = {};
+		const pkgPath = Path.normalize(`${ process.cwd() }/../${ name.substring( 8 ) }/package.json`);
+		const pkg = require( pkgPath, 'utf-8'); //we use require because we like the caching here
+
+		if( Object.keys( pkg.peerDependencies ).length > 0 ) {
+			for( const module of Object.keys( pkg.peerDependencies ) ) {
+				tree[ module.substring( 8 ) ] = GetDepTree( module );
+			}
+		}
+
+		return tree;
+	};
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // PUBLIC METHODS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	return {
 		init: () => {
 			HELPER.precompile.sass();
+			HELPER.precompile.readme();
 		},
 
 		sass: () => {
@@ -199,6 +225,19 @@ HELPER.precompile = (() => {
 
 			ReplaceFileContent( searches, './lib/sass/_globals.scss' );
 			ReplaceFileContent( searches, './lib/sass/_module.scss' );
+		},
+
+		readme: () => {
+			let readme = Fs.readFileSync( `./README.md`, `utf-8`);
+
+			const depTree = GetDepTree( HELPER.NAME );
+			const prettyTree = `${ HELPER.NAME.substring( 8 ) }\n${ Treeify.asTree( depTree ) }`;
+
+			readme = readme.replace(/## Dependency graph\n\n```shell[\s\S]*?```/, `## Dependency graph\n\n\`\`\`shell\n${ prettyTree }\`\`\``);
+
+			Fs.writeFileSync( `./README.md`, readme, `utf-8` );
+
+			HELPER.log.success(`Replaced dependency tree inside ${ Chalk.yellow('README.md') }`);
 		},
 
 		js: () => {

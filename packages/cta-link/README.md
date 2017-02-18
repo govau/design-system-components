@@ -20,7 +20,25 @@
 
 
 ```shell
+yarn add @gov.au/more-link
+```
+
+```shell
 npm install @gov.au/more-link --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+cta-link
+└─ core
 ```
 
 

@@ -20,7 +20,25 @@
 
 
 ```shell
+yarn add @gov.au/footer
+```
+
+```shell
 npm install @gov.au/footer --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+footer
+└─ core
 ```
 
 

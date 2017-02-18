@@ -20,7 +20,27 @@
 
 
 ```shell
+yarn add @gov.au/callout
+```
+
+```shell
 npm install @gov.au/callout --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+callout
+├─ core
+└─ body
+   └─ core
 ```
 
 

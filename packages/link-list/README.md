@@ -20,7 +20,27 @@
 
 
 ```shell
+yarn add @gov.au/link-list
+```
+
+```shell
 npm install @gov.au/link-list --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+link-list
+├─ core
+└─ body
+   └─ core
 ```
 
 
