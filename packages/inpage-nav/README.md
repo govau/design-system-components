@@ -20,7 +20,29 @@
 
 
 ```shell
+yarn add @gov.au/inpage-nav
+```
+
+```shell
 npm install @gov.au/inpage-nav --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+inpage-nav
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
 ```
 
 

@@ -20,7 +20,25 @@
 
 
 ```shell
+yarn add @gov.au/skip-link
+```
+
+```shell
 npm install @gov.au/skip-link --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+skip-link
+└─ core
 ```
 
 

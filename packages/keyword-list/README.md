@@ -20,7 +20,29 @@
 
 
 ```shell
+yarn add @gov.au/keyword-list
+```
+
+```shell
 npm install @gov.au/keyword-list --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+keyword-list
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
 ```
 
 

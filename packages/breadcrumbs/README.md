@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -20,7 +21,29 @@
 
 
 ```shell
+yarn add @gov.au/breadcrumbs
+```
+
+```shell
 npm install @gov.au/breadcrumbs --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+breadcrumbs
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
 ```
 
 

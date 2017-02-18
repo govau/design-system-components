@@ -20,7 +20,25 @@
 
 
 ```shell
+yarn add @gov.au/headings
+```
+
+```shell
 npm install @gov.au/headings --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+headings
+└─ core
 ```
 
 

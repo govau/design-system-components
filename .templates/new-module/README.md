@@ -20,7 +20,24 @@
 
 
 ```shell
+yarn add @gov.au/[-replace-name-]
+```
+
+```shell
 npm install @gov.au/[-replace-name-] --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+[-replace-name-]
 ```
 
 
