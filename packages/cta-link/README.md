@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -58,6 +59,8 @@ cta-link
 
 
 ## Tests
+
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/
 
 
 **[⬆ back to top](#content)**

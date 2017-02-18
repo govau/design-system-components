@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -57,6 +58,8 @@ npm install @gov.au/[-replace-name-] --save-dev
 
 
 ## Tests
+
+The visual test: [-replace-URL-]
 
 
 **[⬆ back to top](#content)**
