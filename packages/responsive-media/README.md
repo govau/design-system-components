@@ -20,7 +20,25 @@
 
 
 ```shell
+yarn add @gov.au/responsive-media
+```
+
+```shell
 npm install @gov.au/responsive-media --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+responsive-media
+└─ core
 ```
 
 
