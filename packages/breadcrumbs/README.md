@@ -64,6 +64,8 @@ breadcrumbs
 
 ## Tests
 
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/
+
 
 **[⬆ back to top](#content)**
 

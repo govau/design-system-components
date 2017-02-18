@@ -128,6 +128,7 @@ const HELPER = (() => { //constructor factory
 		VERSION: PKG.version,
 		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/../.templates`),
+		URL: `http://uikit.apps.staging.digital.gov.au`,
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -197,11 +198,17 @@ HELPER.precompile = (() => {
 // PUBLIC METHODS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	return {
+		/**
+		 * Starting off precompile
+		 */
 		init: () => {
 			HELPER.precompile.sass();
 			HELPER.precompile.readme();
 		},
 
+		/**
+		 * Move files from src/ to lib/ and replace placeholders inside
+		 */
 		sass: () => {
 			//1. create path
 			CreateDir('./lib/sass/');
@@ -227,17 +234,18 @@ HELPER.precompile = (() => {
 			ReplaceFileContent( searches, './lib/sass/_module.scss' );
 		},
 
+		/**
+		 * Inject the current dependency tree into the readme file
+		 */
 		readme: () => {
-			let readme = Fs.readFileSync( `./README.md`, `utf-8`);
-
 			const depTree = GetDepTree( HELPER.NAME );
 			const prettyTree = `${ HELPER.NAME.substring( 8 ) }\n${ Treeify.asTree( depTree ) }`;
 
+			let readme = Fs.readFileSync( `./README.md`, `utf-8`);
 			readme = readme.replace(/## Dependency graph\n\n```shell[\s\S]*?```/, `## Dependency graph\n\n\`\`\`shell\n${ prettyTree }\`\`\``);
-
 			Fs.writeFileSync( `./README.md`, readme, `utf-8` );
 
-			HELPER.log.success(`Replaced dependency tree inside ${ Chalk.yellow('README.md') }`);
+			HELPER.log.success(`Injected dependency tree into ${ Chalk.yellow('README.md') }`);
 		},
 
 		js: () => {
@@ -321,10 +329,16 @@ HELPER.compile = (() => {
 // PUBLIC METHODS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	return {
+		/**
+		 * Starting off compile
+		 */
 		init: () => {
 			HELPER.compile.sass();
 		},
 
+		/**
+		 * Compile and autoprefix Sass
+		 */
 		sass: () => {
 			//1. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
@@ -385,12 +399,16 @@ HELPER.generate = (() => {
 // PUBLIC METHODS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	return {
+		/**
+		 * Starting off generate
+		 */
 		init: () => {
 			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
 			const allModules = GetFolders( packagesPath );
 
 			HELPER.generate.json( allModules );
 			HELPER.generate.index( allModules );
+			HELPER.generate.readme( allModules );
 		},
 
 		/**
@@ -417,7 +435,7 @@ HELPER.generate = (() => {
 				}
 			}
 
-			Fs.writeFile(`${ __dirname }/../uikit.json`, JSON.stringify( uikitJson ), 'utf8', ( error ) => { //write file
+			Fs.writeFile( Path.normalize(`${ __dirname }/../uikit.json`), JSON.stringify( uikitJson ), 'utf8', ( error ) => { //write file
 				if( error ) {
 					console.error( error );
 					return;
@@ -429,9 +447,11 @@ HELPER.generate = (() => {
 
 		/**
 		 * Write json file
+		 *
+		 * @param {array} allModules - An array of all modules
 		 */
 		index: ( allModules ) => {
-			let index = Fs.readFileSync( `${ __dirname }/../.templates/index/index.html`, 'utf-8') //this will be the index file
+			let index = Fs.readFileSync( Path.normalize(`${ __dirname }/../.templates/index/index.html`), 'utf-8') //this will be the index file
 			let replacement = '';
 
 			//iterate over all packages
@@ -452,6 +472,28 @@ HELPER.generate = (() => {
 				HELPER.log.success(`Written ${ Chalk.yellow('index.html') }`);
 			});
 		},
+
+		/**
+		 * Inject a list of all modules into the main readme file
+		 *
+		 * @param  {array} allModules - An array of all modules
+		 */
+		readme: ( allModules ) => {
+			let list = ``;
+
+			if( allModules !== undefined && allModules.length > 0 ) {
+				for( let module of allModules ) {
+					list += `- [${ module }](${ HELPER.URL }/packages/${ module }/tests/site/)\n`;
+				}
+			}
+
+			const pkgPath = Path.normalize(`${ __dirname }/../README.md`);
+			let readme = Fs.readFileSync( pkgPath, `utf-8`);
+			readme = readme.replace(/## Modules\n\n[\s\S]*?back to top]/, `## Modules\n\n${ list }\n\n**[⬆ back to top]`);
+			Fs.writeFileSync( pkgPath, readme, `utf-8` );
+
+			HELPER.log.success(`Injected modules into main readme file`);
+		}
 	}
 
 })();
@@ -495,6 +537,7 @@ HELPER.scaffolding = (() => {
 				const replacements = {
 					'[-replace-name-]': answers.name,
 					'[-replace-description-]': answers.description,
+					'[-replace-URL-]': `${ HELPER.URL }/packages/${ answers.name }/tests/site/`,
 					'[-replace-version-]': '0.1.0',
 				};
 
