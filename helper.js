@@ -126,6 +126,7 @@ const HELPER = (() => { //constructor factory
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 		NAME: PKG.name,
 		VERSION: PKG.version,
+		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/.templates`),
 
 
@@ -158,7 +159,7 @@ const HELPER = (() => { //constructor factory
  *
  * COMPILE MODULE
  *
- * Compile assets, move files from /scr/ to /dist/
+ * Compile assets, move files from /scr/ to /lib/
  *
  **************************************************************************************************************************************************************/
 
@@ -168,6 +169,7 @@ const HELPER = (() => { //constructor factory
 const Autoprefixer = require('autoprefixer');
 const Postcss = require('postcss');
 const Sass = require('node-sass');
+const Semver =  require('semver');
 
 
 HELPER.compile = (() => {
@@ -182,7 +184,7 @@ HELPER.compile = (() => {
 		const compiled = Sass.renderSync({
 			file: scss,
 			indentType: 'tab',
-			includePaths: [ './dist/sass/' ],
+			includePaths: [ './lib/sass/' ],
 			outputStyle: 'compressed',
 		});
 
@@ -227,20 +229,27 @@ HELPER.compile = (() => {
 
 		sass: () => {
 			//1. create path
-			CreateDir('./dist/sass/');
+			CreateDir('./lib/sass/');
 
 			//2. copy files
-			CopyFile('./src/sass/globals.scss', './dist/sass/globals.scss');
-			CopyFile('./src/sass/module.scss', './dist/sass/module.scss');
+			CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
+			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
 
-			//3.replace strings inside new files in dist
+			//rethingiemajiging the peer dependencies for sass
+			let dependencies = [];
+			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
+				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
+			}
+
+			//3.replace strings inside new files in lib
 			const searches = {
 				'[replace-name]': HELPER.NAME,
 				'[replace-version]': HELPER.VERSION,
+				'[replace-dependencies]': dependencies.join(`\n\t`),
 			};
 
-			ReplaceFileContent( searches, './dist/sass/globals.scss' );
-			ReplaceFileContent( searches, './dist/sass/module.scss' );
+			ReplaceFileContent( searches, './lib/sass/_globals.scss' );
+			ReplaceFileContent( searches, './lib/sass/_module.scss' );
 
 			//4. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
@@ -304,6 +313,18 @@ HELPER.generate = (() => {
 		init: () => {
 			const packagesPath = Path.normalize(`${ __dirname }/packages/`);
 			const allModules = GetFolders( packagesPath );
+
+			HELPER.generate.json( allModules );
+			HELPER.generate.index( allModules );
+		},
+
+		/**
+		 * Write json file
+		 *
+		 * @param {array} allModules - An array of all modules
+		 */
+		json: ( allModules ) => {
+			const packagesPath = Path.normalize(`${ __dirname }/packages/`);
 			let packageJson = {}; //each package.json
 			let uikitJson = {};   //the uikit.json object
 
@@ -313,7 +334,11 @@ HELPER.generate = (() => {
 					const pkgPath = Path.normalize(`${ packagesPath }/${ module }/package.json`);
 					packageJson = require( pkgPath ); //read the package.json
 
-					uikitJson[ packageJson.name ] = packageJson.version; //add to uikit.json
+					uikitJson[ packageJson.name ] = { //add to uikit.json
+						name: packageJson.name,
+						version: packageJson.version,
+						peerDependencies: packageJson.peerDependencies,
+					};
 				}
 			}
 
@@ -324,6 +349,32 @@ HELPER.generate = (() => {
 				}
 
 				HELPER.log.success(`Written ${ Chalk.yellow('uikit.json') }`);
+			});
+		},
+
+		/**
+		 * Write json file
+		 */
+		index: ( allModules ) => {
+			let index = Fs.readFileSync( `${ __dirname }/.templates/index/index.html`, 'utf-8') //this will be the index file
+			let replacement = '';
+
+			//iterate over all packages
+			if( allModules !== undefined && allModules.length > 0 ) {
+				for( let module of allModules ) {
+					replacement += `<li><a href="packages/${ module }/tests/site/">${ module }</a></li>\n`;
+				}
+			}
+
+			index = index.replace('[-uikit-modules-]', replacement);
+
+			Fs.writeFile(`${ __dirname }/index.html`, index, 'utf8', ( error ) => { //write file
+				if( error ) {
+					console.error( error );
+					return;
+				}
+
+				HELPER.log.success(`Written ${ Chalk.yellow('index.html') }`);
 			});
 		},
 	}
@@ -403,12 +454,12 @@ HELPER.init = () => {
 
 	if( process.argv.indexOf( 'compile' ) !== -1 ) {
 		path = 'compile';
-		headline = 'Compiling module';
+		headline = `Compiling ${ PKG.name.substring( 8 ) }`;
 	}
 
 	if( process.argv.indexOf( 'scaffolding' ) !== -1 ) {
 		path = 'scaffolding';
-		headline = 'Scaffolding module';
+		headline = `Scaffolding ${ PKG.name.substring( 8 ) }`;
 	}
 
 	if( path.length !== 0 ) {
