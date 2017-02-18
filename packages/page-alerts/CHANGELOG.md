@@ -1,4 +1,4 @@
-@gov.au/callout CHANGELOG
+@gov.au/page-alerts CHANGELOG
 ======================
 
 > Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.

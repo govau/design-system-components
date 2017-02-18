@@ -69,8 +69,7 @@
 	}
 
 	mark {
-		padding: 0 2px;
-		border-radius: $uikit-border-radius;
+		box-shadow: 0 0 1px $uikit-box-shadow-colour;
 	}
 
 
@@ -209,10 +208,12 @@
 		text-transform: lowercase;
 		letter-spacing: 1px;
 		text-decoration: none;
-		border-bottom-color: $uikit-colour-Border;
-		border-bottom-style: dotted;
-		border-bottom-width: 1px;
+		border-bottom: 1px dotted $uikit-colour-Border;
 		cursor: help;
+	}
+
+	a abbr {
+		padding-bottom: 1px;
 	}
 
 

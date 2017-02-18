@@ -20,8 +20,8 @@
 .uikit-callout {
 	margin: uikit-space( 1 ) uikit-space( 0.25 );
 	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
-	border-left: uikit-space( 0.25 ) solid $uikit-colour-Link;
-	border-radius: 1px;
+	border-left: 6px solid $uikit-colour-Info;
+	border-radius: $uikit-border-radius;
 	box-shadow: 0 0 8px $uikit-box-shadow-colour;
 	max-width: $uikit-maxwidth;
 
