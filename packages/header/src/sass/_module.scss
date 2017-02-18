@@ -1,0 +1,73 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// header module
+// Headers provide a consistent start to pages.
+//
+// Content:
+// - Header styles
+// - Logo container styling
+// - Logomark styling
+// - Logotype styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Header styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Basic header block styling.
+ */
+.uikit-header {
+	padding: uikit-space( 0.5 ) uikit-space( 1 ) uikit-space( 1 );
+	background-image: linear-gradient(to top, #f0f3f5, #fff);
+	border-bottom: 6px $uikit-colour-Border-40 solid;
+	margin-bottom: uikit-space( 1 );
+}
+
+
+/**
+ * Logo container styling -- indented to be an anchor back to the homepage.
+ */
+.uikit-header__logo {
+	.uikit-body & {
+		border-bottom: none;
+
+		&:hover,
+		&:focus {
+			background-color: transparent;
+		}
+	}
+}
+
+
+/**
+ * Logomark styling.
+ */
+.uikit-header__logo__mark {
+	display: inline-block;
+
+	&:hover,
+	&:focus {
+		background-color: transparent;
+	}
+}
+
+/**
+ * Logotype styling.
+ */
+.uikit-header__logo__type {
+	display: inline-block;
+	position: absolute;
+	margin-left: uikit-space( 0.5 );
+	-webkit-text-decoration-skip: objects;
+	color: $uikit-colour-Text;
+	text-decoration: none;
+	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
+
+	&:hover,
+	&:focus {
+		background-color: $uikit-colour-Link;
+	}
+}

@@ -1,12 +1,12 @@
 //dependencies
 @import '../../../core/lib/sass/_module.scss';
-@import '../../../body/lib/sass/_module.scss';
 
 //testing includes
+@import '../../../body/lib/sass/_module.scss';
 @import '../../../grid-12/lib/sass/_module.scss';
-@import '../../../link-lists/lib/sass/_module.scss';
+@import '../../../link-list/lib/sass/_module.scss';
 @import '../../../headings/lib/sass/_module.scss';
-@import '../../../responsive-embeds/lib/sass/_module.scss';
+@import '../../../responsive-media/lib/sass/_module.scss';
 
 //this module
 @import '_module.scss';

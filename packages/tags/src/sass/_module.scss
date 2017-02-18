@@ -1,0 +1,68 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// tags module
+// Use tags to apply a taxonomy and link to similar content.
+//
+// Content:
+// - Tag styles
+// - Tag heading style
+// - Tag item style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Tag styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-tags {
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	line-height: $uikit-leading;
+	margin-bottom: uikit-space( 0.25 );
+	vertical-align: middle;
+
+	.uikit-body & {
+		margin-bottom: uikit-space( 0.25 );
+		padding-left: 0;
+	}
+
+	> dt {
+		display: inline;
+		vertical-align: middle;
+	}
+}
+
+.uikit-tags__item {
+	border: 1px solid $uikit-colour-Beta-50;
+	border-radius: $uikit-border-radius;
+	display: inline-block;
+	margin: 0 0.4em uikit-space( 0.25 ) 0;
+	padding: 0 0.4em;
+	vertical-align: middle;
+
+	.uikit-body & {
+		padding-left: 0.4em;
+		margin-bottom: uikit-space( 0.25 );
+	}
+
+	> a {
+		display: inline-block;
+		text-decoration: none;
+		color: $uikit-colour-Text;
+		margin: 0 -0.4em;
+		padding: 0 0.4em;
+
+		&:hover,
+		&:focus {
+			background-color: $uikit-colour-Link;
+		}
+
+		.uikit-body & {
+			border: none;
+		}
+	}
+}

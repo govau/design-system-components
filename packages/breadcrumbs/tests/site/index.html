@@ -22,7 +22,7 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -41,17 +41,17 @@
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
 
-	<a href="/">&larr; back to the module index</a>
+	<a class="test-link" href="../../../../">&larr; back to the module index</a>
 
 	<h1>Test: breadcrumbs</h1>
 
 	<h2>breadcrumbs</h2>
 
 	<nav class="uikit-breadcrumbs" aria-label="breadcrumb">
-		<ul class="uikit-linklists uikit-linklists--inline">
-			<li><a href="#" title="Home">Home</a></li>
-			<li><a href="#" title="Menu1">Menu1</a></li>
-			<li>Menu2</li>
+		<ul class="uikit-link-list uikit-link-list--inline">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Parent</a></li>
+			<li>Current page</li>
 		</ul>
 	</nav>
 
@@ -59,10 +59,10 @@
 	<h2>breadcrumbs inverted</h2>
 
 	<nav class="uikit-breadcrumbs uikit-breadcrumbs--inverted" aria-label="breadcrumb">
-		<ul class="uikit-linklists uikit-linklists--inline uikit-linklists--inverted">
-			<li><a href="#" title="Home">Home</a></li>
-			<li><a href="#" title="Menu1">Menu1</a></li>
-			<li>Menu2</li>
+		<ul class="uikit-link-list uikit-link-list--inline uikit-link-list--inverted">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Parent</a></li>
+			<li>Current page</li>
 		</ul>
 	</nav>
 
