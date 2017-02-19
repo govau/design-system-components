@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -62,6 +63,8 @@ keyword-list
 
 
 ## Tests
+
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/keyword-list/tests/site/
 
 
 **[⬆ back to top](#content)**
