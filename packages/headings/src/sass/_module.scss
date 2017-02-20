@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Headings module
+// headings module
 // Class styles for display headings.
 //
 // Content:
@@ -12,23 +12,23 @@
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// HEADING/DISPLAY STYLES
+// HEADINGS/DISPLAY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
  * Generates .uikit-display-[1…6] classes for display headings.
  *
  * The magic number here reduces the leading for these heading displays, since
- * the body text leading is too large at heading/display sizes.
+ * the body text leading is too large at headings/display sizes.
  *
  * We also set the font-size automatically too. (:
  */
 @for $i from 1 through 6 {
 	.uikit-display-#{$i} {
 		font-family: $uikit-font;
+		color: $uikit-colour-Text;
 		display: block;
-		line-height: $uikit-leading; //1.142857143;//1.4 from 16 (default: core)
-		margin-top: uikit-space( 1, 1 ); //1 unit at the new line-height (1.4 -- 1.4em)
-		margin-bottom: uikit-space( .5, 1 ); //1 unit at the new line-height (1.4 -- 0.7em)
+		line-height: ($uikit-leading * 0.875); //1.4 from 16 (default: core)
+		margin: 0 0 uikit-space( .5, 1 ) 0; //1 unit at the new line-height (1.4 -- 0.7em)
 		font-size: 48 - ( 4 * ( $i + 2 ) ) + 0px;
 		font-weight: bold;
 	}

@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -20,7 +21,25 @@
 
 
 ```shell
+yarn add @gov.au/headings
+```
+
+```shell
 npm install @gov.au/headings --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+headings
+└─ core
 ```
 
 
@@ -40,6 +59,8 @@ npm install @gov.au/headings --save-dev
 
 
 ## Tests
+
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/headings/tests/site/
 
 
 **[⬆ back to top](#content)**

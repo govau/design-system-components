@@ -1,0 +1,115 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// page-alerts module
+// Use page alerts to notify users of important information and state changes to the page.
+//
+// Content:
+// - Generic page alert styling
+// - Generic page alert icon position styling
+// - Page alert error
+// - Page alert warning
+// - Page alert success
+// - Page alert info
+// - Page alert screen-reader only
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Page alert styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Generic page alert styling.
+ */
+.uikit-page-alerts {
+	position: relative;
+	margin: uikit-space( 1 ) 0;
+	padding: uikit-space( 0.75 ) uikit-space( 0.5 ) uikit-space( 0.75 ) uikit-space( 0.5 );
+	border: solid 2px $uikit-colour-Info;
+	border-left: 72px solid $uikit-colour-Info;
+	border-radius: $uikit-border-radius;
+	max-width: $uikit-maxwidth;
+
+	:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+/**
+ * Generic page alert icon position styling.
+ *
+ * This caters for a 24x24 icon.
+ * NOTE: this means the calc() function below will need toggling if the icon size changes.
+ */
+.uikit-page-alerts__icon {
+	position: absolute;
+	left: -72px;
+	width: 72px;
+	top: 0;
+	bottom: 0;
+
+	> img,
+	> svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -12px 0 0 -12px;
+		width: 24px;
+		height: 24px;
+
+		//If and when we introduce icon sizes
+		// .uikit-page-alerts__icon--sm& {
+		// 	width: 12px;
+		// 	height: 12px;
+		// 	margin: -6px 0 0 -6px;
+		// }
+
+		// .uikit-page-alerts__icon--lg& {
+		// 	width: 48px;
+		// 	height: 48px;
+		// 	margin: -24px 0 0 -24px;
+		// }
+	}
+}
+
+
+/**
+ * Page alert error.
+ */
+.uikit-page-alerts--error {
+	border-color: $uikit-colour-Error;
+}
+
+
+/**
+ * Page alert warning.
+ */
+.uikit-page-alerts--warning {
+	border-color: $uikit-colour-Warning;
+}
+
+
+/**
+ * Page alert success
+ */
+.uikit-page-alerts--success {
+	border-color: $uikit-colour-Success-80;
+}
+
+
+/**
+ * Page alert info.
+ */
+.uikit-page-alerts--info {
+	border-color: $uikit-colour-Info;
+}
+
+
+/**
+ * Screen-reader only class for interlinking error messages and corresponding form elements.
+ */
+.uikit-page-alerts__sronly {
+	@include uikit-sronly;
+}
