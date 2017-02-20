@@ -1,0 +1,107 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// text-inputs module
+// Single and multi-line text inputs.
+//
+// Content:
+// - Text input styling, inc:
+//   - labels
+//   - generic text input styling
+//   - states (eg invalid|valid|disabled)
+//   - textarea styling
+//   - --number variant text input
+//   - hint text
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Text input styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Text input labels.
+ */
+.uikit-text-input__label {
+	display: block;
+	margin-bottom: uikit-space( 0.5 );
+}
+
+
+/**
+ * Generic text input styling.
+ *
+ * Also includes variants:
+ * - invalid
+ * - valid
+ * - :focus
+ * - :disabled/[disabled]
+ */
+.uikit-text-input {
+	display: block;
+	border: 2px solid $uikit-colour-Border-40;
+	padding: uikit-space( 0.25 );
+	outline-offset: 0;
+	font-size: 16px;
+	color: $uikit-colour-Text;
+
+	&:invalid,
+	&.uikit-text-input--invalid {
+		outline: 2px solid $uikit-colour-Error;
+	}
+
+	&.uikit-text-input--valid {
+		outline: 2px solid $uikit-colour-Success-80;
+		border-color: $uikit-colour-Success-60;
+	}
+
+	&:focus {
+		outline: 2px solid $uikit-colour-Info;
+	}
+
+	&:disabled,
+	&[disabled] {
+		cursor: not-allowed;
+		background: $uikit-colour-Background-40;
+		border-color: transparent;
+		outline: 2px solid $uikit-colour-Border-50;
+	}
+}
+
+
+/**
+ * Textarea styling.
+ */
+.uikit-text-input__textarea {
+	line-height: $uikit-leading;
+}
+
+
+/**
+ * Number input styling.
+ *
+ * Numbers are easier to disambiguate from each other (and letters) when set in
+ * monospace.
+ */
+.uikit-text-input--number {
+	font-family: $uikit-font-monospace;
+	letter-spacing: 2px;
+}
+
+
+/**
+ * Hint text.
+ *
+ * Built so it can sit both in- and outside the `label`.
+ */
+.uikit-text-input__hint {
+	display: block;
+	margin-bottom: uikit-space( 0.25 );
+	font-size: 87.5%;
+
+	// Keeps spacing neat depending on where the hint text is added.
+	.uikit-text-input__label > &,
+	.uikit-text-input + & {
+		margin-top: uikit-space( 0.25 );
+	}
+}
