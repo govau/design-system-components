@@ -1,0 +1,43 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// direction-links module
+// Use direction links to link up and down within the DOM or back to a parent page.
+//
+// Content:
+// - Direction link base style and the up|down|left|right variations
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// HEADINGS/DISPLAY STYLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Direction link base styling
+ *
+ * Everyone needs Konami code style links, right? (:
+ */
+.uikit-direction-link {
+	display: inline-block;
+	color: $uikit-colour-Text;
+}
+
+//
+
+.uikit-direction-link--up {
+	//
+}
+
+.uikit-direction-link--down {
+	//
+}
+
+.uikit-direction-link--left {
+	//
+}
+
+
+.uikit-direction-link--right {
+	//
+}
