@@ -6,9 +6,10 @@
 // - Text input styling, inc:
 //   - labels
 //   - generic text input styling
-//   - states (eg invalid|valid|disabled)
+//   - states (invalid|valid|disabled)
 //   - textarea styling
 //   - --number variant text input
+//   - --block variant
 //   - hint text
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -25,6 +26,10 @@
 .uikit-text-input__label {
 	display: block;
 	margin-bottom: uikit-space( 0.5 );
+
+	> .uikit-text-input {
+		margin-top: uikit-space( 0.5 );
+	}
 }
 
 
@@ -38,31 +43,35 @@
  * - :disabled/[disabled]
  */
 .uikit-text-input {
-	display: block;
 	border: 2px solid $uikit-colour-Border-40;
 	padding: uikit-space( 0.25 );
 	outline-offset: 0;
 	font-size: 16px;
+	font-family: $uikit-font-system;
 	color: $uikit-colour-Text;
 
-	&:invalid,
+	&:invalid {
+		border: 2px solid $uikit-colour-Error;
+	}
+
 	&.uikit-text-input--invalid {
-		outline: 2px solid $uikit-colour-Error;
+		border: 2px solid $uikit-colour-Error;
 	}
 
 	&.uikit-text-input--valid {
-		outline: 2px solid $uikit-colour-Success-80;
-		border-color: $uikit-colour-Success-60;
+		border: 2px solid $uikit-colour-Success-80;
 	}
 
-	&:focus {
-		outline: 2px solid $uikit-colour-Info;
+	&:disabled {
+		cursor: not-allowed;
+		background: $uikit-colour-Background-20;
+		border-color: transparent;
+		outline: 2px solid $uikit-colour-Border-50;
 	}
 
-	&:disabled,
 	&[disabled] {
 		cursor: not-allowed;
-		background: $uikit-colour-Background-40;
+		background: $uikit-colour-Background-20;
 		border-color: transparent;
 		outline: 2px solid $uikit-colour-Border-50;
 	}
@@ -70,9 +79,19 @@
 
 
 /**
+ * Block modifier
+ */
+.uikit-text-input--block {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+
+/**
  * Textarea styling.
  */
-.uikit-text-input__textarea {
+.uikit-text-input--textarea {
 	line-height: $uikit-leading;
 }
 
