@@ -15,6 +15,7 @@ html {
 	font-family: $uikit-font-system;
 }
 
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // BREAKPOINT TEST
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -65,6 +66,7 @@ html {
 	}
 }
 
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // font families
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,6 +82,7 @@ html {
 	font-family: $uikit-font-system;
 }
 
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // max width
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -87,12 +90,6 @@ html {
 	max-width: $uikit-maxwidth;
 }
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// screenreader only
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.sr-only {
-	@include uikit-sronly();
-}
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // borderize
@@ -101,6 +98,7 @@ html {
 	border: none;
 	border-top: $uikit-borderize;
 }
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // border radius
@@ -121,6 +119,140 @@ html {
 	height: 5em;
 	margin-right: 1em;
 }
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// mixin uikit-media
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-media {
+	@include uikit-media( xs ) {
+		&:after {
+			content: 'xs';
+			display: block;
+		}
+	}
+
+	@include uikit-media( sm ) {
+		&:after {
+			content: 'sm';
+			display: block;
+		}
+	}
+
+	@include uikit-media( md ) {
+		&:after {
+			content: 'md';
+			display: block;
+		}
+	}
+
+	@include uikit-media( lg ) {
+		&:after {
+			content: 'lg';
+			display: block;
+		}
+	}
+}
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+// mixin uikit-sronly
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.sr-only {
+	@include uikit-sronly();
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-space
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-space {
+	display: block;
+	position: relative;
+	overflow: visible;
+	padding: 1em 0;
+
+	&:after {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 6px;
+		display: block;
+		content: ' ';
+		background-color: rebeccapurple;
+	}
+
+	&.uikit-space--05:after {
+		width: uikit-space( 0.5 );
+	}
+
+	&.uikit-space--1:after {
+		width: uikit-space( 1 );
+	}
+
+	&.uikit-space--15:after {
+		width: uikit-space( 1.5 );
+	}
+
+	&.uikit-space--2:after {
+		width: uikit-space( 2 );
+	}
+
+	&.uikit-space--25:after {
+		width: uikit-space( 2.5 );
+	}
+
+	&.uikit-space--3:after {
+		width: uikit-space( 3 );
+	}
+
+	&.uikit-space--35:after {
+		width: uikit-space( 3.5 );
+	}
+
+	&.uikit-space--4:after {
+		width: uikit-space( 4 );
+	}
+
+	&.uikit-space--45:after {
+		width: uikit-space( 4.5 );
+	}
+
+	&.uikit-space--5:after {
+		width: uikit-space( 5 );
+	}
+
+	&.uikit-space--55:after {
+		width: uikit-space( 5.5 );
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-replace
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-replace:after {
+	content: uikit-replace('We love spaces for indentation', 'spaces', 'tabs');
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-svguri
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-svguri {
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background: uikit-svguri('<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+		<path fill="#{ $uikit-colour-Text }" d="M1408 928v320q0 119-84.5 203.5T1120 1536H288q-119
+		0-203.5-84.5T0 1248V416q0-119 84.5-203.5T288 128h704q14 0 23 9t9 23v64q0 14-9 23t-23 9H288q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0
+		113-47t47-113V928q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10L695
+		983q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z"/>
+		</svg>');
+}
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // colors
@@ -162,85 +294,6 @@ html {
 
 	.colorbox__tint {
 		padding: 2em 0;
-	}
-}
-
-.colorbox__colour-Hero {
-	background-color: $uikit-colour-Hero;
-
-	> span:after {
-		content: "#{ $uikit-colour-Hero }";
-	}
-
-	.colorbox--colour-90 {
-		background-color: $uikit-colour-Hero-90;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-90 }";
-		}
-	}
-	.colorbox--colour-80 {
-		background-color: $uikit-colour-Hero-80;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-80 }";
-		}
-	}
-	.colorbox--colour-70 {
-		background-color: $uikit-colour-Hero-70;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-70 }";
-		}
-	}
-	.colorbox--colour-60 {
-		background-color: $uikit-colour-Hero-60;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-60 }";
-		}
-	}
-	.colorbox--colour-50 {
-		background-color: $uikit-colour-Hero-50;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-50 }";
-		}
-	}
-	.colorbox--colour-40 {
-		background-color: $uikit-colour-Hero-40;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-40 }";
-		}
-	}
-	.colorbox--colour-30 {
-		background-color: $uikit-colour-Hero-30;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-30 }";
-		}
-	}
-	.colorbox--colour-20 {
-		background-color: $uikit-colour-Hero-20;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-20 }";
-		}
-	}
-	.colorbox--colour-10 {
-		background-color: $uikit-colour-Hero-10;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-10 }";
-		}
-	}
-	.colorbox--colour-5 {
-		background-color: $uikit-colour-Hero-5;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-5 }";
-		}
 	}
 }
 
@@ -319,6 +372,85 @@ html {
 
 		span:after {
 			content: "#{ $uikit-colour-Primary-5 }";
+		}
+	}
+}
+
+.colorbox__colour-Secondary {
+	background-color: $uikit-colour-Secondary;
+
+	> span:after {
+		content: "#{ $uikit-colour-Secondary }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-Secondary-90;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-Secondary-80;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-Secondary-70;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-Secondary-60;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-Secondary-50;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-Secondary-40;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-Secondary-30;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-Secondary-20;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-Secondary-10;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-Secondary-5;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-5 }";
 		}
 	}
 }
@@ -793,6 +925,326 @@ html {
 
 		span:after {
 			content: "#{ $uikit-colour-Beta-5 }";
+		}
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// secondary colors
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.colorbox__colour-secondary-A {
+	background-color: $uikit-colour-secondary-A;
+
+	> span:after {
+		content: "#{ $uikit-colour-secondary-A }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-secondary-A-90;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-secondary-A-80;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-secondary-A-70;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-secondary-A-60;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-secondary-A-50;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-secondary-A-40;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-secondary-A-30;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-secondary-A-20;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-secondary-A-10;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-secondary-A-5;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-5 }";
+		}
+	}
+}
+
+.colorbox__colour-secondary-B {
+	background-color: $uikit-colour-secondary-B;
+
+	> span:after {
+		content: "#{ $uikit-colour-secondary-B }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-secondary-B-90;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-secondary-B-80;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-secondary-B-70;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-secondary-B-60;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-secondary-B-50;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-secondary-B-40;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-secondary-B-30;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-secondary-B-20;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-secondary-B-10;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-secondary-B-5;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-5 }";
+		}
+	}
+}
+
+.colorbox__colour-secondary-C {
+	background-color: $uikit-colour-secondary-C;
+
+	> span:after {
+		content: "#{ $uikit-colour-secondary-C }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-secondary-C-90;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-secondary-C-80;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-secondary-C-70;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-secondary-C-60;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-secondary-C-50;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-secondary-C-40;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-secondary-C-30;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-secondary-C-20;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-secondary-C-10;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-secondary-C-5;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-5 }";
+		}
+	}
+}
+
+.colorbox__colour-secondary-D {
+	background-color: $uikit-colour-secondary-D;
+
+	> span:after {
+		content: "#{ $uikit-colour-secondary-D }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-secondary-D-90;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-secondary-D-80;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-secondary-D-70;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-secondary-D-60;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-secondary-D-50;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-secondary-D-40;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-secondary-D-30;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-secondary-D-20;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-secondary-D-10;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-secondary-D-5;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-5 }";
 		}
 	}
 }

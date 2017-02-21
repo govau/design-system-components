@@ -28,6 +28,13 @@
 	p:last-child {
 		margin-bottom: 0;
 	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		border-top: $uikit-borderize;
+		border-right: $uikit-borderize;
+		border-bottom: $uikit-borderize;
+	}
 }
 
 
@@ -35,8 +42,15 @@
  * The calendar event callout
  */
 .uikit-callout--calendar-event {
-	border-left-color: $uikit-colour-Hero;
-	background-color: $uikit-colour-Hero-10;
+	border-left-color: $uikit-colour-Primary;
+	background-color: $uikit-colour-Primary-10;
+
+	.ie8 &,
+	.lt-ie8 & {
+		border-top: none;
+		border-right: none;
+		border-bottom: none;
+	}
 }
 
 .uikit-callout--calendar-event__lede,

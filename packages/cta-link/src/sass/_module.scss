@@ -34,6 +34,12 @@
 		border-right: 3px solid $uikit-colour-Beta-80;
 		transform: rotate( 45deg );
 		transition: margin 0.1s ease-in;
+
+		.ie8 &,
+		.lt-ie8 & {
+			content: ' > ';
+			border: none;
+		}
 	}
 
 	&:hover,
