@@ -22,6 +22,7 @@ gov.au UI-Kit
 - [callout](http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/)
 - [core](http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/)
 - [cta-link](http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/)
+- [direction-links](http://uikit.apps.staging.digital.gov.au/packages/direction-links/tests/site/)
 - [footer](http://uikit.apps.staging.digital.gov.au/packages/footer/tests/site/)
 - [grid-12](http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests/site/)
 - [header](http://uikit.apps.staging.digital.gov.au/packages/header/tests/site/)
