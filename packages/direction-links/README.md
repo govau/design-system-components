@@ -39,7 +39,9 @@ npm install @gov.au/direction-links --save-dev
 
 ```shell
 direction-links
-└─ core
+├─ core
+└─ body
+   └─ core
 ```
 
 

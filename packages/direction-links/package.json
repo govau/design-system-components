@@ -32,10 +32,12 @@
 	"dependencies": {
 		"@gov.au/pancake": "latest",
 
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": "^0.1.0",
+		"@gov.au/body": "^0.1.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": "^0.1.0",
+		"@gov.au/body": "^0.1.0"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.18.6",
