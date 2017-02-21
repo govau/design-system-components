@@ -297,85 +297,6 @@ html {
 	}
 }
 
-.colorbox__colour-Hero {
-	background-color: $uikit-colour-Hero;
-
-	> span:after {
-		content: "#{ $uikit-colour-Hero }";
-	}
-
-	.colorbox--colour-90 {
-		background-color: $uikit-colour-Hero-90;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-90 }";
-		}
-	}
-	.colorbox--colour-80 {
-		background-color: $uikit-colour-Hero-80;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-80 }";
-		}
-	}
-	.colorbox--colour-70 {
-		background-color: $uikit-colour-Hero-70;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-70 }";
-		}
-	}
-	.colorbox--colour-60 {
-		background-color: $uikit-colour-Hero-60;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-60 }";
-		}
-	}
-	.colorbox--colour-50 {
-		background-color: $uikit-colour-Hero-50;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-50 }";
-		}
-	}
-	.colorbox--colour-40 {
-		background-color: $uikit-colour-Hero-40;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-40 }";
-		}
-	}
-	.colorbox--colour-30 {
-		background-color: $uikit-colour-Hero-30;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-30 }";
-		}
-	}
-	.colorbox--colour-20 {
-		background-color: $uikit-colour-Hero-20;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-20 }";
-		}
-	}
-	.colorbox--colour-10 {
-		background-color: $uikit-colour-Hero-10;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-10 }";
-		}
-	}
-	.colorbox--colour-5 {
-		background-color: $uikit-colour-Hero-5;
-
-		span:after {
-			content: "#{ $uikit-colour-Hero-5 }";
-		}
-	}
-}
-
 .colorbox__colour-Primary {
 	background-color: $uikit-colour-Primary;
 
@@ -451,6 +372,85 @@ html {
 
 		span:after {
 			content: "#{ $uikit-colour-Primary-5 }";
+		}
+	}
+}
+
+.colorbox__colour-Secondary {
+	background-color: $uikit-colour-Secondary;
+
+	> span:after {
+		content: "#{ $uikit-colour-Secondary }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-Secondary-90;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-Secondary-80;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-Secondary-70;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-Secondary-60;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-Secondary-50;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-Secondary-40;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-Secondary-30;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-Secondary-20;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-Secondary-10;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-Secondary-5;
+
+		span:after {
+			content: "#{ $uikit-colour-Secondary-5 }";
 		}
 	}
 }
@@ -925,6 +925,326 @@ html {
 
 		span:after {
 			content: "#{ $uikit-colour-Beta-5 }";
+		}
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// secondary colors
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.colorbox__colour-secondary-A {
+	background-color: $uikit-colour-secondary-A;
+
+	> span:after {
+		content: "#{ $uikit-colour-secondary-A }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-secondary-A-90;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-secondary-A-80;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-secondary-A-70;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-secondary-A-60;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-secondary-A-50;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-secondary-A-40;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-secondary-A-30;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-secondary-A-20;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-secondary-A-10;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-secondary-A-5;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-A-5 }";
+		}
+	}
+}
+
+.colorbox__colour-secondary-B {
+	background-color: $uikit-colour-secondary-B;
+
+	> span:after {
+		content: "#{ $uikit-colour-secondary-B }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-secondary-B-90;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-secondary-B-80;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-secondary-B-70;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-secondary-B-60;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-secondary-B-50;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-secondary-B-40;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-secondary-B-30;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-secondary-B-20;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-secondary-B-10;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-secondary-B-5;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-B-5 }";
+		}
+	}
+}
+
+.colorbox__colour-secondary-C {
+	background-color: $uikit-colour-secondary-C;
+
+	> span:after {
+		content: "#{ $uikit-colour-secondary-C }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-secondary-C-90;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-secondary-C-80;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-secondary-C-70;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-secondary-C-60;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-secondary-C-50;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-secondary-C-40;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-secondary-C-30;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-secondary-C-20;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-secondary-C-10;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-secondary-C-5;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-C-5 }";
+		}
+	}
+}
+
+.colorbox__colour-secondary-D {
+	background-color: $uikit-colour-secondary-D;
+
+	> span:after {
+		content: "#{ $uikit-colour-secondary-D }";
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-secondary-D-90;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-secondary-D-80;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-secondary-D-70;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-secondary-D-60;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-secondary-D-50;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-secondary-D-40;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-secondary-D-30;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-secondary-D-20;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-secondary-D-10;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-secondary-D-5;
+
+		span:after {
+			content: "#{ $uikit-colour-secondary-D-5 }";
 		}
 	}
 }

@@ -30,7 +30,7 @@
 		> li {
 			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
 
-			&:not(:last-child):after {
+			&:after {
 				content: ' ';
 				display: inline-block;
 				width: 0.4em;
@@ -39,6 +39,20 @@
 				border-top: 2px solid $uikit-colour-Border;
 				border-right: 2px solid $uikit-colour-Border;
 				transform: rotate( 45deg );
+			}
+
+			&:last-child:after {
+				display: none;
+			}
+
+			.ie8 &,
+			.lt-ie8 & {
+				&:after {
+					content: ' > ';
+					display: inline-block;
+					border: none;
+
+				}
 			}
 		}
 	}
