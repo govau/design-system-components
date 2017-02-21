@@ -16,14 +16,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Test: body</title>
+	<title>Test: text-inputs</title>
 
 	<script type="text/javascript">
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -37,101 +36,181 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="uikit-body">
+<body>
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
 
 	<a class="test-link" href="../../../../">&larr; back to the module index</a>
 
-	<h1>Test: body module</h1>
+	<h1>Test: text-inputs</h1>
 
-	<p>This is an opening paragraph, that <a href="#">contains a link</a>.</p>
+	<h2>Text inputs</h2>
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad expedita tenetur blanditiis in libero distinctio inventore porro
-		<a href="#" rel="external">external link</a> quaerat, eum aspernatur <a href="#" rel="external">and one that<br>has a line break</a> dolorum animi a
-		perferendis, obcaecati, accusantium dignissimos atque, voluptates veniam!
-	</p>
-
-	<p style="font-size:24px;margin-bottom:12px;">
-		Testing <a href="#" rel="external">large</a> external links.
-	</p>
-
-	<p style="font-size:60px;margin-bottom:12px;">
-		Testing <a href="#" rel="external">larger</a> external links.
-	</p>
-
-	<p>The purpose of the <kbd>Tab</kbd> character is indentation; conversely, using the <kbd>Space</kbd> character for indentation carries no semantic meaning&mdash;if you code this way your indentation schema may as well be a form of <abbr title="American Standard Code for Information Interchange">ASCII</abbr> art. ;-)</p>
-
-	<p>The <del>slow </del>quick brown fox jumped over the lazy dog. The <ins>ins (insert)</ins> element, unlike the dog cannot jump over anything, so it cannot span cross paragraph boundaries.</p>
-
-	<p>This paragraph contains <s>outdated information</s> as well as current information.</p>
-
-	<p>The coordinate of the <var>j</var>th point is (<var>x<sub><var>j</var></sub></var>, <var>y<sub><var>j</var></sub></var>). For example, the 10th point has coordinate (<var>x<sub>10</sub></var>, <var>y<sub>10</sub></var>).</p>
-
-	<p><var>E</var>=<var>m</var><var>c</var><sup>2</sup>f(<var>x</var>, <var>n</var>) = log<sub>4</sub><var>x</var><sup><var>n</var></sup></p>
-
-	<dl>
-		<dt>Definition term</dt>
-		<dd>A definition description: important information. <small>Less important information.</small></dd>
-		<dd>A second definition description. <small>Did you know?&mdash;a single definition term can have multiple definition (descriptions).</small></dd>
-		<dt>Single room</dt>
-		<dd>$199 <small>breakfast included, <abbr title="Goods and Services Tax">GST</abbr> inclusive</small></dd>
-		<dt>Double room</dt>
-		<dd>$239 <small>breakfast included, <abbr title="Goods and Services Tax">GST</abbr> inclusive</small></dd>
-	</dl>
-
-	<p>We can also have single definitions, used for terms upon their first occurence in a document:</p>
-
-	<p>While they are essential reading material for our job, the <dfn><abbr title="World Wide Web Consortium">W3C</abbr></dfn> specifications are not exactly George R. R. Martin-level reading material.</p>
-
-	<p>Now to the <code>mark</code> element. This has a few useful applications:</p>
-
-	<ul>
-		<li>useful for marking up interesting things in quotations (without altering the styling of text, eg to italic)</li>
-		<li>drawing attention to specific parts of pre-formatted text (eg code snippets)</li>
-		<li>for marking up search results (eg that match a given query)</li>
-	</ul>
-
-	<p>I also have some <mark>kitten</mark>s who are visiting me these days. They’re really cute. I think they like my garden! Maybe I should adopt a <mark>kitten</mark>.</p>
-
-	<p>The highlighted part below is where the error lies:</p>
-
-	<pre><code>var i: Integer;
-begin
-    i := <mark>1.1</mark>;
-end.</code></pre>
-
-
-	<p>An unordered list containing an ordered list:</p>
-	<ul>
-		<li>Canberra office</li>
-		<li>Sydney office</li>
-		<li>Foo item, with sub-items:
-			<ol>
-				<li>one</li>
-				<li>two</li>
-				<li>three</li>
-			</ol>
-		</li>
-		<li>Bar</li>
-		<li>Baz</li>
-	</ul>
-
-	<p>A simple ordered list:</p>
-	<ol>
-		<li>Discovery</li>
-		<li>Alpha</li>
-		<li>Beta</li>
-		<li>Live</li>
-	</ol>
-
-	<p>Back to a paragraph.</p>
+	<label class="uikit-text-input__label" for="textin-a">A text input field</label>
+	<input class="uikit-text-input" name="textin-a" id="textin-a" type="text" value="ABCZ abcjg liI1 12340">
 
 	<hr>
+	<h2>Text inputs with wrapping label</h2>
 
-	<p>And that’s a wrap.</p>
+	<label class="uikit-text-input__label">A text input field
+		<input class="uikit-text-input" name="textin2" type="text" value="ABCZ abcjg liI1 12340">
+	</label>
+
+	<hr>
+	<h2>Text inputs with block</h2>
+
+	<label class="uikit-text-input__label" for="textin-b">A text input field</label>
+	<input class="uikit-text-input uikit-text-input--block" name="textin-b" id="textin-b" type="text" value="ABCZ abcjg liI1 12340">
+
+	<hr>
+	<h2>Text inputs with wrapping label with block</h2>
+
+	<label class="uikit-text-input__label">A text input field
+		<input class="uikit-text-input uikit-text-input--block" name="textin2" type="text" value="ABCZ abcjg liI1 12340">
+	</label>
+
+	<hr>
+	<h2>Text inputs with grid</h2>
+
+	<div class="uikit-grid">
+		<div class="row">
+			<div class="col-sm-6">
+
+				<h2>Text inputs</h2>
+				<form>
+					<p>
+						<label class="uikit-text-input__label" for="textin">A text input field</label>
+						<input class="uikit-text-input uikit-text-input--block" name="textin" id="textin" type="text" value="ABCZ abcjg liI1 12340">
+					</p>
+					<p>
+						<label class="uikit-text-input__label" for="numberin">A number input field <small>(optional)</small></label>
+						<input class="uikit-text-input uikit-text-input--block uikit-text-input--number" name="numberin" id="numberin" type="number" value="12340">
+					</p>
+					<p>
+						<label class="uikit-text-input__label" for="phonein">A phone number (tel) input field</label>
+						<input class="uikit-text-input uikit-text-input--block uikit-text-input--number" name="phonein" id="phonein" type="tel" pattern="[0-9]*" value="12340">
+					</p>
+					<p>
+						<label class="uikit-text-input__label" for="textinvalid">An invalid field</label>
+						<input class="uikit-text-input uikit-text-input--block uikit-text-input--invalid" name="textinvalid" id="textinvalid" type="text" value="ABCZ abcjg liI1 12340">
+					</p>
+						<p>
+						<label class="uikit-text-input__label" for="textvalid">A valid field</label>
+						<input class="uikit-text-input uikit-text-input--block uikit-text-input--valid" name="textvalid" id="textvalid" type="text" value="ABCZ abcjg liI1 12340">
+					</p>
+					<p>
+						<label class="uikit-text-input__label" for="textdisabled">A disabled field</label>
+						<input class="uikit-text-input uikit-text-input--block" name="textdisabled" id="textdisabled" type="text" disabled value="ABCZ abcjg liI1 12340">
+					</p>
+				</form>
+
+				<hr>
+				<h2>Textarea input</h2>
+
+				<form>
+					<label class="uikit-text-input__label" for="texta">An input for longer responses</label>
+					<textarea class="uikit-text-input uikit-text-input--block uikit-text-input--textarea" name="texta" id="texta">
+ABCZ abcjg liI1 12340
+ABCZ abcjg liI1 12340
+					</textarea>
+				</form>
+
+				<hr>
+				<h2>input with an additional <code>__hint</code></h2>
+
+				<form>
+					<label class="uikit-text-input__label" for="tfn1">Tax File Number</label>
+					<span class="uikit-text-input__hint" id="tfn-hint1">
+						Your Tax File Number is on your payslip. For example, 123 456 789.
+					</span>
+					<input class="uikit-text-input uikit-text-input--block uikit-text-input--number" type="number" id="tfn1" aria-describedby="tfn-hint1" value="12340">
+				</form>
+
+			</div>
+			<div class="col-sm-6 uikit-body">
+
+				<h2>Text inputs, using <code>body</code></h2>
+				<form>
+					<p>
+						<label class="uikit-text-input__label" for="textin2">A text input field</label>
+						<input class="uikit-text-input uikit-text-input--block" name="textin2" id="textin2" type="text" value="ABCZ abcjg liI1 12340">
+					</p>
+					<p>
+						<label class="uikit-text-input__label" for="numberin2">A number input field <small>(optional)</small></label>
+						<input class="uikit-text-input uikit-text-input--block uikit-text-input--number" name="numberin2" id="numberin2" type="number" value="12340">
+					</p>
+					<p>
+						<label class="uikit-text-input__label" for="phonein2">A phone number (tel) input field</label>
+						<input class="uikit-text-input uikit-text-input--block uikit-text-input--number" name="phonein2" id="phonein2" type="tel" pattern="[0-9]*" value="12340">
+					</p>
+					<p>
+						<label class="uikit-text-input__label" for="textinvalid2">An invalid field</label>
+						<input class="uikit-text-input uikit-text-input--block uikit-text-input--invalid" name="textinvalid2" id="textinvalid2" type="text" value="ABCZ abcjg liI1 12340">
+					</p>
+						<p>
+						<label class="uikit-text-input__label" for="textvalid2">A valid field</label>
+						<input class="uikit-text-input uikit-text-input--block uikit-text-input--valid" name="textvalid2" id="textvalid2" type="text" value="ABCZ abcjg liI1 12340">
+					</p>
+					<p>
+						<label class="uikit-text-input__label" for="textdisabled2">A disabled field</label>
+						<input class="uikit-text-input uikit-text-input--block" name="textdisabled2" id="textdisabled2" type="text" disabled value="ABCZ abcjg liI1 12340">
+					</p>
+				</form>
+
+				<hr>
+				<h2>Textarea input, using <code>body</code></h2>
+
+				<form>
+					<label class="uikit-text-input__label" for="texta2">An input for longer responses</label>
+					<textarea class="uikit-text-input uikit-text-input--block uikit-text-input--textarea" name="texta2" id="texta2">
+ABCZ abcjg liI1 12340
+ABCZ abcjg liI1 12340
+					</textarea>
+				</form>
+
+				<hr>
+				<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
+				<p>Here the hint is nested inside the <code>label</code>.</p>
+
+				<form>
+					<label class="uikit-text-input__label" for="tfn2">
+						Tax File number
+						<span class="uikit-text-input__hint" id="tfn-hint2">
+							Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
+						</span>
+					</label>
+					<input class="uikit-text-input uikit-text-input--block uikit-text-input--number" type="number" id="tfn2" aria-describedby="tfn-hint2" value="12340">
+				</form>
+
+				<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
+				<p>Here the hint is sits between the <code>label</code> and the <code>input</code>.</p>
+
+				<form>
+					<label class="uikit-text-input__label" for="tfn3">
+						Tax File number
+					</label>
+					<span class="uikit-text-input__hint" id="tfn-hint3">
+						Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
+					</span>
+					<input class="uikit-text-input uikit-text-input--block uikit-text-input--number" type="number" id="tfn3" aria-describedby="tfn-hint3" value="12340">
+				</form>
+
+				<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
+				<p>Here the hint is comes after the <code>input</code>.</p>
+
+				<form>
+					<label class="uikit-text-input__label" for="tfn4">
+						Tax File number
+					</label>
+					<input class="uikit-text-input uikit-text-input--block uikit-text-input--number" type="number" id="tfn4" aria-describedby="tfn-hint4" value="12340">
+					<span class="uikit-text-input__hint" id="tfn-hint4">
+						Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
+					</span>
+				</form>
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>

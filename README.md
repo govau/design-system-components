@@ -34,6 +34,7 @@ gov.au UI-Kit
 - [responsive-media](http://uikit.apps.staging.digital.gov.au/packages/responsive-media/tests/site/)
 - [skip-link](http://uikit.apps.staging.digital.gov.au/packages/skip-link/tests/site/)
 - [tags](http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/)
+- [text-inputs](http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/)
 
 
 **[⬆ back to top](#content)**
