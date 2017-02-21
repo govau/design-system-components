@@ -12,10 +12,25 @@
 //   - colours
 //   - border styles and vars
 // - mixins
-//   - media query
-//   - sr-only
+//   - uikit-media
+//   - uikit-sronly
 // - functions
-//   - space
+//   - uikit-space
+//   - uikit-replace
+//   - uikit-svguri
+//
+//  Error messages all start with a movie quote. Here are some in reserve:
+//  - Elementary, my dear Watson;
+//  - Houston, we have a problem;
+//  - Go ahead, make my day;
+//  - You can’t handle the truth;
+//  - You talking to me?;
+//  - Try not. Do - or do not. There is no try;
+//  - May the Force be with you;
+//  - Toto, I’ve got a feeling we’re not in Kansas anymore;
+//  - Nobody puts Baby in a corner;
+//  - I have always depended on the kindness of strangers;
+//  - Where we’re going, we don’t need roads;
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -228,11 +243,16 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
  * Create media queries and wraps the @content code inside of it
  *
  * @param  {keywords} $breakpoint - Either one of the following keywords: xs, sm, md, lg
+ *
  * @return {string}               - The code passed in via @content wrapped inside a media query
  */
 @mixin uikit-media( $breakpoint ) {
 	@if type-of( $breakpoint ) != 'string' {
-		@error "Captain I'm giving it all she's got but: the uikit-media mixin only takes a string!";
+		@error "Captain I’m giving it all she’s got but; the uikit-media mixin only takes a string!";
+	}
+
+	@if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
+		@error "There’s no crying in baseball; the uikit-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
 	}
 
 	@if( $breakpoint == "xs" ) {
@@ -276,16 +296,20 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
 }
 
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL FUNCTIONS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
  * Return a space value based on the line-height and the unit em
  *
  * @param  {number} $number - The space as a multiplier of line-height
  * @param  {number} $number - The line-height [optional]
+ *
  * @return {number}         - The space in ems
  */
 @function uikit-space( $number, $line-height: $uikit-leading ) {
 	@if type-of( $number ) != 'number' {
-		@error "I'm sorry Dave, I can't do that; the uikit-space function only takes a number!";
+		@error "I’m sorry Dave, I can't do that; the uikit-space function only takes a number!";
 	}
 
 	@if type-of( $number ) == 'number' and not unitless( $number ) {
@@ -295,4 +319,106 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
 	$space: $number * $line-height;
 
 	@return #{ $space }em;
+}
+
+
+/**
+ * Replace a string with a string
+ * http://codepen.io/jakob-e/pen/doMoML
+ *
+ * @author @eriksen_dk <https://twitter.com/eriksen_dk>
+ *
+ * @param  {string} $string   - The haystack string to be manipulated
+ * @param  {string} $search   - The needle to be replace
+ * @param  {string} $replace  - The replacement
+ *
+ * @return {string}           - The manipulated string with replaced values
+ */
+@function uikit-replace( $string, $search, $replace: '' ) {
+	@if type-of( $string ) != 'string' {
+		@error "I have a bad feeling about this; the uikit-replace first argument must be a string!";
+	}
+
+	@if type-of( $search ) != 'string' {
+		@error "We’ll always have Paris; the uikit-replace second argument must be a string!";
+	}
+
+	@if type-of( $replace ) != 'string' {
+		@error "Hasta la vista, baby; the uikit-replace third argument must be a string!";
+	}
+
+	$index: str-index( $string, $search );
+
+	@return if( $index,
+		str-slice( $string, 1, $index - 1 ) +
+		$replace +
+		uikit-replace(
+			str-slice( $string, $index + str-length( $search )
+		), $search, $replace ),
+		$string
+	);
+}
+
+
+/**
+ * Generate an optimized SVG data-uri for
+ * https://codepen.io/tigt/post/optimizing-svgs-in-data-uris
+ * http://codepen.io/jakob-e/pen/doMoML
+ *
+ * @author @eriksen_dk <https://twitter.com/eriksen_dk>
+ *
+ * @param  {string} $svg - The SVG to be converted
+ *
+ * @return {string}      - An optimized data-uri
+ */
+@function uikit-svguri( $svg ) {
+	@if type-of( $svg ) != 'string' {
+		@error "With great power comes great responsibility; the uikit-svguri function only takes a string!";
+	}
+
+	@if not str-index( $svg, xmlns ) { //Add missing namespace
+		$svg: uikit-replace( $svg, '<svg','<svg xmlns="http://www.w3.org/2000/svg"' );
+	}
+
+	$encoded:'';
+	$slice: 2000;
+	$index: 0;
+	$loops: ceil( str-length( $svg ) / $slice ); //Chunk up string in order to avoid "stack level too deep" error
+
+	@for $i from 1 through $loops {
+		$chunk: str-slice( $svg, $index, $index + $slice - 1 );
+
+		$chunk: uikit-replace( $chunk,'"', "'" );
+		$chunk: uikit-replace( $chunk,'	', " " );
+		$chunk: uikit-replace( $chunk,'  ', " " );
+		$chunk: uikit-replace( $chunk,'%', '%25' );
+		$chunk: uikit-replace( $chunk,'&', '%26' );
+		$chunk: uikit-replace( $chunk,'#', '%23' );
+		$chunk: uikit-replace( $chunk,'{', '%7B' );
+		$chunk: uikit-replace( $chunk,'}', '%7D' );
+		$chunk: uikit-replace( $chunk,'<', '%3C' );
+		$chunk: uikit-replace( $chunk,'>', '%3E' );
+
+		/*    The maybe list
+
+		   Keep size and compile time down
+		   ... only add on documented fail
+
+		 $chunk: uikit-replace( $chunk, '|', '%7C' );
+		 $chunk: uikit-replace( $chunk, '[', '%5B' );
+		 $chunk: uikit-replace( $chunk, ']', '%5D' );
+		 $chunk: uikit-replace( $chunk, '^', '%5E' );
+		 $chunk: uikit-replace( $chunk, '`', '%60' );
+		 $chunk: uikit-replace( $chunk, ';', '%3B' );
+		 $chunk: uikit-replace( $chunk, '?', '%3F' );
+		 $chunk: uikit-replace( $chunk, ':', '%3A' );
+		 $chunk: uikit-replace( $chunk, '@', '%40' );
+		 $chunk: uikit-replace( $chunk, '=', '%3D' );
+		*/
+
+		$encoded: #{ $encoded }#{ $chunk };
+		$index: $index + $slice;
+	}
+
+	@return url("data:image/svg+xml,#{ $encoded }");
 }
