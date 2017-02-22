@@ -21,6 +21,7 @@ gov.au UI-Kit
 - [breadcrumbs](http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/)
 - [buttons](http://uikit.apps.staging.digital.gov.au/packages/buttons/tests/site/)
 - [callout](http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/)
+- [control-input](http://uikit.apps.staging.digital.gov.au/packages/control-input/tests/site/)
 - [core](http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/)
 - [cta-link](http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/)
 - [direction-links](http://uikit.apps.staging.digital.gov.au/packages/direction-links/tests/site/)
