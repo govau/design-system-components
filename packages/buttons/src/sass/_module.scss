@@ -24,7 +24,7 @@
 	font-weight: bold;
 	color: #fff;
 	border-radius: $uikit-border-radius;
-	background-color: $uikit-colour-Primary-90;
+	background-color: $uikit-colour-Primary;
 	height: 48px;
 	padding: 0 1.2em;
 	cursor: pointer;
@@ -32,7 +32,7 @@
 
 	&:focus,
 	&:hover {
-		background-color: $uikit-colour-Primary;
+		background-color: $uikit-colour-Primary--30;
 	}
 
 	&:disabled {
@@ -53,11 +53,11 @@
  * SECONDARY
  */
 .uikit-btn--secondary {
-	background-color: $uikit-colour-Secondary-90;
+	background-color: $uikit-colour-Secondary;
 
 	&:focus,
 	&:hover {
-		background-color: $uikit-colour-Secondary;
+		background-color: $uikit-colour-Secondary--30;
 	}
 }
 
@@ -71,7 +71,6 @@
 
 	&:focus,
 	&:hover {
-		background-color: #fff;
-		border-width: 4px;
+		background-color: $uikit-colour-Primary-10;
 	}
 }
