@@ -1,0 +1,83 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// control-input module
+// Control inputs include radio buttons and checkboxes. They allow users to select one or more options.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// control inputs
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-control-input {
+	display: inline-block;
+	position: relative;
+}
+
+.uikit-control-input__input {
+	display: inline-block;
+	line-height: $uikit-leading;
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 27px;
+		height: 27px;
+		background-repeat: no-repeat;
+	}
+
+	&[type='checkbox'] {
+		&:after {
+			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="19 79 414 414">
+				<rect fill="#{ $uikit-colour-Text }" x="19" y="79" width="414" height="414"/>
+				<rect fill="#fff" x="60" y="120" width="332" height="332"/>
+			</svg>');
+		}
+
+		&:checked:after {
+			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="19 79 414 414">
+				<rect fill="#{ $uikit-colour-Text }" x="19" y="79" width="414" height="414"/>
+				<rect fill="#fff" x="60" y="120" width="332" height="332"/>
+				<path fill="#{ $uikit-colour-Text }" d="M204.8,377.8c-32.5-32.4-64.9-64.9-97.4-97.3c9.7-9.7,19.4-19.4,29.1-29.1c22.8,22.7,45.5,45.5,68.3,68.2 c44.1-44.2,88.3-88.4,132.4-132.6c9.8,9.7,19.5,19.4,29.3,29.1C312.7,270,258.8,323.9,204.8,377.8z"/>
+			</svg>');
+		}
+	}
+
+	&[type='radio'] {
+		&:after {
+			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="18 78 416 416">
+				<circle fill="#{ $uikit-colour-Text }" cx="226" cy="286" r="208"/>
+				<circle fill="#fff" cx="226" cy="286" r="166.4"/>
+			</svg>');
+		}
+
+		&:checked:after {
+			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="18 78 416 416">
+				<circle fill="#{ $uikit-colour-Text }" cx="226" cy="286" r="208"/>
+				<circle fill="#fff" cx="226" cy="286" r="166.4"/>
+				<circle fill="#{ $uikit-colour-Text }" cx="225" cy="286" r="104"/>
+			</svg>');
+		}
+	}
+
+	&:checked + .uikit-control-input__text {
+		font-weight: bold;
+	}
+}
+
+/**
+ * The label text
+ */
+.uikit-control-input__text {
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	line-height: $uikit-leading;
+	font-size: 17px;
+	margin-left: 12px;
+}
