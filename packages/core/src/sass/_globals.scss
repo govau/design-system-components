@@ -100,7 +100,18 @@ $uikit-colour-Success: #007554 !global;
 $uikit-colour-Warning: #f9c642 !global;
 $uikit-colour-Info: #00bfe9 !global;
 
-$uikit-colour-Primary-90: mix(white, $uikit-colour-Primary, 10) !global; //tints of the colors
+$uikit-colour-Primary--10: mix(black, $uikit-colour-Primary, 10) !global; //tints of the colors
+$uikit-colour-Primary--20: mix(black, $uikit-colour-Primary, 20) !global;
+$uikit-colour-Primary--30: mix(black, $uikit-colour-Primary, 30) !global;
+$uikit-colour-Primary--40: mix(black, $uikit-colour-Primary, 40) !global;
+$uikit-colour-Primary--50: mix(black, $uikit-colour-Primary, 50) !global;
+$uikit-colour-Primary--60: mix(black, $uikit-colour-Primary, 60) !global;
+$uikit-colour-Primary--70: mix(black, $uikit-colour-Primary, 70) !global;
+$uikit-colour-Primary--80: mix(black, $uikit-colour-Primary, 80) !global;
+$uikit-colour-Primary--90: mix(black, $uikit-colour-Primary, 90) !global;
+$uikit-colour-Primary--95: mix(black, $uikit-colour-Primary, 95) !global;
+
+$uikit-colour-Primary-90: mix(white, $uikit-colour-Primary, 10) !global;
 $uikit-colour-Primary-80: mix(white, $uikit-colour-Primary, 20) !global;
 $uikit-colour-Primary-70: mix(white, $uikit-colour-Primary, 30) !global;
 $uikit-colour-Primary-60: mix(white, $uikit-colour-Primary, 40) !global;
@@ -110,6 +121,18 @@ $uikit-colour-Primary-30: mix(white, $uikit-colour-Primary, 70) !global;
 $uikit-colour-Primary-20: mix(white, $uikit-colour-Primary, 80) !global;
 $uikit-colour-Primary-10: mix(white, $uikit-colour-Primary, 90) !global;
 $uikit-colour-Primary-5: mix(white, $uikit-colour-Primary, 95) !global;
+
+
+$uikit-colour-Secondary--10: mix(black, $uikit-colour-Secondary, 10) !global;
+$uikit-colour-Secondary--20: mix(black, $uikit-colour-Secondary, 20) !global;
+$uikit-colour-Secondary--30: mix(black, $uikit-colour-Secondary, 30) !global;
+$uikit-colour-Secondary--40: mix(black, $uikit-colour-Secondary, 40) !global;
+$uikit-colour-Secondary--50: mix(black, $uikit-colour-Secondary, 50) !global;
+$uikit-colour-Secondary--60: mix(black, $uikit-colour-Secondary, 60) !global;
+$uikit-colour-Secondary--70: mix(black, $uikit-colour-Secondary, 70) !global;
+$uikit-colour-Secondary--80: mix(black, $uikit-colour-Secondary, 80) !global;
+$uikit-colour-Secondary--90: mix(black, $uikit-colour-Secondary, 90) !global;
+$uikit-colour-Secondary--95: mix(black, $uikit-colour-Secondary, 95) !global;
 
 $uikit-colour-Secondary-90: mix(white, $uikit-colour-Secondary, 10) !global;
 $uikit-colour-Secondary-80: mix(white, $uikit-colour-Secondary, 20) !global;
@@ -122,6 +145,18 @@ $uikit-colour-Secondary-20: mix(white, $uikit-colour-Secondary, 80) !global;
 $uikit-colour-Secondary-10: mix(white, $uikit-colour-Secondary, 90) !global;
 $uikit-colour-Secondary-5: mix(white, $uikit-colour-Secondary, 95) !global;
 
+
+$uikit-colour-Background--10: mix(black, $uikit-colour-Background, 10) !global;
+$uikit-colour-Background--20: mix(black, $uikit-colour-Background, 20) !global;
+$uikit-colour-Background--30: mix(black, $uikit-colour-Background, 30) !global;
+$uikit-colour-Background--40: mix(black, $uikit-colour-Background, 40) !global;
+$uikit-colour-Background--50: mix(black, $uikit-colour-Background, 50) !global;
+$uikit-colour-Background--60: mix(black, $uikit-colour-Background, 60) !global;
+$uikit-colour-Background--70: mix(black, $uikit-colour-Background, 70) !global;
+$uikit-colour-Background--80: mix(black, $uikit-colour-Background, 80) !global;
+$uikit-colour-Background--90: mix(black, $uikit-colour-Background, 90) !global;
+$uikit-colour-Background--95: mix(black, $uikit-colour-Background, 95) !global;
+
 $uikit-colour-Background-90: mix(white, $uikit-colour-Background, 10) !global;
 $uikit-colour-Background-80: mix(white, $uikit-colour-Background, 20) !global;
 $uikit-colour-Background-70: mix(white, $uikit-colour-Background, 30) !global;
@@ -132,6 +167,18 @@ $uikit-colour-Background-30: mix(white, $uikit-colour-Background, 70) !global;
 $uikit-colour-Background-20: mix(white, $uikit-colour-Background, 80) !global;
 $uikit-colour-Background-10: mix(white, $uikit-colour-Background, 90) !global;
 $uikit-colour-Background-5: mix(white, $uikit-colour-Background, 95) !global;
+
+
+$uikit-colour-Border--10: mix(black, $uikit-colour-Border, 10) !global;
+$uikit-colour-Border--20: mix(black, $uikit-colour-Border, 20) !global;
+$uikit-colour-Border--30: mix(black, $uikit-colour-Border, 30) !global;
+$uikit-colour-Border--40: mix(black, $uikit-colour-Border, 40) !global;
+$uikit-colour-Border--50: mix(black, $uikit-colour-Border, 50) !global;
+$uikit-colour-Border--60: mix(black, $uikit-colour-Border, 60) !global;
+$uikit-colour-Border--70: mix(black, $uikit-colour-Border, 70) !global;
+$uikit-colour-Border--80: mix(black, $uikit-colour-Border, 80) !global;
+$uikit-colour-Border--90: mix(black, $uikit-colour-Border, 90) !global;
+$uikit-colour-Border--95: mix(black, $uikit-colour-Border, 95) !global;
 
 $uikit-colour-Border-90: mix(white, $uikit-colour-Border, 10) !global;
 $uikit-colour-Border-80: mix(white, $uikit-colour-Border, 20) !global;
@@ -144,6 +191,18 @@ $uikit-colour-Border-20: mix(white, $uikit-colour-Border, 80) !global;
 $uikit-colour-Border-10: mix(white, $uikit-colour-Border, 90) !global;
 $uikit-colour-Border-5: mix(white, $uikit-colour-Border, 95) !global;
 
+
+$uikit-colour-Text--10: mix(black, $uikit-colour-Text, 10) !global;
+$uikit-colour-Text--20: mix(black, $uikit-colour-Text, 20) !global;
+$uikit-colour-Text--30: mix(black, $uikit-colour-Text, 30) !global;
+$uikit-colour-Text--40: mix(black, $uikit-colour-Text, 40) !global;
+$uikit-colour-Text--50: mix(black, $uikit-colour-Text, 50) !global;
+$uikit-colour-Text--60: mix(black, $uikit-colour-Text, 60) !global;
+$uikit-colour-Text--70: mix(black, $uikit-colour-Text, 70) !global;
+$uikit-colour-Text--80: mix(black, $uikit-colour-Text, 80) !global;
+$uikit-colour-Text--90: mix(black, $uikit-colour-Text, 90) !global;
+$uikit-colour-Text--95: mix(black, $uikit-colour-Text, 95) !global;
+
 $uikit-colour-Text-90: mix(white, $uikit-colour-Text, 10) !global;
 $uikit-colour-Text-80: mix(white, $uikit-colour-Text, 20) !global;
 $uikit-colour-Text-70: mix(white, $uikit-colour-Text, 30) !global;
@@ -154,6 +213,18 @@ $uikit-colour-Text-30: mix(white, $uikit-colour-Text, 70) !global;
 $uikit-colour-Text-20: mix(white, $uikit-colour-Text, 80) !global;
 $uikit-colour-Text-10: mix(white, $uikit-colour-Text, 90) !global;
 $uikit-colour-Text-5: mix(white, $uikit-colour-Text, 95) !global;
+
+
+$uikit-colour-Link--10: mix(black, $uikit-colour-Link, 10) !global;
+$uikit-colour-Link--20: mix(black, $uikit-colour-Link, 20) !global;
+$uikit-colour-Link--30: mix(black, $uikit-colour-Link, 30) !global;
+$uikit-colour-Link--40: mix(black, $uikit-colour-Link, 40) !global;
+$uikit-colour-Link--50: mix(black, $uikit-colour-Link, 50) !global;
+$uikit-colour-Link--60: mix(black, $uikit-colour-Link, 60) !global;
+$uikit-colour-Link--70: mix(black, $uikit-colour-Link, 70) !global;
+$uikit-colour-Link--80: mix(black, $uikit-colour-Link, 80) !global;
+$uikit-colour-Link--90: mix(black, $uikit-colour-Link, 90) !global;
+$uikit-colour-Link--95: mix(black, $uikit-colour-Link, 95) !global;
 
 $uikit-colour-Link-90: mix(white, $uikit-colour-Link, 10) !global;
 $uikit-colour-Link-80: mix(white, $uikit-colour-Link, 20) !global;
@@ -166,6 +237,18 @@ $uikit-colour-Link-20: mix(white, $uikit-colour-Link, 80) !global;
 $uikit-colour-Link-10: mix(white, $uikit-colour-Link, 90) !global;
 $uikit-colour-Link-5: mix(white, $uikit-colour-Link, 95) !global;
 
+
+$uikit-colour-Alpha--10: mix(black, $uikit-colour-Alpha, 10) !global;
+$uikit-colour-Alpha--20: mix(black, $uikit-colour-Alpha, 20) !global;
+$uikit-colour-Alpha--30: mix(black, $uikit-colour-Alpha, 30) !global;
+$uikit-colour-Alpha--40: mix(black, $uikit-colour-Alpha, 40) !global;
+$uikit-colour-Alpha--50: mix(black, $uikit-colour-Alpha, 50) !global;
+$uikit-colour-Alpha--60: mix(black, $uikit-colour-Alpha, 60) !global;
+$uikit-colour-Alpha--70: mix(black, $uikit-colour-Alpha, 70) !global;
+$uikit-colour-Alpha--80: mix(black, $uikit-colour-Alpha, 80) !global;
+$uikit-colour-Alpha--90: mix(black, $uikit-colour-Alpha, 90) !global;
+$uikit-colour-Alpha--95: mix(black, $uikit-colour-Alpha, 95) !global;
+
 $uikit-colour-Alpha-90: mix(white, $uikit-colour-Alpha, 10) !global;
 $uikit-colour-Alpha-80: mix(white, $uikit-colour-Alpha, 20) !global;
 $uikit-colour-Alpha-70: mix(white, $uikit-colour-Alpha, 30) !global;
@@ -176,6 +259,18 @@ $uikit-colour-Alpha-30: mix(white, $uikit-colour-Alpha, 70) !global;
 $uikit-colour-Alpha-20: mix(white, $uikit-colour-Alpha, 80) !global;
 $uikit-colour-Alpha-10: mix(white, $uikit-colour-Alpha, 90) !global;
 $uikit-colour-Alpha-5: mix(white, $uikit-colour-Alpha, 95) !global;
+
+
+$uikit-colour-Beta--10: mix(black, $uikit-colour-Beta, 10) !global;
+$uikit-colour-Beta--20: mix(black, $uikit-colour-Beta, 20) !global;
+$uikit-colour-Beta--30: mix(black, $uikit-colour-Beta, 30) !global;
+$uikit-colour-Beta--40: mix(black, $uikit-colour-Beta, 40) !global;
+$uikit-colour-Beta--50: mix(black, $uikit-colour-Beta, 50) !global;
+$uikit-colour-Beta--60: mix(black, $uikit-colour-Beta, 60) !global;
+$uikit-colour-Beta--70: mix(black, $uikit-colour-Beta, 70) !global;
+$uikit-colour-Beta--80: mix(black, $uikit-colour-Beta, 80) !global;
+$uikit-colour-Beta--90: mix(black, $uikit-colour-Beta, 90) !global;
+$uikit-colour-Beta--95: mix(black, $uikit-colour-Beta, 95) !global;
 
 $uikit-colour-Beta-90: mix(white, $uikit-colour-Beta, 10) !global;
 $uikit-colour-Beta-80: mix(white, $uikit-colour-Beta, 20) !global;
@@ -189,6 +284,17 @@ $uikit-colour-Beta-10: mix(white, $uikit-colour-Beta, 90) !global;
 $uikit-colour-Beta-5: mix(white, $uikit-colour-Beta, 95) !global;
 
 
+$uikit-colour-secondary-A--10: mix(black, $uikit-colour-secondary-A, 10) !global;
+$uikit-colour-secondary-A--20: mix(black, $uikit-colour-secondary-A, 20) !global;
+$uikit-colour-secondary-A--30: mix(black, $uikit-colour-secondary-A, 30) !global;
+$uikit-colour-secondary-A--40: mix(black, $uikit-colour-secondary-A, 40) !global;
+$uikit-colour-secondary-A--50: mix(black, $uikit-colour-secondary-A, 50) !global;
+$uikit-colour-secondary-A--60: mix(black, $uikit-colour-secondary-A, 60) !global;
+$uikit-colour-secondary-A--70: mix(black, $uikit-colour-secondary-A, 70) !global;
+$uikit-colour-secondary-A--80: mix(black, $uikit-colour-secondary-A, 80) !global;
+$uikit-colour-secondary-A--90: mix(black, $uikit-colour-secondary-A, 90) !global;
+$uikit-colour-secondary-A--95: mix(black, $uikit-colour-secondary-A, 95) !global;
+
 $uikit-colour-secondary-A-90: mix(white, $uikit-colour-secondary-A, 10) !global;
 $uikit-colour-secondary-A-80: mix(white, $uikit-colour-secondary-A, 20) !global;
 $uikit-colour-secondary-A-70: mix(white, $uikit-colour-secondary-A, 30) !global;
@@ -199,6 +305,18 @@ $uikit-colour-secondary-A-30: mix(white, $uikit-colour-secondary-A, 70) !global;
 $uikit-colour-secondary-A-20: mix(white, $uikit-colour-secondary-A, 80) !global;
 $uikit-colour-secondary-A-10: mix(white, $uikit-colour-secondary-A, 90) !global;
 $uikit-colour-secondary-A-5: mix(white, $uikit-colour-secondary-A, 95) !global;
+
+
+$uikit-colour-secondary-B--10: mix(black, $uikit-colour-secondary-B, 10) !global;
+$uikit-colour-secondary-B--20: mix(black, $uikit-colour-secondary-B, 20) !global;
+$uikit-colour-secondary-B--30: mix(black, $uikit-colour-secondary-B, 30) !global;
+$uikit-colour-secondary-B--40: mix(black, $uikit-colour-secondary-B, 40) !global;
+$uikit-colour-secondary-B--50: mix(black, $uikit-colour-secondary-B, 50) !global;
+$uikit-colour-secondary-B--60: mix(black, $uikit-colour-secondary-B, 60) !global;
+$uikit-colour-secondary-B--70: mix(black, $uikit-colour-secondary-B, 70) !global;
+$uikit-colour-secondary-B--80: mix(black, $uikit-colour-secondary-B, 80) !global;
+$uikit-colour-secondary-B--90: mix(black, $uikit-colour-secondary-B, 90) !global;
+$uikit-colour-secondary-B--95: mix(black, $uikit-colour-secondary-B, 95) !global;
 
 $uikit-colour-secondary-B-90: mix(white, $uikit-colour-secondary-B, 10) !global;
 $uikit-colour-secondary-B-80: mix(white, $uikit-colour-secondary-B, 20) !global;
@@ -211,6 +329,18 @@ $uikit-colour-secondary-B-20: mix(white, $uikit-colour-secondary-B, 80) !global;
 $uikit-colour-secondary-B-10: mix(white, $uikit-colour-secondary-B, 90) !global;
 $uikit-colour-secondary-B-5: mix(white, $uikit-colour-secondary-B, 95) !global;
 
+
+$uikit-colour-secondary-C--10: mix(black, $uikit-colour-secondary-C, 10) !global;
+$uikit-colour-secondary-C--20: mix(black, $uikit-colour-secondary-C, 20) !global;
+$uikit-colour-secondary-C--30: mix(black, $uikit-colour-secondary-C, 30) !global;
+$uikit-colour-secondary-C--40: mix(black, $uikit-colour-secondary-C, 40) !global;
+$uikit-colour-secondary-C--50: mix(black, $uikit-colour-secondary-C, 50) !global;
+$uikit-colour-secondary-C--60: mix(black, $uikit-colour-secondary-C, 60) !global;
+$uikit-colour-secondary-C--70: mix(black, $uikit-colour-secondary-C, 70) !global;
+$uikit-colour-secondary-C--80: mix(black, $uikit-colour-secondary-C, 80) !global;
+$uikit-colour-secondary-C--90: mix(black, $uikit-colour-secondary-C, 90) !global;
+$uikit-colour-secondary-C--95: mix(black, $uikit-colour-secondary-C, 95) !global;
+
 $uikit-colour-secondary-C-90: mix(white, $uikit-colour-secondary-C, 10) !global;
 $uikit-colour-secondary-C-80: mix(white, $uikit-colour-secondary-C, 20) !global;
 $uikit-colour-secondary-C-70: mix(white, $uikit-colour-secondary-C, 30) !global;
@@ -221,6 +351,18 @@ $uikit-colour-secondary-C-30: mix(white, $uikit-colour-secondary-C, 70) !global;
 $uikit-colour-secondary-C-20: mix(white, $uikit-colour-secondary-C, 80) !global;
 $uikit-colour-secondary-C-10: mix(white, $uikit-colour-secondary-C, 90) !global;
 $uikit-colour-secondary-C-5: mix(white, $uikit-colour-secondary-C, 95) !global;
+
+
+$uikit-colour-secondary-D--10: mix(black, $uikit-colour-secondary-D, 10) !global;
+$uikit-colour-secondary-D--20: mix(black, $uikit-colour-secondary-D, 20) !global;
+$uikit-colour-secondary-D--30: mix(black, $uikit-colour-secondary-D, 30) !global;
+$uikit-colour-secondary-D--40: mix(black, $uikit-colour-secondary-D, 40) !global;
+$uikit-colour-secondary-D--50: mix(black, $uikit-colour-secondary-D, 50) !global;
+$uikit-colour-secondary-D--60: mix(black, $uikit-colour-secondary-D, 60) !global;
+$uikit-colour-secondary-D--70: mix(black, $uikit-colour-secondary-D, 70) !global;
+$uikit-colour-secondary-D--80: mix(black, $uikit-colour-secondary-D, 80) !global;
+$uikit-colour-secondary-D--90: mix(black, $uikit-colour-secondary-D, 90) !global;
+$uikit-colour-secondary-D--95: mix(black, $uikit-colour-secondary-D, 95) !global;
 
 $uikit-colour-secondary-D-90: mix(white, $uikit-colour-secondary-D, 10) !global;
 $uikit-colour-secondary-D-80: mix(white, $uikit-colour-secondary-D, 20) !global;
@@ -235,6 +377,17 @@ $uikit-colour-secondary-D-5: mix(white, $uikit-colour-secondary-D, 95) !global;
 
 
 
+$uikit-colour-Error--10: mix(black, $uikit-colour-Error, 10) !global;
+$uikit-colour-Error--20: mix(black, $uikit-colour-Error, 20) !global;
+$uikit-colour-Error--30: mix(black, $uikit-colour-Error, 30) !global;
+$uikit-colour-Error--40: mix(black, $uikit-colour-Error, 40) !global;
+$uikit-colour-Error--50: mix(black, $uikit-colour-Error, 50) !global;
+$uikit-colour-Error--60: mix(black, $uikit-colour-Error, 60) !global;
+$uikit-colour-Error--70: mix(black, $uikit-colour-Error, 70) !global;
+$uikit-colour-Error--80: mix(black, $uikit-colour-Error, 80) !global;
+$uikit-colour-Error--90: mix(black, $uikit-colour-Error, 90) !global;
+$uikit-colour-Error--95: mix(black, $uikit-colour-Error, 95) !global;
+
 $uikit-colour-Error-90: mix(white, $uikit-colour-Error, 10) !global;
 $uikit-colour-Error-80: mix(white, $uikit-colour-Error, 20) !global;
 $uikit-colour-Error-70: mix(white, $uikit-colour-Error, 30) !global;
@@ -245,6 +398,18 @@ $uikit-colour-Error-30: mix(white, $uikit-colour-Error, 70) !global;
 $uikit-colour-Error-20: mix(white, $uikit-colour-Error, 80) !global;
 $uikit-colour-Error-10: mix(white, $uikit-colour-Error, 90) !global;
 $uikit-colour-Error-5: mix(white, $uikit-colour-Error, 95) !global;
+
+
+$uikit-colour-Success--10: mix(black, $uikit-colour-Success, 10) !global;
+$uikit-colour-Success--20: mix(black, $uikit-colour-Success, 20) !global;
+$uikit-colour-Success--30: mix(black, $uikit-colour-Success, 30) !global;
+$uikit-colour-Success--40: mix(black, $uikit-colour-Success, 40) !global;
+$uikit-colour-Success--50: mix(black, $uikit-colour-Success, 50) !global;
+$uikit-colour-Success--60: mix(black, $uikit-colour-Success, 60) !global;
+$uikit-colour-Success--70: mix(black, $uikit-colour-Success, 70) !global;
+$uikit-colour-Success--80: mix(black, $uikit-colour-Success, 80) !global;
+$uikit-colour-Success--90: mix(black, $uikit-colour-Success, 90) !global;
+$uikit-colour-Success--95: mix(black, $uikit-colour-Success, 95) !global;
 
 $uikit-colour-Success-90: mix(white, $uikit-colour-Success, 10) !global;
 $uikit-colour-Success-80: mix(white, $uikit-colour-Success, 20) !global;
@@ -257,6 +422,18 @@ $uikit-colour-Success-20: mix(white, $uikit-colour-Success, 80) !global;
 $uikit-colour-Success-10: mix(white, $uikit-colour-Success, 90) !global;
 $uikit-colour-Success-5: mix(white, $uikit-colour-Success, 95) !global;
 
+
+$uikit-colour-Warning--10: mix(black, $uikit-colour-Warning, 10) !global;
+$uikit-colour-Warning--20: mix(black, $uikit-colour-Warning, 20) !global;
+$uikit-colour-Warning--30: mix(black, $uikit-colour-Warning, 30) !global;
+$uikit-colour-Warning--40: mix(black, $uikit-colour-Warning, 40) !global;
+$uikit-colour-Warning--50: mix(black, $uikit-colour-Warning, 50) !global;
+$uikit-colour-Warning--60: mix(black, $uikit-colour-Warning, 60) !global;
+$uikit-colour-Warning--70: mix(black, $uikit-colour-Warning, 70) !global;
+$uikit-colour-Warning--80: mix(black, $uikit-colour-Warning, 80) !global;
+$uikit-colour-Warning--90: mix(black, $uikit-colour-Warning, 90) !global;
+$uikit-colour-Warning--95: mix(black, $uikit-colour-Warning, 95) !global;
+
 $uikit-colour-Warning-90: mix(white, $uikit-colour-Warning, 10) !global;
 $uikit-colour-Warning-80: mix(white, $uikit-colour-Warning, 20) !global;
 $uikit-colour-Warning-70: mix(white, $uikit-colour-Warning, 30) !global;
@@ -267,6 +444,18 @@ $uikit-colour-Warning-30: mix(white, $uikit-colour-Warning, 70) !global;
 $uikit-colour-Warning-20: mix(white, $uikit-colour-Warning, 80) !global;
 $uikit-colour-Warning-10: mix(white, $uikit-colour-Warning, 90) !global;
 $uikit-colour-Warning-5: mix(white, $uikit-colour-Warning, 95) !global;
+
+
+$uikit-colour-Info--10: mix(black, $uikit-colour-Info, 10) !global;
+$uikit-colour-Info--20: mix(black, $uikit-colour-Info, 20) !global;
+$uikit-colour-Info--30: mix(black, $uikit-colour-Info, 30) !global;
+$uikit-colour-Info--40: mix(black, $uikit-colour-Info, 40) !global;
+$uikit-colour-Info--50: mix(black, $uikit-colour-Info, 50) !global;
+$uikit-colour-Info--60: mix(black, $uikit-colour-Info, 60) !global;
+$uikit-colour-Info--70: mix(black, $uikit-colour-Info, 70) !global;
+$uikit-colour-Info--80: mix(black, $uikit-colour-Info, 80) !global;
+$uikit-colour-Info--90: mix(black, $uikit-colour-Info, 90) !global;
+$uikit-colour-Info--95: mix(black, $uikit-colour-Info, 95) !global;
 
 $uikit-colour-Info-90: mix(white, $uikit-colour-Info, 10) !global;
 $uikit-colour-Info-80: mix(white, $uikit-colour-Info, 20) !global;
