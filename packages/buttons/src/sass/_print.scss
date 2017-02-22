@@ -1,11 +1,20 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// Buttons module
+// Buttons signal action. Use them to move the user through the service.
 //
 // Content:
-// - sass-versioning
-// - globals
+// - print styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+@media print {
+	.uikit-btn {
+		background-color: #fff !important;
+		border: 2px solid #000 !important;
+		color: #000 !important;
+
+		&:disabled {
+			background-color: #ccc !important;
+		}
+	}
+}

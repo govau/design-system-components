@@ -1,11 +1,16 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// callout module
+// Use callout to notify and alert users of important snippets of information.
 //
 // Content:
-// - sass-versioning
-// - globals
+// - print styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+@media print {
+	.uikit-callout {
+		border-top: 1px solid #000 !important;
+		border-right: 1px solid #000 !important;
+		border-bottom: 1px solid #000 !important;
+	}
+}

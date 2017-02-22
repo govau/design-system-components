@@ -216,6 +216,7 @@ HELPER.precompile = (() => {
 			//2. copy files
 			CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
 			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
+			CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
 
 			//rethingiemajiging the peer dependencies for sass
 			let dependencies = [];
@@ -232,6 +233,7 @@ HELPER.precompile = (() => {
 
 			ReplaceFileContent( searches, './lib/sass/_globals.scss' );
 			ReplaceFileContent( searches, './lib/sass/_module.scss' );
+			ReplaceFileContent( searches, './lib/sass/_print.scss' );
 		},
 
 		/**
