@@ -19,6 +19,7 @@ gov.au UI-Kit
 
 - [body](http://uikit.apps.staging.digital.gov.au/packages/body/tests/site/)
 - [breadcrumbs](http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/)
+- [buttons](http://uikit.apps.staging.digital.gov.au/packages/buttons/tests/site/)
 - [callout](http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/)
 - [core](http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/)
 - [cta-link](http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/)
