@@ -83,14 +83,6 @@
 	</p>
 
 	<hr>
-	<h2>screen reader only</h2>
-
-	<p class="sr-only">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. In sunt, enim sint. Quibusdam consequatur, quo recusandae quidem amet. Est tempora recusandae
-		cupiditate esse sunt dolore iusto officiis sed ea unde.
-	</p>
-
-	<hr>
 	<h2>borderize</h2>
 
 	<hr class="borderize">
@@ -105,11 +97,60 @@
 	</ul>
 
 	<hr>
-	<h2>colors</h2>
+	<h2>mixin: uikit-media</h2>
 
-	<div class="colorbox-wrapper">
-		<div class="colorbox colorbox__colour-Hero">
-			<span>colour-Hero</span>
+	<div class="uikit-media"></div>
+
+
+	<hr>
+	<h2>mixin: uikit-sronly</h2>
+
+	<p class="sr-only">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. In sunt, enim sint. Quibusdam consequatur, quo recusandae quidem amet. Est tempora recusandae
+		cupiditate esse sunt dolore iusto officiis sed ea unde.
+	</p>
+
+	<hr>
+	<h2>function: uikit-space</h2>
+
+	<div class="uikit-space uikit-space--05">uikit-space( 0.5 )</div>
+	<div class="uikit-space uikit-space--1">uikit-space( 1 )</div>
+	<div class="uikit-space uikit-space--15">uikit-space( 1.5 )</div>
+	<div class="uikit-space uikit-space--2">uikit-space( 2 )</div>
+	<div class="uikit-space uikit-space--25">uikit-space( 2.5 )</div>
+	<div class="uikit-space uikit-space--3">uikit-space( 3 )</div>
+	<div class="uikit-space uikit-space--35">uikit-space( 3.5 )</div>
+	<div class="uikit-space uikit-space--4">uikit-space( 4 )</div>
+	<div class="uikit-space uikit-space--45">uikit-space( 4.5 )</div>
+	<div class="uikit-space uikit-space--5">uikit-space( 5 )</div>
+	<div class="uikit-space uikit-space--55">uikit-space( 5.5 )</div>
+
+	<hr>
+	<h2>function: uikit-replace</h2>
+
+	<div class="uikit-replace">uikit-replace('We love spaces for indentation', 'spaces', 'tabs'): </div>
+
+	<hr>
+	<h2>function: uikit-svguri</h2>
+
+	<div class="uikit-svguri"></div>
+
+	<hr>
+	<h2>main colors</h2>
+
+	<div class="colorbox-wrapper colorbox__4">
+		<div class="colorbox colorbox__colour-Primary">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Primary</span>
 			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
 			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
 			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
@@ -122,8 +163,18 @@
 			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
 		</div>
 
-		<div class="colorbox colorbox__colour-Primary">
-			<span>colour-Primary</span>
+		<div class="colorbox colorbox__colour-Secondary">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Secondary</span>
 			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
 			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
 			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
@@ -137,7 +188,17 @@
 		</div>
 
 		<div class="colorbox colorbox__colour-Background">
-			<span>colour-Background</span>
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Background</span>
 			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
 			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
 			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
@@ -151,7 +212,17 @@
 		</div>
 
 		<div class="colorbox colorbox__colour-Border">
-			<span>colour-Border</span>
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Border</span>
 			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
 			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
 			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
@@ -164,8 +235,22 @@
 			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
 		</div>
 
+	</div>
+	<hr>
+	<div class="colorbox-wrapper colorbox__4">
+
 		<div class="colorbox colorbox__colour-Text">
-			<span>colour-Text</span>
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Text</span>
 			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
 			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
 			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
@@ -179,7 +264,17 @@
 		</div>
 
 		<div class="colorbox colorbox__colour-Link">
-			<span>colour-Link</span>
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Link</span>
 			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
 			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
 			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
@@ -193,7 +288,17 @@
 		</div>
 
 		<div class="colorbox colorbox__colour-Alpha">
-			<span>colour-Alpha</span>
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Alpha</span>
 			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
 			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
 			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
@@ -207,7 +312,219 @@
 		</div>
 
 		<div class="colorbox colorbox__colour-Beta">
-			<span>colour-Beta</span>
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Beta</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+	</div>
+
+	<hr>
+	<h2>secondary colors</h2>
+
+	<div class="colorbox-wrapper colorbox__4">
+		<div class="colorbox colorbox__colour-secondary-A">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">secondary-A</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+
+		<div class="colorbox colorbox__colour-secondary-B">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">secondary-B</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+
+		<div class="colorbox colorbox__colour-secondary-C">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">secondary-C</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+
+		<div class="colorbox colorbox__colour-secondary-D">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">secondary-D</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+	</div>
+
+	<hr>
+	<h2>notification colours</h2>
+
+	<div class="colorbox-wrapper colorbox__4">
+		<div class="colorbox colorbox__colour-Error">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">colour-Error</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+
+		<div class="colorbox colorbox__colour-Success">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">colour-Success</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+
+		<div class="colorbox colorbox__colour-Warning">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">colour-Warning</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+
+		<div class="colorbox colorbox__colour-Info">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">colour-Info</span>
 			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
 			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
 			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>

@@ -1,0 +1,117 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// direction-links module
+// Use direction links to link up and down within the DOM or back to a parent page.
+//
+// Content:
+// - Direction link base style and the up|down|left|right variations
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// HEADINGS/DISPLAY STYLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Direction link base styling
+ *
+ * Everyone needs Konami code style links, right? (:
+ */
+.uikit-direction-link {
+	display: inline-block;
+	color: $uikit-colour-Text;
+
+	&:after { //defaults to --right
+		content: ' ';
+		display: inline-block;
+		width: 0.5em;
+		height: 0.9em;
+		margin: 0 uikit-space( 0.1 ) -2px uikit-space( 0.25 );
+		background: uikit-svguri('<svg viewBox="98 30 256 512" xmlns="http://www.w3.org/2000/svg">
+			<path fill="#{ $uikit-colour-Text }" d="M354,286L98,542V414l128-128L98,158V30L354,286z"></path>
+			</svg>');
+		background-repeat: no-repeat;
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			content: '→';
+			width: auto;
+			height: auto;
+		}
+	}
+}
+
+/**
+ * LEFT
+ */
+.uikit-direction-link--left {
+	&:after {
+		display: none;
+	}
+
+	&:before {
+		content: ' ';
+		display: inline-block;
+		width: 0.5em;
+		height: 0.9em;
+		margin: 0 uikit-space( 0.25 ) -2px uikit-space( 0.1 );
+		background: uikit-svguri('<svg viewBox="98 30 256 512" xmlns="http://www.w3.org/2000/svg">
+			<path fill="#{ $uikit-colour-Text }" d="M98,286L354,30v128L226,286l128,128v128L98,286z"></path>
+			</svg>') no-repeat;
+		background-repeat: no-repeat;
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		&:before {
+			content: '←';
+			width: auto;
+			height: auto;
+		}
+	}
+}
+
+/**
+ * UP
+ */
+.uikit-direction-link--up {
+	&:after {
+		width: 0.9em;
+		height: 0.5em;
+		margin-bottom: 2px;
+		background-image: uikit-svguri('<svg viewBox="-30 158 512 256" xmlns="http://www.w3.org/2000/svg">
+			<path fill="#{ $uikit-colour-Text }" d="M226,158l256,256H354L226,286L98,414H-30L226,158z"></path>
+			</svg>');
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			content: '↑';
+		}
+	}
+}
+
+/**
+ * DOWN
+ */
+.uikit-direction-link--down {
+	&:after {
+		width: 0.9em;
+		height: 0.5em;
+		margin-bottom: -2px;
+		background-image: uikit-svguri('<svg viewBox="-30 158 512 256" xmlns="http://www.w3.org/2000/svg">
+			<path fill="#{ $uikit-colour-Text }" d="M226,414L-30,158H98l128,128l128-128h128L226,414z"></path>
+			</svg>');
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			content: '↓';
+		}
+	}
+}

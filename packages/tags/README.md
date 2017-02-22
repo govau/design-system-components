@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -20,7 +21,25 @@
 
 
 ```shell
+yarn add @gov.au/tags
+```
+
+```shell
 npm install @gov.au/tags --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+tags
+└─ core
 ```
 
 
@@ -40,6 +59,8 @@ npm install @gov.au/tags --save-dev
 
 
 ## Tests
+
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/
 
 
 **[⬆ back to top](#content)**

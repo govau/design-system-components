@@ -20,13 +20,20 @@
 .uikit-callout {
 	margin: uikit-space( 1 ) uikit-space( 0.25 );
 	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
-	border-left: uikit-space( 0.25 ) solid $uikit-colour-Link;
-	border-radius: 1px;
+	border-left: 6px solid $uikit-colour-Info;
+	border-radius: $uikit-border-radius;
 	box-shadow: 0 0 8px $uikit-box-shadow-colour;
 	max-width: $uikit-maxwidth;
 
 	p:last-child {
 		margin-bottom: 0;
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		border-top: $uikit-borderize;
+		border-right: $uikit-borderize;
+		border-bottom: $uikit-borderize;
 	}
 }
 
@@ -35,8 +42,15 @@
  * The calendar event callout
  */
 .uikit-callout--calendar-event {
-	border-left-color: $uikit-colour-Hero;
-	background-color: $uikit-colour-Hero-10;
+	border-left-color: $uikit-colour-Primary;
+	background-color: $uikit-colour-Primary-10;
+
+	.ie8 &,
+	.lt-ie8 & {
+		border-top: none;
+		border-right: none;
+		border-bottom: none;
+	}
 }
 
 .uikit-callout--calendar-event__lede,

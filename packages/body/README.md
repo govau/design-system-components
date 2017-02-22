@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -20,7 +21,25 @@
 
 
 ```shell
+yarn add @gov.au/body
+```
+
+```shell
 npm install @gov.au/body --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+body
+└─ core
 ```
 
 
@@ -40,6 +59,8 @@ npm install @gov.au/body --save-dev
 
 
 ## Tests
+
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/body/tests/site/
 
 
 **[⬆ back to top](#content)**

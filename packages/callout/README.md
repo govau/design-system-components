@@ -7,6 +7,7 @@
 ## Content
 
 * [Install](#install)
+* [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
@@ -20,7 +21,27 @@
 
 
 ```shell
+yarn add @gov.au/callout
+```
+
+```shell
 npm install @gov.au/callout --save-dev
+```
+
+
+**[⬆ back to top](#content)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Dependency graph
+
+```shell
+callout
+├─ core
+└─ body
+   └─ core
 ```
 
 
@@ -40,6 +61,8 @@ npm install @gov.au/callout --save-dev
 
 
 ## Tests
+
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/
 
 
 **[⬆ back to top](#content)**
