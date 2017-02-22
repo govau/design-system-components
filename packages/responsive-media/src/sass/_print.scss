@@ -1,11 +1,11 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// responsive-media module
+// Caters for video/slideshow dimensions and aspect ratios across various viewports/widths
 //
 // Content:
-// - sass-versioning
-// - globals
+// - print styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+@media print {
+}

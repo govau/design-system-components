@@ -1,11 +1,14 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// Tags module
+// Use tags to apply a taxonomy and link to similar content.
 //
 // Content:
-// - sass-versioning
-// - globals
+// - print styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+@media print {
+	.uikit-tags__item {
+		border-color: #000 !important;
+	}
+}

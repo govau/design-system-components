@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// text-inputs module
+// Text-inputs module
 // Single and multi-line text inputs.
 //
 // Content:
@@ -15,6 +15,7 @@
 
 
 @import '_globals.scss';
+@import '_print.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,7 +46,6 @@
 .uikit-text-input {
 	border: 2px solid $uikit-colour-Border-40;
 	padding: uikit-space( 0.25 );
-	outline-offset: 0;
 	font-size: 16px;
 	font-family: $uikit-font-system;
 	color: $uikit-colour-Text;
@@ -66,14 +66,12 @@
 		cursor: not-allowed;
 		background: $uikit-colour-Background-20;
 		border-color: transparent;
-		outline: 2px solid $uikit-colour-Border-50;
 	}
 
 	&[disabled] {
 		cursor: not-allowed;
 		background: $uikit-colour-Background-20;
 		border-color: transparent;
-		outline: 2px solid $uikit-colour-Border-50;
 	}
 }
 

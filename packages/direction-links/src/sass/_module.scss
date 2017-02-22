@@ -8,28 +8,26 @@
 
 
 @import '_globals.scss';
+@import '_print.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// HEADINGS/DISPLAY STYLES
+// Direction links default to pointing right
+//
+// Everyone needs Konami code style links, right? (:
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-/**
- * Direction link base styling
- *
- * Everyone needs Konami code style links, right? (:
- */
 .uikit-direction-link {
 	display: inline-block;
 	color: $uikit-colour-Text;
 
-	&:after { //defaults to --right
+	&:after {
 		content: ' ';
 		display: inline-block;
-		width: 0.5em;
-		height: 0.9em;
-		margin: 0 uikit-space( 0.1 ) -2px uikit-space( 0.25 );
-		background: uikit-svguri('<svg viewBox="98 30 256 512" xmlns="http://www.w3.org/2000/svg">
-			<path fill="#{ $uikit-colour-Text }" d="M354,286L98,542V414l128-128L98,158V30L354,286z"></path>
+		width: 0.8em;
+		height: 0.8em;
+		margin: 0 uikit-space( 0.1 ) -1px uikit-space( 0.25 );
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $uikit-colour-Text }" d="M128 64l-64 57V8"/><path fill="#{ $uikit-colour-Text }" fill-rule="nonzero" d="M8 48h64v32H8z"/>
 			</svg>');
 		background-repeat: no-repeat;
 	}
@@ -55,12 +53,12 @@
 	&:before {
 		content: ' ';
 		display: inline-block;
-		width: 0.5em;
-		height: 0.9em;
-		margin: 0 uikit-space( 0.25 ) -2px uikit-space( 0.1 );
-		background: uikit-svguri('<svg viewBox="98 30 256 512" xmlns="http://www.w3.org/2000/svg">
-			<path fill="#{ $uikit-colour-Text }" d="M98,286L354,30v128L226,286l128,128v128L98,286z"></path>
-			</svg>') no-repeat;
+		width: 0.8em;
+		height: 0.8em;
+		margin: 0 uikit-space( 0.25 ) -1px uikit-space( 0.1 );
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $uikit-colour-Text }" d="M0 64l64 57V8"/><path fill="#{ $uikit-colour-Text }" fill-rule="nonzero" d="M120 48H56v32h64z"/>
+			</svg>');
 		background-repeat: no-repeat;
 	}
 
@@ -79,11 +77,8 @@
  */
 .uikit-direction-link--up {
 	&:after {
-		width: 0.9em;
-		height: 0.5em;
-		margin-bottom: 2px;
-		background-image: uikit-svguri('<svg viewBox="-30 158 512 256" xmlns="http://www.w3.org/2000/svg">
-			<path fill="#{ $uikit-colour-Text }" d="M226,158l256,256H354L226,286L98,414H-30L226,158z"></path>
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $uikit-colour-Text }" d="M64 0l57 64H8"/><path fill="#{ $uikit-colour-Text }" fill-rule="nonzero" d="M48 120V56h32v64z"/>
 			</svg>');
 	}
 
@@ -100,11 +95,8 @@
  */
 .uikit-direction-link--down {
 	&:after {
-		width: 0.9em;
-		height: 0.5em;
-		margin-bottom: -2px;
-		background-image: uikit-svguri('<svg viewBox="-30 158 512 256" xmlns="http://www.w3.org/2000/svg">
-			<path fill="#{ $uikit-colour-Text }" d="M226,414L-30,158H98l128,128l128-128h128L226,414z"></path>
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $uikit-colour-Text }" d="M64 128l57-64H8"/><path fill="#{ $uikit-colour-Text }" fill-rule="nonzero" d="M48 8v64h32V8z"/>
 			</svg>');
 	}
 

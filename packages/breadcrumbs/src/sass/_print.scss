@@ -1,11 +1,14 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// Breadcrumbs module
+// Breadcrumbs help users understand where they are in the service and how they got there.
 //
 // Content:
-// - sass-versioning
-// - globals
+// - print styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+@media print {
+	.uikit-breadcrumbs > .uikit-link-list > li:after {
+		border-color: #000 !important;
+	}
+}

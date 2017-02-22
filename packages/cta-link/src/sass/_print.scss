@@ -1,11 +1,16 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// cta-link module
+// Use cta links to draw attention to a primary call to action
 //
 // Content:
-// - sass-versioning
-// - globals
+// - print styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+@media print {
+	.uikit-cta-link:after {
+		content: ' > ' !important;
+		border: none !important;
+		transform: rotate( 0deg ) !important;
+	}
+}

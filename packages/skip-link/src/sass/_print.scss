@@ -1,11 +1,14 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// skip-link module
+// Provide skip links to navigation and content.
 //
 // Content:
-// - sass-versioning
-// - globals
+// - print styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+@media print {
+	.uikit-skip-link__link {
+		background: #fff !important;
+	}
+}

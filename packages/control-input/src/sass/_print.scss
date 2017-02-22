@@ -1,11 +1,14 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Core module
+// control-input module
+// Control inputs include radio buttons and checkboxes. They allow users to select one or more options.
 //
 // Content:
-// - sass-versioning
-// - globals
+// - print styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+@media print {
+	.uikit-control-input__text:after {
+		display: none !important;
+	}
+}
