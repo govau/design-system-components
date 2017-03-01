@@ -22,7 +22,7 @@
 		"info"
 	],
 	"scripts": {
-		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
+		"postinstall": "pancake",
 
 		"prepublish": "node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
