@@ -62,7 +62,7 @@ npm install @gov.au/page-alerts --save-dev
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/packages/page-alerts/LICENSE).
 
 
 **[⬆ back to top](#contents)**

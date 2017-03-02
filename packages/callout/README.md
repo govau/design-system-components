@@ -85,7 +85,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/callout/tests
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/packages/callout/LICENSE).
 
 
 **[⬆ back to top](#contents)**

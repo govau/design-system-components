@@ -87,7 +87,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/keyword-list/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/packages/keyword-list/LICENSE).
 
 
 **[⬆ back to top](#contents)**

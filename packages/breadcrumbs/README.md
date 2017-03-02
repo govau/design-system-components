@@ -86,7 +86,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/t
 
 ## License
 
-Copyright (c) Commonwealth of Australia. Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Copyright (c) Commonwealth of Australia. Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/packages/breadcrumbs/LICENSE).
 
 
 **[⬆ back to top](#contents)**
