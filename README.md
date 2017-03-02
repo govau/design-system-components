@@ -1,21 +1,17 @@
-gov.au UI-Kit
+GOV.AU UI-Kit
 =============
 
-> The UI-Kit for the Australian Government.
+GOV.AU UI-Kit is a CSS and JS framework for Australian Government websites.
 
+## Contents
 
-## Content
-
-* [Modules](#modules)
+* [Modules & visual tests](#modules)
 * [Build](#build)
-* [Tests](#tests)
 * [License](#license)
-
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-## Modules
+## Modules & visual tests
 
 - [body](http://uikit.apps.staging.digital.gov.au/packages/body/tests/site/)
 - [breadcrumbs](http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/)
@@ -38,54 +34,52 @@ gov.au UI-Kit
 - [tags](http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/)
 - [text-inputs](http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/)
 
-
 **[⬆ back to top](#content)**
 
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 ## Build
 
-To build the UI-Kit you have to install [lerna](https://github.com/lerna/lerna) globally and run.
+Clone the UI-Kit project:
 
 ```shell
-yarn
-lerna init
-lerna bootstrap
+$ git clone https://github.com/govau/uikit.git
 ```
 
-To add a new module run the scaffolding helper:
+If you haven't already,
+[install Yarn](https://yarnpkg.com/en/docs/instal).
+
+Install [lerna](https://github.com/lerna/lerna) globally.
+
+Run lerna from your UI-KIt clone:
 
 ```shell
-npm run scaffolding
+$ cd uikit
+$ yarn
+$ lerna init
+$ lerna bootstrap
 ```
 
-_After the you filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
+### Add a module
 
+Run the scaffolding helper:
+
+```shell
+$ npm run scaffolding
+```
+
+Respond to the prompts to add dependencies to the package.json file.
+
+Run `lerna bootstrap` again.
 
 **[⬆ back to top](#content)**
 
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-## Tests
-
-Visual tests have been build into each module and can be seen in either the `README.md` files of each module or in the [listing above](#modules).
-
-
-**[⬆ back to top](#content)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/master/LICENSE).
-
+Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/LICENSE).
 
 **[⬆ back to top](#content)**
 
