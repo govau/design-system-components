@@ -12,6 +12,7 @@
 //   - colours
 //   - border styles and vars
 // - mixins
+//   - uikit-clearfix
 //   - uikit-media
 //   - uikit-sronly
 // - functions
@@ -480,6 +481,21 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL MIXINS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Clearing floats
+ */
+@mixin uikit-clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
 /**
  * Create media queries and wraps the @content code inside of it
  *

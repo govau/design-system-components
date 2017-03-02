@@ -15,29 +15,29 @@
 // Implementation of the Bootstrap 3 grid
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-grid {
-	* {
-		box-sizing: border-box;
-	}
-	*:before,
-	*:after {
-		box-sizing: border-box;
-	}
-
+	//create container that snaps to breakpoints
 	.container {
+		box-sizing: border-box;
+
 		@include uikit-media( sm ) {
 			width: ( $uikit-media-sm - $uikit-grid-12-gutter-width );
 		}
+
 		@include uikit-media( md ) {
 			width: ( $uikit-media-md - $uikit-grid-12-gutter-width );
 		}
+
 		@include uikit-media( lg ) {
 			width: ( $uikit-media-lg - $uikit-grid-12-gutter-width );
 		}
 	}
 
+	//create both containers
 	.container,
 	.container-fluid {
-		@include uikit-grid-12-clearfix;
+		box-sizing: border-box;
+
+		@include uikit-clearfix;
 
 		margin-right: auto;
 		margin-left: auto;
@@ -45,26 +45,32 @@
 		padding-right: ceil( ( $uikit-grid-12-gutter-width / 2 ) );
 	}
 
+	//create row and clear floats inside
 	.row {
-		@include uikit-grid-12-clearfix;
+		@include uikit-clearfix;
 
 		margin-left: ceil( ( $uikit-grid-12-gutter-width / -2 ) );
 		margin-right: floor( ( $uikit-grid-12-gutter-width / -2 ) );
 	}
 
-
+	//create all classes
 	@include uikit-grid-12-make-grid-columns;
 
+
+	//create xs classes
 	@include uikit-grid-12-make-grid( xs );
 
+	//create sm classes
 	@include uikit-media( sm ) {
 		@include uikit-grid-12-make-grid( sm );
 	}
 
+	//create md classes
 	@include uikit-media( md ) {
 		@include uikit-grid-12-make-grid( md );
 	}
 
+	//create lg classes
 	@include uikit-media( lg ) {
 		@include uikit-grid-12-make-grid( lg );
 	}

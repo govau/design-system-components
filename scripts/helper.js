@@ -292,6 +292,7 @@ HELPER.compile = (() => {
 		const compiled = Sass.renderSync({
 			file: scss,
 			indentType: 'tab',
+			precision: 8,
 			includePaths: [ './lib/sass/' ],
 			outputStyle: 'compressed',
 		});
