@@ -4,7 +4,7 @@
 > Use page alerts to notify users of important information and state changes to the page.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Build](#build)
@@ -24,7 +24,7 @@ npm install @gov.au/page-alerts --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ npm install @gov.au/page-alerts --save-dev
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ npm install @gov.au/page-alerts --save-dev
 ## Tests
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ npm install @gov.au/page-alerts --save-dev
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -62,9 +62,9 @@ npm install @gov.au/page-alerts --save-dev
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };
