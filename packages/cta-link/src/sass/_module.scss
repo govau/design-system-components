@@ -8,6 +8,7 @@
 
 
 @import '_globals.scss';
+@import '_print.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -27,13 +28,20 @@
 	&:after {
 		content: ' ';
 		display: inline-block;
-		width: 0.4em;
-		height: 0.4em;
-		margin: 0 uikit-space( 0.25 ) 2px uikit-space( 0.25 );
-		border-top: 3px solid $uikit-colour-Beta-80;
-		border-right: 3px solid $uikit-colour-Beta-80;
-		transform: rotate( 45deg );
+		width: 0.8em;
+		height: 0.8em;
+		margin: 0 uikit-space( 0.25 ) 0 uikit-space( 0.25 );
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $uikit-colour-Beta-80 }" d="M128 64l-64 64-16-16 64-64"/>
+				<path fill="#{ $uikit-colour-Beta-80 }" d="M128 64l-16 16-64-64L64 0"/>
+			</svg>');
 		transition: margin 0.1s ease-in;
+
+		.ie8 &,
+		.lt-ie8 & {
+			content: ' > ';
+			border: none;
+		}
 	}
 
 	&:hover,
@@ -41,7 +49,7 @@
 		color: $uikit-colour-Text; //sets the hover back to what it used to be.
 
 		&:after {
-			margin: 0 uikit-space( 0.1 ) 2px uikit-space( 0.4 );
+			margin: 0 uikit-space( 0.1 ) 0 uikit-space( 0.4 );
 		}
 	}
 }

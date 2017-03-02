@@ -19,9 +19,12 @@ gov.au UI-Kit
 
 - [body](http://uikit.apps.staging.digital.gov.au/packages/body/tests/site/)
 - [breadcrumbs](http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/)
+- [buttons](http://uikit.apps.staging.digital.gov.au/packages/buttons/tests/site/)
 - [callout](http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/)
+- [control-input](http://uikit.apps.staging.digital.gov.au/packages/control-input/tests/site/)
 - [core](http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/)
 - [cta-link](http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/)
+- [direction-links](http://uikit.apps.staging.digital.gov.au/packages/direction-links/tests/site/)
 - [footer](http://uikit.apps.staging.digital.gov.au/packages/footer/tests/site/)
 - [grid-12](http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests/site/)
 - [header](http://uikit.apps.staging.digital.gov.au/packages/header/tests/site/)
@@ -33,6 +36,7 @@ gov.au UI-Kit
 - [responsive-media](http://uikit.apps.staging.digital.gov.au/packages/responsive-media/tests/site/)
 - [skip-link](http://uikit.apps.staging.digital.gov.au/packages/skip-link/tests/site/)
 - [tags](http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/)
+- [text-inputs](http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/)
 
 
 **[⬆ back to top](#content)**

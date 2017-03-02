@@ -1,0 +1,20 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// page-alerts module
+// Use page alerts to notify users of important information and state changes to the page.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.uikit-page-alerts {
+		border-color: #000 !important;
+		background-color: #fff !important;
+		border-left: 2px solid #000 !important;
+	}
+
+	.uikit-page-alerts__icon {
+		display: none !important;
+	}
+}

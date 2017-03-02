@@ -5,6 +5,8 @@
 	"keywords": [
 		"uikit",
 		"pancake-module",
+		"pancake-sass",
+		"pancake-sass-versioning",
 		"scss",
 		"css",
 		"gov.au",
@@ -17,7 +19,7 @@
 		"date event"
 	],
 	"scripts": {
-		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
+		"postinstall": "pancake",
 
 		"prepublish": "node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",

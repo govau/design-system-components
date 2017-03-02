@@ -1,0 +1,20 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Buttons module
+// Buttons signal action. Use them to move the user through the service.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.uikit-btn {
+		background-color: #fff !important;
+		border: 2px solid #000 !important;
+		color: #000 !important;
+
+		&:disabled {
+			background-color: #ccc !important;
+		}
+	}
+}

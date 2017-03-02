@@ -1,0 +1,23 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Text-inputs module
+// Single and multi-line text inputs.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.uikit-text-input {
+		border-color: #000 !important;
+	}
+
+	&:disabled {
+		background-color: #ccc !important;
+		border-color: transparent;
+	}
+
+	&[disabled] {
+		background-color: #ccc !important;
+	}
+}
