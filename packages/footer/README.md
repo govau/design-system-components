@@ -4,7 +4,7 @@
 > Footers help users who reach the bottom of a page without finding what they want.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/footer --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ footer
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ footer
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ footer
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/footer/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/footer/tests/
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,9 +83,9 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/footer/tests/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/packages/footer/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

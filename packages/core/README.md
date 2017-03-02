@@ -4,7 +4,7 @@
 > The core module all [gov.au UI-Kit modules](https://github.com/govau/uikit/) depend on.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/core --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ core
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ core
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ core
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/core/tests/si
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -82,9 +82,9 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/core/tests/si
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/packages/core/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

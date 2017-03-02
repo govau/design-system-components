@@ -4,7 +4,7 @@
 > Use tags to apply a taxonomy and link to similar content.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/tags --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ tags
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ tags
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ tags
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/tags/tests/si
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,9 +83,9 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/tags/tests/si
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/packages/tags/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

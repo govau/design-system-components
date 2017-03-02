@@ -1,10 +1,10 @@
 @gov.au/breadcrumbs
 ============
 
-> Breadcrumbs help users understand where they are in the service and how they got there.
+Breadcrumbs help users understand where they are in the service and how they got there.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/breadcrumbs --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ breadcrumbs
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ breadcrumbs
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,7 +67,7 @@ breadcrumbs
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/t
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,10 +86,9 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/t
 
 ## License
 
-Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Copyright (c) Commonwealth of Australia. Licensed under [MIT license](https://raw.githubusercontent.com/govau/uikit/master/packages/breadcrumbs/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };
