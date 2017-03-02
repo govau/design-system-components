@@ -43,7 +43,7 @@ GOV.AU UI-Kit is a CSS and JS framework for Australian Government websites.
 Clone the UI-Kit project:
 
 ```shell
-$ git clone https://github.com/govau/uikit.git
+git clone https://github.com/govau/uikit.git
 ```
 
 If you haven't already,
@@ -54,10 +54,10 @@ Install [lerna](https://github.com/lerna/lerna) globally.
 Run lerna from your UI-KIt clone:
 
 ```shell
-$ cd uikit
-$ yarn
-$ lerna init
-$ lerna bootstrap
+cd uikit
+yarn
+lerna init
+lerna bootstrap
 ```
 
 ### Add a module
@@ -65,7 +65,7 @@ $ lerna bootstrap
 Run the scaffolding helper:
 
 ```shell
-$ npm run scaffolding
+npm run scaffolding
 ```
 
 Respond to the prompts to add dependencies to the package.json file.
