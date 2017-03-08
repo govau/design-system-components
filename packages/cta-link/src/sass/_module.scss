@@ -49,7 +49,7 @@
 		color: $uikit-colour-Text; //sets the hover back to what it used to be.
 
 		&:after {
-			margin: 0 uikit-space( 0.1 ) 0 uikit-space( 0.4 );
+			margin: 0 uikit-space( 0.1 ) 0 uikit-space( 0.4 ); //move arrow by just uikit-space( 0.1 ); this is not a magic number …
 		}
 	}
 }
