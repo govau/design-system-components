@@ -39,9 +39,7 @@ npm install @gov.au/header --save-dev
 
 ```shell
 header
-├─ core
-└─ body
-   └─ core
+└─ core
 ```
 
 
