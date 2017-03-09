@@ -43,6 +43,10 @@
 		background-color: $uikit-colour-Background-20;
 		color: $uikit-colour-Text-90;
 	}
+
+	&.uikit-header--dark {
+		background-color: $uikit-colour-Primary;
+	}
 }
 
 .uikit-header-heading {
