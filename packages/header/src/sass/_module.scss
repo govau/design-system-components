@@ -11,6 +11,7 @@
 
 
 @import '_globals.scss';
+@import '_print.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -20,54 +21,51 @@
  * Basic header block styling.
  */
 .uikit-header {
-	padding: uikit-space( 0.5 ) uikit-space( 1 ) uikit-space( 1 );
-	background-image: linear-gradient(to top, #f0f3f5, #fff);
-	border-bottom: 6px $uikit-colour-Border-40 solid;
+	font-family: $uikit-font-system;
+	color: #fff;
+	background: $uikit-colour-Secondary;
+	padding: uikit-space( 1 ) uikit-space( 0.5 ) uikit-space( 1.25 ) uikit-space( 0.75 );
 	margin-bottom: uikit-space( 1 );
-}
 
+	&.uikit-header--hero {
+		padding: uikit-space( 2 ) uikit-space( 0.5 ) uikit-space( 2.5 ) uikit-space( 0.75 );
+	}
 
-/**
- * Logo container styling -- indented to be an anchor back to the homepage.
- */
-.uikit-header__logo {
-	.uikit-body & {
-		border-bottom: none;
+	@include uikit-media( sm ) {
+		padding: uikit-space( 2 ) uikit-space( 1 ) uikit-space( 3 ) uikit-space( 4 );
 
-		&:hover,
-		&:focus {
-			background-color: transparent;
+		&.uikit-header--hero {
+			padding: uikit-space( 4.5 ) uikit-space( 1 ) uikit-space( 8.5 ) uikit-space( 4 );
 		}
 	}
-}
 
+	&.uikit-header--light {
+		background-color: $uikit-colour-Background-20;
+		color: $uikit-colour-Text-90;
+	}
 
-/**
- * Logomark styling.
- */
-.uikit-header__logo__mark {
-	display: inline-block;
-
-	&:hover,
-	&:focus {
-		background-color: transparent;
+	&.uikit-header--dark {
+		background-color: $uikit-colour-Primary;
 	}
 }
 
-/**
- * Logotype styling.
- */
-.uikit-header__logo__type {
-	display: inline-block;
-	position: absolute;
-	margin-left: uikit-space( 0.5 );
-	-webkit-text-decoration-skip: objects;
-	color: $uikit-colour-Text;
-	text-decoration: none;
-	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
+.uikit-header-heading {
+	font-size: 20px;
+	line-height: $uikit-leading;
+	margin: 0;
+	padding: 0;
 
-	&:hover,
-	&:focus {
-		background-color: $uikit-colour-Link;
+	@include uikit-media( sm ) {
+		font-size: 36px;
+	}
+}
+
+.uikit-header-subline {
+	font-size: 18px;
+	line-height: $uikit-leading;
+	max-width: $uikit-maxwidth;
+
+	@include uikit-media( sm ) {
+		font-size: 20px;
 	}
 }

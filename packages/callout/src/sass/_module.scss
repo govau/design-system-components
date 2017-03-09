@@ -9,6 +9,7 @@
 
 
 @import '_globals.scss';
+@import '_print.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,5 +78,5 @@
 
 .uikit-callout--calendar-event__time {
 	font-weight: bold;
-	margin-bottom: uikit-space( 0 );
+	margin-bottom: 0;
 }

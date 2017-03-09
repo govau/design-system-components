@@ -4,7 +4,9 @@
 	"description": "Provide skip links to navigation and content.",
 	"keywords": [
 		"uikit",
-		"uikit-module",
+		"pancake",
+		"pancake-module",
+		"sass",
 		"scss",
 		"css",
 		"gov.au",
@@ -17,7 +19,7 @@
 		"accessibility"
 	],
 	"scripts": {
-		"postinstall": "pancake batter \"$(cd .. && npm prefix)\" -v",
+		"postinstall": "pancake",
 
 		"prepublish": "node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
@@ -25,8 +27,20 @@
 		"serve": "browser-sync start --server --startPath 'tests/site' --files 'tests/site/*.html, tests/site/*.css, tests/site/*.js'",
 		"watch": "npm-run-all --parallel serve watch:*"
 	},
+	"pancake": {
+		"pancake-module": {
+			"version": "1.0.0",
+			"plugins": [
+				"@gov.au/pancake-sass"
+			],
+			"sass": {
+				"path": "lib/sass/_module.scss",
+				"sass-versioning": true
+			}
+		}
+	},
 	"dependencies": {
-		"@gov.au/pancake": "latest",
+		"@gov.au/pancake": "~1",
 
 		"@gov.au/core": "^0.1.0"
 	},

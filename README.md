@@ -4,7 +4,7 @@ gov.au UI-Kit
 > The UI-Kit for the Australian Government.
 
 
-## Content
+## Contents
 
 * [Modules](#modules)
 * [Build](#build)
@@ -19,9 +19,12 @@ gov.au UI-Kit
 
 - [body](http://uikit.apps.staging.digital.gov.au/packages/body/tests/site/)
 - [breadcrumbs](http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/)
+- [buttons](http://uikit.apps.staging.digital.gov.au/packages/buttons/tests/site/)
 - [callout](http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/)
+- [control-input](http://uikit.apps.staging.digital.gov.au/packages/control-input/tests/site/)
 - [core](http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/)
 - [cta-link](http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/)
+- [direction-links](http://uikit.apps.staging.digital.gov.au/packages/direction-links/tests/site/)
 - [footer](http://uikit.apps.staging.digital.gov.au/packages/footer/tests/site/)
 - [grid-12](http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests/site/)
 - [header](http://uikit.apps.staging.digital.gov.au/packages/header/tests/site/)
@@ -33,9 +36,10 @@ gov.au UI-Kit
 - [responsive-media](http://uikit.apps.staging.digital.gov.au/packages/responsive-media/tests/site/)
 - [skip-link](http://uikit.apps.staging.digital.gov.au/packages/skip-link/tests/site/)
 - [tags](http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/)
+- [text-inputs](http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/)
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -60,7 +64,7 @@ npm run scaffolding
 _After the you filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -71,7 +75,7 @@ _After the you filled out all the blanks and added your dependencies into your p
 Visual tests have been build into each module and can be seen in either the `README.md` files of each module or in the [listing above](#modules).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -83,6 +87,6 @@ Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/master/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

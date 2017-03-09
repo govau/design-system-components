@@ -9,6 +9,7 @@
 
 
 @import '_globals.scss';
+@import '_print.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -33,12 +34,13 @@
 			&:after {
 				content: ' ';
 				display: inline-block;
-				width: 0.4em;
-				height: 0.4em;
+				width: 0.8em;
+				height: 0.8em;
 				margin: 0 uikit-space( 0.5 );
-				border-top: 2px solid $uikit-colour-Border;
-				border-right: 2px solid $uikit-colour-Border;
-				transform: rotate( 45deg );
+				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $uikit-colour-Border }" d="M128 64l-64 64-16-16 64-64"/>
+						<path fill="#{ $uikit-colour-Border }" d="M128 64l-16 16-64-64L64 0"/>
+					</svg>');
 			}
 
 			&:last-child:after {
@@ -51,7 +53,6 @@
 					content: ' > ';
 					display: inline-block;
 					border: none;
-
 				}
 			}
 		}
@@ -62,7 +63,10 @@
 
 		> .uikit-link-list {
 			> li:not(:last-child):after {
-				border-color: invert( $uikit-colour-Border );
+				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ invert( $uikit-colour-Border ) }" d="M128 64l-64 64-16-16 64-64"/>
+						<path fill="#{ invert( $uikit-colour-Border ) }" d="M128 64l-16 16-64-64L64 0"/>
+					</svg>');
 			}
 		}
 	}

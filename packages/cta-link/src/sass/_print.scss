@@ -1,0 +1,16 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// cta-link module
+// Use cta links to draw attention to a primary call to action
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.uikit-cta-link:after {
+		content: ' > ' !important;
+		border: none !important;
+		transform: rotate( 0deg ) !important;
+	}
+}

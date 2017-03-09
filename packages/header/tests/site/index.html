@@ -36,7 +36,7 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="uikit-body">
+<body>
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
@@ -45,34 +45,120 @@
 
 	<h1>Test: header</h1>
 
-	<h2>header</h2>
+	<div class="split-wrapper">
+		<div class="split">
+			<h2>without body</h2>
 
-	<header class="uikit-header" role="banner">
-		<span>Department of Foo</span>
+			<h3>header default</h3>
 
-		<h1>Page title</h1>
-	</header>
+			<header class="uikit-header" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+			</header>
 
-	<hr>
-	<h2>header with <code>headings</code></h2>
 
-	<header class="uikit-header" role="banner">
-		<span class="uikit-display-5">Department of Foo</span>
+			<h3>header default with subline</h3>
 
-		<h1 class="uikit-display-1">Page title</h1>
-	</header>
+			<header class="uikit-header" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+				<span class="uikit-header-subline">Service sub-title that could be a little longer</span>
+			</header>
 
-	<hr>
-	<h2>header with <code>responsive-embeds</code></h2>
 
-	<header class="uikit-header" role="banner">
-		<a class="uikit-header__logo" href="#">
-			<img class="uikit-header__logo__mark uikit-responsive-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo">
-			<span class="uikit-header__logo__type uikit-display-4">Department of Foo</span>
-		</a>
+			<h3>header <code>--light</code></h3>
 
-		<h1 class="uikit-display-1">Page title</h1>
-	</header>
+			<header class="uikit-header uikit-header--light" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+			</header>
+
+
+			<h3>header <code>--dark</code></h3>
+
+			<header class="uikit-header uikit-header--dark" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+			</header>
+
+
+			<h3>header <code>--hero</code></h3>
+
+			<header class="uikit-header uikit-header--hero" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+				<span class="uikit-header-subline">Service sub-title that could be a little longer</span>
+			</header>
+
+
+			<h3>header <code>--hero</code> <code>--light</code></h3>
+
+			<header class="uikit-header uikit-header--hero uikit-header--light" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+				<span class="uikit-header-subline">Service sub-title that could be a little longer</span>
+			</header>
+
+
+			<h3>header <code>--hero</code> <code>--dark</code></h3>
+
+			<header class="uikit-header uikit-header--hero uikit-header--dark" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+				<span class="uikit-header-subline">Service sub-title that could be a little longer</span>
+			</header>
+
+		</div>
+		<div class="split uikit-body">
+			<h2>with body</h2>
+
+			<h3>header default</h3>
+
+			<header class="uikit-header" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+			</header>
+
+
+			<h3>header default with subline</h3>
+
+			<header class="uikit-header" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+				<span class="uikit-header-subline">Service sub-title that could be a little longer</span>
+			</header>
+
+
+			<h3>header <code>--light</code></h3>
+
+			<header class="uikit-header uikit-header--light" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+			</header>
+
+
+			<h3>header <code>--dark</code></h3>
+
+			<header class="uikit-header uikit-header--dark" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+			</header>
+
+
+			<h3>header <code>--hero</code></h3>
+
+			<header class="uikit-header uikit-header--hero" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+				<span class="uikit-header-subline">Service sub-title that could be a little longer</span>
+			</header>
+
+
+			<h3>header <code>--hero</code> <code>--light</code></h3>
+
+			<header class="uikit-header uikit-header--hero uikit-header--light" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+				<span class="uikit-header-subline">Service sub-title that could be a little longer</span>
+			</header>
+
+
+			<h3>header <code>--hero</code> <code>--dark</code></h3>
+
+			<header class="uikit-header uikit-header--hero uikit-header--dark" role="banner">
+				<h1 class="uikit-header-heading">Page title</h1>
+				<span class="uikit-header-subline">Service sub-title that could be a little longer</span>
+			</header>
+
+		</div>
+	</div>
 
 </body>
 </html>

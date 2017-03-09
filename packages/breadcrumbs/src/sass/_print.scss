@@ -1,0 +1,14 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Breadcrumbs module
+// Breadcrumbs help users understand where they are in the service and how they got there.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.uikit-breadcrumbs > .uikit-link-list > li:after {
+		border-color: #000 !important;
+	}
+}

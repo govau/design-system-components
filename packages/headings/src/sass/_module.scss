@@ -9,6 +9,7 @@
 
 
 @import '_globals.scss';
+@import '_print.scss';
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -29,14 +30,14 @@
 		display: block;
 		line-height: ($uikit-leading * 0.875); //1.4 from 16 (default: core)
 		margin: 0 0 uikit-space( .5, 1 ) 0; //1 unit at the new line-height (1.4 -- 0.7em)
-		font-size: 48 - ( 4 * ( $i + 2 ) ) + 0px;
+		font-size: 16 + ( 4 * ( $i - 1 ) ) + 0px;
 		font-weight: bold;
 	}
 }
 
 
+.uikit-display-2,
 .uikit-display-3,
-.uikit-display-4,
-.uikit-display-5 {
+.uikit-display-4 {
 	font-weight: normal;
 }
