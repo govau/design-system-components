@@ -4,7 +4,7 @@ gov.au UI-Kit
 > The UI-Kit for the Australian Government.
 
 
-## Content
+## Contents
 
 * [Modules](#modules)
 * [Build](#build)
@@ -39,7 +39,7 @@ gov.au UI-Kit
 - [text-inputs](http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/)
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ npm run scaffolding
 _After the you filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -75,7 +75,7 @@ _After the you filled out all the blanks and added your dependencies into your p
 Visual tests have been build into each module and can be seen in either the `README.md` files of each module or in the [listing above](#modules).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -87,6 +87,6 @@ Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/master/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

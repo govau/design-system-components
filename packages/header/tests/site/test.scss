@@ -1,11 +1,8 @@
 //dependencies
 @import '../../../core/lib/sass/_module.scss';
-@import '../../../body/lib/sass/_module.scss';
 
 //testing includes
-@import '../../../headings/lib/sass/_module.scss';
-@import '../../../responsive-media/lib/sass/_module.scss';
-
+@import '../../../body/lib/sass/_module.scss';
 
 //this module
 @import '_module.scss';
@@ -15,3 +12,22 @@
 
 //version check with sass-versioning
 @include versioning-check();
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// split style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.split-wrapper {
+	overflow: hidden;
+}
+
+.split {
+	@include uikit-media( sm ) {
+		width: 49.5%;
+		float: left;
+
+		&:first-child {
+			padding-right: 0.5%;
+		}
+	}
+}
