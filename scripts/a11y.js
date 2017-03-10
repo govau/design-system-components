@@ -11,7 +11,7 @@
 // Dependencies
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const Helper = require('./helper.js')
-const CFonts = require()
+const CFonts = require(`cfonts`)
 const Pa11y = require('pa11y')
 const Chalk = require('chalk')
 const Express = require('express')
