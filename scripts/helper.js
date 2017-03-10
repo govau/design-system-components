@@ -115,6 +115,29 @@ const ReplaceFileContent = ( searchs, fileName ) => {
 	HELPER.log.success(`Replaced file strings inside ${ Chalk.yellow( fileName ) }`);
 };
 
+
+/**
+ * Generate a dependency representation of a module inside an object by calling this function repeatedly
+ *
+ * @param  {string} name - The name of the module
+ *
+ * @return {object}      - An object of the dependency tree
+ */
+const GetDepTree = ( name ) => {
+	let tree = {};
+	const pkgPath = Path.normalize(`${ process.cwd() }/../${ name.substring( 8 ) }/package.json`);
+	const pkg = require( pkgPath, 'utf-8'); //we use require because we like the caching here
+
+	if( Object.keys( pkg.peerDependencies ).length > 0 ) {
+		for( const module of Object.keys( pkg.peerDependencies ) ) {
+			tree[ module.substring( 8 ) ] = GetDepTree( module );
+		}
+	}
+
+	return tree;
+};
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Constructor
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -171,28 +194,6 @@ const Treeify = require('treeify');
 
 
 HELPER.precompile = (() => {
-	/**
-	 * PRIVATE
-	 * Generate a dependency representation of a module inside an object by calling this function repeatedly
-	 *
-	 * @param  {string} name - The name of the module
-	 *
-	 * @return {object}      - An object of the dependency tree
-	 */
-	const GetDepTree = ( name ) => {
-		let tree = {};
-		const pkgPath = Path.normalize(`${ process.cwd() }/../${ name.substring( 8 ) }/package.json`);
-		const pkg = require( pkgPath, 'utf-8'); //we use require because we like the caching here
-
-		if( Object.keys( pkg.peerDependencies ).length > 0 ) {
-			for( const module of Object.keys( pkg.peerDependencies ) ) {
-				tree[ module.substring( 8 ) ] = GetDepTree( module );
-			}
-		}
-
-		return tree;
-	};
-
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // PUBLIC METHODS
@@ -486,7 +487,14 @@ HELPER.generate = (() => {
 
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
+					let tree = Treeify.asTree( GetDepTree(`@gov.au/${ module }`) );
+
+					if( tree === '' ) {
+						tree = '.';
+					}
+
 					list += `- [${ module }](${ HELPER.URL }/packages/${ module }/tests/site/)\n`;
+					list += `\`\`\`\n${ tree }\n\`\`\`\n`;
 				}
 			}
 

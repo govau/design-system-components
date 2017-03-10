@@ -21,6 +21,9 @@
 // Page alert defaults to info
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-page-alerts {
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	line-height: $uikit-leading;
 	position: relative;
 	margin: uikit-space( 1 ) 0;
 	padding: uikit-space( 0.75 ) uikit-space( 0.5 ) uikit-space( 0.75 ) uikit-space( 0.5 );
@@ -28,6 +31,10 @@
 	border-left: 48px solid $uikit-colour-Info;
 	border-radius: $uikit-border-radius;
 	max-width: $uikit-maxwidth;
+
+	:first-child {
+		margin-top: 0;
+	}
 
 	:last-child {
 		margin-bottom: 0;

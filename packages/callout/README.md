@@ -39,9 +39,7 @@ npm install @gov.au/callout --save-dev
 
 ```shell
 callout
-├─ core
-└─ body
-   └─ core
+└─ core
 ```
 
 

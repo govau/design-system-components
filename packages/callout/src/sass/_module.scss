@@ -19,6 +19,9 @@
  * The generic callout.
  */
 .uikit-callout {
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	line-height: $uikit-leading;
 	margin: uikit-space( 1 ) uikit-space( 0.25 );
 	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
 	border-left: 6px solid $uikit-colour-Info;
@@ -26,7 +29,11 @@
 	box-shadow: 0 0 8px $uikit-box-shadow-colour;
 	max-width: $uikit-maxwidth;
 
-	p:last-child {
+	:first-child {
+		margin-top: 0;
+	}
+
+	:last-child {
 		margin-bottom: 0;
 	}
 
