@@ -145,11 +145,11 @@ const HELPER = (() => { //constructor factory
 		log: {
 
 			success: ( text ) => {
-				console.log( Chalk.green(`✅  ${text}`));
+				console.log( Chalk.green(`✔  ${text}`));
 			},
 
 			error: ( text ) => {
-				console.error( Chalk.red(`❎  ${text}`));
+				console.error( Chalk.red(`✘  ${text}`));
 			},
 		},
 	}
@@ -638,6 +638,8 @@ HELPER.init = () => {
 
 HELPER.init();
 
+module.exports = HELPER;
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // EXIT HANDLER
@@ -649,10 +651,6 @@ HELPER.init();
  * @param {object} error   - Object to distinguish between closing events
  */
 function ExitHandler( exiting, error ) {
-	if( error ) {
-		console.error( error.stack );
-	}
-
 	if( exiting.now ) {
 		process.exit( 0 ); //exit now
 	}

@@ -4,9 +4,9 @@
 	"description": "Footers help users who reach the bottom of a page without finding what they want.",
 	"keywords": [
 		"uikit",
+		"pancake",
 		"pancake-module",
-		"pancake-sass",
-		"pancake-sass-versioning",
+		"sass",
 		"scss",
 		"css",
 		"gov.au",
@@ -19,15 +19,27 @@
 	],
 	"scripts": {
 		"postinstall": "pancake",
-
+		"test": "node ../../scripts/a11y.js",
 		"prepublish": "node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
 		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
 		"serve": "browser-sync start --server --startPath 'tests/site' --files 'tests/site/*.html, tests/site/*.css, tests/site/*.js'",
 		"watch": "npm-run-all --parallel serve watch:*"
 	},
+	"pancake": {
+		"pancake-module": {
+			"version": "1.0.0",
+			"plugins": [
+				"@gov.au/pancake-sass"
+			],
+			"sass": {
+				"path": "lib/sass/_module.scss",
+				"sass-versioning": true
+			}
+		}
+	},
 	"dependencies": {
-		"@gov.au/pancake": "latest",
+		"@gov.au/pancake": "~1",
 
 		"@gov.au/core": "^0.1.0"
 	},
