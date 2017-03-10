@@ -359,8 +359,32 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // contrast table
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+@mixin check-contrast( $ratio ) {
+	@if( $ratio < 4.5 ) {
+		background-color: rgba( 255, 255, 0, 0.7 );
+		background-image: repeating-linear-gradient(
+			45deg, transparent,
+			transparent 5px,
+			rgba(255,255,255,.5) 5px,
+			rgba(255,255,255,.5) 10px
+		);
+	}
+
+	@if( $ratio < 3 ) {
+		background-color: rgba( 255, 0, 0, 0.7 );
+		color: #fff;
+	}
+
+	content: "#{ $ratio }";
+}
+
 .contrast {
 	width: 100%;
+
+	caption {
+		text-align: left;
+		margin-bottom: 1em;
+	}
 
 	td {
 		width: 13.333333333333%;
@@ -411,22 +435,22 @@ html {
 		color: #fff;
 	}
 	.contrast-box--white:after {
-		content: " #{ uikit-color-contrast( #fff, #fff ) }";
+		@include check-contrast( uikit-color-contrast( #fff, #fff ) );
 	}
 	.contrast-box--background:after {
-		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Background ) }";
+		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Background ) );
 	}
 	.contrast-box--primary:after {
-		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Primary ) }";
+		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
-		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Secondary ) }";
+		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Secondary ) );
 	}
 	.contrast-box--alpha:after {
-		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Alpha ) }";
+		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Alpha ) );
 	}
 	.contrast-box--beta:after {
-		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Beta ) }";
+		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Beta ) );
 	}
 }
 
@@ -435,22 +459,22 @@ html {
 		color: $uikit-colour-Text;
 	}
 	.contrast-box--white:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Text, #fff ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, #fff ) );
 	}
 	.contrast-box--background:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Background ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Background ) );
 	}
 	.contrast-box--primary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Primary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary ) );
 	}
 	.contrast-box--alpha:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Alpha ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Alpha ) );
 	}
 	.contrast-box--beta:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Beta ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Beta ) );
 	}
 }
 
@@ -459,22 +483,22 @@ html {
 		color: $uikit-colour-Primary;
 	}
 	.contrast-box--white:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Primary, #fff ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, #fff ) );
 	}
 	.contrast-box--background:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Background ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Background ) );
 	}
 	.contrast-box--primary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Primary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Secondary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Secondary ) );
 	}
 	.contrast-box--alpha:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Alpha ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Alpha ) );
 	}
 	.contrast-box--beta:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Beta ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Beta ) );
 	}
 }
 
@@ -483,22 +507,22 @@ html {
 		color: $uikit-colour-Secondary;
 	}
 	.contrast-box--white:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, #fff ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, #fff ) );
 	}
 	.contrast-box--background:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Background ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Background ) );
 	}
 	.contrast-box--primary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Primary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Secondary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Secondary ) );
 	}
 	.contrast-box--alpha:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Alpha ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Alpha ) );
 	}
 	.contrast-box--beta:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Beta ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Beta ) );
 	}
 }
 
@@ -507,22 +531,22 @@ html {
 		color: $uikit-colour-Alpha;
 	}
 	.contrast-box--white:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, #fff ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Alpha, #fff ) );
 	}
 	.contrast-box--background:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Background ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Background ) );
 	}
 	.contrast-box--primary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Primary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Secondary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Secondary ) );
 	}
 	.contrast-box--alpha:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Alpha ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Alpha ) );
 	}
 	.contrast-box--beta:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Beta ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Beta ) );
 	}
 }
 
@@ -531,22 +555,22 @@ html {
 		color: $uikit-colour-Beta;
 	}
 	.contrast-box--white:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Beta, #fff ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Beta, #fff ) );
 	}
 	.contrast-box--background:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Background ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Background ) );
 	}
 	.contrast-box--primary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Primary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Secondary ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Secondary ) );
 	}
 	.contrast-box--alpha:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Alpha ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Alpha ) );
 	}
 	.contrast-box--beta:after {
-		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Beta ) }";
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Beta ) );
 	}
 }
 
