@@ -494,7 +494,7 @@ HELPER.generate = (() => {
 					}
 
 					list += `- [${ module }](${ HELPER.URL }/packages/${ module }/tests/site/)\n`;
-					list += `\`\`\`\n${ tree }\n\`\`\`\n`;
+					list += `\`\`\`\n${ tree }\`\`\`\n\n`;
 				}
 			}
 
