@@ -255,6 +255,303 @@ html {
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-replace
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-replace:after {
+	content: uikit-replace('We love spaces for indentation', 'spaces', 'tabs');
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-nth-root
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-nth-root:after {
+	content: " #{ uikit-nth-root( 50, 2 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-gcd
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-gcd:after {
+	content: " #{ uikit-gcd( 3, 9 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-pow
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-pow:after {
+	content: " #{ uikit-pow( 5, 3 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-colour-luminance
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-colour-luminance1:after {
+	content: " #{ uikit-colour-luminance( #000 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-colour-luminance2:after {
+	content: " #{ uikit-colour-luminance( #663399 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-colour-luminance3:after {
+	content: " #{ uikit-colour-luminance( #ff69b4 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-colour-luminance4:after {
+	content: " #{ uikit-colour-luminance( #fff ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function uikit-color-contrast
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-color-contrast1:after {
+	content: " #{ uikit-color-contrast( #fff, #000 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-color-contrast2:after {
+	content: " #{ uikit-color-contrast( #fff, $uikit-colour-Background ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-color-contrast3:after {
+	content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Background ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-color-contrast4:after {
+	content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Background ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-color-contrast5:after {
+	content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Background ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// contrast table
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.contrast {
+	width: 100%;
+
+	td {
+		width: 13.333333333333%;
+	}
+}
+
+.contrast-box {
+	padding: 1em;
+	text-align: center;
+	font-weight: bold;
+
+	&:after {
+		display: block;
+		margin: 0.5em;
+		padding: 1em;
+		background-color: rgba(255, 255, 255, 0.5);
+		color: #000;
+	}
+}
+
+.contrast-box--white {
+	background-color: #fff;
+}
+
+.contrast-box--background {
+	background-color: $uikit-colour-Background;
+}
+
+.contrast-box--primary {
+	background-color: $uikit-colour-Primary;
+}
+
+.contrast-box--secondary {
+	background-color: $uikit-colour-Secondary;
+}
+
+.contrast-box--alpha {
+	background-color: $uikit-colour-Alpha;
+}
+
+.contrast-box--beta {
+	background-color: $uikit-colour-Beta;
+}
+
+
+.contrast-white {
+	.contrast-box {
+		color: #fff;
+	}
+	.contrast-box--white:after {
+		content: " #{ uikit-color-contrast( #fff, #fff ) }";
+	}
+	.contrast-box--background:after {
+		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Background ) }";
+	}
+	.contrast-box--primary:after {
+		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Primary ) }";
+	}
+	.contrast-box--secondary:after {
+		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Secondary ) }";
+	}
+	.contrast-box--alpha:after {
+		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Alpha ) }";
+	}
+	.contrast-box--beta:after {
+		content: " #{ uikit-color-contrast( #fff, $uikit-colour-Beta ) }";
+	}
+}
+
+.contrast-text {
+	.contrast-box {
+		color: $uikit-colour-Text;
+	}
+	.contrast-box--white:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Text, #fff ) }";
+	}
+	.contrast-box--background:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Background ) }";
+	}
+	.contrast-box--primary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Primary ) }";
+	}
+	.contrast-box--secondary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary ) }";
+	}
+	.contrast-box--alpha:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Alpha ) }";
+	}
+	.contrast-box--beta:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Beta ) }";
+	}
+}
+
+.contrast-primary {
+	.contrast-box {
+		color: $uikit-colour-Primary;
+	}
+	.contrast-box--white:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Primary, #fff ) }";
+	}
+	.contrast-box--background:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Background ) }";
+	}
+	.contrast-box--primary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Primary ) }";
+	}
+	.contrast-box--secondary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Secondary ) }";
+	}
+	.contrast-box--alpha:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Alpha ) }";
+	}
+	.contrast-box--beta:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Beta ) }";
+	}
+}
+
+.contrast-secondary {
+	.contrast-box {
+		color: $uikit-colour-Secondary;
+	}
+	.contrast-box--white:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, #fff ) }";
+	}
+	.contrast-box--background:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Background ) }";
+	}
+	.contrast-box--primary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Primary ) }";
+	}
+	.contrast-box--secondary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Secondary ) }";
+	}
+	.contrast-box--alpha:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Alpha ) }";
+	}
+	.contrast-box--beta:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Beta ) }";
+	}
+}
+
+.contrast-alpha {
+	.contrast-box {
+		color: $uikit-colour-Alpha;
+	}
+	.contrast-box--white:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, #fff ) }";
+	}
+	.contrast-box--background:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Background ) }";
+	}
+	.contrast-box--primary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Primary ) }";
+	}
+	.contrast-box--secondary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Secondary ) }";
+	}
+	.contrast-box--alpha:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Alpha ) }";
+	}
+	.contrast-box--beta:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Alpha, $uikit-colour-Beta ) }";
+	}
+}
+
+.contrast-beta {
+	.contrast-box {
+		color: $uikit-colour-Beta;
+	}
+	.contrast-box--white:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Beta, #fff ) }";
+	}
+	.contrast-box--background:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Background ) }";
+	}
+	.contrast-box--primary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Primary ) }";
+	}
+	.contrast-box--secondary:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Secondary ) }";
+	}
+	.contrast-box--alpha:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Alpha ) }";
+	}
+	.contrast-box--beta:after {
+		content: " #{ uikit-color-contrast( $uikit-colour-Beta, $uikit-colour-Beta ) }";
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // color boxes
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .colorbox-wrapper {
