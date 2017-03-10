@@ -43,7 +43,7 @@ const displayResults = results => {
     process.exit(1)
   }
 	else {
-		Heper.log.success('No errors')
+		Helper.log.success('No errors')
   }
 }
 
