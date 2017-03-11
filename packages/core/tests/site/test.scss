@@ -182,8 +182,16 @@ html {
 		background-color: rebeccapurple;
 	}
 
+	&.uikit-space--025:after {
+		width: uikit-space( 0.25 );
+	}
+
 	&.uikit-space--05:after {
 		width: uikit-space( 0.5 );
+	}
+
+	&.uikit-space--075:after {
+		width: uikit-space( 0.75 );
 	}
 
 	&.uikit-space--1:after {
@@ -332,25 +340,25 @@ html {
 }
 
 .uikit-color-contrast2:after {
-	content: " #{ uikit-color-contrast( #fff, $uikit-colour-Background ) }";
+	content: " #{ uikit-color-contrast( #fff, #f00 ) }";
 	display: inline;
 	color: rebeccapurple;
 }
 
 .uikit-color-contrast3:after {
-	content: " #{ uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Background ) }";
+	content: " #{ uikit-color-contrast( #000, #f00 ) }";
 	display: inline;
 	color: rebeccapurple;
 }
 
 .uikit-color-contrast4:after {
-	content: " #{ uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Background ) }";
+	content: " #{ uikit-color-contrast( #000, #ff0 ) }";
 	display: inline;
 	color: rebeccapurple;
 }
 
 .uikit-color-contrast5:after {
-	content: " #{ uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Background ) }";
+	content: " #{ uikit-color-contrast( #fff, #ff0 ) }";
 	display: inline;
 	color: rebeccapurple;
 }
@@ -360,6 +368,8 @@ html {
 // contrast table
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 @mixin check-contrast( $ratio ) {
+	$result: "✔";
+
 	@if( $ratio < 4.5 ) {
 		background-color: rgba( 255, 255, 0, 0.7 );
 		background-image: repeating-linear-gradient(
@@ -368,14 +378,19 @@ html {
 			rgba(255,255,255,.5) 5px,
 			rgba(255,255,255,.5) 10px
 		);
+		color: #000;
+
+		$result: "✗";
 	}
 
 	@if( $ratio < 3 ) {
 		background-color: rgba( 255, 0, 0, 0.7 );
 		color: #fff;
+
+		$result: "✗";
 	}
 
-	content: "#{ $ratio }";
+	content: "#{ $ratio } #{ $result }";
 }
 
 .contrast {
@@ -400,8 +415,6 @@ html {
 		display: block;
 		margin: 0.5em;
 		padding: 1em;
-		background-color: rgba(255, 255, 255, 0.5);
-		color: #000;
 	}
 }
 

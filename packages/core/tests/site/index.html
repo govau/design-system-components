@@ -113,7 +113,9 @@
 	<hr>
 	<h2>function: uikit-space</h2>
 
+	<div class="uikit-space uikit-space--025">uikit-space( 0.25 )</div>
 	<div class="uikit-space uikit-space--05">uikit-space( 0.5 )</div>
+	<div class="uikit-space uikit-space--075">uikit-space( 0.75 )</div>
 	<div class="uikit-space uikit-space--1">uikit-space( 1 )</div>
 	<div class="uikit-space uikit-space--15">uikit-space( 1.5 )</div>
 	<div class="uikit-space uikit-space--2">uikit-space( 2 )</div>
@@ -128,7 +130,7 @@
 	<hr>
 	<h2>function: uikit-replace</h2>
 
-	<div class="uikit-replace">uikit-replace('We love spaces for indentation', 'spaces', 'tabs'): </div>
+	<code class="uikit-replace">uikit-replace('We love spaces for indentation', 'spaces', 'tabs'): </code>
 
 	<hr>
 	<h2>function: uikit-svguri</h2>
@@ -138,34 +140,34 @@
 	<hr>
 	<h2>function: uikit-nth-root</h2>
 
-	<div class="uikit-nth-root">&radic;<span style="text-decoration: overline">50</span> =</div>
+	<code class="uikit-nth-root">&radic;<span style="text-decoration: overline">50</span> =</code>
 
 	<hr>
 	<h2>function: uikit-gcd</h2>
 
-	<div class="uikit-gcd">3 and 9 GCD =</div>
+	<code class="uikit-gcd">3 and 9 GCD =</code>
 
 	<hr>
 	<h2>function: uikit-pow</h2>
 
-	<div class="uikit-pow">5<sup>3</sup> =</div>
+	<code class="uikit-pow">5<sup>3</sup> =</code>
 
 	<hr>
 	<h2>function: uikit-colour-luminance</h2>
 
-	<div class="uikit-colour-luminance1">Luminance of #000000:</div>
-	<div class="uikit-colour-luminance2">Luminance of #663399:</div>
-	<div class="uikit-colour-luminance3">Luminance of #ff69b4:</div>
-	<div class="uikit-colour-luminance4">Luminance of #ffffff:</div>
+	<code class="uikit-colour-luminance1">Luminance of #000000:</code><br>
+	<code class="uikit-colour-luminance2">Luminance of #663399:</code><br>
+	<code class="uikit-colour-luminance3">Luminance of #ff69b4:</code><br>
+	<code class="uikit-colour-luminance4">Luminance of #ffffff:</code>
 
 	<hr>
 	<h2>function: uikit-color-contrast</h2>
 
-	<div class="uikit-color-contrast1">#fff on #000</div>
-	<div class="uikit-color-contrast2">#fff on $uikit-colour-Background</div>
-	<div class="uikit-color-contrast3">$uikit-colour-Text on $uikit-colour-Background</div>
-	<div class="uikit-color-contrast4">$uikit-colour-Primary on $uikit-colour-Background</div>
-	<div class="uikit-color-contrast5">$uikit-colour-Secondary on $uikit-colour-Background</div>
+	<code class="uikit-color-contrast1">#fff on #000:</code><br>
+	<code class="uikit-color-contrast2">#fff on #f00:</code><br>
+	<code class="uikit-color-contrast3">#000 on #f00:</code><br>
+	<code class="uikit-color-contrast4">#000 on #ff0:</code><br>
+	<code class="uikit-color-contrast5">#fff on #ff0:</code>
 
 	<hr>
 	<h2>colour contrasts</h2>
@@ -188,7 +190,7 @@
 		<tbody>
 			<tr class="contrast-white">
 				<th scope="row">White</th>
-				<td><div class="contrast-box contrast-box--white">White</div></td>
+				<td><div class="contrast-box"></div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
@@ -208,7 +210,7 @@
 				<th scope="row">Primary</th>
 				<td><div class="contrast-box contrast-box--white">White</div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
-				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
+				<td><div class="contrast-box"></div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
 				<td><div class="contrast-box contrast-box--alpha">Alpha</div></td>
 				<td><div class="contrast-box contrast-box--beta">Beta</div></td>
@@ -218,7 +220,7 @@
 				<td><div class="contrast-box contrast-box--white">White</div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
-				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
+				<td><div class="contrast-box"></div></td>
 				<td><div class="contrast-box contrast-box--alpha">Alpha</div></td>
 				<td><div class="contrast-box contrast-box--beta">Beta</div></td>
 			</tr>
@@ -228,7 +230,7 @@
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
-				<td><div class="contrast-box contrast-box--alpha">Alpha</div></td>
+				<td><div class="contrast-box"></div></td>
 				<td><div class="contrast-box contrast-box--beta">Beta</div></td>
 			</tr>
 			<tr class="contrast-beta">
@@ -238,7 +240,7 @@
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
 				<td><div class="contrast-box contrast-box--alpha">Alpha</div></td>
-				<td><div class="contrast-box contrast-box--beta">Beta</div></td>
+				<td><div class="contrast-box"></div></td>
 			</tr>
 		</tbody>
 	</table>
