@@ -22,7 +22,7 @@ const Path = require('path')
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const OPTIONS = {
 	timeout: 60000,
-	hideElements: '.skip-to, .is-visuallyhidden, .visuallyhidden',
+	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test',
 }
 
 const TestURL = 'http://localhost:8080'
@@ -39,6 +39,7 @@ const displayResults = results => {
 			Helper.log.error(`Error found at ${ error.selector }`)
 			console.log(`${ error.context }\n ${ error.message }\n`)
 		})
+
 		process.exit( 1 )
 	}
 	else {
