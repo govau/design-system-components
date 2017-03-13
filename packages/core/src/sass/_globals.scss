@@ -19,8 +19,7 @@
 //   - uikit-space
 //   - uikit-replace
 //   - uikit-svguri
-//   - uikit-nth-root
-//   - uikit-gcd
+//   - uikit-factorial
 //   - uikit-pow
 //   - uikit-colour-luminance
 //   - uikit-color-contrast
@@ -28,6 +27,14 @@
 //  Error messages all start with a movie quote. Here are some in reserve:
 //  - I can see dead people;
 //  - E.T. phone home;
+//  - I have always depended on the kindness of strangers;
+//  - Where we’re going, we don’t need roads;
+//  - You shall not pass;
+//  - You’re tearing me apart, Lisa;
+//  - Toto, I’ve got a feeling we’re not in Kansas anymore;
+//  - Nobody puts Baby in a corner;
+//  - Try not. Do - or do not. There is no try;
+//  - May the Force be with you;
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -678,123 +685,136 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
 
 
 /**
- * Calculate nth root of a number
+ * Returns the factorial of a non-negative integer.
+ * https://github.com/terkel/mathsass
  *
- * From: http://rosettacode.org/wiki/Nth_root#JavaScript
- * https://github.com/voxpelli/sass-color-helpers/blob/a719d52ea0b4b077a237edf9028543954eef563e/stylesheets/color-helpers/_math.scss
+ * @author Pascal Duez @pascalduez <http://pascalduez.me/>
  *
- * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
+ * @param  {integer} $number - A non-negative integer.
  *
- * @param  {integer} $num       - The number to calculate the root from
- * @param  {integer} $n         - The position
- * @param  {integer} $precision - The precision
- *
- * @return {integer}            - The nth ($n) root of $num
+ * @return {integer}         - The factorial log
  */
-@function uikit-nth-root( $num, $n: 2, $precision: 12 ) {
-	@if type-of( $num ) != 'number' {
-		@error "I have always depended on the kindness of strangers; the uikit-nth-root function only takes a number as first argument!";
+@function uikit-factorial( $number ) {
+	@if $number < 0 or $number != floor( $number ) {
+		@warn "You talking to me?; the uikit-factorial function only takes positive numbers.";
+
+		@return null;
 	}
 
-	@if type-of( $n ) != 'number' {
-		@error "Where we’re going, we don’t need roads; the uikit-nth-root function only takes a number as second argument!";
+	$factorial: 1;
+
+	@while $number > 0 {
+		$factorial: $factorial * $number;
+		$number: $number - 1;
 	}
 
-	@if type-of( $precision ) != 'number' {
-		@error "You shall not pass; the uikit-nth-root function only takes a number as third argument!";
-	}
-
-	$x: 1;
-
-	@for $i from 0 through $precision {
-		$x: 1 / $n * ( ( $n - 1 ) * $x + ( $num / uikit-pow( $x, $n - 1 ) ) );
-	}
-
-	@return $x;
+	@return $factorial;
 }
 
 
 /**
- * Calculating the greatest common divisor
+ * Returns base to the exponent power.
+ * https://github.com/terkel/mathsass
  *
- * https://github.com/voxpelli/sass-color-helpers/blob/a719d52ea0b4b077a237edf9028543954eef563e/stylesheets/color-helpers/_math.scss
- * From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
+ * @author Pascal Duez @pascalduez <http://pascalduez.me/>
  *
- * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
+ * @param  {integers} $base     - The base number
+ * @param  {integers} $exponent - The exponent to which to raise base
  *
- * @param  {integer} $a - The number
- * @param  {integer} $b - The second number
- *
- * @return {integer}    - The greatest common divisor of both numbers
+ * @return {integers}           - The result of the math
  */
-@function uikit-gcd( $a, $b ) {
-	@if type-of( $a ) != 'number' {
-		@error "Toto, I’ve got a feeling we’re not in Kansas anymore; the uikit-gcd function only takes a number as first argument!";
+@function uikit-pow( $base, $exponent ) {
+	// Constants
+	$LN2:   0.6931471805599453;
+	$SQRT2: 1.4142135623730951;
+
+	//full number
+	@if $exponent == floor( $exponent ) {
+		$rest: 1;
+
+		@if $exponent < 0 {
+			$exponent: $exponent * -1;
+		}
+
+		@while $exponent > 0 {
+			@if $exponent % 2 == 1 {
+				$rest: $rest * $base;
+			}
+
+			$exponent: floor($exponent * 0.5);
+			$base: $base * $base;
+		}
+
+		@return if( $exponent < 0, 1 / $rest, $rest );
 	}
 
-	@if type-of( $b ) != 'number' {
-		@error "Nobody puts Baby in a corner; the uikit-gcd function only takes a number as second argument!";
-	}
-
-	@if( $b != 0 ) {
-		@return uikit-gcd( $b, $a % $b );
-	}
-
+	//decimal number
 	@else {
-		@return abs( $a );
-	}
-}
-
-
-/**
- * Returns the value of $base to the power of $exponent with the precision of $precision
- * Handles decimal exponents by trying to convert them into a fraction and then use a nthRoot-algorithm for parts of the calculation
- *
- * https://github.com/voxpelli/sass-color-helpers/blob/a719d52ea0b4b077a237edf9028543954eef563e/stylesheets/color-helpers/_math.scss
- *
- * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
- *
- * @param  {integer} $base      - The base
- * @param  {integer} $exponent  - The exponent
- * @param  {integer} $precision - The precision
- *
- * @return {integer}            - The pow
- */
-@function uikit-pow( $base, $exponent, $precision: 12 ) {
-	@if type-of( $base ) != 'number' {
-		@error "You talking to me?; the uikit-pow function only takes a number as first argument!";
-	}
-
-	@if type-of( $exponent ) != 'number' {
-		@error "Try not. Do - or do not. There is no try; the uikit-pow function only takes a number as second argument!";
-	}
-
-	@if type-of( $precision ) != 'number' {
-		@error "May the Force be with you; the uikit-pow function only takes a number as third argument!";
-	}
-
-	@if( floor( $exponent ) != $exponent ) {
-		$precision2 : uikit-pow( 10, $precision );
-		$exponent: round( $exponent * $precision2 );
-		$denominator: uikit-gcd( $exponent, $precision2 );
-
-		@return uikit-nth-root( uikit-pow( $base, $exponent / $denominator ), $precision2 / $denominator, $precision );
-	}
-
-	$value: $base;
-
-	@if $exponent > 1 {
-		@for $i from 2 through $exponent {
-			$value: $value * $base;
+		@if $base <= 0 {
+			@return 0 / 0;
 		}
-	}
-	@else if $exponent < 1 {
-		@for $i from 0 through -$exponent {
-			$value: $value / $base;
-		}
-	}
 
-	@return $value;
+		$normalized: ( $base / $SQRT2 );
+		$log: 0;
+
+		@if $normalized < 0 {
+			$normalized: $normalized * -1;
+		}
+
+		@if $normalized < 0.5 {
+			@while $normalized < 0.5 {
+				$normalized: $normalized * 2;
+				$log: $log - 1;
+			}
+		}
+
+		@else if $normalized >= 1 {
+			@while $normalized >= 1 {
+				$normalized: $normalized / 2;
+				$log: $log + 1;
+			}
+		}
+
+		$divider: 1;
+		$deviderExponent: $log;
+
+		$baseExponent: if( $deviderExponent >= 0, 2, 1 / 2 );
+
+		@if $deviderExponent < 0 {
+			$deviderExponent: $deviderExponent * -1;
+		}
+
+		@while $deviderExponent > 0 {
+			@if $deviderExponent % 2 == 1 {
+				$divider: $divider * $baseExponent;
+			}
+			$baseExponent: $baseExponent * $baseExponent;
+			$deviderExponent: floor( $deviderExponent * 0.5 );
+		}
+
+		$base: $base / $divider;
+		$base: ( $base - 1 ) / ( $base + 1 );
+		$base2: $base * $base;
+		$iterator: 1;
+		$tempBase: $base;
+		$tempBase2: null;
+
+		@while $tempBase2 != $tempBase {
+			$base: $base * $base2;
+			$iterator: $iterator + 2;
+			$tempBase2: $tempBase;
+			$tempBase: $tempBase + $base / $iterator;
+		}
+
+		$logarithm: ( $LN2 * $log + 2 * $tempBase ) * $exponent;
+		$return: 0;
+
+		@for $quarter from 0 to 24 {
+			$return: $return + uikit-pow( $logarithm, $quarter ) / uikit-factorial( $quarter );
+		}
+
+		@return $return;
+	}
 }
 
 
@@ -823,7 +843,7 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
 		$rgb: nth( $rgba, $i );
 		$rgb: $rgb / 255;
 
-		$rgb: if( $rgb < .03928, $rgb / 12.92, uikit-pow( ( $rgb + .055 ) / 1.055, 2.4, 16) );
+		$rgb: if( $rgb < .03928, $rgb / 12.92, uikit-pow( ( $rgb + .055 ) / 1.055, 2.4 ) );
 
 		$rgba2: append( $rgba2, $rgb );
 	}

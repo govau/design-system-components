@@ -273,20 +273,22 @@ html {
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// function uikit-nth-root
+// function uikit-factorial
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-nth-root:after {
-	content: " #{ uikit-nth-root( 50, 2 ) }";
+.uikit-factorial1:after {
+	content: " #{ uikit-factorial( 9 ) }";
 	display: inline;
 	color: rebeccapurple;
 }
 
+.uikit-factorial2:after {
+	content: " #{ uikit-factorial( 9 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// function uikit-gcd
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-gcd:after {
-	content: " #{ uikit-gcd( 3, 9 ) }";
+.uikit-factorial3:after {
+	content: " #{ uikit-factorial( 9 ) }";
 	display: inline;
 	color: rebeccapurple;
 }
@@ -295,8 +297,26 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // function uikit-pow
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-pow:after {
+.uikit-pow1:after {
 	content: " #{ uikit-pow( 5, 3 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-pow2:after {
+	content: " #{ uikit-pow( 4, 2 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-pow3:after {
+	content: " #{ uikit-pow( 4, -2 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.uikit-pow4:after {
+	content: " #{ uikit-pow( 4, 0.2 ) }";
 	display: inline;
 	color: rebeccapurple;
 }
