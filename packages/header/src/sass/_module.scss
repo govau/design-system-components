@@ -23,7 +23,7 @@
 .uikit-header {
 	font-family: $uikit-font-system;
 	color: #fff;
-	background: $uikit-colour-Secondary;
+	background: $uikit-colour-Primary;
 	padding: uikit-space( 1 ) uikit-space( 0.5 ) uikit-space( 1.25 ) uikit-space( 0.75 );
 	margin-bottom: uikit-space( 1 );
 
@@ -41,11 +41,11 @@
 
 	&.uikit-header--light {
 		background-color: $uikit-colour-Background;
-		color: $uikit-colour-Text-90;
+		color: $uikit-colour-Text;
 	}
 
 	&.uikit-header--dark {
-		background-color: $uikit-colour-Primary;
+		background-color: $uikit-colour-Secondary;
 	}
 }
 

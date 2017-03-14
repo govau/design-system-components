@@ -50,8 +50,7 @@
  * The calendar event callout
  */
 .uikit-callout--calendar-event {
-	border-left-color: $uikit-colour-Primary;
-	background-color: $uikit-colour-Primary-10;
+	background-color: $uikit-colour-Background;
 
 	.ie8 &,
 	.lt-ie8 & {
@@ -80,7 +79,6 @@
 .uikit-callout--calendar-event__time,
 .uikit-callout--calendar-event__name {
 	font-size: 32px;
-	line-height: 1.4; //TODO: clean me up
 }
 
 .uikit-callout--calendar-event__time {
