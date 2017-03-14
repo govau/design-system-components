@@ -113,7 +113,7 @@ html {
 .border-radius {
 	float: left;
 	border-radius: $uikit-border-radius;
-	background-color: $uikit-colour-Secondary-A;
+	background-color: $uikit-colour-Hero;
 	overflow: hidden;
 	width: 5em;
 	height: 5em;
@@ -413,9 +413,9 @@ html {
 	position: relative;
 	float: left;
 
-	.palette--7 & {
-		width: 14.285714286%;
-		padding-bottom: 14.285714286%;
+	.palette--8 & {
+		width: 12.5%;
+		padding-bottom: 12.5%;
 	}
 
 	.palette--4 & {
@@ -554,6 +554,13 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // main palette colors
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.palette__color--hero {
+	background-color: $uikit-colour-Hero;
+
+	&:after {
+		content: 'Hero: #{ $uikit-colour-Hero }'
+	}
+}
 .palette__color--primary {
 	background-color: $uikit-colour-Primary;
 
@@ -566,13 +573,6 @@ html {
 
 	&:after {
 		content: 'Secondary: #{ $uikit-colour-Secondary }'
-	}
-}
-.palette__color--tertiary {
-	background-color: $uikit-colour-Tertiary;
-
-	&:after {
-		content: 'Tertiary: #{ $uikit-colour-Tertiary }'
 	}
 }
 .palette__color--background {
@@ -601,39 +601,6 @@ html {
 
 	&:after {
 		content: 'Link: #{ $uikit-colour-Link }'
-	}
-}
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// secondary palette colors
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.palette__color--Secondary-a {
-	background-color: $uikit-colour-Secondary-A;
-
-	&:after {
-		content: 'Secondary-A: #{ $uikit-colour-Secondary-A }'
-	}
-}
-.palette__color--Secondary-b {
-	background-color: $uikit-colour-Secondary-B;
-
-	&:after {
-		content: 'Secondary-B: #{ $uikit-colour-Secondary-B }'
-	}
-}
-.palette__color--Secondary-c {
-	background-color: $uikit-colour-Secondary-C;
-
-	&:after {
-		content: 'Secondary-C: #{ $uikit-colour-Secondary-C }'
-	}
-}
-.palette__color--Secondary-d {
-	background-color: $uikit-colour-Secondary-D;
-
-	&:after {
-		content: 'Secondary-D: #{ $uikit-colour-Secondary-D }'
 	}
 }
 
@@ -680,14 +647,14 @@ html {
 .contrast-box--background {
 	background-color: $uikit-colour-Background;
 }
+.contrast-box--hero {
+	background-color: $uikit-colour-Hero;
+}
 .contrast-box--primary {
 	background-color: $uikit-colour-Primary;
 }
 .contrast-box--secondary {
 	background-color: $uikit-colour-Secondary;
-}
-.contrast-box--tertiary {
-	background-color: $uikit-colour-Tertiary;
 }
 .contrast-box--border {
 	background-color: $uikit-colour-Border;
@@ -706,14 +673,14 @@ html {
 	.contrast-box--background:after {
 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Background ) );
 	}
+	.contrast-box--hero:after {
+		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Hero ) );
+	}
 	.contrast-box--primary:after {
 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Secondary ) );
-	}
-	.contrast-box--tertiary:after {
-		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Tertiary ) );
 	}
 	.contrast-box--border:after {
 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Border ) );
@@ -733,20 +700,47 @@ html {
 	.contrast-box--background:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Background ) );
 	}
+	.contrast-box--hero:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Hero ) );
+	}
 	.contrast-box--primary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary ) );
 	}
-	.contrast-box--tertiary:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Tertiary ) );
-	}
 	.contrast-box--border:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Border ) );
 	}
 	.contrast-box--link:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Link ) );
+	}
+}
+
+.contrast-hero {
+	.contrast-box {
+		color: $uikit-colour-Hero;
+	}
+	.contrast-box--white:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, #fff ) );
+	}
+	.contrast-box--background:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Background ) );
+	}
+	.contrast-box--hero:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Hero ) );
+	}
+	.contrast-box--primary:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Primary ) );
+	}
+	.contrast-box--secondary:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Secondary ) );
+	}
+	.contrast-box--border:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Border ) );
+	}
+	.contrast-box--link:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Link ) );
 	}
 }
 
@@ -760,14 +754,14 @@ html {
 	.contrast-box--background:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Background ) );
 	}
+	.contrast-box--hero:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Hero ) );
+	}
 	.contrast-box--primary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Secondary ) );
-	}
-	.contrast-box--tertiary:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Tertiary ) );
 	}
 	.contrast-box--border:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Border ) );
@@ -787,47 +781,20 @@ html {
 	.contrast-box--background:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Background ) );
 	}
+	.contrast-box--hero:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Hero ) );
+	}
 	.contrast-box--primary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Secondary ) );
 	}
-	.contrast-box--tertiary:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Tertiary ) );
-	}
 	.contrast-box--border:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Border ) );
 	}
 	.contrast-box--link:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Link ) );
-	}
-}
-
-.contrast-tertiary {
-	.contrast-box {
-		color: $uikit-colour-Tertiary;
-	}
-	.contrast-box--white:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Tertiary, #fff ) );
-	}
-	.contrast-box--background:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Tertiary, $uikit-colour-Background ) );
-	}
-	.contrast-box--primary:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Tertiary, $uikit-colour-Primary ) );
-	}
-	.contrast-box--secondary:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Tertiary, $uikit-colour-Secondary ) );
-	}
-	.contrast-box--tertiary:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Tertiary, $uikit-colour-Tertiary ) );
-	}
-	.contrast-box--border:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Tertiary, $uikit-colour-Border ) );
-	}
-	.contrast-box--link:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Tertiary, $uikit-colour-Link ) );
 	}
 }
 
@@ -841,14 +808,14 @@ html {
 	.contrast-box--background:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Background ) );
 	}
+	.contrast-box--hero:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Hero ) );
+	}
 	.contrast-box--primary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Secondary ) );
-	}
-	.contrast-box--tertiary:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Tertiary ) );
 	}
 	.contrast-box--border:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Border ) );
@@ -868,169 +835,20 @@ html {
 	.contrast-box--background:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Background ) );
 	}
+	.contrast-box--hero:after {
+		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Hero ) );
+	}
 	.contrast-box--primary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Primary ) );
 	}
 	.contrast-box--secondary:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Secondary ) );
 	}
-	.contrast-box--tertiary:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Tertiary ) );
-	}
 	.contrast-box--border:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Border ) );
 	}
 	.contrast-box--link:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Link ) );
-	}
-}
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// secondary palette contrast ratios
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.contrast-box--Secondary-a {
-	background-color: $uikit-colour-Secondary-A;
-}
-.contrast-box--Secondary-b {
-	background-color: $uikit-colour-Secondary-B;
-}
-.contrast-box--Secondary-c {
-	background-color: $uikit-colour-Secondary-C;
-}
-.contrast-box--Secondary-d {
-	background-color: $uikit-colour-Secondary-D;
-}
-
-.contrast-white {
-	.contrast-box {
-		color: #fff;
-	}
-	.contrast-box--Secondary-a:after {
-		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Secondary-A ) );
-	}
-	.contrast-box--Secondary-b:after {
-		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Secondary-B ) );
-	}
-	.contrast-box--Secondary-c:after {
-		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Secondary-C ) );
-	}
-	.contrast-box--Secondary-d:after {
-		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Secondary-D ) );
-	}
-}
-
-.contrast-text {
-	.contrast-box {
-		color: $uikit-colour-Text;
-	}
-	.contrast-box--Secondary-a:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary-A ) );
-	}
-	.contrast-box--Secondary-b:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary-B ) );
-	}
-	.contrast-box--Secondary-c:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary-C ) );
-	}
-	.contrast-box--Secondary-d:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary-D ) );
-	}
-}
-
-.contrast-Secondary-a {
-	.contrast-box {
-		color: $uikit-colour-Secondary-A;
-	}
-	.contrast-box--white:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-A, #fff ) );
-	}
-	.contrast-box--background:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-A, $uikit-colour-Background ) );
-	}
-	.contrast-box--Secondary-a:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-A, $uikit-colour-Secondary-A ) );
-	}
-	.contrast-box--Secondary-b:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-A, $uikit-colour-Secondary-B ) );
-	}
-	.contrast-box--Secondary-c:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-A, $uikit-colour-Secondary-C ) );
-	}
-	.contrast-box--Secondary-d:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-A, $uikit-colour-Secondary-D ) );
-	}
-}
-
-.contrast-Secondary-b {
-	.contrast-box {
-		color: $uikit-colour-Secondary-B;
-	}
-	.contrast-box--white:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-B, #fff ) );
-	}
-	.contrast-box--background:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-B, $uikit-colour-Background ) );
-	}
-	.contrast-box--Secondary-a:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-B, $uikit-colour-Secondary-A ) );
-	}
-	.contrast-box--Secondary-b:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-B, $uikit-colour-Secondary-B ) );
-	}
-	.contrast-box--Secondary-c:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-B, $uikit-colour-Secondary-C ) );
-	}
-	.contrast-box--Secondary-d:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-B, $uikit-colour-Secondary-D ) );
-	}
-}
-
-.contrast-Secondary-c {
-	.contrast-box {
-		color: $uikit-colour-Secondary-C;
-	}
-	.contrast-box--white:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-C, #fff ) );
-	}
-	.contrast-box--background:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-C, $uikit-colour-Background ) );
-	}
-	.contrast-box--Secondary-a:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-C, $uikit-colour-Secondary-A ) );
-	}
-	.contrast-box--Secondary-b:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-C, $uikit-colour-Secondary-B ) );
-	}
-	.contrast-box--Secondary-c:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-C, $uikit-colour-Secondary-C ) );
-	}
-	.contrast-box--Secondary-d:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-C, $uikit-colour-Secondary-D ) );
-	}
-}
-
-.contrast-Secondary-d {
-	.contrast-box {
-		color: $uikit-colour-Secondary-D;
-	}
-	.contrast-box--white:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-D, #fff ) );
-	}
-	.contrast-box--background:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-D, $uikit-colour-Background ) );
-	}
-	.contrast-box--Secondary-a:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-D, $uikit-colour-Secondary-A ) );
-	}
-	.contrast-box--Secondary-b:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-D, $uikit-colour-Secondary-B ) );
-	}
-	.contrast-box--Secondary-c:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-D, $uikit-colour-Secondary-C ) );
-	}
-	.contrast-box--Secondary-d:after {
-		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary-D, $uikit-colour-Secondary-D ) );
 	}
 }
 
@@ -1183,6 +1001,159 @@ html {
 	}
 }
 
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// color Hero
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.colorbox__colour-Hero {
+	background-color: $uikit-colour-Hero;
+
+	> span:after {
+		content: "#{ $uikit-colour-Hero }";
+	}
+
+	.colorbox--colour--95 {
+		background-color: $uikit-colour-Hero--95;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--95 }";
+		}
+	}
+	.colorbox--colour--90 {
+		background-color: $uikit-colour-Hero--90;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--90 }";
+		}
+	}
+	.colorbox--colour--80 {
+		background-color: $uikit-colour-Hero--80;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--80 }";
+		}
+	}
+	.colorbox--colour--70 {
+		background-color: $uikit-colour-Hero--70;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--70 }";
+		}
+	}
+	.colorbox--colour--60 {
+		background-color: $uikit-colour-Hero--60;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--60 }";
+		}
+	}
+	.colorbox--colour--50 {
+		background-color: $uikit-colour-Hero--50;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--50 }";
+		}
+	}
+	.colorbox--colour--40 {
+		background-color: $uikit-colour-Hero--40;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--40 }";
+		}
+	}
+	.colorbox--colour--30 {
+		background-color: $uikit-colour-Hero--30;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--30 }";
+		}
+	}
+	.colorbox--colour--20 {
+		background-color: $uikit-colour-Hero--20;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--20 }";
+		}
+	}
+	.colorbox--colour--10 {
+		background-color: $uikit-colour-Hero--10;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero--10 }";
+		}
+	}
+
+	.colorbox--colour-90 {
+		background-color: $uikit-colour-Hero-90;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-90 }";
+		}
+	}
+	.colorbox--colour-80 {
+		background-color: $uikit-colour-Hero-80;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-80 }";
+		}
+	}
+	.colorbox--colour-70 {
+		background-color: $uikit-colour-Hero-70;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-70 }";
+		}
+	}
+	.colorbox--colour-60 {
+		background-color: $uikit-colour-Hero-60;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-60 }";
+		}
+	}
+	.colorbox--colour-50 {
+		background-color: $uikit-colour-Hero-50;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-50 }";
+		}
+	}
+	.colorbox--colour-40 {
+		background-color: $uikit-colour-Hero-40;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-40 }";
+		}
+	}
+	.colorbox--colour-30 {
+		background-color: $uikit-colour-Hero-30;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-30 }";
+		}
+	}
+	.colorbox--colour-20 {
+		background-color: $uikit-colour-Hero-20;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-20 }";
+		}
+	}
+	.colorbox--colour-10 {
+		background-color: $uikit-colour-Hero-10;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-10 }";
+		}
+	}
+	.colorbox--colour-5 {
+		background-color: $uikit-colour-Hero-5;
+
+		span:after {
+			content: "#{ $uikit-colour-Hero-5 }";
+		}
+	}
+}
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // tints color Primary
@@ -1490,159 +1461,6 @@ html {
 	}
 }
 
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// color Tertiary
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.colorbox__colour-Tertiary {
-	background-color: $uikit-colour-Tertiary;
-
-	> span:after {
-		content: "#{ $uikit-colour-Tertiary }";
-	}
-
-	.colorbox--colour--95 {
-		background-color: $uikit-colour-Tertiary--95;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--95 }";
-		}
-	}
-	.colorbox--colour--90 {
-		background-color: $uikit-colour-Tertiary--90;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--90 }";
-		}
-	}
-	.colorbox--colour--80 {
-		background-color: $uikit-colour-Tertiary--80;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--80 }";
-		}
-	}
-	.colorbox--colour--70 {
-		background-color: $uikit-colour-Tertiary--70;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--70 }";
-		}
-	}
-	.colorbox--colour--60 {
-		background-color: $uikit-colour-Tertiary--60;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--60 }";
-		}
-	}
-	.colorbox--colour--50 {
-		background-color: $uikit-colour-Tertiary--50;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--50 }";
-		}
-	}
-	.colorbox--colour--40 {
-		background-color: $uikit-colour-Tertiary--40;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--40 }";
-		}
-	}
-	.colorbox--colour--30 {
-		background-color: $uikit-colour-Tertiary--30;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--30 }";
-		}
-	}
-	.colorbox--colour--20 {
-		background-color: $uikit-colour-Tertiary--20;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--20 }";
-		}
-	}
-	.colorbox--colour--10 {
-		background-color: $uikit-colour-Tertiary--10;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary--10 }";
-		}
-	}
-
-	.colorbox--colour-90 {
-		background-color: $uikit-colour-Tertiary-90;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-90 }";
-		}
-	}
-	.colorbox--colour-80 {
-		background-color: $uikit-colour-Tertiary-80;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-80 }";
-		}
-	}
-	.colorbox--colour-70 {
-		background-color: $uikit-colour-Tertiary-70;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-70 }";
-		}
-	}
-	.colorbox--colour-60 {
-		background-color: $uikit-colour-Tertiary-60;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-60 }";
-		}
-	}
-	.colorbox--colour-50 {
-		background-color: $uikit-colour-Tertiary-50;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-50 }";
-		}
-	}
-	.colorbox--colour-40 {
-		background-color: $uikit-colour-Tertiary-40;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-40 }";
-		}
-	}
-	.colorbox--colour-30 {
-		background-color: $uikit-colour-Tertiary-30;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-30 }";
-		}
-	}
-	.colorbox--colour-20 {
-		background-color: $uikit-colour-Tertiary-20;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-20 }";
-		}
-	}
-	.colorbox--colour-10 {
-		background-color: $uikit-colour-Tertiary-10;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-10 }";
-		}
-	}
-	.colorbox--colour-5 {
-		background-color: $uikit-colour-Tertiary-5;
-
-		span:after {
-			content: "#{ $uikit-colour-Tertiary-5 }";
-		}
-	}
-}
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // color Background
@@ -2256,618 +2074,6 @@ html {
 	}
 }
 
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// color Secondary A
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.colorbox__colour-Secondary-A {
-	background-color: $uikit-colour-Secondary-A;
-
-	> span:after {
-		content: "#{ $uikit-colour-Secondary-A }";
-	}
-
-	.colorbox--colour--95 {
-		background-color: $uikit-colour-Secondary-A--95;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--95 }";
-		}
-	}
-	.colorbox--colour--90 {
-		background-color: $uikit-colour-Secondary-A--90;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--90 }";
-		}
-	}
-	.colorbox--colour--80 {
-		background-color: $uikit-colour-Secondary-A--80;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--80 }";
-		}
-	}
-	.colorbox--colour--70 {
-		background-color: $uikit-colour-Secondary-A--70;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--70 }";
-		}
-	}
-	.colorbox--colour--60 {
-		background-color: $uikit-colour-Secondary-A--60;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--60 }";
-		}
-	}
-	.colorbox--colour--50 {
-		background-color: $uikit-colour-Secondary-A--50;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--50 }";
-		}
-	}
-	.colorbox--colour--40 {
-		background-color: $uikit-colour-Secondary-A--40;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--40 }";
-		}
-	}
-	.colorbox--colour--30 {
-		background-color: $uikit-colour-Secondary-A--30;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--30 }";
-		}
-	}
-	.colorbox--colour--20 {
-		background-color: $uikit-colour-Secondary-A--20;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--20 }";
-		}
-	}
-	.colorbox--colour--10 {
-		background-color: $uikit-colour-Secondary-A--10;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A--10 }";
-		}
-	}
-
-	.colorbox--colour-90 {
-		background-color: $uikit-colour-Secondary-A-90;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-90 }";
-		}
-	}
-	.colorbox--colour-80 {
-		background-color: $uikit-colour-Secondary-A-80;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-80 }";
-		}
-	}
-	.colorbox--colour-70 {
-		background-color: $uikit-colour-Secondary-A-70;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-70 }";
-		}
-	}
-	.colorbox--colour-60 {
-		background-color: $uikit-colour-Secondary-A-60;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-60 }";
-		}
-	}
-	.colorbox--colour-50 {
-		background-color: $uikit-colour-Secondary-A-50;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-50 }";
-		}
-	}
-	.colorbox--colour-40 {
-		background-color: $uikit-colour-Secondary-A-40;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-40 }";
-		}
-	}
-	.colorbox--colour-30 {
-		background-color: $uikit-colour-Secondary-A-30;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-30 }";
-		}
-	}
-	.colorbox--colour-20 {
-		background-color: $uikit-colour-Secondary-A-20;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-20 }";
-		}
-	}
-	.colorbox--colour-10 {
-		background-color: $uikit-colour-Secondary-A-10;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-10 }";
-		}
-	}
-	.colorbox--colour-5 {
-		background-color: $uikit-colour-Secondary-A-5;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-A-5 }";
-		}
-	}
-}
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// color Secondary B
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.colorbox__colour-Secondary-B {
-	background-color: $uikit-colour-Secondary-B;
-
-	> span:after {
-		content: "#{ $uikit-colour-Secondary-B }";
-	}
-
-	.colorbox--colour--95 {
-		background-color: $uikit-colour-Secondary-B--95;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--95 }";
-		}
-	}
-	.colorbox--colour--90 {
-		background-color: $uikit-colour-Secondary-B--90;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--90 }";
-		}
-	}
-	.colorbox--colour--80 {
-		background-color: $uikit-colour-Secondary-B--80;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--80 }";
-		}
-	}
-	.colorbox--colour--70 {
-		background-color: $uikit-colour-Secondary-B--70;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--70 }";
-		}
-	}
-	.colorbox--colour--60 {
-		background-color: $uikit-colour-Secondary-B--60;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--60 }";
-		}
-	}
-	.colorbox--colour--50 {
-		background-color: $uikit-colour-Secondary-B--50;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--50 }";
-		}
-	}
-	.colorbox--colour--40 {
-		background-color: $uikit-colour-Secondary-B--40;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--40 }";
-		}
-	}
-	.colorbox--colour--30 {
-		background-color: $uikit-colour-Secondary-B--30;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--30 }";
-		}
-	}
-	.colorbox--colour--20 {
-		background-color: $uikit-colour-Secondary-B--20;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--20 }";
-		}
-	}
-	.colorbox--colour--10 {
-		background-color: $uikit-colour-Secondary-B--10;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B--10 }";
-		}
-	}
-
-	.colorbox--colour-90 {
-		background-color: $uikit-colour-Secondary-B-90;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-90 }";
-		}
-	}
-	.colorbox--colour-80 {
-		background-color: $uikit-colour-Secondary-B-80;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-80 }";
-		}
-	}
-	.colorbox--colour-70 {
-		background-color: $uikit-colour-Secondary-B-70;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-70 }";
-		}
-	}
-	.colorbox--colour-60 {
-		background-color: $uikit-colour-Secondary-B-60;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-60 }";
-		}
-	}
-	.colorbox--colour-50 {
-		background-color: $uikit-colour-Secondary-B-50;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-50 }";
-		}
-	}
-	.colorbox--colour-40 {
-		background-color: $uikit-colour-Secondary-B-40;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-40 }";
-		}
-	}
-	.colorbox--colour-30 {
-		background-color: $uikit-colour-Secondary-B-30;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-30 }";
-		}
-	}
-	.colorbox--colour-20 {
-		background-color: $uikit-colour-Secondary-B-20;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-20 }";
-		}
-	}
-	.colorbox--colour-10 {
-		background-color: $uikit-colour-Secondary-B-10;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-10 }";
-		}
-	}
-	.colorbox--colour-5 {
-		background-color: $uikit-colour-Secondary-B-5;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-B-5 }";
-		}
-	}
-}
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// color Secondary C
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.colorbox__colour-Secondary-C {
-	background-color: $uikit-colour-Secondary-C;
-
-	> span:after {
-		content: "#{ $uikit-colour-Secondary-C }";
-	}
-
-	.colorbox--colour--95 {
-		background-color: $uikit-colour-Secondary-C--95;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--95 }";
-		}
-	}
-	.colorbox--colour--90 {
-		background-color: $uikit-colour-Secondary-C--90;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--90 }";
-		}
-	}
-	.colorbox--colour--80 {
-		background-color: $uikit-colour-Secondary-C--80;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--80 }";
-		}
-	}
-	.colorbox--colour--70 {
-		background-color: $uikit-colour-Secondary-C--70;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--70 }";
-		}
-	}
-	.colorbox--colour--60 {
-		background-color: $uikit-colour-Secondary-C--60;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--60 }";
-		}
-	}
-	.colorbox--colour--50 {
-		background-color: $uikit-colour-Secondary-C--50;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--50 }";
-		}
-	}
-	.colorbox--colour--40 {
-		background-color: $uikit-colour-Secondary-C--40;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--40 }";
-		}
-	}
-	.colorbox--colour--30 {
-		background-color: $uikit-colour-Secondary-C--30;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--30 }";
-		}
-	}
-	.colorbox--colour--20 {
-		background-color: $uikit-colour-Secondary-C--20;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--20 }";
-		}
-	}
-	.colorbox--colour--10 {
-		background-color: $uikit-colour-Secondary-C--10;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C--10 }";
-		}
-	}
-
-	.colorbox--colour-90 {
-		background-color: $uikit-colour-Secondary-C-90;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-90 }";
-		}
-	}
-	.colorbox--colour-80 {
-		background-color: $uikit-colour-Secondary-C-80;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-80 }";
-		}
-	}
-	.colorbox--colour-70 {
-		background-color: $uikit-colour-Secondary-C-70;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-70 }";
-		}
-	}
-	.colorbox--colour-60 {
-		background-color: $uikit-colour-Secondary-C-60;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-60 }";
-		}
-	}
-	.colorbox--colour-50 {
-		background-color: $uikit-colour-Secondary-C-50;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-50 }";
-		}
-	}
-	.colorbox--colour-40 {
-		background-color: $uikit-colour-Secondary-C-40;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-40 }";
-		}
-	}
-	.colorbox--colour-30 {
-		background-color: $uikit-colour-Secondary-C-30;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-30 }";
-		}
-	}
-	.colorbox--colour-20 {
-		background-color: $uikit-colour-Secondary-C-20;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-20 }";
-		}
-	}
-	.colorbox--colour-10 {
-		background-color: $uikit-colour-Secondary-C-10;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-10 }";
-		}
-	}
-	.colorbox--colour-5 {
-		background-color: $uikit-colour-Secondary-C-5;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-C-5 }";
-		}
-	}
-}
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// color Secondary D
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.colorbox__colour-Secondary-D {
-	background-color: $uikit-colour-Secondary-D;
-
-	> span:after {
-		content: "#{ $uikit-colour-Secondary-D }";
-	}
-
-	.colorbox--colour--95 {
-		background-color: $uikit-colour-Secondary-D--95;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--95 }";
-		}
-	}
-	.colorbox--colour--90 {
-		background-color: $uikit-colour-Secondary-D--90;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--90 }";
-		}
-	}
-	.colorbox--colour--80 {
-		background-color: $uikit-colour-Secondary-D--80;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--80 }";
-		}
-	}
-	.colorbox--colour--70 {
-		background-color: $uikit-colour-Secondary-D--70;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--70 }";
-		}
-	}
-	.colorbox--colour--60 {
-		background-color: $uikit-colour-Secondary-D--60;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--60 }";
-		}
-	}
-	.colorbox--colour--50 {
-		background-color: $uikit-colour-Secondary-D--50;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--50 }";
-		}
-	}
-	.colorbox--colour--40 {
-		background-color: $uikit-colour-Secondary-D--40;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--40 }";
-		}
-	}
-	.colorbox--colour--30 {
-		background-color: $uikit-colour-Secondary-D--30;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--30 }";
-		}
-	}
-	.colorbox--colour--20 {
-		background-color: $uikit-colour-Secondary-D--20;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--20 }";
-		}
-	}
-	.colorbox--colour--10 {
-		background-color: $uikit-colour-Secondary-D--10;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D--10 }";
-		}
-	}
-
-	.colorbox--colour-90 {
-		background-color: $uikit-colour-Secondary-D-90;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-90 }";
-		}
-	}
-	.colorbox--colour-80 {
-		background-color: $uikit-colour-Secondary-D-80;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-80 }";
-		}
-	}
-	.colorbox--colour-70 {
-		background-color: $uikit-colour-Secondary-D-70;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-70 }";
-		}
-	}
-	.colorbox--colour-60 {
-		background-color: $uikit-colour-Secondary-D-60;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-60 }";
-		}
-	}
-	.colorbox--colour-50 {
-		background-color: $uikit-colour-Secondary-D-50;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-50 }";
-		}
-	}
-	.colorbox--colour-40 {
-		background-color: $uikit-colour-Secondary-D-40;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-40 }";
-		}
-	}
-	.colorbox--colour-30 {
-		background-color: $uikit-colour-Secondary-D-30;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-30 }";
-		}
-	}
-	.colorbox--colour-20 {
-		background-color: $uikit-colour-Secondary-D-20;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-20 }";
-		}
-	}
-	.colorbox--colour-10 {
-		background-color: $uikit-colour-Secondary-D-10;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-10 }";
-		}
-	}
-	.colorbox--colour-5 {
-		background-color: $uikit-colour-Secondary-D-5;
-
-		span:after {
-			content: "#{ $uikit-colour-Secondary-D-5 }";
-		}
-	}
-}
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // color Error

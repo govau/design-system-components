@@ -51,7 +51,7 @@
 		-webkit-text-decoration-skip: objects;
 		color: $uikit-colour-Text;
 		text-decoration: none;
-		border-bottom: solid 1px $uikit-colour-Secondary;
+		border-bottom: solid 1px $uikit-colour-Primary;
 		transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
 
 		&:hover,

@@ -175,7 +175,8 @@
 	<hr>
 	<h2>colours main palette</h2>
 
-	<div class="palette palette--7">
+	<div class="palette palette--8">
+		<div class="palette__color palette__color--hero"></div>
 		<div class="palette__color palette__color--primary"></div>
 		<div class="palette__color palette__color--secondary"></div>
 		<div class="palette__color palette__color--tertiary"></div>
@@ -197,9 +198,9 @@
 				<th scope="col"></th>
 				<th scope="col">White</th>
 				<th scope="col">Background</th>
+				<th scope="col">Hero</th>
 				<th scope="col">Primary</th>
 				<th scope="col">Secondary</th>
-				<th scope="col">Tertiary</th>
 				<th scope="col">Border</th>
 				<th scope="col">Link</th>
 			</tr>
@@ -209,9 +210,9 @@
 				<th scope="row">White</th>
 				<td><div class="contrast-box"></div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
+				<td><div class="contrast-box contrast-box--hero">Hero</div></td>
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
-				<td><div class="contrast-box contrast-box--tertiary">Tertiary</div></td>
 				<td><div class="contrast-box contrast-box--border">Border</div></td>
 				<td><div class="contrast-box contrast-box--link">Link</div></td>
 			</tr>
@@ -219,9 +220,19 @@
 				<th scope="row">Text</th>
 				<td><div class="contrast-box contrast-box--white">White</div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
+				<td><div class="contrast-box contrast-box--hero">Hero</div></td>
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
-				<td><div class="contrast-box contrast-box--tertiary">Tertiary</div></td>
+				<td><div class="contrast-box contrast-box--border">Border</div></td>
+				<td><div class="contrast-box contrast-box--link">Link</div></td>
+			</tr>
+			<tr class="contrast-hero">
+				<th scope="row">Hero</th>
+				<td><div class="contrast-box contrast-box--white">White</div></td>
+				<td><div class="contrast-box contrast-box--background">Background</div></td>
+				<td><div class="contrast-box"></div></td>
+				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
+				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
 				<td><div class="contrast-box contrast-box--border">Border</div></td>
 				<td><div class="contrast-box contrast-box--link">Link</div></td>
 			</tr>
@@ -229,9 +240,9 @@
 				<th scope="row">Primary</th>
 				<td><div class="contrast-box contrast-box--white">White</div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
+				<td><div class="contrast-box contrast-box--hero">Hero</div></td>
 				<td><div class="contrast-box"></div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
-				<td><div class="contrast-box contrast-box--tertiary">Tertiary</div></td>
 				<td><div class="contrast-box contrast-box--border">Border</div></td>
 				<td><div class="contrast-box contrast-box--link">Link</div></td>
 			</tr>
@@ -239,18 +250,8 @@
 				<th scope="row">Secondary</th>
 				<td><div class="contrast-box contrast-box--white">White</div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
+				<td><div class="contrast-box contrast-box--hero">Hero</div></td>
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
-				<td><div class="contrast-box"></div></td>
-				<td><div class="contrast-box contrast-box--tertiary">Tertiary</div></td>
-				<td><div class="contrast-box contrast-box--border">Border</div></td>
-				<td><div class="contrast-box contrast-box--link">Link</div></td>
-			</tr>
-			<tr class="contrast-tertiary">
-				<th scope="row">Tertiary</th>
-				<td><div class="contrast-box contrast-box--white">White</div></td>
-				<td><div class="contrast-box contrast-box--background">Background</div></td>
-				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
-				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
 				<td><div class="contrast-box"></div></td>
 				<td><div class="contrast-box contrast-box--border">Border</div></td>
 				<td><div class="contrast-box contrast-box--link">Link</div></td>
@@ -259,9 +260,9 @@
 				<th scope="row">Border</th>
 				<td><div class="contrast-box contrast-box--white">White</div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
+				<td><div class="contrast-box contrast-box--hero">Hero</div></td>
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
-				<td><div class="contrast-box contrast-box--tertiary">Tertiary</div></td>
 				<td><div class="contrast-box"></div></td>
 				<td><div class="contrast-box contrast-box--link">Link</div></td>
 			</tr>
@@ -269,9 +270,9 @@
 				<th scope="row">Link</th>
 				<td><div class="contrast-box contrast-box--white">White</div></td>
 				<td><div class="contrast-box contrast-box--background">Background</div></td>
+				<td><div class="contrast-box contrast-box--hero">Hero</div></td>
 				<td><div class="contrast-box contrast-box--primary">Primary</div></td>
 				<td><div class="contrast-box contrast-box--secondary">Secondary</div></td>
-				<td><div class="contrast-box contrast-box--tertiary">Tertiary</div></td>
 				<td><div class="contrast-box contrast-box--border">Border</div></td>
 				<td><div class="contrast-box"></div></td>
 			</tr>
@@ -282,6 +283,30 @@
 	<h2>main colour palette tints</h2>
 
 	<div class="colorbox-wrapper colorbox__4">
+		<div class="colorbox colorbox__colour-Hero">
+			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
+			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
+			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
+			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
+			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
+			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
+			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
+			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
+			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
+			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
+			<span class="colorbox__tint__name">Hero</span>
+			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
+			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
+			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
+			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
+			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
+			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
+			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
+			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
+			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
+			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
+		</div>
+
 		<div class="colorbox colorbox__colour-Primary">
 			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
 			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
@@ -330,29 +355,6 @@
 			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
 		</div>
 
-		<div class="colorbox colorbox__colour-Tertiary">
-			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
-			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
-			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
-			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
-			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
-			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
-			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
-			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
-			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
-			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
-			<span class="colorbox__tint__name">Tertiary</span>
-			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
-			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
-			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
-			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
-			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
-			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
-			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
-			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
-			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
-			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
-		</div>
 
 		<div class="colorbox colorbox__colour-Background">
 			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
@@ -454,193 +456,6 @@
 			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
 		</div>
 
-	</div>
-
-	<hr>
-	<h2>colours secondary palette</h2>
-
-	<div class="palette palette--4">
-		<div class="palette__color palette__color--Secondary-a"></div>
-		<div class="palette__color palette__color--Secondary-b"></div>
-		<div class="palette__color palette__color--Secondary-c"></div>
-		<div class="palette__color palette__color--Secondary-d"></div>
-	</div>
-
-	<hr>
-	<h2>colour contrasts secondary palette</h2>
-
-	<table class="contrast">
-		<caption>
-			The contrast of the secondary colors
-		</caption>
-		<thead>
-			<tr>
-				<th scope="col"></th>
-				<th scope="col">White</th>
-				<th scope="col">Background</th>
-				<th scope="col">Secondary A</th>
-				<th scope="col">Secondary B</th>
-				<th scope="col">Secondary C</th>
-				<th scope="col">Secondary D</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class="contrast-white">
-				<th scope="row">White</th>
-				<td><div class="contrast-box"></div></td>
-				<td><div class="contrast-box contrast-box--background">Background</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-a">Secondary A</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-b">Secondary B</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-c">Secondary C</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-d">Secondary D</div></td>
-			</tr>
-			<tr class="contrast-text">
-				<th scope="row">Text</th>
-				<td><div class="contrast-box contrast-box--white">White</div></td>
-				<td><div class="contrast-box contrast-box--background">Background</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-a">Secondary A</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-b">Secondary B</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-c">Secondary C</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-d">Secondary D</div></td>
-			</tr>
-			<tr class="contrast-Secondary-a">
-				<th scope="row">Secondary A</th>
-				<td><div class="contrast-box contrast-box--white">White</div></td>
-				<td><div class="contrast-box contrast-box--background">Background</div></td>
-				<td><div class="contrast-box"></div></td>
-				<td><div class="contrast-box contrast-box--Secondary-b">Secondary B</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-c">Secondary C</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-d">Secondary D</div></td>
-			</tr>
-			<tr class="contrast-Secondary-b">
-				<th scope="row">Secondary B</th>
-				<td><div class="contrast-box contrast-box--white">White</div></td>
-				<td><div class="contrast-box contrast-box--background">Background</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-a">Secondary A</div></td>
-				<td><div class="contrast-box"></div></td>
-				<td><div class="contrast-box contrast-box--Secondary-c">Secondary C</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-d">Secondary D</div></td>
-			</tr>
-			<tr class="contrast-Secondary-c">
-				<th scope="row">Secondary C</th>
-				<td><div class="contrast-box contrast-box--white">White</div></td>
-				<td><div class="contrast-box contrast-box--background">Background</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-a">Secondary A</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-b">Secondary B</div></td>
-				<td><div class="contrast-box"></div></td>
-				<td><div class="contrast-box contrast-box--Secondary-d">Secondary D</div></td>
-			</tr>
-			<tr class="contrast-Secondary-d">
-				<th scope="row">Secondary D</th>
-				<td><div class="contrast-box contrast-box--white">White</div></td>
-				<td><div class="contrast-box contrast-box--background">Background</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-a">Secondary A</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-b">Secondary B</div></td>
-				<td><div class="contrast-box contrast-box--Secondary-c">Secondary C</div></td>
-				<td><div class="contrast-box"></div></td>
-			</tr>
-		</tbody>
-	</table>
-
-	<hr>
-	<h2>secondary colour palette tints</h2>
-
-	<div class="colorbox-wrapper colorbox__4">
-		<div class="colorbox colorbox__colour-Secondary-A">
-			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
-			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
-			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
-			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
-			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
-			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
-			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
-			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
-			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
-			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
-			<span class="colorbox__tint__name">secondary-A</span>
-			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
-			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
-			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
-			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
-			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
-			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
-			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
-			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
-			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
-			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
-		</div>
-
-		<div class="colorbox colorbox__colour-Secondary-B">
-			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
-			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
-			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
-			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
-			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
-			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
-			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
-			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
-			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
-			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
-			<span class="colorbox__tint__name">secondary-B</span>
-			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
-			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
-			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
-			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
-			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
-			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
-			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
-			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
-			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
-			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
-		</div>
-
-		<div class="colorbox colorbox__colour-Secondary-C">
-			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
-			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
-			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
-			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
-			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
-			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
-			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
-			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
-			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
-			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
-			<span class="colorbox__tint__name">secondary-C</span>
-			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
-			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
-			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
-			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
-			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
-			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
-			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
-			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
-			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
-			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
-		</div>
-
-		<div class="colorbox colorbox__colour-Secondary-D">
-			<div class="colorbox__tint colorbox--colour--95"><span>-95</span></div>
-			<div class="colorbox__tint colorbox--colour--90"><span>-90</span></div>
-			<div class="colorbox__tint colorbox--colour--80"><span>-80</span></div>
-			<div class="colorbox__tint colorbox--colour--70"><span>-70</span></div>
-			<div class="colorbox__tint colorbox--colour--60"><span>-60</span></div>
-			<div class="colorbox__tint colorbox--colour--50"><span>-50</span></div>
-			<div class="colorbox__tint colorbox--colour--40"><span>-40</span></div>
-			<div class="colorbox__tint colorbox--colour--30"><span>-30</span></div>
-			<div class="colorbox__tint colorbox--colour--20"><span>-20</span></div>
-			<div class="colorbox__tint colorbox--colour--10"><span>-10</span></div>
-			<span class="colorbox__tint__name">secondary-D</span>
-			<div class="colorbox__tint colorbox--colour-90"><span>90</span></div>
-			<div class="colorbox__tint colorbox--colour-80"><span>80</span></div>
-			<div class="colorbox__tint colorbox--colour-70"><span>70</span></div>
-			<div class="colorbox__tint colorbox--colour-60"><span>60</span></div>
-			<div class="colorbox__tint colorbox--colour-50"><span>50</span></div>
-			<div class="colorbox__tint colorbox--colour-40"><span>40</span></div>
-			<div class="colorbox__tint colorbox--colour-30"><span>30</span></div>
-			<div class="colorbox__tint colorbox--colour-20"><span>20</span></div>
-			<div class="colorbox__tint colorbox--colour-10"><span>10</span></div>
-			<div class="colorbox__tint colorbox--colour-5"><span>5</span></div>
-		</div>
 	</div>
 
 	<hr>

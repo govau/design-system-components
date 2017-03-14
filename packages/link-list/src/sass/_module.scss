@@ -40,10 +40,14 @@
 	}
 
 	&.uikit-link-list--inverted {
-		background-color: invert( $uikit-colour-Background );
+		background-color: $uikit-colour-Text;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 
 		> li > a {
-			color: invert( $uikit-colour-Text );
+			color: #fff;
+			border-color: $uikit-colour-Link;
+			transition: color 0.1s ease-in-out;
 
 			&:hover,
 			&:focus {
