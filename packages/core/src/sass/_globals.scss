@@ -25,7 +25,6 @@
 //   - uikit-color-contrast
 //
 //  Error messages all start with a movie quote. Here are some in reserve:
-//  - I can see dead people;
 //  - E.T. phone home;
 //  - I have always depended on the kindness of strangers;
 //  - Where we’re going, we don’t need roads;
@@ -86,18 +85,17 @@ $uikit-maxwidth: 42em; //Answer to life, the universe, and everything (keeps thi
  * Colours
  */
 $uikit-colour-Primary: #115361 !default; //color variables (yes! the actual spelling doesn't have a u)
-$uikit-colour-Secondary: #2da2bb !default;
-$uikit-colour-Background: #b3c2cc !default;
+$uikit-colour-Secondary: #313131 !default;
+$uikit-colour-Tertiary: #007dab !default;
+$uikit-colour-Background: #f0f3f5 !default;
 $uikit-colour-Border: #555 !default;
 $uikit-colour-Text: #313131 !default;
 $uikit-colour-Link: #5bcbe3 !default;
-$uikit-colour-Alpha: #e6efc2 !default;
-$uikit-colour-Beta: #043751 !default;
 
-$uikit-colour-secondary-A: #f4b124 !default;
-$uikit-colour-secondary-B: #74a56e !default;
-$uikit-colour-secondary-C: #4491c2 !default;
-$uikit-colour-secondary-D: #7064a7 !default;
+$uikit-colour-Secondary-A: #f4b124 !default;
+$uikit-colour-Secondary-B: #74a56e !default;
+$uikit-colour-Secondary-C: #4491c2 !default;
+$uikit-colour-Secondary-D: #7064a7 !default;
 
 $uikit-colour-Error: #cc0000 !default;
 $uikit-colour-Success: #007554 !default;
@@ -148,6 +146,29 @@ $uikit-colour-Secondary-30: mix(white, $uikit-colour-Secondary, 70) !default;
 $uikit-colour-Secondary-20: mix(white, $uikit-colour-Secondary, 80) !default;
 $uikit-colour-Secondary-10: mix(white, $uikit-colour-Secondary, 90) !default;
 $uikit-colour-Secondary-5: mix(white, $uikit-colour-Secondary, 95) !default;
+
+
+$uikit-colour-Tertiary--10: mix(black, $uikit-colour-Tertiary, 10) !default;
+$uikit-colour-Tertiary--20: mix(black, $uikit-colour-Tertiary, 20) !default;
+$uikit-colour-Tertiary--30: mix(black, $uikit-colour-Tertiary, 30) !default;
+$uikit-colour-Tertiary--40: mix(black, $uikit-colour-Tertiary, 40) !default;
+$uikit-colour-Tertiary--50: mix(black, $uikit-colour-Tertiary, 50) !default;
+$uikit-colour-Tertiary--60: mix(black, $uikit-colour-Tertiary, 60) !default;
+$uikit-colour-Tertiary--70: mix(black, $uikit-colour-Tertiary, 70) !default;
+$uikit-colour-Tertiary--80: mix(black, $uikit-colour-Tertiary, 80) !default;
+$uikit-colour-Tertiary--90: mix(black, $uikit-colour-Tertiary, 90) !default;
+$uikit-colour-Tertiary--95: mix(black, $uikit-colour-Tertiary, 95) !default;
+
+$uikit-colour-Tertiary-90: mix(white, $uikit-colour-Tertiary, 10) !default;
+$uikit-colour-Tertiary-80: mix(white, $uikit-colour-Tertiary, 20) !default;
+$uikit-colour-Tertiary-70: mix(white, $uikit-colour-Tertiary, 30) !default;
+$uikit-colour-Tertiary-60: mix(white, $uikit-colour-Tertiary, 40) !default;
+$uikit-colour-Tertiary-50: mix(white, $uikit-colour-Tertiary, 50) !default;
+$uikit-colour-Tertiary-40: mix(white, $uikit-colour-Tertiary, 60) !default;
+$uikit-colour-Tertiary-30: mix(white, $uikit-colour-Tertiary, 70) !default;
+$uikit-colour-Tertiary-20: mix(white, $uikit-colour-Tertiary, 80) !default;
+$uikit-colour-Tertiary-10: mix(white, $uikit-colour-Tertiary, 90) !default;
+$uikit-colour-Tertiary-5: mix(white, $uikit-colour-Tertiary, 95) !default;
 
 
 $uikit-colour-Background--10: mix(black, $uikit-colour-Background, 10) !default;
@@ -242,142 +263,97 @@ $uikit-colour-Link-10: mix(white, $uikit-colour-Link, 90) !default;
 $uikit-colour-Link-5: mix(white, $uikit-colour-Link, 95) !default;
 
 
-$uikit-colour-Alpha--10: mix(black, $uikit-colour-Alpha, 10) !default;
-$uikit-colour-Alpha--20: mix(black, $uikit-colour-Alpha, 20) !default;
-$uikit-colour-Alpha--30: mix(black, $uikit-colour-Alpha, 30) !default;
-$uikit-colour-Alpha--40: mix(black, $uikit-colour-Alpha, 40) !default;
-$uikit-colour-Alpha--50: mix(black, $uikit-colour-Alpha, 50) !default;
-$uikit-colour-Alpha--60: mix(black, $uikit-colour-Alpha, 60) !default;
-$uikit-colour-Alpha--70: mix(black, $uikit-colour-Alpha, 70) !default;
-$uikit-colour-Alpha--80: mix(black, $uikit-colour-Alpha, 80) !default;
-$uikit-colour-Alpha--90: mix(black, $uikit-colour-Alpha, 90) !default;
-$uikit-colour-Alpha--95: mix(black, $uikit-colour-Alpha, 95) !default;
 
-$uikit-colour-Alpha-90: mix(white, $uikit-colour-Alpha, 10) !default;
-$uikit-colour-Alpha-80: mix(white, $uikit-colour-Alpha, 20) !default;
-$uikit-colour-Alpha-70: mix(white, $uikit-colour-Alpha, 30) !default;
-$uikit-colour-Alpha-60: mix(white, $uikit-colour-Alpha, 40) !default;
-$uikit-colour-Alpha-50: mix(white, $uikit-colour-Alpha, 50) !default;
-$uikit-colour-Alpha-40: mix(white, $uikit-colour-Alpha, 60) !default;
-$uikit-colour-Alpha-30: mix(white, $uikit-colour-Alpha, 70) !default;
-$uikit-colour-Alpha-20: mix(white, $uikit-colour-Alpha, 80) !default;
-$uikit-colour-Alpha-10: mix(white, $uikit-colour-Alpha, 90) !default;
-$uikit-colour-Alpha-5: mix(white, $uikit-colour-Alpha, 95) !default;
+$uikit-colour-Secondary-A--10: mix(black, $uikit-colour-Secondary-A, 10) !default;
+$uikit-colour-Secondary-A--20: mix(black, $uikit-colour-Secondary-A, 20) !default;
+$uikit-colour-Secondary-A--30: mix(black, $uikit-colour-Secondary-A, 30) !default;
+$uikit-colour-Secondary-A--40: mix(black, $uikit-colour-Secondary-A, 40) !default;
+$uikit-colour-Secondary-A--50: mix(black, $uikit-colour-Secondary-A, 50) !default;
+$uikit-colour-Secondary-A--60: mix(black, $uikit-colour-Secondary-A, 60) !default;
+$uikit-colour-Secondary-A--70: mix(black, $uikit-colour-Secondary-A, 70) !default;
+$uikit-colour-Secondary-A--80: mix(black, $uikit-colour-Secondary-A, 80) !default;
+$uikit-colour-Secondary-A--90: mix(black, $uikit-colour-Secondary-A, 90) !default;
+$uikit-colour-Secondary-A--95: mix(black, $uikit-colour-Secondary-A, 95) !default;
 
-
-$uikit-colour-Beta--10: mix(black, $uikit-colour-Beta, 10) !default;
-$uikit-colour-Beta--20: mix(black, $uikit-colour-Beta, 20) !default;
-$uikit-colour-Beta--30: mix(black, $uikit-colour-Beta, 30) !default;
-$uikit-colour-Beta--40: mix(black, $uikit-colour-Beta, 40) !default;
-$uikit-colour-Beta--50: mix(black, $uikit-colour-Beta, 50) !default;
-$uikit-colour-Beta--60: mix(black, $uikit-colour-Beta, 60) !default;
-$uikit-colour-Beta--70: mix(black, $uikit-colour-Beta, 70) !default;
-$uikit-colour-Beta--80: mix(black, $uikit-colour-Beta, 80) !default;
-$uikit-colour-Beta--90: mix(black, $uikit-colour-Beta, 90) !default;
-$uikit-colour-Beta--95: mix(black, $uikit-colour-Beta, 95) !default;
-
-$uikit-colour-Beta-90: mix(white, $uikit-colour-Beta, 10) !default;
-$uikit-colour-Beta-80: mix(white, $uikit-colour-Beta, 20) !default;
-$uikit-colour-Beta-70: mix(white, $uikit-colour-Beta, 30) !default;
-$uikit-colour-Beta-60: mix(white, $uikit-colour-Beta, 40) !default;
-$uikit-colour-Beta-50: mix(white, $uikit-colour-Beta, 50) !default;
-$uikit-colour-Beta-40: mix(white, $uikit-colour-Beta, 60) !default;
-$uikit-colour-Beta-30: mix(white, $uikit-colour-Beta, 70) !default;
-$uikit-colour-Beta-20: mix(white, $uikit-colour-Beta, 80) !default;
-$uikit-colour-Beta-10: mix(white, $uikit-colour-Beta, 90) !default;
-$uikit-colour-Beta-5: mix(white, $uikit-colour-Beta, 95) !default;
+$uikit-colour-Secondary-A-90: mix(white, $uikit-colour-Secondary-A, 10) !default;
+$uikit-colour-Secondary-A-80: mix(white, $uikit-colour-Secondary-A, 20) !default;
+$uikit-colour-Secondary-A-70: mix(white, $uikit-colour-Secondary-A, 30) !default;
+$uikit-colour-Secondary-A-60: mix(white, $uikit-colour-Secondary-A, 40) !default;
+$uikit-colour-Secondary-A-50: mix(white, $uikit-colour-Secondary-A, 50) !default;
+$uikit-colour-Secondary-A-40: mix(white, $uikit-colour-Secondary-A, 60) !default;
+$uikit-colour-Secondary-A-30: mix(white, $uikit-colour-Secondary-A, 70) !default;
+$uikit-colour-Secondary-A-20: mix(white, $uikit-colour-Secondary-A, 80) !default;
+$uikit-colour-Secondary-A-10: mix(white, $uikit-colour-Secondary-A, 90) !default;
+$uikit-colour-Secondary-A-5: mix(white, $uikit-colour-Secondary-A, 95) !default;
 
 
-$uikit-colour-secondary-A--10: mix(black, $uikit-colour-secondary-A, 10) !default;
-$uikit-colour-secondary-A--20: mix(black, $uikit-colour-secondary-A, 20) !default;
-$uikit-colour-secondary-A--30: mix(black, $uikit-colour-secondary-A, 30) !default;
-$uikit-colour-secondary-A--40: mix(black, $uikit-colour-secondary-A, 40) !default;
-$uikit-colour-secondary-A--50: mix(black, $uikit-colour-secondary-A, 50) !default;
-$uikit-colour-secondary-A--60: mix(black, $uikit-colour-secondary-A, 60) !default;
-$uikit-colour-secondary-A--70: mix(black, $uikit-colour-secondary-A, 70) !default;
-$uikit-colour-secondary-A--80: mix(black, $uikit-colour-secondary-A, 80) !default;
-$uikit-colour-secondary-A--90: mix(black, $uikit-colour-secondary-A, 90) !default;
-$uikit-colour-secondary-A--95: mix(black, $uikit-colour-secondary-A, 95) !default;
+$uikit-colour-Secondary-B--10: mix(black, $uikit-colour-Secondary-B, 10) !default;
+$uikit-colour-Secondary-B--20: mix(black, $uikit-colour-Secondary-B, 20) !default;
+$uikit-colour-Secondary-B--30: mix(black, $uikit-colour-Secondary-B, 30) !default;
+$uikit-colour-Secondary-B--40: mix(black, $uikit-colour-Secondary-B, 40) !default;
+$uikit-colour-Secondary-B--50: mix(black, $uikit-colour-Secondary-B, 50) !default;
+$uikit-colour-Secondary-B--60: mix(black, $uikit-colour-Secondary-B, 60) !default;
+$uikit-colour-Secondary-B--70: mix(black, $uikit-colour-Secondary-B, 70) !default;
+$uikit-colour-Secondary-B--80: mix(black, $uikit-colour-Secondary-B, 80) !default;
+$uikit-colour-Secondary-B--90: mix(black, $uikit-colour-Secondary-B, 90) !default;
+$uikit-colour-Secondary-B--95: mix(black, $uikit-colour-Secondary-B, 95) !default;
 
-$uikit-colour-secondary-A-90: mix(white, $uikit-colour-secondary-A, 10) !default;
-$uikit-colour-secondary-A-80: mix(white, $uikit-colour-secondary-A, 20) !default;
-$uikit-colour-secondary-A-70: mix(white, $uikit-colour-secondary-A, 30) !default;
-$uikit-colour-secondary-A-60: mix(white, $uikit-colour-secondary-A, 40) !default;
-$uikit-colour-secondary-A-50: mix(white, $uikit-colour-secondary-A, 50) !default;
-$uikit-colour-secondary-A-40: mix(white, $uikit-colour-secondary-A, 60) !default;
-$uikit-colour-secondary-A-30: mix(white, $uikit-colour-secondary-A, 70) !default;
-$uikit-colour-secondary-A-20: mix(white, $uikit-colour-secondary-A, 80) !default;
-$uikit-colour-secondary-A-10: mix(white, $uikit-colour-secondary-A, 90) !default;
-$uikit-colour-secondary-A-5: mix(white, $uikit-colour-secondary-A, 95) !default;
-
-
-$uikit-colour-secondary-B--10: mix(black, $uikit-colour-secondary-B, 10) !default;
-$uikit-colour-secondary-B--20: mix(black, $uikit-colour-secondary-B, 20) !default;
-$uikit-colour-secondary-B--30: mix(black, $uikit-colour-secondary-B, 30) !default;
-$uikit-colour-secondary-B--40: mix(black, $uikit-colour-secondary-B, 40) !default;
-$uikit-colour-secondary-B--50: mix(black, $uikit-colour-secondary-B, 50) !default;
-$uikit-colour-secondary-B--60: mix(black, $uikit-colour-secondary-B, 60) !default;
-$uikit-colour-secondary-B--70: mix(black, $uikit-colour-secondary-B, 70) !default;
-$uikit-colour-secondary-B--80: mix(black, $uikit-colour-secondary-B, 80) !default;
-$uikit-colour-secondary-B--90: mix(black, $uikit-colour-secondary-B, 90) !default;
-$uikit-colour-secondary-B--95: mix(black, $uikit-colour-secondary-B, 95) !default;
-
-$uikit-colour-secondary-B-90: mix(white, $uikit-colour-secondary-B, 10) !default;
-$uikit-colour-secondary-B-80: mix(white, $uikit-colour-secondary-B, 20) !default;
-$uikit-colour-secondary-B-70: mix(white, $uikit-colour-secondary-B, 30) !default;
-$uikit-colour-secondary-B-60: mix(white, $uikit-colour-secondary-B, 40) !default;
-$uikit-colour-secondary-B-50: mix(white, $uikit-colour-secondary-B, 50) !default;
-$uikit-colour-secondary-B-40: mix(white, $uikit-colour-secondary-B, 60) !default;
-$uikit-colour-secondary-B-30: mix(white, $uikit-colour-secondary-B, 70) !default;
-$uikit-colour-secondary-B-20: mix(white, $uikit-colour-secondary-B, 80) !default;
-$uikit-colour-secondary-B-10: mix(white, $uikit-colour-secondary-B, 90) !default;
-$uikit-colour-secondary-B-5: mix(white, $uikit-colour-secondary-B, 95) !default;
+$uikit-colour-Secondary-B-90: mix(white, $uikit-colour-Secondary-B, 10) !default;
+$uikit-colour-Secondary-B-80: mix(white, $uikit-colour-Secondary-B, 20) !default;
+$uikit-colour-Secondary-B-70: mix(white, $uikit-colour-Secondary-B, 30) !default;
+$uikit-colour-Secondary-B-60: mix(white, $uikit-colour-Secondary-B, 40) !default;
+$uikit-colour-Secondary-B-50: mix(white, $uikit-colour-Secondary-B, 50) !default;
+$uikit-colour-Secondary-B-40: mix(white, $uikit-colour-Secondary-B, 60) !default;
+$uikit-colour-Secondary-B-30: mix(white, $uikit-colour-Secondary-B, 70) !default;
+$uikit-colour-Secondary-B-20: mix(white, $uikit-colour-Secondary-B, 80) !default;
+$uikit-colour-Secondary-B-10: mix(white, $uikit-colour-Secondary-B, 90) !default;
+$uikit-colour-Secondary-B-5: mix(white, $uikit-colour-Secondary-B, 95) !default;
 
 
-$uikit-colour-secondary-C--10: mix(black, $uikit-colour-secondary-C, 10) !default;
-$uikit-colour-secondary-C--20: mix(black, $uikit-colour-secondary-C, 20) !default;
-$uikit-colour-secondary-C--30: mix(black, $uikit-colour-secondary-C, 30) !default;
-$uikit-colour-secondary-C--40: mix(black, $uikit-colour-secondary-C, 40) !default;
-$uikit-colour-secondary-C--50: mix(black, $uikit-colour-secondary-C, 50) !default;
-$uikit-colour-secondary-C--60: mix(black, $uikit-colour-secondary-C, 60) !default;
-$uikit-colour-secondary-C--70: mix(black, $uikit-colour-secondary-C, 70) !default;
-$uikit-colour-secondary-C--80: mix(black, $uikit-colour-secondary-C, 80) !default;
-$uikit-colour-secondary-C--90: mix(black, $uikit-colour-secondary-C, 90) !default;
-$uikit-colour-secondary-C--95: mix(black, $uikit-colour-secondary-C, 95) !default;
+$uikit-colour-Secondary-C--10: mix(black, $uikit-colour-Secondary-C, 10) !default;
+$uikit-colour-Secondary-C--20: mix(black, $uikit-colour-Secondary-C, 20) !default;
+$uikit-colour-Secondary-C--30: mix(black, $uikit-colour-Secondary-C, 30) !default;
+$uikit-colour-Secondary-C--40: mix(black, $uikit-colour-Secondary-C, 40) !default;
+$uikit-colour-Secondary-C--50: mix(black, $uikit-colour-Secondary-C, 50) !default;
+$uikit-colour-Secondary-C--60: mix(black, $uikit-colour-Secondary-C, 60) !default;
+$uikit-colour-Secondary-C--70: mix(black, $uikit-colour-Secondary-C, 70) !default;
+$uikit-colour-Secondary-C--80: mix(black, $uikit-colour-Secondary-C, 80) !default;
+$uikit-colour-Secondary-C--90: mix(black, $uikit-colour-Secondary-C, 90) !default;
+$uikit-colour-Secondary-C--95: mix(black, $uikit-colour-Secondary-C, 95) !default;
 
-$uikit-colour-secondary-C-90: mix(white, $uikit-colour-secondary-C, 10) !default;
-$uikit-colour-secondary-C-80: mix(white, $uikit-colour-secondary-C, 20) !default;
-$uikit-colour-secondary-C-70: mix(white, $uikit-colour-secondary-C, 30) !default;
-$uikit-colour-secondary-C-60: mix(white, $uikit-colour-secondary-C, 40) !default;
-$uikit-colour-secondary-C-50: mix(white, $uikit-colour-secondary-C, 50) !default;
-$uikit-colour-secondary-C-40: mix(white, $uikit-colour-secondary-C, 60) !default;
-$uikit-colour-secondary-C-30: mix(white, $uikit-colour-secondary-C, 70) !default;
-$uikit-colour-secondary-C-20: mix(white, $uikit-colour-secondary-C, 80) !default;
-$uikit-colour-secondary-C-10: mix(white, $uikit-colour-secondary-C, 90) !default;
-$uikit-colour-secondary-C-5: mix(white, $uikit-colour-secondary-C, 95) !default;
+$uikit-colour-Secondary-C-90: mix(white, $uikit-colour-Secondary-C, 10) !default;
+$uikit-colour-Secondary-C-80: mix(white, $uikit-colour-Secondary-C, 20) !default;
+$uikit-colour-Secondary-C-70: mix(white, $uikit-colour-Secondary-C, 30) !default;
+$uikit-colour-Secondary-C-60: mix(white, $uikit-colour-Secondary-C, 40) !default;
+$uikit-colour-Secondary-C-50: mix(white, $uikit-colour-Secondary-C, 50) !default;
+$uikit-colour-Secondary-C-40: mix(white, $uikit-colour-Secondary-C, 60) !default;
+$uikit-colour-Secondary-C-30: mix(white, $uikit-colour-Secondary-C, 70) !default;
+$uikit-colour-Secondary-C-20: mix(white, $uikit-colour-Secondary-C, 80) !default;
+$uikit-colour-Secondary-C-10: mix(white, $uikit-colour-Secondary-C, 90) !default;
+$uikit-colour-Secondary-C-5: mix(white, $uikit-colour-Secondary-C, 95) !default;
 
 
-$uikit-colour-secondary-D--10: mix(black, $uikit-colour-secondary-D, 10) !default;
-$uikit-colour-secondary-D--20: mix(black, $uikit-colour-secondary-D, 20) !default;
-$uikit-colour-secondary-D--30: mix(black, $uikit-colour-secondary-D, 30) !default;
-$uikit-colour-secondary-D--40: mix(black, $uikit-colour-secondary-D, 40) !default;
-$uikit-colour-secondary-D--50: mix(black, $uikit-colour-secondary-D, 50) !default;
-$uikit-colour-secondary-D--60: mix(black, $uikit-colour-secondary-D, 60) !default;
-$uikit-colour-secondary-D--70: mix(black, $uikit-colour-secondary-D, 70) !default;
-$uikit-colour-secondary-D--80: mix(black, $uikit-colour-secondary-D, 80) !default;
-$uikit-colour-secondary-D--90: mix(black, $uikit-colour-secondary-D, 90) !default;
-$uikit-colour-secondary-D--95: mix(black, $uikit-colour-secondary-D, 95) !default;
+$uikit-colour-Secondary-D--10: mix(black, $uikit-colour-Secondary-D, 10) !default;
+$uikit-colour-Secondary-D--20: mix(black, $uikit-colour-Secondary-D, 20) !default;
+$uikit-colour-Secondary-D--30: mix(black, $uikit-colour-Secondary-D, 30) !default;
+$uikit-colour-Secondary-D--40: mix(black, $uikit-colour-Secondary-D, 40) !default;
+$uikit-colour-Secondary-D--50: mix(black, $uikit-colour-Secondary-D, 50) !default;
+$uikit-colour-Secondary-D--60: mix(black, $uikit-colour-Secondary-D, 60) !default;
+$uikit-colour-Secondary-D--70: mix(black, $uikit-colour-Secondary-D, 70) !default;
+$uikit-colour-Secondary-D--80: mix(black, $uikit-colour-Secondary-D, 80) !default;
+$uikit-colour-Secondary-D--90: mix(black, $uikit-colour-Secondary-D, 90) !default;
+$uikit-colour-Secondary-D--95: mix(black, $uikit-colour-Secondary-D, 95) !default;
 
-$uikit-colour-secondary-D-90: mix(white, $uikit-colour-secondary-D, 10) !default;
-$uikit-colour-secondary-D-80: mix(white, $uikit-colour-secondary-D, 20) !default;
-$uikit-colour-secondary-D-70: mix(white, $uikit-colour-secondary-D, 30) !default;
-$uikit-colour-secondary-D-60: mix(white, $uikit-colour-secondary-D, 40) !default;
-$uikit-colour-secondary-D-50: mix(white, $uikit-colour-secondary-D, 50) !default;
-$uikit-colour-secondary-D-40: mix(white, $uikit-colour-secondary-D, 60) !default;
-$uikit-colour-secondary-D-30: mix(white, $uikit-colour-secondary-D, 70) !default;
-$uikit-colour-secondary-D-20: mix(white, $uikit-colour-secondary-D, 80) !default;
-$uikit-colour-secondary-D-10: mix(white, $uikit-colour-secondary-D, 90) !default;
-$uikit-colour-secondary-D-5: mix(white, $uikit-colour-secondary-D, 95) !default;
+$uikit-colour-Secondary-D-90: mix(white, $uikit-colour-Secondary-D, 10) !default;
+$uikit-colour-Secondary-D-80: mix(white, $uikit-colour-Secondary-D, 20) !default;
+$uikit-colour-Secondary-D-70: mix(white, $uikit-colour-Secondary-D, 30) !default;
+$uikit-colour-Secondary-D-60: mix(white, $uikit-colour-Secondary-D, 40) !default;
+$uikit-colour-Secondary-D-50: mix(white, $uikit-colour-Secondary-D, 50) !default;
+$uikit-colour-Secondary-D-40: mix(white, $uikit-colour-Secondary-D, 60) !default;
+$uikit-colour-Secondary-D-30: mix(white, $uikit-colour-Secondary-D, 70) !default;
+$uikit-colour-Secondary-D-20: mix(white, $uikit-colour-Secondary-D, 80) !default;
+$uikit-colour-Secondary-D-10: mix(white, $uikit-colour-Secondary-D, 90) !default;
+$uikit-colour-Secondary-D-5: mix(white, $uikit-colour-Secondary-D, 95) !default;
 
 
 
@@ -696,9 +672,7 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
  */
 @function uikit-factorial( $number ) {
 	@if $number < 0 or $number != floor( $number ) {
-		@warn "You talking to me?; the uikit-factorial function only takes positive numbers.";
-
-		@return null;
+		@error "You talking to me?; the uikit-factorial function only takes positive numbers.";
 	}
 
 	$factorial: 1;
@@ -724,6 +698,10 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
  * @return {integers}           - The result of the math
  */
 @function uikit-pow( $base, $exponent ) {
+	@if $exponent < 0 {
+		@error "I can see dead people; the uikit-pow function only takes positive numbers as the second argument.";
+	}
+
 	// Constants
 	$LN2:   0.6931471805599453;
 	$SQRT2: 1.4142135623730951;
@@ -829,7 +807,7 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
  *
  * @param  {string} $colour - The color to calculate the luminance from
  *
- * @return {float}         - The luminance
+ * @return {float}          - The luminance
  */
 @function uikit-colour-luminance( $colour ) {
 	@if type-of( $colour ) != 'color' {
