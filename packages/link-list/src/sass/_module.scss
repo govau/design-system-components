@@ -40,7 +40,7 @@
 	}
 
 	&.uikit-link-list--inverted {
-		background-color: invert( $uikit-colour-Background-20 );
+		background-color: invert( $uikit-colour-Background );
 
 		> li > a {
 			color: invert( $uikit-colour-Text );

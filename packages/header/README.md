@@ -4,7 +4,7 @@
 > Headers provide a consistent start to pages.
 
 
-## Contentss
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)

@@ -22,7 +22,7 @@
 	font-weight: bold;
 
 	.uikit-body & {
-		color: $uikit-colour-Beta-80; //overrides body’s uikit-body a styling.
+		color: $uikit-colour-Link; //overrides body’s uikit-body a styling.
 	}
 
 	&:after {
@@ -32,8 +32,8 @@
 		height: 0.8em;
 		margin: 0 uikit-space( 0.25 ) 0 uikit-space( 0.25 );
 		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Beta-80 }" d="M128 64l-64 64-16-16 64-64"/>
-				<path fill="#{ $uikit-colour-Beta-80 }" d="M128 64l-16 16-64-64L64 0"/>
+				<path fill="#{ $uikit-colour-Link }" d="M128 64l-64 64-16-16 64-64"/>
+				<path fill="#{ $uikit-colour-Link }" d="M128 64l-16 16-64-64L64 0"/>
 			</svg>');
 		transition: margin 0.1s ease-in;
 

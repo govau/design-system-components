@@ -64,13 +64,13 @@
 
 	&:disabled {
 		cursor: not-allowed;
-		background: $uikit-colour-Background-20;
+		background: $uikit-colour-Background;
 		border-color: transparent;
 	}
 
 	&[disabled] {
 		cursor: not-allowed;
-		background: $uikit-colour-Background-20;
+		background: $uikit-colour-Background;
 		border-color: transparent;
 	}
 }
