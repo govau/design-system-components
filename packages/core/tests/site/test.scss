@@ -870,9 +870,6 @@ html {
 }
 
 .contrast-white {
-	.contrast-box {
-		color: #fff;
-	}
 	.contrast-box--error:after {
 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Error ) );
 	}
@@ -888,9 +885,6 @@ html {
 }
 
 .contrast-text {
-	.contrast-box {
-		color: $uikit-colour-Text;
-	}
 	.contrast-box--error:after {
 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Error ) );
 	}
