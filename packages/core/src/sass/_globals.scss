@@ -39,7 +39,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // SASS VERSIONING
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-@import '../../node_modules/sass-versioning/dist/_index.scss';
+@import '../../../../sass-versioning/dist/_index.scss';
 
 $name: "[replace-name]";
 $version: "[replace-version]";
@@ -94,7 +94,7 @@ $uikit-colour-Link: #5bcbe3 !default;
 
 $uikit-colour-Error: #cc0000 !default;
 $uikit-colour-Success: #007554 !default;
-$uikit-colour-Warning: #d47500 !default;
+$uikit-colour-Warning: #f69900 !default;
 $uikit-colour-Info: #00bfe9 !default;
 
 $uikit-colour-Hero--10: mix(black, $uikit-colour-Hero, 10) !default; //tints of the colors
