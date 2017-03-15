@@ -294,7 +294,7 @@ HELPER.compile = (() => {
 			file: scss,
 			indentType: 'tab',
 			precision: 8,
-			includePaths: [ './lib/sass/', '../../../../sass-versioning/dist/' ],
+			includePaths: [ './lib/sass/', '../../sass-versioning/dist/' ],
 			outputStyle: 'compressed',
 		});
 
