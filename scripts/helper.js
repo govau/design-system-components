@@ -490,7 +490,7 @@ HELPER.generate = (() => {
 					let tree = Treeify.asTree( GetDepTree(`@gov.au/${ module }`) );
 
 					if( tree === '' ) {
-						tree = '.';
+						tree = '.\n';
 					}
 
 					list += `- [${ module }](${ HELPER.URL }/packages/${ module }/tests/site/)\n`;
