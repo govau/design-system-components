@@ -286,18 +286,12 @@ HELPER.compile = (() => {
 	 * PRIVATE
 	 * Compile Sass code into CSS
 	 *
-	 * @param  {string} file The Sass file to be compiled
+	 * @param  {string} scss The Sass file to be compiled
 	 * @param  {string} css  The location where the CSS should be written to
 	 */
-	const Sassify = ( file, css ) => {
-		let scss = Fs.readFileSync( file, 'utf-8');
-
-		const sassVersioningPath = Path.normalize(`${ __dirname }/../packages/core/node_modules/sass-versioning/dist/_index.scss`);
-
-		scss = `@import "${ sassVersioningPath }";\n\n${ scss }`;
-
+	const Sassify = ( scss, css ) => {
 		const compiled = Sass.renderSync({
-			data: scss,
+			file: scss,
 			indentType: 'tab',
 			precision: 8,
 			includePaths: [ './lib/sass/' ],
@@ -306,7 +300,7 @@ HELPER.compile = (() => {
 
 		Fs.writeFileSync( css, compiled.css );
 
-		HELPER.log.success(`Compiled Sass ${ Chalk.yellow( file ) }`);
+		HELPER.log.success(`Compiled Sass ${ Chalk.yellow( scss ) }`);
 	};
 
 
