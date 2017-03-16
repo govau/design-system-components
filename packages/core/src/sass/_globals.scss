@@ -62,21 +62,21 @@ $uikit-media-lg: 1200px !default;
 /**
  * Line-height (‘leading’)
  */
-$uikit-leading: 1.6;
+$uikit-leading: 1.6 !default;
 
 
 /**
  * Font stacks
  */
-$uikit-font: 'Open Sans', Verdana, 'Bitstream Vera Sans', sans-serif;
-$uikit-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
-$uikit-font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$uikit-font: 'Open Sans', Verdana, 'Bitstream Vera Sans', sans-serif !default;
+$uikit-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
+$uikit-font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
 
 
 /**
  * max-width for line lengths (the ‘measure’)
  */
-$uikit-maxwidth: 42em; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
+$uikit-maxwidth: 42em !default; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
 
 
 /**
@@ -351,9 +351,9 @@ $uikit-colour-Info-5: mix(white, $uikit-colour-Info, 95) !default;
 /**
  * Border vars and styles
  */
-$uikit-borderize: 1px solid $uikit-colour-Border-40;
-$uikit-border-radius: 3px;
-$uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
+$uikit-borderize: 1px solid $uikit-colour-Border !default;
+$uikit-border-radius: 3px !default;
+$uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6) !default;
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
