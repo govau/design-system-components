@@ -15,6 +15,8 @@
 //   - uikit-clearfix
 //   - uikit-media
 //   - uikit-sronly
+//   - uikit-outline
+//   - uikit-focus
 // - functions
 //   - uikit-space
 //   - uikit-replace
@@ -428,6 +430,25 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6) !default;
 	overflow: hidden;
 	clip: rect(0,0,0,0);
 	border: 0;
+}
+
+
+/**
+ * The outline for focus
+ */
+@mixin uikit-outline() {
+	outline: 1px solid $uikit-colour-Text;
+	outline-offset: 1px;
+}
+
+
+/**
+ * Add the outline to focus
+ */
+@mixin uikit-focus() {
+	&:focus {
+		@include uikit-outline();
+	}
 }
 
 

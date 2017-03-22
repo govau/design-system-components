@@ -36,6 +36,8 @@
 		background-color: $uikit-colour-Primary--30;
 	}
 
+	@include uikit-focus();
+
 	&:disabled {
 		background-color: $uikit-colour-Border-30;
 		font-weight: normal;

@@ -114,8 +114,7 @@
 	}
 
 	&:focus + .uikit-control-input__text {
-		outline: 2px solid #000; //fallback
-		outline: 4px auto -webkit-focus-ring-color;
+		@include uikit-outline();
 	}
 
 	&:disabled {

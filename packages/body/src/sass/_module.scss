@@ -60,6 +60,8 @@
 			border-color: transparent;
 		}
 
+		@include uikit-focus();
+
 		&[rel~='external']:after {
 			content: ' ';
 			display: inline-block;
@@ -92,10 +94,6 @@
 	mark,
 	::selection {
 		background-color: rgba( $uikit-colour-Warning-60, 0.5 );
-	}
-
-	mark {
-		box-shadow: 0 0 1px $uikit-box-shadow-colour;
 	}
 
 

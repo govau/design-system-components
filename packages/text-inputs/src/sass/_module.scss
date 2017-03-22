@@ -50,6 +50,16 @@
 	font-family: $uikit-font-system;
 	color: $uikit-colour-Text;
 
+	@include uikit-focus();
+
+	&:focus {
+		background-color: $uikit-colour-Link-10;
+	}
+
+	&::selection {
+		background-color: rgba( $uikit-colour-Warning-60, 0.5 );
+	}
+
 	&:invalid {
 		border: 2px solid $uikit-colour-Error;
 	}
