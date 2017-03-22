@@ -51,19 +51,19 @@
 		height: 24px;
 		background-repeat: no-repeat;
 		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<circle fill="#fff" cx="64" cy="64" r="64"/>
-				<rect fill="#{ $uikit-colour-Info }" width="16" height="16" x="56" y="20" rx="2"/>
-				<rect fill="#{ $uikit-colour-Info }" width="16" height="56" x="56" y="44" rx="2"/>
-				<rect fill="#{ $uikit-colour-Info }" width="40" height="16" x="44" y="84" rx="2"/>
-				<rect fill="#{ $uikit-colour-Info }" width="28" height="16" x="44" y="44" rx="2"/>
+				<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="64"/>
+				<rect fill="#fff" width="16" height="16" x="56" y="20" rx="2"/>
+				<rect fill="#fff" width="16" height="56" x="56" y="44" rx="2"/>
+				<rect fill="#fff" width="40" height="16" x="44" y="84" rx="2"/>
+				<rect fill="#fff" width="28" height="16" x="44" y="44" rx="2"/>
 			</svg>');
 
 		.ie8 &,
 		.lt-ie8 & {
 			background: none;
 			text-align: center;
-			background-color: #fff;
-			color: $uikit-colour-Info;
+			background-color: $uikit-colour-Text;
+			color: #fff;
 			font-weight: bold;
 			content: 'i';
 		}
@@ -79,14 +79,13 @@
 
 	&:after {
 		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<circle fill="#fff" cx="64" cy="64" r="64"/>
-				<path fill="#{ $uikit-colour-Success }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68
+				<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="64"/>
+				<path fill="#fff" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68
 					41.42 53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
 			</svg>');
 
 		.ie8 &,
 		.lt-ie8 & {
-			color: $uikit-colour-Success;
 			content: '✓';
 		}
 	}
@@ -101,17 +100,16 @@
 
 	&:after {
 		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#fff" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
+				<path fill="#{ $uikit-colour-Text }" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
 					3.282-1.403.808-2.914 1.213-4.53 1.213H9.206c-1.62 0-3.13-.405-4.533-1.213-1.403-.81-2.51-1.903-3.317-3.282-1.76-2.997-1.808-7.993-.143-10.99L56.01
 					12.78c.808-1.474 1.925-2.64 3.352-3.496C60.79 8.428 62.335 8 64 8s3.21.428 4.638 1.284c1.427.856 2.544 2.022 3.353 3.496z"/>
-				<rect fill="#{ $uikit-colour-Warning }" width="16" height="16" x="56" y="96" rx="2"/>
-				<path fill="#{ $uikit-colour-Warning }" d="M52.167 42c-.092-1.104.73-2 1.838-2h19.99c1.107 0 1.93.895 1.838 2l-3.666 44c-.092 1.104-1.062 2-2.16 2H57.993c-1.1
+				<rect fill="#fff" width="16" height="16" x="56" y="96" rx="2"/>
+				<path fill="#fff" d="M52.167 42c-.092-1.104.73-2 1.838-2h19.99c1.107 0 1.93.895 1.838 2l-3.666 44c-.092 1.104-1.062 2-2.16 2H57.993c-1.1
 					0-2.07-.895-2.16-2l-3.667-44z"/>
 			</svg>');
 
 		.ie8 &,
 		.lt-ie8 & {
-			color: $uikit-colour-Warning;
 			content: '!';
 		}
 	}
@@ -126,15 +124,17 @@
 
 	&:after {
 		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<circle fill="#fff" cx="64" cy="64" r="64"/>
-				<circle fill="#{ $uikit-colour-Error }" cx="64" cy="64" r="48"/>
-				<path fill="#fff" fill-rule="nonzero" d="M18.745 92.284l73.54-73.54 16.97 16.972-73.54 73.54z"/>
+				<path fill="#{ $uikit-colour-Text }" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
+					3.282-1.403.808-2.914 1.213-4.53 1.213H9.206c-1.62 0-3.13-.405-4.533-1.213-1.403-.81-2.51-1.903-3.317-3.282-1.76-2.997-1.808-7.993-.143-10.99L56.01
+					12.78c.808-1.474 1.925-2.64 3.352-3.496C60.79 8.428 62.335 8 64 8s3.21.428 4.638 1.284c1.427.856 2.544 2.022 3.353 3.496z"/>
+				<rect fill="#fff" width="16" height="16" x="56" y="96" rx="2"/>
+				<path fill="#fff" d="M52.167 42c-.092-1.104.73-2 1.838-2h19.99c1.107 0 1.93.895 1.838 2l-3.666 44c-.092 1.104-1.062 2-2.16 2H57.993c-1.1
+					0-2.07-.895-2.16-2l-3.667-44z"/>
 			</svg>');
 
 		.ie8 &,
 		.lt-ie8 & {
-			color: $uikit-colour-Error;
-			content: 'X';
+			content: '!';
 		}
 	}
 }

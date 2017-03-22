@@ -42,7 +42,7 @@
 		background-color: $uikit-colour-Border-30;
 		font-weight: normal;
 		color: $uikit-colour-Text;
-		border: none;
+		border: 1px dotted $uikit-colour-Text;
 		cursor: not-allowed;
 
 		&:focus,

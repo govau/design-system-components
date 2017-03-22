@@ -89,6 +89,15 @@
 
 
 	/**
+	 * Highlighting in-page sections that are in focus
+	 */
+	[tabindex="0"]:focus,
+	:target {
+		@include uikit-outline();
+	}
+
+
+	/**
 	 * Text selection and `mark` styling.
 	 */
 	mark,

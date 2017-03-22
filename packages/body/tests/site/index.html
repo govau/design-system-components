@@ -46,7 +46,7 @@
 
 	<h1>Test: body module</h1>
 
-	<p>This is an opening paragraph, that <a href="http://some.address.com">contains a link</a>.</p>
+	<p>This is an opening paragraph, that <a href="#content">contains a link</a>.</p>
 
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad expedita tenetur blanditiis in libero distinctio inventore porro
@@ -72,62 +72,64 @@
 
 	<p><var>E</var>=<var>m</var><var>c</var><sup>2</sup>f(<var>x</var>, <var>n</var>) = log<sub>4</sub><var>x</var><sup><var>n</var></sup></p>
 
-	<dl>
-		<dt>Definition term</dt>
-		<dd>A definition description: important information. <small>Less important information.</small></dd>
-		<dd>A second definition description. <small>Did you know?&mdash;a single definition term can have multiple definition (descriptions).</small></dd>
-		<dt>Single room</dt>
-		<dd>$199 <small>breakfast included, <abbr title="Goods and Services Tax">GST</abbr> inclusive</small></dd>
-		<dt>Double room</dt>
-		<dd>$239 <small>breakfast included, <abbr title="Goods and Services Tax">GST</abbr> inclusive</small></dd>
-	</dl>
+	<main id="content">
+		<dl>
+			<dt>Definition term</dt>
+			<dd>A definition description: important information. <small>Less important information.</small></dd>
+			<dd>A second definition description. <small>Did you know?&mdash;a single definition term can have multiple definition (descriptions).</small></dd>
+			<dt>Single room</dt>
+			<dd>$199 <small>breakfast included, <abbr title="Goods and Services Tax">GST</abbr> inclusive</small></dd>
+			<dt>Double room</dt>
+			<dd>$239 <small>breakfast included, <abbr title="Goods and Services Tax">GST</abbr> inclusive</small></dd>
+		</dl>
 
-	<p>We can also have single definitions, used for terms upon their first occurence in a document:</p>
+		<p>We can also have single definitions, used for terms upon their first occurence in a document:</p>
 
-	<p>While they are essential reading material for our job, the <dfn><abbr title="World Wide Web Consortium">W3C</abbr></dfn> specifications are not exactly George R. R. Martin-level reading material.</p>
+		<p>While they are essential reading material for our job, the <dfn><abbr title="World Wide Web Consortium">W3C</abbr></dfn> specifications are not exactly George R. R. Martin-level reading material.</p>
 
-	<p>Now to the <code>mark</code> element. This has a few useful applications:</p>
+		<p>Now to the <code>mark</code> element. This has a few useful applications:</p>
 
-	<ul>
-		<li>useful for marking up interesting things in quotations (without altering the styling of text, eg to italic)</li>
-		<li>drawing attention to specific parts of pre-formatted text (eg code snippets)</li>
-		<li>for marking up search results (eg that match a given query)</li>
-	</ul>
+		<ul>
+			<li>useful for marking up interesting things in quotations (without altering the styling of text, eg to italic)</li>
+			<li>drawing attention to specific parts of pre-formatted text (eg code snippets)</li>
+			<li>for marking up search results (eg that match a given query)</li>
+		</ul>
 
-	<p>I also have some <mark>kitten</mark>s who are visiting me these days. They’re really cute. I think they like my garden! Maybe I should adopt a <mark>kitten</mark>.</p>
+		<p>I also have some <mark>kitten</mark>s who are visiting me these days. They’re really cute. I think they like my garden! Maybe I should adopt a <mark>kitten</mark>.</p>
 
-	<p>The highlighted part below is where the error lies:</p>
+		<p>The highlighted part below is where the error lies:</p>
 
-	<pre><code>var i: Integer;
+		<pre><code>var i: Integer;
 begin
-    i := <mark>1.1</mark>;
+	i := <mark>1.1</mark>;
 end.</code></pre>
 
 
-	<p>An unordered list containing an ordered list:</p>
-	<ul>
-		<li>Canberra office</li>
-		<li>Sydney office</li>
-		<li>Foo item, with sub-items:
-			<ol>
-				<li>one</li>
-				<li>two</li>
-				<li>three</li>
-			</ol>
-		</li>
-		<li>Bar</li>
-		<li>Baz</li>
-	</ul>
+		<p>An unordered list containing an ordered list:</p>
+		<ul>
+			<li>Canberra office</li>
+			<li>Sydney office</li>
+			<li>Foo item, with sub-items:
+				<ol>
+					<li>one</li>
+					<li>two</li>
+					<li>three</li>
+				</ol>
+			</li>
+			<li>Bar</li>
+			<li>Baz</li>
+		</ul>
 
-	<p>A simple ordered list:</p>
-	<ol>
-		<li>Discovery</li>
-		<li>Alpha</li>
-		<li>Beta</li>
-		<li>Live</li>
-	</ol>
+		<p>A simple ordered list:</p>
+		<ol>
+			<li>Discovery</li>
+			<li>Alpha</li>
+			<li>Beta</li>
+			<li>Live</li>
+		</ol>
 
-	<p>Back to a paragraph.</p>
+		<p>Back to a paragraph.</p>
+	</main>
 
 	<hr>
 

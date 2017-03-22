@@ -61,7 +61,9 @@
 		&:hover,
 		&:focus {
 			background-color: $uikit-colour-Link;
+		}
 
+		&:focus {
 			@include uikit-outline();
 			outline-offset: 2px;
 		}
