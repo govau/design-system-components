@@ -119,7 +119,7 @@
 
 	&:disabled {
 		& + .uikit-control-input__text {
-			color: $uikit-colour-Text-50;
+			color: $uikit-colour-Text-70;
 		}
 
 		//we are adding an opaque white box ontop of the svg so we don’t have to add new svgs per control kind
