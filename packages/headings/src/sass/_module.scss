@@ -33,6 +33,10 @@
 		font-size: 16 + ( 4 * ( $i - 1 ) ) + 0px;
 		font-weight: bold;
 	}
+
+	p + .uikit-display-#{$i} {
+		margin-top: uikit-space( 1 );
+	}
 }
 
 

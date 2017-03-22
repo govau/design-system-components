@@ -41,3 +41,15 @@
 .uikit-inpage-nav-links__heading {
 	color: $uikit-colour-Text-70;
 }
+
+.uikit-inpage-nav-section {
+	position: relative;
+	padding-right: 120px;
+}
+
+.uikit-inpage-nav-section-link {
+	position: absolute;
+	top: uikit-space( 0.25 );
+	right: 0;
+	font-size: 14px;
+}

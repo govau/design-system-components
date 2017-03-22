@@ -46,11 +46,13 @@
 	<h1>Test: inpage-nav</h1>
 
 	<nav class="uikit-inpage-nav-links">
-		<h2 class="uikit-inpage-nav-links__heading uikit-display-5">Contents</h2>
+		<h2 class="uikit-inpage-nav-links__heading uikit-display-2">Contents</h2>
 		<ul class="uikit-link-list">
-			<li><a href="#foo">Foo page item</a></li>
-			<li><a href="#bar">Bar page item</a></li>
-			<li><a href="#baz">Baz page item</a></li>
+			<li><a href="#section1">Section 1</a></li>
+			<li><a href="#section2">Section 2</a></li>
+			<li><a href="#section3">Section 3</a></li>
+			<li><a href="#section3">Section 4</a></li>
+			<li><a href="#section3">Section 5</a></li>
 		</ul>
 	</nav>
 
@@ -65,7 +67,11 @@
 		Cras rutrum metus consequat pellentesque luctus. Aenean nunc purus, scelerisque ut pretium ut, blandit ac lacus.
 	</p>
 
-	<h2 id="foo" tabindex="0">Foo page item</h2>
+	<h2 class="uikit-inpage-nav-section uikit-display-3">
+		Section 1 page headline
+
+		<a id="section1" class="uikit-inpage-nav-section-link" href="#section1">Link to section</a>
+	</h2>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio fuga adipisci aliquid ut rerum mollitia commodi eligendi, asperiores nostrum
 		unde blanditiis eveniet impedit labore, <a href="#link">temporibus exercitationem</a>, provident ab fugit? Lorem ipsum dolor sit amet, consectetur
@@ -79,7 +85,11 @@
 		faucibus auctor.
 	</p>
 
-	<h2 id="bar" tabindex="0">Bar page item</h2>
+	<h2 class="uikit-inpage-nav-section uikit-display-3">
+		Section 2 page headline
+
+		<a id="section2" class="uikit-inpage-nav-section-link" href="#section2">Link to section</a>
+	</h2>
 	<p>
 		Voluptate commodi, labore sapiente natus iste facilis eaque harum fuga recusandae dolores laborum iusto perspiciatis, numquam dignissimos blanditiis
 		alias impedit ipsa. Unde?
@@ -88,7 +98,7 @@
 	<p>
 		Phasellus rhoncus tempor nunc, in facilisis leo lobortis sit amet. Duis arcu sem, placerat vel nibh fringilla, dictum imperdiet lectus. Nam mauris ante,
 		imperdiet id ultricies eget, molestie at lacus. Aliquam erat volutpat. Donec iaculis, massa nec iaculis blandit, magna lectus tempor nibh, eget fringilla
-		nisi felis nec ex. Donec molestie eleifend posuere. Proin <a href="#link">laoreet</a> magna a odio pharetra ultrices. Donec sit amet dolor at felis faucibus
+		nisi felis nec ex. Donec molestie eleifend posuere. Proin <a href="#link">laoreet</a> magna a odio pharetra ultrices. Donec sit amet dolor at felis fauci
 		orci. Praesent tempor eu magna non ultrices. Vestibulum leo nunc, venenatis et lacinia et, tristique molestie arcu. Nullam scelerisque fermentum eros
 		rutrum semper. Pellentesque a volutpat dolor. Cras dolor tellus, fermentum nec ipsum ac, facilisis commodo mi. Suspendisse potenti. Suspendisse in odio
 		posuere, pellentesque lorem nec, tempor mauris. Ut <a href="#link">scelerisque justo</a> a aliquam rutrum.
@@ -100,10 +110,57 @@
 		luctus non id tortor. Maecenas feugiat malesuada pretium. Nam sagittis erat feugiat placerat pharetra.
 	</p>
 
-	<h2 id="baz" tabindex="0">Baz page item</h2>
+	<h2 class="uikit-inpage-nav-section uikit-display-3">
+		Section 3 page headline with a lot of words so we can test what it looks like when the end of the paragraph is hit and the headline breaks into another line
+
+		<a id="section3" class="uikit-inpage-nav-section-link" href="#section3">Link to section</a>
+	</h2>
 
 	<p>
-		Das ende&hellip;</p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, molestiae blanditiis, enim unde laudantium voluptate fuga excepturi explicabo quae, nulla
+		dolorum, ea doloribus ducimus. Nesciunt eveniet ab a nobis perferendis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi, dolorem
+		ut amet magnam ad architecto assumenda enim unde dolores, ratione incidunt, ipsum aspernatur delectus quibusdam officiis, vero dolor illo?
+		Lorem ipsum dolor sit amet, consectetur adipisicing <a href="#link">elit</a>. Itaque aliquid et iusto ex debitis quos eum sit quidem ab culpa tempora
+		voluptatibus sequi quam sunt unde, fuga cum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo aliquam beatae unde corporis autem quos
+		dignissimos delectus ullam odit, dolore natus, eos, nam eligendi reprehenderit <a href="#link">qui</a> alias voluptatibus. Minima, ullam.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, sequi itaque voluptatibus. Maxime tenetur, dolorum enim, adipisci, ullam, quibusdam nemo
+		debitis nihil magni itaque voluptatem. Ullam <a href="#link">minus</a> officia nulla mollitia.
+	</p>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, omnis earum eveniet beatae ipsa itaque amet obcaecati in dolorum sapiente atque
+		magnam sit accusantium nemo commodi aut debitis, ea quod. Lorem ipsum <a href="#link">dolor sit</a> amet, consectetur adipisicing elit. Veniam magni minus
+		soluta neque cumque inventore similique veritatis. Nostrum obcaecati eveniet assumenda ea cupiditate enim laborum voluptate suscipit! Expedita?
+	</p>
+
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam earum, accusantium soluta explicabo debitis recusandae, illum beatae ullam pariatur aliquam,
+		iusto vero quia! Totam consequatur rerum tenetur, placeat ex beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, magni accusamus
+		molestiae eveniet expedita aliquam distinctio cum voluptatem quidem voluptatum, ut possimus autem, architecto ratione, officia labore placeat excepturi.
+		Lorem ipsum dolor sit amet, consectetur adipisicing <a href="#link">elit</a>. Doloremque necessitatibus laborum itaque, suscipit, expedita est possimus!
+		Veritatis mollitia eligendi harum consequuntur fugit, explicabo, facilis corporis ex dolore, ipsam soluta totam? Lorem ipsum dolor sit amet, consectetur
+		Beatae, deserunt facilis nobis! <a href="#link">Illum</a> aspernatur commodi perspiciatis cum esse, labore asperiores natus in mollitia totam inventore. Ab
+		ducimus numquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur vel itaque, neque, magni, modi eum blanditiis facere, natus
+		accusamus expedita autem? <a href="#link">Eveniet</a> ad, consequatur <a href="#link">architecto</a> illum suscipit culpa <a href="#link">iure</a>. Sed!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat <a href="#link">ipsa</a> recusandae eos id voluptatibus ut molestias earum placeat odit
+		ex, delectus quas doloribus iusto <a href="#link">odio</a> dolorum, <a href="#link">similique</a>, necessitatibus <a href="#link">autem</a> quam.
+	</p>
+
+	<h2 class="uikit-inpage-nav-section uikit-display-3">
+		Section 4 page headline
+
+		<a id="section4" class="uikit-inpage-nav-section-link" href="#section4">Link to section</a>
+	</h2>
+
+	<p>
+		Das ende&hellip;
+	</p>
+
+	<h2 class="uikit-inpage-nav-section uikit-display-3">
+		Last stray headline
+
+		<a id="section5" class="uikit-inpage-nav-section-link" href="#section5">Link to section</a>
+	</h2>
 
 </body>
 </html>
