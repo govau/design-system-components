@@ -186,7 +186,7 @@ To add a new module run the scaffolding helper:
 npm run scaffolding
 ```
 
-_After the you filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
+_After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 
 
 **[⬆ back to top](#contents)**
@@ -197,7 +197,7 @@ _After the you filled out all the blanks and added your dependencies into your p
 
 ## Tests
 
-Visual tests have been build into each module and can be seen in either the `README.md` files of each module or in the [listing above](#modules).
+Visual tests have been built into each module and can be seen in either the `README.md` files of each module or in the [listing above](#modules).
 
 
 **[⬆ back to top](#contents)**
