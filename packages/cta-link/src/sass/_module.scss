@@ -21,10 +21,6 @@
 	margin-bottom: uikit-space( 1 );
 	font-weight: bold;
 
-	.uikit-body & {
-		color: $uikit-colour-Beta-80; //overrides body’s uikit-body a styling.
-	}
-
 	&:after {
 		content: ' ';
 		display: inline-block;
@@ -32,8 +28,8 @@
 		height: 0.8em;
 		margin: 0 uikit-space( 0.25 ) 0 uikit-space( 0.25 );
 		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Beta-80 }" d="M128 64l-64 64-16-16 64-64"/>
-				<path fill="#{ $uikit-colour-Beta-80 }" d="M128 64l-16 16-64-64L64 0"/>
+				<path fill="#{ $uikit-colour-Primary }" d="M128 64l-64 64-16-16 64-64"/>
+				<path fill="#{ $uikit-colour-Primary }" d="M128 64l-16 16-64-64L64 0"/>
 			</svg>');
 		transition: margin 0.1s ease-in;
 
@@ -49,7 +45,7 @@
 		color: $uikit-colour-Text; //sets the hover back to what it used to be.
 
 		&:after {
-			margin: 0 uikit-space( 0.1 ) 0 uikit-space( 0.4 );
+			margin: 0 uikit-space( 0.1 ) 0 uikit-space( 0.4 ); //move arrow by just uikit-space( 0.1 ); this is not a magic number …
 		}
 	}
 }

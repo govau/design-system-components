@@ -4,7 +4,7 @@
 > A list style for emphasising parts of a list item, useful for repeating phrases across that list’s items. 
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/keyword-list --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ keyword-list
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ keyword-list
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,7 +67,7 @@ keyword-list
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/keyword-list/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/keyword-list/
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -90,6 +90,6 @@ Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

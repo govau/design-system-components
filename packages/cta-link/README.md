@@ -4,7 +4,7 @@
 > Use cta links to draw attention to a primary call to action.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/more-link --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ cta-link
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ cta-link
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ cta-link
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/cta-link/test
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,6 +86,6 @@ Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

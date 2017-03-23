@@ -4,7 +4,7 @@
 > Use callout to notify and alert users of important snippets of information.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/callout --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -39,13 +39,11 @@ npm install @gov.au/callout --save-dev
 
 ```shell
 callout
-├─ core
-└─ body
-   └─ core
+└─ core
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -54,7 +52,7 @@ callout
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -65,7 +63,7 @@ callout
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -76,7 +74,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/callout/tests
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -88,6 +86,6 @@ Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

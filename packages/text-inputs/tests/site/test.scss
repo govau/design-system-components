@@ -1,3 +1,6 @@
+//sass-versioning
+@import '../../../core/node_modules/sass-versioning/dist/_index.scss';
+
 //dependencies
 @import '../../../core/lib/sass/_module.scss';
 
@@ -13,3 +16,8 @@
 
 //version check with sass-versioning
 @include versioning-check();
+
+
+.no-a11y-test {
+	display: none;
+}

@@ -19,14 +19,21 @@
  * The generic callout.
  */
 .uikit-callout {
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	line-height: $uikit-leading;
 	margin: uikit-space( 1 ) uikit-space( 0.25 );
 	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
 	border-left: 6px solid $uikit-colour-Info;
 	border-radius: $uikit-border-radius;
-	box-shadow: 0 0 8px $uikit-box-shadow-colour;
+	box-shadow: 2px 0 6px transparentize($uikit-colour-Text, 0.3);
 	max-width: $uikit-maxwidth;
 
-	p:last-child {
+	:first-child {
+		margin-top: 0;
+	}
+
+	:last-child {
 		margin-bottom: 0;
 	}
 
@@ -43,15 +50,7 @@
  * The calendar event callout
  */
 .uikit-callout--calendar-event {
-	border-left-color: $uikit-colour-Primary;
-	background-color: $uikit-colour-Primary-10;
-
-	.ie8 &,
-	.lt-ie8 & {
-		border-top: none;
-		border-right: none;
-		border-bottom: none;
-	}
+	background-color: $uikit-colour-Background;
 }
 
 .uikit-callout--calendar-event__lede,
@@ -73,10 +72,9 @@
 .uikit-callout--calendar-event__time,
 .uikit-callout--calendar-event__name {
 	font-size: 32px;
-	line-height: 1.4; //TODO: clean me up
 }
 
 .uikit-callout--calendar-event__time {
 	font-weight: bold;
-	margin-bottom: uikit-space( 0 );
+	margin-bottom: 0;
 }

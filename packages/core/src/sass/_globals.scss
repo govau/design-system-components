@@ -15,30 +15,32 @@
 //   - uikit-clearfix
 //   - uikit-media
 //   - uikit-sronly
+//   - uikit-outline
+//   - uikit-focus
 // - functions
 //   - uikit-space
 //   - uikit-replace
 //   - uikit-svguri
+//   - uikit-factorial
+//   - uikit-pow
+//   - uikit-colour-luminance
+//   - uikit-color-contrast
 //
 //  Error messages all start with a movie quote. Here are some in reserve:
-//  - Elementary, my dear Watson;
-//  - Houston, we have a problem;
-//  - Go ahead, make my day;
-//  - You can’t handle the truth;
-//  - You talking to me?;
-//  - Try not. Do - or do not. There is no try;
-//  - May the Force be with you;
-//  - Toto, I’ve got a feeling we’re not in Kansas anymore;
-//  - Nobody puts Baby in a corner;
+//  - E.T. phone home;
 //  - I have always depended on the kindness of strangers;
 //  - Where we’re going, we don’t need roads;
+//  - You shall not pass;
+//  - You’re tearing me apart, Lisa;
+//  - Toto, I’ve got a feeling we’re not in Kansas anymore;
+//  - Nobody puts Baby in a corner;
+//  - Try not. Do - or do not. There is no try;
+//  - May the Force be with you;
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // SASS VERSIONING
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-@import '../../node_modules/sass-versioning/dist/_index.scss';
-
 $name: "[replace-name]";
 $version: "[replace-version]";
 $dependencies: (
@@ -62,46 +64,62 @@ $uikit-media-lg: 1200px !default;
 /**
  * Line-height (‘leading’)
  */
-$uikit-leading: 1.6;
+$uikit-leading: 1.6 !default;
 
 
 /**
  * Font stacks
  */
-$uikit-font: 'Open Sans', Verdana, 'Bitstream Vera Sans', sans-serif;
-$uikit-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
-$uikit-font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$uikit-font: 'Open Sans', Verdana, 'Bitstream Vera Sans', sans-serif !default;
+$uikit-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
+$uikit-font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
 
 
 /**
  * max-width for line lengths (the ‘measure’)
  */
-$uikit-maxwidth: 42em; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
+$uikit-maxwidth: 42em !default; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
 
 
 /**
  * Colours
  */
-$uikit-colour-Primary: #115361 !default; //color variables (yes! the actual spelling doesn't have a u)
-$uikit-colour-Secondary: #2da2bb !default;
-$uikit-colour-Background: #b3c2cc !default;
+$uikit-colour-Hero: #115361 !default; //color variables (yes! the actual spelling doesn't have a u)
+$uikit-colour-Primary: #1B7991 !default;
+$uikit-colour-Secondary: #313131 !default;
+$uikit-colour-Background: #f0f3f5 !default;
 $uikit-colour-Border: #555 !default;
 $uikit-colour-Text: #313131 !default;
 $uikit-colour-Link: #5bcbe3 !default;
-$uikit-colour-Alpha: #e6efc2 !default;
-$uikit-colour-Beta: #043751 !default;
 
-$uikit-colour-secondary-A: #f4b124 !default;
-$uikit-colour-secondary-B: #74a56e !default;
-$uikit-colour-secondary-C: #4491c2 !default;
-$uikit-colour-secondary-D: #7064a7 !default;
-
-$uikit-colour-Error: #cc0000 !default;
-$uikit-colour-Success: #007554 !default;
-$uikit-colour-Warning: #d47500 !default;
+$uikit-colour-Error: #ff635c !default;
+$uikit-colour-Success: #0cac78 !default;
+$uikit-colour-Warning: #f69900 !default;
 $uikit-colour-Info: #00bfe9 !default;
 
-$uikit-colour-Primary--10: mix(black, $uikit-colour-Primary, 10) !default; //tints of the colors
+$uikit-colour-Hero--10: mix(black, $uikit-colour-Hero, 10) !default; //tints of the colors
+$uikit-colour-Hero--20: mix(black, $uikit-colour-Hero, 20) !default;
+$uikit-colour-Hero--30: mix(black, $uikit-colour-Hero, 30) !default;
+$uikit-colour-Hero--40: mix(black, $uikit-colour-Hero, 40) !default;
+$uikit-colour-Hero--50: mix(black, $uikit-colour-Hero, 50) !default;
+$uikit-colour-Hero--60: mix(black, $uikit-colour-Hero, 60) !default;
+$uikit-colour-Hero--70: mix(black, $uikit-colour-Hero, 70) !default;
+$uikit-colour-Hero--80: mix(black, $uikit-colour-Hero, 80) !default;
+$uikit-colour-Hero--90: mix(black, $uikit-colour-Hero, 90) !default;
+$uikit-colour-Hero--95: mix(black, $uikit-colour-Hero, 95) !default;
+
+$uikit-colour-Hero-90: mix(white, $uikit-colour-Hero, 10) !default;
+$uikit-colour-Hero-80: mix(white, $uikit-colour-Hero, 20) !default;
+$uikit-colour-Hero-70: mix(white, $uikit-colour-Hero, 30) !default;
+$uikit-colour-Hero-60: mix(white, $uikit-colour-Hero, 40) !default;
+$uikit-colour-Hero-50: mix(white, $uikit-colour-Hero, 50) !default;
+$uikit-colour-Hero-40: mix(white, $uikit-colour-Hero, 60) !default;
+$uikit-colour-Hero-30: mix(white, $uikit-colour-Hero, 70) !default;
+$uikit-colour-Hero-20: mix(white, $uikit-colour-Hero, 80) !default;
+$uikit-colour-Hero-10: mix(white, $uikit-colour-Hero, 90) !default;
+$uikit-colour-Hero-5: mix(white, $uikit-colour-Hero, 95) !default;
+
+$uikit-colour-Primary--10: mix(black, $uikit-colour-Primary, 10) !default;
 $uikit-colour-Primary--20: mix(black, $uikit-colour-Primary, 20) !default;
 $uikit-colour-Primary--30: mix(black, $uikit-colour-Primary, 30) !default;
 $uikit-colour-Primary--40: mix(black, $uikit-colour-Primary, 40) !default;
@@ -239,144 +257,6 @@ $uikit-colour-Link-10: mix(white, $uikit-colour-Link, 90) !default;
 $uikit-colour-Link-5: mix(white, $uikit-colour-Link, 95) !default;
 
 
-$uikit-colour-Alpha--10: mix(black, $uikit-colour-Alpha, 10) !default;
-$uikit-colour-Alpha--20: mix(black, $uikit-colour-Alpha, 20) !default;
-$uikit-colour-Alpha--30: mix(black, $uikit-colour-Alpha, 30) !default;
-$uikit-colour-Alpha--40: mix(black, $uikit-colour-Alpha, 40) !default;
-$uikit-colour-Alpha--50: mix(black, $uikit-colour-Alpha, 50) !default;
-$uikit-colour-Alpha--60: mix(black, $uikit-colour-Alpha, 60) !default;
-$uikit-colour-Alpha--70: mix(black, $uikit-colour-Alpha, 70) !default;
-$uikit-colour-Alpha--80: mix(black, $uikit-colour-Alpha, 80) !default;
-$uikit-colour-Alpha--90: mix(black, $uikit-colour-Alpha, 90) !default;
-$uikit-colour-Alpha--95: mix(black, $uikit-colour-Alpha, 95) !default;
-
-$uikit-colour-Alpha-90: mix(white, $uikit-colour-Alpha, 10) !default;
-$uikit-colour-Alpha-80: mix(white, $uikit-colour-Alpha, 20) !default;
-$uikit-colour-Alpha-70: mix(white, $uikit-colour-Alpha, 30) !default;
-$uikit-colour-Alpha-60: mix(white, $uikit-colour-Alpha, 40) !default;
-$uikit-colour-Alpha-50: mix(white, $uikit-colour-Alpha, 50) !default;
-$uikit-colour-Alpha-40: mix(white, $uikit-colour-Alpha, 60) !default;
-$uikit-colour-Alpha-30: mix(white, $uikit-colour-Alpha, 70) !default;
-$uikit-colour-Alpha-20: mix(white, $uikit-colour-Alpha, 80) !default;
-$uikit-colour-Alpha-10: mix(white, $uikit-colour-Alpha, 90) !default;
-$uikit-colour-Alpha-5: mix(white, $uikit-colour-Alpha, 95) !default;
-
-
-$uikit-colour-Beta--10: mix(black, $uikit-colour-Beta, 10) !default;
-$uikit-colour-Beta--20: mix(black, $uikit-colour-Beta, 20) !default;
-$uikit-colour-Beta--30: mix(black, $uikit-colour-Beta, 30) !default;
-$uikit-colour-Beta--40: mix(black, $uikit-colour-Beta, 40) !default;
-$uikit-colour-Beta--50: mix(black, $uikit-colour-Beta, 50) !default;
-$uikit-colour-Beta--60: mix(black, $uikit-colour-Beta, 60) !default;
-$uikit-colour-Beta--70: mix(black, $uikit-colour-Beta, 70) !default;
-$uikit-colour-Beta--80: mix(black, $uikit-colour-Beta, 80) !default;
-$uikit-colour-Beta--90: mix(black, $uikit-colour-Beta, 90) !default;
-$uikit-colour-Beta--95: mix(black, $uikit-colour-Beta, 95) !default;
-
-$uikit-colour-Beta-90: mix(white, $uikit-colour-Beta, 10) !default;
-$uikit-colour-Beta-80: mix(white, $uikit-colour-Beta, 20) !default;
-$uikit-colour-Beta-70: mix(white, $uikit-colour-Beta, 30) !default;
-$uikit-colour-Beta-60: mix(white, $uikit-colour-Beta, 40) !default;
-$uikit-colour-Beta-50: mix(white, $uikit-colour-Beta, 50) !default;
-$uikit-colour-Beta-40: mix(white, $uikit-colour-Beta, 60) !default;
-$uikit-colour-Beta-30: mix(white, $uikit-colour-Beta, 70) !default;
-$uikit-colour-Beta-20: mix(white, $uikit-colour-Beta, 80) !default;
-$uikit-colour-Beta-10: mix(white, $uikit-colour-Beta, 90) !default;
-$uikit-colour-Beta-5: mix(white, $uikit-colour-Beta, 95) !default;
-
-
-$uikit-colour-secondary-A--10: mix(black, $uikit-colour-secondary-A, 10) !default;
-$uikit-colour-secondary-A--20: mix(black, $uikit-colour-secondary-A, 20) !default;
-$uikit-colour-secondary-A--30: mix(black, $uikit-colour-secondary-A, 30) !default;
-$uikit-colour-secondary-A--40: mix(black, $uikit-colour-secondary-A, 40) !default;
-$uikit-colour-secondary-A--50: mix(black, $uikit-colour-secondary-A, 50) !default;
-$uikit-colour-secondary-A--60: mix(black, $uikit-colour-secondary-A, 60) !default;
-$uikit-colour-secondary-A--70: mix(black, $uikit-colour-secondary-A, 70) !default;
-$uikit-colour-secondary-A--80: mix(black, $uikit-colour-secondary-A, 80) !default;
-$uikit-colour-secondary-A--90: mix(black, $uikit-colour-secondary-A, 90) !default;
-$uikit-colour-secondary-A--95: mix(black, $uikit-colour-secondary-A, 95) !default;
-
-$uikit-colour-secondary-A-90: mix(white, $uikit-colour-secondary-A, 10) !default;
-$uikit-colour-secondary-A-80: mix(white, $uikit-colour-secondary-A, 20) !default;
-$uikit-colour-secondary-A-70: mix(white, $uikit-colour-secondary-A, 30) !default;
-$uikit-colour-secondary-A-60: mix(white, $uikit-colour-secondary-A, 40) !default;
-$uikit-colour-secondary-A-50: mix(white, $uikit-colour-secondary-A, 50) !default;
-$uikit-colour-secondary-A-40: mix(white, $uikit-colour-secondary-A, 60) !default;
-$uikit-colour-secondary-A-30: mix(white, $uikit-colour-secondary-A, 70) !default;
-$uikit-colour-secondary-A-20: mix(white, $uikit-colour-secondary-A, 80) !default;
-$uikit-colour-secondary-A-10: mix(white, $uikit-colour-secondary-A, 90) !default;
-$uikit-colour-secondary-A-5: mix(white, $uikit-colour-secondary-A, 95) !default;
-
-
-$uikit-colour-secondary-B--10: mix(black, $uikit-colour-secondary-B, 10) !default;
-$uikit-colour-secondary-B--20: mix(black, $uikit-colour-secondary-B, 20) !default;
-$uikit-colour-secondary-B--30: mix(black, $uikit-colour-secondary-B, 30) !default;
-$uikit-colour-secondary-B--40: mix(black, $uikit-colour-secondary-B, 40) !default;
-$uikit-colour-secondary-B--50: mix(black, $uikit-colour-secondary-B, 50) !default;
-$uikit-colour-secondary-B--60: mix(black, $uikit-colour-secondary-B, 60) !default;
-$uikit-colour-secondary-B--70: mix(black, $uikit-colour-secondary-B, 70) !default;
-$uikit-colour-secondary-B--80: mix(black, $uikit-colour-secondary-B, 80) !default;
-$uikit-colour-secondary-B--90: mix(black, $uikit-colour-secondary-B, 90) !default;
-$uikit-colour-secondary-B--95: mix(black, $uikit-colour-secondary-B, 95) !default;
-
-$uikit-colour-secondary-B-90: mix(white, $uikit-colour-secondary-B, 10) !default;
-$uikit-colour-secondary-B-80: mix(white, $uikit-colour-secondary-B, 20) !default;
-$uikit-colour-secondary-B-70: mix(white, $uikit-colour-secondary-B, 30) !default;
-$uikit-colour-secondary-B-60: mix(white, $uikit-colour-secondary-B, 40) !default;
-$uikit-colour-secondary-B-50: mix(white, $uikit-colour-secondary-B, 50) !default;
-$uikit-colour-secondary-B-40: mix(white, $uikit-colour-secondary-B, 60) !default;
-$uikit-colour-secondary-B-30: mix(white, $uikit-colour-secondary-B, 70) !default;
-$uikit-colour-secondary-B-20: mix(white, $uikit-colour-secondary-B, 80) !default;
-$uikit-colour-secondary-B-10: mix(white, $uikit-colour-secondary-B, 90) !default;
-$uikit-colour-secondary-B-5: mix(white, $uikit-colour-secondary-B, 95) !default;
-
-
-$uikit-colour-secondary-C--10: mix(black, $uikit-colour-secondary-C, 10) !default;
-$uikit-colour-secondary-C--20: mix(black, $uikit-colour-secondary-C, 20) !default;
-$uikit-colour-secondary-C--30: mix(black, $uikit-colour-secondary-C, 30) !default;
-$uikit-colour-secondary-C--40: mix(black, $uikit-colour-secondary-C, 40) !default;
-$uikit-colour-secondary-C--50: mix(black, $uikit-colour-secondary-C, 50) !default;
-$uikit-colour-secondary-C--60: mix(black, $uikit-colour-secondary-C, 60) !default;
-$uikit-colour-secondary-C--70: mix(black, $uikit-colour-secondary-C, 70) !default;
-$uikit-colour-secondary-C--80: mix(black, $uikit-colour-secondary-C, 80) !default;
-$uikit-colour-secondary-C--90: mix(black, $uikit-colour-secondary-C, 90) !default;
-$uikit-colour-secondary-C--95: mix(black, $uikit-colour-secondary-C, 95) !default;
-
-$uikit-colour-secondary-C-90: mix(white, $uikit-colour-secondary-C, 10) !default;
-$uikit-colour-secondary-C-80: mix(white, $uikit-colour-secondary-C, 20) !default;
-$uikit-colour-secondary-C-70: mix(white, $uikit-colour-secondary-C, 30) !default;
-$uikit-colour-secondary-C-60: mix(white, $uikit-colour-secondary-C, 40) !default;
-$uikit-colour-secondary-C-50: mix(white, $uikit-colour-secondary-C, 50) !default;
-$uikit-colour-secondary-C-40: mix(white, $uikit-colour-secondary-C, 60) !default;
-$uikit-colour-secondary-C-30: mix(white, $uikit-colour-secondary-C, 70) !default;
-$uikit-colour-secondary-C-20: mix(white, $uikit-colour-secondary-C, 80) !default;
-$uikit-colour-secondary-C-10: mix(white, $uikit-colour-secondary-C, 90) !default;
-$uikit-colour-secondary-C-5: mix(white, $uikit-colour-secondary-C, 95) !default;
-
-
-$uikit-colour-secondary-D--10: mix(black, $uikit-colour-secondary-D, 10) !default;
-$uikit-colour-secondary-D--20: mix(black, $uikit-colour-secondary-D, 20) !default;
-$uikit-colour-secondary-D--30: mix(black, $uikit-colour-secondary-D, 30) !default;
-$uikit-colour-secondary-D--40: mix(black, $uikit-colour-secondary-D, 40) !default;
-$uikit-colour-secondary-D--50: mix(black, $uikit-colour-secondary-D, 50) !default;
-$uikit-colour-secondary-D--60: mix(black, $uikit-colour-secondary-D, 60) !default;
-$uikit-colour-secondary-D--70: mix(black, $uikit-colour-secondary-D, 70) !default;
-$uikit-colour-secondary-D--80: mix(black, $uikit-colour-secondary-D, 80) !default;
-$uikit-colour-secondary-D--90: mix(black, $uikit-colour-secondary-D, 90) !default;
-$uikit-colour-secondary-D--95: mix(black, $uikit-colour-secondary-D, 95) !default;
-
-$uikit-colour-secondary-D-90: mix(white, $uikit-colour-secondary-D, 10) !default;
-$uikit-colour-secondary-D-80: mix(white, $uikit-colour-secondary-D, 20) !default;
-$uikit-colour-secondary-D-70: mix(white, $uikit-colour-secondary-D, 30) !default;
-$uikit-colour-secondary-D-60: mix(white, $uikit-colour-secondary-D, 40) !default;
-$uikit-colour-secondary-D-50: mix(white, $uikit-colour-secondary-D, 50) !default;
-$uikit-colour-secondary-D-40: mix(white, $uikit-colour-secondary-D, 60) !default;
-$uikit-colour-secondary-D-30: mix(white, $uikit-colour-secondary-D, 70) !default;
-$uikit-colour-secondary-D-20: mix(white, $uikit-colour-secondary-D, 80) !default;
-$uikit-colour-secondary-D-10: mix(white, $uikit-colour-secondary-D, 90) !default;
-$uikit-colour-secondary-D-5: mix(white, $uikit-colour-secondary-D, 95) !default;
-
-
 
 $uikit-colour-Error--10: mix(black, $uikit-colour-Error, 10) !default;
 $uikit-colour-Error--20: mix(black, $uikit-colour-Error, 20) !default;
@@ -473,9 +353,8 @@ $uikit-colour-Info-5: mix(white, $uikit-colour-Info, 95) !default;
 /**
  * Border vars and styles
  */
-$uikit-borderize: 1px solid $uikit-colour-Border-40;
-$uikit-border-radius: 3px;
-$uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
+$uikit-borderize: 1px solid $uikit-colour-Border !default;
+$uikit-border-radius: 3px !default;
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -550,6 +429,25 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
 	overflow: hidden;
 	clip: rect(0,0,0,0);
 	border: 0;
+}
+
+
+/**
+ * The outline for focus
+ */
+@mixin uikit-outline() {
+	outline: 1px solid $uikit-colour-Text;
+	outline-offset: 1px;
+}
+
+
+/**
+ * Add the outline to focus
+ */
+@mixin uikit-focus() {
+	&:focus {
+		@include uikit-outline();
+	}
 }
 
 
@@ -658,8 +556,8 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
 
 		/*    The maybe list
 
-		   Keep size and compile time down
-		   ... only add on documented fail
+			 Keep size and compile time down
+			 ... only add on documented fail
 
 		 $chunk: uikit-replace( $chunk, '|', '%7C' );
 		 $chunk: uikit-replace( $chunk, '[', '%5B' );
@@ -678,4 +576,215 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6);
 	}
 
 	@return url("data:image/svg+xml,#{ $encoded }");
+}
+
+
+/**
+ * Returns the factorial of a non-negative integer.
+ * https://github.com/terkel/mathsass
+ *
+ * @author Pascal Duez @pascalduez <http://pascalduez.me/>
+ *
+ * @param  {integer} $number - A non-negative integer.
+ *
+ * @return {integer}         - The factorial log
+ */
+@function uikit-factorial( $number ) {
+	@if $number < 0 or $number != floor( $number ) {
+		@error "You talking to me?; the uikit-factorial function only takes positive numbers.";
+	}
+
+	$factorial: 1;
+
+	@while $number > 0 {
+		$factorial: $factorial * $number;
+		$number: $number - 1;
+	}
+
+	@return $factorial;
+}
+
+
+/**
+ * Returns base to the exponent power.
+ * https://github.com/terkel/mathsass
+ *
+ * @author Pascal Duez @pascalduez <http://pascalduez.me/>
+ *
+ * @param  {integers} $base     - The base number
+ * @param  {integers} $exponent - The exponent to which to raise base
+ *
+ * @return {integers}           - The result of the math
+ */
+@function uikit-pow( $base, $exponent ) {
+	@if $exponent < 0 {
+		@error "I can see dead people; the uikit-pow function only takes positive numbers as the second argument.";
+	}
+
+	// Constants
+	$LN2:   0.6931471805599453;
+	$SQRT2: 1.4142135623730951;
+
+	//full number
+	@if $exponent == floor( $exponent ) {
+		$rest: 1;
+
+		@if $exponent < 0 {
+			$exponent: $exponent * -1;
+		}
+
+		@while $exponent > 0 {
+			@if $exponent % 2 == 1 {
+				$rest: $rest * $base;
+			}
+
+			$exponent: floor($exponent * 0.5);
+			$base: $base * $base;
+		}
+
+		@return if( $exponent < 0, 1 / $rest, $rest );
+	}
+
+	//decimal number
+	@else {
+		@if $base <= 0 {
+			@return 0 / 0;
+		}
+
+		$normalized: ( $base / $SQRT2 );
+		$log: 0;
+
+		@if $normalized < 0 {
+			$normalized: $normalized * -1;
+		}
+
+		@if $normalized < 0.5 {
+			@while $normalized < 0.5 {
+				$normalized: $normalized * 2;
+				$log: $log - 1;
+			}
+		}
+
+		@else if $normalized >= 1 {
+			@while $normalized >= 1 {
+				$normalized: $normalized / 2;
+				$log: $log + 1;
+			}
+		}
+
+		$divider: 1;
+		$deviderExponent: $log;
+
+		$baseExponent: if( $deviderExponent >= 0, 2, 1 / 2 );
+
+		@if $deviderExponent < 0 {
+			$deviderExponent: $deviderExponent * -1;
+		}
+
+		@while $deviderExponent > 0 {
+			@if $deviderExponent % 2 == 1 {
+				$divider: $divider * $baseExponent;
+			}
+			$baseExponent: $baseExponent * $baseExponent;
+			$deviderExponent: floor( $deviderExponent * 0.5 );
+		}
+
+		$base: $base / $divider;
+		$base: ( $base - 1 ) / ( $base + 1 );
+		$base2: $base * $base;
+		$iterator: 1;
+		$tempBase: $base;
+		$tempBase2: null;
+
+		@while $tempBase2 != $tempBase {
+			$base: $base * $base2;
+			$iterator: $iterator + 2;
+			$tempBase2: $tempBase;
+			$tempBase: $tempBase + $base / $iterator;
+		}
+
+		$logarithm: ( $LN2 * $log + 2 * $tempBase ) * $exponent;
+		$return: 0;
+
+		@for $quarter from 0 to 24 {
+			$return: $return + uikit-pow( $logarithm, $quarter ) / uikit-factorial( $quarter );
+		}
+
+		@return $return;
+	}
+}
+
+
+/**
+ * Calculate color luminance
+ *
+ * https://github.com/voxpelli/sass-color-helpers/blob/master/stylesheets/color-helpers/_contrast.scss
+ * Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
+ * Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
+ *
+ * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
+ *
+ * @param  {string} $colour - The color to calculate the luminance from
+ *
+ * @return {float}          - The luminance
+ */
+@function uikit-colour-luminance( $colour ) {
+	@if type-of( $colour ) != 'color' {
+		@error "Go ahead, make my day; the uikit-colour-luminance function only takes a color!";
+	}
+
+	$rgba: red( $colour ), green( $colour ), blue( $colour );
+	$rgba2: ();
+
+	@for $i from 1 through 3 {
+		$rgb: nth( $rgba, $i );
+		$rgb: $rgb / 255;
+
+		$rgb: if( $rgb < .03928, $rgb / 12.92, uikit-pow( ( $rgb + .055 ) / 1.055, 2.4 ) );
+
+		$rgba2: append( $rgba2, $rgb );
+	}
+
+	@return .2126 * nth( $rgba2, 1 ) + .7152 * nth( $rgba2, 2 ) + 0.0722 * nth( $rgba2, 3 );
+}
+
+
+/**
+ * Get the contrast ratio of two colors and warn when it is below WCAG 2.0 AA standard 4.5:1
+ *
+ * https://github.com/voxpelli/sass-color-helpers/blob/master/stylesheets/color-helpers/_contrast.scss
+ * Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
+ * Formula: http://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
+ *
+ * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
+ *
+ * @param  {string}  $forground  - Color one
+ * @param  {string}  $background - Color two
+ *
+ * @return {integer}             - The contrast ratio
+ */
+@function uikit-color-contrast( $forground, $background ) {
+	@if type-of( $forground ) != 'color' {
+		@error "Elementary, my dear Watson; the uikit-color-contrast function only takes a color as first argument!";
+	}
+
+	@if type-of( $background ) != 'color' {
+		@error "You can’t handle the truth; the uikit-color-contrast function only takes a color as second argument!";
+	}
+
+	$luminance1: uikit-colour-luminance( $forground ) + .05;
+	$luminance2: uikit-colour-luminance( $background ) + .05;
+	$ratio: $luminance1 / $luminance2;
+
+	@if $luminance2 > $luminance1 {
+		$ratio: 1 / $ratio;
+	}
+
+	$ratio: round( $ratio * 10 ) / 10;
+
+	@if( $ratio < 4.5 ) {
+		@warn "Houston, we have a problem; contrast ratio of #{ $forground } on #{ $background } is bad, just #{ $ratio }";
+	}
+
+	@return $ratio;
 }

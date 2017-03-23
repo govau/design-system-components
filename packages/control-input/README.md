@@ -4,7 +4,7 @@
 > Control inputs include radio buttons and checkboxes. They allow users to select one or more options.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/control-input --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ control-input
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ control-input
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ control-input
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/control-input/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/control-input
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,6 +86,6 @@ Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };

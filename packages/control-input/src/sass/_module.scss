@@ -25,6 +25,14 @@
 	line-height: $uikit-leading;
 	margin: 0 0px 0 7px;
 
+	&:hover {
+		cursor: pointer;
+
+		& + .uikit-control-input__text {
+			cursor: pointer;
+		}
+	}
+
 	// CHECKBOXES
 	&[type=checkbox] {
 		& + .uikit-control-input__text:after {
@@ -106,13 +114,12 @@
 	}
 
 	&:focus + .uikit-control-input__text {
-		outline: 2px solid #000; //fallback
-		outline: 4px auto -webkit-focus-ring-color;
+		@include uikit-outline();
 	}
 
 	&:disabled {
 		& + .uikit-control-input__text {
-			color: $uikit-colour-Text-50;
+			color: $uikit-colour-Text-70;
 		}
 
 		//we are adding an opaque white box ontop of the svg so we don’t have to add new svgs per control kind
@@ -120,11 +127,20 @@
 		//we have that native control behind the svg in case the svg background fails (fallback)
 		& + .uikit-control-input__text:before {
 			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="rgba(255, 255, 255, 0.5)" d="M0 0h128v128H0z"/>
+					<path fill="rgba(255, 255, 255, 0.3)" d="M0 0h128v128H0z"/>
 				</svg>');
 			z-index: 2;
 		}
+
+		&:hover {
+			cursor: not-allowed;
+
+			& + .uikit-control-input__text {
+				cursor: not-allowed;
+			}
+		}
 	}
+
 }
 
 /**

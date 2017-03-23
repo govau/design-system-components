@@ -4,7 +4,7 @@
 > Caters for video/slideshow dimensions and aspect ratios across various viewports/widths.
 
 
-## Content
+## Contents
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
@@ -29,7 +29,7 @@ npm install @gov.au/responsive-media --save-dev
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ responsive-media
 ```
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,7 +52,7 @@ responsive-media
 ## Build
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ responsive-media
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/responsive-media/tests/site/
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/responsive-me
 * v0.1.0 - 💥 Initial version
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,6 +86,6 @@ Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
 
 
-**[⬆ back to top](#content)**
+**[⬆ back to top](#contents)**
 
 # };
