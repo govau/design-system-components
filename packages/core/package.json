@@ -19,6 +19,7 @@
 		"postinstall": "pancake",
 
 		"test": "node ../../scripts/a11y.js",
+
 		"prepublish": "node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
 		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",

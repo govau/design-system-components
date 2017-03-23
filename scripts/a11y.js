@@ -22,7 +22,7 @@ const Path = require('path')
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const OPTIONS = {
 	timeout: 60000,
-	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test',
+	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test, .uikit-page-alerts__sronly, .uikit-skip-link',
 }
 
 const TestURL = 'http://localhost:8080'
