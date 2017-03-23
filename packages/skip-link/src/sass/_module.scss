@@ -38,5 +38,7 @@
 		color: $uikit-colour-Text;
 		background-color: $uikit-colour-Link;
 		text-decoration: none;
+
+		@include uikit-outline();
 	}
 }

@@ -389,9 +389,13 @@ HELPER.generate = (() => {
 	 */
 	const GetFolders = ( thisPath, verbose ) => {
 		try {
-			return Fs.readdirSync( thisPath ).filter(
-				( thisFile ) => Fs.statSync(`${ thisPath }/${ thisFile }`).isDirectory()
+			let folders = Fs.readdirSync( thisPath ).filter(
+					thisFile => Fs.statSync(`${ thisPath }/${ thisFile }`).isDirectory()
+				).filter(
+					thisFile => thisFile !== 'core'
 			);
+
+			return ['core', ...folders ]; //moving core to top
 		}
 		catch( error ) {
 			return [];

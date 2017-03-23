@@ -60,6 +60,8 @@
 			border-color: transparent;
 		}
 
+		@include uikit-focus();
+
 		&[rel~='external']:after {
 			content: ' ';
 			display: inline-block;
@@ -87,15 +89,20 @@
 
 
 	/**
+	 * Highlighting in-page sections that are in focus
+	 */
+	[tabindex="0"]:focus,
+	:target {
+		@include uikit-outline();
+	}
+
+
+	/**
 	 * Text selection and `mark` styling.
 	 */
 	mark,
 	::selection {
 		background-color: rgba( $uikit-colour-Warning-60, 0.5 );
-	}
-
-	mark {
-		box-shadow: 0 0 1px $uikit-box-shadow-colour;
 	}
 
 
@@ -104,9 +111,9 @@
 	 */
 	p {
 		max-width: $uikit-maxwidth;
+		margin: 0 0 uikit-space( 1 ) 0;
 	}
 
-	p,
 	ul,
 	ol,
 	dl,

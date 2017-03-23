@@ -36,11 +36,13 @@
 		background-color: $uikit-colour-Primary--30;
 	}
 
+	@include uikit-focus();
+
 	&:disabled {
 		background-color: $uikit-colour-Border-30;
 		font-weight: normal;
 		color: $uikit-colour-Text;
-		border: none;
+		border: 1px dotted $uikit-colour-Text;
 		cursor: not-allowed;
 
 		&:focus,
@@ -58,7 +60,7 @@
 
 	&:focus,
 	&:hover {
-		background-color: $uikit-colour-Secondary--30;
+		background-color: $uikit-colour-Secondary-70;
 	}
 }
 

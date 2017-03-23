@@ -17,6 +17,11 @@ gov.au UI-Kit
 
 ## Modules
 
+- [core](http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/)
+```
+.
+```
+
 - [body](http://uikit.apps.staging.digital.gov.au/packages/body/tests/site/)
 ```
 └─ core
@@ -44,11 +49,6 @@ gov.au UI-Kit
 - [control-input](http://uikit.apps.staging.digital.gov.au/packages/control-input/tests/site/)
 ```
 └─ core
-```
-
-- [core](http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/)
-```
-.
 ```
 
 - [cta-link](http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/)

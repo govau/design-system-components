@@ -44,34 +44,56 @@
  * - :disabled/[disabled]
  */
 .uikit-text-input {
-	border: 2px solid $uikit-colour-Border-40;
+	border: 2px solid $uikit-colour-Border-80;
 	padding: uikit-space( 0.25 );
 	font-size: 16px;
 	font-family: $uikit-font-system;
 	color: $uikit-colour-Text;
 
+	@include uikit-focus();
+
+	&:focus {
+		background-color: $uikit-colour-Link-10;
+	}
+
+	&::selection {
+		background-color: rgba( $uikit-colour-Warning-60, 0.5 );
+	}
+
 	&:invalid {
 		border: 2px solid $uikit-colour-Error;
+
+		&:focus {
+			background-color: $uikit-colour-Error-10;
+		}
 	}
 
 	&.uikit-text-input--invalid {
 		border: 2px solid $uikit-colour-Error;
+
+		&:focus {
+			background-color: $uikit-colour-Error-10;
+		}
 	}
 
 	&.uikit-text-input--valid {
-		border: 2px solid $uikit-colour-Success-80;
+		border: 2px solid $uikit-colour-Success;
+
+		&:focus {
+			background-color: $uikit-colour-Success-10;
+		}
 	}
 
 	&:disabled {
 		cursor: not-allowed;
 		background: $uikit-colour-Background;
-		border-color: transparent;
+		color: $uikit-colour-Text-80;
 	}
 
 	&[disabled] {
 		cursor: not-allowed;
 		background: $uikit-colour-Background;
-		border-color: transparent;
+		color: $uikit-colour-Text-80;
 	}
 }
 

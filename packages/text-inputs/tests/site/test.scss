@@ -16,3 +16,8 @@
 
 //version check with sass-versioning
 @include versioning-check();
+
+
+.no-a11y-test {
+	display: none;
+}

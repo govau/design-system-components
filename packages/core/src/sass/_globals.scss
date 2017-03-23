@@ -15,6 +15,8 @@
 //   - uikit-clearfix
 //   - uikit-media
 //   - uikit-sronly
+//   - uikit-outline
+//   - uikit-focus
 // - functions
 //   - uikit-space
 //   - uikit-replace
@@ -83,15 +85,15 @@ $uikit-maxwidth: 42em !default; //Answer to life, the universe, and everything (
  * Colours
  */
 $uikit-colour-Hero: #115361 !default; //color variables (yes! the actual spelling doesn't have a u)
-$uikit-colour-Primary: #18788D !default;
+$uikit-colour-Primary: #1B7991 !default;
 $uikit-colour-Secondary: #313131 !default;
 $uikit-colour-Background: #f0f3f5 !default;
 $uikit-colour-Border: #555 !default;
 $uikit-colour-Text: #313131 !default;
 $uikit-colour-Link: #5bcbe3 !default;
 
-$uikit-colour-Error: #cc0000 !default;
-$uikit-colour-Success: #007554 !default;
+$uikit-colour-Error: #ff635c !default;
+$uikit-colour-Success: #0cac78 !default;
 $uikit-colour-Warning: #f69900 !default;
 $uikit-colour-Info: #00bfe9 !default;
 
@@ -353,7 +355,6 @@ $uikit-colour-Info-5: mix(white, $uikit-colour-Info, 95) !default;
  */
 $uikit-borderize: 1px solid $uikit-colour-Border !default;
 $uikit-border-radius: 3px !default;
-$uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6) !default;
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -428,6 +429,25 @@ $uikit-box-shadow-colour: transparentize($uikit-colour-Text, 0.6) !default;
 	overflow: hidden;
 	clip: rect(0,0,0,0);
 	border: 0;
+}
+
+
+/**
+ * The outline for focus
+ */
+@mixin uikit-outline() {
+	outline: 1px solid $uikit-colour-Text;
+	outline-offset: 1px;
+}
+
+
+/**
+ * Add the outline to focus
+ */
+@mixin uikit-focus() {
+	&:focus {
+		@include uikit-outline();
+	}
 }
 
 
