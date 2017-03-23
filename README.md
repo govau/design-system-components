@@ -6,10 +6,39 @@ gov.au UI-Kit
 
 ## Contents
 
+* [How to use](#how-to-use)
 * [Modules](#modules)
 * [Build](#build)
 * [Tests](#tests)
 * [License](#license)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## How to use
+
+The gov.au UI-Kit is distributed through the [npm](https://www.npmjs.com) ecosystem and can only be installed through the `npm` command.
+Npm requires [node.js](https://nodejs.org/en/) and the UI-Kit needs a node.js 5 or higher.
+
+To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`).
+Inside your working folder install any module and [pancake](https://github.com/govau/pancake/) will make sure you have all assets ready to use.
+
+Run `npm install @gov.au/body` to install the body module. To install several modules just chain them like:
+
+```shell
+npm install @gov.au/body @gov.au/header @gov.au/footer @gov.au/buttons
+```
+
+❗️Due to pancake installing plugins very slowly make sure you include the sass plugin into your install command. That will speed up things considerably.
+
+```
+npm install @gov.au/pancake-sass @gov.au/body @gov.au/header @gov.au/footer @gov.au/buttons
+```
+
+
+
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
