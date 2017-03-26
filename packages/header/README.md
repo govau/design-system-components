@@ -71,6 +71,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/header/tests/
 
 ## Release History
 
+* v1.0.0 - Removed the side spacing #147
 * v0.1.0 - 💥 Initial version
 
 
