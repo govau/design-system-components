@@ -24,18 +24,18 @@
 	font-family: $uikit-font-system;
 	color: #fff;
 	background: $uikit-colour-Primary;
-	padding: uikit-space( 1 ) uikit-space( 0.5 ) uikit-space( 1.25 ) uikit-space( 0.75 );
+	padding: uikit-space( 1 ) 0 uikit-space( 1.25 ) 0;
 	margin-bottom: uikit-space( 1 );
 
 	&.uikit-header--hero {
-		padding: uikit-space( 2 ) uikit-space( 0.5 ) uikit-space( 2.5 ) uikit-space( 0.75 );
+		padding: uikit-space( 2 ) 0 uikit-space( 2.5 ) 0;
 	}
 
 	@include uikit-media( sm ) {
-		padding: uikit-space( 2 ) uikit-space( 1 ) uikit-space( 3 ) uikit-space( 4 );
+		padding: uikit-space( 2 ) 0 uikit-space( 3 ) 0;
 
 		&.uikit-header--hero {
-			padding: uikit-space( 4.5 ) uikit-space( 1 ) uikit-space( 8.5 ) uikit-space( 4 );
+			padding: uikit-space( 4.5 ) 0 uikit-space( 8.5 ) 0;
 		}
 	}
 
