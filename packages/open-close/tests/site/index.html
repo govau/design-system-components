@@ -45,7 +45,29 @@
 
 	<h1>Test: open-close</h1>
 
-	code here
+	<a aria-controls="open" id="open" href="#" onclick="UIKIT.openclose.open(object, 'height', '500px', 50)">Open</a>
+	<a aria-controls="close" id="close" href="#" onclick="UIKIT.openclose.close(object, 'height', 500)">Close</a>
 
+	<div style="height:18px" id="dropdown-1">
+		I'm content in a vertical dropdown
+	</div>
+
+	<a aria-controls="close" id="close" href="#" onclick="UIKIT.openclose.close(object2, 'height', 500)">Close</a>
+	<div style="height:227px" id="dropdown-2">
+		I'm content in a vertical dropdown
+	</div>
+
+	<a href="#">Open horizontally</a>
+	<div>
+		I'm content in a horizontal dropdown
+	</div>
+
+	<script type="text/javascript" src="../../src/js/module.js"></script>
+
+	<script>
+		var object = document.getElementById('dropdown-1')
+		var object2 = document.getElementById('dropdown-2')
+		//object.onclick = UIKIT.openclose.toggle();
+	</script>
 </body>
 </html>
