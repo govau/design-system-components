@@ -45,24 +45,23 @@
 
 	<h1>Test: open-close</h1>
 
+	<h2>Horizontal open-close</h2>
 	<div>
-		<a aria-controls="open" id="open" href="#" onclick="UIKIT.openclose.open(object, '400', 'height', 1500)">Open</a>
-		<a aria-controls="close" id="close" href="#" onclick="UIKIT.openclose.close(object, 200, 'height', 1500)">Close</a>
+		<button aria-controls="open" id="open" onclick="UIKIT.openclose.open(object, 'auto', 'width', 150)">Open</button>
+		<button aria-controls="close" id="close" onclick="UIKIT.openclose.close(object, 0, 'width', 250)">Close</button>
 	</div>
-	<div style="height:400px;background-color:blue;" id="dropdown-1">
+	<div style="width:0px;height:300px;background-color:blue;" id="dropdown-1">
 		I'm content in a vertical dropdown
 	</div>
 
-	<!--
+	<h2>Vertical open-close</h2>
 	<div>
-		<a aria-controls="open" id="open" href="#" onclick="UIKIT.openclose.open(object2, 'auto', 'height', 1000)">Open</a>
-		<a aria-controls="close" id="close" href="#" onclick="UIKIT.openclose.close(object2, 0, 'height', 2000)">Close</a>
+		<button aria-controls="open" id="open" onclick="UIKIT.openclose.open(object2, 'auto', 'height', 250)">Open</button>
+		<button aria-controls="close" id="close" onclick="UIKIT.openclose.close(object2, 0, 'height', 250)">Close</button>
 	</div>
-	<div style="height:0" id="dropdown-2">
-		I'm content in a vertical dropdown <br /> Some other stuff
+	<div style="height:0;background-color:blue;" id="dropdown-2">
+		I'm content in a vertical dropdown
 	</div>
--->
-
 
 	<script type="text/javascript" src="../../src/js/module.js"></script>
 
