@@ -86,7 +86,7 @@ var UIKIT = UIKIT || {};
 	/**
 	 * Animation
 	 *
-	 * @param  {object} el            - Element we are animating
+	 * @param  {object} el            - Element/s we are animating
 	 * @param  {integer} initialSize  - The initial size of the element
 	 * @param  {integer} stepSize     - The amount of pixels the element needs to move for each setInterval
 	 * @param  {integer} intervalTime - The time taken for each iteration of setInterval
@@ -94,14 +94,14 @@ var UIKIT = UIKIT || {};
 	 */
 	function animateClose( el, closeSize, initialSize, direction, stepSize, intervalTime ) {
 
-		var runAnimate = setInterval ( function() {
+		UIKIT.openclose.animation = setInterval ( function() {
 
 			if ( initialSize == closeSize ) {
-				clearInterval(runAnimate);
+				clearInterval(UIKIT.openclose.animation);
 			}
 			else if ( initialSize < closeSize ) {
 				el.style.height = closeSize;
-				clearInterval(runAnimate);
+				clearInterval(UIKIT.openclose.animation);
 			}
 			else {
 				initialSize -= stepSize;
@@ -110,17 +110,19 @@ var UIKIT = UIKIT || {};
 
 		}, intervalTime )
 
+
 	}
 
 	function animateOpen( el, openSize, initialSize, direction, stepSize, intervalTime ) {
 
-		var runAnimate = setInterval ( function() {
+		UIKIT.openclose.animation = setInterval ( function() {
+
 			if ( initialSize == openSize ) {
-				clearInterval(runAnimate);
+				clearInterval(UIKIT.openclose.animation);
 			}
 			else if ( initialSize > openSize ) {
 				el.style.height = openSize;
-				clearInterval(runAnimate);
+				clearInterval(UIKIT.openclose.animation);
 			}
 			else {
 				initialSize += stepSize;
@@ -143,11 +145,11 @@ var UIKIT = UIKIT || {};
 	 */
 
 	openclose.close = function (el, closeSize, direction, speed, callback) {
+		clearInterval(UIKIT.openclose.animation);
 
 		var initialSize = getInitialSize ( el, direction )
 		var animationSpecs = calculateAnimationSteps (initialSize.initialSize, closeSize, speed)
-		//console.log(animationSpecs)
-		UIKIT.openclose.animation = animateClose( el, closeSize, initialSize.initialSize, direction, animationSpecs.stepSize, animationSpecs.intervalTime )
+		animateClose( el, closeSize, initialSize.initialSize, direction, animationSpecs.stepSize, animationSpecs.intervalTime )
 
 		if (callback) {
 			callback();
@@ -155,9 +157,11 @@ var UIKIT = UIKIT || {};
 	};
 
 	openclose.open = function (el, openSize, direction, speed, callback) {
+		clearInterval(UIKIT.openclose.animation);
+
 		var initialSize = getInitialSize (el, direction, openSize )
 		var animationSpecs = calculateAnimationSteps (initialSize.initialSize, initialSize.endSize, speed)
-		UIKIT.openclose.animation = animateOpen( el, initialSize.endSize, initialSize.initialSize, direction, animationSpecs.stepSize, animationSpecs.intervalTime )
+		animateOpen( el, initialSize.endSize, initialSize.initialSize, direction, animationSpecs.stepSize, animationSpecs.intervalTime )
 
 		if (callback) {
 			callback();
