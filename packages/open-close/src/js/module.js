@@ -65,7 +65,7 @@ var UIKIT = UIKIT || {};
 	function calculateAnimationSteps ( initialSize, endSize, speed ) {
 
 		var distance = Math.abs( initialSize - endSize )
-		var intervalTime = ( speed / distance );  // the time each setInterval iteration will take
+		var intervalTime = ( speed / distance );    // the time each setInterval iteration will take
 		var stepSize = 1;                           // the size of each step in pixels
 		var steps = distance / stepSize             // the amount of steps required to achieve animation
 		intervalTime = speed / steps;
@@ -104,9 +104,11 @@ var UIKIT = UIKIT || {};
 			 //check if the element is opening or closing
 			 if (endSize > initialSize) {
 				 var iterateCounter = initialSize += stepSize;
+				 el.UIKITtoggleState = 'opening'
 			 }
 			 else if (endSize < initialSize){
 				 var iterateCounter = initialSize -= stepSize;
+				 el.UIKITtoggleState = 'closing'
 			 }
 
 			 //check if the element is modifying height or width
@@ -174,7 +176,45 @@ var UIKIT = UIKIT || {};
 		}
 	};
 
-	openclose.toggle = function (event) {
+	openclose.toggle = function (el, closeSize, openSize, direction, speed, callback) {
+		clearInterval(UIKIT.openclose.animation);
+
+		var initialSize = getInitialSize ( el, direction, openSize )
+		console.log(initialSize)
+		//check if accordion is open or closed
+		if ( initialSize.initialSize == closeSize ) {
+			//get the specs we need to open the element
+			var animationSpecs = calculateAnimationSteps (initialSize.initialSize, initialSize.endSize, speed)
+			var endSize = initialSize.endSize
+		}
+		else if ( initialSize.initialSize == initialSize.endSize ) {
+			//get the specs we need to close the element
+			var animationSpecs = calculateAnimationSteps (initialSize.initialSize, closeSize, speed)
+			console.log(animationSpecs)
+			var endSize = closeSize
+		}
+		else {
+			if ( el.UIKITtoggleState == 'opening' ) {
+				// we should start to close
+				var animationSpecs = calculateAnimationSteps (initialSize.initialSize, closeSize, speed)
+				var endSize = closeSize
+			}
+			else if ( el.UIKITtoggleState == 'closing' ) {
+				// we should start to open
+				var animationSpecs = calculateAnimationSteps (initialSize.initialSize, initialSize.endSize, speed)
+				var endSize = initialSize.endSize
+			}
+			else {
+				console.log('Uhoh: Something went wrong with UIKIT.openclose.toggle animation')
+			}
+		}
+
+		//console.log('toggle state: '+el.UIKITtoggleStateState)
+		animate( el, endSize, initialSize.initialSize, direction, animationSpecs.stepSize, animationSpecs.steps, animationSpecs.intervalTime )
+
+		if (callback) {
+			callback();
+		}
 	};
 
 	UIKIT.openclose = openclose;
