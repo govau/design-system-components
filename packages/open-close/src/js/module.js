@@ -14,44 +14,76 @@ var UIKIT = UIKIT || {};
 		animation: {},
 	}
 
+
+	/**
+	 * Calculate the size of the element when it's dimension(height or width) is set to auto
+	 *
+	 * @param  {object} el          - The element to animate
+	 * @param  {string} dimension   - The dimenstion the animation moves in (either height or width)
+	 *
+	 * @return {integer}            - the size of the element when at dimension(height or width)='auto'
+	 */
+	function calculateAuto( el, dimension ) {
+
+		var initialSize;
+		var endSize;
+
+		if ( dimension === 'height' ) {
+			initialSize = el.clientHeight;
+			el.style[ dimension ] = 'auto';
+			endSize = el.clientHeight;
+			el.style[ dimension ] = initialSize;
+		}
+		else {
+			initialSize = el.clientWidth;
+			el.style[ dimension ] = 'auto';
+			endSize = el.clientWidth;
+			el.style[ dimension ] = initialSize;
+		}
+
+		return parseInt( endSize );
+	}
+
+
 	/**
 	 * Get inital size of element to animate
 	 *
 	 * @param  {object} el          - The element to animate
-	 * @param  {string} direction   - The direction of the animation (either height or width)
+	 * @param  {string} dimension   - The dimenstion the animation moves in (either height or width)
 	 *
 	 * @return {object}             - initial and end sizes of the element to animate
 	 */
 
-	function getInitialSize ( el, direction, endSize ) {
-		if (direction == 'height') {
-			var initialSize = el.clientHeight; // the start height of the element to animate
+	function getInitialSize ( el, dimension, endSize ) {
+
+		var initialSize;
+
+		// validate the dimension argument
+		if (dimension === 'height') {
+			initialSize = el.clientHeight;
 		}
-		else if (direction == 'width') {
-			var initialSize = el.clientWidth; // the start width of the element to animate
-		} else {
-			throw new Error('Direction argument on UIKIT.openclose can only be "height" or "width"');
+		else if (dimension === 'width') {
+			initialSize = el.clientWidth;
+		}
+		else {
+			throw new Error('Dimension argument on UIKIT.openclose can only be "height" or "width"');
 		}
 
-		if ( endSize == 'auto' && direction == 'height' ) {
-			el.style.height = 'auto';
-			var endSize = el.clientHeight;
-			el.style.height = initialSize;
+		// 1. we may need to calculate the size of the elements at 'auto'
+		if ( endSize === 'auto' ) {
+			var endSize = calculateAuto( el, dimension );
 		}
-		else if ( endSize == 'auto' && direction == 'width' ) {
-			el.style.width = 'auto';
-			var endSize = el.clientWidth;
-			el.style.width = initialSize;
-		}
+		// 2. if not simply use the integer from endSize
 		else {
 			var endSize = endSize;
 		}
 
 		return {
-			initialSize: initialSize,
-			endSize: endSize,
+			initialSize: parseInt( initialSize ),
+			endSize: parseInt( endSize ),
 		}
 	}
+
 
 	/**
 	 * Calculate the requiremnts for the desired animation
@@ -62,16 +94,18 @@ var UIKIT = UIKIT || {};
 	 *
 	 * @return {object}               - Required steps, stepSize and intervalTime for the animation
 	 */
-	function calculateAnimationSteps ( initialSize, endSize, speed ) {
+	function calculateAnimationSpecs ( initialSize, endSize, speed ) {
 
-		var distance = Math.abs( initialSize - endSize )
-		var intervalTime = ( speed / distance );    // the time each setInterval iteration will take
-		var stepSize = 1;                           // the size of each step in pixels
-		var steps = distance / stepSize             // the amount of steps required to achieve animation
+		var distance = Math.abs( initialSize - endSize )  // the overall distance the animation needs to travel
+		var intervalTime = ( speed / distance );          // the time each setInterval iteration will take
+		var stepSize = 1;                                 // the size of each step in pixels
+		var steps = distance / stepSize                   // the amount of steps required to achieve animation
 		intervalTime = speed / steps;
-		//if iterval time exceeds 60FPS eg intervalTime < 16.67ms
+
+		// we need to adjust our animation specs if iterval time exceeds 60FPS eg intervalTime < 16.67ms
 		if (intervalTime < (50/3)) {
 			stepSize = Math.round( (50/3) / intervalTime );
+
 			// if number of steps required is not a whole number
 			if ( ( ( initialSize - endSize ) / stepSize ) % 1 != 0) {
 				steps = Math.floor( distance / stepSize )
@@ -88,46 +122,55 @@ var UIKIT = UIKIT || {};
 
 
 	/**
-	 * Animation
+	 * The magical animation function
 	 *
 	 * @param  {object} el            - Element/s we are animating
+	 * @param  {integer} endSize      - The size the element should animate to
 	 * @param  {integer} initialSize  - The initial size of the element
+	 * @param  {integer} dimesnion    - The dimenstion the animation moves in (either height or width)
 	 * @param  {integer} stepSize     - The amount of pixels the element needs to move for each setInterval
-	 * @param  {integer} intervalTime - The time taken for each iteration of setInterval
+	 * @param  {integer} steps        - The amount of steps the element needs to take
+	 * @param  {integer} intervalTime - The time taken for each iteration of setInterval in milliseconds
 	 *
 	 */
 
-	function animate( el, endSize, initialSize, direction, stepSize, steps, intervalTime ) {
+	function animate( el, endSize, initialSize, dimension, stepSize, steps, intervalTime ) {
 
 		 UIKIT.openclose.animation = setInterval ( function() {
 
-			 //check if the element is opening or closing
-			 if (endSize > initialSize) {
-				 var iterateCounter = initialSize += stepSize;
-				 el.UIKITtoggleState = 'opening'
-			 }
-			 else if (endSize < initialSize){
-				 var iterateCounter = initialSize -= stepSize;
-				 el.UIKITtoggleState = 'closing'
-			 }
+			 var iterateCounter; // this variable will hold the current size of the element
+			 var iterateSize;    // this variable will hold the the
 
-			 //check if the element is modifying height or width
-			 if (direction == 'height') {
-				 var iterateSize = el.style.height = initialSize + 'px';
-			 }
-			 else {
-				 var iterateSize = el.style.width = initialSize + 'px';
-			 }
+			// check the current animation state of the element
+			if (endSize > initialSize) {
+				iterateCounter = initialSize += stepSize;
+				el.UIKITtoggleState = 'opening';
+			}
+			else if (endSize < initialSize) {
+				iterateCounter = initialSize -= stepSize;
+				el.UIKITtoggleState = 'closing';
+			}
+			else {
+				el.UIKITtoggleState = undefined;
+			}
+
+			// check if the element is modifying height or width
+			if (dimension === 'height') {
+				iterateSize = el.style.height = initialSize + 'px';
+			}
+			else {
+				iterateSize = el.style.width = initialSize + 'px';
+			}
 
 			 // we dont run function if dropwdown is already closed or opened
-			 if ( initialSize == endSize ) {
+			 if ( initialSize === endSize ) {
 				 clearInterval(UIKIT.openclose.animation);
 			 }
-			 else if ( steps == 0 && direction == 'width' ) {
+			 else if ( steps === 0 && dimension == 'width' ) {
 				 el.style.width = endSize + 'px';
 				 clearInterval(UIKIT.openclose.animation);
 			 }
-			 else if ( steps == 0 && direction == 'height' ) {
+			 else if ( steps === 0 && dimension == 'height' ) {
 				 el.style.height = endSize + 'px';
 				 clearInterval(UIKIT.openclose.animation);
 			 }
@@ -141,82 +184,104 @@ var UIKIT = UIKIT || {};
 
 	}
 
+
 	/**
 	 * Close animation
 	 *
 	 * @param  {object} el          - The element to animate
-	 * @param  {string} direction   - The direction of the animation (either height or width)
+	 * @param  {string} closeSize   - The direction of the animation (either height or width)
+	 * @param  {string} dimension   - The dimenstion the animation moves in (either height or width)
 	 * @param  {integer} speed      - The speed of the animation in ms
 	 * @param  {function} callback  - The callback to run after the animation has completed
 	 *
 	 */
 
-	openclose.close = function (el, closeSize, direction, speed, callback) {
+	openclose.close = function (el, closeSize, dimension, speed, callback) {
 		clearInterval(UIKIT.openclose.animation);
 
-		var initialSize = getInitialSize ( el, direction, closeSize )
-		var animationSpecs = calculateAnimationSteps (initialSize.initialSize, closeSize, speed)
+		var initialSize = getInitialSize ( el, dimension, closeSize )
+		var animationSpecs = calculateAnimationSpecs (initialSize.initialSize, closeSize, speed)
 
-		animate( el, closeSize, initialSize.initialSize, direction, animationSpecs.stepSize, animationSpecs.steps, animationSpecs.intervalTime )
+		animate( el, closeSize, initialSize.initialSize, dimension, animationSpecs.stepSize, animationSpecs.steps, animationSpecs.intervalTime )
 
-		if (callback) {
+		if (typeof callback === 'function') {
 			callback();
 		}
 	};
 
-	openclose.open = function (el, openSize, direction, speed, callback) {
+
+	/**
+	 * Open animation
+	 *
+	 * @param  {object} el          - The element to animate
+	 * @param  {string} closeSize   - The direction of the animation (either height or width)
+	 * @param  {string} dimension   - The dimenstion the animation moves in (either height or width)
+	 * @param  {integer} speed      - The speed of the animation in ms
+	 * @param  {function} callback  - The callback to run after the animation has completed
+	 *
+	 */
+	openclose.open = function (el, openSize, dimension, speed, callback) {
 		clearInterval(UIKIT.openclose.animation);
 
-		var initialSize = getInitialSize (el, direction, openSize )
-		var animationSpecs = calculateAnimationSteps (initialSize.initialSize, initialSize.endSize, speed)
-		animate( el, initialSize.endSize, initialSize.initialSize, direction, animationSpecs.stepSize, animationSpecs.steps, animationSpecs.intervalTime )
+		var initialSize = getInitialSize (el, dimension, openSize )
+		var animationSpecs = calculateAnimationSpecs (initialSize.initialSize, initialSize.endSize, speed)
+		animate( el, initialSize.endSize, initialSize.initialSize, dimension, animationSpecs.stepSize, animationSpecs.steps, animationSpecs.intervalTime )
 
-		if (callback) {
+		if (typeof callback === 'function') {
 			callback();
 		}
 	};
 
-	openclose.toggle = function (el, closeSize, openSize, direction, speed, callback) {
+
+	/**
+	 * Toggle animation
+	 *
+	 * @param  {object} el          - The element to animate
+	 * @param  {string} closeSize   - The direction of the animation (either height or width)
+	 * @param  {string} dimension   - The dimenstion the animation moves in (either height or width)
+	 * @param  {integer} speed      - The speed of the animation in ms
+	 * @param  {function} callback  - The callback to run after the animation has completed
+	 *
+	 */
+	openclose.toggle = function(el, closeSize, openSize, dimension, speed, callback) {
 		clearInterval(UIKIT.openclose.animation);
 
-		var initialSize = getInitialSize ( el, direction, openSize )
-		console.log(initialSize)
-		//check if accordion is open or closed
-		if ( initialSize.initialSize == closeSize ) {
-			//get the specs we need to open the element
-			var animationSpecs = calculateAnimationSteps (initialSize.initialSize, initialSize.endSize, speed)
-			var endSize = initialSize.endSize
+		var closeSize = parseInt( closeSize ) || 0;
+		var openSize = openSize || 'auto';
+		var initialSize = getInitialSize( el, dimension, openSize );
+		var targetSize; // the size the element should open/close to after toggle is clicked
+
+		// check the state of the element and determine whether the element should close or open
+
+		// is the accordion closed?
+		if ( initialSize.initialSize === parseInt( closeSize ) ) {
+			targetSize = initialSize.endSize;
 		}
-		else if ( initialSize.initialSize == initialSize.endSize ) {
-			//get the specs we need to close the element
-			var animationSpecs = calculateAnimationSteps (initialSize.initialSize, closeSize, speed)
-			console.log(animationSpecs)
-			var endSize = closeSize
+		// is the accordion open?
+		else if ( initialSize.initialSize === initialSize.endSize ) {
+			targetSize = closeSize;
+		}
+		// is the accordion opening?
+		else if ( el.UIKITtoggleState === 'opening' ) {
+			targetSize = closeSize;
+		}
+		// is the accordion closing?
+		else if ( el.UIKITtoggleState === 'closing' ) {
+			targetSize = initialSize.endSize;
 		}
 		else {
-			if ( el.UIKITtoggleState == 'opening' ) {
-				// we should start to close
-				var animationSpecs = calculateAnimationSteps (initialSize.initialSize, closeSize, speed)
-				var endSize = closeSize
-			}
-			else if ( el.UIKITtoggleState == 'closing' ) {
-				// we should start to open
-				var animationSpecs = calculateAnimationSteps (initialSize.initialSize, initialSize.endSize, speed)
-				var endSize = initialSize.endSize
-			}
-			else {
-				console.log('Uhoh: Something went wrong with UIKIT.openclose.toggle animation')
-			}
+			throw new Error('Uhoh: Something went wrong with UIKIT.openclose.toggle animation');
 		}
 
-		//console.log('toggle state: '+el.UIKITtoggleStateState)
-		animate( el, endSize, initialSize.initialSize, direction, animationSpecs.stepSize, animationSpecs.steps, animationSpecs.intervalTime )
+		var animationSpecs = calculateAnimationSpecs (initialSize.initialSize, targetSize, speed)
 
-		if (callback) {
+		animate( el, targetSize, initialSize.initialSize, dimension, animationSpecs.stepSize, animationSpecs.steps, animationSpecs.intervalTime )
+
+		if (typeof callback === 'function') {
 			callback();
 		}
 	};
 
 	UIKIT.openclose = openclose;
 
-}(UIKIT));
+}( UIKIT ));
