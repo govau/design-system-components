@@ -23,10 +23,6 @@
 	margin: 0 0 uikit-space( 1 ) 0;
 	border-top: 1px solid $uikit-colour-Border-40;
 
-	@include uikit-media( xs ) {
-		max-width: 18em;
-	}
-
 	& > li {
 		margin: 0;
 	}
@@ -70,6 +66,14 @@
 		background-position: 0 center;
 	}
 
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			top: 6px;
+			content: '-';
+		}
+	}
+
 	&.progress-indicator--doing {
 		border-left-color: $uikit-colour-Hero;
 		font-weight: bold;
@@ -84,6 +88,13 @@
 					<circle fill="#{ $uikit-colour-Hero }" cx="12" cy="12" r="1.5"></circle>
 					<circle fill="#{ $uikit-colour-Hero }" cx="17.5" cy="12" r="1.5"></circle>
 				</svg>');
+		}
+
+		.ie8 &,
+		.lt-ie8 & {
+			&:after {
+				content: '...';
+			}
 		}
 	}
 
@@ -101,6 +112,13 @@
 						L10.7655039,13.1496063 L16.0445736,7.27427822 C16.2073643,7.10104987 16.4244186,7 16.6550388,7 C16.8856589,7 17.1027132,7.10104987
 						17.2655039,7.27427822 L18.5,8.57349081 C18.6627907,8.74671916 18.744186,8.99212598 18.744186,9.23753281 Z"></path>
 				</svg>');
+		}
+
+		.ie8 &,
+		.lt-ie8 & {
+			&:after {
+				content: '✓';
+			}
 		}
 	}
 }
