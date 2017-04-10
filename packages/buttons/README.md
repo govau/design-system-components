@@ -71,6 +71,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/buttons/tests
 
 ## Release History
 
+* v0.2.0 - Added block modifier
 * v0.1.0 - 💥 Initial version
 
 
