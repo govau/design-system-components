@@ -57,7 +57,7 @@
 		bottom: 0;
 		width: 24px;
 		background: uikit-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-				<path fill="#{ $uikit-colour-Border-40 }" d="M24,12 C24,18.6251859 18.6251859,24 12,24 C5.37481408,24 0,18.6251859 0,12 C0,5.37481408 5.37481408,0 12,0 C18.6251859,0
+				<path fill="#{ $uikit-colour-Text-80 }" d="M24,12 C24,18.6251859 18.6251859,24 12,24 C5.37481408,24 0,18.6251859 0,12 C0,5.37481408 5.37481408,0 12,0 C18.6251859,0
 					24,5.37481408 24,12 Z"></path>
 				<path fill="#fff" d="M22,12 C22,6.47916667 17.5208333,2 12,2 C6.47916667,2 2,6.47916667 2,12 C2,17.5208333 6.47916667,22 12,22 C17.5208333,22
 					22,17.5208333 22,12 Z"></path>
@@ -127,5 +127,5 @@
 	display: block;
 	font-size: 14px;
 	font-weight: normal;
-	color: $uikit-colour-Text-70;
+	color: $uikit-colour-Text-80;
 }
