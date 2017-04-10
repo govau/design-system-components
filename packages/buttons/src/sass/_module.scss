@@ -77,3 +77,16 @@
 		background-color: $uikit-colour-Primary-10;
 	}
 }
+
+/**
+ * BLOCK
+ */
+.uikit-btn--block {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+
+	& + .uikit-btn--block {
+		margin-top: uikit-space( 0.25 );
+	}
+}
