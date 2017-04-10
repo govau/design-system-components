@@ -65,13 +65,22 @@
 		I'm content in a vertical dropdown
 	</div>
 
-	<h2>Vertical open-close</h2>
+	<h2>Multiple elements</h2>
 	<div>
-		<button aria-controls="open" id="open" onclick="UIKIT.openclose.open(object2, '200', 'height', 250)">Open</button>
-		<button aria-controls="close" id="close" onclick="UIKIT.openclose.close(object2, 0, 'height', 250)">Close</button>
+		<button aria-controls="open" id="open" onclick="UIKIT.openclose.open(objects, '200', 'height', 250)">Open all</button>
+		<button aria-controls="close" id="close" onclick="UIKIT.openclose.close(objects, 0, 'height', 250)">Close all</button>
+		<button aria-controls="close" id="close" onclick="UIKIT.openclose.close(objects, 0, 200, 'height', 250)">Toggle all</button>
 	</div>
-	<div style="height:0;background-color:rebeccapurple;" id="dropdown-2">
-		I'm content in a vertical dropdown
+	<div style="overflow:hidden;">
+		<div class="accordion" style="height:200px;background-color:rebeccapurple;width:25%;margin-right:5%;float:left;" id="dropdown-4">
+			I'm content in a vertical dropdown
+		</div>
+		<div class="accordion" style="height:200px;background-color:rebeccapurple;width:25%;margin-right:5%;float:left;" id="dropdown-5">
+			I'm content in a vertical dropdown
+		</div>
+		<div class="accordion" style="height:200px;background-color:rebeccapurple;width:25%;margin-right:5%;float:left;" id="dropdown-6">
+			I'm content in a vertical dropdown
+		</div>
 	</div>
 
 
@@ -82,6 +91,7 @@
 		var object = document.getElementById('dropdown-1')
 		var object2 = document.getElementById('dropdown-2')
 		var object3 = document.getElementById('dropdown-3')
+		var objects = document.getElementsByClassName('accordion')
 	</script>
 </body>
 </html>
