@@ -49,7 +49,7 @@
 	<div>
 		<button aria-controls="open" id="open" onclick="UIKIT.openclose.open(object3, '200', 'height', 200, function() { console.log('done!!')})">Open</button>
 		<button aria-controls="close" id="close" onclick="UIKIT.openclose.close(object3, 0, 'height', 200, function() { console.log('done!!')})">Close</button>
-		<button aria-controls="open" id="toggle" onclick="UIKIT.openclose.toggle(object3, '0', '200', 'height', 200, function() { console.log('done!!')})">Toggle</button>
+		<button aria-controls="open" id="toggle" onclick="UIKIT.openclose.toggle(object3, 'height', 200, function() { console.log('done!!')})">Toggle</button>
 	</div>
 	<div style="height:200px;background-color:rebeccapurple;" id="dropdown-3">
 		I'm content in a vertical dropdown<br><br><br>
@@ -59,7 +59,7 @@
 	<div>
 		<button aria-controls="open" id="open" onclick="UIKIT.openclose.open(object, 'auto', 'width', 400, function() { console.log('done!!')})">Open</button>
 		<button aria-controls="close" id="close" onclick="UIKIT.openclose.close(object, 0, 'width', 400, function() { console.log('done!!')})">Close</button>
-		<button aria-controls="open" id="toggle" onclick="UIKIT.openclose.toggle(object, '0', 'auto', 'width', 1000, function() { console.log('done!!')})">Toggle</button>
+		<button aria-controls="open" id="toggle" onclick="UIKIT.openclose.toggle(object, 'width', 1000, function() { console.log('done!!')})">Toggle</button>
 	</div>
 	<div style="width:0px;height:300px;background-color:rebeccapurple;" id="dropdown-1">
 		I'm content in a vertical dropdown
@@ -69,7 +69,7 @@
 	<div>
 		<button aria-controls="open" id="open" onclick="UIKIT.openclose.open(objects, 'auto', 'height', 1000, function() { console.log('done!!')})">Open all</button>
 		<button aria-controls="close" id="close" onclick="UIKIT.openclose.close(objects, 0, 'height', 5000, function() { console.log('done!!')})">Close all</button>
-		<button aria-controls="close" id="close" onclick="UIKIT.openclose.toggle(objects, 0, 'auto', 'height', 250, function() { console.log('done!!')})">Toggle all</button>
+		<button aria-controls="close" id="close" onclick="UIKIT.openclose.toggle(objects, 'height', 250, function() { console.log('done!!')})">Toggle all</button>
 	</div>
 	<div style="overflow:hidden;">
 		<div class="accordion" style="background-color:rebeccapurple;width:25%;margin-right:5%;float:left;" id="dropdown-4">

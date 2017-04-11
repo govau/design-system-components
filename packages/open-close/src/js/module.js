@@ -314,9 +314,11 @@ var UIKIT = UIKIT || {};
 	 * @param  {function} callback  - The callback to run after the animation has completed
 	 *
 	 */
-	openclose.toggle = function( el, closeSize, openSize, dimension, speed, callback ) {
+	openclose.toggle = function( el, dimension, speed, callback ) {
 
-		//make iteratable
+		var closeSize = 0;
+		var openSize = 'auto';
+
 		if( el.length === undefined ) {
 			el = [ el ];
 		}
@@ -372,9 +374,6 @@ var UIKIT = UIKIT || {};
 				el[ 0 ]
 			);
 
-			// if (typeof callback === 'function') {
-			// 	callback();
-			// }
 		}
 	};
 
