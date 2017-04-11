@@ -215,10 +215,25 @@ var UIKIT = UIKIT || {};
 	 * @param  {function} callback  - The callback to run after the animation has completed
 	 *
 	 */
+	openclose.close = function (el, dimension, speed, closeSize, callback) {
 
-	openclose.close = function (el, closeSize, dimension, speed, callback) {
+		// how we handle if user defines callback but no closeSize
+		if (typeof closeSize === 'function') {
+			callback = closeSize;
+			closeSize = undefined;
+		}
 
-		//make iteratable
+		// how we handle if user defines callback but no speed or closeSize
+		if (typeof speed === 'function') {
+			callback = speed;
+			speed = undefined;
+		}
+
+		// set our defaults
+		closeSize = closeSize || 0
+		speed = speed || 250
+
+		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
 			el = [ el ];
 		}
@@ -227,7 +242,7 @@ var UIKIT = UIKIT || {};
 		el[ 0 ].UIKITinteration = 0;
 		el[ 0 ].UIKITinterations = el.length;
 
-		//iterate over all DOM nodes
+		// iterate over all DOM nodes
 		for(var i = 0; i < el.length; i++) {
 			var element = el[ i ];
 
@@ -249,9 +264,6 @@ var UIKIT = UIKIT || {};
 			);
 		};
 
-		// if (typeof callback === 'function') {
-		// 	callback();
-		// }
 	};
 
 
@@ -265,9 +277,25 @@ var UIKIT = UIKIT || {};
 	 * @param  {function} callback  - The callback to run after the animation has completed
 	 *
 	 */
-	openclose.open = function( el, openSize, dimension, speed, callback ) {
+	openclose.open = function( el, dimension, speed, openSize, callback ) {
 
-		//make iteratable
+		// how we handle if user defines callback but no closeSize
+		if (typeof openSize === 'function') {
+			callback = openSize;
+			openSize = undefined;
+		}
+
+		// how we handle if user defines callback but no speed or closeSize
+		if (typeof speed === 'function') {
+			callback = speed;
+			speed = undefined;
+		}
+
+		// set our defaults
+		var openSize = openSize || 'auto'
+		var speed = speed || 250
+
+		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
 			el = [ el ];
 		}
@@ -298,9 +326,6 @@ var UIKIT = UIKIT || {};
 			);
 		}
 
-		// if (typeof callback === 'function') {
-		// 	callback();
-		// }
 	};
 
 
@@ -316,9 +341,22 @@ var UIKIT = UIKIT || {};
 	 */
 	openclose.toggle = function( el, dimension, speed, callback ) {
 
-		var closeSize = 0;
-		var openSize = 'auto';
+		// how we handle if user defines callback but no speed
+		if (typeof speed === 'function') {
+			callback = speed;
+			speed = undefined;
+		}
 
+		closeSize = 0;
+		openSize = 'auto';
+		speed = 250;
+
+		// todo!
+		// toggle always auto and 0 (rearrange arguments and check typeof to see if it is callback function)
+		// stop function
+		// remove height or width when it is complete - if it goes to auto, add height: auto not a px dimension
+
+		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
 			el = [ el ];
 		}
