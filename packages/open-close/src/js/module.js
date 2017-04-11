@@ -146,17 +146,21 @@ var UIKIT = UIKIT || {};
 			var iterateSize;    // this variable will hold the the
 
 			// check the current animation state of the element
+			//console.log(elementSize.endSize)
 			if (elementSize.endSize > elementSize.initialSize) {
 				iterateCounter = elementSize.initialSize += stepSize;
 				el.UIKITtoggleState = 'opening';
+				//console.log('fired opening');
 			}
 			else if (elementSize.endSize < elementSize.initialSize) {
 				iterateCounter = elementSize.initialSize -= stepSize;
 				el.UIKITtoggleState = 'closing';
+				//console.log('fired closing');
 			}
 			else {
 				el.UIKITtoggleState = undefined;
 			}
+
 
 			// check if the element is modifying height or width
 			if (dimension === 'height') {
@@ -172,7 +176,7 @@ var UIKIT = UIKIT || {};
 
 			// 1. we don't run function if dropwdown is already closed or opened
 			if ( elementSize.initialSize === elementSize.endSize ) {
-				clearInterval( el.UIKITanimation );
+				openclose.stop( el )
 
 				iterations.UIKITinteration ++;
 				if( iterations.UIKITinteration >= iterations.UIKITinterations ) {
@@ -187,7 +191,7 @@ var UIKIT = UIKIT || {};
 					el.style.removeProperty('width');
 				}
 
-				clearInterval( el.UIKITanimation );
+				openclose.stop( el )
 
 				iterations.UIKITinteration ++;
 				if( iterations.UIKITinteration >= iterations.UIKITinterations ) {
@@ -202,7 +206,7 @@ var UIKIT = UIKIT || {};
 					el.style.removeProperty('height');
 				}
 
-				clearInterval( el.UIKITanimation );
+				openclose.stop( el )
 
 				iterations.UIKITinteration ++;
 				if( iterations.UIKITinteration >= iterations.UIKITinterations ) {
@@ -218,6 +222,17 @@ var UIKIT = UIKIT || {};
 
 		}, intervalTime )
 
+	}
+
+
+	/**
+	 * Stop animation
+	 *
+	 * @param  {object} element     - The element to stop animating
+	 *
+	 */
+	openclose.stop = function ( element ) {
+		clearInterval( element.UIKITanimation );
 	}
 
 
@@ -363,11 +378,10 @@ var UIKIT = UIKIT || {};
 
 		closeSize = 0;
 		openSize = 'auto';
-		speed = 250;
+		speed = speed || 250;
 
 		// todo!
 		// refactor function params to be object
-		// stop function
 
 		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
@@ -402,6 +416,7 @@ var UIKIT = UIKIT || {};
 			// is the accordion opening?
 			else if ( element.UIKITtoggleState === 'opening' ) {
 				targetSize = 0;
+				elementSize.endSize = 0;
 			}
 			// is the accordion closing?
 			else if ( element.UIKITtoggleState === 'closing' ) {
