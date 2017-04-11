@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/page-alerts",
-	"version": "0.1.1",
-	"description": "Use page alerts to notify users of important information and state changes to the page.",
+	"name": "@gov.au/progress-indicator",
+	"version": "0.1.0",
+	"description": "Indicator of progress through a multitude of pages mostly used for forms.",
 	"keywords": [
 		"uikit",
 		"pancake",
@@ -12,20 +12,12 @@
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
-		"design system",
-		"alert",
-		"page alert",
-		"notification",
-		"error",
-		"warning",
-		"success",
-		"info"
+		"design system"
 	],
 	"scripts": {
 		"postinstall": "pancake",
 
 		"test": "node ../../scripts/a11y.js",
-
 		"prepublish": "node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
 		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",

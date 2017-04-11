@@ -142,6 +142,11 @@ npm install @gov.au/pancake-sass @gov.au/body @gov.au/header @gov.au/footer @gov
 └─ core
 ```
 
+- [progress-indicator](http://uikit.apps.staging.digital.gov.au/packages/progress-indicator/tests/site/)
+```
+└─ core
+```
+
 - [responsive-media](http://uikit.apps.staging.digital.gov.au/packages/responsive-media/tests/site/)
 ```
 └─ core
