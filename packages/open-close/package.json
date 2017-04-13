@@ -20,7 +20,7 @@
 		"test": "node ../../scripts/a11y.js",
 		"prepublish": "node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
-		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
+		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' 'src/js/*.js' 'tests/js/*.js' -- npm run build",
 		"serve": "browser-sync start --server --startPath 'tests/site' --files 'tests/site/*.html, tests/site/*.css, tests/site/*.js'",
 		"watch": "npm-run-all --parallel serve watch:*"
 	},
