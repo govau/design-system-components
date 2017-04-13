@@ -53,23 +53,22 @@
 			<div class="grids col-sm-6">
 
 				<div>
-					<button aria-controls="open" onclick="UIKIT.openclose.open( openOptions )">Open</button>
-					<button aria-controls="close" onclick="UIKIT.openclose.close( closeOptions )">Close</button>
-					<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptions )">Toggle</button>
+					<button aria-controls="open" onclick="UIKIT.openclose.open( openOptionsHeight1 )">Open</button>
+					<button aria-controls="close" onclick="UIKIT.openclose.close( closeOptionsHeight1 )">Close</button>
+					<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsHeight1 )">Toggle</button>
 				</div>
 
 				<div style="background-color:rebeccapurple;" class="uikit-dropdown-example" id="dropdown-1">
 					&nbsp;<br><br><br>
 				</div>
-
 			</div>
 
 			<div class="grids col-sm-6">
 
 				<div>
-					<button aria-controls="open" onclick="UIKIT.openclose.open(object2, 'width', function() { console.log('done!!')})">Open</button>
-					<button aria-controls="close" onclick="UIKIT.openclose.close(object2, 'width', function() { console.log('done!!')})">Close</button>
-					<button aria-controls="toggle" onclick="UIKIT.openclose.toggle(object2, 'width', function() { console.log('done!!')})">Toggle</button>
+					<button aria-controls="open" onclick="UIKIT.openclose.open( openOptionsWidth1 )">Open</button>
+					<button aria-controls="close" onclick="UIKIT.openclose.close( closeOptionsWidth1 )">Close</button>
+					<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsWidth1 )">Toggle</button>
 				</div>
 
 				<div style="background-color:rebeccapurple;" class="uikit-dropdown-example" id="dropdown-2">
@@ -85,8 +84,8 @@
 			<div class="grids col-sm-6">
 
 				<div>
-					<button aria-controls="open" onclick="UIKIT.openclose.open(object3, 'height', 500, 200, function() { console.log('done!!')})">Open</button>
-					<button aria-controls="close" onclick="UIKIT.openclose.close(object3, 'height', 500, 50, function() { console.log('done!!')})">Close</button>
+					<button aria-controls="open" onclick="UIKIT.openclose.open( openOptionsHeight2 )">Open</button>
+					<button aria-controls="close" onclick="UIKIT.openclose.close( closeOptionsHeight2 )">Close</button>
 				</div>
 
 				<div style="background-color:rebeccapurple;height:50px;" class="uikit-dropdown-example" id="dropdown-3">
@@ -98,8 +97,8 @@
 			<div class="grids col-sm-6">
 
 				<div>
-					<button aria-controls="open" onclick="UIKIT.openclose.open(object4, 'width', 500, 200, function() { console.log('done!!')})">Open</button>
-					<button aria-controls="close" onclick="UIKIT.openclose.close(object4, 'width', 500, 50, function() { console.log('done!!')})">Close</button>
+					<button aria-controls="open" onclick="UIKIT.openclose.open( openOptionsWidth2 )">Open</button>
+					<button aria-controls="close" onclick="UIKIT.openclose.close( closeOptionsWidth2 )">Close</button>
 				</div>
 
 				<div style="height:50px;width:50px;" class="uikit-dropdown-example" id="dropdown-4">
@@ -116,14 +115,11 @@
 
 				<div>
 					<div>
-						<button aria-controls="open"  onclick="UIKIT.openclose.open(objects1, 'height', function() { console.log('done!!')})">Open all</button>
-						<button aria-controls="close" onclick="UIKIT.openclose.close(objects1, 'height', function() { console.log('done!!')})">Close all</button>
-						<button aria-controls="toggle" onclick="UIKIT.openclose.toggle(objects1, 'height', function() { console.log('done!!')})">Toggle all</button>
+						<button aria-controls="open"  onclick="UIKIT.openclose.open( openOptionsMultiple1 )">Open all</button>
+						<button aria-controls="close" onclick="UIKIT.openclose.close( closeOptionsMultiple1 )">Close all</button>
+						<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsMultiple1 )">Toggle all</button>
 					</div>
 				</div>
-
-				<button aria-controls="open"  onclick="UIKIT.openclose.open(object5, 'height', function() { console.log('done!!')})">Open top dropdown</button>
-				<button aria-controls="close" onclick="UIKIT.openclose.close(object5, 'height', function() { console.log('done!!')})">Close top dropdown</button>
 
 				<div class="uikit-dropdown-example vertical-dropdown-group" id="dropdown-5">
 					&nbsp;<br><br><br><br><br><br>
@@ -143,14 +139,11 @@
 
 				<div>
 					<div>
-						<button aria-controls="open"  onclick="UIKIT.openclose.open(objects2, 'width', function() { console.log('done!!')})">Open all</button>
-						<button aria-controls="close" onclick="UIKIT.openclose.close(objects2, 'width', function() { console.log('done!!')})">Close all</button>
-						<button aria-controls="toggle" onclick="UIKIT.openclose.toggle(objects2, 'width', function() { console.log('done!!')})">Toggle all</button>
+						<button aria-controls="open"  onclick="UIKIT.openclose.open( openOptionsMultiple2 )">Open all</button>
+						<button aria-controls="close" onclick="UIKIT.openclose.close( closeOptionsMultiple2 )">Close all</button>
+						<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsMultiple2 )">Toggle all</button>
 					</div>
 				</div>
-
-				<button aria-controls="open"  onclick="UIKIT.openclose.open(object6, 'width', function() { console.log('done!!')})">Open top dropdown</button>
-				<button aria-controls="close" onclick="UIKIT.openclose.close(object6, 'width', function() { console.log('done!!')})">Close top dropdown</button>
 
 				<div class="uikit-dropdown-example horizontal-dropdown-group" id="dropdown-6">
 					&nbsp;<br><br><br>
@@ -174,41 +167,87 @@
 
 	<script>
 
-		// for open
-		var openOptions = {
+		// Section 1 animate height to auto
+		var openOptionsHeight1 = {
 			element: document.getElementById('dropdown-1'),  // mandatory
-			dimension: 'height',                              // optional - defaults to height
-			speed: 250,                                       // optional - defaults to 250ms
-			openSize: 'auto',                                 // optional - defaults to 'auto'
-			callback: function(){console.log('test')},        // optional
 		}
 
-		// for close
-		var closeOptions = {
+		var closeOptionsHeight1 = {
 			element: document.getElementById('dropdown-1'),  // mandatory
-			dimension: 'height',                             // optional - defaults to height
-			speed: 250,                                      // optional - defaults to 250ms
-			closeSize: 0,                                   // optional - defaults to '0px'
-			callback: function(){console.log('test')},       // optional
 		}
 
-		// for toggle
-		var toggleOptions = {
-			//element: document.querySelectorAll('.vertical-dropdown-group'),  // mandatory
-			element: document.getElementById('dropdown-1'),
-			dimension: 'height',                                             // optional - defaults to height
-			speed: 250,                                                      // optional - defaults to 250ms
-			callback: function(){console.log('test')},                       // optional
+		var toggleOptionsHeight1 = {
+			element: document.getElementById('dropdown-1'),  // mandatory
 		}
 
-		var object1 = document.getElementById('dropdown-1');
-		var object2 = document.getElementById('dropdown-2');
-		var object3 = document.getElementById('dropdown-3');
-		var object4 = document.getElementById('dropdown-4');
-		var object5 = document.getElementById('dropdown-5');
-		var object6 = document.getElementById('dropdown-6');
-		var objects1 = document.querySelectorAll('.vertical-dropdown-group');
-		var objects2 = document.querySelectorAll('.horizontal-dropdown-group');
+		// Section 1 animate width to auto
+		var openOptionsWidth1 = {
+			element: document.getElementById('dropdown-2'),  // mandatory
+			dimension: 'width',                              // optional - defaults to height
+		}
+
+		var closeOptionsWidth1 = {
+			element: document.getElementById('dropdown-2'),  // mandatory
+			dimension: 'width',                              // optional - defaults to height
+		}
+
+		var toggleOptionsWidth1 = {
+			element: document.getElementById('dropdown-2'),  // mandatory
+			dimension: 'width',                              // optional - defaults to height
+		}
+
+		// Section 2 animate height between two values
+		var openOptionsHeight2 = {
+			element: document.getElementById('dropdown-3'),  // mandatory
+			openSize: 200,
+		}
+
+		var closeOptionsHeight2 = {
+			element: document.getElementById('dropdown-3'),  // mandatory
+			closeSize: 50,
+		}
+
+		// Section 2 animate width between two values
+		var openOptionsWidth2 = {
+			element: document.getElementById('dropdown-4'),  // mandatory
+			dimension: 'width',
+			openSize: 200,
+		}
+
+		var closeOptionsWidth2 = {
+			element: document.getElementById('dropdown-4'),  // mandatory
+			dimension: 'width',
+			closeSize: 50,
+		}
+
+		// Section 3 animate multiple elements height
+		var openOptionsMultiple1 = {
+			element: document.querySelectorAll('.vertical-dropdown-group'),  // mandatory
+		}
+
+		var closeOptionsMultiple1 = {
+			element: document.querySelectorAll('.vertical-dropdown-group'),  // mandatory
+		}
+
+		var toggleOptionsMultiple1 = {
+			element: document.querySelectorAll('.vertical-dropdown-group'),  // mandatory
+		}
+
+		// Section 3 animate multiple elements width
+		var openOptionsMultiple2 = {
+			element: document.querySelectorAll('.horizontal-dropdown-group'),  // mandatory
+			dimension: 'width',
+		}
+
+		var closeOptionsMultiple2 = {
+			element: document.querySelectorAll('.horizontal-dropdown-group'),  // mandatory
+			dimension: 'width',
+		}
+
+		var toggleOptionsMultiple2 = {
+			element: document.querySelectorAll('.horizontal-dropdown-group'),  // mandatory
+			dimension: 'width',
+		}
 
 	</script>
 </body>

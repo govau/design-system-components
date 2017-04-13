@@ -252,7 +252,7 @@ var UIKIT = UIKIT || {};
 	openclose.close = function ( options ) {
 
 		var el = options.element;
-		var dimension = options.dimension;
+		var dimension = options.dimension || 'height';
 		var speed = options.speed || 250;
 		var closeSize = options.closeSize || 0;
 		var callback = options.callback;
@@ -315,7 +315,7 @@ var UIKIT = UIKIT || {};
 	openclose.open = function( options ) {
 
 		var el = options.element;
-		var dimension = options.dimension;
+		var dimension = options.dimension || 'height';
 		var speed = options.speed || 250;
 		var openSize = options.openSize || 'auto';
 		var callback = options.callback;
@@ -382,7 +382,7 @@ var UIKIT = UIKIT || {};
 		//( el, dimension, speed, callback )
 
 		var el = options.element;
-		var dimension = options.dimension;
+		var dimension = options.dimension || 'height';
 		var callback = options.callback;
 		var speed = options.speed || 250;
 
