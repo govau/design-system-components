@@ -5,7 +5,9 @@
 @import '../../../core/lib/sass/_module.scss';
 
 //testing includes
-// @import '../../../body/lib/sass/_module.scss';
+//@import '../../../body/lib/sass/_module.scss';
+@import '../../../grid-12/lib/sass/_module.scss';
+
 
 //this module
 @import '_module.scss';
@@ -15,3 +17,8 @@
 
 //version check with sass-versioning
 @include versioning-check();
+
+.uikit-dropdown-example {
+	background-color: rebeccapurple;
+	margin-bottom: 1em;
+}

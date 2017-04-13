@@ -28,6 +28,9 @@ var UIKIT = UIKIT || {};
 		var initialSize;
 		var endSize;
 
+
+		// doesnt accommodate padding, should this be done at the component css level? should we add a toggle class to make targeting this easier?
+		// https://github.com/angular-ui/bootstrap/issues/3080
 		if ( dimension === 'height' ) {
 			initialSize = el.clientHeight;
 			el.style[ dimension ] = 'auto';
@@ -146,7 +149,6 @@ var UIKIT = UIKIT || {};
 			var iterateSize;    // this variable will hold the the
 
 			// check the current animation state of the element
-			//console.log(elementSize.endSize)
 			if (elementSize.endSize > elementSize.initialSize) {
 				iterateCounter = elementSize.initialSize += stepSize;
 				el.UIKITtoggleState = 'opening';
@@ -185,6 +187,7 @@ var UIKIT = UIKIT || {};
 			}
 			// 2a. if steps have completed, set the width to endSize and stop animation
 			else if ( steps === 0 && dimension == 'width' ) {
+
 				el.style.width = elementSize.endSize + 'px';
 
 				if ( elementSize.expandToAuto && elementSize.endSize != 0  ) {
@@ -246,7 +249,13 @@ var UIKIT = UIKIT || {};
 	 * @param  {function} callback  - The callback to run after the animation has completed
 	 *
 	 */
-	openclose.close = function (el, dimension, speed, closeSize, callback) {
+	openclose.close = function ( options ) {
+
+		var el = options.element;
+		var dimension = options.dimension;
+		var speed = options.speed || 250;
+		var closeSize = options.closeSize || 0;
+		var callback = options.callback;
 
 		// how we handle if user defines callback but no closeSize
 		if (typeof closeSize === 'function') {
@@ -259,10 +268,6 @@ var UIKIT = UIKIT || {};
 			callback = speed;
 			speed = undefined;
 		}
-
-		// set our defaults
-		closeSize = closeSize || 0
-		speed = speed || 250
 
 		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
@@ -307,7 +312,13 @@ var UIKIT = UIKIT || {};
 	 * @param  {function} callback  - The callback to run after the animation has completed
 	 *
 	 */
-	openclose.open = function( el, dimension, speed, openSize, callback ) {
+	openclose.open = function( options ) {
+
+		var el = options.element;
+		var dimension = options.dimension;
+		var speed = options.speed || 250;
+		var openSize = options.openSize || 'auto';
+		var callback = options.callback;
 
 		// how we handle if user defines callback but no closeSize
 		if (typeof openSize === 'function') {
@@ -320,10 +331,6 @@ var UIKIT = UIKIT || {};
 			callback = speed;
 			speed = undefined;
 		}
-
-		// set our defaults
-		openSize = openSize || 'auto'
-		speed = speed || 250
 
 		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
@@ -368,7 +375,16 @@ var UIKIT = UIKIT || {};
 	 * @param  {function} callback  - The callback to run after the animation has completed
 	 *
 	 */
-	openclose.toggle = function( el, dimension, speed, callback ) {
+
+
+	openclose.toggle = function( options ) {
+
+		//( el, dimension, speed, callback )
+
+		var el = options.element;
+		var dimension = options.dimension;
+		var callback = options.callback;
+		var speed = options.speed || 250;
 
 		// how we handle if user defines callback but no speed
 		if (typeof speed === 'function') {
@@ -376,12 +392,13 @@ var UIKIT = UIKIT || {};
 			speed = undefined;
 		}
 
-		closeSize = 0;
-		openSize = 'auto';
-		speed = speed || 250;
+		var closeSize = 0;
+		var openSize = 'auto';
+
 
 		// todo!
 		// refactor function params to be object
+		// how does it work if paddings and heights are specified on css?
 
 		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
