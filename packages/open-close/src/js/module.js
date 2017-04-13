@@ -257,18 +257,6 @@ var UIKIT = UIKIT || {};
 		var closeSize = options.closeSize || 0;
 		var callback = options.callback;
 
-		// how we handle if user defines callback but no closeSize
-		if (typeof closeSize === 'function') {
-			callback = closeSize;
-			closeSize = undefined;
-		}
-
-		// how we handle if user defines callback but no speed or closeSize
-		if (typeof speed === 'function') {
-			callback = speed;
-			speed = undefined;
-		}
-
 		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
 			el = [ el ];
@@ -320,18 +308,6 @@ var UIKIT = UIKIT || {};
 		var openSize = options.openSize || 'auto';
 		var callback = options.callback;
 
-		// how we handle if user defines callback but no closeSize
-		if (typeof openSize === 'function') {
-			callback = openSize;
-			openSize = undefined;
-		}
-
-		// how we handle if user defines callback but no speed or closeSize
-		if (typeof speed === 'function') {
-			callback = speed;
-			speed = undefined;
-		}
-
 		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
 			el = [ el ];
@@ -379,26 +355,12 @@ var UIKIT = UIKIT || {};
 
 	openclose.toggle = function( options ) {
 
-		//( el, dimension, speed, callback )
-
 		var el = options.element;
 		var dimension = options.dimension || 'height';
 		var callback = options.callback;
 		var speed = options.speed || 250;
-
-		// how we handle if user defines callback but no speed
-		if (typeof speed === 'function') {
-			callback = speed;
-			speed = undefined;
-		}
-
 		var closeSize = 0;
 		var openSize = 'auto';
-
-
-		// todo!
-		// refactor function params to be object
-		// how does it work if paddings and heights are specified on css?
 
 		// make element iteratable if it is a single element
 		if( el.length === undefined ) {
