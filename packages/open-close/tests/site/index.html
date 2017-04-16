@@ -110,6 +110,27 @@
 					&nbsp;<br><br><br>
 				</div>
 
+				I'm pushed down by the bottom margin
+
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="grids col-sm-6">
+				<h2>Animate position</h2>
+
+				<div>
+					<button aria-controls="open" onclick="UIKIT.openclose.Animate({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 100, callback: function() { console.log('end3!!'); } })">Forward</button>
+					<button aria-controls="close" onclick="UIKIT.openclose.Animate({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 0, callback: function() { console.log('end4!!'); } })">Back</button>
+					<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsMargin1 )">Toggle</button>
+				</div>
+
+				<div class="position-container" style="position:relative;">
+					<div style="background-color:rebeccapurple;height:20px;width:20px;border-radius:50%;position:absolute;top:0;left:0;" class="uikit-dropdown-example" id="dropdown-position1">
+						&nbsp;
+					</div>
+				</div>
+
 			</div>
 		</div>
 

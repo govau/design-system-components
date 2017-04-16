@@ -142,7 +142,7 @@ var UIKIT = UIKIT || {};
 
 			// calculate our animation specs
 			var animationSpecs = CalculateAnimationSpecs( initialSize, endSize, speed );
-			var steps = animationSpecs.steps;
+			var steps = Math.abs(animationSpecs.steps);
 			var iterateCounter = initialSize;
 
 			// keep track of animation by adding it to the DOM element
@@ -170,7 +170,7 @@ var UIKIT = UIKIT || {};
 					steps --;
 				}
 
-			}, animationSpecs.intervalTime );
+			}, Math.abs(animationSpecs.intervalTime) );
 		}
 	};
 
