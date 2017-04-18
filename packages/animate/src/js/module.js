@@ -1,6 +1,6 @@
 /***************************************************************************************************************************************************************
  *
- * Open Close function
+ * Animate function
  *
  * A function to open, close and toggle the display of page elements.
  *
@@ -13,7 +13,7 @@ var UIKIT = UIKIT || {};
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // NAMESPACE MODULE
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-	var openclose = {}
+	var animate = {}
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -36,19 +36,18 @@ var UIKIT = UIKIT || {};
 		intervalTime = speed / steps;
 
 		// we need to adjust our animation specs if interval time exceeds 60FPS eg intervalTime < 16.67ms
-		if( Math.abs(intervalTime) < ( 50 / 3 ) ) {
-
+		if( Math.abs( intervalTime ) < ( 50 / 3 ) ) {
 			stepSize = Math.round( ( 50 / 3 ) / intervalTime );
-			steps = Math.floor( distance / stepSize );
+			steps = Math.abs( Math.floor( distance / stepSize ) );
 			stepSize = distance < 0 ? -stepSize : stepSize;
 			intervalTime = speed / steps;
 		}
 
 		return {
 			stepSize: stepSize,
-			steps: ( steps - 1 ),
+			steps: ( steps - 1 ), //TODO small distance with long time
 			intervalTime: intervalTime,
-		}
+		};
 	}
 
 
@@ -63,7 +62,7 @@ var UIKIT = UIKIT || {};
 	 *
 	 * @return {integer}          - The size of the element when at dimension(height or width) is set to 'auto'
 	 */
-	openclose.CalculateAuto = function( element, dimension ) {
+	animate.CalculateAuto = function( element, dimension ) {
 		var initialSize;
 		var endSize;
 
@@ -89,7 +88,7 @@ var UIKIT = UIKIT || {};
 	 *
 	 * @param  {object} element - The element to stop animating
 	 */
-	openclose.Stop = function ( element ) {
+	animate.Stop = function ( element ) {
 		clearInterval( element.UIKITanimation );
 	}
 
@@ -105,7 +104,7 @@ var UIKIT = UIKIT || {};
 	 *
 	 * @return {unknown}           - The return passed on from our callback function [optional]
 	 */
-	openclose.Animate = function( options ) {
+	animate.Run = function( options ) {
 		// defaults
 		var elements = options.element;
 		var speed = options.speed || 250;
@@ -126,29 +125,31 @@ var UIKIT = UIKIT || {};
 
 		// iterate over all DOM nodes
 		for( var i = 0; i < elements.length; i++ ) {
-			openclose.Stop( elements[ i ] ); // stop any previous animations
-
 			var element = elements[ i ];                                                         // this element
+			UIKIT.animate.Stop( element );                                                       // stop any previous animations
 			var initialSize = parseInt( window.getComputedStyle( element )[ options.property ] ) // the elements current size
 			// TODO element.currentStyle for IE?
 
 			var endSize = options.endSize;                                                       // the element end size
 
 			if( options.endSize === 'auto' ) {                                                   // calculate what 'auto' means in pixel
-				endSize = openclose.CalculateAuto( element, options.property );
+				endSize = UIKIT.animate.CalculateAuto( element, options.property );
 			}
 
 			// calculate our animation specs
 			var animationSpecs = CalculateAnimationSpecs( initialSize, endSize, speed );
-			var steps = Math.abs(animationSpecs.steps);
+			// var steps = Math.abs( animationSpecs.steps );
 			var iterateCounter = initialSize;
 
 			// set state
-			if ( animationSpecs.stepSize < 0 ) {
+			if( animationSpecs.stepSize < 0 ) {
 				element.UIKITtoggleState = 'closing'
 			}
-			else if ( animationSpecs.stepSize > 0 ) {
+			else if( animationSpecs.stepSize > 0 ) {
 				element.UIKITtoggleState = 'opening'
+			}
+			else {
+				throw new Error('UIKIT.animate.Run cannot determine state of element');
 			}
 
 			// keep track of animation by adding it to the DOM element
@@ -157,16 +158,17 @@ var UIKIT = UIKIT || {};
 				element.style[ options.property ] = iterateCounter + 'px';
 
 				// when we are at the end
-				if( initialSize === endSize || steps === 0 ) {
-					openclose.Stop( element );
+				if( initialSize === endSize || animationSpecs.steps === 0 ) {
+					UIKIT.animate.Stop( element );
 
 					element.style[ options.property ] = endSize + 'px'; //set to endSize
-					element.UIKITtoggleState = ''
+					element.UIKITtoggleState = '';
 
 					elements[ 0 ].UIKITinteration ++;
 
-					if ( options.endSize === 'auto' ) {
-						element.style[ options.property ] = ''
+					// removing auto so CSS can take over
+					if( options.endSize === 'auto' ) {
+						element.style[ options.property ] = '';
 					}
 
 					// when all iterations have finished, run the callback
@@ -177,10 +179,10 @@ var UIKIT = UIKIT || {};
 
 				// if we are still animating
 				else {
-					steps --;
+					animationSpecs.steps --;
 				}
 
-			}, Math.abs(animationSpecs.intervalTime) );
+			}, Math.abs( animationSpecs.intervalTime ) );
 		}
 	};
 
@@ -188,87 +190,61 @@ var UIKIT = UIKIT || {};
 	/**
 	 * Toggle animation
 	 *
-	 * @param  {object} el          - The element to animate
-	 * @param  {string} closeSize   - The direction of the animation (either height or width)
-	 * @param  {string} dimension   - The dimension the animation moves in (either height or width)
-	 * @param  {integer} speed      - The speed of the animation in ms
+	 * @param  {object}   el          - The element to animate
+	 * @param  {string}   closeSize   - The direction of the animation (either height or width)
+	 * @param  {string}   dimension   - The dimension the animation moves in (either height or width)
+	 * @param  {integer}  speed      - The speed of the animation in ms
 	 * @param  {function} callback  - The callback to run after the animation has completed
 	 *
 	 */
-	openclose.Toggle = function( options ) {
+	animate.Toggle = function( options ) {
 
-		var el = options.element;
-		var dimension = options.property || 'height';
-		var callback = options.callback;
+		var elements = options.element;
+		var property = options.property || 'height';
 		var speed = options.speed || 250;
 
-		// how we handle if user defines callback but no speed
-		if(typeof speed === 'function') {
-			callback = speed;
-			speed = undefined;
+		// making a single DOM element iteratable
+		if( elements.length === undefined ) {
+			elements = [ elements ];
 		}
 
-		var closeSize = 0;
-		var openSize = 'auto';
-
-		// make element iteratable if it is a single element
-		if( el.length === undefined ) {
-			el = [ el ];
+		// making a callback if none was provided
+		if( typeof options.callback !== 'function' ) {
+			options.callback = function() {};
 		}
 
-		//adding iteration counts
-		el[ 0 ].UIKITinteration = 0;
-		el[ 0 ].UIKITinterations = el.length;
+		// iterate over all DOM nodes
+		for( var i = 0; i < elements.length; i++ ) {
+			var element = elements[ i ];
 
-		//iterate over all DOM nodes
-		for(var i = 0; i < el.length; i++) {
-			var element = el[ i ];
+			UIKIT.animate.Stop( element );
 
-			openclose.Stop(element)
-			//clearInterval( element.UIKITanimation );
+			var targetSize;                                                           // the size the element should open/close to after toggle is clicked
+			var currentSize = parseInt( window.getComputedStyle( element )[ options.property ] ); // the current size of the element
 
-			var openSize = openSize || 'auto';
-			var elementSize = openclose.CalculateAuto( element, dimension, openSize );  // the size of the element at auto
-			var targetSize;  // the size the element should open/close to after toggle is clicked
-			var currentSize = element.style[ dimension ];
-
-			console.log( element.UIKITtoggleState )
-
-			if ( currentSize === '0px' || element.UIKITtoggleState === 'closing' ) {
+			if( currentSize === 0 || element.UIKITtoggleState === 'closing' ) {
 				targetSize = 'auto';
 			}
-			else if ( currentSize === 'auto' || element.UIKITtoggleState === 'opening' ) {
+			else if( currentSize !== 0 || element.UIKITtoggleState === 'opening' ) {
 				targetSize = 0;
 			}
 			else {
-				throw new Error('UIKIT.openclose.Toggle animation cannot determing state of element')
+				throw new Error('UIKIT.animate.Toggle cannot determine state of element');
 			}
 
-			var toggleOptions = {
+			// shoot off animation
+			UIKIT.animate.Run({
 				element: element,
 				endSize: targetSize,
-				property: dimension,
+				property: property,
 				speed: speed,
-				callback: callback,
-			}
-
-			openclose.Animate ( toggleOptions )
-
-			// animate(
-			// 	element,
-			// 	elementSize,
-			// 	dimension,
-			// 	animationSpecs.stepSize,
-			// 	animationSpecs.steps,
-			// 	animationSpecs.intervalTime,
-			// 	callback,
-			// 	el[ 0 ]
-			// );
+				callback: options.callback,
+			});
 
 		}
 	};
 
 
-	UIKIT.openclose = openclose;
+	UIKIT.animate = animate;
 
 }( UIKIT ));

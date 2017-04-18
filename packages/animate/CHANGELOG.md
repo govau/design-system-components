@@ -1,4 +1,4 @@
-@gov.au/open-close CHANGELOG
+@gov.au/animate CHANGELOG
 ======================
 
 > Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.

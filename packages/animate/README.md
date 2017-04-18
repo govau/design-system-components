@@ -1,4 +1,4 @@
-@gov.au/open-close
+@gov.au/animate
 ============
 
 > A JavaScript function to open, close and toggle the display of page elements.
@@ -21,11 +21,11 @@
 
 
 ```shell
-yarn add @gov.au/open-close
+yarn add @gov.au/animate
 ```
 
 ```shell
-npm install @gov.au/open-close --save-dev
+npm install @gov.au/animate --save-dev
 ```
 
 
@@ -38,7 +38,7 @@ npm install @gov.au/open-close --save-dev
 ## Dependency graph
 
 ```shell
-open-close
+animate
 └─ core
 ```
 
@@ -60,7 +60,7 @@ open-close
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/open-close/tests/site/
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/animate/tests/site/
 
 
 **[⬆ back to top](#contents)**
