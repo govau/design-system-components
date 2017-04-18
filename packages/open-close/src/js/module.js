@@ -29,22 +29,19 @@ var UIKIT = UIKIT || {};
 	 * @return {object}             - Required steps, stepSize and intervalTime for the animation
 	 */
 	function CalculateAnimationSpecs( initialSize, endSize, speed ) {
-		var distance = endSize - initialSize; // the overall distance the animation needs to travel
-		var intervalTime = ( speed / distance ); // the time each setInterval iteration will take
-		var stepSize = 1;                        // the size of each step in pixels
-		var steps = distance / stepSize;         // the amount of steps required to achieve animation
-
+		var distance = endSize - initialSize;         // the overall distance the animation needs to travel
+		var intervalTime = ( speed / distance );      // the time each setInterval iteration will take
+		var stepSize = distance < 0 ? -1 : 1;         // if distance is negative then we set stepSize to -1
+		var steps = Math.abs( distance / stepSize );  // the amount of steps required to achieve animation
 		intervalTime = speed / steps;
 
 		// we need to adjust our animation specs if interval time exceeds 60FPS eg intervalTime < 16.67ms
-		if( intervalTime < ( 50 / 3 ) ) {
-			stepSize = Math.round( ( 50 / 3 ) / intervalTime );
+		if( Math.abs(intervalTime) < ( 50 / 3 ) ) {
 
-			// if number of steps required is not a whole number
-			if( ( ( initialSize - endSize ) / stepSize ) % 1 != 0) {
-				steps = Math.floor( distance / stepSize );
-				intervalTime = speed / steps;
-			}
+			stepSize = Math.round( ( 50 / 3 ) / intervalTime );
+			steps = Math.floor( distance / stepSize );
+			stepSize = distance < 0 ? -stepSize : stepSize;
+			intervalTime = speed / steps;
 		}
 
 		return {
@@ -148,7 +145,6 @@ var UIKIT = UIKIT || {};
 			// keep track of animation by adding it to the DOM element
 			element.UIKITanimation = setInterval( function() {
 				iterateCounter += animationSpecs.stepSize;
-
 				element.style[ options.property ] = iterateCounter + 'px';
 
 				// when we are at the end

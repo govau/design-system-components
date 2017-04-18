@@ -57,7 +57,7 @@
 				<div>
 					<button aria-controls="open" onclick="UIKIT.openclose.Animate( openOptionsHeight1 )">Open</button>
 					<button aria-controls="close" onclick="UIKIT.openclose.Animate( closeOptionsHeight1 )">Close</button>
-					<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsHeight1 )">Toggle</button>
+					<button aria-controls="toggle" onclick="UIKIT.openclose.Toggle( toggleOptionsHeight1 )">Toggle</button>
 				</div>
 
 				<div style="background-color:rebeccapurple;" class="uikit-dropdown-example" id="dropdown-1">
@@ -120,8 +120,8 @@
 				<h2>Animate position</h2>
 
 				<div>
-					<button aria-controls="open" onclick="UIKIT.openclose.Animate({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 100, callback: function() { console.log('end3!!'); } })">Forward</button>
-					<button aria-controls="close" onclick="UIKIT.openclose.Animate({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 0, callback: function() { console.log('end4!!'); } })">Back</button>
+					<button aria-controls="open" onclick="UIKIT.openclose.Animate({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 100, speed: 1000, callback: function() { console.log('end3!!'); } })">Forward</button>
+					<button aria-controls="close" onclick="UIKIT.openclose.Animate({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 0, speed: 1000, callback: function() { console.log('end4!!'); } })">Back</button>
 					<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsMargin1 )">Toggle</button>
 				</div>
 
