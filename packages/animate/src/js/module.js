@@ -202,6 +202,8 @@ var UIKIT = UIKIT || {};
 		var elements = options.element;
 		var property = options.property || 'height';
 		var speed = options.speed || 250;
+		var closeSize = options.closeSize || 0;
+		var openSize = options.openSize || 'auto'
 
 		// making a single DOM element iteratable
 		if( elements.length === undefined ) {
@@ -222,11 +224,11 @@ var UIKIT = UIKIT || {};
 			var targetSize;                                                           // the size the element should open/close to after toggle is clicked
 			var currentSize = parseInt( window.getComputedStyle( element )[ options.property ] ); // the current size of the element
 
-			if( currentSize === 0 || element.UIKITtoggleState === 'closing' ) {
-				targetSize = 'auto';
+			if( currentSize === closeSize || element.UIKITtoggleState === 'closing' ) {
+				targetSize = openSize;
 			}
-			else if( currentSize !== 0 || element.UIKITtoggleState === 'opening' ) {
-				targetSize = 0;
+			else if( currentSize !== closeSize || element.UIKITtoggleState === 'opening' ) {
+				targetSize = closeSize;
 			}
 			else {
 				throw new Error('UIKIT.animate.Toggle cannot determine state of element');
