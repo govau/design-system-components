@@ -122,7 +122,7 @@
 				<div>
 					<button aria-controls="open" onclick="UIKIT.openclose.Animate({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 100, speed: 1000, callback: function() { console.log('end3!!'); } })">Forward</button>
 					<button aria-controls="close" onclick="UIKIT.openclose.Animate({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 0, speed: 1000, callback: function() { console.log('end4!!'); } })">Back</button>
-					<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsMargin1 )">Toggle</button>
+					<button aria-controls="toggle" onclick="UIKIT.openclose.Toggle( )">Toggle</button>
 				</div>
 
 				<div class="position-container" style="position:relative;">
@@ -179,9 +179,9 @@
 
 				<div>
 					<div>
-						<button aria-controls="open"  onclick="UIKIT.openclose.open( openOptionsMultiple1 )">Open all</button>
-						<button aria-controls="close" onclick="UIKIT.openclose.close( closeOptionsMultiple1 )">Close all</button>
-						<button aria-controls="toggle" onclick="UIKIT.openclose.toggle( toggleOptionsMultiple1 )">Toggle all</button>
+						<button aria-controls="open"  onclick="UIKIT.openclose.Animate( openOptionsMultiple1 )">Open all</button>
+						<button aria-controls="close" onclick="UIKIT.openclose.Animate( closeOptionsMultiple1 )">Close all</button>
+						<button aria-controls="toggle" onclick="UIKIT.openclose.Toggle( toggleOptionsMultiple1 )">Toggle all</button>
 					</div>
 				</div>
 
@@ -236,6 +236,7 @@
 			element: document.getElementById('dropdown-1'),  // mandatory
 			property: 'height',
 			endSize: 'auto',
+			speed: 1000,
 			callback: function() { console.log('end1!!'); }
 		}
 
@@ -243,11 +244,14 @@
 			element: document.getElementById('dropdown-1'),  // mandatory
 			property: 'height',
 			endSize: 0,
+			speed: 1000,
 			callback: function() { console.log('end2!!'); }
 		}
 
 		var toggleOptionsHeight1 = {
 			element: document.getElementById('dropdown-1'),  // mandatory
+			property: 'height',
+			speed: 2000,
 		}
 
 		// Section 1 animate width to auto
