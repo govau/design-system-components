@@ -75,7 +75,13 @@ var UIKIT = UIKIT || {};
 			return window.getComputedStyle( element )[ property ];
 		}
 		else {
-			return element.currentStyle[ property ];
+			var space = element.currentStyle[ property ];
+
+			if( space === 'auto' ) {
+				space = UIKIT.animate.CalculateAuto( element, property );
+			}
+
+			return space;
 		}
 	}
 
@@ -155,13 +161,13 @@ var UIKIT = UIKIT || {};
 
 		// iterate over all DOM nodes
 		for( var i = 0; i < elements.length; i++ ) {
-			var element = elements[ i ];                                                      // this element
-			UIKIT.animate.Stop( element );                                                    // stop any previous animations
+			var element = elements[ i ];                                                        // this element
+			UIKIT.animate.Stop( element );                                                      // stop any previous animations
 			var initialSize = parseInt( GetCSSPropertyBecauseIE( element, options.property ) ); // the elements current size
 
-			var endSize = options.endSize;                                                    // the element end size
+			var endSize = options.endSize;                                                      // the element end size
 
-			if( options.endSize === 'auto' ) {                                                // calculate what 'auto' means in pixel
+			if( options.endSize === 'auto' ) {                                                  // calculate what 'auto' means in pixel
 				endSize = UIKIT.animate.CalculateAuto( element, options.property );
 			}
 
