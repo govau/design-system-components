@@ -96,16 +96,16 @@ var UIKIT = UIKIT || {};
 		var endSize;
 
 		if( dimension === 'height' ) {
-			initialSize = element.clientHeight;       // get current height
-			element.style[ dimension ] = 'auto';      // set height to auto
-			endSize = element.clientHeight;           // get height again
-			element.style[ dimension ] = initialSize; // set back to initial height
+			initialSize = element.clientHeight;              // get current height
+			element.style[ dimension ] = 'auto';             // set height to auto
+			endSize = element.clientHeight;                  // get height again
+			element.style[ dimension ] = initialSize + 'px'; // set back to initial height
 		}
 		else {
 			initialSize = element.clientWidth;
 			element.style[ dimension ] = 'auto';
 			endSize = element.clientWidth;
-			element.style[ dimension ] = initialSize;
+			element.style[ dimension ] = initialSize + 'px';
 		}
 
 		return parseInt( endSize );
