@@ -7,19 +7,19 @@
 'use strict';
 
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Dependencies
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Dependencies
+ */
 const Fs = require(`fs`);
-const Path = require('path');
-const Chalk = require('chalk');
+const Path = require(`path`);
+const Chalk = require(`chalk`);
 const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBALS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * Create a path if it doesn't exist
+ * Create a path if it doesn’t exist
  *
  * @param  {string} dir - The path to be checked and created if not found
  */
@@ -55,19 +55,19 @@ const CreateDir = ( dir ) => {
 const CopyTemp = ( source, destination, replacements ) => {
 	CreateDir( destination );
 
-	const files = Fs.readdirSync( source ); //create target folder
+	const files = Fs.readdirSync( source ); // create target folder
 
 	for( let file of files ) {
-		if( !file.startsWith('.') ) { //don't copy hidden files
+		if( !file.startsWith('.') ) { // don’t copy hidden files
 			const current = Fs.lstatSync( Path.join( source, file ) );
 
 			if( current.isDirectory() ) {
-				CopyTemp( Path.join( source, file ), Path.join( destination, file ), replacements ); //call self
+				CopyTemp( Path.join( source, file ), Path.join( destination, file ), replacements ); // call self
 			}
 			else {
-				CopyFile( Path.join( source, file ), Path.join( destination, file ) ); //copy file over
+				CopyFile( Path.join( source, file ), Path.join( destination, file ) ); // copy file over
 
-				ReplaceFileContent( replacements, Path.join( destination, file ) ); //replace all placeholders
+				ReplaceFileContent( replacements, Path.join( destination, file ) ); // replace all placeholders
 			}
 		}
 	}
@@ -101,8 +101,8 @@ const CopyFile = ( source, target ) => {
 const ReplaceFileContent = ( searchs, fileName ) => {
 	let content = Fs.readFileSync( fileName, 'utf-8');
 
-	for( const replacing of Object.keys( searchs ) ) { //replace all searches
-		content = content.split( replacing ).join( searchs[ replacing ] ); //replacing globally without regex
+	for( const replacing of Object.keys( searchs ) ) { // replace all searches
+		content = content.split( replacing ).join( searchs[ replacing ] ); // replacing globally without regex
 	}
 
 	Fs.writeFileSync( fileName, content, ( error ) => {
@@ -126,7 +126,7 @@ const ReplaceFileContent = ( searchs, fileName ) => {
 const GetDepTree = ( name ) => {
 	let tree = {};
 	const pkgPath = Path.normalize(`${ process.cwd() }/../${ name.substring( 8 ) }/package.json`);
-	const pkg = require( pkgPath, 'utf-8'); //we use require because we like the caching here
+	const pkg = require( pkgPath, 'utf-8'); // we use require because we like the caching here
 
 	if( Object.keys( pkg.peerDependencies ).length > 0 ) {
 		for( const module of Object.keys( pkg.peerDependencies ) ) {
@@ -138,10 +138,34 @@ const GetDepTree = ( name ) => {
 };
 
 
+/**
+ * Get all folders within a given path
+ *
+ * @param  {string}  thisPath - The path that contains the desired folders
+ * @param  {boolean} verbose  - Verbose flag either undefined or true
+ *
+ * @return {array}            - An array of names of each folder
+ */
+const GetFolders = ( thisPath, verbose ) => {
+	try {
+		let folders = Fs.readdirSync( thisPath ).filter(
+				thisFile => Fs.statSync(`${ thisPath }/${ thisFile }`).isDirectory()
+			).filter(
+				thisFile => thisFile !== 'core'
+		);
+
+		return ['core', ...folders ]; // moving core to top
+	}
+	catch( error ) {
+		return [];
+	}
+};
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Constructor
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-const HELPER = (() => { //constructor factory
+const HELPER = (() => { // constructor factory
 
 	return {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -179,6 +203,7 @@ const HELPER = (() => { //constructor factory
 })();
 
 
+
 /***************************************************************************************************************************************************************
  *
  * PRECOMPILE MODULE
@@ -187,17 +212,16 @@ const HELPER = (() => { //constructor factory
  *
  **************************************************************************************************************************************************************/
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Dependencies
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Dependencies
+ */
 const Treeify = require('treeify');
 
 
 HELPER.precompile = (() => {
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// PUBLIC METHODS
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	/**
+	 * PUBLIC METHODS
+	 */
 	return {
 		/**
 		 * Starting off precompile
@@ -205,27 +229,28 @@ HELPER.precompile = (() => {
 		init: () => {
 			HELPER.precompile.sass();
 			HELPER.precompile.readme();
+			HELPER.precompile.js();
 		},
 
 		/**
 		 * Move files from src/ to lib/ and replace placeholders inside
 		 */
 		sass: () => {
-			//1. create path
+			// 1. create path
 			CreateDir('./lib/sass/');
 
-			//2. copy files
+			// 2. copy files
 			CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
 			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
 			CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
 
-			//rethingiemajiging the peer dependencies for sass
+			// rethingiemajiging the peer dependencies for sass
 			let dependencies = [];
 			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
 				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
 			}
 
-			//3.replace strings inside new files in lib
+			// 3.replace strings inside new files in lib
 			const searches = {
 				'[replace-name]': HELPER.NAME,
 				'[replace-version]': HELPER.VERSION,
@@ -252,6 +277,22 @@ HELPER.precompile = (() => {
 		},
 
 		js: () => {
+			if( Fs.existsSync( `${ process.cwd() }/src/js/module.js` ) ) {
+
+				// 1. create path
+				CreateDir('./lib/js/');
+
+				// 2. copy files
+				CopyFile('./src/js/module.js', './lib/js/module.js');
+
+				// 3.replace strings inside new files in lib
+				const searches = {
+					'[replace-name]': HELPER.NAME,
+					'[replace-version]': HELPER.VERSION,
+				};
+
+				ReplaceFileContent( searches, './lib/js/module.js' );
+			}
 		},
 
 		img: () => {
@@ -264,6 +305,7 @@ HELPER.precompile = (() => {
 })();
 
 
+
 /***************************************************************************************************************************************************************
  *
  * COMPILE MODULE
@@ -272,9 +314,9 @@ HELPER.precompile = (() => {
  *
  **************************************************************************************************************************************************************/
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Dependencies
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Dependencies
+ */
 const Autoprefixer = require('autoprefixer');
 const Postcss = require('postcss');
 const Sass = require('node-sass');
@@ -329,9 +371,9 @@ HELPER.compile = (() => {
 	};
 
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// PUBLIC METHODS
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	/**
+	 * PUBLIC METHODS
+	 */
 	return {
 		/**
 		 * Starting off compile
@@ -344,10 +386,10 @@ HELPER.compile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		sass: () => {
-			//1. compile scss
+			// 1. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
 
-			//2. autoprefixer
+			// 2. autoprefixer
 			Autoprefix('./tests/site/style.css');
 		},
 
@@ -364,6 +406,7 @@ HELPER.compile = (() => {
 })();
 
 
+
 /***************************************************************************************************************************************************************
  *
  * GENERATE MODULE
@@ -372,40 +415,15 @@ HELPER.compile = (() => {
  *
  **************************************************************************************************************************************************************/
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Dependencies
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Dependencies
+ */
 
 
 HELPER.generate = (() => {
 	/**
-	 * PRIVATE
-	 * Get all folders within a given path
-	 *
-	 * @param  {string}  thisPath - The path that contains the desired folders
-	 * @param  {boolean} verbose  - Verbose flag either undefined or true
-	 *
-	 * @return {array}            - An array of names of each folder
+	 * PUBLIC METHODS
 	 */
-	const GetFolders = ( thisPath, verbose ) => {
-		try {
-			let folders = Fs.readdirSync( thisPath ).filter(
-					thisFile => Fs.statSync(`${ thisPath }/${ thisFile }`).isDirectory()
-				).filter(
-					thisFile => thisFile !== 'core'
-			);
-
-			return ['core', ...folders ]; //moving core to top
-		}
-		catch( error ) {
-			return [];
-		}
-	};
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// PUBLIC METHODS
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	return {
 		/**
 		 * Starting off generate
@@ -426,16 +444,16 @@ HELPER.generate = (() => {
 		 */
 		json: ( allModules ) => {
 			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			let packageJson = {}; //each package.json
-			let uikitJson = {};   //the uikit.json object
+			let packageJson = {}; // each package.json
+			let uikitJson = {};   // the uikit.json object
 
-			//iterate over all packages
+			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
 					const pkgPath = Path.normalize(`${ packagesPath }/${ module }/package.json`);
-					packageJson = require( pkgPath ); //read the package.json
+					packageJson = require( pkgPath ); // read the package.json
 
-					uikitJson[ packageJson.name ] = { //add to uikit.json
+					uikitJson[ packageJson.name ] = { // add to uikit.json
 						name: packageJson.name,
 						version: packageJson.version,
 						peerDependencies: packageJson.peerDependencies,
@@ -443,7 +461,7 @@ HELPER.generate = (() => {
 				}
 			}
 
-			Fs.writeFile( Path.normalize(`${ __dirname }/../uikit.json`), JSON.stringify( uikitJson ), 'utf8', ( error ) => { //write file
+			Fs.writeFile( Path.normalize(`${ __dirname }/../uikit.json`), JSON.stringify( uikitJson ), 'utf8', ( error ) => { // write file
 				if( error ) {
 					console.error( error );
 					return;
@@ -459,10 +477,10 @@ HELPER.generate = (() => {
 		 * @param {array} allModules - An array of all modules
 		 */
 		index: ( allModules ) => {
-			let index = Fs.readFileSync( Path.normalize(`${ __dirname }/../.templates/index/index.html`), 'utf-8') //this will be the index file
+			let index = Fs.readFileSync( Path.normalize(`${ __dirname }/../.templates/index/index.html`), 'utf-8') // this will be the index file
 			let replacement = '';
 
-			//iterate over all packages
+			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
 					replacement += `<li><a href="packages/${ module }/tests/site/">${ module }</a></li>\n`;
@@ -471,7 +489,7 @@ HELPER.generate = (() => {
 
 			index = index.replace('[-uikit-modules-]', replacement);
 
-			Fs.writeFile(`${ __dirname }/../index.html`, index, 'utf8', ( error ) => { //write file
+			Fs.writeFile(`${ __dirname }/../index.html`, index, 'utf8', ( error ) => { // write file
 				if( error ) {
 					console.error( error );
 					return;
@@ -514,6 +532,7 @@ HELPER.generate = (() => {
 })();
 
 
+
 /***************************************************************************************************************************************************************
  *
  * SCAFFOLDING MODULE
@@ -522,16 +541,16 @@ HELPER.generate = (() => {
  *
  **************************************************************************************************************************************************************/
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Dependencies
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Dependencies
+ */
 const Inquirer = require('inquirer');
 
 
 HELPER.scaffolding = (() => {
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// PUBLIC METHODS
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	/**
+	 * PUBLIC METHODS
+	 */
 	return {
 		init: () => {
 			Inquirer.prompt([
@@ -556,7 +575,7 @@ HELPER.scaffolding = (() => {
 					'[-replace-version-]': '0.1.0',
 				};
 
-				CopyTemp( template, destination, replacements ); //copy all files and replace placeholders inside of them
+				CopyTemp( template, destination, replacements ); // copy all files and replace placeholders inside of them
 
 			});
 		},
@@ -565,22 +584,103 @@ HELPER.scaffolding = (() => {
 })();
 
 
+
 /***************************************************************************************************************************************************************
  *
- * MODULE
+ * TEST MODULE
+ *
+ * Testing dependencies
+ *
+ **************************************************************************************************************************************************************/
+
+/**
+ * Dependencies
+ */
+
+
+HELPER.test = (() => {
+	/**
+	 * PRIVATE
+	 */
+	const some = ( thisPath, verbose ) => {
+	};
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// PUBLIC METHODS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+	return {
+		init: () => {
+			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
+			const allModules = GetFolders( packagesPath );
+
+			HELPER.test.dependencies( allModules );
+		},
+
+		/**
+		 * Test all dependencies
+		 *
+		 * @param {array} allModules - An array of all modules
+		 */
+		dependencies: ( allModules ) => {
+			let pancakes = {};
+			let dependencies = [];
+
+			if( allModules !== undefined && allModules.length > 0 ) {
+				for( let module of allModules ) {
+					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
+
+					pancakes[ packagesPKG.name ] = packagesPKG.version; //adding to our library of pancakes
+
+					for( const module of Object.keys( packagesPKG.peerDependencies ) ) {
+						let version = packagesPKG.peerDependencies[ module ];
+
+						if( version.startsWith('^') ) {
+							version = version.substring( 1 );
+						}
+
+						dependencies.push({
+							name: module,
+							version: version,
+							from: packagesPKG.name,
+						})
+					}
+				}
+			}
+
+			for( const module of dependencies ) {
+				if( !Semver.satisfies( pancakes[ module.name ], module.version ) ) {
+					HELPER.log.error(`Peer Dependencies ${ module.name }:${ module.version } failed for ${ module.from }`);
+
+					console.log('\n');
+					process.exit( 1 );
+				}
+			}
+
+			HELPER.log.success(`All pancakes without dependency conflicts`);
+		},
+	}
+
+})();
+
+
+
+/***************************************************************************************************************************************************************
+ *
+ * CLI MODULE
  *
  * Initiate application
  *
  **************************************************************************************************************************************************************/
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Dependencies
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Dependencies
+ */
 const CFonts = require(`cfonts`);
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// SCRIPT INIT
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * SCRIPT INIT
+ **/
 HELPER.init = () => {
 
 	if( process.argv.indexOf( 'scaffolding' ) !== -1 ) {
@@ -599,6 +699,7 @@ HELPER.init = () => {
 		HELPER.scaffolding.init();
 	}
 
+
 	if( process.argv.indexOf( 'precompile' ) !== -1 ) {
 		CFonts.say( `Precompile ${ PKG.name.substring( 8 ) }`, {
 			font: 'chrome',
@@ -614,6 +715,7 @@ HELPER.init = () => {
 		console.log(`\n`);
 		HELPER.precompile.init();
 	}
+
 
 	if( process.argv.indexOf( 'compile' ) !== -1 ) {
 		CFonts.say( `Compiling ${ PKG.name.substring( 8 ) }`, {
@@ -631,6 +733,7 @@ HELPER.init = () => {
 		HELPER.compile.init();
 	}
 
+
 	if( process.argv.indexOf( 'publish' ) !== -1 ) {
 		CFonts.say( 'Publishing', {
 			font: 'chrome',
@@ -646,6 +749,23 @@ HELPER.init = () => {
 		console.log(`\n`);
 		HELPER.generate.init();
 	}
+
+
+	if( process.argv.indexOf( 'test' ) !== -1 ) {
+		CFonts.say( 'Testing', {
+			font: 'chrome',
+			space: false,
+			colors: ['red', 'magenta', 'blue'],
+		});
+
+		CFonts.say(`... so you don't have to`, {
+			font: 'console',
+			space: false,
+		});
+
+		console.log(`\n`);
+		HELPER.test.init();
+	}
 };
 
 HELPER.init();
@@ -653,9 +773,7 @@ HELPER.init();
 module.exports = HELPER;
 
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// EXIT HANDLER
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 /**
  * Handle exiting of program
  *
@@ -672,14 +790,14 @@ function ExitHandler( exiting, error ) {
 	}
 
 	if( exiting.now ) {
-		process.exit( 0 ); //exit now
+		process.exit( 0 ); // exit now
 	}
 
 	console.log('\n');
 
-	process.exit( 0 ); //now exit with a smile :)
+	process.exit( 0 ); // now exit with a smile :)
 }
 
-process.on( 'exit', ExitHandler.bind( null, { now: false } ) );              //on closing
-process.on( 'SIGINT', ExitHandler.bind( null, { now: true } ) );             //on [ctrl] + [c]
-process.on( 'uncaughtException', ExitHandler.bind( null, { now: true } ) );  //on uncaught exceptions
+process.on( 'exit', ExitHandler.bind( null, { now: false } ) );              // on closing
+process.on( 'SIGINT', ExitHandler.bind( null, { now: true } ) );             // on [ctrl] + [c]
+process.on( 'uncaughtException', ExitHandler.bind( null, { now: true } ) );  // on uncaught exceptions

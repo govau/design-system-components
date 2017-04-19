@@ -1,3 +1,4 @@
+/*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
  * Animate function
@@ -39,10 +40,10 @@ var UIKIT = UIKIT || {};
 			};
 		}
 
-		var distance = endSize - initialSize;         // the overall distance the animation needs to travel
-		var intervalTime = ( speed / distance );      // the time each setInterval iteration will take
-		var stepSize = distance < 0 ? -1 : 1;         // if distance is negative then we set stepSize to -1
-		var steps = Math.abs( distance / stepSize );  // the amount of steps required to achieve animation
+		var distance = endSize - initialSize;        // the overall distance the animation needs to travel
+		var intervalTime = ( speed / distance );     // the time each setInterval iteration will take
+		var stepSize = distance < 0 ? -1 : 1;        // if distance is negative then we set stepSize to -1
+		var steps = Math.abs( distance / stepSize ); // the amount of steps required to achieve animation
 		intervalTime = speed / steps;
 
 		// we need to adjust our animation specs if interval time exceeds 60FPS eg intervalTime < 16.67ms
@@ -298,3 +299,6 @@ var UIKIT = UIKIT || {};
 	UIKIT.animate = animate;
 
 }( UIKIT ));
+
+
+export UIKIT;

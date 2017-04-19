@@ -16,48 +16,31 @@
 	],
 	"scripts": {
 		"postinstall": "pancake",
-		"test": "node ../../scripts/a11y.js",
-		"prepublish": "node ../../scripts/helper.js precompile publish",
+
+		"test": "node ../../scripts/helper.js test && node ../../scripts/a11y.js",
+
+		"prepublish": "npm run test && node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
-		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' 'src/js/*.js' 'tests/js/*.js' -- npm run build",
+		"watch:js": "npm run build && onchange 'src/js/*.js' -- npm run build",
+		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
 		"serve": "browser-sync start --server --startPath 'tests/site' --files 'tests/site/*.html, tests/site/*.css, tests/site/*.js'",
 		"watch": "npm-run-all --parallel serve watch:*"
 	},
 	"pancake": {
-		"auto-save": true,
-		"plugins": true,
-		"ignore": [],
 		"pancake-module": {
 			"version": "1.0.0",
 			"plugins": [
-				"@gov.au/pancake-sass"
+				"@gov.au/pancake-js"
 			],
-			"sass": {
-				"path": "lib/sass/_module.scss",
-				"sass-versioning": true
+			"js": {
+				"path": "lib/js/module.js"
 			}
-		},
-		"css": {
-			"minified": true,
-			"modules": false,
-			"browsers": [
-				"last 2 versions",
-				"ie 8",
-				"ie 9",
-				"ie 10"
-			],
-			"location": "pancake/css/",
-			"name": "pancake.min.css"
-		},
-		"sass": {
-			"modules": false,
-			"location": "pancake/sass/",
-			"name": "pancake.scss"
 		}
 	},
 	"dependencies": {
-		"@gov.au/core": "^0.1.0",
 		"@gov.au/pancake": "~1",
+
+		"@gov.au/core": "^0.1.0",
 		"@gov.au/pancake-sass": "^1.0.9"
 	},
 	"peerDependencies": {
@@ -98,7 +81,7 @@
 		{
 			"name": "Simon Schwartz",
 			"email": "simon.schwartz0@gmail.com",
-			"url": "https://www.simonschwartz.github.io"
+			"url": "https://simonschwartz.github.io/"
 		}
 	],
 	"license": "MIT"
