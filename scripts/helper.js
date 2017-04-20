@@ -380,6 +380,7 @@ HELPER.compile = (() => {
 		 */
 		init: () => {
 			HELPER.compile.sass();
+			HELPER.compile.js();
 		},
 
 		/**
@@ -394,6 +395,10 @@ HELPER.compile = (() => {
 		},
 
 		js: () => {
+			if( Fs.existsSync( `${ process.cwd() }/src/js/module.js` ) ) {
+				// 1. copy files
+				CopyFile('./lib/js/module.js', './tests/site/module.js');
+			}
 		},
 
 		img: () => {
