@@ -24,9 +24,11 @@
 	"scripts": {
 		"postinstall": "pancake",
 
-		"test": "node ../../scripts/helper.js test && node ../../scripts/a11y.js",
+		"test:a11y": "node ../../scripts/a11y.js",
+		"test:deps": "node ../../scripts/helper.js test",
+		"test": "npm run test:a11y && npm run test:deps",
 
-		"prepublish": "npm run test && node ../../scripts/helper.js precompile publish",
+		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
 		"watch:js": "npm run build && onchange 'src/js/*.js' -- npm run build",
 		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
