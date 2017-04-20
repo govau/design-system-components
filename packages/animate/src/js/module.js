@@ -178,11 +178,6 @@ var UIKIT = UIKIT || {};
 
 			// calculate our animation specs
 			var animationSpecs = CalculateAnimationSpecs( initialSize, endSize, speed );
-			console.log(initialSize);
-			console.log(endSize);
-			console.log(speed);
-			console.log(animationSpecs);
-			console.log( '------------------' );
 			var iterateCounter = initialSize;
 
 			// set state
