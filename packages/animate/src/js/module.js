@@ -135,7 +135,6 @@ var UIKIT = UIKIT || {};
 	 * @param  {object}         options          - The options for the animation
 	 * @param  {object}         options.element  - Element/s we are animating (DOM nodes)
 	 * @param  {string}         options.property - The CSS property to animate
-	 * @param  {string}         options.unit     - The CSS unit for the property [optional] [default: 'px']
 	 * @param  {integer|string} options.endSize  - The size the element should animate to. Can be 'auto' or pixel value
 	 * @param  {integer}        options.speed    - The speed of the animation in milliseconds [optional] [default: 250]
 	 * @param  {function}       options.callback - A function to be executed after the animation ends [optional]
@@ -146,7 +145,6 @@ var UIKIT = UIKIT || {};
 		// defaults
 		var elements = options.element;
 		var speed = options.speed || 250;
-		var unit = options.unit || 'px';
 
 		// making a single DOM element iteratable
 		if( elements.length === undefined ) {
@@ -195,7 +193,7 @@ var UIKIT = UIKIT || {};
 					if( initialSize === endSize || animationSpecs.steps === 0 ) {
 						UIKIT.animate.Stop( element );
 
-						element.style[ options.property ] = endSize + unit; // set to endSize
+						element.style[ options.property ] = endSize + 'px'; // set to endSize
 						element.UIKITtoggleState = '';
 
 						elements[ 0 ].UIKITinteration ++;
@@ -214,7 +212,7 @@ var UIKIT = UIKIT || {};
 					// if we are still animating
 					else {
 						iterateCounter += animationSpecs.stepSize;
-						element.style[ options.property ] = iterateCounter + unit;
+						element.style[ options.property ] = iterateCounter + 'px';
 
 						animationSpecs.steps --;
 					}
@@ -231,7 +229,6 @@ var UIKIT = UIKIT || {};
 	 * @param  {object}         options           - The options for the animation
 	 * @param  {object}         options.element   - Element/s we are animating (DOM nodes)
 	 * @param  {string}         options.property  - The CSS property to animate [optional] [default: 'height']
-	 * @param  {string}         options.unit     - The CSS unit for the property [optional] [default: 'px']
 	 * @param  {integer|string} options.closeSize - The size the element should close to. Can be 'auto' or pixel value [optional] [default: 0]
 	 * @param  {integer|string} options.openSize  - The size the element should open to. Can be 'auto' or pixel value [optional] [default: 'auto']
 	 * @param  {integer}        options.speed     - The speed of the animation in milliseconds [optional] [default: 250]
@@ -285,7 +282,6 @@ var UIKIT = UIKIT || {};
 				element: element,
 				endSize: targetSize,
 				property: property,
-				unit: options.unit,
 				speed: speed,
 				callback: function() { // making sure we fire the callback only once
 					elements[ 0 ].UIKITtoggleInteration ++;
