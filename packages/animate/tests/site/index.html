@@ -234,6 +234,46 @@
 			</div>
 		</div>
 
+		<hr>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>Edge cases</h2>
+			</div>
+
+			<div class="grids col-sm-6">
+				<h2>less pixel than steps</h2>
+
+				<div>
+					<div>
+						<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('edgecase1'), property: 'height', endSize: 3, speed: 4, callback: function() { console.log('end edgecase1!!'); } })">Open</button>
+						<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('edgecase1'), property: 'height', endSize: 0, speed: 4, callback: function() { console.log('end edgecase2!!'); } })">Close</button>
+						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('edgecase1'), property: 'height', openSize: 3, closeSize: 0, speed: 4, callback: function() { console.log('end edgecase2!!'); } })">Toggle</button>
+					</div>
+				</div>
+
+				<div class="uikit-dropdown-example" id="edgecase1"></div>
+
+			</div>
+
+			<div class="grids col-sm-6">
+				<h2>Half pixel step size</h2>
+
+				<div>
+					<div>
+						<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('edgecase2'), property: 'height', endSize: 200, speed: 473, callback: function() { console.log('end edgecase2!!'); } })">Open</button>
+						<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('edgecase2'), property: 'height', endSize: 0, speed: 473, callback: function() { console.log('end edgecase2!!'); } })">Close</button>
+						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('edgecase2'), property: 'height', openSize: 200, closeSize: 0, speed: 473, callback: function() { console.log('end edgecase2!!'); } })">Toggle</button>
+					</div>
+				</div>
+
+				<div class="uikit-dropdown-example" id="edgecase2" style="height:0;">
+					&nbsp;<br><br><br>
+				</div>
+
+			</div>
+		</div>
+
 	</div>
 
 

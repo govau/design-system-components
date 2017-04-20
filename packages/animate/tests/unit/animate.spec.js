@@ -15,15 +15,15 @@ test('UIKIT.animate.CalculateAnimationSpecs should calculate correct animation v
 	}
 
 	const result3 = {
-		"intervalTime": 12.5,
-		"stepSize": -1,
-		"steps": 19,
+		"intervalTime": 16.666666666666668,
+		"stepSize": -1.3333333333333333,
+		"steps": 14,
 	}
 
 	const result4 = {
-		"intervalTime": 15.625,
-		"stepSize": -27,
-		"steps": 15,
+		"intervalTime": 16.666666666666668,
+		"stepSize": -27.466666666666665,
+		"steps": 14,
 	}
 
 	const result5 = {
@@ -51,21 +51,21 @@ test('UIKIT.animate.CalculateAnimationSpecs should calculate correct animation v
 	}
 
 	const result9 = {
-		"intervalTime": 14.586709886547812,
-		"stepSize": 2,
-		"steps": 616,
+		"intervalTime": 16.666666666666668,
+		"stepSize": 2.285185185185185,
+		"steps": 539,
 	}
 
 	const result10 = {
-		"intervalTime": 16,
+		"intervalTime": 16.666666666666668,
 		"stepSize": 2,
 		"steps": 4,
 	}
 
 	const result11 = {
-		"intervalTime": 14.285714285714286,
-		"stepSize": -128,
-		"steps": 6,
+		"intervalTime": 16.666666666666668,
+		"stepSize": -128.16666666666666,
+		"steps": 5,
 	}
 
 	const result12 = {
@@ -75,8 +75,8 @@ test('UIKIT.animate.CalculateAnimationSpecs should calculate correct animation v
 	}
 
 	const result13 = {
-		"intervalTime": 0,
-		"stepSize": 0,
+		"intervalTime": 16.666666666666668,
+		"stepSize": 3,
 		"steps": 0,
 	}
 
@@ -110,23 +110,21 @@ test('UIKIT.animate.CalculateAnimationSpecs should calculate correct animation v
 });
 
 
+
 expect.extend({
 	toBeWholeNumber( received ) {
 
-		console.log(received.stepSize)
-
 		return {
 			message: () => (
-				`expected ${ received.stepSize } to be a whole number`
+				`expected ${ received.steps } to be a whole number`
 			),
-			pass: Math.round( received.stepSize ) === received.stepSize,
+			pass: Math.round( received.steps ) === received.steps,
 		};
 	},
 });
 
-test('UIKIT.animate.CalculateAnimationSpecs should only return whole number for steps', () => {
 
+test('UIKIT.animate.CalculateAnimationSpecs should only return whole number for steps', () => {
 	expect( UIKIT.animate.CalculateAnimationSpecs( 162, 982, 350 ) ).toBeWholeNumber();
 	expect( UIKIT.animate.CalculateAnimationSpecs( 0, 3, 6 ) ).toBeWholeNumber();
-
 });

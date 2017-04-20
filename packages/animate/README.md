@@ -52,20 +52,20 @@ Animate has 3 functions:
 The options settings are:
 
 `element` - DOM node/s you want to animate   
-`property` - CSS property you want to animate (optional, defaults to `height`)   
-`endSize` - 'auto' or pixel size of the property after the animation has finished (optional)   
-`speed` - animation speed in milliseconds (optional, defaults to `250ms`)   
+`property` - CSS property you want to animate (optional, defaults to `height`)  
+`endSize` - 'auto' or pixel size of the property after the animation has finished (optional)  
+`speed` - animation speed in milliseconds (optional, defaults to `250ms`)  
 `callback` - callback function to run when the animation completes (optional)
 
 Example:
 
 ```js
 UIKIT.animate.Run(
-  element: document.getElementById('elementId'),
-  property: 'height',
-  endSize: 'auto',
-  speed: 1000,
-  callback: myFunction,
+	element: document.getElementById('elementId'),
+	property: 'height',
+	endSize: 'auto',
+	speed: 1000,
+	callback: myFunction,
 )
 ```
 
@@ -81,7 +81,7 @@ Example:
 
 ```js
 UIKIT.animate.Stop(
-  element: document.getElementById('elementId'),
+	element: document.getElementById('elementId'),
 )
 ```
 
@@ -92,22 +92,22 @@ UIKIT.animate.Stop(
 The options settings are:
 
 `element` - DOM node/s you want to animate   
-`property` - CSS property you want to animate (optional, defaults to `height`)   
-`openSize` - pixel size of the property when the element is open (optional, defaults to `auto`)   
-`closeSize` - pixel size of the property when the element is closed (optional, defaults to `0`)   
-`speed` - animation speed in milliseconds (optional, defaults to `250ms`)   
+`property` - CSS property you want to animate (optional, defaults to `height`)  
+`openSize` - pixel size of the property when the element is open (optional, defaults to `auto`)  
+`closeSize` - pixel size of the property when the element is closed (optional, defaults to `0`)  
+`speed` - animation speed in milliseconds (optional, defaults to `250ms`)  
 `callback` - callback function to run when the animation completes (optional)
 
 Example:
 
 ```js
 UIKIT.animate.Toggle(
-  element: document.getElementById('elementId'),
-  property: 'height',
-  closeSize: 0,
-  openSize: 'auto',
-  speed: 1000,
-  callback: myFunction,
+	element: document.getElementById('elementId'),
+	property: 'height',
+	closeSize: 0,
+	openSize: 'auto',
+	speed: 1000,
+	callback: myFunction,
 )
 ```
 
@@ -145,6 +145,8 @@ animate
 ## Tests
 
 The visual test: http://uikit.apps.staging.digital.gov.au/packages/animate/tests/site/
+
+Run `jest` for the unit tests
 
 
 **[⬆ back to top](#contents)**

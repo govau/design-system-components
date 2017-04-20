@@ -43,24 +43,24 @@ var UIKIT = UIKIT || {};
 		var distance = endSize - initialSize;        // the overall distance the animation needs to travel
 		var intervalTime = ( speed / distance );     // the time each setInterval iteration will take
 		var stepSize = distance < 0 ? -1 : 1;        // if distance is negative then we set stepSize to -1
-		var steps = Math.abs( distance / stepSize ); // the amount of steps required to achieve animation
+		var steps = Math.abs( distance / stepSize ); // the amount of steps required to get to endSize
 		intervalTime = speed / steps;
 
-		// we need to adjust our animation specs if interval time exceeds 60FPS eg intervalTime < 16.67ms
+		// we need to adjust our animation specs if interval time exceeds 60FPS eg intervalTime < 16.67ms (1000 / 60) = (50 / 3)
 		if( Math.abs( intervalTime ) < ( 50 / 3 ) ) {
-			stepSize = Math.round( ( 50 / 3 ) / intervalTime );
-			steps = Math.abs( Math.floor( distance / stepSize ) );
-			stepSize = distance < 0 ? -stepSize : stepSize;
-			intervalTime = speed / steps;
+			intervalTime = ( 50 / 3 );                             // let’s not get lower that 60FPS
+			steps = Math.ceil( Math.abs( speed / intervalTime ) ); // we now need the steps and make sure we ceil them so -1 won't make them negative
+			stepSize = distance / steps;                           // last thing is step sizes which are derived from all of the above
 		}
 
 		return {
 			stepSize: stepSize,
-			steps: ( steps - 1 ), //TODO small distance with long time
+			steps: ( steps - 1 ),
 			intervalTime: intervalTime,
 		};
 	}
 
+	// export for node and babel environments
 	if( typeof module !== 'undefined' ) {
 		animate.CalculateAnimationSpecs = CalculateAnimationSpecs;
 	}
@@ -169,7 +169,6 @@ var UIKIT = UIKIT || {};
 			var element = elements[ i ];                                                        // this element
 			UIKIT.animate.Stop( element );                                                      // stop any previous animations
 			var initialSize = parseInt( GetCSSPropertyBecauseIE( element, options.property ) ); // the elements current size
-
 			var endSize = options.endSize;                                                      // the element end size
 
 			if( options.endSize === 'auto' ) {                                                  // calculate what 'auto' means in pixel
