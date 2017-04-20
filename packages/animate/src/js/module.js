@@ -61,6 +61,10 @@ var UIKIT = UIKIT || {};
 		};
 	}
 
+	if( typeof module !== 'undefined' ) {
+		animate.CalculateAnimationSpecs = CalculateAnimationSpecs;
+	}
+
 
 	/**
 	 * PRIVATE
@@ -174,6 +178,11 @@ var UIKIT = UIKIT || {};
 
 			// calculate our animation specs
 			var animationSpecs = CalculateAnimationSpecs( initialSize, endSize, speed );
+			console.log(initialSize);
+			console.log(endSize);
+			console.log(speed);
+			console.log(animationSpecs);
+			console.log( '------------------' );
 			var iterateCounter = initialSize;
 
 			// set state
@@ -301,6 +310,6 @@ var UIKIT = UIKIT || {};
 }( UIKIT ));
 
 
-if( typeof window.module !== 'undefined' ) {
+if( typeof module !== 'undefined' ) {
 	module.exports = UIKIT;
 }
