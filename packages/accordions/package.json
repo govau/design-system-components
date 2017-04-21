@@ -45,11 +45,11 @@
 		"@gov.au/pancake": "~1",
 
 		"@gov.au/core": "^0.1.0",
-		"@gov.au/animate": "^0.1.1"
+		"@gov.au/animate": "^0.1.2"
 	},
 	"peerDependencies": {
 		"@gov.au/core": "^0.1.0",
-		"@gov.au/animate": "^0.1.1"
+		"@gov.au/animate": "^0.1.2"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.18.6",

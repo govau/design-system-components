@@ -41,7 +41,6 @@ npm install @gov.au/accordions --save-dev
 accordions
 ├─ core
 └─ animate
-   └─ core
 ```
 
 
