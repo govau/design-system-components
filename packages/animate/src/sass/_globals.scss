@@ -1,50 +1,27 @@
+/*! [replace-name] v[replace-version] */
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// responsive-media module
-// Caters for video/slideshow dimensions and aspect ratios across various viewports/widths
+// open-close module globals
+// A JavaScript function to open, close and toggle the display of page elements.
 //
 // Content:
-// - Responsive video embeds
-// - Responsive image
+// - Sass versioning
+// - Global variables: none so far
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SASS VERSIONING
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+$name: "[replace-name]";
+$version: "[replace-version]";
+$dependencies: (
+	[replace-dependencies]
+);
 
-@import '_globals.scss';
-@import '_print.scss';
-
+@include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Responsive video embeds
+// GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-responsive-media-vid {
-	position: relative;
-	display: block;
-	height: 0;
-	padding: 0;
-	overflow: hidden;
-	margin-bottom: uikit-space( 0.5 );
 
-	> .uikit-responsive-media-vid__item {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		border: 0;
-	}
-
-	&.uikit-responsive-media-vid--16x9 {
-		padding-bottom: percentage( 9 / 16 ); // 16:9
-	}
-
-	&.uikit-responsive-media-vid--4x3 {
-		padding-bottom: percentage( 3 / 4 ); // 4:3
-	}
-}
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Responsive image
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-responsive-media-img {
-	max-width: 100%;
-}
+// Boy it sure is quiet here.

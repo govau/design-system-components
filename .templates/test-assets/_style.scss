@@ -1,11 +1,8 @@
 body {
 	background: #fff;
 	margin: 0;
-	padding: uikit-space(4) uikit-space(2) uikit-space(2) uikit-space(2);
-	overflow-x: hidden;//For Opera apparently.
-	box-shadow:
-		inset $uikit-colour-Info-20 0 uikit-space(3) 0 0,
-		inset $uikit-colour-Info-20 0 0 0 uikit-space(1);
+	padding: uikit-space( 4 ) uikit-space( 1 ) uikit-space( 2 ) uikit-space( 1 );
+	overflow-x: hidden; //For Opera apparently.
 
 	&:before {
 		position: absolute;
@@ -19,7 +16,7 @@ body {
 			#333 10px,
 			#333 20px
 		);
-		padding: uikit-space(0.5) uikit-space(2) uikit-space(0.5) uikit-space(1);
+		padding: uikit-space( 0.5 ) uikit-space( 2 ) uikit-space( 0.5 ) uikit-space( 1 );
 		content: "📃 Test file";
 		font-family: $uikit-font-monospace;
 		color: white;
