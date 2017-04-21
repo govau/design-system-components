@@ -10,3 +10,26 @@
 
 @import '_globals.scss';
 @import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion wrapper
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-accordion {
+	border: $uikit-borderize;
+}
+
+.uikit-accordion__title {
+	padding: uikit-space( 0.75 );
+	background-color: $uikit-colour-Background;
+
+	// remove the default details arrow icon
+	&::-webkit-details-marker {
+		display: none;
+	}
+}
+
+.uikit-accordion__body {
+	padding: uikit-space( 0.75 );
+	border-top: $uikit-borderize;
+}

@@ -45,13 +45,31 @@
 
 	<h1>Test: accordions</h1>
 
-	<details>
-		<summary>Accordion title</summary>
-		<div>
+	<details class="uikit-accordion">
+		<summary class="uikit-accordion__title">Accordion title</summary>
+		<div class="uikit-accordion__body">
 			Here is some accordion content
+
+			<details class="uikit-accordion">
+				<summary class="uikit-accordion__title">A nested accordion</summary>
+				<div class="uikit-accordion__body">
+					Here is some accordion content
+				</div>
+			</details>
+
 		</div>
 	</details>
 
+	<hr>
+
+	<section class="uikit-accordion">
+		<div class="uikit-accordion__title">Accordion title</div>
+		<div class="uikit-accordion__body">
+			Here is some accordion content
+		</div>
+	</dection>
+
+<!--
 	<div>
 		<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-1'), property: 'height', endSize: 0, speed: 500, callback: function() { console.log('end2!!'); } })">Close</button>
 		<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-1'), property: 'height', endSize: 'auto', speed: 500, callback: function() { console.log('end1!!'); } })">Open</button>
@@ -61,7 +79,7 @@
 
 	<div class="uikit-dropdown-example" id="dropdown-1">
 		&nbsp;<br><br><br>
-	</div>
+	</div> -->
 
 	<!--<script type="text/javascript" src="../../../animate/lib/js/module.js"></script>-->
 	<script type="text/javascript" src="module.js"></script>
