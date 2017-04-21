@@ -123,7 +123,6 @@ UIKIT.animate.Toggle(
 
 ```shell
 animate
-└─ core
 ```
 
 
@@ -157,6 +156,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
+* v0.1.2 - Removed core as dependency
 * v0.1.1 - 💥 Initial version
 
 
