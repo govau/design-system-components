@@ -1,7 +1,7 @@
-@gov.au/buttons
+@gov.au/progress-indicator
 ============
 
-> Buttons signal action. Use them to move the user through the service.
+> Indicator of progress through a multitude of pages mostly used for forms.
 
 
 ## Contents
@@ -21,11 +21,11 @@
 
 
 ```shell
-yarn add @gov.au/buttons
+yarn add @gov.au/progress-indicator
 ```
 
 ```shell
-npm install @gov.au/buttons --save-dev
+npm install @gov.au/progress-indicator --save-dev
 ```
 
 
@@ -38,7 +38,7 @@ npm install @gov.au/buttons --save-dev
 ## Dependency graph
 
 ```shell
-buttons
+progress-indicator
 └─ core
 ```
 
@@ -60,7 +60,7 @@ buttons
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/buttons/tests/site/
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/progress-indicator/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -71,7 +71,6 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/buttons/tests
 
 ## Release History
 
-* v0.2.0 - Added block modifier
 * v0.1.0 - 💥 Initial version
 
 

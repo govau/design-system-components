@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Test: buttons</title>
+	<title>Test: progress-indicator</title>
 
 	<script type="text/javascript">
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
@@ -43,31 +43,107 @@
 
 	<a class="test-link" href="../../../../">&larr; back to the module index</a>
 
-	<h1>Test: buttons</h1>
+	<h1 id="url">Test: progress-indicator</h1>
 
-	<h2>primary button</h2>
+	<h2>without body</h2>
 
-	<button class="uikit-btn">Continue</button>
-	<button class="uikit-btn" disabled>Continue</button>
+	<nav>
+		<ul class="progress-indicator">
+			<li>
+				<a class="progress-indicator__link progress-indicator--doing" href="#url">
+					<span class="progress-indicator__status">Doing</span>
+					Introduction
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--todo" href="#url">
+					<span class="progress-indicator__status">To do</span>
+					Business Contacts
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--done" href="#url">
+					<span class="progress-indicator__status">Done</span>
+					Case Studies
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--done" href="#url">
+					<span class="progress-indicator__status">Done</span>
+					Personal Infos
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--todo" href="#url">
+					<span class="progress-indicator__status">To do</span>
+					Spouses
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--todo" href="#url">
+					<span class="progress-indicator__status">To do</span>
+					Spouses
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--todo" href="#url">
+					<span class="progress-indicator__status">To do</span>
+					Very long title that will likely break because it is a very long line as I just mentioned
+				</a>
+			</li>
+		</ul>
+	</nav>
+
 
 	<hr>
-	<h2>secondary button</h2>
+	<h2>with body</h2>
 
-	<button class="uikit-btn uikit-btn--secondary">Save</button>
-	<button class="uikit-btn uikit-btn--secondary" disabled>Save</button>
-
-	<hr>
-	<h2>tertiary button</h2>
-
-	<button class="uikit-btn uikit-btn--tertiary">Cancel</button>
-	<button class="uikit-btn uikit-btn--tertiary" disabled>Cancel</button>
-
-	<hr>
-	<h2>buttons with block</h2>
-
-	<button class="uikit-btn uikit-btn--block">Continue</button>
-	<button class="uikit-btn uikit-btn--secondary uikit-btn--block">Save</button>
-	<button class="uikit-btn uikit-btn--tertiary uikit-btn--block">Cancel</button>
+	<nav class="uikit-body">
+		<ul class="progress-indicator">
+			<li>
+				<a class="progress-indicator__link progress-indicator--doing" href="#url">
+					<span class="progress-indicator__status">Doing</span>
+					Introduction
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--todo" href="#url">
+					<span class="progress-indicator__status">To do</span>
+					Business Contacts
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--done" href="#url">
+					<span class="progress-indicator__status">Done</span>
+					Case Studies
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--done" href="#url">
+					<span class="progress-indicator__status">Done</span>
+					Personal Infos
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--todo" href="#url">
+					<span class="progress-indicator__status">To do</span>
+					Spouses
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--todo" href="#url">
+					<span class="progress-indicator__status">To do</span>
+					Spouses
+				</a>
+			</li>
+			<li>
+				<a class="progress-indicator__link progress-indicator--todo" href="#url">
+					<span class="progress-indicator__status">To do</span>
+					Very long title that will likely break because it is a very long line as I just mentioned
+				</a>
+			</li>
+		</ul>
+	</nav>
 
 </body>
 </html>

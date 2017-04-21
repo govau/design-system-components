@@ -64,6 +64,7 @@ page-alerts
 
 ## Release History
 
+* v0.1.1 - Improved print styles
 * v0.1.0 - 💥 Initial version
 
 

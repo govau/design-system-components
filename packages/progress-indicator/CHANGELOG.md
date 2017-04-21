@@ -1,4 +1,4 @@
-@gov.au/page-alerts CHANGELOG
+@gov.au/progress-indicator CHANGELOG
 ======================
 
 > Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
@@ -15,7 +15,6 @@
 
 ## Versions
 
-* [v0.1.1 - Improved print styles](v011)
 * [v0.1.0 - 💥 Initial version](v010)
 
 
@@ -23,11 +22,6 @@
 
 
 ## Release History
-
-### v0.1.1
-
-- Improved print styles ([#156](https://github.com/govau/uikit/issues/156))
-
 
 ### v0.1.0
 

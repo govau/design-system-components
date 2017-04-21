@@ -56,8 +56,56 @@
 			color: white;
 		}
 
-		li {
+		.module-list > li {
 			margin-bottom: 0.5em;
+		}
+
+		.module-list {
+			padding: 0 0 0 1.5em;
+			margin: 0;
+			column-count: 1;
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1;
+			-webkit-column-gap: 4em;
+			-moz-column-gap: 4em;
+			column-gap: 4em;
+		}
+
+		@media (min-width: 576px) {
+			.module-list {
+				column-count: 2;
+				-webkit-column-count: 2;
+				-moz-column-count: 2;
+				column-count: 2;
+			}
+		}
+
+		@media (min-width: 768px) {
+			.module-list {
+				column-count: 2;
+				-webkit-column-count: 2;
+				-moz-column-count: 2;
+				column-count: 2;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.module-list {
+				column-count: 3;
+				-webkit-column-count: 3;
+				-moz-column-count: 3;
+				column-count: 3;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			.module-list {
+				column-count: 4;
+				-webkit-column-count: 4;
+				-moz-column-count: 4;
+				column-count: 4;
+			}
 		}
 	</style>
 
@@ -80,7 +128,7 @@
 	<h1>All UI-Kit module tests</h1>
 
 	<main>
-		<ol>
+		<ol class="module-list">
 			[-uikit-modules-]
 		</ol>
 	</main>
