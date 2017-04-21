@@ -157,7 +157,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
-* v0.1.0 - 💥 Initial version
+* v0.1.1 - 💥 Initial version
 
 
 **[⬆ back to top](#contents)**
