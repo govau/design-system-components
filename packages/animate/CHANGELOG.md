@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.2 - Removed core as dependency](v012)
 * [v0.1.1 - 💥 Initial version](v011)
 
 
@@ -22,6 +23,11 @@
 
 
 ## Release History
+
+### v0.1.2
+
+- Removed core as dependency
+
 
 ### v0.1.1
 
