@@ -23,3 +23,13 @@
 	background-color: rebeccapurple;
 	margin-bottom: 1em;
 }
+
+// We’re undoing these test page styles in order to properly test the grid.
+body {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.test-link { //have to to make it look awesome again
+	margin-left: uikit-space( 1 );
+}

@@ -39,9 +39,9 @@ body {
 
 // Same here.
 h1 {
-	margin-left: uikit-space(1);
+	margin-left: uikit-space( 0.5 );
 }
 
 .test-link { //have to to make it look awesome again
-	margin-left: 3.2em;
+	margin-left: uikit-space( 1 );
 }

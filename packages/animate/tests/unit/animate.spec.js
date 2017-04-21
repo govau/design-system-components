@@ -46,7 +46,7 @@ test('UIKIT.animate.CalculateAnimationSpecs should only return whole number for 
 		expect( UIKIT.animate.CalculateAnimationSpecs(
 			( 2.1425 * iteration ),
 			( 100.921833 * iteration ),
-			( 20.9178187 * iteration )
+			( 20.9178187 * iteration ),
 		) ).toBeWholeNumber();
 	});
 

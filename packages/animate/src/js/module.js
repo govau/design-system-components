@@ -46,9 +46,9 @@ var UIKIT = UIKIT || {};
 		var steps = Math.abs( distance / stepSize ); // the amount of steps required to get to endSize
 		intervalTime = speed / steps;
 
-		// we need to adjust our animation specs if interval time exceeds 60FPS eg intervalTime < 16.67ms (1000 / 60) = (50 / 3)
-		if( Math.abs( intervalTime ) < ( 50 / 3 ) ) {
-			intervalTime = ( 50 / 3 );                             // let’s not get lower that 60FPS
+		// we need to adjust our animation specs if interval time exceeds 60FPS eg intervalTime < 16.67ms
+		if( Math.abs( intervalTime ) < ( 1000 / 60 ) ) {
+			intervalTime = ( 1000 / 60 );                          // let’s not get lower that 60FPS
 			steps = Math.ceil( Math.abs( speed / intervalTime ) ); // we now need the steps and make sure we ceil them so -1 won't make them negative
 			stepSize = distance / steps;                           // last thing is step sizes which are derived from all of the above
 		}
@@ -267,7 +267,7 @@ var UIKIT = UIKIT || {};
 
 			UIKIT.animate.Stop( element );
 
-			var targetSize;                                                                   // the size the element should open/close to after toggle is clicked
+			var targetSize;                                                                     // the size the element should open/close to after toggle is clicked
 			var currentSize = parseInt( GetCSSPropertyBecauseIE( element, options.property ) ); // the current size of the element
 
 			if( currentSize === closeSize || element.UIKITtoggleState === 'closing' ) {
