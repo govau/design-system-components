@@ -640,10 +640,6 @@ HELPER.test = (() => {
 					for( const module of Object.keys( packagesPKG.peerDependencies ) ) {
 						let version = packagesPKG.peerDependencies[ module ];
 
-						if( version.startsWith('^') ) {
-							version = version.substring( 1 );
-						}
-
 						dependencies.push({
 							name: module,
 							version: version,
