@@ -30,7 +30,7 @@ Run `npm install @gov.au/body` to install the body module. To install several mo
 npm install @gov.au/body @gov.au/header @gov.au/footer @gov.au/buttons
 ```
 
-❗️Due to pancake installing plugins very slowly make sure you include the sass plugin into your install command. That will speed up things considerably.
+💡 You can make the very first install even faster by including the pancake plugins you need:
 
 ```
 npm install @gov.au/pancake-sass @gov.au/body @gov.au/header @gov.au/footer @gov.au/buttons
@@ -46,128 +46,301 @@ npm install @gov.au/pancake-sass @gov.au/body @gov.au/header @gov.au/footer @gov
 
 ## Modules
 
-- [core](http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/)
-```
-.
-```
+<details>
+	<summary>@gov.au/core</summary>
+	<br><code>npm install @gov.au/core</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/core/tests/site/">visual test file for core</a><br><br>
+	<i>No dependencies</i>
 
-- [body](http://uikit.apps.staging.digital.gov.au/packages/body/tests/site/)
-```
+----------
+</details>
+
+<details>
+	<summary>@gov.au/animate</summary>
+	<br><code>npm install @gov.au/animate</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/animate/tests/site/">visual test file for animate</a><br><br>
+	<i>No dependencies</i>
+
+----------
+</details>
+
+<details>
+	<summary>@gov.au/body</summary>
+	<br><code>npm install @gov.au/body</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/body/tests/site/">visual test file for body</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [breadcrumbs](http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/)
-```
+<details>
+	<summary>@gov.au/breadcrumbs</summary>
+	<br><code>npm install @gov.au/breadcrumbs</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/">visual test file for breadcrumbs</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 ├─ core
 └─ link-list
    ├─ core
    └─ body
       └─ core
 ```
+----------
+</details>
 
-- [buttons](http://uikit.apps.staging.digital.gov.au/packages/buttons/tests/site/)
-```
+<details>
+	<summary>@gov.au/buttons</summary>
+	<br><code>npm install @gov.au/buttons</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/buttons/tests/site/">visual test file for buttons</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [callout](http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/)
-```
+<details>
+	<summary>@gov.au/callout</summary>
+	<br><code>npm install @gov.au/callout</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/">visual test file for callout</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [control-input](http://uikit.apps.staging.digital.gov.au/packages/control-input/tests/site/)
-```
+<details>
+	<summary>@gov.au/control-input</summary>
+	<br><code>npm install @gov.au/control-input</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/control-input/tests/site/">visual test file for control-input</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [cta-link](http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/)
-```
+<details>
+	<summary>@gov.au/cta-link</summary>
+	<br><code>npm install @gov.au/cta-link</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/">visual test file for cta-link</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [direction-links](http://uikit.apps.staging.digital.gov.au/packages/direction-links/tests/site/)
-```
+<details>
+	<summary>@gov.au/direction-links</summary>
+	<br><code>npm install @gov.au/direction-links</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/direction-links/tests/site/">visual test file for direction-links</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 ├─ core
 └─ body
    └─ core
 ```
+----------
+</details>
 
-- [footer](http://uikit.apps.staging.digital.gov.au/packages/footer/tests/site/)
-```
+<details>
+	<summary>@gov.au/footer</summary>
+	<br><code>npm install @gov.au/footer</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/footer/tests/site/">visual test file for footer</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [grid-12](http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests/site/)
-```
+<details>
+	<summary>@gov.au/grid-12</summary>
+	<br><code>npm install @gov.au/grid-12</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests/site/">visual test file for grid-12</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [header](http://uikit.apps.staging.digital.gov.au/packages/header/tests/site/)
-```
+<details>
+	<summary>@gov.au/header</summary>
+	<br><code>npm install @gov.au/header</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/header/tests/site/">visual test file for header</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [headings](http://uikit.apps.staging.digital.gov.au/packages/headings/tests/site/)
-```
+<details>
+	<summary>@gov.au/headings</summary>
+	<br><code>npm install @gov.au/headings</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/headings/tests/site/">visual test file for headings</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [inpage-nav](http://uikit.apps.staging.digital.gov.au/packages/inpage-nav/tests/site/)
-```
+<details>
+	<summary>@gov.au/inpage-nav</summary>
+	<br><code>npm install @gov.au/inpage-nav</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/inpage-nav/tests/site/">visual test file for inpage-nav</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 ├─ core
 └─ link-list
    ├─ core
    └─ body
       └─ core
 ```
+----------
+</details>
 
-- [keyword-list](http://uikit.apps.staging.digital.gov.au/packages/keyword-list/tests/site/)
-```
+<details>
+	<summary>@gov.au/keyword-list</summary>
+	<br><code>npm install @gov.au/keyword-list</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/keyword-list/tests/site/">visual test file for keyword-list</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 ├─ core
 └─ link-list
    ├─ core
    └─ body
       └─ core
 ```
+----------
+</details>
 
-- [link-list](http://uikit.apps.staging.digital.gov.au/packages/link-list/tests/site/)
-```
+<details>
+	<summary>@gov.au/link-list</summary>
+	<br><code>npm install @gov.au/link-list</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/link-list/tests/site/">visual test file for link-list</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 ├─ core
 └─ body
    └─ core
 ```
+----------
+</details>
 
-- [page-alerts](http://uikit.apps.staging.digital.gov.au/packages/page-alerts/tests/site/)
-```
+<details>
+	<summary>@gov.au/page-alerts</summary>
+	<br><code>npm install @gov.au/page-alerts</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/page-alerts/tests/site/">visual test file for page-alerts</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [progress-indicator](http://uikit.apps.staging.digital.gov.au/packages/progress-indicator/tests/site/)
-```
+<details>
+	<summary>@gov.au/progress-indicator</summary>
+	<br><code>npm install @gov.au/progress-indicator</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/progress-indicator/tests/site/">visual test file for progress-indicator</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [responsive-media](http://uikit.apps.staging.digital.gov.au/packages/responsive-media/tests/site/)
-```
+<details>
+	<summary>@gov.au/responsive-media</summary>
+	<br><code>npm install @gov.au/responsive-media</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/responsive-media/tests/site/">visual test file for responsive-media</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [skip-link](http://uikit.apps.staging.digital.gov.au/packages/skip-link/tests/site/)
-```
+<details>
+	<summary>@gov.au/skip-link</summary>
+	<br><code>npm install @gov.au/skip-link</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/skip-link/tests/site/">visual test file for skip-link</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [tags](http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/)
-```
+<details>
+	<summary>@gov.au/tags</summary>
+	<br><code>npm install @gov.au/tags</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/">visual test file for tags</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-- [text-inputs](http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/)
-```
+<details>
+	<summary>@gov.au/text-inputs</summary>
+	<br><code>npm install @gov.au/text-inputs</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/">visual test file for text-inputs</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
 └─ core
 ```
+----------
+</details>
 
-
+<br>
 
 **[⬆ back to top](#contents)**
 
@@ -177,12 +350,21 @@ npm install @gov.au/pancake-sass @gov.au/body @gov.au/header @gov.au/footer @gov
 
 ## Build
 
-To build the UI-Kit you have to install [lerna](https://github.com/lerna/lerna) globally and run.
+💡 Building the UI-Kit is only necessary of you want to contribute to it. If you want to use the modules in your own project, install them via npm as described
+in [How to use](#how-to-use).
+To build this project you have to install [lerna](https://github.com/lerna/lerna) globally after cloning it via `yarn global add lerna` and run:
 
 ```shell
 yarn
-lerna init
-lerna bootstrap
+yarn bootstrap
+yarn build
+```
+
+To make changes to an existing module, cd into the folder and run the watch:
+
+```shell
+cd packages/body
+yarn watch
 ```
 
 To add a new module run the scaffolding helper:
@@ -202,7 +384,15 @@ _After you have filled out all the blanks and added your dependencies into your 
 
 ## Tests
 
-Visual tests have been built into each module and can be seen in either the `README.md` files of each module or in the [listing above](#modules).
+Visual tests have been built into each module and can be seen in either of the `README.md` files of each module or in the [listing above](#modules).
+We have also integrated [pa11y](https://github.com/pa11y/pa11y) for accessibility testing and are using [jest](https://facebook.github.io/jest/) for javascript
+tests.
+
+Run all tests with the npm test script:
+
+```shell
+yarn test
+```
 
 
 **[⬆ back to top](#contents)**
@@ -218,5 +408,6 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/master/LICENS
 
 
 **[⬆ back to top](#contents)**
+
 
 # };
