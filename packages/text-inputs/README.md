@@ -71,6 +71,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/text-inputs/t
 
 ## Release History
 
+* v0.1.1 - Fixed print background in disabled inputs
 * v0.1.0 - 💥 Initial version
 
 

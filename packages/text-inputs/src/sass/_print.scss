@@ -13,11 +13,11 @@
 	}
 
 	&:disabled {
-		background-color: #ccc !important;
+		background-color: $uikit-colour-Background !important;
 		border-color: transparent;
 	}
 
 	&[disabled] {
-		background-color: #ccc !important;
+		background-color: $uikit-colour-Background !important;
 	}
 }
