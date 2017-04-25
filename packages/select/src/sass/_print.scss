@@ -1,0 +1,21 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// select module
+// The form select element for multiple options
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.uikit-select__element {
+		border-color: #000 !important;
+	}
+
+	.uikit-select:after {
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#000" d="M64 128l64-64-16-16-64 64"/>
+				<path fill="#000" d="M64 128l16-16-64-64L0 64"/>
+			</svg>') !important;
+	}
+}
