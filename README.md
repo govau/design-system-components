@@ -8,7 +8,7 @@ gov.au UI-Kit
 
 * [How to use](#how-to-use)
 * [Modules](#modules)
-* [Build](#build)
+* [Contribute](#contribute)
 * [Tests](#tests)
 * [License](#license)
 
@@ -348,10 +348,11 @@ npm install @gov.au/pancake-sass @gov.au/body @gov.au/header @gov.au/footer @gov
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
+## Contribute
 
 💡 Building the UI-Kit is only necessary of you want to contribute to it. If you want to use the modules in your own project, install them via npm as described
 in [How to use](#how-to-use).
+
 To build this project you have to install [lerna](https://github.com/lerna/lerna) globally after cloning it via `yarn global add lerna` and run:
 
 ```shell
