@@ -22,11 +22,28 @@
 .uikit-accordion__title {
 	padding: uikit-space( 0.75 );
 	background-color: $uikit-colour-Background;
+	position: relative;
 
 	// remove the default details arrow icon
 	&::-webkit-details-marker {
 		display: none;
 	}
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		top: 50%;
+		right: uikit-space( 1 );
+		width: uikit-space( 0.75 );
+		height: uikit-space( 0.75 );
+		margin-top: -( uikit-space( 0.5 ) );
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+			<path fill="#{ $uikit-colour-Primary }" d="M64 128l64-64-16-16-64 64"/>
+			<path fill="#{ $uikit-colour-Primary }" d="M64 128l16-16-64-64L0 64"/>
+		</svg>');
+		background-repeat: no-repeat;
+		z-index: 0;
+ }
 }
 
 .uikit-accordion__body {
