@@ -57,6 +57,17 @@
 		<div class="row">
 			<div class="grids col-sm-6">
 				<h2>Open, close and toggle height between 0 and auto</h2>
+
+				<div>
+					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-1'), property: 'height', endSize: 0, speed: 500, callback: function() { console.log('end2!!'); } })">Close</button>
+					<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-1'), property: 'height', endSize: 'auto', speed: 500, callback: function() { console.log('end1!!'); } })">Open</button>
+					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-1'), property: 'height', speed: 500, callback: function() { console.log('end2!!'); } })">Toggle</button>
+					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-1') )">Stop</button>
+				</div>
+
+				<div class="uikit-dropdown-example" id="dropdown-1">
+					&nbsp;<br><br><br>
+				</div>
 			</div>
 
 			<div class="grids col-sm-6">
@@ -98,8 +109,8 @@
 				<h2>Animate margin</h2>
 
 				<div>
-					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-margin1'), property: 'margin', endSize: 0, callback: function() { console.log('end4!!'); } })">Remove margin</button>
 					<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-margin1'), property: 'margin', endSize: 20, callback: function() { console.log('end3!!'); } })">Add margin</button>
+					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-margin1'), property: 'margin', endSize: 0, callback: function() { console.log('end4!!'); } })">Remove margin</button>
 					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-margin1'), property: 'margin', closeSize: 0, openSize: 20, callback: function() { console.log('end3!!'); } })">Toggle margin</button>
 					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-margin1') )">Stop</button>
 				</div>
@@ -113,6 +124,9 @@
 			</div>
 
 		</div>
+
+		<hr>
+
 		<div class="row">
 			<div class="grids col-sm-6">
 				<h2>Animate position</h2>
@@ -125,7 +139,7 @@
 				</div>
 
 				<div class="position-container" style="position:relative;height:50px;margin-top:20px;">
-					<div style="height:20px;width:20px;border-radius:50%;position:absolute;top:0;left:0;" class="uikit-dropdown-example" id="dropdown-position1">
+					<div style="height:20px;width:20px;border-radius:50%;position:absolute;top:0;left:100px;" class="uikit-dropdown-example" id="dropdown-position1">
 						&nbsp;
 					</div>
 				</div>
