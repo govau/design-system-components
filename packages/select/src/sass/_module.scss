@@ -78,9 +78,8 @@
 
 	&:disabled {
 		cursor: not-allowed;
-		background: $uikit-colour-Background;
+		background: rgba( $uikit-colour-Background--30, 0.5 );
 		color: $uikit-colour-Text-80;
-		padding-right: uikit-space( 0.25 );
 	}
 
 	//ie hacks
