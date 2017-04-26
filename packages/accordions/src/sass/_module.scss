@@ -43,7 +43,13 @@
 		</svg>');
 		background-repeat: no-repeat;
 		z-index: 0;
- }
+		transition: transform 0.25s ease-in;
+	}
+
+	&.uikit-accordion__title--closed:after {
+		transform: rotate(180deg);
+	}
+
 }
 
 .uikit-accordion__body  {

@@ -19,13 +19,51 @@ var UIKIT = UIKIT || {};
 	 * PRIVATE
 	 * Set the correct Aria roles for given element
 	 *
-	 * @param  {object} element  - The DOM element we want to set Aria roles for
+	 * @param  {object} element  - The DOM element we want to set attributes for
 	 *
 	 * @return {object}          - something
 	 */
-	function setAriaRoles( element ) {
-		element.setAttribute('aria-hidden', false);
-		console.log(element);
+	function setAriaRoles( element, target ) {
+
+		// we toggle the aria tags on the accordion title and body
+		var targetHeight = UIKIT.animate.GetCSSPropertyBecauseIE( target, 'height' );
+
+		if( targetHeight === '0px' ) {
+			target.setAttribute( 'aria-hidden', true );
+			// replaceClass( 'uikit-accordion__body--open', 'uikit-accordion__body--closed', target )
+			// replaceClass( 'uikit-accordion__title--open', 'uikit-accordion__title--closed', element )
+			element.setAttribute( 'aria-expanded', false );
+		}
+		else {
+			target.setAttribute('aria-hidden', false);
+			// replaceClass( 'uikit-accordion__body--closed', 'uikit-accordion__body--open', target )
+			// replaceClass( 'uikit-accordion__title--closed', 'uikit-accordion__title--open', element )
+			element.setAttribute('aria-expanded', true);
+		}
+
+	}
+
+	/**
+	 * PRIVATE
+	 * IE8 compatible function for replacing classes on a DOM node
+	 *
+	 * @param  {string} oldClass  - The existing class on the DOM node
+	 * @param  {object} newClass  - The new class to add to the DOM node
+	 * @param  {object} element   - The DOM element we want to change classes on
+	 *
+	 * @return {object}           - something
+	 */
+	function replaceClass( oldClass, newClass, element ) {
+
+		if( element.classList ) {
+			element.classList.remove( oldClass );
+			element.classList.add( newClass );
+		}
+		else {
+			element.className = element.className.replace( new RegExp("(^|\\b)" + oldClass.split(" ").join("|") + "(\\b|$)", "gi"), " " );
+			element.className += " " + newClass;
+		}
+
 	}
 
 
@@ -44,13 +82,14 @@ var UIKIT = UIKIT || {};
 		var target = document.getElementById( id );
 		console.log(element);
 
+		//setToggleClasses( element, target );
+
 		UIKIT.animate.Toggle({
 			element: target,
 			property: 'height',
 			speed: speed || 250,
 			callback: function() {
-				setAriaRoles( element );
-				setAriaRoles( target );
+				setAriaRoles( element, target );
 			}
 		});
 
@@ -61,28 +100,3 @@ var UIKIT = UIKIT || {};
 	UIKIT.accordion = accordion;
 
 }( UIKIT ));
-
-
-
-
-// for( var i = 0; i < accordionHeaders.length; i++ ) {
-// 	var accordionHeader = accordionHeaders[ i ];
-// 	var accordionBody = accordionBodies[ i ];
-//
-// 	// set aria-expanded = false on acordion header
-// 	accordionHeader.setAttribute('aria-expanded', false);
-// 	accordionBody.setAttribute('aria-hidden', true);
-//
-// 	accordionHeader.addEventListener('click', function(){
-//
-// 		// console.log( accordionHeader );
-// 		// console.log( 'uikit-accordion-'+i );
-// 		// console.log(accordionHeader);
-// 		// UIKIT.animate.Toggle({
-// 		// 	element: accordionHeader,
-// 		// 	property: 'height',
-// 		// 	speed: 250,
-// 		// })
-//
-// 	})
-// }
