@@ -10,10 +10,6 @@ var UIKIT = UIKIT || {};
 
 ( function( UIKIT ) {
 
-	// on DOM load we get our elements and add aria-expanded and is-closed to accordion body
-
-
-	// todo - can we just target the parent?
 	var accordionHeaders = []; // the array of accordion headers
 	var accordionBodies = [];  // the array of accordion bodies
 
@@ -30,30 +26,6 @@ var UIKIT = UIKIT || {};
 		accordionBody.setAttribute('aria-hidden', true);
 		accordionBody.setAttribute('id', 'uikit-accordion-'+i);
 
-		// attatch our event handler
-
-		// THIS SHOULD...
-		// animate toggle function ( 0 - auto )
-		// toggle aria roles
-		accordionHeader.onclick = function() { toggleAccordion( i ) };
-
 	}
-
-	function toggleAccordion ( element ) {
-
-		var accordionBody = document.getElementById('uikit-accordion-'+element)
-		console.log(accordionBody);
-
-	}
-
-
-
-
-
-
-
-	//console.log(element);
-	//element.onclick = function() { console.log('clicked'); };
-
 
 }( UIKIT ));
