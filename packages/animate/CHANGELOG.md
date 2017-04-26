@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly](v013)
 * [v0.1.2 - Removed core as dependency](v012)
 * [v0.1.1 - 💥 Initial version](v011)
 
@@ -23,6 +24,11 @@
 
 
 ## Release History
+
+### v0.1.3
+
+- `GetCSSPropertyBecauseIE` is now part of the public API so we can reuse it in other modules
+
 
 ### v0.1.2
 
