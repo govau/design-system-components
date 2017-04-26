@@ -45,17 +45,39 @@
 
 	<h1>Test: accordions</h1>
 
-	<details class="uikit-accordion">
-		<summary class="uikit-accordion__title js-uikit-accordion__title">Accordion title</summary>
-		<div class="uikit-accordion__body js-uikit-accordion__body">
-			Here is some accordion content
+	<details class="uikit-accordion" open>
+		<summary
+			class="uikit-accordion__title js-uikit-accordion__title"
+			aria-controls="acc1"
+			aria-expanded="false"
+			onclick="return UIKIT.accordion.Toggle( this, 'acc1' )">
+			Accordion title
+		</summary>
+		<div class="uikit-accordion__body js-uikit-accordion__body" id="acc1" aria-hidden="true">
+			<div class="uikit-accordion__body-wrapper">
 
-			<details class="uikit-accordion">
-				<summary class="uikit-accordion__title js-uikit-accordion__title">A nested accordion</summary>
-				<div class="uikit-accordion__body js-uikit-accordion__body">
-					Here is some accordion content
-				</div>
-			</details>
+				Here is some accordion content
+
+				<details class="uikit-accordion" open>
+
+					<summary
+						class="uikit-accordion__title js-uikit-accordion__title"
+						aria-controls="acc2"
+						aria-expanded="false"
+						onclick="return UIKIT.accordion.Toggle( this, 'acc2' )">
+						A nested accordion
+					</summary>
+					<div
+						class="uikit-accordion__body js-uikit-accordion__body"
+						id="acc2"
+						aria-hidden="true">
+						<div class="uikit-accordion__body-wrapper">
+							Here is some accordion content
+						</div>
+					</div>
+
+				</details>
+			</div>
 
 		</div>
 	</details>
@@ -63,9 +85,11 @@
 	<hr>
 
 	<section class="uikit-accordion">
-		<div class="uikit-accordion__title js-uikit-accordion__title">Accordion title</div>
-		<div class="uikit-accordion__body js-uikit-accordion__body">
-			Here is some accordion content
+		<div class="uikit-accordion__title js-uikit-accordion__title" aria-controls="acc3" onclick="return UIKIT.accordion.Toggle( this, 'acc3' )">Accordion title</div>
+		<div class="uikit-accordion__body js-uikit-accordion__body" id="acc3">
+			<div class="uikit-accordion__body-wrapper">
+				Here is some accordion content
+			</div>
 		</div>
 	</dection>
 

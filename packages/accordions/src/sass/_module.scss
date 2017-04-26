@@ -46,7 +46,11 @@
  }
 }
 
-.uikit-accordion__body {
+.uikit-accordion__body  {
+	overflow: hidden;
+}
+
+.uikit-accordion__body-wrapper {
 	padding: uikit-space( 0.75 );
 	border-top: $uikit-borderize;
 }
