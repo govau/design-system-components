@@ -302,6 +302,19 @@ npm install @gov.au/pancake-sass @gov.au/body @gov.au/header @gov.au/footer @gov
 </details>
 
 <details>
+	<summary>@gov.au/select</summary>
+	<br><code>npm install @gov.au/select</code>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/select/tests/site/">visual test file for select</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+└─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/skip-link</summary>
 	<br><code>npm install @gov.au/skip-link</code>
 	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/skip-link/tests/site/">visual test file for skip-link</a><br><br>
