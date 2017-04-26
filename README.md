@@ -21,7 +21,7 @@ GOV.AU UI-Kit
 The GOV.AU UI-Kit is distributed through the [npm](https://www.npmjs.com) ecosystem and can only be installed through the `npm` command.
 Npm requires [node.js](https://nodejs.org/en/) and the UI-Kit needs a node.js 5 or higher.
 
-To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`).
+To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`.)
 Inside your working folder install any module and [pancake](https://github.com/govau/pancake/) will make sure you have all assets ready to use.
 
 Run `npm install @gov.au/body` to install the body module. To install several modules just chain them like:
@@ -374,7 +374,7 @@ To add a new module run the scaffolding helper:
 npm run scaffolding
 ```
 
-_After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
+_❗ After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 
 
 **[⬆ back to top](#contents)**
