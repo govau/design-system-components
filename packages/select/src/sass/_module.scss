@@ -1,0 +1,105 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// select module
+// The form select element for multiple options
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// select style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-select {
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	background-color: #fff;
+	margin-bottom: uikit-space( 0.5 );
+	box-sizing: border-box;
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		top: 50%;
+		right: uikit-space( 0.5 );
+		width: uikit-space( 0.5 );
+		height: uikit-space( 0.5 );
+		margin-top: -( uikit-space( 0.25 ) );
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $uikit-colour-Primary }" d="M64 128l64-64-16-16-64 64"/>
+				<path fill="#{ $uikit-colour-Primary }" d="M64 128l16-16-64-64L0 64"/>
+			</svg>');
+		background-repeat: no-repeat;
+		z-index: 0;
+	}
+
+	.ie8 &,
+	.ie9 & {
+		&:after {
+			display: none;
+		}
+	}
+
+
+	&.uikit-select-block {
+		display: block;
+
+		.uikit-select__element {
+			width: 100%;
+		}
+	}
+}
+
+.uikit-select__element {
+	position: relative;
+	z-index: 1;
+	background: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	font-size: 16px;
+	text-indent: 0.01px;
+	text-overflow: '';
+	border: none;
+	padding: uikit-space( 0.25 ) uikit-space( 1.5 ) uikit-space( 0.25 ) uikit-space( 0.25 );
+	border: 2px solid $uikit-colour-Border-80;
+	border-radius: $uikit-border-radius;
+	box-sizing: border-box;
+
+	@include uikit-focus();
+
+	&:disabled {
+		cursor: not-allowed;
+		background: rgba( $uikit-colour-Background--30, 0.5 );
+		color: $uikit-colour-Text-80;
+	}
+
+	//ie hacks
+	&::-ms-expand {
+		display: none;
+	}
+
+	.ie8 &,
+	.ie9 & {
+		padding-right: uikit-space( 0.25 );
+	}
+}
+
+//firefox hacks...
+html>/**/body .uikit-select__element, x:-moz-any-link, x:default {
+	padding-right: uikit-space( 0.25 );
+}
+
+@supports (-moz-osx-font-smoothing:auto) {
+	html body .uikit-select__element {
+		padding-right: uikit-space( 1.5 );
+	}
+}

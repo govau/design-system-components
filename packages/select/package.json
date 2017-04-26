@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/animate",
-	"version": "0.1.2",
-	"description": "A JavaScript function to animate CSS properties of page elements.",
+	"name": "@gov.au/select",
+	"version": "0.1.0",
+	"description": "The form select element for multiple options",
 	"keywords": [
 		"uikit",
 		"pancake",
@@ -13,17 +13,14 @@
 		"Commonwealth of Australia",
 		"design guide",
 		"design system",
-		"animation",
-		"JavaScript"
+		"select",
+		"select input"
 	],
 	"scripts": {
 		"postinstall": "pancake",
 
-		"test:a11y": "node ../../scripts/a11y.js",
-		"test:deps": "node ../../scripts/helper.js test",
-		"test": "npm run test:a11y && npm run test:deps",
-
-		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
+		"test": "node ../../scripts/helper.js test && node ../../scripts/a11y.js",
+		"prepublish": "npm run test && node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
 		"watch:js": "npm run build && onchange 'src/js/*.js' -- npm run build",
 		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
@@ -34,45 +31,30 @@
 		"pancake-module": {
 			"version": "1.0.0",
 			"plugins": [
-				"@gov.au/pancake-js"
+				"@gov.au/pancake-sass"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
 				"sass-versioning": true
-			},
-			"js": {
-				"path": "lib/js/module.js"
 			}
 		}
 	},
 	"dependencies": {
-		"@gov.au/pancake": "~1"
+		"@gov.au/pancake": "~1",
+
+		"@gov.au/core": "^0.1.0"
 	},
 	"peerDependencies": {
+		"@gov.au/core": "^0.1.0"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.18.6",
-		"jest-cli": "^19.0.2",
 		"npm-run-all": "^4.0.1",
 		"onchange": "^3.2.1"
 	},
 	"files": [
 		"lib/*"
 	],
-	"jest": {
-		"testRegex": "\\.spec.js$",
-		"collectCoverageFrom": [
-			"lib/js/*.js"
-		],
-		"coverageThreshold": {
-			"global": {
-				"branches": 0,
-				"functions": 0,
-				"lines": 0,
-				"statements": 0
-			}
-		}
-	},
 	"engines": {
 		"node": ">=0.12.0",
 		"npm": "^3.0.0"
