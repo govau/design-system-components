@@ -56,9 +56,11 @@
 			aria-controls="acc1"
 			aria-expanded="false"
 			aria-selected="false"
+			role="tab"
 			onclick="return UIKIT.accordion.Toggle( this )">
-			Accordion title
+				Accordion title
 		</summary>
+
 		<div class="uikit-accordion__body uikit-accordion--open" id="acc1" aria-hidden="false">
 			<div class="uikit-accordion__body-wrapper">
 
@@ -71,13 +73,12 @@
 						aria-controls="acc2"
 						aria-expanded="false"
 						aria-selected="false"
+						role="tab"
 						onclick="return UIKIT.accordion.Toggle( this )">
-						A nested accordion
+							A nested accordion
 					</summary>
-					<div
-						class="uikit-accordion__body uikit-accordion--open"
-						id="acc2"
-						aria-hidden="true">
+
+					<div class="uikit-accordion__body uikit-accordion--open" id="acc2" aria-hidden="true">
 						<div class="uikit-accordion__body-wrapper">
 							Here is some accordion content
 						</div>
@@ -98,6 +99,7 @@
 			onclick="return UIKIT.accordion.Toggle( this )">
 			Accordion title
 		</div>
+
 		<div class="uikit-accordion__body uikit-accordion--open" id="acc3" aria-hidden="true">
 			<div class="uikit-accordion__body-wrapper">
 				Here is some accordion content
@@ -116,8 +118,9 @@
 			aria-selected="true"
 			role="tab"
 			onclick="return UIKIT.accordion.Toggle( this )">
-			Accordion title
+				Accordion title
 		</summary>
+
 		<div class="uikit-accordion__body uikit-accordion--open" id="acc4" aria-hidden="false">
 			<div class="uikit-accordion__body-wrapper">
 
@@ -137,8 +140,9 @@
 			aria-selected="false"
 			role="tab"
 			onclick="return UIKIT.accordion.Toggle( this )">
-			Accordion title
+				Accordion title
 		</summary>
+
 		<div class="uikit-accordion__body uikit-accordion--close" id="acc5" aria-hidden="true">
 			<div class="uikit-accordion__body-wrapper">
 
@@ -148,8 +152,7 @@
 		</div>
 	</details>
 
+
 	<script type="text/javascript" src="script.js"></script>
-
-
 </body>
 </html>
