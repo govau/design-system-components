@@ -17,25 +17,40 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-accordion {
 	border: $uikit-borderize;
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	margin-bottom: uikit-space( 1 );
+
+	p:first-child {
+		margin-top: 0;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .uikit-accordion + .uikit-accordion {
 	border-top: 0;
+	margin-top: -( uikit-space( 1 ) );
 }
 
 .uikit-accordion__title {
+	display: block;
+	color: $uikit-colour-Text;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
 	padding: uikit-space( 0.75 );
 	background-color: $uikit-colour-Background;
 	position: relative;
 	cursor: pointer;
 
+	@include uikit-focus();
+
 	// remove the default details arrow icon
 	&::-webkit-details-marker {
 		display: none;
-	}
-
-	&:focus {
-		outline: $uikit-borderize;
 	}
 
 	&:after {
@@ -64,12 +79,15 @@
 .uikit-accordion__body  {
 	overflow: hidden;
 
-	&.uikit-accordion--open {
-		height: auto;
-	}
+	// only listen to the state classes if js is enabled
+	.js & {
+		&.uikit-accordion--open {
+			height: auto;
+		}
 
-	&.uikit-accordion--close {
-		height: 0;
+		&.uikit-accordion--close {
+			height: 0;
+		}
 	}
 }
 

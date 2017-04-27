@@ -49,6 +49,9 @@
 
 	<button onclick="return UIKIT.accordion.Open( document.querySelectorAll('.js-uikit-accordion') )">Open all</button>
 	<button onclick="return UIKIT.accordion.Close( document.querySelectorAll('.js-uikit-accordion'), 1000 )">Close all</button>
+	<button onclick="return UIKIT.accordion.Toggle( document.querySelectorAll('.js-uikit-accordion') )">Toggle all</button>
+
+	<hr>
 
 	<details class="uikit-accordion" open>
 		<summary
@@ -64,21 +67,20 @@
 		<div class="uikit-accordion__body uikit-accordion--open" id="acc1" aria-hidden="false">
 			<div class="uikit-accordion__body-wrapper">
 
-				Here is some accordion content
+				<p>Here is some accordion content</p>
 
 				<details class="uikit-accordion" open>
-
 					<summary
 						class="uikit-accordion__title uikit-accordion--open js-uikit-accordion"
 						aria-controls="acc2"
-						aria-expanded="false"
-						aria-selected="false"
+						aria-expanded="true"
+						aria-selected="true"
 						role="tab"
 						onclick="return UIKIT.accordion.Toggle( this )">
 							A nested accordion
 					</summary>
 
-					<div class="uikit-accordion__body uikit-accordion--open" id="acc2" aria-hidden="true">
+					<div class="uikit-accordion__body uikit-accordion--open" id="acc2" aria-hidden="false">
 						<div class="uikit-accordion__body-wrapper">
 							Here is some accordion content
 						</div>
@@ -91,18 +93,20 @@
 	</details>
 
 	<section class="uikit-accordion">
-		<div
+		<a href="#acc3"
 			class="uikit-accordion__title uikit-accordion--open js-uikit-accordion"
 			aria-controls="acc3"
 			aria-expanded="false"
 			aria-selected="false"
 			onclick="return UIKIT.accordion.Toggle( this )">
-			Accordion title
-		</div>
+				Non-detail markup accordion
+		</a>
 
 		<div class="uikit-accordion__body uikit-accordion--open" id="acc3" aria-hidden="true">
 			<div class="uikit-accordion__body-wrapper">
-				Here is some accordion content
+				<p>Here is some accordion content</p>
+				<p>Here is some accordion content</p>
+				<p>Here is some accordion content</p>
 			</div>
 		</div>
 	</section>

@@ -53,9 +53,9 @@ var UIKIT = UIKIT || {};
 	 * @param  {string} openingClass  - The firstClass you want to toggle on the DOM node
 	 * @param  {string} closingClass  - The secondClass you want to toggle on the DOM node
 	 */
-	function toggleClasses( element, target, state, openingClass, closingClass ) {
+	function toggleClasses( element, state, openingClass, closingClass ) {
 
-		if( state === 'opening' ) {
+		if( state === 'opening' || state === 'open' ) {
 			var oldClass = openingClass || 'uikit-accordion--close';
 			var newClass = closingClass || 'uikit-accordion--open';
 		}
@@ -67,14 +67,10 @@ var UIKIT = UIKIT || {};
 		if( element.classList ) {
 			element.classList.remove( oldClass );
 			element.classList.add( newClass );
-			target.classList.remove( oldClass );
-			target.classList.add( newClass );
 		}
 		else {
 			element.className = element.className.replace( new RegExp("(^|\\b)" + oldClass.split(" ").join("|") + "(\\b|$)", "gi"), " " );
 			element.className += " " + newClass;
-			target.className = target.className.replace( new RegExp("(^|\\b)" + oldClass.split(" ").join("|") + "(\\b|$)", "gi"), " " );
-			target.className += " " + newClass;
 		}
 	}
 
@@ -91,6 +87,13 @@ var UIKIT = UIKIT || {};
 	 */
 	accordion.Toggle = function( elements, speed ) {
 
+		// stop event propagation
+		window.event.cancelBubble = true;
+		try {
+			event.stopPropagation();
+		}
+		catch( error ) {}
+
 		if( elements.length === undefined ) {
 			elements = [ elements ];
 		}
@@ -106,8 +109,11 @@ var UIKIT = UIKIT || {};
 				property: 'height',
 				speed: speed || 250,
 				prefunction: function( target, state ) {
-					toggleClasses( element, target, state );
 					setAriaRoles( element, target, state );
+					toggleClasses( element, state );
+				},
+				postfunction: function( target, state ) {
+					toggleClasses( target, state );
 				},
 			});
 
@@ -127,6 +133,13 @@ var UIKIT = UIKIT || {};
 	 */
 	accordion.Open = function( elements, speed ) {
 
+		// stop event propagation
+		window.event.cancelBubble = true;
+		try {
+			event.stopPropagation();
+		}
+		catch( error ) {}
+
 		if( elements.length === undefined ) {
 			elements = [ elements ];
 		}
@@ -137,7 +150,7 @@ var UIKIT = UIKIT || {};
 			var targetId = element.getAttribute('aria-controls');
 			var target = document.getElementById( targetId );
 
-			toggleClasses( element, target, 'opening' );
+			toggleClasses( target, 'opening' );
 			setAriaRoles( element, target, 'opening' );
 
 			UIKIT.animate.Run({
@@ -145,7 +158,10 @@ var UIKIT = UIKIT || {};
 				property: 'height',
 				endSize: 'auto',
 				speed: speed || 250,
-			})
+				callback: function() {
+					toggleClasses( element, 'opening' );
+				},
+			});
 		}
 
 	}
@@ -160,6 +176,13 @@ var UIKIT = UIKIT || {};
 	 */
 	accordion.Close = function( elements, speed ) {
 
+		// stop event propagation
+		window.event.cancelBubble = true;
+		try {
+			event.stopPropagation();
+		}
+		catch( error ) {}
+
 		if( elements.length === undefined ) {
 			elements = [ elements ];
 		}
@@ -170,7 +193,7 @@ var UIKIT = UIKIT || {};
 			var targetId = element.getAttribute('aria-controls');
 			var target = document.getElementById( targetId );
 
-			toggleClasses( element, target, 'closing' );
+			toggleClasses( element, 'closing' );
 			setAriaRoles( element, target, 'closing' );
 
 			UIKIT.animate.Run({
@@ -178,7 +201,10 @@ var UIKIT = UIKIT || {};
 				property: 'height',
 				endSize: 0,
 				speed: speed || 250,
-			})
+				callback: function() {
+					toggleClasses( target, 'close' );
+				},
+			});
 		}
 
 	}
