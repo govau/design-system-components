@@ -41,28 +41,36 @@
 	&:after {
 		content: ' ';
 		position: absolute;
-		top: 50%;
+		top: 0;
+		bottom: 0;
 		right: uikit-space( 1 );
 		width: uikit-space( 0.75 );
-		height: uikit-space( 0.75 );
-		margin-top: -( uikit-space( 0.5 ) );
 		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-			<path fill="#{ $uikit-colour-Primary }" d="M64 128l64-64-16-16-64 64"/>
-			<path fill="#{ $uikit-colour-Primary }" d="M64 128l16-16-64-64L0 64"/>
-		</svg>');
+				<path fill="#{ $uikit-colour-Primary }" d="M64 0l64 64-16 16-64-64"/>
+				<path fill="#{ $uikit-colour-Primary }" d="M64 0l16 16-64 64L0 64"/>
+			</svg>');
 		background-repeat: no-repeat;
+		background-position: center;
 		z-index: 0;
 		transition: transform 0.25s ease-in;
 	}
 
-	&.uikit-accordion__title--closed:after {
-		transform: rotate(180deg);
+	&.uikit-accordion--close:after {
+		transform: rotate(-180deg);
 	}
 
 }
 
 .uikit-accordion__body  {
 	overflow: hidden;
+
+	&.uikit-accordion--open {
+		height: auto;
+	}
+
+	&.uikit-accordion--close {
+		height: 0;
+	}
 }
 
 .uikit-accordion__body-wrapper {
