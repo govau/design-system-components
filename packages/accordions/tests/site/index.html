@@ -45,6 +45,9 @@
 
 	<h1>Test: accordions</h1>
 
+	<button onclick="return UIKIT.accordion.OpenAll( document.querySelectorAll('.js-uikit-accordion__title'), 'acc1' )">Open all</button>
+	<button onclick="return UIKIT.accordion.CloseAll( document.querySelectorAll('.js-uikit-accordion__title'), 'acc1' )">Close all</button>
+
 	<details class="uikit-accordion" open>
 		<summary
 			class="uikit-accordion__title uikit-accordion__title--open js-uikit-accordion__title"
@@ -80,8 +83,6 @@
 
 		</div>
 	</details>
-
-	<hr>
 
 	<section class="uikit-accordion">
 		<div class="uikit-accordion__title js-uikit-accordion__title" aria-controls="acc3" onclick="return UIKIT.accordion.Toggle( this, 'acc3' )">Accordion title</div>

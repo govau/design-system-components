@@ -30,38 +30,57 @@ var UIKIT = UIKIT || {};
 
 		if( targetHeight === '0px' ) {
 			target.setAttribute( 'aria-hidden', true );
-			// replaceClass( 'uikit-accordion__body--open', 'uikit-accordion__body--closed', target )
-			// replaceClass( 'uikit-accordion__title--open', 'uikit-accordion__title--closed', element )
 			element.setAttribute( 'aria-expanded', false );
 		}
 		else {
 			target.setAttribute('aria-hidden', false);
-			// replaceClass( 'uikit-accordion__body--closed', 'uikit-accordion__body--open', target )
-			// replaceClass( 'uikit-accordion__title--closed', 'uikit-accordion__title--open', element )
 			element.setAttribute('aria-expanded', true);
 		}
 
 	}
 
+
 	/**
 	 * PRIVATE
 	 * IE8 compatible function for replacing classes on a DOM node
 	 *
-	 * @param  {string} oldClass  - The existing class on the DOM node
-	 * @param  {object} newClass  - The new class to add to the DOM node
-	 * @param  {object} element   - The DOM element we want to change classes on
+	 * @param  {string} firstClass   - The firstClass you want to toggle on the DOM node
+	 * @param  {object} secondClass  - The secondClass you want to toggle on the DOM node
+	 * @param  {object} element      - The DOM element we want to toggle classes on
+	 * @param  {object} state        - The current state of the animation on the element
 	 *
-	 * @return {object}           - something
 	 */
-	function replaceClass( oldClass, newClass, element ) {
+	function toggleClasses( element, state ) {
 
-		if( element.classList ) {
-			element.classList.remove( oldClass );
-			element.classList.add( newClass );
+		var openingClass = 'uikit-accordion__title--open';
+		var closingClass = 'uikit-accordion__title--close';
+
+		if( state === 'opening' ) {
+
+			if( element.classList ) {
+				element.classList.remove( closingClass );
+				element.classList.add( openingClass );
+			}
+			else {
+				element.className = element.className.replace( new RegExp("(^|\\b)" + openingClass.split(" ").join("|") + "(\\b|$)", "gi"), " " );
+				element.className += " " + closingClass;
+			}
+
+		}
+		else if( state === 'closing' ) {
+
+			if( element.classList ) {
+				element.classList.remove( openingClass );
+				element.classList.add( closingClass );
+			}
+			else {
+				element.className = element.className.replace( new RegExp("(^|\\b)" + closingClass.split(" ").join("|") + "(\\b|$)", "gi"), " " );
+				element.className += " " + openingClass;
+			}
+
 		}
 		else {
-			element.className = element.className.replace( new RegExp("(^|\\b)" + oldClass.split(" ").join("|") + "(\\b|$)", "gi"), " " );
-			element.className += " " + newClass;
+			throw new Error('Cannot determine state for "toggleClasses" function in UIKIT.accordion')
 		}
 
 	}
@@ -80,9 +99,8 @@ var UIKIT = UIKIT || {};
 	accordion.Toggle = function( element, id , speed ) {
 
 		var target = document.getElementById( id );
-		console.log(element);
 
-		//setToggleClasses( element, target );
+		toggleClasses( element, state );
 
 		UIKIT.animate.Toggle({
 			element: target,
@@ -96,6 +114,80 @@ var UIKIT = UIKIT || {};
 		return false;
 
 	}
+
+
+	/**
+	 * Open a group of accordion elements
+	 *
+	 * @param  {object} elements - The elements to open
+	 * @param  {string} id       - The id of the element to toggle
+	 * @param  {integer} speed   - The speed in ms for the animation
+	 *
+	 */
+	accordion.OpenAll = function( elements, id, speed ) {
+
+		// errors if open attribute is removed on any <details>. open must stay on? add property open?
+		// toggle open='' i reckon
+
+		for( var i = 0; i < elements.length; i++ ) {
+
+			var element = elements[ i ];
+			var targetId = element.getAttribute('aria-controls')
+			var target = document.getElementById( targetId );
+
+			toggleClasses( element, state );
+
+			UIKIT.animate.Run({
+				element: target,
+				property: 'height',
+				endSize: 'auto',
+				callback: function() {
+					target.setAttribute( 'aria-hidden', false );
+					element.setAttribute( 'aria-expanded', true );
+				}
+			})
+
+		}
+
+		return false;
+
+	}
+
+
+	/**
+	 * Close a group of accordion elements
+	 *
+	 * @param  {object} elements - The elements to close
+	 * @param  {string} id       - The id of the element to toggle
+	 * @param  {integer} speed   - The speed in ms for the animation
+	 *
+	 */
+	accordion.CloseAll = function( elements, id , speed ) {
+
+		for( var i = 0; i < elements.length; i++ ) {
+
+			var element = elements[ i ];
+			var targetId = element.getAttribute('aria-controls')
+			var target = document.getElementById( targetId );
+
+			toggleClasses( element, state );
+
+			UIKIT.animate.Run({
+				element: target,
+				property: 'height',
+				endSize: 0,
+				callback: function() {
+					target.setAttribute( 'aria-hidden', true );
+					element.setAttribute( 'aria-expanded', false );
+				}
+			})
+
+		}
+
+		return false;
+
+	}
+
 
 	UIKIT.accordion = accordion;
 

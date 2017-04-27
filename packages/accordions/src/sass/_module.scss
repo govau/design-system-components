@@ -19,14 +19,23 @@
 	border: $uikit-borderize;
 }
 
+.uikit-accordion + .uikit-accordion {
+	border-top: 0;
+}
+
 .uikit-accordion__title {
 	padding: uikit-space( 0.75 );
 	background-color: $uikit-colour-Background;
 	position: relative;
+	cursor: pointer;
 
 	// remove the default details arrow icon
 	&::-webkit-details-marker {
 		display: none;
+	}
+
+	&:focus {
+		outline: $uikit-borderize;
 	}
 
 	&:after {
