@@ -96,7 +96,9 @@ The options settings are:
 `openSize` - pixel size of the property when the element is open (optional, defaults to `auto`)  
 `closeSize` - pixel size of the property when the element is closed (optional, defaults to `0`)  
 `speed` - animation speed in milliseconds (optional, defaults to `250ms`)  
-`callback` - callback function to run when the animation completes (optional)
+`prefunction` - function to be executed before any animation starts, passes {object} element, {string} state (optional)
+`postfunction` - function to be executed after any animation ends, passes {object} element, {string} state (optional)
+`callback` - function to be executed after the animation ends, passes {object} element, {string} state (optional)
 
 Example:
 
@@ -107,7 +109,9 @@ UIKIT.animate.Toggle(
 	closeSize: 0,
 	openSize: 'auto',
 	speed: 1000,
-	callback: myFunction,
+	prefunction: function( element, state ) { myPreFunction() },
+	postfunction: function( element, state ) { myPreFunction() },
+	callback: function( element, state ) { myCallbackFunction() },
 )
 ```
 
@@ -156,7 +160,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
-* v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly
+* v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction
 * v0.1.2 - Removed core as dependency
 * v0.1.1 - 💥 Initial version
 
