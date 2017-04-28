@@ -89,6 +89,17 @@
 		transform: rotate(-180deg);
 	}
 
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			content: ' ▲ ';
+			margin-top: uikit-space( 0.75 );
+		}
+		&.uikit-accordion--close:after {
+			content: ' ▼ ';
+		}
+	}
+
 }
 
 .uikit-accordion__body  {
