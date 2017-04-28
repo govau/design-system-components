@@ -66,8 +66,10 @@ var UIKIT = UIKIT || {};
 	}
 
 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// PUBLIC FUNCTIONS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	/**
-	 * PRIVATE
 	 * Getting computed CSS styles from normal browsers and IE
 	 *
 	 * @param {object} element  - The DOM element we want to get the computed style from
@@ -75,7 +77,7 @@ var UIKIT = UIKIT || {};
 	 *
 	 * @return {string|integer} - The CSS value for the property
 	 */
-	function GetCSSPropertyBecauseIE( element, property ) {
+	animate.GetCSSPropertyBecauseIE = function( element, property ) {
 		if( typeof getComputedStyle !== 'undefined' ) {
 			return window.getComputedStyle( element )[ property ];
 		}
@@ -88,12 +90,9 @@ var UIKIT = UIKIT || {};
 
 			return space;
 		}
-	}
+	};
 
 
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// PUBLIC FUNCTIONS
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	/**
 	 * Calculate the size of the element when it’s dimension(height or width) is set to auto
 	 *
@@ -120,7 +119,7 @@ var UIKIT = UIKIT || {};
 		}
 
 		return parseInt( endSize );
-	}
+	};
 
 
 	/**
@@ -130,7 +129,7 @@ var UIKIT = UIKIT || {};
 	 */
 	animate.Stop = function ( element ) {
 		clearInterval( element.UIKITanimation );
-	}
+	};
 
 
 	/**
@@ -166,12 +165,12 @@ var UIKIT = UIKIT || {};
 
 		// iterate over all DOM nodes
 		for( var i = 0; i < elements.length; i++ ) {
-			var element = elements[ i ];                                                        // this element
-			UIKIT.animate.Stop( element );                                                      // stop any previous animations
-			var initialSize = parseInt( GetCSSPropertyBecauseIE( element, options.property ) ); // the elements current size
-			var endSize = options.endSize;                                                      // the element end size
+			var element = elements[ i ];                                                                      // this element
+			UIKIT.animate.Stop( element );                                                                    // stop any previous animations
+			var initialSize = parseInt( UIKIT.animate.GetCSSPropertyBecauseIE( element, options.property ) ); // the elements current size
+			var endSize = options.endSize;                                                                    // the element end size
 
-			if( options.endSize === 'auto' ) {                                                  // calculate what 'auto' means in pixel
+			if( options.endSize === 'auto' ) {                                                                // calculate what 'auto' means in pixel
 				endSize = UIKIT.animate.CalculateAuto( element, options.property );
 			}
 
@@ -229,13 +228,15 @@ var UIKIT = UIKIT || {};
 	/**
 	 * Toggle animation
 	 *
-	 * @param  {object}         options           - The options for the animation
-	 * @param  {object}         options.element   - Element/s we are animating (DOM nodes)
-	 * @param  {string}         options.property  - The CSS property to animate [optional] [default: 'height']
-	 * @param  {integer|string} options.closeSize - The size the element should close to. Can be 'auto' or pixel value [optional] [default: 0]
-	 * @param  {integer|string} options.openSize  - The size the element should open to. Can be 'auto' or pixel value [optional] [default: 'auto']
-	 * @param  {integer}        options.speed     - The speed of the animation in milliseconds [optional] [default: 250]
-	 * @param  {function}       options.callback  - A function to be executed after the animation ends [optional]
+	 * @param  {object}         options              - The options for the animation
+	 * @param  {object}         options.element      - Element/s we are animating (DOM nodes)
+	 * @param  {string}         options.property     - The CSS property to animate [optional] [default: 'height']
+	 * @param  {integer|string} options.closeSize    - The size the element should close to. Can be 'auto' or pixel value [optional] [default: 0]
+	 * @param  {integer|string} options.openSize     - The size the element should open to. Can be 'auto' or pixel value [optional] [default: 'auto']
+	 * @param  {integer}        options.speed        - The speed of the animation in milliseconds [optional] [default: 250]
+	 * @param  {function}       options.prefunction  - A function to be executed before each animation starts, passes {object} element, {string} state [optional]
+	 * @param  {function}       options.postfunction - A function to be executed after each animation ends, passes {object} element, {string} state [optional]
+	 * @param  {function}       options.callback     - A function to be executed after the animation ends, passes {object} element, {string} state [optional]
 	 *
 	 * @return {unknown}                          - The return value passed on from our options.callback function [optional]
 	 */
@@ -250,6 +251,16 @@ var UIKIT = UIKIT || {};
 		// making a single DOM element iteratable
 		if( elements.length === undefined ) {
 			elements = [ elements ];
+		}
+
+		// making a prefunction if none was provided
+		if( typeof options.prefunction !== 'function' ) {
+			options.prefunction = function() {};
+		}
+
+		// making a postfunction if none was provided
+		if( typeof options.postfunction !== 'function' ) {
+			options.postfunction = function() {};
 		}
 
 		// making a callback if none was provided
@@ -267,18 +278,27 @@ var UIKIT = UIKIT || {};
 
 			UIKIT.animate.Stop( element );
 
-			var targetSize;                                                                     // the size the element should open/close to after toggle is clicked
-			var currentSize = parseInt( GetCSSPropertyBecauseIE( element, options.property ) ); // the current size of the element
+			var targetSize;     // the size the element should open/close to after toggle is clicked
+			var preState = '';  // the state we animate to for the prefunction and callback functions
+			var postState = ''; // the state we animate to for the prefunction and callback functions
+			var currentSize = parseInt( UIKIT.animate.GetCSSPropertyBecauseIE( element, options.property ) ); // the current size of the element
 
 			if( currentSize === closeSize || element.UIKITtoggleState === 'closing' ) {
 				targetSize = openSize;
+				preState = 'opening';
+				postState = 'open';
 			}
 			else if( currentSize !== closeSize || element.UIKITtoggleState === 'opening' ) {
 				targetSize = closeSize;
+				preState = 'closing';
+				postState = 'closed';
 			}
 			else {
 				throw new Error('UIKIT.animate.Toggle cannot determine state of element');
 			}
+
+			// run prefunction once per element
+			options.prefunction( element, preState );
 
 			// shoot off animation
 			UIKIT.animate.Run({
@@ -290,8 +310,16 @@ var UIKIT = UIKIT || {};
 					elements[ 0 ].UIKITtoggleInteration ++;
 
 					if( elements[ 0 ].UIKITtoggleInteration === elements[ 0 ].UIKITinterations ) {
-						return options.callback();
+						var returnParam = options.callback( element, postState );
+
+						// run postfunction once per element
+						options.postfunction( element, postState );
+
+						return returnParam;
 					}
+
+					// run postfunction once per element
+					options.postfunction( element, postState );
 				},
 			});
 

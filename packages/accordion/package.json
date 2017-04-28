@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/[-replace-name-]",
-	"version": "[-replace-version-]",
-	"description": "[-replace-description-]",
+	"name": "@gov.au/accordion",
+	"version": "0.1.0",
+	"description": "Allow the user to toggle the visibility of an element",
 	"keywords": [
 		"uikit",
 		"pancake",
@@ -17,11 +17,8 @@
 	"scripts": {
 		"postinstall": "pancake",
 
-		"test:a11y": "node ../../scripts/a11y.js",
-		"test:deps": "node ../../scripts/helper.js test",
-		"test": "npm run test:a11y && npm run test:deps",
-
-		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
+		"test": "node ../../scripts/helper.js test && node ../../scripts/a11y.js",
+		"prepublish": "npm run test && node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
 		"watch:js": "npm run build && onchange 'src/js/*.js' -- npm run build",
 		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
@@ -47,10 +44,12 @@
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": "^0.1.0",
+		"@gov.au/animate": "^0.1.3"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": "^0.1.0",
+		"@gov.au/animate": "^0.1.3"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.18.6",

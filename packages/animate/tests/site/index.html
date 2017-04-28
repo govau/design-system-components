@@ -56,12 +56,47 @@
 
 		<div class="row">
 			<div class="grids col-sm-6">
-				<h2>Open, close and toggle height between 0 and auto</h2>
+				<h2>#1 Open, close and toggle height between 0 and auto</h2>
 
 				<div>
-					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-1'), property: 'height', endSize: 0, speed: 500, callback: function() { console.log('end2!!'); } })">Close</button>
-					<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-1'), property: 'height', endSize: 'auto', speed: 500, callback: function() { console.log('end1!!'); } })">Open</button>
-					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-1'), property: 'height', speed: 500, callback: function() { console.log('end2!!'); } })">Toggle</button>
+					<button aria-controls="close" onclick="UIKIT.animate.Run({
+							element: document.getElementById('dropdown-1'),
+							property: 'height',
+							endSize: 0,
+							speed: 500,
+							callback: function() {
+								console.log('end close #1');
+							},
+						})">Close</button>
+					<button aria-controls="open" onclick="UIKIT.animate.Run({
+							element: document.getElementById('dropdown-1'),
+							property: 'height',
+							endSize: 'auto',
+							speed: 500,
+							callback: function() {
+								console.log('end open #1');
+							},
+						})">Open</button>
+					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({
+							element: document.getElementById('dropdown-1'),
+							property: 'height',
+							speed: 500,
+							prefunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('prefunction toggle #1');
+							},
+							postfunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('postfunction toggle #1');
+							},
+							callback: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('callback toggle #1');
+							},
+						})">Toggle</button>
 					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-1') )">Stop</button>
 				</div>
 
@@ -71,12 +106,44 @@
 			</div>
 
 			<div class="grids col-sm-6">
-				<h2>Open, close and toggle width between 0 and auto</h2>
+				<h2>#2 Open, close and toggle width between 0 and auto</h2>
 
 				<div>
-					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-2'), property: 'width', endSize: 0, callback: function() { console.log('end3!!'); } })">Close</button>
-					<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-2'), property: 'width', endSize: 'auto', callback: function() { console.log('end3!!'); } })">Open</button>
-					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-2'), property: 'width', callback: function() { console.log('end3!!'); } })">Toggle</button>
+					<button aria-controls="close" onclick="UIKIT.animate.Run({
+							element: document.getElementById('dropdown-2'),
+							property: 'width',
+							endSize: 0,
+							callback: function() {
+								console.log('end close #2');
+							},
+						})">Close</button>
+					<button aria-controls="open" onclick="UIKIT.animate.Run({
+							element: document.getElementById('dropdown-2'),
+							property: 'width',
+							endSize: 'auto',
+							callback: function() {
+								console.log('end open #2');
+							},
+						})">Open</button>
+					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({
+							element: document.getElementById('dropdown-2'),
+							property: 'width',
+							prefunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('prefunction toggle #2');
+							},
+							postfunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('postfunction toggle #2');
+							},
+							callback: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('callback toggle #2');
+							},
+						})">Toggle</button>
 					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-2') )">Stop</button>
 				</div>
 
@@ -91,12 +158,46 @@
 
 		<div class="row">
 			<div class="grids col-sm-6">
-				<h2>Animate padding</h2>
+				<h2>#3 Animate padding</h2>
 
 				<div>
-					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-padding1'), property: 'padding', endSize: 0, callback: function() { console.log('end4!!'); } })">Remove padding</button>
-					<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-padding1'), property: 'padding', endSize: 20, callback: function() { console.log('end3!!'); } })">Add padding</button>
-					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-padding1'), property: 'padding', closeSize: 0, openSize: 20, callback: function() { console.log('end3!!'); } })">Toggle padding</button>
+					<button aria-controls="close" onclick="UIKIT.animate.Run({
+							element: document.getElementById('dropdown-padding1'),
+							property: 'padding',
+							endSize: 0,
+							callback: function() {
+								console.log('end removing padding #3');
+							},
+						})">Remove padding</button>
+					<button aria-controls="open" onclick="UIKIT.animate.Run({
+							element: document.getElementById('dropdown-padding1'),
+							property: 'padding',
+							endSize: 20,
+							callback: function() {
+								console.log('end add padding #3');
+							},
+						})">Add padding</button>
+					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({
+							element: document.getElementById('dropdown-padding1'),
+							property: 'padding',
+							closeSize: 0,
+							openSize: 20,
+							prefunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('prefunction toggle #3');
+							},
+							postfunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('postfunction toggle #3');
+							},
+							callback: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('callback toggle #3');
+							},
+						})">Toggle padding</button>
 					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-padding1') )">Stop</button>
 				</div>
 
@@ -106,12 +207,46 @@
 			</div>
 
 			<div class="grids col-sm-6">
-				<h2>Animate margin</h2>
+				<h2>#4 Animate margin</h2>
 
 				<div>
-					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-margin1'), property: 'margin', endSize: 0, callback: function() { console.log('end4!!'); } })">Remove margin</button>
-					<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-margin1'), property: 'margin', endSize: 20, callback: function() { console.log('end3!!'); } })">Add margin</button>
-					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-margin1'), property: 'margin', closeSize: 0, openSize: 20, callback: function() { console.log('end3!!'); } })">Toggle margin</button>
+					<button aria-controls="open" onclick="UIKIT.animate.Run({
+							element: document.getElementById('dropdown-margin1'),
+							property: 'margin',
+							endSize: 20,
+							callback: function() {
+								console.log('end margin add #4');
+							},
+						})">Add margin</button>
+					<button aria-controls="close" onclick="UIKIT.animate.Run({ element:
+							document.getElementById('dropdown-margin1'),
+							property: 'margin',
+							endSize: 0,
+							callback: function() {
+								console.log('end remove margin #4');
+							},
+						})">Remove margin</button>
+					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element:
+							document.getElementById('dropdown-margin1'),
+							property: 'margin',
+							closeSize: 0,
+							openSize: 20,
+							prefunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('prefunction toggle #4');
+							},
+							postfunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('postfunction toggle #4');
+							},
+							callback: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('callback toggle #4');
+							},
+						})">Toggle margin</button>
 					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-margin1') )">Stop</button>
 				</div>
 
@@ -124,19 +259,59 @@
 			</div>
 
 		</div>
+
+		<hr>
+
 		<div class="row">
 			<div class="grids col-sm-6">
-				<h2>Animate position</h2>
+				<h2>#5 Animate position</h2>
 
 				<div>
-					<button aria-controls="back" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 0, speed: 1000, callback: function() { console.log('end4!!'); } })">Back</button>
-					<button aria-controls="forward" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-position1'), property: 'left', endSize: 100, speed: 1000, callback: function() { console.log('end3!!'); } })">Forward</button>
-					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-position1'), property: 'left', closeSize: 0, openSize: 100, speed: 1000, callback: function() { console.log('end3!!'); } })">Toggle</button>
+					<button aria-controls="back" onclick="UIKIT.animate.Run({ element:
+							document.getElementById('dropdown-position1'),
+							property: 'left',
+							endSize: 0,
+							speed: 1000,
+							callback: function() {
+								console.log('end position back #5');
+							},
+						})">Back</button>
+					<button aria-controls="forward" onclick="UIKIT.animate.Run({ element:
+							document.getElementById('dropdown-position1'),
+							property: 'left',
+							endSize: 100,
+							speed: 1000,
+							callback: function() {
+								console.log('end position forward #5');
+							},
+						})">Forward</button>
+					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element:
+							document.getElementById('dropdown-position1'),
+							property: 'left',
+							closeSize: 0,
+							openSize: 100,
+							speed: 1000,
+							prefunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('prefunction toggle #5');
+							},
+							postfunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('postfunction toggle #5');
+							},
+							callback: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('callback toggle #5');
+							},
+						})">Toggle</button>
 					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-position1') )">Stop</button>
 				</div>
 
 				<div class="position-container" style="position:relative;height:50px;margin-top:20px;">
-					<div style="height:20px;width:20px;border-radius:50%;position:absolute;top:0;left:0;" class="uikit-dropdown-example" id="dropdown-position1">
+					<div style="height:20px;width:20px;border-radius:50%;position:absolute;top:0;left:100px;" class="uikit-dropdown-example" id="dropdown-position1">
 						&nbsp;
 					</div>
 				</div>
@@ -149,12 +324,48 @@
 		<div class="row">
 
 			<div class="grids col-sm-6">
-				<h2>Open, close height between specified values</h2>
+				<h2>#6 Open, close height between specified values</h2>
 
 				<div>
-					<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-3'), property: 'height', endSize: 200, speed: 1000, callback: function() { console.log('end4!!'); } })">Open</button>
-					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-3'), property: 'height', endSize: 50, speed: 1000, callback: function() { console.log('end4!!'); } })">Close</button>
-					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-3'), property: 'height', openSize: 200, closeSize: 50, callback: function() { console.log('end4!!'); } })">Toggle</button>
+					<button aria-controls="open" onclick="UIKIT.animate.Run({ element:
+							document.getElementById('dropdown-3'),
+							property: 'height',
+							endSize: 200,
+							speed: 1000,
+							callback: function() {
+								console.log('end open #6');
+							},
+						})">Open</button>
+					<button aria-controls="close" onclick="UIKIT.animate.Run({ element:
+							document.getElementById('dropdown-3'),
+							property: 'height',
+							endSize: 50,
+							speed: 1000,
+							callback: function() {
+								console.log('end close #6');
+							},
+						})">Close</button>
+					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element:
+							document.getElementById('dropdown-3'),
+							property: 'height',
+							openSize: 200,
+							closeSize: 50,
+							prefunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('prefunction toggle #6');
+							},
+							postfunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('postfunction toggle #6');
+							},
+							callback: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('callback toggle #6');
+							},
+						})">Toggle</button>
 					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-3') )">Stop</button>
 				</div>
 
@@ -165,12 +376,48 @@
 			</div>
 
 			<div class="grids col-sm-6">
-				<h2>Open, close width between specified values</h2>
+				<h2>#7 Open, close width between specified values</h2>
 
 				<div>
-					<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-4'), property: 'width', endSize: 200, speed: 1000, callback: function() { console.log('end4!!'); } })">Open</button>
-					<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('dropdown-4'), property: 'width', endSize: 100, speed: 1000, callback: function() { console.log('end4!!'); } })">Close</button>
-					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('dropdown-4'), property: 'width', openSize: 200, closeSize: 100, callback: function() { console.log('end4!!'); } })">Toggle</button>
+					<button aria-controls="open" onclick="UIKIT.animate.Run({ element:
+							document.getElementById('dropdown-4'),
+							property: 'width',
+							endSize: 200,
+							speed: 1000,
+							callback: function() {
+								console.log('end open #7');
+							},
+						})">Open</button>
+					<button aria-controls="close" onclick="UIKIT.animate.Run({ element:
+							document.getElementById('dropdown-4'),
+							property: 'width',
+							endSize: 100,
+							speed: 1000,
+							callback: function() {
+								console.log('end close #7');
+							},
+						})">Close</button>
+					<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element:
+							document.getElementById('dropdown-4'),
+							property: 'width',
+							openSize: 200,
+							closeSize: 100,
+							prefunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('prefunction toggle #7');
+							},
+							postfunction: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('postfunction toggle #7');
+							},
+							callback: function( element, state ) {
+								console.log( element );
+								console.log( state );
+								console.log('callback toggle #7');
+							},
+						})">Toggle</button>
 					<button aria-controls="stop" onclick="UIKIT.animate.Stop( document.getElementById('dropdown-4') )">Stop</button>
 				</div>
 
@@ -184,17 +431,48 @@
 		<hr>
 
 		<div class="row">
-			<div class="col-sm-12">
-				<h2>Open, close and toggle multiple items</h2>
-			</div>
-
 			<div class="grids col-sm-6">
+				<h2>#8 Open, close and toggle multiple items</h2>
 
 				<div>
 					<div>
-						<button aria-controls="open"  onclick="UIKIT.animate.Run({ element: document.querySelectorAll('.js-vertical-dropdown-group'), property: 'height', endSize: 'auto', speed: 1000, callback: function() { console.log('end8!!'); } })">Open all</button>
-						<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.querySelectorAll('.js-vertical-dropdown-group'), property: 'height', endSize: 0, speed: 1000, callback: function() { console.log('end9!!'); } })">Close all</button>
-						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.querySelectorAll('.js-vertical-dropdown-group'), property: 'height', callback: function() { console.log('toggle end10!!'); } })">Toggle all</button>
+						<button aria-controls="open"  onclick="UIKIT.animate.Run({ element:
+								document.querySelectorAll('.js-vertical-dropdown-group'),
+								property: 'height',
+								endSize: 'auto',
+								speed: 1000,
+								callback: function() {
+									console.log('end open all #8');
+								},
+							})">Open all</button>
+						<button aria-controls="close" onclick="UIKIT.animate.Run({ element:
+								document.querySelectorAll('.js-vertical-dropdown-group'),
+								property: 'height',
+								endSize: 0,
+								speed: 1000,
+								callback: function() {
+									console.log('end close all #8');
+								},
+							})">Close all</button>
+						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element:
+								document.querySelectorAll('.js-vertical-dropdown-group'),
+								property: 'height',
+								prefunction: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('prefunction toggle #8');
+								},
+								postfunction: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('postfunction toggle #8');
+								},
+								callback: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('callback toggle #8');
+								},
+							})">Toggle all</button>
 					</div>
 				</div>
 
@@ -213,12 +491,47 @@
 			</div>
 
 			<div class="grids col-sm-6">
+				<h2>#9</h2>
 
 				<div>
 					<div>
-						<button aria-controls="open"  onclick="UIKIT.animate.Run({ element: document.querySelectorAll('.js-horizontal-dropdown-group'), property: 'width', endSize: 'auto', speed: 1000, callback: function() { console.log('end8!!'); } })">Open all</button>
-						<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.querySelectorAll('.js-horizontal-dropdown-group'), property: 'width', endSize: 0, speed: 1000, callback: function() { console.log('end8!!'); } })">Close all</button>
-						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.querySelectorAll('.js-horizontal-dropdown-group'), property: 'width', callback: function() { console.log('toggle end9-!!'); } })">Toggle all</button>
+						<button aria-controls="open"  onclick="UIKIT.animate.Run({ element:
+								document.querySelectorAll('.js-horizontal-dropdown-group'),
+								property: 'width',
+								endSize: 'auto',
+								speed: 1000,
+								callback: function() {
+									console.log('end open all #9');
+								},
+							})">Open all</button>
+						<button aria-controls="close" onclick="UIKIT.animate.Run({ element:
+								document.querySelectorAll('.js-horizontal-dropdown-group'),
+								property: 'width',
+								endSize: 0,
+								speed: 1000,
+								callback: function() {
+									console.log('end close all #9');
+								},
+							})">Close all</button>
+						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element:
+								document.querySelectorAll('.js-horizontal-dropdown-group'),
+								property: 'width',
+								prefunction: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('prefunction toggle #9');
+								},
+								postfunction: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('postfunction toggle #9');
+								},
+								callback: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('callback toggle #9');
+								},
+							})">Toggle all</button>
 					</div>
 				</div>
 
@@ -245,13 +558,50 @@
 			</div>
 
 			<div class="grids col-sm-6">
-				<h2>less pixel than steps</h2>
+				<h2>#10 less pixel than steps</h2>
 
 				<div>
 					<div>
-						<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('edgecase1'), property: 'height', endSize: 3, speed: 4, callback: function() { console.log('end edgecase1!!'); } })">Open</button>
-						<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('edgecase1'), property: 'height', endSize: 0, speed: 4, callback: function() { console.log('end edgecase2!!'); } })">Close</button>
-						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('edgecase1'), property: 'height', openSize: 3, closeSize: 0, speed: 4, callback: function() { console.log('end edgecase2!!'); } })">Toggle</button>
+						<button aria-controls="open" onclick="UIKIT.animate.Run({ element:
+								document.getElementById('edgecase1'),
+								property: 'height',
+								endSize: 3,
+								speed: 4,
+								callback: function() {
+									console.log('end open #10');
+								},
+							})">Open</button>
+						<button aria-controls="close" onclick="UIKIT.animate.Run({ element:
+								document.getElementById('edgecase1'),
+								property: 'height',
+								endSize: 0,
+								speed: 4,
+								callback: function() {
+									console.log('end close #10');
+								},
+							})">Close</button>
+						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element:
+								document.getElementById('edgecase1'),
+								property: 'height',
+								openSize: 3,
+								closeSize: 0,
+								speed: 4,
+								prefunction: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('prefunction toggle #10');
+								},
+								postfunction: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('postfunction toggle #10');
+								},
+								callback: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('callback toggle #10');
+								},
+							})">Toggle</button>
 					</div>
 				</div>
 
@@ -260,13 +610,50 @@
 			</div>
 
 			<div class="grids col-sm-6">
-				<h2>Half pixel step size</h2>
+				<h2>#11 Half pixel step size</h2>
 
 				<div>
 					<div>
-						<button aria-controls="open" onclick="UIKIT.animate.Run({ element: document.getElementById('edgecase2'), property: 'height', endSize: 200, speed: 473, callback: function() { console.log('end edgecase2!!'); } })">Open</button>
-						<button aria-controls="close" onclick="UIKIT.animate.Run({ element: document.getElementById('edgecase2'), property: 'height', endSize: 0, speed: 473, callback: function() { console.log('end edgecase2!!'); } })">Close</button>
-						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element: document.getElementById('edgecase2'), property: 'height', openSize: 200, closeSize: 0, speed: 473, callback: function() { console.log('end edgecase2!!'); } })">Toggle</button>
+						<button aria-controls="open" onclick="UIKIT.animate.Run({ element:
+								document.getElementById('edgecase2'),
+								property: 'height',
+								endSize: 200,
+								speed: 473,
+								callback: function() {
+									console.log('end open #11');
+								},
+							})">Open</button>
+						<button aria-controls="close" onclick="UIKIT.animate.Run({ element:
+								document.getElementById('edgecase2'),
+								property: 'height',
+								endSize: 0,
+								speed: 473,
+								callback: function() {
+									console.log('end close #11');
+								},
+							})">Close</button>
+						<button aria-controls="toggle" onclick="UIKIT.animate.Toggle({ element:
+								document.getElementById('edgecase2'),
+								property: 'height',
+								openSize: 200,
+								closeSize: 0,
+								speed: 473,
+								prefunction: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('prefunction toggle #11');
+								},
+								postfunction: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('postfunction toggle #11');
+								},
+								callback: function( element, state ) {
+									console.log( element );
+									console.log( state );
+									console.log('callback toggle #11');
+								},
+							})">Toggle</button>
 					</div>
 				</div>
 
@@ -280,6 +667,6 @@
 	</div>
 
 
-	<script type="text/javascript" src="module.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

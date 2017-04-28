@@ -1,0 +1,23 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion module
+// Allow the user to toggle the visibility of an element
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.uikit-accordion__title {
+		background: #fff !important;
+
+		&:after {
+			display: none;
+		}
+	}
+
+	.uikit-accordion__body {
+		height: auto !important;
+		display: block !important;
+	}
+}
