@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [API](#api)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -26,6 +27,70 @@ yarn add @gov.au/accordion
 
 ```shell
 npm install @gov.au/accordion --save-dev
+```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## API
+
+
+Animate has 3 functions:
+
+- [`UIKIT.accordion.Open( elements, speed )`](#open)
+- [`UIKIT.accordion.Close( elements, speed )`](#close)
+- [`UIKIT.accordion.Toggle( elements, speed )`](#toggle)
+
+
+### Open
+
+`UIKIT.accordion.Open( elements, speed )`
+
+The parameters are:
+
+`elements` - DOM node/s of accordion titles you want to open. They should have the `js-uikit-accordion` class and point `aria-controls` to the accordion body. 
+`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+
+Example:
+
+```js
+UIKIT.accordion.Open( document.getElementById('accordion-title'), 500 );
+```
+
+
+### Close
+
+`UIKIT.accordion.Close( elements, speed )`
+
+The parameters are:
+
+`elements` - DOM node/s of accordion titles you want to open. They should have the `js-uikit-accordion` class and point `aria-controls` to the accordion body. 
+`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+
+Example:
+
+```js
+UIKIT.accordion.Close( document.getElementById('accordion-title'), 500 );
+```
+
+
+### Toggle
+
+`UIKIT.accordion.Toggle( elements, speed )`
+
+The parameters are:
+
+`elements` - DOM node/s of accordion titles you want to open. They should have the `js-uikit-accordion` class and point `aria-controls` to the accordion body. 
+`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+
+Example:
+
+```js
+UIKIT.accordion.Toggle( document.getElementById('accordion-title'), 500 );
 ```
 
 

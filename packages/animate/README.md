@@ -45,13 +45,14 @@ Animate has 3 functions:
 - [`UIKIT.animate.Stop( options )`](#stop)
 - [`UIKIT.animate.Toggle( options )`](#toggle)
 
+
 ### Run
 
 `UIKIT.animate.Run( options )`
 
 The options settings are:
 
-`element` - DOM node/s you want to animate   
+`element` - DOM node/s you want to animate  
 `property` - CSS property you want to animate (optional, defaults to `height`)  
 `endSize` - 'auto' or pixel size of the property after the animation has finished (optional)  
 `speed` - animation speed in milliseconds (optional, defaults to `250ms`)  
@@ -69,6 +70,7 @@ UIKIT.animate.Run(
 )
 ```
 
+
 ### Stop
 
 `UIKIT.animate.Stop( options )`
@@ -85,13 +87,14 @@ UIKIT.animate.Stop(
 )
 ```
 
+
 ### Toggle
 
 `UIKIT.animate.Toggle( options )`
 
 The options settings are:
 
-`element` - DOM node/s you want to animate   
+`element` - DOM node/s you want to animate  
 `property` - CSS property you want to animate (optional, defaults to `height`)  
 `openSize` - pixel size of the property when the element is open (optional, defaults to `auto`)  
 `closeSize` - pixel size of the property when the element is closed (optional, defaults to `0`)  
