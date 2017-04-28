@@ -17,7 +17,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-accordion {
 	display: block;
-	border: 0 none;
+	border: $uikit-borderize;
 	font-family: $uikit-font-system;
 	color: $uikit-colour-Text;
 	margin-bottom: uikit-space( 1 );
@@ -37,6 +37,7 @@
 	margin-top: -( uikit-space( 1 ) );
 }
 
+.uikit-body .uikit-accordion__title,
 .uikit-accordion__title {
 	display: block;
 	color: $uikit-colour-Text;
@@ -49,12 +50,17 @@
 	background-color: $uikit-colour-Background;
 	position: relative;
 	cursor: pointer;
-	border: $uikit-borderize;
+	border-bottom: 0 none;
 
 	@include uikit-focus();
 
 	&:focus {
 		outline-offset: 2px;
+	}
+
+	&:focus,
+	&:hover {
+		background-color: $uikit-colour-Background;
 	}
 
 	// remove the default details arrow icon
@@ -79,7 +85,7 @@
 		transition: transform 0.25s ease-in;
 	}
 
-	&.uikit-accordion--close:after {
+	&.uikit-accordion--closed:after {
 		transform: rotate(-180deg);
 	}
 
@@ -87,16 +93,16 @@
 
 .uikit-accordion__body  {
 	overflow: hidden;
-	border: $uikit-borderize;
-	border-top: 0 none;
 
 	// only listen to the state classes if js is enabled
 	.js & {
 		&.uikit-accordion--open {
+			display: block;
 			height: auto;
 		}
 
-		&.uikit-accordion--close {
+		&.uikit-accordion--closed {
+			display: none;
 			height: 0;
 		}
 	}
@@ -104,4 +110,5 @@
 
 .uikit-accordion__body-wrapper {
 	padding: uikit-space( 0.75 );
+	border-top: $uikit-borderize;
 }

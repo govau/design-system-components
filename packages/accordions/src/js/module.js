@@ -56,21 +56,49 @@ var UIKIT = UIKIT || {};
 	function toggleClasses( element, state, openingClass, closingClass ) {
 
 		if( state === 'opening' || state === 'open' ) {
-			var oldClass = openingClass || 'uikit-accordion--close';
+			var oldClass = openingClass || 'uikit-accordion--closed';
 			var newClass = closingClass || 'uikit-accordion--open';
 		}
 		else {
 			var oldClass = closingClass || 'uikit-accordion--open';
-			var newClass = openingClass || 'uikit-accordion--close';
+			var newClass = openingClass || 'uikit-accordion--closed';
 		}
 
+		removeClass( element, oldClass );
+		addClass( element, newClass );
+	}
+
+
+	/**
+	 * PRIVATE
+	 * IE8 compatible function for removing a class
+	 *
+	 * @param  {object} element   - The DOM element we want to manipulate
+	 * @param  {object} className - The name of the class to be removed
+	 */
+	function removeClass( element, className ) {
 		if( element.classList ) {
-			element.classList.remove( oldClass );
-			element.classList.add( newClass );
+			element.classList.remove( className );
 		}
 		else {
-			element.className = element.className.replace( new RegExp("(^|\\b)" + oldClass.split(" ").join("|") + "(\\b|$)", "gi"), " " );
-			element.className += " " + newClass;
+			element.className = element.className.replace( new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " " );
+		}
+	}
+
+
+	/**
+	 * PRIVATE
+	 * IE8 compatible function for adding a class
+	 *
+	 * @param  {object} element   - The DOM element we want to manipulate
+	 * @param  {object} className - The name of the class to be added
+	 */
+	function addClass( element, className ) {
+		if( element.classList ) {
+			element.classList.add( className );
+		}
+		else {
+			element.className = element.className + " " + newClass;
 		}
 	}
 
@@ -104,26 +132,30 @@ var UIKIT = UIKIT || {};
 			var targetId = element.getAttribute('aria-controls');
 			var target = document.getElementById( targetId );
 
-			UIKIT.animate.Toggle({
-				element: target,
-				property: 'height',
-				speed: speed || 250,
-				prefunction: function( target, state ) {
-					if( state === 'opening' ) {
-						target.style.display = '';
-					}
+			target.style.display = 'block';
 
-					setAriaRoles( element, target, state );
-					toggleClasses( element, state );
-				},
-				postfunction: function( target, state ) {
-					if( state === 'closed' ) {
-						target.style.display = 'none';
-					}
+			(function( element ) {
+				UIKIT.animate.Toggle({
+					element: target,
+					property: 'height',
+					speed: speed || 250,
+					prefunction: function( target, state ) {
+						if( state === 'opening' ) {
+							target.style.display = 'block';
+						}
 
-					toggleClasses( target, state );
-				},
-			});
+						setAriaRoles( element, target, state );
+						toggleClasses( element, state );
+					},
+					postfunction: function( target, state ) {
+						if( state === 'closed' ) {
+							target.style.display = '';
+						}
+
+						toggleClasses( target, state );
+					},
+				});
+			})( element );
 
 		}
 
@@ -160,7 +192,10 @@ var UIKIT = UIKIT || {};
 
 			target.style.display = '';
 			toggleClasses( target, 'opening' );
+			toggleClasses( element, 'opening' );
 			setAriaRoles( element, target, 'opening' );
+
+			target.style.height = 0;
 
 			(function( target, speed, element ) {
 				UIKIT.animate.Run({

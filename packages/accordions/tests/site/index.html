@@ -43,7 +43,7 @@
 
 	<a class="test-link" href="../../../../">&larr; back to the module index</a>
 
-	<h1>Test: accordions</h1>
+	<h1 id="url">Test: accordions</h1>
 
 
 	<div class="split-wrapper">
@@ -61,7 +61,7 @@
 
 			<details class="uikit-accordion" open>
 				<summary
-					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group1"
+					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion js-uikit-accordion--group1"
 					aria-controls="acc1-1"
 					aria-expanded="false"
 					aria-selected="false"
@@ -70,7 +70,7 @@
 						Accordion title
 				</summary>
 
-				<div class="uikit-accordion__body uikit-accordion--close" id="acc1-1" aria-hidden="true">
+				<div class="uikit-accordion__body uikit-accordion--closed" id="acc1-1" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
 
 						<p>Here is some accordion content</p>
@@ -94,7 +94,7 @@
 
 						</details>
 
-						<p>Here is some accordion content</p>
+						<p>Here is some accordion <a href="#url">content</a>.</p>
 
 					</div>
 
@@ -114,7 +114,7 @@
 				<div class="uikit-accordion__body uikit-accordion--open" id="acc1-3" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
 						<p>Here is some accordion content</p>
-						<p>Here is some accordion content</p>
+						<p>Here is some <a href="#url">accordion</a> content</p>
 						<p>Here is some accordion content</p>
 					</div>
 				</div>
@@ -138,7 +138,7 @@
 				<div class="uikit-accordion__body uikit-accordion--open" id="acc1-4" aria-hidden="false">
 					<div class="uikit-accordion__body-wrapper">
 
-						Here is some accordion content
+						Here <a href="#url">is</a> some accordion content
 
 					</div>
 				</div>
@@ -150,7 +150,7 @@
 
 			<details class="uikit-accordion" open>
 				<summary
-					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group1"
+					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion js-uikit-accordion--group1"
 					aria-controls="acc1-5"
 					aria-expanded="false"
 					aria-selected="false"
@@ -159,40 +159,15 @@
 						Accordion title
 				</summary>
 
-				<div class="uikit-accordion__body uikit-accordion--close" id="acc1-5" aria-hidden="true">
+				<div class="uikit-accordion__body uikit-accordion--closed" id="acc1-5" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
 
-						Here is some accordion content
+						Here is some accordion <a href="#url">content</a>.
 
 					</div>
 				</div>
 			</details>
 
-
-			<hr>
-			<h3>Accordion vis fieldset</h3>
-
-			<form>
-				<fieldset class="uikit-accordion" open>
-					<legend
-						class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group1"
-						aria-controls="acc1-6"
-						aria-expanded="false"
-						aria-selected="false"
-						role="tab"
-						onclick="return UIKIT.accordion.Toggle( this )">
-							Accordion title
-					</legend>
-
-					<div class="uikit-accordion__body uikit-accordion--close" id="acc1-6" aria-hidden="true">
-						<div class="uikit-accordion__body-wrapper">
-
-							Here is some accordion content
-
-						</div>
-					</div>
-				</fieldset>
-			</form>
 		</div>
 
 
@@ -210,7 +185,7 @@
 
 			<details class="uikit-accordion" open>
 				<summary
-					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group2"
+					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion js-uikit-accordion--group2"
 					aria-controls="acc2-1"
 					aria-expanded="false"
 					aria-selected="false"
@@ -219,7 +194,7 @@
 						Accordion title
 				</summary>
 
-				<div class="uikit-accordion__body uikit-accordion--close" id="acc2-1" aria-hidden="true">
+				<div class="uikit-accordion__body uikit-accordion--closed" id="acc2-1" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
 
 						<p>Here is some accordion content</p>
@@ -237,13 +212,13 @@
 
 							<div class="uikit-accordion__body uikit-accordion--open" id="acc2-2" aria-hidden="false">
 								<div class="uikit-accordion__body-wrapper">
-									Here is some accordion content
+									Here is some <a href="#url">accordion</a> content
 								</div>
 							</div>
 
 						</details>
 
-						<p>Here is some accordion content</p>
+						<p>Here is some <a href="#url">accordion</a> content</p>
 
 					</div>
 
@@ -263,7 +238,7 @@
 				<div class="uikit-accordion__body uikit-accordion--open" id="acc2-3" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
 						<p>Here is some accordion content</p>
-						<p>Here is some accordion content</p>
+						<p>Here is some <a href="#url">accordion</a> content</p>
 						<p>Here is some accordion content</p>
 					</div>
 				</div>
@@ -287,7 +262,7 @@
 				<div class="uikit-accordion__body uikit-accordion--open" id="acc2-4" aria-hidden="false">
 					<div class="uikit-accordion__body-wrapper">
 
-						Here is some accordion content
+						Here is <a href="#url">some accordion</a> content
 
 					</div>
 				</div>
@@ -299,7 +274,7 @@
 
 			<details class="uikit-accordion" open>
 				<summary
-					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group2"
+					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion js-uikit-accordion--group2"
 					aria-controls="acc2-5"
 					aria-expanded="false"
 					aria-selected="false"
@@ -308,40 +283,15 @@
 						Accordion title
 				</summary>
 
-				<div class="uikit-accordion__body uikit-accordion--close" id="acc2-5" aria-hidden="true">
+				<div class="uikit-accordion__body uikit-accordion--closed" id="acc2-5" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
 
-						Here is some accordion content
+						Here is <a href="#url">some</a> accordion content
 
 					</div>
 				</div>
 			</details>
 
-
-			<hr>
-			<h3>Accordion vis fieldset</h3>
-
-			<form>
-				<fieldset class="uikit-accordion" open>
-					<legend
-						class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group2"
-						aria-controls="acc2-6"
-						aria-expanded="false"
-						aria-selected="false"
-						role="tab"
-						onclick="return UIKIT.accordion.Toggle( this )">
-							Accordion title
-					</legend>
-
-					<div class="uikit-accordion__body uikit-accordion--close" id="acc2-6" aria-hidden="true">
-						<div class="uikit-accordion__body-wrapper">
-
-							Here is some accordion content
-
-						</div>
-					</div>
-				</fieldset>
-			</form>
 		</div>
 	</div>
 
