@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Text-inputs module
-// Single and multi-line text inputs.
+// accordion module
+// Allow the user to toggle the visibility of an element
 //
 // Content:
 // - print styles
@@ -8,16 +8,16 @@
 
 
 @media print {
-	.uikit-text-input {
-		border-color: #000 !important;
+	.uikit-accordion__title {
+		background: #fff !important;
+
+		&:after {
+			display: none;
+		}
 	}
 
-	&:disabled {
-		background-color: $uikit-colour-Background !important;
-		border-color: transparent;
-	}
-
-	&[disabled] {
-		background-color: $uikit-colour-Background !important;
+	.uikit-accordion__body {
+		height: auto !important;
+		display: block !important;
 	}
 }

@@ -1,0 +1,126 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion module
+// Allow the user to toggle the visibility of an element
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion wrapper
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.uikit-accordion {
+	display: block;
+	border: $uikit-borderize;
+	font-family: $uikit-font-system;
+	color: $uikit-colour-Text;
+	margin-bottom: uikit-space( 1 );
+	padding: 0;
+
+	p:first-child {
+		margin-top: 0;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.uikit-accordion + .uikit-accordion {
+	border-top: 0;
+	margin-top: -( uikit-space( 1 ) );
+}
+
+.uikit-body .uikit-accordion__title,
+.uikit-accordion__title {
+	display: block;
+	color: $uikit-colour-Text;
+	text-decoration: none;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 20px;
+	font-weight: bold;
+	padding: uikit-space( 0.75 ) uikit-space( 2.5 ) uikit-space( 0.75 ) uikit-space( 0.75 );
+	background-color: $uikit-colour-Background;
+	position: relative;
+	cursor: pointer;
+	border-bottom: 0 none;
+
+	@include uikit-focus();
+
+	&:focus {
+		outline-offset: 2px;
+	}
+
+	&:focus,
+	&:hover {
+		background-color: $uikit-colour-Background;
+	}
+
+	// remove the default details arrow icon
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: uikit-space( 1 );
+		width: uikit-space( 0.75 );
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $uikit-colour-Primary }" d="M64 0l64 64-16 16-64-64"/>
+				<path fill="#{ $uikit-colour-Primary }" d="M64 0l16 16-64 64L0 64"/>
+			</svg>');
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 0;
+		transition: transform 0.25s ease-in;
+	}
+
+	&.uikit-accordion--closed:after {
+		transform: rotate(-180deg);
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			content: ' ▼ ';
+			margin-top: uikit-space( 0.75 );
+		}
+
+		&.uikit-accordion--open:after {
+			content: ' ▲ ';
+		}
+	}
+
+}
+
+.uikit-accordion__body {
+	overflow: hidden;
+
+	// only listen to the state classes if js is enabled
+	.js & {
+		&.uikit-accordion--open {
+			display: block;
+			height: auto;
+		}
+
+		&.uikit-accordion--closed {
+			display: none;
+			height: 0;
+		}
+	}
+}
+
+.uikit-accordion__body-wrapper {
+	padding: uikit-space( 0.75 );
+	border-top: $uikit-borderize;
+}

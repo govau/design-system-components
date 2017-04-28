@@ -348,6 +348,24 @@ HELPER.compile = (() => {
 
 	/**
 	 * PRIVATE
+	 * Flatten a deep object into a one level array
+	 *
+	 * @param  {object} object - The object to be flattened
+	 *
+	 * @return {array}         - The resulting flat array
+	 */
+	const flatten = object => {
+		return [].concat( ...Object.keys( object ).map( key =>
+			Object.keys( object[ key ] ).length > 0 ?
+				[ key, ...flatten( object[ key ] ) ] :
+				key
+			)
+		);
+	};
+
+
+	/**
+	 * PRIVATE
 	 * Autoprefix a css file
 	 *
 	 * @param  {string} file - The file to be prefixed
@@ -395,9 +413,24 @@ HELPER.compile = (() => {
 		},
 
 		js: () => {
-			if( Fs.existsSync( `${ process.cwd() }/src/js/module.js` ) ) {
-				// 1. copy files
-				CopyFile('./lib/js/module.js', './tests/site/module.js');
+			// 1. check if js exists
+			if( Fs.existsSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`) ) ) {
+				const allDependencies = GetDepTree( HELPER.NAME );
+				const dependencies = [ ...new Set( flatten( allDependencies ) ) ];
+
+				let code = '';
+
+				dependencies.forEach( dependency => {
+					if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }/lib/js/module.js`) ) ) {
+						// 2. get all dependencies
+						code += `\n\n/* ${ dependency } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }/../${ dependency }/lib/js/module.js`), 'utf-8');
+					}
+				});
+
+				code += `\n\n/* ${ HELPER.NAME } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`), 'utf-8');
+
+				// 3. write files
+				Fs.writeFileSync( './tests/site/script.js', code, `utf-8` );
 			}
 		},
 
@@ -482,7 +515,7 @@ HELPER.generate = (() => {
 		 * @param {array} allModules - An array of all modules
 		 */
 		index: ( allModules ) => {
-			let index = Fs.readFileSync( Path.normalize(`${ __dirname }/../.templates/index/index.html`), 'utf-8') // this will be the index file
+			let index = Fs.readFileSync( Path.normalize(`${ __dirname }/../.templates/index/index.html`), 'utf-8'); // this will be the index file
 			let replacement = '';
 
 			// iterate over all packages
@@ -516,18 +549,26 @@ HELPER.generate = (() => {
 				for( let module of allModules ) {
 					let tree = Treeify.asTree( GetDepTree(`@gov.au/${ module }`) );
 
+					list += `<details>\n`;
+					list += `	<summary>@gov.au/${ module }</summary>\n`;
+					list += `	<br><code>npm install @gov.au/${ module }</code>\n`;
+					list += `	<br>See the <a href="${ HELPER.URL }/packages/${ module }/tests/site/">visual test file for ${ module }</a><br><br>\n`;
+
 					if( tree === '' ) {
-						tree = '.\n';
+						list += `	<i>No dependencies</i>\n\n----------\n`;
+					}
+					else {
+						list += `	Dependencies:\n	<br>\n\n`;
+						list += `\`\`\`shell\n${ tree }\`\`\`\n----------\n`;
 					}
 
-					list += `- [${ module }](${ HELPER.URL }/packages/${ module }/tests/site/)\n`;
-					list += `\`\`\`\n${ tree }\`\`\`\n\n`;
+					list += `</details>\n\n`;
 				}
 			}
 
 			const pkgPath = Path.normalize(`${ __dirname }/../README.md`);
 			let readme = Fs.readFileSync( pkgPath, `utf-8`);
-			readme = readme.replace(/## Modules\n\n[\s\S]*?back to top]/, `## Modules\n\n${ list }\n\n**[⬆ back to top]`);
+			readme = readme.replace(/## Modules\n\n[\s\S]*?back to top]/, `## Modules\n\n${ list }<br>\n\n**[⬆ back to top]`);
 			Fs.writeFileSync( pkgPath, readme, `utf-8` );
 
 			HELPER.log.success(`Injected modules into main readme file`);
@@ -639,10 +680,6 @@ HELPER.test = (() => {
 
 					for( const module of Object.keys( packagesPKG.peerDependencies ) ) {
 						let version = packagesPKG.peerDependencies[ module ];
-
-						if( version.startsWith('^') ) {
-							version = version.substring( 1 );
-						}
 
 						dependencies.push({
 							name: module,

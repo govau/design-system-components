@@ -313,9 +313,9 @@
 	kbd {
 		display: inline-block;
 		font-size: 14px;
-		border: solid 1px $uikit-colour-Primary-50;
+		border: solid 1px $uikit-colour-Primary;
 		border-radius: $uikit-border-radius;
-		box-shadow: 0 1px 0 0 $uikit-colour-Info;
+		box-shadow: 0 1px 0 0 $uikit-colour-Primary;
 		background-color: $uikit-colour-Background-10;
 		text-align: center;
 		padding: 0 uikit-space( 0.5 );

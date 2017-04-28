@@ -71,6 +71,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/body/tests/si
 
 ## Release History
 
+* v0.1.1 - Fixed a11y contrast issue
 * v0.1.0 - 💥 Initial version
 
 

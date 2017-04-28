@@ -1,7 +1,7 @@
-@gov.au/text-inputs
+@gov.au/select
 ============
 
-> Single and multi-line text inputs.
+> The form select element for multiple options
 
 
 ## Contents
@@ -21,11 +21,11 @@
 
 
 ```shell
-yarn add @gov.au/text-inputs
+yarn add @gov.au/select
 ```
 
 ```shell
-npm install @gov.au/text-inputs --save-dev
+npm install @gov.au/select --save-dev
 ```
 
 
@@ -38,7 +38,7 @@ npm install @gov.au/text-inputs --save-dev
 ## Dependency graph
 
 ```shell
-text-inputs
+select
 └─ core
 ```
 
@@ -60,7 +60,7 @@ text-inputs
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/select/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -71,7 +71,6 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/text-inputs/t
 
 ## Release History
 
-* v0.1.1 - Fixed print background in disabled inputs
 * v0.1.0 - 💥 Initial version
 
 
