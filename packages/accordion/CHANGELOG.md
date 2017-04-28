@@ -1,4 +1,4 @@
-@gov.au/accordions CHANGELOG
+@gov.au/accordion CHANGELOG
 ======================
 
 > Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.

@@ -1,4 +1,4 @@
-@gov.au/accordions
+@gov.au/accordion
 ============
 
 > Allow the user to toggle the visibility of an element
@@ -21,11 +21,11 @@
 
 
 ```shell
-yarn add @gov.au/accordions
+yarn add @gov.au/accordion
 ```
 
 ```shell
-npm install @gov.au/accordions --save-dev
+npm install @gov.au/accordion --save-dev
 ```
 
 
@@ -38,7 +38,7 @@ npm install @gov.au/accordions --save-dev
 ## Dependency graph
 
 ```shell
-accordions
+accordion
 ├─ core
 └─ animate
 ```
@@ -61,7 +61,7 @@ accordions
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/accordions/tests/site/
+The visual test: http://uikit.apps.staging.digital.gov.au/packages/accordion/tests/site/
 
 
 **[⬆ back to top](#contents)**

@@ -1,5 +1,5 @@
 {
-	"name": "@gov.au/accordions",
+	"name": "@gov.au/accordion",
 	"version": "0.1.0",
 	"description": "Allow the user to toggle the visibility of an element",
 	"keywords": [
