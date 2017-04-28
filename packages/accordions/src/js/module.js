@@ -109,10 +109,18 @@ var UIKIT = UIKIT || {};
 				property: 'height',
 				speed: speed || 250,
 				prefunction: function( target, state ) {
+					if( state === 'opening' ) {
+						target.style.display = '';
+					}
+
 					setAriaRoles( element, target, state );
 					toggleClasses( element, state );
 				},
 				postfunction: function( target, state ) {
+					if( state === 'closed' ) {
+						target.style.display = 'none';
+					}
+
 					toggleClasses( target, state );
 				},
 			});
@@ -150,18 +158,21 @@ var UIKIT = UIKIT || {};
 			var targetId = element.getAttribute('aria-controls');
 			var target = document.getElementById( targetId );
 
+			target.style.display = '';
 			toggleClasses( target, 'opening' );
 			setAriaRoles( element, target, 'opening' );
 
-			UIKIT.animate.Run({
-				element: target,
-				property: 'height',
-				endSize: 'auto',
-				speed: speed || 250,
-				callback: function() {
-					toggleClasses( element, 'opening' );
-				},
-			});
+			(function( target, speed, element ) {
+				UIKIT.animate.Run({
+					element: target,
+					property: 'height',
+					endSize: 'auto',
+					speed: speed || 250,
+					callback: function() {
+						toggleClasses( element, 'opening' );
+					},
+				});
+			})( target, speed, element );
 		}
 
 	}
@@ -196,15 +207,18 @@ var UIKIT = UIKIT || {};
 			toggleClasses( element, 'closing' );
 			setAriaRoles( element, target, 'closing' );
 
-			UIKIT.animate.Run({
-				element: target,
-				property: 'height',
-				endSize: 0,
-				speed: speed || 250,
-				callback: function() {
-					toggleClasses( target, 'close' );
-				},
-			});
+			(function( target, speed ) {
+				UIKIT.animate.Run({
+					element: target,
+					property: 'height',
+					endSize: 0,
+					speed: speed || 250,
+					callback: function() {
+						target.style.display = 'none';
+						toggleClasses( target, 'close' );
+					},
+				});
+			})( target, speed );
 		}
 
 	}

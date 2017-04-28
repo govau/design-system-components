@@ -87,6 +87,9 @@
 					</div>
 
 				</details>
+
+				<p>Here is some accordion content</p>
+
 			</div>
 
 		</div>
@@ -112,6 +115,7 @@
 	</section>
 
 
+	<hr>
 	<h2>Accordion open by default</h2>
 
 	<details class="uikit-accordion" open>
@@ -134,6 +138,8 @@
 		</div>
 	</details>
 
+
+	<hr>
 	<h2>Accordion closed by default</h2>
 
 	<details class="uikit-accordion" open>
@@ -148,6 +154,31 @@
 		</summary>
 
 		<div class="uikit-accordion__body uikit-accordion--close" id="acc5" aria-hidden="true">
+			<div class="uikit-accordion__body-wrapper">
+
+				Here is some accordion content
+
+			</div>
+		</div>
+	</details>
+
+
+	<hr>
+	<h2>Accordion vis fieldset</h2>
+
+	<form>
+	<fieldset class="uikit-accordion" open>
+		<legend
+			class="uikit-accordion__title uikit-accordion--close js-uikit-accordion"
+			aria-controls="acc6"
+			aria-expanded="false"
+			aria-selected="false"
+			role="tab"
+			onclick="return UIKIT.accordion.Toggle( this )">
+				Accordion title
+		</legend>
+
+		<div class="uikit-accordion__body uikit-accordion--close" id="acc6" aria-hidden="true">
 			<div class="uikit-accordion__body-wrapper">
 
 				Here is some accordion content

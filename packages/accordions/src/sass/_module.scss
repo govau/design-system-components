@@ -16,10 +16,12 @@
 // accordion wrapper
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-accordion {
+	display: block;
 	border: $uikit-borderize;
 	font-family: $uikit-font-system;
 	color: $uikit-colour-Text;
 	margin-bottom: uikit-space( 1 );
+	padding: 0;
 
 	p:first-child {
 		margin-top: 0;
@@ -39,6 +41,8 @@
 	display: block;
 	color: $uikit-colour-Text;
 	text-decoration: none;
+	width: 100%;
+	box-sizing: border-box;
 	font-size: 20px;
 	font-weight: bold;
 	padding: uikit-space( 0.75 );
@@ -47,6 +51,10 @@
 	cursor: pointer;
 
 	@include uikit-focus();
+
+	&:focus {
+		outline-offset: 2px;
+	}
 
 	// remove the default details arrow icon
 	&::-webkit-details-marker {
