@@ -45,147 +45,303 @@
 
 	<h1>Test: accordions</h1>
 
-	<h2>Accordion group</h2>
 
-	<button onclick="return UIKIT.accordion.Open( document.querySelectorAll('.js-uikit-accordion') )">Open all</button>
-	<button onclick="return UIKIT.accordion.Close( document.querySelectorAll('.js-uikit-accordion'), 1000 )">Close all</button>
-	<button onclick="return UIKIT.accordion.Toggle( document.querySelectorAll('.js-uikit-accordion') )">Toggle all</button>
+	<div class="split-wrapper">
+		<div class="split">
 
-	<hr>
+			<h2>Without body</h2>
 
-	<details class="uikit-accordion" open>
-		<summary
-			class="uikit-accordion__title uikit-accordion--open js-uikit-accordion"
-			aria-controls="acc1"
-			aria-expanded="false"
-			aria-selected="false"
-			role="tab"
-			onclick="return UIKIT.accordion.Toggle( this )">
-				Accordion title
-		</summary>
+			<h3>Accordion group</h3>
 
-		<div class="uikit-accordion__body uikit-accordion--open" id="acc1" aria-hidden="false">
-			<div class="uikit-accordion__body-wrapper">
+			<button onclick="return UIKIT.accordion.Open( document.querySelectorAll('.js-uikit-accordion--group1') )">Open all</button>
+			<button onclick="return UIKIT.accordion.Close( document.querySelectorAll('.js-uikit-accordion--group1'), 1000 )">Close all</button>
+			<button onclick="return UIKIT.accordion.Toggle( document.querySelectorAll('.js-uikit-accordion--group1') )">Toggle all</button>
 
-				<p>Here is some accordion content</p>
+			<hr>
 
-				<details class="uikit-accordion" open>
-					<summary
-						class="uikit-accordion__title uikit-accordion--open js-uikit-accordion"
-						aria-controls="acc2"
-						aria-expanded="true"
-						aria-selected="true"
-						role="tab"
-						onclick="return UIKIT.accordion.Toggle( this )">
-							A nested accordion
-					</summary>
+			<details class="uikit-accordion" open>
+				<summary
+					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group1"
+					aria-controls="acc1-1"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Accordion title
+				</summary>
 
-					<div class="uikit-accordion__body uikit-accordion--open" id="acc2" aria-hidden="false">
-						<div class="uikit-accordion__body-wrapper">
-							Here is some accordion content
-						</div>
+				<div class="uikit-accordion__body uikit-accordion--close" id="acc1-1" aria-hidden="true">
+					<div class="uikit-accordion__body-wrapper">
+
+						<p>Here is some accordion content</p>
+
+						<details class="uikit-accordion" open>
+							<summary
+								class="uikit-accordion__title uikit-accordion--open js-uikit-accordion js-uikit-accordion--group1"
+								aria-controls="acc1-2"
+								aria-expanded="true"
+								aria-selected="true"
+								role="tab"
+								onclick="return UIKIT.accordion.Toggle( this )">
+									A nested accordion
+							</summary>
+
+							<div class="uikit-accordion__body uikit-accordion--open" id="acc1-2" aria-hidden="false">
+								<div class="uikit-accordion__body-wrapper">
+									Here is some accordion content
+								</div>
+							</div>
+
+						</details>
+
+						<p>Here is some accordion content</p>
+
 					</div>
 
-				</details>
+				</div>
+			</details>
 
-				<p>Here is some accordion content</p>
+			<section class="uikit-accordion">
+				<a href="#acc3"
+					class="uikit-accordion__title uikit-accordion--open js-uikit-accordion js-uikit-accordion--group1"
+					aria-controls="acc1-3"
+					aria-expanded="false"
+					aria-selected="false"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Non-detail markup accordion
+				</a>
 
-			</div>
+				<div class="uikit-accordion__body uikit-accordion--open" id="acc1-3" aria-hidden="true">
+					<div class="uikit-accordion__body-wrapper">
+						<p>Here is some accordion content</p>
+						<p>Here is some accordion content</p>
+						<p>Here is some accordion content</p>
+					</div>
+				</div>
+			</section>
 
+
+			<hr>
+			<h3>Accordion open by default</h3>
+
+			<details class="uikit-accordion" open>
+				<summary
+					class="uikit-accordion__title uikit-accordion--open js-uikit-accordion js-uikit-accordion--group1"
+					aria-controls="acc1-4"
+					aria-expanded="true"
+					aria-selected="true"
+					role="tab"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Accordion title
+				</summary>
+
+				<div class="uikit-accordion__body uikit-accordion--open" id="acc1-4" aria-hidden="false">
+					<div class="uikit-accordion__body-wrapper">
+
+						Here is some accordion content
+
+					</div>
+				</div>
+			</details>
+
+
+			<hr>
+			<h3>Accordion closed by default</h3>
+
+			<details class="uikit-accordion" open>
+				<summary
+					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group1"
+					aria-controls="acc1-5"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Accordion title
+				</summary>
+
+				<div class="uikit-accordion__body uikit-accordion--close" id="acc1-5" aria-hidden="true">
+					<div class="uikit-accordion__body-wrapper">
+
+						Here is some accordion content
+
+					</div>
+				</div>
+			</details>
+
+
+			<hr>
+			<h3>Accordion vis fieldset</h3>
+
+			<form>
+			<fieldset class="uikit-accordion" open>
+				<legend
+					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group1"
+					aria-controls="acc1-6"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Accordion title
+				</legend>
+
+				<div class="uikit-accordion__body uikit-accordion--close" id="acc1-6" aria-hidden="true">
+					<div class="uikit-accordion__body-wrapper">
+
+						Here is some accordion content
+
+					</div>
+				</div>
+			</details>
 		</div>
-	</details>
 
-	<section class="uikit-accordion">
-		<a href="#acc3"
-			class="uikit-accordion__title uikit-accordion--open js-uikit-accordion"
-			aria-controls="acc3"
-			aria-expanded="false"
-			aria-selected="false"
-			onclick="return UIKIT.accordion.Toggle( this )">
-				Non-detail markup accordion
-		</a>
 
-		<div class="uikit-accordion__body uikit-accordion--open" id="acc3" aria-hidden="true">
-			<div class="uikit-accordion__body-wrapper">
-				<p>Here is some accordion content</p>
-				<p>Here is some accordion content</p>
-				<p>Here is some accordion content</p>
-			</div>
+
+		<div class="split uikit-body">
+
+			<h2>With body</h2>
+
+			<h3>Accordion group</h3>
+			<button onclick="UIKIT.accordion.Open( document.querySelectorAll('.js-uikit-accordion--group2') )">Open all</button>
+			<button onclick="UIKIT.accordion.Close( document.querySelectorAll('.js-uikit-accordion--group2'), 1000 )">Close all</button>
+			<button onclick="UIKIT.accordion.Toggle( document.querySelectorAll('.js-uikit-accordion--group2') )">Toggle all</button>
+
+			<hr>
+
+			<details class="uikit-accordion" open>
+				<summary
+					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group2"
+					aria-controls="acc2-1"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Accordion title
+				</summary>
+
+				<div class="uikit-accordion__body uikit-accordion--close" id="acc2-1" aria-hidden="true">
+					<div class="uikit-accordion__body-wrapper">
+
+						<p>Here is some accordion content</p>
+
+						<details class="uikit-accordion" open>
+							<summary
+								class="uikit-accordion__title uikit-accordion--open js-uikit-accordion js-uikit-accordion--group2"
+								aria-controls="acc2-2"
+								aria-expanded="true"
+								aria-selected="true"
+								role="tab"
+								onclick="return UIKIT.accordion.Toggle( this )">
+									A nested accordion
+							</summary>
+
+							<div class="uikit-accordion__body uikit-accordion--open" id="acc2-2" aria-hidden="false">
+								<div class="uikit-accordion__body-wrapper">
+									Here is some accordion content
+								</div>
+							</div>
+
+						</details>
+
+						<p>Here is some accordion content</p>
+
+					</div>
+
+				</div>
+			</details>
+
+			<section class="uikit-accordion">
+				<a href="#acc3"
+					class="uikit-accordion__title uikit-accordion--open js-uikit-accordion js-uikit-accordion--group2"
+					aria-controls="acc2-3"
+					aria-expanded="false"
+					aria-selected="false"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Non-detail markup accordion
+				</a>
+
+				<div class="uikit-accordion__body uikit-accordion--open" id="acc2-3" aria-hidden="true">
+					<div class="uikit-accordion__body-wrapper">
+						<p>Here is some accordion content</p>
+						<p>Here is some accordion content</p>
+						<p>Here is some accordion content</p>
+					</div>
+				</div>
+			</section>
+
+
+			<hr>
+			<h3>Accordion open by default</h3>
+
+			<details class="uikit-accordion" open>
+				<summary
+					class="uikit-accordion__title uikit-accordion--open js-uikit-accordion js-uikit-accordion--group2"
+					aria-controls="acc2-4"
+					aria-expanded="true"
+					aria-selected="true"
+					role="tab"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Accordion title
+				</summary>
+
+				<div class="uikit-accordion__body uikit-accordion--open" id="acc2-4" aria-hidden="false">
+					<div class="uikit-accordion__body-wrapper">
+
+						Here is some accordion content
+
+					</div>
+				</div>
+			</details>
+
+
+			<hr>
+			<h3>Accordion closed by default</h3>
+
+			<details class="uikit-accordion" open>
+				<summary
+					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group2"
+					aria-controls="acc2-5"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Accordion title
+				</summary>
+
+				<div class="uikit-accordion__body uikit-accordion--close" id="acc2-5" aria-hidden="true">
+					<div class="uikit-accordion__body-wrapper">
+
+						Here is some accordion content
+
+					</div>
+				</div>
+			</details>
+
+
+			<hr>
+			<h3>Accordion vis fieldset</h3>
+
+			<form>
+			<fieldset class="uikit-accordion" open>
+				<legend
+					class="uikit-accordion__title uikit-accordion--close js-uikit-accordion js-uikit-accordion--group2"
+					aria-controls="acc2-6"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onclick="return UIKIT.accordion.Toggle( this )">
+						Accordion title
+				</legend>
+
+				<div class="uikit-accordion__body uikit-accordion--close" id="acc2-6" aria-hidden="true">
+					<div class="uikit-accordion__body-wrapper">
+
+						Here is some accordion content
+
+					</div>
+				</div>
+			</details>
 		</div>
-	</section>
-
-
-	<hr>
-	<h2>Accordion open by default</h2>
-
-	<details class="uikit-accordion" open>
-		<summary
-			class="uikit-accordion__title uikit-accordion--open js-uikit-accordion"
-			aria-controls="acc4"
-			aria-expanded="true"
-			aria-selected="true"
-			role="tab"
-			onclick="return UIKIT.accordion.Toggle( this )">
-				Accordion title
-		</summary>
-
-		<div class="uikit-accordion__body uikit-accordion--open" id="acc4" aria-hidden="false">
-			<div class="uikit-accordion__body-wrapper">
-
-				Here is some accordion content
-
-			</div>
-		</div>
-	</details>
-
-
-	<hr>
-	<h2>Accordion closed by default</h2>
-
-	<details class="uikit-accordion" open>
-		<summary
-			class="uikit-accordion__title uikit-accordion--close js-uikit-accordion"
-			aria-controls="acc5"
-			aria-expanded="false"
-			aria-selected="false"
-			role="tab"
-			onclick="return UIKIT.accordion.Toggle( this )">
-				Accordion title
-		</summary>
-
-		<div class="uikit-accordion__body uikit-accordion--close" id="acc5" aria-hidden="true">
-			<div class="uikit-accordion__body-wrapper">
-
-				Here is some accordion content
-
-			</div>
-		</div>
-	</details>
-
-
-	<hr>
-	<h2>Accordion vis fieldset</h2>
-
-	<form>
-	<fieldset class="uikit-accordion" open>
-		<legend
-			class="uikit-accordion__title uikit-accordion--close js-uikit-accordion"
-			aria-controls="acc6"
-			aria-expanded="false"
-			aria-selected="false"
-			role="tab"
-			onclick="return UIKIT.accordion.Toggle( this )">
-				Accordion title
-		</legend>
-
-		<div class="uikit-accordion__body uikit-accordion--close" id="acc6" aria-hidden="true">
-			<div class="uikit-accordion__body-wrapper">
-
-				Here is some accordion content
-
-			</div>
-		</div>
-	</details>
+	</div>
 
 
 	<script type="text/javascript" src="script.js"></script>
