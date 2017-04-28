@@ -17,7 +17,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-accordion {
 	display: block;
-	border: $uikit-borderize;
+	border: 0 none;
 	font-family: $uikit-font-system;
 	color: $uikit-colour-Text;
 	margin-bottom: uikit-space( 1 );
@@ -49,6 +49,7 @@
 	background-color: $uikit-colour-Background;
 	position: relative;
 	cursor: pointer;
+	border: $uikit-borderize;
 
 	@include uikit-focus();
 
@@ -86,6 +87,8 @@
 
 .uikit-accordion__body  {
 	overflow: hidden;
+	border: $uikit-borderize;
+	border-top: 0 none;
 
 	// only listen to the state classes if js is enabled
 	.js & {
@@ -101,5 +104,4 @@
 
 .uikit-accordion__body-wrapper {
 	padding: uikit-space( 0.75 );
-	border-top: $uikit-borderize;
 }
