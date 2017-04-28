@@ -549,18 +549,26 @@ HELPER.generate = (() => {
 				for( let module of allModules ) {
 					let tree = Treeify.asTree( GetDepTree(`@gov.au/${ module }`) );
 
+					list += `<details>\n`;
+					list += `	<summary>@gov.au/${ module }</summary>\n`;
+					list += `	<br><code>npm install @gov.au/${ module }</code>\n`;
+					list += `	<br>See the <a href="${ HELPER.URL }/packages/${ module }/tests/site/">visual test file for ${ module }</a><br><br>\n`;
+
 					if( tree === '' ) {
-						tree = '.\n';
+						list += `	<i>No dependencies</i>\n\n----------\n`;
+					}
+					else {
+						list += `	Dependencies:\n	<br>\n\n`;
+						list += `\`\`\`shell\n${ tree }\`\`\`\n----------\n`;
 					}
 
-					list += `- [${ module }](${ HELPER.URL }/packages/${ module }/tests/site/)\n`;
-					list += `\`\`\`\n${ tree }\`\`\`\n\n`;
+					list += `</details>\n\n`;
 				}
 			}
 
 			const pkgPath = Path.normalize(`${ __dirname }/../README.md`);
 			let readme = Fs.readFileSync( pkgPath, `utf-8`);
-			readme = readme.replace(/## Modules\n\n[\s\S]*?back to top]/, `## Modules\n\n${ list }\n\n**[⬆ back to top]`);
+			readme = readme.replace(/## Modules\n\n[\s\S]*?back to top]/, `## Modules\n\n${ list }<br>\n\n**[⬆ back to top]`);
 			Fs.writeFileSync( pkgPath, readme, `utf-8` );
 
 			HELPER.log.success(`Injected modules into main readme file`);
@@ -672,10 +680,6 @@ HELPER.test = (() => {
 
 					for( const module of Object.keys( packagesPKG.peerDependencies ) ) {
 						let version = packagesPKG.peerDependencies[ module ];
-
-						if( version.startsWith('^') ) {
-							version = version.substring( 1 );
-						}
 
 						dependencies.push({
 							name: module,

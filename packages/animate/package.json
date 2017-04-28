@@ -12,7 +12,9 @@
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
-		"design system"
+		"design system",
+		"animation",
+		"JavaScript"
 	],
 	"scripts": {
 		"postinstall": "pancake",

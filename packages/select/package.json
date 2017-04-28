@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/callout",
-	"version": "0.1.1",
-	"description": "Use callout to notify and alert users of important snippets of information.",
+	"name": "@gov.au/select",
+	"version": "0.1.0",
+	"description": "The form select element for multiple options",
 	"keywords": [
 		"uikit",
 		"pancake",
@@ -13,19 +13,14 @@
 		"Commonwealth of Australia",
 		"design guide",
 		"design system",
-		"callout",
-		"information",
-		"calendar event",
-		"date event"
+		"select",
+		"select input"
 	],
 	"scripts": {
 		"postinstall": "pancake",
 
-		"test:a11y": "node ../../scripts/a11y.js",
-		"test:deps": "node ../../scripts/helper.js test",
-		"test": "npm run test:a11y && npm run test:deps",
-
-		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
+		"test": "node ../../scripts/helper.js test && node ../../scripts/a11y.js",
+		"prepublish": "npm run test && node ../../scripts/helper.js precompile publish",
 		"build": "node ../../scripts/helper.js precompile compile",
 		"watch:js": "npm run build && onchange 'src/js/*.js' -- npm run build",
 		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/site/*.scss' -- npm run build",
@@ -85,9 +80,9 @@
 			"url": "https://dominik-wilkowski.com/"
 		},
 		{
-			"name": "Simon Pascal Klein",
-			"email": "klepas@klepas.org",
-			"url": "http://klepas.org/"
+			"name": "Simon Schwartz",
+			"email": "simon.schwartz0@gmail.com",
+			"url": "https://simonschwartz.github.io/"
 		}
 	],
 	"license": "MIT"
