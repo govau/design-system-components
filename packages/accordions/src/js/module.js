@@ -98,7 +98,7 @@ var UIKIT = UIKIT || {};
 			element.classList.add( className );
 		}
 		else {
-			element.className = element.className + " " + newClass;
+			element.className = element.className + " " + className;
 		}
 	}
 
@@ -190,12 +190,23 @@ var UIKIT = UIKIT || {};
 			var targetId = element.getAttribute('aria-controls');
 			var target = document.getElementById( targetId );
 
+			// let’s find out if this accordion is still closed
+			var height = 0;
+			if( typeof getComputedStyle !== 'undefined' ) {
+				height = window.getComputedStyle( target ).height;
+			}
+			else {
+				height = target.currentStyle.height;
+			}
+
+			if( parseInt( height ) === 0 ) {
+				target.style.height = '0px';
+			}
+
 			target.style.display = '';
 			toggleClasses( target, 'opening' );
 			toggleClasses( element, 'opening' );
 			setAriaRoles( element, target, 'opening' );
-
-			target.style.height = 0;
 
 			(function( target, speed, element ) {
 				UIKIT.animate.Run({

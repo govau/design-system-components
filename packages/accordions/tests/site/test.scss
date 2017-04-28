@@ -25,11 +25,11 @@
 
 .split {
 	@include uikit-media( sm ) {
-		width: 49.5%;
-		float: left;
+		width: 49%;
+		float: right;
 
 		&:first-child {
-			padding-right: 0.5%;
+			float: left;
 		}
 	}
 }

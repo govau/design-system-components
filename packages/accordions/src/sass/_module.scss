@@ -46,7 +46,7 @@
 	box-sizing: border-box;
 	font-size: 20px;
 	font-weight: bold;
-	padding: uikit-space( 0.75 );
+	padding: uikit-space( 0.75 ) uikit-space( 2.5 ) uikit-space( 0.75 ) uikit-space( 0.75 );
 	background-color: $uikit-colour-Background;
 	position: relative;
 	cursor: pointer;
@@ -92,11 +92,12 @@
 	.ie8 &,
 	.lt-ie8 & {
 		&:after {
-			content: ' ▲ ';
+			content: ' ▼ ';
 			margin-top: uikit-space( 0.75 );
 		}
-		&.uikit-accordion--close:after {
-			content: ' ▼ ';
+
+		&.uikit-accordion--open:after {
+			content: ' ▲ ';
 		}
 	}
 
