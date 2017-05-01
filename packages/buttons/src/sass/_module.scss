@@ -30,7 +30,7 @@
 	display: inline-block
 	cursor: pointer;
 	transition: background 0.1s ease;
-	
+
 	&:focus,
 	&:hover {
 		background-color: $uikit-colour-Primary--30;
