@@ -17,6 +17,7 @@
 // buttons
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .uikit-btn {
+	display: inline-block;
 	-webkit-appearance: none;
 	border: none;
 	background: none;
@@ -24,10 +25,10 @@
 	font-family: $uikit-font-system;
 	font-weight: bold;
 	color: #fff;
+	text-decoration: none;
 	border-radius: $uikit-border-radius;
 	background-color: $uikit-colour-Primary;
-	height: 48px;
-	padding: 0 1.2em;
+	padding: uikit-space( 0.5 ) uikit-space( 0.75 );
 	cursor: pointer;
 	transition: background 0.1s ease;
 
@@ -85,6 +86,7 @@
 	display: block;
 	width: 100%;
 	box-sizing: border-box;
+	text-align: center;
 
 	& + .uikit-btn--block {
 		margin-top: uikit-space( 0.25 );
