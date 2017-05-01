@@ -26,10 +26,11 @@
 	color: #fff;
 	border-radius: $uikit-border-radius;
 	background-color: $uikit-colour-Primary;
-	height: 48px;
-	padding: 0 1.2em;
+	padding: 0.6em 1.2em;
+	display: inline-block;
 	cursor: pointer;
 	transition: background 0.1s ease;
+	text-decoration: none;
 
 	&:focus,
 	&:hover {
