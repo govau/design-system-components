@@ -116,8 +116,8 @@ var UIKIT = UIKIT || {};
 	accordion.Toggle = function( elements, speed ) {
 
 		// stop event propagation
-		window.event.cancelBubble = true;
 		try {
+			window.event.cancelBubble = true;
 			event.stopPropagation();
 		}
 		catch( error ) {}
@@ -174,8 +174,8 @@ var UIKIT = UIKIT || {};
 	accordion.Open = function( elements, speed ) {
 
 		// stop event propagation
-		window.event.cancelBubble = true;
 		try {
+			window.event.cancelBubble = true;
 			event.stopPropagation();
 		}
 		catch( error ) {}
@@ -234,8 +234,8 @@ var UIKIT = UIKIT || {};
 	accordion.Close = function( elements, speed ) {
 
 		// stop event propagation
-		window.event.cancelBubble = true;
 		try {
+			window.event.cancelBubble = true;
 			event.stopPropagation();
 		}
 		catch( error ) {}
