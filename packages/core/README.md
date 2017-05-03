@@ -70,6 +70,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/core/tests/si
 
 ## Release History
 
+* v0.1.1 - Fixed uikit-svguri bug
 * v0.1.0 - 💥 Initial version
 
 

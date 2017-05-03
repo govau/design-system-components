@@ -6,10 +6,16 @@
 
 ## Versions
 
+* [v0.1.1 - Fixed uikit-svguri bug](v011)
 * [v0.1.0 - 💥 Initial version](v010)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## v0.1.1
+
+- Fixed uikit-svguri bug where new lines would cause webpack to break CSS.
 
 
 ## v0.1.0
