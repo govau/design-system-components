@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/core",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "The core module all UI-Kit modules depend on",
 	"keywords": [
 		"uikit",

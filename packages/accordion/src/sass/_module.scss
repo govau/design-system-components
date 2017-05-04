@@ -77,10 +77,10 @@
 		bottom: 0;
 		right: uikit-space( 1 );
 		width: uikit-space( 0.75 );
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Primary }" d="M64 0l64 64-16 16-64-64"/>
-				<path fill="#{ $uikit-colour-Primary }" d="M64 0l16 16-64 64L0 64"/>
-			</svg>');
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+			'	<path fill="#{ $uikit-colour-Primary }" d="M64 0l64 64-16 16-64-64"/>' +
+			'	<path fill="#{ $uikit-colour-Primary }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
 		background-repeat: no-repeat;
 		background-position: center;
 		z-index: 0;

@@ -547,7 +547,6 @@ $uikit-border-radius: 3px !default;
 		$chunk: uikit-replace( $chunk,'	', " " );
 		$chunk: uikit-replace( $chunk,"
 ", " " );
-		$chunk: uikit-replace( $chunk,"\n", " " );
 		$chunk: uikit-replace( $chunk,"\a", " " );
 		$chunk: uikit-replace( $chunk,'  ', " " );
 		$chunk: uikit-replace( $chunk,'%', '%25' );
