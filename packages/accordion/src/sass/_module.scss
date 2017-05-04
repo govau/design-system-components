@@ -51,13 +51,11 @@
 	background-color: $uikit-colour-Background;
 	position: relative;
 	cursor: pointer;
-	border-bottom: 0 none;
-
-	@include uikit-focus();
+	border: 2px solid transparent;
 
 	&:focus {
-		outline-offset: 2px;
-		box-shadow: inset 0px 0px 0px 1px $uikit-colour-Text;
+		outline: none;
+		border: 2px solid $uikit-colour-Text;
 	}
 
 	&:focus,
