@@ -176,6 +176,7 @@ const HELPER = (() => { // constructor factory
 		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/../.templates`),
 		URL: `http://uikit.apps.staging.digital.gov.au`,
+		GITHUB: `https://github.com/govau/uikit/`,
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -551,8 +552,9 @@ HELPER.generate = (() => {
 
 					list += `<details>\n`;
 					list += `	<summary>@gov.au/${ module }</summary>\n`;
-					list += `	<br><code>npm install @gov.au/${ module }</code>\n`;
-					list += `	<br>See the <a href="${ HELPER.URL }/packages/${ module }/tests/site/">visual test file for ${ module }</a><br><br>\n`;
+					list += `	<br><code>yarn add @gov.au/${ module }</code> or <code>npm install @gov.au/${ module }</code><br>\n`;
+					list += `	<br>See the <a href="${ HELPER.URL }/packages/${ module }/tests/site/">visual test file for ${ module }</a>\n`;
+					list += `	<br>See the <a href="${ HELPER.GITHUB }blob/master/packages/${ module }/README.md">readme file for ${ module }</a><br><br>\n`;
 
 					if( tree === '' ) {
 						list += `	<i>No dependencies</i>\n\n----------\n`;

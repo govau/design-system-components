@@ -43,6 +43,7 @@
 	color: $uikit-colour-Text;
 	text-decoration: none;
 	width: 100%;
+	line-height: 1.3;
 	box-sizing: border-box;
 	font-size: 20px;
 	font-weight: bold;
@@ -50,12 +51,11 @@
 	background-color: $uikit-colour-Background;
 	position: relative;
 	cursor: pointer;
-	border-bottom: 0 none;
-
-	@include uikit-focus();
+	border: 2px solid transparent;
 
 	&:focus {
-		outline-offset: 2px;
+		outline: none;
+		border: 2px solid $uikit-colour-Text;
 	}
 
 	&:focus,
@@ -75,10 +75,10 @@
 		bottom: 0;
 		right: uikit-space( 1 );
 		width: uikit-space( 0.75 );
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Primary }" d="M64 0l64 64-16 16-64-64"/>
-				<path fill="#{ $uikit-colour-Primary }" d="M64 0l16 16-64 64L0 64"/>
-			</svg>');
+		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+			'	<path fill="#{ $uikit-colour-Primary }" d="M64 0l64 64-16 16-64-64"/>' +
+			'	<path fill="#{ $uikit-colour-Primary }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
 		background-repeat: no-repeat;
 		background-position: center;
 		z-index: 0;

@@ -59,8 +59,8 @@
 
 			<h3>Accordion open by default</h3>
 
-			<details class="uikit-accordion" open>
-				<summary
+			<section class="uikit-accordion">
+				<a href="#accordion-default"
 					class="uikit-accordion__title js-uikit-accordion"
 					aria-controls="accordion-default"
 					aria-expanded="true"
@@ -68,7 +68,7 @@
 					role="tab"
 					onclick="return UIKIT.accordion.Toggle( this )">
 						Accordion title
-				</summary>
+				</a>
 
 				<div class="uikit-accordion__body" id="accordion-default" aria-hidden="false">
 					<div class="uikit-accordion__body-wrapper">
@@ -77,22 +77,23 @@
 
 					</div>
 				</div>
-			</details>
+			</section>
 
 
 			<hr>
 			<h3>Accordion closed by default</h3>
 
-			<details class="uikit-accordion" open>
-				<summary
+			<section class="uikit-accordion">
+				<a href="#accordion-closed"
 					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
 					aria-controls="accordion-closed"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
+					tabindex="0"
 					onclick="return UIKIT.accordion.Toggle( this )">
 						Accordion title
-				</summary>
+				</a>
 
 				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-closed" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
@@ -101,38 +102,40 @@
 
 					</div>
 				</div>
-			</details>
+			</section>
 
 
 			<hr>
 			<h3>Accordion group</h3>
 
-			<details class="uikit-accordion" open>
-				<summary
+			<section class="uikit-accordion">
+				<a href="#accordion-stacked1"
 					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
 					aria-controls="accordion-stacked1"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
+					tabindex="0"
 					onclick="return UIKIT.accordion.Toggle( this )">
 						First accordion title
-				</summary>
+				</a>
 
 				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked1" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
 
 						<p>Here is some accordion content</p>
 
-						<details class="uikit-accordion" open>
-							<summary
+						<section class="uikit-accordion">
+							<a href="#inner-accordion"
 								class="uikit-accordion__title uikit-accordion--open js-uikit-accordion"
 								aria-controls="inner-accordion"
 								aria-expanded="true"
 								aria-selected="true"
 								role="tab"
+								tabindex="0"
 								onclick="return UIKIT.accordion.Toggle( this )">
 									A nested accordion
-							</summary>
+							</a>
 
 							<div class="uikit-accordion__body uikit-accordion--open" id="inner-accordion" aria-hidden="false">
 								<div class="uikit-accordion__body-wrapper">
@@ -140,14 +143,14 @@
 								</div>
 							</div>
 
-						</details>
+						</section>
 
 						<p>Here is some accordion <a href="#url">content</a>.</p>
 
 					</div>
 
 				</div>
-			</details>
+			</section>
 
 			<section class="uikit-accordion">
 				<a href="#accordion-stacked2"
@@ -156,7 +159,7 @@
 					aria-expanded="true"
 					aria-selected="true"
 					onclick="return UIKIT.accordion.Toggle( this )">
-						Non-detail markup accordion
+						Another accordion
 				</a>
 
 				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked2" aria-hidden="false">
@@ -175,7 +178,7 @@
 					aria-expanded="true"
 					aria-selected="true"
 					onclick="return UIKIT.accordion.Toggle( this )">
-						Non-detail markup accordion with words and words and a very long title
+						Accordion with words and words and a very long title so that it can break into several
 				</a>
 
 				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked3" aria-hidden="false">
@@ -196,16 +199,17 @@
 
 			<h3>Accordion open by default</h3>
 
-			<details class="uikit-accordion" open>
-				<summary
+			<section class="uikit-accordion">
+				<a href="#accordion-default-grid"
 					class="uikit-accordion__title js-uikit-accordion"
 					aria-controls="accordion-default-grid"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
+					tabindex="0"
 					onclick="return UIKIT.accordion.Toggle( this )">
 						Accordion title
-				</summary>
+				</a>
 
 				<div class="uikit-accordion__body" id="accordion-default-grid" aria-hidden="false">
 					<div class="uikit-accordion__body-wrapper">
@@ -214,22 +218,23 @@
 
 					</div>
 				</div>
-			</details>
+			</section>
 
 
 			<hr>
 			<h3>Accordion closed by default</h3>
 
-			<details class="uikit-accordion" open>
-				<summary
+			<section class="uikit-accordion">
+				<a href="#accordion-closed-grid"
 					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
 					aria-controls="accordion-closed-grid"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
+					tabindex="0"
 					onclick="return UIKIT.accordion.Toggle( this )">
 						Accordion title
-				</summary>
+				</a>
 
 				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-closed-grid" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
@@ -238,38 +243,40 @@
 
 					</div>
 				</div>
-			</details>
+			</section>
 
 
 			<hr>
 			<h3>Accordion group</h3>
 
-			<details class="uikit-accordion" open>
-				<summary
+			<section class="uikit-accordion">
+				<a href="#accordion-stacked-grid1"
 					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
 					aria-controls="accordion-stacked-grid1"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
+					tabindex="0"
 					onclick="return UIKIT.accordion.Toggle( this )">
 						First accordion title
-				</summary>
+				</a>
 
 				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked-grid1" aria-hidden="true">
 					<div class="uikit-accordion__body-wrapper">
 
 						<p>Here is some accordion content</p>
 
-						<details class="uikit-accordion" open>
-							<summary
+						<section class="uikit-accordion">
+							<a href="#inner-accordion-grid"
 								class="uikit-accordion__title uikit-accordion--open js-uikit-accordion"
 								aria-controls="inner-accordion-grid"
 								aria-expanded="true"
 								aria-selected="true"
 								role="tab"
+								tabindex="0"
 								onclick="return UIKIT.accordion.Toggle( this )">
 									A nested accordion
-							</summary>
+							</a>
 
 							<div class="uikit-accordion__body uikit-accordion--open" id="inner-accordion-grid" aria-hidden="false">
 								<div class="uikit-accordion__body-wrapper">
@@ -277,14 +284,14 @@
 								</div>
 							</div>
 
-						</details>
+						</section>
 
 						<p>Here is some accordion <a href="#url">content</a>.</p>
 
 					</div>
 
 				</div>
-			</details>
+			</section>
 
 			<section class="uikit-accordion">
 				<a href="#accordion-stacked-grid2"
@@ -293,7 +300,7 @@
 					aria-expanded="true"
 					aria-selected="true"
 					onclick="return UIKIT.accordion.Toggle( this )">
-						Non-detail markup accordion
+						Another accordion
 				</a>
 
 				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked-grid2" aria-hidden="false">
@@ -312,7 +319,7 @@
 					aria-expanded="true"
 					aria-selected="true"
 					onclick="return UIKIT.accordion.Toggle( this )">
-						Non-detail markup accordion with words and words and a very long title
+						Accordion with words and words and a very long title so that it can break into several
 				</a>
 
 				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked-grid3" aria-hidden="false">
