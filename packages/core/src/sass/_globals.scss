@@ -464,7 +464,7 @@ $uikit-border-radius: 3px !default;
  */
 @function uikit-space( $number, $line-height: $uikit-leading ) {
 	@if type-of( $number ) != 'number' {
-		@error "I’m sorry Dave, I can't do that; the uikit-space function only takes a number!";
+		@error "I’m sorry Dave, I can’t do that; the uikit-space function only takes a number!";
 	}
 
 	@if type-of( $number ) == 'number' and not unitless( $number ) {
