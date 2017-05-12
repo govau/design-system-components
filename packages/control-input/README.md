@@ -71,6 +71,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/control-input
 
 ## Release History
 
+* v0.1.1 - Fixed webkit render bug
 * v0.1.0 - 💥 Initial version
 
 
