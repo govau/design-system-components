@@ -285,6 +285,7 @@ HELPER.precompile = (() => {
 
 				// 2. copy files
 				CopyFile('./src/js/module.js', './lib/js/module.js');
+				CopyFile('./src/js/jquery.js', './lib/js/jquery.js');
 
 				// 3.replace strings inside new files in lib
 				const searches = {
@@ -293,6 +294,7 @@ HELPER.precompile = (() => {
 				};
 
 				ReplaceFileContent( searches, './lib/js/module.js' );
+				ReplaceFileContent( searches, './lib/js/jquery.js' );
 			}
 		},
 
@@ -367,6 +369,37 @@ HELPER.compile = (() => {
 
 	/**
 	 * PRIVATE
+	 * Get js from all dependencies for a module and write to a file
+	 *
+	 * @param  {string} from - The file to read from
+	 * @param  {string} to   - The file to write to
+	 */
+	const getAllJs = ( from, to ) => {
+		if( Fs.existsSync( Path.normalize(`${ process.cwd() }${ from }`) ) ) {
+			const allDependencies = GetDepTree( HELPER.NAME );
+			const dependencies = [ ...new Set( flatten( allDependencies ) ) ];
+
+			let code = '';
+
+			dependencies.forEach( dependency => {
+				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
+					// 1. get all dependencies
+					code += `\n\n/* ${ dependency } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`), 'utf-8');
+				}
+			});
+
+			code += `\n\n/* ${ HELPER.NAME } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }${ from }`), 'utf-8');
+
+			// 2. write files
+			Fs.writeFileSync( `.${ to }`, code, `utf-8` );
+
+			HELPER.log.success(`Written script ${ Chalk.yellow( `.${ to }` ) }`);
+		}
+	};
+
+
+	/**
+	 * PRIVATE
 	 * Autoprefix a css file
 	 *
 	 * @param  {string} file - The file to be prefixed
@@ -406,33 +439,29 @@ HELPER.compile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		sass: () => {
+			let _hasJs = Fs.existsSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`) );
+
 			// 1. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
 
+			if( _hasJs ) {
+				Sassify('./tests/jquery/test.scss', './tests/jquery/style.css');
+			}
+
 			// 2. autoprefixer
 			Autoprefix('./tests/site/style.css');
+
+			if( _hasJs ) {
+				Autoprefix('./tests/jquery/style.css');
+			}
 		},
 
 		js: () => {
-			// 1. check if js exists
-			if( Fs.existsSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`) ) ) {
-				const allDependencies = GetDepTree( HELPER.NAME );
-				const dependencies = [ ...new Set( flatten( allDependencies ) ) ];
+			// get all js for module.js
+			getAllJs( '/lib/js/module.js', '/tests/site/script.js' );
 
-				let code = '';
-
-				dependencies.forEach( dependency => {
-					if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }/lib/js/module.js`) ) ) {
-						// 2. get all dependencies
-						code += `\n\n/* ${ dependency } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }/../${ dependency }/lib/js/module.js`), 'utf-8');
-					}
-				});
-
-				code += `\n\n/* ${ HELPER.NAME } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`), 'utf-8');
-
-				// 3. write files
-				Fs.writeFileSync( './tests/site/script.js', code, `utf-8` );
-			}
+			// get all js for jquery.js
+			getAllJs( '/lib/js/jquery.js', '/tests/jquery/jquery.js' );
 		},
 
 		img: () => {
