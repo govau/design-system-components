@@ -284,5 +284,23 @@
 	<script type="text/javascript" src="script.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.js"></script>
+	<script>
+		$(function() {
+			$('.js-uikit-accordion-wrapper').uikitAccordion().setA11y().addListeners();
+
+			$('.js-uikit-openall').on('click', function() {
+				UIKIT.accordion.Open( $('.js-uikit-accordion') )
+			});
+
+			$('.js-uikit-closeall').on('click', function() {
+				UIKIT.accordion.Close( $('.js-uikit-accordion') )
+			});
+
+			$('.js-uikit-toggleall').on('click', function() {
+				UIKIT.accordion.Toggle( $('.js-uikit-accordion') )
+			});
+
+		});
+	</script>
 </body>
 </html>

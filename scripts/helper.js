@@ -462,6 +462,7 @@ HELPER.compile = (() => {
 
 			// get all js for jquery.js
 			getAllJs( '/lib/js/jquery.js', '/tests/jquery/jquery.js' );
+			getAllJs( '/lib/js/module.js', '/tests/jquery/script.js' );
 		},
 
 		img: () => {
