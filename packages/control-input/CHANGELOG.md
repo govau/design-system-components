@@ -26,7 +26,7 @@
 
 ### v0.1.1
 
-- Fixed a Safari bug that made the labels break into another line. HastagSafariIsTheNewIE. ([#140](https://github.com/govau/uikit/issues/140))
+- Fixed a Safari bug that made the labels break into another line. HastagSafariIsTheNewIE. ([#184](https://github.com/govau/uikit/issues/184))
 
 
 ### v0.1.0
