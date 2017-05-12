@@ -21,9 +21,9 @@
 }
 
 .uikit-control-input__input {
-	display: inline-block;
-	line-height: $uikit-leading;
-	margin: 0 0px 0 7px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
 
 	&:hover {
 		cursor: pointer;
@@ -151,7 +151,7 @@
 	color: $uikit-colour-Text;
 	line-height: $uikit-leading;
 	font-size: 17px;
-	margin-left: 12px;
+	margin-left: 35px;
 
 	&:before,
 	&:after {
