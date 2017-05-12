@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.1 - Fixed webkit render bug](v011)
 * [v0.1.0 - 💥 Initial version](v010)
 
 
@@ -22,6 +23,11 @@
 
 
 ## Release History
+
+### v0.1.1
+
+- Fixed a Safari bug that made the labels break into another line. HastagSafariIsTheNewIE. ([#184](https://github.com/govau/uikit/issues/184))
+
 
 ### v0.1.0
 
