@@ -25,6 +25,8 @@ If you're requesting a new module, prefix the title with "new module:".
 
 If you're filing a bug, specific steps to reproduce are helpful. Please reference the module that has the bug, along with what you expected to see and what happened instead.
 
+**[⬆ back to top](#contents)**
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
