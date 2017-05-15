@@ -132,6 +132,10 @@ var UIKIT = UIKIT || {};
 			var targetId = element.getAttribute('aria-controls');
 			var target = document.getElementById( targetId );
 
+			if( target == null ) {
+				throw new Error('UIKIT.animate.Toggle cannot find the target to be toggled from inside aria-controls');
+			}
+
 			target.style.display = 'block';
 
 			(function( element ) {
