@@ -1,10 +1,11 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Accordion from '../../src/js/react.jsx'
+import Accordion from './react.jsx';
 
 ReactDOM.render(
 	<Accordion>
 	</Accordion>,
-	document.getElementById('root')
+
+	document.getElementById('root'),
 );

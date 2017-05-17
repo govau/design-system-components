@@ -58,7 +58,7 @@ const CopyTemp = ( source, destination, replacements ) => {
 	const files = Fs.readdirSync( source ); // create target folder
 
 	for( let file of files ) {
-		if( !file.startsWith('.') ) { // don’t copy hidden files
+		if( !file.startsWith('.') || file === '.babelrc' ) { // don’t copy hidden files
 			const current = Fs.lstatSync( Path.join( source, file ) );
 
 			if( current.isDirectory() ) {
@@ -286,6 +286,8 @@ HELPER.precompile = (() => {
 				// 2. copy files
 				CopyFile('./src/js/module.js', './lib/js/module.js');
 				CopyFile('./src/js/jquery.js', './lib/js/jquery.js');
+				CopyFile('./src/js/react.jsx', './lib/js/react.jsx');
+				CopyFile('./src/js/react.jsx', './tests/react/react.jsx');
 
 				// 3.replace strings inside new files in lib
 				const searches = {
@@ -295,6 +297,8 @@ HELPER.precompile = (() => {
 
 				ReplaceFileContent( searches, './lib/js/module.js' );
 				ReplaceFileContent( searches, './lib/js/jquery.js' );
+				ReplaceFileContent( searches, './lib/js/react.jsx' );
+				ReplaceFileContent( searches, './tests/react/react.jsx' );
 			}
 		},
 
@@ -552,7 +556,7 @@ HELPER.generate = (() => {
 			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					replacement += `<li><a href="packages/${ module }/tests/site/">${ module }</a></li>\n`;
+					replacement += `<li><a href="packages/${ module }/tests/">${ module }</a></li>\n`;
 				}
 			}
 
@@ -648,6 +652,16 @@ HELPER.scaffolding = (() => {
 				const destination = Path.normalize(`${ __dirname }/../packages/${ answers.name }`);
 				const replacements = {
 					'[-replace-name-]': answers.name,
+					'[-replace-name-capital-]':
+						answers.name
+							.split('')
+							.reduce(
+								( lastCharacter, thisCharacter, i ) => lastCharacter +
+									( i === 0 ?
+										thisCharacter.toUpperCase() :
+										thisCharacter
+									), ''
+							),
 					'[-replace-description-]': answers.description,
 					'[-replace-URL-]': `${ HELPER.URL }/packages/${ answers.name }/tests/site/`,
 					'[-replace-version-]': '0.1.0',

@@ -22,14 +22,20 @@
 
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:deps": "node ../../scripts/helper.js test",
-		"test": "npm run test:a11y && npm run test:deps",
+		"test": "npm-run-all --parallel test:*",
 
 		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
-		"build": "node ../../scripts/helper.js precompile compile",
-		"watch:js": "npm run build && onchange 'src/js/*.js' -- npm run build",
-		"watch:sass": "npm run build && onchange 'src/sass/*.scss' 'tests/**/*.scss' -- npm run build",
+
+		"build:js": "node ../../scripts/helper.js precompile compile",
+		"build:react": "cd tests/react/ && webpack",
+		"build": "npm-run-all --parallel build:*",
+
 		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
-		"watch": "npm-run-all --parallel serve watch:*"
+
+		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
+		"watch:jsx": "onchange 'src/js/*.jsx' 'tests/react/index.jsx' -- npm run build",
+		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
+		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},
 	"pancake": {
 		"pancake-module": {

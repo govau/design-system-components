@@ -7,15 +7,15 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from "react"
+import React from 'react';
 
 const Accordion = () => (
 	<div className="accordion">
-		<h1>I'm an accordion</h1>
+		<h1>I&rsquo;m an accordion</h1>
 	</div>
-)
+);
 
-export default Accordion
+export default Accordion;
 
 // import "accodrdion.scss"
 //

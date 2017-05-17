@@ -1,7 +1,7 @@
 module.exports = {
-	entry: './tests/react/index.jsx',
+	entry: './index.jsx',
 	output: {
-		filename: './tests/react/bundle.js'
+		filename: './bundle.js'
 	},
 	module: {
 		rules: [
