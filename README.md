@@ -81,7 +81,7 @@ We use the below checklist to ensure new modules or updates to existing modules 
 
 #### Js
 - [x] `var UIKIT = UIKIT || {};` in top?
-- [x] Each modul has it's own name-space prefixed with `UIKIT` e.g.: `UIKIT.modulename.function1`, `UIKIT.modulename.function2`
+- [x] Each module has it's own name-space prefixed with `UIKIT` e.g.: `UIKIT.modulename.function1`, `UIKIT.modulename.function2`
 - [x] Keep public API small, use private functions where you can
 - [x] Export out private function for tests only `if( typeof module !== 'undefined' )`
 - [x] Export entire module in the end: `if( typeof module !== 'undefined' ) { module.exports = UIKIT; }` so react can use it.
