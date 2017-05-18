@@ -278,28 +278,33 @@ HELPER.precompile = (() => {
 		},
 
 		js: () => {
-			if( Fs.existsSync( `${ process.cwd() }/src/js/module.js` ) ) {
+			const _hasJS = Fs.existsSync( `${ process.cwd() }/src/js/module.js` );
 
-				// 1. create path
-				CreateDir('./lib/js/');
+			// 1. create path
+			CreateDir('./lib/js/');
 
-				// 2. copy files
+			// 2. copy files
+			if( _hasJS ) {
 				CopyFile('./src/js/module.js', './lib/js/module.js');
 				CopyFile('./src/js/jquery.js', './lib/js/jquery.js');
-				CopyFile('./src/js/react.jsx', './lib/js/react.jsx');
-				CopyFile('./src/js/react.jsx', './tests/react/react.jsx');
+			}
 
-				// 3.replace strings inside new files in lib
-				const searches = {
-					'[replace-name]': HELPER.NAME,
-					'[replace-version]': HELPER.VERSION,
-				};
+			CopyFile('./src/js/react.jsx', './lib/js/react.jsx');
+			CopyFile('./src/js/react.jsx', './tests/react/react.jsx');
 
+			// 3.replace strings inside new files in lib
+			const searches = {
+				'[replace-name]': HELPER.NAME,
+				'[replace-version]': HELPER.VERSION,
+			};
+
+			if( _hasJS ) {
 				ReplaceFileContent( searches, './lib/js/module.js' );
 				ReplaceFileContent( searches, './lib/js/jquery.js' );
-				ReplaceFileContent( searches, './lib/js/react.jsx' );
-				ReplaceFileContent( searches, './tests/react/react.jsx' );
 			}
+
+			ReplaceFileContent( searches, './lib/js/react.jsx' );
+			ReplaceFileContent( searches, './tests/react/react.jsx' );
 		},
 
 		img: () => {

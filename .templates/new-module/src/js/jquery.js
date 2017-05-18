@@ -12,6 +12,5 @@ $.fn.uikit[-replace-name-capital-] = function() {
 	var $elements = this;
 
 	return {
-		},
 	};
 };
