@@ -289,8 +289,8 @@ HELPER.precompile = (() => {
 				CopyFile('./src/js/jquery.js', './lib/js/jquery.js');
 			}
 
-			CopyFile('./src/js/react.jsx', './lib/js/react.jsx');
-			CopyFile('./src/js/react.jsx', './tests/react/react.jsx');
+			CopyFile('./src/js/react.js', './lib/js/react.js');
+			CopyFile('./src/js/react.js', './tests/react/react.js');
 
 			// 3.replace strings inside new files in lib
 			const searches = {
@@ -303,8 +303,8 @@ HELPER.precompile = (() => {
 				ReplaceFileContent( searches, './lib/js/jquery.js' );
 			}
 
-			ReplaceFileContent( searches, './lib/js/react.jsx' );
-			ReplaceFileContent( searches, './tests/react/react.jsx' );
+			ReplaceFileContent( searches, './lib/js/react.js' );
+			ReplaceFileContent( searches, './tests/react/react.js' );
 		},
 
 		img: () => {

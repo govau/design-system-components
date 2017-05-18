@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import [-replace-name-capital-] from './react.jsx';
+import [-replace-name-capital-] from './react.js';
 
 ReactDOM.render(
 	<[-replace-name-capital-]>

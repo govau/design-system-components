@@ -1,12 +1,12 @@
 module.exports = {
-	entry: './index.jsx',
+	entry: './index.js',
 	output: {
 		filename: './bundle.js',
 	},
 	module: {
 		rules: [
 			{
-				test: /\.jsx$/,
+				test: /\.js$/,
 				exclude: /node_modules/,
 				use: 'babel-loader',
 			},

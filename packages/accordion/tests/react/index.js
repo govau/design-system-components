@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Accordion from './react.jsx';
+import Accordion from './react.js';
 
 ReactDOM.render(
 	<Accordion>

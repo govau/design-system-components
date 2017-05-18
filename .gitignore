@@ -12,7 +12,7 @@ validation-status.json
 packages/*/tests/*/script.js
 packages/*/tests/*/jquery.js
 packages/*/tests/*/bundle.js
-packages/*/tests/*/react.jsx
+packages/*/tests/*/react.js
 packages/*/lib/
 npm-debug.log
 lerna-debug.log
