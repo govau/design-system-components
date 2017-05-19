@@ -23,6 +23,7 @@ export const Callout = ({ description, children }) => (
 );
 
 Callout.propTypes = {
+	children: PropTypes.node.isRequired,
 	description: PropTypes.string.isRequired,
 };
 
