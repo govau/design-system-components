@@ -21,9 +21,9 @@ import classNames from 'classnames';
 const PageAlert = ( { variant = null, children } ) => {
 
 	let classes = classNames({
-    'uikit-page-alerts': true,
-    [`uikit-page-alerts--${variant}`]: variant,
-  });
+		'uikit-page-alerts': true,
+		[`uikit-page-alerts--${variant}`]: variant,
+	});
 
 	return (
 		<section className={ classes } role='alert'>
@@ -34,8 +34,8 @@ const PageAlert = ( { variant = null, children } ) => {
 };
 
 PageAlert.propTypes = {
-  children: PropTypes.node.isRequired,
-  variant: PropTypes.oneOf([null, 'info', 'success', 'warning', 'error']),
+	children: PropTypes.node.isRequired,
+	variant: PropTypes.oneOf([null, 'info', 'success', 'warning', 'error']),
 };
 
 export default PageAlert
