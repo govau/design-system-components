@@ -193,10 +193,9 @@ Accordion.propTypes = {
 	children: PropTypes.node.isRequired,
 };
 
-// Accordion.propTypes = {
-// 	children: PropTypes.node.isRequired,
-// 	description: PropTypes.string.isRequired,
-// };
+Accordion.defaultProps = {
+	open: 'true',
+};
 
 
 
