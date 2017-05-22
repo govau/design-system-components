@@ -13,11 +13,17 @@ import PropTypes from 'prop-types';
 
 let IDstart = 0;
 
-export class Accordion extends React.PureComponent {
+class Accordion extends React.PureComponent {
+
+	/**
+	 * Handle state if supplied
+	 */
 	componentWillReceiveProps( nextProps ) {
 		const open = nextProps.open;
 
-		if( open === 'true' ) {
+		console.log(this);
+
+		if( open ) {
 			UIKIT.accordion.Open( this.accordionHeader );
 		}
 		else {
@@ -25,21 +31,34 @@ export class Accordion extends React.PureComponent {
 		}
 	}
 
+
+	/**
+	 * Generate unique ID and our css class
+	 */
 	componentWillMount() {
 		IDstart ++;
+
 		this.ID = `accordion${ IDstart }`;
-		this.closeClass = this.props.open === 'false' ? 'uikit-accordion--closed' : '';
+		this.closeClass = this.props.open ? '' : 'uikit-accordion--closed';
 	}
 
+
+	/**
+	 * Toggle an accordion on click
+	 *
+	 * @param  {event object} event - The event object of the click
+	 */
 	toggle( event ) {
 		event.preventDefault();
 
-		if( typeof this.props.onOpen === 'function' ) {
-			this.props.onOpen();
-		}
-
-		UIKIT.accordion.Toggle( this.accordionHeader );
+		UIKIT.accordion.Toggle( this.accordionHeader, this.props.speed, {
+			onOpen: this.props.onOpen,
+			afterOpen: this.props.afterOpen,
+			onClose: this.props.onClose,
+			afterClose: this.props.afterClose,
+		});
 	}
+
 
 	render() {
 		return (
@@ -47,8 +66,8 @@ export class Accordion extends React.PureComponent {
 				<a href={`"#${ this.ID }"`}
 					className={`uikit-accordion__title js-uikit-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
-					aria-expanded={ this.props.open === 'false' ? 'false' : 'true' }
-					aria-selected={ this.props.open === 'false' ? 'false' : 'true' }
+					aria-expanded={ this.props.open ? 'true' : 'false' }
+					aria-selected={ this.props.open ? 'true' : 'false' }
 					role="tab"
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
 					onClick={ event => this.toggle( event ) }>
@@ -58,7 +77,7 @@ export class Accordion extends React.PureComponent {
 				<div
 					className={`uikit-accordion__body ${ this.closeClass }`}
 					id={ this.ID }
-					aria-hidden={ this.props.open === 'false' ? 'true' : 'false' }>
+					aria-hidden={ this.props.open ? 'false' : 'true' }>
 					<div className="uikit-accordion__body-wrapper">
 
 						{ this.props.children }
@@ -70,11 +89,22 @@ export class Accordion extends React.PureComponent {
 	}
 };
 
+
+/**
+ * PropTypes type checking
+ *
+ * @type {Object}
+ */
 Accordion.propTypes = {
 	children: PropTypes.node.isRequired,
 	header: PropTypes.string.isRequired,
+	open: PropTypes.bool,
+	speed: PropTypes.number,
 };
 
 Accordion.defaultProps = {
-	open: 'true',
+	open: true,
 };
+
+
+export default Accordion;

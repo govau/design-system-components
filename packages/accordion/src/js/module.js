@@ -111,9 +111,10 @@ var UIKIT = UIKIT || {};
 	 *
 	 * @param  {string}  elements  - The DOM node/s to toggle
 	 * @param  {integer} speed     - The speed in ms for the animation
+	 * @param  {object}  callbacks - An object of four optional callbacks: { onOpen, afterOpen, onClose, afterClose }
 	 *
 	 */
-	accordion.Toggle = function( elements, speed ) {
+	accordion.Toggle = function( elements, speed, callbacks ) {
 
 		// stop event propagation
 		try {
@@ -122,8 +123,14 @@ var UIKIT = UIKIT || {};
 		}
 		catch( error ) {}
 
+		// making sure we can iterate over just one DOM element
 		if( elements.length === undefined ) {
 			elements = [ elements ];
+		}
+
+		// check this once
+		if( typeof callbacks != 'object' ) {
+			callbacks = {};
 		}
 
 		for( var i = 0; i < elements.length; i++ ) {
@@ -146,6 +153,17 @@ var UIKIT = UIKIT || {};
 					prefunction: function( target, state ) {
 						if( state === 'opening' ) {
 							target.style.display = 'block';
+
+							// run when opening
+							if( typeof callbacks.onOpen === 'function' ) {
+								callbacks.onOpen();
+							}
+						}
+						else {
+							// run when closing
+							if( typeof callbacks.onClose === 'function' ) {
+								callbacks.onClose();
+							}
 						}
 
 						setAriaRoles( element, target, state );
@@ -154,6 +172,18 @@ var UIKIT = UIKIT || {};
 					postfunction: function( target, state ) {
 						if( state === 'closed' ) {
 							target.style.display = '';
+
+							// run after opening
+							if( typeof callbacks.afterOpen === 'function' ) {
+								callbacks.afterClose();
+							}
+						}
+						else {
+
+							// run after closing
+							if( typeof callbacks.afterClose === 'function' ) {
+								callbacks.afterOpen();
+							}
 						}
 
 						toggleClasses( target, state );
