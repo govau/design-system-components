@@ -21,8 +21,6 @@ class Accordion extends React.PureComponent {
 	componentWillReceiveProps( nextProps ) {
 		const open = nextProps.open;
 
-		console.log(this);
-
 		if( open ) {
 			UIKIT.accordion.Open( this.accordionHeader );
 		}

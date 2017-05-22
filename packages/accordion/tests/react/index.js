@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom';
 import Accordion from './react.js';
 
 
-class App extends React.Component {
+// To manage an accordion with state just wrap it with a state
+class AccodionWrapper extends React.Component {
 	// for an example on what a state change might look like we have to add a state
 	constructor() {
 		super();
 
 		this.state = {
-			accordion1: true,
-			accordion2: false,
+			accordionOpen: true,
 		};
 	}
 
@@ -20,8 +20,22 @@ class App extends React.Component {
 		this.setState({ [item]: !this.state[ item ] });
 	}
 
+	render() {
+		return (
+			<div>
+				<Accordion open={ this.state.accordionOpen } header="State controlled accordion open">
+					Some content of the accordion <a href="#url">here</a>
+				</Accordion>
 
-	// let’s render some accordions
+				<button type="button" onClick={ () => { this.changeAccordion('accordionOpen') } }>Toggle accordion via state</button>
+			</div>
+		);
+	}
+}
+
+
+// let’s render some accordions
+class App extends React.Component {
 	render() {
 		return (
 			<div>
@@ -68,18 +82,9 @@ class App extends React.Component {
 				<hr />
 				<h2>Accordions statefull</h2>
 
-				<Accordion open={ this.state.accordion1 } header="State controlled accordion 1 open">
-					Some content of the accordion <a href="#url">here</a>
-				</Accordion>
-
-				<Accordion open={ this.state.accordion2 } header="State controlled accordion 2 closed">
-					Some content of the accordion <a href="#url">here</a>
-				</Accordion>
-
-				<button type="button" onClick={ () => { this.changeAccordion('accordion1') } }>Toggle accordion 1 via state</button>
-				<button type="button" onClick={ () => { this.changeAccordion('accordion2') } }>Toggle accordion 2 via state</button>
+				<AccodionWrapper/>
 			</div>
-		)
+		);
 	}
 };
 
