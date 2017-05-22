@@ -60,7 +60,7 @@ class Accordion extends React.PureComponent {
 
 	render() {
 		return (
-			<section className="uikit-accordion">
+			<div className="uikit-accordion">
 				<a href={`"#${ this.ID }"`}
 					className={`uikit-accordion__title js-uikit-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
@@ -82,7 +82,7 @@ class Accordion extends React.PureComponent {
 
 					</div>
 				</div>
-			</section>
+			</div>
 		);
 	}
 };
