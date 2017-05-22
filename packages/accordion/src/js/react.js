@@ -14,6 +14,23 @@ import PropTypes from 'prop-types';
 let IDstart = 0;
 
 class Accordion extends React.PureComponent {
+	/**
+	 * Constructor
+	 *
+	 * @param  {object}  props  - The props object
+	 */
+	constructor( props ) {
+		super( props );
+
+		this.toggle = this.toggle.bind( this );
+
+		// Generate a unique ID and our css class
+		IDstart ++;
+
+		this.ID = `accordion${ IDstart }`;
+		this.closeClass = this.props.open ? '' : 'uikit-accordion--closed';
+	}
+
 
 	/**
 	 * Handle state if supplied
@@ -27,17 +44,6 @@ class Accordion extends React.PureComponent {
 		else {
 			UIKIT.accordion.Close( this.accordionHeader );
 		}
-	}
-
-
-	/**
-	 * Generate unique ID and our css class
-	 */
-	componentWillMount() {
-		IDstart ++;
-
-		this.ID = `accordion${ IDstart }`;
-		this.closeClass = this.props.open ? '' : 'uikit-accordion--closed';
 	}
 
 
@@ -61,14 +67,14 @@ class Accordion extends React.PureComponent {
 	render() {
 		return (
 			<div className="uikit-accordion">
-				<a href={`"#${ this.ID }"`}
+				<a href={`#${ this.ID }`}
 					className={`uikit-accordion__title js-uikit-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
 					aria-expanded={ this.props.open ? 'true' : 'false' }
 					aria-selected={ this.props.open ? 'true' : 'false' }
 					role="tab"
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
-					onClick={ event => this.toggle( event ) }>
+					onClick={ this.toggle }>
 						{ this.props.header }
 				</a>
 
@@ -89,7 +95,7 @@ class Accordion extends React.PureComponent {
 
 
 /**
- * PropTypes type checking
+ * propTypes definition
  *
  * @type {Object}
  */

@@ -36,9 +36,38 @@ class AccodionWrapper extends React.Component {
 
 // let’s render some accordions
 class App extends React.Component {
+	constructor( props ) {
+		super( props );
+
+		this.openAll = this.openAll.bind( this );
+		this.closeAll = this.closeAll.bind( this );
+		this.toggleAll = this.toggleAll.bind( this );
+	}
+
+
+	// you should manage this via state not via these vanilla functions!
+	openAll() {
+		UIKIT.accordion.Open( document.querySelectorAll('.js-uikit-accordion') );
+	}
+
+	closeAll() {
+		UIKIT.accordion.Close( document.querySelectorAll('.js-uikit-accordion') )
+	}
+
+	toggleAll() {
+		UIKIT.accordion.Toggle( document.querySelectorAll('.js-uikit-accordion') )
+	}
+
+
 	render() {
 		return (
 			<div>
+				<button onClick={ this.openAll }>Open all</button>
+				<button onClick={ this.closeAll }>Close all</button>
+				<button onClick={ this.toggleAll }>Toggle all</button>
+
+				<hr />
+
 				<h2>Default accordion</h2>
 
 				<Accordion header="Open and close me">
