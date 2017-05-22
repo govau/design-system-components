@@ -9,32 +9,76 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 
 /**
- * Page alert
+ * Page alert info
  *
- * @param  {string} options.variant  - The variation of the alert (optional) { null, 'info', 'success', 'warning', 'error' }
  * @param  {string} options.children - Anything inside the component
  */
-const PageAlert = ( { variant = null, children } ) => {
-
-	let classes = classNames({
-		'uikit-page-alerts': true,
-		[`uikit-page-alerts--${ variant }`]: variant,
-	});
-
+export const PageAlertInfo = ( { children } ) => {
 	return (
-		<section className={ classes } role='alert'>
+		<section className='uikit-page-alerts uikit-page-alerts--info' role='alert'>
 			{ children }
 		</section>
 	);
 };
 
-PageAlert.propTypes = {
+PageAlertInfo.propTypes = {
 	children: PropTypes.node.isRequired,
-	variant: PropTypes.oneOf([ null, 'info', 'success', 'warning', 'error' ]),
 };
 
-export default PageAlert
+
+/**
+ * Page alert warning
+ *
+ * @param  {string} options.children - Anything inside the component
+ */
+export const PageAlertWarning = ( { children } ) => {
+	return (
+		<section className='uikit-page-alerts uikit-page-alerts--warning' role='alert'>
+			{ children }
+		</section>
+	);
+};
+
+PageAlertWarning.propTypes = {
+	children: PropTypes.node.isRequired,
+};
+
+
+/**
+ * Page alert error
+ *
+ * @param  {string} options.children - Anything inside the component
+ */
+export const PageAlertError = ( { children } ) => {
+	return (
+		<section className='uikit-page-alerts uikit-page-alerts--error' role='alert'>
+			{ children }
+		</section>
+	);
+};
+
+PageAlertError.propTypes = {
+	children: PropTypes.node.isRequired,
+};
+
+
+/**
+ * Page alert success
+ *
+ * @param  {string} options.children - Anything inside the component
+ */
+export const PageAlertSuccess = ( { children } ) => {
+	return (
+		<section className='uikit-page-alerts uikit-page-alerts--success' role='alert'>
+			{ children }
+		</section>
+	);
+};
+
+PageAlertSuccess.propTypes = {
+	children: PropTypes.node.isRequired,
+};
+

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { Callout, CalloutCalendar } from './react.js';
 
+
 ReactDOM.render(
 	<div>
 		<h2>Simple callout</h2>
