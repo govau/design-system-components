@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { PageAlertInfo, PageAlertWarning, PageAlertError, PageAlertSuccess } from './react.js';
+import { PageAlertInfo, PageAlertWarning, PageAlertError, PageAlertSuccess } from './page-alerts.js';
 
 
 ReactDOM.render(

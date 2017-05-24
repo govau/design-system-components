@@ -46,7 +46,9 @@
 				"sass-versioning": true
 			},
 			"js": {
-				"path": "lib/js/module.js"
+				"path": "lib/js/module.js",
+				"jquery": "lib/js/jquery.js",
+				"react": "lib/js/react.js"
 			}
 		}
 	},

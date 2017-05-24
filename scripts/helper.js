@@ -279,18 +279,27 @@ HELPER.precompile = (() => {
 
 		js: () => {
 			const _hasJS = Fs.existsSync( `${ process.cwd() }/src/js/module.js` );
+			const _hasJquery = Fs.existsSync( `${ process.cwd() }/src/js/jquery.js` );
+			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/js/react.js` );
 
 			// 1. create path
-			CreateDir('./lib/js/');
+			if( _hasJS || _hasJquery || _hasReact ) {
+				CreateDir(`./lib/js/`);
+			}
 
 			// 2. copy files
 			if( _hasJS ) {
-				CopyFile('./src/js/module.js', './lib/js/module.js');
-				CopyFile('./src/js/jquery.js', './lib/js/jquery.js');
+				CopyFile(`./src/js/module.js`, `./lib/js/module.js`);
 			}
 
-			CopyFile('./src/js/react.js', './lib/js/react.js');
-			CopyFile('./src/js/react.js', './tests/react/react.js');
+			if( _hasJquery ) {
+				CopyFile(`./src/js/jquery.js`, `./lib/js/jquery.js`);
+			}
+
+			if( _hasReact ) {
+				CopyFile(`./src/js/react.js`, `./lib/js/react.js`);
+				CopyFile(`./src/js/react.js`, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js`);
+			}
 
 			// 3.replace strings inside new files in lib
 			const searches = {
@@ -299,12 +308,17 @@ HELPER.precompile = (() => {
 			};
 
 			if( _hasJS ) {
-				ReplaceFileContent( searches, './lib/js/module.js' );
-				ReplaceFileContent( searches, './lib/js/jquery.js' );
+				ReplaceFileContent( searches, `./lib/js/module.js` );
 			}
 
-			ReplaceFileContent( searches, './lib/js/react.js' );
-			ReplaceFileContent( searches, './tests/react/react.js' );
+			if( _hasJquery ) {
+				ReplaceFileContent( searches, `./lib/js/jquery.js` );
+			}
+
+			if( _hasReact ) {
+				ReplaceFileContent( searches, `./lib/js/react.js` );
+				ReplaceFileContent( searches, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js` );
+			}
 		},
 
 		img: () => {
@@ -409,6 +423,34 @@ HELPER.compile = (() => {
 
 	/**
 	 * PRIVATE
+	 * Get react from all dependencies for a module and copy them all over
+	 *
+	 * @param  {string} from - The file to read from
+	 * @param  {string} to   - The file to write to
+	 */
+	const getAllReact = ( from, to ) => {
+		if( Fs.existsSync( Path.normalize(`${ process.cwd() }${ from }`) ) ) {
+			const allDependencies = GetDepTree( HELPER.NAME );
+			const dependencies = [ ...new Set( flatten( allDependencies ) ) ];
+
+			let code = '';
+
+			dependencies.forEach( dependency => {
+				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
+					const fileLocation = Path.normalize(`${ to }/${ dependency }.js`);
+
+					CopyFile( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`), `.${ fileLocation }` );
+
+					HELPER.log.success(`Written file ${ Chalk.yellow( `.${ fileLocation }` ) }`);
+				}
+			});
+
+		}
+	};
+
+
+	/**
+	 * PRIVATE
 	 * Autoprefix a css file
 	 *
 	 * @param  {string} file - The file to be prefixed
@@ -472,6 +514,9 @@ HELPER.compile = (() => {
 			// get all js for jquery.js
 			getAllJs( '/lib/js/jquery.js', '/tests/jquery/jquery.js' );
 			getAllJs( '/lib/js/module.js', '/tests/jquery/script.js' );
+
+			// get all react scripts
+			getAllReact( '/lib/js/react.js', '/tests/react/' );
 		},
 
 		img: () => {

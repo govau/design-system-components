@@ -26,13 +26,11 @@
 		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
 
 		"build:js": "node ../../scripts/helper.js precompile compile",
-		"build:react": "cd tests/react/ && webpack",
 		"build": "npm-run-all --parallel build:*",
 
 		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 
 		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
-		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
 		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
 		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},

@@ -104,10 +104,14 @@ Accordion.propTypes = {
 	header: PropTypes.string.isRequired,
 	open: PropTypes.bool,
 	speed: PropTypes.number,
+	onOpen: PropTypes.func,
+	afterOpen: PropTypes.func,
+	onClose: PropTypes.func,
+	afterClose: PropTypes.func,
 };
 
 Accordion.defaultProps = {
-	open: true,
+	open: false,
 };
 
 

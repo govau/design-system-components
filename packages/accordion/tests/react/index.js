@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Accordion from './react.js';
+import Accordion from './accordion.js';
 
 
 // To manage an accordion with state just wrap it with a state
@@ -78,11 +78,11 @@ class App extends React.Component {
 				<hr />
 				<h2>Accordions with open/close props</h2>
 
-				<Accordion open={ false } header="Closed">
+				<Accordion header="Closed">
 					Some content of the accordion <a href="#url">here</a> :D
 				</Accordion>
 
-				<Accordion open={ true } header="Open">
+				<Accordion open header="Open">
 					Some content of the accordion <a href="#url">here</a> 8)
 				</Accordion>
 
@@ -98,7 +98,7 @@ class App extends React.Component {
 				<hr />
 				<h2>Accordions with custom functions</h2>
 
-				<Accordion open={ false } header="With custom function"
+				<Accordion header="With custom function"
 					onOpen={ () => { console.log('This function will run when the accordion opens'); } }
 					afterOpen={ () => { console.log('This function will run after the accordion has opened'); } }
 					onClose={ () => { console.log('This function will run when the accordion closes'); } }

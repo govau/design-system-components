@@ -10,6 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 /**
  * Default callout
  *
@@ -47,6 +48,8 @@ export const CalloutCalendar = ({ description, subline, datetime, time, name }) 
 
 CalloutCalendar.propTypes = {
 	description: PropTypes.string.isRequired,
+	subline: PropTypes.string,
 	datetime: PropTypes.string.isRequired,
 	time: PropTypes.string.isRequired,
+	name: PropTypes.string,
 };
