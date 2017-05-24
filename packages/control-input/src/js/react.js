@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
  */
 export const Checkbox = ({ label, name, value, checked, disabled, full, onChange }) => (
 	<label className={ `uikit-control-input${ full ? ' uikit-control-input--full' : '' }` }>
-		<input className="uikit-control-input__input" type="checkbox" name={ name } disabled={ disabled } checked={ checked } onChange={ onChange } />
+		<input className="uikit-control-input__input" type="checkbox" name={ name } disabled={ disabled } defaultChecked={ checked } onChange={ onChange } />
 		<span className="uikit-control-input__text">{ label }</span>
 	</label>
 );
@@ -57,7 +57,7 @@ Checkbox.defaultProps = {
  */
 export const Radio = ({ label, name, value, checked, disabled, full, onChange }) => (
 	<label className={ `uikit-control-input${ full ? ' uikit-control-input--full' : '' }` }>
-		<input className="uikit-control-input__input" type="radio" name={ name } disabled={ disabled } checked={ checked } onChange={ onChange } />
+		<input className="uikit-control-input__input" type="radio" name={ name } disabled={ disabled } defaultChecked={ checked } onChange={ onChange } />
 		<span className="uikit-control-input__text">{ label }</span>
 	</label>
 );
