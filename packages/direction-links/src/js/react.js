@@ -35,7 +35,7 @@ const DirectionLink = ({ href, text, direction }) => {
 DirectionLink.propTypes = {
 	href: PropTypes.string.isRequired,
 	text: PropTypes.string.isRequired,
-	direction: PropTypes.string,
+	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]),
 };
 
 DirectionLink.defaultProps = {
