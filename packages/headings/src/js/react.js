@@ -29,24 +29,11 @@ const Header = ({ level, size, text }) => {
 		'uikit-display-6',
 	];
 
-	if( level === '1' ) {
-		return ( <h1 className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</h1> );
-	}
-	if( level === '2' ) {
-		return ( <h2 className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</h2> );
-	}
-	if( level === '3' ) {
-		return ( <h3 className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</h3> );
-	}
-	if( level === '4' ) {
-		return ( <h4 className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</h4> );
-	}
-	if( level === '5' ) {
-		return ( <h5 className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</h5> );
-	}
-	if( level === '6' ) {
-		return ( <h6 className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</h6> );
-	}
+	const HeadingTag = `h${ level }`;
+
+	return (
+		<HeadingTag className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</HeadingTag>
+	);
 };
 
 Header.propTypes = {

@@ -12,6 +12,12 @@ ReactDOM.render(
 
 
 		<hr />
+		<h2>header default with different heading level</h2>
+
+		<Header title="Section title" level="2" />
+
+
+		<hr />
 		<h2>header default with subline</h2>
 
 		<Header title="Page title" theme="light" subline="Service sub-title that could be a little longer" />
