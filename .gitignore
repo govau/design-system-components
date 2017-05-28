@@ -10,7 +10,8 @@ validation-report.json
 validation-status.json
 *.css
 packages/*/tests/*/*.js
-!packages/*/tests/*/index.js
+!packages/*/tests/react/index.js
+!packages/*/tests/react/webpack.config.js
 packages/*/lib/
 npm-debug.log
 lerna-debug.log
