@@ -37,9 +37,16 @@
 	color: $uikit-colour-Text;
 	text-decoration: none;
 	line-height: 1.45;
+	-webkit-appearance: none;
+	background: transparent;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	border: none;
 	border-bottom: 1px solid $uikit-colour-Border-40;
 	border-left: 3px solid transparent;
 	transition: background-color 0.1s ease-in-out;
+	cursor: pointer;
 
 	&:hover,
 	&:focus {

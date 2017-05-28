@@ -19,11 +19,10 @@ import PropTypes from 'prop-types';
  */
 export const LinkListItem = ({ item }) => (
 	<li>
-		{ item.link === undefined ? (
-			item.text
-		) : (
-			<a href={ item.link }>{ item.text }</a>
-		)}
+		{ item.link === undefined
+			? ( item.text )
+			: ( <a href={ item.link }>{ item.text }</a> )
+		}
 	</li>
 );
 

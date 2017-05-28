@@ -18,9 +18,9 @@ import PropTypes from 'prop-types';
  */
 export const PageAlertInfo = ( { children } ) => {
 	return (
-		<section className='uikit-page-alerts uikit-page-alerts--info' role='alert'>
+		<div className='uikit-page-alerts uikit-page-alerts--info' role='alert'>
 			{ children }
-		</section>
+		</div>
 	);
 };
 
@@ -36,9 +36,9 @@ PageAlertInfo.propTypes = {
  */
 export const PageAlertWarning = ( { children } ) => {
 	return (
-		<section className='uikit-page-alerts uikit-page-alerts--warning' role='alert'>
+		<div className='uikit-page-alerts uikit-page-alerts--warning' role='alert'>
 			{ children }
-		</section>
+		</div>
 	);
 };
 
@@ -54,9 +54,9 @@ PageAlertWarning.propTypes = {
  */
 export const PageAlertError = ( { children } ) => {
 	return (
-		<section className='uikit-page-alerts uikit-page-alerts--error' role='alert'>
+		<div className='uikit-page-alerts uikit-page-alerts--error' role='alert'>
 			{ children }
-		</section>
+		</div>
 	);
 };
 
@@ -72,9 +72,9 @@ PageAlertError.propTypes = {
  */
 export const PageAlertSuccess = ( { children } ) => {
 	return (
-		<section className='uikit-page-alerts uikit-page-alerts--success' role='alert'>
+		<div className='uikit-page-alerts uikit-page-alerts--success' role='alert'>
 			{ children }
-		</section>
+		</div>
 	);
 };
 
