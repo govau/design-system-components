@@ -17,13 +17,18 @@ import PropTypes from 'prop-types';
  * @param  {string}   label    - The label
  * @param  {string}   name     - The name of the input element
  * @param  {string}   value    - The value of the input element
+ * @param  {string}   id       - The id of the input element, for additional labels
  * @param  {boolean}  checked  - The check option
  * @param  {boolean}  disabled - The disable option
  * @param  {boolean}  full     - The full variant option
  * @param  {function} onChange - A callback for onChange
  */
-export const Checkbox = ({ label, name, value, checked, disabled, full, onChange }) => {
+export const Checkbox = ({ label, name, value, id, checked, disabled, full, onChange }) => {
 	const attributeOptions = {};
+
+	if( typeof id !== 'undefined' ) {
+		attributeOptions.id = id;
+	}
 
 	if( typeof checked !== 'undefined' ) {
 		attributeOptions.checked = checked;
@@ -45,6 +50,7 @@ Checkbox.propTypes = {
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	value: PropTypes.string.isRequired,
+	id: PropTypes.string,
 	checked: PropTypes.bool,
 	disabled: PropTypes.bool,
 	full: PropTypes.bool,
