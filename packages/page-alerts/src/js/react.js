@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 /**
  * Page alert info
  *
- * @param  {string} options.children - Anything inside the component
+ * @param  {string} children - Anything inside the component
  */
 export const PageAlertInfo = ( { children } ) => {
 	return (
@@ -32,7 +32,7 @@ PageAlertInfo.propTypes = {
 /**
  * Page alert warning
  *
- * @param  {string} options.children - Anything inside the component
+ * @param  {string} children - Anything inside the component
  */
 export const PageAlertWarning = ( { children } ) => {
 	return (
@@ -50,7 +50,7 @@ PageAlertWarning.propTypes = {
 /**
  * Page alert error
  *
- * @param  {string} options.children - Anything inside the component
+ * @param  {string} children - Anything inside the component
  */
 export const PageAlertError = ( { children } ) => {
 	return (
@@ -68,7 +68,7 @@ PageAlertError.propTypes = {
 /**
  * Page alert success
  *
- * @param  {string} options.children - Anything inside the component
+ * @param  {string} children - Anything inside the component
  */
 export const PageAlertSuccess = ( { children } ) => {
 	return (

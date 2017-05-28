@@ -15,7 +15,7 @@ class AccodionWrapper extends React.Component {
 		};
 	}
 
-	// let’s change the state in the absence of bigger application code
+	// let’s change the state in the absence of more complex application code
 	changeAccordion( item ) {
 		this.setState({ [item]: !this.state[ item ] });
 	}

@@ -27,20 +27,20 @@ export const ProgressIndicatorItem = ({ item }) => {
 		done: 'Done',
 	};
 
-	const options = {};
+	const attributeOptions = {};
 
 	if( typeof item.onClick === 'function' ) {
-		options.onClick = item.onClick;
+		attributeOptions.onClick = item.onClick;
 	}
 
 	return (
 		<li>
 			{ item.link
-				? <a className={`progress-indicator__link progress-indicator--${ item.status }`} href={ item.link } { ...options }>
+				? <a className={`progress-indicator__link progress-indicator--${ item.status }`} href={ item.link } { ...attributeOptions }>
 						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
 						{ item.text }
 					</a>
-				: <button className={`progress-indicator__link progress-indicator--${ item.status }`} { ...options }>
+				: <button className={`progress-indicator__link progress-indicator--${ item.status }`} { ...attributeOptions }>
 						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
 						{ item.text }
 					</button>

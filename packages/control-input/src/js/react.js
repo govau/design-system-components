@@ -23,19 +23,19 @@ import PropTypes from 'prop-types';
  * @param  {function} onChange - A callback for onChange
  */
 export const Checkbox = ({ label, name, value, checked, disabled, full, onChange }) => {
-	const options = {};
+	const attributeOptions = {};
 
 	if( typeof checked !== 'undefined' ) {
-		options.checked = checked;
+		attributeOptions.checked = checked;
 	}
 
-	if( typeof onChange !== 'undefined' ) {
-		options.onChange = onChange;
+	if( typeof onChange === 'function' ) {
+		attributeOptions.onChange = onChange;
 	}
 
 	return (
 		<label className={ `uikit-control-input${ full ? ' uikit-control-input--full' : '' }` }>
-			<input className="uikit-control-input__input" type="checkbox" name={ name } disabled={ disabled } { ...options } />
+			<input className="uikit-control-input__input" type="checkbox" name={ name } disabled={ disabled } { ...attributeOptions } />
 			<span className="uikit-control-input__text">{ label }</span>
 		</label>
 	);
@@ -64,19 +64,19 @@ Checkbox.propTypes = {
  * @param  {function} onChange - A callback for onChange
  */
 export const Radio = ({ label, name, value, checked, disabled, full, onChange }) => {
-	const options = {};
+	const attributeOptions = {};
 
 	if( typeof checked !== 'undefined' ) {
-		options.checked = checked;
+		attributeOptions.checked = checked;
 	}
 
 	if( typeof onChange !== 'undefined' ) {
-		options.onChange = onChange;
+		attributeOptions.onChange = onChange;
 	}
 
 	return (
 		<label className={ `uikit-control-input${ full ? ' uikit-control-input--full' : '' }` }>
-			<input className="uikit-control-input__input" type="radio" name={ name } disabled={ disabled } { ...options } />
+			<input className="uikit-control-input__input" type="radio" name={ name } disabled={ disabled } { ...attributeOptions } />
 			<span className="uikit-control-input__text">{ label }</span>
 		</label>
 	);

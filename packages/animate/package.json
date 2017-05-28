@@ -43,9 +43,6 @@
 			"sass": {
 				"path": "lib/sass/_module.scss",
 				"sass-versioning": true
-			},
-			"js": {
-				"path": "lib/js/module.js"
 			}
 		}
 	},
