@@ -47,9 +47,13 @@
 			"sass": {
 				"path": "lib/sass/_module.scss",
 				"sass-versioning": true
+			},
+			"js": {
+				"react": "lib/js/react.js"
 			}
 		}
 	},
+	"main": "lib/js/react.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 

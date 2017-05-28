@@ -15,7 +15,7 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The select component
  *
- * @param  {string}   options  - The options for the select, format: { value: '', text: '' }
+ * @param  {array}    options  - The options for the select, format: { value: '', text: '' }
  * @param  {string}   id       - The ID for the select for the label
  * @param  {string}   name     - The name attribute
  * @param  {string}   value    - An optional pre-selected value, needs onChange
