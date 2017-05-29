@@ -52,10 +52,15 @@ const Select = ({ options, id, name, value, onChange, block }) => {
 };
 
 Select.propTypes = {
-	options: PropTypes.array.isRequired,
+	options: PropTypes.arrayOf(
+		PropTypes.shape({
+			value: PropTypes.string.isRequired,
+			text: PropTypes.string.isRequired,
+		})
+		).isRequired,
 	name: PropTypes.string,
 	value: PropTypes.string,
-	id: PropTypes.string,
+	id: PropTypes.string.isRequired,
 	onChange: PropTypes.func,
 	block: PropTypes.bool,
 };

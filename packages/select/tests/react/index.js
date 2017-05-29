@@ -23,7 +23,7 @@ class SelectWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<Select onChange={ event => this.changeSelect( event.target.value ) } value={ this.state.select } options={[
+				<Select id="test1" onChange={ event => this.changeSelect( event.target.value ) } value={ this.state.select } options={[
 					{
 						value: '',
 						text: 'Please select',
@@ -57,7 +57,7 @@ ReactDOM.render(
 	<div>
 		<h2>select default</h2>
 
-		<Select options={[
+		<Select id="test2" options={[
 			{
 				value: '',
 				text: 'Please select',
@@ -84,7 +84,7 @@ ReactDOM.render(
 		<hr />
 		<h2>select block</h2>
 
-		<Select block options={[
+		<Select id="test3" block options={[
 			{
 				value: '',
 				text: 'Please select',
@@ -111,7 +111,7 @@ ReactDOM.render(
 		<hr />
 		<h2>select with onchange</h2>
 
-		<Select onChange={ () => {
+		<Select id="test4" onChange={ () => {
 			console.log('This function is called when the select input has changed');
 		} } options={[
 			{

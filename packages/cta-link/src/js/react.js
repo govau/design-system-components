@@ -15,16 +15,29 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The cta link component
  *
- * @param  {string} href - The link target
- * @param  {string} text - The text of the CTA link
+ * @param  {string}   link    - The link target, if not supplied this will render as a button
+ * @param  {string}   text    - The text of the CTA link
+ * @param  {function} onClick - An optional function for onClick
  */
-const CTALink = ({ href, text }) => (
-	<a className="uikit-cta-link" href={ href }>{ text }</a>
-);
+const CTALink = ({ link, text, onClick }) => {
+	const attributeOptions = {};
+
+	if( typeof onClick !== 'undefined' ) {
+		attributeOptions.onClick = onClick;
+	}
+
+	if( link ) {
+		return( <a className="uikit-cta-link" href={ link } { ...attributeOptions }>{ text }</a> );
+	}
+	else {
+		return( <button className="uikit-cta-link" href={ link } { ...attributeOptions }>{ text }</button> );
+	}
+}
 
 CTALink.propTypes = {
-	href: PropTypes.string.isRequired,
+	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
+	onClick: PropTypes.func,
 };
 
 export default CTALink;

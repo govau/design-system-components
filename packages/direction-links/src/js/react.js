@@ -12,30 +12,45 @@ import PropTypes from 'prop-types';
 
 
 /**
+ * All direction options
+ *
+ * @type {Object}
+ */
+const directions = {
+	up: 'uikit-direction-link--up',
+	right: 'uikit-direction-link--right',
+	down: 'uikit-direction-link--down',
+	left: 'uikit-direction-link--left',
+};
+
+/**
  * DEFAULT
  * The direction-links component
  *
- * @param  {string} href      - The link target
+ * @param  {string} link      - The link target
  * @param  {string} text      - The text of the CTA link
- * @param  {string} direction - The direction for the arrow; can be either: top right bottom left
+ * @param  {string} direction - The direction for the arrow; can be either: up right down left
  */
-const DirectionLink = ({ href, text, direction }) => {
-	const directions = {
-		up: 'uikit-direction-link--up',
-		right: 'uikit-direction-link--right',
-		down: 'uikit-direction-link--down',
-		left: 'uikit-direction-link--left',
-	};
+const DirectionLink = ({ link, text, direction, onClick }) => {
+	const attributeOptions = {};
 
-	return (
-		<a className={ `uikit-direction-link ${ directions[ direction ] }` } href={ href }>{ text }</a>
-	);
+	if( typeof onClick !== 'undefined' ) {
+		attributeOptions.onClick = onClick;
+	}
+
+	if( link ) {
+		return (<a className={ `uikit-direction-link ${ directions[ direction ] }` } href={ link } { ...attributeOptions }>{ text }</a> );
+	}
+	else {
+		return (<button className={ `uikit-direction-link ${ directions[ direction ] }` } { ...attributeOptions }>{ text }</button> );
+	}
 };
 
 DirectionLink.propTypes = {
-	href: PropTypes.string.isRequired,
+	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]),
+	onClick: PropTypes.func,
 };
 
 DirectionLink.defaultProps = {

@@ -12,69 +12,52 @@ import PropTypes from 'prop-types';
 
 
 /**
+ * All different kind of button options
+ *
+ * @type {Object}
+ */
+const options = {
+	'primary': '',
+	'secondary': 'uikit-btn--secondary',
+	'tertiary': 'uikit-btn--tertiary',
+};
+
+/**
+ * DEFAULT
  * The primary button
  *
  * @param  {string}  text     - The text of the button
  * @param  {boolean} disabled - The disabled option
  * @param  {boolean} block    - The block option
  */
-export const ButtonPrimary = ({ text, type, disabled, block }) => (
-	<button type={ type } className={ `uikit-btn${ block ? ' uikit-btn--block' : '' }` } disabled={ disabled }>{ text }</button>
-);
+const Button = ({ text, as, type, id, disabled, block, onClick }) => {
+	const attributeOptions = {};
 
-ButtonPrimary.propTypes = {
+	if( typeof id !== 'undefined' ) {
+		attributeOptions.id = id;
+	}
+
+	if( typeof onClick === 'function' ) {
+		attributeOptions.onClick = onClick;
+	}
+
+	return (
+		<button type={ type } className={ `uikit-btn ${ options[ as ] }${ block ? ' uikit-btn--block' : '' }` } disabled={ disabled } { ...attributeOptions }>{ text }</button>
+	);
+};
+
+Button.propTypes = {
 	text: PropTypes.string.isRequired,
 	type: PropTypes.string,
+	id: PropTypes.string,
 	disabled: PropTypes.bool,
 	block: PropTypes.bool,
+	onClick: PropTypes.func,
 };
 
-ButtonPrimary.defaultProps = {
+Button.defaultProps = {
 	type: 'button',
+	as: 'primary',
 };
 
-
-/**
- * The secondary button
- *
- * @param  {string}  text     - The text of the button
- * @param  {boolean} disabled - The disabled option
- * @param  {boolean} block    - The block option
- */
-export const ButtonSecondary = ({ text, type, disabled, block }) => (
-	<button type={ type } className={ `uikit-btn uikit-btn--secondary${ block ? ' uikit-btn--block' : '' }` } disabled={ disabled }>{ text }</button>
-);
-
-ButtonSecondary.propTypes = {
-	text: PropTypes.string.isRequired,
-	type: PropTypes.string,
-	disabled: PropTypes.bool,
-	block: PropTypes.bool,
-};
-
-ButtonSecondary.defaultProps = {
-	type: 'button',
-};
-
-
-/**
- * The tertiary button
- *
- * @param  {string}  text     - The text of the button
- * @param  {boolean} disabled - The disabled option
- * @param  {boolean} block    - The block option
- */
-export const ButtonTertiary = ({ text, type, disabled, block }) => (
-	<button type={ type } className={ `uikit-btn uikit-btn--tertiary${ block ? ' uikit-btn--block' : '' }` } disabled={ disabled }>{ text }</button>
-);
-
-ButtonTertiary.propTypes = {
-	text: PropTypes.string.isRequired,
-	type: PropTypes.string,
-	disabled: PropTypes.bool,
-	block: PropTypes.bool,
-};
-
-ButtonTertiary.defaultProps = {
-	type: 'button',
-};
+export default Button;

@@ -1,40 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { PageAlertInfo, PageAlertWarning, PageAlertError, PageAlertSuccess } from './page-alerts.js';
+import PageAlert from './page-alerts.js';
 
 
 ReactDOM.render(
 	<div>
 		<h2><code>--info</code> variant</h2>
 
-		<PageAlertInfo>
+		<PageAlert as='info'>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-		</PageAlertInfo>
+		</PageAlert>
 
 
 		<hr />
 		<h2><code>--success</code> variant</h2>
 
-		<PageAlertSuccess>
+		<PageAlert as='success'>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-		</PageAlertSuccess>
+		</PageAlert>
 
 
 		<hr />
 		<h2><code>--warning</code> variant</h2>
 
-		<PageAlertWarning>
+		<PageAlert as='warning'>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-		</PageAlertWarning>
+		</PageAlert>
 
 
 		<hr />
 		<h2><code>--error</code> variant</h2>
 
-		<PageAlertError>
+		<PageAlert as='error'>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-		</PageAlertError>
+		</PageAlert>
 
 	</div>,
 

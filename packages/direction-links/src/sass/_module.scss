@@ -19,6 +19,25 @@
 .uikit-direction-link {
 	display: inline-block;
 	color: $uikit-colour-Text;
+	-webkit-appearance: none;
+	padding: 0;
+	line-height: $uikit-leading;
+	background: transparent;
+	text-align: left;
+	font-family: $uikit-font-system;
+	border: none;
+	border-bottom: solid 1px $uikit-colour-Primary;
+	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+	cursor: pointer;
+	font-size: 1em;
+
+	@include uikit-focus();
+
+	&:hover,
+	&:focus {
+		background-color: $uikit-colour-Link;
+		border-color: transparent;
+	}
 
 	&:after {
 		content: ' ';

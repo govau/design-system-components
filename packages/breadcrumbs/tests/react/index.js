@@ -9,15 +9,15 @@ ReactDOM.render(
 		<h2>breadcrumbs</h2>
 		<Breadcrumbs label="Breadcrumb for this page" items={[
 			{
-				link: '#link',
-				text: 'text1',
+				link: '#options',
+				text: 'Options',
 			},
 			{
-				link: '#link2',
-				text: 'text2',
+				link: '#help',
+				text: 'Help',
 			},
 			{
-				text: 'text3',
+				text: 'Sign Out',
 			},
 		]} />
 
@@ -26,15 +26,15 @@ ReactDOM.render(
 
 		<Breadcrumbs inverted label="Breadcrumb for the other page" items={[
 			{
-				link: '#link',
-				text: 'text1',
+				link: '#options',
+				text: 'Options2',
 			},
 			{
-				link: '#link2',
-				text: 'text2',
+				link: '#help',
+				text: 'Help2',
 			},
 			{
-				text: 'text3',
+				text: 'Sign Out2',
 			},
 		]} />
 	</div>,

@@ -28,7 +28,12 @@ export const InpageNavLinks = ({ title, sections }) => (
 
 InpageNavLinks.propTypes = {
 	title: PropTypes.string.isRequired,
-	sections: PropTypes.array.isRequired,
+	sections: PropTypes.arrayOf(
+		PropTypes.shape({
+			link: PropTypes.string.isRequired,
+			title: PropTypes.string.isRequired,
+		})
+		).isRequired,
 };
 
 InpageNavLinks.defaultProps = {

@@ -12,6 +12,16 @@ import PropTypes from 'prop-types';
 
 
 /**
+ * All theme options
+ *
+ * @type {Object}
+ */
+const themes = {
+	light: 'uikit-header--light',
+	dark: 'uikit-header--dark',
+};
+
+/**
  * DEFAULT
  * The header component
  *
@@ -22,25 +32,20 @@ import PropTypes from 'prop-types';
  * @param  {string}  theme   - Optional theme that can be either: light dark
  */
 const Header = ({ title, level, subline, hero, theme }) => {
-	const themes = {
-		light: 'uikit-header--light',
-		dark: 'uikit-header--dark',
-	};
-
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<header className={`uikit-header${ hero ? ' uikit-header--hero' : '' }${ theme ? ` ${ themes[ theme ] }` : '' }`} role="banner">
+		<div className={`uikit-header${ hero ? ' uikit-header--hero' : '' }${ theme ? ` ${ themes[ theme ] }` : '' }`} role="banner">
 			<HeadingTag className="uikit-header-heading">{ title }</HeadingTag>
 			{ subline && <span className="uikit-header-subline">{ subline }</span> }
-		</header>
+		</div>
 	);
 };
 
 Header.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.node.isRequired,
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
-	subline: PropTypes.string,
+	subline: PropTypes.node,
 	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	hero: PropTypes.bool,
 };

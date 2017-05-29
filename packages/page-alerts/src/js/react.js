@@ -12,73 +12,33 @@ import PropTypes from 'prop-types';
 
 
 /**
- * Page alert info
+ * All different kind of alerts
  *
- * @param  {string} children - Anything inside the component
+ * @type {Object}
  */
-export const PageAlertInfo = ( { children } ) => {
-	return (
-		<div className='uikit-page-alerts uikit-page-alerts--info' role='alert'>
-			{ children }
-		</div>
-	);
+const options = {
+	info: 'uikit-page-alerts--info',
+	warning: 'uikit-page-alerts--warning',
+	error: 'uikit-page-alerts--error',
+	success: 'uikit-page-alerts--success',
 };
-
-PageAlertInfo.propTypes = {
-	children: PropTypes.node.isRequired,
-};
-
 
 /**
- * Page alert warning
+ * DEFAULT
+ * Page alert
  *
+ * @param  {string} as       - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
  * @param  {string} children - Anything inside the component
  */
-export const PageAlertWarning = ( { children } ) => {
-	return (
-		<div className='uikit-page-alerts uikit-page-alerts--warning' role='alert'>
-			{ children }
-		</div>
-	);
-};
+const PageAlert = ({ as, children }) => (
+	<div className={`uikit-page-alerts ${ options[ as ] }`} role='alert'>
+		{ children }
+	</div>
+);
 
-PageAlertWarning.propTypes = {
+PageAlert.propTypes = {
+	as: PropTypes.oneOf([ 'info', 'warning', 'error', 'success' ]),
 	children: PropTypes.node.isRequired,
 };
 
-
-/**
- * Page alert error
- *
- * @param  {string} children - Anything inside the component
- */
-export const PageAlertError = ( { children } ) => {
-	return (
-		<div className='uikit-page-alerts uikit-page-alerts--error' role='alert'>
-			{ children }
-		</div>
-	);
-};
-
-PageAlertError.propTypes = {
-	children: PropTypes.node.isRequired,
-};
-
-
-/**
- * Page alert success
- *
- * @param  {string} children - Anything inside the component
- */
-export const PageAlertSuccess = ( { children } ) => {
-	return (
-		<div className='uikit-page-alerts uikit-page-alerts--success' role='alert'>
-			{ children }
-		</div>
-	);
-};
-
-PageAlertSuccess.propTypes = {
-	children: PropTypes.node.isRequired,
-};
-
+export default PageAlert;

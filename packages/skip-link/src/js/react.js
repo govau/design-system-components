@@ -24,7 +24,12 @@ const SkipLink = ({ links }) => (
 );
 
 SkipLink.propTypes = {
-	links: PropTypes.array.isRequired,
+	links: PropTypes.arrayOf(
+		PropTypes.shape({
+			url: PropTypes.string.isRequired,
+			text: PropTypes.string.isRequired,
+		})
+		).isRequired,
 };
 
 export default SkipLink;

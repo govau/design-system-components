@@ -51,7 +51,12 @@ const LinkList = ({ inverted, inline, items }) => (
 LinkList.propTypes = {
 	inverted: PropTypes.bool,
 	inline: PropTypes.bool,
-	items: PropTypes.array.isRequired,
+	items: PropTypes.arrayOf(
+		PropTypes.shape({
+			link: PropTypes.string,
+			text: PropTypes.string.isRequired,
+		})
+		).isRequired,
 };
 
 export default LinkList;

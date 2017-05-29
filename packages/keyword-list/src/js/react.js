@@ -51,7 +51,12 @@ const KeywordList = ({ repeatedName, items }) => (
 
 KeywordList.propTypes = {
 	repeatedName: PropTypes.string.isRequired,
-	items: PropTypes.array.isRequired,
+	items: PropTypes.arrayOf(
+		PropTypes.shape({
+			link: PropTypes.string,
+			name: PropTypes.string.isRequired,
+		})
+		).isRequired,
 };
 
 export default KeywordList;

@@ -1,33 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { ButtonPrimary, ButtonSecondary, ButtonTertiary } from './buttons.js';
+import Button from './buttons.js';
 
 
 ReactDOM.render(
 	<form>
 		<h2>primary button</h2>
-		<ButtonPrimary text="Continue" /> <ButtonPrimary text="Continue" disabled />
+		<Button text="Continue" /> <Button text="Continue" disabled />
 
 
 		<hr />
 		<h2>secondary button</h2>
-		<ButtonSecondary text="Save" /> <ButtonSecondary text="Save" disabled />
+		<Button as='secondary' text="Save" /> <Button as='secondary' text="Save" disabled />
 
 
 		<hr />
 		<h2>tertiary button</h2>
-		<ButtonTertiary text="Cancel" /> <ButtonTertiary text="Cancel" disabled />
+		<Button as='tertiary' text="Cancel" /> <Button as='tertiary' text="Cancel" disabled />
 
 
 		<hr />
 		<h2>buttons with block</h2>
-		<ButtonPrimary text="Continue" block /> <ButtonSecondary text="Save" block /> <ButtonTertiary text="Cancel" block />
+		<Button text="Continue" block /> <Button as='secondary' text="Save" block /> <Button as='tertiary' text="Cancel" block />
 
 
 		<hr />
 		<h2>buttons with different type</h2>
-		<ButtonPrimary type="submit" text="Submit" /> <ButtonPrimary type="button" text="Button" /> <ButtonPrimary type="reset" text="Reset" />
+		<Button type="submit" text="Submit" /> <Button type="button" text="Button" /> <Button type="reset" text="Reset" />
+
+
+		<hr />
+		<h2>buttons with onClick</h2>
+		<p>
+			<Button text="log it" onClick={ () => console.log('This function will be called when the primary button is clicked') } />
+		</p>
+		<p>
+			<Button as='secondary' text="log it" onClick={ () => console.log('This function will be called when the secondary button is clicked') } /><br />
+		</p>
+		<p>
+			<Button as='tertiary' text="log it" onClick={ () => console.log('This function will be called when the tertiary button is clicked') } />
+		</p>
 	</form>,
 
 	document.getElementById('root'),

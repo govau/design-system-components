@@ -23,26 +23,19 @@ import LinkList from './link-list.js';
  */
 const Breadcrumbs = ({ inverted, label, items }) => (
 	<nav className={ `uikit-breadcrumbs${ inverted ? ' uikit-breadcrumbs--inverted' : '' }` } aria-label={ label }>
-		<LinkList inverted={ inverted } inline items={[
-			{
-				link: '#options',
-				text: 'Options',
-			},
-			{
-				link: '#help',
-				text: 'Help',
-			},
-			{
-				text: 'Sign Out',
-			},
-		]} />
+		<LinkList inverted={ inverted } inline items={ items } />
 	</nav>
 );
 
 Breadcrumbs.propTypes = {
 	inverted: PropTypes.bool,
 	label: PropTypes.string.isRequired,
-	items: PropTypes.array.isRequired,
+	items: PropTypes.arrayOf(
+		PropTypes.shape({
+			link: PropTypes.string,
+			text: PropTypes.string.isRequired,
+		})
+		).isRequired,
 };
 
 export default Breadcrumbs;

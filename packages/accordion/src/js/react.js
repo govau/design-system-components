@@ -70,8 +70,8 @@ class Accordion extends React.PureComponent {
 				<a href={`#${ this.ID }`}
 					className={`uikit-accordion__title js-uikit-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
-					aria-expanded={ this.props.open ? 'true' : 'false' }
-					aria-selected={ this.props.open ? 'true' : 'false' }
+					aria-expanded={ this.props.open }
+					aria-selected={ this.props.open }
 					role="tab"
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
 					onClick={ this.toggle }>

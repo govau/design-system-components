@@ -69,8 +69,12 @@ Checkbox.propTypes = {
  * @param  {boolean}  full     - The full variant option
  * @param  {function} onChange - A callback for onChange
  */
-export const Radio = ({ label, name, value, checked, disabled, full, onChange }) => {
+export const Radio = ({ label, name, value, id, checked, disabled, full, onChange }) => {
 	const attributeOptions = {};
+
+	if( typeof id !== 'undefined' ) {
+		attributeOptions.id = id;
+	}
 
 	if( typeof checked !== 'undefined' ) {
 		attributeOptions.checked = checked;
@@ -92,6 +96,7 @@ Radio.propTypes = {
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	value: PropTypes.string.isRequired,
+	id: PropTypes.string,
 	checked: PropTypes.bool,
 	disabled: PropTypes.bool,
 	full: PropTypes.bool,

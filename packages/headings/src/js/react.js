@@ -12,6 +12,20 @@ import PropTypes from 'prop-types';
 
 
 /**
+ * All heading options
+ *
+ * @type {Array}
+ */
+const sizes = [
+	'uikit-display-1',
+	'uikit-display-2',
+	'uikit-display-3',
+	'uikit-display-4',
+	'uikit-display-5',
+	'uikit-display-6',
+];
+
+/**
  * DEFAULT
  * The headings component
  *
@@ -20,15 +34,6 @@ import PropTypes from 'prop-types';
  * @param  {string} text  - The heading text
  */
 const Header = ({ level, size, text }) => {
-	const sizes = [
-		'uikit-display-1',
-		'uikit-display-2',
-		'uikit-display-3',
-		'uikit-display-4',
-		'uikit-display-5',
-		'uikit-display-6',
-	];
-
 	const HeadingTag = `h${ level }`;
 
 	return (
@@ -39,7 +44,7 @@ const Header = ({ level, size, text }) => {
 Header.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 	size: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
-	text: PropTypes.string.isRequired,
+	text: PropTypes.node.isRequired,
 };
 
 export default Header;
