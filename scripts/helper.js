@@ -624,7 +624,7 @@ HELPER.generate = (() => {
 						jquery === '' && react === ''
 						? `packages/${ module }/tests/site/`
 						: `packages/${ module }/tests/`
-					}">${ module }</a>${ jquery }${ react }</li>\n`;
+					}">${ module } <small>v${ pkg.version }</small></a>${ jquery }${ react }</li>\n`;
 				}
 			}
 
