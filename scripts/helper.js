@@ -606,7 +606,25 @@ HELPER.generate = (() => {
 			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					replacement += `<li><a href="packages/${ module }/tests/">${ module }</a></li>\n`;
+					const pkg = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
+					let jquery = '';
+					let react = '';
+
+					if( pkg.pancake['pancake-module'].js ) {
+						if( pkg.pancake['pancake-module'].js.jquery ) {
+							jquery = ` <a class="module-list__attribute" href="packages/${ module }/tests/jquery/">jquery</a>`;
+						}
+
+						if( pkg.pancake['pancake-module'].js.react ) {
+							react = ` <a class="module-list__attribute" href="packages/${ module }/tests/react/">react</a>`;
+						}
+					}
+
+					replacement += `<li><a href="${
+						jquery === '' && react === ''
+						? `packages/${ module }/tests/site/`
+						: `packages/${ module }/tests/`
+					}">${ module }</a>${ jquery }${ react }</li>\n`;
 				}
 			}
 
