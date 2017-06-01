@@ -58,11 +58,11 @@
 		"@gov.au/pancake": "~1",
 
 		"@gov.au/core": "^0.1.0",
-		"@gov.au/link-list": "^0.1.0"
+		"@gov.au/link-list": "^0.2.0"
 	},
 	"peerDependencies": {
 		"@gov.au/core": "^0.1.0",
-		"@gov.au/link-list": "^0.1.0"
+		"@gov.au/link-list": "^0.2.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.1",
