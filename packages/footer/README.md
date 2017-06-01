@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,46 @@ yarn add @gov.au/footer
 ```shell
 npm install @gov.au/footer --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import Footer, { FooterNav, FooterEnd } from './footer.js';
+
+<Footer>
+	<FooterNav>
+		uikit-footer__navigation
+	</FooterNav>
+	<FooterEnd>
+		uikit-footer__end
+	</FooterEnd>
+</Footer>
+```
+
+No props...
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/footer/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -71,6 +112,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/footer/tests/
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
 
 
