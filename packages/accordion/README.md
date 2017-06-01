@@ -7,7 +7,7 @@
 ## Contents
 
 * [Install](#install)
-* [API](#api)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -36,7 +36,20 @@ npm install @gov.au/accordion --save-dev
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## API
+## Usage
+
+
+* [API](#api)
+* [React](#react)
+* [jQuery](#jquery)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### API
 
 
 Accordion has 3 public functions:
@@ -46,7 +59,7 @@ Accordion has 3 public functions:
 - [`UIKIT.accordion.Toggle( elements, speed )`](#toggle)
 
 
-### Open
+#### Open
 
 `UIKIT.accordion.Open( elements, speed )`
 
@@ -62,7 +75,7 @@ UIKIT.accordion.Open( document.getElementById('accordion-title'), 500 );
 ```
 
 
-### Close
+#### Close
 
 `UIKIT.accordion.Close( elements, speed )`
 
@@ -78,7 +91,7 @@ UIKIT.accordion.Close( document.getElementById('accordion-title'), 500 );
 ```
 
 
-### Toggle
+#### Toggle
 
 `UIKIT.accordion.Toggle( elements, speed, callbacks )`
 
@@ -107,6 +120,87 @@ UIKIT.accordion.Toggle( document.getElementById('accordion-title'), 500,
 		},
 	}
 );
+```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import Accordion from './accordion.js';
+
+<Accordion header="First headline">
+	Some content of the first accordion.
+</Accordion>
+
+<Accordion header="Second headline">
+	Some content of the second accordion.
+</Accordion>
+
+<Accordion header="Third headline">
+	Some content of the third accordion.
+</Accordion>
+```
+
+All props:
+
+```jsx
+<Accordion
+	header="Headline"        {/* The headline of the accordion */}
+	open={ true }            {/* Open state */}
+	speed="250"              {/* Speed of the animation in ms */}
+	onOpen={ () => {} }      {/* A function executed when the accordion opens */}
+	afterOpen={ () => {} }   {/* A function executed after the accordion opened */}
+	onClose={ () => {} }     {/* A function executed when the accordion closes */}
+	afterClose={ () => {} }  {/* A function executed after the accordion opened */}
+>
+	Some content of the third accordion.
+</Accordion>
+```
+
+For more details have a look at the [usage example](tree/master/packages/accordion/tests/react/index.js).
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### jQuery
+
+To initialize the [jQuery](https://jquery.com/) plugin make sure you have jQuery on the page and run the below code after the DOM was loaded:
+
+```js
+$(function() {
+	$('.js-uikit-accordion-wrapper').uikitAccordion();
+});
+```
+
+You can optionally add functions to each event like so:
+
+```js
+$('.js-uikit-accordion-wrapper').uikitAccordion({
+	onOpen: function() {
+		console.log('This function will run when an accordion opens');
+	},
+	afterOpen: function() {
+		console.log('This function will run after an accordion has opened');
+	},
+	onClose: function() {
+		console.log('This function will run when an accordion closes');
+	},
+	afterClose: function() {
+		console.log('This function will run after an accordion has closed');
+	},
+});
 ```
 
 
@@ -153,6 +247,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/accordion/tes
 
 ## Release History
 
+* v0.2.0 - Added react and jQuery component
 * v0.1.0 - 💥 Initial version
 
 
