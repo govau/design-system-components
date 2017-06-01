@@ -8,12 +8,17 @@ ReactDOM.render(
 	<div>
 		<SkipLink links={[
 			{
-				url: '#nav',
+				link: '#nav',
 				text: 'Skip to navigation',
 			},
 			{
-				url: '#content',
+				link: '#content',
 				text: 'Skip to content',
+			},
+			{
+				link: '#content',
+				text: 'Skip link with onClick',
+				onClick: () => console.log('This function is called when the last skip link is clicked'),
 			},
 		]} />
 
