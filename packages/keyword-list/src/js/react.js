@@ -14,24 +14,40 @@ import PropTypes from 'prop-types';
 /**
  * An item inside the KeywordList component
  *
- * @param  {string} repeatedName - The repeated bit in each item
- * @param  {string} item.link    - The link URL (optional)
- * @param  {string} item.name    - The name of the item
+ * @param  {string}   repeatedName - The repeated bit in each item
+ * @param  {object}   item         - The keyword list item
+ * @param  {string}   item.link    - The link URL, optional
+ * @param  {string}   item.name    - The name of the item
+ * @param  {function} item.onClick - An onClick event, optional
  */
-export const KeywordListItem = ({ repeatedName, item }) => (
-	<li className="uikit-keyword-list__item">
-		{ item.link
-			? <a href={ item.link }><small className="uikit-keyword-list__item__small">{ repeatedName }</small>{ item.name }</a>
-			: <span><small className="uikit-keyword-list__item__small">{ repeatedName }</small>{ item.name }</span>
+export const KeywordListItem = ({ repeatedName, item }) => {
+	const attributeOptions = {};
+
+	if( typeof item.onClick === 'function' ) {
+		attributeOptions.onClick = item.onClick;
+
+		// if we find an onClick event but no link we make it a link so onClick can be added (no button support yet)
+		if( !item.link ) {
+			item.link = '#';
 		}
-	</li>
-);
+	}
+
+	return (
+		<li className="uikit-keyword-list__item">
+			{ item.link
+				? <a href={ item.link } { ...attributeOptions }><small className="uikit-keyword-list__item__small">{ repeatedName }</small>{ item.name }</a>
+				: <span><small className="uikit-keyword-list__item__small">{ repeatedName }</small>{ item.name }</span>
+			}
+		</li>
+	);
+};
 
 KeywordListItem.propTypes = {
 	repeatedName: PropTypes.string.isRequired,
 	item: PropTypes.shape({
 		link: PropTypes.string,
 		name: PropTypes.string.isRequired,
+		onClick: PropTypes.func,
 	}),
 };
 
@@ -41,7 +57,7 @@ KeywordListItem.propTypes = {
  * The keyword-list component
  *
  * @param  {string} repeatedName - The repeated bit in each item
- * @param  {array}  items        - All items in this list. format: { link: '', name: '' }
+ * @param  {array}  items        - All items in this list, format: { link: '', name: '', onClick: () }
  */
 const KeywordList = ({ repeatedName, items }) => (
 	<ul className="uikit-keyword-list uikit-link-list">
@@ -55,6 +71,7 @@ KeywordList.propTypes = {
 		PropTypes.shape({
 			link: PropTypes.string,
 			name: PropTypes.string.isRequired,
+			onClick: PropTypes.func,
 		})
 		).isRequired,
 };

@@ -52,6 +52,22 @@ ReactDOM.render(
 				name: 'Health',
 			},
 		]} />
+
+
+		<hr />
+		<h2>keyword-list with onClick</h2>
+
+		<KeywordList repeatedName='Links' items={[
+			{
+				link: '#url',
+				name: 'With link',
+				onClick: event => { event.preventDefault(); console.log('This function is called when the first item is clicked') },
+			},
+			{
+				name: 'Without link',
+				onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
+			},
+		]} />
 	</div>,
 
 	document.getElementById('root'),
