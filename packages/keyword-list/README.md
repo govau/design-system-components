@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,68 @@ yarn add @gov.au/keyword-list
 ```shell
 npm install @gov.au/keyword-list --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import KeywordList from './keyword-list.js';
+
+<KeywordList
+	repeatedName='Department of'
+	items={[
+		{
+			link: 'http://www.agriculture.gov.au/',
+			name: 'Agriculture and Water Resources',
+		},
+		{
+			link: 'https://www.communications.gov.au/',
+			name: 'Communications and the Arts',
+		},
+		{
+			link: 'https://www.finance.gov.au/',
+			name: 'Finance',
+		},
+	]}
+/>
+```
+
+All props:
+
+```jsx
+<KeywordList
+	repeatedName="Department of"                  {/* The text That is repeated in each item */}
+	items={[                                      {/* All items in a neat array */}
+		{
+			link: 'http://www.agriculture.gov.au/',   {/* The URL of this item, optional */}
+			name: 'Agriculture and Water Resources',  {/* The name of the item */}
+			onClick={ () => {} }                      {/* A function to execute when the link is clicked, optional */}
+		},
+	]}
+/>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/keyword-list/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -75,6 +138,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/keyword-list/
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
 
 
