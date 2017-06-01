@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 
 /**
- * A tag item
+ * A tag item inside the Tags component
  *
  * @param  {object}   tag         - Th tag object
  * @param  {string}   tag.link    - The link for this tag, optional

@@ -78,6 +78,22 @@ ReactDOM.render(
 				text: 'Sign Out',
 			},
 		]} />
+
+
+		<hr />
+		<h2>Link list with onClick</h2>
+
+		<LinkList items={[
+			{
+				link: '#Options',
+				text: 'With link',
+				onClick: event => { event.preventDefault(); console.log('This function is called when the first item is clicked') },
+			},
+			{
+				text: 'Without link',
+				onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
+			},
+		]} />
 	</div>,
 
 	document.getElementById('root'),
