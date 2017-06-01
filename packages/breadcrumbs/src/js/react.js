@@ -34,6 +34,7 @@ Breadcrumbs.propTypes = {
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
+			onClick: PropTypes.func,
 		})
 		).isRequired,
 };

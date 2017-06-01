@@ -21,6 +21,7 @@ ReactDOM.render(
 			},
 		]} />
 
+
 		<hr />
 		<h2>breadcrumbs inverted</h2>
 
@@ -35,6 +36,22 @@ ReactDOM.render(
 			},
 			{
 				text: 'Sign Out2',
+			},
+		]} />
+
+
+		<hr />
+		<h2>breadcrumbs with onClick</h2>
+
+		<Breadcrumbs label="Breadcrumb for the other page" items={[
+			{
+				link: '#link',
+				text: 'with link',
+				onClick: event => { event.preventDefault(); console.log('This function is called when the first item is clicked') },
+			},
+			{
+				text: 'without link',
+				onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
 			},
 		]} />
 	</div>,
