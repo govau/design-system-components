@@ -165,7 +165,7 @@ All props:
 </Accordion>
 ```
 
-For more details have a look at the [usage example](tree/master/packages/accordion/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/accordion/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
