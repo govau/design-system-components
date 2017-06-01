@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/control-input",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"description": "Control inputs include radio buttons and checkboxes. They allow users to select one or more options.",
 	"keywords": [
 		"uikit",
