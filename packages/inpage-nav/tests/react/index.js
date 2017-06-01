@@ -19,11 +19,13 @@ ReactDOM.render(
 			},
 			{
 				link: 'section3',
-				title: 'Section 3',
+				title: 'Section 3 with onClick',
+				onClick: () => console.log('This function is called when the third item is clicked'),
 			},
 			{
 				link: 'section4',
-				title: 'Section 4',
+				title: 'Section 4 with onClick',
+				onClick: () => console.log('This function is called when the forth item is clicked'),
 			},
 		]} />
 
@@ -91,7 +93,12 @@ ReactDOM.render(
 			</p>
 		</InpageNavSection>
 
-		<InpageNavSection title="Section 4 headline" link="section4" sectionLink="Different sectionLink text">
+		<InpageNavSection
+			title="Section 4 with changed section link and onClick"
+			link="section4"
+			sectionLink="Different sectionLink text"
+			sectionLinkOnClick={ () => console.log('This function is called when the section link is clicked') }
+		>
 			<p>
 				Das ende&hellip;
 			</p>
