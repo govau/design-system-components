@@ -154,12 +154,12 @@ All props:
 ```jsx
 <Accordion
 	header="Headline"        {/* The headline of the accordion */}
-	open={ true }            {/* Open state */}
-	speed="250"              {/* Speed of the animation in ms */}
-	onOpen={ () => {} }      {/* A function executed when the accordion opens */}
-	afterOpen={ () => {} }   {/* A function executed after the accordion opened */}
-	onClose={ () => {} }     {/* A function executed when the accordion closes */}
-	afterClose={ () => {} }  {/* A function executed after the accordion opened */}
+	open={ true }            {/* Open state, optional */}
+	speed="250"              {/* Speed of the animation in ms, optional */}
+	onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
+	afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
+	onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
+	afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
 >
 	Some content of the third accordion.
 </Accordion>

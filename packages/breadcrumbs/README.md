@@ -75,16 +75,14 @@ All props:
 ```jsx
 <Breadcrumbs
 	label="The aria-label"        {/* Provide the aria label is a must */}
-	inverted={ false }            {/* An option to theme the breadcrumbs inverted */}
+	inverted={ false }            {/* An option to theme the breadcrumbs inverted, optional */}
 	items={[                      {/* An array of all breadcrumbs */}
 		{
 			link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}
 			text: 'breadcrumb 1',     {/* The text of the breadcrumb */}
 		},
 	]},
->
-	Some content of the third breadcrumbs.
-</Accordion>
+/>
 ```
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/breadcrumbs/tests/react/index.js).
