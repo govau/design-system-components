@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/cta-link",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Use cta links to draw attention to a primary call to action.",
 	"keywords": [
 		"uikit",
