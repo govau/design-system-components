@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,68 @@ yarn add @gov.au/progress-indicator
 ```shell
 npm install @gov.au/progress-indicator --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import ProgressIndicator from './progress-indicator.js';
+
+<ProgressIndicator items={[
+	{
+		link: 'forms/intro/',
+		text: 'Introduction',
+		status: 'done',
+	},
+	{
+		link: 'forms/contacts/',
+		text: 'Business Contacts',
+		status: 'doing',
+	},
+	{
+		link: 'forms/casestudies/',
+		text: 'Case Studies',
+		status: 'todo',
+	},
+]} />
+```
+
+All props:
+
+```jsx
+<ProgressIndicator
+	items={[                   {/* All steps in a neat array */}
+		{
+			link: 'forms/intro/',  {/* The link to this step, optional */}
+			text: 'Introduction',  {/* The name of this step */}
+			status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
+			onClick={ () => {} }   {/* A function to execute when the link is clicked, optional */}
+		},
+	]}
+/>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/progress-indicator/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -71,6 +134,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/progress-indi
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
 
 
