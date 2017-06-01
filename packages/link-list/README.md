@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,66 @@ yarn add @gov.au/link-list
 ```shell
 npm install @gov.au/link-list --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import LinkList from './link-list.js';
+
+<LinkList items={[
+	{
+		link: 'link/one/',
+		text: 'Link 1',
+	},
+	{
+		link: 'link/two/',
+		text: 'Link 2',
+	},
+	{
+		link: 'link/three/',
+		text: 'Link 3',
+	},
+]} />
+```
+
+All props:
+
+```jsx
+<LinkList
+	inverted={ false }        {/* The inverted option for theming, optional */}
+	inline={ false }          {/* The inline option to make the list inline, optional */}
+	items={[                  {/* All links in a neat array */}
+		{
+			link: 'link/to/',     {/* The link for this item, optional */}
+			text: 'Link title',   {/* The text for this item */}
+			onClick={ () => {} }  {/* A function to execute when this link is clicked, optional */}
+		},
+	]},
+/>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/link-list/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -73,6 +134,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/link-list/tes
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
 
 
