@@ -25,11 +25,12 @@ const statusText = {
 /**
  * An item inside the ProgressIndicator component
  *
- * @param  {string}   item.link       - The link URL, If no link is passed we render a button instead of a link tag.
+ * @param  {array}    item            - The item array with all progress items
+ * @param  {string}   item.link       - The link URL, If no link is passed we render a button instead of a link tag, optional
  * @param  {string}   item.text       - The text of this item
  * @param  {string}   item.status     - The status of this item
- * @param  {string}   item.statusText - The status text of this item. (optional)
- * @param  {function} item.onClick    - An onClick function. (optional)
+ * @param  {string}   item.statusText - The status text of this item, optional
+ * @param  {function} item.onClick    - An onClick function, optional
  */
 export const ProgressIndicatorItem = ({ item }) => {
 	const attributeOptions = {};

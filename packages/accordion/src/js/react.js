@@ -16,8 +16,9 @@ let IDstart = 0;
 class Accordion extends React.PureComponent {
 	/**
 	 * Constructor
+	 * Create state and iterate over a unique ID
 	 *
-	 * @param  {object}  props  - The props object
+	 * @param  {object}  props - The props object
 	 */
 	constructor( props ) {
 		super( props );
@@ -113,6 +114,5 @@ Accordion.propTypes = {
 Accordion.defaultProps = {
 	open: false,
 };
-
 
 export default Accordion;

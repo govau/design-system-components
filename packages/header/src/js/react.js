@@ -26,10 +26,10 @@ const themes = {
  * The header component
  *
  * @param  {string}  title   - The title of the header
- * @param  {string}  level   - The tag level (<h1/> <h2/> etc)
- * @param  {string}  subline - An optional subline
- * @param  {boolean} hero    - The hero option
- * @param  {string}  theme   - Optional theme that can be either: light dark
+ * @param  {string}  level   - The tag level (<h1/> <h2/> etc), default: '1'
+ * @param  {string}  subline - An optional subline, optional
+ * @param  {boolean} hero    - The hero option, optional
+ * @param  {string}  theme   - Optional theme that can be either: light dark, optional
  */
 const Header = ({ title, level, subline, hero, theme }) => {
 	const HeadingTag = `h${ level }`;
@@ -46,8 +46,8 @@ Header.propTypes = {
 	title: PropTypes.node.isRequired,
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 	subline: PropTypes.node,
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	hero: PropTypes.bool,
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 };
 
 Header.defaultProps = {

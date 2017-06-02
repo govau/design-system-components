@@ -26,9 +26,13 @@ const options = {
  * DEFAULT
  * The primary button
  *
- * @param  {string}  text     - The text of the button
- * @param  {boolean} disabled - The disabled option
- * @param  {boolean} block    - The block option
+ * @param  {string}    text     - The text of the button
+ * @param  {string}    as       - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
+ * @param  {string}    type     - The type attribute, default: 'button', optional
+ * @param  {string}    id       - The ID attribute, optional
+ * @param  {boolean}   disabled - The disabled option, optional
+ * @param  {boolean}   block    - The block option, optional
+ * @param  {function}  onClick  - An onClick function, optional
  */
 const Button = ({ text, as, type, id, disabled, block, onClick }) => {
 	const attributeOptions = {};
@@ -42,12 +46,20 @@ const Button = ({ text, as, type, id, disabled, block, onClick }) => {
 	}
 
 	return (
-		<button type={ type } className={ `uikit-btn ${ options[ as ] }${ block ? ' uikit-btn--block' : '' }` } disabled={ disabled } { ...attributeOptions }>{ text }</button>
+		<button
+			type={ type }
+			className={ `uikit-btn ${ options[ as ] }${ block ? ' uikit-btn--block' : '' }` }
+			disabled={ disabled }
+			{ ...attributeOptions }
+		>
+			{ text }
+		</button>
 	);
 };
 
 Button.propTypes = {
 	text: PropTypes.string.isRequired,
+	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
 	type: PropTypes.string,
 	id: PropTypes.string,
 	disabled: PropTypes.bool,

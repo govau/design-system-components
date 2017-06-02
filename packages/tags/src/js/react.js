@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 /**
  * A tag item inside the Tags component
  *
- * @param  {object}   tag         - Th tag object
+ * @param  {object}   tag         - The tag object
  * @param  {string}   tag.link    - The link for this tag, optional
  * @param  {string}   tag.text    - The text for the tag
  * @param  {function} tag.onClick - An onClick event, optional

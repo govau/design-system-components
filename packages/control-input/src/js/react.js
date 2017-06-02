@@ -17,11 +17,11 @@ import PropTypes from 'prop-types';
  * @param  {string}   label    - The label
  * @param  {string}   name     - The name of the input element
  * @param  {string}   value    - The value of the input element
- * @param  {string}   id       - The id of the input element, for additional labels
- * @param  {boolean}  checked  - The check option
- * @param  {boolean}  disabled - The disable option
- * @param  {boolean}  full     - The full variant option
- * @param  {function} onChange - A callback for onChange
+ * @param  {string}   id       - The id of the input element, for additional labels, optional
+ * @param  {boolean}  checked  - The check option, optional
+ * @param  {boolean}  disabled - The disable option, optional
+ * @param  {boolean}  full     - The full variant option, optional
+ * @param  {function} onChange - A callback for onChange, optional
  */
 export const Checkbox = ({ label, name, value, id, checked, disabled, full, onChange }) => {
 	const attributeOptions = {};
@@ -64,10 +64,11 @@ Checkbox.propTypes = {
  * @param  {string}   label    - The label
  * @param  {string}   name     - The name of the input element
  * @param  {string}   value    - The value of the input element
- * @param  {boolean}  checked  - The check option
- * @param  {boolean}  disabled - The disable option
- * @param  {boolean}  full     - The full variant option
- * @param  {function} onChange - A callback for onChange
+ * @param  {string}   id       - The id of the input element, for additional labels, optional
+ * @param  {boolean}  checked  - The check option, optional
+ * @param  {boolean}  disabled - The disable option, optional
+ * @param  {boolean}  full     - The full variant option, optional
+ * @param  {function} onChange - A callback for onChange, optional
  */
 export const Radio = ({ label, name, value, id, checked, disabled, full, onChange }) => {
 	const attributeOptions = {};

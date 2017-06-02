@@ -27,9 +27,10 @@ const directions = {
  * DEFAULT
  * The direction-links component
  *
- * @param  {string} link      - The link target
+ * @param  {string} link      - The link target, optional
  * @param  {string} text      - The text of the CTA link
- * @param  {string} direction - The direction for the arrow; can be either: up right down left
+ * @param  {string} direction - The direction for the arrow; can be either: up right down left, default: 'right'
+ * @param  {string} onClick   - An onClick function, optional
  */
 const DirectionLink = ({ link, text, direction, onClick }) => {
 	const attributeOptions = {};
@@ -49,7 +50,7 @@ const DirectionLink = ({ link, text, direction, onClick }) => {
 DirectionLink.propTypes = {
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
-	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]),
+	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,
 	onClick: PropTypes.func,
 };
 

@@ -28,7 +28,7 @@ const options = {
  * Page alert
  *
  * @param  {string} as       - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
- * @param  {string} children - Anything inside the component
+ * @param  {node}   children - Anything inside the component
  */
 const PageAlert = ({ as, children }) => (
 	<div className={`uikit-page-alerts ${ options[ as ] }`} role='alert'>
@@ -37,7 +37,7 @@ const PageAlert = ({ as, children }) => (
 );
 
 PageAlert.propTypes = {
-	as: PropTypes.oneOf([ 'info', 'warning', 'error', 'success' ]),
+	as: PropTypes.oneOf([ 'info', 'warning', 'error', 'success' ]).isRequired,
 	children: PropTypes.node.isRequired,
 };
 

@@ -54,8 +54,8 @@ LinkListItem.propTypes = {
  * DEFAULT
  * The Link List component
  *
- * @param  {boolean} inverted - Inverted option
- * @param  {boolean} inverted - Inline option
+ * @param  {boolean} inverted - Inverted option, optional
+ * @param  {boolean} inverted - Inline option, optional
  * @param  {array}   items    - All items inside the link list to be passed to LinkListItem, format: { link: '', text: '', onClick: () }
  */
 const LinkList = ({ inverted, inline, items }) => (

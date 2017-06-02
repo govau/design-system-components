@@ -33,10 +33,10 @@ Callout.propTypes = {
  * Calendar callout
  *
  * @param  {string} description - A description of the content of the callout for a11y
- * @param  {string} subline     - The subline of the event
+ * @param  {string} subline     - The subline of the event, optional
  * @param  {string} datetime    - The datetime of the event as ISO datetime
  * @param  {string} time        - The time that appears on the page
- * @param  {string} name        - The name of the event
+ * @param  {string} name        - The name of the event, optional
  */
 export const CalloutCalendar = ({ description, subline, datetime, time, name }) => (
 	<section className="uikit-callout uikit-callout--calendar-event" aria-label={ description }>

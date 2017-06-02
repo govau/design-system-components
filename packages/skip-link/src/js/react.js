@@ -14,9 +14,9 @@ import PropTypes from 'prop-types';
 /**
  * One skip-link item
  *
- * @param  {array} link            - The link object
- * @param  {string} link.link      - The href for the link
- * @param  {string} link.text      - The link text
+ * @param  {array}    link         - The link object
+ * @param  {string}   link.link    - The href for the link
+ * @param  {string}   link.text    - The link text
  * @param  {function} link.onClick - A function called when the link is clicked
  */
 export const SkipLinkItem = ({ link }) => {

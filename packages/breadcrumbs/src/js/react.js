@@ -17,9 +17,9 @@ import LinkList from './link-list.js';
  * DEFAULT
  * The breadcrumbs component
  *
- * @param  {boolean} inverted - the inverted option
+ * @param  {boolean} inverted - The inverted option, optional
  * @param  {string}  label    - The aria label of the component
- * @param  {string}  items    - Items inside the breadcrumbs passed on to LinkList
+ * @param  {array}   items    - Items inside the breadcrumbs passed on to LinkList
  */
 const Breadcrumbs = ({ inverted, label, items }) => (
 	<nav className={ `uikit-breadcrumbs${ inverted ? ' uikit-breadcrumbs--inverted' : '' }` } aria-label={ label }>

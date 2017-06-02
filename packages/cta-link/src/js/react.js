@@ -15,9 +15,9 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The cta link component
  *
- * @param  {string}   link    - The link target, if not supplied this will render as a button
+ * @param  {string}   link    - The link target, if not supplied this will render as a button, optional
  * @param  {string}   text    - The text of the CTA link
- * @param  {function} onClick - An optional function for onClick
+ * @param  {function} onClick - An optional function for onClick, optional
  */
 const CTALink = ({ link, text, onClick }) => {
 	const attributeOptions = {};

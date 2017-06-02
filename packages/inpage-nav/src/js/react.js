@@ -12,10 +12,12 @@ import PropTypes from 'prop-types';
 
 
 /**
- * The inpage-nav component
+ * The section component for the InpageNavLinks component
  *
- * @param  {string} title    - The title of the content link block, default: Contents
- * @param  {array}  sections - An array of objects of all sections, sample: { link: '', title: '', onClick: () }
+ * @param  {object}    section         - The section object
+ * @param  {object}    section.link    - The link of this section
+ * @param  {object}    section.title   - The title of the section
+ * @param  {function}  section.onClick - An onClick function, optional
  */
 export const InpageNavLinksItem = ({ section }) => {
 	const attributeOptions = {};
@@ -76,11 +78,11 @@ InpageNavLinks.defaultProps = {
  *
  * @param  {string}     title               - The title of the section
  * @param  {string}     link                - The link to this section
- * @param  {DOM node}   children            - The content of the section
+ * @param  {DOM node}   children            - The content of the section, default: '2'
  * @param  {string}     level               - The heading level of the h tag
- * @param  {string}     headingClass        - Any additional heading classes eg uikit-display-3 etc
- * @param  {string}     sectionLink         - The text for the section link, default: Link to section
- * @param  {function}   sectionLinkOnClick  - A function for the onClick on the section link
+ * @param  {string}     headingClass        - Any additional heading classes eg 'uikit-display-3' etc, optional
+ * @param  {string}     sectionLink         - The text for the section link, default: 'Link to section', optional
+ * @param  {function}   sectionLinkOnClick  - A function for the onClick on the section link, optional
  */
 export const InpageNavSection = ({ title, link, children, level, headingClass, sectionLink, sectionLinkOnClick }) => {
 	const attributeOptions = {};
