@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.4.0 - Added react component](v040)
 * [v0.3.0 - Fixed px height, added more robust CSS code](v030)
 * [v0.2.0 - Added block modifier](v020)
 * [v0.1.0 - 💥 Initial version](v010)
@@ -24,6 +25,11 @@
 
 
 ## Release History
+
+### v0.4.0
+
+- Added react component
+
 
 ### v0.3.0
 

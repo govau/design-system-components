@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,47 @@ yarn add @gov.au/headings
 ```shell
 npm install @gov.au/headings --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import Heading from './headings.js';
+
+<Heading size="2" level="2" text="Display 2 on h2" />
+```
+
+All props:
+
+```jsx
+<Heading
+	size="1"              {/* The display size, 1 = smallest; 6 = largest */}
+	level="1"             {/* The semantic headline tag level, h1-h6 */}
+	text="Headline text"  {/* The text of the headline */}
+/>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/headings/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -71,6 +113,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/headings/test
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
 
 

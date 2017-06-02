@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.1.0 - Added react component](v110)
 * [v1.0.0 - Removed the side spacing #147](v100)
 * [v0.1.0 - 💥 Initial version](v010)
 
@@ -23,6 +24,11 @@
 
 
 ## Release History
+
+### v1.1.0
+
+- Added react component
+
 
 ### v1.0.0
 

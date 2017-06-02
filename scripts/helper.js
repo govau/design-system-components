@@ -58,7 +58,7 @@ const CopyTemp = ( source, destination, replacements ) => {
 	const files = Fs.readdirSync( source ); // create target folder
 
 	for( let file of files ) {
-		if( !file.startsWith('.') ) { // don’t copy hidden files
+		if( !file.startsWith('.') || file === '.babelrc' ) { // don’t copy hidden files
 			const current = Fs.lstatSync( Path.join( source, file ) );
 
 			if( current.isDirectory() ) {
@@ -278,21 +278,46 @@ HELPER.precompile = (() => {
 		},
 
 		js: () => {
-			if( Fs.existsSync( `${ process.cwd() }/src/js/module.js` ) ) {
+			const _hasJS = Fs.existsSync( `${ process.cwd() }/src/js/module.js` );
+			const _hasJquery = Fs.existsSync( `${ process.cwd() }/src/js/jquery.js` );
+			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/js/react.js` );
 
-				// 1. create path
-				CreateDir('./lib/js/');
+			// 1. create path
+			if( _hasJS || _hasJquery || _hasReact ) {
+				CreateDir(`./lib/js/`);
+			}
 
-				// 2. copy files
-				CopyFile('./src/js/module.js', './lib/js/module.js');
+			// 2. copy files
+			if( _hasJS ) {
+				CopyFile(`./src/js/module.js`, `./lib/js/module.js`);
+			}
 
-				// 3.replace strings inside new files in lib
-				const searches = {
-					'[replace-name]': HELPER.NAME,
-					'[replace-version]': HELPER.VERSION,
-				};
+			if( _hasJquery ) {
+				CopyFile(`./src/js/jquery.js`, `./lib/js/jquery.js`);
+			}
 
-				ReplaceFileContent( searches, './lib/js/module.js' );
+			if( _hasReact ) {
+				CopyFile(`./src/js/react.js`, `./lib/js/react.js`);
+				CopyFile(`./src/js/react.js`, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js`);
+			}
+
+			// 3.replace strings inside new files in lib
+			const searches = {
+				'[replace-name]': HELPER.NAME,
+				'[replace-version]': HELPER.VERSION,
+			};
+
+			if( _hasJS ) {
+				ReplaceFileContent( searches, `./lib/js/module.js` );
+			}
+
+			if( _hasJquery ) {
+				ReplaceFileContent( searches, `./lib/js/jquery.js` );
+			}
+
+			if( _hasReact ) {
+				ReplaceFileContent( searches, `./lib/js/react.js` );
+				ReplaceFileContent( searches, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js` );
 			}
 		},
 
@@ -367,6 +392,65 @@ HELPER.compile = (() => {
 
 	/**
 	 * PRIVATE
+	 * Get js from all dependencies for a module and write to a file
+	 *
+	 * @param  {string} from - The file to read from
+	 * @param  {string} to   - The file to write to
+	 */
+	const getAllJs = ( from, to ) => {
+		if( Fs.existsSync( Path.normalize(`${ process.cwd() }${ from }`) ) ) {
+			const allDependencies = GetDepTree( HELPER.NAME );
+			const dependencies = [ ...new Set( flatten( allDependencies ) ) ];
+
+			let code = '';
+
+			dependencies.forEach( dependency => {
+				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
+					// 1. get all dependencies
+					code += `\n\n/* ${ dependency } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`), 'utf-8');
+				}
+			});
+
+			code += `\n\n/* ${ HELPER.NAME } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }${ from }`), 'utf-8');
+
+			// 2. write files
+			Fs.writeFileSync( `.${ to }`, code, `utf-8` );
+
+			HELPER.log.success(`Written script ${ Chalk.yellow( `.${ to }` ) }`);
+		}
+	};
+
+
+	/**
+	 * PRIVATE
+	 * Get react from all dependencies for a module and copy them all over
+	 *
+	 * @param  {string} from - The file to read from
+	 * @param  {string} to   - The file to write to
+	 */
+	const getAllReact = ( from, to ) => {
+		if( Fs.existsSync( Path.normalize(`${ process.cwd() }${ from }`) ) ) {
+			const allDependencies = GetDepTree( HELPER.NAME );
+			const dependencies = [ ...new Set( flatten( allDependencies ) ) ];
+
+			let code = '';
+
+			dependencies.forEach( dependency => {
+				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
+					const fileLocation = Path.normalize(`${ to }/${ dependency }.js`);
+
+					CopyFile( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`), `.${ fileLocation }` );
+
+					HELPER.log.success(`Written file ${ Chalk.yellow( `.${ fileLocation }` ) }`);
+				}
+			});
+
+		}
+	};
+
+
+	/**
+	 * PRIVATE
 	 * Autoprefix a css file
 	 *
 	 * @param  {string} file - The file to be prefixed
@@ -406,33 +490,33 @@ HELPER.compile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		sass: () => {
+			let _hasJs = Fs.existsSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`) );
+
 			// 1. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
 
+			if( _hasJs ) {
+				Sassify('./tests/jquery/test.scss', './tests/jquery/style.css');
+			}
+
 			// 2. autoprefixer
 			Autoprefix('./tests/site/style.css');
+
+			if( _hasJs ) {
+				Autoprefix('./tests/jquery/style.css');
+			}
 		},
 
 		js: () => {
-			// 1. check if js exists
-			if( Fs.existsSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`) ) ) {
-				const allDependencies = GetDepTree( HELPER.NAME );
-				const dependencies = [ ...new Set( flatten( allDependencies ) ) ];
+			// get all js for module.js
+			getAllJs( '/lib/js/module.js', '/tests/site/script.js' );
 
-				let code = '';
+			// get all js for jquery.js
+			getAllJs( '/lib/js/jquery.js', '/tests/jquery/jquery.js' );
+			getAllJs( '/lib/js/module.js', '/tests/jquery/script.js' );
 
-				dependencies.forEach( dependency => {
-					if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }/lib/js/module.js`) ) ) {
-						// 2. get all dependencies
-						code += `\n\n/* ${ dependency } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }/../${ dependency }/lib/js/module.js`), 'utf-8');
-					}
-				});
-
-				code += `\n\n/* ${ HELPER.NAME } */\n` + Fs.readFileSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`), 'utf-8');
-
-				// 3. write files
-				Fs.writeFileSync( './tests/site/script.js', code, `utf-8` );
-			}
+			// get all react scripts
+			getAllReact( '/lib/js/react.js', '/tests/react/' );
 		},
 
 		img: () => {
@@ -522,7 +606,25 @@ HELPER.generate = (() => {
 			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					replacement += `<li><a href="packages/${ module }/tests/site/">${ module }</a></li>\n`;
+					const pkg = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
+					let jquery = '';
+					let react = '';
+
+					if( pkg.pancake['pancake-module'].js ) {
+						if( pkg.pancake['pancake-module'].js.jquery ) {
+							jquery = ` <a class="module-list__attribute" href="packages/${ module }/tests/jquery/">jquery</a>`;
+						}
+
+						if( pkg.pancake['pancake-module'].js.react ) {
+							react = ` <a class="module-list__attribute" href="packages/${ module }/tests/react/">react</a>`;
+						}
+					}
+
+					replacement += `<li><a href="${
+						jquery === '' && react === ''
+						? `packages/${ module }/tests/site/`
+						: `packages/${ module }/tests/`
+					}">${ module } <small>v${ pkg.version }</small></a>${ jquery }${ react }</li>\n`;
 				}
 			}
 
@@ -618,6 +720,16 @@ HELPER.scaffolding = (() => {
 				const destination = Path.normalize(`${ __dirname }/../packages/${ answers.name }`);
 				const replacements = {
 					'[-replace-name-]': answers.name,
+					'[-replace-name-capital-]':
+						answers.name
+							.split('')
+							.reduce(
+								( lastCharacter, thisCharacter, i ) => lastCharacter +
+									( i === 0 ?
+										thisCharacter.toUpperCase() :
+										thisCharacter
+									), ''
+							),
 					'[-replace-description-]': answers.description,
 					'[-replace-URL-]': `${ HELPER.URL }/packages/${ answers.name }/tests/site/`,
 					'[-replace-version-]': '0.1.0',

@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,60 @@ yarn add @gov.au/skip-link
 ```shell
 npm install @gov.au/skip-link --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import Button from './skip-link.js';
+
+<SkipLink links={[
+	{
+		url: '#nav',
+		text: 'Skip to navigation',
+	},
+	{
+		url: '#content',
+		text: 'Skip to content',
+	},
+]} />
+```
+
+All props:
+
+```jsx
+<SkipLink
+	links={[                         {/* All links inside a neat array */}
+		{
+			url: '#nav',                 {/* The href link of this link */}
+			text: 'Skip to navigation',  {/* The text of the link */}
+			onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */}
+		},
+	]}
+/>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/skip-link/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -71,6 +126,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/skip-link/tes
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
 
 
