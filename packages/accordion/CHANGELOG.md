@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.2.0 - Added react and jQuery component](v020)
 * [v0.1.0 - 💥 Initial version](v010)
 
 
@@ -22,6 +23,11 @@
 
 
 ## Release History
+
+### v0.2.0
+
+- Added react and jQuery component
+
 
 ### v0.1.0
 

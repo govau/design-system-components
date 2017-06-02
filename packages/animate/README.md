@@ -39,7 +39,7 @@ npm install @gov.au/animate --save-dev
 ## API
 
 
-Animate has 3 functions:
+Animate has 3 public functions:
 
 - [`UIKIT.animate.Run( options )`](#run)
 - [`UIKIT.animate.Stop( options )`](#stop)

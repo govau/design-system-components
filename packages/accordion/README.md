@@ -7,7 +7,7 @@
 ## Contents
 
 * [Install](#install)
-* [API](#api)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -36,17 +36,30 @@ npm install @gov.au/accordion --save-dev
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## API
+## Usage
 
 
-Animate has 3 functions:
+* [API](#api)
+* [React](#react)
+* [jQuery](#jquery)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### API
+
+
+Accordion has 3 public functions:
 
 - [`UIKIT.accordion.Open( elements, speed )`](#open)
 - [`UIKIT.accordion.Close( elements, speed )`](#close)
 - [`UIKIT.accordion.Toggle( elements, speed )`](#toggle)
 
 
-### Open
+#### Open
 
 `UIKIT.accordion.Open( elements, speed )`
 
@@ -62,7 +75,7 @@ UIKIT.accordion.Open( document.getElementById('accordion-title'), 500 );
 ```
 
 
-### Close
+#### Close
 
 `UIKIT.accordion.Close( elements, speed )`
 
@@ -78,19 +91,116 @@ UIKIT.accordion.Close( document.getElementById('accordion-title'), 500 );
 ```
 
 
-### Toggle
+#### Toggle
 
-`UIKIT.accordion.Toggle( elements, speed )`
+`UIKIT.accordion.Toggle( elements, speed, callbacks )`
 
 The parameters are:
 
 `elements` - DOM node/s of accordion titles you want to open. They should have the `js-uikit-accordion` class and point `aria-controls` to the accordion body. 
 `speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+`callbacks` - An object of four optional callbacks: `{ onOpen, afterOpen, onClose, afterClose }`
 
 Example:
 
 ```js
-UIKIT.accordion.Toggle( document.getElementById('accordion-title'), 500 );
+UIKIT.accordion.Toggle( document.getElementById('accordion-title'), 500,
+	{
+		onOpen: function() {
+			console.log('This function will run when an accordion opens');
+		},
+		afterOpen: function() {
+			console.log('This function will run after an accordion has opened');
+		},
+		onClose: function() {
+			console.log('This function will run when an accordion closes');
+		},
+		afterClose: function() {
+			console.log('This function will run after an accordion has closed');
+		},
+	}
+);
+```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import Accordion from './accordion.js';
+
+<Accordion header="First headline">
+	Some content of the first accordion.
+</Accordion>
+
+<Accordion header="Second headline">
+	Some content of the second accordion.
+</Accordion>
+
+<Accordion header="Third headline">
+	Some content of the third accordion.
+</Accordion>
+```
+
+All props:
+
+```jsx
+<Accordion
+	header="Headline"        {/* The headline of the accordion */}
+	open={ true }            {/* Open state, optional */}
+	speed="250"              {/* Speed of the animation in ms, optional */}
+	onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
+	afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
+	onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
+	afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
+>
+	Some content of the third accordion.
+</Accordion>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/accordion/tests/react/index.js).
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### jQuery
+
+To initialize the [jQuery](https://jquery.com/) plugin make sure you have jQuery on the page and run the below code after the DOM was loaded:
+
+```js
+$(function() {
+	$('.js-uikit-accordion-wrapper').uikitAccordion();
+});
+```
+
+You can optionally add functions to each event like so:
+
+```js
+$('.js-uikit-accordion-wrapper').uikitAccordion({
+	onOpen: function() {
+		console.log('This function will run when an accordion opens');
+	},
+	afterOpen: function() {
+		console.log('This function will run after an accordion has opened');
+	},
+	onClose: function() {
+		console.log('This function will run when an accordion closes');
+	},
+	afterClose: function() {
+		console.log('This function will run after an accordion has closed');
+	},
+});
 ```
 
 
@@ -104,8 +214,8 @@ UIKIT.accordion.Toggle( document.getElementById('accordion-title'), 500 );
 
 ```shell
 accordion
-├─ core
-└─ animate
+├─ animate
+└─ core
 ```
 
 
@@ -137,6 +247,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/accordion/tes
 
 ## Release History
 
+* v0.2.0 - Added react and jQuery component
 * v0.1.0 - 💥 Initial version
 
 

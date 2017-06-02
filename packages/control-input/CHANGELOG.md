@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.2.0 - Added react component](v020)
 * [v0.1.1 - Fixed webkit render bug](v011)
 * [v0.1.0 - 💥 Initial version](v010)
 
@@ -23,6 +24,11 @@
 
 
 ## Release History
+
+### v0.2.0
+
+- Added react component
+
 
 ### v0.1.1
 

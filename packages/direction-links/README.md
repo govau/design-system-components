@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,47 @@ yarn add @gov.au/direction-links
 ```shell
 npm install @gov.au/direction-links --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import DirectionLink from './direction-links.js';
+
+<DirectionLink link="/next/page/" text="Continue" />
+```
+
+All props:
+
+```jsx
+<DirectionLink
+	text="Submitting"     {/* The text of the link */}
+	link="link/to/page"   {/* The href link, optional */}
+	onClick={ () => {} }  {/* A function to execute when the link is clicked, optional */}
+/>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/direction-links/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -73,6 +115,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/direction-lin
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
 
 

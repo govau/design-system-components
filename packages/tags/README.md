@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,64 @@ yarn add @gov.au/tags
 ```shell
 npm install @gov.au/tags --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import Button from './tags.js';
+
+<Tags tags={[
+	{
+		link: 'link/to/tag1',
+		text: 'tag1',
+	},
+	{
+		link: 'link/to/tag2',
+		text: 'tag2',
+	},
+	{
+		link: 'link/to/tag3',
+		text: 'tag3',
+	},
+]} />
+```
+
+All props:
+
+```jsx
+<Tags
+	tags={[
+		{
+			link: 'url/to/tag',  {/* The href link of this tag, optional */}
+			text: 'tagname',     {/* The text of the tag */}
+			onClick: () => {},   {/* A function to execute when the tag is clicked, optional */}
+		},
+	]}
+/>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/tags/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -71,6 +130,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/tags/tests/si
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.1 - Fixed a11y contrast issue
 * v0.1.0 - 💥 Initial version
 

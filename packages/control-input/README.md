@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
@@ -27,6 +28,64 @@ yarn add @gov.au/control-input
 ```shell
 npm install @gov.au/control-input --save-dev
 ```
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+### React
+
+Usage:
+
+```jsx
+import { Checkbox, Radio } from './control-input.js';
+
+<Radio label="Yes" name="has_email" value="yes" />
+<Radio label="No" name="has_email" value="no" />
+<Radio label="Maybe" name="has_email" value="maybe" />
+
+<Checkbox label="Has email?" name="has_email" />
+```
+
+All props:
+
+```jsx
+<Radio
+	label="The label"      {/* The label of the radio button */}
+	name="the_name"        {/* The name attribute */}
+	full={ false }         {/* An option for the radio button theme */}
+	value="value"          {/* The value attribute */}
+	disabled={ false }     {/* The disabled attribute */}
+	checked={ false }      {/* The state of the radio button */}
+	onChange={ () => {} }  {/* A function to be executed onChange */}
+/>
+
+<Checkbox
+	label="The label"      {/* The label of the checkbox */}
+	name="the_name"        {/* The name attribute */}
+	full={ false }         {/* An option for the checkbox theme */}
+	disabled={ false }     {/* The disabled attribute */}
+	checked={ false }      {/* The state of the checkbox */}
+	onChange={ () => {} }  {/* A function to be executed onChange */}
+/>
+```
+
+For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/control-input/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -71,6 +130,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/control-input
 
 ## Release History
 
+* v0.2.0 - Added react component
 * v0.1.1 - Fixed webkit render bug
 * v0.1.0 - 💥 Initial version
 
