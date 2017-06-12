@@ -612,19 +612,31 @@ HELPER.generate = (() => {
 
 					if( pkg.pancake['pancake-module'].js ) {
 						if( pkg.pancake['pancake-module'].js.jquery ) {
-							jquery = ` <a class="module-list__attribute" href="packages/${ module }/tests/jquery/">jquery</a>`;
+							jquery = `<br><a href="packages/${ module }/tests/jquery/">` +
+									`<img src="https://img.shields.io/badge/js        -jquery-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+								`</a>`;
 						}
 
 						if( pkg.pancake['pancake-module'].js.react ) {
-							react = ` <a class="module-list__attribute" href="packages/${ module }/tests/react/">react</a>`;
+							react = `<br><a href="packages/${ module }/tests/react/">` +
+									`<img src="https://img.shields.io/badge/js        -react-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+								`</a>`;
 						}
 					}
 
-					replacement += `<li><a href="${
+					replacement += `<li>` +
+						`<a class="module-list__headline" href="${
 						jquery === '' && react === ''
 						? `packages/${ module }/tests/site/`
-						: `packages/${ module }/tests/`
-					}">${ module } <small>v${ pkg.version }</small></a>${ jquery }${ react }</li>\n`;
+						: `packages/${ module }/tests/` }">` +
+							`${ module }</a>${ jquery }${ react }` +
+							`<br><a href="https://www.npmjs.com/package/@gov.au/${ module }">` +
+								`<img src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=version&colorA=313131&colorB=1B7991" alt="">` +
+							`</a>` +
+							`<br><a href="https://github.com/govau/uikit/tree/master/packages/${ module }">` +
+								`<img src="https://img.shields.io/badge/docs    -readme-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+							`</a>` +
+						`</li>\n`;
 				}
 			}
 
