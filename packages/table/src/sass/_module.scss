@@ -17,6 +17,11 @@ table {
   border-spacing: 0;
   width: 100%;
 
+  p {
+    display: inline-block;
+    margin: 0;
+  }
+
   thead {
     border-bottom: solid 2px $uikit-colour-Table-Head-Border;
   }
@@ -36,13 +41,14 @@ table {
     }
   }
 
-  tr:nth-child(even) {
-    background: $uikit-colour-Table-Row;
+  &.uikit--content-table-striped {
+    tr:nth-child(even) {
+      background: $uikit-colour-Table-Row;
+    }
   }
 
-
   //----------------------------------------
-  // Responsive Tables.
+  // Responsive Tables medium display.
   //----------------------------------------
   @media (max-width: $uikit-media-md) {
     border: 0;
@@ -54,7 +60,6 @@ table {
     tr {
       border-bottom: solid 2px $uikit-colour-Table-Head-Border;
       display: block;
-      margin-bottom: uikit-space(1);
     }
 
     td {
@@ -66,10 +71,25 @@ table {
         border-bottom: 0;
       }
 
-      &:before {
+      &::before {
         content: attr(data-label);
         float: left;
         font-weight: bold;
+      }
+    }
+  }
+
+  //----------------------------------------
+  // Responsive Tables small display.
+  //----------------------------------------
+  @media (max-width: $uikit-media-xs) {
+    td {
+      text-align: left;
+
+      &::before {
+        display: block;
+        float: none;
+        text-align: left;
       }
     }
   }
