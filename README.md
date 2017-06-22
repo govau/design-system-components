@@ -428,6 +428,20 @@ All modules have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/table</summary>
+	<br><code>yarn add @gov.au/table</code> or <code>npm install @gov.au/table</code><br>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/table/tests/site/">visual test file for table</a>
+	<br>See the <a href="https://github.com/govau/uikit/blob/master/packages/table/README.md">readme file for table</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+└─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/tags</summary>
 	<br><code>yarn add @gov.au/tags</code> or <code>npm install @gov.au/tags</code><br>
 	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/tags/tests/site/">visual test file for tags</a>

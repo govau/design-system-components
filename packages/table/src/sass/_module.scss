@@ -1,0 +1,96 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// table module
+// Table definitions for the UI Kit.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+.uikit--content-table,
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+  p {
+    display: inline-block;
+    margin: 0;
+  }
+
+  thead {
+    border-bottom: solid 2px $uikit-colour-Table-Head-Border;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid $uikit-colour-Table-Row-Border;
+    padding: uikit-space(0.4);
+    text-align: left;
+
+    @include uikit-media("lg") {
+      padding: uikit-space(0.8);
+    }
+  }
+
+  &.uikit--content-table-striped {
+    tr:nth-child(even) {
+      background: $uikit-colour-Table-Row;
+    }
+  }
+
+  //----------------------------------------
+  // Responsive Tables medium display.
+  //----------------------------------------
+  @media (max-width: $uikit-media-md) {
+    border: 0;
+
+    thead {
+      display: none;
+    }
+
+    tr {
+      border-bottom: solid 2px $uikit-colour-Table-Head-Border;
+      display: block;
+    }
+
+    td {
+      border-bottom: 1px dotted $uikit-colour-Table-Row-Border;
+      display: block;
+      text-align: right;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+      }
+    }
+  }
+
+  //----------------------------------------
+  // Responsive Tables small display.
+  //----------------------------------------
+  @media (max-width: $uikit-media-xs) {
+    td {
+      text-align: left;
+
+      &::before {
+        display: block;
+        float: none;
+        text-align: left;
+      }
+    }
+  }
+}
