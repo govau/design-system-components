@@ -16,103 +16,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>All UI-Kit modules</title>
+	<title>Test: calendar-table</title>
 
 	<script type="text/javascript">
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<style>
-		body {
-			margin: 0;
-			padding: 6.4em 3.2em 3.2em 3.2em;
-			overflow-x: hidden;
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-			/*
-				Leaving this out because it was intended to provide a border for actual
-				test files -- this is an index for them and not a test itself.
-			*/
-			/*box-shadow:
-				inset #ccf2fb 0 4.8em 0 0,
-				inset #ccf2fb 0 0 0 1.6em;*/
-		}
-
-		body::before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			background: repeating-linear-gradient(
-				-45deg,
-				#222,
-				#222 10px,
-				#333 10px,
-				#333 20px
-			);
-			padding: 0.8em 3.2em 0.8em 1.6em;
-			content: "🏠 Index of test files";
-			font-family: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
-			color: white;
-		}
-
-		.module-list > li {
-			margin-bottom: 0.5em;
-		}
-
-		.module-list {
-			padding: 0 0 0 1.5em;
-			margin: 0;
-			column-count: 1;
-			-webkit-column-count: 1;
-			-moz-column-count: 1;
-			column-count: 1;
-			-webkit-column-gap: 4em;
-			-moz-column-gap: 4em;
-			column-gap: 4em;
-		}
-
-		.module-list__headline {
-			font-weight: bold;
-			text-align: center;
-		}
-
-		@media (min-width: 576px) {
-			.module-list {
-				column-count: 2;
-				-webkit-column-count: 2;
-				-moz-column-count: 2;
-				column-count: 2;
-			}
-		}
-
-		@media (min-width: 768px) {
-			.module-list {
-				column-count: 2;
-				-webkit-column-count: 2;
-				-moz-column-count: 2;
-				column-count: 2;
-			}
-		}
-
-		@media (min-width: 992px) {
-			.module-list {
-				column-count: 3;
-				-webkit-column-count: 3;
-				-moz-column-count: 3;
-				column-count: 3;
-			}
-		}
-
-		@media (min-width: 1200px) {
-			.module-list {
-				column-count: 4;
-				-webkit-column-count: 4;
-				-moz-column-count: 4;
-				column-count: 4;
-			}
-		}
-	</style>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
 		<script>
@@ -130,13 +41,35 @@
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
 
-	<h1>All UI-Kit module tests</h1>
+	<a class="test-link" href="../">&larr; back to the module index</a>
 
-	<main>
-		<ol class="module-list">
-			[-uikit-modules-]
-		</ol>
-	</main>
+	<h1>Test: calendar-table</h1>
 
+	<table class="calendar-table">
+	  <caption>New South Wales public holidays, January 2017</caption>
+	  <tr>
+	    <th scope="row">
+	      <time datetime="2017-01-01">Sunday <span>1</span> January</time>
+	    </th>
+	    <td>New Year's Day</td>
+	  </tr>
+	  <tr>
+	    <th scope="row">
+	      <time datetime="2017-01-02">Monday <span>2</span> January</time>
+	    </th>
+	    <td>New Year's Day holiday<span class="date-info">The Holiday Act provides
+	      for an extra public holiday to be added when New Year's Day falls on a
+	      weekend.</span>
+	    </td>
+	  </tr>
+	  <tr>
+	    <th scope="row">
+	      <time datetime="2017-01-26">Thursday <span>26</span> January</time>
+	    </th>
+	    <td>Australia Day</td>
+	  </tr>
+	</table>
+
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -192,6 +192,20 @@ All modules have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/calendar-table</summary>
+	<br><code>yarn add @gov.au/calendar-table</code> or <code>npm install @gov.au/calendar-table</code><br>
+	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/calendar-table/tests/site/">visual test file for calendar-table</a>
+	<br>See the <a href="https://github.com/govau/uikit/blob/master/packages/calendar-table/README.md">readme file for calendar-table</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+└─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/callout</summary>
 	<br><code>yarn add @gov.au/callout</code> or <code>npm install @gov.au/callout</code><br>
 	<br>See the <a href="http://uikit.apps.staging.digital.gov.au/packages/callout/tests/site/">visual test file for callout</a>
