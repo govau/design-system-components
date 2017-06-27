@@ -1,0 +1,79 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// calendar-table module
+// Calendar table displays events in a tabular format.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+
+.calendar-table {
+  width: 100%;
+  margin-top: 3.2em;
+
+  caption {
+    margin: 0 0 0.8em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+  }
+
+  tr {
+    border-bottom: 0.4em solid $white;
+  }
+
+  th {
+    display: block;
+    width: 100%;
+    padding: 0.8em 1.6em;
+    text-transform: uppercase;
+    color: $teal;
+    text-align: left;
+
+    span {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.4;
+      display: block;
+      margin: 0;
+    }
+
+    @include breakpoint($up-sm) {
+      display: table-cell;
+      width: 9.6em;
+    }
+  }
+
+  td {
+    display: block;
+    margin: 0;
+    padding: 0 1.6em 0.8em;
+    font-size: 1.1875rem;
+    font-weight: 700;
+    text-align: center;
+
+    .date-info {
+      display: block;
+      margin-top: 0;
+      font-weight: 300;
+      font-size: 1rem;
+    }
+
+    @include breakpoint($up-sm) {
+      display: table-cell;
+      padding-top: 0.8em;
+      border-left: 0.4em solid $white;
+      text-align: left;
+    }
+  }
+
+  th,
+  td {
+    background-color: $light-grey;
+  }
+}
