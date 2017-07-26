@@ -14,6 +14,9 @@ const Fs = require(`fs`);
 const Path = require(`path`);
 const Chalk = require(`chalk`);
 const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
+const Autoprefixer = require('autoprefixer');
+const Postcss = require('postcss');
+const Sass = require('node-sass');
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBALS
@@ -95,14 +98,16 @@ const CopyFile = ( source, target ) => {
 /**
  * Replace a string with a another globally in the file
  *
- * @param  {object} searchs  - What is replaced with what, Key = the text to be replaced, value = the replacement text.
+ * @param  {object} searches  - What is replaced with what, Key = the text to be replaced, value = the replacement text.
  * @param  {string} FileName - The file to be converted
  */
-const ReplaceFileContent = ( searchs, fileName ) => {
+const ReplaceFileContent = ( searches, fileName ) => {
 	let content = Fs.readFileSync( fileName, 'utf-8');
 
-	for( const replacing of Object.keys( searchs ) ) { // replace all searches
-		content = content.split( replacing ).join( searchs[ replacing ] ); // replacing globally without regex
+	for( const replacing of Object.keys( searches ) ) { // replace all searches
+		content = content.split( replacing ).join( searches[ replacing ] ); // replacing globally without regex
+		console.log(replacing);
+		console.log(content.split( replacing ));
 	}
 
 	Fs.writeFileSync( fileName, content, ( error ) => {
@@ -162,6 +167,51 @@ const GetFolders = ( thisPath, verbose ) => {
 };
 
 
+/**
+ * Compile Sass code into CSS
+ *
+ * @param  {string} scss The Sass file to be compiled
+ * @param  {string} css  The location where the CSS should be written to
+ */
+const Sassify = ( scss, css ) => {
+	const compiled = Sass.renderSync({
+		file: scss,
+		indentType: 'tab',
+		precision: 8,
+		includePaths: [ './lib/sass/' ],
+		outputStyle: 'compressed',
+	});
+
+	Fs.writeFileSync( css, compiled.css );
+
+	HELPER.log.success(`Compiled Sass ${ Chalk.yellow( scss ) }`);
+};
+
+
+/**
+ * Autoprefix a css file
+ *
+ * @param  {string} file - The file to be prefixed
+ */
+const Autoprefix = ( file ) => {
+	const data = Fs.readFileSync( file, 'utf-8');
+
+	Postcss([ Autoprefixer({ browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ie 10'] }) ])
+		.process( data )
+		.then( ( prefixed ) => {
+			prefixed
+				.warnings()
+				.forEach( ( warn ) => {
+					console.warn( warn.toString() );
+			});
+
+			Fs.writeFileSync( file, prefixed.css );
+
+			HELPER.log.success(`Autoprefixed file ${ Chalk.yellow( file ) }`);
+	});
+};
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Constructor
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -204,6 +254,75 @@ const HELPER = (() => { // constructor factory
 })();
 
 
+/***************************************************************************************************************************************************************
+ *
+ * React
+ *
+ * Compile SASS to CSS, remove a comment which includes the CSS in the react module.
+ *
+ **************************************************************************************************************************************************************/
+
+/**
+ * Dependencies
+ */
+const Babel = require('babel-core');
+
+
+HELPER.react = ( () => {
+	/**
+	 * PUBLIC METHODS
+	 */
+	return {
+		/**
+		 * Starting off compile
+		 */
+		init: () => {
+			HELPER.react.sass();
+			HELPER.react.react();
+		},
+
+		/**
+		 * Compile and autoprefix Sass
+		 */
+		sass: () => {
+			// 1. create directory
+			CreateDir('./lib/css/');
+
+			// 2. compile scss
+			Sassify('./src/css/styles.scss', './lib/css/styles.css');
+
+			// 3. autoprefixer
+			Autoprefix('./lib/css/styles.css');
+		},
+		react: () => {
+			let reactOptions = {
+				ast: false,
+				compact: true,
+				minified: true,
+				presets: [`es2015`, `react`, `stage-0`],
+				sourceMaps: "both",
+				sourceMapTarget: `react.es5.js`,
+			};
+			const searches = {
+				'/*! [replace-css] */': `import styles from '../css/styles.css';`,
+			};
+			// 1. Copy files
+			CopyFile('./lib/js/react.js', './lib/js/react.es5.js');
+			// 2. Inject the CSS into the react.es5.js file
+			ReplaceFileContent( searches, `${ process.cwd() }/lib/js/react.es5.js` );
+			// 1. Compile /lib/react.js to react.es5.js
+			Babel.transformFile( `./lib/js/react.es5.js`, reactOptions, function (error, result) {
+				if( error ) {
+					HELPER.log.error(`Doh! ${ error }`);
+					return;
+				}
+			  Fs.writeFileSync( `./lib/js/react.es5.js`, result.code );
+			  Fs.writeFileSync( `./lib/js/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
+			});
+		}
+	}
+})();
+
 
 /***************************************************************************************************************************************************************
  *
@@ -245,7 +364,7 @@ HELPER.precompile = (() => {
 			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
 			CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
 
-			// rethingiemajiging the peer dependencies for sass
+			// Tweaking the peer dependencies for sass
 			let dependencies = [];
 			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
 				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
@@ -331,47 +450,21 @@ HELPER.precompile = (() => {
 })();
 
 
-
 /***************************************************************************************************************************************************************
  *
  * COMPILE MODULE
  *
- * Compile assets, move files from /scr/ to /lib/
+ * Compile assets, move files from /src/ to /lib/
  *
  **************************************************************************************************************************************************************/
 
 /**
  * Dependencies
  */
-const Autoprefixer = require('autoprefixer');
-const Postcss = require('postcss');
-const Sass = require('node-sass');
 const Semver =  require('semver');
 
 
 HELPER.compile = (() => {
-	/**
-	 * PRIVATE
-	 * Compile Sass code into CSS
-	 *
-	 * @param  {string} scss The Sass file to be compiled
-	 * @param  {string} css  The location where the CSS should be written to
-	 */
-	const Sassify = ( scss, css ) => {
-		const compiled = Sass.renderSync({
-			file: scss,
-			indentType: 'tab',
-			precision: 8,
-			includePaths: [ './lib/sass/' ],
-			outputStyle: 'compressed',
-		});
-
-		Fs.writeFileSync( css, compiled.css );
-
-		HELPER.log.success(`Compiled Sass ${ Chalk.yellow( scss ) }`);
-	};
-
-
 	/**
 	 * PRIVATE
 	 * Flatten a deep object into a one level array
@@ -446,31 +539,6 @@ HELPER.compile = (() => {
 			});
 
 		}
-	};
-
-
-	/**
-	 * PRIVATE
-	 * Autoprefix a css file
-	 *
-	 * @param  {string} file - The file to be prefixed
-	 */
-	const Autoprefix = ( file ) => {
-		const data = Fs.readFileSync( file, 'utf-8');
-
-		Postcss([ Autoprefixer({ browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ie 10'] }) ])
-			.process( data )
-			.then( ( prefixed ) => {
-				prefixed
-					.warnings()
-					.forEach( ( warn ) => {
-						console.warn( warn.toString() );
-				});
-
-				Fs.writeFileSync( file, prefixed.css );
-
-				HELPER.log.success(`Autoprefixed file ${ Chalk.yellow( file ) }`);
-		});
 	};
 
 
@@ -933,6 +1001,22 @@ HELPER.init = () => {
 
 		console.log(`\n`);
 		HELPER.test.init();
+	}
+
+	if( process.argv.indexOf( 'react' ) !== -1 ) {
+		CFonts.say( 'react', {
+			font: 'chrome',
+			space: false,
+			colors: ['red', 'magenta', 'blue'],
+		});
+
+		CFonts.say(`... so you don't have to`, {
+			font: 'console',
+			space: false,
+		});
+
+		console.log(`\n`);
+		HELPER.react.init();
 	}
 };
 
