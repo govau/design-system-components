@@ -98,7 +98,7 @@ const CopyFile = ( source, target ) => {
 /**
  * Replace a string with a another globally in the file
  *
- * @param  {object} searches  - What is replaced with what, Key = the text to be replaced, value = the replacement text.
+ * @param  {object} searches - What is replaced with what, Key = the text to be replaced, value = the replacement text.
  * @param  {string} FileName - The file to be converted
  */
 const ReplaceFileContent = ( searches, fileName ) => {
@@ -170,8 +170,8 @@ const GetFolders = ( thisPath, verbose ) => {
 /**
  * Compile Sass code into CSS
  *
- * @param  {string} scss The Sass file to be compiled
- * @param  {string} css  The location where the CSS should be written to
+ * @param  {string} scss - The Sass file to be compiled
+ * @param  {string} css  - The location where the CSS should be written to
  */
 const Sassify = ( scss, css ) => {
 	const compiled = Sass.renderSync({
@@ -364,7 +364,7 @@ HELPER.precompile = (() => {
 			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
 			CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
 
-			// Tweaking the peer dependencies for sass
+			// Rethingiemajiging the peer dependencies for sass
 			let dependencies = [];
 			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
 				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
@@ -1004,7 +1004,7 @@ HELPER.init = () => {
 	}
 
 	if( process.argv.indexOf( 'react' ) !== -1 ) {
-		CFonts.say( 'react', {
+		CFonts.say( `Compiling react for ${ PKG.name.substring( 8 ) }`, {
 			font: 'chrome',
 			space: false,
 			colors: ['red', 'magenta', 'blue'],
