@@ -130,6 +130,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/control-input
 
 ## Release History
 
+* v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Fixed webkit render bug
 * v0.1.0 - 💥 Initial version

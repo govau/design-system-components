@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/breadcrumbs",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Breadcrumbs help users understand where they are in the service and how they got there.",
 	"keywords": [
 		"uikit",

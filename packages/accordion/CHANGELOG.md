@@ -29,7 +29,7 @@
 
 - Added pancake-react plugin
 - Added transpiled react ES5 file as main entry file for `package.json`
-- Added compiled css file that is automatically included by ES5 react file
+- Added compiled css file that is automatically imported by ES5 react file
 
 
 ### v0.2.0

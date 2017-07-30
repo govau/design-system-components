@@ -112,6 +112,7 @@ page-alerts
 
 ## Release History
 
+* v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Improved print styles
 * v0.1.0 - 💥 Initial version

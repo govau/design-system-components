@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/select",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "The form select element for multiple options",
 	"keywords": [
 		"uikit",

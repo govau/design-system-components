@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/inpage-nav",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Use inpage-nav links to help users scan and jump to content of a page.",
 	"keywords": [
 		"uikit",

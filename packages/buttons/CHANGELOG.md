@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.5.0 - Added pancake-react plugin, ES5 main file](v050)
 * [v0.4.0 - Added react component](v040)
 * [v0.3.0 - Fixed px height, added more robust CSS code](v030)
 * [v0.2.0 - Added block modifier](v020)
@@ -25,6 +26,13 @@
 
 
 ## Release History
+
+### v0.5.0
+
+- Added pancake-react plugin
+- Added transpiled react ES5 file as main entry file for `package.json`
+- Added compiled css file that is automatically imported by ES5 react file
+
 
 ### v0.4.0
 

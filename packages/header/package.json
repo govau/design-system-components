@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/header",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Headers provide a consistent start to pages.",
 	"keywords": [
 		"uikit",
