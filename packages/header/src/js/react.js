@@ -30,19 +30,21 @@ const themes = {
  * DEFAULT
  * The header component
  *
- * @param  {string}  title   - The title of the header
- * @param  {string}  level   - The tag level (<h1/> <h2/> etc), default: '1'
- * @param  {string}  subline - An optional subline, optional
- * @param  {boolean} hero    - The hero option, optional
- * @param  {string}  theme   - Optional theme that can be either: light dark, optional
+ * @param  {string}  title    - The title of the header
+ * @param  {string}  level    - The tag level (<h1/> <h2/> etc), default: '1'
+ * @param  {string}  subline  - An optional subline, optional
+ * @param  {boolean} hero     - The hero option, optional
+ * @param  {string}  theme    - Optional theme that can be either: light dark, optional
+ * @param  {node}    children - The inside of this section
  */
-const Header = ({ title, level, subline, hero, theme }) => {
+const Header = ({ title, level, subline, hero, theme, children }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
 		<div className={`uikit-header${ hero ? ' uikit-header--hero' : '' }${ theme ? ` ${ themes[ theme ] }` : '' }`} role="banner">
 			<HeadingTag className="uikit-header-heading">{ title }</HeadingTag>
 			{ subline && <span className="uikit-header-subline">{ subline }</span> }
+			{ children }
 		</div>
 	);
 };
@@ -53,6 +55,7 @@ Header.propTypes = {
 	subline: PropTypes.node,
 	hero: PropTypes.bool,
 	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	children: PropTypes.node,
 };
 
 Header.defaultProps = {

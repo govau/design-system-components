@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v1.2.0 - Added pancake-react plugin, ES5 main file](v120)
+* [v1.2.0 - Added pancake-react plugin, ES5 main file, added children](v120)
 * [v1.1.0 - Added react component](v110)
 * [v1.0.0 - Removed the side spacing #147](v100)
 * [v0.1.0 - 💥 Initial version](v010)
@@ -31,6 +31,7 @@
 - Added pancake-react plugin
 - Added transpiled react ES5 file as main entry file for `package.json`
 - Added compiled css file that is automatically imported by ES5 react file
+- Added children to header so you can put things in like menu buttons and whatnot
 
 
 ### v1.1.0
