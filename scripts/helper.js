@@ -256,90 +256,6 @@ const HELPER = (() => { // constructor factory
 
 /***************************************************************************************************************************************************************
  *
- * React
- *
- * Compile SASS to CSS, remove a comment which includes the CSS in the react module.
- *
- **************************************************************************************************************************************************************/
-
-/**
- * Dependencies
- */
-const Babel = require('babel-core');
-
-
-HELPER.react = ( () => {
-	/**
-	 * PUBLIC METHODS
-	 */
-	return {
-		/**
-		 * Starting off compile
-		 */
-		init: () => {
-			HELPER.react.sass();
-			HELPER.react.react();
-		},
-
-		/**
-		 * Compile and autoprefix Sass
-		 */
-		sass: () => {
-			// 1. create directory
-			CreateDir('./lib/css/');
-
-			// 2. compile scss
-			Sassify('./src/css/styles.scss', './lib/css/styles.css');
-
-			// 3. autoprefixer
-			Autoprefix('./lib/css/styles.css');
-		},
-
-		/**
-		 * Transpile react to es5, compile css file and include it into our react component
-		 */
-		react: () => {
-			const reactOptions = {
-				ast: false,
-				compact: true,
-				minified: true,
-				presets: [
-					`es2015`,
-					`react`,
-					`stage-0`,
-				],
-				sourceMaps: "both",
-				sourceMapTarget: `react.es5.js`,
-			};
-
-			const searches = {
-				'/* [replace-includes] */': `import '../css/styles.css';`,
-			};
-
-			// 1. Copy files
-			CopyFile('./lib/js/react.js', './lib/js/react.es5.js');
-
-			// 2. Replace the comment with an import statement
-			ReplaceFileContent( searches, `${ process.cwd() }/lib/js/react.es5.js` );
-
-			// 1. Compile /lib/react.js to react.es5.js
-			Babel.transformFile( `./lib/js/react.es5.js`, reactOptions, ( error, result ) => {
-				if( error ) {
-					HELPER.log.error(`We encountered an error when transpiling the react file in ${ Chalk.yellow( `${ process.cwd() }/lib/js/react.es5.js` ) }`);
-					HELPER.log.error( error );
-				}
-				else {
-					Fs.writeFileSync( `./lib/js/react.es5.js`, result.code );
-					Fs.writeFileSync( `./lib/js/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
-				}
-			});
-		}
-	}
-})();
-
-
-/***************************************************************************************************************************************************************
- *
  * PRECOMPILE MODULE
  *
  * Replace tags and move files from src/ to lib/
@@ -349,6 +265,7 @@ HELPER.react = ( () => {
 /**
  * Dependencies
  */
+const Babel = require('babel-core');
 const Treeify = require('treeify');
 
 
@@ -364,6 +281,8 @@ HELPER.precompile = (() => {
 			HELPER.precompile.sass();
 			HELPER.precompile.readme();
 			HELPER.precompile.js();
+			HELPER.precompile.reactSass();
+			HELPER.precompile.react();
 		},
 
 		/**
@@ -458,6 +377,60 @@ HELPER.precompile = (() => {
 		},
 
 		svg: () => {
+		},
+
+		/**
+		 * Compile and autoprefix Sass
+		 */
+		reactSass: () => {
+			// 1. create directory
+			CreateDir('./lib/css/');
+
+			// 2. compile scss
+			Sassify('./src/css/styles.scss', './lib/css/styles.css');
+
+			// 3. autoprefixer
+			Autoprefix('./lib/css/styles.css');
+		},
+
+		/**
+		 * Transpile react to es5, compile css file and include it into our react component
+		 */
+		react: () => {
+			const reactOptions = {
+				ast: false,
+				compact: true,
+				minified: true,
+				presets: [
+					`es2015`,
+					`react`,
+					`stage-0`,
+				],
+				sourceMaps: "both",
+				sourceMapTarget: `react.es5.js`,
+			};
+
+			const searches = {
+				'/* [replace-includes] */': `import '../css/styles.css';`,
+			};
+
+			// 1. Copy files
+			CopyFile('./lib/js/react.js', './lib/js/react.es5.js');
+
+			// 2. Replace the comment with an import statement
+			ReplaceFileContent( searches, `${ process.cwd() }/lib/js/react.es5.js` );
+
+			// 1. Compile /lib/react.js to react.es5.js
+			Babel.transformFile( `./lib/js/react.es5.js`, reactOptions, ( error, result ) => {
+				if( error ) {
+					HELPER.log.error(`We encountered an error when transpiling the react file in ${ Chalk.yellow( `${ process.cwd() }/lib/js/react.es5.js` ) }`);
+					HELPER.log.error( error );
+				}
+				else {
+					Fs.writeFileSync( `./lib/js/react.es5.js`, result.code );
+					Fs.writeFileSync( `./lib/js/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
+				}
+			});
 		},
 	}
 
@@ -964,7 +937,6 @@ HELPER.init = () => {
 
 		console.log(`\n`);
 		HELPER.precompile.init();
-		HELPER.react.init();
 	}
 
 
