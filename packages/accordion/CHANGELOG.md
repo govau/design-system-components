@@ -28,7 +28,7 @@
 ### v0.3.0
 
 - Added pancake-react plugin
-- Added transpiled eact ES5 file as main entry file for `package.json`
+- Added transpiled react ES5 file as main entry file for `package.json`
 - Added compiled css file that is automatically included by ES5 react file
 
 
