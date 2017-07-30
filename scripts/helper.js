@@ -383,13 +383,13 @@ HELPER.precompile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		reactSass: () => {
-			if( Fs.existsSync(`${ process.cwd() }/src/css/styles.scss`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
 
 				// 1. create directory
 				CreateDir('./lib/css/');
 
 				// 2. compile scss
-				Sassify('./src/css/styles.scss', './lib/css/styles.css');
+				Sassify('./src/sass/_dependencies.scss', './lib/css/styles.css');
 
 				// 3. autoprefixer
 				Autoprefix('./lib/css/styles.css');
@@ -415,7 +415,7 @@ HELPER.precompile = (() => {
 				};
 
 				const searches = {
-					'/* [replace-includes] */': `import '../css/styles.css';`,
+					'// [replace-imports]': `import '../css/styles.css';`,
 				};
 
 				// 1. Copy files

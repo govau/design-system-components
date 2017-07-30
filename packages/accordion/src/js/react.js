@@ -10,7 +10,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/* [replace-includes] */
+
+// The following line will be replaced automatically with generic imports for the ES5 pipeline.
+// You can safely ignore this bit if you use this module with pancake
+//
+// [replace-imports]
 
 let IDstart = 0;
 
