@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/accordion",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Allow the user to toggle the visibility of an element",
 	"keywords": [
 		"uikit",
@@ -25,7 +25,6 @@
 
 		"build:js": "node ../../scripts/helper.js precompile compile",
 		"build:react": "cd tests/react/ && webpack",
-		"build:css": "node ../../scripts/helper.js react",
 		"build": "npm-run-all --parallel build:*",
 
 		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
@@ -36,14 +35,12 @@
 		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},
 	"pancake": {
-		"auto-save": true,
-		"plugins": true,
-		"ignore": [],
 		"pancake-module": {
 			"version": "1.0.0",
 			"plugins": [
 				"@gov.au/pancake-sass",
-				"@gov.au/pancake-js"
+				"@gov.au/pancake-js",
+				"@gov.au/pancake-react"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
@@ -53,37 +50,18 @@
 				"path": "lib/js/module.js",
 				"jquery": "lib/js/jquery.js",
 				"react": "lib/js/react.js"
+			},
+			"react": {
+				"path": "lib/js/react.js"
 			}
-		},
-		"js": {
-			"minified": true,
-			"modules": false,
-			"location": "pancake/js/",
-			"name": "pancake.min.js"
-		},
-		"css": {
-			"minified": true,
-			"modules": false,
-			"browsers": [
-				"last 2 versions",
-				"ie 8",
-				"ie 9",
-				"ie 10"
-			],
-			"location": "pancake/css/",
-			"name": "pancake.min.css"
-		},
-		"sass": {
-			"modules": false,
-			"location": "pancake/sass/",
-			"name": "pancake.scss"
 		}
 	},
-	"main": "lib/js/react.js",
+	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-js": "^1.0.9",
-		"@gov.au/pancake-sass": "^1.1.1",
+		"@gov.au/pancake-js": "~1",
+		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-react": "~1",
 
 		"@gov.au/animate": "^0.1.3",
 		"@gov.au/core": "^0.1.0"

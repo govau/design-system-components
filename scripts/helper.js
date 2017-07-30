@@ -10,13 +10,15 @@
 /**
  * Dependencies
  */
-const Fs = require(`fs`);
-const Path = require(`path`);
-const Chalk = require(`chalk`);
-const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
 const Autoprefixer = require('autoprefixer');
 const Postcss = require('postcss');
 const Sass = require('node-sass');
+const Chalk = require(`chalk`);
+const Path = require(`path`);
+const Fs = require(`fs`);
+
+const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBALS
@@ -106,8 +108,6 @@ const ReplaceFileContent = ( searches, fileName ) => {
 
 	for( const replacing of Object.keys( searches ) ) { // replace all searches
 		content = content.split( replacing ).join( searches[ replacing ] ); // replacing globally without regex
-		console.log(replacing);
-		console.log(content.split( replacing ));
 	}
 
 	Fs.writeFileSync( fileName, content, ( error ) => {
@@ -194,7 +194,7 @@ const Sassify = ( scss, css ) => {
  * @param  {string} file - The file to be prefixed
  */
 const Autoprefix = ( file ) => {
-	const data = Fs.readFileSync( file, 'utf-8');
+	const data = Fs.readFileSync( file, 'utf-8' );
 
 	Postcss([ Autoprefixer({ browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ie 10'] }) ])
 		.process( data )
@@ -294,30 +294,44 @@ HELPER.react = ( () => {
 			// 3. autoprefixer
 			Autoprefix('./lib/css/styles.css');
 		},
+
+		/**
+		 * Transpile react to es5, compile css file and include it into our react component
+		 */
 		react: () => {
-			let reactOptions = {
+			const reactOptions = {
 				ast: false,
 				compact: true,
 				minified: true,
-				presets: [`es2015`, `react`, `stage-0`],
+				presets: [
+					`es2015`,
+					`react`,
+					`stage-0`,
+				],
 				sourceMaps: "both",
 				sourceMapTarget: `react.es5.js`,
 			};
+
 			const searches = {
-				'/*! [replace-css] */': `import styles from '../css/styles.css';`,
+				'/* [replace-includes] */': `import '../css/styles.css';`,
 			};
+
 			// 1. Copy files
 			CopyFile('./lib/js/react.js', './lib/js/react.es5.js');
-			// 2. Inject the CSS into the react.es5.js file
+
+			// 2. Replace the comment with an import statement
 			ReplaceFileContent( searches, `${ process.cwd() }/lib/js/react.es5.js` );
+
 			// 1. Compile /lib/react.js to react.es5.js
-			Babel.transformFile( `./lib/js/react.es5.js`, reactOptions, function (error, result) {
+			Babel.transformFile( `./lib/js/react.es5.js`, reactOptions, ( error, result ) => {
 				if( error ) {
-					HELPER.log.error(`Doh! ${ error }`);
-					return;
+					HELPER.log.error(`We encountered an error when transpiling the react file in ${ Chalk.yellow( `${ process.cwd() }/lib/js/react.es5.js` ) }`);
+					HELPER.log.error( error );
 				}
-			  Fs.writeFileSync( `./lib/js/react.es5.js`, result.code );
-			  Fs.writeFileSync( `./lib/js/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
+				else {
+					Fs.writeFileSync( `./lib/js/react.es5.js`, result.code );
+					Fs.writeFileSync( `./lib/js/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
+				}
 			});
 		}
 	}
@@ -950,6 +964,7 @@ HELPER.init = () => {
 
 		console.log(`\n`);
 		HELPER.precompile.init();
+		HELPER.react.init();
 	}
 
 
@@ -1001,22 +1016,6 @@ HELPER.init = () => {
 
 		console.log(`\n`);
 		HELPER.test.init();
-	}
-
-	if( process.argv.indexOf( 'react' ) !== -1 ) {
-		CFonts.say( `Compiling react for ${ PKG.name.substring( 8 ) }`, {
-			font: 'chrome',
-			space: false,
-			colors: ['red', 'magenta', 'blue'],
-		});
-
-		CFonts.say(`... so you don't have to`, {
-			font: 'console',
-			space: false,
-		});
-
-		console.log(`\n`);
-		HELPER.react.init();
 	}
 };
 

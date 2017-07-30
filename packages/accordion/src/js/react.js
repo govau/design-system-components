@@ -10,7 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/*! [replace-css] */
+/* [replace-includes] */
 
 let IDstart = 0;
 
