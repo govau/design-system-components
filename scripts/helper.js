@@ -357,6 +357,7 @@ HELPER.precompile = (() => {
 			const searches = {
 				'[replace-name]': HELPER.NAME,
 				'[replace-version]': HELPER.VERSION,
+				'// ES6 dependency: ': '',
 			};
 
 			if( _hasJS ) {
@@ -415,11 +416,14 @@ HELPER.precompile = (() => {
 				};
 
 				const searches = {
+					'[replace-name]': HELPER.NAME,
+					'[replace-version]': HELPER.VERSION,
+					'// ES5 dependency: ': '',
 					'// [replace-imports]': `import '../css/styles.css';`,
 				};
 
 				// 1. Copy files
-				CopyFile('./lib/js/react.js', './lib/js/react.es5.js');
+				CopyFile('./src/js/react.js', './lib/js/react.es5.js');
 
 				// 2. Replace the comment with an import statement
 				ReplaceFileContent( searches, `${ process.cwd() }/lib/js/react.es5.js` );
