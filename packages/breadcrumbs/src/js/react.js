@@ -13,6 +13,11 @@ import PropTypes from 'prop-types';
 import LinkList from './link-list.js';
 
 
+// The following line will be replaced automatically with generic imports for the ES5 pipeline.
+// You can safely ignore this bit if you use this module with pancake
+//
+// [replace-imports]
+
 /**
  * DEFAULT
  * The breadcrumbs component

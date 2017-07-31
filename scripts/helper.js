@@ -10,10 +10,15 @@
 /**
  * Dependencies
  */
-const Fs = require(`fs`);
-const Path = require(`path`);
+const Autoprefixer = require('autoprefixer');
+const Postcss = require('postcss');
+const Sass = require('node-sass');
 const Chalk = require(`chalk`);
+const Path = require(`path`);
+const Fs = require(`fs`);
+
 const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBALS
@@ -95,14 +100,14 @@ const CopyFile = ( source, target ) => {
 /**
  * Replace a string with a another globally in the file
  *
- * @param  {object} searchs  - What is replaced with what, Key = the text to be replaced, value = the replacement text.
+ * @param  {object} searches - What is replaced with what, Key = the text to be replaced, value = the replacement text.
  * @param  {string} FileName - The file to be converted
  */
-const ReplaceFileContent = ( searchs, fileName ) => {
+const ReplaceFileContent = ( searches, fileName ) => {
 	let content = Fs.readFileSync( fileName, 'utf-8');
 
-	for( const replacing of Object.keys( searchs ) ) { // replace all searches
-		content = content.split( replacing ).join( searchs[ replacing ] ); // replacing globally without regex
+	for( const replacing of Object.keys( searches ) ) { // replace all searches
+		content = content.split( replacing ).join( searches[ replacing ] ); // replacing globally without regex
 	}
 
 	Fs.writeFileSync( fileName, content, ( error ) => {
@@ -162,6 +167,51 @@ const GetFolders = ( thisPath, verbose ) => {
 };
 
 
+/**
+ * Compile Sass code into CSS
+ *
+ * @param  {string} scss - The Sass file to be compiled
+ * @param  {string} css  - The location where the CSS should be written to
+ */
+const Sassify = ( scss, css ) => {
+	const compiled = Sass.renderSync({
+		file: scss,
+		indentType: 'tab',
+		precision: 8,
+		includePaths: [ './lib/sass/' ],
+		outputStyle: 'compressed',
+	});
+
+	Fs.writeFileSync( css, compiled.css );
+
+	HELPER.log.success(`Compiled Sass ${ Chalk.yellow( scss ) }`);
+};
+
+
+/**
+ * Autoprefix a css file
+ *
+ * @param  {string} file - The file to be prefixed
+ */
+const Autoprefix = ( file ) => {
+	const data = Fs.readFileSync( file, 'utf-8' );
+
+	Postcss([ Autoprefixer({ browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ie 10'] }) ])
+		.process( data )
+		.then( ( prefixed ) => {
+			prefixed
+				.warnings()
+				.forEach( ( warn ) => {
+					console.warn( warn.toString() );
+			});
+
+			Fs.writeFileSync( file, prefixed.css );
+
+			HELPER.log.success(`Autoprefixed file ${ Chalk.yellow( file ) }`);
+	});
+};
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Constructor
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -204,7 +254,6 @@ const HELPER = (() => { // constructor factory
 })();
 
 
-
 /***************************************************************************************************************************************************************
  *
  * PRECOMPILE MODULE
@@ -216,6 +265,7 @@ const HELPER = (() => { // constructor factory
 /**
  * Dependencies
  */
+const Babel = require('babel-core');
 const Treeify = require('treeify');
 
 
@@ -231,6 +281,8 @@ HELPER.precompile = (() => {
 			HELPER.precompile.sass();
 			HELPER.precompile.readme();
 			HELPER.precompile.js();
+			HELPER.precompile.reactSass();
+			HELPER.precompile.react();
 		},
 
 		/**
@@ -245,7 +297,7 @@ HELPER.precompile = (() => {
 			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
 			CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
 
-			// rethingiemajiging the peer dependencies for sass
+			// Rethingiemajiging the peer dependencies for sass
 			let dependencies = [];
 			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
 				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
@@ -326,52 +378,85 @@ HELPER.precompile = (() => {
 
 		svg: () => {
 		},
+
+		/**
+		 * Compile and autoprefix Sass
+		 */
+		reactSass: () => {
+			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
+
+				// 1. create directory
+				CreateDir('./lib/css/');
+
+				// 2. compile scss
+				Sassify('./src/sass/_dependencies.scss', './lib/css/styles.css');
+
+				// 3. autoprefixer
+				Autoprefix('./lib/css/styles.css');
+			}
+		},
+
+		/**
+		 * Transpile react to es5, compile css file and include it into our react component
+		 */
+		react: () => {
+			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
+				const reactOptions = {
+					ast: false,
+					compact: true,
+					minified: true,
+					presets: [
+						`es2015`,
+						`react`,
+						`stage-0`,
+					],
+					sourceMaps: "both",
+					sourceMapTarget: `react.es5.js`,
+				};
+
+				const searches = {
+					'// [replace-imports]': `import '../css/styles.css';`,
+				};
+
+				// 1. Copy files
+				CopyFile('./lib/js/react.js', './lib/js/react.es5.js');
+
+				// 2. Replace the comment with an import statement
+				ReplaceFileContent( searches, `${ process.cwd() }/lib/js/react.es5.js` );
+
+				// 3. Compile /lib/react.js to react.es5.js
+				Babel.transformFile( `./lib/js/react.es5.js`, reactOptions, ( error, result ) => {
+					if( error ) {
+						HELPER.log.error(`We encountered an error when transpiling the react file in ${ Chalk.yellow( `${ process.cwd() }/lib/js/react.es5.js` ) }`);
+						HELPER.log.error( error );
+					}
+					else {
+						Fs.writeFileSync( `./lib/js/react.es5.js`, result.code );
+						Fs.writeFileSync( `./lib/js/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
+					}
+				});
+			}
+		},
 	}
 
 })();
-
 
 
 /***************************************************************************************************************************************************************
  *
  * COMPILE MODULE
  *
- * Compile assets, move files from /scr/ to /lib/
+ * Compile assets, move files from /src/ to /lib/
  *
  **************************************************************************************************************************************************************/
 
 /**
  * Dependencies
  */
-const Autoprefixer = require('autoprefixer');
-const Postcss = require('postcss');
-const Sass = require('node-sass');
 const Semver =  require('semver');
 
 
 HELPER.compile = (() => {
-	/**
-	 * PRIVATE
-	 * Compile Sass code into CSS
-	 *
-	 * @param  {string} scss The Sass file to be compiled
-	 * @param  {string} css  The location where the CSS should be written to
-	 */
-	const Sassify = ( scss, css ) => {
-		const compiled = Sass.renderSync({
-			file: scss,
-			indentType: 'tab',
-			precision: 8,
-			includePaths: [ './lib/sass/' ],
-			outputStyle: 'compressed',
-		});
-
-		Fs.writeFileSync( css, compiled.css );
-
-		HELPER.log.success(`Compiled Sass ${ Chalk.yellow( scss ) }`);
-	};
-
-
 	/**
 	 * PRIVATE
 	 * Flatten a deep object into a one level array
@@ -446,31 +531,6 @@ HELPER.compile = (() => {
 			});
 
 		}
-	};
-
-
-	/**
-	 * PRIVATE
-	 * Autoprefix a css file
-	 *
-	 * @param  {string} file - The file to be prefixed
-	 */
-	const Autoprefix = ( file ) => {
-		const data = Fs.readFileSync( file, 'utf-8');
-
-		Postcss([ Autoprefixer({ browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ie 10'] }) ])
-			.process( data )
-			.then( ( prefixed ) => {
-				prefixed
-					.warnings()
-					.forEach( ( warn ) => {
-						console.warn( warn.toString() );
-				});
-
-				Fs.writeFileSync( file, prefixed.css );
-
-				HELPER.log.success(`Autoprefixed file ${ Chalk.yellow( file ) }`);
-		});
 	};
 
 
@@ -612,19 +672,31 @@ HELPER.generate = (() => {
 
 					if( pkg.pancake['pancake-module'].js ) {
 						if( pkg.pancake['pancake-module'].js.jquery ) {
-							jquery = ` <a class="module-list__attribute" href="packages/${ module }/tests/jquery/">jquery</a>`;
+							jquery = `<br><a href="packages/${ module }/tests/jquery/">` +
+									`<img src="https://img.shields.io/badge/js        -jquery-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+								`</a>`;
 						}
 
 						if( pkg.pancake['pancake-module'].js.react ) {
-							react = ` <a class="module-list__attribute" href="packages/${ module }/tests/react/">react</a>`;
+							react = `<br><a href="packages/${ module }/tests/react/">` +
+									`<img src="https://img.shields.io/badge/js        -react-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+								`</a>`;
 						}
 					}
 
-					replacement += `<li><a href="${
+					replacement += `<li>` +
+						`<a class="module-list__headline" href="${
 						jquery === '' && react === ''
 						? `packages/${ module }/tests/site/`
-						: `packages/${ module }/tests/`
-					}">${ module } <small>v${ pkg.version }</small></a>${ jquery }${ react }</li>\n`;
+						: `packages/${ module }/tests/` }">` +
+							`${ module }</a>${ jquery }${ react }` +
+							`<br><a href="https://www.npmjs.com/package/@gov.au/${ module }">` +
+								`<img src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=version&colorA=313131&colorB=1B7991" alt="">` +
+							`</a>` +
+							`<br><a href="https://github.com/govau/uikit/tree/master/packages/${ module }">` +
+								`<img src="https://img.shields.io/badge/docs    -readme-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+							`</a>` +
+						`</li>\n`;
 				}
 			}
 

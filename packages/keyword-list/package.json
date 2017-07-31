@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/keyword-list",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "A list style for emphasising parts of a list item, useful for repeating phrases across that list’s items. ",
 	"keywords": [
 		"uikit",
@@ -42,33 +42,37 @@
 		"pancake-module": {
 			"version": "1.0.0",
 			"plugins": [
-				"@gov.au/pancake-sass"
+				"@gov.au/pancake-sass",
+				"@gov.au/pancake-react"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
 				"sass-versioning": true
 			},
-			"js": {
-				"react": "lib/js/react.js"
+			"react": {
+				"path": "lib/js/react.js"
 			}
 		}
 	},
-	"main": "lib/js/react.js",
+	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
+		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-react": "~1",
 
 		"@gov.au/core": "^0.1.0",
-		"@gov.au/link-list": "^0.2.0"
+		"@gov.au/link-list": "^0.3.0"
 	},
 	"peerDependencies": {
 		"@gov.au/core": "^0.1.0",
-		"@gov.au/link-list": "^0.2.0"
+		"@gov.au/link-list": "^0.3.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.1",
 		"babel-loader": "^7.0.0",
 		"babel-preset-es2015": "^6.24.1",
 		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
 		"browser-sync": "^2.18.6",
 		"npm-run-all": "^4.0.1",
 		"onchange": "^3.2.1",

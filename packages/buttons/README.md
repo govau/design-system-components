@@ -115,6 +115,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/buttons/tests
 
 ## Release History
 
+* v0.5.0 - Added pancake-react plugin, ES5 main file
 * v0.4.0 - Added react component
 * v0.3.0 - Fixed px height, added more robust CSS code
 * v0.2.0 - Added block modifier

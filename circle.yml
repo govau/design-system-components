@@ -20,7 +20,8 @@ dependencies:
   override:
     - find . -name "node_modules" -exec rm -rf '{}' + # removing all node_modules/ folder to help circle get it’s act together with caching
     - yarn                                            # install dependencies
-    - yarn bootstrap                                  # running bootstrap script -> install and link all dependencies via lerna
+    - yarn bootstrap:                                 # running bootstrap script -> install and link all dependencies via lerna
+        timeout: 1200
     - yarn build                                      # running build script -> build all assets
   cache_directories:
     - ~/.cache/yarn                                   # yarn needs this
