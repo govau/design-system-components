@@ -12,6 +12,14 @@ ReactDOM.render(
 
 
 		<hr />
+		<h2>header default with children</h2>
+
+		<Header title="Section title">
+			<button>Menu button?</button>
+		</Header>
+
+
+		<hr />
 		<h2>header default with different heading level</h2>
 
 		<Header title="Section title" level="2" />

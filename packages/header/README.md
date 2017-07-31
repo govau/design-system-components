@@ -115,6 +115,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/header/tests/
 
 ## Release History
 
+* v1.2.0 - Added pancake-react plugin, ES5 main file, added children
 * v1.1.0 - Added react component
 * v1.0.0 - Removed the side spacing #147
 * v0.1.0 - 💥 Initial version

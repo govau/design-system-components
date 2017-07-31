@@ -134,6 +134,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/t
 
 ## Release History
 
+* v0.3.0 - Fixed react pipeline, background repeat
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
 

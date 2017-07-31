@@ -47,7 +47,9 @@
 		}
 	},
 	"dependencies": {
-		"@gov.au/pancake": "~1"
+		"@gov.au/pancake": "~1",
+		"@gov.au/pancake-js": "~1",
+		"@gov.au/pancake-sass": "~1"
 	},
 	"peerDependencies": {
 	},

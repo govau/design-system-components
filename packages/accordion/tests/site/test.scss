@@ -1,21 +1,11 @@
-//sass-versioning
-@import '../../../core/node_modules/sass-versioning/dist/_index.scss';
-
 //dependencies
-@import '../../../core/lib/sass/_module.scss';
-@import '../../../animate/lib/sass/_module.scss';
+@import '../../src/sass/_dependencies.scss';
 
 //testing includes
 @import '../../../body/lib/sass/_module.scss';
 
-//this module
-@import '_module.scss';
-
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
-
-//version check with sass-versioning
-@include versioning-check();
 
 
 .split-wrapper {
