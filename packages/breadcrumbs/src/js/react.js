@@ -10,7 +10,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import LinkList from './link-list.js';
+// ES5 dependency: import LinkList from '@gov.au/link-list';
+// ES6 dependency: import LinkList from './link-list';
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
