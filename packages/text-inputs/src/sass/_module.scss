@@ -26,7 +26,7 @@
  */
 .uikit-text-input__label {
 	display: block;
-	margin-bottom: uikit-space( 0.5 );
+	margin-bottom: uikit-space( 0.25 );
 
 	> .uikit-text-input {
 		margin-top: uikit-space( 0.5 );
@@ -54,6 +54,9 @@
 
 	&:focus {
 		background-color: $uikit-colour-Link-10;
+		outline: 3px solid $uikit-light-focus;
+  	outline-offset: 0px;
+  	background-color: transparent;
 	}
 
 	&::selection {
@@ -72,7 +75,7 @@
 		border: 2px solid $uikit-colour-Error;
 
 		&:focus {
-			background-color: $uikit-colour-Error-10;
+			background-color: transparent;
 		}
 	}
 
