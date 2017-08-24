@@ -1,6 +1,6 @@
 # FAQs
 
-The Frequently Asked Questions (FAQs) page contains answers to commonly raised queries about the design system.
+This page contains frequently asked questions from our community.
 
 If you can't find an answer to a question you have please email us at guides@dta.gov.au or join our conversation on [slack](http://guides.service.gov.au/join-slack/).
 
@@ -8,7 +8,7 @@ If you can't find an answer to a question you have please email us at guides@dta
 
 **Is there any documentation or list of components?**
 
-You can view our current [documentation here](http://uikit.apps.staging.digital.gov.au/). We are creating a new version which should make it easier to get started with the design system.
+You can view our current [documentation here](http://uikit.apps.staging.digital.gov.au/). We are creating a new version which will make it easier to get started with the design system.
 
 **What are you working on?**
 
@@ -57,7 +57,7 @@ To optimise readability we have set a max-width on certain elements inside the b
 
 **Are there .PSD or .Sketch files of the design system?**
 
-We currently do not provide and design files. In the future we would love to provide users with variations of files to allow them to access the latest components in the design system.
+We currently do not provide any design files. In the future we would love to provide users with variations of files to allow them to access the latest components in the design system.
 
 **Why no carousels, select, tabs, and dropdowns?**
 
@@ -75,7 +75,7 @@ Complicated functions and interactions need careful accessibility consideration 
 - **Tabs / Collapsible panels:** Need work to be done correctly. They can hide content, often spoil 'find in page' functions, require understanding of how they work, add more accessibility issues.
  [https://baymard.com/blog/accordion-and-tab-design](https://baymard.com/blog/accordion-and-tab-design)
 
-## Developer
+## Development
 
 **Is the design system available with my content management system or javascript framework?**
 
