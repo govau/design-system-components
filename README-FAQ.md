@@ -106,13 +106,11 @@ If you would like all of your headings to use the design system classes you can 
 This will allow the headings to just pick up the styles by default, then you shouldn't have to worry about the classes too much:
 
 ```
-
 h1 {
 
   @extend .uikit-display-6;
 
 }
-
 ```
 
 **Why should I use a design system if I still have to write custom code?**
