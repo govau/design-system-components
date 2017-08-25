@@ -65,21 +65,21 @@ Complicated functions and interactions need careful accessibility consideration 
 
 - **Carousels** : hide content, are difficult to navigate, and often add more accessibility issues than they solve.
  
- [http://bradfrost.com/blog/post/carousels/](http://bradfrost.com/blog/post/carousels/)
+ 	[http://bradfrost.com/blog/post/carousels/](http://bradfrost.com/blog/post/carousels/)
  
- [http://shouldiuseacarousel.com/](http://shouldiuseacarousel.com/)
+ 	[http://shouldiuseacarousel.com/](http://shouldiuseacarousel.com/)
 
 - **Select:** users struggle with drop-downs and select boxes all the time.
  
- [https://www.youtube.com/watch?v=CUkMCQR4TpY](https://www.youtube.com/watch?v=CUkMCQR4TpY)
+ 	[https://www.youtube.com/watch?v=CUkMCQR4TpY](https://www.youtube.com/watch?v=CUkMCQR4TpY)
  
- [https://paper.dropbox.com/doc/Select-boxes-v7PWDvPDV2tmc9pzDbm3s](https://paper.dropbox.com/doc/Select-boxes-v7PWDvPDV2tmc9pzDbm3s)
+ 	[https://paper.dropbox.com/doc/Select-boxes-v7PWDvPDV2tmc9pzDbm3s](https://paper.dropbox.com/doc/Select-boxes-v7PWDvPDV2tmc9pzDbm3s)
  
- [https://www.formisimo.com/blog/why-are-drop-downs-and-select-boxes-bad-for-forms/](https://www.formisimo.com/blog/why-are-drop-downs-and-select-boxes-bad-for-forms/)
+ 	[https://www.formisimo.com/blog/why-are-drop-downs-and-select-boxes-bad-for-forms/](https://www.formisimo.com/blog/why-are-drop-downs-and-select-boxes-bad-for-forms/)
 
 - **Tabs / Collapsible panels:** Need work to be done correctly. They can hide content, often spoil 'find in page' functions, require understanding of how they work, add more accessibility issues.
  
- [https://baymard.com/blog/accordion-and-tab-design](https://baymard.com/blog/accordion-and-tab-design)
+ 	[https://baymard.com/blog/accordion-and-tab-design](https://baymard.com/blog/accordion-and-tab-design)
 
 ## Development
 
