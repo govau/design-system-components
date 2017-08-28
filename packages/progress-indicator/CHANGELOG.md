@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.4.0 - Fixing BEM issues with class names](v040)
 * [v0.3.0 - Added pancake-react plugin, ES5 main file](v030)
 * [v0.2.0 - Added react component](v020)
 * [v0.1.0 - 💥 Initial version](v010)
@@ -24,6 +25,10 @@
 
 
 ## Release History
+
+### v0.4.0
+
+- Fixing BEM issues with class names
 
 ### v0.3.0
 
