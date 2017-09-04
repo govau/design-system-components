@@ -81,7 +81,7 @@
 		}
 	}
 
-	&.progress-indicator--doing {
+	&.progress-indicator__link--doing {
 		border-left-color: $uikit-colour-Hero;
 		font-weight: bold;
 
@@ -105,7 +105,7 @@
 		}
 	}
 
-	&.progress-indicator--done {
+	&.progress-indicator__link--done {
 		&:after {
 			background-image: uikit-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path fill="#{ $uikit-colour-Hero }" d="M24,12 C24,18.6251859 18.6251859,24 12,24 C5.37481408,24 0,18.6251859 0,12 C0,5.37481408 5.37481408,0 12,0 C18.6251859,0
