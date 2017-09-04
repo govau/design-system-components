@@ -465,34 +465,7 @@ All modules have to work on the below browsers:
 
 ## Contribute
 
-💡 Building the UI-Kit is only necessary of you want to contribute to it. If you want to use the modules in your own project, install them via npm as described
-in [How to use](#how-to-use).
-
-To build this project you have to install [lerna](https://github.com/lerna/lerna) globally after cloning it via `yarn global add lerna` and run:
-
-```shell
-yarn
-yarn bootstrap
-yarn build
-```
-
-To make changes to an existing module, cd into the folder and run the watch:
-
-```shell
-cd packages/body
-yarn watch
-```
-
-To add a new module run the scaffolding helper:
-
-```shell
-npm run scaffolding
-```
-
-_❗ After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
-
-
-**[⬆ back to top](#contents)**
+See our [guide to contributing](.github/CONTRIBUTING.md).
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
