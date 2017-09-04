@@ -47,11 +47,11 @@ export const ProgressIndicatorItem = ({ item }) => {
 	return (
 		<li>
 			{ item.link
-				? <a className={`progress-indicator__link progress-indicator--${ item.status }`} href={ item.link } { ...attributeOptions }>
+				? <a className={`progress-indicator__link progress-indicator__link--${ item.status }`} href={ item.link } { ...attributeOptions }>
 						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
 						{ item.text }
 					</a>
-				: <button className={`progress-indicator__link progress-indicator--${ item.status }`} { ...attributeOptions }>
+				: <button className={`progress-indicator__link progress-indicator__link--${ item.status }`} { ...attributeOptions }>
 						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
 						{ item.text }
 					</button>
