@@ -7,6 +7,7 @@ GOV.AU UI-Kit
 ## Contents
 
 * [How to use](#how-to-use)
+* [Frequently asked questions](#frequently-asked-questions)
 * [Checklist and browser support](#checklist-and-browser-support)
 * [Modules](#modules)
 * [Contribute](#contribute)
@@ -46,6 +47,18 @@ yarn add @gov.au/pancake-sass @gov.au/body @gov.au/header @gov.au/footer @gov.au
 An even better experience is using [Syrup](https://github.com/govau/pancake/tree/master/packages/pancake-syrup). Install it globally via
 `yarn global add @gov.au/syrup`. More info coming soon.
 
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Frequently asked questions
+
+View our [frequently asked questions page](FAQ.md) to see common questions from the community.
+
+If you can’t find an answer to a question you have please email us at guides@dta.gov.au or join our conversation on [slack](http://guides.service.gov.au/join-slack/).
 
 **[⬆ back to top](#contents)**
 
