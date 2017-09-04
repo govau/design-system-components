@@ -37,6 +37,14 @@
 		background-color: $uikit-colour-Primary--30;
 	}
 
+	&:focus {
+		outline: none;
+	  -webkit-box-shadow: 0 0 0 3px $uikit-light-focus;
+	  -moz-box-shadow: 0 0 0 3px $uikit-light-focus;
+	  box-shadow: 0 0 0 3px $uikit-light-focus;
+	  border-radius: 0px;
+	}
+
 	@include uikit-focus();
 
 	&:disabled {

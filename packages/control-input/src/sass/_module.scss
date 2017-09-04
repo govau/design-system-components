@@ -115,6 +115,13 @@
 
 	&:focus + .uikit-control-input__text {
 		@include uikit-outline();
+
+		&:before {
+			-webkit-box-shadow: 0 0 0 3px $uikit-light-focus;
+		  -moz-box-shadow: 0 0 0 3px $uikit-light-focus;
+		  box-shadow: 0 0 0 3px $uikit-light-focus;
+		  border-radius: 15px;
+		}
 	}
 
 	&:disabled {
@@ -152,6 +159,7 @@
 	line-height: $uikit-leading;
 	font-size: 17px;
 	margin-left: 35px;
+	display: block;
 
 	&:before,
 	&:after {
