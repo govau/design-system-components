@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/responsive-media",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Caters for video/slideshow dimensions and aspect ratios across various viewports/widths.",
 	"keywords": [
 		"uikit",
