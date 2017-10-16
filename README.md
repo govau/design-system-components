@@ -478,7 +478,7 @@ All modules have to work on the below browsers:
 
 ## Contribute
 
-See our [guide to contributing](.github/CONTRIBUTING.md).
+See our [guide to contributing](CONTRIBUTING.md).
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
