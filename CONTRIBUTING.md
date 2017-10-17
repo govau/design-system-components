@@ -1,11 +1,12 @@
 Contributing to UI-Kit
 ======================
 
-Hi! Thank you for your interest in contributing to UI-Kit, we really appreciate it.
+Hi there! Thank you for your interest in contributing to UI-Kit, we really appreciate it.
 
-There are many ways to contribute – reporting bugs, fixing bugs, new module suggestions, submitting pull requests for enhancements to modules.
+There are many ways to contribute – reporting bugs, fixing bugs, new module suggestions, submitting pull requests for enhancements to modules or even writing
+documentation.
 
-Wherever you are in government, and whatever your discipline is, you are invited to contribute.
+Wherever you are, and whatever your discipline is, you are invited to contribute.
 
 
 ## Contents
@@ -17,13 +18,14 @@ Wherever you are in government, and whatever your discipline is, you are invited
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Reporting Bugs, Asking Questions, Sending Suggestions
+## Reporting Bugs, asking Questions, sending Suggestions
 
-Use search to see if the same bug, question or suggestion has already been raised.
+Use the search in [issues](https://github.com/govau/uikit/issues) to see if the same bug, question or suggestion has already been raised.
 
-If you're requesting a new module, prefix the title with "new module:".
+If you’re requesting a new module, prefix the title with `new module: `.
 
-If you're filing a bug, specific steps to reproduce are helpful. Please reference the module that has the bug, along with what you expected to see and what happened instead.
+If you’re filing a bug, specific steps to reproduce are helpful. Please reference the module that has the bug, along with what you expected to see and what
+happened instead. For more infos look at our [issue template](./ISSUE_TEMPLATE.md).
 
 **[⬆ back to top](#contents)**
 
@@ -35,21 +37,22 @@ If you're filing a bug, specific steps to reproduce are helpful. Please referenc
 
 If you’d like to contribute code, first, you will need to run UI-Kit locally.
 
-💡 Building the UI-Kit is only necessary if you want to contribute to it. If you want to use the modules in your own project, install them via npm as described in [How to use](#how-to-use).
+💡 Building the UI-Kit is only necessary if you want to contribute to it. If you want to use the modules in your own project, install them via npm as described
+in [How to use](./README.md#how-to-use).
 
-To build this project you have to install [lerna](https://github.com/lerna/lerna) globally after cloning it via `yarn global add lerna` and run:
+To build this project you have to install [lerna](https://github.com/lerna/lerna) globally after cloning it via `npm install -g lerna` and run:
 
 ```shell
-yarn
-yarn bootstrap
-yarn build
+npm install
+npm run bootstrap
+npm run build
 ```
 
 To make changes to an existing module, cd into the folder and run the watch:
 
 ```shell
 cd packages/body
-yarn watch
+npm run watch
 ```
 
 To add a new module run the scaffolding helper:
