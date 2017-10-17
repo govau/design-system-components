@@ -56,7 +56,7 @@ An even better experience is using [Syrup](https://github.com/govau/pancake/tree
 
 ## Frequently asked questions
 
-View our [frequently asked questions page](FAQ.md) to see common questions from the community.
+View our [frequently asked questions page](./FAQ.md) to see common questions from the community.
 
 If you can’t find an answer to a question you have please email us at guides@dta.gov.au or join our conversation on [slack](http://guides.service.gov.au/join-slack/).
 
@@ -478,7 +478,7 @@ All modules have to work on the below browsers:
 
 ## Contribute
 
-See our [guide to contributing](.github/CONTRIBUTING.md).
+See our [guide to contributing](./CONTRIBUTING.md).
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
