@@ -15,6 +15,8 @@
 
 ## Versions
 
+* [v0.1.5 - Fixed pancake config](v015)
+* [v0.1.4 - Pinned pancake plugins](v014)
 * [v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction](v013)
 * [v0.1.2 - Removed core as dependency](v012)
 * [v0.1.1 - 💥 Initial version](v011)
@@ -24,6 +26,16 @@
 
 
 ## Release History
+
+### v0.1.5
+
+- Fixed pancake config
+
+
+### v0.1.4
+
+- Pinned `pancake-js` and `pancake-sass` to avoid issues with caching in continues integration
+
 
 ### v0.1.3
 
