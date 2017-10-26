@@ -644,6 +644,7 @@ HELPER.generate = (() => {
 						name: packageJson.name,
 						version: packageJson.version,
 						peerDependencies: packageJson.peerDependencies,
+						'pancake-module': packageJson.pancake['pancake-module'],
 					};
 				}
 			}
