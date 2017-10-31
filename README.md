@@ -10,7 +10,7 @@ GOV.AU UI-Kit
 * [Frequently asked questions](#frequently-asked-questions)
 * [Checklist and browser support](#checklist-and-browser-support)
 * [Modules](#modules)
-* [Contribute](#contribute)
+* [Contribute](./CONTRIBUTING.md)
 * [Tests](#tests)
 * [License](#license)
 
@@ -459,14 +459,6 @@ All modules have to work on the below browsers:
 <br>
 
 **[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-## Contribute
-
-See our [guide to contributing](./CONTRIBUTING.md).
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
