@@ -637,7 +637,7 @@ HELPER.generate = (() => {
 			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const packageJson = require( Path.normalize( `${ packagesPath }/${ module }/package.json` ) );
+					packageJson = require( Path.normalize( `${ packagesPath }/${ module }/package.json` ) );
 
 					uikitJson[ packageJson.name ] = { // add to uikit.json
 						name: packageJson.name,
@@ -661,10 +661,11 @@ HELPER.generate = (() => {
 		/**
 		 * Get all the dependencies and their child dependencies
 		 *
-		 * @param {object} dependencies      - An object containing dependency { name: version }
-		 * @param {object} dependencyBundle  - An empty object to add the found dependencies to
+		 * @param {object} dependencies         - An object containing dependency
+		 * @param {object} dependencies[ name ] - The version string with the name as the key
+		 * @param {object} dependencyBundle     - An empty object to add the found dependencies to
 		 *
-		 * @return {array} dependencyBundle  - An object containing all of the dependencies found
+		 * @return {array} dependencyBundle   - An object containing all of the dependencies found
 		 */
 		getAllDependencies: ( dependencies, dependencyBundle = {} ) => {
 			const packagesPath = Path.normalize( `${ __dirname }/../packages/` );
