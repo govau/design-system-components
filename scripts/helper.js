@@ -631,13 +631,12 @@ HELPER.generate = (() => {
 		 */
 		json: ( allModules ) => {
 			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			let packageJson = {}; // each package.json
 			let uikitJson = {};   // the uikit.json object
 
 			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					packageJson = require( Path.normalize( `${ packagesPath }/${ module }/package.json` ) );
+					const packageJson = require( Path.normalize( `${ packagesPath }/${ module }/package.json` ) );
 
 					uikitJson[ packageJson.name ] = { // add to uikit.json
 						name: packageJson.name,
@@ -651,7 +650,6 @@ HELPER.generate = (() => {
 			Fs.writeFile( Path.normalize(`${ __dirname }/../uikit.json`), JSON.stringify( uikitJson ), 'utf8', ( error ) => { // write file
 				if( error ) {
 					console.error( error );
-					return;
 				}
 
 				HELPER.log.success(`Written ${ Chalk.yellow('uikit.json') }`);
