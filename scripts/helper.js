@@ -637,13 +637,12 @@ HELPER.generate = (() => {
 			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const pkgPath = Path.normalize(`${ packagesPath }/${ module }/package.json`);
-					packageJson = require( pkgPath ); // read the package.json
+					const packageJson = require( Path.normalize( `${ packagesPath }/${ module }/package.json` ) );
 
 					uikitJson[ packageJson.name ] = { // add to uikit.json
 						name: packageJson.name,
 						version: packageJson.version,
-						peerDependencies: packageJson.peerDependencies,
+						peerDependencies: HELPER.generate.getAllDependencies( packageJson.dependencies ),
 						'pancake-module': packageJson.pancake['pancake-module'],
 					};
 				}
@@ -657,6 +656,39 @@ HELPER.generate = (() => {
 
 				HELPER.log.success(`Written ${ Chalk.yellow('uikit.json') }`);
 			});
+		},
+
+		/**
+		 * Get all the dependencies and their child dependencies
+		 *
+		 * @param {object} dependencies      - An object containing dependency { name: version }
+		 * @param {object} dependencyBundle  - An empty object to add the found dependencies to
+		 *
+		 * @return {array} dependencyBundle  - An object containing all of the dependencies found
+		 */
+		getAllDependencies: ( dependencies, dependencyBundle = {} ) => {
+			const packagesPath = Path.normalize( `${ __dirname }/../packages/` );
+
+			// For each dependency received go through each of the keys
+			for( const dependency of Object.keys( dependencies ) ) {
+
+				const trimmedDepedency = dependency.replace( '@gov.au/', '' );
+				const dependencyPackagePath = Path.normalize( `${ packagesPath }/${ trimmedDepedency }/package.json` );
+
+				// If there is a package.json file
+				if( Fs.existsSync( dependencyPackagePath ) ) {
+					// Get the data inside the package.json
+					const packageJson = require( dependencyPackagePath );
+
+					// Add the dependency information to the bundle
+					dependencyBundle[ dependency ] = dependencies[ dependency ];
+
+					// Iterate over new dependencies
+					HELPER.generate.getAllDependencies( packageJson.dependencies, dependencyBundle );
+				}
+			};
+
+			return dependencyBundle;
 		},
 
 		/**
