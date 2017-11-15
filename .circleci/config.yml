@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - checkout                                    # get the files from the repo (why would you ever not want the files????)
+      - run: rm -rf node_modules                    # delete node_modules folder because we need to bust the cache
       - run: npm install                            # duh
       - run: npm run bootstrap                      # installing all dependencies of all packages
       - run: npm run build                          # build all packages
@@ -39,6 +40,7 @@ jobs:
 
     steps:
       - checkout                                    # get the files from the repo (why would you ever not want the files????)
+      - run: rm -rf node_modules                    # delete node_modules folder because we need to bust the cache
       - run: npm install                            # duh
       - run: npm run bootstrap                      # installing all dependencies of all packages
       - run: npm run build                          # build all packages
