@@ -8,7 +8,7 @@
 
 
 @media print {
-	.uikit-accordion__title {
+	.au-accordion__title {
 		background: #fff !important;
 
 		&:after {
@@ -16,7 +16,7 @@
 		}
 	}
 
-	.uikit-accordion__body {
+	.au-accordion__body {
 		height: auto !important;
 		display: block !important;
 	}

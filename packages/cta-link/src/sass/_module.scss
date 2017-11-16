@@ -14,36 +14,36 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-cta-link {
+.au-cta-link {
 	-webkit-appearance: none;
 	padding: 0;
 	display: inline-block;
 	position: relative;
 	font-size: 21px;
-	margin-bottom: uikit-space( 1 );
-	line-height: $uikit-leading;
+	margin-bottom: AU-space( 1 );
+	line-height: $AU-leading;
 	font-weight: bold;
 	background: transparent;
 	text-align: left;
-	color: $uikit-colour-Text;
-	font-family: $uikit-font-system;
+	color: $AU-color-Text;
+	font-family: $AU-font;
 	text-decoration: none;
 	border: none;
-	border-bottom: solid 1px $uikit-colour-Primary;
+	border-bottom: solid 1px $AU-darkcolor-Background-light;
 	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 	cursor: pointer;
 
-	@include uikit-focus();
+	@include AU-focus();
 
 	&:after {
 		content: ' ';
 		display: inline-block;
 		width: 0.9em;
 		height: 0.8em;
-		margin: 0 uikit-space( 0.25 ) 0 uikit-space( 0.25 );
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Primary }" d="M128 64l-64 64-16-16 64-64"/>
-				<path fill="#{ $uikit-colour-Primary }" d="M128 64l-16 16-64-64L64 0"/>
+		margin: 0 AU-space( 0.25 ) 0 AU-space( 0.25 );
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $AU-darkcolor-Background-light }" d="M128 64l-64 64-16-16 64-64"/>
+				<path fill="#{ $AU-darkcolor-Background-light }" d="M128 64l-16 16-64-64L64 0"/>
 			</svg>');
 		transition: margin 0.1s ease-in;
 
@@ -56,12 +56,12 @@
 
 	&:hover,
 	&:focus {
-		background-color: $uikit-colour-Link;
+		background-color: $AU-color-Action;
 		border-color: transparent;
-		color: $uikit-colour-Text; //sets the hover back to what it used to be.
+		color: $AU-color-Text; //sets the hover back to what it used to be.
 
 		&:after {
-			margin: 0 uikit-space( 0.1 ) 0 uikit-space( 0.4 ); //move arrow by just uikit-space( 0.1 ); this is not a magic number …
+			margin: 0 AU-space( 0.1 ) 0 AU-space( 0.4 ); //move arrow by just AU-space( 0.1 ); this is not a magic number …
 		}
 	}
 }

@@ -18,16 +18,16 @@
 /**
  * The generic callout.
  */
-.uikit-callout {
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
-	line-height: $uikit-leading;
-	margin: uikit-space( 1 ) uikit-space( 0.25 );
-	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
-	border-left: 6px solid $uikit-colour-Primary;
-	border-radius: $uikit-border-radius;
-	box-shadow: 2px 0 6px transparentize($uikit-colour-Text, 0.3);
-	max-width: $uikit-maxwidth;
+.au-callout {
+	font-family: $AU-font;
+	color: $AU-color-Text;
+	line-height: $AU-leading;
+	margin: AU-space( 1 ) AU-space( 0.25 );
+	padding: AU-space( 0.75 ) AU-space( 0.75 ) AU-space( 0.75 ) AU-space( 0.5 );
+	border-left: 6px solid $AU-darkcolor-Background-light;
+	border-radius: $AU-border-radius;
+	box-shadow: 2px 0 6px transparentize($AU-color-Text, 0.3);
+	max-width: $AU-maxwidth;
 
 	:first-child {
 		margin-top: 0;
@@ -39,9 +39,9 @@
 
 	.ie8 &,
 	.lt-ie8 & {
-		border-top: $uikit-borderize;
-		border-right: $uikit-borderize;
-		border-bottom: $uikit-borderize;
+		border-top: $AU-borderize;
+		border-right: $AU-borderize;
+		border-bottom: $AU-borderize;
 	}
 }
 
@@ -49,32 +49,32 @@
 /**
  * The calendar event callout
  */
-.uikit-callout--calendar-event {
-	background-color: $uikit-colour-Background;
+.au-callout--calendar-event {
+	background-color: $AU-color-Background;
 }
 
-.uikit-callout--calendar-event__lede,
-.uikit-callout--calendar-event__time,
-.uikit-callout--calendar-event__name {
+.au-callout--calendar-event__lede,
+.au-callout--calendar-event__time,
+.au-callout--calendar-event__name {
 	display: block; //overrides body, depending on markup (eg. using `p`).
 }
 
-.uikit-callout--calendar-event__lede,
-.uikit-callout--calendar-event__time,
-.uikit-callout--calendar-event__name {
-	margin-bottom: uikit-space( 0.5 ); //overrides body, to allow for var. text markup.
+.au-callout--calendar-event__lede,
+.au-callout--calendar-event__time,
+.au-callout--calendar-event__name {
+	margin-bottom: AU-space( 0.5 ); //overrides body, to allow for var. text markup.
 }
 
-.uikit-callout--calendar-event__lede {
+.au-callout--calendar-event__lede {
 	font-size: 18px;
 }
 
-.uikit-callout--calendar-event__time,
-.uikit-callout--calendar-event__name {
+.au-callout--calendar-event__time,
+.au-callout--calendar-event__name {
 	font-size: 32px;
 }
 
-.uikit-callout--calendar-event__time {
+.au-callout--calendar-event__time {
 	font-weight: bold;
 	margin-bottom: 0;
 }

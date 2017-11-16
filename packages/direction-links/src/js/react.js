@@ -22,10 +22,10 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const directions = {
-	up: 'uikit-direction-link--up',
-	right: 'uikit-direction-link--right',
-	down: 'uikit-direction-link--down',
-	left: 'uikit-direction-link--left',
+	up: 'au-direction-link--up',
+	right: 'au-direction-link--right',
+	down: 'au-direction-link--down',
+	left: 'au-direction-link--left',
 };
 
 /**
@@ -45,10 +45,10 @@ const DirectionLink = ({ link, text, direction, onClick }) => {
 	}
 
 	if( link ) {
-		return (<a className={ `uikit-direction-link ${ directions[ direction ] }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return (<a className={ `au-direction-link ${ directions[ direction ] }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return (<button className={ `uikit-direction-link ${ directions[ direction ] }` } { ...attributeOptions }>{ text }</button> );
+		return (<button className={ `au-direction-link ${ directions[ direction ] }` } { ...attributeOptions }>{ text }</button> );
 	}
 };
 

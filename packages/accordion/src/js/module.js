@@ -7,9 +7,9 @@
  *
  **************************************************************************************************************************************************************/
 
-var UIKIT = UIKIT || {};
+var AU = AU || {};
 
-( function( UIKIT ) {
+( function( AU ) {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // NAMESPACE MODULE
@@ -56,12 +56,12 @@ var UIKIT = UIKIT || {};
 	function toggleClasses( element, state, openingClass, closingClass ) {
 
 		if( state === 'opening' || state === 'open' ) {
-			var oldClass = openingClass || 'uikit-accordion--closed';
-			var newClass = closingClass || 'uikit-accordion--open';
+			var oldClass = openingClass || 'au-accordion--closed';
+			var newClass = closingClass || 'au-accordion--open';
 		}
 		else {
-			var oldClass = closingClass || 'uikit-accordion--open';
-			var newClass = openingClass || 'uikit-accordion--closed';
+			var oldClass = closingClass || 'au-accordion--open';
+			var newClass = openingClass || 'au-accordion--closed';
 		}
 
 		removeClass( element, oldClass );
@@ -140,13 +140,13 @@ var UIKIT = UIKIT || {};
 			var target = document.getElementById( targetId );
 
 			if( target == null ) {
-				throw new Error('UIKIT.animate.Toggle cannot find the target to be toggled from inside aria-controls');
+				throw new Error('AU.animate.Toggle cannot find the target to be toggled from inside aria-controls');
 			}
 
 			target.style.display = 'block';
 
 			(function( element ) {
-				UIKIT.animate.Toggle({
+				AU.animate.Toggle({
 					element: target,
 					property: 'height',
 					speed: speed || 250,
@@ -243,7 +243,7 @@ var UIKIT = UIKIT || {};
 			setAriaRoles( element, target, 'opening' );
 
 			(function( target, speed, element ) {
-				UIKIT.animate.Run({
+				AU.animate.Run({
 					element: target,
 					property: 'height',
 					endSize: 'auto',
@@ -288,7 +288,7 @@ var UIKIT = UIKIT || {};
 			setAriaRoles( element, target, 'closing' );
 
 			(function( target, speed ) {
-				UIKIT.animate.Run({
+				AU.animate.Run({
 					element: target,
 					property: 'height',
 					endSize: 0,
@@ -304,11 +304,11 @@ var UIKIT = UIKIT || {};
 	}
 
 
-	UIKIT.accordion = accordion;
+	AU.accordion = accordion;
 
-}( UIKIT ));
+}( AU ));
 
 
 if( typeof module !== 'undefined' ) {
-	module.exports = UIKIT;
+	module.exports = AU;
 }

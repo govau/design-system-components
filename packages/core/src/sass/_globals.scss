@@ -89,11 +89,11 @@ $AU-color-Focus:            #f04400 !default;
 $AU-color-Background-light: #ffffff !default;
 
 // non user definable pallet colors
-$AU-color-Muted:              pink !global;
-$AU-color-Border:             pink !global;
-$AU-color-Background:         pink !global;
-$AU-color-Background-dark:    pink !global;
-$AU-color-Background-darkest: pink !global;
+$AU-color-Muted:              #6a6a6a !global;
+$AU-color-Border:             #878787 !global;
+$AU-color-Background:         #f5f5f5 !global;
+$AU-color-Background-dark:    #ebebeb !global;
+$AU-color-Background-darkest: #d6d6d6 !global;
 
 
 /**
@@ -102,13 +102,24 @@ $AU-color-Background-darkest: pink !global;
 $AU-darkcolor-Text:             #ffffff !default;
 $AU-darkcolor-Action:           #61daff !default;
 $AU-darkcolor-Focus:            #ff8629 !default;
-$AU-darkcolor-Background-light: #121f22 !default;
+$AU-darkcolor-Background-light: #135E70 !default;
 
-$AU-darkcolor-Muted:              pink !global;
-$AU-darkcolor-Border:             pink !global;
-$AU-darkcolor-Background:         pink !global;
-$AU-darkcolor-Background-dark:    pink !global;
-$AU-darkcolor-Background-darkest: pink !global;
+// non user definable pallet colors
+$AU-darkcolor-Muted:              #aed1d9 !global;
+$AU-darkcolor-Border:             #74afbe !global;
+$AU-darkcolor-Background:         #104f5f !global;
+$AU-darkcolor-Background-dark:    #0d414d !global;
+$AU-darkcolor-Background-darkest: #051b20 !global;
+
+
+/**
+ * Colors system messages
+ */
+$AU-color-Error: #ff635c !default;
+$AU-color-Success: #0cac78 !default;
+$AU-color-Warning: #f69900 !default;
+$AU-color-Info: #00bfe9 !default;
+
 
 /**
  * Border vars and styles

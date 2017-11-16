@@ -38,10 +38,10 @@ export const KeywordListItem = ({ repeatedName, item }) => {
 	}
 
 	return (
-		<li className="uikit-keyword-list__item">
+		<li className="au-keyword-list__item">
 			{ item.link
-				? <a href={ item.link } { ...attributeOptions }><small className="uikit-keyword-list__item__small">{ repeatedName }</small>{ item.name }</a>
-				: <span><small className="uikit-keyword-list__item__small">{ repeatedName }</small>{ item.name }</span>
+				? <a href={ item.link } { ...attributeOptions }><small className="au-keyword-list__item__small">{ repeatedName }</small>{ item.name }</a>
+				: <span><small className="au-keyword-list__item__small">{ repeatedName }</small>{ item.name }</span>
 			}
 		</li>
 	);
@@ -65,7 +65,7 @@ KeywordListItem.propTypes = {
  * @param  {array}  items        - All items in this list, format: { link: '', name: '', onClick: () }
  */
 const KeywordList = ({ repeatedName, items }) => (
-	<ul className="uikit-keyword-list uikit-link-list">
+	<ul className="au-keyword-list au-link-list">
 		{ items.map( ( item, i ) => <KeywordListItem key={ i } item={ item } repeatedName={ repeatedName } /> ) }
 	</ul>
 );

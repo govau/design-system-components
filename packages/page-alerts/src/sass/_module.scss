@@ -20,17 +20,17 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Page alert defaults to info
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-page-alerts {
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
-	line-height: $uikit-leading;
+.au-page-alerts {
+	font-family: $AU-font;
+	color: $AU-color-Text;
+	line-height: $AU-leading;
 	position: relative;
-	margin: uikit-space( 1 ) 0;
-	padding: uikit-space( 0.75 ) uikit-space( 0.5 ) uikit-space( 0.75 ) uikit-space( 0.5 );
-	border: solid 2px $uikit-colour-Info;
-	border-left: 48px solid $uikit-colour-Info;
-	border-radius: $uikit-border-radius;
-	max-width: $uikit-maxwidth;
+	margin: AU-space( 1 ) 0;
+	padding: AU-space( 0.75 ) AU-space( 0.5 ) AU-space( 0.75 ) AU-space( 0.5 );
+	border: solid 2px $AU-color-Info;
+	border-left: 48px solid $AU-color-Info;
+	border-radius: $AU-border-radius;
+	max-width: $AU-maxwidth;
 
 	:first-child {
 		margin-top: 0;
@@ -50,8 +50,8 @@
 		width: 24px;
 		height: 24px;
 		background-repeat: no-repeat;
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="64"/>
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
 				<rect fill="#fff" width="16" height="16" x="56" y="20" rx="2"/>
 				<rect fill="#fff" width="16" height="56" x="56" y="44" rx="2"/>
 				<rect fill="#fff" width="40" height="16" x="44" y="84" rx="2"/>
@@ -62,7 +62,7 @@
 		.lt-ie8 & {
 			background: none;
 			text-align: center;
-			background-color: $uikit-colour-Text;
+			background-color: $AU-color-Text;
 			color: #fff;
 			font-weight: bold;
 			content: 'i';
@@ -74,12 +74,12 @@
 /**
  * Page alert success
  */
-.uikit-page-alerts--success {
-	border-color: $uikit-colour-Success-80;
+.au-page-alerts--success {
+	border-color: $AU-color-Success-80;
 
 	&:after {
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="64"/>
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
 				<path fill="#fff" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68
 					41.42 53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
 			</svg>');
@@ -95,12 +95,12 @@
 /**
  * Page alert warning.
  */
-.uikit-page-alerts--warning {
-	border-color: $uikit-colour-Warning;
+.au-page-alerts--warning {
+	border-color: $AU-color-Warning;
 
 	&:after {
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Text }" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $AU-color-Text }" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
 					3.282-1.403.808-2.914 1.213-4.53 1.213H9.206c-1.62 0-3.13-.405-4.533-1.213-1.403-.81-2.51-1.903-3.317-3.282-1.76-2.997-1.808-7.993-.143-10.99L56.01
 					12.78c.808-1.474 1.925-2.64 3.352-3.496C60.79 8.428 62.335 8 64 8s3.21.428 4.638 1.284c1.427.856 2.544 2.022 3.353 3.496z"/>
 				<rect fill="#fff" width="16" height="16" x="56" y="96" rx="2"/>
@@ -119,12 +119,12 @@
 /**
  * Page alert error.
  */
-.uikit-page-alerts--error {
-	border-color: $uikit-colour-Error;
+.au-page-alerts--error {
+	border-color: $AU-color-Error;
 
 	&:after {
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Text }" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				<path fill="#{ $AU-color-Text }" d="M71.99 12.78l54.796 99.458c1.665 2.997 1.617 7.993-.143 10.99-.808 1.38-1.914 2.473-3.317
 					3.282-1.403.808-2.914 1.213-4.53 1.213H9.206c-1.62 0-3.13-.405-4.533-1.213-1.403-.81-2.51-1.903-3.317-3.282-1.76-2.997-1.808-7.993-.143-10.99L56.01
 					12.78c.808-1.474 1.925-2.64 3.352-3.496C60.79 8.428 62.335 8 64 8s3.21.428 4.638 1.284c1.427.856 2.544 2.022 3.353 3.496z"/>
 				<rect fill="#fff" width="16" height="16" x="56" y="96" rx="2"/>
@@ -143,6 +143,6 @@
 /**
  * Screen-reader only class for interlinking error messages and corresponding form elements.
  */
-.uikit-page-alerts__sronly {
-	@include uikit-sronly;
+.au-page-alerts__sronly {
+	@include AU-sronly;
 }

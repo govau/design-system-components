@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
  * @param  {string} children    - Anything inside
  */
 export const Callout = ({ description, children }) => (
-	<section className="uikit-callout" aria-label={ description }>
+	<section className="au-callout" aria-label={ description }>
 		{ children }
 	</section>
 );
@@ -44,10 +44,10 @@ Callout.propTypes = {
  * @param  {string} name        - The name of the event, optional
  */
 export const CalloutCalendar = ({ description, subline, datetime, time, name }) => (
-	<section className="uikit-callout uikit-callout--calendar-event" aria-label={ description }>
-		{ subline && <span className="uikit-callout--calendar-event__lede">{ subline }</span> }
-		<time className="uikit-callout--calendar-event__time" dateTime={ new Date( datetime ).toJSON() }>{ time }</time>
-		{ name && <span className="uikit-callout--calendar-event__name">{ name }</span> }
+	<section className="au-callout au-callout--calendar-event" aria-label={ description }>
+		{ subline && <span className="au-callout--calendar-event__lede">{ subline }</span> }
+		<time className="au-callout--calendar-event__time" dateTime={ new Date( datetime ).toJSON() }>{ time }</time>
+		{ name && <span className="au-callout--calendar-event__name">{ name }</span> }
 	</section>
 );
 

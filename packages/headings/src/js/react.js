@@ -22,12 +22,12 @@ import PropTypes from 'prop-types';
  * @type {Array}
  */
 const sizes = [
-	'uikit-display-1',
-	'uikit-display-2',
-	'uikit-display-3',
-	'uikit-display-4',
-	'uikit-display-5',
-	'uikit-display-6',
+	'au-display-1',
+	'au-display-2',
+	'au-display-3',
+	'au-display-4',
+	'au-display-5',
+	'au-display-6',
 ];
 
 /**

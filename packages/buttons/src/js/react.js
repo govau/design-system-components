@@ -23,8 +23,8 @@ import PropTypes from 'prop-types';
  */
 const options = {
 	'primary': '',
-	'secondary': 'uikit-btn--secondary',
-	'tertiary': 'uikit-btn--tertiary',
+	'secondary': 'au-btn--secondary',
+	'tertiary': 'au-btn--tertiary',
 };
 
 /**
@@ -53,7 +53,7 @@ const Button = ({ text, as, type, id, disabled, block, onClick }) => {
 	return (
 		<button
 			type={ type }
-			className={ `uikit-btn ${ options[ as ] }${ block ? ' uikit-btn--block' : '' }` }
+			className={ `au-btn ${ options[ as ] }${ block ? ' au-btn--block' : '' }` }
 			disabled={ disabled }
 			{ ...attributeOptions }
 		>

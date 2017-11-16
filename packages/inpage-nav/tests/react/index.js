@@ -63,7 +63,7 @@ ReactDOM.render(
 			</p>
 		</InpageNavSection>
 
-		<InpageNavSection title="Section 3 headline with headingClass" link="section3" headingClass="uikit-display-3">
+		<InpageNavSection title="Section 3 headline with headingClass" link="section3" headingClass="au-display-3">
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, molestiae blanditiis, enim unde laudantium voluptate fuga excepturi explicabo quae, nulla
 				dolorum, ea doloribus ducimus. Nesciunt eveniet ab a nobis perferendis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi, dolorem

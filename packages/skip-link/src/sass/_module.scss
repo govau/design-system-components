@@ -14,14 +14,14 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Skip-to links
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-skip-link {
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
-	line-height: $uikit-leading;
+.au-skip-link {
+	font-family: $AU-font;
+	color: $AU-color-Text;
+	line-height: $AU-leading;
 }
 
-.uikit-skip-link__link {
-	@include uikit-sronly;
+.au-skip-link__link {
+	@include AU-sronly;
 
 	&:active,
 	&:focus {
@@ -32,13 +32,13 @@
 		position: absolute;
 		width: auto;
 		font-size: 21px;
-		top: uikit-space( 0.5 );
-		left: uikit-space( 0.5 );
-		padding: uikit-space( 0.25 ) uikit-space( 0.5 );
-		color: $uikit-colour-Text;
-		background-color: $uikit-colour-Link;
+		top: AU-space( 0.5 );
+		left: AU-space( 0.5 );
+		padding: AU-space( 0.25 ) AU-space( 0.5 );
+		color: $AU-color-Text;
+		background-color: $AU-color-Action;
 		text-decoration: none;
 
-		@include uikit-outline();
+		@include AU-outline();
 	}
 }

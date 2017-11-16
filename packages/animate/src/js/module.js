@@ -7,9 +7,9 @@
  *
  **************************************************************************************************************************************************************/
 
-var UIKIT = UIKIT || {};
+var AU = AU || {};
 
-( function( UIKIT ) {
+( function( AU ) {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // NAMESPACE MODULE
@@ -85,7 +85,7 @@ var UIKIT = UIKIT || {};
 			var space = element.currentStyle[ property ];
 
 			if( space === 'auto' ) {
-				space = UIKIT.animate.CalculateAuto( element, property );
+				space = AU.animate.CalculateAuto( element, property );
 			}
 
 			return space;
@@ -128,7 +128,7 @@ var UIKIT = UIKIT || {};
 	 * @param  {object} element - The element to stop animating
 	 */
 	animate.Stop = function ( element ) {
-		clearInterval( element.UIKITanimation );
+		clearInterval( element.AUanimation );
 	};
 
 
@@ -160,18 +160,18 @@ var UIKIT = UIKIT || {};
 		}
 
 		// adding iteration counts
-		elements[ 0 ].UIKITinteration = 0;
-		elements[ 0 ].UIKITinterations = elements.length;
+		elements[ 0 ].AUinteration = 0;
+		elements[ 0 ].AUinterations = elements.length;
 
 		// iterate over all DOM nodes
 		for( var i = 0; i < elements.length; i++ ) {
 			var element = elements[ i ];                                                                      // this element
-			UIKIT.animate.Stop( element );                                                                    // stop any previous animations
-			var initialSize = parseInt( UIKIT.animate.GetCSSPropertyBecauseIE( element, options.property ) ); // the elements current size
+			AU.animate.Stop( element );                                                                    // stop any previous animations
+			var initialSize = parseInt( AU.animate.GetCSSPropertyBecauseIE( element, options.property ) ); // the elements current size
 			var endSize = options.endSize;                                                                    // the element end size
 
 			if( options.endSize === 'auto' ) {                                                                // calculate what 'auto' means in pixel
-				endSize = UIKIT.animate.CalculateAuto( element, options.property );
+				endSize = AU.animate.CalculateAuto( element, options.property );
 			}
 
 			// calculate our animation specs
@@ -180,25 +180,25 @@ var UIKIT = UIKIT || {};
 
 			// set state
 			if( animationSpecs.stepSize < 0 ) {
-				element.UIKITtoggleState = 'closing';
+				element.AUtoggleState = 'closing';
 			}
 			else if( animationSpecs.stepSize > 0 ) {
-				element.UIKITtoggleState = 'opening';
+				element.AUtoggleState = 'opening';
 			}
 
 			// scoping variable
 			(function( element, initialSize, iterateCounter, animationSpecs, endSize ) {
 				// keep track of animation by adding it to the DOM element
-				element.UIKITanimation = setInterval( function() {
+				element.AUanimation = setInterval( function() {
 
 					// when we are at the end
 					if( initialSize === endSize || animationSpecs.steps === 0 ) {
-						UIKIT.animate.Stop( element );
+						AU.animate.Stop( element );
 
 						element.style[ options.property ] = endSize + 'px'; // set to endSize
-						element.UIKITtoggleState = '';
+						element.AUtoggleState = '';
 
-						elements[ 0 ].UIKITinteration ++;
+						elements[ 0 ].AUinteration ++;
 
 						// removing auto so CSS can take over
 						if( options.endSize === 'auto' ) {
@@ -206,7 +206,7 @@ var UIKIT = UIKIT || {};
 						}
 
 						// when all iterations have finished, run the callback
-						if( elements[ 0 ].UIKITinteration >= elements[ 0 ].UIKITinterations ) {
+						if( elements[ 0 ].AUinteration >= elements[ 0 ].AUinterations ) {
 							return options.callback();
 						}
 					}
@@ -269,47 +269,47 @@ var UIKIT = UIKIT || {};
 		}
 
 		// adding iteration counts
-		elements[ 0 ].UIKITtoggleInteration = 0;
-		elements[ 0 ].UIKITtoggleInterations = elements.length;
+		elements[ 0 ].AUtoggleInteration = 0;
+		elements[ 0 ].AUtoggleInterations = elements.length;
 
 		// iterate over all DOM nodes
 		for( var i = 0; i < elements.length; i++ ) {
 			var element = elements[ i ];
 
-			UIKIT.animate.Stop( element );
+			AU.animate.Stop( element );
 
 			var targetSize;     // the size the element should open/close to after toggle is clicked
 			var preState = '';  // the state we animate to for the prefunction and callback functions
 			var postState = ''; // the state we animate to for the prefunction and callback functions
-			var currentSize = parseInt( UIKIT.animate.GetCSSPropertyBecauseIE( element, options.property ) ); // the current size of the element
+			var currentSize = parseInt( AU.animate.GetCSSPropertyBecauseIE( element, options.property ) ); // the current size of the element
 
-			if( currentSize === closeSize || element.UIKITtoggleState === 'closing' ) {
+			if( currentSize === closeSize || element.AUtoggleState === 'closing' ) {
 				targetSize = openSize;
 				preState = 'opening';
 				postState = 'open';
 			}
-			else if( currentSize !== closeSize || element.UIKITtoggleState === 'opening' ) {
+			else if( currentSize !== closeSize || element.AUtoggleState === 'opening' ) {
 				targetSize = closeSize;
 				preState = 'closing';
 				postState = 'closed';
 			}
 			else {
-				throw new Error('UIKIT.animate.Toggle cannot determine state of element');
+				throw new Error('AU.animate.Toggle cannot determine state of element');
 			}
 
 			// run prefunction once per element
 			options.prefunction( element, preState );
 
 			// shoot off animation
-			UIKIT.animate.Run({
+			AU.animate.Run({
 				element: element,
 				endSize: targetSize,
 				property: property,
 				speed: speed,
 				callback: function() { // making sure we fire the callback only once
-					elements[ 0 ].UIKITtoggleInteration ++;
+					elements[ 0 ].AUtoggleInteration ++;
 
-					if( elements[ 0 ].UIKITtoggleInteration === elements[ 0 ].UIKITinterations ) {
+					if( elements[ 0 ].AUtoggleInteration === elements[ 0 ].AUinterations ) {
 						var returnParam = options.callback( element, postState );
 
 						// run postfunction once per element
@@ -327,11 +327,11 @@ var UIKIT = UIKIT || {};
 	};
 
 
-	UIKIT.animate = animate;
+	AU.animate = animate;
 
-}( UIKIT ));
+}( AU ));
 
 
 if( typeof module !== 'undefined' ) {
-	module.exports = UIKIT;
+	module.exports = AU;
 }

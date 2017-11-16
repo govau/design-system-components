@@ -15,15 +15,15 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Responsive video embeds
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-responsive-media-vid {
+.au-responsive-media-vid {
 	position: relative;
 	display: block;
 	height: 0;
 	padding: 0;
 	overflow: hidden;
-	margin-bottom: uikit-space( 0.5 );
+	margin-bottom: AU-space( 0.5 );
 
-	> .uikit-responsive-media-vid__item {
+	> .au-responsive-media-vid__item {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -32,11 +32,11 @@
 		border: 0;
 	}
 
-	&.uikit-responsive-media-vid--16x9 {
+	&.au-responsive-media-vid--16x9 {
 		padding-bottom: percentage( 9 / 16 ); // 16:9
 	}
 
-	&.uikit-responsive-media-vid--4x3 {
+	&.au-responsive-media-vid--4x3 {
 		padding-bottom: percentage( 3 / 4 ); // 4:3
 	}
 }
@@ -45,6 +45,6 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Responsive image
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-responsive-media-img {
+.au-responsive-media-img {
 	max-width: 100%;
 }

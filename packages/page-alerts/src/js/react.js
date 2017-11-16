@@ -22,10 +22,10 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const options = {
-	info: 'uikit-page-alerts--info',
-	warning: 'uikit-page-alerts--warning',
-	error: 'uikit-page-alerts--error',
-	success: 'uikit-page-alerts--success',
+	info: 'au-page-alerts--info',
+	warning: 'au-page-alerts--warning',
+	error: 'au-page-alerts--error',
+	success: 'au-page-alerts--success',
 };
 
 /**
@@ -36,7 +36,7 @@ const options = {
  * @param  {node}   children - Anything inside the component
  */
 const PageAlert = ({ as, children }) => (
-	<div className={`uikit-page-alerts ${ options[ as ] }`} role='alert'>
+	<div className={`au-page-alerts ${ options[ as ] }`} role='alert'>
 		{ children }
 	</div>
 );

@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
  * @param  {node} children - The inside of this section
  */
 export const FooterNav = ({ children }) => (
-	<nav className="uikit-footer__navigation">
+	<nav className="au-footer__navigation">
 		{ children }
 	</nav>
 );
@@ -38,7 +38,7 @@ FooterNav.propTypes = {
  * @param  {node} children - The inside of this section
  */
 export const FooterEnd = ({ children }) => (
-	<nav className="uikit-footer__end">
+	<nav className="au-footer__end">
 		{ children }
 	</nav>
 );
@@ -55,7 +55,7 @@ FooterEnd.propTypes = {
  * @param  {node} children - The inside of this section
  */
 const Footer = ({ children }) => (
-	<footer className="uikit-footer" role="contentinfo">
+	<footer className="au-footer" role="contentinfo">
 		{ children }
 	</footer>
 );

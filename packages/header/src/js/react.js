@@ -22,8 +22,8 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const themes = {
-	light: 'uikit-header--light',
-	dark: 'uikit-header--dark',
+	light: 'au-header--light',
+	dark: 'au-header--dark',
 };
 
 /**
@@ -41,9 +41,9 @@ const Header = ({ title, level, subline, hero, theme, children }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<div className={`uikit-header${ hero ? ' uikit-header--hero' : '' }${ theme ? ` ${ themes[ theme ] }` : '' }`} role="banner">
-			<HeadingTag className="uikit-header-heading">{ title }</HeadingTag>
-			{ subline && <span className="uikit-header-subline">{ subline }</span> }
+		<div className={`au-header${ hero ? ' au-header--hero' : '' }${ theme ? ` ${ themes[ theme ] }` : '' }`} role="banner">
+			<HeadingTag className="au-header-heading">{ title }</HeadingTag>
+			{ subline && <span className="au-header-subline">{ subline }</span> }
 			{ children }
 		</div>
 	);

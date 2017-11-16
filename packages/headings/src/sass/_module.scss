@@ -16,7 +16,7 @@
 // HEADINGS/DISPLAY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * Generates .uikit-display-[1…6] classes for display headings.
+ * Generates .au-display-[1…6] classes for display headings.
  *
  * The magic number here reduces the leading for these heading displays, since
  * the body text leading is too large at headings/display sizes.
@@ -24,24 +24,24 @@
  * We also set the font-size automatically too. (:
  */
 @for $i from 1 through 6 {
-	.uikit-display-#{$i} {
-		font-family: $uikit-font;
-		color: $uikit-colour-Text;
+	.au-display-#{$i} {
+		font-family: $AU-font;
+		color: $AU-color-Text;
 		display: block;
-		line-height: ($uikit-leading * 0.875); //1.4 from 16 (default: core)
-		margin: 0 0 uikit-space( .5, 1 ) 0; //1 unit at the new line-height (1.4 -- 0.7em)
+		line-height: ($AU-leading * 0.875); //1.4 from 16 (default: core)
+		margin: 0 0 AU-space( .5, 1 ) 0; //1 unit at the new line-height (1.4 -- 0.7em)
 		font-size: 16 + ( 4 * ( $i - 1 ) ) + 0px;
 		font-weight: bold;
 	}
 
-	p + .uikit-display-#{$i} {
-		margin-top: uikit-space( 1 );
+	p + .au-display-#{$i} {
+		margin-top: AU-space( 1 );
 	}
 }
 
 
-.uikit-display-2,
-.uikit-display-3,
-.uikit-display-4 {
+.au-display-2,
+.au-display-3,
+.au-display-4 {
 	font-weight: normal;
 }

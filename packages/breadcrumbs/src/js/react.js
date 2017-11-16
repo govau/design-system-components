@@ -28,7 +28,7 @@ import PropTypes from 'prop-types';
  * @param  {array}   items    - Items inside the breadcrumbs passed on to LinkList
  */
 const Breadcrumbs = ({ inverted, label, items }) => (
-	<nav className={ `uikit-breadcrumbs${ inverted ? ' uikit-breadcrumbs--inverted' : '' }` } aria-label={ label }>
+	<nav className={ `au-breadcrumbs${ inverted ? ' au-breadcrumbs--inverted' : '' }` } aria-label={ label }>
 		<LinkList inverted={ inverted } inline items={ items } />
 	</nav>
 );

@@ -24,12 +24,12 @@
 /**
  * Text input labels.
  */
-.uikit-text-input__label {
+.au-text-input__label {
 	display: block;
-	margin-bottom: uikit-space( 0.5 );
+	margin-bottom: AU-space( 0.5 );
 
-	> .uikit-text-input {
-		margin-top: uikit-space( 0.5 );
+	> .au-text-input {
+		margin-top: AU-space( 0.5 );
 	}
 }
 
@@ -43,57 +43,57 @@
  * - :focus
  * - :disabled/[disabled]
  */
-.uikit-text-input {
-	border: 2px solid $uikit-colour-Border-80;
-	padding: uikit-space( 0.25 );
+.au-text-input {
+	border: 2px solid $AU-color-Border-80;
+	padding: AU-space( 0.25 );
 	font-size: 16px;
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
+	font-family: $AU-font;
+	color: $AU-color-Text;
 
-	@include uikit-focus();
+	@include AU-focus();
 
 	&:focus {
-		background-color: $uikit-colour-Link-10;
+		background-color: $AU-color-Action;
 	}
 
 	&::selection {
-		background-color: rgba( $uikit-colour-Warning-60, 0.5 );
+		background-color: rgba( $AU-color-Warning, 0.5 );
 	}
 
 	&:invalid {
-		border: 2px solid $uikit-colour-Error;
+		border: 2px solid $AU-color-Error;
 
 		&:focus {
-			background-color: $uikit-colour-Error-10;
+			background-color: $AU-color-Error-10;
 		}
 	}
 
-	&.uikit-text-input--invalid {
-		border: 2px solid $uikit-colour-Error;
+	&.au-text-input--invalid {
+		border: 2px solid $AU-color-Error;
 
 		&:focus {
-			background-color: $uikit-colour-Error-10;
+			background-color: $AU-color-Error-10;
 		}
 	}
 
-	&.uikit-text-input--valid {
-		border: 2px solid $uikit-colour-Success;
+	&.au-text-input--valid {
+		border: 2px solid $AU-color-Success;
 
 		&:focus {
-			background-color: $uikit-colour-Success-10;
+			background-color: $AU-color-Success-10;
 		}
 	}
 
 	&:disabled {
 		cursor: not-allowed;
-		background: $uikit-colour-Background;
-		color: $uikit-colour-Text-80;
+		background: $AU-color-Background;
+		color: $AU-color-Text;
 	}
 
 	&[disabled] {
 		cursor: not-allowed;
-		background: $uikit-colour-Background;
-		color: $uikit-colour-Text-80;
+		background: $AU-color-Background;
+		color: $AU-color-Text;
 	}
 }
 
@@ -101,7 +101,7 @@
 /**
  * Block modifier
  */
-.uikit-text-input--block {
+.au-text-input--block {
 	display: block;
 	width: 100%;
 	box-sizing: border-box;
@@ -111,8 +111,8 @@
 /**
  * Textarea styling.
  */
-.uikit-text-input--textarea {
-	line-height: $uikit-leading;
+.au-text-input--textarea {
+	line-height: $AU-leading;
 }
 
 
@@ -122,8 +122,8 @@
  * Numbers are easier to disambiguate from each other (and letters) when set in
  * monospace.
  */
-.uikit-text-input--number {
-	font-family: $uikit-font-monospace;
+.au-text-input--number {
+	font-family: $AU-font-monospace;
 	letter-spacing: 2px;
 }
 
@@ -133,14 +133,14 @@
  *
  * Built so it can sit both in- and outside the `label`.
  */
-.uikit-text-input__hint {
+.au-text-input__hint {
 	display: block;
-	margin-bottom: uikit-space( 0.25 );
+	margin-bottom: AU-space( 0.25 );
 	font-size: 87.5%;
 
 	// Keeps spacing neat depending on where the hint text is added.
-	.uikit-text-input__label > &,
-	.uikit-text-input + & {
-		margin-top: uikit-space( 0.25 );
+	.au-text-input__label > &,
+	.au-text-input + & {
+		margin-top: AU-space( 0.25 );
 	}
 }

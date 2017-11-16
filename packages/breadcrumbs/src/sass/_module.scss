@@ -15,19 +15,19 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Breadcrumb styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-breadcrumbs {
+.au-breadcrumbs {
 	display: none;
 	width: 100%;
 	margin: 0;
-	color: $uikit-colour-Text;
+	color: $AU-color-Text;
 	font-size: 14px;
-	font-family: $uikit-font-system;
+	font-family: $AU-font;
 
-	@include uikit-media( sm ) {
+	@include AU-media( sm ) {
 		display: inline-block;
 	}
 
-	> .uikit-link-list {
+	> .au-link-list {
 		> li {
 			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
 
@@ -36,10 +36,10 @@
 				display: inline-block;
 				width: 0.8em;
 				height: 0.8em;
-				margin: 0 uikit-space( 0.5 );
-				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $uikit-colour-Border }" d="M128 64l-64 64-16-16 64-64"/>
-						<path fill="#{ $uikit-colour-Border }" d="M128 64l-16 16-64-64L64 0"/>
+				margin: 0 AU-space( 0.5 );
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $AU-color-Border }" d="M128 64l-64 64-16-16 64-64"/>
+						<path fill="#{ $AU-color-Border }" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');
 				background-repeat: no-repeat;
 			}
@@ -59,12 +59,12 @@
 		}
 	}
 
-	&.uikit-breadcrumbs--inverted {
+	&.au-breadcrumbs--inverted {
 		color: #fff;
 
-		> .uikit-link-list {
+		> .au-link-list {
 			> li:not(:last-child):after {
-				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
 						<path fill="#fff" d="M128 64l-64 64-16-16 64-64"/>
 						<path fill="#fff" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');

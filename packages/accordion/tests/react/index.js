@@ -47,15 +47,15 @@ class App extends React.Component {
 
 	// you should manage this via state not via these vanilla functions!
 	openAll() {
-		UIKIT.accordion.Open( document.querySelectorAll('.js-uikit-accordion') );
+		AU.accordion.Open( document.querySelectorAll('.js-au-accordion') );
 	}
 
 	closeAll() {
-		UIKIT.accordion.Close( document.querySelectorAll('.js-uikit-accordion') )
+		AU.accordion.Close( document.querySelectorAll('.js-au-accordion') )
 	}
 
 	toggleAll() {
-		UIKIT.accordion.Toggle( document.querySelectorAll('.js-uikit-accordion') )
+		AU.accordion.Toggle( document.querySelectorAll('.js-au-accordion') )
 	}
 
 

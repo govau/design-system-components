@@ -15,20 +15,20 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // inpage-nav style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-inpage-nav-links {
-	margin: uikit-space( 2 ) 0;
-	border-left: uikit-space( 0.25 ) solid $uikit-colour-Border-70;
-	padding: 0 0 uikit-space( 0.5 ) uikit-space( 0.75);
+.au-inpage-nav-links {
+	margin: AU-space( 2 ) 0;
+	border-left: AU-space( 0.25 ) solid $AU-color-Border-70;
+	padding: 0 0 AU-space( 0.5 ) AU-space( 0.75);
 
-	.uikit-body & > ul,
-	.uikit-body & > ol {
+	.au-body & > ul,
+	.au-body & > ol {
 		list-style-type: none;
-		margin: uikit-space( 1 ) 0 0;
+		margin: AU-space( 1 ) 0 0;
 		padding: 0;
 
 		> li {
 			margin-left: 0;
-			margin-bottom: uikit-space( 0.5 );
+			margin-bottom: AU-space( 0.5 );
 			font-weight: bold;
 
 			&:last-child {
@@ -38,18 +38,18 @@
 	}
 }
 
-.uikit-inpage-nav-links__heading {
-	color: $uikit-colour-Text-70;
+.au-inpage-nav-links__heading {
+	color: $AU-color-Text;
 }
 
-.uikit-inpage-nav-section {
+.au-inpage-nav-section {
 	position: relative;
 	padding-right: 120px;
 }
 
-.uikit-inpage-nav-section-link {
+.au-inpage-nav-section-link {
 	position: absolute;
-	top: uikit-space( 0.25 );
+	top: AU-space( 0.25 );
 	right: 0;
 	font-size: 14px;
 	font-weight: normal;

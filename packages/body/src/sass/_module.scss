@@ -39,28 +39,28 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // BODY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-body {
+.au-body {
 	margin: 0;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
-	line-height: $uikit-leading;
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
+	line-height: $AU-leading;
+	font-family: $AU-font;
+	color: $AU-color-Text;
 
 	a {
 		-webkit-text-decoration-skip: objects;
-		color: $uikit-colour-Text;
+		color: $AU-color-Text;
 		text-decoration: none;
-		border-bottom: solid 1px $uikit-colour-Primary;
+		border-bottom: solid 1px $AU-darkcolor-Background-light;
 		transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
 
 		&:hover,
 		&:focus {
-			background-color: $uikit-colour-Link;
+			background-color: $AU-color-Action;
 			border-color: transparent;
 		}
 
-		@include uikit-focus();
+		@include AU-focus();
 
 		&[rel~='external']:after {
 			content: ' ';
@@ -68,11 +68,11 @@
 			width: 0.7em;
 			height: 0.8em;
 			margin: 0 0.1em 0 0.25em;
-			background: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="#{ $uikit-colour-Primary }" d="M24.002 8C15.155 8 8 15.164 8 24.002v79.996C8 112.845 15.164 120 24.002 120h79.996c8.847 0 16.002-7.164
+			background: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<path fill="#{ $AU-darkcolor-Background-light }" d="M24.002 8C15.155 8 8 15.164 8 24.002v79.996C8 112.845 15.164 120 24.002 120h79.996c8.847 0 16.002-7.164
 						16.002-16.002V82.005c0-1.107-.895-2.005-1.994-2.005h-12.012c-1.1 0-1.994.893-1.994 1.995v16.008c0 3.312-2.685 5.997-5.997 5.997H29.997C26.685
 						104 24 101.315 24 98.003V29.997C24 26.685 26.685 24 29.997 24h16.008C47.107 24 48 23.105 48 22.006V9.994C48 8.894 47.103 8 45.995 8H24.002z"/>
-					<path fill="#{ $uikit-colour-Primary }" d="M127.416.584c-.36-.36-.86-.584-1.41-.584H73.994C72.904 0 72 .893 72 1.994v12.012c0 1.1.892 1.994 1.993 1.994H96L49.41
+					<path fill="#{ $AU-darkcolor-Background-light }" d="M127.416.584c-.36-.36-.86-.584-1.41-.584H73.994C72.904 0 72 .893 72 1.994v12.012c0 1.1.892 1.994 1.993 1.994H96L49.41
 						62.59c-.777.777-.774 2.046.01 2.83l13.16 13.16c.793.793 2.052.788 2.83.01L112 32v22.007c0 1.09.893 1.993 1.994 1.993h12.012c1.1 0 1.994-.892
 						1.994-1.993V1.993c0-.545-.223-1.043-.584-1.405V.584z"/>
 				</svg>');
@@ -82,7 +82,7 @@
 			.ie8 &,
 			.lt-ie8 & {
 				content: '⇗';
-				color: $uikit-colour-Primary;
+				color: $AU-darkcolor-Background-light;
 			}
 		}
 	}
@@ -93,7 +93,7 @@
 	 */
 	[tabindex="0"]:focus,
 	:target {
-		@include uikit-outline();
+		@include AU-outline();
 	}
 
 
@@ -102,7 +102,7 @@
 	 */
 	mark,
 	::selection {
-		background-color: rgba( $uikit-colour-Warning-60, 0.5 );
+		background-color: rgba( $AU-color-Warning, 0.5 );
 	}
 
 
@@ -110,8 +110,8 @@
 	 * Vertical spacing of common text elements.
 	 */
 	p {
-		max-width: $uikit-maxwidth;
-		margin: 0 0 uikit-space( 1 ) 0;
+		max-width: $AU-maxwidth;
+		margin: 0 0 AU-space( 1 ) 0;
 	}
 
 	ul,
@@ -119,25 +119,25 @@
 	dl,
 	pre {
 		margin-top: 0;
-		margin-bottom: uikit-space( 1 );
+		margin-bottom: AU-space( 1 );
 	}
 
 	ul,
 	ol,
 	dd {
 		margin-left: 0;
-		padding-left: uikit-space( 1 );
+		padding-left: AU-space( 1 );
 	}
 
 	ul,
 	ol {
 		> li {
-			margin-bottom: uikit-space( 0.25 );
+			margin-bottom: AU-space( 0.25 );
 
 			> ul,
 			> ol {
-				margin-top: uikit-space( 0.25 );
-				margin-bottom: uikit-space( 0.5 );
+				margin-top: AU-space( 0.25 );
+				margin-bottom: AU-space( 0.5 );
 			}
 		}
 
@@ -148,13 +148,13 @@
 
 	dl {
 		> dd {
-			margin-bottom: uikit-space( 1 );
+			margin-bottom: AU-space( 1 );
 		}
 
 		> dt {
 			font-weight: bold;
-			margin-top: uikit-space( 0.5 );
-			margin-bottom: uikit-space( 0.5 );
+			margin-top: AU-space( 0.5 );
+			margin-bottom: AU-space( 0.5 );
 
 			&:first-of-type {
 				margin-top: 0;
@@ -184,7 +184,7 @@
 	 */
 	small {
 		font-size: 87.5%;
-		color: $uikit-colour-Text-90;
+		color: $AU-color-Text;
 	}
 
 
@@ -202,7 +202,7 @@
 	 */
 	del {
 		text-decoration: line-through;
-		color: $uikit-colour-Text-80;
+		color: $AU-color-Text;
 		//Idea: for `del`: switch to the opposite of the current sans/sans-serif style?
 	}
 
@@ -241,7 +241,7 @@
 		text-transform: lowercase;
 		letter-spacing: 1px;
 		text-decoration: none;
-		border-bottom: 1px dotted $uikit-colour-Border;
+		border-bottom: 1px dotted $AU-color-Border;
 		cursor: help;
 	}
 
@@ -262,7 +262,7 @@
 
 		sup,
 		sub {
-			font-family: $uikit-font;
+			font-family: $AU-font;
 			font-style: normal;
 			padding: 0 1px;
 		}
@@ -291,7 +291,7 @@
 	code,
 	kbd,
 	pre {
-		font-family: $uikit-font-monospace;
+		font-family: $AU-font-monospace;
 	}
 
 
@@ -313,12 +313,12 @@
 	kbd {
 		display: inline-block;
 		font-size: 14px;
-		border: solid 1px $uikit-colour-Primary;
-		border-radius: $uikit-border-radius;
-		box-shadow: 0 1px 0 0 $uikit-colour-Primary;
-		background-color: $uikit-colour-Background-10;
+		border: solid 1px $AU-darkcolor-Background-light;
+		border-radius: $AU-border-radius;
+		box-shadow: 0 1px 0 0 $AU-darkcolor-Background-light;
+		background-color: $AU-color-Background;
 		text-align: center;
-		padding: 0 uikit-space( 0.5 );
+		padding: 0 AU-space( 0.5 );
 		margin: 0 2px;
 	}
 
@@ -330,7 +330,7 @@
 		height: 0;
 		overflow: visible;
 		border: none;
-		border-top: $uikit-borderize;
-		margin-bottom: uikit-space( 1 );
+		border-top: $AU-borderize;
+		margin-bottom: AU-space( 1 );
 	}
 }

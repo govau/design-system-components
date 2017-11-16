@@ -16,38 +16,38 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Tag styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-tags {
+.au-tags {
 	display: block;
 	margin: 0;
 	padding: 0;
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
-	line-height: $uikit-leading;
-	margin-bottom: uikit-space( 0.25 );
+	font-family: $AU-font;
+	color: $AU-color-Text;
+	line-height: $AU-leading;
+	margin-bottom: AU-space( 0.25 );
 
-	.uikit-body & {
-		margin-bottom: uikit-space( 0.25 );
+	.au-body & {
+		margin-bottom: AU-space( 0.25 );
 		padding-left: 0;
 	}
 
 	> dt {
 		display: inline-block;
 
-		.uikit-body & {
-			margin-bottom: uikit-space( 0.25 );
+		.au-body & {
+			margin-bottom: AU-space( 0.25 );
 		}
 	}
 }
 
-.uikit-tags__item {
-	border: 1px solid $uikit-colour-Primary;
-	border-radius: $uikit-border-radius;
+.au-tags__item {
+	border: 1px solid $AU-darkcolor-Background-light;
+	border-radius: $AU-border-radius;
 	display: inline-block;
-	margin: 0 uikit-space( 0.25 ) uikit-space( 0.25 ) 0;
+	margin: 0 AU-space( 0.25 ) AU-space( 0.25 ) 0;
 	padding: 0 0.4em;
 
-	.uikit-body & {
-		margin-bottom: uikit-space( 0.25 );
+	.au-body & {
+		margin-bottom: AU-space( 0.25 );
 		padding-left: 0.4em;
 	}
 
@@ -57,19 +57,19 @@
 		margin: 0 -0.4em;
 		padding: 0 0.4em;
 		text-decoration: none;
-		color: $uikit-colour-Text;
+		color: $AU-color-Text;
 
 		&:hover,
 		&:focus {
-			background-color: $uikit-colour-Link;
+			background-color: $AU-color-Action;
 		}
 
 		&:focus {
-			@include uikit-outline();
+			@include AU-outline();
 			outline-offset: 2px;
 		}
 
-		.uikit-body & {
+		.au-body & {
 			border: none;
 		}
 	}

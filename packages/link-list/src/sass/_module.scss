@@ -17,21 +17,21 @@
 /**
  * Block of links.
  */
-.uikit-link-list {
+.au-link-list {
 	display: block;
 	list-style-type: none;
 
-	.uikit-body & {
+	.au-body & {
 		margin: 0;
-		padding: uikit-space( 0.25 ) 0;
+		padding: AU-space( 0.25 ) 0;
 	}
 
 	> li {
 		display: block;
-		margin: uikit-space( 0.25 );
+		margin: AU-space( 0.25 );
 	}
 
-	&.uikit-link-list--inline {
+	&.au-link-list--inline {
 		display: inline-block;
 
 		> li {
@@ -39,20 +39,20 @@
 		}
 	}
 
-	&.uikit-link-list--inverted {
-		background-color: $uikit-colour-Text;
+	&.au-link-list--inverted {
+		background-color: $AU-color-Text;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 
 		> li > a {
 			color: #fff;
-			border-color: $uikit-colour-Link;
+			border-color: $AU-color-Action;
 			transition: color 0.1s ease-in-out;
 
 			&:hover,
 			&:focus {
-				background-color: $uikit-colour-Link;
-				color: $uikit-colour-Text;
+				background-color: $AU-color-Action;
+				color: $AU-color-Text;
 			}
 		}
 	}

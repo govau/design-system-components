@@ -48,8 +48,8 @@ const Select = ({ options, id, name, value, onChange, block }) => {
 	}
 
 	return (
-		<div className={`uikit-select${ block ? ` uikit-select-block` : `` }`}>
-			<select className="uikit-select__element" { ...attributeOptions }>
+		<div className={`au-select${ block ? ` au-select-block` : `` }`}>
+			<select className="au-select__element" { ...attributeOptions }>
 				{ options.map( ( option, i ) => <option key={ i } value={ option.value }>{ option.text }</option> ) }
 			</select>
 		</div>

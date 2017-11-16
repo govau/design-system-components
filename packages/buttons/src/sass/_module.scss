@@ -16,39 +16,39 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // buttons
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-btn {
+.au-btn {
 	display: inline-block;
 	-webkit-appearance: none;
 	border: none;
 	background: none;
 	font-size: 17px;
-	font-family: $uikit-font-system;
+	font-family: $AU-font;
 	font-weight: bold;
 	color: #fff;
 	text-decoration: none;
-	border-radius: $uikit-border-radius;
-	background-color: $uikit-colour-Primary;
-	padding: uikit-space( 0.5 ) uikit-space( 0.75 );
+	border-radius: $AU-border-radius;
+	background-color: $AU-darkcolor-Background-light;
+	padding: AU-space( 0.5 ) AU-space( 0.75 );
 	cursor: pointer;
 	transition: background 0.1s ease;
 
 	&:focus,
 	&:hover {
-		background-color: $uikit-colour-Primary--30;
+		background-color: $AU-darkcolor-Background-light--30;
 	}
 
-	@include uikit-focus();
+	@include AU-focus();
 
 	&:disabled {
-		background-color: $uikit-colour-Border-30;
+		background-color: $AU-color-Border-30;
 		font-weight: normal;
-		color: $uikit-colour-Text;
-		border: 1px dotted $uikit-colour-Text;
+		color: $AU-color-Text;
+		border: 1px dotted $AU-color-Text;
 		cursor: not-allowed;
 
 		&:focus,
 		&:hover {
-			background-color: $uikit-colour-Border-30;
+			background-color: $AU-color-Border-30;
 		}
 	}
 }
@@ -56,39 +56,39 @@
 /**
  * SECONDARY
  */
-.uikit-btn--secondary {
-	background-color: $uikit-colour-Secondary;
+.au-btn--secondary {
+	background-color: $AU-color-Secondary;
 
 	&:focus,
 	&:hover {
-		background-color: $uikit-colour-Secondary-70;
+		background-color: $AU-color-Secondary-70;
 	}
 }
 
 /**
  * TERTIARY
  */
-.uikit-btn--tertiary {
+.au-btn--tertiary {
 	background-color: #fff;
-	color: $uikit-colour-Text;
-	border: 1px solid $uikit-colour-Primary;
+	color: $AU-color-Text;
+	border: 1px solid $AU-darkcolor-Background-light;
 
 	&:focus,
 	&:hover {
-		background-color: $uikit-colour-Primary-10;
+		background-color: $AU-darkcolor-Background-light-10;
 	}
 }
 
 /**
  * BLOCK
  */
-.uikit-btn--block {
+.au-btn--block {
 	display: block;
 	width: 100%;
 	box-sizing: border-box;
 	text-align: center;
 
-	& + .uikit-btn--block {
-		margin-top: uikit-space( 0.25 );
+	& + .au-btn--block {
+		margin-top: AU-space( 0.25 );
 	}
 }

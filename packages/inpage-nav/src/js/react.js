@@ -54,9 +54,9 @@ InpageNavLinksItem.propTypes = {
  * @param  {array}  sections - An array of objects of all sections, sample: { link: '', title: '', onClick: () }
  */
 export const InpageNavLinks = ({ title, sections }) => (
-	<nav className="uikit-inpage-nav-links">
-		<h2 className="uikit-inpage-nav-links__heading uikit-display-2">{ title }</h2>
-		<ul className="uikit-link-list">
+	<nav className="au-inpage-nav-links">
+		<h2 className="au-inpage-nav-links__heading au-display-2">{ title }</h2>
+		<ul className="au-link-list">
 			{ sections.map( ( section, i ) => <InpageNavLinksItem key={ i } section={ section } /> ) }
 		</ul>
 	</nav>
@@ -85,7 +85,7 @@ InpageNavLinks.defaultProps = {
  * @param  {string}     link                - The link to this section
  * @param  {DOM node}   children            - The content of the section, default: '2'
  * @param  {string}     level               - The heading level of the h tag
- * @param  {string}     headingClass        - Any additional heading classes eg 'uikit-display-3' etc, optional
+ * @param  {string}     headingClass        - Any additional heading classes eg 'au-display-3' etc, optional
  * @param  {string}     sectionLink         - The text for the section link, default: 'Link to section', optional
  * @param  {function}   sectionLinkOnClick  - A function for the onClick on the section link, optional
  */
@@ -100,10 +100,10 @@ export const InpageNavSection = ({ title, link, children, level, headingClass, s
 
 	return (
 		<div>
-			<HeadingTag className={ `uikit-inpage-nav-section ${ headingClass }` }>
+			<HeadingTag className={ `au-inpage-nav-section ${ headingClass }` }>
 				{ title }
 
-				<a id={ link } className="uikit-inpage-nav-section-link" href={ `#${ link }` } { ...attributeOptions }>{ sectionLink }</a>
+				<a id={ link } className="au-inpage-nav-section-link" href={ `#${ link }` } { ...attributeOptions }>{ sectionLink }</a>
 			</HeadingTag>
 
 			{ children }

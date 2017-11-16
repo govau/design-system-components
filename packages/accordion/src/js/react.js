@@ -34,7 +34,7 @@ class Accordion extends React.PureComponent {
 		IDstart ++;
 
 		this.ID = `accordion${ IDstart }`;
-		this.closeClass = this.props.open ? '' : 'uikit-accordion--closed';
+		this.closeClass = this.props.open ? '' : 'au-accordion--closed';
 	}
 
 
@@ -45,10 +45,10 @@ class Accordion extends React.PureComponent {
 		const open = nextProps.open;
 
 		if( open ) {
-			UIKIT.accordion.Open( this.accordionHeader );
+			AU.accordion.Open( this.accordionHeader );
 		}
 		else {
-			UIKIT.accordion.Close( this.accordionHeader );
+			AU.accordion.Close( this.accordionHeader );
 		}
 	}
 
@@ -61,7 +61,7 @@ class Accordion extends React.PureComponent {
 	toggle( event ) {
 		event.preventDefault();
 
-		UIKIT.accordion.Toggle( this.accordionHeader, this.props.speed, {
+		AU.accordion.Toggle( this.accordionHeader, this.props.speed, {
 			onOpen: this.props.onOpen,
 			afterOpen: this.props.afterOpen,
 			onClose: this.props.onClose,
@@ -72,9 +72,9 @@ class Accordion extends React.PureComponent {
 
 	render() {
 		return (
-			<div className="uikit-accordion">
+			<div className="au-accordion">
 				<a href={`#${ this.ID }`}
-					className={`uikit-accordion__title js-uikit-accordion ${ this.closeClass }`}
+					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
 					aria-expanded={ this.props.open }
 					aria-selected={ this.props.open }
@@ -85,10 +85,10 @@ class Accordion extends React.PureComponent {
 				</a>
 
 				<div
-					className={`uikit-accordion__body ${ this.closeClass }`}
+					className={`au-accordion__body ${ this.closeClass }`}
 					id={ this.ID }
 					aria-hidden={ this.props.open ? 'false' : 'true' }>
-					<div className="uikit-accordion__body-wrapper">
+					<div className="au-accordion__body-wrapper">
 
 						{ this.props.children }
 

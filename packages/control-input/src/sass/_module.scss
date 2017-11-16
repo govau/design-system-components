@@ -15,12 +15,12 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // control inputs
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-control-input {
+.au-control-input {
 	display: inline-block;
 	position: relative;
 }
 
-.uikit-control-input__input {
+.au-control-input__input {
 	position: absolute;
 	left: 5px;
 	top: 5px;
@@ -28,44 +28,44 @@
 	&:hover {
 		cursor: pointer;
 
-		& + .uikit-control-input__text {
+		& + .au-control-input__text {
 			cursor: pointer;
 		}
 	}
 
 	// CHECKBOXES
 	&[type=checkbox] {
-		& + .uikit-control-input__text:after {
-			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="#{ $uikit-colour-Text }" d="M0 0h128v128H0z"/>
+		& + .au-control-input__text:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
 					<path fill="#fff" d="M8 8h112v112H8z"/>
 				</svg>');
 		}
 
-		&:checked + .uikit-control-input__text:after {
-			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="#{ $uikit-colour-Text }" d="M0 0h128v128H0z"/>
+		&:checked + .au-control-input__text:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
 					<path fill="#fff" d="M8 8h112v112H8z"/>
-					<path fill="#{ $uikit-colour-Text }" d="M16 16h96v96H16z"/>
+					<path fill="#{ $AU-color-Text }" d="M16 16h96v96H16z"/>
 					<path fill="#fff" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
 						53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
 				</svg>');
 		}
 
 		// CHECKBOXES FULL VARIATION
-		.uikit-control-input--full > & {
-			& + .uikit-control-input__text:after {
-				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $uikit-colour-Text }" d="M0 0h128v128H0z"/>
+		.au-control-input--full > & {
+			& + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
 						<path fill="#fff" d="M8 8h112v112H8z"/>
 					</svg>');
 			}
 
-			&:checked + .uikit-control-input__text:after {
-				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $uikit-colour-Text }" d="M0 0h128v128H0z"/>
+			&:checked + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
 						<path fill="#fff" d="M8 8h112v112H8z"/>
-						<path fill="#{ $uikit-colour-Text }" d="M16 16h96v96H16z"/>
+						<path fill="#{ $AU-color-Text }" d="M16 16h96v96H16z"/>
 					</svg>');
 			}
 		}
@@ -73,60 +73,60 @@
 
 	// RADIOS
 	&[type=radio] {
-		& + .uikit-control-input__text:after {
-			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="64"/>
+		& + .au-control-input__text:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
 					<circle fill="#fff" cx="64" cy="64" r="56"/>
 				</svg>');
 		}
 
-		&:checked + .uikit-control-input__text:after {
-			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="64"/>
+		&:checked + .au-control-input__text:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
 					<circle fill="#fff" cx="64" cy="64" r="56"/>
-					<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="44"/>
+					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="44"/>
 					<path fill="#fff" fill-rule="nonzero" d="M94.588 53.412c.78-.78.784-2.04 0-2.824l-9.176-9.176c-.78-.78-2.05-.775-2.82-.004L56 68 45.412
 						57.412c-.78-.78-2.04-.784-2.824 0l-9.176 9.176c-.78.78-.782 2.042 0 2.824l21.176 21.176c.78.78 2.04.784 2.824 0l37.176-37.176z"/>
 				</svg>');
 		}
 
 		// RADIOS FULL VARIATION
-		.uikit-control-input--full > & {
-			& + .uikit-control-input__text:after {
-				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="64"/>
+		.au-control-input--full > & {
+			& + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
 					<circle fill="#fff" cx="64" cy="64" r="56"/>
 				</svg>');
 			}
 
-			&:checked + .uikit-control-input__text:after {
-				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="64"/>
+			&:checked + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
 					<circle fill="#fff" cx="64" cy="64" r="56"/>
-					<circle fill="#{ $uikit-colour-Text }" cx="64" cy="64" r="44"/>
+					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="44"/>
 				</svg>');
 			}
 		}
 	}
 
-	&:checked + .uikit-control-input__text {
+	&:checked + .au-control-input__text {
 		font-weight: bold;
 	}
 
-	&:focus + .uikit-control-input__text {
-		@include uikit-outline();
+	&:focus + .au-control-input__text {
+		@include AU-outline();
 	}
 
 	&:disabled {
-		& + .uikit-control-input__text {
-			color: $uikit-colour-Text-70;
+		& + .au-control-input__text {
+			color: $AU-color-Text;
 		}
 
 		//we are adding an opaque white box ontop of the svg so we don’t have to add new svgs per control kind
 		//and using opacity would shot the actual native control behind
 		//we have that native control behind the svg in case the svg background fails (fallback)
-		& + .uikit-control-input__text:before {
-			background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+		& + .au-control-input__text:before {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
 					<path fill="rgba(255, 255, 255, 0.3)" d="M0 0h128v128H0z"/>
 				</svg>');
 			z-index: 2;
@@ -135,7 +135,7 @@
 		&:hover {
 			cursor: not-allowed;
 
-			& + .uikit-control-input__text {
+			& + .au-control-input__text {
 				cursor: not-allowed;
 			}
 		}
@@ -146,10 +146,10 @@
 /**
  * The label text
  */
-.uikit-control-input__text {
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
-	line-height: $uikit-leading;
+.au-control-input__text {
+	font-family: $AU-font;
+	color: $AU-color-Text;
+	line-height: $AU-leading;
 	font-size: 17px;
 	margin-left: 35px;
 

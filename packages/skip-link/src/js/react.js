@@ -27,7 +27,7 @@ export const SkipLinkItem = ({ link }) => {
 	}
 
 	return (
-		<a className="uikit-skip-link__link" href={ link.link } { ...attributeOptions }>{ link.text }</a>
+		<a className="au-skip-link__link" href={ link.link } { ...attributeOptions }>{ link.text }</a>
 	);
 };
 
@@ -47,7 +47,7 @@ SkipLinkItem.propTypes = {
  * @param  {array} links - The links, format: { url: '', text: '', onClick: () }
  */
 const SkipLink = ({ links }) => (
-	<nav className="uikit-skip-link">
+	<nav className="au-skip-link">
 		{ links.map( ( link, i ) => <SkipLinkItem key={ i } link={ link } /> ) }
 	</nav>
 );

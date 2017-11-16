@@ -16,7 +16,7 @@
 }
 
 .split {
-	@include uikit-media( sm ) {
+	@include AU-media( sm ) {
 		width: 49.5%;
 		float: left;
 

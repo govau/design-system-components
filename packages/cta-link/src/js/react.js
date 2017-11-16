@@ -32,10 +32,10 @@ const CTALink = ({ link, text, onClick }) => {
 	}
 
 	if( link ) {
-		return( <a className="uikit-cta-link" href={ link } { ...attributeOptions }>{ text }</a> );
+		return( <a className="au-cta-link" href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return( <button className="uikit-cta-link" href={ link } { ...attributeOptions }>{ text }</button> );
+		return( <button className="au-cta-link" href={ link } { ...attributeOptions }>{ text }</button> );
 	}
 }
 

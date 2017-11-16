@@ -19,12 +19,12 @@
 /**
  * Basic footer block styling.
  */
-.uikit-footer {
-	background-color: $uikit-colour-Background;
-	border-top: 6px solid $uikit-colour-Border;
-	padding: uikit-space( 1 );
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
+.au-footer {
+	background-color: $AU-color-Background;
+	border-top: 6px solid $AU-color-Border;
+	padding: AU-space( 1 );
+	font-family: $AU-font;
+	color: $AU-color-Text;
 
 	p:last-child {
 		margin: 0;
@@ -35,17 +35,17 @@
 /**
  * Footer `nav` navigation styling.
  */
-.uikit-footer__navigation {
+.au-footer__navigation {
 
-	.uikit-link-list {
+	.au-link-list {
 		> li {
 			margin-left: 0;
 		}
 	}
 
-	+ .uikit-footer__end {
-		padding-top: uikit-space( 1 );
-		border-top: $uikit-borderize;
-		margin-top: uikit-space( 1 );
+	+ .au-footer__end {
+		padding-top: AU-space( 1 );
+		border-top: $AU-borderize;
+		margin-top: AU-space( 1 );
 	}
 }

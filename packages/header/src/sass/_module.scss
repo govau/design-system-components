@@ -20,53 +20,53 @@
 /**
  * Basic header block styling.
  */
-.uikit-header {
-	font-family: $uikit-font-system;
+.au-header {
+	font-family: $AU-font;
 	color: #fff;
-	background: $uikit-colour-Primary;
-	padding: uikit-space( 1 ) 0 uikit-space( 1.25 ) 0;
-	margin-bottom: uikit-space( 1 );
+	background: $AU-darkcolor-Background-light;
+	padding: AU-space( 1 ) 0 AU-space( 1.25 ) 0;
+	margin-bottom: AU-space( 1 );
 
-	&.uikit-header--hero {
-		padding: uikit-space( 2 ) 0 uikit-space( 2.5 ) 0;
+	&.au-header--hero {
+		padding: AU-space( 2 ) 0 AU-space( 2.5 ) 0;
 	}
 
-	@include uikit-media( sm ) {
-		padding: uikit-space( 2 ) 0 uikit-space( 3 ) 0;
+	@include AU-media( sm ) {
+		padding: AU-space( 2 ) 0 AU-space( 3 ) 0;
 
-		&.uikit-header--hero {
-			padding: uikit-space( 4.5 ) 0 uikit-space( 8.5 ) 0;
+		&.au-header--hero {
+			padding: AU-space( 4.5 ) 0 AU-space( 8.5 ) 0;
 		}
 	}
 
-	&.uikit-header--light {
-		background-color: $uikit-colour-Background;
-		color: $uikit-colour-Text;
+	&.au-header--light {
+		background-color: $AU-color-Background;
+		color: $AU-color-Text;
 	}
 
-	&.uikit-header--dark {
-		background-color: $uikit-colour-Secondary;
+	&.au-header--dark {
+		background-color: $AU-color-Secondary;
 	}
 }
 
-.uikit-header-heading {
+.au-header-heading {
 	font-size: 20px;
-	line-height: $uikit-leading;
+	line-height: $AU-leading;
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
 
-	@include uikit-media( sm ) {
+	@include AU-media( sm ) {
 		font-size: 36px;
 	}
 }
 
-.uikit-header-subline {
+.au-header-subline {
 	font-size: 18px;
-	line-height: $uikit-leading;
-	max-width: $uikit-maxwidth;
+	line-height: $AU-leading;
+	max-width: $AU-maxwidth;
 
-	@include uikit-media( sm ) {
+	@include AU-media( sm ) {
 		font-size: 20px;
 	}
 }

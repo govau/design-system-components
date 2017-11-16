@@ -8,25 +8,25 @@
 
 
 @media print {
-	.uikit-direction-link:after {
+	.au-direction-link:after {
 		background: none !important;
 		content: '→' !important;
 		width: auto !important;
 		height: auto !important;
 	}
 
-	.uikit-direction-link--left:before {
+	.au-direction-link--left:before {
 		background: none !important;
 		content: '←' !important;
 		width: auto !important;
 		height: auto !important;
 	}
 
-	.uikit-direction-link--up:after {
+	.au-direction-link--up:after {
 		content: '↑' !important;
 	}
 
-	.uikit-direction-link--down:after {
+	.au-direction-link--down:after {
 		content: '↓' !important;
 	}
 }

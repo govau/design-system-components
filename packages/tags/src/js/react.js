@@ -32,7 +32,7 @@ const TagItem = ({ tag }) => {
 	}
 
 	return (
-		<li className="uikit-tags__item">
+		<li className="au-tags__item">
 			{ tag.link
 				? <a href={ tag.link } { ...attributeOptions }>{ tag.text }</a>
 				: tag.text
@@ -57,7 +57,7 @@ TagItem.propTypes = {
  * @param  {array} tags - The tags, format: { link: '', text: '', onClick: () }
  */
 const Tags = ({ tags }) => (
-	<ul className="uikit-tags">
+	<ul className="au-tags">
 		{ tags.map( ( tag, i ) => <TagItem key={ i } tag={ tag } /> ) }
 	</ul>
 );

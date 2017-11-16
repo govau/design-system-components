@@ -64,7 +64,7 @@ LinkListItem.propTypes = {
  * @param  {array}   items    - All items inside the link list to be passed to LinkListItem, format: { link: '', text: '', onClick: () }
  */
 const LinkList = ({ inverted, inline, items }) => (
-	<ul className={ `uikit-link-list${ inverted ? ' uikit-link-list--inverted' : '' }${ inline ? ' uikit-link-list--inline' : '' }` }>
+	<ul className={ `au-link-list${ inverted ? ' au-link-list--inverted' : '' }${ inline ? ' au-link-list--inline' : '' }` }>
 		{ items.map( ( item, i ) => <LinkListItem key={ i } item={ item } /> ) }
 	</ul>
 );

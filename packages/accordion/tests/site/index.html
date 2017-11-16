@@ -45,9 +45,9 @@
 
 	<h1 id="url">Test: accordion</h1>
 
-	<button onClick="return UIKIT.accordion.Open( document.querySelectorAll('.js-uikit-accordion') )">Open all</button>
-	<button onClick="return UIKIT.accordion.Close( document.querySelectorAll('.js-uikit-accordion') )">Close all</button>
-	<button onClick="return UIKIT.accordion.Toggle( document.querySelectorAll('.js-uikit-accordion') )">Toggle all</button>
+	<button onClick="return AU.accordion.Open( document.querySelectorAll('.js-au-accordion') )">Open all</button>
+	<button onClick="return AU.accordion.Close( document.querySelectorAll('.js-au-accordion') )">Close all</button>
+	<button onClick="return AU.accordion.Toggle( document.querySelectorAll('.js-au-accordion') )">Toggle all</button>
 
 	<hr>
 
@@ -59,19 +59,19 @@
 
 			<h3>Accordion open by default</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-default"
-					class="uikit-accordion__title js-uikit-accordion"
+					class="au-accordion__title js-au-accordion"
 					aria-controls="accordion-default"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						Accordion title
 				</a>
 
-				<div class="uikit-accordion__body" id="accordion-default" aria-hidden="false">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body" id="accordion-default" aria-hidden="false">
+					<div class="au-accordion__body-wrapper">
 
 						Here <a href="#url">is</a> some accordion content
 
@@ -83,19 +83,19 @@
 			<hr>
 			<h3>Accordion closed by default</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-closed"
-					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+					class="au-accordion__title au-accordion--closed js-au-accordion"
 					aria-controls="accordion-closed"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						Accordion title
 				</a>
 
-				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-closed" aria-hidden="true">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-closed" aria-hidden="true">
+					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
 
@@ -107,19 +107,19 @@
 			<hr>
 			<h3>Accordion slow</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-slow"
-					class="uikit-accordion__title js-uikit-accordion"
+					class="au-accordion__title js-au-accordion"
 					aria-controls="accordion-slow"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this, 1000 )">
+					onClick="return AU.accordion.Toggle( this, 1000 )">
 						Accordion title
 				</a>
 
-				<div class="uikit-accordion__body" id="accordion-slow" aria-hidden="false">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body" id="accordion-slow" aria-hidden="false">
+					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
 
@@ -131,14 +131,14 @@
 			<hr>
 			<h3>Accordion with all callbacks</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-callbacks"
-					class="uikit-accordion__title js-uikit-accordion"
+					class="au-accordion__title js-au-accordion"
 					aria-controls="accordion-callbacks"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this, undefined, {
+					onClick="return AU.accordion.Toggle( this, undefined, {
 						onOpen: function() {
 							console.log('This function will run when an accordion opens');
 						},
@@ -155,8 +155,8 @@
 						Accordion title
 				</a>
 
-				<div class="uikit-accordion__body" id="accordion-callbacks" aria-hidden="false">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body" id="accordion-callbacks" aria-hidden="false">
+					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
 
@@ -168,35 +168,35 @@
 			<hr>
 			<h3>Accordion group</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-stacked1"
-					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+					class="au-accordion__title au-accordion--closed js-au-accordion"
 					aria-controls="accordion-stacked1"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						First accordion title
 				</a>
 
-				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked1" aria-hidden="true">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked1" aria-hidden="true">
+					<div class="au-accordion__body-wrapper">
 
 						<p>Here is some accordion content</p>
 
-						<section class="uikit-accordion">
+						<section class="au-accordion">
 							<a href="#inner-accordion"
-								class="uikit-accordion__title js-uikit-accordion"
+								class="au-accordion__title js-au-accordion"
 								aria-controls="inner-accordion"
 								aria-expanded="true"
 								aria-selected="true"
 								role="tab"
-								onClick="return UIKIT.accordion.Toggle( this )">
+								onClick="return AU.accordion.Toggle( this )">
 									A nested accordion
 							</a>
 
-							<div class="uikit-accordion__body" id="inner-accordion" aria-hidden="false">
-								<div class="uikit-accordion__body-wrapper">
+							<div class="au-accordion__body" id="inner-accordion" aria-hidden="false">
+								<div class="au-accordion__body-wrapper">
 									Here is some <a href="#url">accordion</a> content
 								</div>
 							</div>
@@ -210,18 +210,18 @@
 				</div>
 			</section>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-stacked2"
-					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+					class="au-accordion__title au-accordion--closed js-au-accordion"
 					aria-controls="accordion-stacked2"
 					aria-expanded="false"
 					aria-selected="false"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						Another accordion
 				</a>
 
-				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked2" aria-hidden="true">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked2" aria-hidden="true">
+					<div class="au-accordion__body-wrapper">
 						<p>Here is some accordion content</p>
 						<p>Here is some <a href="#url">accordion</a> content</p>
 						<p>Here is some accordion content</p>
@@ -229,18 +229,18 @@
 				</div>
 			</section>
 
-			<div class="uikit-accordion">
+			<div class="au-accordion">
 				<a href="#accordion-stacked3"
-					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+					class="au-accordion__title au-accordion--closed js-au-accordion"
 					aria-controls="accordion-stacked3"
 					aria-expanded="false"
 					aria-selected="false"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						Accordion with words and words and a very long title so that it can break into several
 				</a>
 
-				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked3" aria-hidden="true">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked3" aria-hidden="true">
+					<div class="au-accordion__body-wrapper">
 						<p>Here is some accordion content</p>
 						<p>Here is some <a href="#url">accordion</a> content</p>
 						<p>Here is some accordion content</p>
@@ -251,25 +251,25 @@
 		</div>
 
 
-		<div class="split uikit-body">
+		<div class="split au-body">
 
 			<h2>With body</h2>
 
 			<h3>Accordion open by default</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-default-grid"
-					class="uikit-accordion__title js-uikit-accordion"
+					class="au-accordion__title js-au-accordion"
 					aria-controls="accordion-default-grid"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						Accordion title
 				</a>
 
-				<div class="uikit-accordion__body" id="accordion-default-grid" aria-hidden="false">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body" id="accordion-default-grid" aria-hidden="false">
+					<div class="au-accordion__body-wrapper">
 
 						Here <a href="#url">is</a> some accordion content
 
@@ -281,19 +281,19 @@
 			<hr>
 			<h3>Accordion closed by default</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-closed-grid"
-					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+					class="au-accordion__title au-accordion--closed js-au-accordion"
 					aria-controls="accordion-closed-grid"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						Accordion title
 				</a>
 
-				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-closed-grid" aria-hidden="true">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-closed-grid" aria-hidden="true">
+					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
 
@@ -305,19 +305,19 @@
 			<hr>
 			<h3>Accordion slow</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-slow-grid"
-					class="uikit-accordion__title js-uikit-accordion"
+					class="au-accordion__title js-au-accordion"
 					aria-controls="accordion-slow-grid"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this, 1000 )">
+					onClick="return AU.accordion.Toggle( this, 1000 )">
 						Accordion title
 				</a>
 
-				<div class="uikit-accordion__body" id="accordion-slow-grid" aria-hidden="false">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body" id="accordion-slow-grid" aria-hidden="false">
+					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
 
@@ -329,14 +329,14 @@
 			<hr>
 			<h3>Accordion with all callbacks</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-callbacks-grid"
-					class="uikit-accordion__title js-uikit-accordion"
+					class="au-accordion__title js-au-accordion"
 					aria-controls="accordion-callbacks-grid"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this, undefined, {
+					onClick="return AU.accordion.Toggle( this, undefined, {
 						onOpen: function() {
 							console.log('This function will run when an accordion opens');
 						},
@@ -353,8 +353,8 @@
 						Accordion title
 				</a>
 
-				<div class="uikit-accordion__body" id="accordion-callbacks-grid" aria-hidden="false">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body" id="accordion-callbacks-grid" aria-hidden="false">
+					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
 
@@ -366,35 +366,35 @@
 			<hr>
 			<h3>Accordion group</h3>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-stacked-grid1"
-					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+					class="au-accordion__title au-accordion--closed js-au-accordion"
 					aria-controls="accordion-stacked-grid1"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						First accordion title
 				</a>
 
-				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked-grid1" aria-hidden="true">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid1" aria-hidden="true">
+					<div class="au-accordion__body-wrapper">
 
 						<p>Here is some accordion content</p>
 
-						<section class="uikit-accordion">
+						<section class="au-accordion">
 							<a href="#inner-accordion-grid"
-								class="uikit-accordion__title js-uikit-accordion"
+								class="au-accordion__title js-au-accordion"
 								aria-controls="inner-accordion-grid"
 								aria-expanded="true"
 								aria-selected="true"
 								role="tab"
-								onClick="return UIKIT.accordion.Toggle( this )">
+								onClick="return AU.accordion.Toggle( this )">
 									A nested accordion
 							</a>
 
-							<div class="uikit-accordion__body" id="inner-accordion-grid" aria-hidden="false">
-								<div class="uikit-accordion__body-wrapper">
+							<div class="au-accordion__body" id="inner-accordion-grid" aria-hidden="false">
+								<div class="au-accordion__body-wrapper">
 									Here is some <a href="#url">accordion</a> content
 								</div>
 							</div>
@@ -408,18 +408,18 @@
 				</div>
 			</section>
 
-			<section class="uikit-accordion">
+			<section class="au-accordion">
 				<a href="#accordion-stacked-grid2"
-					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+					class="au-accordion__title au-accordion--closed js-au-accordion"
 					aria-controls="accordion-stacked-grid2"
 					aria-expanded="false"
 					aria-selected="false"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						Another accordion
 				</a>
 
-				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked-grid2" aria-hidden="true">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid2" aria-hidden="true">
+					<div class="au-accordion__body-wrapper">
 						<p>Here is some accordion content</p>
 						<p>Here is some <a href="#url">accordion</a> content</p>
 						<p>Here is some accordion content</p>
@@ -427,18 +427,18 @@
 				</div>
 			</section>
 
-			<div class="uikit-accordion">
+			<div class="au-accordion">
 				<a href="#accordion-stacked-grid3"
-					class="uikit-accordion__title uikit-accordion--closed js-uikit-accordion"
+					class="au-accordion__title au-accordion--closed js-au-accordion"
 					aria-controls="accordion-stacked-grid3"
 					aria-expanded="false"
 					aria-selected="false"
-					onClick="return UIKIT.accordion.Toggle( this )">
+					onClick="return AU.accordion.Toggle( this )">
 						Accordion with words and words and a very long title so that it can break into several
 				</a>
 
-				<div class="uikit-accordion__body uikit-accordion--closed" id="accordion-stacked-grid3" aria-hidden="true">
-					<div class="uikit-accordion__body-wrapper">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid3" aria-hidden="true">
+					<div class="au-accordion__body-wrapper">
 						<p>Here is some accordion content</p>
 						<p>Here is some <a href="#url">accordion</a> content</p>
 						<p>Here is some accordion content</p>

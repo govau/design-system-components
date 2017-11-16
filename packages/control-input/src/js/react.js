@@ -44,9 +44,9 @@ export const Checkbox = ({ label, name, value, id, checked, disabled, full, onCh
 	}
 
 	return (
-		<label className={ `uikit-control-input${ full ? ' uikit-control-input--full' : '' }` }>
-			<input className="uikit-control-input__input" type="checkbox" name={ name } disabled={ disabled } { ...attributeOptions } />
-			<span className="uikit-control-input__text">{ label }</span>
+		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }` }>
+			<input className="au-control-input__input" type="checkbox" name={ name } disabled={ disabled } { ...attributeOptions } />
+			<span className="au-control-input__text">{ label }</span>
 		</label>
 	);
 };
@@ -91,9 +91,9 @@ export const Radio = ({ label, name, value, id, checked, disabled, full, onChang
 	}
 
 	return (
-		<label className={ `uikit-control-input${ full ? ' uikit-control-input--full' : '' }` }>
-			<input className="uikit-control-input__input" type="radio" name={ name } disabled={ disabled } { ...attributeOptions } />
-			<span className="uikit-control-input__text">{ label }</span>
+		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }` }>
+			<input className="au-control-input__input" type="radio" name={ name } disabled={ disabled } { ...attributeOptions } />
+			<span className="au-control-input__text">{ label }</span>
 		</label>
 	);
 };
