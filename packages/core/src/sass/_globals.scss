@@ -83,42 +83,68 @@ $AU-maxwidth: 42em !default; //Answer to life, the universe, and everything (kee
 /**
  * Colors light theme
  */
-$AU-color-Text:             #313131 !default;
-$AU-color-Action:           #00698f !default;
-$AU-color-Focus:            #f04400 !default;
-$AU-color-Background-light: #ffffff !default;
+$AU-color-Text:                   #313131 !default;
+$AU-color-Action:                 #00698f !default;
+$AU-color-Focus:                  #f04400 !default;
+$AU-color-Background-light:       #ffffff !default;
 
-// non user definable pallet colors
-$AU-color-Muted:              #6a6a6a !global;
-$AU-color-Border:             #878787 !global;
-$AU-color-Background:         #f5f5f5 !global;
-$AU-color-Background-dark:    #ebebeb !global;
-$AU-color-Background-darkest: #d6d6d6 !global;
+// Non-user definable pallet colors
+$AU-color-Muted:                  #6a6a6a !global;
+$AU-color-Border:                 #878787 !global;
+$AU-color-Background:             #f5f5f5 !global;
+$AU-color-Background-dark:        #ebebeb !global;
+$AU-color-Background-darkest:     #d6d6d6 !global;
+
+// Color sets
+$AU-color-hero-Text:              $AU-color-Background !global;
+$AU-color-hero-Background:        $AU-color-Action !global;
+$AU-color-hero-Border:            $AU-color-Action !global;
+
+$AU-color-primary-Text:           $AU-color-Background-light !global;
+$AU-color-primary-Background:     $AU-color-Text !global;
+$AU-color-primary-Border:         $AU-color-Text !global;
+
+$AU-color-soft-Text:              $AU-color-Action !global;
+$AU-color-soft-Border:            $AU-color-Action !global;
+$AU-color-soft-Background:        $AU-color-Background-light !global;
 
 
 /**
- * Colors light theme
+ * Colors dark theme
  */
-$AU-darkcolor-Text:             #ffffff !default;
-$AU-darkcolor-Action:           #61daff !default;
-$AU-darkcolor-Focus:            #ff8629 !default;
-$AU-darkcolor-Background-light: #135E70 !default;
+$AU-colordark-Text:               #ffffff !default;
+$AU-colordark-Action:             #61daff !default;
+$AU-colordark-Focus:              #ff8629 !default;
+$AU-colordark-Background-light:   #135E70 !default;
 
 // non user definable pallet colors
-$AU-darkcolor-Muted:              #aed1d9 !global;
-$AU-darkcolor-Border:             #74afbe !global;
-$AU-darkcolor-Background:         #104f5f !global;
-$AU-darkcolor-Background-dark:    #0d414d !global;
-$AU-darkcolor-Background-darkest: #051b20 !global;
+$AU-colordark-Muted:              #aed1d9 !global;
+$AU-colordark-Border:             #74afbe !global;
+$AU-colordark-Background:         #104f5f !global;
+$AU-colordark-Background-dark:    #0d414d !global;
+$AU-colordark-Background-darkest: #051b20 !global;
+
+// Color sets
+$AU-colordark-hero-Text:          $AU-colordark-Background !global;
+$AU-colordark-hero-Background:    $AU-colordark-Action !global;
+$AU-colordark-hero-Border:        $AU-colordark-Action !global;
+
+$AU-colordark-primary-Text:       $AU-colordark-Text !global;
+$AU-colordark-primary-Background: $AU-colordark-Text !global;
+$AU-colordark-primary-Border:     $AU-colordark-Background-light !global;
+
+$AU-colordark-soft-Text:          $AU-colordark-Action !global;
+$AU-colordark-soft-Background:    $AU-colordark-Action !global;
+$AU-colordark-soft-Border:        $AU-colordark-Background-light !global;
 
 
 /**
  * Colors system messages
  */
-$AU-color-Error: #ff635c !default;
-$AU-color-Success: #0cac78 !default;
-$AU-color-Warning: #f69900 !default;
-$AU-color-Info: #00bfe9 !default;
+$AU-color-Error:                  #ff635c !default;
+$AU-color-Success:                #0cac78 !default;
+$AU-color-Warning:                #f69900 !default;
+$AU-color-Info:                   #00bfe9 !default;
 
 
 /**

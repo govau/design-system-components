@@ -27,20 +27,20 @@
 	color: #fff;
 	text-decoration: none;
 	border-radius: $AU-border-radius;
-	background-color: $AU-darkcolor-Background-light;
+	background-color: $AU-colordark-Background-light;
 	padding: AU-space( 0.5 ) AU-space( 0.75 );
 	cursor: pointer;
 	transition: background 0.1s ease;
 
 	&:focus,
 	&:hover {
-		background-color: $AU-darkcolor-Background-light--30;
+		background-color: $AU-colordark-Background-light;
 	}
 
 	@include AU-focus();
 
 	&:disabled {
-		background-color: $AU-color-Border-30;
+		background-color: $AU-color-Border;
 		font-weight: normal;
 		color: $AU-color-Text;
 		border: 1px dotted $AU-color-Text;
@@ -48,7 +48,7 @@
 
 		&:focus,
 		&:hover {
-			background-color: $AU-color-Border-30;
+			background-color: $AU-color-Border;
 		}
 	}
 }
@@ -57,11 +57,11 @@
  * SECONDARY
  */
 .au-btn--secondary {
-	background-color: $AU-color-Secondary;
+	background-color:  $AU-color-primary-Background;
 
 	&:focus,
 	&:hover {
-		background-color: $AU-color-Secondary-70;
+		background-color:  $AU-color-primary-Background;
 	}
 }
 
@@ -71,11 +71,11 @@
 .au-btn--tertiary {
 	background-color: #fff;
 	color: $AU-color-Text;
-	border: 1px solid $AU-darkcolor-Background-light;
+	border: 1px solid $AU-colordark-Background-light;
 
 	&:focus,
 	&:hover {
-		background-color: $AU-darkcolor-Background-light-10;
+		background-color: $AU-colordark-Background-light;
 	}
 }
 

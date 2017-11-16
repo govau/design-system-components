@@ -24,7 +24,7 @@
 	line-height: $AU-leading;
 	margin: AU-space( 1 ) AU-space( 0.25 );
 	padding: AU-space( 0.75 ) AU-space( 0.75 ) AU-space( 0.75 ) AU-space( 0.5 );
-	border-left: 6px solid $AU-darkcolor-Background-light;
+	border-left: 6px solid $AU-colordark-Background-light;
 	border-radius: $AU-border-radius;
 	box-shadow: 2px 0 6px transparentize($AU-color-Text, 0.3);
 	max-width: $AU-maxwidth;

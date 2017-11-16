@@ -110,7 +110,7 @@ html {
 .border-radius {
 	float: left;
 	border-radius: $AU-border-radius;
-	background-color: $AU-darkcolor-Background;
+	background-color: $AU-colordark-Background;
 	overflow: hidden;
 	width: 5em;
 	height: 5em;
@@ -568,24 +568,24 @@ html {
 // main palette colors
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .palette__color--hero {
-	background-color: $AU-darkcolor-Background;
+	background-color: $AU-colordark-Background;
 
 	&:after {
-		content: 'Hero: #{ $AU-darkcolor-Background }'
+		content: 'Hero: #{ $AU-colordark-Background }'
 	}
 }
 .palette__color--primary {
-	background-color: $AU-darkcolor-Background-light;
+	background-color: $AU-colordark-Background-light;
 
 	&:after {
-		content: 'Primary: #{ $AU-darkcolor-Background-light }'
+		content: 'Primary: #{ $AU-colordark-Background-light }'
 	}
 }
 .palette__color--secondary {
-	background-color: $AU-darkcolor-Background-darkest;
+	background-color: $AU-colordark-Background-darkest;
 
 	&:after {
-		content: 'Secondary: #{ $AU-darkcolor-Background-darkest }'
+		content: 'Secondary: #{ $AU-colordark-Background-darkest }'
 	}
 }
 .palette__color--background {
@@ -661,13 +661,13 @@ html {
 	background-color: $AU-color-Background;
 }
 .contrast-box--hero {
-	background-color: $AU-darkcolor-Background;
+	background-color: $AU-colordark-Background;
 }
 .contrast-box--primary {
-	background-color: $AU-darkcolor-Background-light;
+	background-color: $AU-colordark-Background-light;
 }
 .contrast-box--secondary {
-	background-color: $AU-darkcolor-Background-darkest;
+	background-color: $AU-colordark-Background-darkest;
 }
 .contrast-box--border {
 	background-color: $AU-color-Border;
@@ -687,13 +687,13 @@ html {
 		@include check-contrast( AU-color-contrast( #fff, $AU-color-Background ) );
 	}
 	.contrast-box--hero:after {
-		@include check-contrast( AU-color-contrast( #fff, $AU-darkcolor-Background ) );
+		@include check-contrast( AU-color-contrast( #fff, $AU-colordark-Background ) );
 	}
 	.contrast-box--primary:after {
-		@include check-contrast( AU-color-contrast( #fff, $AU-darkcolor-Background-light ) );
+		@include check-contrast( AU-color-contrast( #fff, $AU-colordark-Background-light ) );
 	}
 	.contrast-box--secondary:after {
-		@include check-contrast( AU-color-contrast( #fff, $AU-darkcolor-Background-darkest ) );
+		@include check-contrast( AU-color-contrast( #fff, $AU-colordark-Background-darkest ) );
 	}
 	.contrast-box--border:after {
 		@include check-contrast( AU-color-contrast( #fff, $AU-color-Border ) );
@@ -714,13 +714,13 @@ html {
 		@include check-contrast( AU-color-contrast( $AU-color-Text, $AU-color-Background ) );
 	}
 	.contrast-box--hero:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Text, $AU-darkcolor-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Text, $AU-colordark-Background ) );
 	}
 	.contrast-box--primary:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Text, $AU-darkcolor-Background-light ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Text, $AU-colordark-Background-light ) );
 	}
 	.contrast-box--secondary:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Text, $AU-darkcolor-Background-darkest ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Text, $AU-colordark-Background-darkest ) );
 	}
 	.contrast-box--border:after {
 		@include check-contrast( AU-color-contrast( $AU-color-Text, $AU-color-Border ) );
@@ -732,82 +732,82 @@ html {
 
 .contrast-hero {
 	.contrast-box {
-		color: $AU-darkcolor-Background;
+		color: $AU-colordark-Background;
 	}
 	.contrast-box--white:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background, #fff ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background, #fff ) );
 	}
 	.contrast-box--background:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background, $AU-color-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-color-Background ) );
 	}
 	.contrast-box--hero:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background, $AU-darkcolor-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Background ) );
 	}
 	.contrast-box--primary:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background, $AU-darkcolor-Background-light ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Background-light ) );
 	}
 	.contrast-box--secondary:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background, $AU-darkcolor-Background-darkest ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Background-darkest ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background, $AU-color-Border ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-color-Border ) );
 	}
 	.contrast-box--link:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background, $AU-color-Action ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-color-Action ) );
 	}
 }
 
 .contrast-primary {
 	.contrast-box {
-		color: $AU-darkcolor-Background-light;
+		color: $AU-colordark-Background-light;
 	}
 	.contrast-box--white:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-light, #fff ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, #fff ) );
 	}
 	.contrast-box--background:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-light, $AU-color-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-color-Background ) );
 	}
 	.contrast-box--hero:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-light, $AU-darkcolor-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Background ) );
 	}
 	.contrast-box--primary:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-light, $AU-darkcolor-Background-light ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Background-light ) );
 	}
 	.contrast-box--secondary:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-light, $AU-darkcolor-Background-darkest ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Background-darkest ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-light, $AU-color-Border ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-color-Border ) );
 	}
 	.contrast-box--link:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-light, $AU-color-Action ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-color-Action ) );
 	}
 }
 
 .contrast-secondary {
 	.contrast-box {
-		color: $AU-darkcolor-Background-darkest;
+		color: $AU-colordark-Background-darkest;
 	}
 	.contrast-box--white:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-darkest, #fff ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, #fff ) );
 	}
 	.contrast-box--background:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-darkest, $AU-color-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-color-Background ) );
 	}
 	.contrast-box--hero:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-darkest, $AU-darkcolor-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Background ) );
 	}
 	.contrast-box--primary:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-darkest, $AU-darkcolor-Background-light ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Background-light ) );
 	}
 	.contrast-box--secondary:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-darkest, $AU-darkcolor-Background-darkest ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Background-darkest ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-darkest, $AU-color-Border ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-color-Border ) );
 	}
 	.contrast-box--link:after {
-		@include check-contrast( AU-color-contrast( $AU-darkcolor-Background-darkest, $AU-color-Action ) );
+		@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-color-Action ) );
 	}
 }
 
@@ -822,13 +822,13 @@ html {
 		@include check-contrast( AU-color-contrast( $AU-color-Border, $AU-color-Background ) );
 	}
 	.contrast-box--hero:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Border, $AU-darkcolor-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Border, $AU-colordark-Background ) );
 	}
 	.contrast-box--primary:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Border, $AU-darkcolor-Background-light ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Border, $AU-colordark-Background-light ) );
 	}
 	.contrast-box--secondary:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Border, $AU-darkcolor-Background-darkest ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Border, $AU-colordark-Background-darkest ) );
 	}
 	.contrast-box--border:after {
 		@include check-contrast( AU-color-contrast( $AU-color-Border, $AU-color-Border ) );
@@ -849,13 +849,13 @@ html {
 		@include check-contrast( AU-color-contrast( $AU-color-Action, $AU-color-Background ) );
 	}
 	.contrast-box--hero:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Action, $AU-darkcolor-Background ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Action, $AU-colordark-Background ) );
 	}
 	.contrast-box--primary:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Action, $AU-darkcolor-Background-light ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Action, $AU-colordark-Background-light ) );
 	}
 	.contrast-box--secondary:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Action, $AU-darkcolor-Background-darkest ) );
+		@include check-contrast( AU-color-contrast( $AU-color-Action, $AU-colordark-Background-darkest ) );
 	}
 	.contrast-box--border:after {
 		@include check-contrast( AU-color-contrast( $AU-color-Action, $AU-color-Border ) );

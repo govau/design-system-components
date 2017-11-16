@@ -76,8 +76,8 @@
 		right: AU-space( 1 );
 		width: AU-space( 0.75 );
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-			'	<path fill="#{ $AU-darkcolor-Background-light }" d="M64 0l64 64-16 16-64-64"/>' +
-			'	<path fill="#{ $AU-darkcolor-Background-light }" d="M64 0l16 16-64 64L0 64"/>' +
+			'	<path fill="#{ $AU-colordark-Background-light }" d="M64 0l64 64-16 16-64-64"/>' +
+			'	<path fill="#{ $AU-colordark-Background-light }" d="M64 0l16 16-64 64L0 64"/>' +
 			'</svg>');
 		background-repeat: no-repeat;
 		background-position: center;

@@ -23,7 +23,7 @@
 .au-header {
 	font-family: $AU-font;
 	color: #fff;
-	background: $AU-darkcolor-Background-light;
+	background: $AU-colordark-Background-light;
 	padding: AU-space( 1 ) 0 AU-space( 1.25 ) 0;
 	margin-bottom: AU-space( 1 );
 
@@ -45,7 +45,7 @@
 	}
 
 	&.au-header--dark {
-		background-color: $AU-color-Secondary;
+		background-color:  $AU-color-primary-Background;
 	}
 }
 

@@ -123,7 +123,7 @@ var AU = AU || {};
 
 
 	/**
-	 * Stop any uikit animation on a DOM element
+	 * Stop any au animation on a DOM element
 	 *
 	 * @param  {object} element - The element to stop animating
 	 */

@@ -29,7 +29,7 @@
 	font-family: $AU-font;
 	text-decoration: none;
 	border: none;
-	border-bottom: solid 1px $AU-darkcolor-Background-light;
+	border-bottom: solid 1px $AU-colordark-Background-light;
 	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 	cursor: pointer;
 
@@ -42,8 +42,8 @@
 		height: 0.8em;
 		margin: 0 AU-space( 0.25 ) 0 AU-space( 0.25 );
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-darkcolor-Background-light }" d="M128 64l-64 64-16-16 64-64"/>
-				<path fill="#{ $AU-darkcolor-Background-light }" d="M128 64l-16 16-64-64L64 0"/>
+				<path fill="#{ $AU-colordark-Background-light }" d="M128 64l-64 64-16-16 64-64"/>
+				<path fill="#{ $AU-colordark-Background-light }" d="M128 64l-16 16-64-64L64 0"/>
 			</svg>');
 		transition: margin 0.1s ease-in;
 
