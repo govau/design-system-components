@@ -1,7 +1,7 @@
 body {
 	background: #fff;
 	margin: 0;
-	padding: uikit-space( 4 ) uikit-space( 1 ) uikit-space( 2 ) uikit-space( 1 );
+	padding: AU-space( 4 ) AU-space( 1 ) AU-space( 2 ) AU-space( 1 );
 	overflow-x: hidden; //For Opera apparently.
 
 	&:before {
@@ -16,13 +16,13 @@ body {
 			#333 10px,
 			#333 20px
 		);
-		padding: uikit-space( 0.5 ) uikit-space( 2 ) uikit-space( 0.5 ) uikit-space( 1 );
+		padding: AU-space( 0.5 ) AU-space( 2 ) AU-space( 0.5 ) AU-space( 1 );
 		content: "📃 Test file";
-		font-family: $uikit-font-monospace;
+		font-family: $AU-font-monospace;
 		color: white;
 	}
 }
 
 .test-link {
-	font-family: $uikit-font-system;
+	font-family: $AU-font;
 }
