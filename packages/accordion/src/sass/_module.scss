@@ -17,7 +17,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-accordion {
 	display: block;
-	border: $AU-borderize;
+	border: 1px solid $AU-color-Border;
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	margin-bottom: AU-space( 1 );
@@ -122,5 +122,5 @@
 
 .au-accordion__body-wrapper {
 	padding: AU-space( 0.75 );
-	border-top: $AU-borderize;
+	border-top: 1px solid $AU-color-Border;
 }

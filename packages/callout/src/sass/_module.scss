@@ -39,9 +39,9 @@
 
 	.ie8 &,
 	.lt-ie8 & {
-		border-top: $AU-borderize;
-		border-right: $AU-borderize;
-		border-bottom: $AU-borderize;
+		border-top: 1px solid $AU-color-Border;
+		border-right: 1px solid $AU-color-Border;
+		border-bottom: 1px solid $AU-color-Border;
 	}
 }
 

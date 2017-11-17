@@ -330,7 +330,7 @@
 		height: 0;
 		overflow: visible;
 		border: none;
-		border-top: $AU-borderize;
+		border-top: 1px solid $AU-color-Border;
 		margin-bottom: AU-space( 1 );
 	}
 }
