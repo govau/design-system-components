@@ -27,7 +27,6 @@
 //   - AU-color-contrast
 //
 //  Error messages all start with a movie quote. Here are some in reserve:
-//  - E.T. phone home;
 //  - I have always depended on the kindness of strangers;
 //  - Where we’re going, we don’t need roads;
 //  - You shall not pass;
@@ -36,6 +35,7 @@
 //  - Nobody puts Baby in a corner;
 //  - Try not. Do - or do not. There is no try;
 //  - May the Force be with you;
+//  - You call that a knife? This is a knife!
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -89,24 +89,24 @@ $AU-color-Focus:                  #f04400 !default;
 $AU-color-Background-light:       #ffffff !default;
 
 // Non-user definable pallet colors
-$AU-color-Muted:                  #6a6a6a !global;
-$AU-color-Border:                 #878787 !global;
-$AU-color-Background:             #f5f5f5 !global;
-$AU-color-Background-dark:        #ebebeb !global;
-$AU-color-Background-darkest:     #d6d6d6 !global;
+$AU-color-Muted:                  #6a6a6a;
+$AU-color-Border:                 #878787;
+$AU-color-Background:             #f5f5f5;
+$AU-color-Background-dark:        #ebebeb;
+$AU-color-Background-darkest:     #d6d6d6;
 
 // Color sets
-$AU-color-hero-Text:              $AU-color-Background !global;
-$AU-color-hero-Background:        $AU-color-Action !global;
-$AU-color-hero-Border:            $AU-color-Action !global;
+$AU-color-hero-Text:              $AU-color-Background;
+$AU-color-hero-Background:        $AU-color-Action;
+$AU-color-hero-Border:            $AU-color-Action;
 
-$AU-color-primary-Text:           $AU-color-Background-light !global;
-$AU-color-primary-Background:     $AU-color-Text !global;
-$AU-color-primary-Border:         $AU-color-Text !global;
+$AU-color-primary-Text:           $AU-color-Background-light;
+$AU-color-primary-Background:     $AU-color-Text;
+$AU-color-primary-Border:         $AU-color-Text;
 
-$AU-color-soft-Text:              $AU-color-Action !global;
-$AU-color-soft-Border:            $AU-color-Action !global;
-$AU-color-soft-Background:        $AU-color-Background-light !global;
+$AU-color-soft-Text:              $AU-color-Action;
+$AU-color-soft-Border:            $AU-color-Action;
+$AU-color-soft-Background:        $AU-color-Background-light;
 
 
 /**
@@ -118,24 +118,24 @@ $AU-colordark-Focus:              #ff8629 !default;
 $AU-colordark-Background-light:   #135E70 !default;
 
 // non user definable pallet colors
-$AU-colordark-Muted:              #aed1d9 !global;
-$AU-colordark-Border:             #74afbe !global;
-$AU-colordark-Background:         #104f5f !global;
-$AU-colordark-Background-dark:    #0d414d !global;
-$AU-colordark-Background-darkest: #051b20 !global;
+$AU-colordark-Muted:              #aed1d9;
+$AU-colordark-Border:             #74afbe;
+$AU-colordark-Background:         #104f5f;
+$AU-colordark-Background-dark:    #0d414d;
+$AU-colordark-Background-darkest: #051b20;
 
 // Color sets
-$AU-colordark-hero-Text:          $AU-colordark-Background !global;
-$AU-colordark-hero-Background:    $AU-colordark-Action !global;
-$AU-colordark-hero-Border:        $AU-colordark-Action !global;
+$AU-colordark-hero-Text:          $AU-colordark-Background;
+$AU-colordark-hero-Background:    $AU-colordark-Action;
+$AU-colordark-hero-Border:        $AU-colordark-Action;
 
-$AU-colordark-primary-Text:       $AU-colordark-Text !global;
-$AU-colordark-primary-Background: $AU-colordark-Text !global;
-$AU-colordark-primary-Border:     $AU-colordark-Background-light !global;
+$AU-colordark-primary-Text:       $AU-colordark-Text;
+$AU-colordark-primary-Background: $AU-colordark-Text;
+$AU-colordark-primary-Border:     $AU-colordark-Background-light;
 
-$AU-colordark-soft-Text:          $AU-colordark-Action !global;
-$AU-colordark-soft-Background:    $AU-colordark-Action !global;
-$AU-colordark-soft-Border:        $AU-colordark-Background-light !global;
+$AU-colordark-soft-Text:          $AU-colordark-Action;
+$AU-colordark-soft-Background:    $AU-colordark-Action;
+$AU-colordark-soft-Border:        $AU-colordark-Background-light;
 
 
 /**
@@ -231,18 +231,24 @@ $AU-border-radius: 3px !default;
 /**
  * The outline for focus
  */
-@mixin AU-outline() {
-	outline: 1px solid $AU-color-Text;
-	outline-offset: 1px;
+@mixin AU-outline( $theme: 'light' ) {
+	@if $theme == 'dark' {
+		outline: 3px solid $AU-colordark-Focus;
+		outline-offset: 3px;
+	}
+	@else {
+		outline: 3px solid $AU-color-Focus;
+		outline-offset: 3px;
+	}
 }
 
 
 /**
  * Add the outline to focus
  */
-@mixin AU-focus() {
+@mixin AU-focus( $theme: 'light' ) {
 	&:focus {
-		@include AU-outline();
+		@include AU-outline( $theme );
 	}
 }
 
@@ -562,7 +568,7 @@ $AU-border-radius: 3px !default;
  *
  * @return {integer}             - The contrast ratio
  */
-@function AU-color-contrast( $forground, $background ) {
+@function AU-color-contrast( $forground, $background, $silent: false ) {
 	@if type-of( $forground ) != 'color' {
 		@error "Elementary, my dear Watson; the AU-color-contrast function only takes a color as first argument!";
 	}
@@ -581,7 +587,7 @@ $AU-border-radius: 3px !default;
 
 	$ratio: $ratio;
 
-	@if( $ratio < 4.5 ) {
+	@if( $ratio < 4.5 and $silent == false ) {
 		@warn "Houston, we have a problem; contrast ratio of #{ $forground } on #{ $background } is bad, just #{ $ratio }";
 	}
 
@@ -605,7 +611,7 @@ $AU-border-radius: 3px !default;
  *
  * @return {Color}                                  - Returns the nearest accessible color
  */
-@function AU-a11ycolor( $toMakeA11y, $background, $ratioKey: 'small', $steps: 0.1 ) {
+@function AU-color-a11y( $toMakeA11y, $background, $ratioKey: 'small', $steps: 0.1 ) {
 	@if type-of( $toMakeA11y ) != 'color' {
 		@error "Where we’re going, we don’t need roads; the AU-a11ycolor function only takes a color as the first attribute!";
 	}
@@ -632,7 +638,7 @@ $AU-border-radius: 3px !default;
 	);
 	$ratio: map-get( $ratios, $ratioKey );
 
-	$currentRatio: AU-color-contrast( $toMakeA11y, $background ); // Get the current ratio
+	$currentRatio: AU-color-contrast( $toMakeA11y, $background, true ); // Get the current ratio
 	$colorLighter: $toMakeA11y;   // We have to scope those variables outside the loop
 	$ratioLighter: $currentRatio; // so that we have access to them after the loop finished
 	$colorDarker: $toMakeA11y;    // doing it for all of them
@@ -648,8 +654,8 @@ $AU-border-radius: 3px !default;
 		$colorLighter: hsl( $hue, $saturation, ( $lightness + $i ) );   // then we lighten a new color
 		$colorDarker:  hsl( $hue, $saturation, ( $lightness - $i ) );   // and darken another
 
-		$ratioLighter: AU-color-contrast( $colorLighter, $background ); // now we assign the new ratios; the loop will break
-		$ratioDarker:  AU-color-contrast( $colorDarker, $background );  // when one of these is beyond the defined ration
+		$ratioLighter: AU-color-contrast( $colorLighter, $background, true ); // now we assign the new ratios; the loop will break
+		$ratioDarker:  AU-color-contrast( $colorDarker, $background, true );  // when one of these is beyond the defined ration
 
 		$i: $i + $steps; // iterate by increasing our step
 	}
