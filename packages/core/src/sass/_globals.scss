@@ -563,12 +563,14 @@ $AU-border-radius: 3px !default;
  *
  * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
  *
- * @param  {string}  $forground  - Color one
- * @param  {string}  $background - Color two
+ * @param  {string}   $forground  - Color one
+ * @param  {string}   $background - Color two
+ * @param  {boolean}  $silent     - If the logs get printed in the terminal
+ * @param  {boolean}  $rounded    - If the value is rounded or not
  *
  * @return {integer}             - The contrast ratio
  */
-@function AU-color-contrast( $forground, $background, $silent: false ) {
+@function AU-color-contrast( $forground, $background, $silent: false, $rounded: true ) {
 	@if type-of( $forground ) != 'color' {
 		@error "Elementary, my dear Watson; the AU-color-contrast function only takes a color as first argument!";
 	}
@@ -585,10 +587,12 @@ $AU-border-radius: 3px !default;
 		$ratio: 1 / $ratio;
 	}
 
-	$ratio: $ratio;
-
 	@if( $ratio < 4.5 and $silent == false ) {
 		@warn "Houston, we have a problem; contrast ratio of #{ $forground } on #{ $background } is bad, just #{ $ratio }";
+	}
+
+	@if $rounded == true {
+		$ratio: round( $ratio * 10 ) / 10;
 	}
 
 	@return $ratio;
@@ -638,7 +642,7 @@ $AU-border-radius: 3px !default;
 	);
 	$ratio: map-get( $ratios, $ratioKey );
 
-	$currentRatio: AU-color-contrast( $toMakeA11y, $background, true ); // Get the current ratio
+	$currentRatio: AU-color-contrast( $toMakeA11y, $background, true, false ); // Get the current ratio
 	$colorLighter: $toMakeA11y;   // We have to scope those variables outside the loop
 	$ratioLighter: $currentRatio; // so that we have access to them after the loop finished
 	$colorDarker: $toMakeA11y;    // doing it for all of them
@@ -654,8 +658,8 @@ $AU-border-radius: 3px !default;
 		$colorLighter: hsl( $hue, $saturation, ( $lightness + $i ) );   // then we lighten a new color
 		$colorDarker:  hsl( $hue, $saturation, ( $lightness - $i ) );   // and darken another
 
-		$ratioLighter: AU-color-contrast( $colorLighter, $background, true ); // now we assign the new ratios; the loop will break
-		$ratioDarker:  AU-color-contrast( $colorDarker, $background, true );  // when one of these is beyond the defined ration
+		$ratioLighter: AU-color-contrast( $colorLighter, $background, true, false ); // now we assign the new ratios; the loop will break
+		$ratioDarker:  AU-color-contrast( $colorDarker, $background, true, false );  // when one of these is beyond the defined ration
 
 		$i: $i + $steps; // iterate by increasing our step
 	}
