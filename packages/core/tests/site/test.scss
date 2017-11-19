@@ -531,7 +531,7 @@ html {
 		);
 		color: #000;
 
-		$result: "✗";
+		$result: "!";
 	}
 
 	@if( $ratio < 3 ) {
