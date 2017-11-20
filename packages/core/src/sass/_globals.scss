@@ -4,19 +4,6 @@
 // Core module globals
 //
 // Content:
-// - variables
-//   - breakpoints
-//   - line-height (leading)
-//   - font stacks
-//   - max width line length (measure)
-//   - colours
-//   - border styles and vars
-// - mixins
-//   - AU-clearfix
-//   - AU-media
-//   - AU-sronly
-//   - AU-outline
-//   - AU-focus
 // - functions
 //   - AU-space
 //   - AU-replace
@@ -25,6 +12,19 @@
 //   - AU-pow
 //   - AU-color-luminance
 //   - AU-color-contrast
+// - mixins
+//   - AU-clearfix
+//   - AU-media
+//   - AU-sronly
+//   - AU-outline
+//   - AU-focus
+// - variables
+//   - breakpoints
+//   - line-height (leading)
+//   - font stacks
+//   - max width line length (measure)
+//   - colours
+//   - border styles and vars
 //
 //  Error messages all start with a movie quote. Here are some in reserve:
 //  - I have always depended on the kindness of strangers;
@@ -50,210 +50,6 @@ $dependencies: (
 @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// GLOBAL VARIABLES
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-/**
- * Breakpoints
- */
-$AU-media-xs: 576px !default; //media query breakpoints
-$AU-media-sm: 768px !default;
-$AU-media-md: 992px !default;
-$AU-media-lg: 1200px !default;
-
-
-/**
- * Line-height (‘leading’)
- */
-$AU-leading: 1.6 !default;
-
-
-/**
- * Font stacks
- */
-$AU-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
-$AU-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
-
-
-/**
- * max-width for line lengths (the ‘measure’)
- */
-$AU-maxwidth: 42em !default; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
-
-
-/**
- * Colors light theme
- */
-$AU-color-Text:                   #313131 !default;
-$AU-color-Action:                 #00698f !default;
-$AU-color-Focus:                  #f04400 !default;
-$AU-color-Background-light:       #ffffff !default;
-
-// Non-user definable pallet colors
-$AU-color-Muted:                  #6a6a6a !global;
-$AU-color-Border:                 #878787 !global;
-$AU-color-Background:             #f5f5f5 !global;
-$AU-color-Background-dark:        #ebebeb !global;
-$AU-color-Background-darkest:     #d6d6d6 !global;
-
-// Color sets
-$AU-color-hero-Text:              $AU-color-Background !global;
-$AU-color-hero-Background:        $AU-color-Action !global;
-$AU-color-hero-Border:            $AU-color-Action !global;
-
-$AU-color-primary-Text:           $AU-color-Background-light !global;
-$AU-color-primary-Background:     $AU-color-Text !global;
-$AU-color-primary-Border:         $AU-color-Text !global;
-
-$AU-color-soft-Text:              $AU-color-Action !global;
-$AU-color-soft-Border:            $AU-color-Action !global;
-$AU-color-soft-Background:        $AU-color-Background-light !global;
-
-
-/**
- * Colors dark theme
- */
-$AU-colordark-Text:               #ffffff !default;
-$AU-colordark-Action:             #61daff !default;
-$AU-colordark-Focus:              #ff8629 !default;
-$AU-colordark-Background-light:   #135E70 !default;
-
-// non user definable pallet colors
-$AU-colordark-Muted:              #aed1d9 !global;
-$AU-colordark-Border:             #74afbe !global;
-$AU-colordark-Background:         #104f5f !global;
-$AU-colordark-Background-dark:    #0d414d !global;
-$AU-colordark-Background-darkest: #051b20 !global;
-
-// Color sets
-$AU-colordark-hero-Text:          $AU-colordark-Background !global;
-$AU-colordark-hero-Background:    $AU-colordark-Action !global;
-$AU-colordark-hero-Border:        $AU-colordark-Action !global;
-
-$AU-colordark-primary-Text:       $AU-colordark-Text !global;
-$AU-colordark-primary-Background: $AU-colordark-Text !global;
-$AU-colordark-primary-Border:     $AU-colordark-Background-light !global;
-
-$AU-colordark-soft-Text:          $AU-colordark-Action !global;
-$AU-colordark-soft-Background:    $AU-colordark-Action !global;
-$AU-colordark-soft-Border:        $AU-colordark-Background-light !global;
-
-
-/**
- * Colors system messages
- */
-$AU-color-Error:                  #ff635c !default;
-$AU-color-Success:                #0cac78 !default;
-$AU-color-Warning:                #f69900 !default;
-$AU-color-Info:                   #00bfe9 !default;
-
-
-/**
- * Border vars and styles
- */
-$AU-border-radius: 3px !default;
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// GLOBAL MIXINS
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-/**
- * Clearing floats
- */
-@mixin AU-clearfix() {
-	&:before,
-	&:after {
-		content: " "; // 1
-		display: table; // 2
-	}
-	&:after {
-		clear: both;
-	}
-}
-
-
-/**
- * Create media queries and wraps the @content code inside of it
- *
- * @param  {keywords} $breakpoint - Either one of the following keywords: xs, sm, md, lg
- *
- * @return {string}               - The code passed in via @content wrapped inside a media query
- */
-@mixin AU-media( $breakpoint ) {
-	@if type-of( $breakpoint ) != 'string' {
-		@error "Captain I’m giving it all she’s got but; the AU-media mixin only takes a string!";
-	}
-
-	@if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
-		@error "There’s no crying in baseball; the AU-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
-	}
-
-	@if( $breakpoint == "xs" ) {
-		@media (min-width: $AU-media-xs) {
-			@content;
-		}
-	}
-
-	@if( $breakpoint == "sm" ) {
-		@media (min-width: $AU-media-sm) {
-			@content;
-		}
-	}
-
-	@if( $breakpoint == "md" ) {
-		@media (min-width: $AU-media-md) {
-			@content;
-		}
-	}
-
-	@if( $breakpoint == "lg" ) {
-		@media (min-width: $AU-media-lg) {
-			@content;
-		}
-	}
-}
-
-
-/**
- * Hide an element from the screen but not a screen reader
- */
-@mixin AU-sronly() {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0,0,0,0);
-	border: 0;
-}
-
-
-/**
- * The outline for focus
- */
-@mixin AU-outline( $theme: 'light' ) {
-	@if $theme == 'dark' {
-		outline: 3px solid $AU-colordark-Focus;
-		outline-offset: 3px;
-	}
-	@else {
-		outline: 3px solid $AU-color-Focus;
-		outline-offset: 3px;
-	}
-}
-
-
-/**
- * Add the outline to focus
- */
-@mixin AU-focus( $theme: 'light' ) {
-	&:focus {
-		@include AU-outline( $theme );
-	}
-}
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
@@ -264,7 +60,7 @@ $AU-border-radius: 3px !default;
  *
  * @return {number}         - The space in ems
  */
-@function AU-space( $number, $line-height: $AU-leading ) {
+ @function AU-space( $number, $line-height: $AU-leading ) {
 	@if type-of( $number ) != 'number' {
 		@error "I’m sorry Dave, I can’t do that; the AU-space function only takes a number!";
 	}
@@ -587,7 +383,7 @@ $AU-border-radius: 3px !default;
 		$ratio: 1 / $ratio;
 	}
 
-	@if( $ratio < 4.5 and $silent == false ) {
+	@if $ratio < 4.5 and $silent == false {
 		@warn "Houston, we have a problem; contrast ratio of #{ $forground } on #{ $background } is bad, just #{ $ratio }";
 	}
 
@@ -617,23 +413,23 @@ $AU-border-radius: 3px !default;
  */
 @function AU-color-a11y( $toMakeA11y, $background, $ratioKey: 'small', $steps: 0.1 ) {
 	@if type-of( $toMakeA11y ) != 'color' {
-		@error "Where we’re going, we don’t need roads; the AU-a11ycolor function only takes a color as the first attribute!";
+		@error "Where we’re going, we don’t need roads; the AU-color-a11y function only takes a color as the first attribute!";
 	}
 
 	@if type-of( $background ) != 'color' {
-		@error "You shall not pass; the AU-a11ycolor function only takes a color as the second attribute!";
+		@error "You shall not pass; the AU-color-a11y function only takes a color as the second attribute!";
 	}
 
 	@if $ratioKey != 'small' and $ratioKey != 'large' {
-		@error "I have always depended on the kindness of strangers; the AU-a11ycolor function only takes 'small' or 'large' as third attribute.";
+		@error "I have always depended on the kindness of strangers; the AU-color-a11y function only takes 'small' or 'large' as third attribute.";
 	}
 
 	@if type-of( $steps ) != 'number' {
-		@error "You’re tearing me apart, Lisa; the AU-a11ycolor function only takes a number as the forth attribute!";
+		@error "You’re tearing me apart, Lisa; the AU-color-a11y function only takes a number as the forth attribute!";
 	}
 
 	@if $steps >= 100 or $steps < 0.1 {
-		@error "Toto, I’ve got a feeling we’re not in Kansas anymore; the AU-a11ycolor function only takes a number between 0.1 and 100 as the forth attribute!";
+		@error "Toto, I’ve got a feeling we’re not in Kansas anymore; the AU-color-a11y function only takes a number between 0.1 and 100 as the forth attribute!";
 	}
 
 	$ratios: (
@@ -672,6 +468,211 @@ $AU-border-radius: 3px !default;
 		@return $colorDarker;
 	}
 	@else {
-		@error 'Bagger; AU-a11ycolor was unable to find an accessible color for you.';
+		@error 'Bagger; AU-color-a11y was unable to find an accessible color for you.';
 	}
 }
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL MIXINS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Clearing floats
+ */
+ @mixin AU-clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+/**
+ * Create media queries and wraps the @content code inside of it
+ *
+ * @param  {keywords} $breakpoint - Either one of the following keywords: xs, sm, md, lg
+ *
+ * @return {string}               - The code passed in via @content wrapped inside a media query
+ */
+@mixin AU-media( $breakpoint ) {
+	@if type-of( $breakpoint ) != 'string' {
+		@error "Captain I’m giving it all she’s got but; the AU-media mixin only takes a string!";
+	}
+
+	@if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
+		@error "There’s no crying in baseball; the AU-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
+	}
+
+	@if( $breakpoint == "xs" ) {
+		@media (min-width: $AU-media-xs) {
+			@content;
+		}
+	}
+
+	@if( $breakpoint == "sm" ) {
+		@media (min-width: $AU-media-sm) {
+			@content;
+		}
+	}
+
+	@if( $breakpoint == "md" ) {
+		@media (min-width: $AU-media-md) {
+			@content;
+		}
+	}
+
+	@if( $breakpoint == "lg" ) {
+		@media (min-width: $AU-media-lg) {
+			@content;
+		}
+	}
+}
+
+
+/**
+ * Hide an element from the screen but not a screen reader
+ */
+@mixin AU-sronly() {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+
+/**
+ * The outline for focus
+ */
+@mixin AU-outline( $theme: 'light' ) {
+	@if $theme == 'dark' {
+		outline: 3px solid $AU-colordark-Focus;
+		outline-offset: 3px;
+	}
+	@else {
+		outline: 3px solid $AU-color-Focus;
+		outline-offset: 3px;
+	}
+}
+
+
+/**
+ * Add the outline to focus
+ */
+@mixin AU-focus( $theme: 'light' ) {
+	&:focus {
+		@include AU-outline( $theme );
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL VARIABLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Breakpoints
+ */
+$AU-media-xs: 576px !default; //media query breakpoints
+$AU-media-sm: 768px !default;
+$AU-media-md: 992px !default;
+$AU-media-lg: 1200px !default;
+
+
+/**
+ * Line-height (‘leading’)
+ */
+$AU-leading: 1.6 !default;
+
+
+/**
+ * Font stacks
+ */
+$AU-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
+$AU-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
+
+
+/**
+ * max-width for line lengths (the ‘measure’)
+ */
+$AU-maxwidth: 42em !default; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
+
+
+/**
+ * Colors light theme
+ */
+$AU-color-Text:                   #313131 !default;
+$AU-color-Action:                 #00698f !default;
+$AU-color-Focus:                  #ea4200 !default;
+$AU-color-Background-light:       #ffffff !default;
+
+// Non-user definable pallet colors
+$AU-color-Background:             AU-color-a11y( darken( $AU-color-Background-light, 4%), $AU-color-Text ) !global;
+$AU-color-Background-dark:        AU-color-a11y( darken( $AU-color-Background, 4%), $AU-color-Text ) !global;
+$AU-color-Background-darkest:     AU-color-a11y( darken( $AU-color-Background-dark, 4%), $AU-color-Text ) !global;
+$AU-color-Muted:                  AU-color-a11y( mix( $AU-color-Text, $AU-color-Background-darkest, 20%), $AU-color-Background-darkest ) !global;
+$AU-color-Border:                 AU-color-a11y( mix( $AU-color-Text, $AU-color-Background-darkest, 20%) , $AU-color-Background-darkest, 'large') !global;
+
+
+// Color sets
+$AU-color-hero-Text:              $AU-color-Background !global;
+$AU-color-hero-Background:        $AU-color-Action !global;
+$AU-color-hero-Border:            $AU-color-Action !global;
+
+$AU-color-primary-Text:           $AU-color-Background-light !global;
+$AU-color-primary-Background:     $AU-color-Text !global;
+$AU-color-primary-Border:         $AU-color-Text !global;
+
+$AU-color-soft-Text:              $AU-color-Action !global;
+$AU-color-soft-Border:            $AU-color-Action !global;
+$AU-color-soft-Background:        $AU-color-Background-light !global;
+
+
+/**
+ * Colors dark theme
+ */
+$AU-colordark-Text:               #ffffff !default;
+$AU-colordark-Action:             #61daff !default;
+$AU-colordark-Focus:              #ff8629 !default;
+$AU-colordark-Background-light:   #135E70 !default;
+
+// non user definable pallet colors
+$AU-colordark-Background:          AU-color-a11y( darken( $AU-colordark-Background-light, 6%), $AU-colordark-Text ) !global;
+$AU-colordark-Background-dark:     AU-color-a11y( darken( $AU-colordark-Background, 6%), $AU-colordark-Text ) !global;
+$AU-colordark-Background-darkest:  AU-color-a11y( darken( $AU-colordark-Background-dark, 6%), $AU-colordark-Text ) !global;
+$AU-colordark-Muted:               AU-color-a11y( mix( $AU-colordark-Text, $AU-colordark-Background-light, 20%), $AU-colordark-Background-light ) !global;
+$AU-colordark-Border:              AU-color-a11y( mix( $AU-colordark-Text, $AU-colordark-Background-light, 20%) , $AU-colordark-Background-light, 'large') !global;
+
+// Color sets
+$AU-colordark-hero-Text:          $AU-colordark-Background !global;
+$AU-colordark-hero-Background:    $AU-colordark-Action !global;
+$AU-colordark-hero-Border:        $AU-colordark-Action !global;
+
+$AU-colordark-primary-Text:       $AU-colordark-Text !global;
+$AU-colordark-primary-Background: $AU-colordark-Text !global;
+$AU-colordark-primary-Border:     $AU-colordark-Background-light !global;
+
+$AU-colordark-soft-Text:          $AU-colordark-Action !global;
+$AU-colordark-soft-Background:    $AU-colordark-Action !global;
+$AU-colordark-soft-Border:        $AU-colordark-Background-light !global;
+
+
+/**
+ * Colors system messages
+ */
+$AU-color-Error:                  #ff635c !default;
+$AU-color-Success:                #0cac78 !default;
+$AU-color-Warning:                #f69900 !default;
+$AU-color-Info:                   #00bfe9 !default;
+
+
+/**
+ * Border vars and styles
+ */
+$AU-border-radius: 3px !default;
