@@ -38,22 +38,4 @@
 			display: inline-block;
 		}
 	}
-
-	&.au-link-list--inverted {
-		background-color: $AU-color-Text;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-
-		> li > a {
-			color: #fff;
-			border-color: $AU-color-Action;
-			transition: color 0.1s ease-in-out;
-
-			&:hover,
-			&:focus {
-				background-color: $AU-color-Action;
-				color: $AU-color-Text;
-			}
-		}
-	}
 }
