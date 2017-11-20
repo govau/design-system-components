@@ -386,8 +386,7 @@ $dependencies: (
 	@if $ratio < 4.5 and $silent == false {
 		@warn "Houston, we have a problem; contrast ratio of #{ $forground } on #{ $background } is bad, just #{ $ratio }";
 	}
-
-	@if $rounded == true {
+	@else if $rounded == true {
 		$ratio: round( $ratio * 10 ) / 10;
 	}
 
