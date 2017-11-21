@@ -16,66 +16,100 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // buttons
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/**
+ * PRIMARY
+ */
 .au-btn {
 	display: inline-block;
 	-webkit-appearance: none;
-	border: none;
-	background: none;
-	font-size: 17px;
+	font-size: 16px;
 	font-family: $AU-font;
-	font-weight: bold;
-	color: #fff;
+	color: $AU-color-Background-light;
 	text-decoration: none;
 	border-radius: $AU-border-radius;
-	background-color: $AU-colordark-Background-light;
-	padding: AU-space( 0.5 ) AU-space( 0.75 );
+	background-color: $AU-color-Action;
+	border: 3px solid $AU-color-Action;
+	padding: AU-space( 0.5 ) AU-space( 1 );
 	cursor: pointer;
-	transition: background 0.1s ease;
+	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
 
-	&:focus,
 	&:hover {
-		background-color: $AU-colordark-Background-light;
+		background-color: transparent;
+		border-color: $AU-color-Text;
+		text-decoration: underline;
+		color: $AU-color-Text;
+	}
+
+	&:focus {
+		border-radius: 0;
 	}
 
 	@include AU-focus();
 
-	&:disabled {
-		background-color: $AU-color-Border;
-		font-weight: normal;
-		color: $AU-color-Text;
-		border: 1px dotted $AU-color-Text;
-		cursor: not-allowed;
-
-		&:focus,
+	&.au-btn--dark {
+		color: $AU-colordark-Background-light;
+		background-color: $AU-colordark-Action;
+		border: 3px solid $AU-colordark-Action;
 		&:hover {
-			background-color: $AU-color-Border;
+			color: $AU-colordark-Text;
+			border-color: $AU-colordark-Text;
+			background-color: transparent;
 		}
+
+		@include AU-focus( 'dark' );
 	}
 }
+
 
 /**
  * SECONDARY
  */
 .au-btn--secondary {
-	background-color:  $AU-color-primary-Background;
+	background-color: transparent;
+	border-color: $AU-color-Action;
+	color: $AU-color-Action;
 
-	&:focus,
-	&:hover {
-		background-color:  $AU-color-primary-Background;
+	&.au-btn--dark {
+		background-color: transparent;
+		border-color: $AU-colordark-Action;
+		color: $AU-colordark-Action;
 	}
 }
+
 
 /**
  * TERTIARY
  */
 .au-btn--tertiary {
-	background-color: #fff;
-	color: $AU-color-Text;
-	border: 1px solid $AU-colordark-Background-light;
+	background-color: transparent;
+	color: $AU-color-Action;
+	border-color: transparent;
+	text-decoration: underline;
 
-	&:focus,
-	&:hover {
-		background-color: $AU-colordark-Background-light;
+	&.au-btn--dark {
+		background-color: transparent;
+		color: $AU-colordark-Action;
+		border-color: transparent;
+	}
+}
+
+/**
+ * DISABLED
+ */
+.au-btn:disabled {
+	font-weight: normal;
+	color: $AU-color-Muted;
+	border-color: transparent;
+	background: transparent;
+	cursor: not-allowed;
+	text-decoration: none;
+
+	&.au-btn--dark {
+		color: $AU-colordark-Muted;
+		background: transparent;
+		border-color: transparent;
 	}
 }
 

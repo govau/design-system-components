@@ -553,11 +553,9 @@ $dependencies: (
 @mixin AU-outline( $theme: 'light' ) {
 	@if $theme == 'dark' {
 		outline: 3px solid $AU-colordark-Focus;
-		outline-offset: 3px;
 	}
 	@else {
 		outline: 3px solid $AU-color-Focus;
-		outline-offset: 3px;
 	}
 }
 
@@ -623,21 +621,6 @@ $AU-color-Border:                 #808080 !global;
 // $AU-color-Muted:               AU-color-a11y( mix( $AU-color-Text, $AU-color-Background-darkest, 20%), $AU-color-Background-darkest ) !global;
 // $AU-color-Border:              AU-color-a11y( mix( $AU-color-Text, $AU-color-Background-darkest, 20%) , $AU-color-Background-darkest, 'large') !global;
 
-
-// Color sets
-$AU-color-hero-Text:              $AU-color-Background !global;
-$AU-color-hero-Background:        $AU-color-Action !global;
-$AU-color-hero-Border:            $AU-color-Action !global;
-
-$AU-color-primary-Text:           $AU-color-Background-light !global;
-$AU-color-primary-Background:     $AU-color-Text !global;
-$AU-color-primary-Border:         $AU-color-Text !global;
-
-$AU-color-soft-Text:              $AU-color-Action !global;
-$AU-color-soft-Border:            $AU-color-Action !global;
-$AU-color-soft-Background:        $AU-color-Background-light !global;
-
-
 /**
  * Colors dark theme
  */
@@ -647,29 +630,16 @@ $AU-colordark-Focus:              #ff8629 !default;
 $AU-colordark-Background-light:   #135E70 !default;
 
 // non user definable pallet colors
-$AU-colordark-Background:          #0f4856 !global;
-$AU-colordark-Background-dark:     #0a323c !global;
-$AU-colordark-Background-darkest:  #061c22 !global;
+$AU-colordark-Background:          #104f5f !global;
+$AU-colordark-Background-dark:     #0d414d !global;
+$AU-colordark-Background-darkest:  #0a323c !global;
 $AU-colordark-Muted:               #74afbe !global;
 $AU-colordark-Border:              #aed1d9 !global;
-// $AU-colordark-Background:          AU-color-a11y( darken( $AU-colordark-Background-light, 6%), $AU-colordark-Text ) !global;
-// $AU-colordark-Background-dark:     AU-color-a11y( darken( $AU-colordark-Background, 6%), $AU-colordark-Text ) !global;
-// $AU-colordark-Background-darkest:  AU-color-a11y( darken( $AU-colordark-Background-dark, 6%), $AU-colordark-Text ) !global;
+// $AU-colordark-Background:          AU-color-a11y( darken( $AU-colordark-Background-light, 4%), $AU-colordark-Text ) !global;
+// $AU-colordark-Background-dark:     AU-color-a11y( darken( $AU-colordark-Background, 4%), $AU-colordark-Text ) !global;
+// $AU-colordark-Background-darkest:  AU-color-a11y( darken( $AU-colordark-Background-dark, 4%), $AU-colordark-Text ) !global;
 // $AU-colordark-Muted:               AU-color-a11y( mix( $AU-colordark-Text, $AU-colordark-Background-light, 20%), $AU-colordark-Background-light ) !global;
 // $AU-colordark-Border:              AU-color-a11y( mix( $AU-colordark-Text, $AU-colordark-Background-light, 20%) , $AU-colordark-Background-light, 'large') !global;
-
-// Color sets
-$AU-colordark-hero-Text:          $AU-colordark-Background !global;
-$AU-colordark-hero-Background:    $AU-colordark-Action !global;
-$AU-colordark-hero-Border:        $AU-colordark-Action !global;
-
-$AU-colordark-primary-Text:       $AU-colordark-Text !global;
-$AU-colordark-primary-Background: $AU-colordark-Text !global;
-$AU-colordark-primary-Border:     $AU-colordark-Background-light !global;
-
-$AU-colordark-soft-Text:          $AU-colordark-Action !global;
-$AU-colordark-soft-Background:    $AU-colordark-Action !global;
-$AU-colordark-soft-Border:        $AU-colordark-Background-light !global;
 
 
 /**
@@ -684,4 +654,4 @@ $AU-color-Info:                   #00bfe9 !default;
 /**
  * Border vars and styles
  */
-$AU-border-radius: 3px !default;
+$AU-border-radius: 4px !default;
