@@ -20,7 +20,7 @@
  * Basic footer block styling.
  */
 .au-footer {
-	background-color: $AU-color-Background;
+	background-color: $AU-color-Background-light;
 	border-top: 6px solid $AU-color-Border;
 	padding: AU-space( 1 );
 	font-family: $AU-font;
@@ -28,6 +28,20 @@
 
 	p:last-child {
 		margin: 0;
+	}
+
+	&.au-footer--alt {
+		background-color: $AU-color-Background;
+	}
+
+	&.au-footer--dark {
+		color: $AU-colordark-Text;
+		border-color: $AU-colordark-Border;
+		background-color:  $AU-colordark-Background-light;
+	}
+
+	&.au-footer--dark.au-footer--alt {
+		background-color:  $AU-colordark-Background-dark;
 	}
 }
 
@@ -47,5 +61,11 @@
 		padding-top: AU-space( 1 );
 		border-top: 1px solid $AU-color-Border;
 		margin-top: AU-space( 1 );
+	}
+}
+
+.au-footer--dark .au-footer__navigation {
+	+ .au-footer__end {
+		border-top: 1px solid $AU-colordark-Border;
 	}
 }

@@ -41,7 +41,6 @@
 
 	&.au-header--alt {
 		background-color: $AU-color-Background;
-		color: $AU-color-Text;
 	}
 
 	&.au-header--dark {
@@ -50,7 +49,6 @@
 	}
 
 	&.au-header--dark.au-header--alt {
-		color: $AU-colordark-Text;
 		background-color:  $AU-colordark-Background-dark;
 	}
 }
