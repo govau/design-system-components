@@ -22,8 +22,8 @@
  */
 .au-header {
 	font-family: $AU-font;
-	color: #fff;
-	background: $AU-colordark-Background-light;
+	color: $AU-color-Text;
+	background: $AU-color-Background-light;
 	padding: AU-space( 1 ) 0 AU-space( 1.25 ) 0;
 	margin-bottom: AU-space( 1 );
 
@@ -39,13 +39,19 @@
 		}
 	}
 
-	&.au-header--light {
+	&.au-header--alt {
 		background-color: $AU-color-Background;
 		color: $AU-color-Text;
 	}
 
 	&.au-header--dark {
-		background-color:  $AU-color-primary-Background;
+		color: $AU-colordark-Text;
+		background-color:  $AU-colordark-Background-light;
+	}
+
+	&.au-header--dark.au-header--alt {
+		color: $AU-colordark-Text;
+		background-color:  $AU-colordark-Background-dark;
 	}
 }
 
