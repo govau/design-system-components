@@ -604,17 +604,17 @@ $AU-maxwidth: 42em !default; //Answer to life, the universe, and everything (kee
 /**
  * Colors light theme
  */
-$AU-color-Text:                   #313131 !default;
-$AU-color-Action:                 #00698f !default;
-$AU-color-Focus:                  #ea4200 !default;
-$AU-color-Background-light:       #ffffff !default;
+$AU-color-Text:                    #313131 !default;
+$AU-color-Action:                  #00698f !default;
+$AU-color-Focus:                   #ea4200 !default;
+$AU-color-Background-light:        #ffffff !default;
 
 // Non-user definable pallet colors
-$AU-color-Background:             #fff !global;
-$AU-color-Background-dark:        #f5f5f5 !global;
-$AU-color-Background-darkest:     #ebebeb !global;
-$AU-color-Muted:                  #646464 !global;
-$AU-color-Border:                 #808080 !global;
+$AU-color-Background:              #f5f5f5 !global;
+$AU-color-Background-dark:         #ebebeb !global;
+$AU-color-Background-darkest:      #e0e0e0 !global;
+$AU-color-Muted:                   #646464 !global;
+$AU-color-Border:                  #808080 !global;
 // $AU-color-Background:          AU-color-a11y( darken( $AU-color-Background-light, 4%), $AU-color-Text ) !global;
 // $AU-color-Background-dark:     AU-color-a11y( darken( $AU-color-Background, 4%), $AU-color-Text ) !global;
 // $AU-color-Background-darkest:  AU-color-a11y( darken( $AU-color-Background-dark, 4%), $AU-color-Text ) !global;
@@ -624,10 +624,10 @@ $AU-color-Border:                 #808080 !global;
 /**
  * Colors dark theme
  */
-$AU-colordark-Text:               #ffffff !default;
-$AU-colordark-Action:             #61daff !default;
-$AU-colordark-Focus:              #ff8629 !default;
-$AU-colordark-Background-light:   #135E70 !default;
+$AU-colordark-Text:                #ffffff !default;
+$AU-colordark-Background-light:    #135E70 !default;
+$AU-colordark-Action:              #61daff !default;
+$AU-colordark-Focus:               #ff8629 !default;
 
 // non user definable pallet colors
 $AU-colordark-Background:          #104f5f !global;
@@ -645,10 +645,10 @@ $AU-colordark-Border:              #aed1d9 !global;
 /**
  * Colors system messages
  */
-$AU-color-Error:                  #ff635c !default;
-$AU-color-Success:                #0cac78 !default;
-$AU-color-Warning:                #f69900 !default;
-$AU-color-Info:                   #00bfe9 !default;
+$AU-color-Error:                   #ff635c !default;
+$AU-color-Success:                 #0cac78 !default;
+$AU-color-Warning:                 #f69900 !default;
+$AU-color-Info:                    #00bfe9 !default;
 
 
 /**
