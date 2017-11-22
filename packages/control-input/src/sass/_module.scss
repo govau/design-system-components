@@ -38,36 +38,17 @@
 		& + .au-control-input__text:after {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
 					<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
-					<path fill="#fff" d="M8 8h112v112H8z"/>
+					<path fill="#{ $AU-color-Background-light }" d="M8 8h112v112H8z"/>
 				</svg>');
 		}
 
 		&:checked + .au-control-input__text:after {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
 					<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
-					<path fill="#fff" d="M8 8h112v112H8z"/>
-					<path fill="#{ $AU-color-Text }" d="M16 16h96v96H16z"/>
-					<path fill="#fff" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
+					<path fill="#{ $AU-color-Background-light }" d="M8 8h112v112H8z"/>
+					<path fill="#{ $AU-color-Text }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
 						53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
 				</svg>');
-		}
-
-		// CHECKBOXES FULL VARIATION
-		.au-control-input--full > & {
-			& + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
-						<path fill="#fff" d="M8 8h112v112H8z"/>
-					</svg>');
-			}
-
-			&:checked + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
-						<path fill="#fff" d="M8 8h112v112H8z"/>
-						<path fill="#{ $AU-color-Text }" d="M16 16h96v96H16z"/>
-					</svg>');
-			}
 		}
 	}
 
@@ -75,37 +56,17 @@
 	&[type=radio] {
 		& + .au-control-input__text:after {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
-					<circle fill="#fff" cx="64" cy="64" r="56"/>
-				</svg>');
+				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
+				<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
+			</svg>');
 		}
 
 		&:checked + .au-control-input__text:after {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
-					<circle fill="#fff" cx="64" cy="64" r="56"/>
-					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="44"/>
-					<path fill="#fff" fill-rule="nonzero" d="M94.588 53.412c.78-.78.784-2.04 0-2.824l-9.176-9.176c-.78-.78-2.05-.775-2.82-.004L56 68 45.412
-						57.412c-.78-.78-2.04-.784-2.824 0l-9.176 9.176c-.78.78-.782 2.042 0 2.824l21.176 21.176c.78.78 2.04.784 2.824 0l37.176-37.176z"/>
-				</svg>');
-		}
-
-		// RADIOS FULL VARIATION
-		.au-control-input--full > & {
-			& + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
-					<circle fill="#fff" cx="64" cy="64" r="56"/>
-				</svg>');
-			}
-
-			&:checked + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
-					<circle fill="#fff" cx="64" cy="64" r="56"/>
-					<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="44"/>
-				</svg>');
-			}
+				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
+				<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
+				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="44"/>
+			</svg>');
 		}
 	}
 
@@ -113,23 +74,48 @@
 		font-weight: bold;
 	}
 
-	&:focus + .au-control-input__text {
-		@include AU-outline();
+	&:focus + .au-control-input__text:after {
+	  @include AU-outline();
 	}
 
 	&:disabled {
 		& + .au-control-input__text {
-			color: $AU-color-Text;
+			color: $AU-color-Muted;
 		}
 
-		//we are adding an opaque white box ontop of the svg so we don’t have to add new svgs per control kind
-		//and using opacity would shot the actual native control behind
-		//we have that native control behind the svg in case the svg background fails (fallback)
-		& + .au-control-input__text:before {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="rgba(255, 255, 255, 0.3)" d="M0 0h128v128H0z"/>
+		&[type=checkbox] {
+			& + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $AU-color-Muted }" d="M0 0h128v128H0z"/>
+						<path fill="#{ $AU-color-Background-light }" d="M8 8h112v112H8z"/>
+					</svg>');
+			}
+
+			&:checked + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $AU-color-Muted }" d="M0 0h128v128H0z"/>
+						<path fill="#{ $AU-color-Background-light }" d="M8 8h112v112H8z"/>
+						<path fill="#{ $AU-color-Muted }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
+							53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
+					</svg>');
+			}
+		}
+
+		&[type=radio] {
+			& + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<circle fill="#{ $AU-color-Muted }" cx="64" cy="64" r="64"/>
+					<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
 				</svg>');
-			z-index: 2;
+			}
+
+			&:checked + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<circle fill="#{ $AU-color-Muted  }" cx="64" cy="64" r="64"/>
+					<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
+					<circle fill="#{ $AU-color-Muted  }" cx="64" cy="64" r="44"/>
+				</svg>');
+			}
 		}
 
 		&:hover {
@@ -140,7 +126,6 @@
 			}
 		}
 	}
-
 }
 
 /**
@@ -164,5 +149,95 @@
 		height: 27px;
 		background-repeat: no-repeat;
 		z-index: 1;
+	}
+}
+
+
+.au-control-input--dark {
+	.au-control-input__input {
+
+		&[type=checkbox] {
+			& + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $AU-colordark-Text }" d="M0 0h128v128H0z"/>
+						<path fill="#{ $AU-colordark-Background-light }" d="M8 8h112v112H8z"/>
+					</svg>');
+			}
+
+			&:checked + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $AU-colordark-Text }" d="M0 0h128v128H0z"/>
+						<path fill="#{ $AU-colordark-Background-light }" d="M8 8h112v112H8z"/>
+						<path fill="#{ $AU-colordark-Text }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
+							53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
+					</svg>');
+			}
+		}
+
+		&[type=radio] {
+			& + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<circle fill="#{ $AU-colordark-Text }" cx="64" cy="64" r="64"/>
+					<circle fill="#{ $AU-colordark-Background-light }" cx="64" cy="64" r="56"/>
+				</svg>');
+			}
+
+			&:checked + .au-control-input__text:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<circle fill="#{ $AU-colordark-Text }" cx="64" cy="64" r="64"/>
+					<circle fill="#{ $AU-colordark-Background-light }" cx="64" cy="64" r="56"/>
+					<circle fill="#{ $AU-colordark-Text }" cx="64" cy="64" r="44"/>
+				</svg>');
+			}
+		}
+
+		&:disabled {
+			& + .au-control-input__text {
+				color: $AU-colordark-Muted;
+			}
+
+			&[type=checkbox] {
+				& + .au-control-input__text:after {
+					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+							<path fill="#{ $AU-colordark-Muted }" d="M0 0h128v128H0z"/>
+							<path fill="#{ $AU-colordark-Background-light }" d="M8 8h112v112H8z"/>
+						</svg>');
+				}
+
+				&:checked + .au-control-input__text:after {
+					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+							<path fill="#{ $AU-colordark-Muted }" d="M0 0h128v128H0z"/>
+							<path fill="#{ $AU-colordark-Background-light }" d="M8 8h112v112H8z"/>
+							<path fill="#{ $AU-colordark-Muted }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
+								53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
+						</svg>');
+				}
+			}
+
+			&[type=radio] {
+				& + .au-control-input__text:after {
+					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<circle fill="#{ $AU-colordark-Muted }" cx="64" cy="64" r="64"/>
+						<circle fill="#{ $AU-colordark-Background-light }" cx="64" cy="64" r="56"/>
+					</svg>');
+				}
+
+				&:checked + .au-control-input__text:after {
+					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<circle fill="#{ $AU-colordark-Muted  }" cx="64" cy="64" r="64"/>
+						<circle fill="#{ $AU-colordark-Background-light }" cx="64" cy="64" r="56"/>
+						<circle fill="#{ $AU-colordark-Muted  }" cx="64" cy="64" r="44"/>
+					</svg>');
+				}
+			}
+		}
+
+		&:focus + .au-control-input__text:after {
+			@include AU-outline( 'dark' );
+		}
+	}
+
+	.au-control-input__text {
+		color: $AU-colordark-Text;
 	}
 }
