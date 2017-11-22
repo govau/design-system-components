@@ -59,14 +59,14 @@
 		}
 	}
 
-	&.au-breadcrumbs--inverted {
-		color: #fff;
+	&.au-breadcrumbs--dark {
+		color: $AU-colordark-Text;
 
 		> .au-link-list {
 			> li:not(:last-child):after {
 				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#fff" d="M128 64l-64 64-16-16 64-64"/>
-						<path fill="#fff" d="M128 64l-16 16-64-64L64 0"/>
+						<path fill="#{ $AU-colordark-Border }" d="M128 64l-64 64-16-16 64-64"/>
+						<path fill="#{ $AU-colordark-Border }" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');
 			}
 		}
