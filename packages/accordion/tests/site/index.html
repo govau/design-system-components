@@ -247,20 +247,215 @@
 					</div>
 				</div>
 			</div>
+			<br />
+			<hr	/>
+			<div class="au-body">
+				<h2>With body</h2>
+
+				<h3>Accordion open by default</h3>
+
+				<section class="au-accordion">
+					<a href="#accordion-default-grid"
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-default-grid"
+						aria-expanded="true"
+						aria-selected="true"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body" id="accordion-default-grid" aria-hidden="false">
+						<div class="au-accordion__body-wrapper">
+
+							Here <a href="#url">is</a> some accordion content
+
+						</div>
+					</div>
+				</section>
+
+
+				<hr>
+				<h3>Accordion closed by default</h3>
+
+				<section class="au-accordion">
+					<a href="#accordion-closed-grid"
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-closed-grid"
+						aria-expanded="false"
+						aria-selected="false"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body au-accordion--closed" id="accordion-closed-grid" aria-hidden="true">
+						<div class="au-accordion__body-wrapper">
+
+							Here is some accordion <a href="#url">content</a>.
+
+						</div>
+					</div>
+				</section>
+
+
+				<hr>
+				<h3>Accordion slow</h3>
+
+				<section class="au-accordion">
+					<a href="#accordion-slow-grid"
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-slow-grid"
+						aria-expanded="true"
+						aria-selected="true"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this, 1000 )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body" id="accordion-slow-grid" aria-hidden="false">
+						<div class="au-accordion__body-wrapper">
+
+							Here is some accordion <a href="#url">content</a>.
+
+						</div>
+					</div>
+				</section>
+
+
+				<hr>
+				<h3>Accordion with all callbacks</h3>
+
+				<section class="au-accordion">
+					<a href="#accordion-callbacks-grid"
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-callbacks-grid"
+						aria-expanded="true"
+						aria-selected="true"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this, undefined, {
+							onOpen: function() {
+								console.log('This function will run when an accordion opens');
+							},
+							afterOpen: function() {
+								console.log('This function will run after an accordion has opened');
+							},
+							onClose: function() {
+								console.log('This function will run when an accordion closes');
+							},
+							afterClose: function() {
+								console.log('This function will run after an accordion has closed');
+							},
+						} )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body" id="accordion-callbacks-grid" aria-hidden="false">
+						<div class="au-accordion__body-wrapper">
+
+							Here is some accordion <a href="#url">content</a>.
+
+						</div>
+					</div>
+				</section>
+
+
+				<hr>
+				<h3>Accordion group</h3>
+
+				<section class="au-accordion">
+					<a href="#accordion-stacked-grid1"
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-stacked-grid1"
+						aria-expanded="false"
+						aria-selected="false"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this )">
+							First accordion title
+					</a>
+
+					<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid1" aria-hidden="true">
+						<div class="au-accordion__body-wrapper">
+
+							<p>Here is some accordion content</p>
+
+							<section class="au-accordion">
+								<a href="#inner-accordion-grid"
+									class="au-accordion__title js-au-accordion"
+									aria-controls="inner-accordion-grid"
+									aria-expanded="true"
+									aria-selected="true"
+									role="tab"
+									onClick="return AU.accordion.Toggle( this )">
+										A nested accordion
+								</a>
+
+								<div class="au-accordion__body" id="inner-accordion-grid" aria-hidden="false">
+									<div class="au-accordion__body-wrapper">
+										Here is some <a href="#url">accordion</a> content
+									</div>
+								</div>
+
+							</section>
+
+							<p>Here is some accordion <a href="#url">content</a>.</p>
+
+						</div>
+
+					</div>
+				</section>
+
+				<section class="au-accordion">
+					<a href="#accordion-stacked-grid2"
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-stacked-grid2"
+						aria-expanded="false"
+						aria-selected="false"
+						onClick="return AU.accordion.Toggle( this )">
+							Another accordion
+					</a>
+
+					<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid2" aria-hidden="true">
+						<div class="au-accordion__body-wrapper">
+							<p>Here is some accordion content</p>
+							<p>Here is some <a href="#url">accordion</a> content</p>
+							<p>Here is some accordion content</p>
+						</div>
+					</div>
+				</section>
+
+				<div class="au-accordion">
+					<a href="#accordion-stacked-grid3"
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-stacked-grid3"
+						aria-expanded="false"
+						aria-selected="false"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion with words and words and a very long title so that it can break into several
+					</a>
+
+					<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid3" aria-hidden="true">
+						<div class="au-accordion__body-wrapper">
+							<p>Here is some accordion content</p>
+							<p>Here is some <a href="#url">accordion</a> content</p>
+							<p>Here is some accordion content</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</div>
 
+		<div class="split dark">
 
-		<div class="split au-body">
-
-			<h2>With body</h2>
+			<h2>Without body</h2>
 
 			<h3>Accordion open by default</h3>
 
-			<section class="au-accordion">
-				<a href="#accordion-default-grid"
+			<section class="au-accordion au-accordion--dark">
+				<a href="#accordion-dark-default"
 					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-default-grid"
+					aria-controls="accordion-dark-default"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
@@ -268,7 +463,7 @@
 						Accordion title
 				</a>
 
-				<div class="au-accordion__body" id="accordion-default-grid" aria-hidden="false">
+				<div class="au-accordion__body" id="accordion-dark-default" aria-hidden="false">
 					<div class="au-accordion__body-wrapper">
 
 						Here <a href="#url">is</a> some accordion content
@@ -281,10 +476,10 @@
 			<hr>
 			<h3>Accordion closed by default</h3>
 
-			<section class="au-accordion">
-				<a href="#accordion-closed-grid"
+			<section class="au-accordion au-accordion--dark">
+				<a href="#accordion-dark-closed"
 					class="au-accordion__title au-accordion--closed js-au-accordion"
-					aria-controls="accordion-closed-grid"
+					aria-controls="accordion-dark-closed"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
@@ -292,7 +487,7 @@
 						Accordion title
 				</a>
 
-				<div class="au-accordion__body au-accordion--closed" id="accordion-closed-grid" aria-hidden="true">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-dark-closed" aria-hidden="true">
 					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
@@ -305,10 +500,10 @@
 			<hr>
 			<h3>Accordion slow</h3>
 
-			<section class="au-accordion">
-				<a href="#accordion-slow-grid"
+			<section class="au-accordion au-accordion--dark">
+				<a href="#accordion-dark-slow"
 					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-slow-grid"
+					aria-controls="accordion-dark-slow"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
@@ -316,7 +511,7 @@
 						Accordion title
 				</a>
 
-				<div class="au-accordion__body" id="accordion-slow-grid" aria-hidden="false">
+				<div class="au-accordion__body" id="accordion-dark-slow" aria-hidden="false">
 					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
@@ -329,10 +524,10 @@
 			<hr>
 			<h3>Accordion with all callbacks</h3>
 
-			<section class="au-accordion">
-				<a href="#accordion-callbacks-grid"
+			<section class="au-accordion au-accordion--dark">
+				<a href="#accordion-dark-callbacks"
 					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-callbacks-grid"
+					aria-controls="accordion-dark-callbacks"
 					aria-expanded="true"
 					aria-selected="true"
 					role="tab"
@@ -353,7 +548,7 @@
 						Accordion title
 				</a>
 
-				<div class="au-accordion__body" id="accordion-callbacks-grid" aria-hidden="false">
+				<div class="au-accordion__body" id="accordion-dark-callbacks" aria-hidden="false">
 					<div class="au-accordion__body-wrapper">
 
 						Here is some accordion <a href="#url">content</a>.
@@ -366,10 +561,10 @@
 			<hr>
 			<h3>Accordion group</h3>
 
-			<section class="au-accordion">
-				<a href="#accordion-stacked-grid1"
+			<section class="au-accordion au-accordion--dark">
+				<a href="#accordion-dark-stacked1"
 					class="au-accordion__title au-accordion--closed js-au-accordion"
-					aria-controls="accordion-stacked-grid1"
+					aria-controls="accordion-dark-stacked1"
 					aria-expanded="false"
 					aria-selected="false"
 					role="tab"
@@ -377,15 +572,15 @@
 						First accordion title
 				</a>
 
-				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid1" aria-hidden="true">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked1" aria-hidden="true">
 					<div class="au-accordion__body-wrapper">
 
 						<p>Here is some accordion content</p>
 
-						<section class="au-accordion">
-							<a href="#inner-accordion-grid"
+						<section class="au-accordion au-accordion--dark">
+							<a href="#inner-accordion-dark"
 								class="au-accordion__title js-au-accordion"
-								aria-controls="inner-accordion-grid"
+								aria-controls="inner-accordion-dark"
 								aria-expanded="true"
 								aria-selected="true"
 								role="tab"
@@ -393,7 +588,7 @@
 									A nested accordion
 							</a>
 
-							<div class="au-accordion__body" id="inner-accordion-grid" aria-hidden="false">
+							<div class="au-accordion__body" id="inner-accordion-dark" aria-hidden="false">
 								<div class="au-accordion__body-wrapper">
 									Here is some <a href="#url">accordion</a> content
 								</div>
@@ -408,17 +603,17 @@
 				</div>
 			</section>
 
-			<section class="au-accordion">
-				<a href="#accordion-stacked-grid2"
+			<section class="au-accordion au-accordion--dark">
+				<a href="#accordion-dark-stacked2"
 					class="au-accordion__title au-accordion--closed js-au-accordion"
-					aria-controls="accordion-stacked-grid2"
+					aria-controls="accordion-dark-stacked2"
 					aria-expanded="false"
 					aria-selected="false"
 					onClick="return AU.accordion.Toggle( this )">
 						Another accordion
 				</a>
 
-				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid2" aria-hidden="true">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked2" aria-hidden="true">
 					<div class="au-accordion__body-wrapper">
 						<p>Here is some accordion content</p>
 						<p>Here is some <a href="#url">accordion</a> content</p>
@@ -427,21 +622,217 @@
 				</div>
 			</section>
 
-			<div class="au-accordion">
-				<a href="#accordion-stacked-grid3"
+			<div class="au-accordion au-accordion--dark">
+				<a href="#accordion-dark-stacked3"
 					class="au-accordion__title au-accordion--closed js-au-accordion"
-					aria-controls="accordion-stacked-grid3"
+					aria-controls="accordion-dark-stacked3"
 					aria-expanded="false"
 					aria-selected="false"
 					onClick="return AU.accordion.Toggle( this )">
 						Accordion with words and words and a very long title so that it can break into several
 				</a>
 
-				<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid3" aria-hidden="true">
+				<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked3" aria-hidden="true">
 					<div class="au-accordion__body-wrapper">
 						<p>Here is some accordion content</p>
 						<p>Here is some <a href="#url">accordion</a> content</p>
 						<p>Here is some accordion content</p>
+					</div>
+				</div>
+			</div>
+			<br />
+			<hr	/>
+			<div class="au-body au-body--dark">
+				<h2>With body</h2>
+
+				<h3>Accordion open by default</h3>
+
+				<section class="au-accordion au-accordion--dark">
+					<a href="#accordion-dark-default-grid"
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-dark-default-grid"
+						aria-expanded="true"
+						aria-selected="true"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body" id="accordion-dark-default-grid" aria-hidden="false">
+						<div class="au-accordion__body-wrapper">
+
+							Here <a href="#url">is</a> some accordion content
+
+						</div>
+					</div>
+				</section>
+
+
+				<hr>
+				<h3>Accordion closed by default</h3>
+
+				<section class="au-accordion au-accordion--dark">
+					<a href="#accordion-dark-closed-grid"
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-dark-closed-grid"
+						aria-expanded="false"
+						aria-selected="false"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body au-accordion--closed" id="accordion-dark-closed-grid" aria-hidden="true">
+						<div class="au-accordion__body-wrapper">
+
+							Here is some accordion <a href="#url">content</a>.
+
+						</div>
+					</div>
+				</section>
+
+
+				<hr>
+				<h3>Accordion slow</h3>
+
+				<section class="au-accordion au-accordion--dark">
+					<a href="#accordion-dark-slow-grid"
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-dark-slow-grid"
+						aria-expanded="true"
+						aria-selected="true"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this, 1000 )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body" id="accordion-dark-slow-grid" aria-hidden="false">
+						<div class="au-accordion__body-wrapper">
+
+							Here is some accordion <a href="#url">content</a>.
+
+						</div>
+					</div>
+				</section>
+
+
+				<hr>
+				<h3>Accordion with all callbacks</h3>
+
+				<section class="au-accordion au-accordion--dark">
+					<a href="#accordion-dark-callbacks-grid"
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-dark-callbacks-grid"
+						aria-expanded="true"
+						aria-selected="true"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this, undefined, {
+							onOpen: function() {
+								console.log('This function will run when an accordion opens');
+							},
+							afterOpen: function() {
+								console.log('This function will run after an accordion has opened');
+							},
+							onClose: function() {
+								console.log('This function will run when an accordion closes');
+							},
+							afterClose: function() {
+								console.log('This function will run after an accordion has closed');
+							},
+						} )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body" id="accordion-dark-callbacks-grid" aria-hidden="false">
+						<div class="au-accordion__body-wrapper">
+
+							Here is some accordion <a href="#url">content</a>.
+
+						</div>
+					</div>
+				</section>
+
+
+				<hr>
+				<h3>Accordion group</h3>
+
+				<section class="au-accordion au-accordion--dark">
+					<a href="#accordion-dark-stacked-grid1"
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-dark-stacked-grid1"
+						aria-expanded="false"
+						aria-selected="false"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this )">
+							First accordion title
+					</a>
+
+					<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked-grid1" aria-hidden="true">
+						<div class="au-accordion__body-wrapper">
+
+							<p>Here is some accordion content</p>
+
+							<section class="au-accordion au-accordion--dark">
+								<a href="#inner-accordion-dark-grid"
+									class="au-accordion__title js-au-accordion"
+									aria-controls="inner-accordion-dark-grid"
+									aria-expanded="true"
+									aria-selected="true"
+									role="tab"
+									onClick="return AU.accordion.Toggle( this )">
+										A nested accordion
+								</a>
+
+								<div class="au-accordion__body" id="inner-accordion-dark-grid" aria-hidden="false">
+									<div class="au-accordion__body-wrapper">
+										Here is some <a href="#url">accordion</a> content
+									</div>
+								</div>
+
+							</section>
+
+							<p>Here is some accordion <a href="#url">content</a>.</p>
+
+						</div>
+
+					</div>
+				</section>
+
+				<section class="au-accordion au-accordion--dark">
+					<a href="#accordion-dark-stacked-grid2"
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-dark-stacked-grid2"
+						aria-expanded="false"
+						aria-selected="false"
+						onClick="return AU.accordion.Toggle( this )">
+							Another accordion
+					</a>
+
+					<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked-grid2" aria-hidden="true">
+						<div class="au-accordion__body-wrapper">
+							<p>Here is some accordion content</p>
+							<p>Here is some <a href="#url">accordion</a> content</p>
+							<p>Here is some accordion content</p>
+						</div>
+					</div>
+				</section>
+
+				<div class="au-accordion au-accordion--dark">
+					<a href="#accordion-dark-stacked-grid3"
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-dark-stacked-grid3"
+						aria-expanded="false"
+						aria-selected="false"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion with words and words and a very long title so that it can break into several
+					</a>
+
+					<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked-grid3" aria-hidden="true">
+						<div class="au-accordion__body-wrapper">
+							<p>Here is some accordion content</p>
+							<p>Here is some <a href="#url">accordion</a> content</p>
+							<p>Here is some accordion content</p>
+						</div>
 					</div>
 				</div>
 			</div>
