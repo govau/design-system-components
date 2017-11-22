@@ -26,7 +26,6 @@
 @for $i from 1 through 6 {
 	.au-display-#{$i} {
 		font-family: $AU-font;
-		color: $AU-color-Text;
 		display: block;
 		line-height: ($AU-leading * 0.875); //1.4 from 16 (default: core)
 		margin: 0 0 AU-space( .5, 1 ) 0; //1 unit at the new line-height (1.4 -- 0.7em)
