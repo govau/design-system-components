@@ -23,10 +23,9 @@
 	color: $AU-color-Text;
 	line-height: $AU-leading;
 	margin: AU-space( 1 ) AU-space( 0.25 );
-	padding: AU-space( 0.75 ) AU-space( 0.75 ) AU-space( 0.75 ) AU-space( 0.5 );
-	border-left: 6px solid $AU-colordark-Background-light;
-	border-radius: $AU-border-radius;
-	box-shadow: 2px 0 6px transparentize($AU-color-Text, 0.3);
+	padding: AU-space( 1 );
+	border-left: 4px solid $AU-color-Border;
+	background-color: $AU-color-Background;
 	max-width: $AU-maxwidth;
 
 	:first-child {
@@ -77,4 +76,11 @@
 .au-callout--calendar-event__time {
 	font-weight: bold;
 	margin-bottom: 0;
+}
+
+
+.au-callout--dark {
+	color: $AU-colordark-Text;
+	border-color: $AU-colordark-Border;
+	background-color: $AU-colordark-Background;
 }
