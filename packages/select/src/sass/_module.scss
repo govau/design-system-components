@@ -19,7 +19,7 @@
 	position: relative;
 	vertical-align: middle;
 	display: inline-block;
-	background-color: #fff;
+	background-color: $AU-color-Background-light;
 	margin-bottom: AU-space( 0.5 );
 	box-sizing: border-box;
 
@@ -31,9 +31,9 @@
 		width: AU-space( 0.5 );
 		height: AU-space( 0.5 );
 		margin-top: -( AU-space( 0.25 ) );
-		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-colordark-Background-light }" d="M64 128l64-64-16-16-64 64"/>
-				<path fill="#{ $AU-colordark-Background-light }" d="M64 128l16-16-64-64L0 64"/>
+		background-image: AU-svguri('<svg fill="#{ $AU-color-Action }" viewBox="4 4 16 16" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+				<path d="M0-.75h24v24H0z" fill="none"/>
 			</svg>');
 		background-repeat: no-repeat;
 		z-index: 0;
@@ -60,8 +60,6 @@
 	position: relative;
 	z-index: 1;
 	background: transparent;
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	appearance: none;
 	font-family: $AU-font;
 	color: $AU-color-Text;
@@ -76,10 +74,15 @@
 
 	@include AU-focus();
 
+	&:focus {
+		border-radius: 0;
+	}
+
 	&:disabled {
 		cursor: not-allowed;
-		background: rgba( $AU-color-Background, 0.5 );
-		color: $AU-color-Text;
+		background-color: rgba( $AU-color-Background, 0.7 );
+		color: $AU-color-Muted;
+		border-color: rgba( $AU-color-Background, 0.7 );
 	}
 
 	//ie hacks
@@ -90,6 +93,30 @@
 	.ie8 &,
 	.ie9 & {
 		padding-right: AU-space( 0.25 );
+	}
+}
+
+.au-select--dark {
+	background-color: $AU-colordark-Background-light;
+
+	&:after {
+		background-image: AU-svguri('<svg fill="#{ $AU-colordark-Action }" viewBox="4 4 16 16" xmlns="http://www.w3.org/2000/svg">
+			<path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+			<path d="M0-.75h24v24H0z" fill="none"/>
+		</svg>');
+	}
+
+	.au-select__element {
+		color: $AU-colordark-Text;
+		border-color: $AU-colordark-Border;
+
+		@include AU-focus( 'dark' );
+
+		&:disabled {
+			background-color: rgba( $AU-colordark-Background, 0.5 );
+			color: $AU-colordark-Muted;
+			border-color: rgba( $AU-colordark-Background, 0.7 );
+		}
 	}
 }
 
