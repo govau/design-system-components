@@ -45,177 +45,356 @@
 
 	<h1>Test: tags</h1>
 
-	<h2>Tags list using definition list (<code>dl</code>)</h2>
+	<div class="split-wrapper">
+		<div class="split">
+		<h2>Tags list using definition list (<code>dl</code>)</h2>
 
-	<dl class="au-tags">
-		<dt>Tags:</dt>
-		<dd class="au-tags__item"><a href="#">foo</a></dd>
-		<dd class="au-tags__item"><a href="#">bar</a></dd>
-		<dd class="au-tags__item"><a href="#">baz</a></dd>
-		<dd class="au-tags__item"><a href="#">bloop</a></dd>
-		<dd class="au-tags__item"><a href="#">blip</a></dd>
-		<dd class="au-tags__item"><a href="#">wallop</a></dd>
-		<dd class="au-tags__item"><a href="#">doodle</a></dd>
-		<dd class="au-tags__item"><a href="#">pear ice cream</a></dd>
-	</dl>
+			<dl class="au-tags">
+				<dt>Tags:</dt>
+				<dd class="au-tags__item"><a href="#">foo</a></dd>
+				<dd class="au-tags__item"><a href="#">bar</a></dd>
+				<dd class="au-tags__item"><a href="#">baz</a></dd>
+				<dd class="au-tags__item"><a href="#">bloop</a></dd>
+				<dd class="au-tags__item"><a href="#">blip</a></dd>
+				<dd class="au-tags__item"><a href="#">wallop</a></dd>
+				<dd class="au-tags__item"><a href="#">doodle</a></dd>
+				<dd class="au-tags__item"><a href="#">pear ice cream</a></dd>
+			</dl>
 
-	<dl class="au-tags">
-		<dt>Tags without link:</dt>
-		<dd class="au-tags__item">foo</dd>
-		<dd class="au-tags__item">bar</dd>
-		<dd class="au-tags__item">baz</dd>
-		<dd class="au-tags__item">bloop</dd>
-		<dd class="au-tags__item">blip</dd>
-		<dd class="au-tags__item">wallop</dd>
-		<dd class="au-tags__item">doodle</dd>
-		<dd class="au-tags__item">pear ice cream</dd>
-	</dl>
+			<dl class="au-tags">
+				<dt>Tags without link:</dt>
+				<dd class="au-tags__item">foo</dd>
+				<dd class="au-tags__item">bar</dd>
+				<dd class="au-tags__item">baz</dd>
+				<dd class="au-tags__item">bloop</dd>
+				<dd class="au-tags__item">blip</dd>
+				<dd class="au-tags__item">wallop</dd>
+				<dd class="au-tags__item">doodle</dd>
+				<dd class="au-tags__item">pear ice cream</dd>
+			</dl>
 
-	<h2>Tags list using <code>ul</code> and a heading</h2>
+			<h2>Tags list using <code>ul</code> and a heading</h2>
 
-	<span>Tags:</span>
-	<ul class="au-tags">
-		<li class="au-tags__item">
-			<a href="#">foo</a>
-		</li>
-		<li class="au-tags__item">
-			<a href="#">bar</a>
-		</li>
-		<li class="au-tags__item">
-			<a href="#">baz</a>
-		</li>
-		<li class="au-tags__item">
-			<a href="#">bloop</a>
-		</li>
-		<li class="au-tags__item">
-			<a href="#">blip</a>
-		</li>
-		<li class="au-tags__item">
-			<a href="#">wallop</a>
-		</li>
-		<li class="au-tags__item">
-			<a href="#">doodle</a>
-		<li class="au-tags__item">
-			<a href="#">pear ice cream</a>
-		</li>
-	</ul>
+			<span>Tags:</span>
+			<ul class="au-tags">
+				<li class="au-tags__item">
+					<a href="#">foo</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">bar</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">baz</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">bloop</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">blip</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">wallop</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">doodle</a>
+				<li class="au-tags__item">
+					<a href="#">pear ice cream</a>
+				</li>
+			</ul>
 
-	<span>Tags without links:</span>
-	<ul class="au-tags">
-		<li class="au-tags__item">
-			foo
-		</li>
-		<li class="au-tags__item">
-			bar
-		</li>
-		<li class="au-tags__item">
-			baz
-		</li>
-		<li class="au-tags__item">
-			bloop
-		</li>
-		<li class="au-tags__item">
-			blip
-		</li>
-		<li class="au-tags__item">
-			wallop
-		</li>
-		<li class="au-tags__item">
-			doodle
-		<li class="au-tags__item">
-			pear ice cream
-		</li>
-	</ul>
+			<span>Tags without links:</span>
+			<ul class="au-tags">
+				<li class="au-tags__item">
+					foo
+				</li>
+				<li class="au-tags__item">
+					bar
+				</li>
+				<li class="au-tags__item">
+					baz
+				</li>
+				<li class="au-tags__item">
+					bloop
+				</li>
+				<li class="au-tags__item">
+					blip
+				</li>
+				<li class="au-tags__item">
+					wallop
+				</li>
+				<li class="au-tags__item">
+					doodle
+				<li class="au-tags__item">
+					pear ice cream
+				</li>
+			</ul>
 
-	<div class="au-body">
-		<hr>
-		<h2>Tags list using definition list (<code>dl</code>) with body</h2>
+			<div class="au-body">
+				<hr>
+				<h2>Tags list using definition list (<code>dl</code>) with body</h2>
 
-		<dl class="au-tags">
-			<dt>Tags:</dt>
-			<dd class="au-tags__item"><a href="#">foo</a></dd>
-			<dd class="au-tags__item"><a href="#">bar</a></dd>
-			<dd class="au-tags__item"><a href="#">baz</a></dd>
-			<dd class="au-tags__item"><a href="#">bloop</a></dd>
-			<dd class="au-tags__item"><a href="#">blip</a></dd>
-			<dd class="au-tags__item"><a href="#">wallop</a></dd>
-			<dd class="au-tags__item"><a href="#">doodle</a></dd>
-			<dd class="au-tags__item"><a href="#">pear ice cream</a></dd>
-		</dl>
+				<dl class="au-tags">
+					<dt>Tags:</dt>
+					<dd class="au-tags__item"><a href="#">foo</a></dd>
+					<dd class="au-tags__item"><a href="#">bar</a></dd>
+					<dd class="au-tags__item"><a href="#">baz</a></dd>
+					<dd class="au-tags__item"><a href="#">bloop</a></dd>
+					<dd class="au-tags__item"><a href="#">blip</a></dd>
+					<dd class="au-tags__item"><a href="#">wallop</a></dd>
+					<dd class="au-tags__item"><a href="#">doodle</a></dd>
+					<dd class="au-tags__item"><a href="#">pear ice cream</a></dd>
+				</dl>
 
-		<dl class="au-tags">
-			<dt>Tags without links:</dt>
-			<dd class="au-tags__item">foo</dd>
-			<dd class="au-tags__item">bar</dd>
-			<dd class="au-tags__item">baz</dd>
-			<dd class="au-tags__item">bloop</dd>
-			<dd class="au-tags__item">blip</dd>
-			<dd class="au-tags__item">wallop</dd>
-			<dd class="au-tags__item">doodle</dd>
-			<dd class="au-tags__item">pear ice cream</dd>
-		</dl>
+				<dl class="au-tags">
+					<dt>Tags without links:</dt>
+					<dd class="au-tags__item">foo</dd>
+					<dd class="au-tags__item">bar</dd>
+					<dd class="au-tags__item">baz</dd>
+					<dd class="au-tags__item">bloop</dd>
+					<dd class="au-tags__item">blip</dd>
+					<dd class="au-tags__item">wallop</dd>
+					<dd class="au-tags__item">doodle</dd>
+					<dd class="au-tags__item">pear ice cream</dd>
+				</dl>
 
-		<h2>Tags list using <code>ul</code> and a heading with body</h2>
+				<h2>Tags list using <code>ul</code> and a heading with body</h2>
 
-		<span>Tags:</span>
-		<ul class="au-tags">
-			<li class="au-tags__item">
-				<a href="#">foo</a>
-			</li>
-			<li class="au-tags__item">
-				<a href="#">bar</a>
-			</li>
-			<li class="au-tags__item">
-				<a href="#">baz</a>
-			</li>
-			<li class="au-tags__item">
-				<a href="#">bloop</a>
-			</li>
-			<li class="au-tags__item">
-				<a href="#">blip</a>
-			</li>
-			<li class="au-tags__item">
-				blip
-			</li>
-			<li class="au-tags__item">
-				<a href="#">wallop</a>
-			</li>
-			<li class="au-tags__item">
-				<a href="#">doodle</a>
-			<li class="au-tags__item">
-				<a href="#">pear ice cream</a>
-			</li>
-		</ul>
+				<span>Tags:</span>
+				<ul class="au-tags">
+					<li class="au-tags__item">
+						<a href="#">foo</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">bar</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">baz</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">bloop</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">blip</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">blip</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">wallop</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">doodle</a>
+					<li class="au-tags__item">
+						<a href="#">pear ice cream</a>
+					</li>
+				</ul>
 
-		<span>Tags without links:</span>
-		<ul class="au-tags">
-			<li class="au-tags__item">
-				foo
-			</li>
-			<li class="au-tags__item">
-				bar
-			</li>
-			<li class="au-tags__item">
-				baz
-			</li>
-			<li class="au-tags__item">
-				bloop
-			</li>
-			<li class="au-tags__item">
-				blip
-			</li>
-			<li class="au-tags__item">
-				blip
-			</li>
-			<li class="au-tags__item">
-				wallop
-			</li>
-			<li class="au-tags__item">
-				doodle
-			<li class="au-tags__item">
-				pear ice cream
-			</li>
-		</ul>
+				<span>Tags without links:</span>
+				<ul class="au-tags">
+					<li class="au-tags__item">
+						foo
+					</li>
+					<li class="au-tags__item">
+						bar
+					</li>
+					<li class="au-tags__item">
+						baz
+					</li>
+					<li class="au-tags__item">
+						bloop
+					</li>
+					<li class="au-tags__item">
+						blip
+					</li>
+					<li class="au-tags__item">
+						blip
+					</li>
+					<li class="au-tags__item">
+						wallop
+					</li>
+					<li class="au-tags__item">
+						doodle
+					<li class="au-tags__item">
+						pear ice cream
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="split dark">
+		<h2>Tags list using definition list (<code>dl</code>)</h2>
+
+			<dl class="au-tags au-tags--dark">
+				<dt>Tags:</dt>
+				<dd class="au-tags__item"><a href="#">foo</a></dd>
+				<dd class="au-tags__item"><a href="#">bar</a></dd>
+				<dd class="au-tags__item"><a href="#">baz</a></dd>
+				<dd class="au-tags__item"><a href="#">bloop</a></dd>
+				<dd class="au-tags__item"><a href="#">blip</a></dd>
+				<dd class="au-tags__item"><a href="#">wallop</a></dd>
+				<dd class="au-tags__item"><a href="#">doodle</a></dd>
+				<dd class="au-tags__item"><a href="#">pear ice cream</a></dd>
+			</dl>
+
+			<dl class="au-tags au-tags--dark">
+				<dt>Tags without link:</dt>
+				<dd class="au-tags__item">foo</dd>
+				<dd class="au-tags__item">bar</dd>
+				<dd class="au-tags__item">baz</dd>
+				<dd class="au-tags__item">bloop</dd>
+				<dd class="au-tags__item">blip</dd>
+				<dd class="au-tags__item">wallop</dd>
+				<dd class="au-tags__item">doodle</dd>
+				<dd class="au-tags__item">pear ice cream</dd>
+			</dl>
+
+			<h2>Tags list using <code>ul</code> and a heading</h2>
+
+			<span>Tags:</span>
+			<ul class="au-tags au-tags--dark">
+				<li class="au-tags__item">
+					<a href="#">foo</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">bar</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">baz</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">bloop</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">blip</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">wallop</a>
+				</li>
+				<li class="au-tags__item">
+					<a href="#">doodle</a>
+				<li class="au-tags__item">
+					<a href="#">pear ice cream</a>
+				</li>
+			</ul>
+
+			<span>Tags without links:</span>
+			<ul class="au-tags au-tags--dark">
+				<li class="au-tags__item">
+					foo
+				</li>
+				<li class="au-tags__item">
+					bar
+				</li>
+				<li class="au-tags__item">
+					baz
+				</li>
+				<li class="au-tags__item">
+					bloop
+				</li>
+				<li class="au-tags__item">
+					blip
+				</li>
+				<li class="au-tags__item">
+					wallop
+				</li>
+				<li class="au-tags__item">
+					doodle
+				<li class="au-tags__item">
+					pear ice cream
+				</li>
+			</ul>
+
+			<div class="au-body au-body--dark">
+				<hr>
+				<h2>Tags list using definition list (<code>dl</code>) with body</h2>
+
+				<dl class="au-tags au-tags--dark">
+					<dt>Tags:</dt>
+					<dd class="au-tags__item"><a href="#">foo</a></dd>
+					<dd class="au-tags__item"><a href="#">bar</a></dd>
+					<dd class="au-tags__item"><a href="#">baz</a></dd>
+					<dd class="au-tags__item"><a href="#">bloop</a></dd>
+					<dd class="au-tags__item"><a href="#">blip</a></dd>
+					<dd class="au-tags__item"><a href="#">wallop</a></dd>
+					<dd class="au-tags__item"><a href="#">doodle</a></dd>
+					<dd class="au-tags__item"><a href="#">pear ice cream</a></dd>
+				</dl>
+
+				<dl class="au-tags au-tags--dark">
+					<dt>Tags without links:</dt>
+					<dd class="au-tags__item">foo</dd>
+					<dd class="au-tags__item">bar</dd>
+					<dd class="au-tags__item">baz</dd>
+					<dd class="au-tags__item">bloop</dd>
+					<dd class="au-tags__item">blip</dd>
+					<dd class="au-tags__item">wallop</dd>
+					<dd class="au-tags__item">doodle</dd>
+					<dd class="au-tags__item">pear ice cream</dd>
+				</dl>
+
+				<h2>Tags list using <code>ul</code> and a heading with body</h2>
+
+				<span>Tags:</span>
+				<ul class="au-tags au-tags--dark">
+					<li class="au-tags__item">
+						<a href="#">foo</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">bar</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">baz</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">bloop</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">blip</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">blip</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">wallop</a>
+					</li>
+					<li class="au-tags__item">
+						<a href="#">doodle</a>
+					<li class="au-tags__item">
+						<a href="#">pear ice cream</a>
+					</li>
+				</ul>
+
+				<span>Tags without links:</span>
+				<ul class="au-tags au-tags--dark">
+					<li class="au-tags__item">
+						foo
+					</li>
+					<li class="au-tags__item">
+						bar
+					</li>
+					<li class="au-tags__item">
+						baz
+					</li>
+					<li class="au-tags__item">
+						bloop
+					</li>
+					<li class="au-tags__item">
+						blip
+					</li>
+					<li class="au-tags__item">
+						blip
+					</li>
+					<li class="au-tags__item">
+						wallop
+					</li>
+					<li class="au-tags__item">
+						doodle
+					<li class="au-tags__item">
+						pear ice cream
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 
 </body>
