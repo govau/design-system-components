@@ -142,8 +142,7 @@
 		color: $AU-colordark-Action;
 		background-color: $AU-colordark-Background;
 
-		&:hover,
-		&:focus {
+		&:hover {
 			background-color: $AU-colordark-Background-light;
 			color: $AU-colordark-Text;
 			&:after {
