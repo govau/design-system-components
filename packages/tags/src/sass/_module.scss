@@ -73,19 +73,22 @@
 	}
 }
 
-.au-tags--dark .au-tags__item {
-	border-color: $AU-colordark-Action;
+.au-tags--dark {
 	color: $AU-colordark-Text;
 
-	> a,
-	> button {
-		color: $AU-colordark-Action;
+	.au-tags__item {
+		border-color: $AU-colordark-Action;
 
-		&:hover {
-			color: $AU-colordark-Text;
-			background-color: $AU-colordark-Background;
+		> a,
+		> button {
+			color: $AU-colordark-Action;
+
+			&:hover {
+				color: $AU-colordark-Text;
+				background-color: $AU-colordark-Background;
+			}
+
+			@include AU-focus( 'dark' );
 		}
-
-		@include AU-focus( 'dark' );
 	}
 }
