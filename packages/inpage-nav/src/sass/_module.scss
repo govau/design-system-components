@@ -17,19 +17,18 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-inpage-nav-links {
 	margin: AU-space( 2 ) 0;
-	border-left: AU-space( 0.25 ) solid $AU-color-Border;
-	padding: 0 0 AU-space( 0.5 ) AU-space( 0.75);
+	border-left: 4px solid $AU-color-Action;
+	padding-left: AU-space( 1 );
 
 	.au-body & > ul,
 	.au-body & > ol {
 		list-style-type: none;
-		margin: AU-space( 1 ) 0 0;
+		margin: AU-space( 0.5 ) 0 0;
 		padding: 0;
 
 		> li {
 			margin-left: 0;
 			margin-bottom: AU-space( 0.5 );
-			font-weight: bold;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -39,7 +38,8 @@
 }
 
 .au-inpage-nav-links__heading {
-	color: $AU-color-Text;
+	font-weight: bold;
+	font-size: 1em;
 }
 
 .au-inpage-nav-section {
@@ -54,3 +54,9 @@
 	font-size: 14px;
 	font-weight: normal;
 }
+
+
+.au-inpage-nav-links--dark {
+	border-color: $AU-colordark-Action;
+}
+
