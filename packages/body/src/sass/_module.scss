@@ -54,8 +54,7 @@
 		text-decoration-skip: ink;
 		transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
 
-		&:hover,
-		&:focus {
+		&:hover {
 			color: $AU-color-Text;
 			text-decoration: none;
 		}
@@ -338,8 +337,7 @@
 	a {
 		color: $AU-colordark-Action;
 
-		&:hover,
-		&:focus {
+		&:hover {
 			color: $AU-colordark-Text;
 		}
 

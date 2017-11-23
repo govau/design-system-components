@@ -53,8 +53,7 @@
 	cursor: pointer;
 	border: 3px solid transparent;
 
-	&:hover,
-	&:focus {
+	&:hover {
 		background-color: $AU-color-Background-light;
 		text-decoration: underline;
 		text-decoration-skip: ink;
