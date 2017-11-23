@@ -18,46 +18,34 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-direction-link {
 	display: inline-block;
-	color: $AU-color-Text;
 	-webkit-appearance: none;
 	padding: 0;
 	line-height: $AU-leading;
 	background: transparent;
 	text-align: left;
 	font-family: $AU-font;
-	border: none;
-	border-bottom: solid 1px $AU-colordark-Background-light;
-	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
 	cursor: pointer;
 	font-size: 1em;
-
-	@include AU-focus();
-
-	&:hover,
-	&:focus {
-		background-color: $AU-color-Action;
-		border-color: transparent;
-	}
+	border: 0;
+	color: $AU-color-Action;
+	text-decoration: underline;
+	text-decoration-skip: ink;
 
 	&:after {
-		content: ' ';
 		display: inline-block;
 		width: 0.8em;
 		height: 0.8em;
 		margin: 0 AU-space( 0.1 ) -1px AU-space( 0.25 );
-		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-color-Text }" d="M128 64l-64 57V8"/><path fill="#{ $AU-color-Text }" fill-rule="nonzero" d="M8 48h64v32H8z"/>
-			</svg>');
-		background-repeat: no-repeat;
+		content: '→';
+		width: auto;
+		height: auto;
 	}
 
-	.ie8 &,
-	.lt-ie8 & {
-		&:after {
-			content: '→';
-			width: auto;
-			height: auto;
-		}
+	@include AU-focus();
+
+	&:hover {
+		text-decoration: none;
+		color: $AU-color-Text;
 	}
 }
 
@@ -70,59 +58,36 @@
 	}
 
 	&:before {
-		content: ' ';
+		content: '←';
 		display: inline-block;
 		width: 0.8em;
 		height: 0.8em;
 		margin: 0 AU-space( 0.25 ) -1px AU-space( 0.1 );
-		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-color-Text }" d="M0 64l64 57V8"/><path fill="#{ $AU-color-Text }" fill-rule="nonzero" d="M120 48H56v32h64z"/>
-			</svg>');
-		background-repeat: no-repeat;
-	}
-
-	.ie8 &,
-	.lt-ie8 & {
-		&:before {
-			content: '←';
-			width: auto;
-			height: auto;
-		}
 	}
 }
 
 /**
  * UP
  */
-.au-direction-link--up {
-	&:after {
-		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-color-Text }" d="M64 0l57 64H8"/><path fill="#{ $AU-color-Text }" fill-rule="nonzero" d="M48 120V56h32v64z"/>
-			</svg>');
-	}
-
-	.ie8 &,
-	.lt-ie8 & {
-		&:after {
-			content: '↑';
-		}
-	}
+.au-direction-link--up:after {
+	content: '↑';
 }
 
 /**
  * DOWN
  */
-.au-direction-link--down {
-	&:after {
-		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-color-Text }" d="M64 128l57-64H8"/><path fill="#{ $AU-color-Text }" fill-rule="nonzero" d="M48 8v64h32V8z"/>
-			</svg>');
-	}
+.au-direction-link--down:after {
+	content: '↓';
+}
 
-	.ie8 &,
-	.lt-ie8 & {
-		&:after {
-			content: '↓';
-		}
+
+.au-direction-link--dark {
+	color: $AU-colordark-Action;
+
+	@include AU-focus( 'dark' );
+
+
+	&:hover {
+		color: $AU-colordark-Text;
 	}
 }

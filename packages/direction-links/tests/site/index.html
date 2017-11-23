@@ -36,7 +36,7 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="au-body">
+<body>
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
@@ -45,38 +45,74 @@
 
 	<h1>Test: direction-links</h1>
 
-	<div class="col-sm-6 au-body">
-		<h2>bare</h2>
-		<a class="au-direction-link" href="#">Continue</a>
+	<div class="split-wrapper">
+		<div class="split au-body">
+
+			<h2>bare</h2>
+			<a class="au-direction-link" href="#">Continue</a>
+
+			<hr>
+			<h2><code>--right</code> variant</h2>
+
+			<a class="au-direction-link au-direction-link--right" href="#">Next</a>
+
+			<hr>
+			<h2><code>--left</code> variant</h2>
+
+			<a class="au-direction-link au-direction-link--left" href="#">Back</a>
+
+			<hr>
+			<h2><code>--up</code> variant</h2>
+
+			<a class="au-direction-link au-direction-link--up" href="#">Top</a>
+
+			<hr>
+			<h2><code>--down</code> variant</h2>
+
+			<a class="au-direction-link au-direction-link--down" href="#">Skip to footer</a>
+
+			<hr>
+			<h2>direction-links as button</h2>
+
+			<button class="au-direction-link au-direction-link--right">Next</button>
+			<button class="au-direction-link au-direction-link--left">Back</button>
+			<button class="au-direction-link au-direction-link--up">Top</button>
+			<button class="au-direction-link au-direction-link--down">Skip to footer</button>
+		</div>
+
+		<div class="split au-body au-body--dark">
+
+			<h2>bare <code>--dark</code></h2>
+			<a class="au-direction-link au-direction-link--dark" href="#">Continue</a>
+
+			<hr>
+			<h2><code>--right</code> <code>--dark</code> variant</h2>
+
+			<a class="au-direction-link au-direction-link--right au-direction-link--dark" href="#">Next</a>
+
+			<hr>
+			<h2><code>--left</code> <code>--dark</code> variant</h2>
+
+			<a class="au-direction-link au-direction-link--left au-direction-link--dark" href="#">Back</a>
+
+			<hr>
+			<h2><code>--up</code> <code>--dark</code> variant</h2>
+
+			<a class="au-direction-link au-direction-link--up au-direction-link--dark" href="#">Top</a>
+
+			<hr>
+			<h2><code>--down</code> <code>--dark</code> variant</h2>
+
+			<a class="au-direction-link au-direction-link--down au-direction-link--dark" href="#">Skip to footer</a>
+
+			<hr>
+			<h2>direction-links as button <code>--dark</code></h2>
+
+			<button class="au-direction-link au-direction-link--right au-direction-link--dark">Next</button>
+			<button class="au-direction-link au-direction-link--left au-direction-link--dark">Back</button>
+			<button class="au-direction-link au-direction-link--up au-direction-link--dark">Top</button>
+			<button class="au-direction-link au-direction-link--down au-direction-link--dark">Skip to footer</button>
+		</div>
 	</div>
-
-	<hr>
-	<h2><code>--right</code> variant</h2>
-
-	<a class="au-direction-link au-direction-link--right" href="#">Next</a>
-
-	<hr>
-	<h2><code>--left</code> variant</h2>
-
-	<a class="au-direction-link au-direction-link--left" href="#">Back</a>
-
-	<hr>
-	<h2><code>--up</code> variant</h2>
-
-	<a class="au-direction-link au-direction-link--up" href="#">Top</a>
-
-	<hr>
-	<h2><code>--down</code> variant</h2>
-
-	<a class="au-direction-link au-direction-link--down" href="#">Skip to footer</a>
-
-	<hr>
-	<h2>direction-links as button</h2>
-
-	<button class="au-direction-link au-direction-link--right">Next</button>
-	<button class="au-direction-link au-direction-link--left">Back</button>
-	<button class="au-direction-link au-direction-link--up">Top</button>
-	<button class="au-direction-link au-direction-link--down">Skip to footer</button>
-
 </body>
 </html>
