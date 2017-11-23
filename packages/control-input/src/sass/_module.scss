@@ -70,10 +70,6 @@
 		}
 	}
 
-	&:checked + .au-control-input__text {
-		font-weight: bold;
-	}
-
 	&:focus + .au-control-input__text:after {
 	  @include AU-outline();
 	}
