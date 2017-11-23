@@ -31,7 +31,6 @@
 		list-style: none;
 		margin-left: 0;
 		margin-bottom: AU-space( 0.5 );
-		color: $AU-color-Text;
 	}
 }
 
@@ -46,5 +45,9 @@
 		display: block;
 		font-size: 18px;
 		color: $AU-color-Text;
+	}
+
+	.au-body--dark & {
+		color: $AU-colordark-Text;
 	}
 }
