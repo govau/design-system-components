@@ -35,9 +35,10 @@
 		top: AU-space( 0.5 );
 		left: AU-space( 0.5 );
 		padding: AU-space( 0.25 ) AU-space( 0.5 );
-		color: $AU-color-Text;
-		background-color: $AU-color-Action;
-		text-decoration: none;
+		color: $AU-color-Action;
+		background-color: $AU-color-Background-light;
+		text-decoration: underline;
+		text-decoration-skip: ink;
 
 		@include AU-outline();
 	}
