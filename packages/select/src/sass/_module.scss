@@ -22,6 +22,7 @@
 	background-color: $AU-color-Background-light;
 	margin-bottom: AU-space( 0.5 );
 	box-sizing: border-box;
+	border-radius: $AU-border-radius;
 
 	&:after {
 		content: ' ';
@@ -66,9 +67,8 @@
 	font-size: 16px;
 	text-indent: 0.01px;
 	text-overflow: '';
-	border: none;
-	padding: AU-space( 0.25 ) AU-space( 1.5 ) AU-space( 0.25 ) AU-space( 0.25 );
-	border: 2px solid $AU-color-Border;
+	padding: AU-space( 0.5 ) AU-space( 1.5 ) AU-space( 0.5 ) AU-space( 0.5 );
+	border: 3px solid $AU-color-Border;
 	border-radius: $AU-border-radius;
 	box-sizing: border-box;
 
@@ -97,25 +97,16 @@
 }
 
 .au-select--dark {
-	background-color: $AU-colordark-Background-light;
-
-	&:after {
-		background-image: AU-svguri('<svg fill="#{ $AU-colordark-Action }" viewBox="4 4 16 16" xmlns="http://www.w3.org/2000/svg">
-			<path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-			<path d="M0-.75h24v24H0z" fill="none"/>
-		</svg>');
-	}
 
 	.au-select__element {
-		color: $AU-colordark-Text;
-		border-color: $AU-colordark-Border;
+		border-color: $AU-colordark-Text;
 
 		@include AU-focus( 'dark' );
 
 		&:disabled {
-			background-color: rgba( $AU-colordark-Background, 0.5 );
+			background-color: $AU-colordark-Background-dark;
 			color: $AU-colordark-Muted;
-			border-color: rgba( $AU-colordark-Background, 0.7 );
+			border-color: $AU-colordark-Background-dark;
 		}
 	}
 }
