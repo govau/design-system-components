@@ -44,59 +44,53 @@
  * - :disabled/[disabled]
  */
 .au-text-input {
-	border: 2px solid $AU-color-Border;
-	padding: AU-space( 0.25 );
+	border: 3px solid $AU-color-Border;
+	background-color: $AU-color-Background-light;
+	padding: AU-space( 0.5 );
 	font-size: 16px;
 	font-family: $AU-font;
 	color: $AU-color-Text;
+	border-radius: $AU-border-radius;
+
+	&:invalid,
+	&.au-text-input--invalid {
+		background-color: mix( $AU-color-Error, $AU-color-Background-light, 10% );
+		border-color: $AU-color-Error;
+	}
+
+	&.au-text-input--valid {
+		background-color: mix( $AU-color-Success, $AU-color-Background-light, 10% );
+		border-color: $AU-color-Success;
+	}
+
+	&:disabled,
+	&[disabled] {
+		cursor: not-allowed;
+		background: $AU-color-Background;
+		border-color: $AU-color-Background;
+		color: $AU-color-Muted;
+	}
 
 	@include AU-focus();
 
 	&:focus {
-		background-color: $AU-color-Action;
-	}
-
-	&::selection {
-		background-color: rgba( $AU-color-Warning, 0.5 );
-	}
-
-	&:invalid {
-		border: 2px solid $AU-color-Error;
-
-		&:focus {
-			background-color: $AU-color-Error;
-		}
-	}
-
-	&.au-text-input--invalid {
-		border: 2px solid $AU-color-Error;
-
-		&:focus {
-			background-color: $AU-color-Error;
-		}
-	}
-
-	&.au-text-input--valid {
-		border: 2px solid $AU-color-Success;
-
-		&:focus {
-			background-color: $AU-color-Success;
-		}
-	}
-
-	&:disabled {
-		cursor: not-allowed;
-		background: $AU-color-Background;
-		color: $AU-color-Text;
-	}
-
-	&[disabled] {
-		cursor: not-allowed;
-		background: $AU-color-Background;
-		color: $AU-color-Text;
+		outline-offset: -3px;
+		background-color: $AU-color-Background-light;
 	}
 }
 
+.au-text-input--dark {
+	border-color:  $AU-colordark-Text;
+
+	&:disabled,
+	&[disabled] {
+		color: $AU-colordark-Muted;
+		background: $AU-colordark-Background-dark;
+		border-color: $AU-colordark-Background-dark;
+	}
+
+	@include AU-focus( 'dark' );
+}
 
 /**
  * Block modifier
@@ -113,6 +107,8 @@
  */
 .au-text-input--textarea {
 	line-height: $AU-leading;
+	max-width: 100%;
+	min-height: 50px;
 }
 
 
