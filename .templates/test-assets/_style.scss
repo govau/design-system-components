@@ -36,13 +36,16 @@ body {
 
 .split {
 	padding: 1%;
+	background-color: $AU-color-Background-light;
 	@include AU-media( sm ) {
 		width: 48%;
 		float: left;
 	}
+
+	&--dark {
+		background: $AU-colordark-Background-light;
+		color: $AU-colordark-Text;
+	}
 }
 
-.dark {
-	background: $AU-colordark-Background-light;
-	color: $AU-colordark-Text;
-}
+
