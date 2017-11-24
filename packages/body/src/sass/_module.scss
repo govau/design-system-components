@@ -94,15 +94,20 @@
 		@include AU-outline();
 	}
 
-
 	/**
-	 * Text selection and `mark` styling.
+	 * `mark` styling.
 	 */
-	mark,
-	::selection {
-		background-color: rgba( $AU-color-Warning, 0.3 );
+	mark {
+		color: $AU-color-Text;
+		background-color: rgba( $AU-color-Action, 0.3 );
 	}
 
+	/**
+	 * Text selection styling
+	 */
+	::selection {
+		background-color: rgba( $AU-color-Action, 0.3 );
+	}
 
 	/**
 	 * Vertical spacing of common text elements.
@@ -326,6 +331,7 @@
 		border-top: 1px solid $AU-color-Border;
 		margin-bottom: AU-space( 1 );
 	}
+
 }
 
 .au-body--dark {
@@ -361,6 +367,11 @@
 	[tabindex="0"]:focus,
 	:target {
 		@include AU-outline( 'dark' );
+	}
+
+	mark {
+		background-color: rgba( $AU-colordark-Action, 0.3 );
+		color: $AU-colordark-Text;
 	}
 
 	kbd {
