@@ -326,7 +326,6 @@
 		border-top: 1px solid $AU-color-Border;
 		margin-bottom: AU-space( 1 );
 	}
-
 }
 
 .au-body--dark {
@@ -362,12 +361,6 @@
 	[tabindex="0"]:focus,
 	:target {
 		@include AU-outline( 'dark' );
-	}
-
-	mark,
-	::selection {
-		color: $AU-colordark-Text;
-		background-color: rgba( $AU-color-Warning, 0.3 );
 	}
 
 	kbd {
