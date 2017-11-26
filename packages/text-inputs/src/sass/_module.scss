@@ -54,12 +54,12 @@
 
 	&:invalid,
 	&.au-text-input--invalid {
-		background-color: mix( $AU-color-Error, $AU-color-Background-light, 10% );
+		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
 		border-color: $AU-color-Error;
 	}
 
 	&.au-text-input--valid {
-		background-color: mix( $AU-color-Success, $AU-color-Background-light, 10% );
+		background-color: mix( $AU-color-Success, $AU-color-Background-light, 5% );
 		border-color: $AU-color-Success;
 	}
 

@@ -1,5 +1,6 @@
 body {
-	background: #fff;
+	background: $AU-color-Background-light;
+	color: $AU-color-Text;
 	margin: 0;
 	padding: AU-space( 4 ) AU-space( 1 ) AU-space( 2 ) AU-space( 1 );
 	overflow-x: hidden; //For Opera apparently.
@@ -36,15 +37,15 @@ body {
 
 .split {
 	padding: 1%;
-	background-color: $AU-color-Background-light;
-	@include AU-media( sm ) {
-		width: 48%;
-		float: left;
-	}
 
 	&--dark {
 		background: $AU-colordark-Background-light;
 		color: $AU-colordark-Text;
+	}
+
+	@include AU-media( sm ) {
+		width: 48%;
+		float: left;
 	}
 }
 
