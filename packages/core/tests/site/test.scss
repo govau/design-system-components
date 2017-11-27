@@ -184,6 +184,103 @@ html {
 }
 
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+// mixin AU-fontsize
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-fontsize {
+	background-color: $AU-color-Background;
+	margin-bottom: $AU-unit + 0px;
+}
+
+.au-fontsize-0 {
+	@include AU-fontsize( xxxl );
+}
+
+.au-fontsize-1 {
+	@include AU-fontsize( xxl );
+}
+
+.au-fontsize-2 {
+	@include AU-fontsize( xl );
+}
+
+.au-fontsize-3 {
+	@include AU-fontsize( lg );
+}
+
+.au-fontsize-4 {
+	@include AU-fontsize( md );
+}
+
+.au-fontsize-5 {
+	@include AU-fontsize( sm );
+}
+
+.au-fontsize-6 {
+	@include AU-fontsize( xs );
+}
+
+.lineheight-heading {
+	.au-fontsize-0 {
+		@include AU-fontsize( xxxl, heading );
+	}
+
+	.au-fontsize-1 {
+		@include AU-fontsize( xxl, heading );
+	}
+
+	.au-fontsize-2 {
+		@include AU-fontsize( xl, heading );
+	}
+
+	.au-fontsize-3 {
+		@include AU-fontsize( lg, heading );
+	}
+
+	.au-fontsize-4 {
+		@include AU-fontsize( md, heading );
+	}
+
+	.au-fontsize-5 {
+		@include AU-fontsize( sm, heading );
+	}
+
+	.au-fontsize-6 {
+		@include AU-fontsize( xs, heading );
+	}
+}
+
+.lineheight-nospace {
+	.au-fontsize-0 {
+		@include AU-fontsize( xxxl, nospace );
+	}
+
+	.au-fontsize-1 {
+		@include AU-fontsize( xxl, nospace );
+	}
+
+	.au-fontsize-2 {
+		@include AU-fontsize( xl, nospace );
+	}
+
+	.au-fontsize-3 {
+		@include AU-fontsize( lg, nospace );
+	}
+
+	.au-fontsize-4 {
+		@include AU-fontsize( md, nospace );
+	}
+
+	.au-fontsize-5 {
+		@include AU-fontsize( sm, nospace );
+	}
+
+	.au-fontsize-6 {
+		@include AU-fontsize( xs, nospace );
+	}
+}
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // function AU-space
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -426,59 +523,59 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // function AU-color-a11y
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.au-color-a11y1:after {
-	content: " #{ AU-color-a11y( red, blue ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y1:after {
+// 	content: " #{ AU-color-a11y( red, blue ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y2:after {
-	content: " #{ AU-color-a11y( green, blue ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y2:after {
+// 	content: " #{ AU-color-a11y( green, blue ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y3:after {
-	content: " #{ AU-color-a11y( pink, blue ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y3:after {
+// 	content: " #{ AU-color-a11y( pink, blue ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y4:after {
-	content: " #{ AU-color-a11y( blue, blue ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y4:after {
+// 	content: " #{ AU-color-a11y( blue, blue ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y5:after {
-	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y5:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y6:after {
-	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 1 ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y6:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 1 ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y7:after {
-	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 50 ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y7:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 50 ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y8:after {
-	content: " #{ AU-color-a11y( #231284, #ccc ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y8:after {
+// 	content: " #{ AU-color-a11y( #231284, #ccc ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y9:after {
-	content: " #{ AU-color-a11y( #fff, #fff ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y9:after {
+// 	content: " #{ AU-color-a11y( #fff, #fff ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // palettes
