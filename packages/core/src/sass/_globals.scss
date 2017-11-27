@@ -29,13 +29,13 @@
 //  Error messages all start with a movie quote. Here are some in reserve:
 //  - I have always depended on the kindness of strangers;
 //  - Where we’re going, we don’t need roads;
-//  - You shall not pass;
 //  - You’re tearing me apart, Lisa;
 //  - Toto, I’ve got a feeling we’re not in Kansas anymore;
 //  - Nobody puts Baby in a corner;
 //  - Try not. Do - or do not. There is no try;
 //  - May the Force be with you;
-//  - You call that a knife? This is a knife!
+//  - You call that an error? This is an Error!
+//  - This... Is... ERROR!
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -583,9 +583,7 @@ $dependencies: (
  * @return {string}                    	- The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
 */
 @mixin AU-fontsize( $fontsize-key, $lineheight-key: 'default' ) {
-
-	// Predetermined pixel sizes mapped to keyword
-	// Sizes derived from a 1.25 typescale rounded to the nearest $AU-unit (vertical grid)
+	// Predetermined pixel sizes from a 1.25 typescale rounded to the nearest $AU-unit (vertical grid)
 	$fontsize-map: (
 		xs:   14,
 		sm:   16,
@@ -603,17 +601,33 @@ $dependencies: (
 		default:  1.5
 	);
 
+	@if type-of( $fontsize-key ) != 'string' {
+		@error "Going somewhere, Solo?; the AU-fontsize mixin fontsize key takes a string!";
+	}
+
+	@if type-of( $lineheight-key ) != 'string' {
+		@error "Tell Jabba I've got his money; the AU-fontsize mixin lineheight key takes a string!";
+	}
+
+	@if not map-has-key( $fontsize-map, $fontsize-key ) {
+		@error "You shall not pass; the AU-fontsize mixin only takes the following fontsize keys strings: " + map-keys( $fontsize-map );
+	}
+
+	@if not map-has-key( $lineheight-map, $lineheight-key ) {
+		@error "There's a snake in my boot; the AU-fontsize mixin only takes the following lineheight keys strings: " + map-keys( $lineheight-map );
+	}
+
 	// Get the value from supplied key for pixel and calculate the rem value
 	$fontsize-px: map-get( $fontsize-map, $fontsize-key );
 	$fontsize-rem: $fontsize-px / $AU-rem;
 
-	// Calc a unitless line-height which will fit vertical grid
+	// Calculate a unitless line-height which will fit vertical grid
 	$lineheight-pixel: round( ( map-get( $lineheight-map, $lineheight-key ) * $fontsize-px ) / $AU-unit ) * $AU-unit;
 	$lineheight: $lineheight-pixel / $fontsize-px;
 
 	// Mixin output
-	font-size: $fontsize-px + 0px; // pixel fallback for non-rem support
-	font-size: $fontsize-rem + 0rem; // rem size
+	font-size: $fontsize-px + 0px;   // Pixel fallback for non-rem support
+	font-size: $fontsize-rem + 0rem; // REM size
 	line-height: $lineheight;
 }
 
