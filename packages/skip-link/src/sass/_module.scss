@@ -15,9 +15,9 @@
 // Skip-to links
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-skip-link {
+	@include AU-fontsize( md, nospace );
 	font-family: $AU-font;
 	color: $AU-color-Text;
-	line-height: $AU-leading;
 }
 
 .au-skip-link__link {
@@ -31,12 +31,11 @@
 		overflow: visible;
 		position: absolute;
 		width: auto;
-		font-size: 21px;
 		top: AU-space( 0.5 );
 		left: AU-space( 0.5 );
-		padding: AU-space( 0.25 ) AU-space( 0.5 );
-		color: $AU-color-Action;
-		background-color: $AU-color-Background-light;
+		padding: AU-space( 0.75 );
+		color: $AU-color-Background-light;
+		background-color: $AU-color-Action;
 		text-decoration: underline;
 		text-decoration-skip: ink;
 

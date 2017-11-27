@@ -22,9 +22,9 @@
  * PRIMARY
  */
 .au-btn {
+	@include AU-fontsize ( sm, nospace );
 	display: inline-block;
 	-webkit-appearance: none;
-	font-size: 16px;
 	font-family: $AU-font;
 	color: $AU-color-Background-light;
 	text-decoration: none;

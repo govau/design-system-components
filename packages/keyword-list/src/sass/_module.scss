@@ -35,16 +35,16 @@
 }
 
 .au-keyword-list__item {
-	font-size: 28px;
+	@include AU-fontsize( lg );
 	font-weight: bold;
-	line-height: ($AU-leading * 0.875); //TODO: clean up magic numbers.
 }
 
 .au-keyword-list__item__small {
 	.au-body & {
-		display: block;
-		font-size: 18px;
+		@include AU-fontsize( sm, nospace );
 		color: $AU-color-Text;
+		display: block;
+		font-weight: normal;
 	}
 
 	.au-body--dark & {

@@ -54,23 +54,21 @@
 }
 
 .au-header-heading {
-	font-size: 20px;
-	line-height: $AU-leading;
+	@include AU-fontsize ( md );
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
 
 	@include AU-media( sm ) {
-		font-size: 36px;
+		@include AU-fontsize ( xxl, heading );
 	}
 }
 
 .au-header-subline {
-	font-size: 18px;
-	line-height: $AU-leading;
+	@include AU-fontsize ( sm );
 	max-width: $AU-maxwidth;
 
 	@include AU-media( sm ) {
-		font-size: 20px;
+		@include AU-fontsize ( md );
 	}
 }

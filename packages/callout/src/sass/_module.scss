@@ -19,9 +19,9 @@
  * The generic callout.
  */
 .au-callout {
+	@include AU-fontsize( sm );
 	font-family: $AU-font;
 	color: $AU-color-Text;
-	line-height: $AU-leading;
 	margin: AU-space( 1 ) AU-space( 0.25 );
 	padding: AU-space( 1 );
 	border-left: 4px solid $AU-color-Border;
@@ -65,12 +65,12 @@
 }
 
 .au-callout--calendar-event__lede {
-	font-size: 18px;
+	@include AU-fontsize( sm, nospace );
 }
 
 .au-callout--calendar-event__time,
 .au-callout--calendar-event__name {
-	font-size: 32px;
+	@include AU-fontsize( xl, heading );
 }
 
 .au-callout--calendar-event__time {

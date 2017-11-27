@@ -39,13 +39,12 @@
 
 .au-body .au-accordion__title,
 .au-accordion__title {
+	@include AU-fontsize( md, heading );
 	display: block;
 	color: $AU-color-Action;
 	text-decoration: none;
 	width: 100%;
-	line-height: 1.3;
 	box-sizing: border-box;
-	font-size: 20px;
 	font-weight: bold;
 	padding: AU-space( 0.75 ) AU-space( 2.5 ) AU-space( 0.75 ) AU-space( 0.75 );
 	background-color: $AU-color-Background;

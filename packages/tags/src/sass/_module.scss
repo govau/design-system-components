@@ -17,12 +17,12 @@
 // Tag styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-tags {
+	@include AU-fontsize( sm );
 	display: block;
 	margin: 0;
 	padding: 0;
 	font-family: $AU-font;
 	color: $AU-color-Text;
-	line-height: $AU-leading;
 	margin-bottom: AU-space( 0.25 );
 
 	.au-body & {
