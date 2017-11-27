@@ -42,13 +42,13 @@ const Header = ({ level, size, text }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<HeadingTag className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</HeadingTag>
+		<HeadingTag className={ `au-display-${ size }` }>{ text }</HeadingTag>
 	);
 };
 
 Header.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
-	size: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
+	size: PropTypes.oneOf([ 'xxs', 'xs', 'sm', 'md', 'lg', 'xxl' ]).isRequired,
 	text: PropTypes.node.isRequired,
 };
 
