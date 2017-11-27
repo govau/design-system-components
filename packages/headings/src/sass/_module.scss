@@ -23,8 +23,13 @@
  *
  * We also set the font-size automatically too. (:
  */
+
+
+$sizes: xxs, xs, sm, md, lg, xl;
+
+
 @for $i from 1 through 6 {
-	.au-display-#{$i} {
+	.au-display-#{ nth( $sizes, $i ) } {
 		font-family: $AU-font;
 		display: block;
 		line-height: ($AU-leading * 0.875); //1.4 from 16 (default: core)
@@ -33,14 +38,14 @@
 		font-weight: bold;
 	}
 
-	p + .au-display-#{$i} {
+	p + .au-display-#{ nth( $sizes, $i ) } {
 		margin-top: AU-space( 1 );
 	}
 }
 
 
-.au-display-2,
-.au-display-3,
-.au-display-4 {
+.au-display-xs,
+.au-display-sm,
+.au-display-md {
 	font-weight: normal;
 }

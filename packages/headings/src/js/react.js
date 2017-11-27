@@ -22,12 +22,12 @@ import PropTypes from 'prop-types';
  * @type {Array}
  */
 const sizes = [
-	'au-display-1',
-	'au-display-2',
-	'au-display-3',
-	'au-display-4',
-	'au-display-5',
-	'au-display-6',
+	'au-display-xxs',
+	'au-display-xs',
+	'au-display-sm',
+	'au-display-md',
+	'au-display-lg',
+	'au-display-xl',
 ];
 
 /**
