@@ -301,55 +301,55 @@ html {
 	}
 
 	&.au-space--025:after {
-		width: AU-space( 0.25 );
+		@include AU-space( width, .25 );
 	}
 
 	&.au-space--05:after {
-		width: AU-space( 0.5 );
+		@include AU-space( width, .5 );
 	}
 
 	&.au-space--075:after {
-		width: AU-space( 0.75 );
+		@include AU-space( width, .75 );
 	}
 
 	&.au-space--1:after {
-		width: AU-space( 1 );
+		@include AU-space( width, 1 );
 	}
 
 	&.au-space--15:after {
-		width: AU-space( 1.5 );
+		@include AU-space( width, 1.5 );
 	}
 
 	&.au-space--2:after {
-		width: AU-space( 2 );
+		@include AU-space( width, 2 );
 	}
 
 	&.au-space--25:after {
-		width: AU-space( 2.5 );
+		@include AU-space( width, 2.5 );
 	}
 
 	&.au-space--3:after {
-		width: AU-space( 3 );
+		@include AU-space( width, 3 );
 	}
 
 	&.au-space--35:after {
-		width: AU-space( 3.5 );
+		@include AU-space( width, 3.5 );
 	}
 
 	&.au-space--4:after {
-		width: AU-space( 4 );
+		@include AU-space( width, 4 );
 	}
 
 	&.au-space--45:after {
-		width: AU-space( 4.5 );
+		@include AU-space( width, 4.5 );
 	}
 
 	&.au-space--5:after {
-		width: AU-space( 5 );
+		@include AU-space( width, 5 );
 	}
 
 	&.au-space--55:after {
-		width: AU-space( 5.5 );
+		@include AU-space( width, 5.5 );
 	}
 }
 
@@ -523,59 +523,59 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // function AU-color-a11y
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.au-color-a11y1:after {
-	content: " #{ AU-color-a11y( red, blue ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y1:after {
+// 	content: " #{ AU-color-a11y( red, blue ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y2:after {
-	content: " #{ AU-color-a11y( green, blue ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y2:after {
+// 	content: " #{ AU-color-a11y( green, blue ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y3:after {
-	content: " #{ AU-color-a11y( pink, blue ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y3:after {
+// 	content: " #{ AU-color-a11y( pink, blue ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y4:after {
-	content: " #{ AU-color-a11y( blue, blue ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y4:after {
+// 	content: " #{ AU-color-a11y( blue, blue ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y5:after {
-	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y5:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y6:after {
-	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 1 ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y6:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 1 ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y7:after {
-	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 50 ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y7:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 50 ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y8:after {
-	content: " #{ AU-color-a11y( #231284, #ccc ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y8:after {
+// 	content: " #{ AU-color-a11y( #231284, #ccc ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
-.au-color-a11y9:after {
-	content: " #{ AU-color-a11y( #fff, #fff ) }";
-	display: inline;
-	color: rebeccapurple;
-}
+// .au-color-a11y9:after {
+// 	content: " #{ AU-color-a11y( #fff, #fff ) }";
+// 	display: inline;
+// 	color: rebeccapurple;
+// }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // palettes
