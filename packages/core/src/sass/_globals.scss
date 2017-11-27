@@ -571,6 +571,49 @@ $dependencies: (
 }
 
 
+/**
+ * Mixin for setting font-size and line-height.
+ * @param  {keywords} $fontsize-key 		-  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
+ * @param  {keywords} $lineheight-key 	-  Either one of the following keywords: heading, nospace, default
+ *
+ * @return {string}                    	- The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
+*/
+@mixin AU-fontsize( $fontsize-key, $lineheight-key: 'default' ) {
+
+	// Predetermined pixel sizes mapped to keyword
+	// Sizes derived from a 1.25 typescale rounded to the nearest $AU-unit (vertical grid)
+	$fontsize-map: (
+		xs:   14,
+		sm:   16,
+		md: 	20,
+		lg: 	24,
+		xl: 	32,
+		xxl:	40,
+		xxxl:	48
+	);
+
+	// Predetermined lineheight mapped to keyword
+	$lineheight-map: (
+		nospace:  1,
+		heading:  1.25,
+		default:  1.5
+	);
+
+	// Get the value from supplied key for pixel and calculate the rem value
+	$fontsize-px: map-get( $fontsize-map, $fontsize-key );
+	$fontsize-rem: $fontsize-px / $AU-rem;
+
+	// Calc a unitless line-height which will fit vertical grid
+	$lineheight-pixel: round( ( map-get( $lineheight-map, $lineheight-key ) * $fontsize-px ) / $AU-unit ) * $AU-unit;
+	$lineheight: $lineheight-pixel / $fontsize-px;
+
+	// Mixin output
+	font-size: $fontsize-px + 0px; // pixel fallback for non-rem support
+	font-size: $fontsize-rem + 0rem; // rem size
+	line-height: $lineheight;
+}
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -587,6 +630,18 @@ $AU-media-lg: 1200px !default;
  * Line-height (‘leading’)
  */
 $AU-leading: 1.6 !default;
+
+
+/**
+ * Value used for REM calculation
+ */
+$AU-rem: 16;
+
+
+/**
+ * Unit used for all type and grid calculations
+ */
+$AU-unit: 4;
 
 
 /**
