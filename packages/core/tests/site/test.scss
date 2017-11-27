@@ -523,59 +523,59 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // function AU-color-a11y
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .au-color-a11y1:after {
-// 	content: " #{ AU-color-a11y( red, blue ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y1:after {
+	content: " #{ AU-color-a11y( red, blue ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y2:after {
-// 	content: " #{ AU-color-a11y( green, blue ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y2:after {
+	content: " #{ AU-color-a11y( green, blue ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y3:after {
-// 	content: " #{ AU-color-a11y( pink, blue ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y3:after {
+	content: " #{ AU-color-a11y( pink, blue ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y4:after {
-// 	content: " #{ AU-color-a11y( blue, blue ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y4:after {
+	content: " #{ AU-color-a11y( blue, blue ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y5:after {
-// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y5:after {
+	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y6:after {
-// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 1 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y6:after {
+	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 1 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y7:after {
-// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 50 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y7:after {
+	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 50 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y8:after {
-// 	content: " #{ AU-color-a11y( #231284, #ccc ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y8:after {
+	content: " #{ AU-color-a11y( #231284, #ccc ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y9:after {
-// 	content: " #{ AU-color-a11y( #fff, #fff ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y9:after {
+	content: " #{ AU-color-a11y( #fff, #fff ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // palettes
