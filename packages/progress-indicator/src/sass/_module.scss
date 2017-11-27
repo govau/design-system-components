@@ -30,13 +30,12 @@
 
 .au-body .progress-indicator__link,
 .progress-indicator__link {
+	@include AU-fontsize( sm, heading );
 	position: relative;
 	display: block;
-	padding: AU-space( 0.25 ) 0 AU-space( 0.25 ) 41px;
-	font-size: 17px;
+	padding: AU-space( 0.5 ) 0 AU-space( 0.5 ) 41px;
 	color: $AU-color-Text;
 	text-decoration: none;
-	line-height: 1.45;
 	-webkit-appearance: none;
 	background: transparent;
 	box-sizing: border-box;
@@ -120,13 +119,13 @@
 }
 
 .progress-indicator__status {
+	@include AU-fontsize( xs, heading );
 	display: block;
-	font-size: 14px;
 	font-weight: normal;
 	color: $AU-color-Muted;
 }
 
-
+.au-body--dark .progress-indicator--dark,
 .progress-indicator--dark {
 	border-color: $AU-colordark-Border;
 

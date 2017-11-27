@@ -17,17 +17,16 @@
 // Everyone needs Konami code style links, right? (:
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-direction-link {
+	@include AU-fontsize( sm );
 	display: inline-block;
 	color: $AU-color-Action;
 	-webkit-appearance: none;
 	padding: 0;
-	line-height: $AU-leading;
 	background: transparent;
 	text-align: left;
 	font-family: $AU-font;
 	border: none;
 	cursor: pointer;
-	font-size: 1em;
 	text-decoration: underline;
 	text-decoration-skip: ink;
 

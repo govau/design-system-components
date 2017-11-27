@@ -58,19 +58,20 @@
 }
 
 .au-select__element {
+	@include AU-fontsize( sm, nospace );
 	position: relative;
 	z-index: 1;
 	background: transparent;
 	appearance: none;
 	font-family: $AU-font;
 	color: $AU-color-Text;
-	font-size: 16px;
 	text-indent: 0.01px;
 	text-overflow: '';
 	padding: AU-space( 0.5 ) AU-space( 1.5 ) AU-space( 0.5 ) AU-space( 0.5 );
 	border: 3px solid $AU-color-Border;
 	border-radius: $AU-border-radius;
 	box-sizing: border-box;
+	cursor: pointer;
 
 	@include AU-focus();
 

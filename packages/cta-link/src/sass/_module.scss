@@ -15,13 +15,12 @@
 // styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-cta-link {
+	@include AU-fontsize( md );
 	-webkit-appearance: none;
 	padding: 0;
 	display: inline-block;
 	position: relative;
-	font-size: 21px;
 	margin-bottom: AU-space( 1 );
-	line-height: $AU-leading;
 	font-weight: bold;
 	background: transparent;
 	text-align: left;

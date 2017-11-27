@@ -128,10 +128,9 @@
  * The label text
  */
 .au-control-input__text {
+	@include AU-fontsize( sm );
 	font-family: $AU-font;
 	color: $AU-color-Text;
-	line-height: $AU-leading;
-	font-size: 17px;
 	margin-left: 35px;
 
 	&:before,

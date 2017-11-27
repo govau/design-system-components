@@ -16,6 +16,7 @@
 // inpage-nav style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-inpage-nav-links {
+	@include AU-fontsize( sm );
 	margin: AU-space( 2 ) 0;
 	border-left: 4px solid $AU-color-Action;
 	padding-left: AU-space( 1 );
@@ -39,7 +40,7 @@
 
 .au-inpage-nav-links__heading {
 	font-weight: bold;
-	font-size: 1em;
+	font-size: 1em; //inherit from parent
 }
 
 .au-inpage-nav-section {
@@ -48,10 +49,10 @@
 }
 
 .au-inpage-nav-section-link {
+	@include AU-fontsize( xs, nospace );
 	position: absolute;
 	top: AU-space( 0.25 );
 	right: 0;
-	font-size: 14px;
 	font-weight: normal;
 }
 
@@ -59,4 +60,3 @@
 .au-inpage-nav-links--dark {
 	border-color: $AU-colordark-Action;
 }
-
