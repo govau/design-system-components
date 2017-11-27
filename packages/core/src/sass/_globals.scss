@@ -549,7 +549,11 @@ $dependencies: (
 
 
 /**
- * The outline for focus
+ * Create outline based on the theme the user is using.
+ *
+ * @param  {keywords} $theme - `dark` or default ( `light` )
+ *
+ * @return {string}          - The code
  */
 @mixin AU-outline( $theme: 'light' ) {
 	@if $theme == 'dark' {
