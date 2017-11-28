@@ -26,11 +26,11 @@
 	}
 
 	.au-body & > li {
+		@include AU-space( margin-bottom, 1 );
 		float: left;
 		clear: both;
 		list-style: none;
 		margin-left: 0;
-		margin-bottom: AU-space( 0.5 );
 	}
 }
 
