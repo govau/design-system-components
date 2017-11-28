@@ -22,12 +22,13 @@ import PropTypes from 'prop-types';
  * @type {Array}
  */
 const sizes = [
-	'au-display-xxs',
 	'au-display-xs',
 	'au-display-sm',
 	'au-display-md',
 	'au-display-lg',
 	'au-display-xl',
+	'au-display-xxl',
+	'au-display-xxxl',
 ];
 
 /**
@@ -48,7 +49,7 @@ const Header = ({ level, size, text }) => {
 
 Header.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
-	size: PropTypes.oneOf([ 'xxs', 'xs', 'sm', 'md', 'lg', 'xxl' ]).isRequired,
+	size: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' ]).isRequired,
 	text: PropTypes.node.isRequired,
 };
 

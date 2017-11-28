@@ -25,16 +25,15 @@
  */
 
 
-$sizes: xxs, xs, sm, md, lg, xl;
+$sizes: xs, sm, md, lg, xl, xxl, xxxl;
 
-
-@for $i from 1 through 6 {
+@for $i from 1 through 7 {
 	.au-display-#{ nth( $sizes, $i ) } {
+		@include AU-fontsize( nth( $sizes, $i ) , heading );
 		font-family: $AU-font;
 		display: block;
-		line-height: ($AU-leading * 0.875); //1.4 from 16 (default: core)
-		margin: 0 0 AU-space( .5, 1 ) 0; //1 unit at the new line-height (1.4 -- 0.7em)
-		font-size: 16 + ( 4 * ( $i - 1 ) ) + 0px;
+		margin: 0;
+		margin-top: 1rem;
 		font-weight: bold;
 	}
 
@@ -43,9 +42,6 @@ $sizes: xxs, xs, sm, md, lg, xl;
 	}
 }
 
-
-.au-display-xs,
-.au-display-sm,
-.au-display-md {
+.au-display-xxxl {
 	font-weight: normal;
 }

@@ -55,7 +55,7 @@ InpageNavLinksItem.propTypes = {
  */
 export const InpageNavLinks = ({ title, sections }) => (
 	<nav className="au-inpage-nav-links">
-		<h2 className="au-inpage-nav-links__heading au-display-xs">{ title }</h2>
+		<h2 className="au-inpage-nav-links__heading au-display-sm">{ title }</h2>
 		<ul className="au-link-list">
 			{ sections.map( ( section, i ) => <InpageNavLinksItem key={ i } section={ section } /> ) }
 		</ul>
