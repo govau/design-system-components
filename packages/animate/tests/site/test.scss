@@ -16,5 +16,5 @@
 
 
 .test-link { //have to to make it look awesome again
-	margin-left: AU-space( 1 );
+	@include AU-space( margin-left, 1 );
 }

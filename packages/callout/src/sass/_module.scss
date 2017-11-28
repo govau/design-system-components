@@ -61,7 +61,7 @@
 .au-callout--calendar-event__lede,
 .au-callout--calendar-event__time,
 .au-callout--calendar-event__name {
-	margin-bottom: AU-space( 0.5 ); //overrides body, to allow for var. text markup.
+	@include AU-space( margin-bottom, 1 ); //overrides body, to allow for var. text markup.
 }
 
 .au-callout--calendar-event__lede {
