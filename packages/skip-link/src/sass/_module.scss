@@ -25,20 +25,19 @@
 
 	&:active,
 	&:focus {
+		@include AU-outline();
+		@include AU-space ( top, 1 );
+		@include AU-space ( left, 1 );
+		@include AU-space ( padding, 1.5 );
 		clip: auto;
 		height: auto;
 		margin: 0;
 		overflow: visible;
 		position: absolute;
 		width: auto;
-		top: AU-space( 0.5 );
-		left: AU-space( 0.5 );
-		padding: AU-space( 0.75 );
 		color: $AU-color-Background-light;
 		background-color: $AU-color-Action;
 		text-decoration: underline;
 		text-decoration-skip: ink;
-
-		@include AU-outline();
 	}
 }
