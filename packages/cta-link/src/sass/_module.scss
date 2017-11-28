@@ -37,7 +37,7 @@
 	&:after {
 		@include AU-space( width, 1 );
 		@include AU-space( height, 1 );
-		@include AU-space( margin, 0 .25 0 .25 );
+		@include AU-space( margin, 0 0.25 0 0.25 );
 		content: ' ';
 		display: inline-block;
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">

@@ -29,7 +29,7 @@
 		padding: 0;
 
 		> li {
-			@include AU-space( margin-bottom, .5 );
+			@include AU-space( margin-bottom, 0.5 );
 			margin-left: 0;
 
 			&:last-child {
@@ -51,7 +51,7 @@
 
 .au-inpage-nav-section-link {
 	@include AU-fontsize( xs, nospace );
-	@include AU-space( top, .25 );
+	@include AU-space( top, 0.25 );
 	position: absolute;
 	right: 0;
 	font-weight: normal;

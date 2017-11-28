@@ -22,8 +22,8 @@
 
 .au-control-input__input {
 	position: absolute;
-	@include AU-space( left, .5 );
-	@include AU-space( top, .5 );
+	@include AU-space( left, 0.5 );
+	@include AU-space( top, 0.5 );
 
 	&:hover {
 		cursor: pointer;
@@ -129,7 +129,7 @@
  */
 .au-control-input__text {
 	@include AU-fontsize( sm, nospace );
-	@include AU-space( margin, .5 .5 .5 2.5 );
+	@include AU-space( margin, 0.5 0.5 0.5 2.5 );
 	display: block;
 	font-family: $AU-font;
 	color: $AU-color-Text;

@@ -126,6 +126,6 @@
 
 	// If it follows another au-btn--block
 	& + .au-btn--block {
-		@include AU-space( margin-top, .25 );
+		@include AU-space( margin-top, 0.25 );
 	}
 }

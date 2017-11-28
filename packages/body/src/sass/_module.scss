@@ -135,11 +135,11 @@
 	ul,
 	ol {
 		> li {
-			@include AU-space( margin-bottom, .5 );
+			@include AU-space( margin-bottom, 0.5 );
 
 			> ul,
 			> ol {
-				@include AU-space( margin-top, .5 );
+				@include AU-space( margin-top, 0.5 );
 				@include AU-space( margin-bottom, 1 );
 			}
 		}
@@ -155,7 +155,7 @@
 		}
 
 		> dt {
-			@include AU-space( margin-top, .5 );
+			@include AU-space( margin-top, 0.5 );
 			@include AU-space( margin-bottom, 1 );
 			font-weight: bold;
 
@@ -289,7 +289,7 @@
 	code,
 	samp {
 		@include AU-fontsize( xs );
-		@include AU-space( padding, .25 );
+		@include AU-space( padding, 0.25 );
 		font-family: $AU-font-monospace;
 		display: inline-block;
 		border-radius: $AU-border-radius;
@@ -303,7 +303,7 @@
 	}
 
 	pre code {
-		@include AU-space( padding, .5 );
+		@include AU-space( padding, 0.5 );
 		display:block;
 		tab-size: 4;
 	}

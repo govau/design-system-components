@@ -39,7 +39,7 @@
 	&:after {
 		@include AU-space( width, 1 );
 		@include AU-space( height, 1 );
-		@include AU-space( margin, 0 0 0 .25 );
+		@include AU-space( margin, 0 0 0 0.25 );
 		content: '→';
 		display: inline-block;
 		width: auto;
@@ -60,7 +60,7 @@
 		display: inline-block;
 		@include AU-space( width, 1 );
 		@include AU-space( height, 1 );
-		@include AU-space( margin, 0 .25 0 0 );
+		@include AU-space( margin, 0 0.25 0 0 );
 	}
 }
 

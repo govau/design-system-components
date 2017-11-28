@@ -301,15 +301,15 @@ html {
 	}
 
 	&.au-space--025:after {
-		@include AU-space( width, .25 );
+		@include AU-space( width, 0.25 );
 	}
 
 	&.au-space--05:after {
-		@include AU-space( width, .5 );
+		@include AU-space( width, 0.5 );
 	}
 
 	&.au-space--075:after {
-		@include AU-space( width, .75 );
+		@include AU-space( width, 0.75 );
 	}
 
 	&.au-space--1:after {
