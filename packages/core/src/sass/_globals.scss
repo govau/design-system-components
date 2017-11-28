@@ -36,6 +36,7 @@
 //  - May the Force be with you;
 //  - You call that an error? This is an Error!
 //  - This... Is... ERROR!
+//  - E.T. phone home;
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,29 +53,6 @@ $dependencies: (
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-/**
- * Return a space value based on the line-height and the unit em
- *
- * @param  {number} $number - The space as a multiplier of line-height
- * @param  {number} $number - The line-height [optional]
- *
- * @return {number}         - The space in ems
- */
- @function AU-space( $number, $line-height: $AU-leading ) {
-	@if type-of( $number ) != 'number' {
-		@error "I’m sorry Dave, I can’t do that; the AU-space function only takes a number!";
-	}
-
-	@if type-of( $number ) == 'number' and not unitless( $number ) {
-		$number: $number / ($number * 0 + 1);
-	}
-
-	$space: $number * $line-height;
-
-	@return #{ $space }em;
-}
-
-
 /**
  * Replace a string with a string
  * http://codepen.io/jakob-e/pen/doMoML
@@ -476,6 +454,53 @@ $dependencies: (
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL MIXINS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Return a space value based on the line-height and the unit em
+ *
+ * @param  {string} $property - The css property to apply the spacing ( padding, margin )
+ * @param  {number} $values   - The values of the property ( 0, 20px 10px, 5% )
+ *
+ * @return {number}           - The space in px and rems
+ */
+ @mixin AU-space( $property, $values ) {
+	$unit: $AU-unit; 	// The grid unit to use
+	$output: ();
+	$fallback: ();
+	$has_fallback: false;
+
+	@if type-of( $property ) != 'string' {
+		@error "I’m sorry Dave, I can’t do that; the AU-space function only takes a string as first argument!";
+	}
+
+	// Loop through the $values list
+	@each $value in $values {
+		// This is a pixel on unitless unit. Let’s convert it to rems
+		@if type-of( $value ) == 'number' and unit( $value ) == "" {
+			$rem: $value / ( ( $value / $unit ) * 0 + 1 );
+
+			$fallback: join( $fallback, round( $value * ( $unit * $unit ) ) + 0px );
+			$output: join( $output, #{ $rem }rem );
+
+			$has_fallback: true;
+		}
+
+		// We don’t know what this is so we don’t change it.
+		@else {
+			$fallback: join( $fallback, $value );
+			$output: join( $output, $value );
+		}
+	}
+
+	@if( $has_fallback ) {
+		#{ $property }: $fallback;
+		#{ $property }: $output;
+	}
+	@else {
+		#{ $property }: $output;
+	}
+}
+
+
 /**
  * Clearing floats
  */

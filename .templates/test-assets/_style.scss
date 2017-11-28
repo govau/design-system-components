@@ -2,14 +2,14 @@ body {
 	background: $AU-color-Background-light;
 	color: $AU-color-Text;
 	margin: 0;
-	padding: AU-space( 4 ) AU-space( 1 ) AU-space( 2 ) AU-space( 1 );
+	@include AU-space( padding, 8 1 2 1 );
 	overflow-x: hidden; //For Opera apparently.
 
 	&:before {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
+		right: 0;
 		background: repeating-linear-gradient(
 			-45deg,
 			#222,
@@ -17,7 +17,8 @@ body {
 			#333 10px,
 			#333 20px
 		);
-		padding: AU-space( 0.5 ) AU-space( 2 ) AU-space( 0.5 ) AU-space( 1 );
+		@include AU-space( padding, 1.5 1 );
+		@include AU-fontsize( sm, nospace );
 		content: "📃 Test file";
 		font-family: $AU-font-monospace;
 		color: white;
