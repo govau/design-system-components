@@ -114,7 +114,7 @@
 	 */
 	p {
 		max-width: $AU-maxwidth;
-		margin: 0 0 AU-space( 1 ) 0;
+		@include AU-space( margin, 0 0 1 0 );
 	}
 
 	ul,
@@ -122,25 +122,25 @@
 	dl,
 	pre {
 		margin-top: 0;
-		margin-bottom: AU-space( 1 );
+		@include AU-space( margin-bottom, 1 );
 	}
 
 	ul,
 	ol,
 	dd {
+		@include AU-space( padding-left, 1 );
 		margin-left: 0;
-		padding-left: AU-space( 1 );
 	}
 
 	ul,
 	ol {
 		> li {
-			margin-bottom: AU-space( 0.25 );
+			@include AU-space( margin-bottom, .5 );
 
 			> ul,
 			> ol {
-				margin-top: AU-space( 0.25 );
-				margin-bottom: AU-space( 0.5 );
+				@include AU-space( margin-top, .5 );
+				@include AU-space( margin-bottom, 1 );
 			}
 		}
 
@@ -151,13 +151,13 @@
 
 	dl {
 		> dd {
-			margin-bottom: AU-space( 1 );
+			@include AU-space( margin-bottom, 1 );
 		}
 
 		> dt {
+			@include AU-space( margin-top, .5 );
+			@include AU-space( margin-bottom, 1 );
 			font-weight: bold;
-			margin-top: AU-space( 0.5 );
-			margin-bottom: AU-space( 0.5 );
 
 			&:first-of-type {
 				margin-top: 0;
@@ -289,12 +289,12 @@
 	code,
 	samp {
 		@include AU-fontsize( xs );
+		@include AU-space( padding, .25 );
 		font-family: $AU-font-monospace;
 		display: inline-block;
 		border-radius: $AU-border-radius;
 		background-color: $AU-color-Background-darkest;
 		color: $AU-color-Muted;
-		padding: 0 AU-space( 0.5 );
 		margin: 0 2px;
 	}
 
@@ -303,7 +303,7 @@
 	}
 
 	pre code {
-		padding: 8px;
+		@include AU-space( padding, .5 );
 		display:block;
 		tab-size: 4;
 	}
@@ -320,8 +320,8 @@
 		border-top: 1px solid $AU-color-Border;
 		margin-bottom: AU-space( 1 );
 	}
-
 }
+
 
 .au-body--dark {
 	background: $AU-colordark-Background-light;
