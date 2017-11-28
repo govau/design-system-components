@@ -24,7 +24,7 @@
 .au-btn {
 	@include AU-fontsize ( sm, nospace );
 	display: inline-block;
-	-webkit-appearance: none;
+	appearance: none;
 	font-family: $AU-font;
 	color: $AU-color-Background-light;
 	text-decoration: none;

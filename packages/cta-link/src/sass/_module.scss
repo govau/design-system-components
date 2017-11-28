@@ -16,7 +16,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-cta-link {
 	@include AU-fontsize( md );
-	-webkit-appearance: none;
+	appearance: none;
 	padding: 0;
 	display: inline-block;
 	position: relative;
