@@ -20,7 +20,7 @@
  * Basic footer block styling.
  */
 .au-footer {
-	@include AU-space( padding, 1 );
+	@include AU-space( padding, 1 0 );
 	background-color: $AU-color-Background-light;
 	border-top: $AU-unitpx solid $AU-color-Border;
 	font-family: $AU-font;
