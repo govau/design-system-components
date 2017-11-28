@@ -40,10 +40,10 @@
 // BODY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-body {
+	@include AU-fontsize( sm );
 	margin: 0;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
-	line-height: $AU-leading;
 	font-family: $AU-font;
 	color: $AU-color-Text;
 
@@ -175,9 +175,10 @@
 	}
 
 	/**
-	 * Important (leaving `b` out for now (and `u` also)).
+	 * Stong emphasis.
 	 */
-	strong {
+	strong,
+	b {
 		font-weight: bold;
 	}
 
@@ -186,31 +187,23 @@
 	 * `small`: for less important information (not stylistic purposes).
 	 */
 	small {
-		font-size: 87.5%;
+		@include AU-fontsize( xs );
 	}
 
 
 	/**
 	 * `s`: represents contents no longer accurate/relevant.
+	 * del` & `ins`: editorial markup.
 	 */
-	s {
-		text-decoration: line-through;
-	}
-
-
-	/**
-	 * `del` & `ins`: editorial markup.
-	 *
-	 */
+	s,
 	del {
 		text-decoration: line-through;
-		//Idea: for `del`: switch to the opposite of the current sans/sans-serif style?
 	}
 
 	ins {
 		text-decoration-line: underline;
 		text-decoration-style: dashed; //Waiting on Chrome.
-		//text-decoration-skip: ink; //Forward planning.
+		text-decoration-skip: ink;
 	}
 
 
@@ -230,19 +223,15 @@
 
 	/**
 	 * Abbreviations/acronyms.
-	 *
-	 * This styling removes any custom casing (mixing of u&lc chars in the `abbr`).
-	 *
-	 * Todo: test font stack fallbacks with the font-size adj.
 	 */
 	abbr,
 	abbr[title] {
-		font-size: 18px;
-		font-variant: small-caps;
-		text-transform: lowercase;
-		letter-spacing: 1px;
-		text-decoration: none;
-		border-bottom: 1px dotted;
+		border-bottom: none;
+		text-decoration: underline;
+		text-decoration: underline dotted;
+	}
+
+	abbr[title] {
 		cursor: help;
 	}
 
@@ -269,56 +258,56 @@
 		}
 	}
 
+	/**
+	 * Prevent `sub` and `sup` elements from affecting the line height in
+	 * all browsers.
+	 * https://github.com/necolas/normalize.css/blob/master/normalize.css#L174
+	 */
+
 	sub,
 	sup {
-		font-size: 75%;
-		line-height: 0;
+		@include AU-fontsize( xs, nospace );
 		position: relative;
 		vertical-align: baseline;
 	}
 
 	sub {
-		bottom: -0.25em;
+	  bottom: -0.25em;
 	}
 
 	sup {
-		top: -0.5em;
+	  top: -0.5em;
 	}
 
-
-	/**
-	 * Code snippets and code blocks.
-	 */
-	code,
-	kbd,
-	pre {
-		font-family: $AU-font-monospace;
-	}
-
-
-	/**
-	 * Pre-formatted text set by typographic characters.
-	 */
-	pre {
-		code,
-		samp,
-		kbd {
-			font-size: 14px;
-		}
-	}
 
 
 	/**
 	 * Keyboard strokes.
+	 * Code snippets and code blocks.
 	 */
-	kbd {
-		font-size: 14px;
+	kbd,
+	code,
+	samp {
+		@include AU-fontsize( xs );
+		font-family: $AU-font-monospace;
 		display: inline-block;
 		border-radius: $AU-border-radius;
 		background-color: $AU-color-Background-darkest;
+		color: $AU-color-Muted;
 		padding: 0 AU-space( 0.5 );
 		margin: 0 2px;
 	}
+
+	pre {
+		font-family: $AU-font-monospace;
+	}
+
+	pre code {
+		padding: 8px;
+		display:block;
+		tab-size: 4;
+	}
+
 
 	/**
 	 * Horizontal rule, used for paragraph-level thematic breaks.
@@ -380,5 +369,11 @@
 
 	hr {
 		border-top-color: $AU-colordark-Border;
+	}
+
+	code,
+	kbd {
+		color: $AU-colordark-Muted;
+		background-color: $AU-colordark-Background-dark;
 	}
 }
