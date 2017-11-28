@@ -17,10 +17,10 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-body .progress-indicator,
 .progress-indicator {
+	@include AU-space( margin, 0 0 1 0 );
 	font-family: $AU-font;
 	list-style: none;
 	padding: 0;
-	margin: 0 0 AU-space( 1 ) 0;
 	border-top: 1px solid $AU-color-Border;
 
 	& > li {
@@ -31,9 +31,9 @@
 .au-body .progress-indicator__link,
 .progress-indicator__link {
 	@include AU-fontsize( sm, heading );
+	@include AU-space( padding, .75 .75 .75 2.75 );
 	position: relative;
 	display: block;
-	padding: AU-space( 0.5 ) 0 AU-space( 0.5 ) 41px;
 	color: $AU-color-Text;
 	text-decoration: none;
 	-webkit-appearance: none;
@@ -54,12 +54,12 @@
 	@include AU-focus();
 
 	&:after {
+		@include AU-space( left, .5 );
+		@include AU-space( width, 1.5 );
 		content: '';
 		position: absolute;
-		left: 6px;
 		top: 0;
 		bottom: 0;
-		width: 24px;
 		background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 				<path fill="#{ $AU-color-Muted }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>
 			</svg>');

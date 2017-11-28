@@ -16,23 +16,23 @@
 // select style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-select {
+	@include AU-space( margin-bottom, .5 );
 	position: relative;
 	vertical-align: middle;
 	display: inline-block;
 	background-color: $AU-color-Background-light;
-	margin-bottom: AU-space( 0.5 );
 	box-sizing: border-box;
 	border-radius: $AU-border-radius;
 
 	&:after {
+		@include AU-space( right, 0.75 );
+		@include AU-space( width, 1 );
+		@include AU-space( height, 1 );
+		@include AU-space( margin-top, -.5 );
 		content: ' ';
 		position: absolute;
 		top: 50%;
-		right: AU-space( 0.5 );
-		width: AU-space( 0.5 );
-		height: AU-space( 0.5 );
-		margin-top: -( AU-space( 0.25 ) );
-		background-image: AU-svguri('<svg fill="#{ $AU-color-Action }" viewBox="4 4 16 16" xmlns="http://www.w3.org/2000/svg">
+		background-image: AU-svguri('<svg fill="#{ $AU-color-Action }" viewBox="6 5 12 12" xmlns="http://www.w3.org/2000/svg">
 				<path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
 				<path d="M0-.75h24v24H0z" fill="none"/>
 			</svg>');
@@ -59,6 +59,7 @@
 
 .au-select__element {
 	@include AU-fontsize( sm, nospace );
+	@include AU-space( padding, .75 2.25 .75 .75 );
 	position: relative;
 	z-index: 1;
 	background: transparent;
@@ -67,7 +68,6 @@
 	color: $AU-color-Text;
 	text-indent: 0.01px;
 	text-overflow: '';
-	padding: AU-space( 0.5 ) AU-space( 1.5 ) AU-space( 0.5 ) AU-space( 0.5 );
 	border: 3px solid $AU-color-Border;
 	border-radius: $AU-border-radius;
 	box-sizing: border-box;
@@ -94,32 +94,29 @@
 
 	.ie8 &,
 	.ie9 & {
-		padding-right: AU-space( 0.25 );
+		@include AU-space( padding-right, .25 );
 	}
 }
 
-.au-select--dark {
+.au-select--dark .au-select__element {
+	border-color: $AU-colordark-Text;
 
-	.au-select__element {
-		border-color: $AU-colordark-Text;
+	@include AU-focus( 'dark' );
 
-		@include AU-focus( 'dark' );
-
-		&:disabled {
-			background-color: $AU-colordark-Background-dark;
-			color: $AU-colordark-Muted;
-			border-color: $AU-colordark-Background-dark;
-		}
+	&:disabled {
+		background-color: $AU-colordark-Background-dark;
+		color: $AU-colordark-Muted;
+		border-color: $AU-colordark-Background-dark;
 	}
 }
 
 //firefox hacks...
 html>/**/body .au-select__element, x:-moz-any-link, x:default {
-	padding-right: AU-space( 0.25 );
+	@include AU-space( padding-right, .25 );
 }
 
 @supports (-moz-osx-font-smoothing:auto) {
 	html body .au-select__element {
-		padding-right: AU-space( 1.5 );
+		@include AU-space( padding-right, 1.25 );
 	}
 }
