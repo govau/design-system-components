@@ -51,3 +51,12 @@ body {
 }
 
 
+
+@media print {
+	body,
+	.split--dark {
+		background: #fff !important;
+		color: #000 !important;
+	}
+}
+
