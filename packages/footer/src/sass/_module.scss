@@ -20,9 +20,9 @@
  * Basic footer block styling.
  */
 .au-footer {
+	@include AU-space( padding, 1 );
 	background-color: $AU-color-Background-light;
-	border-top: 6px solid $AU-color-Border;
-	padding: AU-space( 1 );
+	border-top: $AU-unitpx solid $AU-color-Border;
 	font-family: $AU-font;
 	color: $AU-color-Text;
 
@@ -58,9 +58,9 @@
 	}
 
 	+ .au-footer__end {
-		padding-top: AU-space( 1 );
+		@include AU-space( padding-top, 1 );
+		@include AU-space( margin-top, 1 );
 		border-top: 1px solid $AU-color-Border;
-		margin-top: AU-space( 1 );
 	}
 }
 
