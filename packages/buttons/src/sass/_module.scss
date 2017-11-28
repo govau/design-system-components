@@ -23,15 +23,15 @@
  */
 .au-btn {
 	@include AU-fontsize ( sm, nospace );
+	@include AU-space( padding, 1 2 );
 	display: inline-block;
-	-webkit-appearance: none;
+	appearance: none;
 	font-family: $AU-font;
 	color: $AU-color-Background-light;
 	text-decoration: none;
 	border-radius: $AU-border-radius;
 	background-color: $AU-color-Action;
 	border: 3px solid $AU-color-Action;
-	padding: AU-space( 0.5 ) AU-space( 1 );
 	cursor: pointer;
 	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
 
@@ -51,7 +51,7 @@
 	&.au-btn--dark {
 		color: $AU-colordark-Background-light;
 		background-color: $AU-colordark-Action;
-		border: 3px solid $AU-colordark-Action;
+		border-color: $AU-colordark-Action;
 		&:hover {
 			color: $AU-colordark-Text;
 			border-color: $AU-colordark-Text;
@@ -124,7 +124,8 @@
 	box-sizing: border-box;
 	text-align: center;
 
+	// If it follows another au-btn--block
 	& + .au-btn--block {
-		margin-top: AU-space( 0.25 );
+		@include AU-space( margin-top, .25 );
 	}
 }

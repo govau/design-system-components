@@ -16,11 +16,11 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-cta-link {
 	@include AU-fontsize( md );
-	-webkit-appearance: none;
+	@include AU-space( margin-bottom, 1 );
+	appearance: none;
 	padding: 0;
 	display: inline-block;
 	position: relative;
-	margin-bottom: AU-space( 1 );
 	font-weight: bold;
 	background: transparent;
 	text-align: left;
@@ -29,22 +29,21 @@
 	text-decoration: underline;
 	text-decoration-skip: ink;
 	border: none;
-	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+	transition: background-color 0.1s ease-in-out;
 	cursor: pointer;
 
 	@include AU-focus();
 
 	&:after {
+		@include AU-space( width, 1 );
+		@include AU-space( height, 1 );
+		@include AU-space( margin, 0 .25 0 .25 );
 		content: ' ';
 		display: inline-block;
-		width: 0.9em;
-		height: 0.8em;
-		margin: 0 AU-space( 0.25 ) 0 AU-space( 0.25 );
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
 				<path fill="#{ $AU-color-Action }" d="M128 64l-64 64-16-16 64-64"/>
 				<path fill="#{ $AU-color-Action }" d="M128 64l-16 16-64-64L64 0"/>
 			</svg>');
-		transition: margin 0.1s ease-in;
 
 		.ie8 &,
 		.lt-ie8 & {
@@ -57,7 +56,6 @@
 		text-decoration: none;
 
 		&:after {
-			margin: 0 AU-space( 0.1 ) 0 AU-space( 0.4 ); //move arrow by just AU-space( 0.1 ); this is not a magic number …
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
 				<path fill="#{ $AU-color-Text }" d="M128 64l-64 64-16-16 64-64"/>
 				<path fill="#{ $AU-color-Text }" d="M128 64l-16 16-64-64L64 0"/>

@@ -685,6 +685,7 @@ $AU-rem: 16;
  * Unit used for all type and grid calculations
  */
 $AU-unit: 4;
+$AU-unitpx: $AU-unit + 0px;
 
 
 /**
@@ -714,9 +715,9 @@ $AU-color-Background-dark:         #ebebeb !global;
 $AU-color-Background-darkest:      #e0e0e0 !global;
 $AU-color-Muted:                   #646464 !global;
 $AU-color-Border:                  #808080 !global;
-// $AU-color-Background:              AU-color-a11y( darken( $AU-color-Background-light, 4%), $AU-color-Text ) !global;
-// $AU-color-Background-dark:         AU-color-a11y( darken( $AU-color-Background, 4%), $AU-color-Text ) !global;
-// $AU-color-Background-darkest:      AU-color-a11y( darken( $AU-color-Background-dark, 4%), $AU-color-Text ) !global;
+// $AU-color-Background:              AU-color-a11y( darken( $AU-color-Background-light, 4% ), $AU-color-Text ) !global;
+// $AU-color-Background-dark:         AU-color-a11y( darken( $AU-color-Background-light, 8% ), $AU-color-Text ) !global;
+// $AU-color-Background-darkest:      AU-color-a11y( darken( $AU-color-Background-light, 12% ), $AU-color-Text ) !global;
 // $AU-color-Muted:                   AU-color-a11y( mix( $AU-color-Text, $AU-color-Background-darkest, 30%), $AU-color-Background-darkest ) !global;
 // $AU-color-Border:                  AU-color-a11y( desaturate( $AU-color-Background-darkest, 50%) , $AU-color-Background-darkest, 'large') !global;
 
@@ -734,9 +735,9 @@ $AU-colordark-Background-dark:     #0d414d !global;
 $AU-colordark-Background-darkest:  #0a323c !global;
 $AU-colordark-Muted:               #b7cfd5 !global;
 $AU-colordark-Border:              #8babb3 !global;
-// $AU-colordark-Background:          AU-color-a11y( darken( $AU-colordark-Background-light, 4%), $AU-colordark-Text ) !global;
-// $AU-colordark-Background-dark:     AU-color-a11y( darken( $AU-colordark-Background, 4%), $AU-colordark-Text ) !global;
-// $AU-colordark-Background-darkest:  AU-color-a11y( darken( $AU-colordark-Background-dark, 4%), $AU-colordark-Text ) !global;
+// $AU-colordark-Background:          AU-color-a11y( darken( $AU-colordark-Background-light, 4% ), $AU-colordark-Text ) !global;
+// $AU-colordark-Background-dark:     AU-color-a11y( darken( $AU-colordark-Background-light, 8% ), $AU-colordark-Text ) !global;
+// $AU-colordark-Background-darkest:  AU-color-a11y( darken( $AU-colordark-Background-light, 12% ), $AU-colordark-Text ) !global;
 // $AU-colordark-Muted:               AU-color-a11y( mix( $AU-colordark-Text, $AU-colordark-Background-light, 30%), $AU-colordark-Background-light ) !global;
 // $AU-colordark-Border:              AU-color-a11y( desaturate( $AU-colordark-Background-light, 50%) , $AU-colordark-Background-light, 'large') !global;
 

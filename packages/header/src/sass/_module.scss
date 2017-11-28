@@ -21,21 +21,21 @@
  * Basic header block styling.
  */
 .au-header {
+	@include AU-space( padding, 1.5 0 2 0 ); // .5 for optical alignment
+	@include AU-space( margin-bottom, 2 );
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	background: $AU-color-Background-light;
-	padding: AU-space( 1 ) 0 AU-space( 1.25 ) 0;
-	margin-bottom: AU-space( 1 );
 
 	&.au-header--hero {
-		padding: AU-space( 2 ) 0 AU-space( 2.5 ) 0;
+		@include AU-space( padding, 3 0 3.5 0 );
 	}
 
 	@include AU-media( sm ) {
-		padding: AU-space( 2 ) 0 AU-space( 3 ) 0;
+		@include AU-space( padding, 3 0 3.5 0 );
 
 		&.au-header--hero {
-			padding: AU-space( 4.5 ) 0 AU-space( 8.5 ) 0;
+			@include AU-space( padding, 6 0 6.5 0 );
 		}
 	}
 

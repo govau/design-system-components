@@ -32,13 +32,12 @@ $sizes: xs, sm, md, lg, xl, xxl, xxxl;
 		@include AU-fontsize( nth( $sizes, $i ) , heading );
 		font-family: $AU-font;
 		display: block;
-		margin: 0;
-		margin-top: 1rem;
 		font-weight: bold;
+		margin: 0;
 	}
 
-	p + .au-display-#{ nth( $sizes, $i ) } {
-		margin-top: AU-space( 1 );
+	* + .au-display-#{ nth( $sizes, $i ) } {
+		@include AU-space( margin-top, 2 );
 	}
 }
 

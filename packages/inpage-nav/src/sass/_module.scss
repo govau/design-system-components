@@ -17,19 +17,20 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-inpage-nav-links {
 	@include AU-fontsize( sm );
-	margin: AU-space( 2 ) 0;
+	@include AU-space( margin, 3 0 );
+	@include AU-space( padding-left, 1.5 );
+
 	border-left: 4px solid $AU-color-Action;
-	padding-left: AU-space( 1 );
 
 	.au-body & > ul,
 	.au-body & > ol {
+		@include AU-space( margin, 1 0 );
 		list-style-type: none;
-		margin: AU-space( 0.5 ) 0 0;
 		padding: 0;
 
 		> li {
+			@include AU-space( margin-bottom, .5 );
 			margin-left: 0;
-			margin-bottom: AU-space( 0.5 );
 
 			&:last-child {
 				margin-bottom: 0;
@@ -45,13 +46,13 @@
 
 .au-inpage-nav-section {
 	position: relative;
-	padding-right: 120px;
+	@include AU-space( padding-right, 8 );
 }
 
 .au-inpage-nav-section-link {
 	@include AU-fontsize( xs, nospace );
+	@include AU-space( top, .25 );
 	position: absolute;
-	top: AU-space( 0.25 );
 	right: 0;
 	font-weight: normal;
 }
