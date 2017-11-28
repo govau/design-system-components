@@ -70,48 +70,90 @@ class App extends React.Component {
 
 				<h2>Default accordion</h2>
 
-				<Accordion header="Open and close me">
-					Some content of the accordion <a href="#url">here</a> :)
-				</Accordion>
+				<div className="split-wrapper">
+					<div className="split">
+						<Accordion header="Open and close me">
+							Some content of the accordion <a href="#url">here</a> :)
+						</Accordion>
 
 
-				<hr />
-				<h2>Accordions with open/close props</h2>
+						<hr />
+						<h2>Accordions with open/close props</h2>
 
-				<Accordion header="Closed">
-					Some content of the accordion <a href="#url">here</a> :D
-				</Accordion>
+						<Accordion header="Closed">
+							Some content of the accordion <a href="#url">here</a> :D
+						</Accordion>
 
-				<Accordion open header="Open">
-					Some content of the accordion <a href="#url">here</a> 8)
-				</Accordion>
-
-
-				<hr />
-				<h2>Accordions slow</h2>
-
-				<Accordion header="Slow accordion" speed={ 1000 }>
-					Some content of the accordion <a href="#url">here</a> :D
-				</Accordion>
+						<Accordion open header="Open">
+							Some content of the accordion <a href="#url">here</a> 8)
+						</Accordion>
 
 
-				<hr />
-				<h2>Accordions with custom functions</h2>
+						<hr />
+						<h2>Accordions slow</h2>
 
-				<Accordion header="With custom function"
-					onOpen={ () => { console.log('This function will run when the accordion opens'); } }
-					afterOpen={ () => { console.log('This function will run after the accordion has opened'); } }
-					onClose={ () => { console.log('This function will run when the accordion closes'); } }
-					afterClose={ () => { console.log('This function will run after the accordion has closed'); } }
-				>
-					Some content of the accordion <a href="#url">here</a>
-				</Accordion>
+						<Accordion header="Slow accordion" speed={ 1000 }>
+							Some content of the accordion <a href="#url">here</a> :D
+						</Accordion>
 
 
-				<hr />
-				<h2>Accordions statefull</h2>
+						<hr />
+						<h2>Accordions with custom functions</h2>
 
-				<AccodionWrapper/>
+						<Accordion header="With custom function"
+							onOpen={ () => { console.log('This function will run when the accordion opens'); } }
+							afterOpen={ () => { console.log('This function will run after the accordion has opened'); } }
+							onClose={ () => { console.log('This function will run when the accordion closes'); } }
+							afterClose={ () => { console.log('This function will run after the accordion has closed'); } }
+						>
+							Some content of the accordion <a href="#url">here</a>
+						</Accordion>
+
+
+						<hr />
+						<h2>Accordions statefull</h2>
+
+						<AccodionWrapper/>
+					</div>
+					<div className="split split--dark">
+						<Accordion theme="dark" header="Open and close me">
+							Some content of the accordion <a href="#url">here</a> :)
+						</Accordion>
+
+
+						<hr />
+						<h2>Accordions with open/close props</h2>
+
+						<Accordion theme="dark" header="Closed">
+							Some content of the accordion <a href="#url">here</a> :D
+						</Accordion>
+
+						<Accordion theme="dark" open header="Open">
+							Some content of the accordion <a href="#url">here</a> 8)
+						</Accordion>
+
+
+						<hr />
+						<h2>Accordions slow</h2>
+
+						<Accordion theme="dark" header="Slow accordion" speed={ 1000 }>
+							Some content of the accordion <a href="#url">here</a> :D
+						</Accordion>
+
+
+						<hr />
+						<h2>Accordions with custom functions</h2>
+
+						<Accordion theme="dark" header="With custom function"
+							onOpen={ () => { console.log('This function will run when the accordion opens'); } }
+							afterOpen={ () => { console.log('This function will run after the accordion has opened'); } }
+							onClose={ () => { console.log('This function will run when the accordion closes'); } }
+							afterClose={ () => { console.log('This function will run after the accordion has closed'); } }
+						>
+							Some content of the accordion <a href="#url">here</a>
+						</Accordion>
+					</div>
+				</div>
 			</div>
 		);
 	}
