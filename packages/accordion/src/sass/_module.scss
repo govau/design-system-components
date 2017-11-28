@@ -16,11 +16,11 @@
 // accordion wrapper
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-accordion {
+	@include AU-space( margin-bottom, 1 );
 	display: block;
 	border: 1px solid $AU-color-Border;
 	font-family: $AU-font;
 	color: $AU-color-Text;
-	margin-bottom: AU-space( 1 );
 	padding: 0;
 
 	p:first-child {
@@ -33,20 +33,20 @@
 }
 
 .au-accordion + .au-accordion {
+	@include AU-space( margin-top, -1 );
 	border-top: 0;
-	margin-top: -( AU-space( 1 ) );
 }
 
 .au-body .au-accordion__title,
 .au-accordion__title {
 	@include AU-fontsize( md, heading );
+	@include AU-space( padding, 1 2.5 1 1 );
 	display: block;
 	color: $AU-color-Action;
 	text-decoration: none;
 	width: 100%;
 	box-sizing: border-box;
 	font-weight: bold;
-	padding: AU-space( 0.75 ) AU-space( 2.5 ) AU-space( 0.75 ) AU-space( 0.75 );
 	background-color: $AU-color-Background;
 	position: relative;
 	cursor: pointer;
@@ -80,8 +80,8 @@
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		right: AU-space( 1 );
-		width: AU-space( 0.75 );
+		@include AU-space( right, 1 );
+		@include AU-space( width, 1 );
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
 			'	<path fill="#{ $AU-color-Action }" d="M64 0l64 64-16 16-64-64"/>' +
 			'	<path fill="#{ $AU-color-Action }" d="M64 0l16 16-64 64L0 64"/>' +
@@ -100,7 +100,7 @@
 	.lt-ie8 & {
 		&:after {
 			content: ' ▼ ';
-			margin-top: AU-space( 0.75 );
+			@include AU-space( margin-top, 1 );
 		}
 
 		&.au-accordion--open:after {
@@ -127,7 +127,7 @@
 }
 
 .au-accordion__body-wrapper {
-	padding: AU-space( 0.75 );
+	@include AU-space( padding, 1 );
 	border-top: 1px solid $AU-color-Border;
 }
 
