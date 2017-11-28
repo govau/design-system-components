@@ -37,11 +37,11 @@
 		color: $AU-color-Text;
 	}
 	&:after {
+		@include AU-space( width, 1 );
+		@include AU-space( height, 1 );
+		@include AU-space( margin, 0 0 0 .25 );
 		content: '→';
 		display: inline-block;
-		width: 0.8em;
-		height: 0.8em;
-		margin: 0 AU-space( 0.1 ) -1px AU-space( 0.25 );
 		width: auto;
 		height: auto;
 	}
@@ -58,9 +58,9 @@
 	&:before {
 		content: '←';
 		display: inline-block;
-		width: 0.8em;
-		height: 0.8em;
-		margin: 0 AU-space( 0.25 ) -1px AU-space( 0.1 );
+		@include AU-space( width, 1 );
+		@include AU-space( height, 1 );
+		@include AU-space( margin, 0 .25 0 0 );
 	}
 }
 
