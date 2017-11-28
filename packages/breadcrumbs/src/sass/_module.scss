@@ -33,9 +33,9 @@
 			&:after {
 				content: ' ';
 				display: inline-block;
-				width: 0.8em;
-				height: 0.8em;
-				margin: 0 AU-space( 0.5 );
+				@include AU-space( width, .5 );
+				@include AU-space( height, .5 );
+				@include AU-space( margin, 0 .5 );
 				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
 						<path fill="#{ $AU-color-Border }" d="M128 64l-64 64-16-16 64-64"/>
 						<path fill="#{ $AU-color-Border }" d="M128 64l-16 16-64-64L64 0"/>

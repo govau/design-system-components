@@ -23,12 +23,12 @@
 
 	.au-body & {
 		margin: 0;
-		padding: AU-space( 0.25 ) 0;
+		@include AU-space( padding, 0.25 0 );
 	}
 
 	> li {
 		display: block;
-		margin: AU-space( 0.25 );
+		@include AU-space( margin, 0.25 );
 	}
 
 	&.au-link-list--inline {
