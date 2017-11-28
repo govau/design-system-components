@@ -22,8 +22,8 @@
 
 .au-control-input__input {
 	position: absolute;
-	left: 5px;
-	top: 5px;
+	@include AU-space( left, .5 );
+	@include AU-space( top, .5 );
 
 	&:hover {
 		cursor: pointer;
@@ -128,20 +128,21 @@
  * The label text
  */
 .au-control-input__text {
-	@include AU-fontsize( sm );
+	@include AU-fontsize( sm, nospace );
+	@include AU-space( margin, .5 .5 .5 2.5 );
+	display: block;
 	font-family: $AU-font;
 	color: $AU-color-Text;
-	margin-left: 35px;
 
 	&:before,
 	&:after {
+		@include AU-space( width, 2 );
+		@include AU-space( height, 2 );
 		content: ' ';
 		display: block;
 		position: absolute;
 		left: 0;
 		top: 0;
-		width: 27px;
-		height: 27px;
 		background-repeat: no-repeat;
 		z-index: 1;
 	}
