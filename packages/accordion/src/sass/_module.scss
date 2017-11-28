@@ -16,7 +16,7 @@
 // accordion wrapper
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-accordion {
-	@include AU-space( margin-bottom, 1 );
+	@include AU-space( margin-top, 1 );
 	display: block;
 	border: 1px solid $AU-color-Border;
 	font-family: $AU-font;
@@ -33,7 +33,7 @@
 }
 
 .au-accordion + .au-accordion {
-	@include AU-space( margin-top, -1 );
+	margin-top: 0;
 	border-top: 0;
 }
 
