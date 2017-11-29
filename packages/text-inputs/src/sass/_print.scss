@@ -10,14 +10,12 @@
 @media print {
 	.au-text-input {
 		border-color: #000 !important;
-	}
 
-	&:disabled {
-		background-color: $AU-color-Background !important;
-		border-color: transparent;
-	}
-
-	&[disabled] {
-		background-color: $AU-color-Background !important;
+		&:disabled,
+		&[disabled] {
+			color: $AU-color-Muted !important;
+			background-color: #ccc !important;
+			border: 2px solid #ccc !important;
+		}
 	}
 }
