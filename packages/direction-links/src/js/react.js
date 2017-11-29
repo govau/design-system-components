@@ -16,6 +16,18 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
+/**
+ * All theme options
+ *
+ * @type {Object}
+ */
+const themes = {
+	light: '',
+	dark: 'au-direction-link--dark',
+};
+
+
 /**
  * All direction options
  *
@@ -32,12 +44,13 @@ const directions = {
  * DEFAULT
  * The direction-links component
  *
+ * @param  {string} theme     - The colour theme of the component
  * @param  {string} link      - The link target, optional
  * @param  {string} text      - The text of the CTA link
  * @param  {string} direction - The direction for the arrow; can be either: up right down left, default: 'right'
  * @param  {string} onClick   - An onClick function, optional
  */
-const DirectionLink = ({ link, text, direction, onClick }) => {
+const DirectionLink = ({ theme, link, text, direction, onClick }) => {
 	const attributeOptions = {};
 
 	if( typeof onClick !== 'undefined' ) {
@@ -45,14 +58,15 @@ const DirectionLink = ({ link, text, direction, onClick }) => {
 	}
 
 	if( link ) {
-		return (<a className={ `au-direction-link ${ directions[ direction ] }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return (<a className={ `au-direction-link ${ directions[ direction ] }${ theme ? ` ${ themes[ theme ] }` : themes.light }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return (<button className={ `au-direction-link ${ directions[ direction ] }` } { ...attributeOptions }>{ text }</button> );
+		return (<button className={ `au-direction-link ${ directions[ direction ] }${ theme ? ` ${ themes[ theme ] }` : themes.light }` } { ...attributeOptions }>{ text }</button> );
 	}
 };
 
 DirectionLink.propTypes = {
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,
