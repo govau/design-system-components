@@ -16,6 +16,18 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
+/**
+ * All theme options
+ *
+ * @type {Object}
+ */
+const themes = {
+	light: '',
+	dark: 'au-cta-link--dark',
+};
+
+
 /**
  * DEFAULT
  * The cta link component
@@ -24,7 +36,7 @@ import PropTypes from 'prop-types';
  * @param  {string}   text    - The text of the CTA link
  * @param  {function} onClick - An optional function for onClick, optional
  */
-const CTALink = ({ link, text, onClick }) => {
+const CTALink = ({ theme, link, text, onClick }) => {
 	const attributeOptions = {};
 
 	if( typeof onClick !== 'undefined' ) {
@@ -32,14 +44,15 @@ const CTALink = ({ link, text, onClick }) => {
 	}
 
 	if( link ) {
-		return( <a className="au-cta-link" href={ link } { ...attributeOptions }>{ text }</a> );
+		return( <a className={ `au-cta-link${ theme ? ` ${ themes[ theme ] }` : themes.light }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return( <button className="au-cta-link" href={ link } { ...attributeOptions }>{ text }</button> );
+		return( <button className={ `au-cta-link${ theme ? ` ${ themes[ theme ] }` : themes.light }` } href={ link } { ...attributeOptions }>{ text }</button> );
 	}
 }
 
 CTALink.propTypes = {
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
