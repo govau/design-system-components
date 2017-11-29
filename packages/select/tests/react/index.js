@@ -23,7 +23,7 @@ class SelectWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<Select id="test1" onChange={ event => this.changeSelect( event.target.value ) } value={ this.state.select } options={[
+				<Select theme={ this.props.theme } id="test1" onChange={ event => this.changeSelect( event.target.value ) } value={ this.state.select } options={[
 					{
 						value: '',
 						text: 'Please select',
@@ -54,85 +54,165 @@ class SelectWrapper extends React.Component {
 
 
 ReactDOM.render(
-	<div>
+	<div className="split-wrapper">
+		<div className="split">
 		<h2>select default</h2>
-
-		<Select id="test2" options={[
-			{
-				value: '',
-				text: 'Please select',
-			},
-			{
-				value: '1',
-				text: 'Option 1',
-			},
-			{
-				value: '2',
-				text: 'Option 2',
-			},
-			{
-				value: '3',
-				text: 'Option 3',
-			},
-			{
-				value: '4',
-				text: 'Option 4',
-			},
-		]} />
-
-
-		<hr />
-		<h2>select block</h2>
-
-		<Select id="test3" block options={[
-			{
-				value: '',
-				text: 'Please select',
-			},
-			{
-				value: '1',
-				text: 'Option 1',
-			},
-			{
-				value: '2',
-				text: 'Option 2',
-			},
-			{
-				value: '3',
-				text: 'Option 3',
-			},
-			{
-				value: '4',
-				text: 'Option 4',
-			},
-		]} />
+			<Select id="test2" options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+				{
+					value: '4',
+					text: 'Option 4',
+				},
+			]} />
 
 
-		<hr />
-		<h2>select with onchange</h2>
+			<hr />
+			<h2>select block</h2>
 
-		<Select id="test4" onChange={ () => {
-			console.log('This function is called when the select input has changed');
-		} } options={[
-			{
-				value: '1',
-				text: 'Option 1',
-			},
-			{
-				value: '2',
-				text: 'Option 2',
-			},
-			{
-				value: '3',
-				text: 'Option 3',
-			},
-		]} />
+			<Select id="test3" block options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+				{
+					value: '4',
+					text: 'Option 4',
+				},
+			]} />
 
 
-		<hr />
-		<h2>select with state</h2>
+			<hr />
+			<h2>select with onchange</h2>
 
-		<SelectWrapper />
+			<Select id="test4" onChange={ () => {
+				console.log('This function is called when the select input has changed');
+			} } options={[
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+			]} />
+
+
+			<hr />
+			<h2>select with state</h2>
+
+			<SelectWrapper />
+		</div>
+		<div className="split split--dark">
+		<h2>select <code>--dark</code></h2>
+			<Select theme="dark" id="test2" options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+				{
+					value: '4',
+					text: 'Option 4',
+				},
+			]} />
+
+
+			<hr />
+			<h2>select block <code>--dark</code></h2>
+
+			<Select theme="dark" id="test3" block options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+				{
+					value: '4',
+					text: 'Option 4',
+				},
+			]} />
+
+
+			<hr />
+			<h2>select with onchange <code>--dark</code></h2>
+
+			<Select theme="dark" id="test4" onChange={ () => {
+				console.log('This function is called when the select input has changed');
+			} } options={[
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+			]} />
+
+
+			<hr />
+			<h2>select with state <code>--dark</code></h2>
+
+			<SelectWrapper theme="dark" />
+		</div>
 	</div>,
 
 	document.getElementById('root'),
