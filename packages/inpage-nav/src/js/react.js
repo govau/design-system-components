@@ -16,6 +16,7 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
 /**
  * The section component for the InpageNavLinks component
  *
@@ -48,13 +49,25 @@ InpageNavLinksItem.propTypes = {
 
 
 /**
+ * All theme options
+ *
+ * @type {Object}
+ */
+const themes = {
+	light: '',
+	dark: 'au-inpage-nav-links--dark',
+};
+
+
+/**
  * The inpage-nav component
  *
+ * @param  {string} theme    - Optional theme that can be either: light dark
  * @param  {string} title    - The title of the content link block, default: Contents
  * @param  {array}  sections - An array of objects of all sections, sample: { link: '', title: '', onClick: () }
  */
-export const InpageNavLinks = ({ title, sections }) => (
-	<nav className="au-inpage-nav-links">
+export const InpageNavLinks = ({ theme, title, sections }) => (
+	<nav className={ `au-inpage-nav-links ${ theme ? themes[ theme ] : themes.light }` }>
 		<h2 className="au-inpage-nav-links__heading au-display-sm">{ title }</h2>
 		<ul className="au-link-list">
 			{ sections.map( ( section, i ) => <InpageNavLinksItem key={ i } section={ section } /> ) }
