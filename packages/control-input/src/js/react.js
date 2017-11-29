@@ -16,9 +16,22 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
+/**
+ * All theme options
+ *
+ * @type {Object}
+ */
+const themes = {
+	light: '',
+	dark: 'au-control-input--dark',
+};
+
+
 /**
  * The checkbox component
  *
+ * @param  {string}   theme    - The colour theme of the component
  * @param  {string}   label    - The label
  * @param  {string}   name     - The name of the input element
  * @param  {string}   value    - The value of the input element
@@ -28,7 +41,7 @@ import PropTypes from 'prop-types';
  * @param  {boolean}  full     - The full variant option, optional
  * @param  {function} onChange - A callback for onChange, optional
  */
-export const Checkbox = ({ label, name, value, id, checked, disabled, full, onChange }) => {
+export const Checkbox = ({ theme, label, name, value, id, checked, disabled, full, onChange }) => {
 	const attributeOptions = {};
 
 	if( typeof id !== 'undefined' ) {
@@ -44,7 +57,7 @@ export const Checkbox = ({ label, name, value, id, checked, disabled, full, onCh
 	}
 
 	return (
-		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }` }>
+		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }${ theme ? ` ${ themes[ theme ] }` : themes.light }` }>
 			<input className="au-control-input__input" type="checkbox" name={ name } disabled={ disabled } { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
@@ -52,6 +65,7 @@ export const Checkbox = ({ label, name, value, id, checked, disabled, full, onCh
 };
 
 Checkbox.propTypes = {
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	value: PropTypes.string.isRequired,
@@ -66,6 +80,7 @@ Checkbox.propTypes = {
 /**
  * The radio component
  *
+ * @param  {string}   theme    - The colour theme of the component
  * @param  {string}   label    - The label
  * @param  {string}   name     - The name of the input element
  * @param  {string}   value    - The value of the input element
@@ -75,7 +90,7 @@ Checkbox.propTypes = {
  * @param  {boolean}  full     - The full variant option, optional
  * @param  {function} onChange - A callback for onChange, optional
  */
-export const Radio = ({ label, name, value, id, checked, disabled, full, onChange }) => {
+export const Radio = ({ theme, label, name, value, id, checked, disabled, full, onChange }) => {
 	const attributeOptions = {};
 
 	if( typeof id !== 'undefined' ) {
@@ -91,7 +106,7 @@ export const Radio = ({ label, name, value, id, checked, disabled, full, onChang
 	}
 
 	return (
-		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }` }>
+		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }${ theme ? ` ${ themes[ theme ] }` : themes.light }` }>
 			<input className="au-control-input__input" type="radio" name={ name } disabled={ disabled } { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
@@ -99,6 +114,7 @@ export const Radio = ({ label, name, value, id, checked, disabled, full, onChang
 };
 
 Radio.propTypes = {
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	value: PropTypes.string.isRequired,

@@ -8,7 +8,11 @@
 
 
 @media print {
-	.au-control-input__text:after {
-		display: none !important;
+	.au-control-input__text {
+		color: #000 !important;
+
+		&:after {
+			display: none !important;
+		}
 	}
 }

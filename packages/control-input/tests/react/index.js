@@ -24,7 +24,13 @@ class RadioList extends React.Component {
 			<div>
 				{ this.props.items.map( ( item, i ) =>
 					<p key={ i }>
-						<Radio label={ item.label } name={ this.props.name } full={ this.props.full } value={ item.value } disabled={ item.disabled }
+						<Radio
+							theme={ this.props.theme }
+							label={ item.label }
+							name={ this.props.name }
+							full={ this.props.full }
+							value={ item.value }
+							disabled={ item.disabled }
 							checked={ this.state.radio === item.value }
 							onChange={ () => {
 								this.setState({ radio: item.value });
@@ -60,7 +66,13 @@ class CheckboxList extends React.Component {
 			<div>
 				{ this.props.items.map( ( item, i ) =>
 					<p key={ i }>
-						<Checkbox label={ item.label } name={ this.props.name } full={ this.props.full } value={ item.value } disabled={ item.disabled }
+						<Checkbox
+							theme={ this.props.theme }
+							label={ item.label }
+							name={ this.props.name }
+							full={ this.props.full }
+							value={ item.value }
+							disabled={ item.disabled }
 							checked={ this.state[ item.value ] }
 							onChange={ () => {
 								this.setState({ [item.value]: !this.state[ item.value ] });
@@ -79,143 +91,143 @@ class CheckboxList extends React.Component {
 
 
 ReactDOM.render(
-	<div>
+	<div className="split-wrapper">
+		<div className="split">
 		<h2>checkboxes</h2>
-		<CheckboxList name="checkbox-ex" items={[
-			{
-				label: 'Phone',
-				value: 'phone',
-			},
-			{
-				label: 'Tablet',
-				value: 'tablet',
-				checked: true,
-			},
-			{
-				label: 'Laptop',
-				value: 'laptop',
-			},
-			{
-				label: 'Mobile',
-				value: 'mobile',
-			},
-			{
-				label: 'Fax',
-				value: 'fax',
-				disabled: true,
-				checked: true,
-			},
-		]} />
+			<CheckboxList name="checkbox-ex" items={[
+				{
+					label: 'Phone',
+					value: 'phone',
+				},
+				{
+					label: 'Tablet',
+					value: 'tablet',
+					checked: true,
+				},
+				{
+					label: 'Laptop',
+					value: 'laptop',
+				},
+				{
+					label: 'Mobile',
+					value: 'mobile',
+				},
+				{
+					label: 'Fax',
+					value: 'fax',
+					disabled: true,
+					checked: true,
+				},
+			]} />
 
 
-		<hr />
-		<h2>checkboxes variation <code>--full</code></h2>
-		<CheckboxList full name="checkbox-ex2" items={[
-			{
-				label: 'Phone',
-				value: 'phone',
-			},
-			{
-				label: 'Tablet',
-				value: 'tablet',
-				checked: true,
-			},
-			{
-				label: 'Laptop',
-				value: 'laptop',
-			},
-			{
-				label: 'Mobile',
-				value: 'mobile',
-			},
-			{
-				label: 'Fax',
-				value: 'fax',
-				disabled: true,
-				checked: true,
-			},
-		]} />
+			<hr />
+			<h2>radio buttons</h2>
+			<RadioList name="radio-ex" items={[
+				{
+					label: 'Yes',
+					value: 'yes',
+				},
+				{
+					label: 'Maybe',
+					value: 'maybe',
+				},
+				{
+					label: 'No',
+					value: 'no',
+				},
+				{
+					label: 'What',
+					value: 'what',
+					disabled: true,
+					checked: true,
+				},
+			]} />
 
 
-		<hr />
-		<h2>radio buttons</h2>
-		<RadioList name="radio-ex" items={[
-			{
-				label: 'Yes',
-				value: 'yes',
-			},
-			{
-				label: 'Maybe',
-				value: 'maybe',
-			},
-			{
-				label: 'No',
-				value: 'no',
-			},
-			{
-				label: 'What',
-				value: 'what',
-				disabled: true,
-				checked: true,
-			},
-		]} />
+			<hr />
+			<h2>control-inputs with <code>onChange</code></h2>
+
+			<CheckboxList name="checkbox-ex3" items={[
+				{
+					label: 'Phone',
+					value: 'phone',
+					onChange: () => { console.log('This function will run when the first checkbox is changed') },
+				},
+				{
+					label: 'Tablet',
+					value: 'tablet',
+					checked: true,
+					onChange: () => { console.log('This function will run when the second checkbox is changed') },
+				},
+			]} />
 
 
-		<hr />
-		<h2>radio buttons variation <code>--full</code></h2>
-		<RadioList full name="radio-ex2" items={[
-			{
-				label: 'Yes',
-				value: 'yes',
-			},
-			{
-				label: 'Maybe',
-				value: 'maybe',
-			},
-			{
-				label: 'No',
-				value: 'no',
-			},
-			{
-				label: 'What',
-				value: 'what',
-				disabled: true,
-				checked: true,
-			},
-		]} />
+			<RadioList name="radio-ex3" items={[
+				{
+					label: 'Yes',
+					value: 'yes',
+					onChange: () => { console.log('This function will run when the first radio button is changed') },
+				},
+				{
+					label: 'Maybe',
+					value: 'maybe',
+					onChange: () => { console.log('This function will run when the second radio button is changed') },
+				},
+			]} />
+		</div>
+		<div className="split split--dark">
+			<h2>checkboxes</h2>
+			<CheckboxList theme='dark' name="checkbox-ex" items={[
+				{
+					label: 'Phone',
+					value: 'phone',
+				},
+				{
+					label: 'Tablet',
+					value: 'tablet',
+					checked: true,
+				},
+				{
+					label: 'Laptop',
+					value: 'laptop',
+				},
+				{
+					label: 'Mobile',
+					value: 'mobile',
+				},
+				{
+					label: 'Fax',
+					value: 'fax',
+					disabled: true,
+					checked: true,
+				},
+			]} />
 
 
-		<hr />
-		<h2>control-inputs with <code>onChange</code></h2>
-
-		<CheckboxList name="checkbox-ex3" items={[
-			{
-				label: 'Phone',
-				value: 'phone',
-				onChange: () => { console.log('This function will run when the first checkbox is changed') },
-			},
-			{
-				label: 'Tablet',
-				value: 'tablet',
-				checked: true,
-				onChange: () => { console.log('This function will run when the second checkbox is changed') },
-			},
-		]} />
-
-
-		<RadioList name="radio-ex3" items={[
-			{
-				label: 'Yes',
-				value: 'yes',
-				onChange: () => { console.log('This function will run when the first radio button is changed') },
-			},
-			{
-				label: 'Maybe',
-				value: 'maybe',
-				onChange: () => { console.log('This function will run when the second radio button is changed') },
-			},
-		]} />
-
+			<hr />
+			<h2>radio buttons</h2>
+			<RadioList theme='dark' name="radio-ex" items={[
+				{
+					label: 'Yes',
+					value: 'yes',
+				},
+				{
+					label: 'Maybe',
+					value: 'maybe',
+				},
+				{
+					label: 'No',
+					value: 'no',
+				},
+				{
+					label: 'What',
+					value: 'what',
+					disabled: true,
+					checked: true,
+				},
+			]} />
+		</div>
 	</div>,
 
 	document.getElementById('root'),
