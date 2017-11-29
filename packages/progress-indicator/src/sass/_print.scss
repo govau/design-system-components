@@ -8,17 +8,17 @@
 
 
 @media print {
-	.progress-indicator {
+	.au-progress-indicator {
 		border-top-color: #000 !important;
 	}
 
-	.au-body .progress-indicator__link,
-	.progress-indicator__link {
+	.au-body .au-progress-indicator__link,
+	.au-progress-indicator__link {
 		border-bottom-color: #000 !important;
 		border-left-color: transparent !important;
 		padding-left: 6px !important;
 
-		&.progress-indicator__link--doing {
+		&.au-progress-indicator__link--doing {
 			border-left-color: #000 !important;
 		}
 

@@ -7,7 +7,7 @@ import ProgressIndicator from './progress-indicator.js';
 // Let’s show some dynamic interactions
 class ProgressIndicatorWrapper extends React.Component {
 
-	constructor() {
+	constructor( props ) {
 		super();
 
 		this.state = {
@@ -57,7 +57,7 @@ class ProgressIndicatorWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<ProgressIndicator items={ this.state.items } />
+				<ProgressIndicator theme={ this.props.theme } items={ this.state.items } />
 
 				<button type="button" onClick={ () => { this.changeStatus( 'Personal Infos', 'done' ) } }>Mark "Personal Infos" as done</button>
 				<button type="button" onClick={ () => { this.changeStatus( 'Spouses', 'doing' ) } }>Mark "Spouses" as doing</button>
@@ -69,76 +69,147 @@ class ProgressIndicatorWrapper extends React.Component {
 
 
 ReactDOM.render(
-	<div>
+	<div className="split-wrapper">
+		<div className="split au-body">
 		<h2>progress-indicator default</h2>
-
-		<ProgressIndicator items={[
-			{
-				link: '#url',
-				text: 'Introduction',
-				status: 'done',
-			},
-			{
-				link: '#url',
-				text: 'Business Contacts',
-				status: 'done',
-			},
-			{
-				link: '#url',
-				text: 'Case Studies',
-				status: 'todo',
-			},
-			{
-				link: '#url',
-				text: 'Personal Infos',
-				status: 'doing',
-			},
-			{
-				link: '#url',
-				text: 'Spouses',
-				status: 'todo',
-			},
-		]} />
-
-
-		<hr />
-		<h2>progress-indicator with no links and onClick</h2>
-
-		<ProgressIndicator items={[
-			{
-				text: 'Introduction',
-				status: 'done',
-				onClick: event => {
-					event.preventDefault();
-
-					console.log('This function runs when the first item is clicked');
+			<ProgressIndicator items={[
+				{
+					link: '#url',
+					text: 'Introduction',
+					status: 'done',
 				},
-			},
-			{
-				text: 'Business Contacts',
-				status: 'doing',
-				onClick: event => {
-					event.preventDefault();
-
-					console.log('This function runs when the second item is clicked');
+				{
+					link: '#url',
+					text: 'Business Contacts',
+					status: 'done',
 				},
-			},
-			{
-				text: 'Case Studies',
-				status: 'todo',
-				onClick: event => {
-					event.preventDefault();
-
-					console.log('This function runs when the third item is clicked');
+				{
+					link: '#url',
+					text: 'Case Studies',
+					status: 'todo',
 				},
-			},
-		]} />
+				{
+					link: '#url',
+					text: 'Personal Infos',
+					status: 'doing',
+				},
+				{
+					link: '#url',
+					text: 'Spouses',
+					status: 'todo',
+				},
+			]} />
 
 
-		<hr />
-		<h2>progress-indicator with state</h2>
+			<hr />
+			<h2>progress-indicator with no links and onClick</h2>
 
-		<ProgressIndicatorWrapper />
+			<ProgressIndicator items={[
+				{
+					text: 'Introduction',
+					status: 'done',
+					onClick: event => {
+						event.preventDefault();
+
+						console.log('This function runs when the first item is clicked');
+					},
+				},
+				{
+					text: 'Business Contacts',
+					status: 'doing',
+					onClick: event => {
+						event.preventDefault();
+
+						console.log('This function runs when the second item is clicked');
+					},
+				},
+				{
+					text: 'Case Studies',
+					status: 'todo',
+					onClick: event => {
+						event.preventDefault();
+
+						console.log('This function runs when the third item is clicked');
+					},
+				},
+			]} />
+
+
+			<hr />
+			<h2>progress-indicator with state</h2>
+
+			<ProgressIndicatorWrapper />
+		</div>
+		<div className="split au-body au-body--dark">
+		<h2>progress-indicator <code>--dark</code></h2>
+			<ProgressIndicator theme="dark" items={[
+				{
+					link: '#url',
+					text: 'Introduction',
+					status: 'done',
+				},
+				{
+					link: '#url',
+					text: 'Business Contacts',
+					status: 'done',
+				},
+				{
+					link: '#url',
+					text: 'Case Studies',
+					status: 'todo',
+				},
+				{
+					link: '#url',
+					text: 'Personal Infos',
+					status: 'doing',
+				},
+				{
+					link: '#url',
+					text: 'Spouses',
+					status: 'todo',
+				},
+			]} />
+
+
+			<hr />
+			<h2>progress-indicator with no links and onClick <code>--dark</code></h2>
+
+			<ProgressIndicator theme="dark" items={[
+				{
+					text: 'Introduction',
+					status: 'done',
+					onClick: event => {
+						event.preventDefault();
+
+						console.log('This function runs when the first item is clicked');
+					},
+				},
+				{
+					text: 'Business Contacts',
+					status: 'doing',
+					onClick: event => {
+						event.preventDefault();
+
+						console.log('This function runs when the second item is clicked');
+					},
+				},
+				{
+					text: 'Case Studies',
+					status: 'todo',
+					onClick: event => {
+						event.preventDefault();
+
+						console.log('This function runs when the third item is clicked');
+					},
+				},
+			]} />
+
+
+			<hr />
+			<h2>progress-indicator with state <code>--dark</code></h2>
+
+			<ProgressIndicatorWrapper theme="dark" />
+		</div>
 	</div>,
 
 	document.getElementById('root'),

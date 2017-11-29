@@ -15,8 +15,8 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // progress indicator
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.au-body .progress-indicator,
-.progress-indicator {
+.au-body .au-progress-indicator,
+.au-progress-indicator {
 	@include AU-space( margin, 0 0 1 0 );
 	font-family: $AU-font;
 	list-style: none;
@@ -28,8 +28,8 @@
 	}
 }
 
-.au-body .progress-indicator__link,
-.progress-indicator__link {
+.au-body .au-progress-indicator__link,
+.au-progress-indicator__link {
 	@include AU-fontsize( sm, heading );
 	@include AU-space( padding, .75 .75 .75 2.75 );
 	position: relative;
@@ -75,7 +75,7 @@
 		}
 	}
 
-	&.progress-indicator__link--doing {
+	&.au-progress-indicator__link--doing {
 		border-left-color: $AU-color-Action;
 		font-weight: bold;
 
@@ -96,7 +96,7 @@
 		}
 	}
 
-	&.progress-indicator__link--done {
+	&.au-progress-indicator__link--done {
 		&:after {
 			background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path fill="#{ $AU-color-Action }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>
@@ -118,19 +118,19 @@
 	}
 }
 
-.progress-indicator__status {
+.au-progress-indicator__status {
 	@include AU-fontsize( xs, heading );
 	display: block;
 	font-weight: normal;
 	color: $AU-color-Muted;
 }
 
-.au-body--dark .progress-indicator--dark,
-.progress-indicator--dark {
+.au-body--dark .au-progress-indicator--dark,
+.au-progress-indicator--dark {
 	border-color: $AU-colordark-Border;
 
-	.progress-indicator__link,
-	.au-body--dark .progress-indicator__link & {
+	.au-progress-indicator__link,
+	.au-body--dark .au-progress-indicator__link & {
 		color: $AU-colordark-Text;
 		border-bottom-color: $AU-colordark-Border;
 
@@ -147,7 +147,7 @@
 			</svg>');
 		}
 
-		&.progress-indicator__link--done:after {
+		&.au-progress-indicator__link--done:after {
 			background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path fill="#{ $AU-colordark-Action }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>
 					<path fill="#{ $AU-colordark-Action }" d="M18.744186,9.23753281 C18.744186,9.48293963 18.6627907,9.71391076 18.5,9.88713911 L11.3895349,17.7257218
@@ -159,7 +159,7 @@
 				</svg>');
 		}
 
-		&.progress-indicator__link--doing {
+		&.au-progress-indicator__link--doing {
 			border-left-color: $AU-colordark-Action;
 
 			&:after {
@@ -173,7 +173,7 @@
 		}
 	}
 
-	.progress-indicator__status {
+	.au-progress-indicator__status {
 		color: $AU-colordark-Muted;
 	}
 }

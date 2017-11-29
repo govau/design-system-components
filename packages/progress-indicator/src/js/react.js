@@ -47,12 +47,12 @@ export const ProgressIndicatorItem = ({ item }) => {
 	return (
 		<li>
 			{ item.link
-				? <a className={`progress-indicator__link progress-indicator__link--${ item.status }`} href={ item.link } { ...attributeOptions }>
-						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
+				? <a className={`au-progress-indicator__link au-progress-indicator__link--${ item.status }`} href={ item.link } { ...attributeOptions }>
+						<span className="au-progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
 						{ item.text }
 					</a>
-				: <button className={`progress-indicator__link progress-indicator__link--${ item.status }`} { ...attributeOptions }>
-						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
+				: <button className={`au-progress-indicator__link au-progress-indicator__link--${ item.status }`} { ...attributeOptions }>
+						<span className="au-progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
 						{ item.text }
 					</button>
 			}
@@ -72,18 +72,31 @@ ProgressIndicatorItem.propTypes = {
 
 
 /**
+ * All theme options
+ *
+ * @type {Object}
+ */
+const themes = {
+	light: '',
+	dark: 'au-progress-indicator--dark',
+};
+
+
+/**
  * DEFAULT
  * The progress-indicator component
  *
- * @param  {array} items - All items for this progress indicator
+ * @param  {string} theme - The colour theme of the component
+ * @param  {array}  items - All items for this progress indicator
  */
-const ProgressIndicator = ({ items }) => (
-	<ul className="progress-indicator">
+const ProgressIndicator = ({ theme, items }) => (
+	<ul className={ `au-progress-indicator ${ theme ? themes[ theme ] : themes.light }` }>
 		{ items.map( ( item, i ) => <ProgressIndicatorItem key={ i } item={ item } /> ) }
 	</ul>
 );
 
 ProgressIndicator.propTypes = {
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
