@@ -76,6 +76,7 @@ export const InpageNavLinks = ({ theme, title, sections }) => (
 );
 
 InpageNavLinks.propTypes = {
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	title: PropTypes.string.isRequired,
 	sections: PropTypes.arrayOf(
 		PropTypes.shape({
