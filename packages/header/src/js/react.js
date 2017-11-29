@@ -22,8 +22,10 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const themes = {
-	light: 'au-header--light',
+	light: '',
+	alt: 'au-header--alt',
 	dark: 'au-header--dark',
+	altdark: 'au-header--altdark',
 };
 
 /**
@@ -41,7 +43,7 @@ const Header = ({ title, level, subline, hero, theme, children }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<div className={`au-header${ hero ? ' au-header--hero' : '' }${ theme ? ` ${ themes[ theme ] }` : '' }`} role="banner">
+		<div className={`au-header${ hero ? ' au-header--hero' : '' } ${ theme ? themes[ theme ] : themes.light }`} role="banner">
 			<HeadingTag className="au-header-heading">{ title }</HeadingTag>
 			{ subline && <span className="au-header-subline">{ subline }</span> }
 			{ children }
@@ -54,7 +56,7 @@ Header.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 	subline: PropTypes.node,
 	hero: PropTypes.bool,
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	theme: PropTypes.oneOf([ 'light', 'alt', 'dark', 'altdark' ]),
 	children: PropTypes.node,
 };
 

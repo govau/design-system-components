@@ -48,7 +48,8 @@
 		background-color:  $AU-colordark-Background-light;
 	}
 
-	&.au-header--dark.au-header--alt {
+	&.au-header--altdark {
+		color: $AU-colordark-Text;
 		background-color:  $AU-colordark-Background-dark;
 	}
 }
