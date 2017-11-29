@@ -35,9 +35,9 @@ const themes = {
  * DEFAULT
  * The breadcrumbs component
  *
- * @param  {boolean} theme - The colour theme of the component
- * @param  {string}  label - The aria label of the component
- * @param  {array}   items - Items inside the breadcrumbs passed on to LinkList
+ * @param  {string} theme - The colour theme of the component
+ * @param  {string} label - The aria label of the component
+ * @param  {array}  items - Items inside the breadcrumbs passed on to LinkList
  */
 const Breadcrumbs = ({ theme, label, items }) => (
 	<nav className={ `au-breadcrumbs${ theme ? ` ${ themes[ theme ] }` : themes.light }` } aria-label={ label }>

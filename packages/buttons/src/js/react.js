@@ -46,7 +46,7 @@ const themes = {
  *
  * @param  {string}    text     - The text of the button
  * @param  {string}    as       - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
- * @param  {boolean}   theme    - The colour theme of the component
+ * @param  {string}    theme    - The colour theme of the component
  * @param  {string}    type     - The type attribute, default: 'button', optional
  * @param  {string}    id       - The ID attribute, optional
  * @param  {boolean}   disabled - The disabled option, optional
