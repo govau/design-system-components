@@ -12,9 +12,11 @@
 		background-color: #fff !important;
 		border: 2px solid #000 !important;
 		color: #000 !important;
+		text-decoration: none !important;
 
 		&:disabled {
 			background-color: #ccc !important;
+			border: 2px solid #ccc !important;
 		}
 	}
 }
