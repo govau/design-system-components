@@ -23,6 +23,7 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const themes = {
+	light: '',
 	dark: 'au-accordion--dark',
 };
 
@@ -83,7 +84,7 @@ class Accordion extends React.PureComponent {
 
 	render() {
 		return (
-			<div className={ `au-accordion${ this.props.theme ? ` ${ themes[ this.props.theme ] }` : '' }` }>
+			<div className={ `au-accordion${ this.props.theme ? ` ${ themes[ this.props.theme ] }` : themes.light }` }>
 				<a href={`#${ this.ID }`}
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
@@ -121,7 +122,7 @@ Accordion.propTypes = {
 	header: PropTypes.string.isRequired,
 	open: PropTypes.bool,
 	speed: PropTypes.number,
-	theme: PropTypes.oneOf([ 'dark' ]),
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 	onOpen: PropTypes.func,
 	afterOpen: PropTypes.func,
 	onClose: PropTypes.func,

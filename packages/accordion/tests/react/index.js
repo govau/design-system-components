@@ -68,10 +68,9 @@ class App extends React.Component {
 
 				<hr />
 
-				<h2>Default accordion</h2>
-
 				<div className="split-wrapper">
 					<div className="split">
+						<h2>Default accordion</h2>
 						<Accordion header="Open and close me">
 							Some content of the accordion <a href="#url">here</a> :)
 						</Accordion>
@@ -111,18 +110,19 @@ class App extends React.Component {
 
 
 						<hr />
-						<h2>Accordions statefull</h2>
+						<h2>Accordions statefull </h2>
 
 						<AccodionWrapper/>
 					</div>
 					<div className="split split--dark">
+						<h2>Default accordion <code>--dark</code></h2>
 						<Accordion theme="dark" header="Open and close me">
 							Some content of the accordion <a href="#url">here</a> :)
 						</Accordion>
 
 
 						<hr />
-						<h2>Accordions with open/close props</h2>
+						<h2>Accordions with open/close props <code>--dark</code></h2>
 
 						<Accordion theme="dark" header="Closed">
 							Some content of the accordion <a href="#url">here</a> :D
@@ -134,7 +134,7 @@ class App extends React.Component {
 
 
 						<hr />
-						<h2>Accordions slow</h2>
+						<h2>Accordions slow <code>--dark</code></h2>
 
 						<Accordion theme="dark" header="Slow accordion" speed={ 1000 }>
 							Some content of the accordion <a href="#url">here</a> :D
@@ -142,7 +142,7 @@ class App extends React.Component {
 
 
 						<hr />
-						<h2>Accordions with custom functions</h2>
+						<h2>Accordions with custom functions <code>--dark</code></h2>
 
 						<Accordion theme="dark" header="With custom function"
 							onOpen={ () => { console.log('This function will run when the accordion opens'); } }
