@@ -9,6 +9,7 @@
 
 @media print {
 	.au-breadcrumbs > .au-link-list > li:after {
-		border-color: #000 !important;
+		content: ">" !important;
+		background-image: none !important;
 	}
 }
