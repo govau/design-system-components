@@ -16,6 +16,19 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
+/**
+ * All theme options
+ *
+ * @type {Object}
+ */
+const themes = {
+	light: '',
+	dark: 'au-footer--dark',
+};
+
+
+
 /**
  * A section for the footer that contains navigational elements
  *
@@ -54,14 +67,15 @@ FooterEnd.propTypes = {
  *
  * @param  {node} children - The inside of this section
  */
-const Footer = ({ children }) => (
-	<footer className="au-footer" role="contentinfo">
+const Footer = ({ theme, children }) => (
+	<footer className={ `au-footer ${ theme ? themes[ theme ] : themes.light }`} role="contentinfo">
 		{ children }
 	</footer>
 );
 
 Footer.propTypes = {
 	children: PropTypes.node.isRequired,
+	theme: PropTypes.oneOf([ 'light', 'dark' ]),
 };
 
 export default Footer;
