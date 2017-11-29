@@ -36,7 +36,7 @@ const themes = {
  * @param  {string} children    - Anything inside
  */
 export const Callout = ({ theme, description, children }) => (
-	<section className={ `au-callout${ theme ? ` ${ themes[ theme ] }` : themes.light }` } aria-label={ description }>
+	<section className={ `au-callout ${ theme ? themes[ theme ] : themes.light }` } aria-label={ description }>
 		{ children }
 	</section>
 );
@@ -58,7 +58,7 @@ Callout.propTypes = {
  * @param  {string} name        - The name of the event, optional
  */
 export const CalloutCalendar = ({ theme, description, subline, datetime, time, name }) => (
-	<section className={ `au-callout au-callout--calendar-event${ theme ? ` ${ themes[ theme ] }` : themes.light }` } aria-label={ description }>
+	<section className={ `au-callout au-callout--calendar-event ${ theme ? themes[ theme ] : themes.light }` } aria-label={ description }>
 		{ subline && <span className="au-callout--calendar-event__lede">{ subline }</span> }
 		<time className="au-callout--calendar-event__time" dateTime={ new Date( datetime ).toJSON() }>{ time }</time>
 		{ name && <span className="au-callout--calendar-event__name">{ name }</span> }

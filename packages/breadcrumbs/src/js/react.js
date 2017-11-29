@@ -40,7 +40,7 @@ const themes = {
  * @param  {array}  items - Items inside the breadcrumbs passed on to LinkList
  */
 const Breadcrumbs = ({ theme, label, items }) => (
-	<nav className={ `au-breadcrumbs${ theme ? ` ${ themes[ theme ] }` : themes.light }` } aria-label={ label }>
+	<nav className={ `au-breadcrumbs ${ theme ? themes[ theme ] : themes.light }` } aria-label={ label }>
 		<LinkList inverted={ theme } inline items={ items } />
 	</nav>
 );
