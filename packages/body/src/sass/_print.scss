@@ -9,7 +9,9 @@
 
 @media print {
 	.au-body {
-		* {
+
+		*,
+		& {
 			text-shadow: none !important;
 			color: #000 !important;
 			background: #fff !important;
