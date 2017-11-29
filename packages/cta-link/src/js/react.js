@@ -32,6 +32,7 @@ const themes = {
  * DEFAULT
  * The cta link component
  *
+ * @param  {string}   theme   - The colour theme of the component
  * @param  {string}   link    - The link target, if not supplied this will render as a button, optional
  * @param  {string}   text    - The text of the CTA link
  * @param  {function} onClick - An optional function for onClick, optional
