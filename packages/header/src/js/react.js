@@ -36,7 +36,7 @@ const themes = {
  * @param  {string}  level    - The tag level (<h1/> <h2/> etc), default: '1'
  * @param  {string}  subline  - An optional subline, optional
  * @param  {boolean} hero     - The hero option, optional
- * @param  {string}  theme    - Optional theme that can be either: light dark, optional
+ * @param  {string}  theme    - Optional theme that can be either: light, alt, dark, darkalt, optional
  * @param  {node}    children - The inside of this section
  */
 const Header = ({ title, level, subline, hero, theme, children }) => {
