@@ -5,37 +5,69 @@ import PageAlert from './page-alerts.js';
 
 
 ReactDOM.render(
-	<div>
-		<h2><code>--info</code> variant</h2>
+	<div className="split-wrapper">
+		<div className="split">
+			<h2><code>--info</code> variant</h2>
 
-		<PageAlert as='info'>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-		</PageAlert>
-
-
-		<hr />
-		<h2><code>--success</code> variant</h2>
-
-		<PageAlert as='success'>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-		</PageAlert>
+			<PageAlert as='info'>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+			</PageAlert>
 
 
-		<hr />
-		<h2><code>--warning</code> variant</h2>
+			<hr />
+			<h2><code>--success</code> variant</h2>
 
-		<PageAlert as='warning'>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-		</PageAlert>
+			<PageAlert as='success'>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+			</PageAlert>
 
 
-		<hr />
-		<h2><code>--error</code> variant</h2>
+			<hr />
+			<h2><code>--warning</code> variant</h2>
 
-		<PageAlert as='error'>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-		</PageAlert>
+			<PageAlert as='warning'>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+			</PageAlert>
 
+
+			<hr />
+			<h2><code>--error</code> variant</h2>
+
+			<PageAlert as='error'>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+			</PageAlert>
+		</div>
+		<div className="split split--dark">
+			<h2><code>--info</code> variant</h2>
+
+			<PageAlert as='info'>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+			</PageAlert>
+
+
+			<hr />
+			<h2><code>--success</code> variant</h2>
+
+			<PageAlert as='success'>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+			</PageAlert>
+
+
+			<hr />
+			<h2><code>--warning</code> variant</h2>
+
+			<PageAlert as='warning'>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+			</PageAlert>
+
+
+			<hr />
+			<h2><code>--error</code> variant</h2>
+
+			<PageAlert as='error'>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+			</PageAlert>
+		</div>
 	</div>,
 
 	document.getElementById('root'),
