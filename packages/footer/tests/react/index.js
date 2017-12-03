@@ -61,8 +61,8 @@ ReactDOM.render(
 
 		<div className="au-grid au-body">
 			<Footer>
-				<FooterNav>
-					<div className="row">
+				<div className="container">
+					<FooterNav className="row">
 						<div className="col-md-3 col-sm-6">
 							<h3 className="au-display-1">Section</h3>
 							<ul className="au-link-list">
@@ -98,11 +98,9 @@ ReactDOM.render(
 								<li><a href="#">Link 3</a></li>
 							</ul>
 						</div>
-					</div>
-				</FooterNav>
+					</FooterNav>
 
-				<FooterEnd>
-					<div className="row">
+					<FooterEnd className="row">
 						<div className="col-sm-12">
 							<p>Footer text</p>
 
@@ -110,8 +108,8 @@ ReactDOM.render(
 
 							<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
 						</div>
-					</div>
-				</FooterEnd>
+					</FooterEnd>
+				</div>
 			</Footer>
 		</div>
 
@@ -170,8 +168,8 @@ ReactDOM.render(
 
 		<div className="au-grid au-body au-body--dark">
 			<Footer theme="dark">
-				<FooterNav>
-					<div className="row">
+				<div className="container">
+					<FooterNav className="row">
 						<div className="col-md-3 col-sm-6">
 							<h3 className="au-display-1">Section</h3>
 							<ul className="au-link-list">
@@ -207,11 +205,9 @@ ReactDOM.render(
 								<li><a href="#">Link 3</a></li>
 							</ul>
 						</div>
-					</div>
-				</FooterNav>
+					</FooterNav>
 
-				<FooterEnd>
-					<div className="row">
+					<FooterEnd className="row">
 						<div className="col-sm-12">
 							<p>Footer text</p>
 
@@ -219,8 +215,8 @@ ReactDOM.render(
 
 							<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
 						</div>
-					</div>
-				</FooterEnd>
+					</FooterEnd>
+				</div>
 			</Footer>
 		</div>
 	</div>,
