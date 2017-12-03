@@ -108,26 +108,26 @@ ReactDOM.render(
 			<h2>inpage-nav</h2>
 			<InpageNavLinks theme="dark" sections={[
 				{
-					link: 'section1',
+					link: 'sectiondark1',
 					title: 'Section 1',
 				},
 				{
-					link: 'section2',
+					link: 'sectiondark2',
 					title: 'Section 2',
 				},
 				{
-					link: 'section3',
+					link: 'sectiondark3',
 					title: 'Section 3 with onClick',
 					onClick: () => console.log('This function is called when the third item is clicked'),
 				},
 				{
-					link: 'section4',
+					link: 'sectiondark4',
 					title: 'Section 4 with onClick',
 					onClick: () => console.log('This function is called when the forth item is clicked'),
 				},
 			]} />
 
-			<InpageNavSection title="Section 1 headline" link="section1">
+			<InpageNavSection title="Section 1 headline" link="sectiondark1">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio fuga adipisci aliquid ut rerum mollitia commodi eligendi, asperiores nostrum
 					unde blanditiis eveniet impedit labore, <a href="#link">temporibus exercitationem</a>, provident ab fugit? Lorem ipsum dolor sit amet, consectetur
@@ -141,7 +141,7 @@ ReactDOM.render(
 				</p>
 			</InpageNavSection>
 
-			<InpageNavSection title="Section 2 headline with different level" link="section2" level="5">
+			<InpageNavSection title="Section 2 headline with different level" link="sectiondark2" level="5">
 				<p>
 					Voluptate commodi, labore sapiente natus iste facilis eaque harum fuga recusandae dolores laborum iusto perspiciatis, numquam dignissimos blanditiis
 					alias impedit ipsa. Unde?
@@ -161,7 +161,7 @@ ReactDOM.render(
 				</p>
 			</InpageNavSection>
 
-			<InpageNavSection title="Section 3 headline with headingClass" link="section3" headingClass="au-display-3">
+			<InpageNavSection title="Section 3 headline with headingClass" link="sectiondark3" headingClass="au-display-3">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, molestiae blanditiis, enim unde laudantium voluptate fuga excepturi explicabo quae, nulla
 					dolorum, ea doloribus ducimus. Nesciunt eveniet ab a nobis perferendis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi, dolorem
@@ -193,7 +193,7 @@ ReactDOM.render(
 
 			<InpageNavSection
 				title="Section 4 with changed section link and onClick"
-				link="section4"
+				link="sectiondark4"
 				sectionLink="Different sectionLink text"
 				sectionLinkOnClick={ () => console.log('This function is called when the section link is clicked') }
 			>
