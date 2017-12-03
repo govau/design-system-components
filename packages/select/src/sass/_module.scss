@@ -96,6 +96,13 @@
 	.ie9 & {
 		@include AU-space( padding-right, .25 );
 	}
+
+	// Moz hacks
+	// https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
+	&:-moz-focusring {
+	    color: transparent;
+	    text-shadow: 0 0 0 #000;
+	}
 }
 
 .au-select--dark .au-select__element {
