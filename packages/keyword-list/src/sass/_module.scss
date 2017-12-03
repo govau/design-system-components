@@ -37,6 +37,11 @@
 .au-keyword-list__item {
 	@include AU-fontsize( lg );
 	font-weight: bold;
+
+	// Display the link as block as focus doesn't show
+	& > a {
+		display: block;
+	}
 }
 
 .au-keyword-list__item__small {
