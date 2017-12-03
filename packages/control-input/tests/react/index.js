@@ -148,7 +148,7 @@ ReactDOM.render(
 			<hr />
 			<h2>control-inputs with <code>onChange</code></h2>
 
-			<CheckboxList name="checkbox-ex3" items={[
+			<CheckboxList name="checkbox-ex2" items={[
 				{
 					label: 'Phone',
 					value: 'phone',
@@ -163,7 +163,7 @@ ReactDOM.render(
 			]} />
 
 
-			<RadioList name="radio-ex3" items={[
+			<RadioList name="radio-ex2" items={[
 				{
 					label: 'Yes',
 					value: 'yes',
@@ -178,7 +178,7 @@ ReactDOM.render(
 		</div>
 		<div className="split split--dark">
 			<h2>checkboxes</h2>
-			<CheckboxList theme='dark' name="checkbox-ex" items={[
+			<CheckboxList theme='dark' name="checkbox-ex3" items={[
 				{
 					label: 'Phone',
 					value: 'phone',
@@ -207,7 +207,7 @@ ReactDOM.render(
 
 			<hr />
 			<h2>radio buttons</h2>
-			<RadioList theme='dark' name="radio-ex" items={[
+			<RadioList theme='dark' name="radio-ex3" items={[
 				{
 					label: 'Yes',
 					value: 'yes',
