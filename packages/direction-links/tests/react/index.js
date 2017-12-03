@@ -5,7 +5,7 @@ import DirectionLink from './direction-links.js';
 
 
 ReactDOM.render(
-	<div class="split-wrapper">
+	<div className="split-wrapper">
 		<div className="split">
 			<h2>bare</h2>
 			<DirectionLink link="#url" text="Continue" />
