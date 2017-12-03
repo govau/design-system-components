@@ -58,7 +58,7 @@
 }
 
 .au-select__element {
-	@include AU-fontsize( sm, nospace );
+	@include AU-fontsize( sm );
 	@include AU-space( padding, .75 2.25 .75 .75 );
 	position: relative;
 	z-index: 1;

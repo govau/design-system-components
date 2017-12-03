@@ -44,7 +44,7 @@
  * - :disabled/[disabled]
  */
 .au-text-input {
-	@include AU-fontsize ( sm, nospace );
+	@include AU-fontsize ( sm );
 	@include AU-space( padding, .75 1 );
 	border: 3px solid $AU-color-Border;
 	background-color: $AU-color-Background-light;
