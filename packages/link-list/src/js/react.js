@@ -63,14 +63,13 @@ LinkListItem.propTypes = {
  * @param  {boolean} inverted - Inline option, optional
  * @param  {array}   items    - All items inside the link list to be passed to LinkListItem, format: { link: '', text: '', onClick: () }
  */
-const LinkList = ({ inverted, inline, items }) => (
-	<ul className={ `au-link-list${ inverted ? ' au-link-list--inverted' : '' }${ inline ? ' au-link-list--inline' : '' }` }>
+const LinkList = ({ inline, items }) => (
+	<ul className={ `au-link-list${ inline ? ' au-link-list--inline' : '' }` }>
 		{ items.map( ( item, i ) => <LinkListItem key={ i } item={ item } /> ) }
 	</ul>
 );
 
 LinkList.propTypes = {
-	inverted: PropTypes.bool,
 	inline: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
