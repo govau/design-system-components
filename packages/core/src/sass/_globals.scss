@@ -597,6 +597,11 @@ $dependencies: (
 	&:focus {
 		@include AU-outline( $theme );
 	}
+	// Remove Modzilla inner HTML dotted line.
+	// https://github.com/necolas/normalize.css/blob/master/normalize.css#L285
+	&::-moz-focus-inner {
+		border: 0;
+	}
 }
 
 
