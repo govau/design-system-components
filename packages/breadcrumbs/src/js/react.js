@@ -41,7 +41,7 @@ const themes = {
  */
 const Breadcrumbs = ({ theme, label, items }) => (
 	<nav className={ `au-breadcrumbs ${ theme ? themes[ theme ] : themes.light }` } aria-label={ label }>
-		<LinkList inverted={ theme } inline items={ items } />
+		<LinkList inline items={ items } />
 	</nav>
 );
 
