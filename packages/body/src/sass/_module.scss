@@ -99,14 +99,14 @@
 	 */
 	mark {
 		color: $AU-color-Text;
-		background-color: rgba( $AU-color-Action, 0.3 );
+		background-color: mix( $AU-color-Warning, $AU-color-Background-light, 30% );
 	}
 
 	/**
 	 * Text selection styling
 	 */
 	::selection {
-		background-color: rgba( $AU-color-Action, 0.3 );
+		background-color: mix( $AU-color-Warning, $AU-color-Background-light, 30% );
 	}
 
 	/**
@@ -359,7 +359,7 @@
 	}
 
 	mark {
-		background-color: rgba( $AU-colordark-Action, 0.3 );
+		background-color: mix( $AU-color-Warning, $AU-colordark-Background-light, 30% );
 		color: $AU-colordark-Text;
 	}
 
