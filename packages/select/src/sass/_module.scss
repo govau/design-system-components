@@ -72,6 +72,7 @@
 	border-radius: $AU-border-radius;
 	box-sizing: border-box;
 	cursor: pointer;
+	margin: 0; // Remove margin for useragent styles that browsers add ( safari ), layout margins should go on .au-select
 
 	@include AU-focus();
 
@@ -80,11 +81,12 @@
 		outline-offset: 0;
 	}
 
+	// Hide the arrow on disabled, because we can't change parent element styles
 	&:disabled {
 		cursor: not-allowed;
-		background-color: rgba( $AU-color-Background, 0.7 );
+		background-color: $AU-color-Background;
 		color: $AU-color-Muted;
-		border-color: rgba( $AU-color-Background, 0.7 );
+		border-color: $AU-color-Background;
 	}
 
 	//ie hacks
@@ -101,13 +103,12 @@
 
 .au-select--dark .au-select__element {
 	border-color: $AU-colordark-Text;
-
 	@include AU-focus( 'dark' );
 
 	&:disabled {
-		background-color: $AU-colordark-Background-dark;
+		background-color: $AU-colordark-Background;
 		color: $AU-colordark-Muted;
-		border-color: $AU-colordark-Background-dark;
+		border-color: $AU-colordark-Background;
 	}
 }
 
