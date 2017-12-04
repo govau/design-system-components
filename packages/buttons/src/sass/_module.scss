@@ -23,7 +23,7 @@
  */
 .au-btn {
 	@include AU-fontsize ( sm );
-	@include AU-space( padding, .75 2 );
+	@include AU-space( padding, 0.75unit 2unit );
 	display: inline-block;
 	appearance: none;
 	font-family: $AU-font;
@@ -126,6 +126,6 @@
 
 	// If it follows another au-btn--block
 	& + .au-btn--block {
-		@include AU-space( margin-top, 0.25 );
+		@include AU-space( margin-top, 0.25unit );
 	}
 }

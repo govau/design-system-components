@@ -18,7 +18,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-tags {
 	@include AU-fontsize( sm );
-	@include AU-space ( margin-bottom, .5 );
+	@include AU-space ( margin-bottom, 0.5unit );
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -26,7 +26,7 @@
 	color: $AU-color-Text;
 
 	.au-body & {
-		@include AU-space ( margin-bottom, .25 );
+		@include AU-space ( margin-bottom, 0.25unit );
 		padding-left: 0;
 	}
 
@@ -34,27 +34,27 @@
 		display: inline-block;
 
 		.au-body & {
-			@include AU-space ( margin-bottom, .25 );
+			@include AU-space ( margin-bottom, 0.25unit );
 		}
 	}
 }
 
 .au-tags__item {
-	@include AU-space ( margin, 0 .25 .5 0 );
-	@include AU-space ( padding, 0 .5 );
+	@include AU-space ( margin, 0 0.25unit 0.5unit 0 );
+	@include AU-space ( padding, 0 0.5unit );
 	border: 1px solid $AU-color-Action;
 	border-radius: $AU-border-radius;
 	display: inline-block;
 
 	.au-body & {
-		@include AU-space ( margin-bottom, .25 );
-		@include AU-space ( padding-left, .5 );
+		@include AU-space ( margin-bottom, 0.25unit );
+		@include AU-space ( padding-left, 0.5unit );
 	}
 
 	> a,
 	> button {
-		@include AU-space ( margin, 0 -.5 ); // Negative value to pull a/button out to same size as container
-		@include AU-space ( padding, 0 .5 );
+		@include AU-space ( margin, 0 -0.5unit ); // Negative value to pull a/button out to same size as container
+		@include AU-space ( padding, 0 0.5unit );
 		color: $AU-color-Action;
 		display: inline-block;
 		border-radius: $AU-border-radius;

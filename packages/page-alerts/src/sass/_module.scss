@@ -21,13 +21,13 @@
 // Page alert defaults to info
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-page-alerts {
-	@include AU-space( margin, 1 0 );
-	@include AU-space( padding, 1 );
+	@include AU-space( margin, 1unit 0 );
+	@include AU-space( padding, 1unit );
 	@include AU-fontsize( sm );
 	font-family: $AU-font;
 	position: relative;
 	border: solid 3px $AU-color-Info;
-	@include AU-space( border-left-width, 3 );
+	@include AU-space( border-left-width, 3unit );
 	border-radius: $AU-border-radius;
 	max-width: $AU-maxwidth;
 
@@ -40,11 +40,11 @@
 	}
 
 	&:after {
-		@include AU-space( left, -2.5 );
-		@include AU-space( border-left-width, -1 );
-		@include AU-space( width, 2 );
-		@include AU-space( height, 2 );
-		@include AU-space( margin-top, -1 );
+		@include AU-space( left, -2.5unit );
+		@include AU-space( border-left-width, -1unit );
+		@include AU-space( width, 2unit );
+		@include AU-space( height, 2unit );
+		@include AU-space( margin-top, -1unit );
 		content: ' ';
 		position: absolute;
 		display: block;

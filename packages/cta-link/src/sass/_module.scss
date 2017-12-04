@@ -16,7 +16,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-cta-link {
 	@include AU-fontsize( md );
-	@include AU-space( margin-bottom, 1 );
+	@include AU-space( margin-bottom, 1unit );
 	appearance: none;
 	padding: 0;
 	display: inline-block;
@@ -35,9 +35,9 @@
 	@include AU-focus();
 
 	&:after {
-		@include AU-space( width, 1 );
-		@include AU-space( height, 1 );
-		@include AU-space( margin, 0 0.25 0 0.25 );
+		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
+		@include AU-space( margin, 0unit 0.25unit 0unit 0.25unit );
 		content: ' ';
 		display: inline-block;
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">

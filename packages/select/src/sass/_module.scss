@@ -16,7 +16,7 @@
 // select style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-select {
-	@include AU-space( margin-bottom, .5 );
+	@include AU-space( margin-bottom, .5unit );
 	position: relative;
 	vertical-align: middle;
 	display: inline-block;
@@ -25,10 +25,10 @@
 	border-radius: $AU-border-radius;
 
 	&:after {
-		@include AU-space( right, 0.75 );
-		@include AU-space( width, 1 );
-		@include AU-space( height, 1 );
-		@include AU-space( margin-top, -.5 );
+		@include AU-space( right, 0.75unit );
+		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
+		@include AU-space( margin-top, -.5unit );
 		content: ' ';
 		position: absolute;
 		top: 50%;
@@ -59,7 +59,7 @@
 
 .au-select__element {
 	@include AU-fontsize( sm );
-	@include AU-space( padding, .75 2.25 .75 .75 );
+	@include AU-space( padding, 0.75unit 2.25unit 0.75unit 0.75unit );
 	position: relative;
 	z-index: 1;
 	background: transparent;
@@ -96,7 +96,7 @@
 
 	.ie8 &,
 	.ie9 & {
-		@include AU-space( padding-right, .25 );
+		@include AU-space( padding-right, .25unit );
 	}
 
 }
@@ -121,11 +121,11 @@
 }
 
 html>/**/body .au-select__element, x:-moz-any-link, x:default {
-	@include AU-space( padding-right, 1 );
+	@include AU-space( padding-right, 1unit );
 }
 
 @supports (-moz-osx-font-smoothing:auto) {
 	html body .au-select__element {
-		@include AU-space( padding-right, 2.25 );
+		@include AU-space( padding-right, 2.25unit );
 	}
 }

@@ -17,7 +17,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-body .au-progress-indicator,
 .au-progress-indicator {
-	@include AU-space( margin, 0 0 1 0 );
+	@include AU-space( margin, 0 0 1unit 0 );
 	font-family: $AU-font;
 	list-style: none;
 	padding: 0;
@@ -31,7 +31,7 @@
 .au-body .au-progress-indicator__link,
 .au-progress-indicator__link {
 	@include AU-fontsize( sm, heading );
-	@include AU-space( padding, .75 .75 .75 2.75 );
+	@include AU-space( padding, .75unit .75unit .75unit 2.75unit );
 	position: relative;
 	display: block;
 	color: $AU-color-Text;
@@ -54,8 +54,8 @@
 	@include AU-focus();
 
 	&:after {
-		@include AU-space( left, .5 );
-		@include AU-space( width, 1.5 );
+		@include AU-space( left, .5unit );
+		@include AU-space( width, 1.5unit );
 		content: '';
 		position: absolute;
 		top: 0;

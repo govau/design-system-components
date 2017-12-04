@@ -9,8 +9,8 @@
 
 @media print {
 	.au-callout {
+		@include AU-space( border-left-width, 1unit !important );
 		border: 1px solid #000 !important;
-		border-left-width: $AU-unitpx !important;
 		color: #000 !important;
 		background-color: transparent !important;
 	}

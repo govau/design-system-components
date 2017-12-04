@@ -25,9 +25,9 @@
 
 // Same here.
 h1 {
-	@include AU-space( margin-left, 0.5 );
+	@include AU-space( margin-left, 0.5unit );
 }
 
 .test-link { //have to to make it look awesome again
-	@include AU-space( margin-left, 0.5 );
+	@include AU-space( margin-left, 0.5unit );
 }

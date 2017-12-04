@@ -26,9 +26,9 @@
 	&:active,
 	&:focus {
 		@include AU-outline();
-		@include AU-space ( top, 1 );
-		@include AU-space ( left, 1 );
-		@include AU-space ( padding, 1.5 );
+		@include AU-space ( top, 1unit );
+		@include AU-space ( left, 1unit );
+		@include AU-space ( padding, 1.5unit );
 		clip: auto;
 		height: auto;
 		margin: 0;

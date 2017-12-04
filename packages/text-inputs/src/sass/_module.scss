@@ -26,10 +26,10 @@
  */
 .au-text-input__label {
 	display: block;
-	@include AU-space( margin-bottom, 0.5 );
+	@include AU-space( margin-bottom, 0.5unit );
 
 	> .au-text-input {
-		@include AU-space( margin-top, 0.5 );
+		@include AU-space( margin-top, 0.5unit );
 	}
 }
 
@@ -45,7 +45,7 @@
  */
 .au-text-input {
 	@include AU-fontsize ( sm );
-	@include AU-space( padding, .75 1 );
+	@include AU-space( padding, 0.75unit 1unit );
 	border: 3px solid $AU-color-Border;
 	background-color: $AU-color-Background-light;
 	font-family: $AU-font;
@@ -131,13 +131,13 @@
  * Built so it can sit both in- and outside the `label`.
  */
 .au-text-input__hint {
-	@include AU-space( margin-bottom, .5 );
+	@include AU-space( margin-bottom, 0.5unit );
 	@include AU-fontsize( xs );
 	display: block;
 
 	// Keeps spacing neat depending on where the hint text is added.
 	.au-text-input__label > &,
 	.au-text-input + & {
-		@include AU-space( margin-top, .5 );
+		@include AU-space( margin-top, 0.5unit );
 	}
 }

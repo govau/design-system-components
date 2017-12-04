@@ -113,7 +113,7 @@
 	 */
 	p {
 		max-width: $AU-maxwidth;
-		@include AU-space( margin, 0 0 1 0 );
+		@include AU-space( margin, 0 0 1unit 0 );
 	}
 
 	ul,
@@ -121,25 +121,25 @@
 	dl,
 	pre {
 		margin-top: 0;
-		@include AU-space( margin-bottom, 1 );
+		@include AU-space( margin-bottom, 1unit );
 	}
 
 	ul,
 	ol,
 	dd {
-		@include AU-space( padding-left, 1 );
+		@include AU-space( padding-left, 1unit );
 		margin-left: 0;
 	}
 
 	ul,
 	ol {
 		> li {
-			@include AU-space( margin-bottom, 0.5 );
+			@include AU-space( margin-bottom, 0.5unit );
 
 			> ul,
 			> ol {
-				@include AU-space( margin-top, 0.5 );
-				@include AU-space( margin-bottom, 1 );
+				@include AU-space( margin-top, 0.5unit );
+				@include AU-space( margin-bottom, 1unit );
 			}
 		}
 
@@ -150,12 +150,12 @@
 
 	dl {
 		> dd {
-			@include AU-space( margin-bottom, 1 );
+			@include AU-space( margin-bottom, 1unit );
 		}
 
 		> dt {
-			@include AU-space( margin-top, 0.5 );
-			@include AU-space( margin-bottom, 1 );
+			@include AU-space( margin-top, 0.5unit );
+			@include AU-space( margin-bottom, 1unit );
 			font-weight: bold;
 
 			&:first-of-type {
@@ -288,7 +288,7 @@
 	code,
 	samp {
 		@include AU-fontsize( xs );
-		@include AU-space( padding, 0.25 );
+		@include AU-space( padding, 0.25unit );
 		font-family: $AU-font-monospace;
 		display: inline-block;
 		border-radius: $AU-border-radius;
@@ -302,7 +302,7 @@
 	}
 
 	pre code {
-		@include AU-space( padding, 0.5 );
+		@include AU-space( padding, 0.5unit );
 		display:block;
 		tab-size: 4;
 	}
@@ -317,7 +317,7 @@
 		overflow: visible;
 		border: none;
 		border-top: 1px solid $AU-color-Border;
-		@include AU-space( margin-bottom, 1 );
+		@include AU-space( margin-bottom, 1unit );
 	}
 }
 

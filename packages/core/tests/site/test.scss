@@ -301,55 +301,55 @@ html {
 	}
 
 	&.au-space--025:after {
-		@include AU-space( width, 0.25 );
+		@include AU-space( width, 0.25unit );
 	}
 
 	&.au-space--05:after {
-		@include AU-space( width, 0.5 );
+		@include AU-space( width, 0.5unit );
 	}
 
 	&.au-space--075:after {
-		@include AU-space( width, 0.75 );
+		@include AU-space( width, 0.75unit );
 	}
 
 	&.au-space--1:after {
-		@include AU-space( width, 1 );
+		@include AU-space( width, 1unit );
 	}
 
 	&.au-space--15:after {
-		@include AU-space( width, 1.5 );
+		@include AU-space( width, 1.5unit );
 	}
 
 	&.au-space--2:after {
-		@include AU-space( width, 2 );
+		@include AU-space( width, 2unit );
 	}
 
 	&.au-space--25:after {
-		@include AU-space( width, 2.5 );
+		@include AU-space( width, 2.5unit );
 	}
 
 	&.au-space--3:after {
-		@include AU-space( width, 3 );
+		@include AU-space( width, 3unit );
 	}
 
 	&.au-space--35:after {
-		@include AU-space( width, 3.5 );
+		@include AU-space( width, 3.5unit );
 	}
 
 	&.au-space--4:after {
-		@include AU-space( width, 4 );
+		@include AU-space( width, 4unit );
 	}
 
 	&.au-space--45:after {
-		@include AU-space( width, 4.5 );
+		@include AU-space( width, 4.5unit );
 	}
 
 	&.au-space--5:after {
-		@include AU-space( width, 5 );
+		@include AU-space( width, 5unit );
 	}
 
 	&.au-space--55:after {
-		@include AU-space( width, 5.5 );
+		@include AU-space( width, 5.5unit );
 	}
 }
 

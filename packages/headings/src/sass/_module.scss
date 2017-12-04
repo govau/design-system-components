@@ -25,22 +25,25 @@
  */
 
 
-$sizes: xs, sm, md, lg, xl, xxl, xxxl;
+// For each fontsize key (in core)
+@for $i from 1 through length( map-keys( $AU-fontsize-map ) ) {
 
-@for $i from 1 through 7 {
-	.au-display-#{ nth( $sizes, $i ) } {
-		@include AU-fontsize( nth( $sizes, $i ) , heading );
+	// Create a new class with the fontsize key
+	.au-display-#{ nth(  map-keys( $AU-fontsize-map ), $i ) } {
+		@include AU-fontsize( nth(  map-keys( $AU-fontsize-map ), $i ) , heading ); // Get the font size and give it heading leading
 		font-family: $AU-font;
 		display: block;
 		font-weight: bold;
 		margin: 0;
 	}
 
-	* + .au-display-#{ nth( $sizes, $i ) } {
-		@include AU-space( margin-top, 2 );
+	// Give each heading margin-top if it follows an element
+	* + .au-display-#{ nth( map-keys( $AU-fontsize-map ), $i ) } {
+		@include AU-space( margin-top, 2unit );
 	}
 }
 
+// Remove font weight on large headings
 .au-display-xxxl {
 	font-weight: normal;
 }

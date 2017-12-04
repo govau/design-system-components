@@ -2,7 +2,7 @@ body {
 	background: $AU-color-Background-light;
 	color: $AU-color-Text;
 	margin: 0;
-	@include AU-space( padding, 6 1.5 2 1.5 );
+	@include AU-space( padding, 6unit 1.5unit 2unit 1.5unit );
 	overflow-x: hidden; //For Opera apparently.
 
 	&:before {
@@ -17,7 +17,7 @@ body {
 			#333 10px,
 			#333 20px
 		);
-		@include AU-space( padding, 1.5 );
+		@include AU-space( padding, 1.5unit );
 		@include AU-fontsize( sm, nospace );
 		content: "📃 Test file";
 		font-family: $AU-font-monospace;

@@ -16,7 +16,7 @@
 // Responsive video embeds
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-responsive-media-vid {
-	@include AU-space ( margin-bottom, 1 );
+	@include AU-space ( margin-bottom, 1unit );
 	position: relative;
 	display: block;
 	height: 0;

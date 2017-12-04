@@ -26,7 +26,7 @@
 	}
 
 	.au-body & > li {
-		@include AU-space( margin-bottom, 1 );
+		@include AU-space( margin-bottom, 1unit );
 		float: left;
 		clear: both;
 		list-style: none;
@@ -45,14 +45,15 @@
 }
 
 .au-keyword-list__item__small {
+	@include AU-fontsize( sm, nospace );
+	display: block;
+	font-weight: normal; // Reset parent weight
+
 	.au-body & {
-		@include AU-fontsize( sm, nospace );
 		color: $AU-color-Text;
-		display: block;
-		font-weight: normal;
 	}
 
-	.au-body--dark & {
+	.au-keyword-list--dark & {
 		color: $AU-colordark-Text;
 	}
 }
