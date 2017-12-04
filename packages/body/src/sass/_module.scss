@@ -135,6 +135,7 @@
 	ol {
 		> li {
 			@include AU-space( margin-bottom, 0.5unit );
+			@include AU-space( margin-left, 0.75unit );
 
 			> ul,
 			> ol {
