@@ -97,12 +97,6 @@
 		@include AU-space( padding-right, .25 );
 	}
 
-	// Moz hacks
-	// https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
-	&:-moz-focusring {
-	    color: transparent;
-	    text-shadow: 0 0 0 #000;
-	}
 }
 
 .au-select--dark .au-select__element {
@@ -118,12 +112,19 @@
 }
 
 //firefox hacks...
+//=================
+// https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
+.au-select__element:-moz-focusring {
+		color: transparent;
+		text-shadow: 0 0 0 #000;
+}
+
 html>/**/body .au-select__element, x:-moz-any-link, x:default {
-	@include AU-space( padding-right, .25 );
+	@include AU-space( padding-right, 1 );
 }
 
 @supports (-moz-osx-font-smoothing:auto) {
 	html body .au-select__element {
-		@include AU-space( padding-right, 1.25 );
+		@include AU-space( padding-right, 2.25 );
 	}
 }
