@@ -90,7 +90,7 @@ const themes = {
  * @param  {array}  items - All items for this progress indicator
  */
 const ProgressIndicator = ({ theme, items }) => (
-	<ul className={ `au-progress-indicator ${ theme ? themes[ theme ] : themes.light }` }>
+	<ul className={ `au-progress-indicator ${ theme ? themes[ theme ] : '' }` }>
 		{ items.map( ( item, i ) => <ProgressIndicatorItem key={ i } item={ item } /> ) }
 	</ul>
 );
@@ -106,6 +106,10 @@ ProgressIndicator.propTypes = {
 			onclick: PropTypes.func,
 		})
 		).isRequired,
+};
+
+ProgressIndicator.defaultProps = {
+	theme: 'light',
 };
 
 export default ProgressIndicator;

@@ -45,10 +45,10 @@ const CTALink = ({ theme, link, text, onClick }) => {
 	}
 
 	if( link ) {
-		return( <a className={ `au-cta-link${ theme ? ` ${ themes[ theme ] }` : themes.light }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return( <a className={ `au-cta-link${ theme ? ` ${ themes[ theme ] }` : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return( <button className={ `au-cta-link${ theme ? ` ${ themes[ theme ] }` : themes.light }` } href={ link } { ...attributeOptions }>{ text }</button> );
+		return( <button className={ `au-cta-link${ theme ? ` ${ themes[ theme ] }` : '' }` } href={ link } { ...attributeOptions }>{ text }</button> );
 	}
 }
 
@@ -57,6 +57,10 @@ CTALink.propTypes = {
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
+};
+
+CTALink.defaultProps = {
+	theme: 'light',
 };
 
 export default CTALink;

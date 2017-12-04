@@ -40,7 +40,7 @@ const themes = {
  * @param  {array}  items - Items inside the breadcrumbs passed on to LinkList
  */
 const Breadcrumbs = ({ theme, label, items }) => (
-	<nav className={ `au-breadcrumbs ${ theme ? themes[ theme ] : themes.light }` } aria-label={ label }>
+	<nav className={ `au-breadcrumbs ${ theme ? themes[ theme ] : '' }` } aria-label={ label }>
 		<LinkList inline items={ items } />
 	</nav>
 );
@@ -55,6 +55,10 @@ Breadcrumbs.propTypes = {
 			onClick: PropTypes.func,
 		})
 		).isRequired,
+};
+
+Breadcrumbs.defaultProps = {
+	theme: 'light',
 };
 
 export default Breadcrumbs;

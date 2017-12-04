@@ -68,7 +68,7 @@ const themes = {
  * @param  {array}  tags  - The tags, format: { link: '', text: '', onClick: () }
  */
 const Tags = ({ theme, tags }) => (
-	<ul className={ `au-tags ${ theme ? themes[ theme ] : themes.light }` }>
+	<ul className={ `au-tags ${ theme ? themes[ theme ] : '' }` }>
 		{ tags.map( ( tag, i ) => <TagItem key={ i } tag={ tag } /> ) }
 	</ul>
 );
@@ -82,6 +82,10 @@ Tags.propTypes = {
 			onClick: PropTypes.func,
 		})
 		).isRequired,
+};
+
+Tags.defaultProps = {
+	theme: 'light',
 };
 
 export default Tags;

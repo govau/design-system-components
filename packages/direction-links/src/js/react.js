@@ -58,10 +58,10 @@ const DirectionLink = ({ theme, link, text, direction, onClick }) => {
 	}
 
 	if( link ) {
-		return (<a className={ `au-direction-link ${ directions[ direction ] } ${ theme ? themes[ theme ] : themes.light }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return (<a className={ `au-direction-link ${ directions[ direction ] } ${ theme ? themes[ theme ] : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return (<button className={ `au-direction-link ${ directions[ direction ] } ${ theme ? themes[ theme ] : themes.light }` } { ...attributeOptions }>{ text }</button> );
+		return (<button className={ `au-direction-link ${ directions[ direction ] } ${ theme ? themes[ theme ] : '' }` } { ...attributeOptions }>{ text }</button> );
 	}
 };
 
@@ -75,6 +75,7 @@ DirectionLink.propTypes = {
 
 DirectionLink.defaultProps = {
 	direction: 'right',
+	theme: 'light',
 };
 
 export default DirectionLink;

@@ -84,7 +84,7 @@ class Accordion extends React.PureComponent {
 
 	render() {
 		return (
-			<div className={ `au-accordion ${ this.props.theme ? themes[ this.props.theme ] : themes.light }` }>
+			<div className={ `au-accordion ${ this.props.theme ? themes[ this.props.theme ] : '' }` }>
 				<a href={`#${ this.ID }`}
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
@@ -131,6 +131,7 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
 	open: false,
+	theme: 'light',
 };
 
 export default Accordion;

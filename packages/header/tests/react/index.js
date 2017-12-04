@@ -74,19 +74,19 @@ ReactDOM.render(
 
 
 		<hr />
-		<h2>header <code>--altdark</code></h2>
+		<h2>header <code>--alt</code> <code>--dark</code></h2>
 
 		<Header title="Page title" theme="altdark" />
 
 
 		<hr />
-		<h2>header <code>--altdark</code> with subline</h2>
+		<h2>header <code>--alt</code> <code>--dark</code> with subline</h2>
 
 		<Header title="Page title" theme="altdark" subline="Service sub-title that could be a little longer" />
 
 
 		<hr />
-		<h2>header <code>--hero</code> <code>--altdark</code> with subline</h2>
+		<h2>header <code>--hero</code> <code>--alt</code> <code>--dark</code> with subline</h2>
 
 		<Header title="Page title" theme="altdark" hero subline="Service sub-title that could be a little longer" />
 

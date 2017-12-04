@@ -62,51 +62,55 @@ ReactDOM.render(
 		<div className="au-grid au-body">
 			<Footer>
 				<div className="container">
-					<FooterNav className="row">
-						<div className="col-md-3 col-sm-6">
-							<h3 className="au-display-1">Section</h3>
-							<ul className="au-link-list">
-								<li><a href="#">Link 1</a></li>
-								<li><a href="#">Link 2</a></li>
-								<li><a href="#">Link 3</a></li>
-							</ul>
-						</div>
+					<FooterNav>
+						<div className="row">
+							<div className="col-md-3 col-sm-6">
+								<h3 className="au-display-1">Section</h3>
+								<ul className="au-link-list">
+									<li><a href="#">Link 1</a></li>
+									<li><a href="#">Link 2</a></li>
+									<li><a href="#">Link 3</a></li>
+								</ul>
+							</div>
 
-						<div className="col-md-3 col-sm-6">
-							<h3 className="au-display-1">Section</h3>
-							<ul className="au-link-list">
-								<li><a href="#">Link 1</a></li>
-								<li><a href="#">Link 2</a></li>
-								<li><a href="#">Link 3</a></li>
-							</ul>
-						</div>
+							<div className="col-md-3 col-sm-6">
+								<h3 className="au-display-1">Section</h3>
+								<ul className="au-link-list">
+									<li><a href="#">Link 1</a></li>
+									<li><a href="#">Link 2</a></li>
+									<li><a href="#">Link 3</a></li>
+								</ul>
+							</div>
 
-						<div className="col-md-3 col-sm-6">
-							<h3 className="au-display-1">Section</h3>
-							<ul className="au-link-list">
-								<li><a href="#">Link 1</a></li>
-								<li><a href="#">Link 2</a></li>
-								<li><a href="#">Link 3</a></li>
-							</ul>
-						</div>
+							<div className="col-md-3 col-sm-6">
+								<h3 className="au-display-1">Section</h3>
+								<ul className="au-link-list">
+									<li><a href="#">Link 1</a></li>
+									<li><a href="#">Link 2</a></li>
+									<li><a href="#">Link 3</a></li>
+								</ul>
+							</div>
 
-						<div className="col-md-3 col-sm-6">
-							<h3 className="au-display-1">Section</h3>
-							<ul className="au-link-list">
-								<li><a href="#">Link 1</a></li>
-								<li><a href="#">Link 2</a></li>
-								<li><a href="#">Link 3</a></li>
-							</ul>
+							<div className="col-md-3 col-sm-6">
+								<h3 className="au-display-1">Section</h3>
+								<ul className="au-link-list">
+									<li><a href="#">Link 1</a></li>
+									<li><a href="#">Link 2</a></li>
+									<li><a href="#">Link 3</a></li>
+								</ul>
+							</div>
 						</div>
 					</FooterNav>
 
-					<FooterEnd className="row">
-						<div className="col-sm-12">
-							<p>Footer text</p>
+					<FooterEnd>
+						<div className="row">
+							<div className="col-sm-12">
+								<p>Footer text</p>
 
-							<img className="au-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo" />
+								<img className="au-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo" />
 
-							<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
+								<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
+							</div>
 						</div>
 					</FooterEnd>
 				</div>
@@ -169,51 +173,55 @@ ReactDOM.render(
 		<div className="au-grid au-body au-body--dark">
 			<Footer theme="dark">
 				<div className="container">
-					<FooterNav className="row">
-						<div className="col-md-3 col-sm-6">
-							<h3 className="au-display-1">Section</h3>
-							<ul className="au-link-list">
-								<li><a href="#">Link 1</a></li>
-								<li><a href="#">Link 2</a></li>
-								<li><a href="#">Link 3</a></li>
-							</ul>
-						</div>
+					<FooterNav>
+						<div className="row">
+							<div className="col-md-3 col-sm-6">
+								<h3 className="au-display-1">Section</h3>
+								<ul className="au-link-list">
+									<li><a href="#">Link 1</a></li>
+									<li><a href="#">Link 2</a></li>
+									<li><a href="#">Link 3</a></li>
+								</ul>
+							</div>
 
-						<div className="col-md-3 col-sm-6">
-							<h3 className="au-display-1">Section</h3>
-							<ul className="au-link-list">
-								<li><a href="#">Link 1</a></li>
-								<li><a href="#">Link 2</a></li>
-								<li><a href="#">Link 3</a></li>
-							</ul>
-						</div>
+							<div className="col-md-3 col-sm-6">
+								<h3 className="au-display-1">Section</h3>
+								<ul className="au-link-list">
+									<li><a href="#">Link 1</a></li>
+									<li><a href="#">Link 2</a></li>
+									<li><a href="#">Link 3</a></li>
+								</ul>
+							</div>
 
-						<div className="col-md-3 col-sm-6">
-							<h3 className="au-display-1">Section</h3>
-							<ul className="au-link-list">
-								<li><a href="#">Link 1</a></li>
-								<li><a href="#">Link 2</a></li>
-								<li><a href="#">Link 3</a></li>
-							</ul>
-						</div>
+							<div className="col-md-3 col-sm-6">
+								<h3 className="au-display-1">Section</h3>
+								<ul className="au-link-list">
+									<li><a href="#">Link 1</a></li>
+									<li><a href="#">Link 2</a></li>
+									<li><a href="#">Link 3</a></li>
+								</ul>
+							</div>
 
-						<div className="col-md-3 col-sm-6">
-							<h3 className="au-display-1">Section</h3>
-							<ul className="au-link-list">
-								<li><a href="#">Link 1</a></li>
-								<li><a href="#">Link 2</a></li>
-								<li><a href="#">Link 3</a></li>
-							</ul>
+							<div className="col-md-3 col-sm-6">
+								<h3 className="au-display-1">Section</h3>
+								<ul className="au-link-list">
+									<li><a href="#">Link 1</a></li>
+									<li><a href="#">Link 2</a></li>
+									<li><a href="#">Link 3</a></li>
+								</ul>
+							</div>
 						</div>
 					</FooterNav>
 
-					<FooterEnd className="row">
-						<div className="col-sm-12">
-							<p>Footer text</p>
+					<FooterEnd>
+						<div className="row">
+							<div className="col-sm-12">
+								<p>Footer text</p>
 
-							<img className="au-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo" />
+								<img className="au-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo" />
 
-							<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
+								<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
+							</div>
 						</div>
 					</FooterEnd>
 				</div>

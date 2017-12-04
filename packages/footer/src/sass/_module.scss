@@ -64,8 +64,6 @@
 	}
 }
 
-.au-footer--dark .au-footer__navigation {
-	+ .au-footer__end {
-		border-top: 1px solid $AU-colordark-Border;
-	}
+.au-footer--dark .au-footer__navigation + .au-footer__end {
+	border-top: 1px solid $AU-colordark-Border;
 }

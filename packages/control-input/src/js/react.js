@@ -57,7 +57,7 @@ export const Checkbox = ({ theme, label, name, value, id, checked, disabled, ful
 	}
 
 	return (
-		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' } ${ theme ? themes[ theme ] : themes.light }` }>
+		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' } ${ theme ? themes[ theme ] : '' }` }>
 			<input className="au-control-input__input" type="checkbox" name={ name } disabled={ disabled } { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
@@ -74,6 +74,10 @@ Checkbox.propTypes = {
 	disabled: PropTypes.bool,
 	full: PropTypes.bool,
 	onChange: PropTypes.func,
+};
+
+Checkbox.defaultProps = {
+	theme: 'light',
 };
 
 
@@ -106,7 +110,7 @@ export const Radio = ({ theme, label, name, value, id, checked, disabled, full, 
 	}
 
 	return (
-		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }${ theme ? ` ${ themes[ theme ] }` : themes.light }` }>
+		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }${ theme ? ` ${ themes[ theme ] }` : '' }` }>
 			<input className="au-control-input__input" type="radio" name={ name } disabled={ disabled } { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
@@ -123,4 +127,8 @@ Radio.propTypes = {
 	disabled: PropTypes.bool,
 	full: PropTypes.bool,
 	onChange: PropTypes.func,
+};
+
+Radio.defaultProps = {
+	theme: 'light',
 };

@@ -61,7 +61,7 @@ const Select = ({ theme, options, id, name, value, onChange, block }) => {
 	}
 
 	return (
-		<div className={`au-select${ block ? ` au-select-block` : `` } ${ theme ? themes[ theme ] : themes.light }`}>
+		<div className={`au-select${ block ? ` au-select-block` : `` } ${ theme ? themes[ theme ] : '' }`}>
 			<select className="au-select__element" { ...attributeOptions }>
 				{ options.map( ( option, i ) => <option key={ i } value={ option.value }>{ option.text }</option> ) }
 			</select>
@@ -82,6 +82,10 @@ Select.propTypes = {
 	id: PropTypes.string.isRequired,
 	onChange: PropTypes.func,
 	block: PropTypes.bool,
+};
+
+Select.defaultProps = {
+	theme: 'light',
 };
 
 export default Select;

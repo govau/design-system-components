@@ -25,7 +25,7 @@ const themes = {
 	light: '',
 	alt: 'au-header--alt',
 	dark: 'au-header--dark',
-	altdark: 'au-header--altdark',
+	altdark: 'au-header--alt au-header--dark',
 };
 
 /**
@@ -43,7 +43,7 @@ const Header = ({ title, level, subline, hero, theme, children }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<div className={`au-header${ hero ? ' au-header--hero' : '' } ${ theme ? themes[ theme ] : themes.light }`} role="banner">
+		<div className={`au-header${ hero ? ' au-header--hero' : '' } ${ theme ? themes[ theme ] : '' }`} role="banner">
 			<HeadingTag className="au-header-heading">{ title }</HeadingTag>
 			{ subline && <span className="au-header-subline">{ subline }</span> }
 			{ children }
@@ -62,6 +62,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
 	level: '1',
+	theme: 'light',
 };
 
 export default Header;

@@ -67,7 +67,7 @@ const Button = ({ text, as, theme, type, id, disabled, block, onClick }) => {
 	return (
 		<button
 			type={ type }
-			className={ `au-btn ${ options[ as ] }${ block ? ' au-btn--block' : '' } ${ theme ? themes[ theme ] : themes.light }` }
+			className={ `au-btn ${ options[ as ] }${ block ? ' au-btn--block' : '' } ${ theme ? themes[ theme ] : '' }` }
 			disabled={ disabled }
 			{ ...attributeOptions }
 		>
@@ -90,6 +90,7 @@ Button.propTypes = {
 Button.defaultProps = {
 	type: 'button',
 	as: 'primary',
+	theme: 'light',
 };
 
 export default Button;

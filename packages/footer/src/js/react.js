@@ -24,7 +24,9 @@ import PropTypes from 'prop-types';
  */
 const themes = {
 	light: '',
+	alt: 'au-footer--alt',
 	dark: 'au-footer--dark',
+	altdark: 'au-footer--alt au-footer--dark',
 };
 
 
@@ -68,7 +70,7 @@ FooterEnd.propTypes = {
  * @param  {node} children - The inside of this section
  */
 const Footer = ({ theme, children }) => (
-	<footer className={ `au-footer ${ theme ? themes[ theme ] : themes.light }`} role="contentinfo">
+	<footer className={ `au-footer ${ theme ? themes[ theme ] : '' }`} role="contentinfo">
 		{ children }
 	</footer>
 );
@@ -76,6 +78,10 @@ const Footer = ({ theme, children }) => (
 Footer.propTypes = {
 	children: PropTypes.node.isRequired,
 	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+};
+
+Footer.defaultProps = {
+	theme: 'light',
 };
 
 export default Footer;
