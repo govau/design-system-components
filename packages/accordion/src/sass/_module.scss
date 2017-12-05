@@ -50,7 +50,6 @@
 	background-color: $AU-color-Background;
 	position: relative;
 	cursor: pointer;
-	border: 3px solid transparent;
 
 	&:hover {
 		background-color: $AU-color-Background-light;
@@ -65,10 +64,7 @@
 		}
 	}
 
-	&:focus {
-		outline: none;
-		border: 3px solid $AU-color-Focus;
-	}
+	@include AU-focus();
 
 	// remove the default details arrow icon
 	&::-webkit-details-marker {
@@ -152,9 +148,7 @@
 			}
 		}
 
-		&:focus {
-			border-color: $AU-colordark-Focus;
-		}
+		@include AU-focus( 'dark' );
 
 		&:after{
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
