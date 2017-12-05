@@ -153,7 +153,7 @@
 			<div>
 				<button aria-controls="close" onclick="AU.animate.Run({
 						element: document.getElementById('dropdown-padding1'),
-						property: 'padding',
+						property: 'padding-bottom',
 						endSize: 0,
 						callback: function() {
 							console.log('end removing padding #3');
@@ -161,7 +161,7 @@
 					})">Remove padding</button>
 				<button aria-controls="open" onclick="AU.animate.Run({
 						element: document.getElementById('dropdown-padding1'),
-						property: 'padding',
+						property: 'padding-bottom',
 						endSize: 20,
 						callback: function() {
 							console.log('end add padding #3');
@@ -169,7 +169,7 @@
 					})">Add padding</button>
 				<button aria-controls="toggle" onclick="AU.animate.Toggle({
 						element: document.getElementById('dropdown-padding1'),
-						property: 'padding',
+						property: 'padding-bottom',
 						closeSize: 0,
 						openSize: 20,
 						prefunction: function( element, state ) {
@@ -191,7 +191,7 @@
 				<button aria-controls="stop" onclick="AU.animate.Stop( document.getElementById('dropdown-padding1') )">Stop</button>
 			</div>
 
-			<div style="padding:20px;border:1px solid #333;" class="au-dropdown-example" id="dropdown-padding1">
+			<div style="padding-bottom:20px;border:1px solid #333;" class="au-dropdown-example" id="dropdown-padding1">
 				<div class="inner-container" style="background-color:#fff;">&nbsp;<br><br><br></div>
 			</div>
 
@@ -200,7 +200,7 @@
 			<div>
 				<button aria-controls="open" onclick="AU.animate.Run({
 						element: document.getElementById('dropdown-margin1'),
-						property: 'margin',
+						property: 'margin-bottom',
 						endSize: 20,
 						callback: function() {
 							console.log('end margin add #4');
@@ -208,7 +208,7 @@
 					})">Add margin</button>
 				<button aria-controls="close" onclick="AU.animate.Run({ element:
 						document.getElementById('dropdown-margin1'),
-						property: 'margin',
+						property: 'margin-bottom',
 						endSize: 0,
 						callback: function() {
 							console.log('end remove margin #4');
@@ -216,7 +216,7 @@
 					})">Remove margin</button>
 				<button aria-controls="toggle" onclick="AU.animate.Toggle({ element:
 						document.getElementById('dropdown-margin1'),
-						property: 'margin',
+						property: 'margin-bottom',
 						closeSize: 0,
 						openSize: 20,
 						prefunction: function( element, state ) {

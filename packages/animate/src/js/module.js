@@ -165,12 +165,12 @@ var AU = AU || {};
 
 		// iterate over all DOM nodes
 		for( var i = 0; i < elements.length; i++ ) {
-			var element = elements[ i ];                                                                      // this element
+			var element = elements[ i ];                                                                   // this element
 			AU.animate.Stop( element );                                                                    // stop any previous animations
 			var initialSize = parseInt( AU.animate.GetCSSPropertyBecauseIE( element, options.property ) ); // the elements current size
-			var endSize = options.endSize;                                                                    // the element end size
+			var endSize = options.endSize;                                                                 // the element end size
 
-			if( options.endSize === 'auto' ) {                                                                // calculate what 'auto' means in pixel
+			if( options.endSize === 'auto' ) {                                                             // calculate what 'auto' means in pixel
 				endSize = AU.animate.CalculateAuto( element, options.property );
 			}
 
@@ -238,7 +238,7 @@ var AU = AU || {};
 	 * @param  {function}       options.postfunction - A function to be executed after each animation ends, passes {object} element, {string} state [optional]
 	 * @param  {function}       options.callback     - A function to be executed after the animation ends, passes {object} element, {string} state [optional]
 	 *
-	 * @return {unknown}                          - The return value passed on from our options.callback function [optional]
+	 * @return {unknown}                             - The return value passed on from our options.callback function [optional]
 	 */
 	animate.Toggle = function( options ) {
 
