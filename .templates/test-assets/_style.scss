@@ -39,9 +39,17 @@ body {
 .split {
 	padding: 1%;
 
-	&--dark {
+	&.split--alt {
+		background: $AU-color-Background-dark;
+	}
+
+	&.split--dark {
 		background: $AU-colordark-Background-light;
 		color: $AU-colordark-Text;
+	}
+
+	&.split--dark.split--alt {
+		background: $AU-colordark-Background-dark;
 	}
 
 	@include AU-media( sm ) {
