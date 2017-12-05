@@ -23,7 +23,7 @@ class SelectWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<Select theme={ this.props.theme } id="test1" onChange={ event => this.changeSelect( event.target.value ) } value={ this.state.select } options={[
+				<Select dark={ this.props.dark } id="test1" onChange={ event => this.changeSelect( event.target.value ) } value={ this.state.select } options={[
 					{
 						value: '',
 						text: 'Please select',
@@ -136,7 +136,7 @@ ReactDOM.render(
 		</div>
 		<div className="split split--dark">
 		<h2>select <code>--dark</code></h2>
-			<Select theme="dark" id="test2" options={[
+			<Select dark id="test2" options={[
 				{
 					value: '',
 					text: 'Please select',
@@ -163,7 +163,7 @@ ReactDOM.render(
 			<hr />
 			<h2>select block <code>--dark</code></h2>
 
-			<Select theme="dark" id="test3" block options={[
+			<Select dark id="test3" block options={[
 				{
 					value: '',
 					text: 'Please select',
@@ -190,7 +190,7 @@ ReactDOM.render(
 			<hr />
 			<h2>select with onchange <code>--dark</code></h2>
 
-			<Select theme="dark" id="test4" onChange={ () => {
+			<Select dark id="test4" onChange={ () => {
 				console.log('This function is called when the select input has changed');
 			} } options={[
 				{
@@ -211,7 +211,7 @@ ReactDOM.render(
 			<hr />
 			<h2>select with state <code>--dark</code></h2>
 
-			<SelectWrapper theme="dark" />
+			<SelectWrapper dark />
 		</div>
 	</div>,
 

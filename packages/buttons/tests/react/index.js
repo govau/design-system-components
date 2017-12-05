@@ -53,46 +53,46 @@ ReactDOM.render(
 			</div>
 			<div className="split split--dark">
 				<h2>primary button <code>--dark</code></h2>
-				<Button theme='dark' text="Continue" />&nbsp;
-				<Button theme='dark' text="Continue" disabled />
+				<Button dark text="Continue" />&nbsp;
+				<Button dark text="Continue" disabled />
 
 
 				<hr />
 				<h2>secondary button <code>--dark</code></h2>
-				<Button theme='dark' as='secondary' text="Save" />&nbsp;
-				<Button theme='dark' as='secondary' text="Save" disabled />
+				<Button dark as='secondary' text="Save" />&nbsp;
+				<Button dark as='secondary' text="Save" disabled />
 
 
 				<hr />
 				<h2>tertiary button <code>--dark</code></h2>
-				<Button theme='dark' as='tertiary' text="Cancel" />&nbsp;
-				<Button theme='dark' as='tertiary' text="Cancel" disabled />
+				<Button dark as='tertiary' text="Cancel" />&nbsp;
+				<Button dark as='tertiary' text="Cancel" disabled />
 
 
 				<hr />
 				<h2>buttons with block <code>--dark</code></h2>
-				<Button theme='dark' text="Continue" block />
-				<Button theme='dark' as='secondary' text="Save" block />
-				<Button theme='dark' as='tertiary' text="Cancel" block />
+				<Button dark text="Continue" block />
+				<Button dark as='secondary' text="Save" block />
+				<Button dark as='tertiary' text="Cancel" block />
 
 
 				<hr />
 				<h2>buttons with different type <code>--dark</code></h2>
-				<Button theme='dark' type="submit" text="Submit" />&nbsp;
-				<Button theme='dark' type="button" text="Button" />&nbsp;
-				<Button theme='dark' type="reset" text="Reset" />
+				<Button dark type="submit" text="Submit" />&nbsp;
+				<Button dark type="button" text="Button" />&nbsp;
+				<Button dark type="reset" text="Reset" />
 
 
 				<hr />
 				<h2>buttons with onClick <code>--dark</code></h2>
 				<p>
-					<Button theme='dark' text="log it" onClick={ () => console.log('This function will be called when the primary button is clicked') } />
+					<Button dark text="log it" onClick={ () => console.log('This function will be called when the primary button is clicked') } />
 				</p>
 				<p>
-					<Button theme='dark' as='secondary' text="log it" onClick={ () => console.log('This function will be called when the secondary button is clicked') } /><br />
+					<Button dark as='secondary' text="log it" onClick={ () => console.log('This function will be called when the secondary button is clicked') } /><br />
 				</p>
 				<p>
-					<Button theme='dark' as='tertiary' text="log it" onClick={ () => console.log('This function will be called when the tertiary button is clicked') } />
+					<Button dark as='tertiary' text="log it" onClick={ () => console.log('This function will be called when the tertiary button is clicked') } />
 				</p>
 			</div>
 		</div>

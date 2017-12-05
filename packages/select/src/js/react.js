@@ -18,21 +18,10 @@ import PropTypes from 'prop-types';
 
 
 /**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: '',
-	dark: 'au-select--dark',
-};
-
-
-/**
  * DEFAULT
  * The select component
  *
- * @param  {string}   theme    - The colour theme of the component
+ * @param  {string}   dark     - Add the dark variation class
  * @param  {array}    options  - The options for the select, format: { value: '', text: '' }
  * @param  {string}   id       - The ID for the select for the label
  * @param  {string}   name     - The name attribute
@@ -40,7 +29,7 @@ const themes = {
  * @param  {function} onChange - A function to be called on change
  * @param  {string}   block    - The block option
  */
-const Select = ({ theme, options, id, name, value, onChange, block }) => {
+const Select = ({ dark, options, id, name, value, onChange, block }) => {
 
 	const attributeOptions = {};
 
@@ -61,7 +50,7 @@ const Select = ({ theme, options, id, name, value, onChange, block }) => {
 	}
 
 	return (
-		<div className={`au-select${ block ? ` au-select-block` : `` } ${ theme ? themes[ theme ] : '' }`}>
+		<div className={`au-select${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`}>
 			<select className="au-select__element" { ...attributeOptions }>
 				{ options.map( ( option, i ) => <option key={ i } value={ option.value }>{ option.text }</option> ) }
 			</select>
@@ -70,7 +59,7 @@ const Select = ({ theme, options, id, name, value, onChange, block }) => {
 };
 
 Select.propTypes = {
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	dark: PropTypes.bool,
 	options: PropTypes.arrayOf(
 		PropTypes.shape({
 			value: PropTypes.string.isRequired,
@@ -84,8 +73,5 @@ Select.propTypes = {
 	block: PropTypes.bool,
 };
 
-Select.defaultProps = {
-	theme: 'light',
-};
 
 export default Select;

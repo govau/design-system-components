@@ -40,55 +40,55 @@ ReactDOM.render(
 		<hr />
 		<h2>header <code>--alt</code></h2>
 
-		<Header title="Page title" theme="alt" />
+		<Header title="Page title" alt />
 
 
 		<hr />
 		<h2>header <code>--alt</code> with subline</h2>
 
-		<Header title="Page title" theme="alt" subline="Service sub-title that could be a little longer" />
+		<Header title="Page title" alt subline="Service sub-title that could be a little longer" />
 
 
 		<hr />
 		<h2>header  <code>--hero</code> <code>--alt</code> with subline</h2>
 
-		<Header title="Page title" theme="alt" hero subline="Service sub-title that could be a little longer" />
+		<Header title="Page title" alt hero subline="Service sub-title that could be a little longer" />
 
 
 		<hr />
 		<h2>header <code>--dark</code></h2>
 
-		<Header title="Page title" theme="dark" />
+		<Header title="Page title" dark />
 
 
 		<hr />
 		<h2>header <code>--dark</code> with subline</h2>
 
-		<Header title="Page title" theme="dark" subline="Service sub-title that could be a little longer" />
+		<Header title="Page title" dark subline="Service sub-title that could be a little longer" />
 
 
 		<hr />
 		<h2>header <code>--hero</code> <code>--dark</code> with subline</h2>
 
-		<Header title="Page title" theme="dark" hero subline="Service sub-title that could be a little longer" />
+		<Header title="Page title" dark hero subline="Service sub-title that could be a little longer" />
 
 
 		<hr />
 		<h2>header <code>--alt</code> <code>--dark</code></h2>
 
-		<Header title="Page title" theme="altdark" />
+		<Header title="Page title" alt dark />
 
 
 		<hr />
 		<h2>header <code>--alt</code> <code>--dark</code> with subline</h2>
 
-		<Header title="Page title" theme="altdark" subline="Service sub-title that could be a little longer" />
+		<Header title="Page title" alt dark subline="Service sub-title that could be a little longer" />
 
 
 		<hr />
 		<h2>header <code>--hero</code> <code>--alt</code> <code>--dark</code> with subline</h2>
 
-		<Header title="Page title" theme="altdark" hero subline="Service sub-title that could be a little longer" />
+		<Header title="Page title" alt dark hero subline="Service sub-title that could be a little longer" />
 
 	</div>,
 

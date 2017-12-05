@@ -106,7 +106,7 @@ ReactDOM.render(
 		</div>
 		<div className="split au-body au-body--dark">
 			<h2>inpage-nav</h2>
-			<InpageNavLinks theme="dark" sections={[
+			<InpageNavLinks dark sections={[
 				{
 					link: 'sectiondark1',
 					title: 'Section 1',

@@ -75,7 +75,7 @@ ReactDOM.render(
 		<div className="split split--dark">
 			<h2>tags without links</h2>
 
-			<Tags theme="dark" tags={[
+			<Tags dark tags={[
 				{
 					text: 'foo',
 				},
@@ -94,7 +94,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with links</h2>
 
-			<Tags theme="dark" tags={[
+			<Tags dark tags={[
 				{
 					link: '#url',
 					text: 'foo',
@@ -117,7 +117,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with onclick</h2>
 
-			<Tags theme="dark" tags={[
+			<Tags dark tags={[
 				{
 					link: '#url1',
 					text: 'link',

@@ -21,7 +21,7 @@
  */
 .au-footer {
 	@include AU-space( padding, 1unit 0 );
-	@include AU-space( border-top, 1unit solid $AU-color-Border );
+	@include AU-space( border-top, 0.25unit solid $AU-color-Border );
 	background-color: $AU-color-Background-light;
 	font-family: $AU-font;
 	color: $AU-color-Text;

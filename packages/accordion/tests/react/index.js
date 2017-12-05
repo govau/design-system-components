@@ -116,7 +116,7 @@ class App extends React.Component {
 					</div>
 					<div className="split split--dark">
 						<h2>Default accordion <code>--dark</code></h2>
-						<Accordion theme="dark" header="Open and close me">
+						<Accordion dark header="Open and close me">
 							Some content of the accordion <a href="#url">here</a> :)
 						</Accordion>
 
@@ -124,11 +124,11 @@ class App extends React.Component {
 						<hr />
 						<h2>Accordions with open/close props <code>--dark</code></h2>
 
-						<Accordion theme="dark" header="Closed">
+						<Accordion dark header="Closed">
 							Some content of the accordion <a href="#url">here</a> :D
 						</Accordion>
 
-						<Accordion theme="dark" open header="Open">
+						<Accordion dark open header="Open">
 							Some content of the accordion <a href="#url">here</a> 8)
 						</Accordion>
 
@@ -136,7 +136,7 @@ class App extends React.Component {
 						<hr />
 						<h2>Accordions slow <code>--dark</code></h2>
 
-						<Accordion theme="dark" header="Slow accordion" speed={ 1000 }>
+						<Accordion dark header="Slow accordion" speed={ 1000 }>
 							Some content of the accordion <a href="#url">here</a> :D
 						</Accordion>
 
@@ -144,7 +144,7 @@ class App extends React.Component {
 						<hr />
 						<h2>Accordions with custom functions <code>--dark</code></h2>
 
-						<Accordion theme="dark" header="With custom function"
+						<Accordion dark header="With custom function"
 							onOpen={ () => { console.log('This function will run when the accordion opens'); } }
 							afterOpen={ () => { console.log('This function will run after the accordion has opened'); } }
 							onClose={ () => { console.log('This function will run when the accordion closes'); } }

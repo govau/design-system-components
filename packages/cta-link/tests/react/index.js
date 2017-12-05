@@ -35,7 +35,7 @@ ReactDOM.render(
 				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
 			</p>
 
-			<CTALink theme="dark" link="#url" text="Sign up" />
+			<CTALink dark link="#url" text="Sign up" />
 
 
 			<hr />
@@ -46,7 +46,7 @@ ReactDOM.render(
 				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
 			</p>
 
-			<CTALink theme="dark" text="Next" onClick={ () => console.log('This function will be called when the button is clicked') } />
+			<CTALink dark text="Next" onClick={ () => console.log('This function will be called when the button is clicked') } />
 		</div>
 	</div>,
 

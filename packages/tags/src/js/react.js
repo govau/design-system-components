@@ -51,30 +51,20 @@ TagItem.propTypes = {
 
 
 /**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: '',
-	dark: 'au-tags--dark',
-};
-
-/**
  * DEFAULT
  * The tags component
  *
- * @param  {string} theme - The colour theme of the component
+ * @param  {string} dark  - Add the dark variation class
  * @param  {array}  tags  - The tags, format: { link: '', text: '', onClick: () }
  */
-const Tags = ({ theme, tags }) => (
-	<ul className={ `au-tags ${ theme ? themes[ theme ] : '' }` }>
+const Tags = ({ dark, tags }) => (
+	<ul className={ `au-tags ${ dark ? 'au-tags--dark' : '' }` }>
 		{ tags.map( ( tag, i ) => <TagItem key={ i } tag={ tag } /> ) }
 	</ul>
 );
 
 Tags.propTypes = {
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	dark: PropTypes.bool,
 	tags: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -84,8 +74,5 @@ Tags.propTypes = {
 		).isRequired,
 };
 
-Tags.defaultProps = {
-	theme: 'light',
-};
 
 export default Tags;

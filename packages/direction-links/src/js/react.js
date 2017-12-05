@@ -18,17 +18,6 @@ import PropTypes from 'prop-types';
 
 
 /**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: '',
-	dark: 'au-direction-link--dark',
-};
-
-
-/**
  * All direction options
  *
  * @type {Object}
@@ -44,13 +33,13 @@ const directions = {
  * DEFAULT
  * The direction-links component
  *
- * @param  {string} theme     - The colour theme of the component
+ * @param  {string} dark      - Add the dark variation class
  * @param  {string} link      - The link target, optional
  * @param  {string} text      - The text of the CTA link
  * @param  {string} direction - The direction for the arrow; can be either: up right down left, default: 'right'
  * @param  {string} onClick   - An onClick function, optional
  */
-const DirectionLink = ({ theme, link, text, direction, onClick }) => {
+const DirectionLink = ({ dark, link, text, direction, onClick }) => {
 	const attributeOptions = {};
 
 	if( typeof onClick !== 'undefined' ) {
@@ -58,15 +47,15 @@ const DirectionLink = ({ theme, link, text, direction, onClick }) => {
 	}
 
 	if( link ) {
-		return (<a className={ `au-direction-link ${ directions[ direction ] } ${ theme ? themes[ theme ] : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return (<a className={ `au-direction-link ${ directions[ direction ] }${ dark ? 'au-direction-link--dark' : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return (<button className={ `au-direction-link ${ directions[ direction ] } ${ theme ? themes[ theme ] : '' }` } { ...attributeOptions }>{ text }</button> );
+		return (<button className={ `au-direction-link ${ directions[ direction ] }${ dark ? 'au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button> );
 	}
 };
 
 DirectionLink.propTypes = {
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	dark: PropTypes.bool,
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,
@@ -75,7 +64,6 @@ DirectionLink.propTypes = {
 
 DirectionLink.defaultProps = {
 	direction: 'right',
-	theme: 'light',
 };
 
 export default DirectionLink;
