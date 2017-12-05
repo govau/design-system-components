@@ -97,8 +97,8 @@
 	 * `mark` styling.
 	 */
 	mark {
-		color: $AU-color-Text;
-		background-color: mix( $AU-color-Warning, $AU-color-Background-light, 30% );
+		color: $AU-color-Background-light;
+		background-color: $AU-color-Action;
 	}
 
 	/**
@@ -359,8 +359,8 @@
 	}
 
 	mark {
-		background-color: mix( $AU-color-Warning, $AU-colordark-Background-light, 30% );
-		color: $AU-colordark-Text;
+		background-color: $AU-colordark-Action;
+		color: $AU-colordark-Background-light;
 	}
 
 	kbd {
