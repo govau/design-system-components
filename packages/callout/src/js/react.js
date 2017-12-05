@@ -21,11 +21,12 @@ import PropTypes from 'prop-types';
  * Default callout
  *
  * @param  {string} dark        - Add the dark variation class
+ * @param  {string} alt         - Add the alt variation class
  * @param  {string} description - A description of the content of the callout for a11y
  * @param  {string} children    - Anything inside
  */
-export const Callout = ({ dark, description, children }) => (
-	<section className={ `au-callout${ dark ? ' au-callout--dark' : '' }` } aria-label={ description }>
+export const Callout = ({ dark, alt, description, children }) => (
+	<section className={ `au-callout${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` } aria-label={ description }>
 		{ children }
 	</section>
 );
@@ -40,14 +41,15 @@ Callout.propTypes = {
  * Calendar callout
  *
  * @param  {string} dark        - Add the dark variation class
+ * @param  {string} alt         - Add the alt variation class
  * @param  {string} description - A description of the content of the callout for a11y
  * @param  {string} subline     - The subline of the event, optional
  * @param  {string} datetime    - The datetime of the event as ISO datetime
  * @param  {string} time        - The time that appears on the page
  * @param  {string} name        - The name of the event, optional
  */
-export const CalloutCalendar = ({ dark, description, subline, datetime, time, name }) => (
-	<section className={ `au-callout au-callout--calendar-event${ dark ? ' au-callout--dark' : '' }` } aria-label={ description }>
+export const CalloutCalendar = ({ dark, alt, description, subline, datetime, time, name }) => (
+	<section className={ `au-callout au-callout--calendar-event${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` } aria-label={ description }>
 		{ subline && <span className="au-callout--calendar-event__lede">{ subline }</span> }
 		<time className="au-callout--calendar-event__time" dateTime={ new Date( datetime ).toJSON() }>{ time }</time>
 		{ name && <span className="au-callout--calendar-event__name">{ name }</span> }
@@ -56,6 +58,7 @@ export const CalloutCalendar = ({ dark, description, subline, datetime, time, na
 
 CalloutCalendar.propTypes = {
 	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	description: PropTypes.string.isRequired,
 	subline: PropTypes.string,
 	datetime: PropTypes.string.isRequired,
