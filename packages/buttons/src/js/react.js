@@ -30,30 +30,19 @@ const options = {
 
 
 /**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: '',
-	dark: 'au-btn--dark',
-};
-
-
-/**
  * DEFAULT
  * The primary button
  *
  * @param  {string}    text     - The text of the button
  * @param  {string}    as       - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
- * @param  {string}    theme    - The colour theme of the component
+ * @param  {string}    dark     - Add the dark variation class
  * @param  {string}    type     - The type attribute, default: 'button', optional
  * @param  {string}    id       - The ID attribute, optional
  * @param  {boolean}   disabled - The disabled option, optional
  * @param  {boolean}   block    - The block option, optional
  * @param  {function}  onClick  - An onClick function, optional
  */
-const Button = ({ text, as, theme, type, id, disabled, block, onClick }) => {
+const Button = ({ text, as, dark, type, id, disabled, block, onClick }) => {
 	const attributeOptions = {};
 
 	if( typeof id !== 'undefined' ) {
@@ -67,7 +56,7 @@ const Button = ({ text, as, theme, type, id, disabled, block, onClick }) => {
 	return (
 		<button
 			type={ type }
-			className={ `au-btn ${ options[ as ] }${ block ? ' au-btn--block' : '' } ${ theme ? themes[ theme ] : '' }` }
+			className={ `au-btn ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
 			disabled={ disabled }
 			{ ...attributeOptions }
 		>
@@ -79,7 +68,7 @@ const Button = ({ text, as, theme, type, id, disabled, block, onClick }) => {
 Button.propTypes = {
 	text: PropTypes.string.isRequired,
 	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	dark: PropTypes.bool,
 	type: PropTypes.string,
 	id: PropTypes.string,
 	disabled: PropTypes.bool,
@@ -90,7 +79,6 @@ Button.propTypes = {
 Button.defaultProps = {
 	type: 'button',
 	as: 'primary',
-	theme: 'light',
 };
 
 export default Button;

@@ -21,32 +21,21 @@ import PropTypes from 'prop-types';
 
 
 /**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: '',
-	dark: 'au-breadcrumbs--dark',
-};
-
-
-/**
  * DEFAULT
  * The breadcrumbs component
  *
- * @param  {string} theme - The colour theme of the component
+ * @param  {string} dark  - Add the dark variation class
  * @param  {string} label - The aria label of the component
  * @param  {array}  items - Items inside the breadcrumbs passed on to LinkList
  */
-const Breadcrumbs = ({ theme, label, items }) => (
-	<nav className={ `au-breadcrumbs ${ theme ? themes[ theme ] : '' }` } aria-label={ label }>
+const Breadcrumbs = ({ dark, label, items }) => (
+	<nav className={ `au-breadcrumbs${ dark ? ' au-breadcrumbs--dark' : '' }` } aria-label={ label }>
 		<LinkList inline items={ items } />
 	</nav>
 );
 
 Breadcrumbs.propTypes = {
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -57,8 +46,5 @@ Breadcrumbs.propTypes = {
 		).isRequired,
 };
 
-Breadcrumbs.defaultProps = {
-	theme: 'light',
-};
 
 export default Breadcrumbs;

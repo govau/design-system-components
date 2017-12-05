@@ -40,7 +40,7 @@ ReactDOM.render(
 		<div className="split au-body au-body--dark">
 			<h2>breadcrumbs <code>--dark</code></h2>
 
-			<Breadcrumbs theme="dark" label="Breadcrumb for the other page" items={[
+			<Breadcrumbs dark label="Breadcrumb for the other page" items={[
 				{
 					link: '#options',
 					text: 'Options2',

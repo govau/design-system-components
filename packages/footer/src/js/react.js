@@ -17,19 +17,6 @@ import PropTypes from 'prop-types';
 // [replace-imports]
 
 
-/**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: '',
-	alt: 'au-footer--alt',
-	dark: 'au-footer--dark',
-	altdark: 'au-footer--alt au-footer--dark',
-};
-
-
 
 /**
  * A section for the footer that contains navigational elements
@@ -67,21 +54,20 @@ FooterEnd.propTypes = {
  * DEFAULT
  * The footer component
  *
- * @param  {node} children - The inside of this section
+ * @param  {string} dark     - Add the dark variation class
+ * @param  {string} alt      - Add the alt variation class
+ * @param  {node}   children - The inside of this section
  */
-const Footer = ({ theme, children }) => (
-	<footer className={ `au-footer ${ theme ? themes[ theme ] : '' }`} role="contentinfo">
+const Footer = ({ dark, alt, children }) => (
+	<footer className={ `au-footer${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `} role="contentinfo">
 		{ children }
 	</footer>
 );
 
 Footer.propTypes = {
 	children: PropTypes.node.isRequired,
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
-};
-
-Footer.defaultProps = {
-	theme: 'light',
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 };
 
 export default Footer;

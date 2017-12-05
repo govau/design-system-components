@@ -72,31 +72,20 @@ ProgressIndicatorItem.propTypes = {
 
 
 /**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: '',
-	dark: 'au-progress-indicator--dark',
-};
-
-
-/**
  * DEFAULT
  * The progress-indicator component
  *
- * @param  {string} theme - The colour theme of the component
+ * @param  {string} dark  - Add the dark variation class
  * @param  {array}  items - All items for this progress indicator
  */
-const ProgressIndicator = ({ theme, items }) => (
-	<ul className={ `au-progress-indicator ${ theme ? themes[ theme ] : '' }` }>
+const ProgressIndicator = ({ dark, items }) => (
+	<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' }` }>
 		{ items.map( ( item, i ) => <ProgressIndicatorItem key={ i } item={ item } /> ) }
 	</ul>
 );
 
 ProgressIndicator.propTypes = {
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	dark: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -108,8 +97,5 @@ ProgressIndicator.propTypes = {
 		).isRequired,
 };
 
-ProgressIndicator.defaultProps = {
-	theme: 'light',
-};
 
 export default ProgressIndicator;

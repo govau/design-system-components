@@ -36,7 +36,7 @@ ReactDOM.render(
 		<div className="split split--dark">
 			<h2>Simple callout <code>--dark</code></h2>
 
-			<Callout theme="dark" description="description for first callout">
+			<Callout dark description="description for first callout">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
 			</Callout>
 
@@ -44,7 +44,7 @@ ReactDOM.render(
 			<h2>Calendar callout <code>--dark</code></h2>
 
 			<CalloutCalendar
-				theme="dark"
+				dark
 				description="description for second callout"
 				datetime="2017-01-01T00:00:00+00:00"
 				time="Sunday 32 Jun"
@@ -56,7 +56,7 @@ ReactDOM.render(
 			<h2>Calendar callout without optionals <code>--dark</code></h2>
 
 			<CalloutCalendar
-			  theme="dark"
+			  dark
 				description="description for second callout"
 				datetime="2017-01-01T00:00:00+00:00"
 				time="Sunday 32 Jun"

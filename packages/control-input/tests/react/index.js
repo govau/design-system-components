@@ -25,7 +25,7 @@ class RadioList extends React.Component {
 				{ this.props.items.map( ( item, i ) =>
 					<p key={ i }>
 						<Radio
-							theme={ this.props.theme }
+							dark={ this.props.dark }
 							label={ item.label }
 							name={ this.props.name }
 							full={ this.props.full }
@@ -67,7 +67,7 @@ class CheckboxList extends React.Component {
 				{ this.props.items.map( ( item, i ) =>
 					<p key={ i }>
 						<Checkbox
-							theme={ this.props.theme }
+							dark={ this.props.dark }
 							label={ item.label }
 							name={ this.props.name }
 							full={ this.props.full }
@@ -178,7 +178,7 @@ ReactDOM.render(
 		</div>
 		<div className="split split--dark">
 			<h2>checkboxes</h2>
-			<CheckboxList theme='dark' name="checkbox-ex3" items={[
+			<CheckboxList dark name="checkbox-ex3" items={[
 				{
 					label: 'Phone',
 					value: 'phone',
@@ -207,7 +207,7 @@ ReactDOM.render(
 
 			<hr />
 			<h2>radio buttons</h2>
-			<RadioList theme='dark' name="radio-ex3" items={[
+			<RadioList dark name="radio-ex3" items={[
 				{
 					label: 'Yes',
 					value: 'yes',

@@ -22,7 +22,7 @@
 	@include AU-fontsize( sm );
 	@include AU-space( margin, 2unit 0 );
 	@include AU-space( padding, 1.5unit );
-	@include AU-space( border-left, 1unit solid $AU-color-Border );
+	@include AU-space( border-left, 0.25unit solid $AU-color-Border );
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	background-color: $AU-color-Background;
@@ -34,13 +34,6 @@
 
 	:last-child {
 		margin-bottom: 0;
-	}
-
-	.ie8 &,
-	.lt-ie8 & {
-		border-top: 1px solid $AU-color-Border;
-		border-right: 1px solid $AU-color-Border;
-		border-bottom: 1px solid $AU-color-Border;
 	}
 }
 

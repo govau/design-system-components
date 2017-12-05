@@ -57,7 +57,7 @@ class ProgressIndicatorWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<ProgressIndicator theme={ this.props.theme } items={ this.state.items } />
+				<ProgressIndicator dark={ this.props.dark } items={ this.state.items } />
 
 				<button type="button" onClick={ () => { this.changeStatus( 'Personal Infos', 'done' ) } }>Mark "Personal Infos" as done</button>
 				<button type="button" onClick={ () => { this.changeStatus( 'Spouses', 'doing' ) } }>Mark "Spouses" as doing</button>
@@ -142,7 +142,7 @@ ReactDOM.render(
 		</div>
 		<div className="split au-body au-body--dark">
 		<h2>progress-indicator <code>--dark</code></h2>
-			<ProgressIndicator theme="dark" items={[
+			<ProgressIndicator dark items={[
 				{
 					link: '#url',
 					text: 'Introduction',
@@ -174,7 +174,7 @@ ReactDOM.render(
 			<hr />
 			<h2>progress-indicator with no links and onClick <code>--dark</code></h2>
 
-			<ProgressIndicator theme="dark" items={[
+			<ProgressIndicator dark items={[
 				{
 					text: 'Introduction',
 					status: 'done',
@@ -208,7 +208,7 @@ ReactDOM.render(
 			<hr />
 			<h2>progress-indicator with state <code>--dark</code></h2>
 
-			<ProgressIndicatorWrapper theme="dark" />
+			<ProgressIndicatorWrapper dark />
 		</div>
 	</div>,
 

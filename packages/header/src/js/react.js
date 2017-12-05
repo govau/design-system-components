@@ -16,17 +16,6 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
-/**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: '',
-	alt: 'au-header--alt',
-	dark: 'au-header--dark',
-	altdark: 'au-header--alt au-header--dark',
-};
 
 /**
  * DEFAULT
@@ -36,14 +25,15 @@ const themes = {
  * @param  {string}  level    - The tag level (<h1/> <h2/> etc), default: '1'
  * @param  {string}  subline  - An optional subline, optional
  * @param  {boolean} hero     - The hero option, optional
- * @param  {string}  theme    - Optional theme that can be either: light, alt, dark, darkalt, optional
+ * @param  {string}  dark     - Add the dark variation class
+ * @param  {string}  alt      - Add the alt variation class
  * @param  {node}    children - The inside of this section
  */
-const Header = ({ title, level, subline, hero, theme, children }) => {
+const Header = ({ title, level, subline, hero, dark, alt, children }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<div className={`au-header${ hero ? ' au-header--hero' : '' } ${ theme ? themes[ theme ] : '' }`} role="banner">
+		<div className={`au-header${ hero ? ' au-header--hero' : '' }${ dark ? ' au-header--dark' : '' }${ alt ? ' au-header--alt' : '' }`} role="banner">
 			<HeadingTag className="au-header-heading">{ title }</HeadingTag>
 			{ subline && <span className="au-header-subline">{ subline }</span> }
 			{ children }
@@ -56,13 +46,13 @@ Header.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 	subline: PropTypes.node,
 	hero: PropTypes.bool,
-	theme: PropTypes.oneOf([ 'light', 'alt', 'dark', 'altdark' ]),
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	children: PropTypes.node,
 };
 
 Header.defaultProps = {
 	level: '1',
-	theme: 'light',
 };
 
 export default Header;

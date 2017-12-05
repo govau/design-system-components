@@ -17,6 +17,39 @@ ReactDOM.render(
 			</FooterEnd>
 		</Footer>
 
+		<h2>footer <code>--alt</code></h2>
+
+		<Footer alt>
+			<FooterNav>
+				au-footer__navigation
+			</FooterNav>
+			<FooterEnd>
+				au-footer__end
+			</FooterEnd>
+		</Footer>
+
+		<h2>footer <code>--dark</code></h2>
+
+		<Footer dark>
+			<FooterNav>
+				au-footer__navigation
+			</FooterNav>
+			<FooterEnd>
+				au-footer__end
+			</FooterEnd>
+		</Footer>
+
+		<h2>footer <code>--dark</code> <code>--alt</code></h2>
+
+		<Footer dark alt>
+			<FooterNav>
+				au-footer__navigation
+			</FooterNav>
+			<FooterEnd>
+				au-footer__end
+			</FooterEnd>
+		</Footer>
+
 
 		<hr />
 		<h2>footer with paragraph test and body</h2>
@@ -117,61 +150,11 @@ ReactDOM.render(
 			</Footer>
 		</div>
 
-		<h2>footer</h2>
-
-		<Footer theme="dark">
-			<FooterNav>
-				au-footer__navigation
-			</FooterNav>
-			<FooterEnd>
-				au-footer__end
-			</FooterEnd>
-		</Footer>
-
-
 		<hr />
-		<h2>footer with paragraph test and body</h2>
-
-		<div className="au-body">
-			<Footer theme="dark">
-				<FooterNav>
-					<p>au-footer__navigation</p>
-					<p>au-footer__navigation</p>
-					<p>au-footer__navigation</p>
-				</FooterNav>
-				<FooterEnd>
-					<p>au-footer__end</p>
-					<p>au-footer__end</p>
-				</FooterEnd>
-			</Footer>
-		</div>
-
-
-		<hr />
-		<h2>footer navigation only</h2>
-
-		<Footer theme="dark">
-			<FooterNav>
-				au-footer__navigation
-			</FooterNav>
-		</Footer>
-
-
-		<hr />
-		<h2>footer end only</h2>
-
-		<Footer theme="dark">
-			<FooterEnd>
-				au-footer__end
-			</FooterEnd>
-		</Footer>
-
-
-		<hr />
-		<h2>footer with grid, link-list, responsive-embeds and headings</h2>
+		<h2>footer with grid, link-list, responsive-embeds and headings <code>--dark</code></h2>
 
 		<div className="au-grid au-body au-body--dark">
-			<Footer theme="dark">
+			<Footer dark>
 				<div className="container">
 					<FooterNav>
 						<div className="row">
