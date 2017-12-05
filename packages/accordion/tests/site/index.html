@@ -839,6 +839,108 @@
 
 		</div>
 	</div>
+	<div class="split-wrapper">
+
+		<div class="split split--alt">
+			<h3>Accordion open by default on alt</h3>
+
+			<section class="au-accordion">
+				<a href="#accordion-alt"
+					class="au-accordion__title js-au-accordion"
+					aria-controls="accordion-alt"
+					aria-expanded="true"
+					aria-selected="true"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+						Accordion title
+				</a>
+
+				<div class="au-accordion__body" id="accordion-alt" aria-hidden="false">
+					<div class="au-accordion__body-wrapper">
+
+						Here <a href="#url">is</a> some accordion content
+
+					</div>
+				</div>
+			</section>
+
+			<div class="au-body au-body--alt">
+				<h2>With body on alt</h2>
+
+				<h3>Accordion open by default <code>--alt</code></h3>
+				<section class="au-accordion">
+					<a href="#accordion-body-alt"
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-body-alt"
+						aria-expanded="true"
+						aria-selected="true"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body" id="accordion-body-alt" aria-hidden="false">
+						<div class="au-accordion__body-wrapper">
+
+							Here <a href="#url">is</a> some accordion content
+
+						</div>
+					</div>
+				</section>
+			</div>
+
+		</div>
+
+		<div class="split split--dark split--alt">
+			<h3>Accordion <code>--dark</code> open by default on alt</h3>
+
+			<section class="au-accordion au-accordion--dark">
+				<a href="#accordion-altdark"
+					class="au-accordion__title js-au-accordion"
+					aria-controls="accordion-altdark"
+					aria-expanded="true"
+					aria-selected="true"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+						Accordion title
+				</a>
+
+				<div class="au-accordion__body" id="accordion-altdark" aria-hidden="false">
+					<div class="au-accordion__body-wrapper">
+
+						Here <a href="#url">is</a> some accordion content
+
+					</div>
+				</div>
+			</section>
+
+			<div class="au-body au-body--dark au-body--alt">
+				<h2>With body on dark and alt</h2>
+
+				<h3>Accordion <code>--dark</code> open by default</h3>
+				<section class="au-accordion au-accordion--dark">
+					<a href="#accordion-body-altdark"
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-body-altdark"
+						aria-expanded="true"
+						aria-selected="true"
+						role="tab"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</a>
+
+					<div class="au-accordion__body" id="accordion-body-altdark" aria-hidden="false">
+						<div class="au-accordion__body-wrapper">
+
+							Here <a href="#url">is</a> some accordion content
+
+						</div>
+					</div>
+				</section>
+			</div>
+
+		</div>
+	</div>
 
 
 	<script type="text/javascript" src="script.js"></script>
