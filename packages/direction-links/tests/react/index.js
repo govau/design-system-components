@@ -6,7 +6,7 @@ import DirectionLink from './direction-links.js';
 
 ReactDOM.render(
 	<div className="split-wrapper">
-		<div className="split">
+		<div className="split au-body">
 			<h2>bare</h2>
 			<DirectionLink link="#url" text="Continue" />
 
@@ -40,7 +40,7 @@ ReactDOM.render(
 
 			<DirectionLink text="Scroll up" direction="up" onClick={ () => console.log('This function will be called on click') } />
 		</div>
-		<div className="split split--dark">
+		<div className="split au-body au-body--dark">
 			<h2>bare</h2>
 			<DirectionLink dark link="#url" text="Continue" />
 

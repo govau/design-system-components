@@ -30,6 +30,11 @@
 	p:last-child {
 		margin-bottom: 0;
 	}
+
+	&.au-accordion--dark {
+		border-color: $AU-colordark-Border;
+		color: $AU-colordark-Text;
+	}
 }
 
 .au-accordion + .au-accordion {
@@ -103,37 +108,8 @@
 			content: ' ▲ ';
 		}
 	}
-}
 
-.au-accordion__body {
-	overflow: hidden;
-
-	// only listen to the state classes if js is enabled
-	.js & {
-		&.au-accordion--open {
-			display: block;
-			height: auto;
-		}
-
-		&.au-accordion--closed {
-			display: none;
-			height: 0;
-		}
-	}
-}
-
-.au-accordion__body-wrapper {
-	@include AU-space( padding, 1unit );
-	border-top: 1px solid $AU-color-Border;
-}
-
-
-.au-accordion--dark {
-	border-color: $AU-colordark-Border;
-	color: $AU-colordark-Text;
-
-	.au-body .au-accordion__title,
-	.au-accordion__title {
+	.au-accordion--dark & {
 		color: $AU-colordark-Action;
 		background-color: $AU-colordark-Background;
 
@@ -157,8 +133,30 @@
 				'</svg>');
 		}
 	}
+}
 
-	.au-accordion__body-wrapper {
-		border-color: $AU-colordark-Border;
+.au-accordion__body {
+	overflow: hidden;
+
+	// only listen to the state classes if js is enabled
+	.js & {
+		&.au-accordion--open {
+			display: block;
+			height: auto;
+		}
+
+		&.au-accordion--closed {
+			display: none;
+			height: 0;
+		}
+	}
+}
+
+.au-accordion__body-wrapper {
+	@include AU-space( padding, 1unit );
+	border-top: 1px solid $AU-color-Border;
+
+	.au-accordion--dark & {
+		border-top: 1px solid $AU-colordark-Border;
 	}
 }

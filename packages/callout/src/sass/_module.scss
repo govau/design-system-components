@@ -35,6 +35,20 @@
 	:last-child {
 		margin-bottom: 0;
 	}
+
+	&.au-callout--dark {
+		color: $AU-colordark-Text;
+		border-color: $AU-colordark-Border;
+		background-color: $AU-colordark-Background;
+	}
+
+	&.au-callout--alt {
+		background-color: $AU-color-Background-darkest;
+	}
+
+	&.au-callout--dark.au-callout--alt {
+		background-color: $AU-colordark-Background-darkest;
+	}
 }
 
 
@@ -69,11 +83,4 @@
 .au-callout--calendar-event__time {
 	font-weight: bold;
 	margin-bottom: 0;
-}
-
-
-.au-callout--dark {
-	color: $AU-colordark-Text;
-	border-color: $AU-colordark-Border;
-	background-color: $AU-colordark-Background;
 }
