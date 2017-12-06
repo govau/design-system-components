@@ -55,21 +55,21 @@
 }
 
 .au-header-heading {
-	@include AU-fontsize ( md );
+	@include AU-fontgrid( md );
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
 
 	@include AU-media( sm ) {
-		@include AU-fontsize ( xxl, heading );
+		@include AU-fontgrid( xxl, heading );
 	}
 }
 
 .au-header-subline {
-	@include AU-fontsize ( sm );
+	@include AU-fontgrid( sm );
 	max-width: $AU-maxwidth;
 
 	@include AU-media( sm ) {
-		@include AU-fontsize ( md );
+		@include AU-fontgrid( md );
 	}
 }
