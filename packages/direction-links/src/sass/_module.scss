@@ -45,6 +45,17 @@
 		width: auto;
 		height: auto;
 	}
+
+	// Color variation
+	&.au-direction-link--dark {
+		color: $AU-colordark-Action;
+
+		@include AU-focus( 'dark' );
+
+		&:hover {
+			color: $AU-colordark-Text;
+		}
+	}
 }
 
 /**
@@ -76,15 +87,4 @@
  */
 .au-direction-link--down:after {
 	content: '↓';
-}
-
-
-.au-direction-link--dark {
-	color: $AU-colordark-Action;
-
-	@include AU-focus( 'dark' );
-
-	&:hover {
-		color: $AU-colordark-Text;
-	}
 }

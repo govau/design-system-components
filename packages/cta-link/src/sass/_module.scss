@@ -63,7 +63,7 @@
 		}
 	}
 
-	&--dark {
+	&.au-cta-link--dark {
 		color: $AU-colordark-Action;
 
 		@include AU-focus( 'dark' );

@@ -322,12 +322,10 @@
 		@include AU-space( margin-bottom, 1unit );
 	}
 
+	// Body colour schemes
+
 	&.au-body--alt {
 		background: $AU-color-Background-dark;
-	}
-
-	&.au-body--dark.au-body--alt {
-		background: $AU-colordark-Background-dark;
 	}
 
 	&.au-body--dark {
@@ -383,6 +381,10 @@
 			color: $AU-colordark-Muted;
 			background-color: $AU-colordark-Background-darkest;
 		}
+	}
+
+	&.au-body--dark.au-body--alt {
+		background: $AU-colordark-Background-dark;
 	}
 }
 

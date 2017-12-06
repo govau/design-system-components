@@ -37,6 +37,10 @@
 			}
 		}
 	}
+
+	&.au-inpage-nav-links--dark {
+		border-color: $AU-colordark-Action;
+	}
 }
 
 .au-inpage-nav-links__heading {
@@ -55,9 +59,4 @@
 	position: absolute;
 	right: 0;
 	font-weight: normal;
-}
-
-
-.au-inpage-nav-links--dark {
-	border-color: $AU-colordark-Action;
 }

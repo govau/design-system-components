@@ -26,6 +26,10 @@
 	& > li {
 		margin: 0;
 	}
+
+	&.au-progress-indicator--dark {
+		border-color: $AU-colordark-Border;
+	}
 }
 
 .au-body .au-progress-indicator__link,
@@ -116,21 +120,8 @@
 			}
 		}
 	}
-}
 
-.au-progress-indicator__status {
-	@include AU-fontsize( xs, heading );
-	display: block;
-	font-weight: normal;
-	color: $AU-color-Muted;
-}
-
-.au-body--dark .au-progress-indicator--dark,
-.au-progress-indicator--dark {
-	border-color: $AU-colordark-Border;
-
-	.au-progress-indicator__link,
-	.au-body--dark .au-progress-indicator__link & {
+	.au-progress-indicator--dark & {
 		color: $AU-colordark-Text;
 		border-bottom-color: $AU-colordark-Border;
 
@@ -172,8 +163,16 @@
 			}
 		}
 	}
+}
 
-	.au-progress-indicator__status {
+.au-progress-indicator__status {
+	@include AU-fontsize( xs, heading );
+	display: block;
+	font-weight: normal;
+	color: $AU-color-Muted;
+
+	.au-progress-indicator--dark & {
 		color: $AU-colordark-Muted;
 	}
 }
+

@@ -71,24 +71,26 @@
 			outline-offset: -1px;
 		}
 	}
-}
 
-.au-tags--dark {
-	color: $AU-colordark-Text;
+	&.au-tags--dark {
+		color: $AU-colordark-Text;
 
-	.au-tags__item {
-		border-color: $AU-colordark-Action;
+		.au-tags__item {
+			border-color: $AU-colordark-Action;
 
-		> a,
-		> button {
-			color: $AU-colordark-Action;
+			> a,
+			> button {
+				color: $AU-colordark-Action;
 
-			&:hover {
-				color: $AU-colordark-Text;
-				background-color: $AU-colordark-Background;
+				&:hover {
+					color: $AU-colordark-Text;
+					background-color: $AU-colordark-Background;
+				}
+
+				@include AU-focus( 'dark' );
 			}
-
-			@include AU-focus( 'dark' );
 		}
 	}
 }
+
+

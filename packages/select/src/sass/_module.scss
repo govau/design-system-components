@@ -99,16 +99,15 @@
 		@include AU-space( padding-right, .25unit );
 	}
 
-}
+	.au-select--dark & {
+		border-color: $AU-colordark-Text;
+		@include AU-focus( 'dark' );
 
-.au-select--dark .au-select__element {
-	border-color: $AU-colordark-Text;
-	@include AU-focus( 'dark' );
-
-	&:disabled {
-		background-color: $AU-colordark-Background;
-		color: $AU-colordark-Muted;
-		border-color: $AU-colordark-Background;
+		&:disabled {
+			background-color: $AU-colordark-Background;
+			color: $AU-colordark-Muted;
+			border-color: $AU-colordark-Background;
+		}
 	}
 }
 
