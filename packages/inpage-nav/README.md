@@ -91,7 +91,7 @@ All props:
 	title="Section 1"                {/* The title of the section */}
 	link="section1"                  {/* The link of this section, corresponds to the link inside InpageNavLinks */}
 	level="2"                        {/* The semantic heading tag level, h1-h6, optional */}
-	headingClass="uikit-display-3"   {/* Additional classes to be added to the headline, optional */}
+	headingClass="au-display-3"   {/* Additional classes to be added to the headline, optional */}
 	sectionLink="Link to section"    {/* The text for the section link, optional */}
 	sectionLinkOnClick={ () => {} }  {/* A function to be executed when the section link is clicked, optional */}
 />

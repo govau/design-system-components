@@ -12,11 +12,11 @@
  * The accordion jquery function to add attributes and event listeners
  *
  * Public functions are:
- * $('.js-au-accordion-wrapper').auAccordion().isOpen()
- * $('.js-au-accordion-wrapper').auAccordion().setA11y()
- * $('.js-au-accordion-wrapper').auAccordion().addListeners()
+ * $('.js-au-accordion-wrapper').AUaccordion().isOpen()
+ * $('.js-au-accordion-wrapper').AUaccordion().setA11y()
+ * $('.js-au-accordion-wrapper').AUaccordion().addListeners()
  */
-$.fn.auAccordion = function( callbacks ) {
+$.fn.AUaccordion = function( callbacks ) {
 	var $elements = this;
 
 	var accordionObject = {

@@ -57,10 +57,10 @@ import Footer, { FooterNav, FooterEnd } from './footer.js';
 
 <Footer>
 	<FooterNav>
-		uikit-footer__navigation
+		au-footer__navigation
 	</FooterNav>
 	<FooterEnd>
-		uikit-footer__end
+		au-footer__end
 	</FooterEnd>
 </Footer>
 ```
