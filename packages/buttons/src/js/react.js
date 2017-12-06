@@ -33,7 +33,7 @@ const options = {
  * DEFAULT
  * The primary button
  *
- * @param  {string}    text     - The text of the button
+ * @param  {string}    children - Anything inside
  * @param  {string}    as       - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
  * @param  {string}    dark     - Add the dark variation class
  * @param  {string}    type     - The type attribute, default: 'button', optional
@@ -42,7 +42,7 @@ const options = {
  * @param  {boolean}   block    - The block option, optional
  * @param  {function}  onClick  - An onClick function, optional
  */
-const Button = ({ text, as, dark, type, id, disabled, block, onClick }) => {
+const Button = ({ children, as, dark, type, id, disabled, block, onClick }) => {
 	const attributeOptions = {};
 
 	if( typeof id !== 'undefined' ) {
@@ -60,13 +60,13 @@ const Button = ({ text, as, dark, type, id, disabled, block, onClick }) => {
 			disabled={ disabled }
 			{ ...attributeOptions }
 		>
-			{ text }
+			{ children }
 		</button>
 	);
 };
 
 Button.propTypes = {
-	text: PropTypes.string.isRequired,
+	children: PropTypes.string.isRequired,
 	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
 	dark: PropTypes.bool,
 	type: PropTypes.string,
