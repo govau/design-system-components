@@ -82,6 +82,12 @@
 	}
 
 	// Hide the arrow on disabled, because we can't change parent element styles
+	&[disabled] {
+		cursor: not-allowed;
+		background-color: $AU-color-Background;
+		color: $AU-color-Muted;
+		border-color: $AU-color-Background;
+	}
 	&:disabled {
 		cursor: not-allowed;
 		background-color: $AU-color-Background;

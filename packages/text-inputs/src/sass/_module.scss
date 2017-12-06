@@ -63,8 +63,14 @@
 		border-color: $AU-color-Success;
 	}
 
-	&:disabled,
 	&[disabled] {
+		cursor: not-allowed;
+		background: $AU-color-Background;
+		border-color: $AU-color-Background;
+		color: $AU-color-Muted;
+	}
+
+	&:disabled {
 		cursor: not-allowed;
 		background: $AU-color-Background;
 		border-color: $AU-color-Background;

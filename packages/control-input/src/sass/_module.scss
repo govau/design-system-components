@@ -25,12 +25,10 @@
 	@include AU-space( left, 0.5unit );
 	@include AU-space( top, 0.5unit );
 
-	&:hover {
-		cursor: pointer;
+	cursor: pointer;
 
-		& + .au-control-input__text {
-			cursor: pointer;
-		}
+	& + .au-control-input__text {
+		cursor: pointer;
 	}
 
 	// CHECKBOXES
@@ -74,7 +72,28 @@
 	  @include AU-outline();
 	}
 
+	// Disabled styles for IE
+	&[disabled] {
+		cursor: not-allowed;
+
+		& + .au-control-input__text {
+			cursor: not-allowed;
+		}
+
+		& + .au-control-input__text {
+			color: $AU-color-Muted;
+		}
+	}
+
+	// Disabled styles
 	&:disabled {
+
+		cursor: not-allowed;
+
+		& + .au-control-input__text {
+			cursor: not-allowed;
+		}
+
 		& + .au-control-input__text {
 			color: $AU-color-Muted;
 		}
@@ -111,14 +130,6 @@
 					<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
 					<circle fill="#{ $AU-color-Muted  }" cx="64" cy="64" r="44"/>
 				</svg>');
-			}
-		}
-
-		&:hover {
-			cursor: not-allowed;
-
-			& + .au-control-input__text {
-				cursor: not-allowed;
 			}
 		}
 	}
@@ -160,6 +171,13 @@
 			}
 		}
 
+		// Disabled styles for IE
+		&[disabled] + .au-control-input__text {
+			color: $AU-colordark-Muted;
+		}
+
+
+		// Disabled styles
 		&:disabled {
 			& + .au-control-input__text {
 				color: $AU-colordark-Muted;
