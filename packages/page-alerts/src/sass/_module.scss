@@ -29,7 +29,7 @@
 	border: solid 3px $AU-color-Info;
 	@include AU-space( border-left-width, 3unit );
 	border-radius: $AU-border-radius;
-	max-width: $AU-maxwidth;
+	word-wrap: break-word;
 
 	:first-child {
 		margin-top: 0;

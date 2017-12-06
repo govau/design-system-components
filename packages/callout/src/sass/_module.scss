@@ -26,7 +26,7 @@
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	background-color: $AU-color-Background;
-	max-width: $AU-maxwidth;
+	word-wrap: break-word;
 
 	:first-child {
 		margin-top: 0;
