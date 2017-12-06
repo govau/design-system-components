@@ -30,7 +30,7 @@
 
 	// Create a new class with the fontsize key
 	.au-display-#{ nth(  map-keys( $AU-fontsize-map ), $i ) } {
-		@include AU-fontsize( nth(  map-keys( $AU-fontsize-map ), $i ) , heading ); // Get the font size and give it heading leading
+		@include AU-fontgrid( nth(  map-keys( $AU-fontsize-map ), $i ) , heading ); // Get the font size and give it heading leading
 		font-family: $AU-font;
 		display: block;
 		font-weight: bold;

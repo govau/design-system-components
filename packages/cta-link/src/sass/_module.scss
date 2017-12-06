@@ -15,7 +15,7 @@
 // styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-cta-link {
-	@include AU-fontsize( md );
+	@include AU-fontgrid( md );
 	@include AU-space( margin-bottom, 1unit );
 	appearance: none;
 	padding: 0;

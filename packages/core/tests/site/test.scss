@@ -185,98 +185,98 @@ html {
 
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
-// mixin AU-fontsize
+// mixin AU-fontgrid
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.au-fontsize {
+.au-fontgrid {
 	background-color: $AU-color-Background;
 	margin-bottom: $AU-unit + 0px;
 }
 
-.au-fontsize-0 {
-	@include AU-fontsize( xxxl );
+.au-fontgrid-0 {
+	@include AU-fontgrid( xxxl );
 }
 
-.au-fontsize-1 {
-	@include AU-fontsize( xxl );
+.au-fontgrid-1 {
+	@include AU-fontgrid( xxl );
 }
 
-.au-fontsize-2 {
-	@include AU-fontsize( xl );
+.au-fontgrid-2 {
+	@include AU-fontgrid( xl );
 }
 
-.au-fontsize-3 {
-	@include AU-fontsize( lg );
+.au-fontgrid-3 {
+	@include AU-fontgrid( lg );
 }
 
-.au-fontsize-4 {
-	@include AU-fontsize( md );
+.au-fontgrid-4 {
+	@include AU-fontgrid( md );
 }
 
-.au-fontsize-5 {
-	@include AU-fontsize( sm );
+.au-fontgrid-5 {
+	@include AU-fontgrid( sm );
 }
 
-.au-fontsize-6 {
-	@include AU-fontsize( xs );
+.au-fontgrid-6 {
+	@include AU-fontgrid( xs );
 }
 
 .lineheight-heading {
-	.au-fontsize-0 {
-		@include AU-fontsize( xxxl, heading );
+	.au-fontgrid-0 {
+		@include AU-fontgrid( xxxl, heading );
 	}
 
-	.au-fontsize-1 {
-		@include AU-fontsize( xxl, heading );
+	.au-fontgrid-1 {
+		@include AU-fontgrid( xxl, heading );
 	}
 
-	.au-fontsize-2 {
-		@include AU-fontsize( xl, heading );
+	.au-fontgrid-2 {
+		@include AU-fontgrid( xl, heading );
 	}
 
-	.au-fontsize-3 {
-		@include AU-fontsize( lg, heading );
+	.au-fontgrid-3 {
+		@include AU-fontgrid( lg, heading );
 	}
 
-	.au-fontsize-4 {
-		@include AU-fontsize( md, heading );
+	.au-fontgrid-4 {
+		@include AU-fontgrid( md, heading );
 	}
 
-	.au-fontsize-5 {
-		@include AU-fontsize( sm, heading );
+	.au-fontgrid-5 {
+		@include AU-fontgrid( sm, heading );
 	}
 
-	.au-fontsize-6 {
-		@include AU-fontsize( xs, heading );
+	.au-fontgrid-6 {
+		@include AU-fontgrid( xs, heading );
 	}
 }
 
 .lineheight-nospace {
-	.au-fontsize-0 {
-		@include AU-fontsize( xxxl, nospace );
+	.au-fontgrid-0 {
+		@include AU-fontgrid( xxxl, nospace );
 	}
 
-	.au-fontsize-1 {
-		@include AU-fontsize( xxl, nospace );
+	.au-fontgrid-1 {
+		@include AU-fontgrid( xxl, nospace );
 	}
 
-	.au-fontsize-2 {
-		@include AU-fontsize( xl, nospace );
+	.au-fontgrid-2 {
+		@include AU-fontgrid( xl, nospace );
 	}
 
-	.au-fontsize-3 {
-		@include AU-fontsize( lg, nospace );
+	.au-fontgrid-3 {
+		@include AU-fontgrid( lg, nospace );
 	}
 
-	.au-fontsize-4 {
-		@include AU-fontsize( md, nospace );
+	.au-fontgrid-4 {
+		@include AU-fontgrid( md, nospace );
 	}
 
-	.au-fontsize-5 {
-		@include AU-fontsize( sm, nospace );
+	.au-fontgrid-5 {
+		@include AU-fontgrid( sm, nospace );
 	}
 
-	.au-fontsize-6 {
-		@include AU-fontsize( xs, nospace );
+	.au-fontgrid-6 {
+		@include AU-fontgrid( xs, nospace );
 	}
 }
 

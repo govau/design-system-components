@@ -211,7 +211,7 @@
  * The label text
  */
 .au-control-input__text {
-	@include AU-fontsize( sm, nospace );
+	@include AU-fontgrid( sm, nospace );
 	@include AU-space( margin, 0.5unit 0.5unit 0.5unit 2.5unit );
 	display: block;
 	font-family: $AU-font;

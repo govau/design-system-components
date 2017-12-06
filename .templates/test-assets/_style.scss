@@ -18,7 +18,7 @@ body {
 			#333 20px
 		);
 		@include AU-space( padding, 1.5unit );
-		@include AU-fontsize( sm, nospace );
+		@include AU-fontgrid( sm, nospace );
 		content: "📃 Test file";
 		font-family: $AU-font-monospace;
 		color: white;

@@ -16,7 +16,7 @@
 // inpage-nav style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-inpage-nav-links {
-	@include AU-fontsize( sm );
+	@include AU-fontgrid( sm );
 	@include AU-space( margin, 3unit 0 );
 	@include AU-space( padding-left, 1.5unit );
 
@@ -54,7 +54,7 @@
 }
 
 .au-inpage-nav-section-link {
-	@include AU-fontsize( xs, nospace );
+	@include AU-fontgrid( xs, nospace );
 	@include AU-space( top, 0.25unit );
 	position: absolute;
 	right: 0;

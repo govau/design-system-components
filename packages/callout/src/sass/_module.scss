@@ -19,7 +19,7 @@
  * The generic callout.
  */
 .au-callout {
-	@include AU-fontsize( sm );
+	@include AU-fontgrid( sm );
 	@include AU-space( margin, 2unit 0 );
 	@include AU-space( padding, 1.5unit );
 	@include AU-space( border-left, 0.25unit solid $AU-color-Border );
@@ -72,12 +72,12 @@
 }
 
 .au-callout--calendar-event__lede {
-	@include AU-fontsize( sm, nospace );
+	@include AU-fontgrid( sm, nospace );
 }
 
 .au-callout--calendar-event__time,
 .au-callout--calendar-event__name {
-	@include AU-fontsize( xl, heading );
+	@include AU-fontgrid( xl, heading );
 }
 
 .au-callout--calendar-event__time {

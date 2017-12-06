@@ -15,7 +15,7 @@
 // Skip-to links
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-skip-link {
-	@include AU-fontsize( md, nospace );
+	@include AU-fontgrid( md, nospace );
 	font-family: $AU-font;
 	color: $AU-color-Text;
 }

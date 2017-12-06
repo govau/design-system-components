@@ -17,7 +17,7 @@
 // Tag styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-tags {
-	@include AU-fontsize( sm );
+	@include AU-fontgrid( sm );
 	@include AU-space ( margin-bottom, 0.5unit );
 	display: block;
 	margin: 0;

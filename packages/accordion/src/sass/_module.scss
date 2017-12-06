@@ -44,7 +44,7 @@
 
 .au-body .au-accordion__title,
 .au-accordion__title {
-	@include AU-fontsize( md, heading );
+	@include AU-fontgrid( md, heading );
 	@include AU-space( padding, 1unit 2.5unit 1unit 1unit );
 	display: block;
 	color: $AU-color-Action;

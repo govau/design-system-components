@@ -40,7 +40,7 @@
 // BODY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-body {
-	@include AU-fontsize( sm );
+	@include AU-fontgrid( sm );
 	margin: 0;
 	text-size-adjust: 100%;
 	font-family: $AU-font;
@@ -188,7 +188,7 @@
 	 * `small`: for less important information (not stylistic purposes).
 	 */
 	small {
-		@include AU-fontsize( xs );
+		@include AU-fontgrid( xs );
 	}
 
 
@@ -267,7 +267,7 @@
 
 	sub,
 	sup {
-		@include AU-fontsize( xs, nospace );
+		@include AU-fontgrid( xs, nospace );
 		position: relative;
 		vertical-align: baseline;
 	}
@@ -289,7 +289,7 @@
 	kbd,
 	code,
 	samp {
-		@include AU-fontsize( xs );
+		@include AU-fontgrid( xs );
 		@include AU-space( padding, 0.25unit );
 		font-family: $AU-font-monospace;
 		display: inline-block;

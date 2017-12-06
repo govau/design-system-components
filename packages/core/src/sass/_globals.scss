@@ -18,6 +18,7 @@
 //   - AU-sronly
 //   - AU-outline
 //   - AU-focus
+//   - AU-fontgrid
 // - variables
 //   - breakpoints
 //   - font stacks
@@ -606,28 +607,28 @@ $dependencies: (
 
 
 /**
- * AU-fontsize - Mixin for setting font-size and line-height.
+ * AU-fontgrid- Mixin for setting font-size and line-height.
  * @param  {keywords} $fontsize-key 		-  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
  * @param  {keywords} $lineheight-key 	-  Either one of the following keywords: heading, nospace, default
  *
  * @return {string}                    	- The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
 */
-@mixin AU-fontsize( $fontsize-key, $lineheight-key: 'default' ) {
+@mixin AU-fontgrid( $fontsize-key, $lineheight-key: 'default' ) {
 
 	@if type-of( $fontsize-key ) != 'string' {
-		@error "Going somewhere, Solo?; the AU-fontsize mixin fontsize key takes a string!";
+		@error "Going somewhere, Solo?; the AU-fontgrid mixin fontsize key takes a string!";
 	}
 
 	@if type-of( $lineheight-key ) != 'string' {
-		@error "Tell Jabba I've got his money; the AU-fontsize mixin lineheight key takes a string!";
+		@error "Tell Jabba I've got his money; the AU-fontgrid mixin lineheight key takes a string!";
 	}
 
 	@if not map-has-key( $AU-fontsize-map, $fontsize-key ) {
-		@error "You shall not pass; the AU-fontsize mixin only takes the following fontsize keys strings: " + map-keys( $AU-fontsize-map );
+		@error "You shall not pass; the AU-fontgrid mixin only takes the following fontsize keys strings: " + map-keys( $AU-fontsize-map );
 	}
 
 	@if not map-has-key( $AU-lineheight-map, $lineheight-key ) {
-		@error "There's a snake in my boot; the AU-fontsize mixin only takes the following lineheight keys strings: " + map-keys( $AU-lineheight-map );
+		@error "There's a snake in my boot; the AU-fontgrid mixin only takes the following lineheight keys strings: " + map-keys( $AU-lineheight-map );
 	}
 
 	// Get the value from supplied key for pixel and calculate the rem value

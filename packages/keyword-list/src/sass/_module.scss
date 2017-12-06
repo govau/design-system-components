@@ -35,7 +35,7 @@
 }
 
 .au-keyword-list__item {
-	@include AU-fontsize( lg );
+	@include AU-fontgrid( lg );
 	font-weight: bold;
 
 	// Display the link as block as focus doesn't show
@@ -45,7 +45,7 @@
 }
 
 .au-keyword-list__item__small {
-	@include AU-fontsize( sm, nospace );
+	@include AU-fontgrid( sm, nospace );
 	display: block;
 	font-weight: normal; // Reset parent weight
 
