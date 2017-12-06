@@ -10,7 +10,7 @@ ReactDOM.render(
 			<div className="split">
 				<h2>primary button</h2>
 				<Button>Continue</Button>&nbsp;
-				<Button disabled>Continue</Button>
+				<Button id='testforID' disabled>Continue</Button>
 
 
 				<hr />
