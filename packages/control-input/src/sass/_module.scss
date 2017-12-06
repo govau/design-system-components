@@ -68,6 +68,7 @@
 		}
 	}
 
+	&:focus,
 	&:focus + .au-control-input__text:after {
 	  @include AU-outline();
 	}
@@ -219,6 +220,7 @@
 			}
 		}
 
+		&:focus,
 		&:focus + .au-control-input__text:after {
 			@include AU-outline( 'dark' );
 		}
