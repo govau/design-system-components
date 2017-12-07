@@ -90,7 +90,6 @@ All props:
 />
 ```
 
-
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/select/tests/react/index.js).
 
 

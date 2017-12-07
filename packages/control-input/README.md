@@ -88,7 +88,6 @@ All props:
 />
 ```
 
-
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/control-input/tests/react/index.js).
 
 
