@@ -163,6 +163,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, fixed export
 * v0.1.5 - Fixed pancake config
 * v0.1.4 - Pinned pancake plugins
 * v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction
