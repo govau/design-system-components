@@ -108,6 +108,16 @@
 			"name": "Simon Schwartz",
 			"email": "simon.schwartz0@gmail.com",
 			"url": "https://simonschwartz.github.io/"
+		},
+		{
+			"name": "Trevor Brennan",
+			"email": "t@trevorbrennan.com",
+			"url": "http://trevorbrennan.com/"
+		},
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "http://alexpage.com.au/"
 		}
 	],
 	"license": "MIT"

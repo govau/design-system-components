@@ -109,6 +109,16 @@
 			"name": "Simon Pascal Klein",
 			"email": "klepas@klepas.org",
 			"url": "http://klepas.org/"
+		},
+		{
+			"name": "Trevor Brennan",
+			"email": "t@trevorbrennan.com",
+			"url": "http://trevorbrennan.com/"
+		},
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "http://alexpage.com.au/"
 		}
 	],
 	"license": "MIT"
