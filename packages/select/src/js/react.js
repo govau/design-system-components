@@ -28,8 +28,9 @@ import PropTypes from 'prop-types';
  * @param  {string}   value    - An optional pre-selected value, needs onChange
  * @param  {function} onChange - A function to be called on change
  * @param  {string}   block    - The block option
+ * @param  {boolean}  disabled - The disable option, optional
  */
-const Select = ({ dark, options, id, name, value, onChange, block }) => {
+const Select = ({ dark, options, id, name, value, onChange, block, disabled }) => {
 
 	const attributeOptions = {};
 
@@ -43,6 +44,10 @@ const Select = ({ dark, options, id, name, value, onChange, block }) => {
 
 	if( typeof value !== 'undefined' ) {
 		attributeOptions.value = value;
+	}
+
+	if( typeof disabled !== 'undefined' ) {
+		attributeOptions.disabled = disabled;
 	}
 
 	if( typeof onChange === 'function' ) {
@@ -71,6 +76,7 @@ Select.propTypes = {
 	id: PropTypes.string.isRequired,
 	onChange: PropTypes.func,
 	block: PropTypes.bool,
+	disabled: PropTypes.bool,
 };
 
 

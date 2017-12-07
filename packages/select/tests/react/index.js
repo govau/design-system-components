@@ -23,7 +23,13 @@ class SelectWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<Select dark={ this.props.dark } id="test1" onChange={ event => this.changeSelect( event.target.value ) } value={ this.state.select } options={[
+				<Select
+					dark={ this.props.dark }
+					disabled={ this.props.disabled }
+					id="test1"
+					onChange={ event => this.changeSelect( event.target.value ) }
+					value={ this.state.select }
+					options={[
 					{
 						value: '',
 						text: 'Please select',
@@ -130,6 +136,26 @@ ReactDOM.render(
 
 
 			<hr />
+			<h2>select disabled <code>--dark</code></h2>
+			<Select disabled id="test4" onChange={ () => {
+				console.log('This function is called when the select input has changed');
+			} } options={[
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+			]} />
+
+
+			<hr />
 			<h2>select with state</h2>
 
 			<SelectWrapper />
@@ -191,6 +217,25 @@ ReactDOM.render(
 			<h2>select with onchange <code>--dark</code></h2>
 
 			<Select dark id="test4" onChange={ () => {
+				console.log('This function is called when the select input has changed');
+			} } options={[
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+			]} />
+
+			<hr />
+			<h2>select disabled <code>--dark</code></h2>
+			<Select dark disabled id="test4" onChange={ () => {
 				console.log('This function is called when the select input has changed');
 			} } options={[
 				{
