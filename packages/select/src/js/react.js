@@ -25,12 +25,11 @@ import PropTypes from 'prop-types';
  * @param  {array}    options  - The options for the select, format: { value: '', text: '' }
  * @param  {string}   id       - The ID for the select for the label
  * @param  {string}   name     - The name attribute
- * @param  {string}   value    - An optional pre-selected value, needs onChange
  * @param  {function} onChange - A function to be called on change
  * @param  {string}   block    - The block option
  * @param  {boolean}  disabled - The disable option, optional
  */
-const Select = ({ dark, options, id, name, value, onChange, block, disabled }) => {
+const Select = ({ dark, options, id, name, onChange, block, disabled }) => {
 
 	const attributeOptions = {};
 
@@ -40,10 +39,6 @@ const Select = ({ dark, options, id, name, value, onChange, block, disabled }) =
 
 	if( typeof name !== 'undefined' ) {
 		attributeOptions.name = name;
-	}
-
-	if( typeof value !== 'undefined' ) {
-		attributeOptions.value = value;
 	}
 
 	if( typeof disabled !== 'undefined' ) {
@@ -72,7 +67,6 @@ Select.propTypes = {
 		})
 		).isRequired,
 	name: PropTypes.string,
-	value: PropTypes.string,
 	id: PropTypes.string.isRequired,
 	onChange: PropTypes.func,
 	block: PropTypes.bool,
