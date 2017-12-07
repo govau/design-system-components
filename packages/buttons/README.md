@@ -67,6 +67,7 @@ All props:
 	block={ true }        {/* The block option to make the button fill the available width, optional */}
 	type="submit"         {/* The type attribute, optional */}
 	onClick={ () => {} }  {/* A function to execute when the button is clicked, optional */}
+	dark={ false }        {/* A dark variation of the component */}
 />
 ```
 

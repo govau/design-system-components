@@ -55,14 +55,14 @@ Usage:
 ```jsx
 import Heading from './headings.js';
 
-<Heading size="2" level="2" text="Display 2 on h2" />
+<Heading size="xl" level="2" text="Display 2 on h2" />
 ```
 
 All props:
 
 ```jsx
 <Heading
-	size="1"              {/* The display size, 1 = smallest; 6 = largest */}
+	size="xl"             {/* The display size, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' */}
 	level="1"             {/* The semantic headline tag level, h1-h6 */}
 	text="Headline text"  {/* The text of the headline */}
 />

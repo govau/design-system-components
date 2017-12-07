@@ -75,7 +75,10 @@ All props:
 
 ```jsx
 <Select
-	id="unique"            {/* Unique ID, a must so you can tie a label to it */}
+	dark={ false }         {/* A dark variation of the component */}
+	name="the_name"        {/* The name attribute */}
+	id="the_id"            {/* The id attribute */}
+	disabled={ false }     {/* The disabled attribute */}
 	block={ true }         {/* The block option to make the select fill the available width, optional */}
 	onChange={ () => {} }  {/* A function to execute when the select value is changed, optional */}
 	options={[             {/* All options in a neat array */}
@@ -86,6 +89,7 @@ All props:
 	]}
 />
 ```
+
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/select/tests/react/index.js).
 

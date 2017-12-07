@@ -65,7 +65,14 @@ import Footer, { FooterNav, FooterEnd } from './footer.js';
 </Footer>
 ```
 
-No props...
+All props:
+
+```jsx
+<Footer
+	alt={ false }         {/* An alternate variation of the component */}
+	dark={ false }        {/* A dark variation of the component */}
+/>
+```
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/footer/tests/react/index.js).
 
