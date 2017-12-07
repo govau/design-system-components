@@ -68,20 +68,23 @@ All props:
 <Radio
 	label="The label"      {/* The label of the radio button */}
 	name="the_name"        {/* The name attribute */}
-	full={ false }         {/* An option for the radio button theme */}
 	value="value"          {/* The value attribute */}
+	id="the_id"            {/* The id attribute */}
 	disabled={ false }     {/* The disabled attribute */}
 	checked={ false }      {/* The state of the radio button */}
 	onChange={ () => {} }  {/* A function to be executed onChange */}
+	dark={ false }         {/* A dark variation of the component */}
 />
 
 <Checkbox
 	label="The label"      {/* The label of the checkbox */}
 	name="the_name"        {/* The name attribute */}
-	full={ false }         {/* An option for the checkbox theme */}
+	value="value"          {/* The value attribute */}
+	id="the_id"            {/* The id attribute */}
 	disabled={ false }     {/* The disabled attribute */}
 	checked={ false }      {/* The state of the checkbox */}
 	onChange={ () => {} }  {/* A function to be executed onChange */}
+	dark={ false }         {/* A dark variation of the component */}
 />
 ```
 

@@ -160,6 +160,7 @@ All props:
 	afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
 	onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
 	afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
+	dark={ false }           {/* A dark variation of the component */}
 >
 	Some content of the third accordion.
 </Accordion>

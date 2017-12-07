@@ -36,10 +36,11 @@
 				@include AU-space( width, 0.5unit );
 				@include AU-space( height, 0.5unit );
 				@include AU-space( margin, 0 0.5unit );
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">
 						<path fill="#{ $AU-color-Border }" d="M128 64l-64 64-16-16 64-64"/>
 						<path fill="#{ $AU-color-Border }" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');
+				background-size: 100%;
 				background-repeat: no-repeat;
 			}
 
@@ -62,7 +63,7 @@
 
 		> .au-link-list {
 			> li:not(:last-child):after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">
 						<path fill="#{ $AU-colordark-Border }" d="M128 64l-64 64-16-16 64-64"/>
 						<path fill="#{ $AU-colordark-Border }" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');

@@ -99,18 +99,34 @@
 /**
  * DISABLED
  */
-.au-btn:disabled {
-	font-weight: normal;
-	color: $AU-color-Muted;
-	border-color: transparent;
-	background: transparent;
-	cursor: not-allowed;
-	text-decoration: none;
-
-	&.au-btn--dark {
-		color: $AU-colordark-Muted;
-		background: transparent;
+.au-btn {
+	// IE8 disabled styles
+	&[disabled] {
+		cursor: not-allowed;
+		color: $AU-color-Muted;
 		border-color: transparent;
+		background: transparent;
+
+		&.au-btn--dark {
+			color: $AU-colordark-Muted;
+			background: transparent;
+			border-color: transparent;
+		}
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		font-weight: normal;
+		color: $AU-color-Muted;
+		border-color: transparent;
+		background: transparent;
+		text-decoration: none;
+
+		&.au-btn--dark {
+			color: $AU-colordark-Muted;
+			background: transparent;
+			border-color: transparent;
+		}
 	}
 }
 

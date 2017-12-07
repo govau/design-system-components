@@ -323,34 +323,6 @@ html {
 	&.au-space--2:after {
 		@include AU-space( width, 2unit );
 	}
-
-	&.au-space--25:after {
-		@include AU-space( width, 2.5unit );
-	}
-
-	&.au-space--3:after {
-		@include AU-space( width, 3unit );
-	}
-
-	&.au-space--35:after {
-		@include AU-space( width, 3.5unit );
-	}
-
-	&.au-space--4:after {
-		@include AU-space( width, 4unit );
-	}
-
-	&.au-space--45:after {
-		@include AU-space( width, 4.5unit );
-	}
-
-	&.au-space--5:after {
-		@include AU-space( width, 5unit );
-	}
-
-	&.au-space--55:after {
-		@include AU-space( width, 5.5unit );
-	}
 }
 
 

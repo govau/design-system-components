@@ -65,7 +65,8 @@ All props:
 	title="Page title"  {/* The headline content */}
 	level="1"           {/* The headline tag level, h1-h6, optional */}
 	subline="Subline"   {/* The subline content, optional */}
-	theme="light"       {/* The theme, 'light', 'dark', optional */}
+	alt={ false }       {/* An alternate variation of the component */}
+	dark={ false }      {/* A dark variation of the component */}
 	hero={ false }      {/* The hero option, optional */}
 />
 ```

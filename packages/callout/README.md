@@ -83,6 +83,7 @@ All props:
 	time="Sunday 32 Jun"                        {/* The same date but human readable */}
 	subline="Your next appointment is"          {/* Your subline, optional */}
 	name="Talk to boss"                         {/* The name of the event, optional */}
+	dark={ false }                              {/* A dark variation of the component */}
 />
 ```
 

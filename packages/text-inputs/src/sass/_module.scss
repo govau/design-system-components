@@ -52,7 +52,11 @@
 	color: $AU-color-Text;
 	border-radius: $AU-border-radius;
 
-	&:invalid,
+	&:invalid {
+		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
+		border-color: $AU-color-Error;
+	}
+
 	&.au-text-input--invalid {
 		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
 		border-color: $AU-color-Error;
@@ -63,8 +67,14 @@
 		border-color: $AU-color-Success;
 	}
 
-	&:disabled,
 	&[disabled] {
+		cursor: not-allowed;
+		background: $AU-color-Background;
+		border-color: $AU-color-Background;
+		color: $AU-color-Muted;
+	}
+
+	&:disabled {
 		cursor: not-allowed;
 		background: $AU-color-Background;
 		border-color: $AU-color-Background;
@@ -83,12 +93,18 @@
 .au-text-input--dark {
 	border-color:  $AU-colordark-Text;
 
-	&:disabled,
 	&[disabled] {
 		color: $AU-colordark-Muted;
 		background: $AU-colordark-Background-dark;
 		border-color: $AU-colordark-Background-dark;
 	}
+
+	&:disabled {
+		color: $AU-colordark-Muted;
+		background: $AU-colordark-Background-dark;
+		border-color: $AU-colordark-Background-dark;
+	}
+
 
 	@include AU-focus( 'dark' );
 }

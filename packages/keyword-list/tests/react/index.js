@@ -71,7 +71,7 @@ ReactDOM.render(
 		</div>
 		<div className="split au-body au-body--dark">
 		<h2>keyword-list without link</h2>
-			<KeywordList repeatedName='Department of' items={[
+			<KeywordList dark repeatedName='Department of' items={[
 				{
 					name: 'Agriculture and Water Resources',
 				},
@@ -93,7 +93,7 @@ ReactDOM.render(
 			<hr />
 			<h2>keyword-list with link</h2>
 
-			<KeywordList repeatedName='Department of' items={[
+			<KeywordList dark repeatedName='Department of' items={[
 				{
 					link: '#url',
 					name: 'Agriculture and Water Resources',
@@ -120,7 +120,7 @@ ReactDOM.render(
 			<hr />
 			<h2>keyword-list with onClick</h2>
 
-			<KeywordList repeatedName='Links' items={[
+			<KeywordList dark repeatedName='Links' items={[
 				{
 					link: '#url',
 					name: 'With link',

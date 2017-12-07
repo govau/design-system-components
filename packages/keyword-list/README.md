@@ -78,6 +78,7 @@ All props:
 
 ```jsx
 <KeywordList
+	dark={ false }                                {/* A dark variation of the component */}
 	repeatedName="Department of"                  {/* The text That is repeated in each item */}
 	items={[                                      {/* All items in a neat array */}
 		{

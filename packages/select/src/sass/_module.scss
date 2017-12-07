@@ -82,6 +82,13 @@
 	}
 
 	// Hide the arrow on disabled, because we can't change parent element styles
+	&[disabled] {
+		cursor: not-allowed;
+		background-color: $AU-color-Background;
+		color: $AU-color-Muted;
+		border-color: $AU-color-Background;
+	}
+
 	&:disabled {
 		cursor: not-allowed;
 		background-color: $AU-color-Background;
@@ -102,6 +109,12 @@
 	.au-select--dark & {
 		border-color: $AU-colordark-Text;
 		@include AU-focus( 'dark' );
+
+		&[disabled] {
+			background-color: $AU-colordark-Background;
+			color: $AU-colordark-Muted;
+			border-color: $AU-colordark-Background;
+		}
 
 		&:disabled {
 			background-color: $AU-colordark-Background;

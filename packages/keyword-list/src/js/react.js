@@ -63,15 +63,17 @@ KeywordListItem.propTypes = {
  *
  * @param  {string} repeatedName - The repeated bit in each item
  * @param  {array}  items        - All items in this list, format: { link: '', name: '', onClick: () }
+ * @param  {string} dark         - Add the dark variation class
  */
-const KeywordList = ({ repeatedName, items }) => (
-	<ul className="au-keyword-list au-link-list">
+const KeywordList = ({ repeatedName, items, dark }) => (
+	<ul className={ `au-keyword-list au-link-list${ dark ? ' au-keyword-list--dark' : '' } `}>
 		{ items.map( ( item, i ) => <KeywordListItem key={ i } item={ item } repeatedName={ repeatedName } /> ) }
 	</ul>
 );
 
 KeywordList.propTypes = {
 	repeatedName: PropTypes.string.isRequired,
+	dark: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,

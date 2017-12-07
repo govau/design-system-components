@@ -75,6 +75,7 @@ All props:
 
 ```jsx
 <Tags
+	dark={ false }           {/* A dark variation of the component */}
 	tags={[
 		{
 			link: 'url/to/tag',  {/* The href link of this tag, optional */}

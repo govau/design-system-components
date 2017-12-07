@@ -28,6 +28,7 @@ class RadioList extends React.Component {
 							dark={ this.props.dark }
 							label={ item.label }
 							name={ this.props.name }
+							id={ item.id }
 							full={ this.props.full }
 							value={ item.value }
 							disabled={ item.disabled }
@@ -70,6 +71,7 @@ class CheckboxList extends React.Component {
 							dark={ this.props.dark }
 							label={ item.label }
 							name={ this.props.name }
+							id={ item.id }
 							full={ this.props.full }
 							value={ item.value }
 							disabled={ item.disabled }
@@ -98,6 +100,7 @@ ReactDOM.render(
 				{
 					label: 'Phone',
 					value: 'phone',
+					id: 'phoneCheckbox'
 				},
 				{
 					label: 'Tablet',
@@ -127,6 +130,7 @@ ReactDOM.render(
 				{
 					label: 'Yes',
 					value: 'yes',
+					id: 'yesRadio'
 				},
 				{
 					label: 'Maybe',

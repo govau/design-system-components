@@ -27,10 +27,9 @@ import PropTypes from 'prop-types';
  * @param  {string}   id       - The id of the input element, for additional labels, optional
  * @param  {boolean}  checked  - The check option, optional
  * @param  {boolean}  disabled - The disable option, optional
- * @param  {boolean}  full     - The full variant option, optional
  * @param  {function} onChange - A callback for onChange, optional
  */
-export const Checkbox = ({ dark, label, name, value, id, checked, disabled, full, onChange }) => {
+export const Checkbox = ({ dark, label, name, value, id, checked, disabled, onChange }) => {
 	const attributeOptions = {};
 
 	if( typeof id !== 'undefined' ) {
@@ -45,9 +44,17 @@ export const Checkbox = ({ dark, label, name, value, id, checked, disabled, full
 		attributeOptions.onChange = onChange;
 	}
 
+	if( typeof name !== 'undefined' ) {
+		attributeOptions.name = name;
+	}
+
+	if( typeof disabled !== 'undefined' ) {
+		attributeOptions.disabled = disabled;
+	}
+
 	return (
-		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' } ${ dark ? ' au-control-input--dark' : '' }` }>
-			<input className="au-control-input__input" type="checkbox" name={ name } disabled={ disabled } { ...attributeOptions } />
+		<label className={ `au-control-input${ dark ? ' au-control-input--dark' : '' }` }>
+			<input className="au-control-input__input" type="checkbox" { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
 	);
@@ -56,12 +63,11 @@ export const Checkbox = ({ dark, label, name, value, id, checked, disabled, full
 Checkbox.propTypes = {
 	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
-	name: PropTypes.string.isRequired,
+	name: PropTypes.string,
 	value: PropTypes.string.isRequired,
 	id: PropTypes.string,
 	checked: PropTypes.bool,
 	disabled: PropTypes.bool,
-	full: PropTypes.bool,
 	onChange: PropTypes.func,
 };
 
@@ -76,10 +82,9 @@ Checkbox.propTypes = {
  * @param  {string}   id       - The id of the input element, for additional labels, optional
  * @param  {boolean}  checked  - The check option, optional
  * @param  {boolean}  disabled - The disable option, optional
- * @param  {boolean}  full     - The full variant option, optional
  * @param  {function} onChange - A callback for onChange, optional
  */
-export const Radio = ({ dark, label, name, value, id, checked, disabled, full, onChange }) => {
+export const Radio = ({ dark, label, name, value, id, checked, disabled, onChange }) => {
 	const attributeOptions = {};
 
 	if( typeof id !== 'undefined' ) {
@@ -94,9 +99,17 @@ export const Radio = ({ dark, label, name, value, id, checked, disabled, full, o
 		attributeOptions.onChange = onChange;
 	}
 
+	if( typeof name !== 'undefined' ) {
+		attributeOptions.name = name;
+	}
+
+	if( typeof disabled !== 'undefined' ) {
+		attributeOptions.disabled = disabled;
+	}
+
 	return (
-		<label className={ `au-control-input${ full ? ' au-control-input--full' : '' }${ dark ? ` au-control-input--dark` : '' }` }>
-			<input className="au-control-input__input" type="radio" name={ name } disabled={ disabled } { ...attributeOptions } />
+		<label className={ `au-control-input${ dark ? ` au-control-input--dark` : '' }` }>
+			<input className="au-control-input__input" type="radio" { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
 	);
@@ -105,11 +118,10 @@ export const Radio = ({ dark, label, name, value, id, checked, disabled, full, o
 Radio.propTypes = {
 	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
-	name: PropTypes.string.isRequired,
+	name: PropTypes.string,
 	value: PropTypes.string.isRequired,
 	id: PropTypes.string,
 	checked: PropTypes.bool,
 	disabled: PropTypes.bool,
-	full: PropTypes.bool,
 	onChange: PropTypes.func,
 };

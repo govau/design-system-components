@@ -75,7 +75,7 @@ All props:
 ```jsx
 <Breadcrumbs
 	label="The aria-label"        {/* Provide the aria label is a must */}
-	inverted={ false }            {/* An option to theme the breadcrumbs inverted, optional */}
+	dark={ false }                {/* A dark variation of the component */}
 	items={[                      {/* An array of all breadcrumbs */}
 		{
 			link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}

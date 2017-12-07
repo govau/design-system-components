@@ -78,6 +78,7 @@ All props:
 
 ```jsx
 <ProgressIndicator
+	dark={ false }             {/* A dark variation of the component */}
 	items={[                   {/* All steps in a neat array */}
 		{
 			link: 'forms/intro/',  {/* The link to this step, optional */}

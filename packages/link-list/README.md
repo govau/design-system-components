@@ -75,7 +75,6 @@ All props:
 
 ```jsx
 <LinkList
-	inverted={ false }        {/* The inverted option for theming, optional */}
 	inline={ false }          {/* The inline option to make the list inline, optional */}
 	items={[                  {/* All links in a neat array */}
 		{
