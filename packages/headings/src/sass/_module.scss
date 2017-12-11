@@ -3,8 +3,9 @@
 // Class styles for display headings.
 //
 // Content:
-// - loop that generates .display-[1…6]
-// - modifications and additions to those .display-[1–6] classes
+// - Basic styles for all headings
+// - Unique styles for individual headings
+// - Typographic spacing for .au-body only
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -25,25 +26,88 @@
  */
 
 
-// For each fontsize key (in core)
-@for $i from 1 through length( map-keys( $AU-fontsize-map ) ) {
+/**
+ * Basic styles for all headings
+ */
+.au-display-xxxl,
+.au-display-xxl,
+.au-display-xl,
+.au-display-lg,
+.au-display-md,
+.au-display-sm,
+.au-display-xs,
+.au-body h1,
+.au-body h2,
+.au-body h2,
+.au-body h2,
+.au-body h2,
+.au-body h2 {
+	font-family: $AU-font;
+	display: block;
+	font-weight: bold;
+	margin: 0;
 
-	// Create a new class with the fontsize key
-	.au-display-#{ nth(  map-keys( $AU-fontsize-map ), $i ) } {
-		@include AU-fontgrid( nth(  map-keys( $AU-fontsize-map ), $i ) , heading ); // Get the font size and give it heading leading
-		font-family: $AU-font;
-		display: block;
-		font-weight: bold;
-		margin: 0;
-	}
-
-	// Give each heading margin-top if it follows an element
-	* + .au-display-#{ nth( map-keys( $AU-fontsize-map ), $i ) } {
-		@include AU-space( margin-top, 2unit );
+	*+& {
+		@include AU-space( margin-top, 1unit );
 	}
 }
 
-// Remove font weight on large headings
+
+/**
+ * Unique styles for individual headings
+ */
 .au-display-xxxl {
-	font-weight: normal;
+	@include AU-fontgrid( xxl, heading );
+}
+
+.au-body h1,
+.au-display-xxl {
+	@include AU-fontgrid( xxl, heading );
+}
+
+.au-body h2,
+.au-display-xl {
+	@include AU-fontgrid( xl, heading );
+}
+
+.au-body h3,
+.au-display-lg {
+	@include AU-fontgrid( lg, heading );
+}
+
+.au-body h4,
+.au-display-md {
+	@include AU-fontgrid( md, heading );
+}
+
+.au-body h5,
+.au-display-sm {
+	@include AU-fontgrid( sm, heading );
+}
+
+.au-body h6,
+.au-display-xs {
+	@include AU-fontgrid( xs, heading );
+}
+
+/**
+ * Typographic spacing for AU-body only
+ * Larger space for larger headings has been added to improve legibility in large blocks of text.
+ * This provides area's of eye-rest and uses spacing to create visual sections
+ * Also ref. https://github.com/govau/uikit/issues/282
+ */
+.au-body {
+	*+h1 {
+	 	@include AU-space( margin-top, 3unit );
+	}
+	*+h2 {
+		@include AU-space( margin-top, 3unit );
+	}
+	*+h3 {
+		@include AU-space( margin-top, 2unit );
+	}
+	h1+h2,
+	h2+h3 {
+		@include AU-space( margin-top, 1unit );
+	}
 }
