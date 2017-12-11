@@ -131,7 +131,7 @@
 	 */
 	p {
 		max-width: $AU-maxwidth;
-		@include AU-space( margin, 0 0 1unit 0 );
+		@include AU-space( margin, 1unit 0 0 0 );
 	}
 
 	ul,
@@ -139,7 +139,7 @@
 	dl,
 	pre {
 		margin-top: 0;
-		@include AU-space( margin-bottom, 1unit );
+		@include AU-space( margin-top, 1unit );
 	}
 
 	ul,
@@ -152,13 +152,13 @@
 	ul,
 	ol {
 		> li {
-			@include AU-space( margin-bottom, 0.5unit );
+			@include AU-space( margin-top, 0.5unit );
 			@include AU-space( margin-left, 0.75unit );
 
 			> ul,
 			> ol {
-				@include AU-space( margin-top, 0.5unit );
-				@include AU-space( margin-bottom, 1unit );
+				@include AU-space( margin-bottom, 0.5unit );
+				@include AU-space( margin-top, 1unit );
 			}
 		}
 
@@ -169,12 +169,12 @@
 
 	dl {
 		> dd {
-			@include AU-space( margin-bottom, 1unit );
+			@include AU-space( margin-top, 1unit );
 		}
 
 		> dt {
-			@include AU-space( margin-top, 0.5unit );
-			@include AU-space( margin-bottom, 1unit );
+			@include AU-space( margin-bottom, 0.5unit );
+			@include AU-space( margin-top, 1unit );
 			font-weight: bold;
 
 			&:first-of-type {
