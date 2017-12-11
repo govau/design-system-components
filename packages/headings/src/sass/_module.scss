@@ -17,94 +17,68 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // HEADINGS/DISPLAY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-/**
- * Generates .au-display-[1…6] classes for display headings.
- *
- * The magic number here reduces the leading for these heading displays, since
- * the body text leading is too large at headings/display sizes.
- *
- * We also set the font-size automatically too. (:
- */
 
 
 /**
  * Basic styles for all headings
  */
-.au-display-xxxl,
-.au-display-xxl,
-.au-display-xl,
-.au-display-lg,
-.au-display-md,
-.au-display-sm,
-.au-display-xs,
-.au-body h1,
-.au-body h2,
-.au-body h3,
-.au-body h4,
-.au-body h5,
-.au-body h6 {
+@mixin AU-display {
 	font-family: $AU-font;
 	display: block;
 	font-weight: bold;
 	margin: 0;
+	* & {
+		@include AU-space( margin-top, 1unit );
+	}
 }
 
 /**
- * Default spacing for headings which follow any element.
+ * Unique selectors and font sizes
  */
-*+.au-display-xxxl,
-*+.au-display-xxl,
-*+.au-display-xl,
-*+.au-display-lg,
-*+.au-display-md,
-*+.au-display-sm,
-*+.au-display-xs,
-.au-body *+h1,
-.au-body *+h2,
-.au-body *+h3,
-.au-body *+h4,
-.au-body *+h5,
-.au-body *+h6 {
-	@include AU-space( margin-top, 1unit );
-}
-
-
-/**
- * Unique styles for individual headings
- */
-.au-display-xxxl {
-	@include AU-fontgrid( xxl, heading );
-}
-
 .au-body h1,
+.au-body .au-display-xxl,
 .au-display-xxl {
+	@include AU-display();
 	@include AU-fontgrid( xxl, heading );
 }
 
 .au-body h2,
+.au-body .au-display-xl,
 .au-display-xl {
+	@include AU-display();
 	@include AU-fontgrid( xl, heading );
 }
 
 .au-body h3,
+.au-body .au-display-lg,
 .au-display-lg {
+	@include AU-display();
 	@include AU-fontgrid( lg, heading );
 }
 
 .au-body h4,
+.au-body .au-display-md,
 .au-display-md {
+	@include AU-display();
 	@include AU-fontgrid( md, heading );
 }
 
 .au-body h5,
+.au-body .au-display-sm,
 .au-display-sm {
+	@include AU-display();
 	@include AU-fontgrid( sm, heading );
 }
 
+
 .au-body h6,
-.au-display-xs {
+.au-body .au-display-xs ,
+.au-display-xs  {
+	@include AU-display();
 	@include AU-fontgrid( xs, heading );
 }
+
+
 
 /**
  * Typographic spacing for AU-body only
@@ -113,17 +87,17 @@
  * Also ref. https://github.com/govau/uikit/issues/282
  */
 .au-body {
-	*+h1 {
-	 	@include AU-space( margin-top, 3unit );
-	}
-	*+h2 {
+	* + h1 {
 		@include AU-space( margin-top, 3unit );
 	}
-	*+h3 {
+	* + h2 {
+		@include AU-space( margin-top, 3unit );
+	}
+	* + h3 {
 		@include AU-space( margin-top, 2unit );
 	}
-	h1+h2,
-	h2+h3 {
+	h1 + h2,
+	h2 + h3 {
 		@include AU-space( margin-top, 1unit );
 	}
 }
