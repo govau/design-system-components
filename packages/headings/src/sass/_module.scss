@@ -4,6 +4,7 @@
 //
 // Content:
 // - Basic styles for all headings
+// - Default spacing
 // - Unique styles for individual headings
 // - Typographic spacing for .au-body only
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -46,10 +47,25 @@
 	display: block;
 	font-weight: bold;
 	margin: 0;
+}
 
-	*+& {
-		@include AU-space( margin-top, 1unit );
-	}
+/**
+ * Default spacing for headings which follow any element.
+ */
+*+.au-display-xxxl,
+*+.au-display-xxl,
+*+.au-display-xl,
+*+.au-display-lg,
+*+.au-display-md,
+*+.au-display-sm,
+*+.au-display-xs,
+.au-body *+h1,
+.au-body *+h2,
+.au-body *+h3,
+.au-body *+h4,
+.au-body *+h5,
+.au-body *+h6 {
+	@include AU-space( margin-top, 1unit );
 }
 
 
