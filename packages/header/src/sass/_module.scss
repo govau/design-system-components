@@ -22,7 +22,6 @@
  */
 .au-header {
 	@include AU-space( padding, 1.5unit 0 2unit 0 ); // 0.5 for optical alignment
-	@include AU-space( margin-bottom, 2unit );
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	background: $AU-color-Background-light;
