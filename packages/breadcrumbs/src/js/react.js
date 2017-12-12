@@ -24,12 +24,17 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The breadcrumbs component
  *
- * @param  {string} dark  - Add the dark variation class
- * @param  {string} label - The aria label of the component
- * @param  {array}  items - Items inside the breadcrumbs passed on to LinkList
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} label            - The aria label of the component
+ * @param  {array}  items            - Items inside the breadcrumbs passed on to LinkList
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Breadcrumbs = ({ dark, label, items }) => (
-	<nav className={ `au-breadcrumbs${ dark ? ' au-breadcrumbs--dark' : '' }` } aria-label={ label }>
+const Breadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
+	<nav
+		className={ `au-breadcrumbs${ dark ? ' au-breadcrumbs--dark' : '' }` }
+		aria-label={ label }
+		{ ...attributeOptions }
+	>
 		<LinkList inline items={ items } />
 	</nav>
 );
