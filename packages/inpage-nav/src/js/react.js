@@ -51,12 +51,13 @@ InpageNavLinksItem.propTypes = {
 /**
  * The inpage-nav component
  *
- * @param  {string} dark     - Add the dark variation class
- * @param  {string} title    - The title of the content link block, default: Contents
- * @param  {array}  sections - An array of objects of all sections, sample: { link: '', title: '', onClick: () }
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} title            - The title of the content link block, default: Contents
+ * @param  {array}  sections         - An array of objects of all sections, sample: { link: '', title: '', onClick: () }
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const InpageNavLinks = ({ dark, title, sections }) => (
-	<nav className={ `au-inpage-nav-links${ dark ? ' au-inpage-nav-links--dark' : '' }` }>
+export const InpageNavLinks = ({ dark, title, sections, ...attributeOptions }) => (
+	<nav className={ `au-inpage-nav-links${ dark ? ' au-inpage-nav-links--dark' : '' }` } { ...attributeOptions }>
 		<h2 className="au-inpage-nav-links__heading au-display-sm">{ title }</h2>
 		<ul className="au-link-list">
 			{ sections.map( ( section, i ) => <InpageNavLinksItem key={ i } section={ section } /> ) }
@@ -90,20 +91,15 @@ InpageNavLinks.defaultProps = {
  * @param  {string}     level               - The heading level of the h tag
  * @param  {string}     headingClass        - Any additional heading classes eg 'au-display-sm' etc, optional
  * @param  {string}     sectionLink         - The text for the section link, default: 'Link to section', optional
- * @param  {function}   sectionLinkOnClick  - A function for the onClick on the section link, optional
+ * @param  {object}     attributeOptions    - Any other attribute options
  */
-export const InpageNavSection = ({ title, link, children, level, headingClass, sectionLink, sectionLinkOnClick }) => {
-	const attributeOptions = {};
-
-	if( typeof sectionLinkOnClick === 'function' ) {
-		attributeOptions.onClick = sectionLinkOnClick;
-	}
+export const InpageNavSection = ({ title, link, children, level, headingClass, sectionLink, ...attributeOptions }) => {
 
 	const HeadingTag = `h${ level }`;
 
 	return (
 		<div>
-			<HeadingTag className={ `au-inpage-nav-section ${ headingClass }` }>
+			<HeadingTag className={ `au-inpage-nav-section${ headingClass ? ' ' + headingClass : "" }` }>
 				{ title }
 
 				<a id={ link } className="au-inpage-nav-section-link" href={ `#${ link }` } { ...attributeOptions }>{ sectionLink }</a>
@@ -121,7 +117,7 @@ InpageNavSection.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 	headingClass: PropTypes.string,
 	sectionLink: PropTypes.string,
-	sectionLinkOnClick: PropTypes.func,
+	onClick: PropTypes.func,
 };
 
 InpageNavSection.defaultProps = {

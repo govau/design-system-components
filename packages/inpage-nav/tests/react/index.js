@@ -97,8 +97,8 @@ ReactDOM.render(
 				title="Section 4 with changed section link and onClick"
 				link="section4"
 				sectionLink="Different sectionLink text"
-				sectionLinkOnClick={ () => console.log('This function is called when the section link is clicked') }
-			>
+				onClick={ () => console.log('This function is called when the section link is clicked') }
+				>
 				<p>
 					Das ende&hellip;
 				</p>
@@ -195,7 +195,7 @@ ReactDOM.render(
 				title="Section 4 with changed section link and onClick"
 				link="sectiondark4"
 				sectionLink="Different sectionLink text"
-				sectionLinkOnClick={ () => console.log('This function is called when the section link is clicked') }
+				onClick={ () => console.log('This function is called when the section link is clicked') }
 			>
 				<p>
 					Das ende&hellip;
