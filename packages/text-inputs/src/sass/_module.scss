@@ -88,72 +88,71 @@
 		border-radius: 0;
 		background-color: $AU-color-Background-light; // Keep the light-bg when focusing on success/error
 	}
-}
 
-.au-text-input--dark {
-	border-color:  $AU-colordark-Text;
+	&.au-text-input--dark {
+		border-color:  $AU-colordark-Text;
 
-	&[disabled] {
-		color: $AU-colordark-Muted;
-		background: $AU-colordark-Background-dark;
-		border-color: $AU-colordark-Background-dark;
+		&[disabled] {
+			color: $AU-colordark-Muted;
+			background: $AU-colordark-Background-dark;
+			border-color: $AU-colordark-Background-dark;
+		}
+
+		&:disabled {
+			color: $AU-colordark-Muted;
+			background: $AU-colordark-Background-dark;
+			border-color: $AU-colordark-Background-dark;
+		}
+
+
+		@include AU-focus( 'dark' );
 	}
 
-	&:disabled {
-		color: $AU-colordark-Muted;
-		background: $AU-colordark-Background-dark;
-		border-color: $AU-colordark-Background-dark;
+	/**
+	 * Block modifier
+	 */
+	&.au-text-input--block {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
 	}
 
+	/**
+	 * Number input styling.
+	 *
+	 * Numbers are easier to disambiguate from each other (and letters) when set in
+	 * monospace.
+	 */
+	&.au-text-input--number {
+		font-family: $AU-font-monospace;
+		letter-spacing: 2px;
+	}
 
-	@include AU-focus( 'dark' );
+	/**
+	 * Hint text.
+	 *
+	 * Built so it can sit both in- and outside the `label`.
+	 */
+	&.au-text-input__hint {
+		@include AU-space( margin-bottom, 0.5unit );
+		@include AU-fontgrid( xs );
+		display: block;
+
+		// Keeps spacing neat depending on where the hint text is added.
+		.au-text-input__label > &,
+		.au-text-input + & {
+			@include AU-space( margin-top, 0.5unit );
+		}
+	}
 }
 
-/**
- * Block modifier
- */
-.au-text-input--block {
-	display: block;
-	width: 100%;
-	box-sizing: border-box;
-}
-
 
 /**
- * Textarea styling.
+ * Textarea styling. (Not nested because sass does odd stuff)
  */
-.au-text-input--textarea {
+textarea.au-text-input {
 	@include AU-fontgrid( sm );
 	max-width: 100%;
 	min-height: 50px;
 }
 
-
-/**
- * Number input styling.
- *
- * Numbers are easier to disambiguate from each other (and letters) when set in
- * monospace.
- */
-.au-text-input--number {
-	font-family: $AU-font-monospace;
-	letter-spacing: 2px;
-}
-
-
-/**
- * Hint text.
- *
- * Built so it can sit both in- and outside the `label`.
- */
-.au-text-input__hint {
-	@include AU-space( margin-bottom, 0.5unit );
-	@include AU-fontgrid( xs );
-	display: block;
-
-	// Keeps spacing neat depending on where the hint text is added.
-	.au-text-input__label > &,
-	.au-text-input + & {
-		@include AU-space( margin-top, 0.5unit );
-	}
-}

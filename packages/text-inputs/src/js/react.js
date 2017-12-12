@@ -3,7 +3,7 @@
  *
  * text-input function
  *
- * Text inputs include text inputs and textareas. They allow users to input data into a field.
+ * Text inputs include text inputs, labels, hints and textareas. They allow users to input data into a field.
  *
  **************************************************************************************************************************************************************/
 
@@ -20,47 +20,21 @@ import PropTypes from 'prop-types';
 /**
  * The TextInput component
  *
- * @param  {string}   as           - The kind of input, can be either 'input' or 'textarea', default: 'input'
- * @param  {string}   dark         - Add the dark variation class
- * @param  {string}   defaultValue - The value of the input element
- * @param  {string}   id           - The id of the input element, for additional labels, optional
- * @param  {boolean}  disabled     - The disable option, optional
- * @param  {function} onChange     - A callback for onChange, optional
- * @param  {function} onClick      - A callback for onClick, optional
+ * @param  {string} as               - The kind of input, can be either 'input' or 'textarea', default: 'input'
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} block            - Add the block variation class
+ * @param  {string} invalid          - Add the invalid variation class
+ * @param  {string} valid            - Add the valid variation class
+ * @param  {Object} attributeOptions - Any other attribute options
  */
 export const TextInput = ({
 	as,
-	defaultValue,
 	dark,
 	block,
-	id,
-	disabled,
 	invalid,
 	valid,
-	onChange,
-	onClick
+	...attributeOptions
 }) => {
-	const attributeOptions = {};
-
-	if( typeof id !== 'undefined' ) {
-		attributeOptions.id = id;
-	}
-
-	if( typeof defaultValue !== 'undefined' ) {
-		attributeOptions.defaultValue = defaultValue;
-	}
-
-	if( typeof disabled !== 'undefined' ) {
-		attributeOptions.disabled = disabled;
-	}
-
-	if( typeof onChange === 'function' ) {
-		attributeOptions.onChange = onChange;
-	}
-
-	if( typeof onClick === 'function' ) {
-		attributeOptions.onClick = onClick;
-	}
 
 	return (
 		as === 'input'
@@ -75,7 +49,7 @@ export const TextInput = ({
 				/>
 			: <textarea
 					className={
-						`au-text-input au-text-input--textarea
+						`au-text-input
 						${ block ? ' au-text-input--block' : '' }
 						${ dark ? ' au-text-input--dark' : '' }
 						${ valid ? ' au-text-input--valid' : '' }
@@ -89,13 +63,12 @@ export const TextInput = ({
 
 TextInput.propTypes = {
 	as: PropTypes.oneOf([ 'input', 'textarea' ]),
-	defaultValue: PropTypes.string,
 	dark: PropTypes.bool,
 	block: PropTypes.bool,
 	id: PropTypes.string,
+	defaultValue: PropTypes.string,
 	disabled: PropTypes.bool,
 	onChange: PropTypes.func,
-	onClick: PropTypes.func,
 };
 
 
@@ -106,18 +79,12 @@ TextInput.defaultProps = {
 
 
 /**
- * The direction-links component
+ * The label component
  *
- * @param  {string} children  - Add the dark variation class
- * @param  {string} for       - The link target, optional
+ * @param  {string} children         - Add the dark variation class
+ * @param  {Object} attributeOptions - Any other attribute options
  */
-export const Label = ({ children, inputID }) => {
-
-	const attributeOptions = {};
-
-	if( typeof inputID !== 'undefined' ) {
-		attributeOptions.for = inputID;
-	}
+export const Label = ({ children, ...attributeOptions }) => {
 
 	return (
 		<label className="au-text-input__label" { ...attributeOptions } >
@@ -128,20 +95,20 @@ export const Label = ({ children, inputID }) => {
 
 Label.propTypes = {
 	children: PropTypes.string.isRequired,
-	inputID:  PropTypes.string,
+	htmlFor:  PropTypes.string,
 };
 
 
 /**
- * The direction-links component
+ * The hint component
  *
- * @param  {string} children  - Add the dark variation class
- * @param  {string} for       - The link target, optional
+ * @param  {string} children         - Add the dark variation class
+ * @param  {Object} attributeOptions - Any other attribute options
  */
-export const Hint = ({ children }) => {
+export const Hint = ({ children, ...attributeOptions }) => {
 
 	return (
-		<span className="au-text-input__hint" >
+		<span className="au-text-input__hint" { ...attributeOptions } >
 			{ children }
 		</span>
 	);
