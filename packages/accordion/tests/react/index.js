@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Accordion from './accordion.js';
+import AUaccordion from './accordion.js';
 
 
 // To manage an accordion with state just wrap it with a state
@@ -23,9 +23,9 @@ class AccodionWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<Accordion open={ this.state.accordionOpen } header="State controlled accordion open">
+				<AUaccordion open={ this.state.accordionOpen } header="State controlled accordion open">
 					Some content of the accordion <a href="#url">here</a>
-				</Accordion>
+				</AUaccordion>
 
 				<button type="button" onClick={ () => { this.changeAccordion('accordionOpen') } }>Toggle accordion via state</button>
 			</div>
@@ -71,42 +71,42 @@ class App extends React.Component {
 				<div className="split-wrapper">
 					<div className="split">
 						<h2>Default accordion</h2>
-						<Accordion header="Open and close me">
+						<AUaccordion header="Open and close me">
 							Some content of the accordion <a href="#url">here</a> :)
-						</Accordion>
+						</AUaccordion>
 
 
 						<hr />
 						<h2>Accordions with open/close props</h2>
 
-						<Accordion header="Closed">
+						<AUaccordion header="Closed">
 							Some content of the accordion <a href="#url">here</a> :D
-						</Accordion>
+						</AUaccordion>
 
-						<Accordion open header="Open">
+						<AUaccordion open header="Open">
 							Some content of the accordion <a href="#url">here</a> 8)
-						</Accordion>
+						</AUaccordion>
 
 
 						<hr />
 						<h2>Accordions slow</h2>
 
-						<Accordion header="Slow accordion" speed={ 1000 }>
+						<AUaccordion header="Slow accordion" speed={ 1000 }>
 							Some content of the accordion <a href="#url">here</a> :D
-						</Accordion>
+						</AUaccordion>
 
 
 						<hr />
 						<h2>Accordions with custom functions</h2>
 
-						<Accordion header="With custom function"
+						<AUaccordion header="With custom function"
 							onOpen={ () => { console.log('This function will run when the accordion opens'); } }
 							afterOpen={ () => { console.log('This function will run after the accordion has opened'); } }
 							onClose={ () => { console.log('This function will run when the accordion closes'); } }
 							afterClose={ () => { console.log('This function will run after the accordion has closed'); } }
 						>
 							Some content of the accordion <a href="#url">here</a>
-						</Accordion>
+						</AUaccordion>
 
 
 						<hr />
@@ -116,42 +116,42 @@ class App extends React.Component {
 					</div>
 					<div className="split split--dark">
 						<h2>Default accordion <code>--dark</code></h2>
-						<Accordion dark header="Open and close me">
+						<AUaccordion dark header="Open and close me">
 							Some content of the accordion <a href="#url">here</a> :)
-						</Accordion>
+						</AUaccordion>
 
 
 						<hr />
 						<h2>Accordions with open/close props <code>--dark</code></h2>
 
-						<Accordion dark header="Closed">
+						<AUaccordion dark header="Closed">
 							Some content of the accordion <a href="#url">here</a> :D
-						</Accordion>
+						</AUaccordion>
 
-						<Accordion dark open header="Open">
+						<AUaccordion dark open header="Open">
 							Some content of the accordion <a href="#url">here</a> 8)
-						</Accordion>
+						</AUaccordion>
 
 
 						<hr />
 						<h2>Accordions slow <code>--dark</code></h2>
 
-						<Accordion dark header="Slow accordion" speed={ 1000 }>
+						<AUaccordion dark header="Slow accordion" speed={ 1000 }>
 							Some content of the accordion <a href="#url">here</a> :D
-						</Accordion>
+						</AUaccordion>
 
 
 						<hr />
 						<h2>Accordions with custom functions <code>--dark</code></h2>
 
-						<Accordion dark header="With custom function"
+						<AUaccordion dark header="With custom function"
 							onOpen={ () => { console.log('This function will run when the accordion opens'); } }
 							afterOpen={ () => { console.log('This function will run after the accordion has opened'); } }
 							onClose={ () => { console.log('This function will run when the accordion closes'); } }
 							afterClose={ () => { console.log('This function will run after the accordion has closed'); } }
 						>
 							Some content of the accordion <a href="#url">here</a>
-						</Accordion>
+						</AUaccordion>
 					</div>
 				</div>
 			</div>

@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 
 let IDstart = 0;
 
-class Accordion extends React.PureComponent {
+class AUaccordion extends React.PureComponent {
 	/**
 	 * Constructor
 	 * Create state and iterate over a unique ID
@@ -106,7 +106,7 @@ class Accordion extends React.PureComponent {
  *
  * @type {Object}
  */
-Accordion.propTypes = {
+AUaccordion.propTypes = {
 	children: PropTypes.node.isRequired,
 	header: PropTypes.string.isRequired,
 	open: PropTypes.bool,
@@ -118,8 +118,8 @@ Accordion.propTypes = {
 	afterClose: PropTypes.func,
 };
 
-Accordion.defaultProps = {
+AUaccordion.defaultProps = {
 	open: false,
 };
 
-export default Accordion;
+export default AUaccordion;

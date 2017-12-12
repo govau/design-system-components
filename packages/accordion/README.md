@@ -134,25 +134,25 @@ AU.accordion.Toggle( document.getElementById('accordion-title'), 500,
 Usage:
 
 ```jsx
-import Accordion from './accordion.js';
+import AUaccordion from './accordion.js';
 
-<Accordion header="First headline">
+<AUaccordion header="First headline">
 	Some content of the first accordion.
-</Accordion>
+</AUaccordion>
 
-<Accordion header="Second headline">
+<AUaccordion header="Second headline">
 	Some content of the second accordion.
-</Accordion>
+</AUaccordion>
 
-<Accordion header="Third headline">
+<AUaccordion header="Third headline">
 	Some content of the third accordion.
-</Accordion>
+</AUaccordion>
 ```
 
 All props:
 
 ```jsx
-<Accordion
+<AUaccordion
 	header="Headline"        {/* The headline of the accordion */}
 	open={ true }            {/* Open state, optional */}
 	speed="250"              {/* Speed of the animation in ms, optional */}
@@ -163,7 +163,7 @@ All props:
 	dark={ false }           {/* A dark variation of the component */}
 >
 	Some content of the third accordion.
-</Accordion>
+</AUaccordion>
 ```
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/accordion/tests/react/index.js).
