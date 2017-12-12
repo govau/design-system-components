@@ -75,7 +75,8 @@ export const TextInput = ({
 				/>
 			: <textarea
 					className={
-						`au-text-input au-text-input--textarea au-text-input--block
+						`au-text-input au-text-input--textarea
+						${ block ? ' au-text-input--block' : '' }
 						${ dark ? ' au-text-input--dark' : '' }
 						${ valid ? ' au-text-input--valid' : '' }
 						${ invalid ? ' au-text-input--invalid' : '' }`

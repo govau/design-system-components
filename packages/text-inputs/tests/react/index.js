@@ -51,44 +51,44 @@ ReactDOM.render(
 		<div className="split split--dark">
 			<h2>Default</h2>
 			<Label inputID="1" >Hello</Label>
-			<TextInput dark id="1" />
+			<TextInput id="1" dark />
 			<Hint>A helpful hint</Hint>
 			<hr />
 
 			<h2>Block</h2>
 			<Label inputID="2" >Hello</Label>
 			<Hint>A helpful hint</Hint>
-			<TextInput dark block id="2" defaultValue="abc" />
+			<TextInput id="2" defaultValue="abc" dark block  />
 			<hr />
 
 			<h2>Block Invalid</h2>
 			<Label inputID="3" >Hello</Label>
-			<TextInput dark id="3" block invalid>Hello</TextInput>
+			<TextInput id="3" dark block invalid>Hello</TextInput>
 			<hr />
 
 			<h2>Block Valid</h2>
 			<Label inputID="4" >Hello</Label>
-			<TextInput dark id="4" block valid />
+			<TextInput id="4" dark block valid />
 			<hr />
 
 			<h2>Disabled</h2>
 			<Label inputID="5" >Hello</Label>
-			<TextInput dark id="5" disabled />
+			<TextInput id="5" dark disabled />
 			<hr />
 
 			<h2>Textarea</h2>
 			<Label inputID="6" >Hello</Label>
-			<TextInput dark id="6" as="textarea" />
+			<TextInput id="6" as="textarea" dark />
 			<hr />
 
 			<h2>Textarea Block</h2>
 			<Label inputID="7" >Hello</Label>
-			<TextInput dark id="7" block as="textarea">Hello</TextInput>
+			<TextInput id="7" as="textarea" dark block>Hello</TextInput>
 			<hr />
 
 			<h2>Text area default value</h2>
 			<Label inputID="8" >Hello</Label>
-			<TextInput dark id="8" defaultValue="abc" disabled as="textarea" />
+			<TextInput as="textarea" id="8" defaultValue="abc" disabled dark block />
 		</div>
 	</div>,
 
