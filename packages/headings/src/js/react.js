@@ -35,15 +35,16 @@ const sizes = [
  * DEFAULT
  * The headings component
  *
- * @param  {string} level - The tag level (<h1/> <h2/> etc)
- * @param  {string} size  - The headings size
- * @param  {string} text  - The heading text
+ * @param  {string} level            - The tag level (<h1/> <h2/> etc)
+ * @param  {string} size             - The headings size
+ * @param  {string} text             - The heading text
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Header = ({ level, size, text }) => {
+const Header = ({ level, size, text, ...attributeOptions }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<HeadingTag className={ `au-display-${ size }` }>{ text }</HeadingTag>
+		<HeadingTag className={ `au-display-${ size }` } { ...attributeOptions }>{ text }</HeadingTag>
 	);
 };
 
