@@ -20,37 +20,12 @@ import PropTypes from 'prop-types';
 /**
  * The checkbox component
  *
- * @param  {string}   dark     - Add the dark variation class
- * @param  {string}   label    - The label
- * @param  {string}   name     - The name of the input element
- * @param  {string}   value    - The value of the input element
- * @param  {string}   id       - The id of the input element, for additional labels, optional
- * @param  {boolean}  checked  - The check option, optional
- * @param  {boolean}  disabled - The disable option, optional
- * @param  {function} onChange - A callback for onChange, optional
+ * @param  {string}   dark             - Add the dark variation class
+ * @param  {string}   label            - The label
+ * @param  {object}   attributeOptions - Any other attribute options
+ *
  */
-export const Checkbox = ({ dark, label, name, value, id, checked, disabled, onChange }) => {
-	const attributeOptions = {};
-
-	if( typeof id !== 'undefined' ) {
-		attributeOptions.id = id;
-	}
-
-	if( typeof checked !== 'undefined' ) {
-		attributeOptions.checked = checked;
-	}
-
-	if( typeof onChange === 'function' ) {
-		attributeOptions.onChange = onChange;
-	}
-
-	if( typeof name !== 'undefined' ) {
-		attributeOptions.name = name;
-	}
-
-	if( typeof disabled !== 'undefined' ) {
-		attributeOptions.disabled = disabled;
-	}
+export const Checkbox = ({ dark, label, ...attributeOptions }) => {
 
 	return (
 		<label className={ `au-control-input${ dark ? ' au-control-input--dark' : '' }` }>
@@ -75,40 +50,14 @@ Checkbox.propTypes = {
 /**
  * The radio component
  *
- * @param  {string}   dark     - Add the dark variation class
- * @param  {string}   label    - The label
- * @param  {string}   name     - The name of the input element
- * @param  {string}   value    - The value of the input element
- * @param  {string}   id       - The id of the input element, for additional labels, optional
- * @param  {boolean}  checked  - The check option, optional
- * @param  {boolean}  disabled - The disable option, optional
- * @param  {function} onChange - A callback for onChange, optional
+ * @param  {string}   dark             - Add the dark variation class
+ * @param  {string}   label            - The label
+ * @param  {object}   attributeOptions - Any other attribute options
  */
-export const Radio = ({ dark, label, name, value, id, checked, disabled, onChange }) => {
-	const attributeOptions = {};
-
-	if( typeof id !== 'undefined' ) {
-		attributeOptions.id = id;
-	}
-
-	if( typeof checked !== 'undefined' ) {
-		attributeOptions.checked = checked;
-	}
-
-	if( typeof onChange !== 'undefined' ) {
-		attributeOptions.onChange = onChange;
-	}
-
-	if( typeof name !== 'undefined' ) {
-		attributeOptions.name = name;
-	}
-
-	if( typeof disabled !== 'undefined' ) {
-		attributeOptions.disabled = disabled;
-	}
+export const Radio = ({ dark, label, ...attributeOptions }) => {
 
 	return (
-		<label className={ `au-control-input${ dark ? ` au-control-input--dark` : '' }` }>
+		<label className={ `au-control-input${ dark ? ` au-control-input--dark` : '' }` } >
 			<input className="au-control-input__input" type="radio" { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
