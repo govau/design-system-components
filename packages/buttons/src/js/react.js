@@ -33,25 +33,14 @@ const options = {
  * DEFAULT
  * The primary button
  *
- * @param  {string}    children - Anything inside
- * @param  {string}    as       - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
- * @param  {string}    dark     - Add the dark variation class
- * @param  {string}    type     - The type attribute, default: 'button', optional
- * @param  {string}    id       - The ID attribute, optional
- * @param  {boolean}   disabled - The disabled option, optional
- * @param  {boolean}   block    - The block option, optional
- * @param  {function}  onClick  - An onClick function, optional
+ * @param  {string}    children         - Anything inside
+ * @param  {string}    as               - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
+ * @param  {string}    dark             - Add the dark variation class
+ * @param  {string}    type             - The type attribute, default: 'button', optional
+ * @param  {boolean}   block            - The block option, optional
+ * @param  {object}    attributeOptions - Any other attribute options
  */
-const Button = ({ children, as, dark, type, id, disabled, block, onClick }) => {
-	const attributeOptions = {};
-
-	if( typeof id !== 'undefined' ) {
-		attributeOptions.id = id;
-	}
-
-	if( typeof onClick === 'function' ) {
-		attributeOptions.onClick = onClick;
-	}
+const Button = ({ children, as, dark, type, block, ...attributeOptions }) => {
 
 	return (
 		<button
