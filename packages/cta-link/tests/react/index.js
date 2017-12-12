@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import CTALink from './cta-link.js';
+import AUctalink from './cta-link.js';
 
 
 ReactDOM.render(
@@ -14,7 +14,7 @@ ReactDOM.render(
 				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
 			</p>
 
-			<CTALink link="#url" text="Sign up" />
+			<AUctalink link="#url" text="Sign up" />
 
 
 			<hr />
@@ -25,7 +25,7 @@ ReactDOM.render(
 				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
 			</p>
 
-			<CTALink text="Next" onClick={ () => console.log('This function will be called when the button is clicked') } />
+			<AUctalink text="Next" onClick={ () => console.log('This function will be called when the button is clicked') } />
 		</div>
 		<div className="split split--dark">
 			<h2>cta-link</h2>
@@ -35,7 +35,7 @@ ReactDOM.render(
 				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
 			</p>
 
-			<CTALink dark link="#url" text="Sign up" />
+			<AUctalink dark link="#url" text="Sign up" />
 
 
 			<hr />
@@ -46,7 +46,7 @@ ReactDOM.render(
 				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
 			</p>
 
-			<CTALink dark text="Next" onClick={ () => console.log('This function will be called when the button is clicked') } />
+			<AUctalink dark text="Next" onClick={ () => console.log('This function will be called when the button is clicked') } />
 		</div>
 	</div>,
 
