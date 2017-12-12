@@ -53,9 +53,9 @@ npm install @gov.au/breadcrumbs --save-dev
 Usage:
 
 ```jsx
-import Breadcrumbs from './breadcrumbs.js';
+import AUbreadcrumbs from './breadcrumbs.js';
 
-<Breadcrumbs label="Breadcrumb for this page" items={[
+<AUbreadcrumbs label="Breadcrumb for this page" items={[
 	{
 		link: 'breadcrumb/one/',
 		text: 'breadcrumb 1',
@@ -73,7 +73,7 @@ import Breadcrumbs from './breadcrumbs.js';
 All props:
 
 ```jsx
-<Breadcrumbs
+<AUbreadcrumbs
 	label="The aria-label"        {/* Provide the aria label is a must */}
 	dark={ false }                {/* A dark variation of the component */}
 	items={[                      {/* An array of all breadcrumbs */}

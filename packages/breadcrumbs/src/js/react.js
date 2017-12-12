@@ -29,7 +29,7 @@ import PropTypes from 'prop-types';
  * @param  {array}  items            - Items inside the breadcrumbs passed on to LinkList
  * @param  {object} attributeOptions - Any other attribute options
  */
-const Breadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
+const AUbreadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
 	<nav
 		className={ `au-breadcrumbs${ dark ? ' au-breadcrumbs--dark' : '' }` }
 		aria-label={ label }
@@ -39,7 +39,8 @@ const Breadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
 	</nav>
 );
 
-Breadcrumbs.propTypes = {
+
+AUbreadcrumbs.propTypes = {
 	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	items: PropTypes.arrayOf(
@@ -52,4 +53,4 @@ Breadcrumbs.propTypes = {
 };
 
 
-export default Breadcrumbs;
+export default AUbreadcrumbs;

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Breadcrumbs from './breadcrumbs.js';
+import AUbreadcrumbs from './breadcrumbs.js';
 
 
 ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split au-body">
 			<h2>breadcrumbs</h2>
-			<Breadcrumbs label="Breadcrumb for this page" items={[
+			<AUbreadcrumbs label="Breadcrumb for this page" items={[
 				{
 					link: '#options',
 					text: 'Options',
@@ -25,7 +25,7 @@ ReactDOM.render(
 			<hr />
 			<h2>breadcrumbs with onClick</h2>
 
-			<Breadcrumbs label="Breadcrumb for the other page" items={[
+			<AUbreadcrumbs label="Breadcrumb for the other page" items={[
 				{
 					link: '#link',
 					text: 'with link',
@@ -40,7 +40,7 @@ ReactDOM.render(
 		<div className="split au-body au-body--dark">
 			<h2>breadcrumbs <code>--dark</code></h2>
 
-			<Breadcrumbs dark label="Breadcrumb for the other page" items={[
+			<AUbreadcrumbs dark label="Breadcrumb for the other page" items={[
 				{
 					link: '#options',
 					text: 'Options2',

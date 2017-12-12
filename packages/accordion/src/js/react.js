@@ -118,8 +118,10 @@ AUaccordion.propTypes = {
 	afterClose: PropTypes.func,
 };
 
+
 AUaccordion.defaultProps = {
 	open: false,
 };
+
 
 export default AUaccordion;
