@@ -26,7 +26,7 @@ import PropTypes from 'prop-types';
  * @param  {string} children         - Anything inside
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const Callout = ({ dark, alt, description, children, ...attributeOptions }) => (
+export const AUcallout = ({ dark, alt, description, children, ...attributeOptions }) => (
 	<section
 		className={ `au-callout${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` }
 		aria-label={ description }
@@ -36,7 +36,7 @@ export const Callout = ({ dark, alt, description, children, ...attributeOptions 
 	</section>
 );
 
-Callout.propTypes = {
+AUcallout.propTypes = {
 	children: PropTypes.node.isRequired,
 	description: PropTypes.string.isRequired,
 };
@@ -54,7 +54,7 @@ Callout.propTypes = {
  * @param  {string} name             - The name of the event, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const CalloutCalendar = ({ dark, alt, description, subline, datetime, time, name, ...attributeOptions }) => (
+export const AUcalloutCalendar = ({ dark, alt, description, subline, datetime, time, name, ...attributeOptions }) => (
 	<section
 		className={ `au-callout au-callout--calendar-event${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` }
 		aria-label={ description }
@@ -66,7 +66,7 @@ export const CalloutCalendar = ({ dark, alt, description, subline, datetime, tim
 	</section>
 );
 
-CalloutCalendar.propTypes = {
+AUcalloutCalendar.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
 	description: PropTypes.string.isRequired,

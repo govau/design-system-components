@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Callout, CalloutCalendar } from './callout.js';
+import { AUcallout, AUcalloutCalendar } from './callout.js';
 
 
 ReactDOM.render(
@@ -10,14 +10,14 @@ ReactDOM.render(
 			<div className="split">
 				<h2>Simple callout</h2>
 
-				<Callout description="description for first callout">
+				<AUcallout description="description for first callout">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-				</Callout>
+				</AUcallout>
 
 				<hr />
 				<h2>Calendar callout</h2>
 
-				<CalloutCalendar
+				<AUcalloutCalendar
 					description="description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
@@ -28,7 +28,7 @@ ReactDOM.render(
 				<hr />
 				<h2>Calendar callout without optionals</h2>
 
-				<CalloutCalendar
+				<AUcalloutCalendar
 					description="description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
@@ -37,14 +37,14 @@ ReactDOM.render(
 			<div className="split split--dark">
 				<h2>Simple callout <code>--dark</code></h2>
 
-				<Callout dark description="description for first callout">
+				<AUcallout dark description="description for first callout">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-				</Callout>
+				</AUcallout>
 
 				<hr />
 				<h2>Calendar callout <code>--dark</code></h2>
 
-				<CalloutCalendar
+				<AUcalloutCalendar
 					dark
 					description="description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
@@ -56,7 +56,7 @@ ReactDOM.render(
 				<hr />
 				<h2>Calendar callout without optionals <code>--dark</code></h2>
 
-				<CalloutCalendar
+				<AUcalloutCalendar
 					dark
 					description="description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
@@ -68,14 +68,14 @@ ReactDOM.render(
 			<div className="split split--alt">
 				<h2>Simple callout <code>--alt</code></h2>
 
-				<Callout alt description="description for first callout">
+				<AUcallout alt description="description for first callout">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-				</Callout>
+				</AUcallout>
 
 				<hr />
 				<h2>Calendar callout <code>--alt</code></h2>
 
-				<CalloutCalendar
+				<AUcalloutCalendar
 					alt
 					description="description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
@@ -87,7 +87,7 @@ ReactDOM.render(
 				<hr />
 				<h2>Calendar callout without optionals <code>--alt</code></h2>
 
-				<CalloutCalendar
+				<AUcalloutCalendar
 					alt
 					description="description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
@@ -97,14 +97,14 @@ ReactDOM.render(
 			<div className="split split--alt split--dark">
 				<h2>Simple callout <code>--alt</code> <code>--dark</code></h2>
 
-				<Callout alt dark description="description for first callout">
+				<AUcallout alt dark description="description for first callout">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-				</Callout>
+				</AUcallout>
 
 				<hr />
 				<h2>Calendar callout <code>--alt</code> <code>--dark</code></h2>
 
-				<CalloutCalendar
+				<AUcalloutCalendar
 					alt
 					dark
 					description="description for second callout"
@@ -117,7 +117,7 @@ ReactDOM.render(
 				<hr />
 				<h2>Calendar callout without optionals <code>--alt</code> <code>--dark</code></h2>
 
-				<CalloutCalendar
+				<AUcalloutCalendar
 					alt
 					dark
 					description="description for second callout"

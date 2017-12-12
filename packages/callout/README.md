@@ -53,13 +53,13 @@ npm install @gov.au/callout --save-dev
 Usage:
 
 ```jsx
-import { Callout, CalloutCalendar } from './callout.js';
+import { AUcallout, AUcalloutCalendar } from './callout.js';
 
-<Callout description="Description for this callout">
-	Callout content
-</Callout>
+<AUcallout description="Description for this callout">
+	AUcallout content
+</AUcallout>
 
-<CalloutCalendar
+<AUcalloutCalendar
 	description="description for this callout"
 	datetime="2017-01-01T00:00:00+00:00"
 	time="Sunday 32 Jun"
@@ -71,13 +71,13 @@ import { Callout, CalloutCalendar } from './callout.js';
 All props:
 
 ```jsx
-<Callout
+<AUcallout
 	description="Description for this callout"  {/* The label is a must for screen readers */}
 >
 	Callout content
-</Callout>
+</AUcallout>
 
-<CalloutCalendar
+<AUcalloutCalendar
 	description="description for this callout"  {/* The label is a must for screen readers */}
 	datetime="2017-01-01T00:00:00+00:00"        {/* The date time string */}
 	time="Sunday 32 Jun"                        {/* The same date but human readable */}
