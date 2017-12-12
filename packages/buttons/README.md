@@ -55,20 +55,20 @@ Usage:
 ```jsx
 import Button from './buttons.js';
 
-<Button text="Continue" />
+<Button>Continue</Button>
 ```
 
 All props:
 
 ```jsx
 <Button
-	text="Submitting"     {/* The text of the button */}
+	children              {/* Anything inside */}
 	as=""                 {/* The kind of button, 'secondary','tertiary', optional */}
 	block={ true }        {/* The block option to make the button fill the available width, optional */}
 	type="submit"         {/* The type attribute, optional */}
 	onClick={ () => {} }  {/* A function to execute when the button is clicked, optional */}
 	dark={ false }        {/* A dark variation of the component */}
-/>
+></Button>
 ```
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/buttons/tests/react/index.js).
