@@ -16,7 +16,7 @@ ReactDOM.render(
 			<h2>Block</h2>
 			<Label inputID="2" >Hello</Label>
 			<Hint>A helpful hint</Hint>
-			<TextInput block id="2" defaultValue="abc" />
+			<TextInput id="2" defaultValue="abc" block />
 			<hr />
 
 			<h2>Block Invalid</h2>
@@ -41,12 +41,12 @@ ReactDOM.render(
 
 			<h2>Textarea Block</h2>
 			<Label inputID="7" >Hello</Label>
-			<TextInput id="7" block as="textarea">Hello</TextInput>
+			<TextInput id="7" as="textarea" block >Hello</TextInput>
 			<hr />
 
 			<h2>Text area default value</h2>
 			<Label inputID="8" >Hello</Label>
-			<TextInput id="8" defaultValue="abc" disabled as="textarea" />
+			<TextInput id="8" defaultValue="abc" as="textarea" disabled />
 		</div>
 		<div className="split split--dark">
 			<h2>Default</h2>
@@ -58,7 +58,7 @@ ReactDOM.render(
 			<h2>Block</h2>
 			<Label inputID="2" >Hello</Label>
 			<Hint>A helpful hint</Hint>
-			<TextInput id="2" defaultValue="abc" dark block  />
+			<TextInput id="2" defaultValue="abc" dark block />
 			<hr />
 
 			<h2>Block Invalid</h2>
@@ -83,7 +83,7 @@ ReactDOM.render(
 
 			<h2>Textarea Block</h2>
 			<Label inputID="7" >Hello</Label>
-			<TextInput id="7" as="textarea" dark block>Hello</TextInput>
+			<TextInput id="7" as="textarea" dark block >Hello</TextInput>
 			<hr />
 
 			<h2>Text area default value</h2>
