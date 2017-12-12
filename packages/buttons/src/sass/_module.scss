@@ -36,19 +36,6 @@ a.au-btn {
 	cursor: pointer;
 	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
 
-	&:hover {
-		background-color: transparent;
-		border-color: $AU-color-Text;
-		text-decoration: underline;
-		color: $AU-color-Text;
-	}
-
-	&:focus {
-		border-radius: 0;
-	}
-
-	@include AU-focus();
-
 	/**
 	* SECONDARY
 	*/
@@ -79,6 +66,19 @@ a.au-btn {
 			border-color: transparent;
 		}
 	}
+
+	&:hover {
+		background-color: transparent;
+		border-color: $AU-color-Text;
+		text-decoration: underline;
+		color: $AU-color-Text;
+	}
+
+	&:focus {
+		border-radius: 0;
+	}
+
+	@include AU-focus();
 
 	&.au-btn--dark {
 		color: $AU-colordark-Background-light;

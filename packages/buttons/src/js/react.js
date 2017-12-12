@@ -46,7 +46,6 @@ const Button = ({ children, as, dark, type, block, ...attributeOptions }) => {
 		<button
 			type={ type }
 			className={ `au-btn ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
-			disabled={ disabled }
 			{ ...attributeOptions }
 		>
 			{ children }
@@ -60,7 +59,6 @@ Button.propTypes = {
 	dark: PropTypes.bool,
 	type: PropTypes.string,
 	id: PropTypes.string,
-	disabled: PropTypes.bool,
 	block: PropTypes.bool,
 	onClick: PropTypes.func,
 };
