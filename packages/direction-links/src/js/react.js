@@ -33,24 +33,18 @@ const directions = {
  * DEFAULT
  * The direction-links component
  *
- * @param  {string} dark      - Add the dark variation class
- * @param  {string} link      - The link target, optional
- * @param  {string} text      - The text of the CTA link
- * @param  {string} direction - The direction for the arrow; can be either: up right down left, default: 'right'
- * @param  {string} onClick   - An onClick function, optional
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} link             - The link target, optional
+ * @param  {string} text             - The text of the CTA link
+ * @param  {string} direction        - The direction for the arrow; can be either: up right down left, default: 'right'
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const DirectionLink = ({ dark, link, text, direction, onClick }) => {
-	const attributeOptions = {};
-
-	if( typeof onClick !== 'undefined' ) {
-		attributeOptions.onClick = onClick;
-	}
-
+const DirectionLink = ({ dark, link, text, direction, ...attributeOptions }) => {
 	if( link ) {
-		return (<a className={ `au-direction-link ${ directions[ direction ] }${ dark ? 'au-direction-link--dark' : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return (<a className={ `au-direction-link ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return (<button className={ `au-direction-link ${ directions[ direction ] }${ dark ? 'au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button> );
+		return (<button className={ `au-direction-link ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button> );
 	}
 };
 
