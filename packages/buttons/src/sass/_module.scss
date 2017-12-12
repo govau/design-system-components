@@ -49,19 +49,6 @@ a.au-btn {
 
 	@include AU-focus();
 
-	&.au-btn--dark {
-		color: $AU-colordark-Background-light;
-		background-color: $AU-colordark-Action;
-		border-color: $AU-colordark-Action;
-		&:hover {
-			color: $AU-colordark-Text;
-			border-color: $AU-colordark-Text;
-			background-color: transparent;
-		}
-
-		@include AU-focus( 'dark' );
-	}
-
 	/**
 	* SECONDARY
 	*/
@@ -91,6 +78,19 @@ a.au-btn {
 			color: $AU-colordark-Action;
 			border-color: transparent;
 		}
+	}
+
+	&.au-btn--dark {
+		color: $AU-colordark-Background-light;
+		background-color: $AU-colordark-Action;
+		border-color: $AU-colordark-Action;
+		&:hover {
+			color: $AU-colordark-Text;
+			border-color: $AU-colordark-Text;
+			background-color: transparent;
+		}
+
+		@include AU-focus( 'dark' );
 	}
 
 	// IE8 disabled styles
