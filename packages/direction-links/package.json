@@ -24,10 +24,10 @@
 		"postinstall": "pancake",
 
 		"test:a11y": "node ../../scripts/a11y.js",
-		"test:deps": "node ../../scripts/helper.js test",
+		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
 
-		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
+		"prepublish": "npm run test:helper && node ../../scripts/helper.js precompile publish",
 
 		"build:js": "node ../../scripts/helper.js precompile compile",
 		"build:react": "cd tests/react/ && webpack",
@@ -94,14 +94,14 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "http://guides.service.gov.au/design-guide/",
+	"homepage": "https://gold.service.gov.au/",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
-		"email": "guides@digital.gov.au"
+		"email": "uikit@digital.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "guides@digital.gov.au",
+		"email": "uikit@digital.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [

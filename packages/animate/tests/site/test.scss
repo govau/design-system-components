@@ -1,7 +1,9 @@
 //dependencies
-@import '../../src/sass/_dependencies.scss';
+// @import '../../src/sass/_dependencies.scss';
 
 //testing includes
+@import '../../../core/node_modules/sass-versioning/dist/_index.scss';
+@import '../../../core/lib/sass/_module.scss';
 @import '../../../grid-12/lib/sass/_module.scss';
 
 //styling all test files
