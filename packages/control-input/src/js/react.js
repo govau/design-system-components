@@ -25,7 +25,7 @@ import PropTypes from 'prop-types';
  * @param  {object}   attributeOptions - Any other attribute options
  *
  */
-export const Checkbox = ({ dark, label, ...attributeOptions }) => {
+export const AUcheckbox = ({ dark, label, ...attributeOptions }) => {
 
 	return (
 		<label className={ `au-control-input${ dark ? ' au-control-input--dark' : '' }` }>
@@ -35,7 +35,8 @@ export const Checkbox = ({ dark, label, ...attributeOptions }) => {
 	);
 };
 
-Checkbox.propTypes = {
+
+AUcheckbox.propTypes = {
 	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string,
@@ -54,7 +55,7 @@ Checkbox.propTypes = {
  * @param  {string}   label            - The label
  * @param  {object}   attributeOptions - Any other attribute options
  */
-export const Radio = ({ dark, label, ...attributeOptions }) => {
+export const AUradio = ({ dark, label, ...attributeOptions }) => {
 
 	return (
 		<label className={ `au-control-input${ dark ? ` au-control-input--dark` : '' }` } >
@@ -64,7 +65,8 @@ export const Radio = ({ dark, label, ...attributeOptions }) => {
 	);
 };
 
-Radio.propTypes = {
+
+AUradio.propTypes = {
 	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string,

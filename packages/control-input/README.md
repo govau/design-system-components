@@ -53,19 +53,19 @@ npm install @gov.au/control-input --save-dev
 Usage:
 
 ```jsx
-import { Checkbox, Radio } from './control-input.js';
+import { AUcheckbox, AUradio } from './control-input.js';
 
-<Radio label="Yes" name="has_email" value="yes" />
-<Radio label="No" name="has_email" value="no" />
-<Radio label="Maybe" name="has_email" value="maybe" />
+<AUradio label="Yes" name="has_email" value="yes" />
+<AUradio label="No" name="has_email" value="no" />
+<AUradio label="Maybe" name="has_email" value="maybe" />
 
-<Checkbox label="Has email?" name="has_email" />
+<AUcheckbox label="Has email?" name="has_email" />
 ```
 
 All props:
 
 ```jsx
-<Radio
+<AUradio
 	label="The label"      {/* The label of the radio button */}
 	name="the_name"        {/* The name attribute */}
 	value="value"          {/* The value attribute */}
@@ -76,7 +76,7 @@ All props:
 	dark={ false }         {/* A dark variation of the component */}
 />
 
-<Checkbox
+<AUcheckbox
 	label="The label"      {/* The label of the checkbox */}
 	name="the_name"        {/* The name attribute */}
 	value="value"          {/* The value attribute */}

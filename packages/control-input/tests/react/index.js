@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Checkbox, Radio } from './control-input.js';
+import { AUcheckbox, AUradio } from './control-input.js';
 
 
 // to test a nice list of radio buttons
@@ -24,7 +24,7 @@ class RadioList extends React.Component {
 			<div>
 				{ this.props.items.map( ( item, i ) =>
 					<p key={ i }>
-						<Radio
+						<AUradio
 							dark={ this.props.dark }
 							label={ item.label }
 							name={ this.props.name }
@@ -67,7 +67,7 @@ class CheckboxList extends React.Component {
 			<div>
 				{ this.props.items.map( ( item, i ) =>
 					<p key={ i }>
-						<Checkbox
+						<AUcheckbox
 							dark={ this.props.dark }
 							label={ item.label }
 							name={ this.props.name }
