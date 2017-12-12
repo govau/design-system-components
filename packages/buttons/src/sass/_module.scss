@@ -21,7 +21,8 @@
 /**
  * PRIMARY
  */
-.au-btn {
+.au-btn,
+a.au-btn {
 	@include AU-fontgrid( sm );
 	@include AU-space( padding, 0.75unit 2unit );
 	display: inline-block;
@@ -60,46 +61,38 @@
 
 		@include AU-focus( 'dark' );
 	}
-}
 
-
-/**
- * SECONDARY
- */
-.au-btn--secondary {
-	background-color: transparent;
-	border-color: $AU-color-Action;
-	color: $AU-color-Action;
-
-	&.au-btn--dark {
+	/**
+	* SECONDARY
+	*/
+	&.au-btn--secondary {
 		background-color: transparent;
-		border-color: $AU-colordark-Action;
-		color: $AU-colordark-Action;
+		border-color: $AU-color-Action;
+		color: $AU-color-Action;
+
+		&.au-btn--dark {
+			background-color: transparent;
+			border-color: $AU-colordark-Action;
+			color: $AU-colordark-Action;
+		}
 	}
-}
 
-
-/**
- * TERTIARY
- */
-.au-btn--tertiary {
-	background-color: transparent;
-	color: $AU-color-Action;
-	border-color: transparent;
-	text-decoration: underline;
-
-	&.au-btn--dark {
+	/**
+	* TERTIARY
+	*/
+	&.au-btn--tertiary {
 		background-color: transparent;
-		color: $AU-colordark-Action;
+		color: $AU-color-Action;
 		border-color: transparent;
+		text-decoration: underline;
+
+		&.au-btn--dark {
+			background-color: transparent;
+			color: $AU-colordark-Action;
+			border-color: transparent;
+		}
 	}
-}
 
-
-/**
- * DISABLED
- */
-.au-btn {
 	// IE8 disabled styles
 	&[disabled] {
 		cursor: not-allowed;
@@ -128,20 +121,19 @@
 			border-color: transparent;
 		}
 	}
-}
 
+	/**
+ 	 * BLOCK
+ 	 */
+	&.au-btn--block {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: center;
 
-/**
- * BLOCK
- */
-.au-btn--block {
-	display: block;
-	width: 100%;
-	box-sizing: border-box;
-	text-align: center;
-
-	// If it follows another au-btn--block
-	& + .au-btn--block {
-		@include AU-space( margin-top, 0.25unit );
+		// If it follows another au-btn--block
+		& + .au-btn--block {
+			@include AU-space( margin-top, 0.25unit );
+		}
 	}
 }
