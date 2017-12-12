@@ -44,7 +44,7 @@ ReactDOM.render(
 			<TextInput id="7" as="textarea" block >Hello</TextInput>
 			<hr />
 
-			<h2>Text area default value</h2>
+			<h2>Textarea default value disabled</h2>
 			<Label inputID="8" >Hello</Label>
 			<TextInput id="8" defaultValue="abc" as="textarea" disabled />
 		</div>
@@ -86,9 +86,9 @@ ReactDOM.render(
 			<TextInput id="7" as="textarea" dark block >Hello</TextInput>
 			<hr />
 
-			<h2>Text area default value</h2>
+			<h2>Textarea default value disabled</h2>
 			<Label inputID="8" >Hello</Label>
-			<TextInput as="textarea" id="8" defaultValue="abc" disabled dark block />
+			<TextInput as="textarea" id="8" defaultValue="abc" disabled dark />
 		</div>
 	</div>,
 
