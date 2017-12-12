@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Button from './buttons.js';
+import AUbutton from './buttons.js';
 
 
 ReactDOM.render(
@@ -9,90 +9,90 @@ ReactDOM.render(
 		<div className="split-wrapper">
 			<div className="split">
 				<h2>primary button</h2>
-				<Button>Continue</Button>&nbsp;
-				<Button id='testforID' disabled>Continue</Button>
+				<AUbutton>Continue</AUbutton>&nbsp;
+				<AUbutton id='testforID' disabled>Continue</AUbutton>
 
 
 				<hr />
 				<h2>secondary button</h2>
-				<Button as='secondary'>Save</Button>&nbsp;
-				<Button as='secondary' disabled>Save</Button>
+				<AUbutton as='secondary'>Save</AUbutton>&nbsp;
+				<AUbutton as='secondary' disabled>Save</AUbutton>
 
 
 				<hr />
 				<h2>tertiary button</h2>
-				<Button as='tertiary'>Cancel</Button>&nbsp;
-				<Button as='tertiary' disabled>Cancel</Button>
+				<AUbutton as='tertiary'>Cancel</AUbutton>&nbsp;
+				<AUbutton as='tertiary' disabled>Cancel</AUbutton>
 
 
 				<hr />
 				<h2>buttons with block</h2>
-				<Button block>Continue</Button>
-				<Button as='secondary' block>Save</Button>
-				<Button as='tertiary' block>Cancel</Button>
+				<AUbutton block>Continue</AUbutton>
+				<AUbutton as='secondary' block>Save</AUbutton>
+				<AUbutton as='tertiary' block>Cancel</AUbutton>
 
 
 				<hr />
 				<h2>buttons with different type</h2>
-				<Button type="submit">Submit</Button>&nbsp;
-				<Button type="button">Button</Button>&nbsp;
-				<Button type="reset">Reset</Button>
+				<AUbutton type="submit">Submit</AUbutton>&nbsp;
+				<AUbutton type="button">AUbutton</AUbutton>&nbsp;
+				<AUbutton type="reset">Reset</AUbutton>
 
 
 				<hr />
 				<h2>buttons with onClick</h2>
 				<p>
-					<Button onClick={ () => console.log('This function will be called when the primary button is clicked') }>log it</Button>
+					<AUbutton onClick={ () => console.log('This function will be called when the primary button is clicked') }>log it</AUbutton>
 				</p>
 				<p>
-					<Button as='secondary' onClick={ () => console.log('This function will be called when the secondary button is clicked') }>log it</Button><br />
+					<AUbutton as='secondary' onClick={ () => console.log('This function will be called when the secondary button is clicked') }>log it</AUbutton><br />
 				</p>
 				<p>
-					<Button as='tertiary' onClick={ () => console.log('This function will be called when the tertiary button is clicked') }>log it</Button>
+					<AUbutton as='tertiary' onClick={ () => console.log('This function will be called when the tertiary button is clicked') }>log it</AUbutton>
 				</p>
 			</div>
 			<div className="split split--dark">
 				<h2>primary button <code>--dark</code></h2>
-				<Button dark>Continue</Button>&nbsp;
-				<Button dark disabled>Continue</Button>
+				<AUbutton dark>Continue</AUbutton>&nbsp;
+				<AUbutton dark disabled>Continue</AUbutton>
 
 
 				<hr />
 				<h2>secondary button <code>--dark</code></h2>
-				<Button dark as='secondary'>Save</Button>&nbsp;
-				<Button dark as='secondary' disabled>Save</Button>
+				<AUbutton dark as='secondary'>Save</AUbutton>&nbsp;
+				<AUbutton dark as='secondary' disabled>Save</AUbutton>
 
 
 				<hr />
 				<h2>tertiary button <code>--dark</code></h2>
-				<Button dark as='tertiary'>Cancel</Button>&nbsp;
-				<Button dark as='tertiary' disabled>Cancel</Button>
+				<AUbutton dark as='tertiary'>Cancel</AUbutton>&nbsp;
+				<AUbutton dark as='tertiary' disabled>Cancel</AUbutton>
 
 
 				<hr />
 				<h2>buttons with block <code>--dark</code></h2>
-				<Button dark block>Continue</Button>
-				<Button dark as='secondary' block>Save</Button>
-				<Button dark as='tertiary' block>Cancel</Button>
+				<AUbutton dark block>Continue</AUbutton>
+				<AUbutton dark as='secondary' block>Save</AUbutton>
+				<AUbutton dark as='tertiary' block>Cancel</AUbutton>
 
 
 				<hr />
 				<h2>buttons with different type <code>--dark</code></h2>
-				<Button dark type="submit">Submit</Button>&nbsp;
-				<Button dark type="button">Button</Button>&nbsp;
-				<Button dark type="reset">Reset</Button>
+				<AUbutton dark type="submit">Submit</AUbutton>&nbsp;
+				<AUbutton dark type="button">AUbutton</AUbutton>&nbsp;
+				<AUbutton dark type="reset">Reset</AUbutton>
 
 
 				<hr />
 				<h2>buttons with onClick <code>--dark</code></h2>
 				<p>
-					<Button dark onClick={ () => console.log('This function will be called when the primary button is clicked') }>log it</Button>
+					<AUbutton dark onClick={ () => console.log('This function will be called when the primary button is clicked') }>log it</AUbutton>
 				</p>
 				<p>
-					<Button dark as='secondary' onClick={ () => console.log('This function will be called when the secondary button is clicked') }>log it</Button><br />
+					<AUbutton dark as='secondary' onClick={ () => console.log('This function will be called when the secondary button is clicked') }>log it</AUbutton><br />
 				</p>
 				<p>
-					<Button dark as='tertiary' onClick={ () => console.log('This function will be called when the tertiary button is clicked') }>log it</Button>
+					<AUbutton dark as='tertiary' onClick={ () => console.log('This function will be called when the tertiary button is clicked') }>log it</AUbutton>
 				</p>
 			</div>
 		</div>

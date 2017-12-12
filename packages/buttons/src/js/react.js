@@ -40,7 +40,7 @@ const options = {
  * @param  {boolean}   block            - The block option, optional
  * @param  {object}    attributeOptions - Any other attribute options
  */
-const Button = ({ children, as, dark, type, block, ...attributeOptions }) => {
+const AUbutton = ({ children, as, dark, type, block, ...attributeOptions }) => {
 
 	return (
 		<button
@@ -53,7 +53,7 @@ const Button = ({ children, as, dark, type, block, ...attributeOptions }) => {
 	);
 };
 
-Button.propTypes = {
+AUbutton.propTypes = {
 	children: PropTypes.string.isRequired,
 	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
 	dark: PropTypes.bool,
@@ -63,9 +63,9 @@ Button.propTypes = {
 	onClick: PropTypes.func,
 };
 
-Button.defaultProps = {
+AUbutton.defaultProps = {
 	type: 'button',
 	as: 'primary',
 };
 
-export default Button;
+export default AUbutton;

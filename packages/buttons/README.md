@@ -53,22 +53,22 @@ npm install @gov.au/buttons --save-dev
 Usage:
 
 ```jsx
-import Button from './buttons.js';
+import AUbutton from './buttons.js';
 
-<Button>Continue</Button>
+<AUbutton>Continue</AUbutton>
 ```
 
 All props:
 
 ```jsx
-<Button
+<AUbutton
 	children              {/* Anything inside */}
 	as=""                 {/* The kind of button, 'secondary','tertiary', optional */}
 	block={ true }        {/* The block option to make the button fill the available width, optional */}
 	type="submit"         {/* The type attribute, optional */}
 	onClick={ () => {} }  {/* A function to execute when the button is clicked, optional */}
 	dark={ false }        {/* A dark variation of the component */}
-></Button>
+></AUbutton>
 ```
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/buttons/tests/react/index.js).
