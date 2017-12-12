@@ -25,7 +25,7 @@ import PropTypes from 'prop-types';
  * @param  {string} block            - Add the block variation class
  * @param  {string} invalid          - Add the invalid variation class
  * @param  {string} valid            - Add the valid variation class
- * @param  {Object} attributeOptions - Any other attribute options
+ * @param  {object} attributeOptions - Any other attribute options
  */
 export const TextInput = ({
 	as,
@@ -82,7 +82,7 @@ TextInput.defaultProps = {
  * The label component
  *
  * @param  {string} children         - Add the dark variation class
- * @param  {Object} attributeOptions - Any other attribute options
+ * @param  {object} attributeOptions - Any other attribute options
  */
 export const Label = ({ children, ...attributeOptions }) => {
 
@@ -103,7 +103,7 @@ Label.propTypes = {
  * The hint component
  *
  * @param  {string} children         - Add the dark variation class
- * @param  {Object} attributeOptions - Any other attribute options
+ * @param  {object} attributeOptions - Any other attribute options
  */
 export const Hint = ({ children, ...attributeOptions }) => {
 
