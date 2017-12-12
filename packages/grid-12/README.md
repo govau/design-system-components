@@ -71,6 +71,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests
 
 ## Release History
 
+* v0.1.1 - Fixed sass rounding precision
 * v0.1.0 - 💥 Initial version
 
 

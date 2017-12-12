@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.2 - Moved to System fonts](v012)
 * [v0.1.1 - Fixed a11y contrast issue](v011)
 * [v0.1.0 - 💥 Initial version](v010)
 
@@ -23,6 +24,11 @@
 
 
 ## Release History
+
+### v0.1.2
+
+- Moved to System fonts
+
 
 ### v0.1.1
 

@@ -22,7 +22,7 @@
 		"delete:node_modules": "rm -rf packages/*/node_modules | rm -rf node_modules",
 		"delete:lib": "rm -rf packages/*/lib/**",
 		"test:unit-test": "jest",
-		"test": "lerna run test:a11y --concurrency 1 && node scripts/helper.js test"
+		"test": "node scripts/helper.js test && lerna run test:a11y --concurrency 1"
 	},
 	"jest": {
 		"testRegex": "\\.spec.js$",
