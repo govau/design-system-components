@@ -39,7 +39,7 @@ const directions = {
  * @param  {string} direction        - The direction for the arrow; can be either: up right down left, default: 'right'
  * @param  {object} attributeOptions - Any other attribute options
  */
-const DirectionLink = ({ dark, link, text, direction, ...attributeOptions }) => {
+const AUdirectionLink = ({ dark, link, text, direction, ...attributeOptions }) => {
 	if( link ) {
 		return (<a className={ `au-direction-link ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
@@ -48,7 +48,7 @@ const DirectionLink = ({ dark, link, text, direction, ...attributeOptions }) => 
 	}
 };
 
-DirectionLink.propTypes = {
+AUdirectionLink.propTypes = {
 	dark: PropTypes.bool,
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
@@ -56,8 +56,8 @@ DirectionLink.propTypes = {
 	onClick: PropTypes.func,
 };
 
-DirectionLink.defaultProps = {
+AUdirectionLink.defaultProps = {
 	direction: 'right',
 };
 
-export default DirectionLink;
+export default AUdirectionLink;

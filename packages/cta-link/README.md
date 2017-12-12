@@ -53,15 +53,15 @@ npm install @gov.au/more-link --save-dev
 Usage:
 
 ```jsx
-import AUctalink from './cta-link.js';
+import AUctaLink from './cta-link.js';
 
-<AUctalink link="/signup" text="Sign up" />
+<AUctaLink link="/signup" text="Sign up" />
 ```
 
 All props:
 
 ```jsx
-<AUctalink
+<AUctaLink
 	text="Sign up"        {/* The text of the CTA link */}
 	onClick={ () => {} }  {/* A function to execute when the link is clicked, optional */}
 	dark={ false }        {/* A dark variation of the component */}

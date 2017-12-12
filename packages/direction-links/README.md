@@ -53,15 +53,15 @@ npm install @gov.au/direction-links --save-dev
 Usage:
 
 ```jsx
-import DirectionLink from './direction-links.js';
+import AUdirectionLink from './direction-links.js';
 
-<DirectionLink link="/next/page/" text="Continue" />
+<AUdirectionLink link="/next/page/" text="Continue" />
 ```
 
 All props:
 
 ```jsx
-<DirectionLink
+<AUdirectionLink
 	text="Submitting"     {/* The text of the link */}
 	link="link/to/page"   {/* The href link, optional */}
 	onClick={ () => {} }  {/* A function to execute when the link is clicked, optional */}

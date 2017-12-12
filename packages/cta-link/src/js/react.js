@@ -26,7 +26,7 @@ import PropTypes from 'prop-types';
  * @param  {string} text             - The text of the CTA link
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUctalink = ({ dark, link, text, ...attributeOptions }) => {
+const AUctaLink = ({ dark, link, text, ...attributeOptions }) => {
 
 	if( link ) {
 		return( <a className={ `au-cta-link${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
@@ -37,7 +37,7 @@ const AUctalink = ({ dark, link, text, ...attributeOptions }) => {
 }
 
 
-AUctalink.propTypes = {
+AUctaLink.propTypes = {
 	dark: PropTypes.bool,
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
@@ -45,4 +45,4 @@ AUctalink.propTypes = {
 };
 
 
-export default AUctalink;
+export default AUctaLink;
