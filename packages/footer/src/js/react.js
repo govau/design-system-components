@@ -21,10 +21,11 @@ import PropTypes from 'prop-types';
 /**
  * A section for the footer that contains navigational elements
  *
- * @param  {node} children - The inside of this section
+ * @param  {node}   children         - The inside of this section
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const FooterNav = ({ children }) => (
-	<nav className="au-footer__navigation">
+export const FooterNav = ({ children, ...attributeOptions }) => (
+	<nav className="au-footer__navigation" { ...attributeOptions }>
 		{ children }
 	</nav>
 );
@@ -37,10 +38,11 @@ FooterNav.propTypes = {
 /**
  * A section for the footer that sits at the end
  *
- * @param  {node} children - The inside of this section
+ * @param  {node}   children         - The inside of this section
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const FooterEnd = ({ children }) => (
-	<nav className="au-footer__end">
+export const FooterEnd = ({ children, ...attributeOptions }) => (
+	<nav className="au-footer__end" { ...attributeOptions }>
 		{ children }
 	</nav>
 );
@@ -54,12 +56,17 @@ FooterEnd.propTypes = {
  * DEFAULT
  * The footer component
  *
- * @param  {string} dark     - Add the dark variation class
- * @param  {string} alt      - Add the alt variation class
- * @param  {node}   children - The inside of this section
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} alt              - Add the alt variation class
+ * @param  {node}   children         - The inside of this section
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Footer = ({ dark, alt, children }) => (
-	<footer className={ `au-footer${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `} role="contentinfo">
+const Footer = ({ dark, alt, children, ...attributeOptions }) => (
+	<footer
+		className={ `au-footer${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `}
+		role="contentinfo"
+		{ ...attributeOptions }
+	>
 		{ children }
 	</footer>
 );
