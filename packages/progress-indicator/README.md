@@ -53,9 +53,9 @@ npm install @gov.au/progress-indicator --save-dev
 Usage:
 
 ```jsx
-import ProgressIndicator from './progress-indicator.js';
+import AUprogressIndicator from './progress-indicator.js';
 
-<ProgressIndicator items={[
+<AUprogressIndicator items={[
 	{
 		link: 'forms/intro/',
 		text: 'Introduction',
@@ -77,7 +77,7 @@ import ProgressIndicator from './progress-indicator.js';
 All props:
 
 ```jsx
-<ProgressIndicator
+<AUprogressIndicator
 	dark={ false }             {/* A dark variation of the component */}
 	items={[                   {/* All steps in a neat array */}
 		{

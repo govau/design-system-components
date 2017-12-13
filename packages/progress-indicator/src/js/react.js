@@ -28,7 +28,7 @@ const statusText = {
 };
 
 /**
- * An item inside the ProgressIndicator component
+ * An item inside the AUprogressIndicator component
  *
  * @param  {array}    item              - The item array with all progress items
  * @param  {string}   item.link         - The link URL, If no link is passed we render a button instead of a link tag, optional
@@ -38,7 +38,7 @@ const statusText = {
  * @param  {function} item.onClick      - An onClick function, optional
  * @param  {object}   attributeOptions  - Any other attribute options
  */
-export const ProgressIndicatorItem = ({ item, ...attributeOptions }) => {
+export const AUprogressIndicatorItem = ({ item, ...attributeOptions }) => {
 
 	if( typeof item.onClick === 'function' ) {
 		attributeOptions.onClick = item.onClick;
@@ -60,7 +60,7 @@ export const ProgressIndicatorItem = ({ item, ...attributeOptions }) => {
 	);
 };
 
-ProgressIndicatorItem.propTypes = {
+AUprogressIndicatorItem.propTypes = {
 	item: PropTypes.shape({
 		link: PropTypes.string,
 		text: PropTypes.string.isRequired,
@@ -79,13 +79,13 @@ ProgressIndicatorItem.propTypes = {
  * @param  {array}  items            - All items for this progress indicator
  * @param  {object} attributeOptions - Any other attribute options
  */
-const ProgressIndicator = ({ dark, items, ...attributeOptions }) => (
+const AUprogressIndicator = ({ dark, items, ...attributeOptions }) => (
 	<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' }` } { ...attributeOptions }>
-		{ items.map( ( item, i ) => <ProgressIndicatorItem key={ i } item={ item } /> ) }
+		{ items.map( ( item, i ) => <AUprogressIndicatorItem key={ i } item={ item } /> ) }
 	</ul>
 );
 
-ProgressIndicator.propTypes = {
+AUprogressIndicator.propTypes = {
 	dark: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -99,4 +99,4 @@ ProgressIndicator.propTypes = {
 };
 
 
-export default ProgressIndicator;
+export default AUprogressIndicator;

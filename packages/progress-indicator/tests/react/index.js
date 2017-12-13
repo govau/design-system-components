@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ProgressIndicator from './progress-indicator.js';
+import AUprogressIndicator from './progress-indicator.js';
 
 
 // Let’s show some dynamic interactions
@@ -57,7 +57,7 @@ class ProgressIndicatorWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<ProgressIndicator dark={ this.props.dark } items={ this.state.items } />
+				<AUprogressIndicator dark={ this.props.dark } items={ this.state.items } />
 
 				<button type="button" onClick={ () => { this.changeStatus( 'Personal Infos', 'done' ) } }>Mark "Personal Infos" as done</button>
 				<button type="button" onClick={ () => { this.changeStatus( 'Spouses', 'doing' ) } }>Mark "Spouses" as doing</button>
@@ -72,7 +72,7 @@ ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split au-body">
 		<h2>progress-indicator default</h2>
-			<ProgressIndicator items={[
+			<AUprogressIndicator items={[
 				{
 					link: '#url',
 					text: 'Introduction',
@@ -104,7 +104,7 @@ ReactDOM.render(
 			<hr />
 			<h2>progress-indicator with no links and onClick</h2>
 
-			<ProgressIndicator items={[
+			<AUprogressIndicator items={[
 				{
 					text: 'Introduction',
 					status: 'done',
@@ -142,7 +142,7 @@ ReactDOM.render(
 		</div>
 		<div className="split au-body au-body--dark">
 		<h2>progress-indicator <code>--dark</code></h2>
-			<ProgressIndicator dark items={[
+			<AUprogressIndicator dark items={[
 				{
 					link: '#url',
 					text: 'Introduction',
@@ -174,7 +174,7 @@ ReactDOM.render(
 			<hr />
 			<h2>progress-indicator with no links and onClick <code>--dark</code></h2>
 
-			<ProgressIndicator dark items={[
+			<AUprogressIndicator dark items={[
 				{
 					text: 'Introduction',
 					status: 'done',
