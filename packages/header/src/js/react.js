@@ -30,7 +30,7 @@ import PropTypes from 'prop-types';
  * @param  {node}    children        - The inside of this section
  * @param  {object} attributeOptions - Any other attribute options
  */
-const Header = ({ title, level, subline, hero, dark, alt, children, ...attributeOptions }) => {
+const AUheader = ({ title, level, subline, hero, dark, alt, children, ...attributeOptions }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
@@ -46,7 +46,8 @@ const Header = ({ title, level, subline, hero, dark, alt, children, ...attribute
 	);
 };
 
-Header.propTypes = {
+
+AUheader.propTypes = {
 	title: PropTypes.node.isRequired,
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 	subline: PropTypes.node,
@@ -56,8 +57,10 @@ Header.propTypes = {
 	children: PropTypes.node,
 };
 
-Header.defaultProps = {
+
+AUheader.defaultProps = {
 	level: '1',
 };
 
-export default Header;
+
+export default AUheader;

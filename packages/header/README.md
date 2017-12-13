@@ -53,15 +53,15 @@ npm install @gov.au/header --save-dev
 Usage:
 
 ```jsx
-import Header from './header.js';
+import AUheader from './header.js';
 
-<Header title="Page title" />
+<AUheader title="Page title" />
 ```
 
 All props:
 
 ```jsx
-<Header
+<AUheader
 	title="Page title"  {/* The headline content */}
 	level="1"           {/* The headline tag level, h1-h6, optional */}
 	subline="Subline"   {/* The subline content, optional */}
