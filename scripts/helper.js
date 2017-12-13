@@ -1043,6 +1043,11 @@ HELPER.test = (() => {
 						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
 					}
 
+					// testing for pancake config
+					if( packagesPKG.pancake['auto-save'] !== undefined ) {
+						error += `The module ${ module } has the pancake config saved though we don’t want that…\n`;
+					}
+
 				}
 			}
 
