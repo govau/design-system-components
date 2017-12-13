@@ -40,7 +40,7 @@ const sizes = [
  * @param  {string} text             - The heading text
  * @param  {object} attributeOptions - Any other attribute options
  */
-const Header = ({ level, size, text, ...attributeOptions }) => {
+const AUheading = ({ level, size, text, ...attributeOptions }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
@@ -48,10 +48,10 @@ const Header = ({ level, size, text, ...attributeOptions }) => {
 	);
 };
 
-Header.propTypes = {
+AUheading.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 	size: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' ]).isRequired,
 	text: PropTypes.node.isRequired,
 };
 
-export default Header;
+export default AUheading;

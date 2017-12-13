@@ -53,15 +53,15 @@ npm install @gov.au/headings --save-dev
 Usage:
 
 ```jsx
-import Heading from './headings.js';
+import AUheading from './headings.js';
 
-<Heading size="xl" level="2" text="Display 2 on h2" />
+<AUheading size="xl" level="2" text="Display 2 on h2" />
 ```
 
 All props:
 
 ```jsx
-<Heading
+<AUheading
 	size="xl"             {/* The display size, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' */}
 	level="1"             {/* The semantic headline tag level, h1-h6 */}
 	text="Headline text"  {/* The text of the headline */}
