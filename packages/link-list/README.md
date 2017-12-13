@@ -53,9 +53,9 @@ npm install @gov.au/link-list --save-dev
 Usage:
 
 ```jsx
-import LinkList from './link-list.js';
+import AUlinkList from './link-list.js';
 
-<LinkList items={[
+<AUlinkList items={[
 	{
 		link: 'link/one/',
 		text: 'Link 1',
@@ -74,7 +74,7 @@ import LinkList from './link-list.js';
 All props:
 
 ```jsx
-<LinkList
+<AUlinkList
 	inline={ false }          {/* The inline option to make the list inline, optional */}
 	items={[                  {/* All links in a neat array */}
 		{

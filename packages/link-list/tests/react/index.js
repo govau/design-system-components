@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import LinkList from './link-list.js';
+import AUlinkList from './link-list.js';
 
 
 ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split au-body">
 			<h2>Link list</h2>
-			<LinkList items={[
+			<AUlinkList items={[
 				{
 					link: '#options',
 					text: 'Options',
@@ -27,7 +27,7 @@ ReactDOM.render(
 			<hr />
 			<h2>Link list inline</h2>
 
-			<LinkList inline items={[
+			<AUlinkList inline items={[
 				{
 					link: '#Options',
 					text: 'Options',
@@ -46,7 +46,7 @@ ReactDOM.render(
 			<hr />
 			<h2>Link list with onClick</h2>
 
-			<LinkList items={[
+			<AUlinkList items={[
 				{
 					link: '#Options',
 					text: 'With link',
@@ -60,7 +60,7 @@ ReactDOM.render(
 		</div>
 		<div className="split au-body au-body--dark">
 			<h2>Link list</h2>
-			<LinkList items={[
+			<AUlinkList items={[
 				{
 					link: '#options',
 					text: 'Options',
@@ -79,7 +79,7 @@ ReactDOM.render(
 			<hr />
 			<h2>Link list inline</h2>
 
-			<LinkList inline items={[
+			<AUlinkList inline items={[
 				{
 					link: '#options',
 					text: 'Options',
@@ -98,7 +98,7 @@ ReactDOM.render(
 			<hr />
 			<h2>Link list with onClick</h2>
 
-			<LinkList items={[
+			<AUlinkList items={[
 				{
 					link: '#Options',
 					text: 'With link',
