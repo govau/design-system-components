@@ -14,13 +14,13 @@ import PropTypes from 'prop-types';
 /**
  * A tag item inside the Tags component
  *
- * @param  {object}   tag         - The tag object
- * @param  {string}   tag.link    - The link for this tag, optional
- * @param  {string}   tag.text    - The text for the tag
- * @param  {function} tag.onClick - An onClick event, optional
+ * @param  {object}   tag              - The tag object
+ * @param  {string}   tag.link         - The link for this tag, optional
+ * @param  {string}   tag.text         - The text for the tag
+ * @param  {function} tag.onClick      - An onClick event, optional
+ * @param  {object}   attributeOptions - Any other attribute options
  */
-const TagItem = ({ tag }) => {
-	const attributeOptions = {};
+const TagItem = ({ tag, ...attributeOptions }) => {
 
 	if( typeof tag.onClick === 'function' ) {
 		attributeOptions.onClick = tag.onClick;
@@ -54,10 +54,11 @@ TagItem.propTypes = {
  * DEFAULT
  * The tags component
  *
- * @param  {string} dark  - Add the dark variation class
- * @param  {array}  tags  - The tags, format: { link: '', text: '', onClick: () }
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {array}  tags             - The tags, format: { link: '', text: '', onClick: () }
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Tags = ({ dark, tags }) => (
+const Tags = ({ dark, tags, ...attributeOptions }) => (
 	<ul className={ `au-tags ${ dark ? 'au-tags--dark' : '' }` }>
 		{ tags.map( ( tag, i ) => <TagItem key={ i } tag={ tag } /> ) }
 	</ul>

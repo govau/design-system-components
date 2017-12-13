@@ -37,6 +37,9 @@
 			@include AU-space ( margin-bottom, 0.25unit );
 		}
 	}
+	&.au-tags--dark {
+		color: $AU-colordark-Text;
+	}
 }
 
 .au-tags__item {
@@ -72,23 +75,19 @@
 		}
 	}
 
-	&.au-tags--dark {
-		color: $AU-colordark-Text;
+	.au-tags--dark & {
+		border-color: $AU-colordark-Action;
 
-		.au-tags__item {
-			border-color: $AU-colordark-Action;
+		> a,
+		> button {
+			color: $AU-colordark-Action;
 
-			> a,
-			> button {
-				color: $AU-colordark-Action;
-
-				&:hover {
-					color: $AU-colordark-Text;
-					background-color: $AU-colordark-Background;
-				}
-
-				@include AU-focus( 'dark' );
+			&:hover {
+				color: $AU-colordark-Text;
+				background-color: $AU-colordark-Background;
 			}
+
+			@include AU-focus( 'dark' );
 		}
 	}
 }
