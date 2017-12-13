@@ -143,17 +143,9 @@
 	}
 
 	ul,
-	ol,
-	dd {
-		@include AU-space( padding-left, 1unit );
-		margin-left: 0;
-	}
-
-	ul,
 	ol {
 		> li {
 			@include AU-space( margin-top, 0.5unit );
-			@include AU-space( margin-left, 0.75unit );
 
 			> ul,
 			> ol {
