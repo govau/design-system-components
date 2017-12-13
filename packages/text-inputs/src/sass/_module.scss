@@ -44,8 +44,8 @@
  * - :disabled/[disabled]
  */
 .au-text-input {
-	@include AU-fontgrid( sm );
-	@include AU-space( padding, 0.75unit 1unit );
+	@include AU-fontgrid( sm, default ); // using default to make sure we don’t crop descenders and ascenders
+	@include AU-space( padding, 0.5unit 1unit );
 	border: 3px solid $AU-color-Border;
 	background-color: $AU-color-Background-light;
 	font-family: $AU-font;
@@ -69,16 +69,12 @@
 
 	&[disabled] {
 		cursor: not-allowed;
-		background: $AU-color-Background;
-		border-color: $AU-color-Background;
-		color: $AU-color-Muted;
+		opacity: 0.3;
 	}
 
 	&:disabled {
 		cursor: not-allowed;
-		background: $AU-color-Background;
-		border-color: $AU-color-Background;
-		color: $AU-color-Muted;
+		opacity: 0.3;
 	}
 
 	@include AU-focus();
@@ -93,15 +89,11 @@
 		border-color:  $AU-colordark-Text;
 
 		&[disabled] {
-			color: $AU-colordark-Muted;
-			background: $AU-colordark-Background-dark;
-			border-color: $AU-colordark-Background-dark;
+			opacity: 0.3;
 		}
 
 		&:disabled {
-			color: $AU-colordark-Muted;
-			background: $AU-colordark-Background-dark;
-			border-color: $AU-colordark-Background-dark;
+			opacity: 0.3;
 		}
 
 

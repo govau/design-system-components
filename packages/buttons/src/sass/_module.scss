@@ -48,6 +48,34 @@ a.au-btn {
 			background-color: transparent;
 			border-color: $AU-colordark-Action;
 			color: $AU-colordark-Action;
+
+			&:hover {
+				&[disabled] {
+					background-color: transparent;
+					border-color: $AU-colordark-Action;
+					color: $AU-colordark-Action;
+				}
+
+				&:disabled {
+					background-color: transparent;
+					border-color: $AU-colordark-Action;
+					color: $AU-colordark-Action;
+				}
+			}
+		}
+
+		&:hover {
+			&[disabled] {
+				background-color: transparent;
+				border-color: $AU-color-Action;
+				color: $AU-color-Action;
+			}
+
+			&:disabled {
+				background-color: transparent;
+				border-color: $AU-color-Action;
+				color: $AU-color-Action;
+			}
 		}
 	}
 
@@ -65,6 +93,22 @@ a.au-btn {
 			color: $AU-colordark-Action;
 			border-color: transparent;
 		}
+
+		&:hover {
+			&[disabled] {
+				background-color: transparent;
+				color: $AU-color-Action;
+				border-color: transparent;
+				text-decoration: underline;
+			}
+
+			&:disabled {
+				background-color: transparent;
+				color: $AU-color-Action;
+				border-color: transparent;
+				text-decoration: underline;
+			}
+		}
 	}
 
 	&:hover {
@@ -72,6 +116,20 @@ a.au-btn {
 		border-color: $AU-color-Text;
 		text-decoration: underline;
 		color: $AU-color-Text;
+
+		&[disabled] {
+			background-color: $AU-color-Action;
+			border-color: $AU-color-Action;
+			text-decoration: none;
+			color: $AU-color-Background-light;
+		}
+
+		&:disabled {
+			background-color: $AU-color-Action;
+			border-color: $AU-color-Action;
+			text-decoration: none;
+			color: $AU-color-Background-light;
+		}
 	}
 
 	&:focus {
@@ -84,10 +142,23 @@ a.au-btn {
 		color: $AU-colordark-Background-light;
 		background-color: $AU-colordark-Action;
 		border-color: $AU-colordark-Action;
+
 		&:hover {
 			color: $AU-colordark-Text;
 			border-color: $AU-colordark-Text;
 			background-color: transparent;
+
+			&[disabled] {
+				color: $AU-colordark-Background-light;
+				background-color: $AU-colordark-Action;
+				border-color: $AU-colordark-Action;
+			}
+
+			&:disabled {
+				color: $AU-colordark-Background-light;
+				background-color: $AU-colordark-Action;
+				border-color: $AU-colordark-Action;
+			}
 		}
 
 		@include AU-focus( 'dark' );
@@ -96,30 +167,12 @@ a.au-btn {
 	// IE8 disabled styles
 	&[disabled] {
 		cursor: not-allowed;
-		color: $AU-color-Muted;
-		border-color: transparent;
-		background: transparent;
-
-		&.au-btn--dark {
-			color: $AU-colordark-Muted;
-			background: transparent;
-			border-color: transparent;
-		}
+		opacity: 0.3;
 	}
 
 	&:disabled {
 		cursor: not-allowed;
-		font-weight: normal;
-		color: $AU-color-Muted;
-		border-color: transparent;
-		background: transparent;
-		text-decoration: none;
-
-		&.au-btn--dark {
-			color: $AU-colordark-Muted;
-			background: transparent;
-			border-color: transparent;
-		}
+		opacity: 0.3;
 	}
 
 	/**
