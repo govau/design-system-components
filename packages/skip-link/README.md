@@ -55,7 +55,7 @@ Usage:
 ```jsx
 import Button from './skip-link.js';
 
-<SkipLink links={[
+<AUskipLink links={[
 	{
 		url: '#nav',
 		text: 'Skip to navigation',
@@ -70,7 +70,7 @@ import Button from './skip-link.js';
 All props:
 
 ```jsx
-<SkipLink
+<AUskipLink
 	links={[                         {/* All links inside a neat array */}
 		{
 			url: '#nav',                 {/* The href link of this link */}

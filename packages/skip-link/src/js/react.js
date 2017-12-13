@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
  * @param  {function} link.onClick     - A function called when the link is clicked
  * @param  {object}   attributeOptions - Any other attribute options
  */
-export const SkipLinkItem = ({ link, ...attributeOptions }) => {
+export const AUskipLinkItem = ({ link, ...attributeOptions }) => {
 
 	if( typeof link.onClick === 'function' ) {
 		attributeOptions.onClick = link.onClick;
@@ -31,7 +31,7 @@ export const SkipLinkItem = ({ link, ...attributeOptions }) => {
 	);
 };
 
-SkipLinkItem.propTypes = {
+AUskipLinkItem.propTypes = {
 	link: PropTypes.shape({
 		link: PropTypes.string.isRequired,
 		text: PropTypes.string.isRequired,
@@ -47,13 +47,13 @@ SkipLinkItem.propTypes = {
  * @param  {array} links - The links, format: { url: '', text: '', onClick: () }
  * @param  {object} attributeOptions - Any other attribute options
  */
-const SkipLink = ({ links, ...attributeOptions }) => (
+const AUskipLink = ({ links, ...attributeOptions }) => (
 	<nav className="au-skip-link" { ...attributeOptions }>
-		{ links.map( ( link, i ) => <SkipLinkItem key={ i } link={ link } /> ) }
+		{ links.map( ( link, i ) => <AUskipLinkItem key={ i } link={ link } /> ) }
 	</nav>
 );
 
-SkipLink.propTypes = {
+AUskipLink.propTypes = {
 	links: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string.isRequired,
@@ -63,4 +63,4 @@ SkipLink.propTypes = {
 		).isRequired,
 };
 
-export default SkipLink;
+export default AUskipLink;
