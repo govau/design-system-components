@@ -20,24 +20,38 @@
 	position: relative;
 	vertical-align: middle;
 	display: inline-block;
+	appearance: none;
+	border: 3px solid $AU-color-Border;
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 0.5unit 2.25unit 0.5unit 0.75unit );
+	text-indent: 0.01px;
+	text-overflow: '';
 	background-color: $AU-color-Background-light;
 	box-sizing: border-box;
 	border-radius: $AU-border-radius;
+	cursor: pointer;
+	background-image: AU-svguri('<svg fill="#{ $AU-color-Action }" viewBox="0 0 28 12" xmlns="http://www.w3.org/2000/svg">
+			<path d="M1.9 1.1L8 7.2l6.1-6.1L16 2.9l-8 8-8-8 1.9-1.8z"/>
+			<path fill="none" d="M2-5.8h24v24H2v-24z"/>
+		</svg>');
+	background-repeat: no-repeat;
+	background-position: right center;
+	@include AU-space( background-size, 1.5unit 1.5unit );
 
-	&:after {
-		@include AU-space( right, 0.75unit );
-		@include AU-space( width, 1unit );
-		@include AU-space( height, 1unit );
-		@include AU-space( margin-top, -.5unit );
-		content: ' ';
-		position: absolute;
-		top: 50%;
-		background-image: AU-svguri('<svg fill="#{ $AU-color-Action }" viewBox="6 5 12 12" xmlns="http://www.w3.org/2000/svg">
-				<path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-				<path d="M0-.75h24v24H0z" fill="none"/>
-			</svg>');
-		background-repeat: no-repeat;
-		z-index: 100;
+	@include AU-focus();
+
+	&:focus {
+		border-radius: 0;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+		opacity: 0.3;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.3;
 	}
 
 	.ie8 &,
@@ -47,56 +61,6 @@
 		}
 	}
 
-
-	&.au-select-block {
-		display: block;
-
-		.au-select__element {
-			width: 100%;
-		}
-	}
-}
-
-.au-select__element {
-	@include AU-fontgrid( sm );
-	@include AU-space( padding, 0.75unit 2.25unit 0.75unit 0.75unit );
-	position: relative;
-	z-index: 100;
-	background: transparent;
-	appearance: none;
-	font-family: $AU-font;
-	color: $AU-color-Text;
-	text-indent: 0.01px;
-	text-overflow: '';
-	border: 3px solid $AU-color-Border;
-	border-radius: $AU-border-radius;
-	box-sizing: border-box;
-	cursor: pointer;
-	margin: 0; // Remove margin for useragent styles that browsers add ( safari ), layout margins should go on .au-select
-
-	@include AU-focus();
-
-	&:focus {
-		border-radius: 0;
-		outline-offset: 0;
-	}
-
-	// Hide the arrow on disabled, because we can't change parent element styles
-	&[disabled] {
-		cursor: not-allowed;
-		background-color: $AU-color-Background;
-		color: $AU-color-Muted;
-		border-color: $AU-color-Background;
-	}
-
-	&:disabled {
-		cursor: not-allowed;
-		background-color: $AU-color-Background;
-		color: $AU-color-Muted;
-		border-color: $AU-color-Background;
-	}
-
-	//ie hacks
 	&::-ms-expand {
 		display: none;
 	}
@@ -106,38 +70,32 @@
 		@include AU-space( padding-right, .25unit );
 	}
 
-	.au-select--dark & {
+	&.au-select--dark {
 		border-color: $AU-colordark-Text;
 		@include AU-focus( 'dark' );
+	}
 
-		&[disabled] {
-			background-color: $AU-colordark-Background;
-			color: $AU-colordark-Muted;
-			border-color: $AU-colordark-Background;
-		}
-
-		&:disabled {
-			background-color: $AU-colordark-Background;
-			color: $AU-colordark-Muted;
-			border-color: $AU-colordark-Background;
-		}
+	&.au-select--block {
+		display: block;
+		width: 100%;
 	}
 }
+
 
 //firefox hacks...
 //=================
 // https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
-.au-select__element:-moz-focusring {
-		color: transparent;
-		text-shadow: 0 0 0 #000;
+.au-select:-moz-focusring {
+	color: transparent;
+	text-shadow: 0 0 0 #000;
 }
 
-html>/**/body .au-select__element, x:-moz-any-link, x:default {
+html>/**/body .au-select, x:-moz-any-link, x:default {
 	@include AU-space( padding-right, 1unit );
 }
 
 @supports (-moz-osx-font-smoothing:auto) {
-	html body .au-select__element {
+	html body .au-select {
 		@include AU-space( padding-right, 2.25unit );
 	}
 }
