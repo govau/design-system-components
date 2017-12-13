@@ -19,13 +19,13 @@ import PropTypes from 'prop-types';
 /**
  * An item inside the LinkList component
  *
- * @param  {object}   item         - The link list item
- * @param  {string}   item.link    - The link URL, optional
- * @param  {string}   item.text    - The link Text
- * @param  {function} item.onClick - An onClick event, optional
+ * @param  {object}   item             - The link list item
+ * @param  {string}   item.link        - The link URL, optional
+ * @param  {string}   item.text        - The link Text
+ * @param  {function} item.onClick     - An onClick event, optional
+ * @param  {object}   attributeOptions - Any other attribute options
  */
-export const LinkListItem = ({ item }) => {
-	const attributeOptions = {};
+export const LinkListItem = ({ item, ...attributeOptions }) => {
 
 	if( typeof item.onClick === 'function' ) {
 		attributeOptions.onClick = item.onClick;
@@ -59,12 +59,12 @@ LinkListItem.propTypes = {
  * DEFAULT
  * The Link List component
  *
- * @param  {boolean} inverted - Inverted option, optional
- * @param  {boolean} inverted - Inline option, optional
- * @param  {array}   items    - All items inside the link list to be passed to LinkListItem, format: { link: '', text: '', onClick: () }
+ * @param  {boolean} inverted         - Inverted option, optional
+ * @param  {array}   items            - All items inside the link list to be passed to LinkListItem, format: { link: '', text: '', onClick: () }
+ * @param  {object}  attributeOptions - Any other attribute options
  */
-const LinkList = ({ inline, items }) => (
-	<ul className={ `au-link-list${ inline ? ' au-link-list--inline' : '' }` }>
+const LinkList = ({ inline, items, ...attributeOptions }) => (
+	<ul className={ `au-link-list${ inline ? ' au-link-list--inline' : '' }` } { ...attributeOptions }>
 		{ items.map( ( item, i ) => <LinkListItem key={ i } item={ item } /> ) }
 	</ul>
 );
