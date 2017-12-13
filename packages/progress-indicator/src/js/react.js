@@ -30,15 +30,15 @@ const statusText = {
 /**
  * An item inside the ProgressIndicator component
  *
- * @param  {array}    item            - The item array with all progress items
- * @param  {string}   item.link       - The link URL, If no link is passed we render a button instead of a link tag, optional
- * @param  {string}   item.text       - The text of this item
- * @param  {string}   item.status     - The status of this item
- * @param  {string}   item.statusText - The status text of this item, optional
- * @param  {function} item.onClick    - An onClick function, optional
+ * @param  {array}    item              - The item array with all progress items
+ * @param  {string}   item.link         - The link URL, If no link is passed we render a button instead of a link tag, optional
+ * @param  {string}   item.text         - The text of this item
+ * @param  {string}   item.status       - The status of this item
+ * @param  {string}   item.statusText   - The status text of this item, optional
+ * @param  {function} item.onClick      - An onClick function, optional
+ * @param  {object}   attributeOptions  - Any other attribute options
  */
-export const ProgressIndicatorItem = ({ item }) => {
-	const attributeOptions = {};
+export const ProgressIndicatorItem = ({ item, ...attributeOptions }) => {
 
 	if( typeof item.onClick === 'function' ) {
 		attributeOptions.onClick = item.onClick;
@@ -75,11 +75,12 @@ ProgressIndicatorItem.propTypes = {
  * DEFAULT
  * The progress-indicator component
  *
- * @param  {string} dark  - Add the dark variation class
- * @param  {array}  items - All items for this progress indicator
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {array}  items            - All items for this progress indicator
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const ProgressIndicator = ({ dark, items }) => (
-	<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' }` }>
+const ProgressIndicator = ({ dark, items, ...attributeOptions }) => (
+	<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' }` } { ...attributeOptions }>
 		{ items.map( ( item, i ) => <ProgressIndicatorItem key={ i } item={ item } /> ) }
 	</ul>
 );
