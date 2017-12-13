@@ -53,9 +53,9 @@ npm install @gov.au/select --save-dev
 Usage:
 
 ```jsx
-import Select from './select.js';
+import AUselect from './select.js';
 
-<Select id="exampleSelect" options={[
+<AUselect id="exampleSelect" options={[
 	{
 		value: '',
 		text: 'Please select',
@@ -74,7 +74,7 @@ import Select from './select.js';
 All props:
 
 ```jsx
-<Select
+<AUselect
 	dark={ false }         {/* A dark variation of the component */}
 	name="the_name"        {/* The name attribute */}
 	id="the_id"            {/* The id attribute */}

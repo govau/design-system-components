@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Select from './select.js';
+import AUselect from './select.js';
 
 
 // to test a select with state
@@ -23,7 +23,7 @@ class SelectWrapper extends React.Component {
 	render() {
 		return (
 			<div>
-				<Select
+				<AUselect
 					dark={ this.props.dark }
 					disabled={ this.props.disabled }
 					id="test1"
@@ -63,7 +63,7 @@ ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split">
 		<h2>select default</h2>
-			<Select id="test2" options={[
+			<AUselect id="test2" options={[
 				{
 					value: '',
 					text: 'Please select',
@@ -90,7 +90,7 @@ ReactDOM.render(
 			<hr />
 			<h2>select block</h2>
 
-			<Select id="test3" block options={[
+			<AUselect id="test3" block options={[
 				{
 					value: '',
 					text: 'Please select',
@@ -117,7 +117,7 @@ ReactDOM.render(
 			<hr />
 			<h2>select with onchange</h2>
 
-			<Select id="test4" onChange={ () => {
+			<AUselect id="test4" onChange={ () => {
 				console.log('This function is called when the select input has changed');
 			} } options={[
 				{
@@ -137,7 +137,7 @@ ReactDOM.render(
 
 			<hr />
 			<h2>select disabled <code>--dark</code></h2>
-			<Select disabled id="test4" onChange={ () => {
+			<AUselect disabled id="test4" onChange={ () => {
 				console.log('This function is called when the select input has changed');
 			} } options={[
 				{
@@ -162,7 +162,7 @@ ReactDOM.render(
 		</div>
 		<div className="split split--dark">
 		<h2>select <code>--dark</code></h2>
-			<Select dark id="test2" options={[
+			<AUselect dark id="test2" options={[
 				{
 					value: '',
 					text: 'Please select',
@@ -189,7 +189,7 @@ ReactDOM.render(
 			<hr />
 			<h2>select block <code>--dark</code></h2>
 
-			<Select dark id="test3" block options={[
+			<AUselect dark id="test3" block options={[
 				{
 					value: '',
 					text: 'Please select',
@@ -216,7 +216,7 @@ ReactDOM.render(
 			<hr />
 			<h2>select with onchange <code>--dark</code></h2>
 
-			<Select dark id="test4" onChange={ () => {
+			<AUselect dark id="test4" onChange={ () => {
 				console.log('This function is called when the select input has changed');
 			} } options={[
 				{
@@ -235,7 +235,7 @@ ReactDOM.render(
 
 			<hr />
 			<h2>select disabled <code>--dark</code></h2>
-			<Select dark disabled id="test4" onChange={ () => {
+			<AUselect dark disabled id="test4" onChange={ () => {
 				console.log('This function is called when the select input has changed');
 			} } options={[
 				{

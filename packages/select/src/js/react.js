@@ -26,7 +26,7 @@ import PropTypes from 'prop-types';
  * @param  {string} block            - The block option
  * @param  {object} attributeOptions - Any other attribute options
  */
-const Select = ({ dark, options, block, ...attributeOptions }) => {
+const AUselect = ({ dark, options, block, ...attributeOptions }) => {
 
 	return (
 		<div className={`au-select${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`}>
@@ -37,7 +37,7 @@ const Select = ({ dark, options, block, ...attributeOptions }) => {
 	);
 };
 
-Select.propTypes = {
+AUselect.propTypes = {
 	dark: PropTypes.bool,
 	options: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -53,4 +53,4 @@ Select.propTypes = {
 };
 
 
-export default Select;
+export default AUselect;
