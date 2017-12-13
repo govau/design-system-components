@@ -18,7 +18,7 @@ import PropTypes from 'prop-types';
 
 
 /**
- * The TextInput component
+ * The AUtextInput component
  *
  * @param  {string} as               - The kind of input, can be either 'input' or 'textarea', default: 'input'
  * @param  {string} dark             - Add the dark variation class
@@ -27,7 +27,7 @@ import PropTypes from 'prop-types';
  * @param  {string} valid            - Add the valid variation class
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const TextInput = ({
+export const AUtextInput = ({
 	as,
 	dark,
 	block,
@@ -61,7 +61,7 @@ export const TextInput = ({
 };
 
 
-TextInput.propTypes = {
+AUtextInput.propTypes = {
 	as: PropTypes.oneOf([ 'input', 'textarea' ]),
 	dark: PropTypes.bool,
 	block: PropTypes.bool,
@@ -72,7 +72,7 @@ TextInput.propTypes = {
 };
 
 
-TextInput.defaultProps = {
+AUtextInput.defaultProps = {
 	as: 'input',
 };
 
@@ -84,7 +84,7 @@ TextInput.defaultProps = {
  * @param  {string} children         - Add the dark variation class
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const Label = ({ children, ...attributeOptions }) => {
+export const AUlabel = ({ children, ...attributeOptions }) => {
 
 	return (
 		<label className="au-text-input__label" { ...attributeOptions } >
@@ -93,7 +93,8 @@ export const Label = ({ children, ...attributeOptions }) => {
 	);
 };
 
-Label.propTypes = {
+
+AUlabel.propTypes = {
 	children: PropTypes.string.isRequired,
 	htmlFor:  PropTypes.string,
 };
@@ -105,7 +106,7 @@ Label.propTypes = {
  * @param  {string} children         - Add the dark variation class
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const Hint = ({ children, ...attributeOptions }) => {
+export const AUhint = ({ children, ...attributeOptions }) => {
 
 	return (
 		<span className="au-text-input__hint" { ...attributeOptions } >
@@ -114,6 +115,7 @@ export const Hint = ({ children, ...attributeOptions }) => {
 	);
 };
 
-Hint.propTypes = {
+
+AUhint.propTypes = {
 	children: PropTypes.string.isRequired,
 };

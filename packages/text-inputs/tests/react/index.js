@@ -1,94 +1,94 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
 
-import { TextInput, Label, Hint } from './text-inputs.js';
+import { AUtextInput, AUlabel, AUhint } from './text-inputs.js';
 
 
 ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split">
 			<h2>Default</h2>
-			<Label htmlFor="1">Hello</Label>
-			<TextInput id="1" />
-			<Hint>A helpful hint</Hint>
+			<AUlabel htmlFor="1">Hello</AUlabel>
+			<AUtextInput id="1" />
+			<AUhint>A helpful hint</AUhint>
 			<hr />
 
 			<h2>Block</h2>
-			<Label htmlFor="2" >Hello</Label>
-			<Hint>A helpful hint</Hint>
-			<TextInput id="2" defaultValue="abc" block />
+			<AUlabel htmlFor="2" >Hello</AUlabel>
+			<AUhint>A helpful hint</AUhint>
+			<AUtextInput id="2" defaultValue="abc" block />
 			<hr />
 
 			<h2>Block Invalid</h2>
-			<Label htmlFor="3" >Hello</Label>
-			<TextInput id="3" defaultValue="abc" block invalid />
+			<AUlabel htmlFor="3" >Hello</AUlabel>
+			<AUtextInput id="3" defaultValue="abc" block invalid />
 			<hr />
 
 			<h2>Block Valid</h2>
-			<Label htmlFor="4" >Hello</Label>
-			<TextInput id="4" block valid />
+			<AUlabel htmlFor="4" >Hello</AUlabel>
+			<AUtextInput id="4" block valid />
 			<hr />
 
 			<h2>Disabled</h2>
-			<Label htmlFor="5" >Hello</Label>
-			<TextInput id="5" disabled />
+			<AUlabel htmlFor="5" >Hello</AUlabel>
+			<AUtextInput id="5" disabled />
 			<hr />
 
 			<h2>Textarea</h2>
-			<Label htmlFor="6" >Hello</Label>
-			<TextInput id="6" as="textarea" />
+			<AUlabel htmlFor="6" >Hello</AUlabel>
+			<AUtextInput id="6" as="textarea" />
 			<hr />
 
 			<h2>Textarea Block</h2>
-			<Label htmlFor="7" >Hello</Label>
-			<TextInput id="7" defaultValue="abc" as="textarea" block />
+			<AUlabel htmlFor="7" >Hello</AUlabel>
+			<AUtextInput id="7" defaultValue="abc" as="textarea" block />
 			<hr />
 
 			<h2>Textarea default value disabled</h2>
-			<Label htmlFor="8" >Hello</Label>
-			<TextInput id="8" defaultValue="abc" as="textarea" disabled />
+			<AUlabel htmlFor="8" >Hello</AUlabel>
+			<AUtextInput id="8" defaultValue="abc" as="textarea" disabled />
 		</div>
 		<div className="split split--dark">
 			<h2>Default</h2>
-			<Label htmlFor="1d" >Hello</Label>
-			<TextInput id="1d" dark />
-			<Hint>A helpful hint</Hint>
+			<AUlabel htmlFor="1d" >Hello</AUlabel>
+			<AUtextInput id="1d" dark />
+			<AUhint>A helpful hint</AUhint>
 			<hr />
 
 			<h2>Block</h2>
-			<Label htmlFor="2d" >Hello</Label>
-			<Hint>A helpful hint</Hint>
-			<TextInput id="2d" defaultValue="abc" dark block />
+			<AUlabel htmlFor="2d" >Hello</AUlabel>
+			<AUhint>A helpful hint</AUhint>
+			<AUtextInput id="2d" defaultValue="abc" dark block />
 			<hr />
 
 			<h2>Block Invalid</h2>
-			<Label htmlFor="3d" >Hello</Label>
-			<TextInput id="3d" defaultValue="abc" dark block invalid />
+			<AUlabel htmlFor="3d" >Hello</AUlabel>
+			<AUtextInput id="3d" defaultValue="abc" dark block invalid />
 			<hr />
 
 			<h2>Block Valid</h2>
-			<Label htmlFor="4d" >Hello</Label>
-			<TextInput id="4d" dark block valid />
+			<AUlabel htmlFor="4d" >Hello</AUlabel>
+			<AUtextInput id="4d" dark block valid />
 			<hr />
 
 			<h2>Disabled</h2>
-			<Label htmlFor="5d" >Hello</Label>
-			<TextInput id="5d" dark disabled />
+			<AUlabel htmlFor="5d" >Hello</AUlabel>
+			<AUtextInput id="5d" dark disabled />
 			<hr />
 
 			<h2>Textarea</h2>
-			<Label htmlFor="6d" >Hello</Label>
-			<TextInput id="6d" as="textarea" dark />
+			<AUlabel htmlFor="6d" >Hello</AUlabel>
+			<AUtextInput id="6d" as="textarea" dark />
 			<hr />
 
 			<h2>Textarea Block</h2>
-			<Label htmlFor="7d" >Hello</Label>
-			<TextInput id="7d" as="textarea" defaultValue="abc" dark block />
+			<AUlabel htmlFor="7d" >Hello</AUlabel>
+			<AUtextInput id="7d" as="textarea" defaultValue="abc" dark block />
 			<hr />
 
 			<h2>Textarea default value disabled</h2>
-			<Label htmlFor="8d" >Hello</Label>
-			<TextInput as="textarea" id="8d" defaultValue="abc" disabled dark />
+			<AUlabel htmlFor="8d" >Hello</AUlabel>
+			<AUtextInput as="textarea" id="8d" defaultValue="abc" disabled dark />
 		</div>
 	</div>,
 
