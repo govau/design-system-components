@@ -55,7 +55,7 @@ Usage:
 ```jsx
 import Button from './tags.js';
 
-<Tags tags={[
+<AUtags tags={[
 	{
 		link: 'link/to/tag1',
 		text: 'tag1',
@@ -74,7 +74,7 @@ import Button from './tags.js';
 All props:
 
 ```jsx
-<Tags
+<AUtags
 	dark={ false }           {/* A dark variation of the component */}
 	tags={[
 		{

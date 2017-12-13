@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 
 /**
- * A tag item inside the Tags component
+ * A tag item inside the AUtags component
  *
  * @param  {object}   tag              - The tag object
  * @param  {string}   tag.link         - The link for this tag, optional
@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
  * @param  {function} tag.onClick      - An onClick event, optional
  * @param  {object}   attributeOptions - Any other attribute options
  */
-const TagItem = ({ tag, ...attributeOptions }) => {
+const AUtagItem = ({ tag, ...attributeOptions }) => {
 
 	if( typeof tag.onClick === 'function' ) {
 		attributeOptions.onClick = tag.onClick;
@@ -41,7 +41,7 @@ const TagItem = ({ tag, ...attributeOptions }) => {
 	);
 };
 
-TagItem.propTypes = {
+AUtagItem.propTypes = {
 	tag: PropTypes.shape({
 		link: PropTypes.string,
 		text: PropTypes.string.isRequired,
@@ -58,13 +58,13 @@ TagItem.propTypes = {
  * @param  {array}  tags             - The tags, format: { link: '', text: '', onClick: () }
  * @param  {object} attributeOptions - Any other attribute options
  */
-const Tags = ({ dark, tags, ...attributeOptions }) => (
+const AUtags = ({ dark, tags, ...attributeOptions }) => (
 	<ul className={ `au-tags ${ dark ? 'au-tags--dark' : '' }` }>
-		{ tags.map( ( tag, i ) => <TagItem key={ i } tag={ tag } /> ) }
+		{ tags.map( ( tag, i ) => <AUtagItem key={ i } tag={ tag } /> ) }
 	</ul>
 );
 
-Tags.propTypes = {
+AUtags.propTypes = {
 	dark: PropTypes.bool,
 	tags: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -76,4 +76,4 @@ Tags.propTypes = {
 };
 
 
-export default Tags;
+export default AUtags;

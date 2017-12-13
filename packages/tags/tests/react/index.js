@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Tags from './tags.js';
+import AUtags from './tags.js';
 
 
 ReactDOM.render(
@@ -9,7 +9,7 @@ ReactDOM.render(
 		<div className="split">
 			<h2>tags without links</h2>
 
-			<Tags tags={[
+			<AUtags tags={[
 				{
 					text: 'foo',
 				},
@@ -28,7 +28,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with links</h2>
 
-			<Tags tags={[
+			<AUtags tags={[
 				{
 					link: '#url',
 					text: 'foo',
@@ -51,7 +51,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with onclick</h2>
 
-			<Tags tags={[
+			<AUtags tags={[
 				{
 					link: '#url1',
 					text: 'link',
@@ -75,7 +75,7 @@ ReactDOM.render(
 		<div className="split split--dark">
 			<h2>tags without links</h2>
 
-			<Tags dark tags={[
+			<AUtags dark tags={[
 				{
 					text: 'foo',
 				},
@@ -94,7 +94,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with links</h2>
 
-			<Tags dark tags={[
+			<AUtags dark tags={[
 				{
 					link: '#url',
 					text: 'foo',
@@ -117,7 +117,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with onclick</h2>
 
-			<Tags dark tags={[
+			<AUtags dark tags={[
 				{
 					link: '#url1',
 					text: 'link',
