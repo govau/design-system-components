@@ -36,15 +36,15 @@ const options = {
  * @param  {node}   children         - Anything inside the component
  * @param  {object} attributeOptions - Any other attribute options
  */
-const PageAlert = ({ as, children, ...attributeOptions }) => (
+const AUpageAlert = ({ as, children, ...attributeOptions }) => (
 	<div className={`au-page-alerts ${ options[ as ] }`} role='alert' { ...attributeOptions }>
 		{ children }
 	</div>
 );
 
-PageAlert.propTypes = {
+AUpageAlert.propTypes = {
 	as: PropTypes.oneOf([ 'info', 'warning', 'error', 'success' ]).isRequired,
 	children: PropTypes.node.isRequired,
 };
 
-export default PageAlert;
+export default AUpageAlert;

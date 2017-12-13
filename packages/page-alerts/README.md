@@ -54,19 +54,19 @@ Usage:
 ```jsx
 import Button from './page-alerts.js';
 
-<PageAlert as='info'>
+<AUpageAlert as='info'>
 	Content of alert
-</PageAlert>
+</AUpageAlert>
 ```
 
 All props:
 
 ```jsx
-<PageAlert
+<AUpageAlert
 	as="info"  {/* One of four kinds: 'info', 'success', 'warning', 'error' */}
 >
 	Content of alert
-</PageAlert>
+</AUpageAlert>
 ```
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/page-alerts/tests/react/index.js).

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import PageAlert from './page-alerts.js';
+import AUpageAlert from './page-alerts.js';
 
 
 ReactDOM.render(
@@ -9,64 +9,64 @@ ReactDOM.render(
 		<div className="split">
 			<h2><code>--info</code> variant</h2>
 
-			<PageAlert as='info'>
+			<AUpageAlert as='info'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-			</PageAlert>
+			</AUpageAlert>
 
 
 			<hr />
 			<h2><code>--success</code> variant</h2>
 
-			<PageAlert as='success'>
+			<AUpageAlert as='success'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-			</PageAlert>
+			</AUpageAlert>
 
 
 			<hr />
 			<h2><code>--warning</code> variant</h2>
 
-			<PageAlert as='warning'>
+			<AUpageAlert as='warning'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-			</PageAlert>
+			</AUpageAlert>
 
 
 			<hr />
 			<h2><code>--error</code> variant</h2>
 
-			<PageAlert as='error'>
+			<AUpageAlert as='error'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-			</PageAlert>
+			</AUpageAlert>
 		</div>
 		<div className="split split--dark">
 			<h2><code>--info</code> variant</h2>
 
-			<PageAlert as='info'>
+			<AUpageAlert as='info'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-			</PageAlert>
+			</AUpageAlert>
 
 
 			<hr />
 			<h2><code>--success</code> variant</h2>
 
-			<PageAlert as='success'>
+			<AUpageAlert as='success'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-			</PageAlert>
+			</AUpageAlert>
 
 
 			<hr />
 			<h2><code>--warning</code> variant</h2>
 
-			<PageAlert as='warning'>
+			<AUpageAlert as='warning'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-			</PageAlert>
+			</AUpageAlert>
 
 
 			<hr />
 			<h2><code>--error</code> variant</h2>
 
-			<PageAlert as='error'>
+			<AUpageAlert as='error'>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
-			</PageAlert>
+			</AUpageAlert>
 		</div>
 	</div>,
 
