@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { InpageNavLinks, InpageNavSection } from './inpage-nav.js';
+import { AUinpageNavLinks, AUinpageNavSection } from './inpage-nav.js';
 
 
 ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split au-body">
 		<h2>inpage-nav</h2>
-			<InpageNavLinks sections={[
+			<AUinpageNavLinks sections={[
 				{
 					link: 'section1',
 					title: 'Section 1',
@@ -29,7 +29,7 @@ ReactDOM.render(
 				},
 			]} />
 
-			<InpageNavSection title="Section 1 headline" link="section1">
+			<AUinpageNavSection title="Section 1 headline" link="section1">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio fuga adipisci aliquid ut rerum mollitia commodi eligendi, asperiores nostrum
 					unde blanditiis eveniet impedit labore, <a href="#link">temporibus exercitationem</a>, provident ab fugit? Lorem ipsum dolor sit amet, consectetur
@@ -41,9 +41,9 @@ ReactDOM.render(
 					pellentesque. Nullam a libero mattis, tincidunt ante ac, ultrices mi. Vivamus eget venenatis massa, nec feugiat risus. Ut eleifend nisi iaculis diam
 					faucibus auctor.
 				</p>
-			</InpageNavSection>
+			</AUinpageNavSection>
 
-			<InpageNavSection title="Section 2 headline with different level" link="section2" level="5">
+			<AUinpageNavSection title="Section 2 headline with different level" link="section2" level="5">
 				<p>
 					Voluptate commodi, labore sapiente natus iste facilis eaque harum fuga recusandae dolores laborum iusto perspiciatis, numquam dignissimos blanditiis
 					alias impedit ipsa. Unde?
@@ -61,9 +61,9 @@ ReactDOM.render(
 					sagittis mi, id rhoncus sem congue quis. Vestibulum dolor libero, congue eget nisl quis, varius dapibus justo. Morbi eget justo sit amet risus interdum
 					luctus non id tortor. Maecenas feugiat malesuada pretium. Nam sagittis erat feugiat placerat pharetra.
 				</p>
-			</InpageNavSection>
+			</AUinpageNavSection>
 
-			<InpageNavSection title="Section 3 headline with headingClass" link="section3" headingClass="au-display-lg">
+			<AUinpageNavSection title="Section 3 headline with headingClass" link="section3" headingClass="au-display-lg">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, molestiae blanditiis, enim unde laudantium voluptate fuga excepturi explicabo quae, nulla
 					dolorum, ea doloribus ducimus. Nesciunt eveniet ab a nobis perferendis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi, dolorem
@@ -91,9 +91,9 @@ ReactDOM.render(
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat <a href="#link">ipsa</a> recusandae eos id voluptatibus ut molestias earum placeat odit
 					ex, delectus quas doloribus iusto <a href="#link">odio</a> dolorum, <a href="#link">similique</a>, necessitatibus <a href="#link">autem</a> quam.
 				</p>
-			</InpageNavSection>
+			</AUinpageNavSection>
 
-			<InpageNavSection
+			<AUinpageNavSection
 				title="Section 4 with changed section link and onClick"
 				link="section4"
 				sectionLink="Different sectionLink text"
@@ -102,11 +102,11 @@ ReactDOM.render(
 				<p>
 					Das ende&hellip;
 				</p>
-			</InpageNavSection>
+			</AUinpageNavSection>
 		</div>
 		<div className="split au-body au-body--dark">
 			<h2>inpage-nav</h2>
-			<InpageNavLinks dark sections={[
+			<AUinpageNavLinks dark sections={[
 				{
 					link: 'sectiondark1',
 					title: 'Section 1',
@@ -127,7 +127,7 @@ ReactDOM.render(
 				},
 			]} />
 
-			<InpageNavSection title="Section 1 headline" link="sectiondark1">
+			<AUinpageNavSection title="Section 1 headline" link="sectiondark1">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio fuga adipisci aliquid ut rerum mollitia commodi eligendi, asperiores nostrum
 					unde blanditiis eveniet impedit labore, <a href="#link">temporibus exercitationem</a>, provident ab fugit? Lorem ipsum dolor sit amet, consectetur
@@ -139,9 +139,9 @@ ReactDOM.render(
 					pellentesque. Nullam a libero mattis, tincidunt ante ac, ultrices mi. Vivamus eget venenatis massa, nec feugiat risus. Ut eleifend nisi iaculis diam
 					faucibus auctor.
 				</p>
-			</InpageNavSection>
+			</AUinpageNavSection>
 
-			<InpageNavSection title="Section 2 headline with different level" link="sectiondark2" level="5">
+			<AUinpageNavSection title="Section 2 headline with different level" link="sectiondark2" level="5">
 				<p>
 					Voluptate commodi, labore sapiente natus iste facilis eaque harum fuga recusandae dolores laborum iusto perspiciatis, numquam dignissimos blanditiis
 					alias impedit ipsa. Unde?
@@ -159,9 +159,9 @@ ReactDOM.render(
 					sagittis mi, id rhoncus sem congue quis. Vestibulum dolor libero, congue eget nisl quis, varius dapibus justo. Morbi eget justo sit amet risus interdum
 					luctus non id tortor. Maecenas feugiat malesuada pretium. Nam sagittis erat feugiat placerat pharetra.
 				</p>
-			</InpageNavSection>
+			</AUinpageNavSection>
 
-			<InpageNavSection title="Section 3 headline with headingClass" link="sectiondark3" headingClass="au-display-lg">
+			<AUinpageNavSection title="Section 3 headline with headingClass" link="sectiondark3" headingClass="au-display-lg">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, molestiae blanditiis, enim unde laudantium voluptate fuga excepturi explicabo quae, nulla
 					dolorum, ea doloribus ducimus. Nesciunt eveniet ab a nobis perferendis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus animi, dolorem
@@ -189,9 +189,9 @@ ReactDOM.render(
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat <a href="#link">ipsa</a> recusandae eos id voluptatibus ut molestias earum placeat odit
 					ex, delectus quas doloribus iusto <a href="#link">odio</a> dolorum, <a href="#link">similique</a>, necessitatibus <a href="#link">autem</a> quam.
 				</p>
-			</InpageNavSection>
+			</AUinpageNavSection>
 
-			<InpageNavSection
+			<AUinpageNavSection
 				title="Section 4 with changed section link and onClick"
 				link="sectiondark4"
 				sectionLink="Different sectionLink text"
@@ -200,7 +200,7 @@ ReactDOM.render(
 				<p>
 					Das ende&hellip;
 				</p>
-			</InpageNavSection>
+			</AUinpageNavSection>
 		</div>
 	</div>,
 

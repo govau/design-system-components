@@ -18,14 +18,14 @@ import PropTypes from 'prop-types';
 
 
 /**
- * The section component for the InpageNavLinks component
+ * The section component for the AUinpageNavLinks component
  *
  * @param  {object}    section         - The section object
  * @param  {object}    section.link    - The link of this section
  * @param  {object}    section.title   - The title of the section
  * @param  {function}  section.onClick - An onClick function, optional
  */
-export const InpageNavLinksItem = ({ section }) => {
+export const AUinpageNavLinksItem = ({ section }) => {
 	const attributeOptions = {};
 
 	if( typeof section.onClick === 'function' ) {
@@ -39,7 +39,8 @@ export const InpageNavLinksItem = ({ section }) => {
 	);
 };
 
-InpageNavLinksItem.propTypes = {
+
+AUinpageNavLinksItem.propTypes = {
 	section: PropTypes.shape({
 		link: PropTypes.string.isRequired,
 		title: PropTypes.string.isRequired,
@@ -56,16 +57,17 @@ InpageNavLinksItem.propTypes = {
  * @param  {array}  sections         - An array of objects of all sections, sample: { link: '', title: '', onClick: () }
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const InpageNavLinks = ({ dark, title, sections, ...attributeOptions }) => (
+export const AUinpageNavLinks = ({ dark, title, sections, ...attributeOptions }) => (
 	<nav className={ `au-inpage-nav-links${ dark ? ' au-inpage-nav-links--dark' : '' }` } { ...attributeOptions }>
 		<h2 className="au-inpage-nav-links__heading au-display-sm">{ title }</h2>
 		<ul className="au-link-list">
-			{ sections.map( ( section, i ) => <InpageNavLinksItem key={ i } section={ section } /> ) }
+			{ sections.map( ( section, i ) => <AUinpageNavLinksItem key={ i } section={ section } /> ) }
 		</ul>
 	</nav>
 );
 
-InpageNavLinks.propTypes = {
+
+AUinpageNavLinks.propTypes = {
 	dark: PropTypes.bool,
 	title: PropTypes.string.isRequired,
 	sections: PropTypes.arrayOf(
@@ -77,7 +79,8 @@ InpageNavLinks.propTypes = {
 		).isRequired,
 };
 
-InpageNavLinks.defaultProps = {
+
+AUinpageNavLinks.defaultProps = {
 	title: 'Contents',
 };
 
@@ -93,7 +96,7 @@ InpageNavLinks.defaultProps = {
  * @param  {string}     sectionLink         - The text for the section link, default: 'Link to section', optional
  * @param  {object}     attributeOptions    - Any other attribute options
  */
-export const InpageNavSection = ({ title, link, children, level, headingClass, sectionLink, ...attributeOptions }) => {
+export const AUinpageNavSection = ({ title, link, children, level, headingClass, sectionLink, ...attributeOptions }) => {
 
 	const HeadingTag = `h${ level }`;
 
@@ -110,7 +113,8 @@ export const InpageNavSection = ({ title, link, children, level, headingClass, s
 	);
 };
 
-InpageNavSection.propTypes = {
+
+AUinpageNavSection.propTypes = {
 	title: PropTypes.string.isRequired,
 	link: PropTypes.string.isRequired,
 	children: PropTypes.node.isRequired,
@@ -120,7 +124,8 @@ InpageNavSection.propTypes = {
 	onClick: PropTypes.func,
 };
 
-InpageNavSection.defaultProps = {
+
+AUinpageNavSection.defaultProps = {
 	level: '2',
 	sectionLink: 'Link to section',
 };
