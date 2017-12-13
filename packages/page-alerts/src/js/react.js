@@ -32,11 +32,12 @@ const options = {
  * DEFAULT
  * Page alert
  *
- * @param  {string} as       - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
- * @param  {node}   children - Anything inside the component
+ * @param  {string} as               - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
+ * @param  {node}   children         - Anything inside the component
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const PageAlert = ({ as, children }) => (
-	<div className={`au-page-alerts ${ options[ as ] }`} role='alert'>
+const PageAlert = ({ as, children, ...attributeOptions }) => (
+	<div className={`au-page-alerts ${ options[ as ] }`} role='alert' { ...attributeOptions }>
 		{ children }
 	</div>
 );
