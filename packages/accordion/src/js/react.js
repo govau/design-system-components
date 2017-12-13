@@ -29,7 +29,10 @@ class AUaccordion extends React.PureComponent {
 	constructor( props ) {
 		super( props );
 
+		const { header, open, speed, onOpen, afterOpen, onClose, afterClose, dark, children, ...attributeOptions } = props;
+
 		this.toggle = this.toggle.bind( this );
+		this.attributeOptions = attributeOptions;
 
 		// Generate a unique ID and our css class
 		IDstart ++;
@@ -73,7 +76,7 @@ class AUaccordion extends React.PureComponent {
 
 	render() {
 		return (
-			<div className={ `au-accordion ${ this.props.dark ? ' au-accordion--dark' : '' }` }>
+			<div className={ `au-accordion ${ this.props.dark ? ' au-accordion--dark' : '' }` } { ...this.attributeOptions }>
 				<a href={`#${ this.ID }`}
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
