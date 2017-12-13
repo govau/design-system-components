@@ -21,33 +21,12 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The select component
  *
- * @param  {string}   dark     - Add the dark variation class
- * @param  {array}    options  - The options for the select, format: { value: '', text: '' }
- * @param  {string}   id       - The ID for the select for the label
- * @param  {string}   name     - The name attribute
- * @param  {function} onChange - A function to be called on change
- * @param  {string}   block    - The block option
- * @param  {boolean}  disabled - The disable option, optional
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {array}  options          - The options for the select, format: { value: '', text: '' }
+ * @param  {string} block            - The block option
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Select = ({ dark, options, id, name, onChange, block, disabled }) => {
-
-	const attributeOptions = {};
-
-	if( typeof id !== 'undefined' ) {
-		attributeOptions.id = id;
-	}
-
-	if( typeof name !== 'undefined' ) {
-		attributeOptions.name = name;
-	}
-
-	if( typeof disabled !== 'undefined' ) {
-		attributeOptions.disabled = disabled;
-	}
-
-	if( typeof onChange === 'function' ) {
-		attributeOptions.onChange = onChange;
-	}
+const Select = ({ dark, options, block, ...attributeOptions }) => {
 
 	return (
 		<div className={`au-select${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`}>
