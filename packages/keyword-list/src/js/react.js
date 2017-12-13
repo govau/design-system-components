@@ -17,7 +17,7 @@ import PropTypes from 'prop-types';
 // [replace-imports]
 
 /**
- * An item inside the KeywordList component
+ * An item inside the AUkeywordList component
  *
  * @param  {string}   repeatedName     - The repeated bit in each item
  * @param  {object}   item             - The keyword list item
@@ -26,7 +26,7 @@ import PropTypes from 'prop-types';
  * @param  {function} item.onClick     - An onClick event, optional
  * @param  {object}   attributeOptions - Any other attribute options
  */
-export const KeywordListItem = ({ repeatedName, item, ...attributeOptions }) => {
+export const AUkeywordListItem = ({ repeatedName, item, ...attributeOptions }) => {
 
 	if( typeof item.onClick === 'function' ) {
 		attributeOptions.onClick = item.onClick;
@@ -47,7 +47,7 @@ export const KeywordListItem = ({ repeatedName, item, ...attributeOptions }) => 
 	);
 };
 
-KeywordListItem.propTypes = {
+AUkeywordListItem.propTypes = {
 	repeatedName: PropTypes.string.isRequired,
 	item: PropTypes.shape({
 		link: PropTypes.string,
@@ -66,13 +66,13 @@ KeywordListItem.propTypes = {
  * @param  {string} dark             - Add the dark variation class
  * @param  {object} attributeOptions - Any other attribute options
  */
-const KeywordList = ({ repeatedName, items, dark, ...attributeOptions }) => (
+const AUkeywordList = ({ repeatedName, items, dark, ...attributeOptions }) => (
 	<ul className={ `au-keyword-list au-link-list${ dark ? ' au-keyword-list--dark' : '' } `} { ...attributeOptions }>
-		{ items.map( ( item, i ) => <KeywordListItem key={ i } item={ item } repeatedName={ repeatedName } /> ) }
+		{ items.map( ( item, i ) => <AUkeywordListItem key={ i } item={ item } repeatedName={ repeatedName } /> ) }
 	</ul>
 );
 
-KeywordList.propTypes = {
+AUkeywordList.propTypes = {
 	repeatedName: PropTypes.string.isRequired,
 	dark: PropTypes.bool,
 	items: PropTypes.arrayOf(
@@ -84,4 +84,4 @@ KeywordList.propTypes = {
 		).isRequired,
 };
 
-export default KeywordList;
+export default AUkeywordList;

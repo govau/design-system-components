@@ -53,9 +53,9 @@ npm install @gov.au/keyword-list --save-dev
 Usage:
 
 ```jsx
-import KeywordList from './keyword-list.js';
+import AUkeywordList from './keyword-list.js';
 
-<KeywordList
+<AUkeywordList
 	repeatedName='Department of'
 	items={[
 		{
@@ -77,7 +77,7 @@ import KeywordList from './keyword-list.js';
 All props:
 
 ```jsx
-<KeywordList
+<AUkeywordList
 	dark={ false }                                {/* A dark variation of the component */}
 	repeatedName="Department of"                  {/* The text That is repeated in each item */}
 	items={[                                      {/* All items in a neat array */}

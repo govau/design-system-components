@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import KeywordList from './keyword-list.js';
+import AUkeywordList from './keyword-list.js';
 
 
 ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split au-body">
 		<h2>keyword-list without link</h2>
-			<KeywordList repeatedName='Department of' items={[
+			<AUkeywordList repeatedName='Department of' items={[
 				{
 					name: 'Agriculture and Water Resources',
 				},
@@ -30,7 +30,7 @@ ReactDOM.render(
 			<hr />
 			<h2>keyword-list with link</h2>
 
-			<KeywordList repeatedName='Department of' items={[
+			<AUkeywordList repeatedName='Department of' items={[
 				{
 					link: '#url',
 					name: 'Agriculture and Water Resources',
@@ -57,7 +57,7 @@ ReactDOM.render(
 			<hr />
 			<h2>keyword-list with onClick</h2>
 
-			<KeywordList repeatedName='Links' items={[
+			<AUkeywordList repeatedName='Links' items={[
 				{
 					link: '#url',
 					name: 'With link',
@@ -71,7 +71,7 @@ ReactDOM.render(
 		</div>
 		<div className="split au-body au-body--dark">
 		<h2>keyword-list without link</h2>
-			<KeywordList dark repeatedName='Department of' items={[
+			<AUkeywordList dark repeatedName='Department of' items={[
 				{
 					name: 'Agriculture and Water Resources',
 				},
@@ -93,7 +93,7 @@ ReactDOM.render(
 			<hr />
 			<h2>keyword-list with link</h2>
 
-			<KeywordList dark repeatedName='Department of' items={[
+			<AUkeywordList dark repeatedName='Department of' items={[
 				{
 					link: '#url',
 					name: 'Agriculture and Water Resources',
@@ -120,7 +120,7 @@ ReactDOM.render(
 			<hr />
 			<h2>keyword-list with onClick</h2>
 
-			<KeywordList dark repeatedName='Links' items={[
+			<AUkeywordList dark repeatedName='Links' items={[
 				{
 					link: '#url',
 					name: 'With link',
