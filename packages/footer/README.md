@@ -53,22 +53,22 @@ npm install @gov.au/footer --save-dev
 Usage:
 
 ```jsx
-import Footer, { FooterNav, FooterEnd } from './footer.js';
+import AUfooter, { AUfooterNav, AUfooterEnd } from './footer.js';
 
-<Footer>
-	<FooterNav>
+<AUfooter>
+	<AUfooterNav>
 		au-footer__navigation
-	</FooterNav>
-	<FooterEnd>
+	</AUfooterNav>
+	<AUfooterEnd>
 		au-footer__end
-	</FooterEnd>
-</Footer>
+	</AUfooterEnd>
+</AUfooter>
 ```
 
 All props:
 
 ```jsx
-<Footer
+<AUfooter
 	alt={ false }         {/* An alternate variation of the component */}
 	dark={ false }        {/* A dark variation of the component */}
 />

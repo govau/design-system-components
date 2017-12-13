@@ -1,101 +1,101 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Footer, { FooterNav, FooterEnd } from './footer.js';
+import AUfooter, { AUfooterNav, AUfooterEnd } from './footer.js';
 
 
 ReactDOM.render(
 	<div>
 		<h2>footer</h2>
 
-		<Footer>
-			<FooterNav>
+		<AUfooter>
+			<AUfooterNav>
 				au-footer__navigation
-			</FooterNav>
-			<FooterEnd>
+			</AUfooterNav>
+			<AUfooterEnd>
 				au-footer__end
-			</FooterEnd>
-		</Footer>
+			</AUfooterEnd>
+		</AUfooter>
 
 		<h2>footer <code>--alt</code></h2>
 
-		<Footer alt>
-			<FooterNav>
+		<AUfooter alt>
+			<AUfooterNav>
 				au-footer__navigation
-			</FooterNav>
-			<FooterEnd>
+			</AUfooterNav>
+			<AUfooterEnd>
 				au-footer__end
-			</FooterEnd>
-		</Footer>
+			</AUfooterEnd>
+		</AUfooter>
 
 		<h2>footer <code>--dark</code></h2>
 
-		<Footer dark>
-			<FooterNav>
+		<AUfooter dark>
+			<AUfooterNav>
 				au-footer__navigation
-			</FooterNav>
-			<FooterEnd>
+			</AUfooterNav>
+			<AUfooterEnd>
 				au-footer__end
-			</FooterEnd>
-		</Footer>
+			</AUfooterEnd>
+		</AUfooter>
 
 		<h2>footer <code>--dark</code> <code>--alt</code></h2>
 
-		<Footer dark alt>
-			<FooterNav>
+		<AUfooter dark alt>
+			<AUfooterNav>
 				au-footer__navigation
-			</FooterNav>
-			<FooterEnd>
+			</AUfooterNav>
+			<AUfooterEnd>
 				au-footer__end
-			</FooterEnd>
-		</Footer>
+			</AUfooterEnd>
+		</AUfooter>
 
 
 		<hr />
 		<h2>footer with paragraph test and body</h2>
 
 		<div className="au-body">
-			<Footer>
-				<FooterNav>
+			<AUfooter>
+				<AUfooterNav>
 					<p>au-footer__navigation</p>
 					<p>au-footer__navigation</p>
 					<p>au-footer__navigation</p>
-				</FooterNav>
-				<FooterEnd>
+				</AUfooterNav>
+				<AUfooterEnd>
 					<p>au-footer__end</p>
 					<p>au-footer__end</p>
-				</FooterEnd>
-			</Footer>
+				</AUfooterEnd>
+			</AUfooter>
 		</div>
 
 
 		<hr />
 		<h2>footer navigation only</h2>
 
-		<Footer>
-			<FooterNav>
+		<AUfooter>
+			<AUfooterNav>
 				au-footer__navigation
-			</FooterNav>
-		</Footer>
+			</AUfooterNav>
+		</AUfooter>
 
 
 		<hr />
 		<h2>footer end only</h2>
 
-		<Footer>
-			<FooterEnd>
+		<AUfooter>
+			<AUfooterEnd>
 				au-footer__end
-			</FooterEnd>
-		</Footer>
+			</AUfooterEnd>
+		</AUfooter>
 
 
 		<hr />
 		<h2>footer with grid, link-list, responsive-embeds and headings</h2>
 
 		<div className="au-grid au-body">
-			<Footer>
+			<AUfooter>
 				<div className="container">
-					<FooterNav>
+					<AUfooterNav>
 						<div className="row">
 							<div className="col-md-3 col-sm-6">
 								<h3 className="au-display-1">Section</h3>
@@ -133,9 +133,9 @@ ReactDOM.render(
 								</ul>
 							</div>
 						</div>
-					</FooterNav>
+					</AUfooterNav>
 
-					<FooterEnd>
+					<AUfooterEnd>
 						<div className="row">
 							<div className="col-sm-12">
 								<p>Footer text</p>
@@ -145,18 +145,18 @@ ReactDOM.render(
 								<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
 							</div>
 						</div>
-					</FooterEnd>
+					</AUfooterEnd>
 				</div>
-			</Footer>
+			</AUfooter>
 		</div>
 
 		<hr />
 		<h2>footer with grid, link-list, responsive-embeds and headings <code>--dark</code></h2>
 
 		<div className="au-grid au-body au-body--dark">
-			<Footer dark>
+			<AUfooter dark>
 				<div className="container">
-					<FooterNav>
+					<AUfooterNav>
 						<div className="row">
 							<div className="col-md-3 col-sm-6">
 								<h3 className="au-display-1">Section</h3>
@@ -194,9 +194,9 @@ ReactDOM.render(
 								</ul>
 							</div>
 						</div>
-					</FooterNav>
+					</AUfooterNav>
 
-					<FooterEnd>
+					<AUfooterEnd>
 						<div className="row">
 							<div className="col-sm-12">
 								<p>Footer text</p>
@@ -206,9 +206,9 @@ ReactDOM.render(
 								<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
 							</div>
 						</div>
-					</FooterEnd>
+					</AUfooterEnd>
 				</div>
-			</Footer>
+			</AUfooter>
 		</div>
 	</div>,
 

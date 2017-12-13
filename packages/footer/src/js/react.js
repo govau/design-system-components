@@ -24,13 +24,14 @@ import PropTypes from 'prop-types';
  * @param  {node}   children         - The inside of this section
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const FooterNav = ({ children, ...attributeOptions }) => (
+export const AUfooterNav = ({ children, ...attributeOptions }) => (
 	<nav className="au-footer__navigation" { ...attributeOptions }>
 		{ children }
 	</nav>
 );
 
-FooterNav.propTypes = {
+
+AUfooterNav.propTypes = {
 	children: PropTypes.node.isRequired,
 };
 
@@ -41,13 +42,14 @@ FooterNav.propTypes = {
  * @param  {node}   children         - The inside of this section
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const FooterEnd = ({ children, ...attributeOptions }) => (
+export const AUfooterEnd = ({ children, ...attributeOptions }) => (
 	<nav className="au-footer__end" { ...attributeOptions }>
 		{ children }
 	</nav>
 );
 
-FooterEnd.propTypes = {
+
+AUfooterEnd.propTypes = {
 	children: PropTypes.node.isRequired,
 };
 
@@ -61,7 +63,7 @@ FooterEnd.propTypes = {
  * @param  {node}   children         - The inside of this section
  * @param  {object} attributeOptions - Any other attribute options
  */
-const Footer = ({ dark, alt, children, ...attributeOptions }) => (
+const AUfooter = ({ dark, alt, children, ...attributeOptions }) => (
 	<footer
 		className={ `au-footer${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `}
 		role="contentinfo"
@@ -71,10 +73,11 @@ const Footer = ({ dark, alt, children, ...attributeOptions }) => (
 	</footer>
 );
 
-Footer.propTypes = {
+
+AUfooter.propTypes = {
 	children: PropTypes.node.isRequired,
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
 };
 
-export default Footer;
+export default AUfooter;
