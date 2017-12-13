@@ -14,13 +14,13 @@ import PropTypes from 'prop-types';
 /**
  * One skip-link item
  *
- * @param  {array}    link         - The link object
- * @param  {string}   link.link    - The href for the link
- * @param  {string}   link.text    - The link text
- * @param  {function} link.onClick - A function called when the link is clicked
+ * @param  {array}    link             - The link object
+ * @param  {string}   link.link        - The href for the link
+ * @param  {string}   link.text        - The link text
+ * @param  {function} link.onClick     - A function called when the link is clicked
+ * @param  {object}   attributeOptions - Any other attribute options
  */
-export const SkipLinkItem = ({ link }) => {
-	const attributeOptions = {};
+export const SkipLinkItem = ({ link, ...attributeOptions }) => {
 
 	if( typeof link.onClick === 'function' ) {
 		attributeOptions.onClick = link.onClick;
@@ -45,9 +45,10 @@ SkipLinkItem.propTypes = {
  * The skip-link component
  *
  * @param  {array} links - The links, format: { url: '', text: '', onClick: () }
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const SkipLink = ({ links }) => (
-	<nav className="au-skip-link">
+const SkipLink = ({ links, ...attributeOptions }) => (
+	<nav className="au-skip-link" { ...attributeOptions }>
 		{ links.map( ( link, i ) => <SkipLinkItem key={ i } link={ link } /> ) }
 	</nav>
 );
