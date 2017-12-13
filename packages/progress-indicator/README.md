@@ -86,7 +86,8 @@ All props:
 			status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
 			onClick={ () => {} }   {/* A function to execute when the link is clicked, optional */}
 		},
-	]}
+	]},
+	attributeOptions           {/* Any other attribute options */}
 />
 ```
 

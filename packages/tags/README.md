@@ -82,7 +82,8 @@ All props:
 			text: 'tagname',     {/* The text of the tag */}
 			onClick: () => {},   {/* A function to execute when the tag is clicked, optional */}
 		},
-	]}
+	]},
+	attributeOptions         {/* Any other attribute options */}
 />
 ```
 

@@ -73,6 +73,7 @@ All props:
 ```jsx
 <AUcallout
 	description="Description for this callout"  {/* The label is a must for screen readers */}
+	attributeOptions                            {/* Any other attribute options */}
 >
 	Callout content
 </AUcallout>
@@ -84,6 +85,7 @@ All props:
 	subline="Your next appointment is"          {/* Your subline, optional */}
 	name="Talk to boss"                         {/* The name of the event, optional */}
 	dark={ false }                              {/* A dark variation of the component */}
+	attributeOptions                            {/* Any other attribute options */}
 />
 ```
 

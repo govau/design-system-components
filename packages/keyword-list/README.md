@@ -86,7 +86,8 @@ All props:
 			name: 'Agriculture and Water Resources',  {/* The name of the item */}
 			onClick={ () => {} }                      {/* A function to execute when the link is clicked, optional */}
 		},
-	]}
+	]},
+	attributeOptions                              {/* Any other attribute options */}
 />
 ```
 

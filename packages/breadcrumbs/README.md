@@ -82,6 +82,7 @@ All props:
 			text: 'breadcrumb 1',     {/* The text of the breadcrumb */}
 		},
 	]},
+	attributeOptions              {/* Any other attribute options */}
 />
 ```
 

@@ -75,9 +75,10 @@ All props:
 		{
 			url: '#nav',                 {/* The href link of this link */}
 			text: 'Skip to navigation',  {/* The text of the link */}
-			onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */}
+			onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */},
 		},
-	]}
+	]},
+	attributeOptions                 {/* Any other attribute options */}
 />
 ```
 

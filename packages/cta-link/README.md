@@ -63,8 +63,8 @@ All props:
 ```jsx
 <AUctaLink
 	text="Sign up"        {/* The text of the CTA link */}
-	onClick={ () => {} }  {/* A function to execute when the link is clicked, optional */}
 	dark={ false }        {/* A dark variation of the component */}
+	attributeOptions      {/* Any other attribute options */}
 />
 ```
 

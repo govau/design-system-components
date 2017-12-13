@@ -83,6 +83,7 @@ All props:
 			onClick={ () => {} }  {/* A function to execute when this link is clicked, optional */}
 		},
 	]},
+	attributeOptions          {/* Any other attribute options */}
 />
 ```
 

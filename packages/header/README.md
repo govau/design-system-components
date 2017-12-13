@@ -68,6 +68,7 @@ All props:
 	alt={ false }       {/* An alternate variation of the component */}
 	dark={ false }      {/* A dark variation of the component */}
 	hero={ false }      {/* The hero option, optional */}
+	attributeOptions    {/* Any other attribute options */}
 />
 ```
 

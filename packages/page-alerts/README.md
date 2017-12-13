@@ -63,7 +63,8 @@ All props:
 
 ```jsx
 <AUpageAlert
-	as="info"  {/* One of four kinds: 'info', 'success', 'warning', 'error' */}
+	as="info"          {/* One of four kinds: 'info', 'success', 'warning', 'error' */}
+	attributeOptions   {/* Any other attribute options */}
 >
 	Content of alert
 </AUpageAlert>

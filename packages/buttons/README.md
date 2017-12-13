@@ -66,8 +66,8 @@ All props:
 	as=""                 {/* The kind of button, 'secondary','tertiary', optional */}
 	block={ true }        {/* The block option to make the button fill the available width, optional */}
 	type="submit"         {/* The type attribute, optional */}
-	onClick={ () => {} }  {/* A function to execute when the button is clicked, optional */}
 	dark={ false }        {/* A dark variation of the component */}
+	attributeOptions      {/* Any other attribute options */}
 ></AUbutton>
 ```
 

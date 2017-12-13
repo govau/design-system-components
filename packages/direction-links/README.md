@@ -64,8 +64,8 @@ All props:
 <AUdirectionLink
 	text="Submitting"     {/* The text of the link */}
 	link="link/to/page"   {/* The href link, optional */}
-	onClick={ () => {} }  {/* A function to execute when the link is clicked, optional */}
 	dark={ false }        {/* A dark variation of the component */}
+	attributeOptions      {/* Any other attribute options */}
 />
 ```
 
