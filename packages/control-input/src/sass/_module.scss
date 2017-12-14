@@ -33,22 +33,88 @@
 
 	// CHECKBOXES
 	&[type=checkbox] {
-		& + .au-control-input__text:after {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
-					<path fill="#{ $AU-color-Background-light }" d="M8 8h112v112H8z"/>
-				</svg>');
+		// normal
+		& + .au-control-input__text {
+			&:before {
+				@include AU-getControlShape( 'checkbox', 'background', $AU-color-Text, $AU-color-Background-light );
+			}
+
+			&:after {
+				background-image: none;
+			}
 		}
 
-		&:checked + .au-control-input__text:after {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="#{ $AU-color-Text }" d="M0 0h128v128H0z"/>
-					<path fill="#{ $AU-color-Background-light }" d="M8 8h112v112H8z"/>
-					<path fill="#{ $AU-color-Text }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
-						53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
-				</svg>');
+		// normal checked
+		&:checked + .au-control-input__text {
+			&:after {
+				@include AU-getControlShape( 'checkbox', 'foreground', $AU-color-Text );
+			}
+		}
+
+		// alt
+		.au-control-input--alt & {
+			& + .au-control-input__text:before {
+				@include AU-getControlShape( 'checkbox', 'background', $AU-color-Text, $AU-color-Background-dark );
+			}
+		}
+
+		// disabled
+		&:disabled {
+			& + .au-control-input__text:before {
+				@include AU-getControlShape( 'checkbox', 'background', mix( $AU-color-Text, $AU-color-Background, 20% ), $AU-color-Background-dark );
+			}
+
+			&:checked + .au-control-input__text:after {
+				@include AU-getControlShape( 'checkbox', 'foreground', mix( $AU-color-Text, $AU-color-Background, 20% ) );
+			}
+		}
+
+		// dark
+		.au-control-input--dark & {
+			& + .au-control-input__text:before {
+				@include AU-getControlShape( 'checkbox', 'background', $AU-colordark-Text, $AU-colordark-Background-light );
+			}
+
+			// dark checked
+			&:checked + .au-control-input__text:after {
+				@include AU-getControlShape( 'checkbox', 'foreground', $AU-colordark-Text );
+			}
+
+			// disabled
+			&:disabled {
+				& + .au-control-input__text:before {
+					@include AU-getControlShape( 'checkbox', 'background', mix( $AU-colordark-Text, $AU-colordark-Background, 20% ), $AU-colordark-Background-light );
+				}
+
+				&:checked + .au-control-input__text:after {
+					@include AU-getControlShape( 'checkbox', 'foreground', mix( $AU-colordark-Text, $AU-colordark-Background, 20% ) );
+				}
+			}
+		}
+
+		// dark alt
+		.au-control-input--alt.au-control-input--dark & {
+			& + .au-control-input__text:before {
+				@include AU-getControlShape( 'checkbox', 'background', $AU-colordark-Text, $AU-colordark-Background-dark );
+			}
+
+			&:disabled {
+				& + .au-control-input__text:before {
+					@include AU-getControlShape( 'checkbox', 'background', mix( $AU-colordark-Text, $AU-colordark-Background-dark, 20% ), $AU-colordark-Background-dark );
+				}
+
+				&:checked + .au-control-input__text:after {
+					@include AU-getControlShape( 'checkbox', 'foreground', mix( $AU-colordark-Text, $AU-colordark-Background-dark, 20% ) );
+				}
+			}
 		}
 	}
+
+
+
+
+
+
 
 	// RADIOS
 	&[type=radio] {
@@ -88,7 +154,6 @@
 
 	// Disabled styles
 	&:disabled {
-
 		cursor: not-allowed;
 
 		& + .au-control-input__text {
@@ -97,24 +162,6 @@
 
 		& + .au-control-input__text {
 			color: $AU-color-Muted;
-		}
-
-		&[type=checkbox] {
-			& + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $AU-color-Muted }" d="M0 0h128v128H0z"/>
-						<path fill="#{ $AU-color-Background-light }" d="M8 8h112v112H8z"/>
-					</svg>');
-			}
-
-			&:checked + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $AU-color-Muted }" d="M0 0h128v128H0z"/>
-						<path fill="#{ $AU-color-Background-light }" d="M8 8h112v112H8z"/>
-						<path fill="#{ $AU-color-Muted }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
-							53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
-					</svg>');
-			}
 		}
 
 		&[type=radio] {
@@ -137,24 +184,6 @@
 
 	// Colour options
 	.au-control-input--dark & {
-		&[type=checkbox] {
-			& + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $AU-colordark-Text }" d="M0 0h128v128H0z"/>
-						<path fill="#{ $AU-colordark-Background-light }" d="M8 8h112v112H8z"/>
-					</svg>');
-			}
-
-			&:checked + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $AU-colordark-Text }" d="M0 0h128v128H0z"/>
-						<path fill="#{ $AU-colordark-Background-light }" d="M8 8h112v112H8z"/>
-						<path fill="#{ $AU-colordark-Text }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
-							53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
-					</svg>');
-			}
-		}
-
 		&[type=radio] {
 			& + .au-control-input__text:after {
 				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -182,24 +211,6 @@
 		&:disabled {
 			& + .au-control-input__text {
 				color: $AU-colordark-Muted;
-			}
-
-			&[type=checkbox] {
-				& + .au-control-input__text:after {
-					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-							<path fill="#{ $AU-colordark-Muted }" d="M0 0h128v128H0z"/>
-							<path fill="#{ $AU-colordark-Background-light }" d="M8 8h112v112H8z"/>
-						</svg>');
-				}
-
-				&:checked + .au-control-input__text:after {
-					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-							<path fill="#{ $AU-colordark-Muted }" d="M0 0h128v128H0z"/>
-							<path fill="#{ $AU-colordark-Background-light }" d="M8 8h112v112H8z"/>
-							<path fill="#{ $AU-colordark-Muted }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42
-								53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>
-						</svg>');
-				}
 			}
 
 			&[type=radio] {
@@ -237,6 +248,7 @@
 	font-family: $AU-font;
 	color: $AU-color-Text;
 
+	// styling for both SVG layers
 	&:before,
 	&:after {
 		@include AU-space( width, 2unit );
@@ -250,11 +262,12 @@
 		z-index: 100;
 	}
 
+	&:after {
+		z-index: 101;
+	}
+
 	// Colour options
 	.au-control-input--dark & {
 		color: $AU-colordark-Text;
 	}
 }
-
-
-

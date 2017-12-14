@@ -6,7 +6,8 @@
 //
 // Content:
 // - Sass versioning
-// - Global variables: none so far
+// - Global mixin:
+//   - AU-getControlShape
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -23,5 +24,28 @@ $dependencies: (
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Return the right SVG shape for fore- and background
+ *
+ * @param  {string} $kind                 - Either "checkbox" or "radio"
+ * @param  {string} $part                 - Either "background" or "foreground"
+ * @param  {color} $color1: transparent   - A color to be applied to the first part of the SVG shape
+ * @param  {color} $color2: transparent   - A color to be applied to the second part of the SVG shape
+ *
+ * @return {svg}                          - The SVG shape inside a background-image
+ */
+@mixin AU-getControlShape( $kind, $part, $color1: transparent, $color2: transparent ) {
+	$start: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">';
+	$end: '</svg>';
 
-// Boy it sure is quiet here.
+	$checkbox-background: '<path fill="#{ $color1 }" d="M0 0h128v128H0z"/><path fill="#{ $color2 }" d="M8 8h112v112H8z"/>';
+	$checkbox-foreground: '<path fill="#{ $color1 }" d="M102.59 45.41c.778-.778.782-2.038-.002-2.822l-9.176-9.176c-.78-.78-2.052-.772-2.823 0L56 68 41.42 53.42c-.784-.784-2.048-.792-2.832-.008l-9.176 9.176c-.78.78-.775 2.05-.004 2.82l25.184 25.184c.778.778 2.04.775 2.82-.003l45.177-45.18z"/>';
+
+	@if( $kind == 'checkbox' and $part == 'background' ) {
+		background-image: AU-svguri( $start + $checkbox-background + $end );
+	}
+
+	@if( $kind == 'checkbox' and $part == 'foreground' ) {
+		background-image: AU-svguri( $start + $checkbox-foreground + $end );
+	}
+}
