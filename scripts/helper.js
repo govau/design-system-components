@@ -1055,7 +1055,7 @@ HELPER.test = (() => {
 				HELPER.log.success(`All pancakes have the appropriate package.json entries`);
 			}
 			else {
-				HELPER.log.error(`Some package.json contain inconcicentcies:\n   ${ error.split('\n').join('\n   ') }`);
+				HELPER.log.error(`Some package.json files contain inconsistencies:\n   ${ error.split('\n').join('\n   ') }`);
 
 				console.log('\n');
 				process.exit( 1 );
@@ -1098,7 +1098,7 @@ HELPER.test = (() => {
 				HELPER.log.success(`All pancakes have the appropriate changelog entries`);
 			}
 			else {
-				HELPER.log.error(`Some changelogs contain inconcicentcies:\n   ${ error.split('\n').join('\n   ') }`);
+				HELPER.log.error(`Some changelogs contain inconsistencies:\n   ${ error.split('\n').join('\n   ') }`);
 
 				console.log('\n');
 				process.exit( 1 );
