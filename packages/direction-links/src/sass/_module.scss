@@ -16,46 +16,14 @@
 //
 // Everyone needs Konami code style links, right? (:
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.au-direction-link {
-	@include AU-fontgrid( sm );
+.au-direction-link:after {
+	@include AU-space( width, 1unit );
+	@include AU-space( height, 1unit );
+	@include AU-space( margin, 0 0 0 0.25unit );
+	content: '→';
 	display: inline-block;
-	color: $AU-color-Action;
-	appearance: none;
-	padding: 0;
-	background: transparent;
-	text-align: left;
-	font-family: $AU-font;
-	border: none;
-	cursor: pointer;
-	text-decoration: underline;
-	text-decoration-skip: ink;
-
-	@include AU-focus();
-
-	&:hover {
-		text-decoration: none;
-		color: $AU-color-Text;
-	}
-	&:after {
-		@include AU-space( width, 1unit );
-		@include AU-space( height, 1unit );
-		@include AU-space( margin, 0 0 0 0.25unit );
-		content: '→';
-		display: inline-block;
-		width: auto;
-		height: auto;
-	}
-
-	// Color variation
-	&.au-direction-link--dark {
-		color: $AU-colordark-Action;
-
-		@include AU-focus( 'dark' );
-
-		&:hover {
-			color: $AU-colordark-Text;
-		}
-	}
+	width: auto;
+	height: auto;
 }
 
 /**
