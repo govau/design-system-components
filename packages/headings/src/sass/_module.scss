@@ -22,68 +22,83 @@
 /**
  * Basic styles for all headings
  */
-@mixin AU-display {
+.au-display-xxxl,
+.au-display-xxl,
+.au-display-xl,
+.au-display-lg,
+.au-display-md,
+.au-display-sm,
+.au-display-xs,
+.au-body h1,
+.au-body h2,
+.au-body h3,
+.au-body h4,
+.au-body h5,
+.au-body h6 {
 	font-family: $AU-font;
 	display: block;
 	font-weight: bold;
 	margin: 0;
-	* & {
-		@include AU-space( margin-top, 1unit );
-	}
 }
+
+/**
+ * Default spacing for headings which follow any element.
+ */
+// All display classes get default magin-top
+* + .au-display-xxxl,
+* + .au-display-xxl,
+* + .au-display-xl,
+* + .au-display-lg,
+* + .au-display-md,
+* + .au-display-sm,
+* + .au-display-xs {
+	@include AU-space( margin-top, 1unit );
+}
+
 
 /**
  * Unique selectors and font sizes
  */
-.au-body h1,
 .au-body .au-display-xxxl,
 .au-display-xxxl {
-	@include AU-display();
 	@include AU-fontgrid( xxxl, heading );
 }
 
-.au-body h2,
+.au-body h1,
 .au-body .au-display-xxl,
 .au-display-xxl {
-	@include AU-display();
 	@include AU-fontgrid( xxl, heading );
 }
 
-.au-body h3,
+.au-body h2,
 .au-body .au-display-xl,
 .au-display-xl {
-	@include AU-display();
 	@include AU-fontgrid( xl, heading );
 }
 
-.au-body h4,
+.au-body h3,
 .au-body .au-display-lg,
 .au-display-lg {
-	@include AU-display();
 	@include AU-fontgrid( lg, heading );
 }
 
-.au-body h5,
+.au-body h4,
 .au-body .au-display-md,
 .au-display-md {
-	@include AU-display();
 	@include AU-fontgrid( md, heading );
 }
 
-
-.au-body h6,
+.au-body h5,
 .au-body .au-display-sm,
 .au-display-sm  {
-	@include AU-display();
 	@include AU-fontgrid( sm, heading );
 }
 
+.au-body h6,
 .au-body .au-display-xs,
 .au-display-xs  {
-	@include AU-display();
 	@include AU-fontgrid( xs, heading );
 }
-
 
 
 /**
@@ -103,7 +118,10 @@
 		@include AU-space( margin-top, 2unit );
 	}
 	h1 + h2,
-	h2 + h3 {
+	h2 + h3,
+	.au-body * + h4,
+	.au-body * + h5,
+	.au-body * + h6 {
 		@include AU-space( margin-top, 1unit );
 	}
 }
