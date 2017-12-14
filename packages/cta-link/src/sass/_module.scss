@@ -17,22 +17,21 @@
 .au-cta-link {
 	@include AU-fontgrid( md );
 	@include AU-space( margin-bottom, 1unit );
-	appearance: none;
-	padding: 0;
-	display: inline-block;
-	position: relative;
 	font-weight: bold;
-	background: transparent;
-	text-align: left;
-	color: $AU-color-Action;
 	font-family: $AU-font;
+
+	// Styles to reset button
+	color: $AU-color-Action;
+	appearance: none;
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
 	text-decoration: underline;
 	text-decoration-skip: ink;
-	border: none;
-	transition: background-color 0.1s ease-in-out;
-	cursor: pointer;
 
 	@include AU-focus();
+
 
 	&:after {
 		@include AU-space( width, 1unit );
@@ -40,10 +39,10 @@
 		@include AU-space( margin, 0unit 0.25unit 0unit 0.25unit );
 		content: ' ';
 		display: inline-block;
-		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-color-Action }" d="M128 64l-64 64-16-16 64-64"/>
-				<path fill="#{ $AU-color-Action }" d="M128 64l-16 16-64-64L64 0"/>
-			</svg>');
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-color-Action }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-color-Action }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
 
 		.ie8 &,
 		.lt-ie8 & {
@@ -52,14 +51,13 @@
 	}
 
 	&:hover {
-		color: $AU-color-Text; //sets the hover back to what it used to be.
-		text-decoration: none;
+		color: $AU-color-Text;
 
 		&:after {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-color-Text }" d="M128 64l-64 64-16-16 64-64"/>
-				<path fill="#{ $AU-color-Text }" d="M128 64l-16 16-64-64L64 0"/>
-			</svg>');
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-color-Text }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-color-Text }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
 		}
 	}
 
@@ -69,20 +67,20 @@
 		@include AU-focus( 'dark' );
 
 		&:after {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $AU-colordark-Action }" d="M128 64l-64 64-16-16 64-64"/>
-				<path fill="#{ $AU-colordark-Action }" d="M128 64l-16 16-64-64L64 0"/>
-			</svg>');
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-colordark-Action }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-colordark-Action }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
 		}
 
 		&:hover {
 			color: $AU-colordark-Text;
 
 			&:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="#{ $AU-colordark-Text }" d="M128 64l-64 64-16-16 64-64"/>
-					<path fill="#{ $AU-colordark-Text }" d="M128 64l-16 16-64-64L64 0"/>
-				</svg>');
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+					'<path fill="#{ $AU-colordark-Text }" d="M128 64l-64 64-16-16 64-64"/>' +
+					'<path fill="#{ $AU-colordark-Text }" d="M128 64l-16 16-64-64L64 0"/>' +
+				'</svg>');
 			}
 		}
 	}
