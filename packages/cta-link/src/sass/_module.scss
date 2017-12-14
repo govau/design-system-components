@@ -32,7 +32,6 @@
 
 	@include AU-focus();
 
-
 	&:after {
 		@include AU-space( width, 1unit );
 		@include AU-space( height, 1unit );
