@@ -20,13 +20,17 @@
  */
 .au-callout {
 	@include AU-fontgrid( sm );
-	@include AU-space( margin, 2unit 0 );
 	@include AU-space( padding, 1.5unit );
 	@include AU-space( border-left, 0.25unit solid $AU-color-Border );
+	@include AU-space( margin-bottom, 2unit );
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	background-color: $AU-color-Background;
 	word-wrap: break-word;
+
+	* + & {
+		@include AU-space( margin-top, 2unit );
+	}
 
 	:first-child {
 		margin-top: 0;
