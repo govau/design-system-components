@@ -39,6 +39,10 @@
 	&.au-responsive-media-vid--4x3 {
 		padding-bottom: percentage( 3 / 4 ); // 4:3
 	}
+
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
 }
 
 
@@ -48,4 +52,9 @@
 .au-responsive-media-img,
 .au-body img {
 	max-width: 100%;
+}
+
+* + .au-responsive-media-img,
+.au-body * + img {
+	@include AU-space( margin-top, 1unit );
 }
