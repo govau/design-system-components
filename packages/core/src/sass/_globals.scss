@@ -414,6 +414,7 @@ $dependencies: (
 		'large': 3,
 		'small': 4.5,
 	);
+
 	$ratio: map-get( $ratios, $ratioKey );
 
 	$currentRatio: AU-color-contrast( $toMakeA11y, $background, true, false ); // Get the current ratio
@@ -424,18 +425,22 @@ $dependencies: (
 
 	$hue: hue( $toMakeA11y );               // Split the color into HSL
 	$saturation: saturation( $toMakeA11y ); // so we can make changes
-	$lightness:  lightness( $toMakeA11y );  // the only the lightness of the color
+	$lightness: lightness( $toMakeA11y );   // the only the lightness of the color
 
 
-	$i: 1;
-	@while $ratioLighter < $ratio and $ratioDarker < $ratio and $i < 101 {
-		$colorLighter: hsl( $hue, $saturation, ( $lightness + $i ) );   // then we lighten a new color
-		$colorDarker:  hsl( $hue, $saturation, ( $lightness - $i ) );   // and darken another
-
-		$ratioLighter: AU-color-contrast( $colorLighter, $background, true, false ); // now we assign the new ratios; the loop will break
-		$ratioDarker:  AU-color-contrast( $colorDarker, $background, true, false );  // when one of these is beyond the defined ration
-
+	$i: 0;
+	@while $ratioLighter < $ratio and $ratioDarker < $ratio and $i < 100 {
 		$i: $i + $steps; // iterate by increasing our step
+
+		$colorLighter: hsl( $hue, $saturation, $lightness + $i );   // then we lighten a new color
+		$colorDarker:  hsl( $hue, $saturation, $lightness - $i );   // and darken another
+
+		// Reset the colors so it compares HEX not HSL
+		$resetLight: mix( $colorLighter, $colorLighter );
+		$resetDark:  mix( $colorDarker, $colorDarker );
+
+		$ratioLighter: AU-color-contrast( $resetLight, $background, true, false ); // now we assign the new ratios; the loop will break
+		$ratioDarker:  AU-color-contrast( $resetDark, $background, true, false );  // when one of these is beyond the defined ration
 	}
 
 
@@ -715,7 +720,7 @@ $AU-color-Background-light:        #ffffff !default;
 $AU-color-Background:              #f5f5f5 !global;
 $AU-color-Background-dark:         #ebebeb !global;
 $AU-color-Background-darkest:      #e0e0e0 !global;
-$AU-color-Muted:                   #646464 !global;
+$AU-color-Muted:                   #636363 !global;
 $AU-color-Border:                  #808080 !global;
 // $AU-color-Background:              AU-color-a11y( darken( $AU-color-Background-light, 4% ), $AU-color-Text ) !global;
 // $AU-color-Background-dark:         AU-color-a11y( darken( $AU-color-Background-light, 8% ), $AU-color-Text ) !global;
@@ -737,7 +742,7 @@ $AU-colordark-Background:          #104f5f !global;
 $AU-colordark-Background-dark:     #0d414d !global;
 $AU-colordark-Background-darkest:  #0a323c !global;
 $AU-colordark-Muted:               #b7cfd5 !global;
-$AU-colordark-Border:              #8babb3 !global;
+$AU-colordark-Border:              #8bacb3 !global;
 // $AU-colordark-Background:          AU-color-a11y( darken( $AU-colordark-Background-light, 4% ), $AU-colordark-Text ) !global;
 // $AU-colordark-Background-dark:     AU-color-a11y( darken( $AU-colordark-Background-light, 8% ), $AU-colordark-Text ) !global;
 // $AU-colordark-Background-darkest:  AU-color-a11y( darken( $AU-colordark-Background-light, 12% ), $AU-colordark-Text ) !global;
