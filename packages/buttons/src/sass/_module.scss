@@ -36,6 +36,15 @@ a.au-btn {
 	cursor: pointer;
 	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
 
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	& + .au-btn,
+	& + a.au-btn {
+		@include AU-space( margin-top, 0.5unit );
+	}
+
 	// focus
 	@include AU-focus();
 
@@ -58,18 +67,18 @@ a.au-btn {
 
 	// hover
 	&:hover:not(:disabled) {
-		background-color: transparent;
+		background-color: $AU-color-Text;
 		border-color: $AU-color-Text;
 		text-decoration: underline;
-		color: $AU-color-Text;
+		color: $AU-color-Background-light;
 	}
 
 	.ie8 & {
 		&:hover {
-			background-color: transparent;
+			background-color: $AU-color-Text;
 			border-color: $AU-color-Text;
 			text-decoration: underline;
-			color: $AU-color-Text;
+			color: $AU-color-Background-light;
 		}
 	}
 
@@ -80,16 +89,16 @@ a.au-btn {
 		border-color: $AU-colordark-Action;
 
 		&:hover:not(:disabled) {
-			color: $AU-colordark-Text;
+			color: $AU-colordark-Background-light;
 			border-color: $AU-colordark-Text;
-			background-color: transparent;
+			background-color:  $AU-colordark-Text;
 		}
 
 		.ie8 & {
 			&:hover {
-				color: $AU-colordark-Text;
+				color: $AU-colordark-Background-light;
 				border-color: $AU-colordark-Text;
-				background-color: transparent;
+				background-color:  $AU-colordark-Text;
 			}
 		}
 
@@ -105,10 +114,20 @@ a.au-btn {
 		border-color: $AU-color-Action;
 		color: $AU-color-Action;
 
-		&.au-btn--dark {
+		&:hover:not(:disabled) {
 			background-color: transparent;
+			border-color: $AU-color-Text;
+			color: $AU-color-Text;
+		}
+
+		&.au-btn--dark {
 			border-color: $AU-colordark-Action;
 			color: $AU-colordark-Action;
+
+			&:hover:not(:disabled) {
+				border-color: $AU-colordark-Text;
+				color: $AU-colordark-Text;
+			}
 		}
 	}
 
@@ -121,10 +140,19 @@ a.au-btn {
 		border-color: transparent;
 		text-decoration: underline;
 
-		&.au-btn--dark {
+		&:hover:not(:disabled) {
 			background-color: transparent;
-			color: $AU-colordark-Action;
+			color: $AU-color-Text;
 			border-color: transparent;
+			text-decoration: none;
+		}
+
+		&.au-btn--dark {
+			color: $AU-colordark-Action;
+
+			&:hover:not(:disabled) {
+				color: $AU-colordark-Text;
+			}
 		}
 	}
 
@@ -136,10 +164,5 @@ a.au-btn {
 		width: 100%;
 		box-sizing: border-box;
 		text-align: center;
-
-		// If it follows another au-btn--block
-		& + .au-btn--block {
-			@include AU-space( margin-top, 0.25unit );
-		}
 	}
 }
