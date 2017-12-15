@@ -21,15 +21,75 @@
 }
 
 .au-control-input__input {
+	// hiding the native element behind our SVG so for browsers that don’t support SVG have a fallback
 	position: absolute;
 	@include AU-space( left, 0.5unit );
 	@include AU-space( top, 0.5unit );
-
 	cursor: pointer;
 
 	& + .au-control-input__text {
 		cursor: pointer;
 	}
+
+	// focus
+	&:focus + .au-control-input__text:before,
+	&:focus + .au-control-input__text:after {
+		border: 3px solid $AU-color-Focus;
+	}
+
+	.au-control-input--dark & {
+		&:focus + .au-control-input__text:before,
+		&:focus + .au-control-input__text:after {
+			border: 3px solid $AU-colordark-Focus;
+		}
+	}
+
+	&[type=radio] {
+		&:focus + .au-control-input__text:before,
+		&:focus + .au-control-input__text:after {
+			border-radius: 50%;
+		}
+	}
+
+	// disabled styling
+	&[disabled] { // for IE
+		cursor: not-allowed;
+
+		& + .au-control-input__text {
+			cursor: not-allowed;
+		}
+
+		& + .au-control-input__text {
+			color: $AU-color-Muted;
+		}
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+
+		& + .au-control-input__text {
+			cursor: not-allowed;
+		}
+
+		& + .au-control-input__text {
+			color: $AU-color-Muted;
+		}
+	}
+
+	.au-control-input--dark & {
+		&[disabled] {
+			& + .au-control-input__text {
+				color: $AU-colordark-Muted;
+			}
+		}
+
+		&:disabled {
+			& + .au-control-input__text {
+				color: $AU-colordark-Muted;
+			}
+		}
+	}
+
 
 	// CHECKBOXES
 	&[type=checkbox] {
@@ -55,6 +115,12 @@
 		.au-control-input--alt & {
 			& + .au-control-input__text:before {
 				@include AU-getControlShape( 'checkbox', 'background', $AU-color-Text, $AU-color-Background-dark );
+			}
+
+			&:disabled {
+				& + .au-control-input__text:before {
+					@include AU-getControlShape( 'checkbox', 'background', mix( $AU-color-Text, $AU-color-Background, 20% ), $AU-color-Background-darkest );
+				}
 			}
 		}
 
@@ -83,7 +149,7 @@
 			// disabled
 			&:disabled {
 				& + .au-control-input__text:before {
-					@include AU-getControlShape( 'checkbox', 'background', mix( $AU-colordark-Text, $AU-colordark-Background, 20% ), $AU-colordark-Background-light );
+					@include AU-getControlShape( 'checkbox', 'background', mix( $AU-colordark-Text, $AU-colordark-Background, 20% ), $AU-colordark-Background );
 				}
 
 				&:checked + .au-control-input__text:after {
@@ -100,7 +166,7 @@
 
 			&:disabled {
 				& + .au-control-input__text:before {
-					@include AU-getControlShape( 'checkbox', 'background', mix( $AU-colordark-Text, $AU-colordark-Background-dark, 20% ), $AU-colordark-Background-dark );
+					@include AU-getControlShape( 'checkbox', 'background', mix( $AU-colordark-Text, $AU-colordark-Background-dark, 20% ), $AU-colordark-Background-darkest );
 				}
 
 				&:checked + .au-control-input__text:after {
@@ -110,130 +176,88 @@
 		}
 	}
 
-
-
-
-
-
-
 	// RADIOS
 	&[type=radio] {
-		& + .au-control-input__text:after {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
-				<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
-			</svg>');
-		}
-
-		&:checked + .au-control-input__text:after {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
-				<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
-				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="44"/>
-			</svg>');
-		}
-	}
-
-	&:focus,
-	&:focus + .au-control-input__text:after {
-	  @include AU-outline();
-	}
-
-	// Disabled styles for IE
-	&[disabled] {
-		cursor: not-allowed;
-
+		// normal
 		& + .au-control-input__text {
-			cursor: not-allowed;
-		}
-
-		& + .au-control-input__text {
-			color: $AU-color-Muted;
-		}
-	}
-
-	// Disabled styles
-	&:disabled {
-		cursor: not-allowed;
-
-		& + .au-control-input__text {
-			cursor: not-allowed;
-		}
-
-		& + .au-control-input__text {
-			color: $AU-color-Muted;
-		}
-
-		&[type=radio] {
-			& + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $AU-color-Muted }" cx="64" cy="64" r="64"/>
-					<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
-				</svg>');
+			&:before {
+				@include AU-getControlShape( 'radio', 'background', $AU-color-Text, $AU-color-Background-light );
 			}
 
-			&:checked + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $AU-color-Muted  }" cx="64" cy="64" r="64"/>
-					<circle fill="#{ $AU-color-Background-light }" cx="64" cy="64" r="56"/>
-					<circle fill="#{ $AU-color-Muted  }" cx="64" cy="64" r="44"/>
-				</svg>');
-			}
-		}
-	}
-
-	// Colour options
-	.au-control-input--dark & {
-		&[type=radio] {
-			& + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $AU-colordark-Text }" cx="64" cy="64" r="64"/>
-					<circle fill="#{ $AU-colordark-Background-light }" cx="64" cy="64" r="56"/>
-				</svg>');
-			}
-
-			&:checked + .au-control-input__text:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<circle fill="#{ $AU-colordark-Text }" cx="64" cy="64" r="64"/>
-					<circle fill="#{ $AU-colordark-Background-light }" cx="64" cy="64" r="56"/>
-					<circle fill="#{ $AU-colordark-Text }" cx="64" cy="64" r="44"/>
-				</svg>');
+			&:after {
+				background-image: none;
 			}
 		}
 
-		// Disabled styles for IE
-		&[disabled] + .au-control-input__text {
-			color: $AU-colordark-Muted;
+		// normal checked
+		&:checked + .au-control-input__text {
+			&:after {
+				@include AU-getControlShape( 'radio', 'foreground', $AU-color-Text );
+			}
 		}
 
+		// alt
+		.au-control-input--alt & {
+			& + .au-control-input__text:before {
+				@include AU-getControlShape( 'radio', 'background', $AU-color-Text, $AU-color-Background-dark );
+			}
 
-		// Disabled styles
+			&:disabled {
+				& + .au-control-input__text:before {
+					@include AU-getControlShape( 'radio', 'background', mix( $AU-color-Text, $AU-color-Background, 20% ), $AU-color-Background-darkest );
+				}
+			}
+		}
+
+		// disabled
 		&:disabled {
-			& + .au-control-input__text {
-				color: $AU-colordark-Muted;
+			& + .au-control-input__text:before {
+				@include AU-getControlShape( 'radio', 'background', mix( $AU-color-Text, $AU-color-Background, 20% ), $AU-color-Background-dark );
 			}
 
-			&[type=radio] {
-				& + .au-control-input__text:after {
-					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<circle fill="#{ $AU-colordark-Muted }" cx="64" cy="64" r="64"/>
-						<circle fill="#{ $AU-colordark-Background-light }" cx="64" cy="64" r="56"/>
-					</svg>');
+			&:checked + .au-control-input__text:after {
+				@include AU-getControlShape( 'radio', 'foreground', mix( $AU-color-Text, $AU-color-Background, 20% ) );
+			}
+		}
+
+		// dark
+		.au-control-input--dark & {
+			& + .au-control-input__text:before {
+				@include AU-getControlShape( 'radio', 'background', $AU-colordark-Text, $AU-colordark-Background-light );
+			}
+
+			// dark checked
+			&:checked + .au-control-input__text:after {
+				@include AU-getControlShape( 'radio', 'foreground', $AU-colordark-Text );
+			}
+
+			// disabled
+			&:disabled {
+				& + .au-control-input__text:before {
+					@include AU-getControlShape( 'radio', 'background', mix( $AU-colordark-Text, $AU-colordark-Background, 20% ), $AU-colordark-Background );
 				}
 
 				&:checked + .au-control-input__text:after {
-					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<circle fill="#{ $AU-colordark-Muted  }" cx="64" cy="64" r="64"/>
-						<circle fill="#{ $AU-colordark-Background-light }" cx="64" cy="64" r="56"/>
-						<circle fill="#{ $AU-colordark-Muted  }" cx="64" cy="64" r="44"/>
-					</svg>');
+					@include AU-getControlShape( 'radio', 'foreground', mix( $AU-colordark-Text, $AU-colordark-Background, 20% ) );
 				}
 			}
 		}
 
-		&:focus,
-		&:focus + .au-control-input__text:after {
-			@include AU-outline( 'dark' );
+		// dark alt
+		.au-control-input--alt.au-control-input--dark & {
+			& + .au-control-input__text:before {
+				@include AU-getControlShape( 'radio', 'background', $AU-colordark-Text, $AU-colordark-Background-dark );
+			}
+
+			&:disabled {
+				& + .au-control-input__text:before {
+					@include AU-getControlShape( 'radio', 'background', mix( $AU-colordark-Text, $AU-colordark-Background-dark, 20% ), $AU-colordark-Background-darkest );
+				}
+
+				&:checked + .au-control-input__text:after {
+					@include AU-getControlShape( 'radio', 'foreground', mix( $AU-colordark-Text, $AU-colordark-Background-dark, 20% ) );
+				}
+			}
 		}
 	}
 }
@@ -243,7 +267,7 @@
  */
 .au-control-input__text {
 	@include AU-fontgrid( sm, nospace );
-	@include AU-space( margin, 0.5unit 0.5unit 0.5unit 2.5unit );
+	@include AU-space( margin, 0.65unit 0.5unit 0.65unit 2.5unit );
 	display: block;
 	font-family: $AU-font;
 	color: $AU-color-Text;
@@ -251,15 +275,17 @@
 	// styling for both SVG layers
 	&:before,
 	&:after {
-		@include AU-space( width, 2unit );
-		@include AU-space( height, 2unit );
+		@include AU-space( width, 2.375unit );
+		@include AU-space( height, 2.375unit );
 		content: ' ';
 		display: block;
 		position: absolute;
+		box-sizing: border-box;
 		left: 0;
 		top: 0;
 		background-repeat: no-repeat;
 		z-index: 100;
+		border: 3px solid transparent;
 	}
 
 	&:after {
