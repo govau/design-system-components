@@ -61,7 +61,6 @@
 	cursor: pointer;
 
 	&:hover {
-		background-color: $AU-color-Background-light;
 		text-decoration: underline;
 		text-decoration-skip: ink;
 		color: $AU-color-Text;
@@ -119,7 +118,6 @@
 		background-color: $AU-colordark-Background;
 
 		&:hover {
-			background-color: $AU-colordark-Background-light;
 			color: $AU-colordark-Text;
 
 			&:after {
