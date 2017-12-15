@@ -16,12 +16,16 @@
 // accordion wrapper
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-accordion {
-	@include AU-space( margin-top, 1unit );
 	display: block;
 	border: 1px solid $AU-color-Border;
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	padding: 0;
+
+	// Add spacing if there is an element before it
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
 
 	p:first-child {
 		margin-top: 0;
