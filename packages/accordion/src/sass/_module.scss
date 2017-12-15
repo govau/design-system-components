@@ -61,6 +61,7 @@
 		text-decoration: underline;
 		text-decoration-skip: ink;
 		color: $AU-color-Text;
+
 		&:after {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
 				'	<path fill="#{ $AU-color-Text }" d="M64 0l64 64-16 16-64-64"/>' +
@@ -116,6 +117,7 @@
 		&:hover {
 			background-color: $AU-colordark-Background-light;
 			color: $AU-colordark-Text;
+
 			&:after {
 				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
 					'	<path fill="#{ $AU-colordark-Text }" d="M64 0l64 64-16 16-64-64"/>' +

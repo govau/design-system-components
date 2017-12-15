@@ -36,6 +36,67 @@ a.au-btn {
 	cursor: pointer;
 	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
 
+	// focus
+	@include AU-focus();
+
+	&:focus {
+		border-radius: 0;
+	}
+
+	// disabled
+	&[disabled] { // IE8
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
+
+	// hover
+	&:hover:not(:disabled) {
+		background-color: transparent;
+		border-color: $AU-color-Text;
+		text-decoration: underline;
+		color: $AU-color-Text;
+	}
+
+	.ie8 & {
+		&:hover {
+			background-color: transparent;
+			border-color: $AU-color-Text;
+			text-decoration: underline;
+			color: $AU-color-Text;
+		}
+	}
+
+	// dark
+	&.au-btn--dark {
+		color: $AU-colordark-Background-light;
+		background-color: $AU-colordark-Action;
+		border-color: $AU-colordark-Action;
+
+		&:hover:not(:disabled) {
+			color: $AU-colordark-Text;
+			border-color: $AU-colordark-Text;
+			background-color: transparent;
+		}
+
+		.ie8 & {
+			&:hover {
+				color: $AU-colordark-Text;
+				border-color: $AU-colordark-Text;
+				background-color: transparent;
+			}
+		}
+
+		@include AU-focus( 'dark' );
+	}
+
+
 	/**
 	* SECONDARY
 	*/
@@ -48,34 +109,6 @@ a.au-btn {
 			background-color: transparent;
 			border-color: $AU-colordark-Action;
 			color: $AU-colordark-Action;
-
-			&:hover {
-				&[disabled] {
-					background-color: transparent;
-					border-color: $AU-colordark-Action;
-					color: $AU-colordark-Action;
-				}
-
-				&:disabled {
-					background-color: transparent;
-					border-color: $AU-colordark-Action;
-					color: $AU-colordark-Action;
-				}
-			}
-		}
-
-		&:hover {
-			&[disabled] {
-				background-color: transparent;
-				border-color: $AU-color-Action;
-				color: $AU-color-Action;
-			}
-
-			&:disabled {
-				background-color: transparent;
-				border-color: $AU-color-Action;
-				color: $AU-color-Action;
-			}
 		}
 	}
 
@@ -93,86 +126,6 @@ a.au-btn {
 			color: $AU-colordark-Action;
 			border-color: transparent;
 		}
-
-		&:hover {
-			&[disabled] {
-				background-color: transparent;
-				color: $AU-color-Action;
-				border-color: transparent;
-				text-decoration: underline;
-			}
-
-			&:disabled {
-				background-color: transparent;
-				color: $AU-color-Action;
-				border-color: transparent;
-				text-decoration: underline;
-			}
-		}
-	}
-
-	&:hover {
-		background-color: transparent;
-		border-color: $AU-color-Text;
-		text-decoration: underline;
-		color: $AU-color-Text;
-
-		&[disabled] {
-			background-color: $AU-color-Action;
-			border-color: $AU-color-Action;
-			text-decoration: none;
-			color: $AU-color-Background-light;
-		}
-
-		&:disabled {
-			background-color: $AU-color-Action;
-			border-color: $AU-color-Action;
-			text-decoration: none;
-			color: $AU-color-Background-light;
-		}
-	}
-
-	&:focus {
-		border-radius: 0;
-	}
-
-	@include AU-focus();
-
-	&.au-btn--dark {
-		color: $AU-colordark-Background-light;
-		background-color: $AU-colordark-Action;
-		border-color: $AU-colordark-Action;
-
-		&:hover {
-			color: $AU-colordark-Text;
-			border-color: $AU-colordark-Text;
-			background-color: transparent;
-
-			&[disabled] {
-				color: $AU-colordark-Background-light;
-				background-color: $AU-colordark-Action;
-				border-color: $AU-colordark-Action;
-			}
-
-			&:disabled {
-				color: $AU-colordark-Background-light;
-				background-color: $AU-colordark-Action;
-				border-color: $AU-colordark-Action;
-			}
-		}
-
-		@include AU-focus( 'dark' );
-	}
-
-	// IE8 disabled styles
-	&[disabled] {
-		cursor: not-allowed;
-		opacity: 0.3;
-	}
-
-	&:disabled {
-		cursor: not-allowed;
-		opacity: 0.3;
 	}
 
 	/**

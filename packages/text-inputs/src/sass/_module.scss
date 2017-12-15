@@ -69,11 +69,13 @@
 
 	&[disabled] {
 		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 		opacity: 0.3;
 	}
 
 	&:disabled {
 		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 		opacity: 0.3;
 	}
 
@@ -89,10 +91,12 @@
 		border-color:  $AU-colordark-Text;
 
 		&[disabled] {
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 			opacity: 0.3;
 		}
 
 		&:disabled {
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
 			opacity: 0.3;
 		}
 
