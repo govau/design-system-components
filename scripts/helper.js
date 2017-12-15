@@ -289,30 +289,34 @@ HELPER.precompile = (() => {
 		 * Move files from src/ to lib/ and replace placeholders inside
 		 */
 		sass: () => {
-			// 1. create path
-			CreateDir('./lib/sass/');
+			const _hasSass = Fs.existsSync( `${ process.cwd() }/src/sass/_module.scss` );
 
-			// 2. copy files
-			CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
-			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
-			CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
+			if( _hasSass ) {
+				// 1. create path
+				CreateDir('./lib/sass/');
 
-			// Rethingiemajiging the peer dependencies for sass
-			let dependencies = [];
-			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
-				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
+				// 2. copy files
+				CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
+				CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
+				CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
+
+				// Rethingiemajiging the peer dependencies for sass
+				let dependencies = [];
+				for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
+					dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
+				}
+
+				// 3.replace strings inside new files in lib
+				const searches = {
+					'[replace-name]': HELPER.NAME,
+					'[replace-version]': HELPER.VERSION,
+					'[replace-dependencies]': dependencies.join(`\n\t`),
+				};
+
+				ReplaceFileContent( searches, './lib/sass/_globals.scss' );
+				ReplaceFileContent( searches, './lib/sass/_module.scss' );
+				ReplaceFileContent( searches, './lib/sass/_print.scss' );
 			}
-
-			// 3.replace strings inside new files in lib
-			const searches = {
-				'[replace-name]': HELPER.NAME,
-				'[replace-version]': HELPER.VERSION,
-				'[replace-dependencies]': dependencies.join(`\n\t`),
-			};
-
-			ReplaceFileContent( searches, './lib/sass/_globals.scss' );
-			ReplaceFileContent( searches, './lib/sass/_module.scss' );
-			ReplaceFileContent( searches, './lib/sass/_print.scss' );
 		},
 
 		/**

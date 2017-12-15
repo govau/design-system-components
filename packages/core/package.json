@@ -50,7 +50,7 @@
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~1",
 
-		"sass-versioning": "^0.2.2"
+		"sass-versioning": "^0.3.0"
 	},
 	"peerDependencies": {},
 	"devDependencies": {
