@@ -31,32 +31,27 @@
 	border-radius: $AU-border-radius;
 	word-wrap: break-word;
 
-	:first-child {
+	*:first-child {
 		margin-top: 0;
 	}
 
-	:last-child {
+	*:last-child {
 		margin-bottom: 0;
 	}
 
+	&:before,
 	&:after {
-		@include AU-space( left, -2.5unit );
-		@include AU-space( border-left-width, -1unit );
-		@include AU-space( width, 2unit );
-		@include AU-space( height, 2unit );
-		@include AU-space( margin-top, -1unit );
 		content: ' ';
 		position: absolute;
-		display: block;
 		top: 50%;
+		@include AU-space( left, -2.25unit );
+		@include AU-space( width, 1.5unit );
+		@include AU-space( height, 1.5unit );
+		@include AU-space( margin-top, -0.75unit );
+		@include AU-space( border-left-width, -0.75unit );
+		display: block;
 		background-repeat: no-repeat;
-		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<circle fill="#{ $AU-color-Text }" cx="64" cy="64" r="64"/>
-				<rect fill="#fff" width="16" height="16" x="56" y="20" rx="2"/>
-				<rect fill="#fff" width="16" height="56" x="56" y="44" rx="2"/>
-				<rect fill="#fff" width="40" height="16" x="44" y="84" rx="2"/>
-				<rect fill="#fff" width="28" height="16" x="44" y="44" rx="2"/>
-			</svg>');
+		background-color: $AU-color-Background-light;
 
 		.ie8 &,
 		.lt-ie8 & {
@@ -65,8 +60,17 @@
 			background-color: $AU-color-Text;
 			color: #fff;
 			font-weight: bold;
-			content: 'i';
 		}
+	}
+
+	&:after {
+		background-color: transparent;
+	}
+
+	&:before {
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path fill="#{ $AU-color-Info }" d="M0,0v24h24V0H0z M12,23C5.9,23,1,18.1,1,12C1,5.9,5.9,1,12,1s11,4.9,11,11C23,18.1,18.1,23,12,23z"/>
+			</svg>');
 	}
 }
 
