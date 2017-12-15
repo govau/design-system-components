@@ -22,6 +22,10 @@
 	color: $AU-color-Text;
 	font-family: $AU-font;
 
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
 	@include AU-media( sm ) {
 		display: inline-block;
 	}
