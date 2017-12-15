@@ -7,3 +7,8 @@
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
+
+
+main {
+	@include AU-space( margin-top, 1unit );
+}

@@ -131,14 +131,28 @@
 	 */
 	p {
 		max-width: $AU-maxwidth;
-		@include AU-space( margin, 1unit 0 0 0 );
+		margin: 0;
+	}
+
+	* + p {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	p + p {
+		@include AU-space( margin-top, 0.5unit );
 	}
 
 	ul,
 	ol,
 	dl,
 	pre {
-		margin-top: 0;
+		margin: 0;
+	}
+
+	* + ul,
+	* + ol,
+	* + dl,
+	* + pre {
 		@include AU-space( margin-top, 1unit );
 	}
 
@@ -328,7 +342,11 @@
 		overflow: visible;
 		border: none;
 		border-top: 1px solid $AU-color-Border;
-		@include AU-space( margin-bottom, 1unit );
+		margin: 0;
+	}
+
+	* + hr {
+		@include AU-space( margin-top, 1unit );
 	}
 
 	// Body colour schemes
