@@ -83,7 +83,9 @@ For more details have a look at the [usage example](https://github.com/govau/uik
 
 ```shell
 page-alerts
-└─ core
+├─ core
+└─ body
+   └─ core
 ```
 
 

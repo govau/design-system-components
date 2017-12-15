@@ -37,7 +37,7 @@ const options = {
  * @param  {object} attributeOptions - Any other attribute options
  */
 const AUpageAlert = ({ as, children, ...attributeOptions }) => (
-	<div className={`au-page-alerts ${ options[ as ] }`} role='alert' { ...attributeOptions }>
+	<div className={`au-body au-page-alerts ${ options[ as ] }`} role='alert' { ...attributeOptions }>
 		{ children }
 	</div>
 );
