@@ -26,11 +26,6 @@
  */
 .au-text-input__label {
 	display: block;
-	@include AU-space( margin-bottom, 0.5unit );
-
-	> .au-text-input {
-		@include AU-space( margin-top, 0.5unit );
-	}
 }
 
 
@@ -51,6 +46,14 @@
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	border-radius: $AU-border-radius;
+
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	.au-text-input__label + & {
+		@include AU-space( margin-top, 0.5unit );
+	}
 
 	&:invalid {
 		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
