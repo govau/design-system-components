@@ -17,10 +17,14 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-inpage-nav-links {
 	@include AU-fontgrid( sm );
-	@include AU-space( margin, 3unit 0 );
 	@include AU-space( padding-left, 1.5unit );
+	@include AU-space( margin-bottom, 3unit );
 
 	border-left: 4px solid $AU-color-Action;
+
+	* + & {
+		@include AU-space( margin-top, 3unit );
+	}
 
 	.au-body & > ul,
 	.au-body & > ol {

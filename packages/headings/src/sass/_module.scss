@@ -41,20 +41,6 @@
 	margin: 0;
 }
 
-/**
- * Default spacing for headings which follow any element.
- */
-// All display classes get default magin-top
-* + .au-display-xxxl,
-* + .au-display-xxl,
-* + .au-display-xl,
-* + .au-display-lg,
-* + .au-display-md,
-* + .au-display-sm,
-* + .au-display-xs {
-	@include AU-space( margin-top, 1unit );
-}
-
 
 /**
  * Unique selectors and font sizes
@@ -107,21 +93,52 @@
  * This provides area's of eye-rest and uses spacing to create visual sections
  * Also ref. https://github.com/govau/uikit/issues/282
  */
+
+/**
+ * Default margin-top
+ */
+* + .au-display-xxxl,
+* + .au-display-xxl,
+* + .au-display-xl,
+* + .au-display-lg,
+* + .au-display-md,
+* + .au-display-sm,
+* + .au-display-xs {
+	@include AU-space( margin-top, 1unit );
+}
+
+
 .au-body {
-	* + h1 {
+	* + h1,
+	* + .au-display-xxl {
 		@include AU-space( margin-top, 3unit );
 	}
-	* + h2 {
+
+	* + h2,
+	* + .au-display-xl {
 		@include AU-space( margin-top, 3unit );
 	}
-	* + h3 {
+
+	* + h3,
+	* + .au-display-lg {
 		@include AU-space( margin-top, 2unit );
 	}
+
 	h1 + h2,
 	h2 + h3,
-	.au-body * + h4,
-	.au-body * + h5,
-	.au-body * + h6 {
+	.au-display-xxl + h2,
+	.au-display-xl + h3,
+	h1 + .au-display-xl,
+	h2 + .au-display-lg,
+	.au-display-xxl + .au-display-xl,
+	.au-display-xl + .au-display-lg,
+
+	* + h4,
+	* + h5,
+	* + h6,
+	* + .au-display-md,
+	* + .au-display-sm,
+	* + .au-display-xs {
 		@include AU-space( margin-top, 1unit );
 	}
 }
