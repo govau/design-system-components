@@ -25,8 +25,12 @@
 		clear: both;
 	}
 
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
 	.au-body & > li {
-		@include AU-space( margin-bottom, 1unit );
+		@include AU-space( margin-top, 1unit );
 		float: left;
 		clear: both;
 		list-style: none;
