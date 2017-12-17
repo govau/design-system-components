@@ -16,14 +16,13 @@
 // select style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-select {
-	@include AU-space( margin-bottom, .5unit );
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 0.5unit 2.25unit 0.5unit 0.75unit );
 	position: relative;
 	vertical-align: middle;
 	display: inline-block;
 	appearance: none;
 	border: 3px solid $AU-color-Border;
-	@include AU-fontgrid( sm );
-	@include AU-space( padding, 0.5unit 2.25unit 0.5unit 0.75unit );
 	text-indent: 0.01px;
 	text-overflow: '';
 	background-color: $AU-color-Background-light;
@@ -39,6 +38,14 @@
 	@include AU-space( background-size, 1.5unit 1.5unit );
 
 	@include AU-focus();
+
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	label + & {
+		@include AU-space( margin-top, 0.5unit );
+	}
 
 	&:focus {
 		border-radius: 0;
