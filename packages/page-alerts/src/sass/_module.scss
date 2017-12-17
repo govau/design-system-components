@@ -21,7 +21,7 @@
 // Page alert defaults to info
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-page-alerts {
-	@include AU-space( margin, 1unit 0 );
+	@include AU-space( margin-bottom, 1unit );
 	@include AU-space( padding, 1unit );
 	@include AU-fontgrid( sm );
 	position: relative;
@@ -29,6 +29,10 @@
 	@include AU-space( border-left-width, 3unit );
 	border-radius: $AU-border-radius;
 	word-wrap: break-word;
+
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
 
 	*:first-child {
 		margin-top: 0;
