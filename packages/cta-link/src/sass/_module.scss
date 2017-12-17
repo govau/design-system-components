@@ -16,7 +16,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-cta-link {
 	@include AU-fontgrid( md );
-	@include AU-space( margin-bottom, 1unit );
+	@include AU-space( margin-top, 1unit );
 	font-weight: bold;
 	font-family: $AU-font;
 
