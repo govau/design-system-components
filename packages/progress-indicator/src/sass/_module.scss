@@ -17,11 +17,15 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-body .au-progress-indicator,
 .au-progress-indicator {
-	@include AU-space( margin, 0 0 1unit 0 );
+	margin: 0;
 	font-family: $AU-font;
 	list-style: none;
 	padding: 0;
 	border-top: 1px solid $AU-color-Border;
+
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
 
 	& > li {
 		margin: 0;
