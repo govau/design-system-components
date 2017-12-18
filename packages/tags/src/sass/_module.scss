@@ -18,24 +18,19 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-tags {
 	@include AU-fontgrid( sm );
-	@include AU-space ( margin-bottom, 0.5unit );
 	display: block;
 	margin: 0;
 	padding: 0;
 	font-family: $AU-font;
 	color: $AU-color-Text;
 
-	.au-body & {
-		@include AU-space ( margin-bottom, 0.25unit );
+	.au-body * + & {
 		padding-left: 0;
+		margin-top: 0;
 	}
 
 	> dt {
 		display: inline-block;
-
-		.au-body & {
-			@include AU-space ( margin-bottom, 0.25unit );
-		}
 	}
 	&.au-tags--dark {
 		color: $AU-colordark-Text;
@@ -43,14 +38,14 @@
 }
 
 .au-tags__item {
-	@include AU-space ( margin, 0 0.25unit 0.5unit 0 );
+	@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
 	@include AU-space ( padding, 0 0.5unit );
 	border: 1px solid $AU-color-Action;
 	border-radius: $AU-border-radius;
 	display: inline-block;
 
-	.au-body & {
-		@include AU-space ( margin-bottom, 0.25unit );
+	.au-body * + & {
+		@include AU-space ( margin-top, 0.25unit );
 		@include AU-space ( padding-left, 0.5unit );
 	}
 
