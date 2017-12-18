@@ -18,6 +18,7 @@
  * Block of links.
  */
 .au-link-list {
+	@include AU-fontgrid( sm );
 	display: block;
 	list-style-type: none;
 

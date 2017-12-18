@@ -16,6 +16,8 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 .au-keyword-list {
+	@include AU-fontgrid( lg );
+
 	&:before, //clear floats without obstructing the outline on focus
 	&:after {
 		content: "";
@@ -39,7 +41,6 @@
 }
 
 .au-keyword-list__item {
-	@include AU-fontgrid( lg );
 	font-weight: bold;
 
 	// Display the link as block as focus doesn't show
