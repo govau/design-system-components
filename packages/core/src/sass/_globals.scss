@@ -640,8 +640,9 @@ $dependencies: (
 	$fontsize-px: map-get( $AU-fontsize-map, $fontsize-key );
 	$fontsize-rem: $fontsize-px / $AU-rem;
 
-	// Calculate a unitless line-height which will fit vertical grid
-	$lineheight: map-get( $AU-lineheight-map, $lineheight-key );
+	// Change the lineheight if it doesn't hit a AU-unit e.g. 40px font size with 1.5 lineheight = 50px should be 52px
+	$lineheight-pixel: round( ( map-get( $AU-lineheight-map, $lineheight-key ) * $fontsize-px ) / $AU-unit ) * $AU-unit;
+	$lineheight: $lineheight-pixel / $fontsize-px;
 
 	// Mixin output
 	font-size: $fontsize-px + 0px;   // Pixel fallback for non-rem support
