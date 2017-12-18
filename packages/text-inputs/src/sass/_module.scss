@@ -135,7 +135,7 @@
  * Built so it can sit both in- and outside the `label`.
  */
 .au-text-input__hint {
-	@include AU-space( margin-bottom, 0.5unit );
+	@include AU-space( margin-top, 0.5unit );
 	@include AU-fontgrid( xs );
 	display: block;
 

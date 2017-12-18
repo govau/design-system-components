@@ -21,7 +21,6 @@
 // Page alert defaults to info
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-page-alerts {
-	@include AU-space( margin-bottom, 1unit );
 	@include AU-space( padding, 1unit );
 	@include AU-fontgrid( sm );
 	position: relative;
