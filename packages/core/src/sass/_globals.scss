@@ -641,8 +641,7 @@ $dependencies: (
 	$fontsize-rem: $fontsize-px / $AU-rem;
 
 	// Calculate a unitless line-height which will fit vertical grid
-	$lineheight-pixel: round( ( map-get( $AU-lineheight-map, $lineheight-key ) * $fontsize-px ) / $AU-unit ) * $AU-unit;
-	$lineheight: $lineheight-pixel / $fontsize-px;
+	$lineheight: map-get( $AU-lineheight-map, $lineheight-key );
 
 	// Mixin output
 	font-size: $fontsize-px + 0px;   // Pixel fallback for non-rem support
@@ -662,8 +661,6 @@ $AU-media-sm: 768px !default;
 $AU-media-md: 992px !default;
 $AU-media-lg: 1200px !default;
 
-
-$AU-leading: 1.6;
 
 /**
  * Value used for REM calculation
