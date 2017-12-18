@@ -18,7 +18,7 @@
 .au-inpage-nav-links {
 	@include AU-fontgrid( sm );
 	@include AU-space( padding-left, 1.5unit );
-	@include AU-space( margin-bottom, 3unit );
+	@include AU-space( margin-bottom, 2unit );
 
 	border-left: 4px solid $AU-color-Action;
 
@@ -28,17 +28,17 @@
 
 	.au-body & > ul,
 	.au-body & > ol {
-		@include AU-space( margin, 1unit 0 );
+		@include AU-space( margin-top, 1unit );
 		list-style-type: none;
 		padding: 0;
 
-		> li {
-			@include AU-space( margin-bottom, 0.5unit );
-			margin-left: 0;
+		li {
+			margin: 0;
+		}
 
-			&:last-child {
-				margin-bottom: 0;
-			}
+		* + li {
+			@include AU-space( margin-top, 0.5unit );
+			margin-left: 0;
 		}
 	}
 
@@ -47,7 +47,8 @@
 	}
 }
 
-.au-inpage-nav-links__heading {
+.au-inpage-nav-links__heading,
+.au-body .au-inpage-nav-links__heading {
 	font-weight: bold;
 	font-size: 1em; //inherit from parent
 }
