@@ -13,7 +13,7 @@
 .au-dropdown-example {
 	background-color: hotpink;
 	background-color: rebeccapurple;
-	margin-bottom: 1em;
+	@include AU-space( margin-top, 1unit );
 }
 
 

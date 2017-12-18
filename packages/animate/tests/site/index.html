@@ -200,7 +200,7 @@
 			<div>
 				<button aria-controls="open" onclick="AU.animate.Run({
 						element: document.getElementById('dropdown-margin1'),
-						property: 'margin-bottom',
+						property: 'margin-top',
 						endSize: 20,
 						callback: function() {
 							console.log('end margin add #4');
@@ -208,7 +208,7 @@
 					})">Add margin</button>
 				<button aria-controls="close" onclick="AU.animate.Run({ element:
 						document.getElementById('dropdown-margin1'),
-						property: 'margin-bottom',
+						property: 'margin-top',
 						endSize: 0,
 						callback: function() {
 							console.log('end remove margin #4');
@@ -216,7 +216,7 @@
 					})">Remove margin</button>
 				<button aria-controls="toggle" onclick="AU.animate.Toggle({ element:
 						document.getElementById('dropdown-margin1'),
-						property: 'margin-bottom',
+						property: 'margin-top',
 						closeSize: 0,
 						openSize: 20,
 						prefunction: function( element, state ) {
@@ -239,7 +239,7 @@
 			</div>
 
 			<div class="outer-container" style="background-color:yellow;overflow:hidden;">
-				<div style="margin-bottom:0;" class="au-dropdown-example" id="dropdown-margin1">
+				<div style="margin-top:0;" class="au-dropdown-example" id="dropdown-margin1">
 					&nbsp;<br><br><br>
 				</div>
 			</div>
