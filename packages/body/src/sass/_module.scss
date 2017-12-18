@@ -163,8 +163,7 @@
 
 			> ul,
 			> ol {
-				@include AU-space( margin-bottom, 0.5unit );
-				@include AU-space( margin-top, 1unit );
+				@include AU-space( margin-top, 0.5unit );
 			}
 		}
 
@@ -179,7 +178,6 @@
 		}
 
 		> dt {
-			@include AU-space( margin-bottom, 0.5unit );
 			@include AU-space( margin-top, 1unit );
 			font-weight: bold;
 
