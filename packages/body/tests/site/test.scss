@@ -10,5 +10,9 @@
 
 
 main {
-	@include AU-space( margin-top, 1unit );
+	@include AU-space( margin-top, 1.5unit );
+}
+
+.text-large-links {
+	font-weight: normal;
 }

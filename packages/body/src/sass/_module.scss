@@ -135,25 +135,28 @@
 	}
 
 	* + p {
-		@include AU-space( margin-top, 1unit );
-	}
-
-	p + p {
-		@include AU-space( margin-top, 0.5unit );
+		@include AU-space( margin-top, 1.5unit );
 	}
 
 	ul,
 	ol,
 	dl,
 	pre {
-		margin: 0;
+		margin: 0; //reset defaults
 	}
 
 	* + ul,
 	* + ol,
 	* + dl,
 	* + pre {
-		@include AU-space( margin-top, 1unit );
+		@include AU-space( margin-top, 1.5unit );
+	}
+
+	p + ul,
+	p + ol,
+	p + dl {
+		// All lists following a paragraph are closer, as the P typically introduces the list.
+		// @include AU-space( margin-top, 0.5unit );
 	}
 
 	ul,
@@ -174,11 +177,14 @@
 
 	dl {
 		> dd {
-			@include AU-space( margin-top, 1unit );
+			@include AU-space( margin-top, 0.5unit );
+			@include AU-space( padding-left, 0.5unit );
+			margin-left: 0;
+			border-left: solid 1px;
 		}
 
 		> dt {
-			@include AU-space( margin-top, 1unit );
+			@include AU-space( margin-top, 1.5unit );
 			font-weight: bold;
 
 			&:first-of-type {
@@ -317,7 +323,6 @@
 		border-radius: $AU-border-radius;
 		background-color: $AU-color-Background-darkest;
 		color: $AU-color-Muted;
-		margin: 0 2px;
 	}
 
 	pre {
@@ -344,7 +349,7 @@
 	}
 
 	* + hr {
-		@include AU-space( margin-top, 1unit );
+		@include AU-space( margin-top, 1.5unit );
 	}
 
 	// Body colour schemes
@@ -428,4 +433,3 @@
 		background: $AU-colordark-Background-dark;
 	}
 }
-
