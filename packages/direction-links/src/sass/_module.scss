@@ -16,6 +16,10 @@
 //
 // Everyone needs Konami code style links, right? (:
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-direction-link {
+	display: inline-block;
+}
+
 .au-direction-link:after {
 	@include AU-space( width, 1unit );
 	@include AU-space( height, 1unit );
