@@ -32,14 +32,6 @@
 		@include AU-space( margin-top, 2unit );
 	}
 
-	:first-child {
-		margin-top: 0;
-	}
-
-	:last-child {
-		margin-bottom: 0;
-	}
-
 	&.au-callout--dark {
 		color: $AU-colordark-Text;
 		border-color: $AU-colordark-Border;
@@ -66,13 +58,12 @@
 .au-callout--calendar-event__lede,
 .au-callout--calendar-event__time,
 .au-callout--calendar-event__name {
-	display: block; //overrides body, depending on markup (eg. using `p`).
+	display: block; // overrides body, depending on markup (eg. using `p`).
 }
 
-.au-callout--calendar-event__lede,
-.au-callout--calendar-event__time,
-.au-callout--calendar-event__name {
-	@include AU-space( margin-bottom, 1unit ); //overrides body, to allow for var. text markup.
+* + .au-callout--calendar-event__time,
+* + .au-callout--calendar-event__name {
+	@include AU-space( margin-top, 0.5unit ); // overrides body, to allow for var. text markup.
 }
 
 .au-callout--calendar-event__lede {
@@ -86,5 +77,4 @@
 
 .au-callout--calendar-event__time {
 	font-weight: bold;
-	margin-bottom: 0;
 }
