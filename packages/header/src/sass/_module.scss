@@ -21,10 +21,15 @@
  * Basic header block styling.
  */
 .au-header {
+	@include AU-fontgrid( sm );
 	@include AU-space( padding, 1.5unit 0 2unit 0 ); // 0.5 for optical alignment
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	background: $AU-color-Background-light;
+
+	@include AU-media( sm ) {
+		@include AU-fontgrid( md );
+	}
 
 	&.au-header--hero {
 		@include AU-space( padding, 3unit 0 3.5unit 0 );
@@ -65,10 +70,5 @@
 }
 
 .au-header-subline {
-	@include AU-fontgrid( sm );
 	max-width: $AU-maxwidth;
-
-	@include AU-media( sm ) {
-		@include AU-fontgrid( md );
-	}
 }
