@@ -26,6 +26,10 @@
  */
 .au-text-input__label {
 	display: block;
+
+	* + & {
+		@include AU-space( margin-top, 1.5unit );
+	}
 }
 
 

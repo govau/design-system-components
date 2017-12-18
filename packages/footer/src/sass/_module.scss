@@ -26,10 +26,6 @@
 	font-family: $AU-font;
 	color: $AU-color-Text;
 
-	* + & {
-		@include AU-space( margin-top, 3unit );
-	}
-
 	p:last-child {
 		margin: 0;
 	}

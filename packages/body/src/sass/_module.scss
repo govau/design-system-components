@@ -345,7 +345,7 @@
 		overflow: visible;
 		border: none;
 		border-top: 1px solid $AU-color-Border;
-		margin: 0;
+		@include AU-space( margin-bottom, 1.5unit );
 	}
 
 	* + hr {
