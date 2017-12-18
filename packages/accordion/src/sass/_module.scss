@@ -16,6 +16,7 @@
 // accordion wrapper
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-accordion {
+	@include AU-fontgrid( sm );
 	display: block;
 	border: 1px solid $AU-color-Border;
 	font-family: $AU-font;
@@ -132,6 +133,7 @@
 }
 
 .au-accordion__body {
+	@include AU-fontgrid( sm );
 	overflow: hidden;
 
 	// only listen to the state classes if js is enabled
