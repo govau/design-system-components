@@ -135,13 +135,11 @@
  * Built so it can sit both in- and outside the `label`.
  */
 .au-text-input__hint {
-	@include AU-space( margin-top, 0.5unit );
 	@include AU-fontgrid( xs );
 	display: block;
 
 	// Keeps spacing neat depending on where the hint text is added.
-	.au-text-input__label > &,
-	.au-text-input + & {
+	* + & {
 		@include AU-space( margin-top, 0.5unit );
 	}
 }
