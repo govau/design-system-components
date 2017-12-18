@@ -18,7 +18,7 @@
 .au-inpage-nav-links {
 	@include AU-fontgrid( sm );
 	@include AU-space( padding-left, 1.5unit );
-	@include AU-space( margin-bottom, 2unit );
+	@include AU-space( margin-bottom, 3unit );
 
 	border-left: 4px solid $AU-color-Action;
 
