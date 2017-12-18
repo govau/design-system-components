@@ -27,14 +27,6 @@
 		@include AU-space( margin-top, 1unit );
 	}
 
-	p:first-child {
-		margin-top: 0;
-	}
-
-	p:last-child {
-		margin-bottom: 0;
-	}
-
 	&.au-accordion--dark {
 		border-color: $AU-colordark-Border;
 		color: $AU-colordark-Text;
