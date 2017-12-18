@@ -25,6 +25,7 @@
  * Text input labels.
  */
 .au-text-input__label {
+	@include AU-fontgrid( sm );
 	display: block;
 
 	* + & {
