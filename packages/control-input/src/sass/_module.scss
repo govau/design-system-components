@@ -273,7 +273,7 @@
  */
 .au-control-input__text {
 	@include AU-fontgrid( sm, nospace );
-	@include AU-space( margin, 0.65unit 0.5unit 0.65unit 2.5unit );
+	@include AU-space( margin, 0.5unit 0.5unit 0.5unit 2.5unit );
 	display: block;
 	font-family: $AU-font;
 	color: $AU-color-Text;
@@ -287,10 +287,10 @@
 		display: block;
 		position: absolute;
 		box-sizing: border-box;
-		left: 0;
-		top: 0;
 		background-repeat: no-repeat;
 		z-index: 100;
+		left: -3px;	//offset for 3px border focus
+		top: -3px;	//offset for 3px border focus
 		border: 3px solid transparent;
 	}
 
