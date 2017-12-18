@@ -24,7 +24,7 @@
 .au-btn,
 a.au-btn {
 	@include AU-fontgrid( sm );
-	@include AU-space( padding, 0.75unit 2unit );
+	@include AU-space( padding, 0.5unit 1.5unit );
 	display: inline-block;
 	appearance: none;
 	font-family: $AU-font;
