@@ -189,7 +189,7 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-fontgrid {
 	background-color: $AU-color-Background;
-	margin-bottom: $AU-unit + 0px;
+	margin-top: $AU-unit + 0px;
 }
 
 .au-fontgrid-0 {
@@ -616,9 +616,14 @@ html {
 .contrast {
 	width: 100%;
 
+	thead:before {
+		content: " ";
+		display: block;
+		@include AU-space( padding-top, 1unit );
+	}
+
 	caption {
 		text-align: left;
-		margin-bottom: 1em;
 	}
 
 	td {
