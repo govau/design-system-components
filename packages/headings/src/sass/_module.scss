@@ -119,10 +119,10 @@
 		@include AU-space( margin-top, 3unit );
 	}
 
-	* + h3,
-	* + .au-display-lg {
-		@include AU-space( margin-top, 2unit );
-	}
+	// * + h3,
+	// * + .au-display-lg {
+	// 	@include AU-space( margin-top, 2unit );
+	// }
 
 	h1 + h2,
 	h2 + h3,
@@ -133,12 +133,13 @@
 	.au-display-xxl + .au-display-xl,
 	.au-display-xl + .au-display-lg,
 
+	* + h3,
 	* + h4,
 	* + h5,
 	* + h6,
 	* + .au-display-md,
 	* + .au-display-sm,
 	* + .au-display-xs {
-		@include AU-space( margin-top, 1unit );
+		@include AU-space( margin-top, 1.5unit );
 	}
 }
