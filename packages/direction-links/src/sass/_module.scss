@@ -17,7 +17,23 @@
 // Everyone needs Konami code style links, right? (:
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-direction-link {
+	@include AU-fontgrid( sm );
 	display: inline-block;
+	font-family: $AU-font;
+
+	// Styles to reset button
+	color: $AU-color-Action;
+	appearance: none;
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-skip: ink;
+
+	&.au-direction-link--dark {
+		color: $AU-colordark-Action;
+	}
 }
 
 .au-direction-link:after {
