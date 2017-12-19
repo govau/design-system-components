@@ -6,7 +6,7 @@ import AUdirectionLink from './direction-links.js';
 
 ReactDOM.render(
 	<div className="split-wrapper">
-		<div className="split au-body">
+		<div className="split">
 			<h2>bare</h2>
 			<AUdirectionLink link="#url" text="Continue" />
 
@@ -40,7 +40,7 @@ ReactDOM.render(
 
 			<AUdirectionLink text="Scroll up" direction="up" onClick={ () => console.log('This function will be called on click') } />
 		</div>
-		<div className="split au-body au-body--dark">
+		<div className="split split--dark">
 			<h2>bare</h2>
 			<AUdirectionLink dark link="#url" text="Continue" />
 
