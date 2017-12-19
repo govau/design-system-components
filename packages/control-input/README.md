@@ -67,12 +67,14 @@ All props:
 ```jsx
 <AUradio
 	label="The label"      {/* The label of the radio button */}
+	alt={ false }          {/* An alternate variation of the component */}
 	dark={ false }         {/* A dark variation of the component */}
 	attributeOptions       {/* Any other attribute options */}
 />
 
 <AUcheckbox
 	label="The label"      {/* The label of the checkbox */}
+	alt={ false }          {/* An alternate variation of the component */}
 	dark={ false }         {/* A dark variation of the component */}
 	attributeOptions       {/* Any other attribute options */}
 />
