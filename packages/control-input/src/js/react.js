@@ -21,14 +21,15 @@ import PropTypes from 'prop-types';
  * The checkbox component
  *
  * @param  {string}   dark             - Add the dark variation class
+ * @param  {string}   alt              - Add the alt variation class
  * @param  {string}   label            - The label
  * @param  {object}   attributeOptions - Any other attribute options
  *
  */
-export const AUcheckbox = ({ dark, label, ...attributeOptions }) => {
+export const AUcheckbox = ({ dark, alt, label, ...attributeOptions }) => {
 
 	return (
-		<label className={ `au-control-input${ dark ? ' au-control-input--dark' : '' }` }>
+		<label className={ `au-control-input${ dark ? ' au-control-input--dark' : '' }${ alt ? ' au-control-input--alt' : '' }` }>
 			<input className="au-control-input__input" type="checkbox" { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
@@ -38,6 +39,7 @@ export const AUcheckbox = ({ dark, label, ...attributeOptions }) => {
 
 AUcheckbox.propTypes = {
 	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string,
 	value: PropTypes.string.isRequired,
@@ -52,13 +54,14 @@ AUcheckbox.propTypes = {
  * The radio component
  *
  * @param  {string}   dark             - Add the dark variation class
+ * @param  {string}   alt              - Add the alt variation class
  * @param  {string}   label            - The label
  * @param  {object}   attributeOptions - Any other attribute options
  */
-export const AUradio = ({ dark, label, ...attributeOptions }) => {
+export const AUradio = ({ dark, alt, label, ...attributeOptions }) => {
 
 	return (
-		<label className={ `au-control-input${ dark ? ` au-control-input--dark` : '' }` } >
+		<label className={ `au-control-input${ dark ? ` au-control-input--dark` : '' }${ alt ? ` au-control-input--alt` : '' }` } >
 			<input className="au-control-input__input" type="radio" { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
@@ -68,6 +71,7 @@ export const AUradio = ({ dark, label, ...attributeOptions }) => {
 
 AUradio.propTypes = {
 	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	name: PropTypes.string,
 	value: PropTypes.string.isRequired,
