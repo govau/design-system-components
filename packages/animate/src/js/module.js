@@ -335,3 +335,14 @@ var AU = AU || {};
 if( typeof module !== 'undefined' ) {
 	module.exports = AU;
 }
+
+
+if( typeof exports !== 'undefined' ) {
+	Object.defineProperty(
+		exports,
+		"__esModule",
+		{ value: true },
+	);
+
+	exports.default = AU;
+}
