@@ -27,7 +27,6 @@ import PropTypes from 'prop-types';
  *
  */
 export const AUcheckbox = ({ dark, alt, label, ...attributeOptions }) => {
-
 	return (
 		<label className={ `au-control-input${ dark ? ' au-control-input--dark' : '' }${ alt ? ' au-control-input--alt' : '' }` }>
 			<input className="au-control-input__input" type="checkbox" { ...attributeOptions } />
