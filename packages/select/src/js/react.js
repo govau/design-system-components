@@ -29,11 +29,9 @@ import PropTypes from 'prop-types';
 const AUselect = ({ dark, options, block, ...attributeOptions }) => {
 
 	return (
-		<div className={`au-select${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`}>
-			<select className="au-select__element" { ...attributeOptions }>
-				{ options.map( ( option, i ) => <option key={ i } value={ option.value }>{ option.text }</option> ) }
-			</select>
-		</div>
+		<select className={`au-select${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`} { ...attributeOptions }>
+			{ options.map( ( option, i ) => <option key={ i } value={ option.value }>{ option.text }</option> ) }
+		</select>
 	);
 };
 
