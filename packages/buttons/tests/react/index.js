@@ -35,7 +35,7 @@ ReactDOM.render(
 				<hr />
 				<h2>buttons with different type</h2>
 				<AUbutton type="submit">Submit</AUbutton>&nbsp;
-				<AUbutton type="button">AUbutton</AUbutton>&nbsp;
+				<AUbutton type="button">Button</AUbutton>&nbsp;
 				<AUbutton type="reset">Reset</AUbutton>
 
 
@@ -79,7 +79,7 @@ ReactDOM.render(
 				<hr />
 				<h2>buttons with different type <code>--dark</code></h2>
 				<AUbutton dark type="submit">Submit</AUbutton>&nbsp;
-				<AUbutton dark type="button">AUbutton</AUbutton>&nbsp;
+				<AUbutton dark type="button">Button</AUbutton>&nbsp;
 				<AUbutton dark type="reset">Reset</AUbutton>
 
 
