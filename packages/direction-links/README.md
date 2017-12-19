@@ -82,9 +82,7 @@ For more details have a look at the [usage example](https://github.com/govau/uik
 
 ```shell
 direction-links
-├─ core
-└─ body
-   └─ core
+└─ core
 ```
 
 
