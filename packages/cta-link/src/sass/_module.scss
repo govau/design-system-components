@@ -33,10 +33,11 @@
 	@include AU-focus();
 
 	&:after {
+		content: ' ';
 		@include AU-space( width, 1unit );
 		@include AU-space( height, 1unit );
-		@include AU-space( margin, 0unit 0.25unit 0unit 0.25unit );
-		content: ' ';
+		@include AU-space( margin, 0 0.25unit 0 0.2unit );
+		transition: margin 0.2s ease;
 		display: inline-block;
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
 				'<path fill="#{ $AU-color-Action }" d="M128 64l-64 64-16-16 64-64"/>' +
@@ -54,6 +55,7 @@
 		text-decoration: none;
 
 		&:after {
+			@include AU-space( margin-left, 0.4unit );
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
 				'<path fill="#{ $AU-color-Text }" d="M128 64l-64 64-16-16 64-64"/>' +
 				'<path fill="#{ $AU-color-Text }" d="M128 64l-16 16-64-64L64 0"/>' +
