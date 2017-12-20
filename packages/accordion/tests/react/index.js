@@ -44,18 +44,18 @@ class App extends React.Component {
 		this.toggleAll = this.toggleAll.bind( this );
 	}
 
-
 	// you should manage this via state not via these vanilla functions!
 	openAll() {
-		AU.accordion.Open( document.querySelectorAll('.js-au-accordion') );
+		console.log( AUaccordion );
+		AUaccordion.accordionOpen( document.querySelectorAll('.js-au-accordion') );
 	}
 
 	closeAll() {
-		AU.accordion.Close( document.querySelectorAll('.js-au-accordion') )
+		// AUaccordion.accordionClose( document.querySelectorAll('.js-au-accordion') )
 	}
 
 	toggleAll() {
-		AU.accordion.Toggle( document.querySelectorAll('.js-au-accordion') )
+		// AUaccordion.accordionToggle( document.querySelectorAll('.js-au-accordion') )
 	}
 
 
