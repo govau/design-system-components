@@ -38,36 +38,12 @@ class AccodionWrapper extends React.Component {
 class App extends React.Component {
 	constructor( props ) {
 		super( props );
-
-		this.openAll = this.openAll.bind( this );
-		this.closeAll = this.closeAll.bind( this );
-		this.toggleAll = this.toggleAll.bind( this );
-	}
-
-
-	// you should manage this via state not via these vanilla functions!
-	openAll() {
-		AU.accordion.Open( document.querySelectorAll('.js-au-accordion') );
-	}
-
-	closeAll() {
-		AU.accordion.Close( document.querySelectorAll('.js-au-accordion') )
-	}
-
-	toggleAll() {
-		AU.accordion.Toggle( document.querySelectorAll('.js-au-accordion') )
 	}
 
 
 	render() {
 		return (
 			<div>
-				<button onClick={ this.openAll }>Open all</button>
-				<button onClick={ this.closeAll }>Close all</button>
-				<button onClick={ this.toggleAll }>Toggle all</button>
-
-				<hr />
-
 				<div className="split-wrapper">
 					<div className="split">
 						<h2>Default accordion</h2>
