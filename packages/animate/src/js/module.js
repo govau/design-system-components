@@ -338,11 +338,7 @@ if( typeof module !== 'undefined' ) {
 
 
 if( typeof exports !== 'undefined' ) {
-	Object.defineProperty(
-		exports,
-		"__esModule",
-		{ value: true },
-	);
+	Object.defineProperty( exports, "__esModule", { value: true } );
 
-	exports.default = AU;
+	eval('exports.default = AU');
 }
