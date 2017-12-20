@@ -31,8 +31,21 @@
 	text-decoration: underline;
 	text-decoration-skip: ink;
 
+	&:hover {
+		text-decoration: none;
+		color: $AU-color-Text;
+	}
+
+	@include AU-focus();
+
 	&.au-direction-link--dark {
 		color: $AU-colordark-Action;
+
+		&:hover {
+			color: $AU-colordark-Text;
+		}
+
+		@include AU-focus( 'dark' );
 	}
 }
 
