@@ -23,26 +23,25 @@ class RadioList extends React.Component {
 		return (
 			<div>
 				{ this.props.items.map( ( item, i ) =>
-					<p key={ i }>
-						<AUradio
-							dark={ this.props.dark }
-							alt={ this.props.alt }
-							label={ item.label }
-							name={ this.props.name }
-							id={ item.id }
-							full={ this.props.full }
-							value={ item.value }
-							disabled={ item.disabled }
-							checked={ this.state.radio === item.value }
-							onChange={ () => {
-								this.setState({ radio: item.value });
+					<AUradio
+						key={ i }
+						dark={ this.props.dark }
+						alt={ this.props.alt }
+						label={ item.label }
+						name={ this.props.name }
+						id={ item.id }
+						full={ this.props.full }
+						value={ item.value }
+						disabled={ item.disabled }
+						checked={ this.state.radio === item.value }
+						onChange={ () => {
+							this.setState({ radio: item.value });
 
-								if( typeof item.onChange === 'function' ) {
-									item.onChange();
-								}
-							} }
-						/>
-					</p>
+							if( typeof item.onChange === 'function' ) {
+								item.onChange();
+							}
+						} }
+					/>
 				) }
 			</div>
 		);
@@ -67,26 +66,25 @@ class CheckboxList extends React.Component {
 		return (
 			<div>
 				{ this.props.items.map( ( item, i ) =>
-					<p key={ i }>
-						<AUcheckbox
-							dark={ this.props.dark }
-							alt={ this.props.alt }
-							label={ item.label }
-							name={ this.props.name }
-							id={ item.id }
-							full={ this.props.full }
-							value={ item.value }
-							disabled={ item.disabled }
-							checked={ this.state[ item.value ] }
-							onChange={ () => {
-								this.setState({ [item.value]: !this.state[ item.value ] });
+					<AUcheckbox
+						key={ i }
+						dark={ this.props.dark }
+						alt={ this.props.alt }
+						label={ item.label }
+						name={ this.props.name }
+						id={ item.id }
+						full={ this.props.full }
+						value={ item.value }
+						disabled={ item.disabled }
+						checked={ this.state[ item.value ] }
+						onChange={ () => {
+							this.setState({ [item.value]: !this.state[ item.value ] });
 
-								if( typeof item.onChange === 'function' ) {
-									item.onChange();
-								}
-							} }
-						/>
-					</p>
+							if( typeof item.onChange === 'function' ) {
+								item.onChange();
+							}
+						} }
+					/>
 				) }
 			</div>
 		);
@@ -155,37 +153,41 @@ ReactDOM.render(
 				<hr />
 				<h2>control-inputs with <code>onChange</code></h2>
 
-				<CheckboxList name="checkbox-ex2" items={[
-					{
-						label: 'Phone',
-						value: 'phone',
-						onChange: () => { console.log('This function will run when the first checkbox is changed') },
-					},
-					{
-						label: 'Tablet',
-						value: 'tablet',
-						checked: true,
-						onChange: () => { console.log('This function will run when the second checkbox is changed') },
-					},
-				]} />
+				<p>
+					<CheckboxList name="checkbox-ex2" items={[
+						{
+							label: 'Phone',
+							value: 'phone',
+							onChange: () => { console.log('This function will run when the first checkbox is changed') },
+						},
+						{
+							label: 'Tablet',
+							value: 'tablet',
+							checked: true,
+							onChange: () => { console.log('This function will run when the second checkbox is changed') },
+						},
+					]} />
+				</p>
 
 
-				<RadioList name="radio-ex2" items={[
-					{
-						label: 'Yes',
-						value: 'yes',
-						onChange: () => { console.log('This function will run when the first radio button is changed') },
-					},
-					{
-						label: 'Maybe',
-						value: 'maybe',
-						onChange: () => { console.log('This function will run when the second radio button is changed') },
-					},
-				]} />
+				<p>
+					<RadioList name="radio-ex2" items={[
+						{
+							label: 'Yes',
+							value: 'yes',
+							onChange: () => { console.log('This function will run when the first radio button is changed') },
+						},
+						{
+							label: 'Maybe',
+							value: 'maybe',
+							onChange: () => { console.log('This function will run when the second radio button is changed') },
+						},
+					]} />
+				</p>
 			</div>
 			<div className="split split--dark">
 				<h2>checkboxes</h2>
-				<CheckboxList dark name="checkbox-ex3" items={[
+				<CheckboxList dark name="checkbox-ex-dark" items={[
 					{
 						label: 'Phone',
 						value: 'phone',
@@ -214,7 +216,7 @@ ReactDOM.render(
 
 				<hr />
 				<h2>radio buttons</h2>
-				<RadioList dark name="radio-ex3" items={[
+				<RadioList dark name="radio-ex-dark" items={[
 					{
 						label: 'Yes',
 						value: 'yes',
@@ -239,7 +241,7 @@ ReactDOM.render(
 		<div className="split-wrapper">
 			<div className="split split--alt">
 			<h2>checkboxes</h2>
-				<CheckboxList alt name="checkbox-ex" items={[
+				<CheckboxList alt name="checkbox-ex-alt" items={[
 					{
 						label: 'Phone',
 						value: 'phone',
@@ -269,7 +271,7 @@ ReactDOM.render(
 
 				<hr />
 				<h2>radio buttons</h2>
-				<RadioList alt name="radio-ex" items={[
+				<RadioList alt name="radio-ex-alt" items={[
 					{
 						label: 'Yes',
 						value: 'yes',
@@ -295,22 +297,24 @@ ReactDOM.render(
 				<hr />
 				<h2>control-inputs with <code>onChange</code></h2>
 
-				<CheckboxList alt name="checkbox-ex2" items={[
-					{
-						label: 'Phone',
-						value: 'phone',
-						onChange: () => { console.log('This function will run when the first checkbox is changed') },
-					},
-					{
-						label: 'Tablet',
-						value: 'tablet',
-						checked: true,
-						onChange: () => { console.log('This function will run when the second checkbox is changed') },
-					},
-				]} />
+				<p>
+					<CheckboxList alt name="checkbox-ex-alt2" items={[
+						{
+							label: 'Phone',
+							value: 'phone',
+							onChange: () => { console.log('This function will run when the first checkbox is changed') },
+						},
+						{
+							label: 'Tablet',
+							value: 'tablet',
+							checked: true,
+							onChange: () => { console.log('This function will run when the second checkbox is changed') },
+						},
+					]} />
+				</p>
 
 
-				<RadioList alt name="radio-ex2" items={[
+				<RadioList alt name="radio-ex-alt2" items={[
 					{
 						label: 'Yes',
 						value: 'yes',
@@ -325,7 +329,7 @@ ReactDOM.render(
 			</div>
 			<div className="split split--alt split--dark">
 				<h2>checkboxes</h2>
-				<CheckboxList dark alt name="checkbox-ex3" items={[
+				<CheckboxList dark alt name="checkbox-ex-alt-dark" items={[
 					{
 						label: 'Phone',
 						value: 'phone',
@@ -354,7 +358,7 @@ ReactDOM.render(
 
 				<hr />
 				<h2>radio buttons</h2>
-				<RadioList dark alt name="radio-ex3" items={[
+				<RadioList dark alt name="radio-ex-dark-alt" items={[
 					{
 						label: 'Yes',
 						value: 'yes',
