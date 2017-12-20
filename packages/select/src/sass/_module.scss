@@ -21,7 +21,7 @@
 
 	// 2.875unit = 46px = 40px height + ( 3px border * 2 );
 	// We include the border because we use box-sizing: border-box;
-	// This gurantees that select will be the same height as buttons and text inputs in all browsers
+	// This guarantees that select will be the same height as buttons and text inputs in all browsers
 	@include AU-space( height, 2.875unit );
 	position: relative;
 	vertical-align: middle;
