@@ -8,6 +8,10 @@
 
 
 @media print {
+	.au-direction-link {
+		color: #000 !important;
+	}
+
 	.au-direction-link:after {
 		content: '→' !important;
 	}
