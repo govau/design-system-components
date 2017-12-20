@@ -60,21 +60,35 @@
 		@include AU-space( margin-top, 0.5unit );
 	}
 
+	// invalid styling
+	&.au-text-input--dark:invalid,
 	&:invalid {
 		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
 		border-color: $AU-color-Error;
 	}
 
+	&.au-text-input--dark.au-text-input--invalid,
 	&.au-text-input--invalid {
 		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
 		border-color: $AU-color-Error;
 	}
 
+	// valid styling
+
+	// disabled :valid pseudo class because all fields would become valid and green too quickly. In the future :valid should be the default styling(not green)
+	// &.au-text-input--dark:valid,
+	// &:valid {
+	// 	background-color: mix( $AU-color-Success, $AU-color-Background-light, 5% );
+	// 	border-color: $AU-color-Success;
+	// }
+
+	&.au-text-input--dark.au-text-input--valid,
 	&.au-text-input--valid {
 		background-color: mix( $AU-color-Success, $AU-color-Background-light, 5% );
 		border-color: $AU-color-Success;
 	}
 
+	// disabled styling
 	&[disabled] {
 		cursor: not-allowed;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
