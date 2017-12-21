@@ -24,11 +24,6 @@
 	font-family: $AU-font;
 	color: $AU-color-Text;
 
-	.au-body * + & {
-		padding-left: 0;
-		margin-top: 0;
-	}
-
 	> dt {
 		display: inline-block;
 	}
@@ -43,11 +38,6 @@
 	border: 1px solid $AU-color-Action;
 	border-radius: $AU-border-radius;
 	display: inline-block;
-
-	.au-body * + & {
-		@include AU-space ( margin-top, 0.25unit );
-		@include AU-space ( padding-left, 0.5unit );
-	}
 
 	> a,
 	> button {
