@@ -39,6 +39,7 @@
 
 .au-body .au-progress-indicator__link,
 .au-progress-indicator__link {
+	@include AU-fontgrid( sm, heading ); // Needed for button elements that reset fontsize
 	@include AU-space( padding, .75unit .75unit .75unit 2.75unit );
 	position: relative;
 	display: block;
@@ -125,6 +126,7 @@
 		}
 	}
 
+	.au-body--dark .au-progress-indicator--dark &,
 	.au-progress-indicator--dark & {
 		color: $AU-colordark-Text;
 		border-bottom-color: $AU-colordark-Border;
