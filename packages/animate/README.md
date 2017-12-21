@@ -9,7 +9,6 @@
 * [Install](#install)
 * [API](#api)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -131,15 +130,6 @@ AU.animate.Toggle(
 ```shell
 animate
 ```
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-## Build
 
 
 **[⬆ back to top](#contents)**

@@ -8,7 +8,6 @@
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -41,15 +40,6 @@ npm install @gov.au/grid-12 --save-dev
 grid-12
 └─ core
 ```
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-## Build
 
 
 **[⬆ back to top](#contents)**

@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -87,15 +86,6 @@ For more details have a look at the [usage example](https://github.com/govau/uik
 header
 └─ core
 ```
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-## Build
 
 
 **[⬆ back to top](#contents)**

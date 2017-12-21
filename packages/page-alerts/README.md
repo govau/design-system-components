@@ -8,7 +8,6 @@
 
 * [Install](#install)
 * [Usage](#usage)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -89,15 +88,6 @@ page-alerts
 └─ body
    └─ core
 ```
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-## Build
 
 
 **[⬆ back to top](#contents)**
