@@ -713,13 +713,13 @@ HELPER.generate = (() => {
 					if( pkg.pancake['pancake-module'].js ) {
 						if( pkg.pancake['pancake-module'].js.jquery ) {
 							jquery = `<br><a href="packages/${ module }/tests/jquery/">` +
-									`<img src="https://img.shields.io/badge/js        -jquery-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+									`<img class="badge badge--jquery" src="https://img.shields.io/badge/js        -jquery-green.svg?colorA=313131&colorB=1B7991" alt="">` +
 								`</a>`;
 						}
 
 						if( pkg.pancake['pancake-module'].js.react ) {
 							react = `<br><a href="packages/${ module }/tests/react/">` +
-									`<img src="https://img.shields.io/badge/js        -react-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+									`<img class="badge badge--react" src="https://img.shields.io/badge/js        -react-green.svg?colorA=313131&colorB=1B7991" alt="">` +
 								`</a>`;
 						}
 					}
@@ -731,10 +731,10 @@ HELPER.generate = (() => {
 						: `packages/${ module }/tests/` }">` +
 							`${ module }</a>${ jquery }${ react }` +
 							`<br><a href="https://www.npmjs.com/package/@gov.au/${ module }">` +
-								`<img src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=version&colorA=313131&colorB=1B7991" alt="">` +
+								`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=version&colorA=313131&colorB=1B7991" alt="">` +
 							`</a>` +
 							`<br><a href="https://github.com/govau/uikit/tree/master/packages/${ module }">` +
-								`<img src="https://img.shields.io/badge/docs    -readme-green.svg?colorA=313131&colorB=1B7991" alt="">` +
+								`<img class="badge badge--readme" src="https://img.shields.io/badge/docs    -readme-green.svg?colorA=313131&colorB=1B7991" alt="">` +
 							`</a>` +
 						`</li>\n`;
 				}
