@@ -25,7 +25,7 @@ ReactDOM.render(
 				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
 			</p>
 
-			<AUctaLink text="Next" onClick={ () => console.log('This function will be called when the button is clicked') } />
+			<AUctaLink text="Log it" onClick={ () => console.log('This function will be called when the button is clicked') } />
 		</div>
 		<div className="split split--dark">
 			<h2>cta-link</h2>
@@ -46,7 +46,7 @@ ReactDOM.render(
 				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
 			</p>
 
-			<AUctaLink dark text="Next" onClick={ () => console.log('This function will be called when the button is clicked') } />
+			<AUctaLink dark text="Log it" onClick={ () => console.log('This function will be called when the button is clicked') } />
 		</div>
 	</div>,
 

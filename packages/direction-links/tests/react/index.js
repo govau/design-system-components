@@ -38,7 +38,7 @@ ReactDOM.render(
 			<hr />
 			<h2>direction-link as button with onclick</h2>
 
-			<AUdirectionLink text="Scroll up" direction="up" onClick={ () => console.log('This function will be called on click') } />
+			<AUdirectionLink text="Log it" direction="up" onClick={ () => console.log('This function will be called on click') } />
 		</div>
 		<div className="split split--dark">
 			<h2>bare</h2>
@@ -72,7 +72,7 @@ ReactDOM.render(
 			<hr />
 			<h2>direction-link as button with onclick</h2>
 
-			<AUdirectionLink dark text="Scroll up" direction="up" onClick={ () => console.log('This function will be called on click') } />
+			<AUdirectionLink dark text="Log it" direction="up" onClick={ () => console.log('This function will be called on click') } />
 		</div>
 	</div>,
 
