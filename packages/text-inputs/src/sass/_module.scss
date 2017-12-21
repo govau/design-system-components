@@ -41,6 +41,7 @@
 	color: $AU-color-Text;
 	border-radius: $AU-border-radius;
 	vertical-align: middle;
+	appearance: none;
 
 	// invalid styling
 	&.au-text-input--dark:invalid,
