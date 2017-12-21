@@ -29,7 +29,7 @@
 		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
 
-		"prepublish": "npm run test:helper && npm run build",
+		"prepublish": "npm run test:helper && npm run build:js && npm run build:react",
 
 		"build:js": "node ../../scripts/helper.js precompile compile",
 		"build:react": "cd tests/react/ && webpack",
