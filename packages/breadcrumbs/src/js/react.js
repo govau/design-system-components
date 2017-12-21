@@ -10,8 +10,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// ES5 dependency: import LinkList from '@gov.au/link-list';
-// ES6 dependency: import LinkList from './link-list';
+// ES5 dependency: import AUlinkList from '@gov.au/link-list';
+// ES6 dependency: import AUlinkList from './link-list';
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -26,7 +26,7 @@ import PropTypes from 'prop-types';
  *
  * @param  {string} dark             - Add the dark variation class
  * @param  {string} label            - The aria label of the component
- * @param  {array}  items            - Items inside the breadcrumbs passed on to LinkList
+ * @param  {array}  items            - Items inside the breadcrumbs passed on to AUlinkList
  * @param  {object} attributeOptions - Any other attribute options
  */
 const AUbreadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
@@ -35,7 +35,7 @@ const AUbreadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
 		aria-label={ label }
 		{ ...attributeOptions }
 	>
-		<LinkList inline items={ items } />
+		<AUlinkList inline items={ items } />
 	</nav>
 );
 
