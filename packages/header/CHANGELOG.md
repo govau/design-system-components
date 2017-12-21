@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.0 - Moved to AU namespace, added new color themes and spacing](v200)
 * [v1.2.0 - Added pancake-react plugin, ES5 main file, added children](v120)
 * [v1.1.0 - Added react component](v110)
 * [v1.0.0 - Removed the side spacing #147](v100)
@@ -25,6 +26,13 @@
 
 
 ## Release History
+
+### v2.0.0
+
+- Moved to AU namespace
+- Added new color themes with dark and alt variants
+- Added a new 4px based spacing system via line-height
+
 
 ### v1.2.0
 

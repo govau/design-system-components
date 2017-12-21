@@ -71,6 +71,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/responsive-me
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.1.1 - Used percentage sass function over magic numbers
 * v0.1.0 - 💥 Initial version
 

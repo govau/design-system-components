@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/grid-12",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"description": "Implementation of the Bootstrap 3 grid.",
 	"keywords": [
 		"uikit",
@@ -52,10 +52,10 @@
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~1",
 
-		"@gov.au/core": "^0.1.3"
+		"@gov.au/core": "^1.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^0.1.3"
+		"@gov.au/core": "^1.0.0"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.18.13",

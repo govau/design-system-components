@@ -134,6 +134,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/callout/tests
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Fixed a11y contrast issue

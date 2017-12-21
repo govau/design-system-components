@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/footer",
-	"version": "0.3.0",
+	"version": "1.0.0",
 	"description": "Footers help users who reach the bottom of a page without finding what they want.",
 	"keywords": [
 		"uikit",
@@ -59,10 +59,10 @@
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
 
-		"@gov.au/core": "^0.1.3"
+		"@gov.au/core": "^1.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^0.1.3"
+		"@gov.au/core": "^1.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
