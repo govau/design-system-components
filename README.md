@@ -75,17 +75,18 @@ We use the below checklist to ensure new modules or updates to existing modules 
 #### CSS / Sass
 - [x] Never nest anything that is not either an overwrite or a child element.
 - [x] `font-family` and text `color` on elements that don’t require body
-- [x] Using `uikit-space()` for spacing everywhere but in font-sizes; no magic numbers
-- [x] No hardcoded colors, use `$uikit-colour-` vars.
-- [x] Sass focus mixin `uikit-outline()`
+- [x] Using `AU-space()` with `unit` for spacing everywhere but in font-sizes; no magic numbers
+- [x] No hardcoded colors, use `$AU-color-` or `$AU-colordark-` vars.
+- [x] Sass focus mixin `AU-focus()` or `AU-focus( 'dark' )`
+- [x] Using `AU-fontgrid()` for `font-size` and `line-height` to snap typography to the grid.
 - [x] Print style sheets
 
 #### Js
-- [x] `var UIKIT = UIKIT || {};` in top?
-- [x] Each module has it’s own name-space prefixed with `UIKIT` e.g.: `UIKIT.modulename.function1`, `UIKIT.modulename.function2`
+- [x] `var AU = AU || {};` in top?
+- [x] Each module has it’s own name-space prefixed with `AU` e.g.: `AU.modulename.function1`, `AU.modulename.function2`
 - [x] Keep public API small, use private functions where you can
 - [x] Export out private function for tests only `if( typeof module !== 'undefined' )`
-- [x] Export entire module in the end: `if( typeof module !== 'undefined' ) { module.exports = UIKIT; }` so react can use it.
+- [x] Export entire module in the end: `if( typeof module !== 'undefined' ) { module.exports = AU; }` so react can use it.
 - [x] Provide sane defaults for parameters where you can
 - [x] Add [jest](https://facebook.github.io/jest/) unit tests where you can
 - [x] Document public API in the readme.
