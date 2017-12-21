@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/text-inputs",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"description": "Single and multi-line text inputs.",
 	"keywords": [
 		"uikit",
@@ -26,12 +26,13 @@
 		"postinstall": "pancake",
 
 		"test:a11y": "node ../../scripts/a11y.js",
-		"test:deps": "node ../../scripts/helper.js test",
+		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
 
-		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
+		"prepublish": "npm run test:helper && node ../../scripts/helper.js precompile publish",
 
 		"build:js": "node ../../scripts/helper.js precompile compile",
+		"build:react": "cd tests/react/ && webpack",
 		"build": "npm-run-all --parallel build:*",
 
 		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
@@ -45,27 +46,43 @@
 		"pancake-module": {
 			"version": "1.0.0",
 			"plugins": [
-				"@gov.au/pancake-sass"
+				"@gov.au/pancake-sass",
+				"@gov.au/pancake-react"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
 				"sass-versioning": true
+			},
+			"react": {
+				"path": "lib/js/react.js"
 			}
 		}
 	},
+	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-react": "~1",
 
-		"@gov.au/core": "^0.1.3"
+		"@gov.au/core": "^1.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^0.1.3"
+		"@gov.au/core": "^1.0.0"
 	},
 	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
 		"browser-sync": "^2.18.13",
 		"npm-run-all": "^4.1.2",
-		"onchange": "^3.2.1"
+		"onchange": "^3.2.1",
+		"react": "^16.1.1",
+		"react-dom": "^16.1.1",
+		"webpack": "^3.8.1",
+		"webpack-dev-server": "^2.9.4"
 	},
 	"files": [
 		"lib/*"
@@ -78,14 +95,14 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "http://guides.service.gov.au/design-guide/",
+	"homepage": "https://gold.service.gov.au/",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
-		"email": "guides@digital.gov.au"
+		"email": "uikit@digital.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "guides@digital.gov.au",
+		"email": "uikit@digital.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [
@@ -98,6 +115,16 @@
 			"name": "Simon Pascal Klein",
 			"email": "klepas@klepas.org",
 			"url": "http://klepas.org/"
+		},
+		{
+			"name": "Trevor Brennan",
+			"email": "t@trevorbrennan.com",
+			"url": "http://trevorbrennan.com/"
+		},
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "http://alexpage.com.au/"
 		}
 	],
 	"license": "MIT"

@@ -16,18 +16,22 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
+
 /**
  * A section for the footer that contains navigational elements
  *
- * @param  {node} children - The inside of this section
+ * @param  {node}   children         - The inside of this section
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const FooterNav = ({ children }) => (
-	<nav className="uikit-footer__navigation">
+export const AUfooterNav = ({ children, ...attributeOptions }) => (
+	<nav className="au-footer__navigation" { ...attributeOptions }>
 		{ children }
 	</nav>
 );
 
-FooterNav.propTypes = {
+
+AUfooterNav.propTypes = {
 	children: PropTypes.node.isRequired,
 };
 
@@ -35,15 +39,17 @@ FooterNav.propTypes = {
 /**
  * A section for the footer that sits at the end
  *
- * @param  {node} children - The inside of this section
+ * @param  {node}   children         - The inside of this section
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const FooterEnd = ({ children }) => (
-	<nav className="uikit-footer__end">
+export const AUfooterEnd = ({ children, ...attributeOptions }) => (
+	<nav className="au-footer__end" { ...attributeOptions }>
 		{ children }
 	</nav>
 );
 
-FooterEnd.propTypes = {
+
+AUfooterEnd.propTypes = {
 	children: PropTypes.node.isRequired,
 };
 
@@ -52,16 +58,26 @@ FooterEnd.propTypes = {
  * DEFAULT
  * The footer component
  *
- * @param  {node} children - The inside of this section
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} alt              - Add the alt variation class
+ * @param  {node}   children         - The inside of this section
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Footer = ({ children }) => (
-	<footer className="uikit-footer" role="contentinfo">
+const AUfooter = ({ dark, alt, children, ...attributeOptions }) => (
+	<footer
+		className={ `au-footer${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `}
+		role="contentinfo"
+		{ ...attributeOptions }
+	>
 		{ children }
 	</footer>
 );
 
-Footer.propTypes = {
+
+AUfooter.propTypes = {
 	children: PropTypes.node.isRequired,
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 };
 
-export default Footer;
+export default AUfooter;

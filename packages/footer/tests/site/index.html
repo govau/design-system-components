@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -47,30 +46,66 @@
 
 	<h2>footer</h2>
 
-	<footer class="uikit-footer" role="contentinfo">
-		<nav class="uikit-footer__navigation">
-			<p>uikit-footer__navigation</p>
+	<footer class="au-footer" role="contentinfo">
+		<nav class="au-footer__navigation">
+			<p>au-footer__navigation</p>
 		</nav>
 
-		<section class="uikit-footer__end">
-			<p>uikit-footer__end</p>
+		<section class="au-footer__end">
+			<p>au-footer__end</p>
+		</section>
+	</footer>
+
+	<h2>footer <code>--alt</code></h2>
+
+	<footer class="au-footer au-footer--alt" role="contentinfo">
+		<nav class="au-footer__navigation">
+			<p>au-footer__navigation</p>
+		</nav>
+
+		<section class="au-footer__end">
+			<p>au-footer__end</p>
+		</section>
+	</footer>
+
+	<h2>footer <code>--dark</code></h2>
+
+	<footer class="au-footer au-footer--dark" role="contentinfo">
+		<nav class="au-footer__navigation">
+			<p>au-footer__navigation</p>
+		</nav>
+
+		<section class="au-footer__end">
+			<p>au-footer__end</p>
+		</section>
+	</footer>
+
+	<h2>footer <code>--alt</code> <code>--dark</code></h2>
+
+	<footer class="au-footer au-footer--alt au-footer--dark" role="contentinfo">
+		<nav class="au-footer__navigation">
+			<p>au-footer__navigation</p>
+		</nav>
+
+		<section class="au-footer__end">
+			<p>au-footer__end</p>
 		</section>
 	</footer>
 
 	<hr>
 	<h2>footer with paragraph test and body</h2>
 
-	<div class="uikit-body">
-		<footer class="uikit-footer" role="contentinfo">
-			<nav class="uikit-footer__navigation">
-				<p>uikit-footer__navigation</p>
-				<p>uikit-footer__navigation</p>
-				<p>uikit-footer__navigation</p>
+	<div class="au-body">
+		<footer class="au-footer" role="contentinfo">
+			<nav class="au-footer__navigation">
+				<p>au-footer__navigation</p>
+				<p>au-footer__navigation</p>
+				<p>au-footer__navigation</p>
 			</nav>
 
-			<section class="uikit-footer__end">
-				<p>uikit-footer__end</p>
-				<p>uikit-footer__end</p>
+			<section class="au-footer__end">
+				<p>au-footer__end</p>
+				<p>au-footer__end</p>
 			</section>
 		</footer>
 	</div>
@@ -78,75 +113,129 @@
 	<hr>
 	<h2>footer navigation only</h2>
 
-	<footer class="uikit-footer" role="contentinfo">
-		<nav class="uikit-footer__navigation">
-			<p>uikit-footer__navigation</p>
+	<footer class="au-footer" role="contentinfo">
+		<nav class="au-footer__navigation">
+			<p>au-footer__navigation</p>
 		</nav>
 	</footer>
 
 	<hr>
 	<h2>footer end only</h2>
 
-	<footer class="uikit-footer" role="contentinfo">
-		<section class="uikit-footer__end">
-			<p>uikit-footer__end</p>
+	<footer class="au-footer" role="contentinfo">
+		<section class="au-footer__end">
+			<p>au-footer__end</p>
 		</section>
 	</footer>
 
 	<hr>
 	<h2>footer with grid, link-list, responsive-embeds and headings</h2>
 
-	<div class="uikit-grid uikit-body">
-		<footer class="uikit-footer" role="contentinfo">
-			<nav class="uikit-footer__navigation row">
-				<div class="col-md-3 col-sm-6">
-					<h3 class="uikit-display-1">Section</h3>
-					<ul class="uikit-link-list">
-						<li><a href="#">Link 1</a></li>
-						<li><a href="#">Link 2</a></li>
-						<li><a href="#">Link 3</a></li>
-					</ul>
-				</div>
+	<div class="au-grid au-body">
+		<footer class="au-footer" role="contentinfo">
+			<div class="container">
+				<nav class="au-footer__navigation row">
+					<div class="col-md-3 col-sm-6">
+						<h3 class="au-display-lg">Section</h3>
+						<ul class="au-link-list">
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</div>
 
-				<div class="col-md-3 col-sm-6">
-					<h3 class="uikit-display-1">Section</h3>
-					<ul class="uikit-link-list">
-						<li><a href="#">Link 1</a></li>
-						<li><a href="#">Link 2</a></li>
-						<li><a href="#">Link 3</a></li>
-					</ul>
-				</div>
+					<div class="col-md-3 col-sm-6">
+						<h3 class="au-display-lg">Section</h3>
+						<ul class="au-link-list">
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</div>
 
-				<div class="col-md-3 col-sm-6">
-					<h3 class="uikit-display-1">Section</h3>
-					<ul class="uikit-link-list">
-						<li><a href="#">Link 1</a></li>
-						<li><a href="#">Link 2</a></li>
-						<li><a href="#">Link 3</a></li>
-					</ul>
-				</div>
+					<div class="col-md-3 col-sm-6">
+						<h3 class="au-display-lg">Section</h3>
+						<ul class="au-link-list">
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</div>
 
-				<div class="col-md-3 col-sm-6">
-					<h3 class="uikit-display-1">Section</h3>
-					<ul class="uikit-link-list">
-						<li><a href="#">Link 1</a></li>
-						<li><a href="#">Link 2</a></li>
-						<li><a href="#">Link 3</a></li>
-					</ul>
-				</div>
-			</nav>
+					<div class="col-md-3 col-sm-6">
+						<h3 class="au-display-lg">Section</h3>
+						<ul class="au-link-list">
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</div>
+				</nav>
 
-			<section class="uikit-footer__end">
-				<div class="row">
+				<section class="au-footer__end row">
 					<div class="col-sm-12">
 						<p>Footer text</p>
 
-						<img class="uikit-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo">
+						<img class="au-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo">
 
 						<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
 					</div>
-				</div>
-			</section>
+				</section>
+			</footer>
+			</div>
+	</div>
+
+	<div class="au-grid au-body au-body--dark">
+		<footer class="au-footer au-footer--dark" role="contentinfo">
+			<div class="container">
+				<nav class="au-footer__navigation row">
+					<div class="col-md-3 col-sm-6">
+						<h3 class="au-display-lg">Section</h3>
+						<ul class="au-link-list">
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<h3 class="au-display-lg">Section</h3>
+						<ul class="au-link-list">
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<h3 class="au-display-lg">Section</h3>
+						<ul class="au-link-list">
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-3 col-sm-6">
+						<h3 class="au-display-lg">Section</h3>
+						<ul class="au-link-list">
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</div>
+				</nav>
+				<section class="au-footer__end row">
+					<div class="col-sm-12">
+						<p>Footer text</p>
+
+						<img class="au-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo">
+
+						<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
+					</div>
+				</section>
+			</div>
+
 		</footer>
 	</div>
 

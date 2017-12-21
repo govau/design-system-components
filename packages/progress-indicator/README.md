@@ -53,9 +53,9 @@ npm install @gov.au/progress-indicator --save-dev
 Usage:
 
 ```jsx
-import ProgressIndicator from './progress-indicator.js';
+import AUprogressIndicator from './progress-indicator.js';
 
-<ProgressIndicator items={[
+<AUprogressIndicator items={[
 	{
 		link: 'forms/intro/',
 		text: 'Introduction',
@@ -77,7 +77,8 @@ import ProgressIndicator from './progress-indicator.js';
 All props:
 
 ```jsx
-<ProgressIndicator
+<AUprogressIndicator
+	dark={ false }             {/* A dark variation of the component */}
 	items={[                   {/* All steps in a neat array */}
 		{
 			link: 'forms/intro/',  {/* The link to this step, optional */}
@@ -85,7 +86,8 @@ All props:
 			status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
 			onClick={ () => {} }   {/* A function to execute when the link is clicked, optional */}
 		},
-	]}
+	]},
+	attributeOptions           {/* Any other attribute options */}
 />
 ```
 
@@ -134,6 +136,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/progress-indi
 
 ## Release History
 
+* v2.0.0 - Moved to AU namespace, added new color themes and spacing
 * v1.0.0 - Fixing BEM issues with class names
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component

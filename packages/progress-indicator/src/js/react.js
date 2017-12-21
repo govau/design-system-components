@@ -28,17 +28,17 @@ const statusText = {
 };
 
 /**
- * An item inside the ProgressIndicator component
+ * An item inside the AUprogressIndicator component
  *
- * @param  {array}    item            - The item array with all progress items
- * @param  {string}   item.link       - The link URL, If no link is passed we render a button instead of a link tag, optional
- * @param  {string}   item.text       - The text of this item
- * @param  {string}   item.status     - The status of this item
- * @param  {string}   item.statusText - The status text of this item, optional
- * @param  {function} item.onClick    - An onClick function, optional
+ * @param  {array}    item              - The item array with all progress items
+ * @param  {string}   item.link         - The link URL, If no link is passed we render a button instead of a link tag, optional
+ * @param  {string}   item.text         - The text of this item
+ * @param  {string}   item.status       - The status of this item
+ * @param  {string}   item.statusText   - The status text of this item, optional
+ * @param  {function} item.onClick      - An onClick function, optional
+ * @param  {object}   attributeOptions  - Any other attribute options
  */
-export const ProgressIndicatorItem = ({ item }) => {
-	const attributeOptions = {};
+export const AUprogressIndicatorItem = ({ item, ...attributeOptions }) => {
 
 	if( typeof item.onClick === 'function' ) {
 		attributeOptions.onClick = item.onClick;
@@ -47,12 +47,12 @@ export const ProgressIndicatorItem = ({ item }) => {
 	return (
 		<li>
 			{ item.link
-				? <a className={`progress-indicator__link progress-indicator__link--${ item.status }`} href={ item.link } { ...attributeOptions }>
-						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
+				? <a className={`au-progress-indicator__link au-progress-indicator__link--${ item.status }`} href={ item.link } { ...attributeOptions }>
+						<span className="au-progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
 						{ item.text }
 					</a>
-				: <button className={`progress-indicator__link progress-indicator__link--${ item.status }`} { ...attributeOptions }>
-						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
+				: <button className={`au-progress-indicator__link au-progress-indicator__link--${ item.status }`} { ...attributeOptions }>
+						<span className="au-progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
 						{ item.text }
 					</button>
 			}
@@ -60,7 +60,7 @@ export const ProgressIndicatorItem = ({ item }) => {
 	);
 };
 
-ProgressIndicatorItem.propTypes = {
+AUprogressIndicatorItem.propTypes = {
 	item: PropTypes.shape({
 		link: PropTypes.string,
 		text: PropTypes.string.isRequired,
@@ -75,15 +75,18 @@ ProgressIndicatorItem.propTypes = {
  * DEFAULT
  * The progress-indicator component
  *
- * @param  {array} items - All items for this progress indicator
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {array}  items            - All items for this progress indicator
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const ProgressIndicator = ({ items }) => (
-	<ul className="progress-indicator">
-		{ items.map( ( item, i ) => <ProgressIndicatorItem key={ i } item={ item } /> ) }
+const AUprogressIndicator = ({ dark, items, ...attributeOptions }) => (
+	<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' }` } { ...attributeOptions }>
+		{ items.map( ( item, i ) => <AUprogressIndicatorItem key={ i } item={ item } /> ) }
 	</ul>
 );
 
-ProgressIndicator.propTypes = {
+AUprogressIndicator.propTypes = {
+	dark: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -95,4 +98,5 @@ ProgressIndicator.propTypes = {
 		).isRequired,
 };
 
-export default ProgressIndicator;
+
+export default AUprogressIndicator;

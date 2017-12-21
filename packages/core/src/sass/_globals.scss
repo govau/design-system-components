@@ -4,38 +4,44 @@
 // Core module globals
 //
 // Content:
-// - variables
-//   - breakpoints
-//   - line-height (leading)
-//   - font stacks
-//   - max width line length (measure)
-//   - colours
-//   - border styles and vars
-// - mixins
-//   - AU-clearfix
-//   - AU-media
-//   - AU-sronly
-//   - AU-outline
-//   - AU-focus
 // - functions
-//   - AU-space
 //   - AU-replace
 //   - AU-svguri
 //   - AU-factorial
 //   - AU-pow
 //   - AU-color-luminance
 //   - AU-color-contrast
+// - mixins
+//   - AU-space
+//   - AU-clearfix
+//   - AU-media
+//   - AU-sronly
+//   - AU-outline
+//   - AU-focus
+//   - AU-fontgrid
+// - variables
+//   - AU-media-*
+//   - AU-rem
+//   - AU-unit
+//   - AU-font
+//   - AU-font-monospace
+//   - AU-fontsize-map
+//   - AU-lineheight-map
+//   - AU-maxwidth
+//   - AU-color-*
+//   - AU-border-radius
 //
 //  Error messages all start with a movie quote. Here are some in reserve:
-//  - E.T. phone home;
 //  - I have always depended on the kindness of strangers;
 //  - Where we’re going, we don’t need roads;
-//  - You shall not pass;
 //  - You’re tearing me apart, Lisa;
 //  - Toto, I’ve got a feeling we’re not in Kansas anymore;
 //  - Nobody puts Baby in a corner;
 //  - Try not. Do - or do not. There is no try;
 //  - May the Force be with you;
+//  - You call that an error? This is an Error!
+//  - This... Is... ERROR!
+//  - E.T. phone home;
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,195 +56,10 @@ $dependencies: (
 @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// GLOBAL VARIABLES
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-/**
- * Breakpoints
- */
-$AU-media-xs: 576px !default; //media query breakpoints
-$AU-media-sm: 768px !default;
-$AU-media-md: 992px !default;
-$AU-media-lg: 1200px !default;
-
-
-/**
- * Line-height (‘leading’)
- */
-$AU-leading: 1.6 !default;
-
-
-/**
- * Font stacks
- */
-$AU-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
-$AU-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
-
-
-/**
- * max-width for line lengths (the ‘measure’)
- */
-$AU-maxwidth: 42em !default; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
-
-
-/**
- * Colors light theme
- */
-$AU-color-Text:             #313131 !default;
-$AU-color-Action:           #00698f !default;
-$AU-color-Focus:            #f04400 !default;
-$AU-color-Background-light: #ffffff !default;
-
-// non user definable pallet colors
-$AU-color-Muted:              pink !global;
-$AU-color-Border:             pink !global;
-$AU-color-Background:         pink !global;
-$AU-color-Background-dark:    pink !global;
-$AU-color-Background-darkest: pink !global;
-
-
-/**
- * Colors light theme
- */
-$AU-darkcolor-Text:             #ffffff !default;
-$AU-darkcolor-Action:           #61daff !default;
-$AU-darkcolor-Focus:            #ff8629 !default;
-$AU-darkcolor-Background-light: #121f22 !default;
-
-$AU-darkcolor-Muted:              pink !global;
-$AU-darkcolor-Border:             pink !global;
-$AU-darkcolor-Background:         pink !global;
-$AU-darkcolor-Background-dark:    pink !global;
-$AU-darkcolor-Background-darkest: pink !global;
-
-/**
- * Border vars and styles
- */
-$AU-borderize: 1px solid $AU-color-Border !default;
-$AU-border-radius: 3px !default;
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// GLOBAL MIXINS
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-/**
- * Clearing floats
- */
-@mixin AU-clearfix() {
-	&:before,
-	&:after {
-		content: " "; // 1
-		display: table; // 2
-	}
-	&:after {
-		clear: both;
-	}
-}
-
-
-/**
- * Create media queries and wraps the @content code inside of it
- *
- * @param  {keywords} $breakpoint - Either one of the following keywords: xs, sm, md, lg
- *
- * @return {string}               - The code passed in via @content wrapped inside a media query
- */
-@mixin AU-media( $breakpoint ) {
-	@if type-of( $breakpoint ) != 'string' {
-		@error "Captain I’m giving it all she’s got but; the AU-media mixin only takes a string!";
-	}
-
-	@if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
-		@error "There’s no crying in baseball; the AU-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
-	}
-
-	@if( $breakpoint == "xs" ) {
-		@media (min-width: $AU-media-xs) {
-			@content;
-		}
-	}
-
-	@if( $breakpoint == "sm" ) {
-		@media (min-width: $AU-media-sm) {
-			@content;
-		}
-	}
-
-	@if( $breakpoint == "md" ) {
-		@media (min-width: $AU-media-md) {
-			@content;
-		}
-	}
-
-	@if( $breakpoint == "lg" ) {
-		@media (min-width: $AU-media-lg) {
-			@content;
-		}
-	}
-}
-
-
-/**
- * Hide an element from the screen but not a screen reader
- */
-@mixin AU-sronly() {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0,0,0,0);
-	border: 0;
-}
-
-
-/**
- * The outline for focus
- */
-@mixin AU-outline() {
-	outline: 1px solid $AU-color-Text;
-	outline-offset: 1px;
-}
-
-
-/**
- * Add the outline to focus
- */
-@mixin AU-focus() {
-	&:focus {
-		@include AU-outline();
-	}
-}
-
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * Return a space value based on the line-height and the unit em
- *
- * @param  {number} $number - The space as a multiplier of line-height
- * @param  {number} $number - The line-height [optional]
- *
- * @return {number}         - The space in ems
- */
-@function AU-space( $number, $line-height: $AU-leading ) {
-	@if type-of( $number ) != 'number' {
-		@error "I’m sorry Dave, I can’t do that; the AU-space function only takes a number!";
-	}
-
-	@if type-of( $number ) == 'number' and not unitless( $number ) {
-		$number: $number / ($number * 0 + 1);
-	}
-
-	$space: $number * $line-height;
-
-	@return #{ $space }em;
-}
-
-
-/**
- * Replace a string with a string
+ * AU-replace - Replace a string with a string
  * http://codepen.io/jakob-e/pen/doMoML
  *
  * @author @eriksen_dk <https://twitter.com/eriksen_dk>
@@ -276,7 +97,7 @@ $AU-border-radius: 3px !default;
 
 
 /**
- * Generate an optimized SVG data-uri for
+ * AU-svguri - Generate an optimized SVG data-uri for
  * https://codepen.io/tigt/post/optimizing-svgs-in-data-uris
  * http://codepen.io/jakob-e/pen/doMoML
  *
@@ -343,7 +164,7 @@ $AU-border-radius: 3px !default;
 
 
 /**
- * Returns the factorial of a non-negative integer.
+ * AU-factorial - Returns the factorial of a non-negative integer.
  * https://github.com/terkel/mathsass
  *
  * @author Pascal Duez @pascalduez <http://pascalduez.me/>
@@ -369,7 +190,7 @@ $AU-border-radius: 3px !default;
 
 
 /**
- * Returns base to the exponent power.
+ * AU-pow - Returns base to the exponent power.
  * https://github.com/terkel/mathsass
  *
  * @author Pascal Duez @pascalduez <http://pascalduez.me/>
@@ -479,7 +300,7 @@ $AU-border-radius: 3px !default;
 
 
 /**
- * Calculate color luminance
+ * AU-color-luminance - Calculate color luminance
  *
  * https://github.com/voxpelli/sass-color-helpers/blob/master/stylesheets/color-helpers/_contrast.scss
  * Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
@@ -513,7 +334,7 @@ $AU-border-radius: 3px !default;
 
 
 /**
- * Get the contrast ratio of two colors and warn when it is below WCAG 2.0 AA standard 4.5:1
+ * AU-color-contrast - Get the contrast ratio of two colors and warn when it is below WCAG 2.0 AA standard 4.5:1
  *
  * https://github.com/voxpelli/sass-color-helpers/blob/master/stylesheets/color-helpers/_contrast.scss
  * Adapted from: https://github.com/LeaVerou/contrast-ratio/blob/gh-pages/color.js
@@ -521,12 +342,14 @@ $AU-border-radius: 3px !default;
  *
  * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
  *
- * @param  {string}  $forground  - Color one
- * @param  {string}  $background - Color two
+ * @param  {string}   $forground  - Color one
+ * @param  {string}   $background - Color two
+ * @param  {boolean}  $silent     - If the logs get printed in the terminal
+ * @param  {boolean}  $rounded    - If the value is rounded or not
  *
  * @return {integer}             - The contrast ratio
  */
-@function AU-color-contrast( $forground, $background ) {
+@function AU-color-contrast( $forground, $background, $silent: false, $rounded: true ) {
 	@if type-of( $forground ) != 'color' {
 		@error "Elementary, my dear Watson; the AU-color-contrast function only takes a color as first argument!";
 	}
@@ -543,10 +366,12 @@ $AU-border-radius: 3px !default;
 		$ratio: 1 / $ratio;
 	}
 
-	$ratio: $ratio;
-
-	@if( $ratio < 4.5 ) {
+	@if $ratio < 4.5 and $silent == false {
 		@warn "Houston, we have a problem; contrast ratio of #{ $forground } on #{ $background } is bad, just #{ $ratio }";
+	}
+
+	@if $rounded == true {
+		$ratio: round( $ratio * 10 ) / 10;
 	}
 
 	@return $ratio;
@@ -555,7 +380,7 @@ $AU-border-radius: 3px !default;
 
 
 /**
- * The function to find the nearest accessible color
+ * AU-color-a11y - The function to find the nearest accessible color
  *
  * https://github.com/alex-page/sass-a11ycolor
  *
@@ -569,34 +394,35 @@ $AU-border-radius: 3px !default;
  *
  * @return {Color}                                  - Returns the nearest accessible color
  */
-@function AU-a11ycolor( $toMakeA11y, $background, $ratioKey: 'small', $steps: 0.1 ) {
+@function AU-color-a11y( $toMakeA11y, $background, $ratioKey: 'small', $steps: 0.1 ) {
 	@if type-of( $toMakeA11y ) != 'color' {
-		@error "Where we’re going, we don’t need roads; the AU-a11ycolor function only takes a color as the first attribute!";
+		@error "Where we’re going, we don’t need roads; the AU-color-a11y function only takes a color as the first attribute!";
 	}
 
 	@if type-of( $background ) != 'color' {
-		@error "You shall not pass; the AU-a11ycolor function only takes a color as the second attribute!";
+		@error "You shall not pass; the AU-color-a11y function only takes a color as the second attribute!";
 	}
 
 	@if $ratioKey != 'small' and $ratioKey != 'large' {
-		@error "I have always depended on the kindness of strangers; the AU-a11ycolor function only takes 'small' or 'large' as third attribute.";
+		@error "I have always depended on the kindness of strangers; the AU-color-a11y function only takes 'small' or 'large' as third attribute.";
 	}
 
 	@if type-of( $steps ) != 'number' {
-		@error "You’re tearing me apart, Lisa; the AU-a11ycolor function only takes a number as the forth attribute!";
+		@error "You’re tearing me apart, Lisa; the AU-color-a11y function only takes a number as the forth attribute!";
 	}
 
 	@if $steps >= 100 or $steps < 0.1 {
-		@error "Toto, I’ve got a feeling we’re not in Kansas anymore; the AU-a11ycolor function only takes a number between 0.1 and 100 as the forth attribute!";
+		@error "Toto, I’ve got a feeling we’re not in Kansas anymore; the AU-color-a11y function only takes a number between 0.1 and 100 as the forth attribute!";
 	}
 
 	$ratios: (
 		'large': 3,
 		'small': 4.5,
 	);
+
 	$ratio: map-get( $ratios, $ratioKey );
 
-	$currentRatio: AU-color-contrast( $toMakeA11y, $background ); // Get the current ratio
+	$currentRatio: AU-color-contrast( $toMakeA11y, $background, true, false ); // Get the current ratio
 	$colorLighter: $toMakeA11y;   // We have to scope those variables outside the loop
 	$ratioLighter: $currentRatio; // so that we have access to them after the loop finished
 	$colorDarker: $toMakeA11y;    // doing it for all of them
@@ -604,18 +430,22 @@ $AU-border-radius: 3px !default;
 
 	$hue: hue( $toMakeA11y );               // Split the color into HSL
 	$saturation: saturation( $toMakeA11y ); // so we can make changes
-	$lightness:  lightness( $toMakeA11y );  // the only the lightness of the color
+	$lightness: lightness( $toMakeA11y );   // the only the lightness of the color
 
 
-	$i: 1;
-	@while $ratioLighter < $ratio and $ratioDarker < $ratio and $i < 101 {
-		$colorLighter: hsl( $hue, $saturation, ( $lightness + $i ) );   // then we lighten a new color
-		$colorDarker:  hsl( $hue, $saturation, ( $lightness - $i ) );   // and darken another
-
-		$ratioLighter: AU-color-contrast( $colorLighter, $background ); // now we assign the new ratios; the loop will break
-		$ratioDarker:  AU-color-contrast( $colorDarker, $background );  // when one of these is beyond the defined ration
-
+	$i: 0;
+	@while $ratioLighter < $ratio and $ratioDarker < $ratio and $i < 100 {
 		$i: $i + $steps; // iterate by increasing our step
+
+		$colorLighter: hsl( $hue, $saturation, $lightness + $i );   // then we lighten a new color
+		$colorDarker:  hsl( $hue, $saturation, $lightness - $i );   // and darken another
+
+		// Reset the colors so it compares HEX not HSL
+		$resetLight: mix( $colorLighter, $colorLighter );
+		$resetDark:  mix( $colorDarker, $colorDarker );
+
+		$ratioLighter: AU-color-contrast( $resetLight, $background, true, false ); // now we assign the new ratios; the loop will break
+		$ratioDarker:  AU-color-contrast( $resetDark, $background, true, false );  // when one of these is beyond the defined ration
 	}
 
 
@@ -626,6 +456,315 @@ $AU-border-radius: 3px !default;
 		@return $colorDarker;
 	}
 	@else {
-		@error 'Bagger; AU-a11ycolor was unable to find an accessible color for you.';
+		@error 'Bagger; AU-color-a11y was unable to find an accessible color for you.';
 	}
 }
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL MIXINS
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * AU-space - Return a space value based on the line-height and the unit em
+ *
+ * @param  {string} $property - The css property to apply the spacing ( padding, margin )
+ * @param  {number} $values   - The values of the property ( 0, 20px 10px, 5% )
+ *
+ * @return {number}           - The space in px and rems
+ */
+ @mixin AU-space( $property, $values ) {
+	$unit: $AU-unit; 	// The grid unit to use
+	$output: ();
+	$fallback: ();
+	$has_fallback: false;
+
+	@if type-of( $property ) != 'string' {
+		@error "I’m sorry Dave, I can’t do that; the AU-space function only takes a string as first argument!";
+	}
+
+	// Loop through the $values list
+	@each $value in $values {
+		// This is a pixel on unitless unit. Let’s convert it to rems
+		@if type-of( $value ) == 'number' and unit( $value ) == 'unit' {
+			$value: $value / 1unit; // This is to remove the unit value
+			$rem: $value / ( ( $value / $unit ) * 0 + 1 );
+
+			$fallback: join( $fallback, round( $value * ( $unit * $unit ) ) + 0px );
+			$output: join( $output, #{ $rem }rem );
+
+			$has_fallback: true;
+		}
+
+		// We don’t know what this is so we don’t change it.
+		@else {
+			$fallback: join( $fallback, $value );
+			$output: join( $output, $value );
+		}
+	}
+
+	@if( $has_fallback ) {
+		#{ $property }: $fallback;
+		#{ $property }: $output;
+	}
+	@else {
+		#{ $property }: $output;
+	}
+}
+
+
+/**
+ * AU-clearfix - Clearing floats
+ */
+ @mixin AU-clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+/**
+ * AU-media - Create media queries and wraps the @content code inside of it
+ *
+ * @param  {keywords} $breakpoint - Either one of the following keywords: xs, sm, md, lg
+ *
+ * @return {string}               - The code passed in via @content wrapped inside a media query
+ */
+@mixin AU-media( $breakpoint ) {
+	@if type-of( $breakpoint ) != 'string' {
+		@error "Captain I’m giving it all she’s got but; the AU-media mixin only takes a string!";
+	}
+
+	@if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
+		@error "There’s no crying in baseball; the AU-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
+	}
+
+	@if( $breakpoint == "xs" ) {
+		@media (min-width: $AU-media-xs) {
+			@content;
+		}
+	}
+
+	@if( $breakpoint == "sm" ) {
+		@media (min-width: $AU-media-sm) {
+			@content;
+		}
+	}
+
+	@if( $breakpoint == "md" ) {
+		@media (min-width: $AU-media-md) {
+			@content;
+		}
+	}
+
+	@if( $breakpoint == "lg" ) {
+		@media (min-width: $AU-media-lg) {
+			@content;
+		}
+	}
+}
+
+
+/**
+ * AU-sronly - Hide an element from the screen but not a screen reader
+ */
+@mixin AU-sronly() {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+
+/**
+ * AU-outline - Create outline based on the theme the user is using.
+ *
+ * @param  {keywords} $theme - `dark` or default ( `light` )
+ *
+ * @return {string}          - The code
+ */
+@mixin AU-outline( $theme: 'light' ) {
+	@if $theme == 'dark' {
+		outline: 3px solid $AU-colordark-Focus;
+	}
+	@else {
+		outline: 3px solid $AU-color-Focus;
+	}
+}
+
+
+/**
+ * AU-focus - Add the outline to focus
+ */
+@mixin AU-focus( $theme: 'light' ) {
+	&:focus {
+		@include AU-outline( $theme );
+	}
+
+	// Remove Modzilla inner HTML dotted line. github.com/necolas/normalize.css/blob/master/normalize.css#L285
+	&::-moz-focus-inner {
+		border: 0;
+	}
+}
+
+
+/**
+ * AU-fontgrid- Mixin for setting font-size and line-height.
+ * @param  {keywords} $fontsize-key 		-  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
+ * @param  {keywords} $lineheight-key 	-  Either one of the following keywords: heading, nospace, default
+ *
+ * @return {string}                    	- The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
+*/
+@mixin AU-fontgrid( $fontsize-key, $lineheight-key: 'default' ) {
+
+	@if type-of( $fontsize-key ) != 'string' {
+		@error "Going somewhere, Solo?; the AU-fontgrid mixin fontsize key takes a string!";
+	}
+
+	@if type-of( $lineheight-key ) != 'string' {
+		@error "Tell Jabba I've got his money; the AU-fontgrid mixin lineheight key takes a string!";
+	}
+
+	@if not map-has-key( $AU-fontsize-map, $fontsize-key ) {
+		@error "You shall not pass; the AU-fontgrid mixin only takes the following fontsize keys strings: " + map-keys( $AU-fontsize-map );
+	}
+
+	@if not map-has-key( $AU-lineheight-map, $lineheight-key ) {
+		@error "There's a snake in my boot; the AU-fontgrid mixin only takes the following lineheight keys strings: " + map-keys( $AU-lineheight-map );
+	}
+
+	// Get the value from supplied key for pixel and calculate the rem value
+	$fontsize-px: map-get( $AU-fontsize-map, $fontsize-key );
+	$fontsize-rem: $fontsize-px / $AU-rem;
+
+	// Change the lineheight if it doesn't hit a AU-unit e.g. 40px font size with 1.5 lineheight = 50px should be 52px
+	$lineheight-pixel: round( ( map-get( $AU-lineheight-map, $lineheight-key ) * $fontsize-px ) / $AU-unit ) * $AU-unit;
+	$lineheight: $lineheight-pixel / $fontsize-px;
+
+	// Mixin output
+	font-size: $fontsize-px + 0px;   // Pixel fallback for non-rem support
+	font-size: $fontsize-rem + 0rem; // REM size
+	line-height: $lineheight;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL VARIABLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Breakpoints
+ */
+$AU-media-xs: 576px !default; //media query breakpoints
+$AU-media-sm: 768px !default;
+$AU-media-md: 992px !default;
+$AU-media-lg: 1200px !default;
+
+
+/**
+ * Value used for REM calculation
+ */
+$AU-rem: 16;
+
+
+/**
+ * Unit used for all type and grid calculations
+ */
+$AU-unit: 4;
+
+
+/**
+ * Font stacks
+ */
+$AU-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
+$AU-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
+
+// Predetermined pixel sizes from a 1.25 typescale rounded to the nearest $AU-unit (vertical grid)
+$AU-fontsize-map: (
+	xs:   14,
+	sm:   16,
+	md: 	20,
+	lg: 	24,
+	xl: 	32,
+	xxl:	40,
+	xxxl:	48
+);
+
+
+// Predetermined lineheight mapped to keyword
+$AU-lineheight-map: (
+	nospace:  1,
+	heading:  1.25,
+	default:  1.5
+);
+
+/**
+ * max-width for line lengths (the ‘measure’)
+ */
+$AU-maxwidth: 42em !default; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
+
+
+/**
+ * Colors light theme
+ */
+$AU-color-Text:                    #313131 !default;
+$AU-color-Action:                  #00698f !default;
+$AU-color-Focus:                   #ea4200 !default;
+$AU-color-Background-light:        #ffffff !default;
+
+// Non-user definable pallet colors
+$AU-color-Background:              #f5f5f5 !global;
+$AU-color-Background-dark:         #ebebeb !global;
+$AU-color-Background-darkest:      #e0e0e0 !global;
+$AU-color-Muted:                   #636363 !global;
+$AU-color-Border:                  #808080 !global;
+// $AU-color-Background:              AU-color-a11y( darken( $AU-color-Background-light, 4% ), $AU-color-Text ) !global;
+// $AU-color-Background-dark:         AU-color-a11y( darken( $AU-color-Background-light, 8% ), $AU-color-Text ) !global;
+// $AU-color-Background-darkest:      AU-color-a11y( darken( $AU-color-Background-light, 12% ), $AU-color-Text ) !global;
+// $AU-color-Muted:                   AU-color-a11y( mix( $AU-color-Text, $AU-color-Background-darkest, 69%), $AU-color-Background-darkest ) !global;
+// $AU-color-Border:                  AU-color-a11y( darken( desaturate( $AU-color-Background-darkest, 50%), 36% ), $AU-color-Background-darkest, 'large') !global;
+
+
+/**
+* Colors dark theme
+*/
+$AU-colordark-Text:                #ffffff !default;
+$AU-colordark-Background-light:    #135E70 !default;
+$AU-colordark-Action:              #61daff !default;
+$AU-colordark-Focus:               #ff8629 !default;
+
+// non user definable pallet colors
+$AU-colordark-Background:          #104f5f !global;
+$AU-colordark-Background-dark:     #0d414d !global;
+$AU-colordark-Background-darkest:  #0a323c !global;
+$AU-colordark-Muted:               #b7cfd5 !global;
+$AU-colordark-Border:              #8bacb3 !global;
+// $AU-colordark-Background:          AU-color-a11y( darken( $AU-colordark-Background-light, 4% ), $AU-colordark-Text ) !global;
+// $AU-colordark-Background-dark:     AU-color-a11y( darken( $AU-colordark-Background-light, 8% ), $AU-colordark-Text ) !global;
+// $AU-colordark-Background-darkest:  AU-color-a11y( darken( $AU-colordark-Background-light, 12% ), $AU-colordark-Text ) !global;
+// $AU-colordark-Muted:               AU-color-a11y( mix( $AU-colordark-Text, $AU-colordark-Background-light, 30%), $AU-colordark-Background-light ) !global;
+// $AU-colordark-Border:              AU-color-a11y( desaturate( $AU-colordark-Background-light, 50%) , $AU-colordark-Background-light, 'large') !global;
+
+
+// Test the colours here <--- this will error
+
+/**
+ * Colors system messages
+ */
+$AU-color-Error:                   #ff635c !default;
+$AU-color-Success:                 #0cac78 !default;
+$AU-color-Warning:                 #f69900 !default;
+$AU-color-Info:                    #00bfe9 !default;
+
+
+/**
+ * Border vars and styles
+ */
+$AU-border-radius: $AU-unit + 0px !default;

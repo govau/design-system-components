@@ -53,21 +53,22 @@ npm install @gov.au/buttons --save-dev
 Usage:
 
 ```jsx
-import Button from './buttons.js';
+import AUbutton from './buttons.js';
 
-<Button text="Continue" />
+<AUbutton>Continue</AUbutton>
 ```
 
 All props:
 
 ```jsx
-<Button
-	text="Submitting"     {/* The text of the button */}
+<AUbutton
+	children              {/* Anything inside */}
 	as=""                 {/* The kind of button, 'secondary','tertiary', optional */}
 	block={ true }        {/* The block option to make the button fill the available width, optional */}
 	type="submit"         {/* The type attribute, optional */}
-	onClick={ () => {} }  {/* A function to execute when the button is clicked, optional */}
-/>
+	dark={ false }        {/* A dark variation of the component */}
+	attributeOptions      {/* Any other attribute options */}
+></AUbutton>
 ```
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/buttons/tests/react/index.js).
@@ -115,6 +116,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/buttons/tests
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.5.0 - Added pancake-react plugin, ES5 main file
 * v0.4.0 - Added react component
 * v0.3.0 - Fixed px height, added more robust CSS code

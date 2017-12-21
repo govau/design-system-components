@@ -53,13 +53,13 @@ npm install @gov.au/callout --save-dev
 Usage:
 
 ```jsx
-import { Callout, CalloutCalendar } from './callout.js';
+import { AUcallout, AUcalloutCalendar } from './callout.js';
 
-<Callout description="Description for this callout">
-	Callout content
-</Callout>
+<AUcallout description="Description for this callout">
+	AUcallout content
+</AUcallout>
 
-<CalloutCalendar
+<AUcalloutCalendar
 	description="description for this callout"
 	datetime="2017-01-01T00:00:00+00:00"
 	time="Sunday 32 Jun"
@@ -71,18 +71,21 @@ import { Callout, CalloutCalendar } from './callout.js';
 All props:
 
 ```jsx
-<Callout
+<AUcallout
 	description="Description for this callout"  {/* The label is a must for screen readers */}
+	attributeOptions                            {/* Any other attribute options */}
 >
 	Callout content
-</Callout>
+</AUcallout>
 
-<CalloutCalendar
+<AUcalloutCalendar
 	description="description for this callout"  {/* The label is a must for screen readers */}
 	datetime="2017-01-01T00:00:00+00:00"        {/* The date time string */}
 	time="Sunday 32 Jun"                        {/* The same date but human readable */}
 	subline="Your next appointment is"          {/* Your subline, optional */}
 	name="Talk to boss"                         {/* The name of the event, optional */}
+	dark={ false }                              {/* A dark variation of the component */}
+	attributeOptions                            {/* Any other attribute options */}
 />
 ```
 
@@ -131,6 +134,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/callout/tests
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Fixed a11y contrast issue

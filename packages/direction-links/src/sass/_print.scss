@@ -8,25 +8,23 @@
 
 
 @media print {
-	.uikit-direction-link:after {
-		background: none !important;
+	.au-direction-link {
+		color: #000 !important;
+	}
+
+	.au-direction-link:after {
 		content: '→' !important;
-		width: auto !important;
-		height: auto !important;
 	}
 
-	.uikit-direction-link--left:before {
-		background: none !important;
+	.au-direction-link--left:before {
 		content: '←' !important;
-		width: auto !important;
-		height: auto !important;
 	}
 
-	.uikit-direction-link--up:after {
+	.au-direction-link--up:after {
 		content: '↑' !important;
 	}
 
-	.uikit-direction-link--down:after {
+	.au-direction-link--down:after {
 		content: '↓' !important;
 	}
 }

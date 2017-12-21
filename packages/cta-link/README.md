@@ -53,17 +53,18 @@ npm install @gov.au/more-link --save-dev
 Usage:
 
 ```jsx
-import CTALink from './cta-link.js';
+import AUctaLink from './cta-link.js';
 
-<CTALink link="/signup" text="Sign up" />
+<AUctaLink link="/signup" text="Sign up" />
 ```
 
 All props:
 
 ```jsx
-<CTALink
+<AUctaLink
 	text="Sign up"        {/* The text of the CTA link */}
-	onClick={ () => {} }  {/* A function to execute when the link is clicked, optional */}
+	dark={ false }        {/* A dark variation of the component */}
+	attributeOptions      {/* Any other attribute options */}
 />
 ```
 
@@ -112,6 +113,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/cta-link/test
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

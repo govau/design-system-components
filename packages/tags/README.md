@@ -55,7 +55,7 @@ Usage:
 ```jsx
 import Button from './tags.js';
 
-<Tags tags={[
+<AUtags tags={[
 	{
 		link: 'link/to/tag1',
 		text: 'tag1',
@@ -74,14 +74,16 @@ import Button from './tags.js';
 All props:
 
 ```jsx
-<Tags
+<AUtags
+	dark={ false }           {/* A dark variation of the component */}
 	tags={[
 		{
 			link: 'url/to/tag',  {/* The href link of this tag, optional */}
 			text: 'tagname',     {/* The text of the tag */}
 			onClick: () => {},   {/* A function to execute when the tag is clicked, optional */}
 		},
-	]}
+	]},
+	attributeOptions         {/* Any other attribute options */}
 />
 ```
 
@@ -130,6 +132,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/tags/tests/si
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Fixed a11y contrast issue

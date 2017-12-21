@@ -19,22 +19,29 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
 /**
  * DEFAULT
  * The breadcrumbs component
  *
- * @param  {boolean} inverted - The inverted option, optional
- * @param  {string}  label    - The aria label of the component
- * @param  {array}   items    - Items inside the breadcrumbs passed on to LinkList
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} label            - The aria label of the component
+ * @param  {array}  items            - Items inside the breadcrumbs passed on to LinkList
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Breadcrumbs = ({ inverted, label, items }) => (
-	<nav className={ `uikit-breadcrumbs${ inverted ? ' uikit-breadcrumbs--inverted' : '' }` } aria-label={ label }>
-		<LinkList inverted={ inverted } inline items={ items } />
+const AUbreadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
+	<nav
+		className={ `au-breadcrumbs${ dark ? ' au-breadcrumbs--dark' : '' }` }
+		aria-label={ label }
+		{ ...attributeOptions }
+	>
+		<LinkList inline items={ items } />
 	</nav>
 );
 
-Breadcrumbs.propTypes = {
-	inverted: PropTypes.bool,
+
+AUbreadcrumbs.propTypes = {
+	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -45,4 +52,5 @@ Breadcrumbs.propTypes = {
 		).isRequired,
 };
 
-export default Breadcrumbs;
+
+export default AUbreadcrumbs;

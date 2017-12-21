@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SkipLink from './skip-link.js';
+import AUskipLink from './skip-link.js';
 
 
 ReactDOM.render(
 	<div>
-		<SkipLink links={[
+		<AUskipLink links={[
 			{
 				link: '#nav',
 				text: 'Skip to navigation',

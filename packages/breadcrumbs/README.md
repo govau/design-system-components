@@ -53,9 +53,9 @@ npm install @gov.au/breadcrumbs --save-dev
 Usage:
 
 ```jsx
-import Breadcrumbs from './breadcrumbs.js';
+import AUbreadcrumbs from './breadcrumbs.js';
 
-<Breadcrumbs label="Breadcrumb for this page" items={[
+<AUbreadcrumbs label="Breadcrumb for this page" items={[
 	{
 		link: 'breadcrumb/one/',
 		text: 'breadcrumb 1',
@@ -73,15 +73,16 @@ import Breadcrumbs from './breadcrumbs.js';
 All props:
 
 ```jsx
-<Breadcrumbs
+<AUbreadcrumbs
 	label="The aria-label"        {/* Provide the aria label is a must */}
-	inverted={ false }            {/* An option to theme the breadcrumbs inverted, optional */}
+	dark={ false }                {/* A dark variation of the component */}
 	items={[                      {/* An array of all breadcrumbs */}
 		{
 			link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}
 			text: 'breadcrumb 1',     {/* The text of the breadcrumb */}
 		},
 	]},
+	attributeOptions              {/* Any other attribute options */}
 />
 ```
 
@@ -134,6 +135,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/t
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.1 - Fixed interdependency with link-list
 * v0.3.0 - Fixed react pipeline, background repeat
 * v0.2.0 - Added react component

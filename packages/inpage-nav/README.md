@@ -53,9 +53,9 @@ npm install @gov.au/inpage-nav --save-dev
 Usage:
 
 ```jsx
-import { InpageNavLinks, InpageNavSection } from './inpage-nav.js';
+import { AUinpageNavLinks, AUinpageNavSection } from './inpage-nav.js';
 
-<InpageNavLinks sections={[
+<AUinpageNavLinks sections={[
 	{
 		link: 'section1',
 		title: 'Section 1',
@@ -66,17 +66,17 @@ import { InpageNavLinks, InpageNavSection } from './inpage-nav.js';
 	},
 ]} />
 
-<InpageNavSection title="Section 1 headline" link="section1">
-</InpageNavSection>
+<AUinpageNavSection title="Section 1 headline" link="section1">
+</AUinpageNavSection>
 
-<InpageNavSection title="Section 2 headline" link="section2">
-</InpageNavSection>
+<AUinpageNavSection title="Section 2 headline" link="section2">
+</AUinpageNavSection>
 ```
 
 All props:
 
 ```jsx
-<InpageNavLinks
+<AUinpageNavLinks
 	title="Contents"         {/* The title above all sections */}
 	sections={[              {/* All section in a neat array */}
 		{
@@ -84,16 +84,18 @@ All props:
 			title: 'Section 1',  {/* The link text of this section */}
 			onClick: () => {},   {/* A function to be executed when a section is clicked, optional */}
 		},
-	]}
+	]},
+	attributeOptions         {/* Any other attribute options */}
 />
 
-<InpageNavLinks
+<AUinpageNavLinks
 	title="Section 1"                {/* The title of the section */}
-	link="section1"                  {/* The link of this section, corresponds to the link inside InpageNavLinks */}
+	link="section1"                  {/* The link of this section, corresponds to the link inside AUinpageNavLinks */}
 	level="2"                        {/* The semantic heading tag level, h1-h6, optional */}
-	headingClass="uikit-display-3"   {/* Additional classes to be added to the headline, optional */}
+	headingClass="au-display-lg"     {/* Additional classes to be added to the headline, optional */}
 	sectionLink="Link to section"    {/* The text for the section link, optional */}
-	sectionLinkOnClick={ () => {} }  {/* A function to be executed when the section link is clicked, optional */}
+	dark={ false }                   {/* A dark variation of the component */}
+	attributeOptions                 {/* Any other attribute options */}
 />
 ```
 
@@ -146,6 +148,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/inpage-nav/te
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Fixed a11y contrast issue

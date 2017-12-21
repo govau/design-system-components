@@ -15,7 +15,9 @@
 //  Strong links style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-.uikit-keyword-list {
+.au-keyword-list {
+	@include AU-fontgrid( lg );
+
 	&:before, //clear floats without obstructing the outline on focus
 	&:after {
 		content: "";
@@ -25,26 +27,38 @@
 		clear: both;
 	}
 
-	.uikit-body & > li {
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	.au-body & > li {
+		@include AU-space( margin-top, 1unit );
 		float: left;
 		clear: both;
 		list-style: none;
 		margin-left: 0;
-		margin-bottom: uikit-space( 0.5 );
-		color: $uikit-colour-Text;
 	}
 }
 
-.uikit-keyword-list__item {
-	font-size: 28px;
+.au-keyword-list__item {
 	font-weight: bold;
-	line-height: ($uikit-leading * 0.875); //TODO: clean up magic numbers.
+
+	// Display the link as block as focus doesn't show
+	& > a {
+		display: block;
+	}
 }
 
-.uikit-keyword-list__item__small {
-	.uikit-body & {
-		display: block;
-		font-size: 18px;
-		color: $uikit-colour-Text;
+.au-keyword-list__item__small {
+	@include AU-fontgrid( sm, nospace );
+	display: block;
+	font-weight: normal; // Reset parent weight
+
+	.au-body & {
+		color: $AU-color-Text;
+	}
+
+	.au-keyword-list--dark & {
+		color: $AU-colordark-Text;
 	}
 }

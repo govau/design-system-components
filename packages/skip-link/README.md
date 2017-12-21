@@ -55,7 +55,7 @@ Usage:
 ```jsx
 import Button from './skip-link.js';
 
-<SkipLink links={[
+<AUskipLink links={[
 	{
 		url: '#nav',
 		text: 'Skip to navigation',
@@ -70,14 +70,15 @@ import Button from './skip-link.js';
 All props:
 
 ```jsx
-<SkipLink
+<AUskipLink
 	links={[                         {/* All links inside a neat array */}
 		{
 			url: '#nav',                 {/* The href link of this link */}
 			text: 'Skip to navigation',  {/* The text of the link */}
-			onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */}
+			onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */},
 		},
-	]}
+	]},
+	attributeOptions                 {/* Any other attribute options */}
 />
 ```
 
@@ -126,6 +127,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/skip-link/tes
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

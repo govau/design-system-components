@@ -1,25 +1,22 @@
 //dependencies
-@import '../../src/sass/_dependencies.scss';
+// @import '../../src/sass/_dependencies.scss';
 
 //testing includes
+@import '../../../core/node_modules/sass-versioning/dist/_index.scss';
+@import '../../../core/lib/sass/_module.scss';
 @import '../../../grid-12/lib/sass/_module.scss';
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
 
 
-.uikit-dropdown-example {
+.au-dropdown-example {
 	background-color: hotpink;
 	background-color: rebeccapurple;
-	margin-bottom: 1em;
+	@include AU-space( margin-top, 1unit );
 }
 
-// We’re undoing these test page styles in order to properly test the grid.
-body {
-	padding-left: 0;
-	padding-right: 0;
-}
 
 .test-link { //have to to make it look awesome again
-	margin-left: uikit-space( 1 );
+	@include AU-space( margin-left, 1unit );
 }

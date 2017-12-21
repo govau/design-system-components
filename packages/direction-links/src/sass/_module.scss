@@ -16,113 +16,76 @@
 //
 // Everyone needs Konami code style links, right? (:
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-direction-link {
+.au-direction-link {
+	@include AU-fontgrid( sm );
 	display: inline-block;
-	color: $uikit-colour-Text;
-	-webkit-appearance: none;
-	padding: 0;
-	line-height: $uikit-leading;
+	font-family: $AU-font;
+
+	// Styles to reset button
+	color: $AU-color-Action;
+	appearance: none;
 	background: transparent;
-	text-align: left;
-	font-family: $uikit-font-system;
 	border: none;
-	border-bottom: solid 1px $uikit-colour-Primary;
-	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+	padding: 0;
 	cursor: pointer;
-	font-size: 1em;
+	text-decoration: underline;
+	text-decoration-skip: ink;
 
-	@include uikit-focus();
-
-	&:hover,
-	&:focus {
-		background-color: $uikit-colour-Link;
-		border-color: transparent;
+	&:hover {
+		text-decoration: none;
+		color: $AU-color-Text;
 	}
 
-	&:after {
-		content: ' ';
-		display: inline-block;
-		width: 0.8em;
-		height: 0.8em;
-		margin: 0 uikit-space( 0.1 ) -1px uikit-space( 0.25 );
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Text }" d="M128 64l-64 57V8"/><path fill="#{ $uikit-colour-Text }" fill-rule="nonzero" d="M8 48h64v32H8z"/>
-			</svg>');
-		background-repeat: no-repeat;
-	}
+	@include AU-focus();
 
-	.ie8 &,
-	.lt-ie8 & {
-		&:after {
-			content: '→';
-			width: auto;
-			height: auto;
+	&.au-direction-link--dark {
+		color: $AU-colordark-Action;
+
+		&:hover {
+			color: $AU-colordark-Text;
 		}
+
+		@include AU-focus( 'dark' );
 	}
+}
+
+.au-direction-link:after {
+	@include AU-space( width, 1unit );
+	@include AU-space( height, 1unit );
+	@include AU-space( margin, 0 0 0 0.25unit );
+	content: '→';
+	display: inline-block;
+	width: auto;
+	height: auto;
 }
 
 /**
  * LEFT
  */
-.uikit-direction-link--left {
+.au-direction-link--left {
 	&:after {
 		display: none;
 	}
 
 	&:before {
-		content: ' ';
+		content: '←';
 		display: inline-block;
-		width: 0.8em;
-		height: 0.8em;
-		margin: 0 uikit-space( 0.25 ) -1px uikit-space( 0.1 );
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Text }" d="M0 64l64 57V8"/><path fill="#{ $uikit-colour-Text }" fill-rule="nonzero" d="M120 48H56v32h64z"/>
-			</svg>');
-		background-repeat: no-repeat;
-	}
-
-	.ie8 &,
-	.lt-ie8 & {
-		&:before {
-			content: '←';
-			width: auto;
-			height: auto;
-		}
+		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
+		@include AU-space( margin, 0 0.25unit 0 0 );
 	}
 }
 
 /**
  * UP
  */
-.uikit-direction-link--up {
-	&:after {
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Text }" d="M64 0l57 64H8"/><path fill="#{ $uikit-colour-Text }" fill-rule="nonzero" d="M48 120V56h32v64z"/>
-			</svg>');
-	}
-
-	.ie8 &,
-	.lt-ie8 & {
-		&:after {
-			content: '↑';
-		}
-	}
+.au-direction-link--up:after {
+	content: '↑';
 }
 
 /**
  * DOWN
  */
-.uikit-direction-link--down {
-	&:after {
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Text }" d="M64 128l57-64H8"/><path fill="#{ $uikit-colour-Text }" fill-rule="nonzero" d="M48 8v64h32V8z"/>
-			</svg>');
-	}
-
-	.ie8 &,
-	.lt-ie8 & {
-		&:after {
-			content: '↓';
-		}
-	}
+.au-direction-link--down:after {
+	content: '↓';
 }

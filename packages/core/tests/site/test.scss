@@ -2,2694 +2,1096 @@
 @import '../../src/sass/_dependencies.scss';
 
 //testing includes
-// @import '../../../body/lib/sass/_module.scss';
+@import '../../../body/lib/sass/_module.scss';
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
 
 
-// html {
-// 	font-family: $uikit-font-system;
-// }
+html {
+	font-family: $AU-font;
+}
 
 
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // BREAKPOINT TEST
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .sm-only,
-// .md-only,
-// .lg-only,
-// .xl-only {
-// 	display: none;
-// }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// BREAKPOINT TEST
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.sm-only,
+.md-only,
+.lg-only,
+.xl-only {
+	display: none;
+}
 
-// @include uikit-media( xs ) {
-// 	.xs-only {
-// 		display: none;
-// 	}
+@include AU-media( xs ) {
+	.xs-only {
+		display: none;
+	}
 
-// 	.sm-only {
-// 		display: block;
-// 	}
-// }
+	.sm-only {
+		display: block;
+	}
+}
 
-// @include uikit-media( sm ) {
-// 	.sm-only {
-// 		display: none;
-// 	}
+@include AU-media( sm ) {
+	.sm-only {
+		display: none;
+	}
 
-// 	.md-only {
-// 		display: block;
-// 	}
-// }
+	.md-only {
+		display: block;
+	}
+}
 
-// @include uikit-media( md ) {
-// 	.md-only {
-// 		display: none;
-// 	}
+@include AU-media( md ) {
+	.md-only {
+		display: none;
+	}
 
-// 	.lg-only {
-// 		display: block;
-// 	}
-// }
+	.lg-only {
+		display: block;
+	}
+}
 
-// @include uikit-media( lg ) {
-// 	.lg-only {
-// 		display: none;
-// 	}
+@include AU-media( lg ) {
+	.lg-only {
+		display: none;
+	}
 
-// 	.xl-only {
-// 		display: block;
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // font families
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .font {
-// 	font-family: $uikit-font;
-// }
-
-// .monospace {
-// 	font-family: $uikit-font-monospace;
-// }
-
-// .system {
-// 	font-family: $uikit-font-system;
-// }
+	.xl-only {
+		display: block;
+	}
+}
 
 
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // max width
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .max-width {
-// 	max-width: $uikit-maxwidth;
-// }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// font families
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.font {
+	font-family: $AU-font;
+}
+
+.monospace {
+	font-family: $AU-font-monospace;
+}
+
+.system {
+	font-family: $AU-font;
+}
 
 
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // borderize
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .borderize {
-// 	border: none;
-// 	border-top: $uikit-borderize;
-// }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// max width
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.max-width {
+	max-width: $AU-maxwidth;
+}
 
 
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // border radius
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .border-radius-wrapper {
-// 	overflow: hidden;
-// 	margin: 0;
-// 	padding: 0;
-// 	list-style: none;
-// }
-
-// .border-radius {
-// 	float: left;
-// 	border-radius: $uikit-border-radius;
-// 	background-color: $uikit-colour-Hero;
-// 	overflow: hidden;
-// 	width: 5em;
-// 	height: 5em;
-// 	margin-right: 1em;
-// }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// borderize
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.borderize {
+	border: none;
+	border-top: 1px solid $AU-color-Border;
+}
 
 
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // mixin uikit-media
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-media {
-// 	@include uikit-media( xs ) {
-// 		&:after {
-// 			content: 'xs';
-// 			display: block;
-// 		}
-// 	}
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// border radius
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.border-radius-wrapper {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 
-// 	@include uikit-media( sm ) {
-// 		&:after {
-// 			content: 'sm';
-// 			display: block;
-// 		}
-// 	}
-
-// 	@include uikit-media( md ) {
-// 		&:after {
-// 			content: 'md';
-// 			display: block;
-// 		}
-// 	}
-
-// 	@include uikit-media( lg ) {
-// 		&:after {
-// 			content: 'lg';
-// 			display: block;
-// 		}
-// 	}
-// }
+.border-radius {
+	float: left;
+	border-radius: $AU-border-radius;
+	background-color: $AU-colordark-Background;
+	overflow: hidden;
+	width: 5em;
+	height: 5em;
+	margin-right: 1em;
+}
 
 
-// //------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // mixin uikit-sronly
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .sr-only {
-// 	@include uikit-sronly();
-// }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// mixin AU-media
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-media {
+	@include AU-media( xs ) {
+		&:after {
+			content: 'xs';
+			display: block;
+		}
+	}
+
+	@include AU-media( sm ) {
+		&:after {
+			content: 'sm';
+			display: block;
+		}
+	}
+
+	@include AU-media( md ) {
+		&:after {
+			content: 'md';
+			display: block;
+		}
+	}
+
+	@include AU-media( lg ) {
+		&:after {
+			content: 'lg';
+			display: block;
+		}
+	}
+}
 
 
-// //------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // mixin uikit-outline
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-outline {
-// 	@include uikit-outline();
-// }
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+// mixin AU-sronly
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.sr-only {
+	@include AU-sronly();
+}
 
 
-// //------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // mixin uikit-focus
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-focus {
-// 	@include uikit-focus();
-// }
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+// mixin AU-outline
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-outline {
+	@include AU-outline();
+}
+
+.au-outline.dark {
+	@include AU-outline( 'dark' );
+}
 
 
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // function uikit-space
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-space {
-// 	display: block;
-// 	position: relative;
-// 	overflow: visible;
-// 	padding: 1em 0;
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+// mixin AU-focus
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-focus {
+	@include AU-focus();
+}
 
-// 	&:after {
-// 		position: absolute;
-// 		left: 0;
-// 		bottom: 0;
-// 		height: 6px;
-// 		display: block;
-// 		content: ' ';
-// 		background-color: rebeccapurple;
-// 	}
-
-// 	&.uikit-space--025:after {
-// 		width: uikit-space( 0.25 );
-// 	}
-
-// 	&.uikit-space--05:after {
-// 		width: uikit-space( 0.5 );
-// 	}
-
-// 	&.uikit-space--075:after {
-// 		width: uikit-space( 0.75 );
-// 	}
-
-// 	&.uikit-space--1:after {
-// 		width: uikit-space( 1 );
-// 	}
-
-// 	&.uikit-space--15:after {
-// 		width: uikit-space( 1.5 );
-// 	}
-
-// 	&.uikit-space--2:after {
-// 		width: uikit-space( 2 );
-// 	}
-
-// 	&.uikit-space--25:after {
-// 		width: uikit-space( 2.5 );
-// 	}
-
-// 	&.uikit-space--3:after {
-// 		width: uikit-space( 3 );
-// 	}
-
-// 	&.uikit-space--35:after {
-// 		width: uikit-space( 3.5 );
-// 	}
-
-// 	&.uikit-space--4:after {
-// 		width: uikit-space( 4 );
-// 	}
-
-// 	&.uikit-space--45:after {
-// 		width: uikit-space( 4.5 );
-// 	}
-
-// 	&.uikit-space--5:after {
-// 		width: uikit-space( 5 );
-// 	}
-
-// 	&.uikit-space--55:after {
-// 		width: uikit-space( 5.5 );
-// 	}
-// }
+.au-focus.dark {
+	@include AU-focus( 'dark' );
+}
 
 
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // function uikit-replace
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-replace:after {
-// 	content: uikit-replace('We love spaces for indentation', 'spaces', 'tabs');
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+// mixin AU-fontgrid
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-fontgrid {
+	background-color: $AU-color-Background;
+	margin-top: $AU-unit + 0px;
+}
+
+.au-fontgrid-0 {
+	@include AU-fontgrid( xxxl );
+}
+
+.au-fontgrid-1 {
+	@include AU-fontgrid( xxl );
+}
+
+.au-fontgrid-2 {
+	@include AU-fontgrid( xl );
+}
+
+.au-fontgrid-3 {
+	@include AU-fontgrid( lg );
+}
+
+.au-fontgrid-4 {
+	@include AU-fontgrid( md );
+}
+
+.au-fontgrid-5 {
+	@include AU-fontgrid( sm );
+}
+
+.au-fontgrid-6 {
+	@include AU-fontgrid( xs );
+}
+
+.lineheight-heading {
+	.au-fontgrid-0 {
+		@include AU-fontgrid( xxxl, heading );
+	}
+
+	.au-fontgrid-1 {
+		@include AU-fontgrid( xxl, heading );
+	}
+
+	.au-fontgrid-2 {
+		@include AU-fontgrid( xl, heading );
+	}
+
+	.au-fontgrid-3 {
+		@include AU-fontgrid( lg, heading );
+	}
+
+	.au-fontgrid-4 {
+		@include AU-fontgrid( md, heading );
+	}
+
+	.au-fontgrid-5 {
+		@include AU-fontgrid( sm, heading );
+	}
+
+	.au-fontgrid-6 {
+		@include AU-fontgrid( xs, heading );
+	}
+}
+
+.lineheight-nospace {
+	.au-fontgrid-0 {
+		@include AU-fontgrid( xxxl, nospace );
+	}
+
+	.au-fontgrid-1 {
+		@include AU-fontgrid( xxl, nospace );
+	}
+
+	.au-fontgrid-2 {
+		@include AU-fontgrid( xl, nospace );
+	}
+
+	.au-fontgrid-3 {
+		@include AU-fontgrid( lg, nospace );
+	}
+
+	.au-fontgrid-4 {
+		@include AU-fontgrid( md, nospace );
+	}
+
+	.au-fontgrid-5 {
+		@include AU-fontgrid( sm, nospace );
+	}
+
+	.au-fontgrid-6 {
+		@include AU-fontgrid( xs, nospace );
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function AU-space
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-space {
+	display: block;
+	position: relative;
+	overflow: visible;
+	padding: 1em 0;
+
+	&:after {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 6px;
+		display: block;
+		content: ' ';
+		background-color: hotpink;
+		background-color: rebeccapurple;
+	}
+
+	&.au-space--025:after {
+		@include AU-space( width, 0.25unit );
+	}
+
+	&.au-space--05:after {
+		@include AU-space( width, 0.5unit );
+	}
+
+	&.au-space--075:after {
+		@include AU-space( width, 0.75unit );
+	}
+
+	&.au-space--1:after {
+		@include AU-space( width, 1unit );
+	}
+
+	&.au-space--15:after {
+		@include AU-space( width, 1.5unit );
+	}
+
+	&.au-space--2:after {
+		@include AU-space( width, 2unit );
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function au-replace
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-replace:after {
+	content: AU-replace('We love spaces for indentation', 'spaces', 'tabs');
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function au-svguri
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-svguri {
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background: AU-svguri('<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+			<path fill="#{ $AU-color-Text }" d="M1408 928v320q0 119-84.5 203.5T1120 1536H288q-119' +
+		'	0-203.5-84.5T0 1248V416q0-119 84.5-203.5T288 128h704q14 0 23 9t9 23v64q0 14-9 23t-23 9H288q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0' +
+		'	113-47t47-113V928q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10L695' +
+		'	983q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z"/>' +
+		'</svg>');
+
+	.ie8 &:after,
+	.lt-ie8 &:after {
+		background: none;
+		content: '⇗';
+		color: $AU-color-Text;
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function au-replace
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-replace:after {
+	content: AU-replace('We love spaces for indentation', 'spaces', 'tabs');
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function au-factorial
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-factorial1:after {
+	content: " #{ AU-factorial( 1 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-factorial2:after {
+	content: " #{ AU-factorial( 2 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-factorial3:after {
+	content: " #{ AU-factorial( 3 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-factorial4:after {
+	content: " #{ AU-factorial( 4 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-factorial5:after {
+	content: " #{ AU-factorial( 5 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-factorial6:after {
+	content: " #{ AU-factorial( 6 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function au-pow
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-pow1:after {
+	content: " #{ AU-pow( 5, 3 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-pow2:after {
+	content: " #{ AU-pow( 4, 2 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+// .au-pow3:after {
+// 	content: " #{ AU-pow( 4, -2 ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // function uikit-svguri
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-svguri {
-// 	width: 24px;
-// 	height: 24px;
-// 	background-repeat: no-repeat;
-// 	background: uikit-svguri('<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-// 			<path fill="#{ $uikit-colour-Text }" d="M1408 928v320q0 119-84.5 203.5T1120 1536H288q-119' +
-// 		'	0-203.5-84.5T0 1248V416q0-119 84.5-203.5T288 128h704q14 0 23 9t9 23v64q0 14-9 23t-23 9H288q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0' +
-// 		'	113-47t47-113V928q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10L695' +
-// 		'	983q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z"/>' +
-// 		'</svg>');
-// }
+.au-pow4:after {
+	content: " #{ AU-pow( 4, 0.2 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
 
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // function uikit-replace
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-replace:after {
-// 	content: uikit-replace('We love spaces for indentation', 'spaces', 'tabs');
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function au-color-luminance
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-color-luminance1:after {
+	content: " #{ AU-color-luminance( #000 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-color-luminance2:after {
+	content: " #{ AU-color-luminance( #663399 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-color-luminance3:after {
+	content: " #{ AU-color-luminance( #ff69b4 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-color-luminance4:after {
+	content: " #{ AU-color-luminance( #fff ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function AU-color-contrast
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-color-contrast1:after {
+	content: " #{ AU-color-contrast( #fff, #000 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-color-contrast2:after {
+	content: " #{ AU-color-contrast( #fff, #f00 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-color-contrast3:after {
+	content: " #{ AU-color-contrast( #000, #f00 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-color-contrast4:after {
+	content: " #{ AU-color-contrast( #000, #ff0 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+.au-color-contrast5:after {
+	content: " #{ AU-color-contrast( #fff, #ff0 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// function AU-color-a11y
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// .au-color-a11y1:after {
+// 	content: " #{ AU-color-a11y( red, blue ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // function uikit-factorial
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-factorial1:after {
-// 	content: " #{ uikit-factorial( 1 ) }";
+// .au-color-a11y2:after {
+// 	content: " #{ AU-color-a11y( green, blue ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-// .uikit-factorial2:after {
-// 	content: " #{ uikit-factorial( 2 ) }";
+// .au-color-a11y3:after {
+// 	content: " #{ AU-color-a11y( pink, blue ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-// .uikit-factorial3:after {
-// 	content: " #{ uikit-factorial( 3 ) }";
+// .au-color-a11y4:after {
+// 	content: " #{ AU-color-a11y( blue, blue ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-// .uikit-factorial4:after {
-// 	content: " #{ uikit-factorial( 4 ) }";
+// .au-color-a11y5:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-// .uikit-factorial5:after {
-// 	content: " #{ uikit-factorial( 5 ) }";
+// .au-color-a11y6:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 1 ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-// .uikit-factorial6:after {
-// 	content: " #{ uikit-factorial( 6 ) }";
+// .au-color-a11y7:after {
+// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 50 ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // function uikit-pow
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-pow1:after {
-// 	content: " #{ uikit-pow( 5, 3 ) }";
+// .au-color-a11y8:after {
+// 	content: " #{ AU-color-a11y( #231284, #ccc ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-// .uikit-pow2:after {
-// 	content: " #{ uikit-pow( 4, 2 ) }";
+// .au-color-a11y9:after {
+// 	content: " #{ AU-color-a11y( #fff, #fff ) }";
 // 	display: inline;
 // 	color: rebeccapurple;
 // }
 
-// // .uikit-pow3:after {
-// // 	content: " #{ uikit-pow( 4, -2 ) }";
-// // 	display: inline;
-// // 	color: rebeccapurple;
-// // }
-
-// .uikit-pow4:after {
-// 	content: " #{ uikit-pow( 4, 0.2 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // function uikit-colour-luminance
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-colour-luminance1:after {
-// 	content: " #{ uikit-colour-luminance( #000 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .uikit-colour-luminance2:after {
-// 	content: " #{ uikit-colour-luminance( #663399 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .uikit-colour-luminance3:after {
-// 	content: " #{ uikit-colour-luminance( #ff69b4 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .uikit-colour-luminance4:after {
-// 	content: " #{ uikit-colour-luminance( #fff ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // function uikit-color-contrast
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .uikit-color-contrast1:after {
-// 	content: " #{ uikit-color-contrast( #fff, #000 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .uikit-color-contrast2:after {
-// 	content: " #{ uikit-color-contrast( #fff, #f00 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .uikit-color-contrast3:after {
-// 	content: " #{ uikit-color-contrast( #000, #f00 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .uikit-color-contrast4:after {
-// 	content: " #{ uikit-color-contrast( #000, #ff0 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .uikit-color-contrast5:after {
-// 	content: " #{ uikit-color-contrast( #fff, #ff0 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // palettes
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .palette {
-// 	overflow: hidden;
-// }
-
-// .palette__color {
-// 	position: relative;
-// 	float: left;
-
-// 	.palette--7 & {
-// 		width: 14.285714286%;
-// 		padding-bottom: 14.285714286%;
-// 	}
-
-// 	.palette--4 & {
-// 		width: 25%;
-// 		padding-bottom: 25%;
-// 	}
-
-// 	&:after {
-// 		position: absolute;
-// 		left: 0;
-// 		right: 0;
-// 		top: 50%;
-// 		margin-top: -1.2em;
-// 		text-align: center;
-// 		font-size: 12px;
-// 		background: rgba(255, 255, 255, 0.2);
-// 		padding: 0.5em 0
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // contrast table
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// @mixin check-contrast( $ratio ) {
-// 	$result: "✔";
-
-// 	@if( $ratio < 4.5 ) {
-// 		background-color: rgba( 255, 255, 0, 0.7 );
-// 		background-image: repeating-linear-gradient(
-// 			45deg, transparent,
-// 			transparent 5px,
-// 			rgba(255,255,255,.5) 5px,
-// 			rgba(255,255,255,.5) 10px
-// 		);
-// 		color: #000;
-
-// 		$result: "✗";
-// 	}
-
-// 	@if( $ratio < 3 ) {
-// 		background-color: rgba( 255, 0, 0, 0.7 );
-// 		color: #fff;
-
-// 		$result: "✗";
-// 	}
-
-// 	content: "#{ $ratio } #{ $result }";
-// }
-
-// .contrast {
-// 	width: 100%;
-
-// 	caption {
-// 		text-align: left;
-// 		margin-bottom: 1em;
-// 	}
-
-// 	td {
-// 		width: 13.333333333333%;
-// 		padding: 0;
-// 	}
-// }
-
-// .contrast-box {
-// 	padding: 1em;
-// 	text-align: center;
-// 	font-weight: bold;
-
-// 	&:after {
-// 		display: block;
-// 		margin: 0.5em;
-// 		padding: 1em;
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color boxes for tints
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox-wrapper {
-// 	overflow: hidden;
-
-// 	&.colorbox__8 .colorbox {
-// 		width: 100%;
-
-// 		@include uikit-media( sm ) {
-// 			width: 25%;
-// 		}
-
-// 		@include uikit-media( md ) {
-// 			width: 12.5%;
-// 		}
-// 	}
-
-// 	&.colorbox__4 .colorbox {
-// 		width: 100%;
-
-// 		@include uikit-media( sm ) {
-// 			width: 50%;
-// 		}
-
-// 		@include uikit-media( md ) {
-// 			width: 25%;
-// 		}
-// 	}
-// }
-
-// .colorbox {
-// 	float: left;
-// 	font-size: 12px;
-
-// 	span {
-// 		display: block;
-// 		background-color: rgba(255, 255, 255, 0.7);
-// 		padding: 1em;
-// 		margin-left: 4em;
-// 		font-weight: bold;
-// 		overflow: auto;
-
-// 		&:after {
-// 			content: '';
-// 			display: inline;
-// 			padding-left: 0.5em;
-// 			font-weight: normal;
-// 		}
-// 	}
-// }
-
-// .colorbox__tint__name {
-// 	border-top: 3px solid #fff;
-// 	border-bottom: 3px solid #fff;
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // main palette colors
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .palette__color--hero {
-// 	background-color: $uikit-colour-Hero;
-
-// 	&:after {
-// 		content: 'Hero: #{ $uikit-colour-Hero }'
-// 	}
-// }
-// .palette__color--primary {
-// 	background-color: $uikit-colour-Primary;
-
-// 	&:after {
-// 		content: 'Primary: #{ $uikit-colour-Primary }'
-// 	}
-// }
-// .palette__color--secondary {
-// 	background-color: $uikit-colour-Secondary;
-
-// 	&:after {
-// 		content: 'Secondary: #{ $uikit-colour-Secondary }'
-// 	}
-// }
-// .palette__color--background {
-// 	background-color: $uikit-colour-Background;
-
-// 	&:after {
-// 		content: 'Background: #{ $uikit-colour-Background }'
-// 	}
-// }
-// .palette__color--border {
-// 	background-color: $uikit-colour-Border;
-
-// 	&:after {
-// 		content: 'Border: #{ $uikit-colour-Border }'
-// 	}
-// }
-// .palette__color--text {
-// 	background-color: $uikit-colour-Text;
-
-// 	&:after {
-// 		content: 'Text: #{ $uikit-colour-Text }'
-// 	}
-// }
-// .palette__color--link {
-// 	background-color: $uikit-colour-Link;
-
-// 	&:after {
-// 		content: 'Link: #{ $uikit-colour-Link }'
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // notification palette colors
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .palette__color--error {
-// 	background-color: $uikit-colour-Error;
-
-// 	&:after {
-// 		content: 'Error: #{ $uikit-colour-Error }'
-// 	}
-// }
-// .palette__color--success {
-// 	background-color: $uikit-colour-Success;
-
-// 	&:after {
-// 		content: 'Success: #{ $uikit-colour-Success }'
-// 	}
-// }
-// .palette__color--warning {
-// 	background-color: $uikit-colour-Warning;
-
-// 	&:after {
-// 		content: 'Warning: #{ $uikit-colour-Warning }'
-// 	}
-// }
-// .palette__color--info {
-// 	background-color: $uikit-colour-Info;
-
-// 	&:after {
-// 		content: 'Info: #{ $uikit-colour-Info }'
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // main palette contrast ratios
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .contrast-box--white {
-// 	background-color: #fff;
-// }
-// .contrast-box--background {
-// 	background-color: $uikit-colour-Background;
-// }
-// .contrast-box--hero {
-// 	background-color: $uikit-colour-Hero;
-// }
-// .contrast-box--primary {
-// 	background-color: $uikit-colour-Primary;
-// }
-// .contrast-box--secondary {
-// 	background-color: $uikit-colour-Secondary;
-// }
-// .contrast-box--border {
-// 	background-color: $uikit-colour-Border;
-// }
-// .contrast-box--link {
-// 	background-color: $uikit-colour-Link;
-// }
-
-// .contrast-white {
-// 	.contrast-box {
-// 		color: #fff;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--hero:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Hero ) );
-// 	}
-// 	.contrast-box--primary:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Primary ) );
-// 	}
-// 	.contrast-box--secondary:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Secondary ) );
-// 	}
-// 	.contrast-box--border:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Border ) );
-// 	}
-// 	.contrast-box--link:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Link ) );
-// 	}
-// }
-
-// .contrast-text {
-// 	.contrast-box {
-// 		color: $uikit-colour-Text;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--hero:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Hero ) );
-// 	}
-// 	.contrast-box--primary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Primary ) );
-// 	}
-// 	.contrast-box--secondary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Secondary ) );
-// 	}
-// 	.contrast-box--border:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Border ) );
-// 	}
-// 	.contrast-box--link:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Link ) );
-// 	}
-// }
-
-// .contrast-hero {
-// 	.contrast-box {
-// 		color: $uikit-colour-Hero;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--hero:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Hero ) );
-// 	}
-// 	.contrast-box--primary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Primary ) );
-// 	}
-// 	.contrast-box--secondary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Secondary ) );
-// 	}
-// 	.contrast-box--border:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Border ) );
-// 	}
-// 	.contrast-box--link:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Hero, $uikit-colour-Link ) );
-// 	}
-// }
-
-// .contrast-primary {
-// 	.contrast-box {
-// 		color: $uikit-colour-Primary;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--hero:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Hero ) );
-// 	}
-// 	.contrast-box--primary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Primary ) );
-// 	}
-// 	.contrast-box--secondary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Secondary ) );
-// 	}
-// 	.contrast-box--border:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Border ) );
-// 	}
-// 	.contrast-box--link:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Primary, $uikit-colour-Link ) );
-// 	}
-// }
-
-// .contrast-secondary {
-// 	.contrast-box {
-// 		color: $uikit-colour-Secondary;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--hero:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Hero ) );
-// 	}
-// 	.contrast-box--primary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Primary ) );
-// 	}
-// 	.contrast-box--secondary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Secondary ) );
-// 	}
-// 	.contrast-box--border:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Border ) );
-// 	}
-// 	.contrast-box--link:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Secondary, $uikit-colour-Link ) );
-// 	}
-// }
-
-// .contrast-border {
-// 	.contrast-box {
-// 		color: $uikit-colour-Border;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--hero:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Hero ) );
-// 	}
-// 	.contrast-box--primary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Primary ) );
-// 	}
-// 	.contrast-box--secondary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Secondary ) );
-// 	}
-// 	.contrast-box--border:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Border ) );
-// 	}
-// 	.contrast-box--link:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Border, $uikit-colour-Link ) );
-// 	}
-// }
-
-// .contrast-link {
-// 	.contrast-box {
-// 		color: $uikit-colour-Link;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--hero:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Hero ) );
-// 	}
-// 	.contrast-box--primary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Primary ) );
-// 	}
-// 	.contrast-box--secondary:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Secondary ) );
-// 	}
-// 	.contrast-box--border:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Border ) );
-// 	}
-// 	.contrast-box--link:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Link, $uikit-colour-Link ) );
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // notification palette contrast ratios
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .contrast-box--error {
-// 	background-color: $uikit-colour-Error;
-// }
-// .contrast-box--success {
-// 	background-color: $uikit-colour-Success;
-// }
-// .contrast-box--warning {
-// 	background-color: $uikit-colour-Warning;
-// }
-// .contrast-box--info {
-// 	background-color: $uikit-colour-Info;
-// }
-
-// .contrast-white {
-// 	.contrast-box--error:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Error ) );
-// 	}
-// 	.contrast-box--success:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Success ) );
-// 	}
-// 	.contrast-box--warning:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Warning ) );
-// 	}
-// 	.contrast-box--info:after {
-// 		@include check-contrast( uikit-color-contrast( #fff, $uikit-colour-Info ) );
-// 	}
-// }
-
-// .contrast-text {
-// 	.contrast-box--error:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Error ) );
-// 	}
-// 	.contrast-box--success:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Success ) );
-// 	}
-// 	.contrast-box--warning:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Warning ) );
-// 	}
-// 	.contrast-box--info:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Text, $uikit-colour-Info ) );
-// 	}
-// }
-
-// .contrast-error {
-// 	.contrast-box {
-// 		color: $uikit-colour-Error;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Error, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Error, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--error:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Error, $uikit-colour-Error ) );
-// 	}
-// 	.contrast-box--success:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Error, $uikit-colour-Success ) );
-// 	}
-// 	.contrast-box--warning:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Error, $uikit-colour-Warning ) );
-// 	}
-// 	.contrast-box--info:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Error, $uikit-colour-Info ) );
-// 	}
-// }
-
-// .contrast-success {
-// 	.contrast-box {
-// 		color: $uikit-colour-Success;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Success, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Success, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--error:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Success, $uikit-colour-Error ) );
-// 	}
-// 	.contrast-box--success:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Success, $uikit-colour-Success ) );
-// 	}
-// 	.contrast-box--warning:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Success, $uikit-colour-Warning ) );
-// 	}
-// 	.contrast-box--info:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Success, $uikit-colour-Info ) );
-// 	}
-// }
-
-// .contrast-warning {
-// 	.contrast-box {
-// 		color: $uikit-colour-Warning;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Warning, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Warning, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--error:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Warning, $uikit-colour-Error ) );
-// 	}
-// 	.contrast-box--success:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Warning, $uikit-colour-Success ) );
-// 	}
-// 	.contrast-box--warning:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Warning, $uikit-colour-Warning ) );
-// 	}
-// 	.contrast-box--info:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Warning, $uikit-colour-Info ) );
-// 	}
-// }
-
-// .contrast-info {
-// 	.contrast-box {
-// 		color: $uikit-colour-Info;
-// 	}
-// 	.contrast-box--white:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Info, #fff ) );
-// 	}
-// 	.contrast-box--background:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Info, $uikit-colour-Background ) );
-// 	}
-// 	.contrast-box--error:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Info, $uikit-colour-Error ) );
-// 	}
-// 	.contrast-box--success:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Info, $uikit-colour-Success ) );
-// 	}
-// 	.contrast-box--warning:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Info, $uikit-colour-Warning ) );
-// 	}
-// 	.contrast-box--info:after {
-// 		@include check-contrast( uikit-color-contrast( $uikit-colour-Info, $uikit-colour-Info ) );
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Hero
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Hero {
-// 	background-color: $uikit-colour-Hero;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Hero }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Hero--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Hero--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Hero--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Hero--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Hero--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Hero--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Hero--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Hero--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Hero--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Hero--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Hero-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Hero-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Hero-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Hero-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Hero-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Hero-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Hero-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Hero-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Hero-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Hero-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Hero-5 }";
-// 		}
-// 	}
-// }
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // tints color Primary
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Primary {
-// 	background-color: $uikit-colour-Primary;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Primary }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Primary--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Primary--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Primary--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Primary--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Primary--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Primary--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Primary--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Primary--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Primary--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Primary--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Primary-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Primary-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Primary-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Primary-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Primary-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Primary-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Primary-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Primary-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Primary-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Primary-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Primary-5 }";
-// 		}
-// 	}
-// }
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Secondary
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Secondary {
-// 	background-color: $uikit-colour-Secondary;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Secondary }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Secondary--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Secondary--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Secondary--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Secondary--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Secondary--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Secondary--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Secondary--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Secondary--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Secondary--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Secondary--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Secondary-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Secondary-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Secondary-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Secondary-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Secondary-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Secondary-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Secondary-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Secondary-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Secondary-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Secondary-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Secondary-5 }";
-// 		}
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Background
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Background {
-// 	background-color: $uikit-colour-Background;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Background }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Background--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Background--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Background--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Background--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Background--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Background--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Background--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Background--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Background--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Background--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Background-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Background-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Background-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Background-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Background-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Background-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Background-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Background-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Background-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Background-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Background-5 }";
-// 		}
-// 	}
-// }
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Border
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Border {
-// 	background-color: $uikit-colour-Border;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Border }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Border--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Border--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Border--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Border--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Border--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Border--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Border--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Border--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Border--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Border--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Border-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Border-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Border-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Border-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Border-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Border-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Border-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Border-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Border-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Border-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Border-5 }";
-// 		}
-// 	}
-// }
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Text
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Text {
-// 	background-color: $uikit-colour-Text;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Text }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Text--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Text--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Text--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Text--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Text--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Text--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Text--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Text--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Text--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Text--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Text-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Text-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Text-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Text-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Text-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Text-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Text-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Text-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Text-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Text-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Text-5 }";
-// 		}
-// 	}
-// }
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Link
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Link {
-// 	background-color: $uikit-colour-Link;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Link }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Link--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Link--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Link--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Link--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Link--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Link--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Link--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Link--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Link--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Link--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Link-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Link-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Link-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Link-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Link-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Link-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Link-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Link-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Link-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Link-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Link-5 }";
-// 		}
-// 	}
-// }
-
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Error
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Error {
-// 	background-color: $uikit-colour-Error;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Error }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Error--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Error--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Error--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Error--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Error--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Error--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Error--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Error--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Error--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Error--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Error-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Error-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Error-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Error-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Error-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Error-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Error-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Error-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Error-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Error-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Error-5 }";
-// 		}
-// 	}
-// }
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Success
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Success {
-// 	background-color: $uikit-colour-Success;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Success }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Success--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Success--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Success--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Success--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Success--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Success--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Success--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Success--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Success--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Success--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Success-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Success-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Success-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Success-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Success-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Success-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Success-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Success-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Success-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Success-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Success-5 }";
-// 		}
-// 	}
-// }
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Warning
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Warning {
-// 	background-color: $uikit-colour-Warning;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Warning }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Warning--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Warning--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Warning--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Warning--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Warning--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Warning--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Warning--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Warning--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Warning--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Warning--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Warning-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Warning-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Warning-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Warning-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Warning-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Warning-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Warning-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Warning-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Warning-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Warning-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Warning-5 }";
-// 		}
-// 	}
-// }
-
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// // color Info
-// //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .colorbox__colour-Info {
-// 	background-color: $uikit-colour-Info;
-
-// 	> span:after {
-// 		content: "#{ $uikit-colour-Info }";
-// 	}
-
-// 	.colorbox--colour--95 {
-// 		background-color: $uikit-colour-Info--95;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--95 }";
-// 		}
-// 	}
-// 	.colorbox--colour--90 {
-// 		background-color: $uikit-colour-Info--90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--90 }";
-// 		}
-// 	}
-// 	.colorbox--colour--80 {
-// 		background-color: $uikit-colour-Info--80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--80 }";
-// 		}
-// 	}
-// 	.colorbox--colour--70 {
-// 		background-color: $uikit-colour-Info--70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--70 }";
-// 		}
-// 	}
-// 	.colorbox--colour--60 {
-// 		background-color: $uikit-colour-Info--60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--60 }";
-// 		}
-// 	}
-// 	.colorbox--colour--50 {
-// 		background-color: $uikit-colour-Info--50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--50 }";
-// 		}
-// 	}
-// 	.colorbox--colour--40 {
-// 		background-color: $uikit-colour-Info--40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--40 }";
-// 		}
-// 	}
-// 	.colorbox--colour--30 {
-// 		background-color: $uikit-colour-Info--30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--30 }";
-// 		}
-// 	}
-// 	.colorbox--colour--20 {
-// 		background-color: $uikit-colour-Info--20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--20 }";
-// 		}
-// 	}
-// 	.colorbox--colour--10 {
-// 		background-color: $uikit-colour-Info--10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info--10 }";
-// 		}
-// 	}
-
-// 	.colorbox--colour-90 {
-// 		background-color: $uikit-colour-Info-90;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-90 }";
-// 		}
-// 	}
-// 	.colorbox--colour-80 {
-// 		background-color: $uikit-colour-Info-80;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-80 }";
-// 		}
-// 	}
-// 	.colorbox--colour-70 {
-// 		background-color: $uikit-colour-Info-70;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-70 }";
-// 		}
-// 	}
-// 	.colorbox--colour-60 {
-// 		background-color: $uikit-colour-Info-60;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-60 }";
-// 		}
-// 	}
-// 	.colorbox--colour-50 {
-// 		background-color: $uikit-colour-Info-50;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-50 }";
-// 		}
-// 	}
-// 	.colorbox--colour-40 {
-// 		background-color: $uikit-colour-Info-40;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-40 }";
-// 		}
-// 	}
-// 	.colorbox--colour-30 {
-// 		background-color: $uikit-colour-Info-30;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-30 }";
-// 		}
-// 	}
-// 	.colorbox--colour-20 {
-// 		background-color: $uikit-colour-Info-20;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-20 }";
-// 		}
-// 	}
-// 	.colorbox--colour-10 {
-// 		background-color: $uikit-colour-Info-10;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-10 }";
-// 		}
-// 	}
-// 	.colorbox--colour-5 {
-// 		background-color: $uikit-colour-Info-5;
-
-// 		span:after {
-// 			content: "#{ $uikit-colour-Info-5 }";
-// 		}
-// 	}
-// }
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// palettes
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.palette {
+	overflow: hidden;
+}
+
+.palette__color {
+	position: relative;
+	float: left;
+
+	.palette--9 & {
+		width: 11.11111111%;
+		padding-bottom: 11.11111111%;
+	}
+
+	.palette--4 & {
+		width: 25%;
+		padding-bottom: 25%;
+	}
+
+	&:after {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		margin-top: -1.2em;
+		text-align: center;
+		font-size: 12px;
+		background: rgba(255, 255, 255, 0.2);
+		padding: 0.5em 0
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// contrast table
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+@mixin check-contrast( $ratio ) {
+	$result: "✔";
+
+	@if( $ratio < 4.5 ) {
+		background-color: rgba( 255, 255, 0, 0.7 );
+		background-image: repeating-linear-gradient(
+			45deg, transparent,
+			transparent 5px,
+			rgba(255,255,255,.5) 5px,
+			rgba(255,255,255,.5) 10px
+		);
+		color: #000;
+
+		$result: "!";
+	}
+
+	@if( $ratio < 3 ) {
+		background-color: rgba( 255, 0, 0, 0.7 );
+		color: #fff;
+
+		$result: "✗";
+	}
+
+	content: "#{ $ratio } #{ $result }";
+}
+
+.contrast {
+	width: 100%;
+
+	thead:before {
+		content: " ";
+		display: block;
+		@include AU-space( padding-top, 1unit );
+	}
+
+	caption {
+		text-align: left;
+	}
+
+	td {
+		width: 13.333333333333%;
+		padding: 0;
+	}
+}
+
+.contrast-box {
+	padding: 1em;
+	text-align: center;
+	font-weight: bold;
+
+	&:after {
+		display: block;
+		margin: 0.5em;
+		padding: 1em;
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// color boxes for tints
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.colorbox-wrapper {
+	overflow: hidden;
+
+	&.colorbox__8 .colorbox {
+		width: 100%;
+
+		@include AU-media( sm ) {
+			width: 25%;
+		}
+
+		@include AU-media( md ) {
+			width: 12.5%;
+		}
+	}
+
+	&.colorbox__4 .colorbox {
+		width: 100%;
+
+		@include AU-media( sm ) {
+			width: 50%;
+		}
+
+		@include AU-media( md ) {
+			width: 25%;
+		}
+	}
+}
+
+.colorbox {
+	float: left;
+	font-size: 12px;
+
+	span {
+		display: block;
+		background-color: rgba(255, 255, 255, 0.7);
+		padding: 1em;
+		margin-left: 4em;
+		font-weight: bold;
+		overflow: auto;
+
+		&:after {
+			content: '';
+			display: inline;
+			padding-left: 0.5em;
+			font-weight: normal;
+		}
+	}
+}
+
+.colorbox__tint__name {
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// main palette colors
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.palette__color--action {
+	background-color: $AU-color-Action;
+
+	&:after {
+		content: 'Action: #{ $AU-color-Action }';
+	}
+}
+.palette__color--focus {
+	background-color: $AU-color-Focus;
+
+	&:after {
+		content: 'Focus: #{ $AU-color-Focus }';
+	}
+}
+.palette__color--text {
+	background-color: $AU-color-Text;
+
+	&:after {
+		content: 'Text: #{ $AU-color-Text }';
+	}
+}
+.palette__color--muted {
+	background-color: $AU-color-Muted;
+
+	&:after {
+		content: 'Muted: #{ $AU-color-Muted }';
+	}
+}
+.palette__color--border {
+	background-color: $AU-color-Border;
+
+	&:after {
+		content: 'Border: #{ $AU-color-Border }';
+	}
+}
+.palette__color--background-light {
+	background-color: $AU-color-Background-light;
+
+	&:after {
+		content: 'Background light: #{ $AU-color-Background-light }';
+	}
+}
+.palette__color--background {
+	background-color: $AU-color-Background;
+
+	&:after {
+		content: 'Background: #{ $AU-color-Background }';
+	}
+}
+.palette__color--background-dark {
+	background-color: $AU-color-Background-dark;
+
+	&:after {
+		content: 'Background dark: #{ $AU-color-Background-dark }';
+	}
+}
+.palette__color--background-darkest {
+	background-color: $AU-color-Background-darkest;
+
+	&:after {
+		content: 'Background darkest: #{ $AU-color-Background-darkest }';
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// dark palette colors
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.palette--dark {
+	.palette__color--action {
+		background-color: $AU-colordark-Action;
+
+		&:after {
+			content: 'Action: #{ $AU-color-Action }';
+		}
+	}
+	.palette__color--focus {
+		background-color: $AU-colordark-Focus;
+
+		&:after {
+			content: 'Focus: #{ $AU-colordark-Focus }';
+		}
+	}
+	.palette__color--text {
+		background-color: $AU-colordark-Text;
+
+		&:after {
+			content: 'Text: #{ $AU-colordark-Text }';
+		}
+	}
+	.palette__color--muted {
+		background-color: $AU-colordark-Muted;
+
+		&:after {
+			content: 'Muted: #{ $AU-colordark-Muted }';
+		}
+	}
+	.palette__color--border {
+		background-color: $AU-colordark-Border;
+
+		&:after {
+			content: 'Border: #{ $AU-colordark-Border }';
+		}
+	}
+	.palette__color--background-light {
+		background-color: $AU-colordark-Background-light;
+		color: #fff;
+
+		&:after {
+			content: 'Background light: #{ $AU-colordark-Background-light }';
+		}
+	}
+	.palette__color--background {
+		background-color: $AU-colordark-Background;
+		color: #fff;
+
+		&:after {
+			content: 'Background: #{ $AU-colordark-Background }';
+		}
+	}
+	.palette__color--background-dark {
+		background-color: $AU-colordark-Background-dark;
+		color: #fff;
+
+		&:after {
+			content: 'Background dark: #{ $AU-colordark-Background-dark }';
+		}
+	}
+	.palette__color--background-darkest {
+		background-color: $AU-colordark-Background-darkest;
+		color: #fff;
+
+		&:after {
+			content: 'Background darkest: #{ $AU-colordark-Background-darkest }';
+		}
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// notification palette colors
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.palette__color--error {
+	background-color: $AU-color-Error;
+
+	&:after {
+		content: 'Error: #{ $AU-color-Error }';
+	}
+}
+.palette__color--success {
+	background-color: $AU-color-Success;
+
+	&:after {
+		content: 'Success: #{ $AU-color-Success }';
+	}
+}
+.palette__color--warning {
+	background-color: $AU-color-Warning;
+
+	&:after {
+		content: 'Warning: #{ $AU-color-Warning }';
+	}
+}
+.palette__color--info {
+	background-color: $AU-color-Info;
+
+	&:after {
+		content: 'Info: #{ $AU-color-Info }';
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// main palette contrast ratios
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.contrast-box--action {
+	color: $AU-color-Action;
+}
+.contrast-box--focus {
+ color: $AU-color-Focus;
+}
+.contrast-box--text {
+	color: $AU-color-Text;
+}
+.contrast-box--muted {
+	color: $AU-color-Muted;
+}
+.contrast-box--border {
+	color: $AU-color-Border;
+}
+
+
+.contrast-background-light {
+	.contrast-box {
+		background-color: $AU-color-Background-light;
+	}
+	.contrast-box--action:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Action ) );
+	}
+	.contrast-box--focus:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Focus ) );
+	}
+	.contrast-box--text:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Text ) );
+	}
+	.contrast-box--muted:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Muted ) );
+	}
+	.contrast-box--border:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Border ) );
+	}
+}
+
+.contrast-background {
+	.contrast-box {
+		background-color: $AU-color-Background;
+	}
+	.contrast-box--action:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Action ) );
+	}
+	.contrast-box--focus:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Focus ) );
+	}
+	.contrast-box--text:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Text ) );
+	}
+	.contrast-box--muted:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Muted ) );
+	}
+	.contrast-box--border:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Border ) );
+	}
+}
+
+.contrast-background-dark {
+	.contrast-box {
+		background-color: $AU-color-Background-dark;
+	}
+	.contrast-box--action:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Action ) );
+	}
+	.contrast-box--focus:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Focus ) );
+	}
+	.contrast-box--text:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Text ) );
+	}
+	.contrast-box--muted:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Muted ) );
+	}
+	.contrast-box--border:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Border ) );
+	}
+}
+
+.contrast-background-darkest {
+	.contrast-box {
+		background-color: $AU-color-Background-darkest;
+	}
+	.contrast-box--action:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Action ) );
+	}
+	.contrast-box--focus:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Focus ) );
+	}
+	.contrast-box--text:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Text ) );
+	}
+	.contrast-box--muted:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Muted ) );
+	}
+	.contrast-box--border:after {
+		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Border ) );
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// dark palette contrast ratios
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.contrast--dark {
+	.contrast-box--action {
+		color: $AU-colordark-Action;
+	}
+	.contrast-box--focus {
+	 color: $AU-colordark-Focus;
+	}
+	.contrast-box--text {
+		color: $AU-colordark-Text;
+	}
+	.contrast-box--muted {
+		color: $AU-colordark-Muted;
+	}
+	.contrast-box--border {
+		color: $AU-colordark-Border;
+	}
+
+	.contrast-background-light {
+		.contrast-box {
+			background-color: $AU-colordark-Background-light;
+		}
+		.contrast-box--action:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Action ) );
+		}
+		.contrast-box--focus:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Focus ) );
+		}
+		.contrast-box--text:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Text ) );
+		}
+		.contrast-box--muted:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Muted ) );
+		}
+		.contrast-box--border:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Border ) );
+		}
+	}
+
+	.contrast-background {
+		.contrast-box {
+			background-color: $AU-colordark-Background;
+		}
+		.contrast-box--action:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Action ) );
+		}
+		.contrast-box--focus:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Focus ) );
+		}
+		.contrast-box--text:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Text ) );
+		}
+		.contrast-box--muted:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Muted ) );
+		}
+		.contrast-box--border:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Border ) );
+		}
+	}
+
+	.contrast-background-dark {
+		.contrast-box {
+			background-color: $AU-colordark-Background-dark;
+		}
+		.contrast-box--action:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Action ) );
+		}
+		.contrast-box--focus:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Focus ) );
+		}
+		.contrast-box--text:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Text ) );
+		}
+		.contrast-box--muted:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Muted ) );
+		}
+		.contrast-box--border:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Border ) );
+		}
+	}
+
+	.contrast-background-darkest {
+		.contrast-box {
+			background-color: $AU-colordark-Background-darkest;
+		}
+		.contrast-box--action:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Action ) );
+		}
+		.contrast-box--focus:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Focus ) );
+		}
+		.contrast-box--text:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Text ) );
+		}
+		.contrast-box--muted:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Muted ) );
+		}
+		.contrast-box--border:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Border ) );
+		}
+	}
+}

@@ -16,6 +16,7 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
 /**
  * All different kind of button options
  *
@@ -23,58 +24,48 @@ import PropTypes from 'prop-types';
  */
 const options = {
 	'primary': '',
-	'secondary': 'uikit-btn--secondary',
-	'tertiary': 'uikit-btn--tertiary',
+	'secondary': 'au-btn--secondary',
+	'tertiary': 'au-btn--tertiary',
 };
+
 
 /**
  * DEFAULT
  * The primary button
  *
- * @param  {string}    text     - The text of the button
- * @param  {string}    as       - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
- * @param  {string}    type     - The type attribute, default: 'button', optional
- * @param  {string}    id       - The ID attribute, optional
- * @param  {boolean}   disabled - The disabled option, optional
- * @param  {boolean}   block    - The block option, optional
- * @param  {function}  onClick  - An onClick function, optional
+ * @param  {string}    children         - Anything inside
+ * @param  {string}    as               - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
+ * @param  {string}    dark             - Add the dark variation class
+ * @param  {string}    type             - The type attribute, default: 'button', optional
+ * @param  {boolean}   block            - The block option, optional
+ * @param  {object}    attributeOptions - Any other attribute options
  */
-const Button = ({ text, as, type, id, disabled, block, onClick }) => {
-	const attributeOptions = {};
-
-	if( typeof id !== 'undefined' ) {
-		attributeOptions.id = id;
-	}
-
-	if( typeof onClick === 'function' ) {
-		attributeOptions.onClick = onClick;
-	}
+const AUbutton = ({ children, as, dark, type, block, ...attributeOptions }) => {
 
 	return (
 		<button
 			type={ type }
-			className={ `uikit-btn ${ options[ as ] }${ block ? ' uikit-btn--block' : '' }` }
-			disabled={ disabled }
+			className={ `au-btn ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
 			{ ...attributeOptions }
 		>
-			{ text }
+			{ children }
 		</button>
 	);
 };
 
-Button.propTypes = {
-	text: PropTypes.string.isRequired,
+AUbutton.propTypes = {
+	children: PropTypes.string.isRequired,
 	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
+	dark: PropTypes.bool,
 	type: PropTypes.string,
 	id: PropTypes.string,
-	disabled: PropTypes.bool,
 	block: PropTypes.bool,
 	onClick: PropTypes.func,
 };
 
-Button.defaultProps = {
+AUbutton.defaultProps = {
 	type: 'button',
 	as: 'primary',
 };
 
-export default Button;
+export default AUbutton;

@@ -16,51 +16,48 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
 /**
  * All direction options
  *
  * @type {Object}
  */
 const directions = {
-	up: 'uikit-direction-link--up',
-	right: 'uikit-direction-link--right',
-	down: 'uikit-direction-link--down',
-	left: 'uikit-direction-link--left',
+	up: 'au-direction-link--up',
+	right: 'au-direction-link--right',
+	down: 'au-direction-link--down',
+	left: 'au-direction-link--left',
 };
 
 /**
  * DEFAULT
  * The direction-links component
  *
- * @param  {string} link      - The link target, optional
- * @param  {string} text      - The text of the CTA link
- * @param  {string} direction - The direction for the arrow; can be either: up right down left, default: 'right'
- * @param  {string} onClick   - An onClick function, optional
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} link             - The link target, optional
+ * @param  {string} text             - The text of the CTA link
+ * @param  {string} direction        - The direction for the arrow; can be either: up right down left, default: 'right'
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const DirectionLink = ({ link, text, direction, onClick }) => {
-	const attributeOptions = {};
-
-	if( typeof onClick !== 'undefined' ) {
-		attributeOptions.onClick = onClick;
-	}
-
+const AUdirectionLink = ({ dark, link, text, direction, ...attributeOptions }) => {
 	if( link ) {
-		return (<a className={ `uikit-direction-link ${ directions[ direction ] }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return (<a className={ `au-direction-link ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return (<button className={ `uikit-direction-link ${ directions[ direction ] }` } { ...attributeOptions }>{ text }</button> );
+		return (<button className={ `au-direction-link ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button> );
 	}
 };
 
-DirectionLink.propTypes = {
+AUdirectionLink.propTypes = {
+	dark: PropTypes.bool,
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,
 	onClick: PropTypes.func,
 };
 
-DirectionLink.defaultProps = {
+AUdirectionLink.defaultProps = {
 	direction: 'right',
 };
 
-export default DirectionLink;
+export default AUdirectionLink;

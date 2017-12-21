@@ -22,34 +22,36 @@ import PropTypes from 'prop-types';
  * @type {Array}
  */
 const sizes = [
-	'uikit-display-1',
-	'uikit-display-2',
-	'uikit-display-3',
-	'uikit-display-4',
-	'uikit-display-5',
-	'uikit-display-6',
+	'au-display-xs',
+	'au-display-sm',
+	'au-display-md',
+	'au-display-lg',
+	'au-display-xl',
+	'au-display-xxl',
+	'au-display-xxxl',
 ];
 
 /**
  * DEFAULT
  * The headings component
  *
- * @param  {string} level - The tag level (<h1/> <h2/> etc)
- * @param  {string} size  - The headings size
- * @param  {string} text  - The heading text
+ * @param  {string} level            - The tag level (<h1/> <h2/> etc)
+ * @param  {string} size             - The headings size
+ * @param  {string} text             - The heading text
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Header = ({ level, size, text }) => {
+const AUheading = ({ level, size, text, ...attributeOptions }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<HeadingTag className={ sizes[ ( parseInt( size ) - 1 ) ] }>{ text }</HeadingTag>
+		<HeadingTag className={ `au-display-${ size }` } { ...attributeOptions }>{ text }</HeadingTag>
 	);
 };
 
-Header.propTypes = {
+AUheading.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
-	size: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
+	size: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' ]).isRequired,
 	text: PropTypes.node.isRequired,
 };
 
-export default Header;
+export default AUheading;

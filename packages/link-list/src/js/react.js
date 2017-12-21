@@ -17,15 +17,15 @@ import PropTypes from 'prop-types';
 // [replace-imports]
 
 /**
- * An item inside the LinkList component
+ * An item inside the AUlinkList component
  *
- * @param  {object}   item         - The link list item
- * @param  {string}   item.link    - The link URL, optional
- * @param  {string}   item.text    - The link Text
- * @param  {function} item.onClick - An onClick event, optional
+ * @param  {object}   item             - The link list item
+ * @param  {string}   item.link        - The link URL, optional
+ * @param  {string}   item.text        - The link Text
+ * @param  {function} item.onClick     - An onClick event, optional
+ * @param  {object}   attributeOptions - Any other attribute options
  */
-export const LinkListItem = ({ item }) => {
-	const attributeOptions = {};
+export const AUlinkListItem = ({ item, ...attributeOptions }) => {
 
 	if( typeof item.onClick === 'function' ) {
 		attributeOptions.onClick = item.onClick;
@@ -46,7 +46,7 @@ export const LinkListItem = ({ item }) => {
 	);
 };
 
-LinkListItem.propTypes = {
+AUlinkListItem.propTypes = {
 	item: PropTypes.shape({
 		link: PropTypes.string,
 		text: PropTypes.string.isRequired,
@@ -59,18 +59,17 @@ LinkListItem.propTypes = {
  * DEFAULT
  * The Link List component
  *
- * @param  {boolean} inverted - Inverted option, optional
- * @param  {boolean} inverted - Inline option, optional
- * @param  {array}   items    - All items inside the link list to be passed to LinkListItem, format: { link: '', text: '', onClick: () }
+ * @param  {boolean} inverted         - Inverted option, optional
+ * @param  {array}   items            - All items inside the link list to be passed to AUlinkListItem, format: { link: '', text: '', onClick: () }
+ * @param  {object}  attributeOptions - Any other attribute options
  */
-const LinkList = ({ inverted, inline, items }) => (
-	<ul className={ `uikit-link-list${ inverted ? ' uikit-link-list--inverted' : '' }${ inline ? ' uikit-link-list--inline' : '' }` }>
-		{ items.map( ( item, i ) => <LinkListItem key={ i } item={ item } /> ) }
+const AUlinkList = ({ inline, items, ...attributeOptions }) => (
+	<ul className={ `au-link-list${ inline ? ' au-link-list--inline' : '' }` } { ...attributeOptions }>
+		{ items.map( ( item, i ) => <AUlinkListItem key={ i } item={ item } /> ) }
 	</ul>
 );
 
-LinkList.propTypes = {
-	inverted: PropTypes.bool,
+AUlinkList.propTypes = {
 	inline: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -81,4 +80,4 @@ LinkList.propTypes = {
 		).isRequired,
 };
 
-export default LinkList;
+export default AUlinkList;

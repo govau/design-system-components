@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -36,7 +35,7 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="uikit-body">
+<body>
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
@@ -45,80 +44,314 @@
 
 	<h1>Test: keyword-list</h1>
 
-	<h2>keyword-list</h2>
 
-	<p>Lorem ipsum dolor sit amet:</p>
+	<div class="split-wrapper">
+		<div class="split au-body">
+			<h2>keyword-list</h2>
 
-	<ul class="uikit-keyword-list uikit-link-list">
-		<li class="uikit-keyword-list__item">
-			<small class="uikit-keyword-list__item__small">Department of </small>Agriculture and Water Resources
-		</li>
-		<li class="uikit-keyword-list__item">
-			<small class="uikit-keyword-list__item__small">Department of</small>Communications and the Arts
-		</li>
-		<li class="uikit-keyword-list__item">
-			<small class="uikit-keyword-list__item__small">Department of</small>Communications
-		</li>
-		<li class="uikit-keyword-list__item">
-			<small class="uikit-keyword-list__item__small">Department of</small>Foobar
-		</li>
-		<li class="uikit-keyword-list__item">
-			<small class="uikit-keyword-list__item__small">Department of</small>Lorem
-		</li>
-		<li class="uikit-keyword-list__item">
-			<small class="uikit-keyword-list__item__small">Department of</small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
-		</li>
-		<li class="uikit-keyword-list__item">
-			<small class="uikit-keyword-list__item__small">Department of</small>Barfoo
-		</li>
-	</ul>
+			<p>Lorem ipsum dolor sit amet:</p>
 
-	<p>End of list.</p>
+			<ul class="au-keyword-list au-link-list">
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Agriculture and Water Resources
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Communications and the Arts
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Communications
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Foobar
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Lorem
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Barfoo
+				</li>
+			</ul>
 
-	<hr>
-	<h2>keyword-list with links</h2>
+			<p>End of list.</p>
 
-	<p>Lorem ipsum dolor sit amet:</p>
+			<hr>
+			<h2>keyword-list with links</h2>
 
-	<ul class="uikit-keyword-list uikit-link-list">
-		<li class="uikit-keyword-list__item">
-			<a href="#">
-				<small class="uikit-keyword-list__item__small">Department of </small>Agriculture and Water Resources
-			</a>
-		</li>
-		<li class="uikit-keyword-list__item">
-			<a href="#">
-				<small class="uikit-keyword-list__item__small">Department of</small>Communications and the Arts
-			</a>
-		</li>
-		<li class="uikit-keyword-list__item">
-			<a href="#">
-				<small class="uikit-keyword-list__item__small">Department of</small>Communications
-			</a>
-		</li>
-		<li class="uikit-keyword-list__item">
-			<a href="#">
-				<small class="uikit-keyword-list__item__small">Department of</small>Foobar
-			</a>
-		</li>
-		<li class="uikit-keyword-list__item">
-			<a href="#">
-				<small class="uikit-keyword-list__item__small">Department of</small>Lorem
-			</a>
-		</li>
-		<li class="uikit-keyword-list__item">
-			<a href="#">
-				<small class="uikit-keyword-list__item__small">Department of</small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
-			</a>
-		</li>
-		<li class="uikit-keyword-list__item">
-			<a href="#">
-				<small class="uikit-keyword-list__item__small">Department of</small>Barfoo
-			</a>
-		</li>
-	</ul>
+			<p>Lorem ipsum dolor sit amet:</p>
 
-	<p>End of list.</p>
+			<ul class="au-keyword-list au-link-list">
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Agriculture and Water Resources
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Communications and the Arts
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Communications
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Foobar
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Lorem
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Barfoo
+					</a>
+				</li>
+			</ul>
 
+			<p>End of list.</p>
+		</div>
+		<div class="split au-body au-body--dark">
+			<h2>keyword-list <code>--dark</code></h2>
+
+			<p>Lorem ipsum dolor sit amet:</p>
+
+			<ul class="au-keyword-list au-keyword-list--dark au-link-list">
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Agriculture and Water Resources
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Communications and the Arts
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Communications
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Foobar
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Lorem
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Barfoo
+				</li>
+			</ul>
+
+			<p>End of list.</p>
+
+			<hr>
+			<h2>keyword-list with links <code>--dark</code></h2>
+
+			<p>Lorem ipsum dolor sit amet:</p>
+
+			<ul class="au-keyword-list au-keyword-list--dark au-link-list">
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Agriculture and Water Resources
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Communications and the Arts
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Communications
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Foobar
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Lorem
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Barfoo
+					</a>
+				</li>
+			</ul>
+
+			<p>End of list.</p>
+		</div>
+	</div>
+	<div class="split-wrapper">
+		<div class="split au-body au-body--alt">
+			<h2>keyword-list</h2>
+
+			<p>Lorem ipsum dolor sit amet:</p>
+
+			<ul class="au-keyword-list au-link-list">
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Agriculture and Water Resources
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Communications and the Arts
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Communications
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Foobar
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Lorem
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Barfoo
+				</li>
+			</ul>
+
+			<p>End of list.</p>
+
+			<hr>
+			<h2>keyword-list with links</h2>
+
+			<p>Lorem ipsum dolor sit amet:</p>
+
+			<ul class="au-keyword-list au-link-list">
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Agriculture and Water Resources
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Communications and the Arts
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Communications
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Foobar
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Lorem
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Barfoo
+					</a>
+				</li>
+			</ul>
+
+			<p>End of list.</p>
+		</div>
+		<div class="split au-body au-body--alt au-body--dark">
+			<h2>keyword-list <code>--dark</code></h2>
+
+			<p>Lorem ipsum dolor sit amet:</p>
+
+			<ul class="au-keyword-list au-keyword-list--dark au-link-list">
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Agriculture and Water Resources
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Communications and the Arts
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Communications
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Foobar
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Lorem
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
+				</li>
+				<li class="au-keyword-list__item">
+					<small class="au-keyword-list__item__small">Department of </small>Barfoo
+				</li>
+			</ul>
+
+			<p>End of list.</p>
+
+			<hr>
+			<h2>keyword-list with links <code>--dark</code></h2>
+
+			<p>Lorem ipsum dolor sit amet:</p>
+
+			<ul class="au-keyword-list au-keyword-list--dark au-link-list">
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Agriculture and Water Resources
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Communications and the Arts
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Communications
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Foobar
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Lorem
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi qui praesentium fuga
+					</a>
+				</li>
+				<li class="au-keyword-list__item">
+					<a href="#">
+						<small class="au-keyword-list__item__small">Department of </small>Barfoo
+					</a>
+				</li>
+			</ul>
+
+			<p>End of list.</p>
+		</div>
+	</div>
 </body>
 </html>

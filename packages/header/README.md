@@ -53,20 +53,22 @@ npm install @gov.au/header --save-dev
 Usage:
 
 ```jsx
-import Header from './header.js';
+import AUheader from './header.js';
 
-<Header title="Page title" />
+<AUheader title="Page title" />
 ```
 
 All props:
 
 ```jsx
-<Header
+<AUheader
 	title="Page title"  {/* The headline content */}
 	level="1"           {/* The headline tag level, h1-h6, optional */}
 	subline="Subline"   {/* The subline content, optional */}
-	theme="light"       {/* The theme, 'light', 'dark', optional */}
+	alt={ false }       {/* An alternate variation of the component */}
+	dark={ false }      {/* A dark variation of the component */}
 	hero={ false }      {/* The hero option, optional */}
+	attributeOptions    {/* Any other attribute options */}
 />
 ```
 
@@ -115,6 +117,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/header/tests/
 
 ## Release History
 
+* v2.0.0 - Moved to AU namespace, added new color themes and spacing
 * v1.2.0 - Added pancake-react plugin, ES5 main file, added children
 * v1.1.0 - Added react component
 * v1.0.0 - Removed the side spacing #147

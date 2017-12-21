@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.0 - Moved to AU namespace, fixed export](v100)
 * [v0.1.5 - Fixed pancake config](v015)
 * [v0.1.4 - Pinned pancake plugins](v014)
 * [v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction](v013)
@@ -26,6 +27,12 @@
 
 
 ## Release History
+
+### v1.0.0
+
+- Moved to AU namespace
+- fixed export so that you now can import animate from node_modules directly
+
 
 ### v0.1.5
 

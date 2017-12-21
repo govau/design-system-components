@@ -12,15 +12,15 @@ import PropTypes from 'prop-types';
 
 
 /**
- * A tag item inside the Tags component
+ * A tag item inside the AUtags component
  *
- * @param  {object}   tag         - The tag object
- * @param  {string}   tag.link    - The link for this tag, optional
- * @param  {string}   tag.text    - The text for the tag
- * @param  {function} tag.onClick - An onClick event, optional
+ * @param  {object}   tag              - The tag object
+ * @param  {string}   tag.link         - The link for this tag, optional
+ * @param  {string}   tag.text         - The text for the tag
+ * @param  {function} tag.onClick      - An onClick event, optional
+ * @param  {object}   attributeOptions - Any other attribute options
  */
-const TagItem = ({ tag }) => {
-	const attributeOptions = {};
+const AUtagItem = ({ tag, ...attributeOptions }) => {
 
 	if( typeof tag.onClick === 'function' ) {
 		attributeOptions.onClick = tag.onClick;
@@ -32,7 +32,7 @@ const TagItem = ({ tag }) => {
 	}
 
 	return (
-		<li className="uikit-tags__item">
+		<li className="au-tags__item">
 			{ tag.link
 				? <a href={ tag.link } { ...attributeOptions }>{ tag.text }</a>
 				: tag.text
@@ -41,7 +41,7 @@ const TagItem = ({ tag }) => {
 	);
 };
 
-TagItem.propTypes = {
+AUtagItem.propTypes = {
 	tag: PropTypes.shape({
 		link: PropTypes.string,
 		text: PropTypes.string.isRequired,
@@ -54,15 +54,18 @@ TagItem.propTypes = {
  * DEFAULT
  * The tags component
  *
- * @param  {array} tags - The tags, format: { link: '', text: '', onClick: () }
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {array}  tags             - The tags, format: { link: '', text: '', onClick: () }
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Tags = ({ tags }) => (
-	<ul className="uikit-tags">
-		{ tags.map( ( tag, i ) => <TagItem key={ i } tag={ tag } /> ) }
+const AUtags = ({ dark, tags, ...attributeOptions }) => (
+	<ul className={ `au-tags ${ dark ? 'au-tags--dark' : '' }` }>
+		{ tags.map( ( tag, i ) => <AUtagItem key={ i } tag={ tag } /> ) }
 	</ul>
 );
 
-Tags.propTypes = {
+AUtags.propTypes = {
+	dark: PropTypes.bool,
 	tags: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -72,4 +75,5 @@ Tags.propTypes = {
 		).isRequired,
 };
 
-export default Tags;
+
+export default AUtags;

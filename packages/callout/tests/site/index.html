@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -45,40 +44,153 @@
 
 	<h1>Test: callout</h1>
 
-	<h2>Generic callout, applied directly to the paragraph</h2>
+	<div class="split-wrapper">
+		<div class="split">
+			<h2>Generic callout, applied directly to the paragraph</h2>
 
-	<p class="uikit-callout" aria-label="Callout description1">A callout.</p>
+			<p class="au-callout" aria-label="Callout description1">A callout.</p>
 
-	<hr>
-	<h2>Generic callout applied to a container</h2>
+			<hr>
+			<h2>Generic callout applied to a container</h2>
 
-	<p>The following container has the callout class, and holds a number of paragraphs.</p>
+			<p>The following container has the callout class, and holds a number of paragraphs.</p>
 
-	<section class="uikit-callout" aria-label="Callout description2">
-		<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-		<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
-		<p>Duis condimentum maximus ligula sed tincidunt.</p>
-	</section>
+			<section class="au-callout" aria-label="Callout description2">
+				<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
+				<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+				<p>Duis condimentum maximus ligula sed tincidunt.</p>
+			</section>
 
-	<hr>
-	<h2>Generic callout applied to a container with uikit-body</h2>
+			<hr>
+			<h2>Generic callout applied to a container with au-body</h2>
 
-	<div class="uikit-body">
-		<section class="uikit-callout" aria-label="Callout description3">
-			<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-			<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
-			<p>Duis condimentum maximus ligula sed tincidunt.</p>
-		</section>
+			<div class="au-body">
+				<section class="au-callout" aria-label="Callout description3">
+					<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
+					<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+					<p>Duis condimentum maximus ligula sed tincidunt.</p>
+				</section>
+			</div>
+
+			<hr>
+			<h2>Calendar event callout</h2>
+
+			<section class="au-callout au-callout--calendar-event" aria-label="Callout description4">
+				<span class="au-callout--calendar-event__lede">The next public holiday is:</span>
+				<time class="au-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
+				<span class="au-callout--calendar-event__name">New Year’s Day</span>
+			</section>
+		</div>
+		<div class="split split--dark">
+			<h2>Generic callout, applied directly to the paragraph <code>--dark</code></h2>
+
+			<p class="au-callout au-callout--dark" aria-label="Callout description1">A callout.</p>
+
+			<hr>
+			<h2>Generic callout applied to a container <code>--dark</code></h2>
+
+			<p>The following container has the callout class, and holds a number of paragraphs.</p>
+
+			<section class="au-callout au-callout--dark" aria-label="Callout description2">
+				<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
+				<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+				<p>Duis condimentum maximus ligula sed tincidunt.</p>
+			</section>
+
+			<hr>
+			<h2>Generic callout applied to a container with au-body <code>--dark</code></h2>
+
+			<div class="au-body">
+				<section class="au-callout au-callout--dark" aria-label="Callout description3">
+					<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
+					<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+					<p>Duis condimentum maximus ligula sed tincidunt.</p>
+				</section>
+			</div>
+
+			<hr>
+			<h2>Calendar event callout <code>--dark</code></h2>
+
+			<section class="au-callout au-callout--calendar-event au-callout--dark" aria-label="Callout description4">
+				<span class="au-callout--calendar-event__lede">The next public holiday is:</span>
+				<time class="au-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
+				<span class="au-callout--calendar-event__name">New Year’s Day</span>
+			</section>
+		</div>
 	</div>
+	<div class="split-wrapper">
+		<div class="split split--alt">
+			<h2>Generic callout, applied directly to the paragraph</h2>
 
-	<hr>
-	<h2>Calendar event callout</h2>
+			<p class="au-callout au-callout--alt" aria-label="Callout description1">A callout.</p>
 
-	<section class="uikit-callout uikit-callout--calendar-event" aria-label="Callout description4">
-		<span class="uikit-callout--calendar-event__lede">The next public holiday is:</span>
-		<time class="uikit-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
-		<span class="uikit-callout--calendar-event__name">New Year’s Day</span>
-	</section>
+			<hr>
+			<h2>Generic callout applied to a container</h2>
 
+			<p>The following container has the callout class, and holds a number of paragraphs.</p>
+
+			<section class="au-callout au-callout--alt" aria-label="Callout description2">
+				<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
+				<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+				<p>Duis condimentum maximus ligula sed tincidunt.</p>
+			</section>
+
+			<hr>
+			<h2>Generic callout applied to a container with au-body</h2>
+
+			<div class="au-body au-body--alt">
+				<section class="au-callout au-callout--alt" aria-label="Callout description3">
+					<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
+					<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+					<p>Duis condimentum maximus ligula sed tincidunt.</p>
+				</section>
+			</div>
+
+			<hr>
+			<h2>Calendar event callout</h2>
+
+			<section class="au-callout au-callout--alt au-callout--calendar-event" aria-label="Callout description4">
+				<span class="au-callout--calendar-event__lede">The next public holiday is:</span>
+				<time class="au-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
+				<span class="au-callout--calendar-event__name">New Year’s Day</span>
+			</section>
+		</div>
+		<div class="split split--alt split--dark">
+			<h2>Generic callout, applied directly to the paragraph <code>--dark</code></h2>
+
+			<p class="au-callout au-callout--dark au-callout--alt" aria-label="Callout description1">A callout.</p>
+
+			<hr>
+			<h2>Generic callout applied to a container <code>--dark</code></h2>
+
+			<p>The following container has the callout class, and holds a number of paragraphs.</p>
+
+			<section class="au-callout au-callout--dark au-callout--alt" aria-label="Callout description2">
+				<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
+				<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+				<p>Duis condimentum maximus ligula sed tincidunt.</p>
+			</section>
+
+			<hr>
+			<h2>Generic callout applied to a container with au-body <code>--dark</code></h2>
+
+			<div class="au-body au-body--alt au-body--dark">
+				<section class="au-callout au-callout--dark au-callout--alt" aria-label="Callout description3">
+					<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
+					<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+					<p>Duis condimentum maximus ligula sed tincidunt.</p>
+				</section>
+			</div>
+
+			<hr>
+			<h2>Calendar event callout <code>--dark</code></h2>
+
+			<section class="au-callout au-callout--calendar-event au-callout--alt au-callout--dark" aria-label="Callout description4">
+				<span class="au-callout--calendar-event__lede">The next public holiday is:</span>
+				<time class="au-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
+				<span class="au-callout--calendar-event__name">New Year’s Day</span>
+			</section>
+		</div>
+	</div>
 </body>
 </html>

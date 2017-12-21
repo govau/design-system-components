@@ -1,14 +1,15 @@
 body {
-	background: #fff;
+	background: $AU-color-Background-light;
+	color: $AU-color-Text;
 	margin: 0;
-	padding: AU-space( 4 ) AU-space( 1 ) AU-space( 2 ) AU-space( 1 );
+	@include AU-space( padding, 6unit 1.5unit 2unit 1.5unit );
 	overflow-x: hidden; //For Opera apparently.
 
 	&:before {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
+		right: 0;
 		background: repeating-linear-gradient(
 			-45deg,
 			#222,
@@ -16,7 +17,8 @@ body {
 			#333 10px,
 			#333 20px
 		);
-		padding: AU-space( 0.5 ) AU-space( 2 ) AU-space( 0.5 ) AU-space( 1 );
+		@include AU-space( padding, 1.5unit );
+		@include AU-fontgrid( sm, nospace );
 		content: "📃 Test file";
 		font-family: $AU-font-monospace;
 		color: white;
@@ -26,3 +28,46 @@ body {
 .test-link {
 	font-family: $AU-font;
 }
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// split style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.split-wrapper {
+	overflow: hidden;
+}
+
+.split {
+	padding: 1%;
+
+	&.split--alt {
+		background: $AU-color-Background-dark;
+	}
+
+	&.split--dark {
+		background: $AU-colordark-Background-light;
+		color: $AU-colordark-Text;
+	}
+
+	&.split--dark.split--alt {
+		background: $AU-colordark-Background-dark;
+	}
+
+	@include AU-media( sm ) {
+		width: 48%;
+		float: left;
+	}
+}
+
+
+@media print {
+	body,
+	.split--dark {
+		background: #fff !important;
+		color: #000 !important;
+	}
+	.split {
+		padding: 0 !important;
+		width: 100% !important;
+	}
+}
+

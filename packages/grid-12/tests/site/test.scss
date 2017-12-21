@@ -23,17 +23,11 @@
 	}
 }
 
-// We’re undoing these test page styles in order to properly test the grid.
-body {
-	padding-left: 0;
-	padding-right: 0;
-}
-
 // Same here.
 h1 {
-	margin-left: uikit-space( 0.5 );
+	@include AU-space( margin-left, 0.5unit );
 }
 
 .test-link { //have to to make it look awesome again
-	margin-left: uikit-space( 1 );
+	@include AU-space( margin-left, 0.5unit );
 }

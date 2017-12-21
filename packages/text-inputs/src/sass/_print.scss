@@ -8,16 +8,19 @@
 
 
 @media print {
-	.uikit-text-input {
+	.au-text-input {
 		border-color: #000 !important;
-	}
 
-	&:disabled {
-		background-color: $uikit-colour-Background !important;
-		border-color: transparent;
-	}
+		&[disabled] {
+			color: $AU-color-Muted !important;
+			background-color: #ccc !important;
+			border: 2px solid #ccc !important;
+		}
 
-	&[disabled] {
-		background-color: $uikit-colour-Background !important;
+		&:disabled {
+			color: $AU-color-Muted !important;
+			background-color: #ccc !important;
+			border: 2px solid #ccc !important;
+		}
 	}
 }

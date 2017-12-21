@@ -53,9 +53,9 @@ npm install @gov.au/select --save-dev
 Usage:
 
 ```jsx
-import Select from './select.js';
+import AUselect from './select.js';
 
-<Select id="exampleSelect" options={[
+<AUselect id="exampleSelect" options={[
 	{
 		value: '',
 		text: 'Please select',
@@ -74,16 +74,16 @@ import Select from './select.js';
 All props:
 
 ```jsx
-<Select
-	id="unique"            {/* Unique ID, a must so you can tie a label to it */}
+<AUselect
+	dark={ false }         {/* A dark variation of the component */}
 	block={ true }         {/* The block option to make the select fill the available width, optional */}
-	onChange={ () => {} }  {/* A function to execute when the select value is changed, optional */}
 	options={[             {/* All options in a neat array */}
 		{
 			value: '1',        {/* The value attribute of the option */}
 			text: 'Option 1',  {/* The text of the option */}
 		},
-	]}
+	]},
+	attributeOptions       {/* Any other attribute options */}
 />
 ```
 
@@ -132,6 +132,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/select/tests/
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

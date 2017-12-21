@@ -16,19 +16,28 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
 /**
  * Default callout
  *
- * @param  {string} description - A description of the content of the callout for a11y
- * @param  {string} children    - Anything inside
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} alt              - Add the alt variation class
+ * @param  {string} description      - A description of the content of the callout for a11y
+ * @param  {string} children         - Anything inside
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const Callout = ({ description, children }) => (
-	<section className="uikit-callout" aria-label={ description }>
+export const AUcallout = ({ dark, alt, description, children, ...attributeOptions }) => (
+	<section
+		className={ `au-callout${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` }
+		aria-label={ description }
+		{ ...attributeOptions }
+	>
 		{ children }
 	</section>
 );
 
-Callout.propTypes = {
+
+AUcallout.propTypes = {
 	children: PropTypes.node.isRequired,
 	description: PropTypes.string.isRequired,
 };
@@ -37,21 +46,31 @@ Callout.propTypes = {
 /**
  * Calendar callout
  *
- * @param  {string} description - A description of the content of the callout for a11y
- * @param  {string} subline     - The subline of the event, optional
- * @param  {string} datetime    - The datetime of the event as ISO datetime
- * @param  {string} time        - The time that appears on the page
- * @param  {string} name        - The name of the event, optional
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} alt              - Add the alt variation class
+ * @param  {string} description      - A description of the content of the callout for a11y
+ * @param  {string} subline          - The subline of the event, optional
+ * @param  {string} datetime         - The datetime of the event as ISO datetime
+ * @param  {string} time             - The time that appears on the page
+ * @param  {string} name             - The name of the event, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const CalloutCalendar = ({ description, subline, datetime, time, name }) => (
-	<section className="uikit-callout uikit-callout--calendar-event" aria-label={ description }>
-		{ subline && <span className="uikit-callout--calendar-event__lede">{ subline }</span> }
-		<time className="uikit-callout--calendar-event__time" dateTime={ new Date( datetime ).toJSON() }>{ time }</time>
-		{ name && <span className="uikit-callout--calendar-event__name">{ name }</span> }
+export const AUcalloutCalendar = ({ dark, alt, description, subline, datetime, time, name, ...attributeOptions }) => (
+	<section
+		className={ `au-callout au-callout--calendar-event${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` }
+		aria-label={ description }
+		{ ...attributeOptions }
+	>
+		{ subline && <span className="au-callout--calendar-event__lede">{ subline }</span> }
+		<time className="au-callout--calendar-event__time" dateTime={ new Date( datetime ).toJSON() }>{ time }</time>
+		{ name && <span className="au-callout--calendar-event__name">{ name }</span> }
 	</section>
 );
 
-CalloutCalendar.propTypes = {
+
+AUcalloutCalendar.propTypes = {
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	description: PropTypes.string.isRequired,
 	subline: PropTypes.string,
 	datetime: PropTypes.string.isRequired,

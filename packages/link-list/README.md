@@ -53,9 +53,9 @@ npm install @gov.au/link-list --save-dev
 Usage:
 
 ```jsx
-import LinkList from './link-list.js';
+import AUlinkList from './link-list.js';
 
-<LinkList items={[
+<AUlinkList items={[
 	{
 		link: 'link/one/',
 		text: 'Link 1',
@@ -74,8 +74,7 @@ import LinkList from './link-list.js';
 All props:
 
 ```jsx
-<LinkList
-	inverted={ false }        {/* The inverted option for theming, optional */}
+<AUlinkList
 	inline={ false }          {/* The inline option to make the list inline, optional */}
 	items={[                  {/* All links in a neat array */}
 		{
@@ -84,6 +83,7 @@ All props:
 			onClick={ () => {} }  {/* A function to execute when this link is clicked, optional */}
 		},
 	]},
+	attributeOptions          {/* Any other attribute options */}
 />
 ```
 
@@ -134,6 +134,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/link-list/tes
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

@@ -16,79 +16,150 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // buttons
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-btn {
-	display: inline-block;
-	-webkit-appearance: none;
-	border: none;
-	background: none;
-	font-size: 17px;
-	font-family: $uikit-font-system;
-	font-weight: bold;
-	color: #fff;
-	text-decoration: none;
-	border-radius: $uikit-border-radius;
-	background-color: $uikit-colour-Primary;
-	padding: uikit-space( 0.5 ) uikit-space( 0.75 );
-	cursor: pointer;
-	transition: background 0.1s ease;
 
-	&:focus,
-	&:hover {
-		background-color: $uikit-colour-Primary--30;
+
+/**
+ * PRIMARY
+ */
+.au-btn,
+a.au-btn {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 0.5unit 1.5unit );
+	display: inline-block;
+	appearance: none;
+	font-family: $AU-font;
+	color: $AU-color-Background-light;
+	text-decoration: none;
+	border-radius: $AU-border-radius;
+	background-color: $AU-color-Action;
+	border: 3px solid $AU-color-Action;
+	cursor: pointer;
+	vertical-align: middle;
+	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
+
+	&.au-btn--block + .au-btn.au-btn--block,
+	&.au-btn--block + a.au-btn.au-btn--block {
+		@include AU-space( margin-top, 0.5unit );
 	}
 
-	@include uikit-focus();
+	// focus
+	@include AU-focus();
+
+	&:focus {
+		border-radius: 0;
+	}
+
+	// disabled
+	&[disabled] { // IE8
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
 
 	&:disabled {
-		background-color: $uikit-colour-Border-30;
-		font-weight: normal;
-		color: $uikit-colour-Text;
-		border: 1px dotted $uikit-colour-Text;
 		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
 
-		&:focus,
+	// hover
+	&:hover:not(:disabled) {
+		background-color: $AU-color-Text;
+		border-color: $AU-color-Text;
+		text-decoration: underline;
+		color: $AU-color-Background-light;
+	}
+
+	.ie8 & {
 		&:hover {
-			background-color: $uikit-colour-Border-30;
+			background-color: $AU-color-Text;
+			border-color: $AU-color-Text;
+			text-decoration: underline;
+			color: $AU-color-Background-light;
 		}
 	}
-}
 
-/**
- * SECONDARY
- */
-.uikit-btn--secondary {
-	background-color: $uikit-colour-Secondary;
+	// dark
+	&.au-btn--dark {
+		color: $AU-colordark-Background-light;
+		background-color: $AU-colordark-Action;
+		border-color: $AU-colordark-Action;
 
-	&:focus,
-	&:hover {
-		background-color: $uikit-colour-Secondary-70;
+		&:hover:not(:disabled) {
+			color: $AU-colordark-Background-light;
+			border-color: $AU-colordark-Text;
+			background-color:  $AU-colordark-Text;
+		}
+
+		.ie8 & {
+			&:hover {
+				color: $AU-colordark-Background-light;
+				border-color: $AU-colordark-Text;
+				background-color:  $AU-colordark-Text;
+			}
+		}
+
+		@include AU-focus( 'dark' );
 	}
-}
 
-/**
- * TERTIARY
- */
-.uikit-btn--tertiary {
-	background-color: #fff;
-	color: $uikit-colour-Text;
-	border: 1px solid $uikit-colour-Primary;
 
-	&:focus,
-	&:hover {
-		background-color: $uikit-colour-Primary-10;
+	/**
+	* SECONDARY
+	*/
+	&.au-btn--secondary {
+		background-color: transparent;
+		border-color: $AU-color-Action;
+		color: $AU-color-Action;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			border-color: $AU-color-Text;
+			color: $AU-color-Text;
+		}
+
+		&.au-btn--dark {
+			border-color: $AU-colordark-Action;
+			color: $AU-colordark-Action;
+
+			&:hover:not(:disabled) {
+				border-color: $AU-colordark-Text;
+				color: $AU-colordark-Text;
+			}
+		}
 	}
-}
 
-/**
- * BLOCK
- */
-.uikit-btn--block {
-	display: block;
-	width: 100%;
-	box-sizing: border-box;
-	text-align: center;
+	/**
+	* TERTIARY
+	*/
+	&.au-btn--tertiary {
+		background-color: transparent;
+		color: $AU-color-Action;
+		border-color: transparent;
+		text-decoration: underline;
 
-	& + .uikit-btn--block {
-		margin-top: uikit-space( 0.25 );
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $AU-color-Text;
+			border-color: transparent;
+			text-decoration: none;
+		}
+
+		&.au-btn--dark {
+			color: $AU-colordark-Action;
+
+			&:hover:not(:disabled) {
+				color: $AU-colordark-Text;
+			}
+		}
+	}
+
+	/**
+ 	 * BLOCK
+ 	 */
+	&.au-btn--block {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: center;
 	}
 }

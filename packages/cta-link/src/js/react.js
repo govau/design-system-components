@@ -16,33 +16,33 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
 /**
  * DEFAULT
  * The cta link component
  *
- * @param  {string}   link    - The link target, if not supplied this will render as a button, optional
- * @param  {string}   text    - The text of the CTA link
- * @param  {function} onClick - An optional function for onClick, optional
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} link             - The link target, if not supplied this will render as a button, optional
+ * @param  {string} text             - The text of the CTA link
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const CTALink = ({ link, text, onClick }) => {
-	const attributeOptions = {};
-
-	if( typeof onClick !== 'undefined' ) {
-		attributeOptions.onClick = onClick;
-	}
+const AUctaLink = ({ dark, link, text, ...attributeOptions }) => {
 
 	if( link ) {
-		return( <a className="uikit-cta-link" href={ link } { ...attributeOptions }>{ text }</a> );
+		return( <a className={ `au-cta-link${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return( <button className="uikit-cta-link" href={ link } { ...attributeOptions }>{ text }</button> );
+		return( <button className={ `au-cta-link${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</button> );
 	}
 }
 
-CTALink.propTypes = {
+
+AUctaLink.propTypes = {
+	dark: PropTypes.bool,
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
 };
 
-export default CTALink;
+
+export default AUctaLink;

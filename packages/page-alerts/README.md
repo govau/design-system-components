@@ -54,19 +54,22 @@ Usage:
 ```jsx
 import Button from './page-alerts.js';
 
-<PageAlert as='info'>
+<AUpageAlert as='info'>
 	Content of alert
-</PageAlert>
+</AUpageAlert>
 ```
 
 All props:
 
 ```jsx
-<PageAlert
-	as="info"  {/* One of four kinds: 'info', 'success', 'warning', 'error' */}
+<AUpageAlert
+	as="info"          {/* One of four kinds: 'info', 'success', 'warning', 'error' */}
+	attributeOptions   {/* Any other attribute options */}
+	alt={ false }      {/* An alternate variation of the component */}
+	dark={ false }     {/* A dark variation of the component */}
 >
 	Content of alert
-</PageAlert>
+</AUpageAlert>
 ```
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/page-alerts/tests/react/index.js).
@@ -82,7 +85,9 @@ For more details have a look at the [usage example](https://github.com/govau/uik
 
 ```shell
 page-alerts
-└─ core
+├─ core
+└─ body
+   └─ core
 ```
 
 
@@ -112,6 +117,7 @@ page-alerts
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Improved print styles

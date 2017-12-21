@@ -15,32 +15,36 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Breadcrumb styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-breadcrumbs {
-	display: none;
+.au-breadcrumbs {
+	@include AU-fontgrid( xs, nospace );
 	width: 100%;
 	margin: 0;
-	color: $uikit-colour-Text;
-	font-size: 14px;
-	font-family: $uikit-font-system;
+	color: $AU-color-Text;
+	font-family: $AU-font;
 
-	@include uikit-media( sm ) {
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	@include AU-media( sm ) {
 		display: inline-block;
 	}
 
-	> .uikit-link-list {
+	> .au-link-list {
 		> li {
 			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
 
 			&:after {
 				content: ' ';
 				display: inline-block;
-				width: 0.8em;
-				height: 0.8em;
-				margin: 0 uikit-space( 0.5 );
-				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#{ $uikit-colour-Border }" d="M128 64l-64 64-16-16 64-64"/>
-						<path fill="#{ $uikit-colour-Border }" d="M128 64l-16 16-64-64L64 0"/>
+				@include AU-space( width, 0.5unit );
+				@include AU-space( height, 0.5unit );
+				@include AU-space( margin, 0 0.5unit );
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">
+						<path fill="#{ $AU-color-Border }" d="M128 64l-64 64-16-16 64-64"/>
+						<path fill="#{ $AU-color-Border }" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');
+				background-size: 100%;
 				background-repeat: no-repeat;
 			}
 
@@ -53,20 +57,19 @@
 				&:after {
 					content: ' > ';
 					display: inline-block;
-					border: none;
 				}
 			}
 		}
 	}
 
-	&.uikit-breadcrumbs--inverted {
-		color: #fff;
+	&.au-breadcrumbs--dark {
+		color: $AU-colordark-Text;
 
-		> .uikit-link-list {
+		> .au-link-list {
 			> li:not(:last-child):after {
-				background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-						<path fill="#fff" d="M128 64l-64 64-16-16 64-64"/>
-						<path fill="#fff" d="M128 64l-16 16-64-64L64 0"/>
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">
+						<path fill="#{ $AU-colordark-Border }" d="M128 64l-64 64-16-16 64-64"/>
+						<path fill="#{ $AU-colordark-Border }" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');
 			}
 		}

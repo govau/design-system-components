@@ -70,6 +70,8 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/core/tests/si
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
+* v0.1.3 - Moved to System fonts
 * v0.1.2 - Fixed newly introduced uikit-svguri bug; ups
 * v0.1.1 - Fixed uikit-svguri bug
 * v0.1.0 - 💥 Initial version

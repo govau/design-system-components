@@ -15,42 +15,53 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // inpage-nav style
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-inpage-nav-links {
-	margin: uikit-space( 2 ) 0;
-	border-left: uikit-space( 0.25 ) solid $uikit-colour-Border-70;
-	padding: 0 0 uikit-space( 0.5 ) uikit-space( 0.75);
+.au-inpage-nav-links {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding-left, 1.5unit );
+	@include AU-space( margin-bottom, 3unit );
 
-	.uikit-body & > ul,
-	.uikit-body & > ol {
+	border-left: 4px solid $AU-color-Action;
+
+	* + & {
+		@include AU-space( margin-top, 3unit );
+	}
+
+	.au-body & > ul,
+	.au-body & > ol {
+		@include AU-space( margin-top, 1unit );
 		list-style-type: none;
-		margin: uikit-space( 1 ) 0 0;
 		padding: 0;
 
-		> li {
-			margin-left: 0;
-			margin-bottom: uikit-space( 0.5 );
-			font-weight: bold;
-
-			&:last-child {
-				margin-bottom: 0;
-			}
+		li {
+			margin: 0;
 		}
+
+		* + li {
+			@include AU-space( margin-top, 0.5unit );
+			margin-left: 0;
+		}
+	}
+
+	&.au-inpage-nav-links--dark {
+		border-color: $AU-colordark-Action;
 	}
 }
 
-.uikit-inpage-nav-links__heading {
-	color: $uikit-colour-Text-70;
+.au-inpage-nav-links__heading,
+.au-body .au-inpage-nav-links__heading {
+	font-weight: bold;
+	font-size: 1em; //inherit from parent
 }
 
-.uikit-inpage-nav-section {
+.au-inpage-nav-section {
 	position: relative;
-	padding-right: 120px;
+	@include AU-space( padding-right, 8unit );
 }
 
-.uikit-inpage-nav-section-link {
+.au-inpage-nav-section-link {
+	@include AU-fontgrid( xs, nospace );
+	@include AU-space( top, 0.25unit );
 	position: absolute;
-	top: uikit-space( 0.25 );
 	right: 0;
-	font-size: 14px;
 	font-weight: normal;
 }

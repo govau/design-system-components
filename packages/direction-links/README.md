@@ -53,18 +53,19 @@ npm install @gov.au/direction-links --save-dev
 Usage:
 
 ```jsx
-import DirectionLink from './direction-links.js';
+import AUdirectionLink from './direction-links.js';
 
-<DirectionLink link="/next/page/" text="Continue" />
+<AUdirectionLink link="/next/page/" text="Continue" />
 ```
 
 All props:
 
 ```jsx
-<DirectionLink
+<AUdirectionLink
 	text="Submitting"     {/* The text of the link */}
 	link="link/to/page"   {/* The href link, optional */}
-	onClick={ () => {} }  {/* A function to execute when the link is clicked, optional */}
+	dark={ false }        {/* A dark variation of the component */}
+	attributeOptions      {/* Any other attribute options */}
 />
 ```
 
@@ -81,9 +82,7 @@ For more details have a look at the [usage example](https://github.com/govau/uik
 
 ```shell
 direction-links
-├─ core
-└─ body
-   └─ core
+└─ core
 ```
 
 
@@ -115,6 +114,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/direction-lin
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

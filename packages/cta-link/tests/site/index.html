@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -45,41 +44,157 @@
 
 	<h1>Test: cta-link</h1>
 
-	<h2>cta-link</h2>
+	<div class="split-wrapper">
+		<div class="split">
+			<h2>cta-link</h2>
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
-		doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
-		quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
-	</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+				doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+			</p>
 
-	<a class="uikit-cta-link" href="#">Sign up</a>
+			<a class="au-cta-link" href="#">Sign up</a>
 
-	<hr>
+			<hr>
 
-	<h2>cta-link as button</h2>
+			<h2>cta-link as button</h2>
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
-		doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
-		quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
-	</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+				doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+			</p>
 
-	<button class="uikit-cta-link">Sign up</button>
+			<button class="au-cta-link">Sign up</button>
 
-	<hr>
+			<hr>
 
-	<div class="uikit-body">
-		<h2>cta-link with body</h2>
+			<div class="au-body">
+				<h2>cta-link with body</h2>
 
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
-			doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
-			quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
-		</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+					doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+					quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+				</p>
 
-		<a class="uikit-cta-link" href="#">Sign up</a>
+				<a class="au-cta-link" href="#">Sign up</a>
+			</div>
+		</div>
+		<div class="split split--dark">
+			<h2>cta-link <code>--dark</code></h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+				doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+			</p>
+
+			<a class="au-cta-link au-cta-link--dark" href="#">Sign up</a>
+
+			<hr>
+
+			<h2>cta-link as button <code>--dark</code></h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+				doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+			</p>
+
+			<button class="au-cta-link au-cta-link--dark">Sign up</button>
+
+			<hr>
+
+			<div class="au-body au-body--dark">
+				<h2>cta-link with body <code>--dark</code></h2>
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+					doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+					quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+				</p>
+
+				<a class="au-cta-link au-cta-link--dark" href="#">Sign up</a>
+			</div>
+		</div>
 	</div>
+	<div class="split-wrapper">
+		<div class="split split--alt">
+			<h2>cta-link</h2>
 
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+				doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+			</p>
+
+			<a class="au-cta-link" href="#">Sign up</a>
+
+			<hr>
+
+			<h2>cta-link as button</h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+				doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+			</p>
+
+			<button class="au-cta-link">Sign up</button>
+
+			<hr>
+
+			<div class="au-body au-body--alt">
+				<h2>cta-link with body</h2>
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+					doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+					quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+				</p>
+
+				<a class="au-cta-link" href="#">Sign up</a>
+			</div>
+		</div>
+		<div class="split split--alt split--dark">
+			<h2>cta-link <code>--dark</code></h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+				doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+			</p>
+
+			<a class="au-cta-link au-cta-link--dark" href="#">Sign up</a>
+
+			<hr>
+
+			<h2>cta-link as button <code>--dark</code></h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+				doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+				quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+			</p>
+
+			<button class="au-cta-link au-cta-link--dark">Sign up</button>
+
+			<hr>
+
+			<div class="au-body au-body--alt au-body--dark">
+				<h2>cta-link with body <code>--dark</code></h2>
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero impedit, iure sequi debitis optio porro unde maiores minus ipsum sit ut aut atque nesciunt
+					doloremque voluptas doloribus blanditiis suscipit rem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consectetur, sed saepe rem culpa
+					quo inventore deserunt, dolore. Provident temporibus consequatur eius maxime assumenda possimus nostrum neque optio quos quisquam?
+				</p>
+
+				<a class="au-cta-link au-cta-link--dark" href="#">Sign up</a>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

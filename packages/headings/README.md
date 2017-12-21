@@ -53,18 +53,19 @@ npm install @gov.au/headings --save-dev
 Usage:
 
 ```jsx
-import Heading from './headings.js';
+import AUheading from './headings.js';
 
-<Heading size="2" level="2" text="Display 2 on h2" />
+<AUheading size="xl" level="2" text="Display 2 on h2" />
 ```
 
 All props:
 
 ```jsx
-<Heading
-	size="1"              {/* The display size, 1 = smallest; 6 = largest */}
+<AUheading
+	size="xl"             {/* The display size, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' */}
 	level="1"             {/* The semantic headline tag level, h1-h6 */}
 	text="Headline text"  {/* The text of the headline */}
+	attributeOptions      {/* Any other attribute options */}
 />
 ```
 
@@ -113,6 +114,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/headings/test
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing, moved to system fonts
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

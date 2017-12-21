@@ -16,47 +16,27 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
 /**
  * DEFAULT
  * The select component
  *
- * @param  {array}    options  - The options for the select, format: { value: '', text: '' }
- * @param  {string}   id       - The ID for the select for the label
- * @param  {string}   name     - The name attribute
- * @param  {string}   value    - An optional pre-selected value, needs onChange
- * @param  {function} onChange - A function to be called on change
- * @param  {string}   block    - The block option
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {array}  options          - The options for the select, format: { value: '', text: '' }
+ * @param  {string} block            - The block option
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Select = ({ options, id, name, value, onChange, block }) => {
-
-	const attributeOptions = {};
-
-	if( typeof id !== 'undefined' ) {
-		attributeOptions.id = id;
-	}
-
-	if( typeof name !== 'undefined' ) {
-		attributeOptions.name = name;
-	}
-
-	if( typeof value !== 'undefined' ) {
-		attributeOptions.value = value;
-	}
-
-	if( typeof onChange === 'function' ) {
-		attributeOptions.onChange = onChange;
-	}
+const AUselect = ({ dark, options, block, ...attributeOptions }) => {
 
 	return (
-		<div className={`uikit-select${ block ? ` uikit-select-block` : `` }`}>
-			<select className="uikit-select__element" { ...attributeOptions }>
-				{ options.map( ( option, i ) => <option key={ i } value={ option.value }>{ option.text }</option> ) }
-			</select>
-		</div>
+		<select className={`au-select${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`} { ...attributeOptions }>
+			{ options.map( ( option, i ) => <option key={ i } value={ option.value }>{ option.text }</option> ) }
+		</select>
 	);
 };
 
-Select.propTypes = {
+AUselect.propTypes = {
+	dark: PropTypes.bool,
 	options: PropTypes.arrayOf(
 		PropTypes.shape({
 			value: PropTypes.string.isRequired,
@@ -64,10 +44,11 @@ Select.propTypes = {
 		})
 		).isRequired,
 	name: PropTypes.string,
-	value: PropTypes.string,
 	id: PropTypes.string.isRequired,
 	onChange: PropTypes.func,
 	block: PropTypes.bool,
+	disabled: PropTypes.bool,
 };
 
-export default Select;
+
+export default AUselect;

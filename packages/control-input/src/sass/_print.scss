@@ -8,7 +8,12 @@
 
 
 @media print {
-	.uikit-control-input__text:after {
-		display: none !important;
+	.au-control-input__text {
+		color: #000 !important;
+
+		&:before,
+		&:after {
+			display: none !important;
+		}
 	}
 }
