@@ -98,7 +98,7 @@ ReactDOM.render(
 					<AUfooterNav>
 						<div className="row">
 							<div className="col-md-3 col-sm-6">
-								<h3 className="au-display-1">Section</h3>
+								<h3 className="au-display-lg">Section</h3>
 								<ul className="au-link-list">
 									<li><a href="#">Link 1</a></li>
 									<li><a href="#">Link 2</a></li>
@@ -107,7 +107,7 @@ ReactDOM.render(
 							</div>
 
 							<div className="col-md-3 col-sm-6">
-								<h3 className="au-display-1">Section</h3>
+								<h3 className="au-display-lg">Section</h3>
 								<ul className="au-link-list">
 									<li><a href="#">Link 1</a></li>
 									<li><a href="#">Link 2</a></li>
@@ -116,7 +116,7 @@ ReactDOM.render(
 							</div>
 
 							<div className="col-md-3 col-sm-6">
-								<h3 className="au-display-1">Section</h3>
+								<h3 className="au-display-lg">Section</h3>
 								<ul className="au-link-list">
 									<li><a href="#">Link 1</a></li>
 									<li><a href="#">Link 2</a></li>
@@ -125,7 +125,7 @@ ReactDOM.render(
 							</div>
 
 							<div className="col-md-3 col-sm-6">
-								<h3 className="au-display-1">Section</h3>
+								<h3 className="au-display-lg">Section</h3>
 								<ul className="au-link-list">
 									<li><a href="#">Link 1</a></li>
 									<li><a href="#">Link 2</a></li>
@@ -159,7 +159,7 @@ ReactDOM.render(
 					<AUfooterNav>
 						<div className="row">
 							<div className="col-md-3 col-sm-6">
-								<h3 className="au-display-1">Section</h3>
+								<h3 className="au-display-lg">Section</h3>
 								<ul className="au-link-list">
 									<li><a href="#">Link 1</a></li>
 									<li><a href="#">Link 2</a></li>
@@ -168,7 +168,7 @@ ReactDOM.render(
 							</div>
 
 							<div className="col-md-3 col-sm-6">
-								<h3 className="au-display-1">Section</h3>
+								<h3 className="au-display-lg">Section</h3>
 								<ul className="au-link-list">
 									<li><a href="#">Link 1</a></li>
 									<li><a href="#">Link 2</a></li>
@@ -177,7 +177,7 @@ ReactDOM.render(
 							</div>
 
 							<div className="col-md-3 col-sm-6">
-								<h3 className="au-display-1">Section</h3>
+								<h3 className="au-display-lg">Section</h3>
 								<ul className="au-link-list">
 									<li><a href="#">Link 1</a></li>
 									<li><a href="#">Link 2</a></li>
@@ -186,7 +186,7 @@ ReactDOM.render(
 							</div>
 
 							<div className="col-md-3 col-sm-6">
-								<h3 className="au-display-1">Section</h3>
+								<h3 className="au-display-lg">Section</h3>
 								<ul className="au-link-list">
 									<li><a href="#">Link 1</a></li>
 									<li><a href="#">Link 2</a></li>
