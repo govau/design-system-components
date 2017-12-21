@@ -49,28 +49,14 @@
 
 			<h2>Text inputs</h2>
 
-			<label class="au-text-input__label" for="textin-a">A text input field</label>
+			<label for="textin-a">A text input field</label>
 			<input class="au-text-input" name="textin-a" id="textin-a" type="text" value="ABCZ abcjg liI1 12340">
-
-			<hr>
-			<h2>Text inputs with wrapping label</h2>
-
-			<label class="au-text-input__label">A text input field
-				<input class="au-text-input" name="textin2" type="text" value="ABCZ abcjg liI1 12340">
-			</label>
 
 			<hr>
 			<h2>Text inputs with block</h2>
 
-			<label class="au-text-input__label" for="textin-b">A text input field</label>
+			<label for="textin-b">A text input field</label>
 			<input class="au-text-input au-text-input--block" name="textin-b" id="textin-b" type="text" value="ABCZ abcjg liI1 12340">
-
-			<hr>
-			<h2>Text inputs with wrapping label with block</h2>
-
-			<label class="au-text-input__label">A text input field
-				<input class="au-text-input au-text-input--block" name="textin2" type="text" value="ABCZ abcjg liI1 12340">
-			</label>
 
 			<hr>
 			<h2>Text inputs with grid</h2>
@@ -82,27 +68,27 @@
 						<h2>Text inputs</h2>
 						<form>
 							<p>
-								<label class="au-text-input__label" for="textin">A text input field</label>
+								<label for="textin">A text input field</label>
 								<input class="au-text-input au-text-input--block" name="textin" id="textin" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="numberin">A number input field <small>(optional)</small></label>
+								<label for="numberin">A number input field <small>(optional)</small></label>
 								<input class="au-text-input au-text-input--block au-text-input--number" name="numberin" id="numberin" type="number" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="phonein">A phone number (tel) input field</label>
+								<label for="phonein">A phone number (tel) input field</label>
 								<input class="au-text-input au-text-input--block au-text-input--number" name="phonein" id="phonein" type="tel" pattern="[0-9]*" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textinvalid">An invalid field</label>
+								<label for="textinvalid">An invalid field</label>
 								<input class="au-text-input au-text-input--block au-text-input--invalid" name="textinvalid" id="textinvalid" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 								<p>
-								<label class="au-text-input__label" for="textvalid">A valid field</label>
+								<label for="textvalid">A valid field</label>
 								<input class="au-text-input au-text-input--block au-text-input--valid" name="textvalid" id="textvalid" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textdisabled">A disabled field</label>
+								<label for="textdisabled">A disabled field</label>
 								<input class="au-text-input au-text-input--block" name="textdisabled" id="textdisabled" type="text" disabled value="ABCZ abcjg liI1 12340">
 							</p>
 
@@ -113,24 +99,11 @@
 						<h2>Textarea input</h2>
 
 						<form>
-							<label class="au-text-input__label" for="texta">An input for longer responses</label>
+							<label for="texta">An input for longer responses</label>
 							<textarea class="au-text-input au-text-input--block" name="texta" id="texta">
 ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340
 							</textarea>
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<hr>
-						<h2>input with an additional <code>__hint</code></h2>
-
-						<form>
-							<label class="au-text-input__label" for="tfn1">Tax File Number</label>
-							<span class="au-text-input__hint" id="tfn-hint1">
-								Your Tax File Number is on your payslip. For example, 123 456 789.
-							</span>
-							<input class="au-text-input au-text-input--block au-text-input--number" type="number" id="tfn1" aria-describedby="tfn-hint1" value="12340">
 
 							<button class="no-a11y-test">submit</button>
 						</form>
@@ -141,27 +114,27 @@ ABCZ abcjg liI1 12340
 						<h2>Text inputs, using <code>body</code></h2>
 						<form>
 							<p>
-								<label class="au-text-input__label" for="textin2">A text input field</label>
+								<label for="textin2">A text input field</label>
 								<input class="au-text-input au-text-input--block" name="textin2" id="textin2" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="numberin2">A number input field <small>(optional)</small></label>
+								<label for="numberin2">A number input field <small>(optional)</small></label>
 								<input class="au-text-input au-text-input--block au-text-input--number" name="numberin2" id="numberin2" type="number" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="phonein2">A phone number (tel) input field</label>
+								<label for="phonein2">A phone number (tel) input field</label>
 								<input class="au-text-input au-text-input--block au-text-input--number" name="phonein2" id="phonein2" type="tel" pattern="[0-9]*" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textinvalid2">An invalid field</label>
+								<label for="textinvalid2">An invalid field</label>
 								<input class="au-text-input au-text-input--block au-text-input--invalid" name="textinvalid2" id="textinvalid2" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 								<p>
-								<label class="au-text-input__label" for="textvalid2">A valid field</label>
+								<label for="textvalid2">A valid field</label>
 								<input class="au-text-input au-text-input--block au-text-input--valid" name="textvalid2" id="textvalid2" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textdisabled2">A disabled field</label>
+								<label for="textdisabled2">A disabled field</label>
 								<input class="au-text-input au-text-input--block" name="textdisabled2" id="textdisabled2" type="text" disabled value="ABCZ abcjg liI1 12340">
 							</p>
 
@@ -172,7 +145,7 @@ ABCZ abcjg liI1 12340
 						<h2>Textarea input, using <code>body</code></h2>
 
 						<form>
-							<label class="au-text-input__label" for="texta2">An input for longer responses</label>
+							<label for="texta2">An input for longer responses</label>
 							<textarea class="au-text-input au-text-input--block" name="texta2" id="texta2">
 ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340
@@ -181,51 +154,6 @@ ABCZ abcjg liI1 12340
 							<button class="no-a11y-test">submit</button>
 						</form>
 
-						<hr>
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is nested inside the <code>label</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn2">
-								Tax File number
-								<span class="au-text-input__hint" id="tfn-hint2">
-									Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-								</span>
-							</label>
-							<input class="au-text-input au-text-input--block au-text-input--number" type="number" id="tfn2" aria-describedby="tfn-hint2" value="12340">
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is sits between the <code>label</code> and the <code>input</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn3">
-								Tax File number
-							</label>
-							<span class="au-text-input__hint" id="tfn-hint3">
-								Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-							</span>
-							<input class="au-text-input au-text-input--block au-text-input--number" type="number" id="tfn3" aria-describedby="tfn-hint3" value="12340">
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is comes after the <code>input</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn4">
-								Tax File number
-							</label>
-							<input class="au-text-input au-text-input--block au-text-input--number" type="number" id="tfn4" aria-describedby="tfn-hint4" value="12340">
-							<span class="au-text-input__hint" id="tfn-hint4">
-								Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-							</span>
-
-							<button class="no-a11y-test">submit</button>
-						</form>
 					</div>
 				</div>
 			</div>
@@ -234,28 +162,14 @@ ABCZ abcjg liI1 12340
 
 			<h2>Text inputs</h2>
 
-			<label class="au-text-input__label" for="textin-a-dark">A text input field</label>
+			<label for="textin-a-dark">A text input field</label>
 			<input class="au-text-input au-text-input--dark" name="textin-a-dark" id="textin-a-dark" type="text" value="ABCZ abcjg liI1 12340">
-
-			<hr>
-			<h2>Text inputs with wrapping label</h2>
-
-			<label class="au-text-input__label">A text input field
-				<input class="au-text-input au-text-input--dark" name="textin2-dark" type="text" value="ABCZ abcjg liI1 12340">
-			</label>
 
 			<hr>
 			<h2>Text inputs with block</h2>
 
-			<label class="au-text-input__label" for="textin-b-dark">A text input field</label>
+			<label for="textin-b-dark">A text input field</label>
 			<input class="au-text-input au-text-input--dark au-text-input--block" name="textin-b-dark" id="textin-b-dark" type="text" value="ABCZ abcjg liI1 12340">
-
-			<hr>
-			<h2>Text inputs with wrapping label with block</h2>
-
-			<label class="au-text-input__label">A text input field
-				<input class="au-text-input au-text-input--dark au-text-input--block" name="textin2-dark" type="text" value="ABCZ abcjg liI1 12340">
-			</label>
 
 			<hr>
 			<h2>Text inputs with grid</h2>
@@ -267,27 +181,27 @@ ABCZ abcjg liI1 12340
 						<h2>Text inputs</h2>
 						<form>
 							<p>
-								<label class="au-text-input__label" for="textin-dark">A text input field</label>
+								<label for="textin-dark">A text input field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block" name="textin-dark" id="textin-dark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="numberin-dark">A number input field <small>(optional)</small></label>
+								<label for="numberin-dark">A number input field <small>(optional)</small></label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" name="numberin-dark" id="numberin-dark" type="number" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="phonein-dark">A phone number (tel) input field</label>
+								<label for="phonein-dark">A phone number (tel) input field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" name="phonein-dark" id="phonein-dark" type="tel" pattern="[0-9]*" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textinvalid-dark">An invalid field</label>
+								<label for="textinvalid-dark">An invalid field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--invalid" name="textinvalid-dark" id="textinvalid-dark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 								<p>
-								<label class="au-text-input__label" for="textvalid-dark">A valid field</label>
+								<label for="textvalid-dark">A valid field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--valid" name="textvalid-dark" id="textvalid-dark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textdisabled-dark">A disabled field</label>
+								<label for="textdisabled-dark">A disabled field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block" name="textdisabled-dark" id="textdisabled-dark" type="text" disabled value="ABCZ abcjg liI1 12340">
 							</p>
 
@@ -298,24 +212,11 @@ ABCZ abcjg liI1 12340
 						<h2>Textarea input</h2>
 
 						<form>
-							<label class="au-text-input__label" for="texta-dark">An input for longer responses</label>
+							<label for="texta-dark">An input for longer responses</label>
 							<textarea class="au-text-input au-text-input--dark au-text-input--block" name="texta-dark" id="texta-dark">
 ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340
 							</textarea>
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<hr>
-						<h2>input with an additional <code>__hint</code></h2>
-
-						<form>
-							<label class="au-text-input__label" for="tfn1-dark">Tax File Number</label>
-							<span class="au-text-input__hint" id="tfn-hint1-dark">
-								Your Tax File Number is on your payslip. For example, 123 456 789.
-							</span>
-							<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" type="number" id="tfn1-dark" aria-describedby="tfn-hint1" value="12340">
 
 							<button class="no-a11y-test">submit</button>
 						</form>
@@ -326,27 +227,27 @@ ABCZ abcjg liI1 12340
 						<h2>Text inputs, using <code>body</code></h2>
 						<form>
 							<p>
-								<label class="au-text-input__label" for="textin2-dark">A text input field</label>
+								<label for="textin2-dark">A text input field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block" name="textin2-dark" id="textin2-dark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="numberin2-dark">A number input field <small>(optional)</small></label>
+								<label for="numberin2-dark">A number input field <small>(optional)</small></label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" name="numberin2-dark" id="numberin2-dark" type="number" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="phonein2-dark">A phone number (tel) input field</label>
+								<label for="phonein2-dark">A phone number (tel) input field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" name="phonein2-dark" id="phonein2-dark" type="tel" pattern="[0-9]*" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textinvalid2-dark">An invalid field</label>
+								<label for="textinvalid2-dark">An invalid field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--invalid" name="textinvalid2-dark" id="textinvalid2-dark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 								<p>
-								<label class="au-text-input__label" for="textvalid2-dark">A valid field</label>
+								<label for="textvalid2-dark">A valid field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--valid" name="textvalid2-dark" id="textvalid2-dark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textdisabled2-dark">A disabled field</label>
+								<label for="textdisabled2-dark">A disabled field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block" name="textdisabled2-dark" id="textdisabled2-dark" type="text" disabled value="ABCZ abcjg liI1 12340">
 							</p>
 
@@ -357,57 +258,11 @@ ABCZ abcjg liI1 12340
 						<h2>Textarea input, using <code>body</code></h2>
 
 						<form>
-							<label class="au-text-input__label" for="texta2-dark">An input for longer responses</label>
+							<label for="texta2-dark">An input for longer responses</label>
 							<textarea class="au-text-input au-text-input--dark au-text-input--block" name="texta2-dark" id="texta2-dark">
 ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340
 							</textarea>
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<hr>
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is nested inside the <code>label</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn2-dark">
-								Tax File number
-								<span class="au-text-input__hint" id="tfn-hint2-dark">
-									Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-								</span>
-							</label>
-							<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" type="number" id="tfn2-dark" aria-describedby="tfn-hint2-dark" value="12340">
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is sits between the <code>label</code> and the <code>input</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn3-dark">
-								Tax File number
-							</label>
-							<span class="au-text-input__hint" id="tfn-hint3-dark">
-								Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-							</span>
-							<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" type="number" id="tfn3-dark" aria-describedby="tfn-hint3-dark" value="12340">
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is comes after the <code>input</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn4-dark">
-								Tax File number
-							</label>
-							<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" type="number" id="tfn4-dark" aria-describedby="tfn-hint4-dark" value="12340">
-							<span class="au-text-input__hint" id="tfn-hint4-dark">
-								Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-							</span>
 
 							<button class="no-a11y-test">submit</button>
 						</form>
@@ -421,28 +276,14 @@ ABCZ abcjg liI1 12340
 
 			<h2>Text inputs</h2>
 
-			<label class="au-text-input__label" for="textin-a-alt">A text input field</label>
+			<label for="textin-a-alt">A text input field</label>
 			<input class="au-text-input" name="textin-a-alt" id="textin-a-alt" type="text" value="ABCZ abcjg liI1 12340">
-
-			<hr>
-			<h2>Text inputs with wrapping label</h2>
-
-			<label class="au-text-input__label">A text input field
-				<input class="au-text-input" name="textin2-alt" type="text" value="ABCZ abcjg liI1 12340">
-			</label>
 
 			<hr>
 			<h2>Text inputs with block</h2>
 
-			<label class="au-text-input__label" for="textin-b-alt">A text input field</label>
+			<label for="textin-b-alt">A text input field</label>
 			<input class="au-text-input au-text-input--block" name="textin-b-alt" id="textin-b-alt" type="text" value="ABCZ abcjg liI1 12340">
-
-			<hr>
-			<h2>Text inputs with wrapping label with block</h2>
-
-			<label class="au-text-input__label">A text input field
-				<input class="au-text-input au-text-input--block" name="textin2-alt" type="text" value="ABCZ abcjg liI1 12340">
-			</label>
 
 			<hr>
 			<h2>Text inputs with grid</h2>
@@ -454,27 +295,27 @@ ABCZ abcjg liI1 12340
 						<h2>Text inputs</h2>
 						<form>
 							<p>
-								<label class="au-text-input__label" for="textin-alt">A text input field</label>
+								<label for="textin-alt">A text input field</label>
 								<input class="au-text-input au-text-input--block" name="textin-alt" id="textin-alt" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="numberin-alt">A number input field <small>(optional)</small></label>
+								<label for="numberin-alt">A number input field <small>(optional)</small></label>
 								<input class="au-text-input au-text-input--block au-text-input--number" name="numberin-alt" id="numberin-alt" type="number" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="phonein-alt">A phone number (tel) input field</label>
+								<label for="phonein-alt">A phone number (tel) input field</label>
 								<input class="au-text-input au-text-input--block au-text-input--number" name="phonein-alt" id="phonein-alt" type="tel" pattern="[0-9]*" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textinvalid-alt">An invalid field</label>
+								<label for="textinvalid-alt">An invalid field</label>
 								<input class="au-text-input au-text-input--block au-text-input--invalid" name="textinvalid-alt" id="textinvalid-alt" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 								<p>
-								<label class="au-text-input__label" for="textvalid-alt">A valid field</label>
+								<label for="textvalid-alt">A valid field</label>
 								<input class="au-text-input au-text-input--block au-text-input--valid" name="textvalid-alt" id="textvalid-alt" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textdisabled-alt">A disabled field</label>
+								<label for="textdisabled-alt">A disabled field</label>
 								<input class="au-text-input au-text-input--block" name="textdisabled-alt" id="textdisabled-alt" type="text" disabled value="ABCZ abcjg liI1 12340">
 							</p>
 
@@ -485,24 +326,11 @@ ABCZ abcjg liI1 12340
 						<h2>Textarea input</h2>
 
 						<form>
-							<label class="au-text-input__label" for="texta-alt">An input for longer responses</label>
+							<label for="texta-alt">An input for longer responses</label>
 							<textarea class="au-text-input au-text-input--block" name="texta-alt" id="texta-alt">
 ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340
 							</textarea>
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<hr>
-						<h2>input with an additional <code>__hint</code></h2>
-
-						<form>
-							<label class="au-text-input__label" for="tfn1-alt">Tax File Number</label>
-							<span class="au-text-input__hint" id="tfn-hint1-alt">
-								Your Tax File Number is on your payslip. For example, 123 456 789.
-							</span>
-							<input class="au-text-input au-text-input--block au-text-input--number" type="number" id="tfn1-alt" aria-describedby="tfn-hint1" value="12340">
 
 							<button class="no-a11y-test">submit</button>
 						</form>
@@ -513,27 +341,27 @@ ABCZ abcjg liI1 12340
 						<h2>Text inputs, using <code>body</code></h2>
 						<form>
 							<p>
-								<label class="au-text-input__label" for="textin2-alt">A text input field</label>
+								<label for="textin2-alt">A text input field</label>
 								<input class="au-text-input au-text-input--block" name="textin2-alt" id="textin2-alt" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="numberin2-alt">A number input field <small>(optional)</small></label>
+								<label for="numberin2-alt">A number input field <small>(optional)</small></label>
 								<input class="au-text-input au-text-input--block au-text-input--number" name="numberin2-alt" id="numberin2-alt" type="number" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="phonein2-alt">A phone number (tel) input field</label>
+								<label for="phonein2-alt">A phone number (tel) input field</label>
 								<input class="au-text-input au-text-input--block au-text-input--number" name="phonein2-alt" id="phonein2-alt" type="tel" pattern="[0-9]*" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textinvalid2-alt">An invalid field</label>
+								<label for="textinvalid2-alt">An invalid field</label>
 								<input class="au-text-input au-text-input--block au-text-input--invalid" name="textinvalid2-alt" id="textinvalid2-alt" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 								<p>
-								<label class="au-text-input__label" for="textvalid2-alt">A valid field</label>
+								<label for="textvalid2-alt">A valid field</label>
 								<input class="au-text-input au-text-input--block au-text-input--valid" name="textvalid2-alt" id="textvalid2-alt" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textdisabled2-alt">A disabled field</label>
+								<label for="textdisabled2-alt">A disabled field</label>
 								<input class="au-text-input au-text-input--block" name="textdisabled2-alt" id="textdisabled2-alt" type="text" disabled value="ABCZ abcjg liI1 12340">
 							</p>
 
@@ -544,7 +372,7 @@ ABCZ abcjg liI1 12340
 						<h2>Textarea input, using <code>body</code></h2>
 
 						<form>
-							<label class="au-text-input__label" for="texta2-alt">An input for longer responses</label>
+							<label for="texta2-alt">An input for longer responses</label>
 							<textarea class="au-text-input au-text-input--block" name="texta2-alt" id="texta2-alt">
 ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340
@@ -553,51 +381,6 @@ ABCZ abcjg liI1 12340
 							<button class="no-a11y-test">submit</button>
 						</form>
 
-						<hr>
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is nested inside the <code>label</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn2-alt">
-								Tax File number
-								<span class="au-text-input__hint" id="tfn-hint2-alt">
-									Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-								</span>
-							</label>
-							<input class="au-text-input au-text-input--block au-text-input--number" type="number" id="tfn2-alt" aria-describedby="tfn-hint-alt" value="12340">
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is sits between the <code>label</code> and the <code>input</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn3-alt">
-								Tax File number
-							</label>
-							<span class="au-text-input__hint" id="tfn-hint3-alt">
-								Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-							</span>
-							<input class="au-text-input au-text-input--block au-text-input--number" type="number" id="tfn3-alt" aria-describedby="tfn-hint3-alt" value="12340">
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is comes after the <code>input</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn4-alt">
-								Tax File number
-							</label>
-							<input class="au-text-input au-text-input--block au-text-input--number" type="number" id="tfn4-alt" aria-describedby="tfn-hint4-alt" value="12340">
-							<span class="au-text-input__hint" id="tfn-hint4-alt">
-								Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-							</span>
-
-							<button class="no-a11y-test">submit</button>
-						</form>
 					</div>
 				</div>
 			</div>
@@ -606,28 +389,14 @@ ABCZ abcjg liI1 12340
 
 			<h2>Text inputs</h2>
 
-			<label class="au-text-input__label" for="textin-a-altdark">A text input field</label>
+			<label for="textin-a-altdark">A text input field</label>
 			<input class="au-text-input au-text-input--dark" name="textin-a-altdark" id="textin-a-altdark" type="text" value="ABCZ abcjg liI1 12340">
-
-			<hr>
-			<h2>Text inputs with wrapping label</h2>
-
-			<label class="au-text-input__label">A text input field
-				<input class="au-text-input au-text-input--dark" name="textin2-altdark" type="text" value="ABCZ abcjg liI1 12340">
-			</label>
 
 			<hr>
 			<h2>Text inputs with block</h2>
 
-			<label class="au-text-input__label" for="textin-b-altdark">A text input field</label>
+			<label for="textin-b-altdark">A text input field</label>
 			<input class="au-text-input au-text-input--dark au-text-input--block" name="textin-b-altdark" id="textin-b-altdark" type="text" value="ABCZ abcjg liI1 12340">
-
-			<hr>
-			<h2>Text inputs with wrapping label with block</h2>
-
-			<label class="au-text-input__label">A text input field
-				<input class="au-text-input au-text-input--dark au-text-input--block" name="textin2" type="text" value="ABCZ abcjg liI1 12340">
-			</label>
 
 			<hr>
 			<h2>Text inputs with grid</h2>
@@ -639,27 +408,27 @@ ABCZ abcjg liI1 12340
 						<h2>Text inputs</h2>
 						<form>
 							<p>
-								<label class="au-text-input__label" for="textin-altdark">A text input field</label>
+								<label for="textin-altdark">A text input field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block" name="textin-altdark" id="textin-altdark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="numberin-altdark">A number input field <small>(optional)</small></label>
+								<label for="numberin-altdark">A number input field <small>(optional)</small></label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" name="numberin-altdark" id="numberin-altdark" type="number" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="phonein-altdark">A phone number (tel) input field</label>
+								<label for="phonein-altdark">A phone number (tel) input field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" name="phonein-altdark" id="phonein-altdark" type="tel" pattern="[0-9]*" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textinvalid-altdark">An invalid field</label>
+								<label for="textinvalid-altdark">An invalid field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--invalid" name="textinvalid"-altdark id="textinvalid-altdark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 								<p>
-								<label class="au-text-input__label" for="textvalid-altdark">A valid field</label>
+								<label for="textvalid-altdark">A valid field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--valid" name="textvalid-altdark" id="textvalid-altdark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textdisabled-altdark">A disabled field</label>
+								<label for="textdisabled-altdark">A disabled field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block" name="textdisabled-altdark" id="textdisabled-altdark" type="text" disabled value="ABCZ abcjg liI1 12340">
 							</p>
 
@@ -670,24 +439,11 @@ ABCZ abcjg liI1 12340
 						<h2>Textarea input</h2>
 
 						<form>
-							<label class="au-text-input__label" for="texta-altdark">An input for longer responses</label>
+							<label for="texta-altdark">An input for longer responses</label>
 							<textarea class="au-text-input au-text-input--dark au-text-input--block" name="texta-altdark" id="texta-altdark">
 ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340
 							</textarea>
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<hr>
-						<h2>input with an additional <code>__hint</code></h2>
-
-						<form>
-							<label class="au-text-input__label" for="tfn1-altdark">Tax File Number</label>
-							<span class="au-text-input__hint" id="tfn-hint1-altdark">
-								Your Tax File Number is on your payslip. For example, 123 456 789.
-							</span>
-							<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" type="number" id="tfn1-altdark" aria-describedby="tfn-hint1-altdark" value="12340">
 
 							<button class="no-a11y-test">submit</button>
 						</form>
@@ -698,27 +454,27 @@ ABCZ abcjg liI1 12340
 						<h2>Text inputs, using <code>body</code></h2>
 						<form>
 							<p>
-								<label class="au-text-input__label" for="textin2-altdark">A text input field</label>
+								<label for="textin2-altdark">A text input field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block" name="textin2-altdark" id="textin2-altdark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="numberin2-altdark">A number input field <small>(optional)</small></label>
+								<label for="numberin2-altdark">A number input field <small>(optional)</small></label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" name="numberin2-altdark" id="numberin2-altdark" type="number" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="phonein2-altdark">A phone number (tel) input field</label>
+								<label for="phonein2-altdark">A phone number (tel) input field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" name="phonein2-altdark" id="phonein2-altdark" type="tel" pattern="[0-9]*" value="12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textinvalid2-altdark">An invalid field</label>
+								<label for="textinvalid2-altdark">An invalid field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--invalid" name="textinvalid2-altdark" id="textinvalid2-altdark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 								<p>
-								<label class="au-text-input__label" for="textvalid2-altdark">A valid field</label>
+								<label for="textvalid2-altdark">A valid field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--valid" name="textvalid2-altdark" id="textvalid2-altdark" type="text" value="ABCZ abcjg liI1 12340">
 							</p>
 							<p>
-								<label class="au-text-input__label" for="textdisabled2-altdark">A disabled field</label>
+								<label for="textdisabled2-altdark">A disabled field</label>
 								<input class="au-text-input au-text-input--dark au-text-input--block" name="textdisabled2-altdark" id="textdisabled2-altdark" type="text" disabled value="ABCZ abcjg liI1 12340">
 							</p>
 
@@ -729,7 +485,7 @@ ABCZ abcjg liI1 12340
 						<h2>Textarea input, using <code>body</code></h2>
 
 						<form>
-							<label class="au-text-input__label" for="texta2-altdark">An input for longer responses</label>
+							<label for="texta2-altdark">An input for longer responses</label>
 							<textarea class="au-text-input au-text-input--dark au-text-input--block" name="texta2-altdark" id="texta2-altdark">
 ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340
@@ -738,55 +494,26 @@ ABCZ abcjg liI1 12340
 							<button class="no-a11y-test">submit</button>
 						</form>
 
-						<hr>
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is nested inside the <code>label</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn2-altdark">
-								Tax File number
-								<span class="au-text-input__hint" id="tfn-hint2-altdark">
-									Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-								</span>
-							</label>
-							<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" type="number" id="tfn2-altdark" aria-describedby="tfn-hint2-altdark" value="12340">
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is sits between the <code>label</code> and the <code>input</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn3-altdark">
-								Tax File number
-							</label>
-							<span class="au-text-input__hint" id="tfn-hint3-altdark">
-								Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-							</span>
-							<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" type="number" id="tfn3-altdark" aria-describedby="tfn-hint3-altdark" value="12340">
-
-							<button class="no-a11y-test">submit</button>
-						</form>
-
-						<h2>input with an additional <code>__hint</code>, using <code>body</code></h2>
-						<p>Here the hint is comes after the <code>input</code>.</p>
-
-						<form>
-							<label class="au-text-input__label" for="tfn4-altdark">
-								Tax File number
-							</label>
-							<input class="au-text-input au-text-input--dark au-text-input--block au-text-input--number" type="number" id="tfn4-altdark" aria-describedby="tfn-hint4-altdark" value="12340">
-							<span class="au-text-input__hint" id="tfn-hint4-altdark">
-								Your Tax File Number is on your payslip. For example, <mark>987654321</mark>.
-							</span>
-
-							<button class="no-a11y-test">submit</button>
-						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+
+
+	<div class="height-test">
+		<label class="no-a11y-test" for="select-height-test">What option?</label>
+		<select id="select-height-test" class="au-select">
+			<option value="">Please select</option>
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3">Option 3</option>
+		</select>
+		<label class="no-a11y-test" for="textinput-height-test">A text input field</label>
+		<input class="au-text-input" name="textinput-height-test" id="textinput-height-test" type="text" value="ABCZ abcjg liI1 12340">
+		<button class="au-btn">Button</button>
+		<button class="au-btn au-btn--secondary">Button</button>
+		<button class="au-btn au-btn--tertiary">Button</button>
 	</div>
 </body>
 </html>

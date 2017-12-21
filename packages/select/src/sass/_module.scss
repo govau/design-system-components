@@ -41,16 +41,9 @@
 	background-repeat: no-repeat;
 	background-position: right center;
 	background-size: 1.5em auto;
+	vertical-align: middle;
 
 	@include AU-focus();
-
-	* + & {
-		@include AU-space( margin-top, 1unit );
-	}
-
-	label + & {
-		@include AU-space( margin-top, 0.5unit );
-	}
 
 	&:focus {
 		border-radius: 0;

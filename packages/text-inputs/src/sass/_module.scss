@@ -22,19 +22,6 @@
 // Text input styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * Text input labels.
- */
-.au-text-input__label {
-	@include AU-fontgrid( sm );
-	display: block;
-
-	* + & {
-		@include AU-space( margin-top, 1.5unit );
-	}
-}
-
-
-/**
  * Generic text input styling.
  *
  * Also includes variants:
@@ -44,21 +31,16 @@
  * - :disabled/[disabled]
  */
 .au-text-input {
-	@include AU-fontgrid( sm, default ); // using default to make sure we don’t crop descenders and ascenders
+	box-sizing: border-box;
+	@include AU-fontgrid( sm, nospace ); // using default to make sure we don’t crop descenders and ascenders
 	@include AU-space( padding, 0.5unit 1unit );
+	@include AU-space( height, 2.875unit );
 	border: 3px solid $AU-color-Border;
 	background-color: $AU-color-Background-light;
 	font-family: $AU-font;
 	color: $AU-color-Text;
 	border-radius: $AU-border-radius;
-
-	* + & {
-		@include AU-space( margin-top, 1unit );
-	}
-
-	.au-text-input__label + & {
-		@include AU-space( margin-top, 0.5unit );
-	}
+	vertical-align: middle;
 
 	// invalid styling
 	&.au-text-input--dark:invalid,
@@ -148,20 +130,39 @@
 }
 
 
-/**
- * Hint text.
- *
- * Built so it can sit both in- and outside the `label`.
- */
-.au-text-input__hint {
-	@include AU-fontgrid( xs );
-	display: block;
+// We remove label styling as it is too atomic to make calls on spacing. There will be form components that will reintroduce these elements.
+// /**
+//  * Text input labels.
+//  */
+// .au-text-input__label {
+// 	@include AU-fontgrid( sm );
+// 	display: block;
 
-	// Keeps spacing neat depending on where the hint text is added.
-	* + & {
-		@include AU-space( margin-top, 0.5unit );
-	}
-}
+// 	& + .au-text-input {
+// 		@include AU-space( margin-top, 0.5unit );
+// 	}
+
+// 	* + & {
+// 		@include AU-space( margin-top, 1.5unit );
+// 	}
+// }
+
+
+// We remove hint text styling as it is too atomic to make calls on spacing. There will be form components that will reintroduce these elements.
+// /**
+//  * Hint text.
+//  *
+//  * Built so it can sit both in- and outside the `label`.
+//  */
+// .au-text-input__hint {
+// 	@include AU-fontgrid( xs );
+// 	display: block;
+
+// 	// Keeps spacing neat depending on where the hint text is added.
+// 	* + & {
+// 		@include AU-space( margin-top, 0.5unit );
+// 	}
+// }
 
 
 /**
@@ -169,7 +170,8 @@
  */
 textarea.au-text-input {
 	@include AU-fontgrid( sm );
+	height: auto;
 	max-width: 100%;
-	min-height: 50px;
+	min-height: 6em;
 }
 
