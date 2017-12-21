@@ -11,6 +11,7 @@
 	.au-control-input__text {
 		color: #000 !important;
 
+		&:before,
 		&:after {
 			display: none !important;
 		}
