@@ -45,7 +45,8 @@
 	@include AU-space( padding, 1unit 2.5unit 1unit 1unit );
 	display: block;
 	color: $AU-color-Action;
-	text-decoration: none;
+	text-decoration: underline;
+	text-decoration-skip: ink;
 	width: 100%;
 	box-sizing: border-box;
 	font-weight: bold;
@@ -54,8 +55,7 @@
 	cursor: pointer;
 
 	&:hover {
-		text-decoration: underline;
-		text-decoration-skip: ink;
+		text-decoration: none;
 		color: $AU-color-Text;
 
 		&:after {
@@ -68,6 +68,10 @@
 
 	@include AU-focus();
 
+	&:focus {
+		z-index: 100;
+	}
+
 	// remove the default details arrow icon
 	&::-webkit-details-marker {
 		display: none;
@@ -76,17 +80,18 @@
 	&:after {
 		content: ' ';
 		position: absolute;
-		top: 0;
-		bottom: 0;
+		top: 50%;
+		@include AU-space( margin-top, -0.5unit ); // Pull it up half of it's height
 		@include AU-space( right, 1unit );
 		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
 			'	<path fill="#{ $AU-color-Action }" d="M64 0l64 64-16 16-64-64"/>' +
 			'	<path fill="#{ $AU-color-Action }" d="M64 0l16 16-64 64L0 64"/>' +
 			'</svg>');
 		background-repeat: no-repeat;
 		background-position: center;
-		z-index: 100;
+		z-index: 101;
 		transition: transform 0.25s ease-in;
 	}
 
