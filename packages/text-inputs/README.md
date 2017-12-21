@@ -7,6 +7,7 @@
 ## Contents
 
 * [Install](#install)
+* [Usage](#usage)
 * [Dependency graph](#dependency-graph)
 * [Build](#build)
 * [Tests](#tests)
