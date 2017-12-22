@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -104,15 +103,6 @@ link-list
 └─ body
    └─ core
 ```
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-## Build
 
 
 **[⬆ back to top](#contents)**
