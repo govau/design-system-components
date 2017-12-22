@@ -710,32 +710,21 @@ HELPER.generate = (() => {
 					let jquery = '';
 					let react = '';
 
-					if( pkg.pancake['pancake-module'].js ) {
-						if( pkg.pancake['pancake-module'].js.jquery ) {
-							jquery = `<br><a href="packages/${ module }/tests/jquery/">` +
-									`<img class="badge badge--jquery" src="https://img.shields.io/badge/js        -jquery-green.svg?colorA=313131&colorB=1B7991" alt="">` +
-								`</a>`;
-						}
+					if( pkg.pancake['pancake-module'].jquery ) {
+						jquery = `<a class="link" href="packages/${ module }/tests/jquery/">jquery</a>`;
+					}
 
-						if( pkg.pancake['pancake-module'].js.react ) {
-							react = `<br><a href="packages/${ module }/tests/react/">` +
-									`<img class="badge badge--react" src="https://img.shields.io/badge/js        -react-green.svg?colorA=313131&colorB=1B7991" alt="">` +
-								`</a>`;
-						}
+					if( pkg.pancake['pancake-module'].react ) {
+						react = `<a class="link" href="packages/${ module }/tests/react/">react</a>`;
 					}
 
 					replacement += `<li>` +
-						`<a class="module-list__headline" href="${
-						jquery === '' && react === ''
-						? `packages/${ module }/tests/site/`
-						: `packages/${ module }/tests/` }">` +
-							`${ module }</a>${ jquery }${ react }` +
-							`<br><a href="https://www.npmjs.com/package/@gov.au/${ module }">` +
-								`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=version&colorA=313131&colorB=1B7991" alt="">` +
-							`</a>` +
-							`<a href="https://github.com/govau/uikit/tree/master/packages/${ module }">` +
-								`<img class="badge badge--readme" src="https://img.shields.io/badge/docs    -readme-green.svg?colorA=313131&colorB=1B7991" alt="">` +
-							`</a>` +
+						`	<a class="module-list__headline" href="packages/${ module }/tests/">` +
+						`		${ module }` +
+						`		<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=%20&colorA=ffffff&colorB=00698f&style=for-the-badge" alt="">` +
+						`	</a><br>` +
+						`	<a class="link" href="packages/${ module }/tests/site/">site</a> ${ jquery } ${ react }` +
+						`	<a class="link" href="https://github.com/govau/uikit/tree/master/packages/${ module }">readme</a>` +
 						`</li>\n`;
 				}
 			}
