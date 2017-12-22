@@ -733,7 +733,7 @@ HELPER.generate = (() => {
 							`<br><a href="https://www.npmjs.com/package/@gov.au/${ module }">` +
 								`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=version&colorA=313131&colorB=1B7991" alt="">` +
 							`</a>` +
-							`<br><a href="https://github.com/govau/uikit/tree/master/packages/${ module }">` +
+							`<a href="https://github.com/govau/uikit/tree/master/packages/${ module }">` +
 								`<img class="badge badge--readme" src="https://img.shields.io/badge/docs    -readme-green.svg?colorA=313131&colorB=1B7991" alt="">` +
 							`</a>` +
 						`</li>\n`;
