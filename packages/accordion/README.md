@@ -64,7 +64,8 @@ Accordion has 3 public functions:
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body. 
+`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body.
+
 `speed` - animation speed in milliseconds (optional, defaults to `250ms`)
 
 Example:
@@ -80,7 +81,8 @@ AU.accordion.Open( document.getElementById('accordion-title'), 500 );
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body. 
+`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body.
+
 `speed` - animation speed in milliseconds (optional, defaults to `250ms`)
 
 Example:
@@ -96,8 +98,10 @@ AU.accordion.Close( document.getElementById('accordion-title'), 500 );
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body. 
+`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body.
+
 `speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+
 `callbacks` - An object of four optional callbacks: `{ onOpen, afterOpen, onClose, afterClose }`
 
 Example:
