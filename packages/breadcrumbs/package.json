@@ -25,7 +25,7 @@
 
 		"prepublish": "npm run test:helper && npm run build:pre",
 
-		"build:pre": "node ../../scripts/helper.js precompile",
+		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:pre && npm run build:js && npm run build:react",
