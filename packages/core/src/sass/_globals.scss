@@ -342,15 +342,15 @@ $dependencies: (
  *
  * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
  *
- * @param  {string}   $forground  - Color one
+ * @param  {string}   $foreground - Color one
  * @param  {string}   $background - Color two
  * @param  {boolean}  $silent     - If the logs get printed in the terminal
  * @param  {boolean}  $rounded    - If the value is rounded or not
  *
- * @return {integer}             - The contrast ratio
+ * @return {integer}              - The contrast ratio
  */
-@function AU-color-contrast( $forground, $background, $silent: false, $rounded: true ) {
-	@if type-of( $forground ) != 'color' {
+@function AU-color-contrast( $foreground, $background, $silent: false, $rounded: true ) {
+	@if type-of( $foreground ) != 'color' {
 		@error "Elementary, my dear Watson; the AU-color-contrast function only takes a color as first argument!";
 	}
 
@@ -358,7 +358,7 @@ $dependencies: (
 		@error "You can’t handle the truth; the AU-color-contrast function only takes a color as second argument!";
 	}
 
-	$luminance1: AU-color-luminance( $forground ) + .05;
+	$luminance1: AU-color-luminance( $foreground ) + .05;
 	$luminance2: AU-color-luminance( $background ) + .05;
 	$ratio: $luminance1 / $luminance2;
 
@@ -367,7 +367,7 @@ $dependencies: (
 	}
 
 	@if $ratio < 4.5 and $silent == false {
-		@warn "Houston, we have a problem; contrast ratio of #{ $forground } on #{ $background } is bad, just #{ $ratio }";
+		@warn "Houston, we have a problem; contrast ratio of #{ $foreground } on #{ $background } is bad, just #{ $ratio }";
 	}
 
 	@if $rounded == true {
@@ -465,10 +465,10 @@ $dependencies: (
 // GLOBAL MIXINS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * AU-space - Return a space value based on the line-height and the unit em
+ * AU-space - Mixin for setting a properties value to snap to the grid, with a fallback for REM.
  *
  * @param  {string} $property - The css property to apply the spacing ( padding, margin )
- * @param  {number} $values   - The values of the property ( 0, 20px 10px, 5% )
+ * @param  {number} $values   - The values of the property ( 0, 20px, 1unit, 5% )
  *
  * @return {number}           - The space in px and rems
  */
