@@ -387,7 +387,7 @@ $dependencies: (
  * @author Alex Page @aalexpaage <http://alexpage.com.au>
  *
  * @param  {Color}           $toMakeA11y            - The color that is to be changed
- * @param  {Color}           $background            - The background color to for the contrast
+ * @param  {Color}           $background            - The background color to compare against toMakeA11y for the contrast
  * @param  {'small'|'large'} $ratioKey   ['small']  - The keyword 'small' or 'large' to set the WCAG 2.1 contrast ration or 3.0 or 4.5
  * @param  {Number}          $steps      [0.1]      - The step size our function is searching for a new color in. The bigger the number the faster the process
  *                                                    the rougher the found color.
