@@ -28,10 +28,11 @@
 		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
 
-		"prepublish": "npm run test:helper && npm run build:js && npm run build:react",
+		"prepublish": "npm run test:helper && npm run build:pre",
 
-		"build:js": "node ../../scripts/helper.js precompile compile",
-		"build": "npm-run-all --parallel build:*",
+		"build:pre": "node ../../scripts/helper.js precompile",
+		"build:js": "node ../../scripts/helper.js compile",
+		"build": "npm run build:prejs && npm run build:js",
 
 		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 

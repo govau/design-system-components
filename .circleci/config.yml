@@ -14,6 +14,7 @@ jobs:
       - run: rm -rf node_modules                    # delete node_modules folder because we need to bust the cache
       - run: npm install                            # duh
       - run: npm run bootstrap                      # installing all dependencies of all packages
+      - run: npm run build                          # build all packages
       - run: npm test                               # run all tests
       - run: rm -rf node_modules                    # delete node_modules folder again to not push it to cf
       - run: find . -name "lib" -exec rm -rf '{}' + # removing all lib/ folders
@@ -42,6 +43,7 @@ jobs:
       - run: rm -rf node_modules                    # delete node_modules folder because we need to bust the cache
       - run: npm install                            # duh
       - run: npm run bootstrap                      # installing all dependencies of all packages
+      - run: npm run build                          # build all packages
       - run: npm test                               # run all tests
       - run: rm -rf node_modules                    # delete node_modules folder again to not push it to cf
       - run: find . -name "lib" -exec rm -rf '{}' + # removing all lib/ folders

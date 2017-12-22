@@ -454,7 +454,7 @@ HELPER.precompile = (() => {
  *
  * COMPILE MODULE
  *
- * Compile assets, move files from /src/ to /lib/
+ * Compile assets for tests
  *
  **************************************************************************************************************************************************************/
 
@@ -963,6 +963,10 @@ HELPER.test = (() => {
 					// testing build scripts
 					if( hasReact && !packagesPKG.scripts['build:react'] ) {
 						error += `The module ${ module } is missing the "build:react" script.\n`;
+					}
+
+					if( hasReact && !packagesPKG.scripts['build'].includes('npm run build:react') ) {
+						error += `The module ${ module } is missing the "build:react" task inside the build script.\n`;
 					}
 
 					// testing pancake plugins
