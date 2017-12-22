@@ -30,7 +30,6 @@ export const AUfooterNav = ({ children, ...attributeOptions }) => (
 	</nav>
 );
 
-
 AUfooterNav.propTypes = {
 	children: PropTypes.node.isRequired,
 };
@@ -47,7 +46,6 @@ export const AUfooterEnd = ({ children, ...attributeOptions }) => (
 		{ children }
 	</nav>
 );
-
 
 AUfooterEnd.propTypes = {
 	children: PropTypes.node.isRequired,
@@ -72,7 +70,6 @@ const AUfooter = ({ dark, alt, children, ...attributeOptions }) => (
 		{ children }
 	</footer>
 );
-
 
 AUfooter.propTypes = {
 	children: PropTypes.node.isRequired,

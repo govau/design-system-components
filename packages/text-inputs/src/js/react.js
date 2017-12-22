@@ -18,6 +18,7 @@ import PropTypes from 'prop-types';
 
 
 /**
+ * DEFAULT
  * The AUtextInput component
  *
  * @param  {string} as               - The kind of input, can be either 'input' or 'textarea', default: 'input'
@@ -27,7 +28,7 @@ import PropTypes from 'prop-types';
  * @param  {string} valid            - Add the valid variation class
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUtextInput = ({
+const AUtextInput = ({
 	as,
 	dark,
 	block,
@@ -60,7 +61,6 @@ export const AUtextInput = ({
 	);
 };
 
-
 AUtextInput.propTypes = {
 	as: PropTypes.oneOf([ 'input', 'textarea' ]),
 	dark: PropTypes.bool,
@@ -71,51 +71,8 @@ AUtextInput.propTypes = {
 	onChange: PropTypes.func,
 };
 
-
 AUtextInput.defaultProps = {
 	as: 'input',
 };
 
-
-
-/**
- * The label component
- *
- * @param  {string} children         - Add the dark variation class
- * @param  {object} attributeOptions - Any other attribute options
- */
-export const AUlabel = ({ children, ...attributeOptions }) => {
-
-	return (
-		<label className="au-text-input__label" { ...attributeOptions } >
-			{ children }
-		</label>
-	);
-};
-
-
-AUlabel.propTypes = {
-	children: PropTypes.string.isRequired,
-	htmlFor:  PropTypes.string,
-};
-
-
-/**
- * The hint component
- *
- * @param  {string} children         - Add the dark variation class
- * @param  {object} attributeOptions - Any other attribute options
- */
-export const AUhint = ({ children, ...attributeOptions }) => {
-
-	return (
-		<span className="au-text-input__hint" { ...attributeOptions } >
-			{ children }
-		</span>
-	);
-};
-
-
-AUhint.propTypes = {
-	children: PropTypes.string.isRequired,
-};
+export default AUtextInput;

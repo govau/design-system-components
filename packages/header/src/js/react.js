@@ -46,7 +46,6 @@ const AUheader = ({ title, level, subline, hero, dark, alt, children, ...attribu
 	);
 };
 
-
 AUheader.propTypes = {
 	title: PropTypes.node.isRequired,
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
@@ -57,10 +56,8 @@ AUheader.propTypes = {
 	children: PropTypes.node,
 };
 
-
 AUheader.defaultProps = {
 	level: '1',
 };
-
 
 export default AUheader;

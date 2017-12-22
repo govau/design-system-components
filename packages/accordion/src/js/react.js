@@ -392,12 +392,6 @@ class AUaccordion extends React.PureComponent {
 	}
 };
 
-
-/**
- * propTypes definition
- *
- * @type {Object}
- */
 AUaccordion.propTypes = {
 	children: PropTypes.node.isRequired,
 	header: PropTypes.string.isRequired,
@@ -410,10 +404,8 @@ AUaccordion.propTypes = {
 	afterClose: PropTypes.func,
 };
 
-
 AUaccordion.defaultProps = {
 	open: false,
 };
-
 
 export default AUaccordion;

@@ -31,6 +31,7 @@ const sizes = [
 	'au-display-xxxl',
 ];
 
+
 /**
  * DEFAULT
  * The headings component

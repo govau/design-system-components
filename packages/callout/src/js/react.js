@@ -36,7 +36,6 @@ export const AUcallout = ({ dark, alt, description, children, ...attributeOption
 	</section>
 );
 
-
 AUcallout.propTypes = {
 	children: PropTypes.node.isRequired,
 	description: PropTypes.string.isRequired,
@@ -66,7 +65,6 @@ export const AUcalloutCalendar = ({ dark, alt, description, subline, datetime, t
 		{ name && <span className="au-callout--calendar-event__name">{ name }</span> }
 	</section>
 );
-
 
 AUcalloutCalendar.propTypes = {
 	dark: PropTypes.bool,

@@ -39,7 +39,6 @@ export const AUinpageNavLinksItem = ({ section }) => {
 	);
 };
 
-
 AUinpageNavLinksItem.propTypes = {
 	section: PropTypes.shape({
 		link: PropTypes.string.isRequired,
@@ -66,7 +65,6 @@ export const AUinpageNavLinks = ({ dark, title, sections, ...attributeOptions })
 	</nav>
 );
 
-
 AUinpageNavLinks.propTypes = {
 	dark: PropTypes.bool,
 	title: PropTypes.string.isRequired,
@@ -78,7 +76,6 @@ AUinpageNavLinks.propTypes = {
 		})
 		).isRequired,
 };
-
 
 AUinpageNavLinks.defaultProps = {
 	title: 'Contents',
@@ -113,7 +110,6 @@ export const AUinpageNavSection = ({ title, link, children, level, headingClass,
 	);
 };
 
-
 AUinpageNavSection.propTypes = {
 	title: PropTypes.string.isRequired,
 	link: PropTypes.string.isRequired,
@@ -123,7 +119,6 @@ AUinpageNavSection.propTypes = {
 	sectionLink: PropTypes.string,
 	onClick: PropTypes.func,
 };
-
 
 AUinpageNavSection.defaultProps = {
 	level: '2',

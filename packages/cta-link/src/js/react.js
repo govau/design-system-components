@@ -36,13 +36,11 @@ const AUctaLink = ({ dark, link, text, ...attributeOptions }) => {
 	}
 }
 
-
 AUctaLink.propTypes = {
 	dark: PropTypes.bool,
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
 };
-
 
 export default AUctaLink;

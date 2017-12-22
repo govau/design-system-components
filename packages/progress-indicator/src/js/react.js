@@ -27,6 +27,7 @@ const statusText = {
 	done: 'Done',
 };
 
+
 /**
  * An item inside the AUprogressIndicator component
  *
@@ -97,6 +98,5 @@ AUprogressIndicator.propTypes = {
 		})
 		).isRequired,
 };
-
 
 export default AUprogressIndicator;

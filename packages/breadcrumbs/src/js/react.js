@@ -39,7 +39,6 @@ const AUbreadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
 	</nav>
 );
 
-
 AUbreadcrumbs.propTypes = {
 	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
@@ -51,6 +50,5 @@ AUbreadcrumbs.propTypes = {
 		})
 		).isRequired,
 };
-
 
 export default AUbreadcrumbs;

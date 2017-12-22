@@ -29,6 +29,7 @@ const directions = {
 	left: 'au-direction-link--left',
 };
 
+
 /**
  * DEFAULT
  * The direction-links component

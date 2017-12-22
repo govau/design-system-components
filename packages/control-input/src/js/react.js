@@ -35,7 +35,6 @@ export const AUcheckbox = ({ dark, alt, label, ...attributeOptions }) => {
 	);
 };
 
-
 AUcheckbox.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
@@ -66,7 +65,6 @@ export const AUradio = ({ dark, alt, label, ...attributeOptions }) => {
 		</label>
 	);
 };
-
 
 AUradio.propTypes = {
 	dark: PropTypes.bool,
