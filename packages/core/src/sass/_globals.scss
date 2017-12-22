@@ -617,7 +617,7 @@ $dependencies: (
 
 
 /**
- * AU-fontgrid- Mixin for setting font-size and line-height.
+ * AU-fontgrid- Mixin for setting font-size and line-height that snaps to the grid.
  * @param  {keywords} $fontsize-key 		-  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
  * @param  {keywords} $lineheight-key 	-  Either one of the following keywords: heading, nospace, default
  *
@@ -686,6 +686,7 @@ $AU-unit: 4;
 $AU-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
 $AU-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
 
+
 // Predetermined pixel sizes from a 1.25 typescale rounded to the nearest $AU-unit (vertical grid)
 $AU-fontsize-map: (
 	xs:   14,
@@ -704,6 +705,7 @@ $AU-lineheight-map: (
 	heading:  1.25,
 	default:  1.5
 );
+
 
 /**
  * max-width for line lengths (the ‘measure’)
