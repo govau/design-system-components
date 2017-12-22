@@ -120,7 +120,7 @@ text-inputs
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/text-inputs/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/text-inputs/tests/site/
 
 
 **[⬆ back to top](#contents)**

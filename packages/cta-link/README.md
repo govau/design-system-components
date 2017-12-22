@@ -1,4 +1,4 @@
-@gov.au/more-link
+@gov.au/cta-link
 ============
 
 > Use cta links to draw attention to a primary call to action.
@@ -92,7 +92,7 @@ cta-link
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/cta-link/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/cta-link/tests/site/
 
 
 **[⬆ back to top](#contents)**

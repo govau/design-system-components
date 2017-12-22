@@ -719,12 +719,11 @@ HELPER.generate = (() => {
 					}
 
 					replacement += `<li>` +
-						`	<a class="module-list__headline" href="packages/${ module }/tests/">` +
-						`		${ module }` +
-						`		<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=%20&colorA=ffffff&colorB=00698f&style=for-the-badge" alt="">` +
-						`	</a><br>` +
+						`	<a class="module-list__headline" href="packages/${ module }/tests/">${ module }</a>` +
+						`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=%20&colorA=ffffff&colorB=00698f&style=flat-square" alt="${ module } version">` +
+						`	<br>` +
 						`	<a class="link" href="packages/${ module }/tests/site/">site</a> ${ jquery } ${ react }` +
-						`	<a class="link" href="https://github.com/govau/uikit/tree/master/packages/${ module }">readme</a>` +
+						`	<a class="link" href="https://github.com/govau/uikit/blob/master/packages/${ module }/README.md">readme</a>` +
 						`</li>\n`;
 				}
 			}

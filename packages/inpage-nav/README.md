@@ -127,7 +127,7 @@ inpage-nav
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/inpage-nav/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/inpage-nav/tests/site/
 
 
 **[⬆ back to top](#contents)**

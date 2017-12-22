@@ -50,7 +50,7 @@ grid-12
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/grid-12/tests/site/
 
 
 **[⬆ back to top](#contents)**

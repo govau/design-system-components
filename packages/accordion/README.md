@@ -232,7 +232,7 @@ accordion
 
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/accordion/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/accordion/tests/site/
 
 
 **[⬆ back to top](#contents)**
