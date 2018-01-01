@@ -472,7 +472,7 @@ $dependencies: (
  *
  * @return {number}           - The space in px and rems
  */
- @mixin AU-space( $property, $values ) {
+@mixin AU-space( $property, $values ) {
 	$unit: $AU-unit; 	// The grid unit to use
 	$output: ();
 	$fallback: ();
@@ -515,7 +515,7 @@ $dependencies: (
 /**
  * AU-clearfix - Clearing floats
  */
- @mixin AU-clearfix() {
+@mixin AU-clearfix() {
 	&:before,
 	&:after {
 		content: " "; // 1
