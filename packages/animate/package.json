@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/animate",
-	"version": "1.0.0-next.1",
+	"version": "1.0.0-next.2",
 	"description": "A JavaScript function to animate CSS properties of page elements.",
 	"keywords": [
 		"uikit",
@@ -45,7 +45,7 @@
 				"path": "lib/js/module.js"
 			},
 			"sass": {
-				"path": "lib/sass/_module.scss",
+				"path": false,
 				"sass-versioning": true
 			}
 		}
@@ -53,8 +53,7 @@
 	"main": "lib/js/module.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-js": "~1",
-		"@gov.au/pancake-sass": "~1"
+		"@gov.au/pancake-js": "~1"
 	},
 	"peerDependencies": {
 	},

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/accordion",
-	"version": "1.0.0-next.1",
+	"version": "1.0.0-next.2",
 	"description": "Allow the user to toggle the visibility of an element",
 	"keywords": [
 		"uikit",
@@ -62,11 +62,11 @@
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
 
-		"@gov.au/animate": "^1.0.0-next.1",
+		"@gov.au/animate": "^1.0.0-next.2",
 		"@gov.au/core": "^1.0.0-next.1"
 	},
 	"peerDependencies": {
-		"@gov.au/animate": "^1.0.0-next.1",
+		"@gov.au/animate": "^1.0.0-next.2",
 		"@gov.au/core": "^1.0.0-next.1"
 	},
 	"devDependencies": {
