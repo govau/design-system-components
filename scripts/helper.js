@@ -225,7 +225,7 @@ const HELPER = (() => { // constructor factory
 		VERSION: PKG.version,
 		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/../.templates`),
-		URL: `http://uikit.apps.staging.digital.gov.au`,
+		URL: `https://uikit.service.gov.au`,
 		GITHUB: `https://github.com/govau/uikit/`,
 
 

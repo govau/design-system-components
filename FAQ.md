@@ -20,7 +20,7 @@ If you can’t find an answer to a question you have please email us at guides@d
 ## General
 
 ### Is there any documentation or list of components?
-You can view our current [unit tests](http://uikit.apps.staging.digital.gov.au/). We’re creating a new version which will make it easier to get started
+You can view our current [unit tests](https://uikit.service.gov.au/). We’re creating a new version which will make it easier to get started
 with the UI-Kit.
 
 
