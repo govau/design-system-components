@@ -37,11 +37,9 @@
 //  - You’re tearing me apart, Lisa;
 //  - Toto, I’ve got a feeling we’re not in Kansas anymore;
 //  - Nobody puts Baby in a corner;
-//  - Try not. Do - or do not. There is no try;
 //  - May the Force be with you;
 //  - You call that an error? This is an Error!
 //  - This... Is... ERROR!
-//  - E.T. phone home;
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -450,13 +448,23 @@ $dependencies: (
 
 
 	@if $ratioLighter >= $ratio {
+		@if $i > 0 {
+			@warn 'Try not. Do - or do not. There is no try; the color ' + $toMakeA11y +
+				' had to be tweaked via AU-color-a11y to make accessible in ' + ( $i / $steps ) + ' iterations and came out as ' + $colorLighter;
+		}
+
 		@return $colorLighter;
 	}
 	@else if $ratioDarker >= $ratio {
+		@if $i > 0 {
+			@warn 'Try not. Do - or do not. There is no try; the color ' + $toMakeA11y +
+				' had to be tweaked via AU-color-a11y to make accessible in ' + ( $i / $steps ) + ' iterations and came out as ' + $colorDarker;
+		}
+
 		@return $colorDarker;
 	}
 	@else {
-		@error 'Bagger; AU-color-a11y was unable to find an accessible color for you.';
+		@error 'E.T. phone home; AU-color-a11y was unable to find an accessible color for you.';
 	}
 }
 
@@ -473,7 +481,7 @@ $dependencies: (
  * @return {number}           - The space in px and rems
  */
 @mixin AU-space( $property, $values ) {
-	$unit: $AU-unit; 	// The grid unit to use
+	$unit: $AU-unit; // The grid unit to use
 	$output: ();
 	$fallback: ();
 	$has_fallback: false;
@@ -518,9 +526,10 @@ $dependencies: (
 @mixin AU-clearfix() {
 	&:before,
 	&:after {
-		content: " "; // 1
-		display: table; // 2
+		content: " ";
+		display: table;
 	}
+
 	&:after {
 		clear: both;
 	}
@@ -618,10 +627,11 @@ $dependencies: (
 
 /**
  * AU-fontgrid- Mixin for setting font-size and line-height that snaps to the grid.
- * @param  {keywords} $fontsize-key 		-  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
- * @param  {keywords} $lineheight-key 	-  Either one of the following keywords: heading, nospace, default
  *
- * @return {string}                    	- The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
+ * @param  {keywords} $fontsize-key     -  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
+ * @param  {keywords} $lineheight-key   -  Either one of the following keywords: heading, nospace, default
+ *
+ * @return {string}                     - The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
 */
 @mixin AU-fontgrid( $fontsize-key, $lineheight-key: 'default' ) {
 
@@ -691,19 +701,19 @@ $AU-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstre
 $AU-fontsize-map: (
 	xs:   14,
 	sm:   16,
-	md: 	20,
-	lg: 	24,
-	xl: 	32,
-	xxl:	40,
-	xxxl:	48
+	md:   20,
+	lg:   24,
+	xl:   32,
+	xxl:  40,
+	xxxl: 48
 );
 
 
 // Predetermined lineheight mapped to keyword
 $AU-lineheight-map: (
-	nospace:  1,
-	heading:  1.25,
-	default:  1.5
+	nospace: 1,
+	heading: 1.25,
+	default: 1.5
 );
 
 
@@ -716,47 +726,47 @@ $AU-maxwidth: 42em !default; //Answer to life, the universe, and everything (kee
 /**
  * Colors light theme
  */
-$AU-color-Text:                    #313131 !default;
-$AU-color-Action:                  #00698f !default;
-$AU-color-Focus:                   #ea4200 !default;
-$AU-color-Background-light:        #ffffff !default;
+$AU-color-Text:             #313131 !default;
+$AU-color-Action:           #00698f !default;
+$AU-color-Focus:            #ea4200 !default;
+$AU-color-Background-light: #ffffff !default;
 
 // Suggestion colors for Non-user definable color palette
-$AU-color-Background-suggestion:              #f5f5f5 !default;
-$AU-color-Background-dark-suggestion:         #ebebeb !default;
-$AU-color-Background-darkest-suggestion:      #e0e0e0 !default;
-$AU-color-Muted-suggestion:                   #636363 !default;
-$AU-color-Border-suggestion:                  #808080 !default;
+$AU-color-Background-suggestion:         #f5f5f5 !default;
+$AU-color-Background-dark-suggestion:    #ebebeb !default;
+$AU-color-Background-darkest-suggestion: #e0e0e0 !default;
+$AU-color-Muted-suggestion:              #636363 !default;
+$AU-color-Border-suggestion:             #7f7f7f !default;
 
 // Non-user definable color palette
-$AU-color-Background:              AU-color-a11y( $AU-color-Background-suggestion, $AU-color-Text ) !global;
-$AU-color-Background-dark:         AU-color-a11y( $AU-color-Background-dark-suggestion, $AU-color-Text ) !global;
-$AU-color-Background-darkest:      AU-color-a11y( $AU-color-Background-darkest-suggestion, $AU-color-Text ) !global;
-$AU-color-Muted:                   AU-color-a11y( $AU-color-Muted-suggestion, $AU-color-Background-darkest ) !global;
-$AU-color-Border:                  AU-color-a11y( $AU-color-Border-suggestion, $AU-color-Background-darkest, 'large') !global;
+$AU-color-Background:         AU-color-a11y( $AU-color-Background-suggestion, $AU-color-Text ) !global;
+$AU-color-Background-dark:    AU-color-a11y( $AU-color-Background-dark-suggestion, $AU-color-Text ) !global;
+$AU-color-Background-darkest: AU-color-a11y( $AU-color-Background-darkest-suggestion, $AU-color-Text ) !global;
+$AU-color-Muted:              AU-color-a11y( $AU-color-Muted-suggestion, $AU-color-Background-darkest ) !global;
+$AU-color-Border:             AU-color-a11y( $AU-color-Border-suggestion, $AU-color-Background-darkest, 'large') !global;
 
 
 /**
 * Colors dark theme
 */
-$AU-colordark-Text:                #ffffff !default;
-$AU-colordark-Background-light:    #135E70 !default;
-$AU-colordark-Action:              #61daff !default;
-$AU-colordark-Focus:               #ff8629 !default;
+$AU-colordark-Text:             #ffffff !default;
+$AU-colordark-Background-light: #135E70 !default;
+$AU-colordark-Action:           #61daff !default;
+$AU-colordark-Focus:            #ff8629 !default;
 
 // Suggestion colors for Non-user definable color palette
-$AU-colordark-Background-suggestion:          #104f5f !default;
-$AU-colordark-Background-dark-suggestion:     #0d414d !default;
-$AU-colordark-Background-darkest-suggestion:  #0a323c !default;
-$AU-colordark-Muted-suggestion:               #b7cfd5 !default;
-$AU-colordark-Border-suggestion:              #8bacb3 !default;
+$AU-colordark-Background-suggestion:         #104f5f !default;
+$AU-colordark-Background-dark-suggestion:    #0d414d !default;
+$AU-colordark-Background-darkest-suggestion: #0a323c !default;
+$AU-colordark-Muted-suggestion:              #b7cfd5 !default;
+$AU-colordark-Border-suggestion:             #8bacb3 !default;
 
 // Non-user definable color palette
-$AU-colordark-Background:          AU-color-a11y( $AU-colordark-Background-suggestion, $AU-colordark-Text ) !global;
-$AU-colordark-Background-dark:     AU-color-a11y( $AU-colordark-Background-dark-suggestion, $AU-colordark-Text ) !global;
-$AU-colordark-Background-darkest:  AU-color-a11y( $AU-colordark-Background-darkest-suggestion, $AU-colordark-Text ) !global;
-$AU-colordark-Muted:               AU-color-a11y( $AU-colordark-Muted-suggestion, $AU-colordark-Background-light ) !global;
-$AU-colordark-Border:              AU-color-a11y( $AU-colordark-Border-suggestion, $AU-colordark-Background-light, 'large') !global;
+$AU-colordark-Background:         AU-color-a11y( $AU-colordark-Background-suggestion, $AU-colordark-Text ) !global;
+$AU-colordark-Background-dark:    AU-color-a11y( $AU-colordark-Background-dark-suggestion, $AU-colordark-Text ) !global;
+$AU-colordark-Background-darkest: AU-color-a11y( $AU-colordark-Background-darkest-suggestion, $AU-colordark-Text ) !global;
+$AU-colordark-Muted:              AU-color-a11y( $AU-colordark-Muted-suggestion, $AU-colordark-Background-light ) !global;
+$AU-colordark-Border:             AU-color-a11y( $AU-colordark-Border-suggestion, $AU-colordark-Background-light, 'large') !global;
 
 
 // Test the colours here <--- this will error
@@ -764,10 +774,10 @@ $AU-colordark-Border:              AU-color-a11y( $AU-colordark-Border-suggestio
 /**
  * Colors system messages
  */
-$AU-color-Error:                   #ff635c !default;
-$AU-color-Success:                 #0cac78 !default;
-$AU-color-Warning:                 #f69900 !default;
-$AU-color-Info:                    #00bfe9 !default;
+$AU-color-Error:   #ff635c !default;
+$AU-color-Success: #0cac78 !default;
+$AU-color-Warning: #f69900 !default;
+$AU-color-Info:    #00bfe9 !default;
 
 
 /**
