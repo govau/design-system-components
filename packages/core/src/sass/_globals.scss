@@ -62,11 +62,11 @@ $dependencies: (
  *
  * @author @eriksen_dk <https://twitter.com/eriksen_dk>
  *
- * @param  {string} $string   - The haystack string to be manipulated
- * @param  {string} $search   - The needle to be replace
- * @param  {string} $replace  - The replacement
+ * @param  {string} $string  - The haystack string to be manipulated
+ * @param  {string} $search  - The needle to be replace
+ * @param  {string} $replace - The replacement
  *
- * @return {string}           - The manipulated string with replaced values
+ * @return {string}          - The manipulated string with replaced values
  */
 @function AU-replace( $string, $search, $replace: '' ) {
 	@if type-of( $string ) != 'string' {
@@ -110,14 +110,14 @@ $dependencies: (
 		@error "With great power comes great responsibility; the AU-svguri function only takes a string!";
 	}
 
-	@if not str-index( $svg, xmlns ) { //Add missing namespace
+	@if not str-index( $svg, xmlns ) { // Add missing namespace
 		$svg: AU-replace( $svg, '<svg','<svg xmlns="http://www.w3.org/2000/svg"' );
 	}
 
 	$encoded:'';
 	$slice: 2000;
 	$index: 0;
-	$loops: ceil( str-length( $svg ) / $slice ); //Chunk up string in order to avoid "stack level too deep" error
+	$loops: ceil( str-length( $svg ) / $slice ); // Chunk up string in order to avoid "stack level too deep" error
 
 	@for $i from 1 through $loops {
 		$chunk: str-slice( $svg, $index, $index + $slice - 1 );
@@ -207,7 +207,7 @@ $dependencies: (
 	$LN2:   0.6931471805599453;
 	$SQRT2: 1.4142135623730951;
 
-	//full number
+	// full number
 	@if $exponent == floor( $exponent ) {
 		$rest: 1;
 
@@ -227,7 +227,7 @@ $dependencies: (
 		@return if( $exponent < 0, 1 / $rest, $rest );
 	}
 
-	//decimal number
+	// decimal number
 	@else {
 		@if $base <= 0 {
 			@return 0 / 0;
@@ -306,16 +306,16 @@ $dependencies: (
  *
  * @author Pelle Wessman @voxpelli <http://kodfabrik.se/>
  *
- * @param  {string} $colour - The color to calculate the luminance from
+ * @param  {string} $color - The color to calculate the luminance from
  *
  * @return {float}          - The luminance
  */
-@function AU-color-luminance( $colour ) {
-	@if type-of( $colour ) != 'color' {
+@function AU-color-luminance( $color ) {
+	@if type-of( $color ) != 'color' {
 		@error "Go ahead, make my day; the AU-color-luminance function only takes a color!";
 	}
 
-	$rgba: red( $colour ), green( $colour ), blue( $colour );
+	$rgba: red( $color ), green( $color ), blue( $color );
 	$rgba2: ();
 
 	@for $i from 1 through 3 {
@@ -384,13 +384,13 @@ $dependencies: (
  *
  * @author Alex Page @aalexpaage <http://alexpage.com.au>
  *
- * @param  {Color}           $toMakeA11y            - The color that is to be changed
- * @param  {Color}           $background            - The background color to compare against toMakeA11y for the contrast
- * @param  {'small'|'large'} $ratioKey   ['small']  - The keyword 'small' or 'large' to set the WCAG 2.1 contrast ration or 3.0 or 4.5
- * @param  {Number}          $steps      [0.1]      - The step size our function is searching for a new color in. The bigger the number the faster the process
+ * @param  {Color}           $toMakeA11y           - The color that is to be changed
+ * @param  {Color}           $background           - The background color to compare against toMakeA11y for the contrast
+ * @param  {'small'|'large'} $ratioKey   ['small'] - The keyword 'small' or 'large' to set the WCAG 2.1 contrast ration or 3.0 or 4.5
+ * @param  {Number}          $steps      [0.1]     - The step size our function is searching for a new color in. The bigger the number the faster the process
  *                                                    the rougher the found color.
  *
- * @return {Color}                                  - Returns the nearest accessible color
+ * @return {Color}                                 - Returns the nearest accessible color
  */
 @function AU-color-a11y( $toMakeA11y, $background, $ratioKey: 'small', $steps: 0.1 ) {
 	@if type-of( $toMakeA11y ) != 'color' {
@@ -588,7 +588,7 @@ $dependencies: (
 	padding: 0;
 	margin: -1px;
 	overflow: hidden;
-	clip: rect(0,0,0,0);
+	clip: rect( 0, 0, 0, 0 );
 	border: 0;
 }
 
@@ -628,10 +628,10 @@ $dependencies: (
 /**
  * AU-fontgrid- Mixin for setting font-size and line-height that snaps to the grid.
  *
- * @param  {keywords} $fontsize-key     -  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
- * @param  {keywords} $lineheight-key   -  Either one of the following keywords: heading, nospace, default
+ * @param  {keywords} $fontsize-key   -  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
+ * @param  {keywords} $lineheight-key -  Either one of the following keywords: heading, nospace, default
  *
- * @return {string}                     - The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
+ * @return {string}                   - The code; fontsize in REM, with PX fallback, and unitless line-height which matches vertical grid
 */
 @mixin AU-fontgrid( $fontsize-key, $lineheight-key: 'default' ) {
 
@@ -672,7 +672,7 @@ $dependencies: (
 /**
  * Breakpoints
  */
-$AU-media-xs: 576px !default; //media query breakpoints
+$AU-media-xs: 576px !default; // media query breakpoints
 $AU-media-sm: 768px !default;
 $AU-media-md: 992px !default;
 $AU-media-lg: 1200px !default;
@@ -720,7 +720,7 @@ $AU-lineheight-map: (
 /**
  * max-width for line lengths (the ‘measure’)
  */
-$AU-maxwidth: 42em !default; //Answer to life, the universe, and everything (keeps things readable on wide viewports).
+$AU-maxwidth: 42em !default; // Answer to life, the universe, and everything (keeps things readable on wide viewports).
 
 
 /**
@@ -768,8 +768,6 @@ $AU-colordark-Background-darkest: AU-color-a11y( $AU-colordark-Background-darkes
 $AU-colordark-Muted:              AU-color-a11y( $AU-colordark-Muted-suggestion, $AU-colordark-Background-light ) !global;
 $AU-colordark-Border:             AU-color-a11y( $AU-colordark-Border-suggestion, $AU-colordark-Background-light, 'large') !global;
 
-
-// Test the colours here <--- this will error
 
 /**
  * Colors system messages
