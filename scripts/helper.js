@@ -1071,20 +1071,21 @@ HELPER.test = (() => {
 					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
 					const changelog = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/CHANGELOG.md`), 'utf8' );
 					const readme = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/README.md`), 'utf8' );
+					const version = packagesPKG.version.split('-next')[ 0 ];
 
 					// testing CHANGELOG.md file for latest version
-					if( !changelog.split('## Versions\n\n* [v')[ 1 ].startsWith( packagesPKG.version ) ) {
+					if( !changelog.split('## Versions\n\n* [v')[ 1 ].startsWith( version ) ) {
 						error += `The module ${ module } does not have the current version in it’s changelog "Versions" section.\n`;
 					}
-					else if( !changelog.split('## Versions\n\n* [v')[ 1 ].split('](v')[ 1 ].startsWith( packagesPKG.version.replace(/[.]/g, '') ) ) {
-						error += `The module ${ module } has the wrong link for the current version ${ packagesPKG.version } in the changelog "Versions" section.\n`;
+					else if( !changelog.split('## Versions\n\n* [v')[ 1 ].split('](v')[ 1 ].startsWith( version.replace(/[.]/g, '') ) ) {
+						error += `The module ${ module } has the wrong link for the current version ${ version } in the changelog "Versions" section.\n`;
 					}
-					else if( !changelog.split('## Release History\n\n### v')[ 1 ].startsWith( packagesPKG.version ) ) {
+					else if( !changelog.split('## Release History\n\n### v')[ 1 ].startsWith( version ) ) {
 						error += `The module ${ module } does not have the current version in it’s changelog "Release History" section.\n`;
 					}
 
 					// testing README.md file for latest version
-					if( !readme.split('## Release History\n\n* v')[ 1 ].startsWith( packagesPKG.version ) ) {
+					if( !readme.split('## Release History\n\n* v')[ 1 ].startsWith( version ) ) {
 						error += `The module ${ module } does not have the current version in it’s readme "Release History" section.\n`;
 					}
 				}

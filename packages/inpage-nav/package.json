@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/inpage-nav",
-	"version": "1.0.0",
+	"version": "1.0.0-next.1",
 	"description": "Use inpage-nav links to help users scan and jump to content of a page.",
 	"keywords": [
 		"uikit",
@@ -61,12 +61,12 @@
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
 
-		"@gov.au/core": "^1.0.0",
-		"@gov.au/link-list": "^1.0.0"
+		"@gov.au/core": "^1.0.0-next.1",
+		"@gov.au/link-list": "^1.0.0-next.1"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^1.0.0",
-		"@gov.au/link-list": "^1.0.0"
+		"@gov.au/core": "^1.0.0-next.1",
+		"@gov.au/link-list": "^1.0.0-next.1"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
