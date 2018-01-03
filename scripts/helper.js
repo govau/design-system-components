@@ -303,7 +303,7 @@ HELPER.precompile = (() => {
 				// Rethingiemajiging the peer dependencies for sass
 				let dependencies = [];
 				for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
-					dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
+					dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '').replace('>', '') }"),`);
 				}
 
 				// 3.replace strings inside new files in lib

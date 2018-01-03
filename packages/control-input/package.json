@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/control-input",
-	"version": "1.0.0-next.1",
+	"version": "1.0.0-next.2",
 	"description": "Control inputs include radio buttons and checkboxes. They allow users to select one or more options.",
 	"keywords": [
 		"uikit",
@@ -57,10 +57,10 @@
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
 
-		"@gov.au/core": "^1.0.0-next.1"
+		"@gov.au/core": ">1.0.0-next.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^1.0.0-next.1"
+		"@gov.au/core": ">1.0.0-next.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",

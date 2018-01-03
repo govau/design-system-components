@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/text-inputs",
-	"version": "1.0.0-next.1",
+	"version": "1.0.0-next.2",
 	"description": "Single and multi-line text inputs.",
 	"keywords": [
 		"uikit",
@@ -65,10 +65,10 @@
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
 
-		"@gov.au/core": "^1.0.0-next.1"
+		"@gov.au/core": ">1.0.0-next.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^1.0.0-next.1"
+		"@gov.au/core": ">1.0.0-next.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
