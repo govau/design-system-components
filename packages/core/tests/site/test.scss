@@ -787,7 +787,7 @@ html {
 		background-color: $AU-colordark-Action;
 
 		&:after {
-			content: 'Action: #{ $AU-color-Action }';
+			content: 'Action: #{ $AU-colordark-Action }';
 		}
 	}
 	.palette__color--focus {

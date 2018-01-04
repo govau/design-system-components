@@ -6,3 +6,12 @@
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
+
+
+.test-class {
+	border: 2px dotted rebeccapurple;
+
+	&.test-class--mod {
+		border-color: hotpink;
+	}
+}

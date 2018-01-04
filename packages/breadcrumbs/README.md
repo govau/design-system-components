@@ -55,17 +55,17 @@ Usage:
 import AUbreadcrumbs from './breadcrumbs.js';
 
 <AUbreadcrumbs label="Breadcrumb for this page" items={[
-	{
-		link: 'breadcrumb/one/',
-		text: 'breadcrumb 1',
-	},
-	{
-		link: 'breadcrumb/two/',
-		text: 'breadcrumb 2',
-	},
-	{
-		text: 'breadcrumb 3',
-	},
+  {
+    link: 'breadcrumb/one/',
+    text: 'breadcrumb 1',
+  },
+  {
+    link: 'breadcrumb/two/',
+    text: 'breadcrumb 2',
+  },
+  {
+    text: 'breadcrumb 3',
+  },
 ]} />
 ```
 
@@ -73,17 +73,17 @@ All props:
 
 ```jsx
 <AUbreadcrumbs
-	label="The aria-label"        {/* Provide the aria label is a must */}
-	dark={ false }                {/* A dark variation of the component */}
-	items={[                      {/* An array of all breadcrumbs */}
-		{
-			link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}
-			text: 'breadcrumb 1',     {/* The text of the breadcrumb */}
-		},
-	]},
-	attributeOptions              {/* Any other attribute options */}
+  label="The aria-label"        {/* Provide the aria label is a must */}
+  dark={ false }                {/* A dark variation of the component */}
+  items={[                      {/* An array of all breadcrumbs */}
+    {
+      link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}
+      text: 'breadcrumb 1',     {/* The text of the breadcrumb */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/breadcrumbs/tests/react/index.js).
 

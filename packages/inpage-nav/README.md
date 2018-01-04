@@ -55,14 +55,14 @@ Usage:
 import { AUinpageNavLinks, AUinpageNavSection } from './inpage-nav.js';
 
 <AUinpageNavLinks sections={[
-	{
-		link: 'section1',
-		title: 'Section 1',
-	},
-	{
-		link: 'section2',
-		title: 'Section 2',
-	},
+  {
+    link: 'section1',
+    title: 'Section 1',
+  },
+  {
+    link: 'section2',
+    title: 'Section 2',
+  },
 ]} />
 
 <AUinpageNavSection title="Section 1 headline" link="section1">
@@ -76,27 +76,28 @@ All props:
 
 ```jsx
 <AUinpageNavLinks
-	title="Contents"         {/* The title above all sections */}
-	sections={[              {/* All section in a neat array */}
-		{
-			link: 'section1',    {/* The link to the section, this will be converted to a hash link */}
-			title: 'Section 1',  {/* The link text of this section */}
-			onClick: () => {},   {/* A function to be executed when a section is clicked, optional */}
-		},
-	]},
-	attributeOptions         {/* Any other attribute options */}
+  title="Contents"         {/* The title above all sections */}
+  sections={[              {/* All section in a neat array */}
+    {
+      link: 'section1',    {/* The link to the section, this will be converted to a hash link */}
+      title: 'Section 1',  {/* The link text of this section */}
+      onClick: () => {},   {/* A function to be executed when a section is clicked, optional */}
+    },
+  ]},
+  attributeOptions         {/* Any other attribute options */}
 />
 
 <AUinpageNavLinks
-	title="Section 1"                {/* The title of the section */}
-	link="section1"                  {/* The link of this section, corresponds to the link inside AUinpageNavLinks */}
-	level="2"                        {/* The semantic heading tag level, h1-h6, optional */}
-	headingClass="au-display-lg"     {/* Additional classes to be added to the headline, optional */}
-	sectionLink="Link to section"    {/* The text for the section link, optional */}
-	dark={ false }                   {/* A dark variation of the component */}
-	attributeOptions                 {/* Any other attribute options */}
+  title="Section 1"              {/* The title of the section */}
+  link="section1"                {/* The link of this section, corresponds to the link inside AUinpageNavLinks */}
+  level="2"                      {/* The semantic heading tag level, h1-h6, optional */}
+  headingClass="au-display-lg"   {/* Additional classes to be added to the headline, optional */}
+  sectionLink="Link to section"  {/* The text for the section link, optional */}
+  dark={ false }                 {/* A dark variation of the component */}
+  attributeOptions               {/* Any other attribute options */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/inpage-nav/tests/react/index.js).
 

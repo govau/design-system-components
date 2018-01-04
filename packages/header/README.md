@@ -61,15 +61,15 @@ All props:
 
 ```jsx
 <AUheader
-	title="Page title"  {/* The headline content */}
-	level="1"           {/* The headline tag level, h1-h6, optional */}
-	subline="Subline"   {/* The subline content, optional */}
-	alt={ false }       {/* An alternate variation of the component */}
-	dark={ false }      {/* A dark variation of the component */}
-	hero={ false }      {/* The hero option, optional */}
-	attributeOptions    {/* Any other attribute options */}
+  title="Page title"  {/* The headline content, optional */}
+  level="1"           {/* The headline tag level, h1-h6, optional */}
+  subline="Subline"   {/* The subline content, optional */}
+  alt={ false }       {/* An alternate variation of the component, optional */}
+  dark={ false }      {/* A dark variation of the component, optional */}
+  hero={ false }      {/* The hero option, optional, optional */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/header/tests/react/index.js).
 

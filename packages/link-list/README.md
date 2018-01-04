@@ -55,18 +55,19 @@ Usage:
 import AUlinkList from './link-list.js';
 
 <AUlinkList items={[
-	{
-		link: 'link/one/',
-		text: 'Link 1',
-	},
-	{
-		link: 'link/two/',
-		text: 'Link 2',
-	},
-	{
-		link: 'link/three/',
-		text: 'Link 3',
-	},
+  {
+    link: 'link/one/',
+    text: 'Link 1',
+  },
+  {
+    link: 'link/two/',
+    text: 'Link 2',
+    className: 'is-active',
+  },
+  {
+    link: 'link/three/',
+    text: 'Link 3',
+  },
 ]} />
 ```
 
@@ -74,17 +75,19 @@ All props:
 
 ```jsx
 <AUlinkList
-	inline={ false }          {/* The inline option to make the list inline, optional */}
-	items={[                  {/* All links in a neat array */}
-		{
-			link: 'link/to/',     {/* The link for this item, optional */}
-			text: 'Link title',   {/* The text for this item */}
-			onClick={ () => {} }  {/* A function to execute when this link is clicked, optional */}
-		},
-	]},
-	attributeOptions          {/* Any other attribute options */}
+  inline={ false }            {/* The inline option to make the list inline, optional */}
+  items={[                    {/* All links in a neat array */}
+    {
+      link: 'link/to/',       {/* The link for this item, optional */}
+      text: 'Link title',     {/* The text for this item */}
+      className: 'is-active', {/* An additional class to be put on this <li> tag, optional */}
+      onClick={ () => {} }    {/* A function to execute when this link is clicked, optional */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
+
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/link-list/tests/react/index.js).
 

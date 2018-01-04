@@ -54,7 +54,7 @@ Usage:
 import Button from './page-alerts.js';
 
 <AUpageAlert as='info'>
-	Content of alert
+  Content of alert
 </AUpageAlert>
 ```
 
@@ -62,14 +62,15 @@ All props:
 
 ```jsx
 <AUpageAlert
-	as="info"          {/* One of four kinds: 'info', 'success', 'warning', 'error' */}
-	attributeOptions   {/* Any other attribute options */}
-	alt={ false }      {/* An alternate variation of the component */}
-	dark={ false }     {/* A dark variation of the component */}
+  as="info"         {/* One of four kinds: 'info', 'success', 'warning', 'error' */}
+  attributeOptions  {/* Any other attribute options */}
+  alt={ false }     {/* An alternate variation of the component */}
+  dark={ false }    {/* A dark variation of the component */}
 >
-	Content of alert
+  Content of alert
 </AUpageAlert>
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/page-alerts/tests/react/index.js).
 

@@ -25,6 +25,27 @@ ReactDOM.render(
 
 
 			<hr />
+			<h2>Link list additional class</h2>
+
+			<AUlinkList items={[
+				{
+					link: '#options',
+					text: 'Options',
+				},
+				{
+					link: '#help',
+					text: 'Help',
+					className: 'test-class',
+				},
+				{
+					link: '#signout',
+					text: 'Sign Out',
+					className: 'test-class test-class--mod',
+				},
+			]} />
+
+
+			<hr />
 			<h2>Link list inline</h2>
 
 			<AUlinkList inline items={[
@@ -72,6 +93,27 @@ ReactDOM.render(
 				{
 					link: '#signout',
 					text: 'Sign Out',
+				},
+			]} />
+
+
+			<hr />
+			<h2>Link list additional class</h2>
+
+			<AUlinkList items={[
+				{
+					link: '#options',
+					text: 'Options',
+				},
+				{
+					link: '#help',
+					text: 'Help',
+					className: 'test-class',
+				},
+				{
+					link: '#signout',
+					text: 'Sign Out',
+					className: 'test-class test-class--mod',
 				},
 			]} />
 

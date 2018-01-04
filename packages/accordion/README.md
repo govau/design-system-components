@@ -108,20 +108,20 @@ Example:
 
 ```js
 AU.accordion.Toggle( document.getElementById('accordion-title'), 500,
-	{
-		onOpen: function() {
-			console.log('This function will run when an accordion opens');
-		},
-		afterOpen: function() {
-			console.log('This function will run after an accordion has opened');
-		},
-		onClose: function() {
-			console.log('This function will run when an accordion closes');
-		},
-		afterClose: function() {
-			console.log('This function will run after an accordion has closed');
-		},
-	}
+  {
+    onOpen: function() {
+      console.log('This function will run when an accordion opens');
+    },
+    afterOpen: function() {
+      console.log('This function will run after an accordion has opened');
+    },
+    onClose: function() {
+      console.log('This function will run when an accordion closes');
+    },
+    afterClose: function() {
+      console.log('This function will run after an accordion has closed');
+    },
+  }
 );
 ```
 
@@ -140,15 +140,15 @@ Usage:
 import AUaccordion from './accordion.js';
 
 <AUaccordion header="First headline">
-	Some content of the first accordion.
+  Some content of the first accordion.
 </AUaccordion>
 
 <AUaccordion header="Second headline">
-	Some content of the second accordion.
+  Some content of the second accordion.
 </AUaccordion>
 
 <AUaccordion header="Third headline">
-	Some content of the third accordion.
+  Some content of the third accordion.
 </AUaccordion>
 ```
 
@@ -156,19 +156,19 @@ All props:
 
 ```jsx
 <AUaccordion
-	header="Headline"        {/* The headline of the accordion */}
-	open={ true }            {/* Open state, optional */}
-	speed="250"              {/* Speed of the animation in ms, optional */}
-	onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
-	afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
-	onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
-	afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
-	dark={ false }           {/* A dark variation of the component */}
-	attributeOptions         {/* Any other attribute options */}
+  header="Headline"        {/* The headline of the accordion */}
+  open={ true }            {/* Open state, optional */}
+  speed="250"              {/* Speed of the animation in ms, optional */}
+  onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
+  afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
+  onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
+  afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
+  dark={ false }           {/* A dark variation of the component */}
 >
-	Some content of the third accordion.
+  Some content of the third accordion.
 </AUaccordion>
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/accordion/tests/react/index.js).
 
@@ -185,7 +185,7 @@ To initialize the [jQuery](https://jquery.com/) plugin make sure you have jQuery
 
 ```js
 $(function() {
-	$('.js-au-accordion-wrapper').AUaccordion();
+  $('.js-au-accordion-wrapper').AUaccordion();
 });
 ```
 
@@ -193,18 +193,18 @@ You can optionally add functions to each event like so:
 
 ```js
 $('.js-au-accordion-wrapper').AUaccordion({
-	onOpen: function() {
-		console.log('This function will run when an accordion opens');
-	},
-	afterOpen: function() {
-		console.log('This function will run after an accordion has opened');
-	},
-	onClose: function() {
-		console.log('This function will run when an accordion closes');
-	},
-	afterClose: function() {
-		console.log('This function will run after an accordion has closed');
-	},
+  onOpen: function() {
+    console.log('This function will run when an accordion opens');
+  },
+  afterOpen: function() {
+    console.log('This function will run after an accordion has opened');
+  },
+  onClose: function() {
+    console.log('This function will run when an accordion closes');
+  },
+  afterClose: function() {
+    console.log('This function will run after an accordion has closed');
+  },
 });
 ```
 

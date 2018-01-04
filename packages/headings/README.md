@@ -61,12 +61,13 @@ All props:
 
 ```jsx
 <AUheading
-	size="xl"             {/* The display size, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' */}
-	level="1"             {/* The semantic headline tag level, h1-h6 */}
-	text="Headline text"  {/* The text of the headline */}
-	attributeOptions      {/* Any other attribute options */}
+  size="xl"             {/* The display size, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' */}
+  level="1"             {/* The semantic headline tag level, h1-h6 */}
+  text="Headline text"  {/* The text of the headline */}
+  attributeOptions      {/* Any other attribute options */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/headings/tests/react/index.js).
 

@@ -55,21 +55,21 @@ Usage:
 import AUprogressIndicator from './progress-indicator.js';
 
 <AUprogressIndicator items={[
-	{
-		link: 'forms/intro/',
-		text: 'Introduction',
-		status: 'done',
-	},
-	{
-		link: 'forms/contacts/',
-		text: 'Business Contacts',
-		status: 'doing',
-	},
-	{
-		link: 'forms/casestudies/',
-		text: 'Case Studies',
-		status: 'todo',
-	},
+  {
+    link: 'forms/intro/',
+    text: 'Introduction',
+    status: 'done',
+  },
+  {
+    link: 'forms/contacts/',
+    text: 'Business Contacts',
+    status: 'doing',
+  },
+  {
+    link: 'forms/casestudies/',
+    text: 'Case Studies',
+    status: 'todo',
+  },
 ]} />
 ```
 
@@ -77,18 +77,18 @@ All props:
 
 ```jsx
 <AUprogressIndicator
-	dark={ false }             {/* A dark variation of the component */}
-	items={[                   {/* All steps in a neat array */}
-		{
-			link: 'forms/intro/',  {/* The link to this step, optional */}
-			text: 'Introduction',  {/* The name of this step */}
-			status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
-			onClick={ () => {} }   {/* A function to execute when the link is clicked, optional */}
-		},
-	]},
-	attributeOptions           {/* Any other attribute options */}
+  dark={ false }             {/* A dark variation of the component */}
+  items={[                   {/* All steps in a neat array */}
+    {
+      link: 'forms/intro/',  {/* The link to this step, optional */}
+      text: 'Introduction',  {/* The name of this step */}
+      status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
+      onClick={ () => {} }   {/* A function to execute when the link is clicked, optional */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/progress-indicator/tests/react/index.js).
 

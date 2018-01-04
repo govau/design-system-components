@@ -23,6 +23,7 @@ import PropTypes from 'prop-types';
  * @param  {string}   item.link        - The link URL, optional
  * @param  {string}   item.text        - The link Text
  * @param  {function} item.onClick     - An onClick event, optional
+ * @param  {function} item.className   - An additional class, optional
  * @param  {object}   attributeOptions - Any other attribute options
  */
 export const AUlinkListItem = ({ item, ...attributeOptions }) => {
@@ -37,7 +38,7 @@ export const AUlinkListItem = ({ item, ...attributeOptions }) => {
 	}
 
 	return (
-		<li>
+		<li className={ item.className }>
 			{ item.link === undefined
 				? ( item.text )
 				: ( <a href={ item.link } { ...attributeOptions }>{ item.text }</a> )

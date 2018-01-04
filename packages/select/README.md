@@ -55,18 +55,18 @@ Usage:
 import AUselect from './select.js';
 
 <AUselect id="exampleSelect" options={[
-	{
-		value: '',
-		text: 'Please select',
-	},
-	{
-		value: '1',
-		text: 'Option 1',
-	},
-	{
-		value: '2',
-		text: 'Option 2',
-	},
+  {
+    value: '',
+    text: 'Please select',
+  },
+  {
+    value: '1',
+    text: 'Option 1',
+  },
+  {
+    value: '2',
+    text: 'Option 2',
+  },
 ]} />
 ```
 
@@ -74,17 +74,17 @@ All props:
 
 ```jsx
 <AUselect
-	dark={ false }         {/* A dark variation of the component */}
-	block={ true }         {/* The block option to make the select fill the available width, optional */}
-	options={[             {/* All options in a neat array */}
-		{
-			value: '1',        {/* The value attribute of the option */}
-			text: 'Option 1',  {/* The text of the option */}
-		},
-	]},
-	attributeOptions       {/* Any other attribute options */}
+  dark={ false }         {/* A dark variation of the component */}
+  block={ true }         {/* The block option to make the select fill the available width, optional */}
+  options={[             {/* All options in a neat array */}
+    {
+      value: '1',        {/* The value attribute of the option */}
+      text: 'Option 1',  {/* The text of the option */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/select/tests/react/index.js).
 

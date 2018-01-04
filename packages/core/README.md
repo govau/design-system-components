@@ -113,8 +113,8 @@ The paramaters are:
 Example:
 ```
 background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">
-	<path fill="red" d="M128 64l-64 64-16-16 64-64"/>
-	<path fill="red" d="M128 64l-16 16-64-64L64 0"/>
+  <path fill="red" d="M128 64l-64 64-16-16 64-64"/>
+  <path fill="red" d="M128 64l-16 16-64-64L64 0"/>
 </svg>');
 ```
 
@@ -134,7 +134,7 @@ The paramaters are:
 Example:
 ```
 @include AU-media( sm ) {
-	width: 48%;
+  width: 48%;
 }
 ```
 

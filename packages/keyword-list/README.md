@@ -55,21 +55,21 @@ Usage:
 import AUkeywordList from './keyword-list.js';
 
 <AUkeywordList
-	repeatedName='Department of'
-	items={[
-		{
-			link: 'http://www.agriculture.gov.au/',
-			name: 'Agriculture and Water Resources',
-		},
-		{
-			link: 'https://www.communications.gov.au/',
-			name: 'Communications and the Arts',
-		},
-		{
-			link: 'https://www.finance.gov.au/',
-			name: 'Finance',
-		},
-	]}
+  repeatedName='Department of'
+  items={[
+    {
+      link: 'http://www.agriculture.gov.au/',
+      name: 'Agriculture and Water Resources',
+    },
+    {
+      link: 'https://www.communications.gov.au/',
+      name: 'Communications and the Arts',
+    },
+    {
+      link: 'https://www.finance.gov.au/',
+      name: 'Finance',
+    },
+  ]}
 />
 ```
 
@@ -77,18 +77,18 @@ All props:
 
 ```jsx
 <AUkeywordList
-	dark={ false }                                {/* A dark variation of the component */}
-	repeatedName="Department of"                  {/* The text That is repeated in each item */}
-	items={[                                      {/* All items in a neat array */}
-		{
-			link: 'http://www.agriculture.gov.au/',   {/* The URL of this item, optional */}
-			name: 'Agriculture and Water Resources',  {/* The name of the item */}
-			onClick={ () => {} }                      {/* A function to execute when the link is clicked, optional */}
-		},
-	]},
-	attributeOptions                              {/* Any other attribute options */}
+  dark={ false }                                {/* A dark variation of the component */}
+  repeatedName="Department of"                  {/* The text That is repeated in each item */}
+  items={[                                      {/* All items in a neat array */}
+    {
+      link: 'http://www.agriculture.gov.au/',   {/* The URL of this item, optional */}
+      name: 'Agriculture and Water Resources',  {/* The name of the item */}
+      onClick={ () => {} }                      {/* A function to execute when the link is clicked, optional */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/keyword-list/tests/react/index.js).
 

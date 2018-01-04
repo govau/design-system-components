@@ -61,12 +61,13 @@ All props:
 
 ```jsx
 <AUdirectionLink
-	text="Submitting"     {/* The text of the link */}
-	link="link/to/page"   {/* The href link, optional */}
-	dark={ false }        {/* A dark variation of the component */}
-	attributeOptions      {/* Any other attribute options */}
+ text="Submitting"    {/* The text of the link */}
+ link="link/to/page"  {/* The href link, optional */}
+ dark={ false }       {/* A dark variation of the component */}
+ attributeOptions     {/* Any other attribute options */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/direction-links/tests/react/index.js).
 

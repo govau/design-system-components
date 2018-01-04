@@ -61,14 +61,14 @@ All props:
 
 ```jsx
 <AUbutton
-	children              {/* Anything inside */}
-	as=""                 {/* The kind of button, 'secondary','tertiary', optional */}
-	block={ true }        {/* The block option to make the button fill the available width, optional */}
-	type="submit"         {/* The type attribute, optional */}
-	dark={ false }        {/* A dark variation of the component */}
-	attributeOptions      {/* Any other attribute options */}
+  children        {/* Anything inside */}
+  as=""           {/* The kind of button, 'secondary','tertiary', optional */}
+  block={ true }  {/* The block option to make the button fill the available width, optional */}
+  type="submit"   {/* The type attribute, optional */}
+  dark={ false }  {/* A dark variation of the component */}
 ></AUbutton>
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/buttons/tests/react/index.js).
 

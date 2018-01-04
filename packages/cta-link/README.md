@@ -61,9 +61,9 @@ All props:
 
 ```jsx
 <AUctaLink
-	text="Sign up"        {/* The text of the CTA link */}
-	dark={ false }        {/* A dark variation of the component */}
-	attributeOptions      {/* Any other attribute options */}
+  text="Sign up"    {/* The text of the CTA link */}
+  dark={ false }    {/* A dark variation of the component */}
+  attributeOptions  {/* Any other attribute options */}
 />
 ```
 

@@ -39,7 +39,7 @@ const AUheader = ({ title, level, subline, hero, dark, alt, children, ...attribu
 			role="banner"
 			{ ...attributeOptions }
 		>
-			<HeadingTag className="au-header-heading">{ title }</HeadingTag>
+			{ title && <HeadingTag className="au-header-heading">{ title }</HeadingTag> }
 			{ subline && <span className="au-header-subline">{ subline }</span> }
 			{ children }
 		</div>
@@ -47,8 +47,8 @@ const AUheader = ({ title, level, subline, hero, dark, alt, children, ...attribu
 };
 
 AUheader.propTypes = {
-	title: PropTypes.node.isRequired,
-	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
+	title: PropTypes.node,
+	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]),
 	subline: PropTypes.node,
 	hero: PropTypes.bool,
 	dark: PropTypes.bool,

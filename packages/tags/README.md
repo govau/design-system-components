@@ -55,18 +55,18 @@ Usage:
 import Button from './tags.js';
 
 <AUtags tags={[
-	{
-		link: 'link/to/tag1',
-		text: 'tag1',
-	},
-	{
-		link: 'link/to/tag2',
-		text: 'tag2',
-	},
-	{
-		link: 'link/to/tag3',
-		text: 'tag3',
-	},
+  {
+    link: 'link/to/tag1',
+    text: 'tag1',
+  },
+  {
+    link: 'link/to/tag2',
+    text: 'tag2',
+  },
+  {
+    link: 'link/to/tag3',
+    text: 'tag3',
+  },
 ]} />
 ```
 
@@ -74,17 +74,17 @@ All props:
 
 ```jsx
 <AUtags
-	dark={ false }           {/* A dark variation of the component */}
-	tags={[
-		{
-			link: 'url/to/tag',  {/* The href link of this tag, optional */}
-			text: 'tagname',     {/* The text of the tag */}
-			onClick: () => {},   {/* A function to execute when the tag is clicked, optional */}
-		},
-	]},
-	attributeOptions         {/* Any other attribute options */}
+  dark={ false }           {/* A dark variation of the component */}
+  tags={[
+    {
+      link: 'url/to/tag',  {/* The href link of this tag, optional */}
+      text: 'tagname',     {/* The text of the tag */}
+      onClick: () => {},   {/* A function to execute when the tag is clicked, optional */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/tags/tests/react/index.js).
 

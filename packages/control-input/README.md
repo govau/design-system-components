@@ -65,19 +65,19 @@ All props:
 
 ```jsx
 <AUradio
-	label="The label"      {/* The label of the radio button */}
-	alt={ false }          {/* An alternate variation of the component */}
-	dark={ false }         {/* A dark variation of the component */}
-	attributeOptions       {/* Any other attribute options */}
+  label="The label"  {/* The label of the radio button */}
+  alt={ false }      {/* An alternate variation of the component */}
+  dark={ false }     {/* A dark variation of the component */}
+  attributeOptions   {/* Any other attribute options */}
 />
 
 <AUcheckbox
-	label="The label"      {/* The label of the checkbox */}
-	alt={ false }          {/* An alternate variation of the component */}
-	dark={ false }         {/* A dark variation of the component */}
-	attributeOptions       {/* Any other attribute options */}
+  label="The label"  {/* The label of the checkbox */}
+  alt={ false }      {/* An alternate variation of the component */}
+  dark={ false }     {/* A dark variation of the component */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/control-input/tests/react/index.js).
 

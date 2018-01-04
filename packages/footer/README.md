@@ -55,12 +55,12 @@ Usage:
 import AUfooter, { AUfooterNav, AUfooterEnd } from './footer.js';
 
 <AUfooter>
-	<AUfooterNav>
-		au-footer__navigation
-	</AUfooterNav>
-	<AUfooterEnd>
-		au-footer__end
-	</AUfooterEnd>
+  <AUfooterNav>
+    au-footer__navigation
+  </AUfooterNav>
+  <AUfooterEnd>
+    au-footer__end
+  </AUfooterEnd>
 </AUfooter>
 ```
 
@@ -68,11 +68,12 @@ All props:
 
 ```jsx
 <AUfooter
-	alt={ false }         {/* An alternate variation of the component */}
-	dark={ false }        {/* A dark variation of the component */}
-	attributeOptions      {/* Any other attribute options */}
+  alt={ false }     {/* An alternate variation of the component */}
+  dark={ false }    {/* A dark variation of the component */}
+  attributeOptions  {/* Any other attribute options */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/footer/tests/react/index.js).
 

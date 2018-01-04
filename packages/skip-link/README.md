@@ -55,14 +55,14 @@ Usage:
 import Button from './skip-link.js';
 
 <AUskipLink links={[
-	{
-		url: '#nav',
-		text: 'Skip to navigation',
-	},
-	{
-		url: '#content',
-		text: 'Skip to content',
-	},
+  {
+    url: '#nav',
+    text: 'Skip to navigation',
+  },
+  {
+    url: '#content',
+    text: 'Skip to content',
+  },
 ]} />
 ```
 
@@ -70,16 +70,16 @@ All props:
 
 ```jsx
 <AUskipLink
-	links={[                         {/* All links inside a neat array */}
-		{
-			url: '#nav',                 {/* The href link of this link */}
-			text: 'Skip to navigation',  {/* The text of the link */}
-			onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */},
-		},
-	]},
-	attributeOptions                 {/* Any other attribute options */}
+  links={[                         {/* All links inside a neat array */}
+    {
+      url: '#nav',                 {/* The href link of this link */}
+      text: 'Skip to navigation',  {/* The text of the link */}
+      onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */},
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/skip-link/tests/react/index.js).
 

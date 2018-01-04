@@ -55,15 +55,15 @@ Usage:
 import { AUcallout, AUcalloutCalendar } from './callout.js';
 
 <AUcallout description="Description for this callout">
-	AUcallout content
+  AUcallout content
 </AUcallout>
 
 <AUcalloutCalendar
-	description="description for this callout"
-	datetime="2017-01-01T00:00:00+00:00"
-	time="Sunday 32 Jun"
-	subline="Your next appointment is"
-	name="Talk to boss"
+  description="description for this callout"
+  datetime="2017-01-01T00:00:00+00:00"
+  time="Sunday 32 Jun"
+  subline="Your next appointment is"
+  name="Talk to boss"
 />
 ```
 
@@ -71,22 +71,22 @@ All props:
 
 ```jsx
 <AUcallout
-	description="Description for this callout"  {/* The label is a must for screen readers */}
-	attributeOptions                            {/* Any other attribute options */}
+  description="Description for this callout"  {/* The label is a must for screen readers */}
+  attributeOptions                            {/* Any other attribute options */}
 >
-	Callout content
+  Callout content
 </AUcallout>
 
 <AUcalloutCalendar
-	description="description for this callout"  {/* The label is a must for screen readers */}
-	datetime="2017-01-01T00:00:00+00:00"        {/* The date time string */}
-	time="Sunday 32 Jun"                        {/* The same date but human readable */}
-	subline="Your next appointment is"          {/* Your subline, optional */}
-	name="Talk to boss"                         {/* The name of the event, optional */}
-	dark={ false }                              {/* A dark variation of the component */}
-	attributeOptions                            {/* Any other attribute options */}
+  description="description for this callout"  {/* The label is a must for screen readers */}
+  datetime="2017-01-01T00:00:00+00:00"        {/* The date time string */}
+  time="Sunday 32 Jun"                        {/* The same date but human readable */}
+  subline="Your next appointment is"          {/* Your subline, optional */}
+  name="Talk to boss"                         {/* The name of the event, optional */}
+  dark={ false }                              {/* A dark variation of the component */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/callout/tests/react/index.js).
 

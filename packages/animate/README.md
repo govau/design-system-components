@@ -61,11 +61,11 @@ Example:
 
 ```js
 AU.animate.Run(
-	element: document.getElementById('elementId'),
-	property: 'height',
-	endSize: 'auto',
-	speed: 1000,
-	callback: myFunction,
+  element: document.getElementById('elementId'),
+  property: 'height',
+  endSize: 'auto',
+  speed: 1000,
+  callback: myFunction,
 )
 ```
 
@@ -82,7 +82,7 @@ Example:
 
 ```js
 AU.animate.Stop(
-	element: document.getElementById('elementId'),
+  element: document.getElementById('elementId'),
 )
 ```
 
@@ -106,14 +106,14 @@ Example:
 
 ```js
 AU.animate.Toggle(
-	element: document.getElementById('elementId'),
-	property: 'height',
-	closeSize: 0,
-	openSize: 'auto',
-	speed: 1000,
-	prefunction: function( element, state ) { myPreFunction() },
-	postfunction: function( element, state ) { myPreFunction() },
-	callback: function( element, state ) { myCallbackFunction() },
+  element: document.getElementById('elementId'),
+  property: 'height',
+  closeSize: 0,
+  openSize: 'auto',
+  speed: 1000,
+  prefunction: function( element, state ) { myPreFunction() },
+  postfunction: function( element, state ) { myPreFunction() },
+  callback: function( element, state ) { myCallbackFunction() },
 )
 ```
 
