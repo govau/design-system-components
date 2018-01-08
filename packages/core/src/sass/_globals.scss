@@ -681,13 +681,13 @@ $AU-media-lg: 1200px !default;
 /**
  * Value used for REM calculation
  */
-$AU-rem: 16;
+$AU-rem: 16 !default;
 
 
 /**
  * Unit used for all type and grid calculations
  */
-$AU-unit: 4;
+$AU-unit: 4 !default;
 
 
 /**
@@ -706,7 +706,7 @@ $AU-fontsize-map: (
 	xl:   32,
 	xxl:  40,
 	xxxl: 48
-);
+) !default;
 
 
 // Predetermined lineheight mapped to keyword
@@ -714,7 +714,7 @@ $AU-lineheight-map: (
 	nospace: 1,
 	heading: 1.25,
 	default: 1.5
-);
+) !default;
 
 
 /**
