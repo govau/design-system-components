@@ -22,16 +22,18 @@ import PropTypes from 'prop-types';
  * A section for the footer that contains navigational elements
  *
  * @param  {node}   children         - The inside of this section
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUfooterNav = ({ children, ...attributeOptions }) => (
-	<nav className="au-footer__navigation" { ...attributeOptions }>
+export const AUfooterNav = ({ children, className = '', ...attributeOptions }) => (
+	<nav className={`au-footer__navigation ${ className }`} { ...attributeOptions }>
 		{ children }
 	</nav>
 );
 
 AUfooterNav.propTypes = {
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
 
@@ -39,16 +41,18 @@ AUfooterNav.propTypes = {
  * A section for the footer that sits at the end
  *
  * @param  {node}   children         - The inside of this section
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUfooterEnd = ({ children, ...attributeOptions }) => (
-	<nav className="au-footer__end" { ...attributeOptions }>
+export const AUfooterEnd = ({ children, className = '', ...attributeOptions }) => (
+	<nav className={`au-footer__end ${ className }`} { ...attributeOptions }>
 		{ children }
 	</nav>
 );
 
 AUfooterEnd.propTypes = {
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
 
@@ -59,11 +63,12 @@ AUfooterEnd.propTypes = {
  * @param  {string} dark             - Add the dark variation class
  * @param  {string} alt              - Add the alt variation class
  * @param  {node}   children         - The inside of this section
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUfooter = ({ dark, alt, children, ...attributeOptions }) => (
+const AUfooter = ({ dark, alt, children, className = '', ...attributeOptions }) => (
 	<footer
-		className={ `au-footer${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `}
+		className={ `au-footer ${ className }${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `}
 		role="contentinfo"
 		{ ...attributeOptions }
 	>
@@ -72,9 +77,10 @@ const AUfooter = ({ dark, alt, children, ...attributeOptions }) => (
 );
 
 AUfooter.propTypes = {
-	children: PropTypes.node.isRequired,
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
+	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
 export default AUfooter;

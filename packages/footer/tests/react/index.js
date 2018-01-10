@@ -17,6 +17,17 @@ ReactDOM.render(
 			</AUfooterEnd>
 		</AUfooter>
 
+		<h2>footer with additional class</h2>
+
+		<AUfooter alt className="testing">
+			<AUfooterNav alt className="testing">
+				au-footer__navigation
+			</AUfooterNav>
+			<AUfooterEnd alt className="testing">
+				au-footer__end
+			</AUfooterEnd>
+		</AUfooter>
+
 		<h2>footer <code>--alt</code></h2>
 
 		<AUfooter alt>

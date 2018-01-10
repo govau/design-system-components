@@ -16,6 +16,8 @@ ReactDOM.render(
 			<AUheading size="md"   level="3" text="au-display-md on h3" />
 			<AUheading size="sm"   level="6" text="au-display-sm on h6" />
 			<AUheading size="xs"   level="4" text="au-display-xs on h4" />
+
+			<AUheading size="xl"   level="6" text="with additional classes" className="testing" />
 		</div>
 		<div className="split split--dark">
 			<h2>headings <code>--dark</code></h2>
@@ -27,6 +29,8 @@ ReactDOM.render(
 			<AUheading size="md"   level="3" text="au-display-md on h3" />
 			<AUheading size="sm"   level="6" text="au-display-sm on h6" />
 			<AUheading size="xs"   level="4" text="au-display-xs on h4" />
+
+			<AUheading size="xl"   level="6" text="with additional classes" className="testing" />
 		</div>
 	</div>,
 

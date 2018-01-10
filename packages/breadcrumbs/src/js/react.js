@@ -27,11 +27,12 @@ import PropTypes from 'prop-types';
  * @param  {string} dark             - Add the dark variation class
  * @param  {string} label            - The aria label of the component
  * @param  {array}  items            - Items inside the breadcrumbs passed on to AUlinkList
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUbreadcrumbs = ({ dark, label, items, ...attributeOptions }) => (
+const AUbreadcrumbs = ({ dark, label, items, className = '', ...attributeOptions }) => (
 	<nav
-		className={ `au-breadcrumbs${ dark ? ' au-breadcrumbs--dark' : '' }` }
+		className={ `au-breadcrumbs ${ className }${ dark ? ' au-breadcrumbs--dark' : '' }` }
 		aria-label={ label }
 		{ ...attributeOptions }
 	>
@@ -46,7 +47,6 @@ AUbreadcrumbs.propTypes = {
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
-			onClick: PropTypes.func,
 		})
 		).isRequired,
 };

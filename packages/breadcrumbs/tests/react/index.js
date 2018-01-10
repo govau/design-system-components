@@ -36,6 +36,24 @@ ReactDOM.render(
 					onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
 				},
 			]} />
+
+			<hr />
+			<h2>breadcrumbs with additional classes</h2>
+
+			<AUbreadcrumbs label="Breadcrumb for the next page" className="testing" items={[
+				{
+					link: '#link',
+					text: 'Options',
+				},
+				{
+					link: '#link',
+					text: 'Help',
+					className: 'testing',
+				},
+				{
+					text: 'Sign Out',
+				},
+			]} />
 		</div>
 		<div className="split au-body au-body--dark">
 			<h2>breadcrumbs <code>--dark</code></h2>

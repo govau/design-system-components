@@ -12,6 +12,12 @@ ReactDOM.render(
 
 
 		<hr />
+		<h2>header with additional class</h2>
+
+		<AUheader dark title="Page title" subline="Service sub-title" className="testing" />
+
+
+		<hr />
 		<h2>header with children</h2>
 
 		<AUheader title="Section title">

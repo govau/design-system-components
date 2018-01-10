@@ -83,8 +83,7 @@ All props:
       title: 'Section 1',  {/* The link text of this section */}
       onClick: () => {},   {/* A function to be executed when a section is clicked, optional */}
     },
-  ]},
-  attributeOptions         {/* Any other attribute options */}
+  ]}
 />
 
 <AUinpageNavLinks
@@ -94,7 +93,6 @@ All props:
   headingClass="au-display-lg"   {/* Additional classes to be added to the headline, optional */}
   sectionLink="Link to section"  {/* The text for the section link, optional */}
   dark={ false }                 {/* A dark variation of the component */}
-  attributeOptions               {/* Any other attribute options */}
 />
 ```
 _(💡 additional props are spread onto the component)_

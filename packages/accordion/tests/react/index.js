@@ -53,6 +53,14 @@ class App extends React.Component {
 
 
 						<hr />
+						<h2>Accordion with additional classes</h2>
+
+						<AUaccordion header="Open and close me" className="testing">
+							Some content of the accordion <a href="#url">here</a> :)
+						</AUaccordion>
+
+
+						<hr />
 						<h2>Accordions with open/close props</h2>
 
 						<AUaccordion header="Closed">
@@ -93,6 +101,14 @@ class App extends React.Component {
 					<div className="split split--dark">
 						<h2>Default accordion <code>--dark</code></h2>
 						<AUaccordion dark header="Open and close me">
+							Some content of the accordion <a href="#url">here</a> :)
+						</AUaccordion>
+
+
+						<hr />
+						<h2>Accordion with additional classes</h2>
+
+						<AUaccordion dark header="Open and close me" className="testing">
 							Some content of the accordion <a href="#url">here</a> :)
 						</AUaccordion>
 

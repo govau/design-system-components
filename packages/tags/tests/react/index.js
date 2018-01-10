@@ -26,6 +26,23 @@ ReactDOM.render(
 
 
 			<hr />
+			<h2>tags with additional classes</h2>
+
+			<AUtags className="testing" tags={[
+				{
+					text: 'foo',
+				},
+				{
+					text: 'bar',
+					className: 'testing',
+				},
+				{
+					text: 'baz',
+				},
+			]} />
+
+
+			<hr />
 			<h2>tags with links</h2>
 
 			<AUtags tags={[
@@ -87,6 +104,23 @@ ReactDOM.render(
 				},
 				{
 					text: 'boing',
+				},
+			]} />
+
+
+			<hr />
+			<h2>tags with additional classes</h2>
+
+			<AUtags dark className="testing" tags={[
+				{
+					text: 'foo',
+				},
+				{
+					text: 'bar',
+					className: 'testing',
+				},
+				{
+					text: 'baz',
 				},
 			]} />
 

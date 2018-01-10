@@ -27,7 +27,7 @@ ReactDOM.render(
 			<hr />
 			<h2>Link list additional class</h2>
 
-			<AUlinkList items={[
+			<AUlinkList className="additional-class" items={[
 				{
 					link: '#options',
 					text: 'Options',
@@ -100,7 +100,7 @@ ReactDOM.render(
 			<hr />
 			<h2>Link list additional class</h2>
 
-			<AUlinkList items={[
+			<AUlinkList className="additional-class" items={[
 				{
 					link: '#options',
 					text: 'Options',

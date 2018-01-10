@@ -24,11 +24,12 @@ import PropTypes from 'prop-types';
  * @param  {string} alt              - Add the alt variation class
  * @param  {string} description      - A description of the content of the callout for a11y
  * @param  {string} children         - Anything inside
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUcallout = ({ dark, alt, description, children, ...attributeOptions }) => (
+export const AUcallout = ({ dark, alt, description, children, className = '', ...attributeOptions }) => (
 	<section
-		className={ `au-callout${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` }
+		className={ `au-callout ${ className }${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` }
 		aria-label={ description }
 		{ ...attributeOptions }
 	>
@@ -37,8 +38,11 @@ export const AUcallout = ({ dark, alt, description, children, ...attributeOption
 );
 
 AUcallout.propTypes = {
-	children: PropTypes.node.isRequired,
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	description: PropTypes.string.isRequired,
+	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
 
@@ -52,11 +56,12 @@ AUcallout.propTypes = {
  * @param  {string} datetime         - The datetime of the event as ISO datetime
  * @param  {string} time             - The time that appears on the page
  * @param  {string} name             - The name of the event, optional
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUcalloutCalendar = ({ dark, alt, description, subline, datetime, time, name, ...attributeOptions }) => (
+export const AUcalloutCalendar = ({ dark, alt, description, subline, datetime, time, name, className = '', ...attributeOptions }) => (
 	<section
-		className={ `au-callout au-callout--calendar-event${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` }
+		className={ `au-callout au-callout--calendar-event ${ className }${ dark ? ' au-callout--dark' : '' }${ alt ? ' au-callout--alt' : '' }` }
 		aria-label={ description }
 		{ ...attributeOptions }
 	>
@@ -74,4 +79,5 @@ AUcalloutCalendar.propTypes = {
 	datetime: PropTypes.string.isRequired,
 	time: PropTypes.string.isRequired,
 	name: PropTypes.string,
+	className: PropTypes.string,
 };

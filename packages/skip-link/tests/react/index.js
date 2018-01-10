@@ -22,6 +22,23 @@ ReactDOM.render(
 			},
 		]} />
 
+		<AUskipLink className="testing" links={[
+			{
+				link: '#nav',
+				text: 'Skip to navigation',
+			},
+			{
+				link: '#content',
+				text: 'Skip to content',
+				className: 'testing',
+			},
+			{
+				link: '#content',
+				text: 'Skip link with onClick',
+				onClick: () => console.log('This function is called when the last skip link is clicked'),
+			},
+		]} />
+
 		<a className="test-link" href="../">&larr; back to the module index</a>
 
 		<h1>Test: skip-link</h1>

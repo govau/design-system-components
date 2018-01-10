@@ -20,15 +20,16 @@ import PropTypes from 'prop-types';
 /**
  * The checkbox component
  *
- * @param  {string}   dark             - Add the dark variation class
- * @param  {string}   alt              - Add the alt variation class
- * @param  {string}   label            - The label
- * @param  {object}   attributeOptions - Any other attribute options
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} alt              - Add the alt variation class
+ * @param  {string} label            - The label
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  *
  */
-export const AUcheckbox = ({ dark, alt, label, ...attributeOptions }) => {
+export const AUcheckbox = ({ dark, alt, label, className = '', ...attributeOptions }) => {
 	return (
-		<label className={ `au-control-input${ dark ? ' au-control-input--dark' : '' }${ alt ? ' au-control-input--alt' : '' }` }>
+		<label className={ `au-control-input ${ className }${ dark ? ' au-control-input--dark' : '' }${ alt ? ' au-control-input--alt' : '' }` }>
 			<input className="au-control-input__input" type="checkbox" { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
@@ -39,27 +40,23 @@ AUcheckbox.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
 	label: PropTypes.string.isRequired,
-	name: PropTypes.string,
-	value: PropTypes.string.isRequired,
-	id: PropTypes.string,
-	checked: PropTypes.bool,
-	disabled: PropTypes.bool,
-	onChange: PropTypes.func,
+	className: PropTypes.string,
 };
 
 
 /**
  * The radio component
  *
- * @param  {string}   dark             - Add the dark variation class
- * @param  {string}   alt              - Add the alt variation class
- * @param  {string}   label            - The label
- * @param  {object}   attributeOptions - Any other attribute options
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} alt              - Add the alt variation class
+ * @param  {string} label            - The label
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUradio = ({ dark, alt, label, ...attributeOptions }) => {
+export const AUradio = ({ dark, alt, label, className = '', ...attributeOptions }) => {
 
 	return (
-		<label className={ `au-control-input${ dark ? ` au-control-input--dark` : '' }${ alt ? ` au-control-input--alt` : '' }` } >
+		<label className={ `au-control-input ${ className }${ dark ? ` au-control-input--dark` : '' }${ alt ? ` au-control-input--alt` : '' }` } >
 			<input className="au-control-input__input" type="radio" { ...attributeOptions } />
 			<span className="au-control-input__text">{ label }</span>
 		</label>
@@ -70,10 +67,5 @@ AUradio.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
 	label: PropTypes.string.isRequired,
-	name: PropTypes.string,
-	value: PropTypes.string.isRequired,
-	id: PropTypes.string,
-	checked: PropTypes.bool,
-	disabled: PropTypes.bool,
-	onChange: PropTypes.func,
+	className: PropTypes.string,
 };

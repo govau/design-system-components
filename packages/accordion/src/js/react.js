@@ -31,7 +31,7 @@ class AUaccordion extends React.PureComponent {
 	constructor( props ) {
 		super( props );
 
-		const { header, open, speed, onOpen, afterOpen, onClose, afterClose, dark, children, ...attributeOptions } = props;
+		const { header, open, speed, onOpen, afterOpen, onClose, afterClose, dark, className = '', children, ...attributeOptions } = props;
 
 		this.setAriaRoles = this.setAriaRoles.bind( this );
 		this.toggleClasses = this.toggleClasses.bind( this );
@@ -41,6 +41,7 @@ class AUaccordion extends React.PureComponent {
 		this.accordionOpen = this.accordionOpen.bind( this );
 		this.accordionClose = this.accordionClose.bind( this );
 		this.toggle = this.toggle.bind( this );
+		this.className = className;
 		this.attributeOptions = attributeOptions;
 
 		// Generate a unique ID and our css class
@@ -365,7 +366,7 @@ class AUaccordion extends React.PureComponent {
 
 	render() {
 		return (
-			<div className={ `au-accordion ${ this.props.dark ? ' au-accordion--dark' : '' }` } { ...this.attributeOptions }>
+			<div className={ `au-accordion ${ this.className }${ this.props.dark ? ' au-accordion--dark' : '' }` } { ...this.attributeOptions }>
 				<a href={`#${ this.ID }`}
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
@@ -402,6 +403,7 @@ AUaccordion.propTypes = {
 	afterOpen: PropTypes.func,
 	onClose: PropTypes.func,
 	afterClose: PropTypes.func,
+	className: PropTypes.string,
 };
 
 AUaccordion.defaultProps = {

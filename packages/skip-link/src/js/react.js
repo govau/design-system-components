@@ -14,29 +14,19 @@ import PropTypes from 'prop-types';
 /**
  * One skip-link item
  *
- * @param  {array}    link             - The link object
- * @param  {string}   link.link        - The href for the link
- * @param  {string}   link.text        - The link text
- * @param  {function} link.onClick     - A function called when the link is clicked
- * @param  {object}   attributeOptions - Any other attribute options
+ * @param  {string} link             - The href for the link
+ * @param  {string} text             - The link text
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUskipLinkItem = ({ link, ...attributeOptions }) => {
-
-	if( typeof link.onClick === 'function' ) {
-		attributeOptions.onClick = link.onClick;
-	}
-
-	return (
-		<a className="au-skip-link__link" href={ link.link } { ...attributeOptions }>{ link.text }</a>
-	);
-};
+export const AUskipLinkItem = ({ link, text, className = '', ...attributeOptions }) => (
+	<a className={`au-skip-link__link ${ className }`} href={ link } { ...attributeOptions }>{ text }</a>
+);
 
 AUskipLinkItem.propTypes = {
-	link: PropTypes.shape({
-		link: PropTypes.string.isRequired,
-		text: PropTypes.string.isRequired,
-		onClick: PropTypes.func,
-	}).isRequired,
+	link: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
+	className: PropTypes.string,
 };
 
 
@@ -44,12 +34,13 @@ AUskipLinkItem.propTypes = {
  * DEFAULT
  * The skip-link component
  *
- * @param  {array} links - The links, format: { url: '', text: '', onClick: () }
+ * @param  {array}  links            - The links, format: { url: '', text: '' }
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUskipLink = ({ links, ...attributeOptions }) => (
-	<nav className="au-skip-link" { ...attributeOptions }>
-		{ links.map( ( link, i ) => <AUskipLinkItem key={ i } link={ link } /> ) }
+const AUskipLink = ({ links, className = '', ...attributeOptions }) => (
+	<nav className={`au-skip-link ${ className }`} { ...attributeOptions }>
+		{ links.map( ( link, i ) => <AUskipLinkItem key={ i } { ...link } /> ) }
 	</nav>
 );
 
@@ -58,7 +49,6 @@ AUskipLink.propTypes = {
 		PropTypes.shape({
 			link: PropTypes.string.isRequired,
 			text: PropTypes.string.isRequired,
-			onClick: PropTypes.func,
 		})
 		).isRequired,
 };

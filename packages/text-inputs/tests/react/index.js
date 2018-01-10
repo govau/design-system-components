@@ -10,80 +10,100 @@ ReactDOM.render(
 			<h2>Default</h2>
 			<label htmlFor="1">Hello</label>
 			<AUtextInput id="1" />
-			<hr />
 
+			<hr />
+			<h2>Default with additional classes</h2>
+			<label htmlFor="1c">Hello</label>
+			<AUtextInput id="1c" className="testing" />
+
+			<hr />
 			<h2>Block</h2>
-			<label htmlFor="2" >Hello</label>
+			<label htmlFor="2">Hello</label>
 			<AUtextInput id="2" defaultValue="abc" block />
-			<hr />
 
+			<hr />
 			<h2>Block Invalid</h2>
-			<label htmlFor="3" >Hello</label>
+			<label htmlFor="3">Hello</label>
 			<AUtextInput id="3" defaultValue="abc" block invalid />
-			<hr />
 
+			<hr />
 			<h2>Block Valid</h2>
-			<label htmlFor="4" >Hello</label>
+			<label htmlFor="4">Hello</label>
 			<AUtextInput id="4" block valid />
-			<hr />
 
+			<hr />
 			<h2>Disabled</h2>
-			<label htmlFor="5" >Hello</label>
+			<label htmlFor="5">Hello</label>
 			<AUtextInput id="5" disabled />
-			<hr />
 
+			<hr />
 			<h2>Textarea</h2>
-			<label htmlFor="6" >Hello</label>
+			<label htmlFor="6">Hello</label>
 			<AUtextInput id="6" as="textarea" />
-			<hr />
 
+			<hr />
+			<h2>Textarea with additional classes</h2>
+			<label htmlFor="6c">Hello</label>
+			<AUtextInput id="6c" as="textarea" className="testing" />
+
+			<hr />
 			<h2>Textarea Block</h2>
-			<label htmlFor="7" >Hello</label>
+			<label htmlFor="7">Hello</label>
 			<AUtextInput id="7" defaultValue="abc" as="textarea" block />
-			<hr />
 
+			<hr />
 			<h2>Textarea default value disabled</h2>
-			<label htmlFor="8" >Hello</label>
+			<label htmlFor="8">Hello</label>
 			<AUtextInput id="8" defaultValue="abc" as="textarea" disabled />
 		</div>
 		<div className="split split--dark">
 			<h2>Default</h2>
-			<label htmlFor="1d" >Hello</label>
+			<label htmlFor="1d">Hello</label>
 			<AUtextInput id="1d" dark />
-			<hr />
 
+			<hr />
+			<h2>Default with additional classes</h2>
+			<label htmlFor="1dc">Hello</label>
+			<AUtextInput dark id="1dc" className="testing" />
+
+			<hr />
 			<h2>Block</h2>
-			<label htmlFor="2d" >Hello</label>
+			<label htmlFor="2d">Hello</label>
 			<AUtextInput id="2d" defaultValue="abc" dark block />
-			<hr />
 
+			<hr />
 			<h2>Block Invalid</h2>
-			<label htmlFor="3d" >Hello</label>
+			<label htmlFor="3d">Hello</label>
 			<AUtextInput id="3d" defaultValue="abc" dark block invalid />
-			<hr />
 
+			<hr />
 			<h2>Block Valid</h2>
-			<label htmlFor="4d" >Hello</label>
+			<label htmlFor="4d">Hello</label>
 			<AUtextInput id="4d" dark block valid />
-			<hr />
 
+			<hr />
 			<h2>Disabled</h2>
-			<label htmlFor="5d" >Hello</label>
+			<label htmlFor="5d">Hello</label>
 			<AUtextInput id="5d" dark disabled />
-			<hr />
 
+			<hr />
 			<h2>Textarea</h2>
-			<label htmlFor="6d" >Hello</label>
+			<label htmlFor="6d">Hello</label>
 			<AUtextInput id="6d" as="textarea" dark />
-			<hr />
 
+			<hr />
+			<h2>Textarea with additional classes</h2>
+			<label htmlFor="6dc">Hello</label>
+			<AUtextInput id="6dc" as="textarea" className="testing" dark />
+
+			<hr />
 			<h2>Textarea Block</h2>
-			<label htmlFor="7d" >Hello</label>
+			<label htmlFor="7d">Hello</label>
 			<AUtextInput id="7d" as="textarea" defaultValue="abc" dark block />
-			<hr />
 
+			<hr />
 			<h2>Textarea default value disabled</h2>
-			<label htmlFor="8d" >Hello</label>
+			<label htmlFor="8d">Hello</label>
 			<AUtextInput as="textarea" id="8d" defaultValue="abc" disabled dark />
 		</div>
 	</div>,

@@ -102,6 +102,29 @@ ReactDOM.render(
 
 
 			<hr />
+			<h2>progress-indicator with additional classes</h2>
+
+			<AUprogressIndicator className="testing" items={[
+				{
+					link: '#url',
+					text: 'Introduction',
+					status: 'done',
+				},
+				{
+					link: '#url',
+					text: 'Business Contacts',
+					status: 'done',
+					className: 'testing',
+				},
+				{
+					link: '#url',
+					text: 'Case Studies',
+					status: 'todo',
+				},
+			]} />
+
+
+			<hr />
 			<h2>progress-indicator with no links and onClick</h2>
 
 			<AUprogressIndicator items={[
@@ -166,6 +189,29 @@ ReactDOM.render(
 				{
 					link: '#url',
 					text: 'Spouses',
+					status: 'todo',
+				},
+			]} />
+
+
+			<hr />
+			<h2>progress-indicator with additional classes <code>--dark</code></h2>
+
+			<AUprogressIndicator dark className="testing" items={[
+				{
+					link: '#url',
+					text: 'Introduction',
+					status: 'done',
+				},
+				{
+					link: '#url',
+					text: 'Business Contacts',
+					status: 'done',
+					className: 'testing',
+				},
+				{
+					link: '#url',
+					text: 'Case Studies',
 					status: 'todo',
 				},
 			]} />

@@ -15,6 +15,13 @@ ReactDOM.render(
 				</AUcallout>
 
 				<hr />
+				<h2>Callout with additional classes</h2>
+
+				<AUcallout className="testing" description="description for first callout">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				</AUcallout>
+
+				<hr />
 				<h2>Calendar callout</h2>
 
 				<AUcalloutCalendar
@@ -23,6 +30,18 @@ ReactDOM.render(
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
 					name="Talk to boss"
+				/>
+
+				<hr />
+				<h2>Calendar callout with additional classes</h2>
+
+				<AUcalloutCalendar
+					description="description for second callout"
+					datetime="2017-01-01T00:00:00+00:00"
+					time="Sunday 32 Jun"
+					subline="Your next appointment is"
+					name="Talk to boss"
+					className="testing"
 				/>
 
 				<hr />
@@ -42,6 +61,13 @@ ReactDOM.render(
 				</AUcallout>
 
 				<hr />
+				<h2>Callout with additional classes <code>--dark</code></h2>
+
+				<AUcallout dark className="testing" description="description for first callout">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				</AUcallout>
+
+				<hr />
 				<h2>Calendar callout <code>--dark</code></h2>
 
 				<AUcalloutCalendar
@@ -51,6 +77,19 @@ ReactDOM.render(
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
 					name="Talk to boss"
+				/>
+
+				<hr />
+				<h2>Calendar callout with additional classes <code>--dark</code></h2>
+
+				<AUcalloutCalendar
+					dark
+					description="description for second callout"
+					datetime="2017-01-01T00:00:00+00:00"
+					time="Sunday 32 Jun"
+					subline="Your next appointment is"
+					name="Talk to boss"
+					className="testing"
 				/>
 
 				<hr />
@@ -73,6 +112,13 @@ ReactDOM.render(
 				</AUcallout>
 
 				<hr />
+				<h2>Callout with additional classes <code>--alt</code></h2>
+
+				<AUcallout alt className="testing" description="description for first callout">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				</AUcallout>
+
+				<hr />
 				<h2>Calendar callout <code>--alt</code></h2>
 
 				<AUcalloutCalendar
@@ -82,6 +128,19 @@ ReactDOM.render(
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
 					name="Talk to boss"
+				/>
+
+				<hr />
+				<h2>Calendar callout with additional classes <code>--alt</code></h2>
+
+				<AUcalloutCalendar
+					alt
+					description="description for second callout"
+					datetime="2017-01-01T00:00:00+00:00"
+					time="Sunday 32 Jun"
+					subline="Your next appointment is"
+					name="Talk to boss"
+					className="testing"
 				/>
 
 				<hr />
@@ -102,6 +161,13 @@ ReactDOM.render(
 				</AUcallout>
 
 				<hr />
+				<h2>Callout with additional classes <code>--alt</code> <code>--dark</code></h2>
+
+				<AUcallout alt dark className="testing" description="description for first callout">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				</AUcallout>
+
+				<hr />
 				<h2>Calendar callout <code>--alt</code> <code>--dark</code></h2>
 
 				<AUcalloutCalendar
@@ -112,6 +178,20 @@ ReactDOM.render(
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
 					name="Talk to boss"
+				/>
+
+				<hr />
+				<h2>Calendar callout with additional classes <code>--alt</code> <code>--dark</code></h2>
+
+				<AUcalloutCalendar
+					alt
+					dark
+					description="description for second callout"
+					datetime="2017-01-01T00:00:00+00:00"
+					time="Sunday 32 Jun"
+					subline="Your next appointment is"
+					name="Talk to boss"
+					className="testing"
 				/>
 
 				<hr />

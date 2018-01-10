@@ -18,19 +18,38 @@ import PropTypes from 'prop-types';
 
 
 /**
+ * An item inside the Select component
+ *
+ * @param  {string}   text             - The text of this option
+ * @param  {string}   value            - The value of this option
+ * @param  {object}   attributeOptions - Any other attribute options
+ */
+export const AUselectItem = ({ text, value, ...attributeOptions }) => (
+	<option value={ value } { ...attributeOptions }>{ text }</option>
+);
+
+AUselectItem.propTypes = {
+	text: PropTypes.string.isRequired,
+	value: PropTypes.string.isRequired,
+	className: PropTypes.string,
+};
+
+
+/**
  * DEFAULT
  * The select component
  *
  * @param  {string} dark             - Add the dark variation class
  * @param  {array}  options          - The options for the select, format: { value: '', text: '' }
  * @param  {string} block            - The block option
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUselect = ({ dark, options, block, ...attributeOptions }) => {
+const AUselect = ({ dark, options, block, className = '', ...attributeOptions }) => {
 
 	return (
-		<select className={`au-select${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`} { ...attributeOptions }>
-			{ options.map( ( option, i ) => <option key={ i } value={ option.value }>{ option.text }</option> ) }
+		<select className={`au-select ${ className }${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`} { ...attributeOptions }>
+			{ options.map( ( option, i ) => <AUselectItem key={ i } { ...option } /> ) }
 		</select>
 	);
 };
@@ -43,11 +62,8 @@ AUselect.propTypes = {
 			text: PropTypes.string.isRequired,
 		})
 		).isRequired,
-	name: PropTypes.string,
-	id: PropTypes.string.isRequired,
-	onChange: PropTypes.func,
 	block: PropTypes.bool,
-	disabled: PropTypes.bool,
+	className: PropTypes.string,
 };
 
 export default AUselect;

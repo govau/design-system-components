@@ -11,7 +11,7 @@ ReactDOM.render(
 			<AUinpageNavLinks sections={[
 				{
 					link: 'section1',
-					title: 'Section 1',
+					title: 'Section 1 with class',
 				},
 				{
 					link: 'section2',
@@ -29,7 +29,31 @@ ReactDOM.render(
 				},
 			]} />
 
-			<AUinpageNavSection title="Section 1 headline" link="section1">
+			<h3>inpage-nav with additional classes</h3>
+
+			<AUinpageNavLinks className="testing" sections={[
+				{
+					link: 'section1',
+					title: 'Section 1 with class',
+					className: 'testing',
+				},
+				{
+					link: 'section2',
+					title: 'Section 2',
+				},
+				{
+					link: 'section3',
+					title: 'Section 3 with onClick',
+					onClick: () => console.log('This function is called when the third item is clicked'),
+				},
+				{
+					link: 'section4',
+					title: 'Section 4 with onClick',
+					onClick: () => console.log('This function is called when the forth item is clicked'),
+				},
+			]} />
+
+			<AUinpageNavSection className="testing" title="Section 1 headline with class" link="section1">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio fuga adipisci aliquid ut rerum mollitia commodi eligendi, asperiores nostrum
 					unde blanditiis eveniet impedit labore, <a href="#link">temporibus exercitationem</a>, provident ab fugit? Lorem ipsum dolor sit amet, consectetur

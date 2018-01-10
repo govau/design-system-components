@@ -88,6 +88,25 @@ ReactDOM.render(
 
 
 			<hr />
+			<h2>select with additional classes</h2>
+			<AUselect id="test2" className="testing" options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+					className: 'testing',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+			]} />
+
+
+			<hr />
 			<h2>select block</h2>
 
 			<AUselect id="test3" block options={[
@@ -182,6 +201,25 @@ ReactDOM.render(
 				{
 					value: '4',
 					text: 'Option 4',
+				},
+			]} />
+
+
+			<hr />
+			<h2>select with additional classes</h2>
+			<AUselect dark id="test2" className="testing" options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+					className: 'testing',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
 				},
 			]} />
 

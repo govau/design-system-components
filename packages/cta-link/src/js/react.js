@@ -24,12 +24,13 @@ import PropTypes from 'prop-types';
  * @param  {string} dark             - Add the dark variation class
  * @param  {string} link             - The link target, if not supplied this will render as a button, optional
  * @param  {string} text             - The text of the CTA link
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUctaLink = ({ dark, link, text, ...attributeOptions }) => {
+const AUctaLink = ({ dark, link, text, className = '', ...attributeOptions }) => {
 
 	if( link ) {
-		return( <a className={ `au-cta-link${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return( <a className={ `au-cta-link ${ className }${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
 		return( <button className={ `au-cta-link${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</button> );
@@ -40,7 +41,7 @@ AUctaLink.propTypes = {
 	dark: PropTypes.bool,
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
-	onClick: PropTypes.func,
+	className: PropTypes.string,
 };
 
 export default AUctaLink;

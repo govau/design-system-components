@@ -65,8 +65,8 @@ import AUlinkList from './link-list.js';
     className: 'is-active',
   },
   {
-    link: 'link/three/',
     text: 'Link 3',
+    onClick: () => console.log('You clicked me!'),
   },
 ]} />
 ```

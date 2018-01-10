@@ -16,6 +16,14 @@ ReactDOM.render(
 
 
 				<hr />
+				<h2><code>--info</code> variant with additional classes</h2>
+
+				<AUpageAlert className='testing'>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				</AUpageAlert>
+
+
+				<hr />
 				<h2><code>--success</code> variant</h2>
 
 				<AUpageAlert as='success'>
@@ -42,6 +50,14 @@ ReactDOM.render(
 				<h2><code>--info</code> variant</h2>
 
 				<AUpageAlert dark as='info'>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				</AUpageAlert>
+
+
+				<hr />
+				<h2><code>--info</code> variant with additional classes</h2>
+
+				<AUpageAlert className='testing'>
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
 				</AUpageAlert>
 

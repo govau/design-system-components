@@ -12,6 +12,11 @@ ReactDOM.render(
 
 
 			<hr />
+			<h2>with additional classes</h2>
+			<AUdirectionLink link="#url" text="Continue" className="testing" />
+
+
+			<hr />
 			<h2><code>--right</code> variant</h2>
 
 			<AUdirectionLink link="#url" text="Next" direction="right" />
@@ -43,6 +48,11 @@ ReactDOM.render(
 		<div className="split split--dark">
 			<h2>bare</h2>
 			<AUdirectionLink dark link="#url" text="Continue" />
+
+
+			<hr />
+			<h2>with additional classes</h2>
+			<AUdirectionLink dark link="#url" text="Continue" className="testing" />
 
 
 			<hr />

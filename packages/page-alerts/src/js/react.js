@@ -37,22 +37,31 @@ const options = {
  * @param  {string} alt              - Add the alt variation class
  * @param  {string} as               - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
  * @param  {node}   children         - Anything inside the component
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUpageAlert = ({ as, alt, dark, children, ...attributeOptions }) => (
+const AUpageAlert = ({ as, alt, dark, children, className = '', ...attributeOptions }) => (
 	<div
-		className={`au-body au-page-alerts ${ dark ? ' au-page-alerts--dark au-body--dark' : '' }${ alt ? ' au-page-alerts--alt au-body--alt' : '' } ${ options[ as ] }`}
-		role='alert' { ...attributeOptions }
+		className={`au-body au-page-alerts ${ className } ${
+			dark
+				? ' au-page-alerts--dark au-body--dark'
+				: ''
+			}${
+				alt
+					? ' au-page-alerts--alt au-body--alt'
+					: ''
+				} ${ options[ as ] }`} role='alert' { ...attributeOptions }
 	>
 		{ children }
 	</div>
 );
 
 AUpageAlert.propTypes = {
-	dark: PropTypes.bool,
-	alt: PropTypes.bool,
 	as: PropTypes.oneOf([ 'info', 'warning', 'error', 'success' ]).isRequired,
+	alt: PropTypes.bool,
+	dark: PropTypes.bool,
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
 export default AUpageAlert;

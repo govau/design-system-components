@@ -26,6 +26,7 @@ import PropTypes from 'prop-types';
  * @param  {string} block            - Add the block variation class
  * @param  {string} invalid          - Add the invalid variation class
  * @param  {string} valid            - Add the valid variation class
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
 const AUtextInput = ({
@@ -34,13 +35,14 @@ const AUtextInput = ({
 	block,
 	invalid,
 	valid,
+	className,
 	...attributeOptions
 }) => {
 
 	return (
 		as === 'input'
 			? <input className={
-						`au-text-input
+						`au-text-input ${ className }
 						${ dark ? ' au-text-input--dark' : '' }
 						${ block ? ' au-text-input--block' : '' }
 						${ valid ? ' au-text-input--valid' : '' }
@@ -50,7 +52,7 @@ const AUtextInput = ({
 				/>
 			: <textarea
 					className={
-						`au-text-input
+						`au-text-input ${ className }
 						${ block ? ' au-text-input--block' : '' }
 						${ dark ? ' au-text-input--dark' : '' }
 						${ valid ? ' au-text-input--valid' : '' }
@@ -65,10 +67,7 @@ AUtextInput.propTypes = {
 	as: PropTypes.oneOf([ 'input', 'textarea' ]),
 	dark: PropTypes.bool,
 	block: PropTypes.bool,
-	id: PropTypes.string,
-	defaultValue: PropTypes.string,
-	disabled: PropTypes.bool,
-	onChange: PropTypes.func,
+	className: PropTypes.string,
 };
 
 AUtextInput.defaultProps = {

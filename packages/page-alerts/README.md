@@ -63,7 +63,6 @@ All props:
 ```jsx
 <AUpageAlert
   as="info"         {/* One of four kinds: 'info', 'success', 'warning', 'error' */}
-  attributeOptions  {/* Any other attribute options */}
   alt={ false }     {/* An alternate variation of the component */}
   dark={ false }    {/* A dark variation of the component */}
 >

@@ -33,19 +33,20 @@ const options = {
  * DEFAULT
  * The primary button
  *
- * @param  {string}    children         - Anything inside
- * @param  {string}    as               - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
- * @param  {string}    dark             - Add the dark variation class
- * @param  {string}    type             - The type attribute, default: 'button', optional
- * @param  {boolean}   block            - The block option, optional
- * @param  {object}    attributeOptions - Any other attribute options
+ * @param  {string}  children         - Anything inside
+ * @param  {string}  as               - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
+ * @param  {string}  dark             - Add the dark variation class
+ * @param  {string}  type             - The type attribute, default: 'button', optional
+ * @param  {boolean} block            - The block option, optional
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUbutton = ({ children, as, dark, type, block, ...attributeOptions }) => {
+const AUbutton = ({ children, as, dark, type, block, className = '', ...attributeOptions }) => {
 
 	return (
 		<button
 			type={ type }
-			className={ `au-btn ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
+			className={ `au-btn ${ className } ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
 			{ ...attributeOptions }
 		>
 			{ children }
@@ -58,9 +59,8 @@ AUbutton.propTypes = {
 	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
 	dark: PropTypes.bool,
 	type: PropTypes.string,
-	id: PropTypes.string,
 	block: PropTypes.bool,
-	onClick: PropTypes.func,
+	className: PropTypes.string,
 };
 
 AUbutton.defaultProps = {

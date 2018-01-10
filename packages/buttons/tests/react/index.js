@@ -26,6 +26,13 @@ ReactDOM.render(
 
 
 				<hr />
+				<h2>buttons with additional class</h2>
+				<AUbutton className="testing">Primary</AUbutton>&nbsp;
+				<AUbutton className="testing" as='secondary'>Secondary</AUbutton>&nbsp;
+				<AUbutton className="testing" as='tertiary'>Tertiary</AUbutton>
+
+
+				<hr />
 				<h2>buttons with block</h2>
 				<AUbutton block>Continue</AUbutton>
 				<AUbutton as='secondary' block>Save</AUbutton>
@@ -67,6 +74,13 @@ ReactDOM.render(
 				<h2>tertiary button <code>--dark</code></h2>
 				<AUbutton dark as='tertiary'>Cancel</AUbutton>&nbsp;
 				<AUbutton dark as='tertiary' disabled>Cancel</AUbutton>
+
+
+				<hr />
+				<h2>buttons with additional class <code>--dark</code></h2>
+				<AUbutton className="testing" dark>Primary</AUbutton>&nbsp;
+				<AUbutton className="testing" dark as='secondary'>Secondary</AUbutton>&nbsp;
+				<AUbutton className="testing" dark as='tertiary'>Tertiary</AUbutton>
 
 
 				<hr />

@@ -11,7 +11,19 @@
 .test-class {
 	border: 2px dotted rebeccapurple;
 
+	.au-body--dark & {
+		border-color: pink;
+	}
+
 	&.test-class--mod {
 		border-color: hotpink;
+	}
+}
+
+.additional-class {
+	border: 1px dashed rebeccapurple;
+
+	.au-body--dark & {
+		border-color: pink;
 	}
 }

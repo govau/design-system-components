@@ -55,6 +55,26 @@ ReactDOM.render(
 
 
 			<hr />
+			<h2>keyword-list with additional classes</h2>
+
+			<AUkeywordList className="testing" repeatedName='Department of' items={[
+				{
+					link: '#url',
+					name: 'Agriculture and Water Resources',
+				},
+				{
+					link: '#url',
+					name: 'Communications and the Arts',
+					className: 'testing',
+				},
+				{
+					link: '#url',
+					name: 'Communications',
+				},
+			]} />
+
+
+			<hr />
 			<h2>keyword-list with onClick</h2>
 
 			<AUkeywordList repeatedName='Links' items={[
@@ -113,6 +133,26 @@ ReactDOM.render(
 				{
 					link: '#url',
 					name: 'Health',
+				},
+			]} />
+
+
+			<hr />
+			<h2>keyword-list with additional classes</h2>
+
+			<AUkeywordList dark className="testing" repeatedName='Department of' items={[
+				{
+					link: '#url',
+					name: 'Agriculture and Water Resources',
+				},
+				{
+					link: '#url',
+					name: 'Communications and the Arts',
+					className: 'testing',
+				},
+				{
+					link: '#url',
+					name: 'Communications',
 				},
 			]} />
 

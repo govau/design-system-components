@@ -38,14 +38,15 @@ const directions = {
  * @param  {string} link             - The link target, optional
  * @param  {string} text             - The text of the CTA link
  * @param  {string} direction        - The direction for the arrow; can be either: up right down left, default: 'right'
+ * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUdirectionLink = ({ dark, link, text, direction, ...attributeOptions }) => {
+const AUdirectionLink = ({ dark, link, text, direction, className = '', ...attributeOptions }) => {
 	if( link ) {
-		return (<a className={ `au-direction-link ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return (<a className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
 	}
 	else {
-		return (<button className={ `au-direction-link ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button> );
+		return (<button className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button> );
 	}
 };
 
@@ -54,7 +55,7 @@ AUdirectionLink.propTypes = {
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,
-	onClick: PropTypes.func,
+	className: PropTypes.string,
 };
 
 AUdirectionLink.defaultProps = {

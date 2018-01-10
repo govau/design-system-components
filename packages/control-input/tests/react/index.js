@@ -41,6 +41,7 @@ class RadioList extends React.Component {
 								item.onChange();
 							}
 						} }
+						className={ item.className }
 					/>
 				) }
 			</div>
@@ -84,6 +85,7 @@ class CheckboxList extends React.Component {
 								item.onChange();
 							}
 						} }
+						className={ item.className }
 					/>
 				) }
 			</div>
@@ -115,6 +117,7 @@ ReactDOM.render(
 					{
 						label: 'Mobile',
 						value: 'mobile',
+						className: 'testing',
 					},
 					{
 						label: 'Fax',
@@ -140,6 +143,7 @@ ReactDOM.render(
 					{
 						label: 'No',
 						value: 'no',
+						className: 'testing',
 					},
 					{
 						label: 'What',
@@ -153,37 +157,34 @@ ReactDOM.render(
 				<hr />
 				<h2>control-inputs with <code>onChange</code></h2>
 
-				<p>
-					<CheckboxList name="checkbox-ex2" items={[
-						{
-							label: 'Phone',
-							value: 'phone',
-							onChange: () => { console.log('This function will run when the first checkbox is changed') },
-						},
-						{
-							label: 'Tablet',
-							value: 'tablet',
-							checked: true,
-							onChange: () => { console.log('This function will run when the second checkbox is changed') },
-						},
-					]} />
-				</p>
+				<CheckboxList name="checkbox-ex2" items={[
+					{
+						label: 'Phone',
+						value: 'phone',
+						onChange: () => { console.log('This function will run when the first checkbox is changed') },
+					},
+					{
+						label: 'Tablet',
+						value: 'tablet',
+						checked: true,
+						onChange: () => { console.log('This function will run when the second checkbox is changed') },
+					},
+				]} />
 
+				<hr />
 
-				<p>
-					<RadioList name="radio-ex2" items={[
-						{
-							label: 'Yes',
-							value: 'yes',
-							onChange: () => { console.log('This function will run when the first radio button is changed') },
-						},
-						{
-							label: 'Maybe',
-							value: 'maybe',
-							onChange: () => { console.log('This function will run when the second radio button is changed') },
-						},
-					]} />
-				</p>
+				<RadioList name="radio-ex2" items={[
+					{
+						label: 'Yes',
+						value: 'yes',
+						onChange: () => { console.log('This function will run when the first radio button is changed') },
+					},
+					{
+						label: 'Maybe',
+						value: 'maybe',
+						onChange: () => { console.log('This function will run when the second radio button is changed') },
+					},
+				]} />
 			</div>
 			<div className="split split--dark">
 				<h2>checkboxes</h2>
@@ -204,6 +205,7 @@ ReactDOM.render(
 					{
 						label: 'Mobile',
 						value: 'mobile',
+						className: 'testing',
 					},
 					{
 						label: 'Fax',
@@ -228,6 +230,7 @@ ReactDOM.render(
 					{
 						label: 'No',
 						value: 'no',
+						className: 'testing',
 					},
 					{
 						label: 'What',
@@ -259,6 +262,7 @@ ReactDOM.render(
 					{
 						label: 'Mobile',
 						value: 'mobile',
+						className: 'testing',
 					},
 					{
 						label: 'Fax',
@@ -284,6 +288,7 @@ ReactDOM.render(
 					{
 						label: 'No',
 						value: 'no',
+						className: 'testing',
 					},
 					{
 						label: 'What',
@@ -297,22 +302,21 @@ ReactDOM.render(
 				<hr />
 				<h2>control-inputs with <code>onChange</code></h2>
 
-				<p>
-					<CheckboxList alt name="checkbox-ex-alt2" items={[
-						{
-							label: 'Phone',
-							value: 'phone',
-							onChange: () => { console.log('This function will run when the first checkbox is changed') },
-						},
-						{
-							label: 'Tablet',
-							value: 'tablet',
-							checked: true,
-							onChange: () => { console.log('This function will run when the second checkbox is changed') },
-						},
-					]} />
-				</p>
+				<CheckboxList alt name="checkbox-ex-alt2" items={[
+					{
+						label: 'Phone',
+						value: 'phone',
+						onChange: () => { console.log('This function will run when the first checkbox is changed') },
+					},
+					{
+						label: 'Tablet',
+						value: 'tablet',
+						checked: true,
+						onChange: () => { console.log('This function will run when the second checkbox is changed') },
+					},
+				]} />
 
+				<hr />
 
 				<RadioList alt name="radio-ex-alt2" items={[
 					{
@@ -346,6 +350,7 @@ ReactDOM.render(
 					{
 						label: 'Mobile',
 						value: 'mobile',
+						className: 'testing',
 					},
 					{
 						label: 'Fax',
@@ -370,6 +375,7 @@ ReactDOM.render(
 					{
 						label: 'No',
 						value: 'no',
+						className: 'testing',
 					},
 					{
 						label: 'What',
