@@ -140,7 +140,7 @@ var AU = AU || {};
 			var target = document.getElementById( targetId );
 
 			if( target == null ) {
-				throw new Error('AU.animate.Toggle cannot find the target to be toggled from inside aria-controls');
+				throw new Error('AU.accordion.Toggle cannot find the target to be toggled from inside aria-controls');
 			}
 
 			target.style.display = 'block';
