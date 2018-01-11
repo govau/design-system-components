@@ -33,6 +33,7 @@ const options = {
  * DEFAULT
  * The primary button
  *
+ * @param  {string}  href             - The href attribute to make this a link
  * @param  {string}  children         - Anything inside
  * @param  {string}  as               - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
  * @param  {string}  dark             - Add the dark variation class
@@ -41,20 +42,33 @@ const options = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUbutton = ({ children, as, dark, type, block, className = '', ...attributeOptions }) => {
-
-	return (
-		<button
-			type={ type }
-			className={ `au-btn ${ className } ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
-			{ ...attributeOptions }
-		>
-			{ children }
-		</button>
-	);
+const AUbutton = ({ href, children, as, dark, type, block, className = '', ...attributeOptions }) => {
+	if( href !== undefined ) {
+		return (
+			<a
+				href={ href }
+				className={ `au-btn ${ className } ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
+				{ ...attributeOptions }
+			>
+				{ children }
+			</a>
+		);
+	}
+	else {
+		return (
+			<button
+				type={ type }
+				className={ `au-btn ${ className } ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
+				{ ...attributeOptions }
+			>
+				{ children }
+			</button>
+		);
+	}
 };
 
 AUbutton.propTypes = {
+	href: PropTypes.string,
 	children: PropTypes.string.isRequired,
 	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
 	dark: PropTypes.bool,

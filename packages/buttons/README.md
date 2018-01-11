@@ -61,6 +61,7 @@ All props:
 
 ```jsx
 <AUbutton
+  href            {/* If an href is set the button will render as a link */}
   children        {/* Anything inside */}
   as=""           {/* The kind of button, 'secondary','tertiary', optional */}
   block={ true }  {/* The block option to make the button fill the available width, optional */}

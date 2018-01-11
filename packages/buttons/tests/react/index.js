@@ -57,6 +57,14 @@ ReactDOM.render(
 				<p>
 					<AUbutton as='tertiary' onClick={ () => console.log('This function will be called when the tertiary button is clicked') }>log it</AUbutton>
 				</p>
+
+
+				<hr />
+				<h2>buttons as link</h2>
+				<AUbutton href="#">Primary</AUbutton>&nbsp;
+				<AUbutton href="#" as='secondary'>Secondary</AUbutton>&nbsp;
+				<AUbutton href="#" as='tertiary'>Tertiary</AUbutton>
+
 			</div>
 			<div className="split split--dark">
 				<h2>primary button <code>--dark</code></h2>
@@ -108,6 +116,13 @@ ReactDOM.render(
 				<p>
 					<AUbutton dark as='tertiary' onClick={ () => console.log('This function will be called when the tertiary button is clicked') }>log it</AUbutton>
 				</p>
+
+
+				<hr />
+				<h2>buttons as link</h2>
+				<AUbutton href="#" dark>Primary</AUbutton>&nbsp;
+				<AUbutton href="#" dark as='secondary'>Secondary</AUbutton>&nbsp;
+				<AUbutton href="#" dark as='tertiary'>Tertiary</AUbutton>
 			</div>
 		</div>
 	</form>,

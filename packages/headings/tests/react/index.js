@@ -9,28 +9,28 @@ ReactDOM.render(
 		<div className="split">
 			<h2>headings</h2>
 
-			<AUheading size="xxxl" level="6" text="au-display-xxxl on h1" />
-			<AUheading size="xxl"  level="5" text="au-display-xxl on h1" />
-			<AUheading size="xl"   level="1" text="au-display-xl on h1" />
-			<AUheading size="lg"   level="2" text="au-display-lg on h2" />
-			<AUheading size="md"   level="3" text="au-display-md on h3" />
-			<AUheading size="sm"   level="6" text="au-display-sm on h6" />
-			<AUheading size="xs"   level="4" text="au-display-xs on h4" />
+			<AUheading size="xxxl" level="6">au-display-xxxl on h1</AUheading>
+			<AUheading size="xxl"  level="5">au-display-xxl on h1</AUheading>
+			<AUheading size="xl"   level="1">au-display-xl on h1</AUheading>
+			<AUheading size="lg"   level="2">au-display-lg on h2</AUheading>
+			<AUheading size="md"   level="3">au-display-md on h3</AUheading>
+			<AUheading size="sm"   level="6">au-display-sm on h6</AUheading>
+			<AUheading size="xs"   level="4">au-display-xs on h4</AUheading>
 
-			<AUheading size="xl"   level="6" text="with additional classes" className="testing" />
+			<AUheading size="xl"   level="6" className="testing">with additional classes</AUheading>
 		</div>
 		<div className="split split--dark">
 			<h2>headings <code>--dark</code></h2>
 
-			<AUheading size="xxxl" level="6" text="au-display-xxxl on h1" />
-			<AUheading size="xxl"  level="5" text="au-display-xxl on h1" />
-			<AUheading size="xl"   level="1" text="au-display-xl on h1" />
-			<AUheading size="lg"   level="2" text="au-display-lg on h2" />
-			<AUheading size="md"   level="3" text="au-display-md on h3" />
-			<AUheading size="sm"   level="6" text="au-display-sm on h6" />
-			<AUheading size="xs"   level="4" text="au-display-xs on h4" />
+			<AUheading size="xxxl" level="6">au-display-xxxl on h1</AUheading>
+			<AUheading size="xxl"  level="5">au-display-xxl on h1</AUheading>
+			<AUheading size="xl"   level="1">au-display-xl on h1</AUheading>
+			<AUheading size="lg"   level="2">au-display-lg on h2</AUheading>
+			<AUheading size="md"   level="3">au-display-md on h3</AUheading>
+			<AUheading size="sm"   level="6">au-display-sm on h6</AUheading>
+			<AUheading size="xs"   level="4">au-display-xs on h4</AUheading>
 
-			<AUheading size="xl"   level="6" text="with additional classes" className="testing" />
+			<AUheading size="xl"   level="6" className="testing">with additional classes</AUheading>
 		</div>
 	</div>,
 

@@ -54,7 +54,7 @@ Usage:
 ```jsx
 import AUheading from './headings.js';
 
-<AUheading size="xl" level="2" text="Display 2 on h2" />
+<AUheading size="xl" level="2">Display 2 on h2</AUheading>
 ```
 
 All props:
@@ -63,7 +63,6 @@ All props:
 <AUheading
   size="xl"             {/* The display size, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' */}
   level="1"             {/* The semantic headline tag level, h1-h6 */}
-  text="Headline text"  {/* The text of the headline */}
   attributeOptions      {/* Any other attribute options */}
 />
 ```
