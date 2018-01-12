@@ -64,9 +64,12 @@ Accordion has 3 public functions:
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body.
+`elements`
+The DOM element (not the container you want to open) like a button or a link;
+Usually DOM node/s of accordion titles you want to open. They need to have the `aria-controls` attribute that points to the accordion body.
 
-`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+`speed`
+Animation speed in milliseconds (optional, defaults to `250ms`)
 
 Example:
 
@@ -81,9 +84,12 @@ AU.accordion.Open( document.getElementById('accordion-title'), 500 );
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body.
+`elements`
+The DOM element (not the container you want to close) like a button or a link;
+Usually DOM node/s of accordion titles you want to close. They need to have the `aria-controls` attribute that points to the accordion body.
 
-`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+`speed`
+Animation speed in milliseconds (optional, defaults to `250ms`)
 
 Example:
 
@@ -98,9 +104,12 @@ AU.accordion.Close( document.getElementById('accordion-title'), 500 );
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-au-accordion` class and point `aria-controls` to the accordion body.
+`elements`
+The DOM element (not the container you want to toggle) like a button or a link;
+Usually DOM node/s of accordion titles you want to toggle. They need to have the `aria-controls` attribute that points to the accordion body.
 
-`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+`speed`
+Animation speed in milliseconds (optional, defaults to `250ms`)
 
 `callbacks` - An object of four optional callbacks: `{ onOpen, afterOpen, onClose, afterClose }`
 
@@ -165,7 +174,7 @@ All props:
   afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
   dark={ false }           {/* A dark variation of the component */}
 >
-  Some content of the third accordion.
+  Some content for this accordion.
 </AUaccordion>
 ```
 _(💡 additional props are spread onto the component)_

@@ -69,7 +69,7 @@ const AUbutton = ({ href, children, as, dark, type, block, className = '', ...at
 
 AUbutton.propTypes = {
 	href: PropTypes.string,
-	children: PropTypes.string.isRequired,
+	children: PropTypes.node.isRequired,
 	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
 	dark: PropTypes.bool,
 	type: PropTypes.string,

@@ -24,9 +24,9 @@ var AU = AU || {};
 	 * PRIVATE
 	 * Set the correct Aria roles for given element on the accordion title and body
 	 *
-	 * @param  {object} element  - The DOM element we want to set attributes for
-	 * @param  {object} target   - The DOM element we want to set attributes for
-	 * @param  {string} state    - The DOM element we want to set attributes for
+	 * @param  {object} element - The DOM element we want to set attributes for
+	 * @param  {object} target  - The DOM element we want to set attributes for
+	 * @param  {string} state   - The DOM element we want to set attributes for
 	 */
 	function setAriaRoles( element, target, state ) {
 
@@ -47,11 +47,11 @@ var AU = AU || {};
 	 * PRIVATE
 	 * IE8 compatible function for replacing classes on a DOM node
 	 *
-	 * @param  {object} element       - The DOM element we want to toggle classes on
-	 * @param  {object} target        - The DOM element we want to toggle classes on
-	 * @param  {object} state         - The current state of the animation on the element
-	 * @param  {string} openingClass  - The firstClass you want to toggle on the DOM node
-	 * @param  {string} closingClass  - The secondClass you want to toggle on the DOM node
+	 * @param  {object} element      - The DOM element we want to toggle classes on
+	 * @param  {object} target       - The DOM element we want to toggle classes on
+	 * @param  {object} state        - The current state of the animation on the element
+	 * @param  {string} openingClass - The firstClass you want to toggle on the DOM node
+	 * @param  {string} closingClass - The secondClass you want to toggle on the DOM node
 	 */
 	function toggleClasses( element, state, openingClass, closingClass ) {
 
@@ -140,7 +140,11 @@ var AU = AU || {};
 			var target = document.getElementById( targetId );
 
 			if( target == null ) {
-				throw new Error('AU.accordion.Toggle cannot find the target to be toggled from inside aria-controls');
+				throw new Error(
+					'AU.accordion.Toggle cannot find the target to be toggled from inside aria-controls.\n' +
+					'Make sure the first argument you give AU.accordion.Toggle is the DOM element (a button or a link) that has an aria-controls attribute that points ' +
+					'to a div that you want to toggle.'
+				);
 			}
 
 			target.style.display = 'block';
@@ -171,17 +175,20 @@ var AU = AU || {};
 					},
 					postfunction: function( target, state ) {
 						if( state === 'closed' ) {
+							// run after closing
 							target.style.display = '';
+							target.style.height = '';
 
-							// run after opening
-							if( typeof callbacks.afterOpen === 'function' ) {
+							if( typeof callbacks.afterClose === 'function' ) {
 								callbacks.afterClose();
 							}
 						}
 						else {
+							// run after opening
+							target.style.display = '';
+							target.style.height = '';
 
-							// run after closing
-							if( typeof callbacks.afterClose === 'function' ) {
+							if( typeof callbacks.afterOpen === 'function' ) {
 								callbacks.afterOpen();
 							}
 						}
@@ -201,8 +208,8 @@ var AU = AU || {};
 	/**
 	 * Open a group of accordion elements
 	 *
-	 * @param  {string}  elements  - The DOM node/s to toggle
-	 * @param  {integer} speed     - The speed in ms for the animation
+	 * @param  {string}  elements - The DOM node/s to toggle
+	 * @param  {integer} speed    - The speed in ms for the animation
 	 *
 	 */
 	accordion.Open = function( elements, speed ) {
@@ -261,8 +268,8 @@ var AU = AU || {};
 	/**
 	 * Close a group of accordion elements
 	 *
-	 * @param  {string}  elements  - The DOM node/s to toggle
-	 * @param  {integer} speed     - The speed in ms for the animation
+	 * @param  {string}  elements - The DOM node/s to toggle
+	 * @param  {integer} speed    - The speed in ms for the animation
 	 *
 	 */
 	accordion.Close = function( elements, speed ) {

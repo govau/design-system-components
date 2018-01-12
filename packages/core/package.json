@@ -25,8 +25,8 @@
 		"prepublish": "npm run test:helper && npm run build:pre",
 
 		"build:pre": "node ../../scripts/helper.js precompile publish",
-		"build:js": "node ../../scripts/helper.js compile",
-		"build": "npm run build:pre && npm run build:js",
+		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
+		"build": "npm run build:js",
 
 		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 

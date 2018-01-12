@@ -50,6 +50,42 @@
 
 	<hr>
 
+	<h2>API test for Toggle, Open and Close</h2>
+	<button
+		class="js-au-accordion"
+		aria-controls="accordion-nude"
+		aria-expanded="true"
+		aria-selected="true"
+		role="tab"
+		onClick="return AU.accordion.Toggle( this )">
+			Toggle text below
+	</button>
+	<button
+		aria-controls="accordion-nude"
+		aria-expanded="true"
+		aria-selected="true"
+		role="tab"
+		onClick="return AU.accordion.Open( this )">
+			Open text below
+	</button>
+	<button
+		aria-controls="accordion-nude"
+		aria-expanded="true"
+		aria-selected="true"
+		role="tab"
+		onClick="return AU.accordion.Close( this )">
+			Close text below
+	</button>
+	<div class="au-accordion__body au-body" id="accordion-nude" aria-hidden="false">
+		<p>
+			Here some content that is just collapsible via our accordion function<br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi magni, nobis laborum dolorum ex excepturi perferendis, pariatur id odit.<br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi magni, nobis laborum dolorum ex excepturi perferendis, pariatur id odit.<br>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi magni, nobis laborum dolorum ex excepturi perferendis, pariatur id odit.
+		</p>
+	</div>
+
+	<hr>
 
 	<div class="split-wrapper">
 		<div class="split">
