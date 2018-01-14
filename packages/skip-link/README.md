@@ -56,11 +56,11 @@ import Button from './skip-link.js';
 
 <AUskipLink links={[
   {
-    url: '#nav',
+    link: '#nav',
     text: 'Skip to navigation',
   },
   {
-    url: '#content',
+    link: '#content',
     text: 'Skip to content',
   },
 ]} />
@@ -72,7 +72,7 @@ All props:
 <AUskipLink
   links={[                         {/* All links inside a neat array */}
     {
-      url: '#nav',                 {/* The href link of this link */}
+      link: '#nav',                {/* The href link of this link */}
       text: 'Skip to navigation',  {/* The text of the link */}
       onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */},
     },
