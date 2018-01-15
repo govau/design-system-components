@@ -21,6 +21,7 @@
 //   - AU-focus
 //   - AU-fontgrid
 // - variables
+//   - AU-pixelfallback
 //   - AU-media-*
 //   - AU-media-*
 //   - AU-rem
@@ -479,7 +480,7 @@ $dependencies: (
  *
  * @return {number}           - The space in px and rems
  */
-@mixin AU-space( $property, $values ) {
+@mixin AU-space( $property, $values, $pixelfallback: $AU-pixelfallback ) {
 	$unit: $AU-unit; // The grid unit to use
 	$output: ();
 	$fallback: ();
@@ -509,7 +510,7 @@ $dependencies: (
 		}
 	}
 
-	@if( $has_fallback ) {
+	@if( $has_fallback and $pixelfallback ) {
 		#{ $property }: $fallback;
 		#{ $property }: $output;
 	}
@@ -668,6 +669,11 @@ $dependencies: (
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * AU-pixelfallback enable pixel fallbacks
+ */
+$AU-pixelfallback: true !default;
+
 /**
  * AU-media Breakpoints
  */

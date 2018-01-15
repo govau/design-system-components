@@ -324,6 +324,10 @@ html {
 	&.au-space--2:after {
 		@include AU-space( width, 2unit );
 	}
+
+	&.au-space--nopixel:after {
+		@include AU-space( width, 2unit, false );
+	}
 }
 
 
