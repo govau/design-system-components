@@ -11,6 +11,7 @@
 //   - AU-pow
 //   - AU-color-luminance
 //   - AU-color-contrast
+//   - AU-color-a11y
 // - mixins
 //   - AU-space
 //   - AU-clearfix
@@ -21,9 +22,11 @@
 //   - AU-fontgrid
 // - variables
 //   - AU-media-*
+//   - AU-media-*
 //   - AU-rem
 //   - AU-unit
 //   - AU-font
+//   - AU-font-monospace
 //   - AU-font-monospace
 //   - AU-fontsize-map
 //   - AU-lineheight-map
@@ -32,10 +35,6 @@
 //   - AU-border-radius
 //
 //  Error messages all start with a movie quote. Here are some in reserve:
-//  - I have always depended on the kindness of strangers;
-//  - Where we’re going, we don’t need roads;
-//  - You’re tearing me apart, Lisa;
-//  - Toto, I’ve got a feeling we’re not in Kansas anymore;
 //  - Nobody puts Baby in a corner;
 //  - May the Force be with you;
 //  - You call that an error? This is an Error!
@@ -626,7 +625,7 @@ $dependencies: (
 
 
 /**
- * AU-fontgrid- Mixin for setting font-size and line-height that snaps to the grid.
+ * AU-fontgrid Mixin for setting font-size and line-height that snaps to the grid.
  *
  * @param  {keywords} $fontsize-key   -  Either one of the following keywords: xs, sm, md, lg, xl, xxl, xxxl
  * @param  {keywords} $lineheight-key -  Either one of the following keywords: heading, nospace, default
@@ -670,7 +669,7 @@ $dependencies: (
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 /**
- * Breakpoints
+ * AU-media Breakpoints
  */
 $AU-media-xs: 576px !default; // media query breakpoints
 $AU-media-sm: 768px !default;
@@ -679,25 +678,30 @@ $AU-media-lg: 1200px !default;
 
 
 /**
- * Value used for REM calculation
+ * AU-rem value used for REM calculation
  */
 $AU-rem: 16 !default;
 
 
 /**
- * Unit used for all type and grid calculations
+ * AU-unit used for all type and grid calculations
  */
 $AU-unit: 4 !default;
 
 
 /**
- * Font stacks
+ * AU-font stack
+ * AU-font-monospace stack
  */
 $AU-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
 $AU-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
 
 
-// Predetermined pixel sizes from a 1.25 typescale rounded to the nearest $AU-unit (vertical grid)
+/**
+ * AU-fontsize-map
+ *
+ * Predetermined pixel sizes from a 1.25 typescale rounded to the nearest $AU-unit (vertical grid)
+ */
 $AU-fontsize-map: (
 	xs:   14,
 	sm:   16,
@@ -709,7 +713,11 @@ $AU-fontsize-map: (
 ) !default;
 
 
-// Predetermined lineheight mapped to keyword
+/**
+ * AU-lineheight-map
+ *
+ * Predetermined lineheight mapped to keyword
+ */
 $AU-lineheight-map: (
 	nospace: 1,
 	heading: 1.25,
@@ -718,7 +726,7 @@ $AU-lineheight-map: (
 
 
 /**
- * max-width for line lengths (the ‘measure’)
+ * AU-maxwidth for line lengths (the ‘measure’)
  */
 $AU-maxwidth: 42em !default; // Answer to life, the universe, and everything (keeps things readable on wide viewports).
 
@@ -779,6 +787,6 @@ $AU-color-Info:    #00bfe9 !default;
 
 
 /**
- * Border vars and styles
+ * AU-border-radius styles
  */
 $AU-border-radius: $AU-unit + 0px !default;
