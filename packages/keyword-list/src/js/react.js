@@ -22,11 +22,10 @@ import PropTypes from 'prop-types';
  * @param  {string}   repeatedName     - The repeated bit in each item
  * @param  {string}   link             - The link URL, optional
  * @param  {string}   name             - The name of the item
- * @param  {function} onClick          - An onClick event, optional
- * @param  {string}   className        - An additional class, optional
+ * @param  {object}   li               - An additional object to be spread into the wrapping element, optional
  * @param  {object}   attributeOptions - Any other attribute options
  */
-export const AUkeywordListItem = ({ repeatedName, link, name, className = '',...attributeOptions }) => {
+export const AUkeywordListItem = ({ repeatedName, link, name, li = {}, ...attributeOptions }) => {
 
 	if( typeof attributeOptions.onClick === 'function' ) {
 
@@ -37,10 +36,10 @@ export const AUkeywordListItem = ({ repeatedName, link, name, className = '',...
 	}
 
 	return (
-		<li className={`au-keyword-list__item ${ className }`}>
+		<li { ...li }>
 			{ link
-				? <a href={ link } { ...attributeOptions }><small className="au-keyword-list__item__small">{ repeatedName }</small>{ name }</a>
-				: <span><small className="au-keyword-list__item__small">{ repeatedName }</small>{ name }</span>
+				? <a href={ link } { ...attributeOptions }><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</a>
+				: <span><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</span>
 			}
 		</li>
 	);
@@ -50,7 +49,7 @@ AUkeywordListItem.propTypes = {
 	repeatedName: PropTypes.string.isRequired,
 	link: PropTypes.string,
 	name: PropTypes.string.isRequired,
-	className: PropTypes.string,
+	li: PropTypes.object,
 };
 
 
@@ -77,7 +76,7 @@ AUkeywordList.propTypes = {
 		PropTypes.shape({
 			link: PropTypes.string,
 			name: PropTypes.string.isRequired,
-			onClick: PropTypes.func,
+			li: PropTypes.object,
 		})
 		).isRequired,
 	className: PropTypes.string,

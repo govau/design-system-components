@@ -52,6 +52,9 @@ ReactDOM.render(
 				},
 				{
 					text: 'Sign Out',
+					li: {
+						className: 'testing',
+					},
 				},
 			]} />
 		</div>

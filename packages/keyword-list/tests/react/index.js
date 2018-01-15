@@ -70,6 +70,9 @@ ReactDOM.render(
 				{
 					link: '#url',
 					name: 'Communications',
+					li: {
+						className: 'testing',
+					},
 				},
 			]} />
 
@@ -153,6 +156,9 @@ ReactDOM.render(
 				{
 					link: '#url',
 					name: 'Communications',
+					li: {
+						className: 'testing',
+					},
 				},
 			]} />
 

@@ -36,11 +36,17 @@ ReactDOM.render(
 					link: '#help',
 					text: 'Help',
 					className: 'test-class',
+					li: {
+						className: 'test-class test-class--mod',
+					},
 				},
 				{
 					link: '#signout',
 					text: 'Sign Out',
 					className: 'test-class test-class--mod',
+					li: {
+						className: 'test-class',
+					},
 				},
 			]} />
 
@@ -109,11 +115,17 @@ ReactDOM.render(
 					link: '#help',
 					text: 'Help',
 					className: 'test-class',
+					li: {
+						className: 'test-class test-class--mod',
+					},
 				},
 				{
 					link: '#signout',
 					text: 'Sign Out',
 					className: 'test-class test-class--mod',
+					li: {
+						className: 'test-class',
+					},
 				},
 			]} />
 

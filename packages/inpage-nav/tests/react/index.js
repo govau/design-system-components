@@ -40,6 +40,9 @@ ReactDOM.render(
 				{
 					link: 'section2',
 					title: 'Section 2',
+					li: {
+						className: 'testing',
+					},
 				},
 				{
 					link: 'section3',

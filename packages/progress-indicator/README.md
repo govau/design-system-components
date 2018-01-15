@@ -64,6 +64,9 @@ import AUprogressIndicator from './progress-indicator.js';
     link: 'forms/contacts/',
     text: 'Business Contacts',
     status: 'doing',
+    li: {
+      className: 'li-wrapping-class',
+    },
   },
   {
     link: 'forms/casestudies/',
@@ -83,6 +86,7 @@ All props:
       link: 'forms/intro/',  {/* The link to this step, optional */}
       text: 'Introduction',  {/* The name of this step */}
       status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
+      li: {},                {/* An object that will be spread onto the <li> tag, optional */}
       onClick={ () => {} }   {/* A function to execute when the link is clicked, optional */}
     },
   ]},

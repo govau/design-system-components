@@ -66,6 +66,9 @@ import Button from './tags.js';
   {
     link: 'link/to/tag3',
     text: 'tag3',
+    li: {
+      className: 'li-wrapping-class',
+    },
   },
 ]} />
 ```
@@ -79,7 +82,7 @@ All props:
     {
       link: 'url/to/tag',  {/* The href link of this tag, optional */}
       text: 'tagname',     {/* The text of the tag */}
-      onClick: () => {},   {/* A function to execute when the tag is clicked, optional */}
+      li: {},              {/* An object that will be spread onto the <li> tag, optional */}
     },
   ]},
 />

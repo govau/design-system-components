@@ -62,6 +62,9 @@ import AUbreadcrumbs from './breadcrumbs.js';
   {
     link: 'breadcrumb/two/',
     text: 'breadcrumb 2',
+    li: {
+      className: 'li-wrapping-class',
+    },
   },
   {
     text: 'breadcrumb 3',
@@ -79,6 +82,7 @@ All props:
     {
       link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}
       text: 'breadcrumb 1',     {/* The text of the breadcrumb */}
+      li: {},                   {/* An object that will be spread onto the <li> tag, optional */}
     },
   ]},
 />

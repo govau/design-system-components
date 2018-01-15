@@ -62,6 +62,9 @@ import { AUinpageNavLinks, AUinpageNavSection } from './inpage-nav.js';
   {
     link: 'section2',
     title: 'Section 2',
+    li: {
+      className: 'li-wrapping-class',
+    },
   },
 ]} />
 
@@ -81,6 +84,7 @@ All props:
     {
       link: 'section1',    {/* The link to the section, this will be converted to a hash link */}
       title: 'Section 1',  {/* The link text of this section */}
+      li: {},              {/* An object that will be spread onto the <li> tag, optional */}
       onClick: () => {},   {/* A function to be executed when a section is clicked, optional */}
     },
   ]}

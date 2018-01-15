@@ -21,10 +21,10 @@ import PropTypes from 'prop-types';
  *
  * @param  {string} link             - The link URL, optional
  * @param  {string} text             - The link Text
- * @param  {string} className        - An additional class, optional
+ * @param  {object} li               - An additional object to be spread into the wrapping element, optional
  * @param  {object} attributeOptions - Any other attribute options, optional
  */
-export const AUlinkListItem = ({ text, link, className, ...attributeOptions }) => {
+export const AUlinkListItem = ({ text, link, li = {}, ...attributeOptions }) => {
 
 	if( typeof onClick === 'function' ) {
 		attributeOptions.onClick = onClick;
@@ -36,7 +36,7 @@ export const AUlinkListItem = ({ text, link, className, ...attributeOptions }) =
 	}
 
 	return (
-		<li className={ className }>
+		<li { ...li }>
 			{ link === undefined
 				? ( text )
 				: ( <a href={ link } { ...attributeOptions }>{ text }</a> )
@@ -48,7 +48,7 @@ export const AUlinkListItem = ({ text, link, className, ...attributeOptions }) =
 AUlinkListItem.propTypes = {
 	text: PropTypes.string.isRequired,
 	link: PropTypes.string,
-	className: PropTypes.string,
+	li: PropTypes.object,
 };
 
 
@@ -73,7 +73,7 @@ AUlinkList.propTypes = {
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
-			className: PropTypes.string,
+			li: PropTypes.object,
 		})
 		).isRequired,
 };

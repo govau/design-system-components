@@ -38,18 +38,18 @@
 		list-style: none;
 		margin-left: 0;
 	}
-}
 
-.au-keyword-list__item {
-	font-weight: bold;
+	& > li {
+		font-weight: bold;
 
-	// Display the link as block as focus doesn't show
-	& > a {
-		display: block;
+		// Display the link as block as focus doesn't show
+		& > a {
+			display: block;
+		}
 	}
 }
 
-.au-keyword-list__item__small {
+.au-keyword-list__small {
 	@include AU-fontgrid( sm, nospace );
 	display: block;
 	font-weight: normal; // Reset parent weight

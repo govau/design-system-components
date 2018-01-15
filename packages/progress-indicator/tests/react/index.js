@@ -72,191 +72,218 @@ ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split au-body">
 		<h2>progress-indicator default</h2>
-			<AUprogressIndicator items={[
-				{
-					link: '#url',
-					text: 'Introduction',
-					status: 'done',
-				},
-				{
-					link: '#url',
-					text: 'Business Contacts',
-					status: 'done',
-				},
-				{
-					link: '#url',
-					text: 'Case Studies',
-					status: 'todo',
-				},
-				{
-					link: '#url',
-					text: 'Personal Infos',
-					status: 'doing',
-				},
-				{
-					link: '#url',
-					text: 'Spouses',
-					status: 'todo',
-				},
-			]} />
+
+		<AUprogressIndicator items={[
+			{
+				link: '#url',
+				text: 'Introduction',
+				status: 'done',
+			},
+			{
+				link: '#url',
+				text: 'Business Contacts',
+				status: 'done',
+			},
+			{
+				link: '#url',
+				text: 'Case Studies',
+				status: 'todo',
+			},
+			{
+				link: '#url',
+				text: 'Personal Infos',
+				status: 'doing',
+			},
+			{
+				link: '#url',
+				text: 'Spouses',
+				status: 'todo',
+			},
+		]} />
 
 
-			<hr />
-			<h2>progress-indicator with additional classes</h2>
+		<hr />
+		<h2>progress-indicator with additional classes</h2>
 
-			<AUprogressIndicator className="testing" items={[
-				{
-					link: '#url',
-					text: 'Introduction',
-					status: 'done',
-				},
-				{
-					link: '#url',
-					text: 'Business Contacts',
-					status: 'done',
+		<AUprogressIndicator className="testing" items={[
+			{
+				link: '#url',
+				text: 'Introduction',
+				status: 'done',
+			},
+			{
+				link: '#url',
+				text: 'Business Contacts',
+				status: 'done',
+				className: 'testing',
+			},
+			{
+				link: '#url',
+				text: 'Case Studies',
+				status: 'todo',
+				li: {
 					className: 'testing',
 				},
-				{
-					link: '#url',
-					text: 'Case Studies',
-					status: 'todo',
+			},
+			{
+				link: '#url',
+				text: 'Step 1',
+				status: 'todo',
+			},
+			{
+				link: '#url',
+				text: 'Step 2',
+				status: 'todo',
+			},
+		]} />
+
+
+		<hr />
+		<h2>progress-indicator with no links and onClick</h2>
+
+		<AUprogressIndicator items={[
+			{
+				text: 'Introduction',
+				status: 'done',
+				onClick: event => {
+					event.preventDefault();
+
+					console.log('This function runs when the first item is clicked');
 				},
-			]} />
+			},
+			{
+				text: 'Business Contacts',
+				status: 'doing',
+				onClick: event => {
+					event.preventDefault();
 
-
-			<hr />
-			<h2>progress-indicator with no links and onClick</h2>
-
-			<AUprogressIndicator items={[
-				{
-					text: 'Introduction',
-					status: 'done',
-					onClick: event => {
-						event.preventDefault();
-
-						console.log('This function runs when the first item is clicked');
-					},
+					console.log('This function runs when the second item is clicked');
 				},
-				{
-					text: 'Business Contacts',
-					status: 'doing',
-					onClick: event => {
-						event.preventDefault();
+			},
+			{
+				text: 'Case Studies',
+				status: 'todo',
+				onClick: event => {
+					event.preventDefault();
 
-						console.log('This function runs when the second item is clicked');
-					},
+					console.log('This function runs when the third item is clicked');
 				},
-				{
-					text: 'Case Studies',
-					status: 'todo',
-					onClick: event => {
-						event.preventDefault();
-
-						console.log('This function runs when the third item is clicked');
-					},
-				},
-			]} />
+			},
+		]} />
 
 
-			<hr />
-			<h2>progress-indicator with state</h2>
+		<hr />
+		<h2>progress-indicator with state</h2>
 
-			<ProgressIndicatorWrapper />
-		</div>
-		<div className="split au-body au-body--dark">
+		<ProgressIndicatorWrapper />
+	</div>
+	<div className="split au-body au-body--dark">
 		<h2>progress-indicator <code>--dark</code></h2>
-			<AUprogressIndicator dark items={[
-				{
-					link: '#url',
-					text: 'Introduction',
-					status: 'done',
-				},
-				{
-					link: '#url',
-					text: 'Business Contacts',
-					status: 'done',
-				},
-				{
-					link: '#url',
-					text: 'Case Studies',
-					status: 'todo',
-				},
-				{
-					link: '#url',
-					text: 'Personal Infos',
-					status: 'doing',
-				},
-				{
-					link: '#url',
-					text: 'Spouses',
-					status: 'todo',
-				},
-			]} />
+		<AUprogressIndicator dark items={[
+			{
+				link: '#url',
+				text: 'Introduction',
+				status: 'done',
+			},
+			{
+				link: '#url',
+				text: 'Business Contacts',
+				status: 'done',
+			},
+			{
+				link: '#url',
+				text: 'Case Studies',
+				status: 'todo',
+			},
+			{
+				link: '#url',
+				text: 'Personal Infos',
+				status: 'doing',
+			},
+			{
+				link: '#url',
+				text: 'Spouses',
+				status: 'todo',
+			},
+		]} />
 
 
-			<hr />
-			<h2>progress-indicator with additional classes <code>--dark</code></h2>
+		<hr />
+		<h2>progress-indicator with additional classes <code>--dark</code></h2>
 
-			<AUprogressIndicator dark className="testing" items={[
-				{
-					link: '#url',
-					text: 'Introduction',
-					status: 'done',
-				},
-				{
-					link: '#url',
-					text: 'Business Contacts',
-					status: 'done',
+		<AUprogressIndicator dark className="testing" items={[
+			{
+				link: '#url',
+				text: 'Introduction',
+				status: 'done',
+			},
+			{
+				link: '#url',
+				text: 'Business Contacts',
+				status: 'done',
+				className: 'testing',
+			},
+			{
+				link: '#url',
+				text: 'Case Studies',
+				status: 'todo',
+				li: {
 					className: 'testing',
 				},
-				{
-					link: '#url',
-					text: 'Case Studies',
-					status: 'todo',
+			},
+			{
+				link: '#url',
+				text: 'Step 1',
+				status: 'todo',
+			},
+			{
+				link: '#url',
+				text: 'Step 2',
+				status: 'todo',
+			},
+		]} />
+
+
+		<hr />
+		<h2>progress-indicator with no links and onClick <code>--dark</code></h2>
+
+		<AUprogressIndicator dark items={[
+			{
+				text: 'Introduction',
+				status: 'done',
+				onClick: event => {
+					event.preventDefault();
+
+					console.log('This function runs when the first item is clicked');
 				},
-			]} />
+			},
+			{
+				text: 'Business Contacts',
+				status: 'doing',
+				onClick: event => {
+					event.preventDefault();
 
-
-			<hr />
-			<h2>progress-indicator with no links and onClick <code>--dark</code></h2>
-
-			<AUprogressIndicator dark items={[
-				{
-					text: 'Introduction',
-					status: 'done',
-					onClick: event => {
-						event.preventDefault();
-
-						console.log('This function runs when the first item is clicked');
-					},
+					console.log('This function runs when the second item is clicked');
 				},
-				{
-					text: 'Business Contacts',
-					status: 'doing',
-					onClick: event => {
-						event.preventDefault();
+			},
+			{
+				text: 'Case Studies',
+				status: 'todo',
+				onClick: event => {
+					event.preventDefault();
 
-						console.log('This function runs when the second item is clicked');
-					},
+					console.log('This function runs when the third item is clicked');
 				},
-				{
-					text: 'Case Studies',
-					status: 'todo',
-					onClick: event => {
-						event.preventDefault();
-
-						console.log('This function runs when the third item is clicked');
-					},
-				},
-			]} />
+			},
+		]} />
 
 
-			<hr />
-			<h2>progress-indicator with state <code>--dark</code></h2>
+		<hr />
+		<h2>progress-indicator with state <code>--dark</code></h2>
 
-			<ProgressIndicatorWrapper dark />
-		</div>
-	</div>,
+		<ProgressIndicatorWrapper dark />
+	</div>
+</div>,
 
 	document.getElementById('root'),
 );

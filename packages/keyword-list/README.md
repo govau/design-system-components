@@ -64,6 +64,9 @@ import AUkeywordList from './keyword-list.js';
     {
       link: 'https://www.communications.gov.au/',
       name: 'Communications and the Arts',
+      li: {
+        className: 'li-wrapping-class',
+      },
     },
     {
       link: 'https://www.finance.gov.au/',
@@ -83,7 +86,7 @@ All props:
     {
       link: 'http://www.agriculture.gov.au/',   {/* The URL of this item, optional */}
       name: 'Agriculture and Water Resources',  {/* The name of the item */}
-      onClick={ () => {} }                      {/* A function to execute when the link is clicked, optional */}
+      li: {},                                   {/* An object that will be spread onto the <li> tag, optional */}
     },
   ]},
 />

@@ -22,11 +22,11 @@ import PropTypes from 'prop-types';
  *
  * @param  {object} link             - The link of this section
  * @param  {object} title            - The title of the section
- * @param  {string} className        - An additional class, optional
+ * @param  {object} li               - An additional object to be spread into the wrapping element, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUinpageNavLinksItem = ({ link, title, className = '', ...attributeOptions }) => (
-	<li className={ className }>
+export const AUinpageNavLinksItem = ({ link, title, li = {}, ...attributeOptions }) => (
+	<li { ...li }>
 		<a href={ `#${ link }` } { ...attributeOptions }>{ title }</a>
 	</li>
 );
@@ -34,7 +34,7 @@ export const AUinpageNavLinksItem = ({ link, title, className = '', ...attribute
 AUinpageNavLinksItem.propTypes = {
 	link: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
-	className: PropTypes.string,
+	li: PropTypes.object,
 };
 
 
@@ -63,7 +63,7 @@ AUinpageNavLinks.propTypes = {
 		PropTypes.shape({
 			link: PropTypes.string.isRequired,
 			title: PropTypes.string.isRequired,
-			className: PropTypes.string,
+			li: PropTypes.object,
 		})
 		).isRequired,
 	className: PropTypes.string,

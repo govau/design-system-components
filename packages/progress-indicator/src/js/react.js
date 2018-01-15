@@ -36,16 +36,17 @@ const StatusText = {
  * @param  {string}   status           - The status of this item
  * @param  {string}   statusText       - The status text of this item, optional
  * @param  {string}   className        - An additional class, optional
+ * @param  {object}   li               - An additional object to be spread into the wrapping element, optional
  * @param  {object}   attributeOptions - Any other attribute options
  */
-export const AUprogressIndicatorItem = ({ link, text, status, statusText, className = '', ...attributeOptions }) => (
-	<li className={ className }>
+export const AUprogressIndicatorItem = ({ link, text, status, statusText, className = '', li = {}, ...attributeOptions }) => (
+	<li { ...li }>
 		{ link
-			? <a className={`au-progress-indicator__link au-progress-indicator__link--${ status }`} href={ link } { ...attributeOptions }>
+			? <a className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} href={ link } { ...attributeOptions }>
 					<span className="au-progress-indicator__status">{ statusText ? statusText : StatusText[ status ] }</span>
 					{ text }
 				</a>
-			: <button className={`au-progress-indicator__link au-progress-indicator__link--${ status }`} { ...attributeOptions }>
+			: <button className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} { ...attributeOptions }>
 					<span className="au-progress-indicator__status">{ statusText ? statusText : StatusText[ status ] }</span>
 					{ text }
 				</button>
@@ -58,7 +59,7 @@ AUprogressIndicatorItem.propTypes = {
 	text: PropTypes.string.isRequired,
 	status: PropTypes.PropTypes.oneOf([ 'doing', 'todo', 'done' ]).isRequired,
 	statusText: PropTypes.string,
-	className: PropTypes.string,
+	li: PropTypes.object,
 };
 
 
@@ -85,7 +86,7 @@ AUprogressIndicator.propTypes = {
 			text: PropTypes.string.isRequired,
 			status: PropTypes.PropTypes.oneOf([ 'doing', 'todo', 'done' ]).isRequired,
 			statusText: PropTypes.string,
-			className: PropTypes.string,
+			li: PropTypes.object,
 		})
 		).isRequired,
 };

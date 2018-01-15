@@ -16,10 +16,10 @@ import PropTypes from 'prop-types';
  *
  * @param  {string}  link             - The link for this tag, optional
  * @param  {string}  text             - The text for the tag
- * @param  {string}  className        - An additional class, optional
+ * @param  {object}  li               - An additional object to be spread into the wrapping element, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtagItem = ({ link, text, className = '', ...attributeOptions }) => {
+const AUtagItem = ({ link, text, li = {}, ...attributeOptions }) => {
 
 	// if we find an onClick event but no link we make it a link so onClick can be added (no button support yet)
 	if( !link ) {
@@ -27,7 +27,7 @@ const AUtagItem = ({ link, text, className = '', ...attributeOptions }) => {
 	}
 
 	return (
-		<li className={`au-tags__item ${ className }`}>
+		<li { ...li }>
 			{ link
 				? <a href={ link } { ...attributeOptions }>{ text }</a>
 				: text
@@ -39,7 +39,7 @@ const AUtagItem = ({ link, text, className = '', ...attributeOptions }) => {
 AUtagItem.propTypes = {
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
-	className: PropTypes.string,
+	li: PropTypes.object,
 };
 
 
@@ -64,7 +64,7 @@ AUtags.propTypes = {
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
-			className: PropTypes.string,
+			li: PropTypes.object,
 		})
 	).isRequired,
 	className: PropTypes.string,

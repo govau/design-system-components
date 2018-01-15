@@ -32,7 +32,8 @@
 	}
 }
 
-.au-tags__item {
+.au-tags > li,
+.au-tags > dd {
 	@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
 	@include AU-space ( padding, 0 0.5unit );
 	border: 1px solid $AU-color-Action;
@@ -59,21 +60,22 @@
 			outline-offset: -1px;
 		}
 	}
+}
 
-	.au-tags--dark & {
-		border-color: $AU-colordark-Action;
+.au-tags.au-tags--dark > li,
+.au-tags.au-tags--dark > dd {
+	border-color: $AU-colordark-Action;
 
-		> a,
-		> button {
-			color: $AU-colordark-Action;
+	> a,
+	> button {
+		color: $AU-colordark-Action;
 
-			&:hover {
-				color: $AU-colordark-Text;
-				background-color: $AU-colordark-Background;
-			}
-
-			@include AU-focus( 'dark' );
+		&:hover {
+			color: $AU-colordark-Text;
+			background-color: $AU-colordark-Background;
 		}
+
+		@include AU-focus( 'dark' );
 	}
 }
 

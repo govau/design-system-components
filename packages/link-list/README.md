@@ -63,6 +63,9 @@ import AUlinkList from './link-list.js';
     link: 'link/two/',
     text: 'Link 2',
     className: 'is-active',
+    li: {
+      className: 'li-wrapping-class',
+    },
   },
   {
     text: 'Link 3',
@@ -80,7 +83,7 @@ All props:
     {
       link: 'link/to/',       {/* The link for this item, optional */}
       text: 'Link title',     {/* The text for this item */}
-      className: 'is-active', {/* An additional class to be put on this <li> tag, optional */}
+      li: {},                 {/* An object that will be spread onto the <li> tag, optional */}
       onClick={ () => {} }    {/* A function to execute when this link is clicked, optional */}
     },
   ]},
