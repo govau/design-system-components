@@ -56,7 +56,6 @@ AUlinkListItem.propTypes = {
  * DEFAULT
  * The Link List component
  *
- * @param  {boolean} inverted         - Inverted option, optional
  * @param  {array}   items            - All items inside the link list to be passed to AUlinkListItem, format: { link: '', text: '', onClick: () }
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options, optional
