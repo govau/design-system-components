@@ -48,7 +48,7 @@ AUselectItem.propTypes = {
 const AUselect = ({ dark, options, block, className = '', ...attributeOptions }) => {
 
 	return (
-		<select className={`au-select ${ className }${ block ? ` au-select-block` : `` }${ dark ? ' au-select--dark' : '' }`} { ...attributeOptions }>
+		<select className={`au-select ${ className }${ block ? ` au-select--block` : `` }${ dark ? ' au-select--dark' : '' }`} { ...attributeOptions }>
 			{ options.map( ( option, i ) => <AUselectItem key={ i } { ...option } /> ) }
 		</select>
 	);
