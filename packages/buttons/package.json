@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/buttons",
-	"version": "1.0.0-next.5",
+	"version": "1.0.0-next.6",
 	"description": "Buttons signal action. Use them to move the user through the service.",
 	"keywords": [
 		"uikit",
@@ -40,7 +40,8 @@
 			"version": "1.0.0",
 			"plugins": [
 				"@gov.au/pancake-sass",
-				"@gov.au/pancake-react"
+				"@gov.au/pancake-react",
+				"@gov.au/pancake-json"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
@@ -56,6 +57,7 @@
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": ">1.0.0-next.0"
 	},

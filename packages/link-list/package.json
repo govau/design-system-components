@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/link-list",
-	"version": "1.0.0-next.6",
+	"version": "1.0.0-next.7",
 	"description": "A simple list of inline links.",
 	"keywords": [
 		"uikit",
@@ -43,7 +43,8 @@
 			"version": "1.0.0",
 			"plugins": [
 				"@gov.au/pancake-sass",
-				"@gov.au/pancake-react"
+				"@gov.au/pancake-react",
+				"@gov.au/pancake-json"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
@@ -59,6 +60,7 @@
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": ">1.0.0-next.0",
 		"@gov.au/body": ">1.0.0-next.0"

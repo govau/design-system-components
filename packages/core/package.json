@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/core",
-	"version": "1.0.0-next.4",
+	"version": "1.0.0-next.5",
 	"description": "The core module all UI-Kit modules depend on",
 	"keywords": [
 		"uikit",
@@ -39,7 +39,8 @@
 		"pancake-module": {
 			"version": "1.0.0",
 			"plugins": [
-				"@gov.au/pancake-sass"
+				"@gov.au/pancake-sass",
+				"@gov.au/pancake-json"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
@@ -50,6 +51,7 @@
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-json": "~1",
 
 		"sass-versioning": "^0.3.0"
 	},

@@ -62,11 +62,10 @@ All props:
 
 ```jsx
 <TextInput
-  as                    {/* The kind of input, can be either 'input' or 'textarea', default: 'input' */}
-  dark={ false }        {/* A dark variation of the component */}
-  block                 {/* Add the block variation class */}
-  invalid               {/* Add the invalid variation class */}
-  valid                 {/* Add the valid variation class */}
+  as              {/* The kind of input, can be either 'input' or 'textarea', default: 'input' */}
+  dark={ false }  {/* A dark variation of the component */}
+  block           {/* Add the block variation class */}
+  status          {/* Mark this field as either 'valid' or 'invalid' */}
 />
 ```
 _(💡 additional props are spread onto the component)_

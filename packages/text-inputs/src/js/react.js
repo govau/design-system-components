@@ -22,10 +22,9 @@ import PropTypes from 'prop-types';
  * The AUtextInput component
  *
  * @param  {string} as               - The kind of input, can be either 'input' or 'textarea', default: 'input'
- * @param  {string} dark             - Add the dark variation class
- * @param  {string} block            - Add the block variation class
- * @param  {string} invalid          - Add the invalid variation class
- * @param  {string} valid            - Add the valid variation class
+ * @param  {string} dark             - Add the dark variation class, optional
+ * @param  {string} block            - Add the block variation class, optional
+ * @param  {string} status           - Mark this field as either 'valid' or 'invalid', optional
  * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
@@ -33,8 +32,7 @@ const AUtextInput = ({
 	as,
 	dark,
 	block,
-	invalid,
-	valid,
+	status,
 	className,
 	...attributeOptions
 }) => {
@@ -45,8 +43,8 @@ const AUtextInput = ({
 						`au-text-input ${ className }
 						${ dark ? ' au-text-input--dark' : '' }
 						${ block ? ' au-text-input--block' : '' }
-						${ valid ? ' au-text-input--valid' : '' }
-						${ invalid ? ' au-text-input--invalid' : '' }`
+						${ status === 'valid' ? ' au-text-input--valid' : '' }
+						${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
 					}
 					type="text" { ...attributeOptions }
 				/>
@@ -55,8 +53,8 @@ const AUtextInput = ({
 						`au-text-input ${ className }
 						${ block ? ' au-text-input--block' : '' }
 						${ dark ? ' au-text-input--dark' : '' }
-						${ valid ? ' au-text-input--valid' : '' }
-						${ invalid ? ' au-text-input--invalid' : '' }`
+						${ status === 'valid' ? ' au-text-input--valid' : '' }
+						${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
 					}
 					type="text" { ...attributeOptions } >
 				</textarea>
@@ -67,6 +65,7 @@ AUtextInput.propTypes = {
 	as: PropTypes.oneOf([ 'input', 'textarea' ]),
 	dark: PropTypes.bool,
 	block: PropTypes.bool,
+	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
 };
 

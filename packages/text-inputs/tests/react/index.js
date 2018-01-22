@@ -24,12 +24,12 @@ ReactDOM.render(
 			<hr />
 			<h2>Block Invalid</h2>
 			<label htmlFor="3">Hello</label>
-			<AUtextInput id="3" defaultValue="abc" block invalid />
+			<AUtextInput id="3" defaultValue="abc" block status="invalid" />
 
 			<hr />
 			<h2>Block Valid</h2>
 			<label htmlFor="4">Hello</label>
-			<AUtextInput id="4" block valid />
+			<AUtextInput id="4" block status="valid" />
 
 			<hr />
 			<h2>Disabled</h2>
@@ -74,12 +74,12 @@ ReactDOM.render(
 			<hr />
 			<h2>Block Invalid</h2>
 			<label htmlFor="3d">Hello</label>
-			<AUtextInput id="3d" defaultValue="abc" dark block invalid />
+			<AUtextInput id="3d" defaultValue="abc" dark block status="invalid" />
 
 			<hr />
 			<h2>Block Valid</h2>
 			<label htmlFor="4d">Hello</label>
-			<AUtextInput id="4d" dark block valid />
+			<AUtextInput id="4d" dark block status="valid" />
 
 			<hr />
 			<h2>Disabled</h2>

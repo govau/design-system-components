@@ -958,6 +958,10 @@ HELPER.test = (() => {
 					}
 
 					// testing pancake plugins
+					if( !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-json') ) {
+						error += `The module ${ module } is missing the "pancake-json" plugin inside the pancake object.\n`;
+					}
+
 					if( hasSass && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-sass') ) {
 						error += `The module ${ module } is missing the "pancake-sass" plugin inside the pancake object.\n`;
 					}
@@ -994,6 +998,13 @@ HELPER.test = (() => {
 					}
 					else {
 						delete packagesPKG.dependencies['@gov.au/pancake'];
+					}
+
+					if( packagesPKG.dependencies['@gov.au/pancake-json'] === undefined ) {
+						error += `The module ${ module } is missing "pancake-json" as a dependency.\n`;
+					}
+					else {
+						delete packagesPKG.dependencies['@gov.au/pancake-json'];
 					}
 
 					if( hasSass && packagesPKG.dependencies['@gov.au/pancake-sass'] === undefined ) {

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/headings",
-	"version": "1.0.0-next.4",
+	"version": "1.0.0-next.5",
 	"description": "Class styles for display headings.",
 	"keywords": [
 		"uikit",
@@ -44,7 +44,8 @@
 			"version": "1.0.0",
 			"plugins": [
 				"@gov.au/pancake-sass",
-				"@gov.au/pancake-react"
+				"@gov.au/pancake-react",
+				"@gov.au/pancake-json"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
@@ -60,6 +61,7 @@
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": ">1.0.0-next.0"
 	},
