@@ -58,7 +58,6 @@ import AUselect from './select.js';
   {
     value: '',
     text: 'Please select',
-    disabled: true,
   },
   {
     value: '1',
@@ -81,7 +80,6 @@ All props:
     {
       value: '1',        {/* The value attribute of the option */}
       text: 'Option 1',  {/* The text of the option */}
-      disabled: true,    {/* Optionally state if this option is disabled */}
     },
   ]},
 />
