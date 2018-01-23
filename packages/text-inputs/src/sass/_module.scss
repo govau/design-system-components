@@ -43,7 +43,7 @@
 	vertical-align: middle;
 	appearance: none;
 
-	// invalid styling
+	// state styling
 	&.au-text-input--dark:invalid,
 	&:invalid {
 		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );

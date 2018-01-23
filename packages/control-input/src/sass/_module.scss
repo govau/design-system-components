@@ -37,6 +37,51 @@
 		cursor: pointer;
 	}
 
+	// state styling
+	&:invalid + .au-control-input__text,
+	.au-control-input--invalid & + .au-control-input__text {
+		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
+
+		&:after {
+			border-color: $AU-color-Error;
+		}
+	}
+
+	.au-control-input--dark &:invalid + .au-control-input__text,
+	.au-control-input--dark.au-control-input--invalid & + .au-control-input__text {
+		background-color: mix( $AU-color-Error, $AU-colordark-Background-light, 15% );
+	}
+
+	.au-control-input--alt.au-control-input--alt &:invalid + .au-control-input__text,
+	.au-control-input--alt.au-control-input--alt.au-control-input--invalid & + .au-control-input__text {
+		background-color: mix( $AU-color-Error, $AU-color-Background, 15% );
+	}
+
+	.au-control-input--dark.au-control-input--alt &:invalid + .au-control-input__text,
+	.au-control-input--dark.au-control-input--alt.au-control-input--invalid & + .au-control-input__text {
+		background-color: mix( $AU-color-Error, $AU-colordark-Background-dark, 15% );
+	}
+
+	.au-control-input--valid & + .au-control-input__text {
+		background-color: mix( $AU-color-Success, $AU-color-Background-light, 5% );
+
+		&:after {
+			border-color: $AU-color-Success;
+		}
+	}
+
+	.au-control-input--dark.au-control-input--valid & + .au-control-input__text {
+		background-color: mix( $AU-color-Success, $AU-colordark-Background-light, 15% );
+	}
+
+	.au-control-input--alt.au-control-input--valid & + .au-control-input__text {
+		background-color: mix( $AU-color-Success, $AU-color-Background, 15% );
+	}
+
+	.au-control-input--alt.au-control-input--dark.au-control-input--valid & + .au-control-input__text {
+		background-color: mix( $AU-color-Success, $AU-colordark-Background-dark, 15% );
+	}
+
 	// focus
 	&:focus + .au-control-input__text:before,
 	&:focus + .au-control-input__text:after {
@@ -51,8 +96,8 @@
 	}
 
 	&[type=radio] {
-		&:focus + .au-control-input__text:before,
-		&:focus + .au-control-input__text:after {
+		& + .au-control-input__text:before,
+		& + .au-control-input__text:after {
 			border-radius: 50%;
 		}
 	}
@@ -273,7 +318,7 @@
  */
 .au-control-input__text {
 	@include AU-fontgrid( sm, nospace );
-	@include AU-space( margin, 0.5unit 0.5unit 0.5unit 2.5unit );
+	@include AU-space( padding, 0.5unit 0.5unit 0.5unit 2.5unit );
 	display: block;
 	font-family: $AU-font;
 	color: $AU-color-Text;

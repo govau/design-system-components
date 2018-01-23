@@ -40,21 +40,21 @@ const AUtextInput = ({
 	return (
 		as === 'input'
 			? <input className={
-						`au-text-input ${ className }
-						${ dark ? ' au-text-input--dark' : '' }
-						${ block ? ' au-text-input--block' : '' }
-						${ status === 'valid' ? ' au-text-input--valid' : '' }
-						${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
+						`au-text-input ${ className }` +
+						`${ dark ? ' au-text-input--dark' : '' }` +
+						`${ block ? ' au-text-input--block' : '' }` +
+						`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
+						`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
 					}
 					type="text" { ...attributeOptions }
 				/>
 			: <textarea
 					className={
-						`au-text-input ${ className }
-						${ block ? ' au-text-input--block' : '' }
-						${ dark ? ' au-text-input--dark' : '' }
-						${ status === 'valid' ? ' au-text-input--valid' : '' }
-						${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
+						`au-text-input ${ className }` +
+						`${ block ? ' au-text-input--block' : '' }` +
+						`${ dark ? ' au-text-input--dark' : '' }` +
+						`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
+						`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
 					}
 					type="text" { ...attributeOptions } >
 				</textarea>

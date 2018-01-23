@@ -88,6 +88,58 @@ ReactDOM.render(
 
 
 			<hr />
+			<h2>select invalid</h2>
+			<AUselect id="test2" status="invalid" options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+				{
+					value: '4',
+					text: 'Option 4',
+				},
+			]} />
+
+
+			<hr />
+			<h2>select valid</h2>
+			<AUselect id="test2" status="valid" options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+				{
+					value: '4',
+					text: 'Option 4',
+				},
+			]} />
+
+
+			<hr />
 			<h2>select with additional classes</h2>
 			<AUselect id="test2" className="testing" options={[
 				{
@@ -206,7 +258,59 @@ ReactDOM.render(
 
 
 			<hr />
-			<h2>select with additional classes</h2>
+			<h2>select invalid <code>--dark</code></h2>
+			<AUselect dark id="test2" status="invalid" options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+				{
+					value: '4',
+					text: 'Option 4',
+				},
+			]} />
+
+
+			<hr />
+			<h2>select valid <code>--dark</code></h2>
+			<AUselect dark id="test2" status="valid" options={[
+				{
+					value: '',
+					text: 'Please select',
+				},
+				{
+					value: '1',
+					text: 'Option 1',
+				},
+				{
+					value: '2',
+					text: 'Option 2',
+				},
+				{
+					value: '3',
+					text: 'Option 3',
+				},
+				{
+					value: '4',
+					text: 'Option 4',
+				},
+			]} />
+
+
+			<hr />
+			<h2>select with additional classes <code>--dark</code></h2>
 			<AUselect dark id="test2" className="testing" options={[
 				{
 					value: '',

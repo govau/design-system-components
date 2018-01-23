@@ -42,6 +42,18 @@ ReactDOM.render(
 			<AUtextInput id="6" as="textarea" />
 
 			<hr />
+			<h2>Textarea valid</h2>
+			<label htmlFor="6">Hello</label>
+			<AUtextInput status="valid" id="6" as="textarea" value="ABCZ abcjg liI1 12340
+ABCZ abcjg liI1 12340" />
+
+			<hr />
+			<h2>Textarea invalid</h2>
+			<label htmlFor="6">Hello</label>
+			<AUtextInput status="invalid" id="6" as="textarea" value="ABCZ abcjg liI1 12340
+ABCZ abcjg liI1 12340" />
+
+			<hr />
 			<h2>Textarea with additional classes</h2>
 			<label htmlFor="6c">Hello</label>
 			<AUtextInput id="6c" as="textarea" className="testing" />
@@ -90,6 +102,18 @@ ReactDOM.render(
 			<h2>Textarea</h2>
 			<label htmlFor="6d">Hello</label>
 			<AUtextInput id="6d" as="textarea" dark />
+
+			<hr />
+			<h2>Textarea valid</h2>
+			<label htmlFor="6">Hello</label>
+			<AUtextInput status="valid" id="6" as="textarea" dark value="ABCZ abcjg liI1 12340
+ABCZ abcjg liI1 12340" />
+
+			<hr />
+			<h2>Textarea invalid</h2>
+			<label htmlFor="6">Hello</label>
+			<AUtextInput status="invalid" id="6" as="textarea" dark value="ABCZ abcjg liI1 12340
+ABCZ abcjg liI1 12340" />
 
 			<hr />
 			<h2>Textarea with additional classes</h2>

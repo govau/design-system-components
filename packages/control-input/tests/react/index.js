@@ -32,6 +32,7 @@ class RadioList extends React.Component {
 						id={ item.id }
 						full={ this.props.full }
 						value={ item.value }
+						required={ this.required }
 						disabled={ item.disabled }
 						checked={ this.state.radio === item.value }
 						onChange={ () => {
@@ -76,6 +77,7 @@ class CheckboxList extends React.Component {
 						id={ item.id }
 						full={ this.props.full }
 						value={ item.value }
+						required={ this.required }
 						disabled={ item.disabled }
 						checked={ this.state[ item.value ] }
 						onChange={ () => {
@@ -98,12 +100,12 @@ ReactDOM.render(
 	<div>
 		<div className="split-wrapper">
 			<div className="split">
-			<h2>checkboxes</h2>
+				<h2>checkboxes</h2>
 				<CheckboxList name="checkbox-ex" items={[
 					{
 						label: 'Phone',
 						value: 'phone',
-						id: 'phoneCheckbox'
+						id: 'phoneCheckbox',
 					},
 					{
 						label: 'Tablet',
@@ -134,7 +136,7 @@ ReactDOM.render(
 					{
 						label: 'Yes',
 						value: 'yes',
-						id: 'yesRadio'
+						id: 'yesRadio',
 					},
 					{
 						label: 'Maybe',
@@ -152,6 +154,18 @@ ReactDOM.render(
 						checked: true,
 					},
 				]} />
+
+
+				<hr />
+				<h2>invalid checkboxes with and without classes</h2>
+				<AUcheckbox label="I agree" status="invalid" checked />
+				<AUcheckbox label="I agree" required />
+
+
+				<hr />
+				<h2>invalid radio buttons with and without classes</h2>
+				<AUradio label="I agree" status="invalid" checked />
+				<AUradio label="I agree" required />
 
 
 				<hr />
@@ -187,7 +201,7 @@ ReactDOM.render(
 				]} />
 			</div>
 			<div className="split split--dark">
-				<h2>checkboxes</h2>
+				<h2>checkboxes <code>--dark</code></h2>
 				<CheckboxList dark name="checkbox-ex-dark" items={[
 					{
 						label: 'Phone',
@@ -217,7 +231,7 @@ ReactDOM.render(
 
 
 				<hr />
-				<h2>radio buttons</h2>
+				<h2>radio buttons <code>--dark</code></h2>
 				<RadioList dark name="radio-ex-dark" items={[
 					{
 						label: 'Yes',
@@ -239,16 +253,28 @@ ReactDOM.render(
 						checked: true,
 					},
 				]} />
+
+
+				<hr />
+				<h2>invalid checkboxes with and without classes <code>--dark</code></h2>
+				<AUcheckbox dark label="I agree" status="invalid" checked />
+				<AUcheckbox dark label="I agree" required />
+
+
+				<hr />
+				<h2>invalid radio buttons with and without classes <code>--dark</code></h2>
+				<AUradio dark label="I agree" status="invalid" checked />
+				<AUradio dark label="I agree" required />
 			</div>
 		</div>
 		<div className="split-wrapper">
 			<div className="split split--alt">
-			<h2>checkboxes</h2>
+				<h2>checkboxes</h2>
 				<CheckboxList alt name="checkbox-ex-alt" items={[
 					{
 						label: 'Phone',
 						value: 'phone',
-						id: 'phoneCheckbox'
+						id: 'phoneCheckbox',
 					},
 					{
 						label: 'Tablet',
@@ -297,6 +323,18 @@ ReactDOM.render(
 						checked: true,
 					},
 				]} />
+
+
+				<hr />
+				<h2>invalid checkboxes with and without classes <code>--alt</code></h2>
+				<AUcheckbox alt label="I agree" status="invalid" checked />
+				<AUcheckbox alt label="I agree" required />
+
+
+				<hr />
+				<h2>invalid radio buttons with and without classes <code>--alt</code></h2>
+				<AUradio alt label="I agree" status="invalid" checked />
+				<AUradio alt label="I agree" required />
 
 
 				<hr />
@@ -384,6 +422,18 @@ ReactDOM.render(
 						checked: true,
 					},
 				]} />
+
+
+				<hr />
+				<h2>invalid checkboxes with and without classes <code>--alt --dark</code></h2>
+				<AUcheckbox alt dark label="I agree" status="invalid" checked />
+				<AUcheckbox alt dark label="I agree" required />
+
+
+				<hr />
+				<h2>invalid radio buttons with and without classes <code>--alt --dark</code></h2>
+				<AUradio alt dark label="I agree" status="invalid" checked />
+				<AUradio alt dark label="I agree" required />
 			</div>
 		</div>
 	</div>,

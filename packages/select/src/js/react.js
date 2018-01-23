@@ -42,13 +42,20 @@ AUselectItem.propTypes = {
  * @param  {string} dark             - Add the dark variation class
  * @param  {array}  options          - The options for the select, format: { value: '', text: '' }
  * @param  {string} block            - The block option
+ * @param  {string} status           - Mark this field as either 'valid' or 'invalid', optional
  * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUselect = ({ dark, options, block, className = '', ...attributeOptions }) => {
+const AUselect = ({ dark, options, block, status, className = '', ...attributeOptions }) => {
 
 	return (
-		<select className={`au-select ${ className }${ block ? ` au-select--block` : `` }${ dark ? ' au-select--dark' : '' }`} { ...attributeOptions }>
+		<select className={
+			`au-select ${ className }` +
+			`${ block ? ` au-select--block` : `` }` +
+			`${ dark ? ' au-select--dark' : '' }` +
+			`${ status === 'valid' ? ' au-select--valid' : '' }` +
+			`${ status === 'invalid' ? ' au-select--invalid' : '' }`
+		} { ...attributeOptions }>
 			{ options.map( ( option, i ) => <AUselectItem key={ i } { ...option } /> ) }
 		</select>
 	);
@@ -63,6 +70,7 @@ AUselect.propTypes = {
 		})
 		).isRequired,
 	block: PropTypes.bool,
+	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
 };
 

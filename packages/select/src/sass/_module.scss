@@ -61,6 +61,25 @@
 		opacity: 0.3;
 	}
 
+	// state styling
+	&.au-select--dark:invalid,
+	&:invalid {
+		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
+		border-color: $AU-color-Error;
+	}
+
+	&.au-select--dark.au-select--invalid,
+	&.au-select--invalid {
+		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
+		border-color: $AU-color-Error;
+	}
+
+	&.au-select--dark.au-select--valid,
+	&.au-select--valid {
+		background-color: mix( $AU-color-Success, $AU-color-Background-light, 5% );
+		border-color: $AU-color-Success;
+	}
+
 	.ie8 &,
 	.ie9 & {
 		&:after {
