@@ -5,7 +5,7 @@ import AUaccordion from './accordion.js';
 
 
 // To manage an accordion with state just wrap it with a state
-class AccodionWrapper extends React.Component {
+class AccordionWrapper extends React.Component {
 	// for an example on what a state change might look like we have to add a state
 	constructor() {
 		super();
@@ -96,7 +96,7 @@ class App extends React.Component {
 						<hr />
 						<h2>Accordions statefull </h2>
 
-						<AccodionWrapper/>
+						<AccordionWrapper/>
 					</div>
 					<div className="split split--dark">
 						<h2>Default accordion <code>--dark</code></h2>

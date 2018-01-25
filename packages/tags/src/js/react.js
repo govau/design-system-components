@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -28,9 +28,10 @@ const AUtagItem = ({ link, text, li = {}, ...attributeOptions }) => {
 
 	return (
 		<li { ...li }>
-			{ link
-				? <a href={ link } { ...attributeOptions }>{ text }</a>
-				: text
+			{
+				link
+					? <a href={ link } { ...attributeOptions }>{ text }</a>
+					: text
 			}
 		</li>
 	);
@@ -54,7 +55,11 @@ AUtagItem.propTypes = {
  */
 const AUtags = ({ dark, tags, className = '', ...attributeOptions }) => (
 	<ul className={ `au-tags ${ className } ${ dark ? 'au-tags--dark' : '' }` } { ...attributeOptions }>
-		{ tags.map( ( tag, i ) => <AUtagItem key={ i } { ...tag } /> ) }
+		{
+			tags.map(
+				( tag, i ) => <AUtagItem key={ i } { ...tag } />
+			)
+		}
 	</ul>
 );
 
@@ -69,6 +74,5 @@ AUtags.propTypes = {
 	).isRequired,
 	className: PropTypes.string,
 };
-
 
 export default AUtags;

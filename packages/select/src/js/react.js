@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -56,7 +56,11 @@ const AUselect = ({ dark, options, block, status, className = '', ...attributeOp
 			`${ status === 'valid' ? ' au-select--valid' : '' }` +
 			`${ status === 'invalid' ? ' au-select--invalid' : '' }`
 		} { ...attributeOptions }>
-			{ options.map( ( option, i ) => <AUselectItem key={ i } { ...option } /> ) }
+			{
+				options.map(
+					( option, i ) => <AUselectItem key={ i } { ...option } />
+				)
+			}
 		</select>
 	);
 };
@@ -68,7 +72,7 @@ AUselect.propTypes = {
 			value: PropTypes.string.isRequired,
 			text: PropTypes.string.isRequired,
 		})
-		).isRequired,
+	).isRequired,
 	block: PropTypes.bool,
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,

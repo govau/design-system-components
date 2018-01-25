@@ -11,6 +11,10 @@ ReactDOM.render(
 			<label htmlFor="1">Hello</label>
 			<AUtextInput id="1" />
 
+			<h2>Text input type number</h2>
+			<label htmlFor="1-number">Hello</label>
+			<AUtextInput id="1-number" type="number" />
+
 			<hr />
 			<h2>Default with additional classes</h2>
 			<label htmlFor="1c">Hello</label>
@@ -44,13 +48,13 @@ ReactDOM.render(
 			<hr />
 			<h2>Textarea valid</h2>
 			<label htmlFor="6">Hello</label>
-			<AUtextInput status="valid" id="6" as="textarea" value="ABCZ abcjg liI1 12340
+			<AUtextInput status="valid" id="6" as="textarea" defaultValue="ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340" />
 
 			<hr />
 			<h2>Textarea invalid</h2>
 			<label htmlFor="6">Hello</label>
-			<AUtextInput status="invalid" id="6" as="textarea" value="ABCZ abcjg liI1 12340
+			<AUtextInput status="invalid" id="6" as="textarea" defaultValue="ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340" />
 
 			<hr />
@@ -72,6 +76,10 @@ ABCZ abcjg liI1 12340" />
 			<h2>Default</h2>
 			<label htmlFor="1d">Hello</label>
 			<AUtextInput id="1d" dark />
+
+			<h2>Text input type number</h2>
+			<label htmlFor="1d-number">Hello</label>
+			<AUtextInput id="1d-number" type="number" dark />
 
 			<hr />
 			<h2>Default with additional classes</h2>
@@ -106,13 +114,13 @@ ABCZ abcjg liI1 12340" />
 			<hr />
 			<h2>Textarea valid</h2>
 			<label htmlFor="6">Hello</label>
-			<AUtextInput status="valid" id="6" as="textarea" dark value="ABCZ abcjg liI1 12340
+			<AUtextInput status="valid" id="6" as="textarea" dark defaultValue="ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340" />
 
 			<hr />
 			<h2>Textarea invalid</h2>
 			<label htmlFor="6">Hello</label>
-			<AUtextInput status="invalid" id="6" as="textarea" dark value="ABCZ abcjg liI1 12340
+			<AUtextInput status="invalid" id="6" as="textarea" dark defaultValue="ABCZ abcjg liI1 12340
 ABCZ abcjg liI1 12340" />
 
 			<hr />

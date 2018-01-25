@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -40,7 +40,11 @@ AUskipLinkItem.propTypes = {
  */
 const AUskipLink = ({ links, className = '', ...attributeOptions }) => (
 	<nav className={`au-skip-link ${ className }`} { ...attributeOptions }>
-		{ links.map( ( link, i ) => <AUskipLinkItem key={ i } { ...link } /> ) }
+		{
+			links.map(
+				( link, i ) => <AUskipLinkItem key={ i } { ...link } />
+			)
+		}
 	</nav>
 );
 
@@ -50,7 +54,7 @@ AUskipLink.propTypes = {
 			link: PropTypes.string.isRequired,
 			text: PropTypes.string.isRequired,
 		})
-		).isRequired,
+	).isRequired,
 };
 
 export default AUskipLink;

@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -41,15 +41,16 @@ const StatusText = {
  */
 export const AUprogressIndicatorItem = ({ link, text, status, statusText, className = '', li = {}, ...attributeOptions }) => (
 	<li { ...li }>
-		{ link
-			? <a className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} href={ link } { ...attributeOptions }>
-					<span className="au-progress-indicator__status">{ statusText ? statusText : StatusText[ status ] }</span>
-					{ text }
-				</a>
-			: <button className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} { ...attributeOptions }>
-					<span className="au-progress-indicator__status">{ statusText ? statusText : StatusText[ status ] }</span>
-					{ text }
-				</button>
+		{
+			link
+				? <a className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} href={ link } { ...attributeOptions }>
+						<span className="au-progress-indicator__status">{ statusText ? statusText : StatusText[ status ] }</span>
+						{ text }
+					</a>
+				: <button className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} { ...attributeOptions }>
+						<span className="au-progress-indicator__status">{ statusText ? statusText : StatusText[ status ] }</span>
+						{ text }
+					</button>
 		}
 	</li>
 );
@@ -74,7 +75,11 @@ AUprogressIndicatorItem.propTypes = {
  */
 const AUprogressIndicator = ({ dark, items, className = '', ...attributeOptions }) => (
 	<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' } ${ className }` } { ...attributeOptions }>
-		{ items.map( ( item, i ) => <AUprogressIndicatorItem key={ i } { ...item } /> ) }
+		{
+			items.map(
+				( item, i ) => <AUprogressIndicatorItem key={ i } { ...item } />
+			)
+		}
 	</ul>
 );
 
@@ -88,7 +93,7 @@ AUprogressIndicator.propTypes = {
 			statusText: PropTypes.string,
 			li: PropTypes.object,
 		})
-		).isRequired,
+	).isRequired,
 };
 
 export default AUprogressIndicator;

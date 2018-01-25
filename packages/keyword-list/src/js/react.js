@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -37,9 +37,10 @@ export const AUkeywordListItem = ({ repeatedName, link, name, li = {}, ...attrib
 
 	return (
 		<li { ...li }>
-			{ link
-				? <a href={ link } { ...attributeOptions }><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</a>
-				: <span><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</span>
+			{
+				link
+					? <a href={ link } { ...attributeOptions }><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</a>
+					: <span><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</span>
 			}
 		</li>
 	);
@@ -65,7 +66,11 @@ AUkeywordListItem.propTypes = {
  */
 const AUkeywordList = ({ repeatedName, items, dark, className = '', ...attributeOptions }) => (
 	<ul className={ `au-keyword-list au-link-list ${ className }${ dark ? ' au-keyword-list--dark' : '' } `} { ...attributeOptions }>
-		{ items.map( ( item, i ) => <AUkeywordListItem key={ i } repeatedName={ repeatedName } { ...item } /> ) }
+		{
+			items.map(
+				( item, i ) => <AUkeywordListItem key={ i } repeatedName={ repeatedName } { ...item } />
+			)
+		}
 	</ul>
 );
 
@@ -78,7 +83,7 @@ AUkeywordList.propTypes = {
 			name: PropTypes.string.isRequired,
 			li: PropTypes.object,
 		})
-		).isRequired,
+	).isRequired,
 	className: PropTypes.string,
 };
 

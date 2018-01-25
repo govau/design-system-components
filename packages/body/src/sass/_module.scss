@@ -137,44 +137,37 @@
 		@include AU-space( margin-top, 1.5unit );
 	}
 
-	ul,
-	ol,
-	dl,
+	ul:not([class]),
+	ol:not([class]),
+	dl:not([class]),
 	pre {
 		margin: 0; //reset defaults
 	}
 
-	* + ul,
-	* + ol,
-	* + dl,
+	* + ul:not([class]),
+	* + ol:not([class]),
+	* + dl:not([class]),
 	* + pre {
 		@include AU-space( margin-top, 1.5unit );
 	}
 
-	p + ul,
-	p + ol,
-	p + dl {
-		// All lists following a paragraph are closer, as the P typically introduces the list.
-		// @include AU-space( margin-top, 0.5unit );
-	}
-
-	ul,
-	ol {
+	ul:not([class]),
+	ol:not([class]) {
 		> li {
 			@include AU-space( margin-top, 0.5unit );
 
-			> ul,
-			> ol {
+			> ul:not([class]),
+			> ol:not([class]) {
 				@include AU-space( margin-top, 0.5unit );
 			}
 		}
 
-		> ul {
+		> ul:not([class]) {
 			list-style-type: disc;
 		}
 	}
 
-	dl {
+	dl:not([class]) {
 		> dd {
 			@include AU-space( margin-top, 0.5unit );
 			@include AU-space( padding-left, 0.5unit );
@@ -190,6 +183,11 @@
 				margin-top: 0;
 			}
 		}
+	}
+
+	.written-by:after {
+		content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHZpZXdCb3g9IjAgMCA2NTggMTgiPjx0ZXh0IHg9IjEzIiB5PSIxMyIgZm9udC1zaXplPSIxMyI+RG9taW5payBXaWxrb3dza2ksIEFsZXggUGFnZSwgVHJldm9yIEJyZW5uYW4sIFBhc2NhbCBLbGVpbiB+IE9uZSBEb2VzIE5vdCBTaW1wbHkgU2hpcCBTb21ldGhpbmcgRm9yIFRoZSBBUFM8L3RleHQ+PC9zdmc+');
+		color: #BADA55;
 	}
 
 
@@ -285,12 +283,12 @@
 		}
 	}
 
+
 	/**
 	 * Prevent `sub` and `sup` elements from affecting the line height in
 	 * all browsers.
 	 * https://github.com/necolas/normalize.css/blob/master/normalize.css#L174
 	 */
-
 	sub,
 	sup {
 		@include AU-fontgrid( xs, nospace );
@@ -299,13 +297,12 @@
 	}
 
 	sub {
-	  bottom: -0.25em;
+		bottom: -0.25em;
 	}
 
 	sup {
-	  top: -0.5em;
+		top: -0.5em;
 	}
-
 
 
 	/**
@@ -351,8 +348,10 @@
 		@include AU-space( margin-top, 1.5unit );
 	}
 
-	// Body colour schemes
 
+	/**
+	 *  Body colour schemes
+	 */
 	&.au-body--alt {
 		background: $AU-color-Background-dark;
 	}

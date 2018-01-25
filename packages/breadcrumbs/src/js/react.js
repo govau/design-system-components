@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
@@ -48,7 +48,7 @@ AUbreadcrumbs.propTypes = {
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
 		})
-		).isRequired,
+	).isRequired,
 };
 
 export default AUbreadcrumbs;

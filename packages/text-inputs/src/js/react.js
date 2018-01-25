@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -25,41 +25,32 @@ import PropTypes from 'prop-types';
  * @param  {string} dark             - Add the dark variation class, optional
  * @param  {string} block            - Add the block variation class, optional
  * @param  {string} status           - Mark this field as either 'valid' or 'invalid', optional
+ * @param  {string} type             - The type of the field, optional, default: text
  * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-const AUtextInput = ({
-	as,
-	dark,
-	block,
-	status,
-	className,
-	...attributeOptions
-}) => {
-
-	return (
-		as === 'input'
-			? <input className={
-						`au-text-input ${ className }` +
-						`${ dark ? ' au-text-input--dark' : '' }` +
-						`${ block ? ' au-text-input--block' : '' }` +
-						`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
-						`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
-					}
-					type="text" { ...attributeOptions }
-				/>
-			: <textarea
-					className={
-						`au-text-input ${ className }` +
-						`${ block ? ' au-text-input--block' : '' }` +
-						`${ dark ? ' au-text-input--dark' : '' }` +
-						`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
-						`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
-					}
-					type="text" { ...attributeOptions } >
-				</textarea>
-	);
-};
+const AUtextInput = ({ as, dark, block, status, type = 'text', className = '', ...attributeOptions }) => (
+	as === 'textarea'
+		? <textarea
+				className={
+					`au-text-input ${ className }` +
+					`${ block ? ' au-text-input--block' : '' }` +
+					`${ dark ? ' au-text-input--dark' : '' }` +
+					`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
+					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
+				}
+				{ ...attributeOptions } >
+			</textarea>
+		: <input className={
+					`au-text-input ${ className }` +
+					`${ dark ? ' au-text-input--dark' : '' }` +
+					`${ block ? ' au-text-input--block' : '' }` +
+					`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
+					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
+				}
+				type={ type } { ...attributeOptions }
+			/>
+);
 
 AUtextInput.propTypes = {
 	as: PropTypes.oneOf([ 'input', 'textarea' ]),

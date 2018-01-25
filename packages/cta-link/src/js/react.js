@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -30,10 +30,14 @@ import PropTypes from 'prop-types';
 const AUctaLink = ({ dark, link, text, className = '', ...attributeOptions }) => {
 
 	if( link ) {
-		return( <a className={ `au-cta-link ${ className }${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</a> );
+		return (
+			<a className={ `au-cta-link ${ className }${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</a>
+		);
 	}
 	else {
-		return( <button className={ `au-cta-link${ dark ? ` au-cta-link--dark` : '' }` } href={ link } { ...attributeOptions }>{ text }</button> );
+		return (
+			<button className={ `au-cta-link${ dark ? ` au-cta-link--dark` : '' }` } { ...attributeOptions }>{ text }</button>
+		);
 	}
 }
 

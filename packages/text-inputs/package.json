@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/text-inputs",
-	"version": "1.0.0-next.5",
+	"version": "1.0.0-next.7",
 	"description": "Single and multi-line text inputs.",
 	"keywords": [
 		"uikit",

@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -47,10 +47,10 @@ const AUpageAlert = ({ as, alt, dark, children, className = '', ...attributeOpti
 				? ' au-page-alerts--dark au-body--dark'
 				: ''
 			}${
-				alt
-					? ' au-page-alerts--alt au-body--alt'
-					: ''
-				} ${ options[ as ] }`} role='alert' { ...attributeOptions }
+			alt
+				? ' au-page-alerts--alt au-body--alt'
+				: ''
+			} ${ options[ as ] }`} role='alert' { ...attributeOptions }
 	>
 		{ children }
 	</div>

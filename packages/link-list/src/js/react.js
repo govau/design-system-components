@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -37,9 +37,10 @@ export const AUlinkListItem = ({ text, link, li = {}, ...attributeOptions }) => 
 
 	return (
 		<li { ...li }>
-			{ link === undefined
-				? ( text )
-				: ( <a href={ link } { ...attributeOptions }>{ text }</a> )
+			{
+				link === undefined
+					? text
+					: <a href={ link } { ...attributeOptions }>{ text }</a>
 			}
 		</li>
 	);
@@ -62,7 +63,11 @@ AUlinkListItem.propTypes = {
  */
 const AUlinkList = ({ inline, items, className = '', ...attributeOptions }) => (
 	<ul className={ `au-link-list ${ className }${ inline ? ' au-link-list--inline' : '' }` } { ...attributeOptions }>
-		{ items.map( ( item, i ) => <AUlinkListItem key={ i } { ...item } /> ) }
+		{
+			items.map(
+				( item, i ) => <AUlinkListItem key={ i } { ...item } />
+			)
+		}
 	</ul>
 );
 
@@ -74,7 +79,7 @@ AUlinkList.propTypes = {
 			text: PropTypes.string.isRequired,
 			li: PropTypes.object,
 		})
-		).isRequired,
+	).isRequired,
 };
 
 export default AUlinkList;

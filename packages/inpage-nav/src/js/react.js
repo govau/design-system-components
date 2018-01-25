@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -50,6 +50,7 @@ AUinpageNavLinksItem.propTypes = {
 export const AUinpageNavLinks = ({ dark, title, sections, className = '', ...attributeOptions }) => (
 	<nav className={ `au-inpage-nav-links ${ className }${ dark ? ' au-inpage-nav-links--dark' : '' }` } { ...attributeOptions }>
 		<h2 className="au-inpage-nav-links__heading au-display-sm">{ title }</h2>
+
 		<ul className="au-link-list">
 			{ sections.map( ( section, i ) => <AUinpageNavLinksItem key={ i } { ...section } /> ) }
 		</ul>
@@ -65,7 +66,7 @@ AUinpageNavLinks.propTypes = {
 			title: PropTypes.string.isRequired,
 			li: PropTypes.object,
 		})
-		).isRequired,
+	).isRequired,
 	className: PropTypes.string,
 };
 
@@ -91,7 +92,7 @@ export const AUinpageNavSection = ({ title, link, children, level, headingClass,
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<div>
+		<Fragment>
 			<HeadingTag className={ `au-inpage-nav-section ${ className }${ headingClass ? ' ' + headingClass : "" }` }>
 				{ title }
 
@@ -99,7 +100,7 @@ export const AUinpageNavSection = ({ title, link, children, level, headingClass,
 			</HeadingTag>
 
 			{ children }
-		</div>
+		</Fragment>
 	);
 };
 
