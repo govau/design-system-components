@@ -33,6 +33,11 @@
 	@include AU-space( top, 0.5unit );
 	cursor: pointer;
 
+	.au-control-input--small & {
+		@include AU-space( left, -0.2unit );
+		@include AU-space( top, -0.1unit );
+	}
+
 	& + .au-control-input__text {
 		cursor: pointer;
 	}
@@ -334,9 +339,18 @@
 		box-sizing: border-box;
 		background-repeat: no-repeat;
 		z-index: 100;
-		left: -3px;	//offset for 3px border focus
-		top: -3px;	//offset for 3px border focus
+		left: -3px; // offset for 3px border focus
+		top: -3px;  // offset for 3px border focus
 		border: 3px solid transparent;
+
+		.au-control-input--small & {
+			@include AU-space( width, 1.375unit );
+			@include AU-space( height, 1.375unit );
+		}
+	}
+
+	.au-control-input--small & {
+		@include AU-space( padding, 0 0.5unit 0 1.3unit );
 	}
 
 	&:after {
