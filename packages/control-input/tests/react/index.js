@@ -157,6 +157,12 @@ ReactDOM.render(
 
 
 				<hr/>
+				<h2>control-inputs <code>--dark --block</code></h2>
+				<AUcheckbox label="I agree" block />
+				<AUradio label="Maybe" block />
+
+
+				<hr/>
 				<h2>control-inputs <code>--small</code></h2>
 				<AUcheckbox label="I agree" small />
 				<AUradio label="Maybe" small />
@@ -262,6 +268,12 @@ ReactDOM.render(
 
 
 				<hr/>
+				<h2>control-inputs <code>--dark --block</code></h2>
+				<AUcheckbox label="I agree" block dark />
+				<AUradio label="Maybe" block dark />
+
+
+				<hr/>
 				<h2>control-inputs <code>--dark --small</code></h2>
 				<AUcheckbox label="I agree" dark small />
 				<AUradio label="Maybe" dark small />
@@ -338,6 +350,12 @@ ReactDOM.render(
 
 
 				<hr/>
+				<h2>control-inputs <code>--alt --block</code></h2>
+				<AUcheckbox label="I agree" alt block />
+				<AUradio label="Maybe" alt block />
+
+
+				<hr/>
 				<h2>control-inputs <code>--alt --small</code></h2>
 				<AUcheckbox label="I agree" alt small />
 				<AUradio label="Maybe" alt small />
@@ -407,6 +425,12 @@ ReactDOM.render(
 						checked: true,
 					},
 				]} />
+
+
+				<hr/>
+				<h2>control-inputs <code>--alt --dark --block</code></h2>
+				<AUcheckbox label="I agree" alt dark block />
+				<AUradio label="Maybe" alt dark block />
 
 
 				<hr/>

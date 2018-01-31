@@ -23,19 +23,21 @@ import PropTypes from 'prop-types';
  * @param  {boolean} dark             - Add the dark variation class
  * @param  {boolean} alt              - Add the alt variation class
  * @param  {boolean} small            - Add the small variation class
+ * @param  {boolean} block            - Add the block variation class
  * @param  {string}  label            - The label
  * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  *
  */
-export const AUcheckbox = ({ dark, alt, small, label, status, className = '', ...attributeOptions }) => {
+export const AUcheckbox = ({ dark, alt, small, block, label, status, className = '', ...attributeOptions }) => {
 	return (
 		<label className={
 			`au-control-input ${ className }` +
 			`${ dark ? ' au-control-input--dark' : '' }` +
 			`${ alt ? ' au-control-input--alt' : '' }` +
 			`${ small ? ' au-control-input--small' : '' }` +
+			`${ block ? ` au-control-input--block` : '' }` +
 			`${ status === 'valid' ? ' au-control-input--valid' : '' }` +
 			`${ status === 'invalid' ? ' au-control-input--invalid' : '' }`
 		}>
@@ -49,6 +51,7 @@ AUcheckbox.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
 	small: PropTypes.bool,
+	block: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
@@ -61,12 +64,13 @@ AUcheckbox.propTypes = {
  * @param  {boolean} dark             - Add the dark variation class
  * @param  {boolean} alt              - Add the alt variation class
  * @param  {boolean} small            - Add the small variation class
+ * @param  {boolean} block            - Add the block variation class
  * @param  {string}  label            - The label
  * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUradio = ({ dark, alt, small, label, status, className = '', ...attributeOptions }) => {
+export const AUradio = ({ dark, alt, small, block, label, status, className = '', ...attributeOptions }) => {
 
 	return (
 		<label className={
@@ -74,6 +78,7 @@ export const AUradio = ({ dark, alt, small, label, status, className = '', ...at
 			`${ dark ? ` au-control-input--dark` : '' }` +
 			`${ alt ? ` au-control-input--alt` : '' }` +
 			`${ small ? ` au-control-input--small` : '' }` +
+			`${ block ? ` au-control-input--block` : '' }` +
 			`${ status === 'valid' ? ' au-control-input--valid' : '' }` +
 			`${ status === 'invalid' ? ' au-control-input--invalid' : '' }`
 		} >
@@ -87,6 +92,7 @@ AUradio.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
 	small: PropTypes.bool,
+	block: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
