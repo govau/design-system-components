@@ -156,6 +156,12 @@ ReactDOM.render(
 				]} />
 
 
+				<hr/>
+				<h2>control-inputs <code>--small</code></h2>
+				<AUcheckbox label="I agree" small />
+				<AUradio label="Maybe" small />
+
+
 				<hr />
 				<h2>invalid checkboxes with and without classes</h2>
 				<AUcheckbox label="I agree" status="invalid" checked />
@@ -255,6 +261,12 @@ ReactDOM.render(
 				]} />
 
 
+				<hr/>
+				<h2>control-inputs <code>--dark --small</code></h2>
+				<AUcheckbox label="I agree" dark small />
+				<AUradio label="Maybe" dark small />
+
+
 				<hr />
 				<h2>invalid checkboxes with and without classes <code>--dark</code></h2>
 				<AUcheckbox dark label="I agree" status="invalid" checked />
@@ -269,7 +281,7 @@ ReactDOM.render(
 		</div>
 		<div className="split-wrapper">
 			<div className="split split--alt">
-				<h2>checkboxes</h2>
+				<h2>checkboxes <code>--alt</code></h2>
 				<CheckboxList alt name="checkbox-ex-alt" items={[
 					{
 						label: 'Phone',
@@ -300,7 +312,7 @@ ReactDOM.render(
 
 
 				<hr />
-				<h2>radio buttons</h2>
+				<h2>radio buttons <code>--alt</code></h2>
 				<RadioList alt name="radio-ex-alt" items={[
 					{
 						label: 'Yes',
@@ -325,6 +337,12 @@ ReactDOM.render(
 				]} />
 
 
+				<hr/>
+				<h2>control-inputs <code>--alt --small</code></h2>
+				<AUcheckbox label="I agree" alt small />
+				<AUradio label="Maybe" alt small />
+
+
 				<hr />
 				<h2>invalid checkboxes with and without classes <code>--alt</code></h2>
 				<AUcheckbox alt label="I agree" status="invalid" checked />
@@ -335,42 +353,9 @@ ReactDOM.render(
 				<h2>invalid radio buttons with and without classes <code>--alt</code></h2>
 				<AUradio alt label="I agree" status="invalid" checked />
 				<AUradio alt label="I agree" required />
-
-
-				<hr />
-				<h2>control-inputs with <code>onChange</code></h2>
-
-				<CheckboxList alt name="checkbox-ex-alt2" items={[
-					{
-						label: 'Phone',
-						value: 'phone',
-						onChange: () => { console.log('This function will run when the first checkbox is changed') },
-					},
-					{
-						label: 'Tablet',
-						value: 'tablet',
-						checked: true,
-						onChange: () => { console.log('This function will run when the second checkbox is changed') },
-					},
-				]} />
-
-				<hr />
-
-				<RadioList alt name="radio-ex-alt2" items={[
-					{
-						label: 'Yes',
-						value: 'yes',
-						onChange: () => { console.log('This function will run when the first radio button is changed') },
-					},
-					{
-						label: 'Maybe',
-						value: 'maybe',
-						onChange: () => { console.log('This function will run when the second radio button is changed') },
-					},
-				]} />
 			</div>
 			<div className="split split--alt split--dark">
-				<h2>checkboxes</h2>
+				<h2>checkboxes <code>--alt --dark</code></h2>
 				<CheckboxList dark alt name="checkbox-ex-alt-dark" items={[
 					{
 						label: 'Phone',
@@ -400,7 +385,7 @@ ReactDOM.render(
 
 
 				<hr />
-				<h2>radio buttons</h2>
+				<h2>radio buttons <code>--alt --dark</code></h2>
 				<RadioList dark alt name="radio-ex-dark-alt" items={[
 					{
 						label: 'Yes',
@@ -422,6 +407,12 @@ ReactDOM.render(
 						checked: true,
 					},
 				]} />
+
+
+				<hr/>
+				<h2>control-inputs <code>--alt --dark --small</code></h2>
+				<AUcheckbox label="I agree" alt dark small />
+				<AUradio label="Maybe" alt dark small />
 
 
 				<hr />
