@@ -24,10 +24,6 @@
 	padding: 0;
 	border-top: 1px solid $AU-color-Border;
 
-	* + & {
-		@include AU-space( margin-top, 1unit );
-	}
-
 	& > li {
 		margin: 0;
 	}
@@ -35,6 +31,11 @@
 	&.au-progress-indicator--dark {
 		border-color: $AU-colordark-Border;
 	}
+}
+
+* + .au-progress-indicator,
+.au-body * + .au-progress-indicator, {
+	@include AU-space( margin-top, 1unit );
 }
 
 .au-body .au-progress-indicator__link,
