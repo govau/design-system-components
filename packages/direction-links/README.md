@@ -63,6 +63,7 @@ All props:
 <AUdirectionLink
  text="Submitting"    {/* The text of the link */}
  link="link/to/page"  {/* The href link, optional */}
+ direction="top"      {/* The direction the link goes */}
  dark={ false }       {/* A dark variation of the component */}
  attributeOptions     {/* Any other attribute options */}
 />
