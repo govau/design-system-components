@@ -69,7 +69,6 @@ All props:
   alt={ false }      {/* An alternate variation of the component */}
   small={ false }    {/* The small variation of the component */}
   dark={ false }     {/* The dark variation of the component */}
-  dark={ false }     {/* A dark variation of the component */}
 />
 
 <AUcheckbox
@@ -77,7 +76,6 @@ All props:
   alt={ false }      {/* An alternate variation of the component */}
   small={ false }    {/* The small variation of the component */}
   dark={ false }     {/* The dark variation of the component */}
-  dark={ false }     {/* A dark variation of the component */}
 />
 ```
 _(💡 additional props are spread onto the component)_
