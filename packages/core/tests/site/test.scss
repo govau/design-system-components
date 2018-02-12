@@ -573,8 +573,8 @@ html {
 	float: left;
 
 	.palette--9 & {
-		width: 11.11111111%;
-		padding-bottom: 11.11111111%;
+		width: 20%;
+		padding-bottom: 20%;
 	}
 
 	.palette--4 & {
@@ -591,7 +591,9 @@ html {
 		text-align: center;
 		font-size: 12px;
 		background: rgba(255, 255, 255, 0.2);
-		padding: 0.5em 0
+		padding: 0.5em 0;
+		white-space: pre;
+		overflow: auto;
 	}
 }
 
@@ -722,63 +724,63 @@ html {
 	background-color: $AU-color-foreground-action;
 
 	&:after {
-		content: 'Action: #{ $AU-color-foreground-action }';
+		content: 'AU-color-foreground-action\A#{ $AU-color-foreground-action }';
 	}
 }
 .palette__color--focus {
 	background-color: $AU-color-foreground-focus;
 
 	&:after {
-		content: 'Focus: #{ $AU-color-foreground-focus }';
+		content: 'AU-color-foreground-focus\A#{ $AU-color-foreground-focus }';
 	}
 }
 .palette__color--text {
 	background-color: $AU-color-foreground-text;
 
 	&:after {
-		content: 'Text: #{ $AU-color-foreground-text }';
+		content: 'AU-color-foreground-text\A#{ $AU-color-foreground-text }';
 	}
 }
 .palette__color--muted {
 	background-color: $AU-color-foreground-muted;
 
 	&:after {
-		content: 'Muted: #{ $AU-color-foreground-muted }';
+		content: 'AU-color-foreground-muted\A#{ $AU-color-foreground-muted }';
 	}
 }
 .palette__color--border {
 	background-color: $AU-color-foreground-border;
 
 	&:after {
-		content: 'Border: #{ $AU-color-foreground-border }';
+		content: 'AU-color-foreground-border\A#{ $AU-color-foreground-border }';
 	}
 }
 .palette__color--background-light {
 	background-color: $AU-color-background;
 
 	&:after {
-		content: 'Background light: #{ $AU-color-background }';
+		content: 'AU-color-background\A#{ $AU-color-background }';
 	}
 }
 .palette__color--background {
 	background-color: $AU-color-background-shade;
 
 	&:after {
-		content: 'Background: #{ $AU-color-background-shade }';
+		content: 'AU-color-background-shade\A#{ $AU-color-background-shade }';
 	}
 }
 .palette__color--background-dark {
 	background-color: $AU-color-background-alt;
 
 	&:after {
-		content: 'Background dark: #{ $AU-color-background-alt }';
+		content: 'AU-color-background-alt\A#{ $AU-color-background-alt }';
 	}
 }
 .palette__color--background-darkest {
 	background-color: $AU-color-background-alt-shade;
 
 	&:after {
-		content: 'Background darkest: #{ $AU-color-background-alt-shade }';
+		content: 'AU-color-background-alt-shade\A#{ $AU-color-background-alt-shade }';
 	}
 }
 
@@ -791,35 +793,35 @@ html {
 		background-color: $AU-colordark-foreground-action;
 
 		&:after {
-			content: 'Action: #{ $AU-colordark-foreground-action }';
+			content: 'AU-colordark-foreground-action\A#{ $AU-colordark-foreground-action }';
 		}
 	}
 	.palette__color--focus {
 		background-color: $AU-colordark-foreground-focus;
 
 		&:after {
-			content: 'Focus: #{ $AU-colordark-foreground-focus }';
+			content: 'AU-colordark-foreground-focus\A#{ $AU-colordark-foreground-focus }';
 		}
 	}
 	.palette__color--text {
 		background-color: $AU-colordark-foreground-text;
 
 		&:after {
-			content: 'Text: #{ $AU-colordark-foreground-text }';
+			content: 'AU-colordark-foreground-text\A#{ $AU-colordark-foreground-text }';
 		}
 	}
 	.palette__color--muted {
 		background-color: $AU-colordark-foreground-muted;
 
 		&:after {
-			content: 'Muted: #{ $AU-colordark-foreground-muted }';
+			content: 'AU-colordark-foreground-muted\A#{ $AU-colordark-foreground-muted }';
 		}
 	}
 	.palette__color--border {
 		background-color: $AU-colordark-foreground-border;
 
 		&:after {
-			content: 'Border: #{ $AU-colordark-foreground-border }';
+			content: 'AU-colordark-foreground-border\A#{ $AU-colordark-foreground-border }';
 		}
 	}
 	.palette__color--background-light {
@@ -827,7 +829,7 @@ html {
 		color: #fff;
 
 		&:after {
-			content: 'Background light: #{ $AU-colordark-background }';
+			content: 'AU-colordark-background\A#{ $AU-colordark-background }';
 		}
 	}
 	.palette__color--background {
@@ -835,7 +837,7 @@ html {
 		color: #fff;
 
 		&:after {
-			content: 'Background: #{ $AU-colordark-background-shade }';
+			content: 'AU-colordark-background-shade\A#{ $AU-colordark-background-shade }';
 		}
 	}
 	.palette__color--background-dark {
@@ -843,7 +845,7 @@ html {
 		color: #fff;
 
 		&:after {
-			content: 'Background dark: #{ $AU-colordark-background-alt }';
+			content: 'AU-colordark-background-alt\A#{ $AU-colordark-background-alt }';
 		}
 	}
 	.palette__color--background-darkest {
@@ -851,7 +853,7 @@ html {
 		color: #fff;
 
 		&:after {
-			content: 'Background darkest: #{ $AU-colordark-background-alt-shade }';
+			content: 'AU-colordark-background-alt-shade\A#{ $AU-colordark-background-alt-shade }';
 		}
 	}
 }
@@ -864,28 +866,28 @@ html {
 	background-color: $AU-color-error;
 
 	&:after {
-		content: 'Error: #{ $AU-color-error }';
+		content: 'AU-color-error\A#{ $AU-color-error }';
 	}
 }
 .palette__color--success {
 	background-color: $AU-color-success;
 
 	&:after {
-		content: 'Success: #{ $AU-color-success }';
+		content: 'AU-color-success\A#{ $AU-color-success }';
 	}
 }
 .palette__color--warning {
 	background-color: $AU-color-warning;
 
 	&:after {
-		content: 'Warning: #{ $AU-color-warning }';
+		content: 'AU-color-warning\A#{ $AU-color-warning }';
 	}
 }
 .palette__color--info {
 	background-color: $AU-color-info;
 
 	&:after {
-		content: 'Info: #{ $AU-color-info }';
+		content: 'AU-color-info\A#{ $AU-color-info }';
 	}
 }
 
@@ -897,7 +899,7 @@ html {
 	color: $AU-color-foreground-action;
 }
 .contrast-box--focus {
- color: $AU-color-foreground-focus;
+	color: $AU-color-foreground-focus;
 }
 .contrast-box--text {
 	color: $AU-color-foreground-text;
