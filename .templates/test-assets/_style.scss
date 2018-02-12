@@ -1,6 +1,6 @@
 body {
-	background: $AU-color-Background-light;
-	color: $AU-color-Text;
+	background: $AU-color-background;
+	color: $AU-color-foreground-text;
 	margin: 0;
 	@include AU-space( padding, 6unit 1.5unit 2unit 1.5unit );
 	overflow-x: hidden; //For Opera apparently.
@@ -40,16 +40,16 @@ body {
 	padding: 1%;
 
 	&.split--alt {
-		background: $AU-color-Background-dark;
+		background: $AU-color-background-alt;
 	}
 
 	&.split--dark {
-		background: $AU-colordark-Background-light;
-		color: $AU-colordark-Text;
+		background: $AU-colordark-background;
+		color: $AU-colordark-foreground-text;
 	}
 
 	&.split--dark.split--alt {
-		background: $AU-colordark-Background-dark;
+		background: $AU-colordark-background-alt;
 	}
 
 	@include AU-media( sm ) {

@@ -93,7 +93,7 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .borderize {
 	border: none;
-	border-top: 1px solid $AU-color-Border;
+	border-top: 1px solid $AU-color-foreground-border;
 }
 
 
@@ -110,7 +110,7 @@ html {
 .border-radius {
 	float: left;
 	border-radius: $AU-border-radius;
-	background-color: $AU-colordark-Background;
+	background-color: $AU-colordark-background-shade;
 	overflow: hidden;
 	width: 5em;
 	height: 5em;
@@ -188,7 +188,7 @@ html {
 // mixin AU-fontgrid
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-fontgrid {
-	background-color: $AU-color-Background;
+	background-color: $AU-color-background-shade;
 	margin-top: $AU-unit + 0px;
 }
 
@@ -349,7 +349,7 @@ html {
 	height: 24px;
 	background-repeat: no-repeat;
 	background: AU-svguri('<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-			<path fill="#{ $AU-color-Text }" d="M1408 928v320q0 119-84.5 203.5T1120 1536H288q-119' +
+			<path fill="#{ $AU-color-foreground-text }" d="M1408 928v320q0 119-84.5 203.5T1120 1536H288q-119' +
 		'	0-203.5-84.5T0 1248V416q0-119 84.5-203.5T288 128h704q14 0 23 9t9 23v64q0 14-9 23t-23 9H288q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0' +
 		'	113-47t47-113V928q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10L695' +
 		'	983q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z"/>' +
@@ -359,7 +359,7 @@ html {
 	.lt-ie8 &:after {
 		background: none;
 		content: '⇗';
-		color: $AU-color-Text;
+		color: $AU-color-foreground-text;
 	}
 }
 
@@ -719,66 +719,66 @@ html {
 // main palette colors
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .palette__color--action {
-	background-color: $AU-color-Action;
+	background-color: $AU-color-foreground-action;
 
 	&:after {
-		content: 'Action: #{ $AU-color-Action }';
+		content: 'Action: #{ $AU-color-foreground-action }';
 	}
 }
 .palette__color--focus {
-	background-color: $AU-color-Focus;
+	background-color: $AU-color-foreground-focus;
 
 	&:after {
-		content: 'Focus: #{ $AU-color-Focus }';
+		content: 'Focus: #{ $AU-color-foreground-focus }';
 	}
 }
 .palette__color--text {
-	background-color: $AU-color-Text;
+	background-color: $AU-color-foreground-text;
 
 	&:after {
-		content: 'Text: #{ $AU-color-Text }';
+		content: 'Text: #{ $AU-color-foreground-text }';
 	}
 }
 .palette__color--muted {
-	background-color: $AU-color-Muted;
+	background-color: $AU-color-foreground-muted;
 
 	&:after {
-		content: 'Muted: #{ $AU-color-Muted }';
+		content: 'Muted: #{ $AU-color-foreground-muted }';
 	}
 }
 .palette__color--border {
-	background-color: $AU-color-Border;
+	background-color: $AU-color-foreground-border;
 
 	&:after {
-		content: 'Border: #{ $AU-color-Border }';
+		content: 'Border: #{ $AU-color-foreground-border }';
 	}
 }
 .palette__color--background-light {
-	background-color: $AU-color-Background-light;
+	background-color: $AU-color-background;
 
 	&:after {
-		content: 'Background light: #{ $AU-color-Background-light }';
+		content: 'Background light: #{ $AU-color-background }';
 	}
 }
 .palette__color--background {
-	background-color: $AU-color-Background;
+	background-color: $AU-color-background-shade;
 
 	&:after {
-		content: 'Background: #{ $AU-color-Background }';
+		content: 'Background: #{ $AU-color-background-shade }';
 	}
 }
 .palette__color--background-dark {
-	background-color: $AU-color-Background-dark;
+	background-color: $AU-color-background-alt;
 
 	&:after {
-		content: 'Background dark: #{ $AU-color-Background-dark }';
+		content: 'Background dark: #{ $AU-color-background-alt }';
 	}
 }
 .palette__color--background-darkest {
-	background-color: $AU-color-Background-darkest;
+	background-color: $AU-color-background-alt-shade;
 
 	&:after {
-		content: 'Background darkest: #{ $AU-color-Background-darkest }';
+		content: 'Background darkest: #{ $AU-color-background-alt-shade }';
 	}
 }
 
@@ -788,70 +788,70 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .palette--dark {
 	.palette__color--action {
-		background-color: $AU-colordark-Action;
+		background-color: $AU-colordark-foreground-action;
 
 		&:after {
-			content: 'Action: #{ $AU-colordark-Action }';
+			content: 'Action: #{ $AU-colordark-foreground-action }';
 		}
 	}
 	.palette__color--focus {
-		background-color: $AU-colordark-Focus;
+		background-color: $AU-colordark-foreground-focus;
 
 		&:after {
-			content: 'Focus: #{ $AU-colordark-Focus }';
+			content: 'Focus: #{ $AU-colordark-foreground-focus }';
 		}
 	}
 	.palette__color--text {
-		background-color: $AU-colordark-Text;
+		background-color: $AU-colordark-foreground-text;
 
 		&:after {
-			content: 'Text: #{ $AU-colordark-Text }';
+			content: 'Text: #{ $AU-colordark-foreground-text }';
 		}
 	}
 	.palette__color--muted {
-		background-color: $AU-colordark-Muted;
+		background-color: $AU-colordark-foreground-muted;
 
 		&:after {
-			content: 'Muted: #{ $AU-colordark-Muted }';
+			content: 'Muted: #{ $AU-colordark-foreground-muted }';
 		}
 	}
 	.palette__color--border {
-		background-color: $AU-colordark-Border;
+		background-color: $AU-colordark-foreground-border;
 
 		&:after {
-			content: 'Border: #{ $AU-colordark-Border }';
+			content: 'Border: #{ $AU-colordark-foreground-border }';
 		}
 	}
 	.palette__color--background-light {
-		background-color: $AU-colordark-Background-light;
+		background-color: $AU-colordark-background;
 		color: #fff;
 
 		&:after {
-			content: 'Background light: #{ $AU-colordark-Background-light }';
+			content: 'Background light: #{ $AU-colordark-background }';
 		}
 	}
 	.palette__color--background {
-		background-color: $AU-colordark-Background;
+		background-color: $AU-colordark-background-shade;
 		color: #fff;
 
 		&:after {
-			content: 'Background: #{ $AU-colordark-Background }';
+			content: 'Background: #{ $AU-colordark-background-shade }';
 		}
 	}
 	.palette__color--background-dark {
-		background-color: $AU-colordark-Background-dark;
+		background-color: $AU-colordark-background-alt;
 		color: #fff;
 
 		&:after {
-			content: 'Background dark: #{ $AU-colordark-Background-dark }';
+			content: 'Background dark: #{ $AU-colordark-background-alt }';
 		}
 	}
 	.palette__color--background-darkest {
-		background-color: $AU-colordark-Background-darkest;
+		background-color: $AU-colordark-background-alt-shade;
 		color: #fff;
 
 		&:after {
-			content: 'Background darkest: #{ $AU-colordark-Background-darkest }';
+			content: 'Background darkest: #{ $AU-colordark-background-alt-shade }';
 		}
 	}
 }
@@ -861,31 +861,31 @@ html {
 // notification palette colors
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .palette__color--error {
-	background-color: $AU-color-Error;
+	background-color: $AU-color-error;
 
 	&:after {
-		content: 'Error: #{ $AU-color-Error }';
+		content: 'Error: #{ $AU-color-error }';
 	}
 }
 .palette__color--success {
-	background-color: $AU-color-Success;
+	background-color: $AU-color-success;
 
 	&:after {
-		content: 'Success: #{ $AU-color-Success }';
+		content: 'Success: #{ $AU-color-success }';
 	}
 }
 .palette__color--warning {
-	background-color: $AU-color-Warning;
+	background-color: $AU-color-warning;
 
 	&:after {
-		content: 'Warning: #{ $AU-color-Warning }';
+		content: 'Warning: #{ $AU-color-warning }';
 	}
 }
 .palette__color--info {
-	background-color: $AU-color-Info;
+	background-color: $AU-color-info;
 
 	&:after {
-		content: 'Info: #{ $AU-color-Info }';
+		content: 'Info: #{ $AU-color-info }';
 	}
 }
 
@@ -894,103 +894,103 @@ html {
 // main palette contrast ratios
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .contrast-box--action {
-	color: $AU-color-Action;
+	color: $AU-color-foreground-action;
 }
 .contrast-box--focus {
- color: $AU-color-Focus;
+ color: $AU-color-foreground-focus;
 }
 .contrast-box--text {
-	color: $AU-color-Text;
+	color: $AU-color-foreground-text;
 }
 .contrast-box--muted {
-	color: $AU-color-Muted;
+	color: $AU-color-foreground-muted;
 }
 .contrast-box--border {
-	color: $AU-color-Border;
+	color: $AU-color-foreground-border;
 }
 
-
-.contrast-background-light {
-	.contrast-box {
-		background-color: $AU-color-Background-light;
-	}
-	.contrast-box--action:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Action ) );
-	}
-	.contrast-box--focus:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Focus ) );
-	}
-	.contrast-box--text:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Text ) );
-	}
-	.contrast-box--muted:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Muted ) );
-	}
-	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-light, $AU-color-Border ) );
-	}
-}
 
 .contrast-background {
 	.contrast-box {
-		background-color: $AU-color-Background;
+		background-color: $AU-color-background;
 	}
 	.contrast-box--action:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Action ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-action ) );
 	}
 	.contrast-box--focus:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Focus ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-focus ) );
 	}
 	.contrast-box--text:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Text ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-text ) );
 	}
 	.contrast-box--muted:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Muted ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-muted ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background, $AU-color-Border ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-border ) );
 	}
 }
 
-.contrast-background-dark {
+.contrast-background-shade {
 	.contrast-box {
-		background-color: $AU-color-Background-dark;
+		background-color: $AU-color-background-shade;
 	}
 	.contrast-box--action:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Action ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-action ) );
 	}
 	.contrast-box--focus:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Focus ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-focus ) );
 	}
 	.contrast-box--text:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Text ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-text ) );
 	}
 	.contrast-box--muted:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Muted ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-muted ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-dark, $AU-color-Border ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-border ) );
 	}
 }
 
-.contrast-background-darkest {
+.contrast-background-alt {
 	.contrast-box {
-		background-color: $AU-color-Background-darkest;
+		background-color: $AU-color-background-alt;
 	}
 	.contrast-box--action:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Action ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-action ) );
 	}
 	.contrast-box--focus:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Focus ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-focus ) );
 	}
 	.contrast-box--text:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Text ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-text ) );
 	}
 	.contrast-box--muted:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Muted ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-muted ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-color-Background-darkest, $AU-color-Border ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-border ) );
+	}
+}
+
+.contrast-background-alt-shade {
+	.contrast-box {
+		background-color: $AU-color-background-alt-shade;
+	}
+	.contrast-box--action:after {
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-action ) );
+	}
+	.contrast-box--focus:after {
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-focus ) );
+	}
+	.contrast-box--text:after {
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-text ) );
+	}
+	.contrast-box--muted:after {
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-muted ) );
+	}
+	.contrast-box--border:after {
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-border ) );
 	}
 }
 
@@ -1000,102 +1000,102 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .contrast--dark {
 	.contrast-box--action {
-		color: $AU-colordark-Action;
+		color: $AU-colordark-foreground-action;
 	}
 	.contrast-box--focus {
-	 color: $AU-colordark-Focus;
+	 color: $AU-colordark-foreground-focus;
 	}
 	.contrast-box--text {
-		color: $AU-colordark-Text;
+		color: $AU-colordark-foreground-text;
 	}
 	.contrast-box--muted {
-		color: $AU-colordark-Muted;
+		color: $AU-colordark-foreground-muted;
 	}
 	.contrast-box--border {
-		color: $AU-colordark-Border;
-	}
-
-	.contrast-background-light {
-		.contrast-box {
-			background-color: $AU-colordark-Background-light;
-		}
-		.contrast-box--action:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Action ) );
-		}
-		.contrast-box--focus:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Focus ) );
-		}
-		.contrast-box--text:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Text ) );
-		}
-		.contrast-box--muted:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Muted ) );
-		}
-		.contrast-box--border:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-light, $AU-colordark-Border ) );
-		}
+		color: $AU-colordark-foreground-border;
 	}
 
 	.contrast-background {
 		.contrast-box {
-			background-color: $AU-colordark-Background;
+			background-color: $AU-colordark-background;
 		}
 		.contrast-box--action:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Action ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-action ) );
 		}
 		.contrast-box--focus:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Focus ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-focus ) );
 		}
 		.contrast-box--text:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Text ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-text ) );
 		}
 		.contrast-box--muted:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Muted ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-muted ) );
 		}
 		.contrast-box--border:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background, $AU-colordark-Border ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-border ) );
 		}
 	}
 
-	.contrast-background-dark {
+	.contrast-background-shade {
 		.contrast-box {
-			background-color: $AU-colordark-Background-dark;
+			background-color: $AU-colordark-background-shade;
 		}
 		.contrast-box--action:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Action ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-action ) );
 		}
 		.contrast-box--focus:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Focus ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-focus ) );
 		}
 		.contrast-box--text:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Text ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-text ) );
 		}
 		.contrast-box--muted:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Muted ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-muted ) );
 		}
 		.contrast-box--border:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-dark, $AU-colordark-Border ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-border ) );
 		}
 	}
 
-	.contrast-background-darkest {
+	.contrast-background-alt {
 		.contrast-box {
-			background-color: $AU-colordark-Background-darkest;
+			background-color: $AU-colordark-background-alt;
 		}
 		.contrast-box--action:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Action ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-action ) );
 		}
 		.contrast-box--focus:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Focus ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-focus ) );
 		}
 		.contrast-box--text:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Text ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-text ) );
 		}
 		.contrast-box--muted:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Muted ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-muted ) );
 		}
 		.contrast-box--border:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-Background-darkest, $AU-colordark-Border ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-border ) );
+		}
+	}
+
+	.contrast-background-alt-shade {
+		.contrast-box {
+			background-color: $AU-colordark-background-alt-shade;
+		}
+		.contrast-box--action:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-action ) );
+		}
+		.contrast-box--focus:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-focus ) );
+		}
+		.contrast-box--text:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-text ) );
+		}
+		.contrast-box--muted:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-muted ) );
+		}
+		.contrast-box--border:after {
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-border ) );
 		}
 	}
 }

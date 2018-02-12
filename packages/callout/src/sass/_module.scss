@@ -21,11 +21,11 @@
 .au-callout {
 	@include AU-fontgrid( sm );
 	@include AU-space( padding, 1.5unit );
-	@include AU-space( border-left, 0.25unit solid $AU-color-Border );
+	@include AU-space( border-left, 0.25unit solid $AU-color-foreground-border );
 	@include AU-space( margin-bottom, 2unit );
 	font-family: $AU-font;
-	color: $AU-color-Text;
-	background-color: $AU-color-Background;
+	color: $AU-color-foreground-text;
+	background-color: $AU-color-background-shade;
 	word-wrap: break-word;
 
 	* + & {
@@ -33,17 +33,17 @@
 	}
 
 	&.au-callout--dark {
-		color: $AU-colordark-Text;
-		border-color: $AU-colordark-Border;
-		background-color: $AU-colordark-Background;
+		color: $AU-colordark-foreground-text;
+		border-color: $AU-colordark-foreground-border;
+		background-color: $AU-colordark-background-shade;
 	}
 
 	&.au-callout--alt {
-		background-color: $AU-color-Background-darkest;
+		background-color: $AU-color-background-alt-shade;
 	}
 
 	&.au-callout--dark.au-callout--alt {
-		background-color: $AU-colordark-Background-darkest;
+		background-color: $AU-colordark-background-alt-shade;
 	}
 }
 
@@ -52,7 +52,7 @@
  * The calendar event callout
  */
 .au-callout--calendar-event {
-	background-color: $AU-color-Background;
+	background-color: $AU-color-background-shade;
 }
 
 .au-callout--calendar-event__lede,

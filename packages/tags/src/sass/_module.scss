@@ -22,13 +22,13 @@
 	margin: 0;
 	padding: 0;
 	font-family: $AU-font;
-	color: $AU-color-Text;
+	color: $AU-color-foreground-text;
 
 	> dt {
 		display: inline-block;
 	}
 	&.au-tags--dark {
-		color: $AU-colordark-Text;
+		color: $AU-colordark-foreground-text;
 	}
 }
 
@@ -36,7 +36,7 @@
 .au-tags > dd {
 	@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
 	@include AU-space ( padding, 0 0.5unit );
-	border: 1px solid $AU-color-Action;
+	border: 1px solid $AU-color-foreground-action;
 	border-radius: $AU-border-radius;
 	display: inline-block;
 
@@ -44,14 +44,14 @@
 	> button {
 		@include AU-space ( margin, 0 -0.5unit ); // Negative value to pull a/button out to same size as container
 		@include AU-space ( padding, 0 0.5unit );
-		color: $AU-color-Action;
+		color: $AU-color-foreground-action;
 		display: inline-block;
 		border-radius: $AU-border-radius;
 
 		&:hover {
-			color: $AU-color-Text;
+			color: $AU-color-foreground-text;
 			text-decoration: none;
-			background-color: $AU-color-Background;
+			background-color: $AU-color-background-shade;
 		}
 
 		@include AU-focus();
@@ -64,15 +64,15 @@
 
 .au-tags.au-tags--dark > li,
 .au-tags.au-tags--dark > dd {
-	border-color: $AU-colordark-Action;
+	border-color: $AU-colordark-foreground-action;
 
 	> a,
 	> button {
-		color: $AU-colordark-Action;
+		color: $AU-colordark-foreground-action;
 
 		&:hover {
-			color: $AU-colordark-Text;
-			background-color: $AU-colordark-Background;
+			color: $AU-colordark-foreground-text;
+			background-color: $AU-colordark-background-shade;
 		}
 
 		@include AU-focus( 'dark' );

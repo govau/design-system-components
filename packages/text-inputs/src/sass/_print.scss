@@ -12,13 +12,13 @@
 		border-color: #000 !important;
 
 		&[disabled] {
-			color: $AU-color-Muted !important;
+			color: $AU-color-foreground-muted !important;
 			background-color: #ccc !important;
 			border: 2px solid #ccc !important;
 		}
 
 		&:disabled {
-			color: $AU-color-Muted !important;
+			color: $AU-color-foreground-muted !important;
 			background-color: #ccc !important;
 			border: 2px solid #ccc !important;
 		}

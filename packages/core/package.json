@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/core",
-	"version": "1.0.0-next.5",
+	"version": "1.0.0-next.6",
 	"description": "The core module all UI-Kit modules depend on",
 	"keywords": [
 		"uikit",
@@ -86,22 +86,22 @@
 		{
 			"name": "Dominik Wilkowski",
 			"email": "hi@dominik-wilkowski.com",
-			"url": "https://dominik-wilkowski.com/"
+			"url": "https://github.com/dominikwilkowski"
 		},
 		{
 			"name": "Simon Pascal Klein",
 			"email": "klepas@klepas.org",
-			"url": "http://klepas.org/"
+			"url": "https://github.com/klepas"
 		},
 		{
 			"name": "Trevor Brennan",
 			"email": "t@trevorbrennan.com",
-			"url": "http://trevorbrennan.com/"
+			"url": "https://github.com/TrebBrennan"
 		},
 		{
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
-			"url": "http://alexpage.com.au/"
+			"url": "https://github.com/alex-page"
 		}
 	],
 	"license": "MIT"

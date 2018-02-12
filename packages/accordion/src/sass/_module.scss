@@ -18,9 +18,9 @@
 .au-accordion {
 	@include AU-fontgrid( sm );
 	display: block;
-	border: 1px solid $AU-color-Border;
+	border: 1px solid $AU-color-foreground-border;
 	font-family: $AU-font;
-	color: $AU-color-Text;
+	color: $AU-color-foreground-text;
 	padding: 0;
 
 	// Add spacing if there is an element before it
@@ -29,8 +29,8 @@
 	}
 
 	&.au-accordion--dark {
-		border-color: $AU-colordark-Border;
-		color: $AU-colordark-Text;
+		border-color: $AU-colordark-foreground-border;
+		color: $AU-colordark-foreground-text;
 	}
 }
 
@@ -44,24 +44,24 @@
 	@include AU-fontgrid( md, heading );
 	@include AU-space( padding, 1unit 2.5unit 1unit 1unit );
 	display: block;
-	color: $AU-color-Action;
+	color: $AU-color-foreground-action;
 	text-decoration: underline;
 	text-decoration-skip: ink;
 	width: 100%;
 	box-sizing: border-box;
 	font-weight: bold;
-	background-color: $AU-color-Background;
+	background-color: $AU-color-background-shade;
 	position: relative;
 	cursor: pointer;
 
 	&:hover {
 		text-decoration: none;
-		color: $AU-color-Text;
+		color: $AU-color-foreground-text;
 
 		&:after {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-				'	<path fill="#{ $AU-color-Text }" d="M64 0l64 64-16 16-64-64"/>' +
-				'	<path fill="#{ $AU-color-Text }" d="M64 0l16 16-64 64L0 64"/>' +
+				'	<path fill="#{ $AU-color-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-color-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
 				'</svg>');
 		}
 	}
@@ -86,8 +86,8 @@
 		@include AU-space( width, 1unit );
 		@include AU-space( height, 1unit );
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-			'	<path fill="#{ $AU-color-Action }" d="M64 0l64 64-16 16-64-64"/>' +
-			'	<path fill="#{ $AU-color-Action }" d="M64 0l16 16-64 64L0 64"/>' +
+			'	<path fill="#{ $AU-color-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+			'	<path fill="#{ $AU-color-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
 			'</svg>');
 		background-repeat: no-repeat;
 		background-position: center;
@@ -112,16 +112,16 @@
 	}
 
 	.au-accordion--dark & {
-		color: $AU-colordark-Action;
-		background-color: $AU-colordark-Background;
+		color: $AU-colordark-foreground-action;
+		background-color: $AU-colordark-background-shade;
 
 		&:hover {
-			color: $AU-colordark-Text;
+			color: $AU-colordark-foreground-text;
 
 			&:after {
 				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-					'	<path fill="#{ $AU-colordark-Text }" d="M64 0l64 64-16 16-64-64"/>' +
-					'	<path fill="#{ $AU-colordark-Text }" d="M64 0l16 16-64 64L0 64"/>' +
+					'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+					'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
 					'</svg>');
 			}
 		}
@@ -130,8 +130,8 @@
 
 		&:after{
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-				'	<path fill="#{ $AU-colordark-Action }" d="M64 0l64 64-16 16-64-64"/>' +
-				'	<path fill="#{ $AU-colordark-Action }" d="M64 0l16 16-64 64L0 64"/>' +
+				'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
 				'</svg>');
 		}
 	}
@@ -157,9 +157,9 @@
 
 .au-accordion__body-wrapper {
 	@include AU-space( padding, 1unit );
-	border-top: 1px solid $AU-color-Border;
+	border-top: 1px solid $AU-color-foreground-border;
 
 	.au-accordion--dark & {
-		border-top: 1px solid $AU-colordark-Border;
+		border-top: 1px solid $AU-colordark-foreground-border;
 	}
 }

@@ -24,11 +24,11 @@ a.au-btn {
 	display: inline-block;
 	appearance: none;
 	font-family: $AU-font;
-	color: $AU-color-Background-light;
+	color: $AU-color-background;
 	text-decoration: none;
 	border-radius: $AU-border-radius;
-	background-color: $AU-color-Action;
-	border: 3px solid $AU-color-Action;
+	background-color: $AU-color-foreground-action;
+	border: 3px solid $AU-color-foreground-action;
 	cursor: pointer;
 	vertical-align: middle;
 	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
@@ -60,38 +60,38 @@ a.au-btn {
 
 	// hover
 	&:hover:not(:disabled) {
-		background-color: $AU-color-Text;
-		border-color: $AU-color-Text;
+		background-color: $AU-color-foreground-text;
+		border-color: $AU-color-foreground-text;
 		text-decoration: underline;
-		color: $AU-color-Background-light;
+		color: $AU-color-background;
 	}
 
 	.ie8 & {
 		&:hover {
-			background-color: $AU-color-Text;
-			border-color: $AU-color-Text;
+			background-color: $AU-color-foreground-text;
+			border-color: $AU-color-foreground-text;
 			text-decoration: underline;
-			color: $AU-color-Background-light;
+			color: $AU-color-background;
 		}
 	}
 
 	// dark
 	&.au-btn--dark {
-		color: $AU-colordark-Background-light;
-		background-color: $AU-colordark-Action;
-		border-color: $AU-colordark-Action;
+		color: $AU-colordark-background;
+		background-color: $AU-colordark-foreground-action;
+		border-color: $AU-colordark-foreground-action;
 
 		&:hover:not(:disabled) {
-			color: $AU-colordark-Background-light;
-			border-color: $AU-colordark-Text;
-			background-color:  $AU-colordark-Text;
+			color: $AU-colordark-background;
+			border-color: $AU-colordark-foreground-text;
+			background-color:  $AU-colordark-foreground-text;
 		}
 
 		.ie8 & {
 			&:hover {
-				color: $AU-colordark-Background-light;
-				border-color: $AU-colordark-Text;
-				background-color:  $AU-colordark-Text;
+				color: $AU-colordark-background;
+				border-color: $AU-colordark-foreground-text;
+				background-color:  $AU-colordark-foreground-text;
 			}
 		}
 
@@ -104,22 +104,22 @@ a.au-btn {
 	*/
 	&.au-btn--secondary {
 		background-color: transparent;
-		border-color: $AU-color-Action;
-		color: $AU-color-Action;
+		border-color: $AU-color-foreground-action;
+		color: $AU-color-foreground-action;
 
 		&:hover:not(:disabled) {
 			background-color: transparent;
-			border-color: $AU-color-Text;
-			color: $AU-color-Text;
+			border-color: $AU-color-foreground-text;
+			color: $AU-color-foreground-text;
 		}
 
 		&.au-btn--dark {
-			border-color: $AU-colordark-Action;
-			color: $AU-colordark-Action;
+			border-color: $AU-colordark-foreground-action;
+			color: $AU-colordark-foreground-action;
 
 			&:hover:not(:disabled) {
-				border-color: $AU-colordark-Text;
-				color: $AU-colordark-Text;
+				border-color: $AU-colordark-foreground-text;
+				color: $AU-colordark-foreground-text;
 			}
 		}
 	}
@@ -129,22 +129,22 @@ a.au-btn {
 	*/
 	&.au-btn--tertiary {
 		background-color: transparent;
-		color: $AU-color-Action;
+		color: $AU-color-foreground-action;
 		border-color: transparent;
 		text-decoration: underline;
 
 		&:hover:not(:disabled) {
 			background-color: transparent;
-			color: $AU-color-Text;
+			color: $AU-color-foreground-text;
 			border-color: transparent;
 			text-decoration: none;
 		}
 
 		&.au-btn--dark {
-			color: $AU-colordark-Action;
+			color: $AU-colordark-foreground-action;
 
 			&:hover:not(:disabled) {
-				color: $AU-colordark-Text;
+				color: $AU-colordark-foreground-text;
 			}
 		}
 	}
@@ -164,7 +164,7 @@ a.au-btn {
 			rgba(11, 178, 255, 0.5) 83.33333333333335%,
 			rgba(152, 90, 255, 0.5) 83.33333333333335%
 		);
-		color: $AU-color-Text;
+		color: $AU-color-foreground-text;
 	}
 
 	/**

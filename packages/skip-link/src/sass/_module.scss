@@ -17,7 +17,7 @@
 .au-skip-link {
 	@include AU-fontgrid( md, nospace );
 	font-family: $AU-font;
-	color: $AU-color-Text;
+	color: $AU-color-foreground-text;
 }
 
 .au-skip-link__link {
@@ -35,8 +35,8 @@
 		overflow: visible;
 		position: absolute;
 		width: auto;
-		color: $AU-color-Background-light;
-		background-color: $AU-color-Action;
+		color: $AU-color-background;
+		background-color: $AU-color-foreground-action;
 		text-decoration: underline;
 		text-decoration-skip: ink;
 		z-index: 600;

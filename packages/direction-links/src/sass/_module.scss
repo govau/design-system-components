@@ -22,7 +22,7 @@
 	font-family: $AU-font;
 
 	// Styles to reset button
-	color: $AU-color-Action;
+	color: $AU-color-foreground-action;
 	appearance: none;
 	background: transparent;
 	border: none;
@@ -33,16 +33,16 @@
 
 	&:hover {
 		text-decoration: none;
-		color: $AU-color-Text;
+		color: $AU-color-foreground-text;
 	}
 
 	@include AU-focus();
 
 	&.au-direction-link--dark {
-		color: $AU-colordark-Action;
+		color: $AU-colordark-foreground-action;
 
 		&:hover {
-			color: $AU-colordark-Text;
+			color: $AU-colordark-foreground-text;
 		}
 
 		@include AU-focus( 'dark' );

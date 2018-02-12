@@ -21,7 +21,7 @@
 	font-family: $AU-font;
 
 	// Styles to reset button
-	color: $AU-color-Action;
+	color: $AU-color-foreground-action;
 	appearance: none;
 	background: transparent;
 	border: none;
@@ -40,8 +40,8 @@
 		transition: margin 0.2s ease;
 		display: inline-block;
 		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-				'<path fill="#{ $AU-color-Action }" d="M128 64l-64 64-16-16 64-64"/>' +
-				'<path fill="#{ $AU-color-Action }" d="M128 64l-16 16-64-64L64 0"/>' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
 			'</svg>');
 
 		.ie8 &,
@@ -51,37 +51,37 @@
 	}
 
 	&:hover {
-		color: $AU-color-Text;
+		color: $AU-color-foreground-text;
 		text-decoration: none;
 
 		&:after {
 			@include AU-space( margin-left, 0.4unit );
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-				'<path fill="#{ $AU-color-Text }" d="M128 64l-64 64-16-16 64-64"/>' +
-				'<path fill="#{ $AU-color-Text }" d="M128 64l-16 16-64-64L64 0"/>' +
+				'<path fill="#{ $AU-color-foreground-text }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-color-foreground-text }" d="M128 64l-16 16-64-64L64 0"/>' +
 			'</svg>');
 		}
 	}
 
 	&.au-cta-link--dark {
-		color: $AU-colordark-Action;
+		color: $AU-colordark-foreground-action;
 
 		@include AU-focus( 'dark' );
 
 		&:after {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-				'<path fill="#{ $AU-colordark-Action }" d="M128 64l-64 64-16-16 64-64"/>' +
-				'<path fill="#{ $AU-colordark-Action }" d="M128 64l-16 16-64-64L64 0"/>' +
+				'<path fill="#{ $AU-colordark-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-colordark-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
 			'</svg>');
 		}
 
 		&:hover {
-			color: $AU-colordark-Text;
+			color: $AU-colordark-foreground-text;
 
 			&:after {
 				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-					'<path fill="#{ $AU-colordark-Text }" d="M128 64l-64 64-16-16 64-64"/>' +
-					'<path fill="#{ $AU-colordark-Text }" d="M128 64l-16 16-64-64L64 0"/>' +
+					'<path fill="#{ $AU-colordark-foreground-text }" d="M128 64l-64 64-16-16 64-64"/>' +
+					'<path fill="#{ $AU-colordark-foreground-text }" d="M128 64l-16 16-64-64L64 0"/>' +
 				'</svg>');
 			}
 		}

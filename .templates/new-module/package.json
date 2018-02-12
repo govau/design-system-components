@@ -105,14 +105,9 @@
 	},
 	"contributors": [
 		{
-			"name": "Dominik Wilkowski",
-			"email": "hi@dominik-wilkowski.com",
-			"url": "https://dominik-wilkowski.com/"
-		},
-		{
-			"name": "Simon Schwartz",
-			"email": "simon.schwartz0@gmail.com",
-			"url": "https://simonschwartz.github.io/"
+			"name": "[-replace-contrib-name-]",
+			"email": "[-replace-contrib-email-]",
+			"url": "[-replace-contrib-name-]"
 		}
 	],
 	"license": "MIT"

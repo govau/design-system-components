@@ -20,7 +20,7 @@
 	@include AU-space( padding-left, 1.5unit );
 	@include AU-space( margin-bottom, 3unit );
 
-	border-left: 4px solid $AU-color-Action;
+	border-left: 4px solid $AU-color-foreground-action;
 
 	* + & {
 		@include AU-space( margin-top, 3unit );
@@ -43,7 +43,7 @@
 	}
 
 	&.au-inpage-nav-links--dark {
-		border-color: $AU-colordark-Action;
+		border-color: $AU-colordark-foreground-action;
 	}
 }
 

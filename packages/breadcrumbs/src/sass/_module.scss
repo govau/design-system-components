@@ -19,7 +19,7 @@
 	@include AU-fontgrid( xs, nospace );
 	width: 100%;
 	margin: 0;
-	color: $AU-color-Text;
+	color: $AU-color-foreground-text;
 	font-family: $AU-font;
 
 	* + & {
@@ -41,8 +41,8 @@
 				@include AU-space( height, 0.5unit );
 				@include AU-space( margin, 0 0.5unit );
 				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">
-						<path fill="#{ $AU-color-Border }" d="M128 64l-64 64-16-16 64-64"/>
-						<path fill="#{ $AU-color-Border }" d="M128 64l-16 16-64-64L64 0"/>
+						<path fill="#{ $AU-color-foreground-border }" d="M128 64l-64 64-16-16 64-64"/>
+						<path fill="#{ $AU-color-foreground-border }" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');
 				background-size: 100%;
 				background-repeat: no-repeat;
@@ -63,13 +63,13 @@
 	}
 
 	&.au-breadcrumbs--dark {
-		color: $AU-colordark-Text;
+		color: $AU-colordark-foreground-text;
 
 		> .au-link-list {
 			> li:not(:last-child):after {
 				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">
-						<path fill="#{ $AU-colordark-Border }" d="M128 64l-64 64-16-16 64-64"/>
-						<path fill="#{ $AU-colordark-Border }" d="M128 64l-16 16-64-64L64 0"/>
+						<path fill="#{ $AU-colordark-foreground-border }" d="M128 64l-64 64-16-16 64-64"/>
+						<path fill="#{ $AU-colordark-foreground-border }" d="M128 64l-16 16-64-64L64 0"/>
 					</svg>');
 			}
 		}

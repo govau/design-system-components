@@ -55,10 +55,10 @@
 	font-weight: normal; // Reset parent weight
 
 	.au-body & {
-		color: $AU-color-Text;
+		color: $AU-color-foreground-text;
 	}
 
 	.au-keyword-list--dark & {
-		color: $AU-colordark-Text;
+		color: $AU-colordark-foreground-text;
 	}
 }

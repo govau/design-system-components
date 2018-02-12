@@ -24,8 +24,8 @@
 	@include AU-fontgrid( sm );
 	@include AU-space( padding, 1.5unit 0 2unit 0 ); // 0.5 for optical alignment
 	font-family: $AU-font;
-	color: $AU-color-Text;
-	background: $AU-color-Background-light;
+	color: $AU-color-foreground-text;
+	background: $AU-color-background;
 
 	@include AU-media( sm ) {
 		@include AU-fontgrid( md );
@@ -44,17 +44,17 @@
 	}
 
 	&.au-header--alt {
-		background-color: $AU-color-Background;
+		background-color: $AU-color-background-shade;
 	}
 
 	&.au-header--dark {
-		color: $AU-colordark-Text;
-		background-color:  $AU-colordark-Background-light;
+		color: $AU-colordark-foreground-text;
+		background-color:  $AU-colordark-background;
 	}
 
 	&.au-header--alt.au-header--dark {
-		color: $AU-colordark-Text;
-		background-color:  $AU-colordark-Background-dark;
+		color: $AU-colordark-foreground-text;
+		background-color:  $AU-colordark-background-alt;
 	}
 }
 

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/accordion",
-	"version": "1.0.0-next.6",
+	"version": "1.0.0-next.7",
 	"description": "Allow the user to toggle the visibility of an element",
 	"keywords": [
 		"uikit",
@@ -111,22 +111,22 @@
 		{
 			"name": "Dominik Wilkowski",
 			"email": "hi@dominik-wilkowski.com",
-			"url": "https://dominik-wilkowski.com/"
+			"url": "https://github.com/dominikwilkowski"
 		},
 		{
 			"name": "Simon Schwartz",
 			"email": "simon.schwartz0@gmail.com",
-			"url": "https://simonschwartz.github.io/"
+			"url": "https://github.com/simonschwartz"
 		},
 		{
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
-			"url": "http://alexpage.com.au/"
+			"url": "https://github.com/alex-page"
 		},
 		{
 			"name": "Trevor Brennan",
 			"email": "t@trevorbrennan.com",
-			"url": "http://trevorbrennan.com/"
+			"url": "https://github.com/TrebBrennan"
 		}
 	],
 	"license": "MIT"

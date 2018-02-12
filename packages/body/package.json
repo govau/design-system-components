@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/body",
-	"version": "1.0.0-next.4",
+	"version": "1.0.0-next.5",
 	"description": "Basic body styles for body HTML elements",
 	"keywords": [
 		"uikit",
@@ -90,22 +90,22 @@
 		{
 			"name": "Dominik Wilkowski",
 			"email": "hi@dominik-wilkowski.com",
-			"url": "https://dominik-wilkowski.com/"
+			"url": "https://github.com/dominikwilkowski"
 		},
 		{
 			"name": "Simon Pascal Klein",
 			"email": "klepas@klepas.org",
-			"url": "http://klepas.org/"
+			"url": "https://github.com/klepas"
 		},
 		{
 			"name": "Trevor Brennan",
 			"email": "t@trevorbrennan.com",
-			"url": "http://trevorbrennan.com/"
+			"url": "https://github.com/TrebBrennan"
 		},
 		{
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
-			"url": "http://alexpage.com.au/"
+			"url": "https://github.com/alex-page"
 		}
 	],
 	"license": "MIT"

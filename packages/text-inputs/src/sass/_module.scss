@@ -35,10 +35,10 @@
 	@include AU-fontgrid( sm, nospace ); // using default to make sure we don’t crop descenders and ascenders
 	@include AU-space( padding, 0.5unit 1unit );
 	@include AU-space( height, 2.875unit );
-	border: 3px solid $AU-color-Border;
-	background-color: $AU-color-Background-light;
+	border: 3px solid $AU-color-foreground-border;
+	background-color: $AU-color-background;
 	font-family: $AU-font;
-	color: $AU-color-Text;
+	color: $AU-color-foreground-text;
 	border-radius: $AU-border-radius;
 	vertical-align: middle;
 	appearance: none;
@@ -46,14 +46,14 @@
 	// state styling
 	&.au-text-input--dark:invalid,
 	&:invalid {
-		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
-		border-color: $AU-color-Error;
+		background-color: mix( $AU-color-error, $AU-color-background, 5% );
+		border-color: $AU-color-error;
 	}
 
 	&.au-text-input--dark.au-text-input--invalid,
 	&.au-text-input--invalid {
-		background-color: mix( $AU-color-Error, $AU-color-Background-light, 5% );
-		border-color: $AU-color-Error;
+		background-color: mix( $AU-color-error, $AU-color-background, 5% );
+		border-color: $AU-color-error;
 	}
 
 	// valid styling
@@ -61,14 +61,14 @@
 	// disabled :valid pseudo class because all fields would become valid and green too quickly. In the future :valid should be the default styling(not green)
 	// &.au-text-input--dark:valid,
 	// &:valid {
-	// 	background-color: mix( $AU-color-Success, $AU-color-Background-light, 5% );
-	// 	border-color: $AU-color-Success;
+	// 	background-color: mix( $AU-color-success, $AU-color-background, 5% );
+	// 	border-color: $AU-color-success;
 	// }
 
 	&.au-text-input--dark.au-text-input--valid,
 	&.au-text-input--valid {
-		background-color: mix( $AU-color-Success, $AU-color-Background-light, 5% );
-		border-color: $AU-color-Success;
+		background-color: mix( $AU-color-success, $AU-color-background, 5% );
+		border-color: $AU-color-success;
 	}
 
 	// disabled styling
@@ -89,11 +89,11 @@
 	&:focus {
 		outline-offset: 0;
 		border-radius: 0;
-		background-color: $AU-color-Background-light; // Keep the light-bg when focusing on success/error
+		background-color: $AU-color-background; // Keep the light-bg when focusing on success/error
 	}
 
 	&.au-text-input--dark {
-		border-color:  $AU-colordark-Text;
+		border-color:  $AU-colordark-foreground-text;
 
 		&[disabled] {
 			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
