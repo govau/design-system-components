@@ -52,7 +52,7 @@ npm install @gov.au/skip-link --save-dev
 Usage:
 
 ```jsx
-import Button from './skip-link.js';
+import AUskipLink from './skip-link.js';
 
 <AUskipLink links={[
   {
