@@ -90,7 +90,7 @@ All props:
   ]}
 />
 
-<AUinpageNavLinks
+<AUinpageNavSection
   title="Section 1"              {/* The title of the section */}
   link="section1"                {/* The link of this section, corresponds to the link inside AUinpageNavLinks */}
   level="2"                      {/* The semantic heading tag level, h1-h6, optional */}
