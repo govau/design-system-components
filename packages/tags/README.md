@@ -52,7 +52,7 @@ npm install @gov.au/tags --save-dev
 Usage:
 
 ```jsx
-import Button from './tags.js';
+import AUtags from './tags.js';
 
 <AUtags tags={[
   {
