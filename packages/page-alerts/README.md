@@ -51,7 +51,7 @@ npm install @gov.au/page-alerts --save-dev
 Usage:
 
 ```jsx
-import Button from './page-alerts.js';
+import AUpageAlert from './page-alerts.js';
 
 <AUpageAlert as='info'>
   Content of alert
