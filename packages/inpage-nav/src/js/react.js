@@ -92,7 +92,7 @@ export const AUinpageNavSection = ({ title, link, children, level, headingClass,
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<Fragment>
+		<div>
 			<HeadingTag className={ `au-inpage-nav-section ${ className }${ headingClass ? ' ' + headingClass : "" }` }>
 				{ title }
 
@@ -100,7 +100,7 @@ export const AUinpageNavSection = ({ title, link, children, level, headingClass,
 			</HeadingTag>
 
 			{ children }
-		</Fragment>
+		</div>
 	);
 };
 
