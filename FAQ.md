@@ -123,10 +123,12 @@ to have room: (`uikit-display-6`, `uikit-display-7`, `uikit-display-8`). That be
 We’re going to be changing to a more sensible `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl` system.
 
 
-### Why should I use a UI-Kit if I still have to write custom code?
-The purpose of a UI-Kit is to bring consistency, quality, efficiency and accessibility to government. IT is to help you get started and give you a foundation
-while not having to reinvent the wheel every time. as with any framework there is still an expectation that custom code will be needed to fully suit your
-users needs. There are always going to be gaps as the framework is help intentionally lose to help as many different platforms.
+### Why should I use the UI-Kit if I still have to write custom code?
+The purpose of the UI-Kit is to help you get started and give you a foundation to work from, which will in turn provide a consistency and efficiency across
+government projects. As with any framework, there is still an expectation that custom code will be needed to meet your specific needs.
+
+However, we do plan to provide whole page templates in the future which will greatly minimise the need to write custom code.
+
 Our recommendation is to write your custom code in a reusable and robust pattern. If you’re making a new component, follow the same patterns as the UI-Kit
 components. That will allow you to contribute back, or replace those components in the future if your team want to implement another solution.
 
