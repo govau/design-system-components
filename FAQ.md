@@ -3,7 +3,7 @@ FAQs
 
 > This page contains frequently asked questions from our community.
 
-If you can't find the answer to your question, you can email guides@digital.gov.au or join our conversation on
+If you can’t find the answer to your question, you can email guides@digital.gov.au or join our conversation on
 [Slack](http://guides.service.gov.au/join-slack/).
 
 
@@ -118,7 +118,7 @@ like `<h2>`’s. Where possible we recommend adding the UI-Kit classes directly 
 
 
 ### Why are the classes on the headings backwards? (`.uikit-display-6` for the biggest)?
-The reverse number system was implemented because when headings can get bigger but can't really get smaller. To be able to scale the system up further you need
+The reverse number system was implemented because when headings can get bigger but can’t really get smaller. To be able to scale the system up further you need
 to have room: (`uikit-display-6`, `uikit-display-7`, `uikit-display-8`). That being said we have identified this as very confusing.
 We’re going to be changing to a more sensible `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl` system.
 
