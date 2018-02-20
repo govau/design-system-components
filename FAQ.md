@@ -3,8 +3,8 @@ FAQs
 
 > This page contains frequently asked questions from our community.
 
-If you can’t find an answer to a question you have please email us at guides@digital.gov.au or join our conversation on
-[slack](http://guides.service.gov.au/join-slack/).
+If you can't find the answer to your question, you can email guides@digital.gov.au or join our conversation on
+[Slack](http://guides.service.gov.au/join-slack/).
 
 
 ## Contents
@@ -63,7 +63,7 @@ These changes in spacing will also influence our typographic rhythm for the spac
 
 
 ### Why do you use system fonts?
-During research we have met many Australians who live in rural and remote areas where Internet access is limited but Government services are still required.
+During research we have met many Australians who live in rural and remote areas where internet access is limited but government services are still required.
 Using system fonts makes the load times faster with only a slight compromise on aesthetics. System fonts have come a long way. Manufacturers are now shipping
 some elegant fonts as default in their operating systems.
 
