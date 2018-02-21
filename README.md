@@ -4,6 +4,12 @@ GOV.AU UI-Kit
 > The UI-Kit for the Australian Government.
 
 
+| Production [![CircleCI](https://circleci.com/gh/govau/uikit/tree/master.svg?style=svg)](https://circleci.com/gh/govau/uikit/tree/master) | Staging [![CircleCI](https://circleci.com/gh/govau/uikit/tree/develop.svg?style=svg)](https://circleci.com/gh/govau/uikit/tree/develop) |
+|------------------------------|--------------------------------------|
+| https://uikit.service.gov.au | https://uikit.staging.service.gov.au |
+|                              | user: `gold`, pass: `gold`           |
+
+
 ## Contents
 
 * [How to use](#how-to-use)
