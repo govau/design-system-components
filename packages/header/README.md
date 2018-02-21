@@ -96,7 +96,7 @@ header
 
 ## Tests
 
-The visual test: https://uikit.apps.b.cld.gov.au/packages/header/tests/site/
+The visual test: https://uikit.service.gov.au/packages/header/tests/site/
 
 
 **[⬆ back to top](#contents)**

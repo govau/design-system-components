@@ -93,7 +93,7 @@ headings
 
 ## Tests
 
-The visual test: https://uikit.apps.b.cld.gov.au/packages/headings/tests/site/
+The visual test: https://uikit.service.gov.au/packages/headings/tests/site/
 
 
 **[⬆ back to top](#contents)**
