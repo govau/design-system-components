@@ -18,30 +18,32 @@
 /**
  * The generic callout.
  */
-.uikit-callout {
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
-	line-height: $uikit-leading;
-	margin: uikit-space( 1 ) uikit-space( 0.25 );
-	padding: uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.75 ) uikit-space( 0.5 );
-	border-left: 6px solid $uikit-colour-Primary;
-	border-radius: $uikit-border-radius;
-	box-shadow: 2px 0 6px transparentize($uikit-colour-Text, 0.3);
-	max-width: $uikit-maxwidth;
+.au-callout {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 1.5unit );
+	@include AU-space( border-left, 0.25unit solid $AU-color-foreground-border );
+	@include AU-space( margin-bottom, 2unit );
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+	background-color: $AU-color-background-shade;
+	word-wrap: break-word;
 
-	:first-child {
-		margin-top: 0;
+	* + & {
+		@include AU-space( margin-top, 2unit );
 	}
 
-	:last-child {
-		margin-bottom: 0;
+	&.au-callout--dark {
+		color: $AU-colordark-foreground-text;
+		border-color: $AU-colordark-foreground-border;
+		background-color: $AU-colordark-background-shade;
 	}
 
-	.ie8 &,
-	.lt-ie8 & {
-		border-top: $uikit-borderize;
-		border-right: $uikit-borderize;
-		border-bottom: $uikit-borderize;
+	&.au-callout--alt {
+		background-color: $AU-color-background-alt-shade;
+	}
+
+	&.au-callout--dark.au-callout--alt {
+		background-color: $AU-colordark-background-alt-shade;
 	}
 }
 
@@ -49,32 +51,30 @@
 /**
  * The calendar event callout
  */
-.uikit-callout--calendar-event {
-	background-color: $uikit-colour-Background;
+.au-callout--calendar-event {
+	background-color: $AU-color-background-shade;
 }
 
-.uikit-callout--calendar-event__lede,
-.uikit-callout--calendar-event__time,
-.uikit-callout--calendar-event__name {
-	display: block; //overrides body, depending on markup (eg. using `p`).
+.au-callout--calendar-event__lede,
+.au-callout--calendar-event__time,
+.au-callout--calendar-event__name {
+	display: block; // overrides body, depending on markup (eg. using `p`).
 }
 
-.uikit-callout--calendar-event__lede,
-.uikit-callout--calendar-event__time,
-.uikit-callout--calendar-event__name {
-	margin-bottom: uikit-space( 0.5 ); //overrides body, to allow for var. text markup.
+* + .au-callout--calendar-event__time,
+* + .au-callout--calendar-event__name {
+	@include AU-space( margin-top, 0.5unit ); // overrides body, to allow for var. text markup.
 }
 
-.uikit-callout--calendar-event__lede {
-	font-size: 18px;
+.au-callout--calendar-event__lede {
+	@include AU-fontgrid( sm, nospace );
 }
 
-.uikit-callout--calendar-event__time,
-.uikit-callout--calendar-event__name {
-	font-size: 32px;
+.au-callout--calendar-event__time,
+.au-callout--calendar-event__name {
+	@include AU-fontgrid( xl, heading );
 }
 
-.uikit-callout--calendar-event__time {
+.au-callout--calendar-event__time {
 	font-weight: bold;
-	margin-bottom: 0;
 }

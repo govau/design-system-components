@@ -15,52 +15,61 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // accordion wrapper
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-accordion {
+.au-accordion {
+	@include AU-fontgrid( sm );
 	display: block;
-	border: $uikit-borderize;
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
-	margin-bottom: uikit-space( 1 );
+	border: 1px solid $AU-color-foreground-border;
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
 	padding: 0;
 
-	p:first-child {
-		margin-top: 0;
+	// Add spacing if there is an element before it
+	* + & {
+		@include AU-space( margin-top, 1unit );
 	}
 
-	p:last-child {
-		margin-bottom: 0;
+	&.au-accordion--dark {
+		border-color: $AU-colordark-foreground-border;
+		color: $AU-colordark-foreground-text;
 	}
 }
 
-.uikit-accordion + .uikit-accordion {
+.au-accordion + .au-accordion {
+	margin-top: 0;
 	border-top: 0;
-	margin-top: -( uikit-space( 1 ) );
 }
 
-.uikit-body .uikit-accordion__title,
-.uikit-accordion__title {
+.au-body .au-accordion__title,
+.au-accordion__title {
+	@include AU-fontgrid( md, heading );
+	@include AU-space( padding, 1unit 2.5unit 1unit 1unit );
 	display: block;
-	color: $uikit-colour-Text;
-	text-decoration: none;
+	color: $AU-color-foreground-action;
+	text-decoration: underline;
+	text-decoration-skip: ink;
 	width: 100%;
-	line-height: 1.3;
 	box-sizing: border-box;
-	font-size: 20px;
 	font-weight: bold;
-	padding: uikit-space( 0.75 ) uikit-space( 2.5 ) uikit-space( 0.75 ) uikit-space( 0.75 );
-	background-color: $uikit-colour-Background;
+	background-color: $AU-color-background-shade;
 	position: relative;
 	cursor: pointer;
-	border: 2px solid transparent;
 
-	&:focus {
-		outline: none;
-		border: 2px solid $uikit-colour-Text;
+	&:hover {
+		text-decoration: none;
+		color: $AU-color-foreground-text;
+
+		&:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'	<path fill="#{ $AU-color-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-color-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
+				'</svg>');
+		}
 	}
 
-	&:focus,
-	&:hover {
-		background-color: $uikit-colour-Background;
+	@include AU-focus();
+
+	&:focus {
+		z-index: 100;
 	}
 
 	// remove the default details arrow icon
@@ -71,21 +80,22 @@
 	&:after {
 		content: ' ';
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: uikit-space( 1 );
-		width: uikit-space( 0.75 );
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-			'	<path fill="#{ $uikit-colour-Primary }" d="M64 0l64 64-16 16-64-64"/>' +
-			'	<path fill="#{ $uikit-colour-Primary }" d="M64 0l16 16-64 64L0 64"/>' +
+		top: 50%;
+		@include AU-space( margin-top, -0.5unit ); // Pull it up half of it's height
+		@include AU-space( right, 1unit );
+		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+			'	<path fill="#{ $AU-color-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+			'	<path fill="#{ $AU-color-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
 			'</svg>');
 		background-repeat: no-repeat;
 		background-position: center;
-		z-index: 0;
+		z-index: 101;
 		transition: transform 0.25s ease-in;
 	}
 
-	&.uikit-accordion--closed:after {
+	&.au-accordion--closed:after {
 		transform: rotate(-180deg);
 	}
 
@@ -93,34 +103,63 @@
 	.lt-ie8 & {
 		&:after {
 			content: ' ▼ ';
-			margin-top: uikit-space( 0.75 );
+			@include AU-space( margin-top, 1unit );
 		}
 
-		&.uikit-accordion--open:after {
+		&.au-accordion--open:after {
 			content: ' ▲ ';
 		}
 	}
 
+	.au-accordion--dark & {
+		color: $AU-colordark-foreground-action;
+		background-color: $AU-colordark-background-shade;
+
+		&:hover {
+			color: $AU-colordark-foreground-text;
+
+			&:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+					'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+					'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
+					'</svg>');
+			}
+		}
+
+		@include AU-focus( 'dark' );
+
+		&:after{
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+				'</svg>');
+		}
+	}
 }
 
-.uikit-accordion__body {
+.au-accordion__body {
+	@include AU-fontgrid( sm );
 	overflow: hidden;
 
 	// only listen to the state classes if js is enabled
 	.js & {
-		&.uikit-accordion--open {
+		&.au-accordion--open {
 			display: block;
 			height: auto;
 		}
 
-		&.uikit-accordion--closed {
+		&.au-accordion--closed {
 			display: none;
 			height: 0;
 		}
 	}
 }
 
-.uikit-accordion__body-wrapper {
-	padding: uikit-space( 0.75 );
-	border-top: $uikit-borderize;
+.au-accordion__body-wrapper {
+	@include AU-space( padding, 1unit );
+	border-top: 1px solid $AU-color-foreground-border;
+
+	.au-accordion--dark & {
+		border-top: 1px solid $AU-colordark-foreground-border;
+	}
 }

@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,41 +52,47 @@ npm install @gov.au/progress-indicator --save-dev
 Usage:
 
 ```jsx
-import ProgressIndicator from './progress-indicator.js';
+import AUprogressIndicator from './progress-indicator.js';
 
-<ProgressIndicator items={[
-	{
-		link: 'forms/intro/',
-		text: 'Introduction',
-		status: 'done',
-	},
-	{
-		link: 'forms/contacts/',
-		text: 'Business Contacts',
-		status: 'doing',
-	},
-	{
-		link: 'forms/casestudies/',
-		text: 'Case Studies',
-		status: 'todo',
-	},
+<AUprogressIndicator items={[
+  {
+    link: 'forms/intro/',
+    text: 'Introduction',
+    status: 'done',
+  },
+  {
+    link: 'forms/contacts/',
+    text: 'Business Contacts',
+    status: 'doing',
+    li: {
+      className: 'li-wrapping-class',
+    },
+  },
+  {
+    link: 'forms/casestudies/',
+    text: 'Case Studies',
+    status: 'todo',
+  },
 ]} />
 ```
 
 All props:
 
 ```jsx
-<ProgressIndicator
-	items={[                   {/* All steps in a neat array */}
-		{
-			link: 'forms/intro/',  {/* The link to this step, optional */}
-			text: 'Introduction',  {/* The name of this step */}
-			status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
-			onClick={ () => {} }   {/* A function to execute when the link is clicked, optional */}
-		},
-	]}
+<AUprogressIndicator
+  dark={ false }             {/* A dark variation of the component */}
+  items={[                   {/* All steps in a neat array */}
+    {
+      link: 'forms/intro/',  {/* The link to this step, optional */}
+      text: 'Introduction',  {/* The name of this step */}
+      status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
+      li: {},                {/* An object that will be spread onto the <li> tag, optional */}
+      onClick={ () => {} }   {/* A function to execute when the link is clicked, optional */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/progress-indicator/tests/react/index.js).
 
@@ -112,18 +117,9 @@ progress-indicator
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/progress-indicator/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/progress-indicator/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -134,6 +130,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/progress-indi
 
 ## Release History
 
+* v2.0.0 - Moved to AU namespace, added new color themes and spacing
 * v1.0.0 - Fixing BEM issues with class names
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component

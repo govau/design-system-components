@@ -8,7 +8,6 @@
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -49,18 +48,9 @@ grid-12
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/grid-12/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -71,6 +61,8 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/grid-12/tests
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace
+* v0.1.1 - Fixed sass rounding precision
 * v0.1.0 - 💥 Initial version
 
 

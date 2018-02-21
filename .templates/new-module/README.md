@@ -8,7 +8,6 @@
 
 * [Install](#install)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -40,15 +39,6 @@ npm install @gov.au/[-replace-name-] --save-dev
 ```shell
 [-replace-name-]
 ```
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-## Build
 
 
 **[⬆ back to top](#contents)**

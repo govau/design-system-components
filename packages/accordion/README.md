@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -54,71 +53,84 @@ npm install @gov.au/accordion --save-dev
 
 Accordion has 3 public functions:
 
-- [`UIKIT.accordion.Open( elements, speed )`](#open)
-- [`UIKIT.accordion.Close( elements, speed )`](#close)
-- [`UIKIT.accordion.Toggle( elements, speed )`](#toggle)
+- [`AU.accordion.Open( elements, speed )`](#open)
+- [`AU.accordion.Close( elements, speed )`](#close)
+- [`AU.accordion.Toggle( elements, speed )`](#toggle)
 
 
 #### Open
 
-`UIKIT.accordion.Open( elements, speed )`
+`AU.accordion.Open( elements, speed )`
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-uikit-accordion` class and point `aria-controls` to the accordion body. 
-`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+`elements`
+The DOM element (not the container you want to open) like a button or a link;
+Usually DOM node/s of accordion titles you want to open. They need to have the `aria-controls` attribute that points to the accordion body.
+
+`speed`
+Animation speed in milliseconds (optional, defaults to `250ms`)
 
 Example:
 
 ```js
-UIKIT.accordion.Open( document.getElementById('accordion-title'), 500 );
+AU.accordion.Open( document.getElementById('accordion-title'), 500 );
 ```
 
 
 #### Close
 
-`UIKIT.accordion.Close( elements, speed )`
+`AU.accordion.Close( elements, speed )`
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-uikit-accordion` class and point `aria-controls` to the accordion body. 
-`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+`elements`
+The DOM element (not the container you want to close) like a button or a link;
+Usually DOM node/s of accordion titles you want to close. They need to have the `aria-controls` attribute that points to the accordion body.
+
+`speed`
+Animation speed in milliseconds (optional, defaults to `250ms`)
 
 Example:
 
 ```js
-UIKIT.accordion.Close( document.getElementById('accordion-title'), 500 );
+AU.accordion.Close( document.getElementById('accordion-title'), 500 );
 ```
 
 
 #### Toggle
 
-`UIKIT.accordion.Toggle( elements, speed, callbacks )`
+`AU.accordion.Toggle( elements, speed, callbacks )`
 
 The parameters are:
 
-`elements` - DOM node/s of accordion titles you want to open. They should have the `js-uikit-accordion` class and point `aria-controls` to the accordion body. 
-`speed` - animation speed in milliseconds (optional, defaults to `250ms`)
+`elements`
+The DOM element (not the container you want to toggle) like a button or a link;
+Usually DOM node/s of accordion titles you want to toggle. They need to have the `aria-controls` attribute that points to the accordion body.
+
+`speed`
+Animation speed in milliseconds (optional, defaults to `250ms`)
+
 `callbacks` - An object of four optional callbacks: `{ onOpen, afterOpen, onClose, afterClose }`
 
 Example:
 
 ```js
-UIKIT.accordion.Toggle( document.getElementById('accordion-title'), 500,
-	{
-		onOpen: function() {
-			console.log('This function will run when an accordion opens');
-		},
-		afterOpen: function() {
-			console.log('This function will run after an accordion has opened');
-		},
-		onClose: function() {
-			console.log('This function will run when an accordion closes');
-		},
-		afterClose: function() {
-			console.log('This function will run after an accordion has closed');
-		},
-	}
+AU.accordion.Toggle( document.getElementById('accordion-title'), 500,
+  {
+    onOpen: function() {
+      console.log('This function will run when an accordion opens');
+    },
+    afterOpen: function() {
+      console.log('This function will run after an accordion has opened');
+    },
+    onClose: function() {
+      console.log('This function will run when an accordion closes');
+    },
+    afterClose: function() {
+      console.log('This function will run after an accordion has closed');
+    },
+  }
 );
 ```
 
@@ -134,36 +146,38 @@ UIKIT.accordion.Toggle( document.getElementById('accordion-title'), 500,
 Usage:
 
 ```jsx
-import Accordion from './accordion.js';
+import AUaccordion from './accordion.js';
 
-<Accordion header="First headline">
-	Some content of the first accordion.
-</Accordion>
+<AUaccordion header="First headline">
+  Some content of the first accordion.
+</AUaccordion>
 
-<Accordion header="Second headline">
-	Some content of the second accordion.
-</Accordion>
+<AUaccordion header="Second headline">
+  Some content of the second accordion.
+</AUaccordion>
 
-<Accordion header="Third headline">
-	Some content of the third accordion.
-</Accordion>
+<AUaccordion header="Third headline">
+  Some content of the third accordion.
+</AUaccordion>
 ```
 
 All props:
 
 ```jsx
-<Accordion
-	header="Headline"        {/* The headline of the accordion */}
-	open={ true }            {/* Open state, optional */}
-	speed="250"              {/* Speed of the animation in ms, optional */}
-	onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
-	afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
-	onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
-	afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
+<AUaccordion
+  header="Headline"        {/* The headline of the accordion */}
+  open={ true }            {/* Open state, optional */}
+  speed="250"              {/* Speed of the animation in ms, optional */}
+  onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
+  afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
+  onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
+  afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
+  dark={ false }           {/* A dark variation of the component */}
 >
-	Some content of the third accordion.
-</Accordion>
+  Some content for this accordion.
+</AUaccordion>
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/accordion/tests/react/index.js).
 
@@ -180,26 +194,26 @@ To initialize the [jQuery](https://jquery.com/) plugin make sure you have jQuery
 
 ```js
 $(function() {
-	$('.js-uikit-accordion-wrapper').uikitAccordion();
+  $('.js-au-accordion-wrapper').AUaccordion();
 });
 ```
 
 You can optionally add functions to each event like so:
 
 ```js
-$('.js-uikit-accordion-wrapper').uikitAccordion({
-	onOpen: function() {
-		console.log('This function will run when an accordion opens');
-	},
-	afterOpen: function() {
-		console.log('This function will run after an accordion has opened');
-	},
-	onClose: function() {
-		console.log('This function will run when an accordion closes');
-	},
-	afterClose: function() {
-		console.log('This function will run after an accordion has closed');
-	},
+$('.js-au-accordion-wrapper').AUaccordion({
+  onOpen: function() {
+    console.log('This function will run when an accordion opens');
+  },
+  afterOpen: function() {
+    console.log('This function will run after an accordion has opened');
+  },
+  onClose: function() {
+    console.log('This function will run when an accordion closes');
+  },
+  afterClose: function() {
+    console.log('This function will run after an accordion has closed');
+  },
 });
 ```
 
@@ -225,18 +239,9 @@ accordion
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/accordion/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/accordion/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -247,6 +252,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/accordion/tes
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react and jQuery component
 * v0.1.0 - 💥 Initial version

@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -41,44 +40,174 @@
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
 
-	<a id="url" class="test-link" href="../../../../">&larr; back to the module index</a>
+	<a id="url" class="test-link" href="../">&larr; back to the module index</a>
 
 	<h1>Test: buttons</h1>
 
-	<h2>primary button</h2>
+	<div class="split-wrapper">
+		<div class="split">
+			<h2>primary button</h2>
 
-	<button class="uikit-btn">Continue</button>
-	<button class="uikit-btn" disabled>Continue</button>
+			<button class="au-btn">Continue</button>
+			<button class="au-btn" disabled>Continue</button>
 
-	<hr>
-	<h2>secondary button</h2>
+			<hr>
+			<h2>secondary button</h2>
 
-	<button class="uikit-btn uikit-btn--secondary">Save</button>
-	<button class="uikit-btn uikit-btn--secondary" disabled>Save</button>
+			<button class="au-btn au-btn--secondary">Save</button>
+			<button class="au-btn au-btn--secondary" disabled>Save</button>
 
-	<hr>
-	<h2>tertiary button</h2>
+			<hr>
+			<h2>tertiary button</h2>
 
-	<button class="uikit-btn uikit-btn--tertiary">Cancel</button>
-	<button class="uikit-btn uikit-btn--tertiary" disabled>Cancel</button>
+			<button class="au-btn au-btn--tertiary">Cancel</button>
+			<button class="au-btn au-btn--tertiary" disabled>Cancel</button>
 
-	<hr>
-	<h2>buttons with block</h2>
+			<hr>
+			<h2>buttons with block</h2>
 
-	<button class="uikit-btn uikit-btn--block">Continue</button>
-	<button class="uikit-btn uikit-btn--secondary uikit-btn--block">Save</button>
-	<button class="uikit-btn uikit-btn--tertiary uikit-btn--block">Cancel</button>
+			<button class="au-btn au-btn--block">Continue</button>
+			<button class="au-btn au-btn--secondary au-btn--block">Save</button>
+			<button class="au-btn au-btn--tertiary au-btn--block">Cancel</button>
 
-	<hr>
-	<h2>buttons wrongly marked up :)</h2>
+			<hr>
+			<h2>Links <code>&lt;a></code> styled to look like buttons</h2>
 
-	<a class="uikit-btn" href="#url">I am actually a link</a>
-	<a class="uikit-btn uikit-btn--secondary" href="#url">I am actually a link</a>
-	<a class="uikit-btn uikit-btn--tertiary" href="#url">I am actually a link</a>
+			<a class="au-btn" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--secondary" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--tertiary" href="#url">I am actually a link</a>
 
-	<hr>
+			<hr>
 
-	<a class="uikit-btn uikit-btn--block" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--block" href="#url">I am actually a link</a>
+		</div>
+		<div class="split split--dark">
 
+			<h2>primary button <code>--dark</code></h2>
+
+			<button class="au-btn au-btn--dark">Continue</button>
+			<button class="au-btn au-btn--dark" disabled>Continue</button>
+
+			<hr>
+			<h2>secondary button <code>--dark</code></h2>
+
+			<button class="au-btn au-btn--dark au-btn--secondary">Save</button>
+			<button class="au-btn au-btn--dark au-btn--secondary" disabled>Save</button>
+
+			<hr>
+			<h2>tertiary button <code>--dark</code></h2>
+
+			<button class="au-btn au-btn--dark au-btn--tertiary">Cancel</button>
+			<button class="au-btn au-btn--dark au-btn--tertiary" disabled>Cancel</button>
+
+			<hr>
+			<h2>buttons with block <code>--dark</code></h2>
+
+			<button class="au-btn au-btn--dark au-btn--block">Continue</button>
+			<button class="au-btn au-btn--dark au-btn--secondary au-btn--block">Save</button>
+			<button class="au-btn au-btn--dark au-btn--tertiary au-btn--block">Cancel</button>
+
+			<hr>
+			<h2>Links <code>&lt;a></code> styled to look like buttons <code>--dark</code></h2>
+
+			<a class="au-btn au-btn--dark" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--dark au-btn--secondary" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--dark au-btn--tertiary" href="#url">I am actually a link</a>
+
+			<hr>
+
+			<a class="au-btn au-btn--dark au-btn--block" href="#url">I am actually a link</a>
+		</div>
+	</div>
+	<div class="split-wrapper">
+		<div class="split split--alt">
+			<h2>primary button</h2>
+
+			<button class="au-btn">Continue</button>
+			<button class="au-btn" disabled>Continue</button>
+
+			<hr>
+			<h2>secondary button</h2>
+
+			<button class="au-btn au-btn--secondary">Save</button>
+			<button class="au-btn au-btn--secondary" disabled>Save</button>
+
+			<hr>
+			<h2>tertiary button</h2>
+
+			<button class="au-btn au-btn--tertiary">Cancel</button>
+			<button class="au-btn au-btn--tertiary" disabled>Cancel</button>
+
+			<hr>
+			<h2>buttons with block</h2>
+
+			<button class="au-btn au-btn--block">Continue</button>
+			<button class="au-btn au-btn--secondary au-btn--block">Save</button>
+			<button class="au-btn au-btn--tertiary au-btn--block">Cancel</button>
+
+			<hr>
+			<h2>Links <code>&lt;a></code> styled to look like buttons</h2>
+
+			<a class="au-btn" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--secondary" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--tertiary" href="#url">I am actually a link</a>
+
+			<hr>
+
+			<a class="au-btn au-btn--block" href="#url">I am actually a link</a>
+		</div>
+		<div class="split split--alt split--dark">
+
+			<h2>primary button <code>--dark</code></h2>
+
+			<button class="au-btn au-btn--dark">Continue</button>
+			<button class="au-btn au-btn--dark" disabled>Continue</button>
+
+			<hr>
+			<h2>secondary button <code>--dark</code></h2>
+
+			<button class="au-btn au-btn--dark au-btn--secondary">Save</button>
+			<button class="au-btn au-btn--dark au-btn--secondary" disabled>Save</button>
+
+			<hr>
+			<h2>tertiary button <code>--dark</code></h2>
+
+			<button class="au-btn au-btn--dark au-btn--tertiary">Cancel</button>
+			<button class="au-btn au-btn--dark au-btn--tertiary" disabled>Cancel</button>
+
+			<hr>
+			<h2>buttons with block <code>--dark</code></h2>
+
+			<button class="au-btn au-btn--dark au-btn--block">Continue</button>
+			<button class="au-btn au-btn--dark au-btn--secondary au-btn--block">Save</button>
+			<button class="au-btn au-btn--dark au-btn--tertiary au-btn--block">Cancel</button>
+
+			<hr>
+			<h2>Links <code>&lt;a></code> styled to look like buttons <code>--dark</code></h2>
+
+			<a class="au-btn au-btn--dark" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--dark au-btn--secondary" href="#url">I am actually a link</a>
+			<a class="au-btn au-btn--dark au-btn--tertiary" href="#url">I am actually a link</a>
+
+			<hr>
+
+			<a class="au-btn au-btn--dark au-btn--block" href="#url">I am actually a link</a>
+		</div>
+	</div>
+
+	<div class="height-test">
+		<label class="no-a11y-test" for="select-height-test">What option?</label>
+		<select id="select-height-test" class="au-select">
+			<option value="">Please select</option>
+			<option value="1">Option 1</option>
+			<option value="2">Option 2</option>
+			<option value="3">Option 3</option>
+		</select>
+		<label class="no-a11y-test" for="textinput-height-test">A text input field</label>
+		<input class="au-text-input" name="textinput-height-test" id="textinput-height-test" type="text" value="ABCZ abcjg liI1 12340">
+		<button class="au-btn">Button</button>
+		<button class="au-btn au-btn--secondary">Button</button>
+		<button class="au-btn au-btn--tertiary">Button</button>
+	</div>
 </body>
 </html>

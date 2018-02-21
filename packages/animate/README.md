@@ -9,7 +9,6 @@
 * [Install](#install)
 * [API](#api)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -41,14 +40,14 @@ npm install @gov.au/animate --save-dev
 
 Animate has 3 public functions:
 
-- [`UIKIT.animate.Run( options )`](#run)
-- [`UIKIT.animate.Stop( options )`](#stop)
-- [`UIKIT.animate.Toggle( options )`](#toggle)
+- [`AU.animate.Run( options )`](#run)
+- [`AU.animate.Stop( options )`](#stop)
+- [`AU.animate.Toggle( options )`](#toggle)
 
 
 ### Run
 
-`UIKIT.animate.Run( options )`
+`AU.animate.Run( options )`
 
 The options settings are:
 
@@ -61,19 +60,19 @@ The options settings are:
 Example:
 
 ```js
-UIKIT.animate.Run(
-	element: document.getElementById('elementId'),
-	property: 'height',
-	endSize: 'auto',
-	speed: 1000,
-	callback: myFunction,
+AU.animate.Run(
+  element: document.getElementById('elementId'),
+  property: 'height',
+  endSize: 'auto',
+  speed: 1000,
+  callback: myFunction,
 )
 ```
 
 
 ### Stop
 
-`UIKIT.animate.Stop( options )`
+`AU.animate.Stop( options )`
 
 The options settings are:
 
@@ -82,15 +81,15 @@ The options settings are:
 Example:
 
 ```js
-UIKIT.animate.Stop(
-	element: document.getElementById('elementId'),
+AU.animate.Stop(
+  element: document.getElementById('elementId'),
 )
 ```
 
 
 ### Toggle
 
-`UIKIT.animate.Toggle( options )`
+`AU.animate.Toggle( options )`
 
 The options settings are:
 
@@ -106,15 +105,15 @@ The options settings are:
 Example:
 
 ```js
-UIKIT.animate.Toggle(
-	element: document.getElementById('elementId'),
-	property: 'height',
-	closeSize: 0,
-	openSize: 'auto',
-	speed: 1000,
-	prefunction: function( element, state ) { myPreFunction() },
-	postfunction: function( element, state ) { myPreFunction() },
-	callback: function( element, state ) { myCallbackFunction() },
+AU.animate.Toggle(
+  element: document.getElementById('elementId'),
+  property: 'height',
+  closeSize: 0,
+  openSize: 'auto',
+  speed: 1000,
+  prefunction: function( element, state ) { myPreFunction() },
+  postfunction: function( element, state ) { myPreFunction() },
+  callback: function( element, state ) { myCallbackFunction() },
 )
 ```
 
@@ -139,18 +138,9 @@ animate
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/animate/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/animate/tests/site/
 
 Run `jest` for the unit tests
 
@@ -163,6 +153,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, fixed export
 * v0.1.5 - Fixed pancake config
 * v0.1.4 - Pinned pancake plugins
 * v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction

@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,22 +52,24 @@ npm install @gov.au/buttons --save-dev
 Usage:
 
 ```jsx
-import Button from './buttons.js';
+import AUbutton from './buttons.js';
 
-<Button text="Continue" />
+<AUbutton>Continue</AUbutton>
 ```
 
 All props:
 
 ```jsx
-<Button
-	text="Submitting"     {/* The text of the button */}
-	as=""                 {/* The kind of button, 'secondary','tertiary', optional */}
-	block={ true }        {/* The block option to make the button fill the available width, optional */}
-	type="submit"         {/* The type attribute, optional */}
-	onClick={ () => {} }  {/* A function to execute when the button is clicked, optional */}
-/>
+<AUbutton
+  href            {/* If an href is set the button will render as a link */}
+  children        {/* Anything inside */}
+  as=""           {/* The kind of button, 'secondary','tertiary', optional */}
+  block={ true }  {/* The block option to make the button fill the available width, optional */}
+  type="submit"   {/* The type attribute, optional */}
+  dark={ false }  {/* A dark variation of the component */}
+></AUbutton>
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/buttons/tests/react/index.js).
 
@@ -93,18 +94,9 @@ buttons
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/buttons/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/buttons/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -115,6 +107,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/buttons/tests
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.5.0 - Added pancake-react plugin, ES5 main file
 * v0.4.0 - Added react component
 * v0.3.0 - Fixed px height, added more robust CSS code

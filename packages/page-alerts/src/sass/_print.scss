@@ -8,7 +8,7 @@
 
 
 @media print {
-	.uikit-page-alerts {
+	.au-page-alerts {
 		border-color: #000 !important;
 		background-color: #fff !important;
 		border-left: 2px solid #000 !important;
@@ -27,15 +27,15 @@
 		}
 	}
 
-	.uikit-page-alerts--success:after {
+	.au-page-alerts--success:after {
 		content: 'success' !important;
 	}
 
-	.uikit-page-alerts--warning:after {
+	.au-page-alerts--warning:after {
 		content: 'warning' !important;
 	}
 
-	.uikit-page-alerts--error:after {
+	.au-page-alerts--error:after {
 		content: 'error' !important;
 	}
 }

@@ -3,8 +3,8 @@ FAQs
 
 > This page contains frequently asked questions from our community.
 
-If you can’t find an answer to a question you have please email us at guides@digital.gov.au or join our conversation on
-[slack](http://guides.service.gov.au/join-slack/).
+If you can’t find the answer to your question, you can email guides@digital.gov.au or join our conversation on
+[Slack](http://guides.service.gov.au/join-slack/).
 
 
 ## Contents
@@ -20,7 +20,7 @@ If you can’t find an answer to a question you have please email us at guides@d
 ## General
 
 ### Is there any documentation or list of components?
-You can view our current [unit tests](http://uikit.apps.staging.digital.gov.au/). We’re creating a new version which will make it easier to get started
+You can view our current [unit tests](https://uikit.service.gov.au/). We’re creating a new version which will make it easier to get started
 with the UI-Kit.
 
 
@@ -63,7 +63,7 @@ These changes in spacing will also influence our typographic rhythm for the spac
 
 
 ### Why do you use system fonts?
-During research we have met many Australians who live in rural and remote areas where Internet access is limited but Government services are still required.
+During research we have met many Australians who live in rural and remote areas where internet access is limited but government services are still required.
 Using system fonts makes the load times faster with only a slight compromise on aesthetics. System fonts have come a long way. Manufacturers are now shipping
 some elegant fonts as default in their operating systems.
 
@@ -118,15 +118,17 @@ like `<h2>`’s. Where possible we recommend adding the UI-Kit classes directly 
 
 
 ### Why are the classes on the headings backwards? (`.uikit-display-6` for the biggest)?
-The reverse number system was implemented because when headings can get bigger but can't really get smaller. To be able to scale the system up further you need
+The reverse number system was implemented because when headings can get bigger but can’t really get smaller. To be able to scale the system up further you need
 to have room: (`uikit-display-6`, `uikit-display-7`, `uikit-display-8`). That being said we have identified this as very confusing.
 We’re going to be changing to a more sensible `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl` system.
 
 
-### Why should I use a UI-Kit if I still have to write custom code?
-The purpose of a UI-Kit is to bring consistency, quality, efficiency and accessibility to government. IT is to help you get started and give you a foundation
-while not having to reinvent the wheel every time. as with any framework there is still an expectation that custom code will be needed to fully suit your
-users needs. There are always going to be gaps as the framework is help intentionally lose to help as many different platforms.
+### Why should I use the UI-Kit if I still have to write custom code?
+The purpose of the UI-Kit is to help you get started and give you a foundation to work from, which will in turn provide a consistency and efficiency across
+government projects. As with any framework, there is still an expectation that custom code will be needed to meet your specific needs.
+
+However, we do plan to provide whole page templates in the future which will greatly minimise the need to write custom code.
+
 Our recommendation is to write your custom code in a reusable and robust pattern. If you’re making a new component, follow the same patterns as the UI-Kit
 components. That will allow you to contribute back, or replace those components in the future if your team want to implement another solution.
 

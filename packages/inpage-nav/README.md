@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,49 +52,54 @@ npm install @gov.au/inpage-nav --save-dev
 Usage:
 
 ```jsx
-import { InpageNavLinks, InpageNavSection } from './inpage-nav.js';
+import { AUinpageNavLinks, AUinpageNavSection } from './inpage-nav.js';
 
-<InpageNavLinks sections={[
-	{
-		link: 'section1',
-		title: 'Section 1',
-	},
-	{
-		link: 'section2',
-		title: 'Section 2',
-	},
+<AUinpageNavLinks sections={[
+  {
+    link: 'section1',
+    title: 'Section 1',
+  },
+  {
+    link: 'section2',
+    title: 'Section 2',
+    li: {
+      className: 'li-wrapping-class',
+    },
+  },
 ]} />
 
-<InpageNavSection title="Section 1 headline" link="section1">
-</InpageNavSection>
+<AUinpageNavSection title="Section 1 headline" link="section1">
+</AUinpageNavSection>
 
-<InpageNavSection title="Section 2 headline" link="section2">
-</InpageNavSection>
+<AUinpageNavSection title="Section 2 headline" link="section2">
+</AUinpageNavSection>
 ```
 
 All props:
 
 ```jsx
-<InpageNavLinks
-	title="Contents"         {/* The title above all sections */}
-	sections={[              {/* All section in a neat array */}
-		{
-			link: 'section1',    {/* The link to the section, this will be converted to a hash link */}
-			title: 'Section 1',  {/* The link text of this section */}
-			onClick: () => {},   {/* A function to be executed when a section is clicked, optional */}
-		},
-	]}
+<AUinpageNavLinks
+  title="Contents"         {/* The title above all sections */}
+  sections={[              {/* All section in a neat array */}
+    {
+      link: 'section1',    {/* The link to the section, this will be converted to a hash link */}
+      title: 'Section 1',  {/* The link text of this section */}
+      li: {},              {/* An object that will be spread onto the <li> tag, optional */}
+      onClick: () => {},   {/* A function to be executed when a section is clicked, optional */}
+    },
+  ]}
 />
 
-<InpageNavLinks
-	title="Section 1"                {/* The title of the section */}
-	link="section1"                  {/* The link of this section, corresponds to the link inside InpageNavLinks */}
-	level="2"                        {/* The semantic heading tag level, h1-h6, optional */}
-	headingClass="uikit-display-3"   {/* Additional classes to be added to the headline, optional */}
-	sectionLink="Link to section"    {/* The text for the section link, optional */}
-	sectionLinkOnClick={ () => {} }  {/* A function to be executed when the section link is clicked, optional */}
+<AUinpageNavSection
+  title="Section 1"              {/* The title of the section */}
+  link="section1"                {/* The link of this section, corresponds to the link inside AUinpageNavLinks */}
+  level="2"                      {/* The semantic heading tag level, h1-h6, optional */}
+  headingClass="au-display-lg"   {/* Additional classes to be added to the headline, optional */}
+  sectionLink="Link to section"  {/* The text for the section link, optional */}
+  dark={ false }                 {/* A dark variation of the component */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/inpage-nav/tests/react/index.js).
 
@@ -124,18 +128,9 @@ inpage-nav
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/inpage-nav/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/inpage-nav/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -146,6 +141,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/inpage-nav/te
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Fixed a11y contrast issue

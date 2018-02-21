@@ -1,59 +1,81 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Breadcrumbs from './breadcrumbs.js';
+import AUbreadcrumbs from './breadcrumbs.js';
 
 
 ReactDOM.render(
-	<div>
-		<h2>breadcrumbs</h2>
-		<Breadcrumbs label="Breadcrumb for this page" items={[
-			{
-				link: '#options',
-				text: 'Options',
-			},
-			{
-				link: '#help',
-				text: 'Help',
-			},
-			{
-				text: 'Sign Out',
-			},
-		]} />
+	<div className="split-wrapper">
+		<div className="split au-body">
+			<h2>breadcrumbs</h2>
+			<AUbreadcrumbs label="Breadcrumb for this page" items={[
+				{
+					link: '#options',
+					text: 'Options',
+				},
+				{
+					link: '#help',
+					text: 'Help',
+				},
+				{
+					text: 'Sign Out',
+				},
+			]} />
 
+			<hr />
+			<h2>breadcrumbs with onClick</h2>
 
-		<hr />
-		<h2>breadcrumbs inverted</h2>
+			<AUbreadcrumbs label="Breadcrumb for the other page" items={[
+				{
+					link: '#link',
+					text: 'with link',
+					onClick: event => { event.preventDefault(); console.log('This function is called when the first item is clicked') },
+				},
+				{
+					text: 'without link',
+					onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
+				},
+			]} />
 
-		<Breadcrumbs inverted label="Breadcrumb for the other page" items={[
-			{
-				link: '#options',
-				text: 'Options2',
-			},
-			{
-				link: '#help',
-				text: 'Help2',
-			},
-			{
-				text: 'Sign Out2',
-			},
-		]} />
+			<hr />
+			<h2>breadcrumbs with additional classes</h2>
 
+			<AUbreadcrumbs label="Breadcrumb for the next page" className="testing" items={[
+				{
+					link: '#link',
+					text: 'Options',
+				},
+				{
+					link: '#link',
+					text: 'Help',
+					className: 'testing',
+				},
+				{
+					text: 'Sign Out',
+					li: {
+						className: 'testing',
+					},
+				},
+			]} />
+		</div>
+		<div className="split au-body au-body--dark">
+			<h2>breadcrumbs <code>--dark</code></h2>
 
-		<hr />
-		<h2>breadcrumbs with onClick</h2>
+			<AUbreadcrumbs dark label="Breadcrumb for the other page" items={[
+				{
+					link: '#options',
+					text: 'Options2',
+				},
+				{
+					link: '#help',
+					text: 'Help2',
+				},
+				{
+					text: 'Sign Out2',
+				},
+			]} />
 
-		<Breadcrumbs label="Breadcrumb for the other page" items={[
-			{
-				link: '#link',
-				text: 'with link',
-				onClick: event => { event.preventDefault(); console.log('This function is called when the first item is clicked') },
-			},
-			{
-				text: 'without link',
-				onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
-			},
-		]} />
+		</div>
 	</div>,
 
 	document.getElementById('root'),

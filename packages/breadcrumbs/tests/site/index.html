@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -36,7 +35,7 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="uikit-body">
+<body>
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
@@ -45,26 +44,51 @@
 
 	<h1>Test: breadcrumbs</h1>
 
-	<h2>breadcrumbs</h2>
+	<div class="split-wrapper">
+		<div class="split au-body">
+			<h2>breadcrumbs</h2>
 
-	<nav class="uikit-breadcrumbs" aria-label="breadcrumb">
-		<ul class="uikit-link-list uikit-link-list--inline">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Parent</a></li>
-			<li>Current page</li>
-		</ul>
-	</nav>
+			<nav class="au-breadcrumbs" aria-label="breadcrumb">
+				<ul class="au-link-list au-link-list--inline">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Parent</a></li>
+					<li>Current page</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="split au-body au-body--dark">
+			<h2>breadcrumbs <code>--dark</code></h2>
+			<nav class="au-breadcrumbs au-breadcrumbs--dark" aria-label="breadcrumb">
+				<ul class="au-link-list au-link-list--inline au-link-list--dark">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Parent</a></li>
+					<li>Current page</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="split-wrapper">
+		<div class="split au-body au-body--alt">
+			<h2>breadcrumbs</h2>
 
-	<hr>
-	<h2>breadcrumbs inverted</h2>
-
-	<nav class="uikit-breadcrumbs uikit-breadcrumbs--inverted" aria-label="breadcrumb">
-		<ul class="uikit-link-list uikit-link-list--inline uikit-link-list--inverted">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Parent</a></li>
-			<li>Current page</li>
-		</ul>
-	</nav>
-
+			<nav class="au-breadcrumbs" aria-label="breadcrumb">
+				<ul class="au-link-list au-link-list--inline">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Parent</a></li>
+					<li>Current page</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="split au-body au-body--alt au-body--dark">
+			<h2>breadcrumbs <code>--dark</code></h2>
+			<nav class="au-breadcrumbs au-breadcrumbs--dark" aria-label="breadcrumb">
+				<ul class="au-link-list au-link-list--inline au-link-list--dark">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Parent</a></li>
+					<li>Current page</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 </body>
 </html>

@@ -225,7 +225,7 @@ const HELPER = (() => { // constructor factory
 		VERSION: PKG.version,
 		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/../.templates`),
-		URL: `http://uikit.apps.staging.digital.gov.au`,
+		URL: `https://uikit.service.gov.au`,
 		GITHUB: `https://github.com/govau/uikit/`,
 
 
@@ -289,30 +289,34 @@ HELPER.precompile = (() => {
 		 * Move files from src/ to lib/ and replace placeholders inside
 		 */
 		sass: () => {
-			// 1. create path
-			CreateDir('./lib/sass/');
+			const _hasSass = Fs.existsSync( `${ process.cwd() }/src/sass/_module.scss` );
 
-			// 2. copy files
-			CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
-			CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
-			CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
+			if( _hasSass ) {
+				// 1. create path
+				CreateDir('./lib/sass/');
 
-			// Rethingiemajiging the peer dependencies for sass
-			let dependencies = [];
-			for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
-				dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '') }"),`);
+				// 2. copy files
+				CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
+				CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
+				CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
+
+				// Rethingiemajiging the peer dependencies for sass
+				let dependencies = [];
+				for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
+					dependencies.push(`("${ module }", "${ HELPER.DEPENDENCIES[ module ].replace('^', '').replace('>', '') }"),`);
+				}
+
+				// 3.replace strings inside new files in lib
+				const searches = {
+					'[replace-name]': HELPER.NAME,
+					'[replace-version]': HELPER.VERSION,
+					'[replace-dependencies]': dependencies.join(`\n\t`),
+				};
+
+				ReplaceFileContent( searches, './lib/sass/_globals.scss' );
+				ReplaceFileContent( searches, './lib/sass/_module.scss' );
+				ReplaceFileContent( searches, './lib/sass/_print.scss' );
 			}
-
-			// 3.replace strings inside new files in lib
-			const searches = {
-				'[replace-name]': HELPER.NAME,
-				'[replace-version]': HELPER.VERSION,
-				'[replace-dependencies]': dependencies.join(`\n\t`),
-			};
-
-			ReplaceFileContent( searches, './lib/sass/_globals.scss' );
-			ReplaceFileContent( searches, './lib/sass/_module.scss' );
-			ReplaceFileContent( searches, './lib/sass/_print.scss' );
 		},
 
 		/**
@@ -450,7 +454,7 @@ HELPER.precompile = (() => {
  *
  * COMPILE MODULE
  *
- * Compile assets, move files from /src/ to /lib/
+ * Compile assets for tests
  *
  **************************************************************************************************************************************************************/
 
@@ -706,32 +710,20 @@ HELPER.generate = (() => {
 					let jquery = '';
 					let react = '';
 
-					if( pkg.pancake['pancake-module'].js ) {
-						if( pkg.pancake['pancake-module'].js.jquery ) {
-							jquery = `<br><a href="packages/${ module }/tests/jquery/">` +
-									`<img src="https://img.shields.io/badge/js        -jquery-green.svg?colorA=313131&colorB=1B7991" alt="">` +
-								`</a>`;
-						}
+					if( pkg.pancake['pancake-module'].jquery ) {
+						jquery = `<a class="link" href="packages/${ module }/tests/jquery/">jquery</a>`;
+					}
 
-						if( pkg.pancake['pancake-module'].js.react ) {
-							react = `<br><a href="packages/${ module }/tests/react/">` +
-									`<img src="https://img.shields.io/badge/js        -react-green.svg?colorA=313131&colorB=1B7991" alt="">` +
-								`</a>`;
-						}
+					if( pkg.pancake['pancake-module'].react ) {
+						react = `<a class="link" href="packages/${ module }/tests/react/">react</a>`;
 					}
 
 					replacement += `<li>` +
-						`<a class="module-list__headline" href="${
-						jquery === '' && react === ''
-						? `packages/${ module }/tests/site/`
-						: `packages/${ module }/tests/` }">` +
-							`${ module }</a>${ jquery }${ react }` +
-							`<br><a href="https://www.npmjs.com/package/@gov.au/${ module }">` +
-								`<img src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=version&colorA=313131&colorB=1B7991" alt="">` +
-							`</a>` +
-							`<br><a href="https://github.com/govau/uikit/tree/master/packages/${ module }">` +
-								`<img src="https://img.shields.io/badge/docs    -readme-green.svg?colorA=313131&colorB=1B7991" alt="">` +
-							`</a>` +
+						`	<a class="module-list__headline" href="packages/${ module }/tests/">${ module }</a>` +
+						`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=%20&colorA=ffffff&colorB=00698f&style=flat-square" alt="${ module } version">` +
+						`	<br>` +
+						`	<a class="link" href="packages/${ module }/tests/site/">site</a> ${ jquery } ${ react }` +
+						`	<a class="link" href="https://github.com/govau/uikit/blob/master/packages/${ module }/README.md">readme</a>` +
 						`</li>\n`;
 				}
 			}
@@ -883,6 +875,8 @@ HELPER.test = (() => {
 			const allModules = GetFolders( packagesPath );
 
 			HELPER.test.dependencies( allModules );
+			HELPER.test.packagejson( allModules );
+			HELPER.test.changelog( allModules );
 		},
 
 		/**
@@ -898,7 +892,7 @@ HELPER.test = (() => {
 				for( let module of allModules ) {
 					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
 
-					pancakes[ packagesPKG.name ] = packagesPKG.version; //adding to our library of pancakes
+					pancakes[ packagesPKG.name ] = packagesPKG.version; // adding to our library of pancakes
 
 					for( const module of Object.keys( packagesPKG.peerDependencies ) ) {
 						let version = packagesPKG.peerDependencies[ module ];
@@ -922,6 +916,201 @@ HELPER.test = (() => {
 			}
 
 			HELPER.log.success(`All pancakes without dependency conflicts`);
+		},
+
+		/**
+		 * Test all package.json files
+		 *
+		 * @param {array} allModules - An array of all modules
+		 */
+		packagejson: ( allModules ) => {
+			let error = ''; // let’s assume the best
+
+			if( allModules !== undefined && allModules.length > 0 ) {
+				for( let module of allModules ) {
+					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
+					const hasSass = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`) );
+					const hasJS = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`) );
+					const hasReact = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/react.js`) );
+					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
+
+					// testing lifecycle script
+					if( packagesPKG.scripts.postinstall !== 'pancake' ) {
+						error += `The module ${ module } is missing the postinstall lifecycle script "pancake".\n`;
+					}
+
+					// testing pancake object
+					if( packagesPKG.pancake === undefined ) {
+						error += `The module ${ module } is missing the pancake object.\n`;
+
+						packagesPKG.pancake = {};
+						packagesPKG.pancake['pancake-module'] = {};
+						packagesPKG.pancake['pancake-module'].plugins = [];
+					}
+
+					// testing build scripts
+					if( hasReact && !packagesPKG.scripts['build:react'] ) {
+						error += `The module ${ module } is missing the "build:react" script.\n`;
+					}
+
+					if( hasReact && !packagesPKG.scripts['build'].includes('npm run build:react') ) {
+						error += `The module ${ module } is missing the "build:react" task inside the build script.\n`;
+					}
+
+					// testing pancake plugins
+					if( !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-json') ) {
+						error += `The module ${ module } is missing the "pancake-json" plugin inside the pancake object.\n`;
+					}
+
+					if( hasSass && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-sass') ) {
+						error += `The module ${ module } is missing the "pancake-sass" plugin inside the pancake object.\n`;
+					}
+
+					if( hasJS && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-js') ) {
+						error += `The module ${ module } is missing the "pancake-js" plugin inside the pancake object.\n`;
+					}
+
+					if( hasReact && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-react') ) {
+						error += `The module ${ module } is missing the "pancake-js" plugin inside the pancake object.\n`;
+					}
+
+					// testing pancake plugin settings
+					if( hasSass && packagesPKG.pancake['pancake-module'].sass === undefined ) {
+						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
+					}
+
+					if( hasJS && packagesPKG.pancake['pancake-module'].js === undefined ) {
+						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
+					}
+
+					if( hasReact && packagesPKG.pancake['pancake-module'].react === undefined ) {
+						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
+					}
+
+					// testing react modules have a main entry point
+					if( hasReact && packagesPKG.main === undefined ) {
+						error += `The module ${ module } is missing the main entry point for react.\n`;
+					}
+
+					// testing all pancake plugins are also a dependency
+					if( packagesPKG.dependencies['@gov.au/pancake'] === undefined ) {
+						error += `The module ${ module } is missing "pancake" as a dependency.\n`;
+					}
+					else {
+						delete packagesPKG.dependencies['@gov.au/pancake'];
+					}
+
+					if( packagesPKG.dependencies['@gov.au/pancake-json'] === undefined ) {
+						error += `The module ${ module } is missing "pancake-json" as a dependency.\n`;
+					}
+					else {
+						delete packagesPKG.dependencies['@gov.au/pancake-json'];
+					}
+
+					if( hasSass && packagesPKG.dependencies['@gov.au/pancake-sass'] === undefined ) {
+						error += `The module ${ module } is missing "pancake-sass" as a dependency.\n`;
+					}
+					else {
+						delete packagesPKG.dependencies['@gov.au/pancake-sass'];
+					}
+
+					if( hasJS && packagesPKG.dependencies['@gov.au/pancake-js'] === undefined ) {
+						error += `The module ${ module } is missing "pancake-js" as a dependency.\n`;
+					}
+					else {
+						delete packagesPKG.dependencies['@gov.au/pancake-js'];
+					}
+
+					if( hasReact && packagesPKG.dependencies['@gov.au/pancake-react'] === undefined ) {
+						error += `The module ${ module } is missing "pancake-react" as a dependency.\n`;
+					}
+					else {
+						delete packagesPKG.dependencies['@gov.au/pancake-react'];
+					}
+
+					// testing all remaining dependencies are also in peerdependencies
+					if( module === 'core' ) { // the exception to the rule is sass-versioning inside core
+						delete packagesPKG.dependencies['sass-versioning'];
+					}
+
+					if( JSON.stringify( packagesPKG.dependencies ) !== JSON.stringify( packagesPKG.peerDependencies ) ) {
+						error += `The module ${ module } has inconsistent dependencies/peerDependencies.\n`;
+					}
+
+					// testing devDependencies
+					if( hasReact && packagesPKG.devDependencies['react'] === undefined ) {
+						error += `The module ${ module } is missing "react" as devDependency.\n`;
+					}
+
+					if( hasReact && Object.keys( packagesPKG.devDependencies ).length !== 13 ) {
+						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
+					}
+
+					if( !hasReact && Object.keys( packagesPKG.devDependencies ).length > 4 ) {
+						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
+					}
+
+					// testing for pancake config
+					if( packagesPKG.pancake['auto-save'] !== undefined ) {
+						error += `The module ${ module } has the pancake config saved though we don’t want that…\n`;
+					}
+
+				}
+			}
+
+			if( error === '' ) {
+				HELPER.log.success(`All pancakes have the appropriate package.json entries`);
+			}
+			else {
+				HELPER.log.error(`Some package.json files contain inconsistencies:\n   ${ error.split('\n').join('\n   ') }`);
+
+				console.log('\n');
+				process.exit( 1 );
+			}
+		},
+
+		/**
+		 * Test all changelog files
+		 *
+		 * @param {array} allModules - An array of all modules
+		 */
+		changelog: ( allModules ) => {
+			let error = ''; // let’s assume the best
+
+			if( allModules !== undefined && allModules.length > 0 ) {
+				for( let module of allModules ) {
+					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
+					const changelog = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/CHANGELOG.md`), 'utf8' );
+					const readme = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/README.md`), 'utf8' );
+					const version = packagesPKG.version.split('-next')[ 0 ];
+
+					// testing CHANGELOG.md file for latest version
+					if( !changelog.split('## Versions\n\n* [v')[ 1 ].startsWith( version ) ) {
+						error += `The module ${ module } does not have the current version in it’s changelog "Versions" section.\n`;
+					}
+					else if( !changelog.split('## Versions\n\n* [v')[ 1 ].split('](v')[ 1 ].startsWith( version.replace(/[.]/g, '') ) ) {
+						error += `The module ${ module } has the wrong link for the current version ${ version } in the changelog "Versions" section.\n`;
+					}
+					else if( !changelog.split('## Release History\n\n### v')[ 1 ].startsWith( version ) ) {
+						error += `The module ${ module } does not have the current version in it’s changelog "Release History" section.\n`;
+					}
+
+					// testing README.md file for latest version
+					if( !readme.split('## Release History\n\n* v')[ 1 ].startsWith( version ) ) {
+						error += `The module ${ module } does not have the current version in it’s readme "Release History" section.\n`;
+					}
+				}
+			}
+
+			if( error === '' ) {
+				HELPER.log.success(`All pancakes have the appropriate changelog entries`);
+			}
+			else {
+				HELPER.log.error(`Some changelogs contain inconsistencies:\n   ${ error.split('\n').join('\n   ') }`);
+
+				console.log('\n');
+				process.exit( 1 );
+			}
 		},
 	}
 

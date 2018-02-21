@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,37 +52,33 @@ npm install @gov.au/control-input --save-dev
 Usage:
 
 ```jsx
-import { Checkbox, Radio } from './control-input.js';
+import { AUcheckbox, AUradio } from './control-input.js';
 
-<Radio label="Yes" name="has_email" value="yes" />
-<Radio label="No" name="has_email" value="no" />
-<Radio label="Maybe" name="has_email" value="maybe" />
+<AUradio label="Yes" name="has_email" value="yes" />
+<AUradio label="No" name="has_email" value="no" />
+<AUradio label="Maybe" name="has_email" value="maybe" />
 
-<Checkbox label="Has email?" name="has_email" />
+<AUcheckbox label="Has email?" name="has_email" />
 ```
 
 All props:
 
 ```jsx
-<Radio
-	label="The label"      {/* The label of the radio button */}
-	name="the_name"        {/* The name attribute */}
-	full={ false }         {/* An option for the radio button theme */}
-	value="value"          {/* The value attribute */}
-	disabled={ false }     {/* The disabled attribute */}
-	checked={ false }      {/* The state of the radio button */}
-	onChange={ () => {} }  {/* A function to be executed onChange */}
+<AUradio
+  label="The label"  {/* The label of the radio button */}
+  alt={ false }      {/* An alternate variation of the component */}
+  small={ false }    {/* The small variation of the component */}
+  dark={ false }     {/* The dark variation of the component */}
 />
 
-<Checkbox
-	label="The label"      {/* The label of the checkbox */}
-	name="the_name"        {/* The name attribute */}
-	full={ false }         {/* An option for the checkbox theme */}
-	disabled={ false }     {/* The disabled attribute */}
-	checked={ false }      {/* The state of the checkbox */}
-	onChange={ () => {} }  {/* A function to be executed onChange */}
+<AUcheckbox
+  label="The label"  {/* The label of the checkbox */}
+  alt={ false }      {/* An alternate variation of the component */}
+  small={ false }    {/* The small variation of the component */}
+  dark={ false }     {/* The dark variation of the component */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/control-input/tests/react/index.js).
 
@@ -108,18 +103,9 @@ control-input
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/control-input/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/control-input/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -130,6 +116,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/control-input
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.1 - Fixed webkit render bug

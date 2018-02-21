@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -22,28 +22,46 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const options = {
-	info: 'uikit-page-alerts--info',
-	warning: 'uikit-page-alerts--warning',
-	error: 'uikit-page-alerts--error',
-	success: 'uikit-page-alerts--success',
+	info: 'au-page-alerts--info',
+	warning: 'au-page-alerts--warning',
+	error: 'au-page-alerts--error',
+	success: 'au-page-alerts--success',
 };
+
 
 /**
  * DEFAULT
  * Page alert
  *
- * @param  {string} as       - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
- * @param  {node}   children - Anything inside the component
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} alt              - Add the alt variation class
+ * @param  {string} as               - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
+ * @param  {node}   children         - Anything inside the component
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const PageAlert = ({ as, children }) => (
-	<div className={`uikit-page-alerts ${ options[ as ] }`} role='alert'>
+const AUpageAlert = ({ as, alt, dark, children, className = '', ...attributeOptions }) => (
+	<div
+		className={`au-body au-page-alerts ${ className } ${
+			dark
+				? ' au-page-alerts--dark au-body--dark'
+				: ''
+			}${
+			alt
+				? ' au-page-alerts--alt au-body--alt'
+				: ''
+			} ${ options[ as ] }`} role='alert' { ...attributeOptions }
+	>
 		{ children }
 	</div>
 );
 
-PageAlert.propTypes = {
+AUpageAlert.propTypes = {
 	as: PropTypes.oneOf([ 'info', 'warning', 'error', 'success' ]).isRequired,
+	alt: PropTypes.bool,
+	dark: PropTypes.bool,
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
-export default PageAlert;
+export default AUpageAlert;

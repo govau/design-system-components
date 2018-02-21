@@ -20,53 +20,55 @@
 /**
  * Basic header block styling.
  */
-.uikit-header {
-	font-family: $uikit-font-system;
-	color: #fff;
-	background: $uikit-colour-Primary;
-	padding: uikit-space( 1 ) 0 uikit-space( 1.25 ) 0;
-	margin-bottom: uikit-space( 1 );
+.au-header {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 1.5unit 0 2unit 0 ); // 0.5 for optical alignment
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+	background: $AU-color-background;
 
-	&.uikit-header--hero {
-		padding: uikit-space( 2 ) 0 uikit-space( 2.5 ) 0;
+	@include AU-media( sm ) {
+		@include AU-fontgrid( md );
 	}
 
-	@include uikit-media( sm ) {
-		padding: uikit-space( 2 ) 0 uikit-space( 3 ) 0;
+	&.au-header--hero {
+		@include AU-space( padding, 3unit 0 3.5unit 0 );
+	}
 
-		&.uikit-header--hero {
-			padding: uikit-space( 4.5 ) 0 uikit-space( 8.5 ) 0;
+	@include AU-media( sm ) {
+		@include AU-space( padding, 3unit 0 3.5unit 0 );
+
+		&.au-header--hero {
+			@include AU-space( padding, 6unit 0 6.5unit 0 );
 		}
 	}
 
-	&.uikit-header--light {
-		background-color: $uikit-colour-Background;
-		color: $uikit-colour-Text;
+	&.au-header--alt {
+		background-color: $AU-color-background-shade;
 	}
 
-	&.uikit-header--dark {
-		background-color: $uikit-colour-Secondary;
+	&.au-header--dark {
+		color: $AU-colordark-foreground-text;
+		background-color:  $AU-colordark-background;
+	}
+
+	&.au-header--alt.au-header--dark {
+		color: $AU-colordark-foreground-text;
+		background-color:  $AU-colordark-background-alt;
 	}
 }
 
-.uikit-header-heading {
-	font-size: 20px;
-	line-height: $uikit-leading;
+.au-header-heading {
+	@include AU-fontgrid( md );
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
 
-	@include uikit-media( sm ) {
-		font-size: 36px;
+	@include AU-media( sm ) {
+		@include AU-fontgrid( xxl, heading );
 	}
 }
 
-.uikit-header-subline {
-	font-size: 18px;
-	line-height: $uikit-leading;
-	max-width: $uikit-maxwidth;
-
-	@include uikit-media( sm ) {
-		font-size: 20px;
-	}
+.au-header-subline {
+	max-width: $AU-maxwidth;
 }

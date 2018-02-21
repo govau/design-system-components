@@ -7,46 +7,32 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
 /**
- * A tag item inside the Tags component
+ * A tag item inside the AUtags component
  *
- * @param  {object}   tag         - The tag object
- * @param  {string}   tag.link    - The link for this tag, optional
- * @param  {string}   tag.text    - The text for the tag
- * @param  {function} tag.onClick - An onClick event, optional
+ * @param  {string}  link             - The link for this tag, optional
+ * @param  {string}  text             - The text for the tag
+ * @param  {object}  li               - An additional object to be spread into the wrapping element, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
-const TagItem = ({ tag }) => {
-	const attributeOptions = {};
-
-	if( typeof tag.onClick === 'function' ) {
-		attributeOptions.onClick = tag.onClick;
-
-		// if we find an onClick event but no link we make it a link so onClick can be added (no button support yet)
-		if( !tag.link ) {
-			tag.link = '#';
+const AUtagItem = ({ link, text, li = {}, ...attributeOptions }) => (
+	<li { ...li }>
+		{
+			link
+				? <a href={ link } { ...attributeOptions }>{ text }</a>
+				: <span { ...attributeOptions }>{ text }</span>
 		}
-	}
+	</li>
+);
 
-	return (
-		<li className="uikit-tags__item">
-			{ tag.link
-				? <a href={ tag.link } { ...attributeOptions }>{ tag.text }</a>
-				: tag.text
-			}
-		</li>
-	);
-};
-
-TagItem.propTypes = {
-	tag: PropTypes.shape({
-		link: PropTypes.string,
-		text: PropTypes.string.isRequired,
-		onClick: PropTypes.func,
-	}).isRequired,
+AUtagItem.propTypes = {
+	link: PropTypes.string,
+	text: PropTypes.string.isRequired,
+	li: PropTypes.object,
 };
 
 
@@ -54,22 +40,31 @@ TagItem.propTypes = {
  * DEFAULT
  * The tags component
  *
- * @param  {array} tags - The tags, format: { link: '', text: '', onClick: () }
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {array}  tags             - The tags, format: { link: '', text: '', onClick: () }
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Tags = ({ tags }) => (
-	<ul className="uikit-tags">
-		{ tags.map( ( tag, i ) => <TagItem key={ i } tag={ tag } /> ) }
+const AUtags = ({ dark, tags, className = '', ...attributeOptions }) => (
+	<ul className={ `au-tags ${ className } ${ dark ? 'au-tags--dark' : '' }` } { ...attributeOptions }>
+		{
+			tags.map(
+				( tag, i ) => <AUtagItem key={ i } { ...tag } />
+			)
+		}
 	</ul>
 );
 
-Tags.propTypes = {
+AUtags.propTypes = {
+	dark: PropTypes.bool,
 	tags: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
-			onClick: PropTypes.func,
+			li: PropTypes.object,
 		})
-		).isRequired,
+	).isRequired,
+	className: PropTypes.string,
 };
 
-export default Tags;
+export default AUtags;

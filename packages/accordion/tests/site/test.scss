@@ -7,19 +7,6 @@
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
 
-
-.split-wrapper {
-	overflow: hidden;
-	padding: 1%;
-}
-
-.split {
-	@include uikit-media( sm ) {
-		width: 49%;
-		float: right;
-
-		&:first-child {
-			float: left;
-		}
-	}
+.testing {
+	border-style: dashed;
 }

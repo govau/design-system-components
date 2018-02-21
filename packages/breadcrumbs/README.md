@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,37 +52,42 @@ npm install @gov.au/breadcrumbs --save-dev
 Usage:
 
 ```jsx
-import Breadcrumbs from './breadcrumbs.js';
+import AUbreadcrumbs from './breadcrumbs.js';
 
-<Breadcrumbs label="Breadcrumb for this page" items={[
-	{
-		link: 'breadcrumb/one/',
-		text: 'breadcrumb 1',
-	},
-	{
-		link: 'breadcrumb/two/',
-		text: 'breadcrumb 2',
-	},
-	{
-		text: 'breadcrumb 3',
-	},
+<AUbreadcrumbs label="Breadcrumb for this page" items={[
+  {
+    link: 'breadcrumb/one/',
+    text: 'breadcrumb 1',
+  },
+  {
+    link: 'breadcrumb/two/',
+    text: 'breadcrumb 2',
+    li: {
+      className: 'li-wrapping-class',
+    },
+  },
+  {
+    text: 'breadcrumb 3',
+  },
 ]} />
 ```
 
 All props:
 
 ```jsx
-<Breadcrumbs
-	label="The aria-label"        {/* Provide the aria label is a must */}
-	inverted={ false }            {/* An option to theme the breadcrumbs inverted, optional */}
-	items={[                      {/* An array of all breadcrumbs */}
-		{
-			link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}
-			text: 'breadcrumb 1',     {/* The text of the breadcrumb */}
-		},
-	]},
+<AUbreadcrumbs
+  label="The aria-label"        {/* Provide the aria label is a must */}
+  dark={ false }                {/* A dark variation of the component */}
+  items={[                      {/* An array of all breadcrumbs */}
+    {
+      link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}
+      text: 'breadcrumb 1',     {/* The text of the breadcrumb */}
+      li: {},                   {/* An object that will be spread onto the <li> tag, optional */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/breadcrumbs/tests/react/index.js).
 
@@ -112,18 +116,9 @@ breadcrumbs
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/breadcrumbs/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -134,6 +129,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/breadcrumbs/t
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.1 - Fixed interdependency with link-list
 * v0.3.0 - Fixed react pipeline, background repeat
 * v0.2.0 - Added react component

@@ -16,61 +16,67 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Tag styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-tags {
+.au-tags {
+	@include AU-fontgrid( sm );
 	display: block;
 	margin: 0;
 	padding: 0;
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
-	line-height: $uikit-leading;
-	margin-bottom: uikit-space( 0.25 );
-
-	.uikit-body & {
-		margin-bottom: uikit-space( 0.25 );
-		padding-left: 0;
-	}
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
 
 	> dt {
 		display: inline-block;
-
-		.uikit-body & {
-			margin-bottom: uikit-space( 0.25 );
-		}
+	}
+	&.au-tags--dark {
+		color: $AU-colordark-foreground-text;
 	}
 }
 
-.uikit-tags__item {
-	border: 1px solid $uikit-colour-Primary;
-	border-radius: $uikit-border-radius;
+.au-tags > li,
+.au-tags > dd {
+	@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
+	@include AU-space ( padding, 0 0.5unit );
+	border: 1px solid $AU-color-foreground-action;
+	border-radius: $AU-border-radius;
 	display: inline-block;
-	margin: 0 uikit-space( 0.25 ) uikit-space( 0.25 ) 0;
-	padding: 0 0.4em;
-
-	.uikit-body & {
-		margin-bottom: uikit-space( 0.25 );
-		padding-left: 0.4em;
-	}
 
 	> a,
 	> button {
+		@include AU-space ( margin, 0 -0.5unit ); // Negative value to pull a/button out to same size as container
+		@include AU-space ( padding, 0 0.5unit );
+		color: $AU-color-foreground-action;
 		display: inline-block;
-		margin: 0 -0.4em;
-		padding: 0 0.4em;
-		text-decoration: none;
-		color: $uikit-colour-Text;
+		border-radius: $AU-border-radius;
 
-		&:hover,
-		&:focus {
-			background-color: $uikit-colour-Link;
+		&:hover {
+			color: $AU-color-foreground-text;
+			text-decoration: none;
+			background-color: $AU-color-background-shade;
 		}
 
-		&:focus {
-			@include uikit-outline();
-			outline-offset: 2px;
-		}
+		@include AU-focus();
 
-		.uikit-body & {
-			border: none;
+		&:focus {
+			outline-offset: -1px;
 		}
 	}
 }
+
+.au-tags.au-tags--dark > li,
+.au-tags.au-tags--dark > dd {
+	border-color: $AU-colordark-foreground-action;
+
+	> a,
+	> button {
+		color: $AU-colordark-foreground-action;
+
+		&:hover {
+			color: $AU-colordark-foreground-text;
+			background-color: $AU-colordark-background-shade;
+		}
+
+		@include AU-focus( 'dark' );
+	}
+}
+
+

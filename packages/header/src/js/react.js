@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -16,50 +16,49 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
-/**
- * All theme options
- *
- * @type {Object}
- */
-const themes = {
-	light: 'uikit-header--light',
-	dark: 'uikit-header--dark',
-};
 
 /**
  * DEFAULT
  * The header component
  *
- * @param  {string}  title    - The title of the header
- * @param  {string}  level    - The tag level (<h1/> <h2/> etc), default: '1'
- * @param  {string}  subline  - An optional subline, optional
- * @param  {boolean} hero     - The hero option, optional
- * @param  {string}  theme    - Optional theme that can be either: light dark, optional
- * @param  {node}    children - The inside of this section
+ * @param  {string}  title            - The title of the header
+ * @param  {string}  level            - The tag level (<h1/> <h2/> etc), default: '1'
+ * @param  {string}  subline          - An optional subline, optional
+ * @param  {boolean} hero             - The hero option, optional
+ * @param  {string}  dark             - Add the dark variation class
+ * @param  {string}  alt              - Add the alt variation class
+ * @param  {node}    children         - The inside of this section
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
-const Header = ({ title, level, subline, hero, theme, children }) => {
+const AUheader = ({ title, level, subline, hero, dark, alt, children, className = '', ...attributeOptions }) => {
 	const HeadingTag = `h${ level }`;
 
 	return (
-		<div className={`uikit-header${ hero ? ' uikit-header--hero' : '' }${ theme ? ` ${ themes[ theme ] }` : '' }`} role="banner">
-			<HeadingTag className="uikit-header-heading">{ title }</HeadingTag>
-			{ subline && <span className="uikit-header-subline">{ subline }</span> }
+		<div
+			className={`au-header ${ className }${ hero ? ' au-header--hero' : '' }${ dark ? ' au-header--dark' : '' }${ alt ? ' au-header--alt' : '' }`}
+			role="banner" { ...attributeOptions }
+		>
+			{ title && <HeadingTag className="au-header-heading">{ title }</HeadingTag> }
+			{ subline && <span className="au-header-subline">{ subline }</span> }
 			{ children }
 		</div>
 	);
 };
 
-Header.propTypes = {
-	title: PropTypes.node.isRequired,
-	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
+AUheader.propTypes = {
+	title: PropTypes.node,
+	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]),
 	subline: PropTypes.node,
 	hero: PropTypes.bool,
-	theme: PropTypes.oneOf([ 'light', 'dark' ]),
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	children: PropTypes.node,
+	className: PropTypes.string,
 };
 
-Header.defaultProps = {
+AUheader.defaultProps = {
 	level: '1',
 };
 
-export default Header;
+export default AUheader;

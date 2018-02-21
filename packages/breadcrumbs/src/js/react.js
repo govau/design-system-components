@@ -7,11 +7,11 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-// ES5 dependency: import LinkList from '@gov.au/link-list';
-// ES6 dependency: import LinkList from './link-list';
+// ES5 dependency: import AUlinkList from '@gov.au/link-list';
+// ES6 dependency: import AUlinkList from './link-list';
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -19,30 +19,36 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
 /**
  * DEFAULT
  * The breadcrumbs component
  *
- * @param  {boolean} inverted - The inverted option, optional
- * @param  {string}  label    - The aria label of the component
- * @param  {array}   items    - Items inside the breadcrumbs passed on to LinkList
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} label            - The aria label of the component
+ * @param  {array}  items            - Items inside the breadcrumbs passed on to AUlinkList
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Breadcrumbs = ({ inverted, label, items }) => (
-	<nav className={ `uikit-breadcrumbs${ inverted ? ' uikit-breadcrumbs--inverted' : '' }` } aria-label={ label }>
-		<LinkList inverted={ inverted } inline items={ items } />
+const AUbreadcrumbs = ({ dark, label, items, className = '', ...attributeOptions }) => (
+	<nav
+		className={ `au-breadcrumbs ${ className }${ dark ? ' au-breadcrumbs--dark' : '' }` }
+		aria-label={ label }
+		{ ...attributeOptions }
+	>
+		<AUlinkList inline items={ items } />
 	</nav>
 );
 
-Breadcrumbs.propTypes = {
-	inverted: PropTypes.bool,
+AUbreadcrumbs.propTypes = {
+	dark: PropTypes.bool,
 	label: PropTypes.string.isRequired,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
-			onClick: PropTypes.func,
 		})
-		).isRequired,
+	).isRequired,
 };
 
-export default Breadcrumbs;
+export default AUbreadcrumbs;

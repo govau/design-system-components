@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,39 +52,45 @@ npm install @gov.au/link-list --save-dev
 Usage:
 
 ```jsx
-import LinkList from './link-list.js';
+import AUlinkList from './link-list.js';
 
-<LinkList items={[
-	{
-		link: 'link/one/',
-		text: 'Link 1',
-	},
-	{
-		link: 'link/two/',
-		text: 'Link 2',
-	},
-	{
-		link: 'link/three/',
-		text: 'Link 3',
-	},
+<AUlinkList items={[
+  {
+    link: 'link/one/',
+    text: 'Link 1',
+  },
+  {
+    link: 'link/two/',
+    text: 'Link 2',
+    className: 'is-active',
+    li: {
+      className: 'li-wrapping-class',
+    },
+  },
+  {
+    text: 'Link 3',
+    onClick: () => console.log('You clicked me!'),
+  },
 ]} />
 ```
 
 All props:
 
 ```jsx
-<LinkList
-	inverted={ false }        {/* The inverted option for theming, optional */}
-	inline={ false }          {/* The inline option to make the list inline, optional */}
-	items={[                  {/* All links in a neat array */}
-		{
-			link: 'link/to/',     {/* The link for this item, optional */}
-			text: 'Link title',   {/* The text for this item */}
-			onClick={ () => {} }  {/* A function to execute when this link is clicked, optional */}
-		},
-	]},
+<AUlinkList
+  inline={ false }            {/* The inline option to make the list inline, optional */}
+  items={[                    {/* All links in a neat array */}
+    {
+      link: 'link/to/',       {/* The link for this item, optional */}
+      text: 'Link title',     {/* The text for this item */}
+      li: {},                 {/* An object that will be spread onto the <li> tag, optional */}
+      onClick={ () => {} }    {/* A function to execute when this link is clicked, optional */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
+
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/link-list/tests/react/index.js).
 
@@ -112,18 +117,9 @@ link-list
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/link-list/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/link-list/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -134,6 +130,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/link-list/tes
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

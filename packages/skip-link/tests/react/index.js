@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SkipLink from './skip-link.js';
+import AUskipLink from './skip-link.js';
 
 
 ReactDOM.render(
 	<div>
-		<SkipLink links={[
+		<AUskipLink links={[
 			{
 				link: '#nav',
 				text: 'Skip to navigation',
@@ -14,6 +14,23 @@ ReactDOM.render(
 			{
 				link: '#content',
 				text: 'Skip to content',
+			},
+			{
+				link: '#content',
+				text: 'Skip link with onClick',
+				onClick: () => console.log('This function is called when the last skip link is clicked'),
+			},
+		]} />
+
+		<AUskipLink className="testing" links={[
+			{
+				link: '#nav',
+				text: 'Skip to navigation',
+			},
+			{
+				link: '#content',
+				text: 'Skip to content',
+				className: 'testing',
 			},
 			{
 				link: '#content',

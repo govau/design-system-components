@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,41 +52,46 @@ npm install @gov.au/keyword-list --save-dev
 Usage:
 
 ```jsx
-import KeywordList from './keyword-list.js';
+import AUkeywordList from './keyword-list.js';
 
-<KeywordList
-	repeatedName='Department of'
-	items={[
-		{
-			link: 'http://www.agriculture.gov.au/',
-			name: 'Agriculture and Water Resources',
-		},
-		{
-			link: 'https://www.communications.gov.au/',
-			name: 'Communications and the Arts',
-		},
-		{
-			link: 'https://www.finance.gov.au/',
-			name: 'Finance',
-		},
-	]}
+<AUkeywordList
+  repeatedName='Department of'
+  items={[
+    {
+      link: 'http://www.agriculture.gov.au/',
+      name: 'Agriculture and Water Resources',
+    },
+    {
+      link: 'https://www.communications.gov.au/',
+      name: 'Communications and the Arts',
+      li: {
+        className: 'li-wrapping-class',
+      },
+    },
+    {
+      link: 'https://www.finance.gov.au/',
+      name: 'Finance',
+    },
+  ]}
 />
 ```
 
 All props:
 
 ```jsx
-<KeywordList
-	repeatedName="Department of"                  {/* The text That is repeated in each item */}
-	items={[                                      {/* All items in a neat array */}
-		{
-			link: 'http://www.agriculture.gov.au/',   {/* The URL of this item, optional */}
-			name: 'Agriculture and Water Resources',  {/* The name of the item */}
-			onClick={ () => {} }                      {/* A function to execute when the link is clicked, optional */}
-		},
-	]}
+<AUkeywordList
+  dark={ false }                                {/* A dark variation of the component */}
+  repeatedName="Department of"                  {/* The text That is repeated in each item */}
+  items={[                                      {/* All items in a neat array */}
+    {
+      link: 'http://www.agriculture.gov.au/',   {/* The URL of this item, optional */}
+      name: 'Agriculture and Water Resources',  {/* The name of the item */}
+      li: {},                                   {/* An object that will be spread onto the <li> tag, optional */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/keyword-list/tests/react/index.js).
 
@@ -116,18 +120,9 @@ keyword-list
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/keyword-list/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/keyword-list/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -138,6 +133,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/keyword-list/
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

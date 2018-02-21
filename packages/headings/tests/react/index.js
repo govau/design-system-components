@@ -1,19 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Heading from './headings.js';
+import AUheading from './headings.js';
 
 
 ReactDOM.render(
-	<div>
-		<h2>headings</h2>
+	<div className="split-wrapper">
+		<div className="split">
+			<h2>headings</h2>
 
-		<Heading size="6" level="1" text="Display 6 on h1" />
-		<Heading size="5" level="2" text="Display 5 on h2" />
-		<Heading size="4" level="3" text="Display 4 on h3" />
-		<Heading size="3" level="6" text="Display 3 on h6" />
-		<Heading size="2" level="4" text="Display 2 on h4" />
-		<Heading size="1" level="5" text="Display 1 on h5" />
+			<AUheading size="xxxl" level="6">au-display-xxxl on h1</AUheading>
+			<AUheading size="xxl"  level="5">au-display-xxl on h1</AUheading>
+			<AUheading size="xl"   level="1">au-display-xl on h1</AUheading>
+			<AUheading size="lg"   level="2">au-display-lg on h2</AUheading>
+			<AUheading size="md"   level="3">au-display-md on h3</AUheading>
+			<AUheading size="sm"   level="6">au-display-sm on h6</AUheading>
+			<AUheading size="xs"   level="4">au-display-xs on h4</AUheading>
+
+			<AUheading size="xl"   level="6" className="testing">with additional classes</AUheading>
+		</div>
+		<div className="split split--dark">
+			<h2>headings <code>--dark</code></h2>
+
+			<AUheading size="xxxl" level="6">au-display-xxxl on h1</AUheading>
+			<AUheading size="xxl"  level="5">au-display-xxl on h1</AUheading>
+			<AUheading size="xl"   level="1">au-display-xl on h1</AUheading>
+			<AUheading size="lg"   level="2">au-display-lg on h2</AUheading>
+			<AUheading size="md"   level="3">au-display-md on h3</AUheading>
+			<AUheading size="sm"   level="6">au-display-sm on h6</AUheading>
+			<AUheading size="xs"   level="4">au-display-xs on h4</AUheading>
+
+			<AUheading size="xl"   level="6" className="testing">with additional classes</AUheading>
+		</div>
 	</div>,
 
 	document.getElementById('root'),

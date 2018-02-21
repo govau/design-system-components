@@ -12,11 +12,11 @@
  * The accordion jquery function to add attributes and event listeners
  *
  * Public functions are:
- * $('.js-uikit-accordion-wrapper').uikitAccordion().isOpen()
- * $('.js-uikit-accordion-wrapper').uikitAccordion().setA11y()
- * $('.js-uikit-accordion-wrapper').uikitAccordion().addListeners()
+ * $('.js-au-accordion-wrapper').AUaccordion().isOpen()
+ * $('.js-au-accordion-wrapper').AUaccordion().setA11y()
+ * $('.js-au-accordion-wrapper').AUaccordion().addListeners()
  */
-$.fn.uikitAccordion = function( callbacks ) {
+$.fn.AUaccordion = function( callbacks ) {
 	var $elements = this;
 
 	var accordionObject = {
@@ -26,7 +26,7 @@ $.fn.uikitAccordion = function( callbacks ) {
 		 * @return {Boolean} - true = open; false = closed
 		 */
 		isOpen: function() {
-			return !$elements.children('.js-uikit-accordion').hasClass('uikit-accordion--closed');
+			return !$elements.children('.js-au-accordion').hasClass('au-accordion--closed');
 		},
 
 
@@ -37,8 +37,8 @@ $.fn.uikitAccordion = function( callbacks ) {
 			$elements.each( function( i, accordion ) { //render multiple elements
 				var $accordion = $( accordion );
 				var _isOpen = accordionObject.isOpen();
-				var $controls = $accordion.children('.js-uikit-accordion');
-				var $body = $accordion.children('.js-uikit-accordion-body');
+				var $controls = $accordion.children('.js-au-accordion');
+				var $body = $accordion.children('.js-au-accordion-body');
 
 				if( _isOpen ) {
 					$controls
@@ -68,43 +68,43 @@ $.fn.uikitAccordion = function( callbacks ) {
 
 		addListeners: function() {
 			// open all
-			$('.js-uikit-openall').not('.js-uikit-accordion-rendered').on('click', function() {
+			$('.js-au-openall').not('.js-au-accordion-rendered').on('click', function() {
 				var selector = $( this ).attr('data-selector');
 				var speed = $( this ).attr('data-speed');
 
-				UIKIT.accordion.Open( $( selector ), speed );
-			}).addClass('js-uikit-accordion-rendered');
+				AU.accordion.Open( $( selector ), speed );
+			}).addClass('js-au-accordion-rendered');
 
 			// close all
-			$('.js-uikit-closeall').not('.js-uikit-accordion-rendered').on('click', function() {
+			$('.js-au-closeall').not('.js-au-accordion-rendered').on('click', function() {
 				var selector = $( this ).attr('data-selector');
 				var speed = $( this ).attr('data-speed');
 
-				UIKIT.accordion.Close( $( selector ), speed );
-			}).addClass('js-uikit-accordion-rendered');
+				AU.accordion.Close( $( selector ), speed );
+			}).addClass('js-au-accordion-rendered');
 
 			// toggle all
-			$('.js-uikit-toggleall').not('.js-uikit-accordion-rendered').on('click', function() {
+			$('.js-au-toggleall').not('.js-au-accordion-rendered').on('click', function() {
 				var selector = $( this ).attr('data-selector');
 				var speed = $( this ).attr('data-speed');
 
-				UIKIT.accordion.Toggle( $( selector ), speed );
-			}).addClass('js-uikit-accordion-rendered');
+				AU.accordion.Toggle( $( selector ), speed );
+			}).addClass('js-au-accordion-rendered');
 
 			// each accordion event handlers
 			$elements
-				.not('.js-uikit-accordion-rendered') // making sure we only add the event listeners once
+				.not('.js-au-accordion-rendered') // making sure we only add the event listeners once
 				.each( function( i, accordion ) {
 					var speed = $( accordion ).attr('data-speed');
 
 					$( accordion )
-						.children('.js-uikit-accordion')
+						.children('.js-au-accordion')
 						.on('click', function( event ) {
 							event.preventDefault();
 
-							UIKIT.accordion.Toggle( $( accordion ).children('.js-uikit-accordion')[ 0 ], speed, callbacks );
+							AU.accordion.Toggle( $( accordion ).children('.js-au-accordion')[ 0 ], speed, callbacks );
 						})
-						.addClass('js-uikit-accordion-rendered'); // marking as processed
+						.addClass('js-au-accordion-rendered'); // marking as processed
 			});
 
 			return this;

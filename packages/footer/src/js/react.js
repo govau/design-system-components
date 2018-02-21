@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -16,35 +16,43 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
+
+
 /**
  * A section for the footer that contains navigational elements
  *
- * @param  {node} children - The inside of this section
+ * @param  {node}   children         - The inside of this section
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const FooterNav = ({ children }) => (
-	<nav className="uikit-footer__navigation">
+export const AUfooterNav = ({ children, className = '', ...attributeOptions }) => (
+	<nav className={`au-footer__navigation ${ className }`} { ...attributeOptions }>
 		{ children }
 	</nav>
 );
 
-FooterNav.propTypes = {
+AUfooterNav.propTypes = {
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
 
 /**
  * A section for the footer that sits at the end
  *
- * @param  {node} children - The inside of this section
+ * @param  {node}   children         - The inside of this section
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-export const FooterEnd = ({ children }) => (
-	<nav className="uikit-footer__end">
+export const AUfooterEnd = ({ children, className = '', ...attributeOptions }) => (
+	<nav className={`au-footer__end ${ className }`} { ...attributeOptions }>
 		{ children }
 	</nav>
 );
 
-FooterEnd.propTypes = {
+AUfooterEnd.propTypes = {
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
 
@@ -52,16 +60,27 @@ FooterEnd.propTypes = {
  * DEFAULT
  * The footer component
  *
- * @param  {node} children - The inside of this section
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} alt              - Add the alt variation class
+ * @param  {node}   children         - The inside of this section
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const Footer = ({ children }) => (
-	<footer className="uikit-footer" role="contentinfo">
+const AUfooter = ({ dark, alt, children, className = '', ...attributeOptions }) => (
+	<footer
+		className={ `au-footer ${ className }${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `}
+		role="contentinfo"
+		{ ...attributeOptions }
+	>
 		{ children }
 	</footer>
 );
 
-Footer.propTypes = {
+AUfooter.propTypes = {
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	children: PropTypes.node.isRequired,
+	className: PropTypes.string,
 };
 
-export default Footer;
+export default AUfooter;

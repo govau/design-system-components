@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,19 +52,28 @@ npm install @gov.au/footer --save-dev
 Usage:
 
 ```jsx
-import Footer, { FooterNav, FooterEnd } from './footer.js';
+import AUfooter, { AUfooterNav, AUfooterEnd } from './footer.js';
 
-<Footer>
-	<FooterNav>
-		uikit-footer__navigation
-	</FooterNav>
-	<FooterEnd>
-		uikit-footer__end
-	</FooterEnd>
-</Footer>
+<AUfooter>
+  <AUfooterNav>
+    au-footer__navigation
+  </AUfooterNav>
+  <AUfooterEnd>
+    au-footer__end
+  </AUfooterEnd>
+</AUfooter>
 ```
 
-No props...
+All props:
+
+```jsx
+<AUfooter
+  alt={ false }     {/* An alternate variation of the component */}
+  dark={ false }    {/* A dark variation of the component */}
+  attributeOptions  {/* Any other attribute options */}
+/>
+```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/footer/tests/react/index.js).
 
@@ -90,18 +98,9 @@ footer
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/footer/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/footer/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -112,6 +111,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/footer/tests/
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

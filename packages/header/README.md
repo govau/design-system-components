@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,22 +52,24 @@ npm install @gov.au/header --save-dev
 Usage:
 
 ```jsx
-import Header from './header.js';
+import AUheader from './header.js';
 
-<Header title="Page title" />
+<AUheader title="Page title" />
 ```
 
 All props:
 
 ```jsx
-<Header
-	title="Page title"  {/* The headline content */}
-	level="1"           {/* The headline tag level, h1-h6, optional */}
-	subline="Subline"   {/* The subline content, optional */}
-	theme="light"       {/* The theme, 'light', 'dark', optional */}
-	hero={ false }      {/* The hero option, optional */}
+<AUheader
+  title="Page title"  {/* The headline content, optional */}
+  level="1"           {/* The headline tag level, h1-h6, optional */}
+  subline="Subline"   {/* The subline content, optional */}
+  alt={ false }       {/* An alternate variation of the component, optional */}
+  dark={ false }      {/* A dark variation of the component, optional */}
+  hero={ false }      {/* The hero option, optional, optional */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/header/tests/react/index.js).
 
@@ -93,18 +94,9 @@ header
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/header/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/header/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -115,6 +107,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/header/tests/
 
 ## Release History
 
+* v2.0.0 - Moved to AU namespace, added new color themes and spacing
 * v1.2.0 - Added pancake-react plugin, ES5 main file, added children
 * v1.1.0 - Added react component
 * v1.0.0 - Removed the side spacing #147

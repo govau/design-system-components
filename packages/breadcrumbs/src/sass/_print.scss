@@ -8,7 +8,8 @@
 
 
 @media print {
-	.uikit-breadcrumbs > .uikit-link-list > li:after {
-		border-color: #000 !important;
+	.au-breadcrumbs > .au-link-list > li:after {
+		content: ">" !important;
+		background-image: none !important;
 	}
 }

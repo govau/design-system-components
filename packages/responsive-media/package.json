@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/responsive-media",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"description": "Caters for video/slideshow dimensions and aspect ratios across various viewports/widths.",
 	"keywords": [
 		"uikit",
@@ -25,13 +25,14 @@
 		"postinstall": "pancake",
 
 		"test:a11y": "node ../../scripts/a11y.js",
-		"test:deps": "node ../../scripts/helper.js test",
+		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
 
-		"prepublish": "npm run test:deps && node ../../scripts/helper.js precompile publish",
+		"prepublish": "npm run test:helper && npm run build:pre",
 
-		"build:js": "node ../../scripts/helper.js precompile compile",
-		"build": "npm-run-all --parallel build:*",
+		"build:pre": "node ../../scripts/helper.js precompile publish",
+		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
+		"build": "npm run build:js",
 
 		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 
@@ -44,7 +45,8 @@
 		"pancake-module": {
 			"version": "1.0.0",
 			"plugins": [
-				"@gov.au/pancake-sass"
+				"@gov.au/pancake-sass",
+				"@gov.au/pancake-json"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
@@ -55,15 +57,16 @@
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": ">=1.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": ">=1.0.0"
 	},
 	"devDependencies": {
-		"browser-sync": "^2.18.6",
-		"npm-run-all": "^4.0.1",
+		"browser-sync": "^2.18.13",
+		"npm-run-all": "^4.1.2",
 		"onchange": "^3.2.1"
 	},
 	"files": [
@@ -77,26 +80,36 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "http://guides.service.gov.au/design-guide/",
+	"homepage": "https://gold.service.gov.au/",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
-		"email": "guides@digital.gov.au"
+		"email": "uikit@digital.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "guides@digital.gov.au",
+		"email": "uikit@digital.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [
 		{
 			"name": "Dominik Wilkowski",
 			"email": "hi@dominik-wilkowski.com",
-			"url": "https://dominik-wilkowski.com/"
+			"url": "https://github.com/dominikwilkowski"
 		},
 		{
 			"name": "Simon Pascal Klein",
 			"email": "klepas@klepas.org",
-			"url": "http://klepas.org/"
+			"url": "https://github.com/klepas"
+		},
+		{
+			"name": "Trevor Brennan",
+			"email": "t@trevorbrennan.com",
+			"url": "https://github.com/TrebBrennan"
+		},
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "https://github.com/alex-page"
 		}
 	],
 	"license": "MIT"

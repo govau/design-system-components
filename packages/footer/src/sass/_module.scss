@@ -19,15 +19,30 @@
 /**
  * Basic footer block styling.
  */
-.uikit-footer {
-	background-color: $uikit-colour-Background;
-	border-top: 6px solid $uikit-colour-Border;
-	padding: uikit-space( 1 );
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
+.au-footer {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 3unit 0 3unit );
+	@include AU-space( border-top, 0.25unit solid $AU-color-foreground-border );
+	background-color: $AU-color-background;
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
 
 	p:last-child {
 		margin: 0;
+	}
+
+	&.au-footer--alt {
+		background-color: $AU-color-background-alt;
+	}
+
+	&.au-footer--dark {
+		color: $AU-colordark-foreground-text;
+		border-color: $AU-colordark-foreground-border;
+		background-color:  $AU-colordark-background;
+	}
+
+	&.au-footer--dark.au-footer--alt {
+		background-color:  $AU-colordark-background-alt;
 	}
 }
 
@@ -35,17 +50,22 @@
 /**
  * Footer `nav` navigation styling.
  */
-.uikit-footer__navigation {
+.au-footer__navigation {
 
-	.uikit-link-list {
+	.au-link-list {
 		> li {
 			margin-left: 0;
 		}
 	}
 
-	+ .uikit-footer__end {
-		padding-top: uikit-space( 1 );
-		border-top: $uikit-borderize;
-		margin-top: uikit-space( 1 );
+	+ .au-footer__end {
+		@include AU-space( padding-top, 1unit );
+		@include AU-space( margin-top, 1unit );
+		border-top: 1px solid $AU-color-foreground-border;
 	}
+}
+
+
+.au-footer--dark .au-footer__navigation + .au-footer__end {
+	border-top: 1px solid $AU-colordark-foreground-border;
 }

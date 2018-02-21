@@ -7,9 +7,9 @@
  *
  **************************************************************************************************************************************************************/
 
-var UIKIT = UIKIT || {};
+var AU = AU || {};
 
-( function( UIKIT ) {
+( function( AU ) {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // NAMESPACE MODULE
@@ -24,9 +24,9 @@ var UIKIT = UIKIT || {};
 	 * PRIVATE
 	 * Set the correct Aria roles for given element on the accordion title and body
 	 *
-	 * @param  {object} element  - The DOM element we want to set attributes for
-	 * @param  {object} target   - The DOM element we want to set attributes for
-	 * @param  {string} state    - The DOM element we want to set attributes for
+	 * @param  {object} element - The DOM element we want to set attributes for
+	 * @param  {object} target  - The DOM element we want to set attributes for
+	 * @param  {string} state   - The DOM element we want to set attributes for
 	 */
 	function setAriaRoles( element, target, state ) {
 
@@ -47,21 +47,21 @@ var UIKIT = UIKIT || {};
 	 * PRIVATE
 	 * IE8 compatible function for replacing classes on a DOM node
 	 *
-	 * @param  {object} element       - The DOM element we want to toggle classes on
-	 * @param  {object} target        - The DOM element we want to toggle classes on
-	 * @param  {object} state         - The current state of the animation on the element
-	 * @param  {string} openingClass  - The firstClass you want to toggle on the DOM node
-	 * @param  {string} closingClass  - The secondClass you want to toggle on the DOM node
+	 * @param  {object} element      - The DOM element we want to toggle classes on
+	 * @param  {object} target       - The DOM element we want to toggle classes on
+	 * @param  {object} state        - The current state of the animation on the element
+	 * @param  {string} openingClass - The firstClass you want to toggle on the DOM node
+	 * @param  {string} closingClass - The secondClass you want to toggle on the DOM node
 	 */
 	function toggleClasses( element, state, openingClass, closingClass ) {
 
 		if( state === 'opening' || state === 'open' ) {
-			var oldClass = openingClass || 'uikit-accordion--closed';
-			var newClass = closingClass || 'uikit-accordion--open';
+			var oldClass = openingClass || 'au-accordion--closed';
+			var newClass = closingClass || 'au-accordion--open';
 		}
 		else {
-			var oldClass = closingClass || 'uikit-accordion--open';
-			var newClass = openingClass || 'uikit-accordion--closed';
+			var oldClass = closingClass || 'au-accordion--open';
+			var newClass = openingClass || 'au-accordion--closed';
 		}
 
 		removeClass( element, oldClass );
@@ -140,13 +140,17 @@ var UIKIT = UIKIT || {};
 			var target = document.getElementById( targetId );
 
 			if( target == null ) {
-				throw new Error('UIKIT.animate.Toggle cannot find the target to be toggled from inside aria-controls');
+				throw new Error(
+					'AU.accordion.Toggle cannot find the target to be toggled from inside aria-controls.\n' +
+					'Make sure the first argument you give AU.accordion.Toggle is the DOM element (a button or a link) that has an aria-controls attribute that points ' +
+					'to a div that you want to toggle.'
+				);
 			}
 
 			target.style.display = 'block';
 
 			(function( element ) {
-				UIKIT.animate.Toggle({
+				AU.animate.Toggle({
 					element: target,
 					property: 'height',
 					speed: speed || 250,
@@ -171,17 +175,20 @@ var UIKIT = UIKIT || {};
 					},
 					postfunction: function( target, state ) {
 						if( state === 'closed' ) {
+							// run after closing
 							target.style.display = '';
+							target.style.height = '';
 
-							// run after opening
-							if( typeof callbacks.afterOpen === 'function' ) {
+							if( typeof callbacks.afterClose === 'function' ) {
 								callbacks.afterClose();
 							}
 						}
 						else {
+							// run after opening
+							target.style.display = '';
+							target.style.height = '';
 
-							// run after closing
-							if( typeof callbacks.afterClose === 'function' ) {
+							if( typeof callbacks.afterOpen === 'function' ) {
 								callbacks.afterOpen();
 							}
 						}
@@ -201,8 +208,8 @@ var UIKIT = UIKIT || {};
 	/**
 	 * Open a group of accordion elements
 	 *
-	 * @param  {string}  elements  - The DOM node/s to toggle
-	 * @param  {integer} speed     - The speed in ms for the animation
+	 * @param  {string}  elements - The DOM node/s to toggle
+	 * @param  {integer} speed    - The speed in ms for the animation
 	 *
 	 */
 	accordion.Open = function( elements, speed ) {
@@ -243,7 +250,7 @@ var UIKIT = UIKIT || {};
 			setAriaRoles( element, target, 'opening' );
 
 			(function( target, speed, element ) {
-				UIKIT.animate.Run({
+				AU.animate.Run({
 					element: target,
 					property: 'height',
 					endSize: 'auto',
@@ -261,8 +268,8 @@ var UIKIT = UIKIT || {};
 	/**
 	 * Close a group of accordion elements
 	 *
-	 * @param  {string}  elements  - The DOM node/s to toggle
-	 * @param  {integer} speed     - The speed in ms for the animation
+	 * @param  {string}  elements - The DOM node/s to toggle
+	 * @param  {integer} speed    - The speed in ms for the animation
 	 *
 	 */
 	accordion.Close = function( elements, speed ) {
@@ -288,7 +295,7 @@ var UIKIT = UIKIT || {};
 			setAriaRoles( element, target, 'closing' );
 
 			(function( target, speed ) {
-				UIKIT.animate.Run({
+				AU.animate.Run({
 					element: target,
 					property: 'height',
 					endSize: 0,
@@ -304,11 +311,11 @@ var UIKIT = UIKIT || {};
 	}
 
 
-	UIKIT.accordion = accordion;
+	AU.accordion = accordion;
 
-}( UIKIT ));
+}( AU ));
 
 
 if( typeof module !== 'undefined' ) {
-	module.exports = UIKIT;
+	module.exports = AU;
 }

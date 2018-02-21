@@ -39,40 +39,30 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // BODY STYLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-body {
+.au-body {
+	@include AU-fontgrid( sm );
 	margin: 0;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-	line-height: $uikit-leading;
-	font-family: $uikit-font-system;
-	color: $uikit-colour-Text;
+	text-size-adjust: 100%;
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+	background-color: $AU-color-background;
 
 	a {
-		-webkit-text-decoration-skip: objects;
-		color: $uikit-colour-Text;
-		text-decoration: none;
-		border-bottom: solid 1px $uikit-colour-Primary;
-		transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out; //Avoiding ‘all’ and an override for performance reasons.
-
-		&:hover,
-		&:focus {
-			background-color: $uikit-colour-Link;
-			border-color: transparent;
-		}
-
-		@include uikit-focus();
+		color: $AU-color-foreground-action;
+		text-decoration: underline;
+		text-decoration-skip: ink;
 
 		&[rel~='external']:after {
 			content: ' ';
 			display: inline-block;
 			width: 0.7em;
-			height: 0.8em;
-			margin: 0 0.1em 0 0.25em;
-			background: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-					<path fill="#{ $uikit-colour-Primary }" d="M24.002 8C15.155 8 8 15.164 8 24.002v79.996C8 112.845 15.164 120 24.002 120h79.996c8.847 0 16.002-7.164
+			height: 0.85em;
+			margin: 0 0.1em -0.02em 0.25em;
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<path fill="#{ $AU-color-foreground-action }" d="M24.002 8C15.155 8 8 15.164 8 24.002v79.996C8 112.845 15.164 120 24.002 120h79.996c8.847 0 16.002-7.164
 						16.002-16.002V82.005c0-1.107-.895-2.005-1.994-2.005h-12.012c-1.1 0-1.994.893-1.994 1.995v16.008c0 3.312-2.685 5.997-5.997 5.997H29.997C26.685
 						104 24 101.315 24 98.003V29.997C24 26.685 26.685 24 29.997 24h16.008C47.107 24 48 23.105 48 22.006V9.994C48 8.894 47.103 8 45.995 8H24.002z"/>
-					<path fill="#{ $uikit-colour-Primary }" d="M127.416.584c-.36-.36-.86-.584-1.41-.584H73.994C72.904 0 72 .893 72 1.994v12.012c0 1.1.892 1.994 1.993 1.994H96L49.41
+					<path fill="#{ $AU-color-foreground-action }" d="M127.416.584c-.36-.36-.86-.584-1.41-.584H73.994C72.904 0 72 .893 72 1.994v12.012c0 1.1.892 1.994 1.993 1.994H96L49.41
 						62.59c-.777.777-.774 2.046.01 2.83l13.16 13.16c.793.793 2.052.788 2.83.01L112 32v22.007c0 1.09.893 1.993 1.994 1.993h12.012c1.1 0 1.994-.892
 						1.994-1.993V1.993c0-.545-.223-1.043-.584-1.405V.584z"/>
 				</svg>');
@@ -82,9 +72,33 @@
 			.ie8 &,
 			.lt-ie8 & {
 				content: '⇗';
-				color: $uikit-colour-Primary;
+				color: $AU-color-foreground-action;
 			}
 		}
+
+		&:hover {
+			color: $AU-color-foreground-text;
+			text-decoration: none;
+
+			&[rel~='external']:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+					<path fill="#{ $AU-color-foreground-text }" d="M24.002 8C15.155 8 8 15.164 8 24.002v79.996C8 112.845 15.164 120 24.002 120h79.996c8.847 0 16.002-7.164
+						16.002-16.002V82.005c0-1.107-.895-2.005-1.994-2.005h-12.012c-1.1 0-1.994.893-1.994 1.995v16.008c0 3.312-2.685 5.997-5.997 5.997H29.997C26.685
+						104 24 101.315 24 98.003V29.997C24 26.685 26.685 24 29.997 24h16.008C47.107 24 48 23.105 48 22.006V9.994C48 8.894 47.103 8 45.995 8H24.002z"/>
+					<path fill="#{ $AU-color-foreground-text }" d="M127.416.584c-.36-.36-.86-.584-1.41-.584H73.994C72.904 0 72 .893 72 1.994v12.012c0 1.1.892 1.994 1.993 1.994H96L49.41
+						62.59c-.777.777-.774 2.046.01 2.83l13.16 13.16c.793.793 2.052.788 2.83.01L112 32v22.007c0 1.09.893 1.993 1.994 1.993h12.012c1.1 0 1.994-.892
+						1.994-1.993V1.993c0-.545-.223-1.043-.584-1.405V.584z"/>
+				</svg>');
+
+				.ie8 &,
+				.lt-ie8 & {
+					content: '⇗';
+					color: $AU-color-foreground-text;
+				}
+			}
+		}
+
+		@include AU-focus();
 	}
 
 
@@ -93,68 +107,77 @@
 	 */
 	[tabindex="0"]:focus,
 	:target {
-		@include uikit-outline();
+		@include AU-outline();
 	}
-
 
 	/**
-	 * Text selection and `mark` styling.
+	 * `mark` styling.
 	 */
-	mark,
-	::selection {
-		background-color: rgba( $uikit-colour-Warning-60, 0.5 );
+	mark {
+		color: $AU-color-background;
+		background-color: $AU-color-foreground-action;
 	}
 
+	/**
+	 * Text selection styling
+	 */
+	::selection {
+		background-color: mix( $AU-color-warning, $AU-color-background, 30% );
+	}
 
 	/**
 	 * Vertical spacing of common text elements.
 	 */
 	p {
-		max-width: $uikit-maxwidth;
-		margin: 0 0 uikit-space( 1 ) 0;
+		max-width: $AU-maxwidth;
+		margin: 0;
 	}
 
-	ul,
-	ol,
-	dl,
+	* + p {
+		@include AU-space( margin-top, 1.5unit );
+	}
+
+	ul:not([class]),
+	ol:not([class]),
+	dl:not([class]),
 	pre {
-		margin-top: 0;
-		margin-bottom: uikit-space( 1 );
+		margin: 0; //reset defaults
 	}
 
-	ul,
-	ol,
-	dd {
-		margin-left: 0;
-		padding-left: uikit-space( 1 );
+	* + ul:not([class]),
+	* + ol:not([class]),
+	* + dl:not([class]),
+	* + pre {
+		@include AU-space( margin-top, 1.5unit );
 	}
 
-	ul,
-	ol {
+	ul:not([class]),
+	ol:not([class]) {
 		> li {
-			margin-bottom: uikit-space( 0.25 );
+			@include AU-space( margin-top, 0.5unit );
 
-			> ul,
-			> ol {
-				margin-top: uikit-space( 0.25 );
-				margin-bottom: uikit-space( 0.5 );
+			> ul:not([class]),
+			> ol:not([class]) {
+				@include AU-space( margin-top, 0.5unit );
 			}
 		}
 
-		> ul {
+		> ul:not([class]) {
 			list-style-type: disc;
 		}
 	}
 
-	dl {
+	dl:not([class]) {
 		> dd {
-			margin-bottom: uikit-space( 1 );
+			@include AU-space( margin-top, 0.5unit );
+			@include AU-space( padding-left, 0.5unit );
+			margin-left: 0;
+			border-left: solid 1px;
 		}
 
 		> dt {
+			@include AU-space( margin-top, 1.5unit );
 			font-weight: bold;
-			margin-top: uikit-space( 0.5 );
-			margin-bottom: uikit-space( 0.5 );
 
 			&:first-of-type {
 				margin-top: 0;
@@ -162,6 +185,10 @@
 		}
 	}
 
+	.written-by:after {
+		content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEiIHZpZXdCb3g9IjAgMCA2NTggMTgiPjx0ZXh0IHg9IjEzIiB5PSIxMyIgZm9udC1zaXplPSIxMyI+TWVzc3JzLCBEb20sIFBhZ2V5LCBUcmViLCBQYXQgYW5kIEtsZXBhcyBhcmUgcHJvdWQgdG8gcHJlc2VudCB0aGUgR09MRCBkZXNpZ24gc3lzdGVtLiAtIE1pc2NoaWVmIG1hbmFnZWQ8L3RleHQ+PC9zdmc+');
+		color: #BADA55;
+	}
 
 	/**
 	 * Emphasis and alt. voice/mood/diff. from prose text.
@@ -172,9 +199,10 @@
 	}
 
 	/**
-	 * Important (leaving `b` out for now (and `u` also)).
+	 * Stong emphasis.
 	 */
-	strong {
+	strong,
+	b {
 		font-weight: bold;
 	}
 
@@ -183,33 +211,23 @@
 	 * `small`: for less important information (not stylistic purposes).
 	 */
 	small {
-		font-size: 87.5%;
-		color: $uikit-colour-Text-90;
+		@include AU-fontgrid( xs );
 	}
 
 
 	/**
 	 * `s`: represents contents no longer accurate/relevant.
+	 * del` & `ins`: editorial markup.
 	 */
-	s {
-		text-decoration: line-through;
-	}
-
-
-	/**
-	 * `del` & `ins`: editorial markup.
-	 *
-	 */
+	s,
 	del {
 		text-decoration: line-through;
-		color: $uikit-colour-Text-80;
-		//Idea: for `del`: switch to the opposite of the current sans/sans-serif style?
 	}
 
 	ins {
 		text-decoration-line: underline;
 		text-decoration-style: dashed; //Waiting on Chrome.
-		//text-decoration-skip: ink; //Forward planning.
+		text-decoration-skip: ink;
 	}
 
 
@@ -229,19 +247,15 @@
 
 	/**
 	 * Abbreviations/acronyms.
-	 *
-	 * This styling removes any custom casing (mixing of u&lc chars in the `abbr`).
-	 *
-	 * Todo: test font stack fallbacks with the font-size adj.
 	 */
 	abbr,
 	abbr[title] {
-		font-size: 18px;
-		font-variant: small-caps;
-		text-transform: lowercase;
-		letter-spacing: 1px;
-		text-decoration: none;
-		border-bottom: 1px dotted $uikit-colour-Border;
+		border-bottom: none;
+		text-decoration: underline;
+		text-decoration: underline dotted;
+	}
+
+	abbr[title] {
 		cursor: help;
 	}
 
@@ -262,16 +276,21 @@
 
 		sup,
 		sub {
-			font-family: $uikit-font;
+			font-family: $AU-font;
 			font-style: normal;
 			padding: 0 1px;
 		}
 	}
 
+
+	/**
+	 * Prevent `sub` and `sup` elements from affecting the line height in
+	 * all browsers.
+	 * https://github.com/necolas/normalize.css/blob/master/normalize.css#L174
+	 */
 	sub,
 	sup {
-		font-size: 75%;
-		line-height: 0;
+		@include AU-fontgrid( xs, nospace );
 		position: relative;
 		vertical-align: baseline;
 	}
@@ -286,41 +305,31 @@
 
 
 	/**
+	 * Keyboard strokes.
 	 * Code snippets and code blocks.
 	 */
-	code,
 	kbd,
-	pre {
-		font-family: $uikit-font-monospace;
-	}
-
-
-	/**
-	 * Pre-formatted text set by typographic characters.
-	 */
-	pre {
-		code,
-		samp,
-		kbd {
-			font-size: 14px;
-		}
-	}
-
-
-	/**
-	 * Keyboard strokes.
-	 */
-	kbd {
+	code,
+	samp {
+		@include AU-fontgrid( xs );
+		@include AU-space( padding, 0.25unit );
+		font-family: $AU-font-monospace;
 		display: inline-block;
-		font-size: 14px;
-		border: solid 1px $uikit-colour-Primary;
-		border-radius: $uikit-border-radius;
-		box-shadow: 0 1px 0 0 $uikit-colour-Primary;
-		background-color: $uikit-colour-Background-10;
-		text-align: center;
-		padding: 0 uikit-space( 0.5 );
-		margin: 0 2px;
+		border-radius: $AU-border-radius;
+		background-color: $AU-color-background-alt-shade;
+		color: $AU-color-foreground-muted;
 	}
+
+	pre {
+		font-family: $AU-font-monospace;
+	}
+
+	pre code {
+		@include AU-space( padding, 0.5unit );
+		display:block;
+		tab-size: 4;
+	}
+
 
 	/**
 	 * Horizontal rule, used for paragraph-level thematic breaks.
@@ -330,7 +339,94 @@
 		height: 0;
 		overflow: visible;
 		border: none;
-		border-top: $uikit-borderize;
-		margin-bottom: uikit-space( 1 );
+		border-top: 1px solid $AU-color-foreground-border;
+		@include AU-space( margin-bottom, 1.5unit );
+	}
+
+	* + hr {
+		@include AU-space( margin-top, 1.5unit );
+	}
+
+
+	/**
+	 *  Body colour schemes
+	 */
+	&.au-body--alt {
+		background: $AU-color-background-alt;
+	}
+
+	&.au-body--dark {
+		background: $AU-colordark-background;
+		color: $AU-colordark-foreground-text;
+
+		a {
+			color: $AU-colordark-foreground-action;
+
+			&[rel~='external']:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+						<path fill="#{ $AU-colordark-foreground-action }" d="M24.002 8C15.155 8 8 15.164 8 24.002v79.996C8 112.845 15.164 120 24.002 120h79.996c8.847 0 16.002-7.164
+							16.002-16.002V82.005c0-1.107-.895-2.005-1.994-2.005h-12.012c-1.1 0-1.994.893-1.994 1.995v16.008c0 3.312-2.685 5.997-5.997 5.997H29.997C26.685
+							104 24 101.315 24 98.003V29.997C24 26.685 26.685 24 29.997 24h16.008C47.107 24 48 23.105 48 22.006V9.994C48 8.894 47.103 8 45.995 8H24.002z"/>
+						<path fill="#{ $AU-colordark-foreground-action }" d="M127.416.584c-.36-.36-.86-.584-1.41-.584H73.994C72.904 0 72 .893 72 1.994v12.012c0 1.1.892 1.994 1.993 1.994H96L49.41
+							62.59c-.777.777-.774 2.046.01 2.83l13.16 13.16c.793.793 2.052.788 2.83.01L112 32v22.007c0 1.09.893 1.993 1.994 1.993h12.012c1.1 0 1.994-.892
+							1.994-1.993V1.993c0-.545-.223-1.043-.584-1.405V.584z"/>
+					</svg>');
+
+				.ie8 &,
+				.lt-ie8 & {
+					color: $AU-colordark-foreground-action;
+				}
+			}
+
+			&:hover {
+				color: $AU-colordark-foreground-text;
+
+				&[rel~='external']:after {
+					background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+							<path fill="#{ $AU-colordark-foreground-text }" d="M24.002 8C15.155 8 8 15.164 8 24.002v79.996C8 112.845 15.164 120 24.002 120h79.996c8.847 0 16.002-7.164
+								16.002-16.002V82.005c0-1.107-.895-2.005-1.994-2.005h-12.012c-1.1 0-1.994.893-1.994 1.995v16.008c0 3.312-2.685 5.997-5.997 5.997H29.997C26.685
+								104 24 101.315 24 98.003V29.997C24 26.685 26.685 24 29.997 24h16.008C47.107 24 48 23.105 48 22.006V9.994C48 8.894 47.103 8 45.995 8H24.002z"/>
+							<path fill="#{ $AU-colordark-foreground-text }" d="M127.416.584c-.36-.36-.86-.584-1.41-.584H73.994C72.904 0 72 .893 72 1.994v12.012c0 1.1.892 1.994 1.993 1.994H96L49.41
+								62.59c-.777.777-.774 2.046.01 2.83l13.16 13.16c.793.793 2.052.788 2.83.01L112 32v22.007c0 1.09.893 1.993 1.994 1.993h12.012c1.1 0 1.994-.892
+								1.994-1.993V1.993c0-.545-.223-1.043-.584-1.405V.584z"/>
+						</svg>');
+
+					.ie8 &,
+					.lt-ie8 & {
+						color: $AU-colordark-foreground-text;
+					}
+				}
+			}
+
+			@include AU-focus( 'dark' );
+		}
+
+		[tabindex="0"]:focus,
+		:target {
+			@include AU-outline( 'dark' );
+		}
+
+		mark {
+			background-color: $AU-colordark-foreground-action;
+			color: $AU-colordark-background;
+		}
+
+		kbd {
+			background-color: $AU-colordark-background-alt-shade;
+		}
+
+		hr {
+			border-top-color: $AU-colordark-foreground-border;
+		}
+
+		code,
+		kbd {
+			color: $AU-colordark-foreground-muted;
+			background-color: $AU-colordark-background-alt-shade;
+		}
+	}
+
+	&.au-body--dark.au-body--alt {
+		background: $AU-colordark-background-alt;
 	}
 }

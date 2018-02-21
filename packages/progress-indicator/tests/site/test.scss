@@ -6,3 +6,11 @@
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
+
+.testing {
+	outline: 3px dashed hotpink;
+}
+
+li.testing {
+	outline-color: pink;
+}

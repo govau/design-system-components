@@ -8,9 +8,13 @@
 
 
 @media print {
-	.uikit-cta-link:after {
-		content: ' > ' !important;
-		border: none !important;
-		transform: rotate( 0deg ) !important;
+	.au-cta-link {
+		color: #000 !important;
+		&:after {
+			background-image: none !important;
+			content: ' > ' !important;
+			border: none !important;
+			transform: rotate( 0deg ) !important;
+		}
 	}
 }

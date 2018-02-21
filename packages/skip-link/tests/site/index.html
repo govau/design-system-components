@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -42,12 +41,12 @@
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
 
-	<nav class="uikit-skip-link">
-		<a class="uikit-skip-link__link" href="#content">Skip to main content</a>
-		<a class="uikit-skip-link__link" href="#nav">Skip to main navigation</a>
+	<nav class="au-skip-link">
+		<a class="au-skip-link__link" href="#content">Skip to main content</a>
+		<a class="au-skip-link__link" href="#nav">Skip to main navigation</a>
 	</nav>
 
-	<div class="uikit-body">
+	<div class="au-body">
 		<a class="test-link" href="../">&larr; back to the module index</a>
 
 		<h1>Test: skip-link</h1>
@@ -59,7 +58,7 @@
 		</p>
 
 		<p>
-			Following the main content link should take the user to <code>/#nav</code> while following the main content link the user should be taken to
+			Following the main navigation link should take the user to <code>/#nav</code> while following the main content link the user should be taken to
 			<code>/#content</code>.
 		</p>
 
@@ -75,7 +74,7 @@
 		</header>
 
 		<main id="content" role="main" tabindex="0">
-			<p>This is paragraph inside the main content space (a <code>main</code> element).</p>
+			<p>This is paragraph inside the main <a href="#">content</a> space (a <code>main</code> element).</p>
 		</main>
 	</div>
 

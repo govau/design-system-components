@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -36,7 +35,7 @@
 		</script>
 	<![endif]-->
 </head>
-<body class="uikit-grid">
+<body class="au-grid">
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
@@ -45,74 +44,339 @@
 
 	<h1>Test: headings</h1>
 
-	<div class="row">
-		<div class="col-sm-6">
+	<div class="split-wrapper">
+		<div class="split">
+			<div class="row">
+				<div class="col-sm-6">
 
-			<h2>headings on h1-h6</h2>
+					<h2>headings on h1-h6</h2>
 
-			<h4 class="uikit-display-6">Display 6</h4>
-			<h5 class="uikit-display-5">Display 5</h5>
-			<h2 class="uikit-display-4">Display 4</h2>
-			<h3 class="uikit-display-3">Display 3</h3>
-			<h1 class="uikit-display-2">Display 2</h1>
-			<h6 class="uikit-display-1">Display 1</h6>
+					<div>
+						<h4 class="au-display-xxxl">Display xxxl</h4>
+						<h6 class="au-display-xxl">Display xxl</h6>
+						<h4 class="au-display-xl">Display xl</h4>
+						<h5 class="au-display-lg">Display lg</h5>
+						<h2 class="au-display-md">Display md</h2>
+						<h3 class="au-display-sm">Display sm</h3>
+						<h1 class="au-display-xs">Display xs</h1>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<h2>headings on span</h2>
+
+					<div>
+						<span class="au-display-xxxl">Display xxxl</span>
+						<span class="au-display-xxl">Display xxl</span>
+						<span class="au-display-xl">Display xl</span>
+						<span class="au-display-lg">Display lg</span>
+						<span class="au-display-md">Display md</span>
+						<span class="au-display-sm">Display sm</span>
+						<span class="au-display-xs">Display xs</span>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+			<h2>headings with text</h2>
+
+			<p>The following heading receive the <code>.au-display-[xs&hellip;xxxl]</code> classes.</p>
+
+			<span class="au-display-xxxl">Promo text (xxxl)</span>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quam odit explicabo hic autem unde exercitationem ipsam illum deserunt, magni ea, aperiam itaque quo nesciunt. Quod fugit quibusdam, alias nemo.</p>
+
+			<h1 class="au-display-xxl">Heading tier one (xxl)</h1>
+
+			<p>The quick brown fox jumped over the lazy dog</p>
+
+			<h2 class="au-display-lg">Heading tier two (lg)</h2>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac quam viverra, lobortis lacus ac, dictum ligula.</p>
+			<p>Curabitur eu porta nisl.</p>
+
+			<h3 class="au-display-md">Straight into a heading tier three (md)</h3>
+
+			<p>Curabitur aliquam id metus nec porttitor. Nunc lacus sapien, rutrum nec convallis pharetra, condimentum vitae turpis.</p>
+
+			<h4 class="au-display-sm">Heading tier four (sm)</h4>
+
+			<p>Sed eros tortor, ornare eu tortor vel, pulvinar commodo dolor. Phasellus bibendum lacus quis quam feugiat lacinia. Sed tellus eros, pellentesque vel posuere tempor, pretium non metus.</p>
+
+			<h5 class="au-display-xs">Heading tier five (xs)</h5>
+
+			<p>Ut erat nisl, convallis sit amet turpis vel, tincidunt dictum dolor. Praesent lacinia nulla nisi, eu suscipit ante ornare sit amet. Sed posuere urna non nibh accumsan dignissim.</p>
+			<p>Pellentesque facilisis magna lectus, in tincidunt dolor sollicitudin finibus.</p>
+
+			<h6 class="au-display-xs">Heading tier six (xs)</h6>
+
+			<p>The goby fish and pistol shrimp are closest of friends.</p>
+
+			<hr>
+
+			<h2>headings on paragraph, span</h2>
+
+			<p>Similarly, we can apply the classes to other elements as visually necessary:</p>
+
+			<p class="au-display-md">This is a paragraph using <code>.au-display-md</code>.</p>
+
+			<span class="au-display-lg">This is a span tag using <code>.au-display-lg</code>.</span>
+
+			<span class="au-display-md">This is a span tag using <code>.au-display-md</code>.</span>
+
+			<p>And back to a regular paragraph.</p>
 		</div>
 
-		<div class="col-sm-6">
-			<h2>headings on span</h2>
 
-			<span class="uikit-display-6">Display 6</span>
-			<span class="uikit-display-5">Display 5</span>
-			<span class="uikit-display-4">Display 4</span>
-			<span class="uikit-display-3">Display 3</span>
-			<span class="uikit-display-2">Display 2</span>
-			<span class="uikit-display-1">Display 1</span>
+
+		<div class="split split--dark">
+			<div class="row">
+				<div class="col-sm-6">
+
+					<h2>headings on h1-h6</h2>
+
+					<div>
+						<h4 class="au-display-xxxl">Display xxxl</h4>
+						<h6 class="au-display-xxl">Display xxl</h6>
+						<h4 class="au-display-xl">Display xl</h4>
+						<h5 class="au-display-lg">Display lg</h5>
+						<h2 class="au-display-md">Display md</h2>
+						<h3 class="au-display-sm">Display sm</h3>
+						<h1 class="au-display-xs">Display xs</h1>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<h2>headings on span</h2>
+
+					<div>
+						<span class="au-display-xxxl">Display xxxl</span>
+						<span class="au-display-xxl">Display xxl</span>
+						<span class="au-display-xl">Display xl</span>
+						<span class="au-display-lg">Display lg</span>
+						<span class="au-display-md">Display md</span>
+						<span class="au-display-sm">Display sm</span>
+						<span class="au-display-xs">Display xs</span>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h2>headings with text</h2>
+
+			<p>The following heading receive the <code>.au-display-[xs&hellip;xxxl]</code> classes.</p>
+
+			<span class="au-display-xxxl">Promo text (xxxl)</span>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quam odit explicabo hic autem unde exercitationem ipsam illum deserunt, magni ea, aperiam itaque quo nesciunt. Quod fugit quibusdam, alias nemo.</p>
+
+			<h1 class="au-display-xxl">Heading tier one (xxl)</h1>
+
+			<p>The quick brown fox jumped over the lazy dog</p>
+
+			<h2 class="au-display-lg">Heading tier two (lg)</h2>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac quam viverra, lobortis lacus ac, dictum ligula.</p>
+			<p>Curabitur eu porta nisl.</p>
+
+			<h3 class="au-display-md">Straight into a heading tier three (md)</h3>
+
+			<p>Curabitur aliquam id metus nec porttitor. Nunc lacus sapien, rutrum nec convallis pharetra, condimentum vitae turpis.</p>
+
+			<h4 class="au-display-sm">Heading tier four (sm)</h4>
+
+			<p>Sed eros tortor, ornare eu tortor vel, pulvinar commodo dolor. Phasellus bibendum lacus quis quam feugiat lacinia. Sed tellus eros, pellentesque vel posuere tempor, pretium non metus.</p>
+
+			<h5 class="au-display-xs">Heading tier five (xs)</h5>
+
+			<p>Ut erat nisl, convallis sit amet turpis vel, tincidunt dictum dolor. Praesent lacinia nulla nisi, eu suscipit ante ornare sit amet. Sed posuere urna non nibh accumsan dignissim.</p>
+			<p>Pellentesque facilisis magna lectus, in tincidunt dolor sollicitudin finibus.</p>
+
+			<h6 class="au-display-xs">Heading tier six (xs)</h6>
+
+			<p>The goby fish and pistol shrimp are closest of friends.</p>
+
+			<hr>
+
+			<h2>headings on paragraph, span</h2>
+
+			<p>Similarly, we can apply the classes to other elements as visually necessary:</p>
+
+			<p class="au-display-md">This is a paragraph using <code>.au-display-md</code>.</p>
+
+			<span class="au-display-lg">This is a span tag using <code>.au-display-lg</code>.</span>
+
+			<span class="au-display-md">This is a span tag using <code>.au-display-md</code>.</span>
+
+			<p>And back to a regular paragraph.</p>
 		</div>
 	</div>
+	<div class="split-wrapper">
+		<div class="split split--alt">
+			<div class="row">
+				<div class="col-sm-6">
 
-	<hr>
-	<h2>headings with text</h2>
+					<h2>headings on h1-h6</h2>
 
-	<p>The following heading receive the <code>.uikit-display-[1&hellip;6]</code> classes.</p>
+					<div>
+						<h4 class="au-display-xxxl">Display xxxl</h4>
+						<h6 class="au-display-xxl">Display xxl</h6>
+						<h4 class="au-display-xl">Display xl</h4>
+						<h5 class="au-display-lg">Display lg</h5>
+						<h2 class="au-display-md">Display md</h2>
+						<h3 class="au-display-sm">Display sm</h3>
+						<h1 class="au-display-xs">Display xs</h1>
+					</div>
+				</div>
 
-	<h1 class="uikit-display-6">Heading tier one (6)</h1>
+				<div class="col-sm-6">
+					<h2>headings on span</h2>
 
-	<p>The quick brown fox jumped over the lazy dog</p>
+					<div>
+						<span class="au-display-xxxl">Display xxxl</span>
+						<span class="au-display-xxl">Display xxl</span>
+						<span class="au-display-xl">Display xl</span>
+						<span class="au-display-lg">Display lg</span>
+						<span class="au-display-md">Display md</span>
+						<span class="au-display-sm">Display sm</span>
+						<span class="au-display-xs">Display xs</span>
+					</div>
+				</div>
+			</div>
 
-	<h2 class="uikit-display-5">Heading tier two (5)</h2>
+			<hr>
+			<h2>headings with text</h2>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac quam viverra, lobortis lacus ac, dictum ligula.</p>
-	<p>Curabitur eu porta nisl.</p>
+			<p>The following heading receive the <code>.au-display-[xs&hellip;xxxl]</code> classes.</p>
 
-	<h3 class="uikit-display-4">Straight into a heading tier three (3)</h3>
+			<span class="au-display-xxxl">Promo text (xxxl)</span>
 
-	<p>Curabitur aliquam id metus nec porttitor. Nunc lacus sapien, rutrum nec convallis pharetra, condimentum vitae turpis.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quam odit explicabo hic autem unde exercitationem ipsam illum deserunt, magni ea, aperiam itaque quo nesciunt. Quod fugit quibusdam, alias nemo.</p>
 
-	<h4 class="uikit-display-3">Heading tier four (3)</h4>
+			<h1 class="au-display-xxl">Heading tier one (xxl)</h1>
 
-	<p>Sed eros tortor, ornare eu tortor vel, pulvinar commodo dolor. Phasellus bibendum lacus quis quam feugiat lacinia. Sed tellus eros, pellentesque vel posuere tempor, pretium non metus.</p>
+			<p>The quick brown fox jumped over the lazy dog</p>
 
-	<h5 class="uikit-display-2">Heading tier five (2)</h5>
+			<h2 class="au-display-lg">Heading tier two (lg)</h2>
 
-	<p>Ut erat nisl, convallis sit amet turpis vel, tincidunt dictum dolor. Praesent lacinia nulla nisi, eu suscipit ante ornare sit amet. Sed posuere urna non nibh accumsan dignissim.</p>
-	<p>Pellentesque facilisis magna lectus, in tincidunt dolor sollicitudin finibus.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac quam viverra, lobortis lacus ac, dictum ligula.</p>
+			<p>Curabitur eu porta nisl.</p>
 
-	<h6 class="uikit-display-1">Heading tier six (1)</h6>
+			<h3 class="au-display-md">Straight into a heading tier three (md)</h3>
 
-	<p>The goby fish and pistol shrimp are closest of friends.</p>
+			<p>Curabitur aliquam id metus nec porttitor. Nunc lacus sapien, rutrum nec convallis pharetra, condimentum vitae turpis.</p>
 
-	<hr>
-	<h2>headings on paragraph, span</h2>
+			<h4 class="au-display-sm">Heading tier four (sm)</h4>
 
-	<p>Similarly, we can apply the classes to other elements as visually necessary:</p>
+			<p>Sed eros tortor, ornare eu tortor vel, pulvinar commodo dolor. Phasellus bibendum lacus quis quam feugiat lacinia. Sed tellus eros, pellentesque vel posuere tempor, pretium non metus.</p>
 
-	<p class="uikit-display-4">This is a paragraph using <code>.uikit-display-4</code>.</p>
+			<h5 class="au-display-xs">Heading tier five (xs)</h5>
 
-	<span class="uikit-display-5">This is a span tag using <code>.uikit-display-5</code>.</span>
+			<p>Ut erat nisl, convallis sit amet turpis vel, tincidunt dictum dolor. Praesent lacinia nulla nisi, eu suscipit ante ornare sit amet. Sed posuere urna non nibh accumsan dignissim.</p>
+			<p>Pellentesque facilisis magna lectus, in tincidunt dolor sollicitudin finibus.</p>
 
-	<span class="uikit-display-4">This is a span tag using <code>.uikit-display-4</code>.</span>
+			<h6 class="au-display-xs">Heading tier six (xs)</h6>
 
-	<p>And back to a regular paragraph.</p>
+			<p>The goby fish and pistol shrimp are closest of friends.</p>
 
+			<hr>
+
+			<h2>headings on paragraph, span</h2>
+
+			<p>Similarly, we can apply the classes to other elements as visually necessary:</p>
+
+			<p class="au-display-md">This is a paragraph using <code>.au-display-md</code>.</p>
+
+			<span class="au-display-lg">This is a span tag using <code>.au-display-lg</code>.</span>
+
+			<span class="au-display-md">This is a span tag using <code>.au-display-md</code>.</span>
+
+			<p>And back to a regular paragraph.</p>
+		</div>
+
+		<div class="split split--alt split--dark">
+			<div class="row">
+				<div class="col-sm-6">
+
+					<h2>headings on h1-h6</h2>
+
+					<div>
+						<h4 class="au-display-xxxl">Display xxxl</h4>
+						<h6 class="au-display-xxl">Display xxl</h6>
+						<h4 class="au-display-xl">Display xl</h4>
+						<h5 class="au-display-lg">Display lg</h5>
+						<h2 class="au-display-md">Display md</h2>
+						<h3 class="au-display-sm">Display sm</h3>
+						<h1 class="au-display-xs">Display xs</h1>
+					</div>
+				</div>
+
+				<div class="col-sm-6">
+					<h2>headings on span</h2>
+
+					<div>
+						<span class="au-display-xxxl">Display xxxl</span>
+						<span class="au-display-xxl">Display xxl</span>
+						<span class="au-display-xl">Display xl</span>
+						<span class="au-display-lg">Display lg</span>
+						<span class="au-display-md">Display md</span>
+						<span class="au-display-sm">Display sm</span>
+						<span class="au-display-xs">Display xs</span>
+					</div>
+				</div>
+			</div>
+
+			<hr>
+
+			<h2>headings with text</h2>
+
+			<p>The following heading receive the <code>.au-display-[xs&hellip;xxxl]</code> classes.</p>
+
+			<span class="au-display-xxxl">Promo text (xxxl)</span>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quam odit explicabo hic autem unde exercitationem ipsam illum deserunt, magni ea, aperiam itaque quo nesciunt. Quod fugit quibusdam, alias nemo.</p>
+
+			<h1 class="au-display-xxl">Heading tier one (xxl)</h1>
+
+			<p>The quick brown fox jumped over the lazy dog</p>
+
+			<h2 class="au-display-lg">Heading tier two (lg)</h2>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac quam viverra, lobortis lacus ac, dictum ligula.</p>
+			<p>Curabitur eu porta nisl.</p>
+
+			<h3 class="au-display-md">Straight into a heading tier three (md)</h3>
+
+			<p>Curabitur aliquam id metus nec porttitor. Nunc lacus sapien, rutrum nec convallis pharetra, condimentum vitae turpis.</p>
+
+			<h4 class="au-display-sm">Heading tier four (sm)</h4>
+
+			<p>Sed eros tortor, ornare eu tortor vel, pulvinar commodo dolor. Phasellus bibendum lacus quis quam feugiat lacinia. Sed tellus eros, pellentesque vel posuere tempor, pretium non metus.</p>
+
+			<h5 class="au-display-xs">Heading tier five (xs)</h5>
+
+			<p>Ut erat nisl, convallis sit amet turpis vel, tincidunt dictum dolor. Praesent lacinia nulla nisi, eu suscipit ante ornare sit amet. Sed posuere urna non nibh accumsan dignissim.</p>
+			<p>Pellentesque facilisis magna lectus, in tincidunt dolor sollicitudin finibus.</p>
+
+			<h6 class="au-display-xs">Heading tier six (xs)</h6>
+
+			<p>The goby fish and pistol shrimp are closest of friends.</p>
+
+			<hr>
+
+			<h2>headings on paragraph, span</h2>
+
+			<p>Similarly, we can apply the classes to other elements as visually necessary:</p>
+
+			<p class="au-display-md">This is a paragraph using <code>.au-display-md</code>.</p>
+
+			<span class="au-display-lg">This is a span tag using <code>.au-display-lg</code>.</span>
+
+			<span class="au-display-md">This is a span tag using <code>.au-display-md</code>.</span>
+
+			<p>And back to a regular paragraph.</p>
+		</div>
+	</div>
 </body>
 </html>

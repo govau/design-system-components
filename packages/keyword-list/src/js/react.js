@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -17,43 +17,40 @@ import PropTypes from 'prop-types';
 // [replace-imports]
 
 /**
- * An item inside the KeywordList component
+ * An item inside the AUkeywordList component
  *
- * @param  {string}   repeatedName - The repeated bit in each item
- * @param  {object}   item         - The keyword list item
- * @param  {string}   item.link    - The link URL, optional
- * @param  {string}   item.name    - The name of the item
- * @param  {function} item.onClick - An onClick event, optional
+ * @param  {string}   repeatedName     - The repeated bit in each item
+ * @param  {string}   link             - The link URL, optional
+ * @param  {string}   name             - The name of the item
+ * @param  {object}   li               - An additional object to be spread into the wrapping element, optional
+ * @param  {object}   attributeOptions - Any other attribute options
  */
-export const KeywordListItem = ({ repeatedName, item }) => {
-	const attributeOptions = {};
+export const AUkeywordListItem = ({ repeatedName, link, name, li = {}, ...attributeOptions }) => {
 
-	if( typeof item.onClick === 'function' ) {
-		attributeOptions.onClick = item.onClick;
+	if( typeof attributeOptions.onClick === 'function' ) {
 
 		// if we find an onClick event but no link we make it a link so onClick can be added (no button support yet)
-		if( !item.link ) {
-			item.link = '#';
+		if( !link ) {
+			link = '#';
 		}
 	}
 
 	return (
-		<li className="uikit-keyword-list__item">
-			{ item.link
-				? <a href={ item.link } { ...attributeOptions }><small className="uikit-keyword-list__item__small">{ repeatedName }</small>{ item.name }</a>
-				: <span><small className="uikit-keyword-list__item__small">{ repeatedName }</small>{ item.name }</span>
+		<li { ...li }>
+			{
+				link
+					? <a href={ link } { ...attributeOptions }><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</a>
+					: <span><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</span>
 			}
 		</li>
 	);
 };
 
-KeywordListItem.propTypes = {
+AUkeywordListItem.propTypes = {
 	repeatedName: PropTypes.string.isRequired,
-	item: PropTypes.shape({
-		link: PropTypes.string,
-		name: PropTypes.string.isRequired,
-		onClick: PropTypes.func,
-	}),
+	link: PropTypes.string,
+	name: PropTypes.string.isRequired,
+	li: PropTypes.object,
 };
 
 
@@ -61,24 +58,33 @@ KeywordListItem.propTypes = {
  * DEFAULT
  * The keyword-list component
  *
- * @param  {string} repeatedName - The repeated bit in each item
- * @param  {array}  items        - All items in this list, format: { link: '', name: '', onClick: () }
+ * @param  {string} repeatedName     - The repeated bit in each item
+ * @param  {array}  items            - All items in this list, format: { link: '', name: '', onClick: () }
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const KeywordList = ({ repeatedName, items }) => (
-	<ul className="uikit-keyword-list uikit-link-list">
-		{ items.map( ( item, i ) => <KeywordListItem key={ i } item={ item } repeatedName={ repeatedName } /> ) }
+const AUkeywordList = ({ repeatedName, items, dark, className = '', ...attributeOptions }) => (
+	<ul className={ `au-keyword-list au-link-list ${ className }${ dark ? ' au-keyword-list--dark' : '' } `} { ...attributeOptions }>
+		{
+			items.map(
+				( item, i ) => <AUkeywordListItem key={ i } repeatedName={ repeatedName } { ...item } />
+			)
+		}
 	</ul>
 );
 
-KeywordList.propTypes = {
+AUkeywordList.propTypes = {
 	repeatedName: PropTypes.string.isRequired,
+	dark: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
 			name: PropTypes.string.isRequired,
-			onClick: PropTypes.func,
+			li: PropTypes.object,
 		})
-		).isRequired,
+	).isRequired,
+	className: PropTypes.string,
 };
 
-export default KeywordList;
+export default AUkeywordList;

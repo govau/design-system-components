@@ -14,54 +14,76 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.uikit-cta-link {
-	-webkit-appearance: none;
-	padding: 0;
-	display: inline-block;
-	position: relative;
-	font-size: 21px;
-	margin-bottom: uikit-space( 1 );
-	line-height: $uikit-leading;
+.au-cta-link {
+	@include AU-fontgrid( md );
+	@include AU-space( margin-top, 1unit );
 	font-weight: bold;
-	background: transparent;
-	text-align: left;
-	color: $uikit-colour-Text;
-	font-family: $uikit-font-system;
-	text-decoration: none;
-	border: none;
-	border-bottom: solid 1px $uikit-colour-Primary;
-	transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
-	cursor: pointer;
+	font-family: $AU-font;
 
-	@include uikit-focus();
+	// Styles to reset button
+	color: $AU-color-foreground-action;
+	appearance: none;
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-skip: ink;
+
+	@include AU-focus();
 
 	&:after {
 		content: ' ';
+		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
+		@include AU-space( margin, 0 0.25unit 0 0.2unit );
+		transition: margin 0.2s ease;
 		display: inline-block;
-		width: 0.9em;
-		height: 0.8em;
-		margin: 0 uikit-space( 0.25 ) 0 uikit-space( 0.25 );
-		background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-				<path fill="#{ $uikit-colour-Primary }" d="M128 64l-64 64-16-16 64-64"/>
-				<path fill="#{ $uikit-colour-Primary }" d="M128 64l-16 16-64-64L64 0"/>
-			</svg>');
-		transition: margin 0.1s ease-in;
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
 
 		.ie8 &,
 		.lt-ie8 & {
 			content: ' > ';
-			border: none;
 		}
 	}
 
-	&:hover,
-	&:focus {
-		background-color: $uikit-colour-Link;
-		border-color: transparent;
-		color: $uikit-colour-Text; //sets the hover back to what it used to be.
+	&:hover {
+		color: $AU-color-foreground-text;
+		text-decoration: none;
 
 		&:after {
-			margin: 0 uikit-space( 0.1 ) 0 uikit-space( 0.4 ); //move arrow by just uikit-space( 0.1 ); this is not a magic number …
+			@include AU-space( margin-left, 0.4unit );
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-color-foreground-text }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-color-foreground-text }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
+		}
+	}
+
+	&.au-cta-link--dark {
+		color: $AU-colordark-foreground-action;
+
+		@include AU-focus( 'dark' );
+
+		&:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-colordark-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-colordark-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
+		}
+
+		&:hover {
+			color: $AU-colordark-foreground-text;
+
+			&:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+					'<path fill="#{ $AU-colordark-foreground-text }" d="M128 64l-64 64-16-16 64-64"/>' +
+					'<path fill="#{ $AU-colordark-foreground-text }" d="M128 64l-16 16-64-64L64 0"/>' +
+				'</svg>');
+			}
 		}
 	}
 }

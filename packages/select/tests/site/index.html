@@ -22,7 +22,6 @@
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
 	</script>
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 	<!--[if lt IE 9]>
@@ -45,48 +44,333 @@
 
 	<h1>Test: select</h1>
 
-	<h2>normal select</h2>
+	<div class="split-wrapper">
+		<div class="split">
+			<h2>normal select</h2>
 
-	<label for="select1">What option?</label>
+			<label for="select1">What option?</label>
 
-	<div class="uikit-select">
-		<select id="select1" class="uikit-select__element">
+			<select id="select1" class="au-select">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select disabled</h2>
+
+			<label for="select2">What option?</label>
+
+			<select id="select2" class="au-select" disabled>
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select invalid</h2>
+
+			<label for="select-invalid">What option?</label>
+
+			<select id="select-invalid" class="au-select" required>
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select invalid via class</h2>
+
+			<label for="select-invalid2">What option?</label>
+
+			<select id="select-invalid2" class="au-select au-select--invalid">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select valid</h2>
+
+			<label for="select-valid">What option?</label>
+
+			<select id="select-valid" class="au-select au-select--valid">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>block select</h2>
+
+			<label for="select3">What option?</label>
+
+			<select id="select3" class="au-select au-select--block">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+		</div>
+		<div class="split split--dark">
+			<h2>normal select <code>--dark</code></h2>
+
+			<label for="select4">What option?</label>
+
+			<select id="select4" class="au-select au-select--dark">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select disabled <code>--dark</code></h2>
+
+			<label for="select5">What option?</label>
+
+			<select id="select5" class="au-select au-select--dark" disabled>
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select invalid</h2>
+
+			<label for="select-dark-invalid">What option?</label>
+
+			<select id="select-dark-invalid" class="au-select au-select--dark" required>
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select invalid via class</h2>
+
+			<label for="select-dark-invalid2">What option?</label>
+
+			<select id="select-dark-invalid2" class="au-select au-select--dark au-select--invalid">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select valid</h2>
+
+			<label for="select-dark-valid">What option?</label>
+
+			<select id="select-dark-valid" class="au-select au-select--dark au-select--valid">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>block select <code>--dark</code></h2>
+
+			<label for="select6">What option?</label>
+
+			<select id="select6" class="au-select au-select--dark au-select--block">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+		</div>
+	</div>
+	<div class="split-wrapper">
+		<div class="split split--alt">
+			<h2>normal select on <code>--alt</code> background</h2>
+
+			<label for="select7">What option?</label>
+
+			<select id="select7" class="au-select">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select disabled</h2>
+
+			<label for="select8">What option?</label>
+
+			<select id="select8" class="au-select" disabled>
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select invalid</h2>
+
+			<label for="select-alt-invalid">What option?</label>
+
+			<select id="select-alt-invalid" class="au-select" required>
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select invalid via class</h2>
+
+			<label for="select-alt-invalid2">What option?</label>
+
+			<select id="select-alt-invalid2" class="au-select au-select--invalid">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select valid</h2>
+
+			<label for="select-alt-valid">What option?</label>
+
+			<select id="select-alt-valid" class="au-select au-select--valid">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>block select</h2>
+
+			<label for="select9">What option?</label>
+
+			<select id="select9" class="au-select au-select--block">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+		</div>
+		<div class="split split--alt split--dark">
+			<h2>normal select <code>--alt --dark</code></h2>
+
+			<label for="select10">What option?</label>
+
+			<select id="select10" class="au-select au-select--dark">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select disabled <code>--dark</code></h2>
+
+			<label for="select11">What option?</label>
+
+			<select id="select11" class="au-select au-select--dark" disabled>
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select invalid</h2>
+
+			<label for="select-alt-dark-invalid">What option?</label>
+
+			<select id="select-alt-dark-invalid" class="au-select au-select--dark" required>
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select invalid via class</h2>
+
+			<label for="select-alt-dark-invalid2">What option?</label>
+
+			<select id="select-alt-dark-invalid2" class="au-select au-select--dark au-select--invalid">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>select valid</h2>
+
+			<label for="select-alt-dark-valid">What option?</label>
+
+			<select id="select-alt-dark-valid" class="au-select au-select--dark au-select--valid">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+
+
+			<hr>
+			<h2>block select <code>--dark</code></h2>
+
+			<label for="select12">What option?</label>
+
+			<select id="select12" class="au-select au-select--dark au-select--block">
+				<option value="">Please select</option>
+				<option value="1">Option 1</option>
+				<option value="2">Option 2</option>
+				<option value="3">Option 3</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="height-test">
+		<label class="no-a11y-test" for="select-height-test">What option?</label>
+		<select id="select-height-test" class="au-select">
 			<option value="">Please select</option>
 			<option value="1">Option 1</option>
 			<option value="2">Option 2</option>
 			<option value="3">Option 3</option>
 		</select>
+		<label class="no-a11y-test" for="textinput-height-test">A text input field</label>
+		<input class="au-text-input" name="textinput-height-test" id="textinput-height-test" type="text" value="ABCZ abcjg liI1 12340">
+		<button class="au-btn">Button</button>
+		<button class="au-btn au-btn--secondary">Button</button>
+		<button class="au-btn au-btn--tertiary">Button</button>
 	</div>
-
-
-	<hr>
-	<h2>select disabled</h2>
-
-	<label for="select2">What option?</label>
-
-	<div class="uikit-select">
-		<select id="select2" class="uikit-select__element" disabled>
-			<option value="">Please select</option>
-			<option value="1">Option 1</option>
-			<option value="2">Option 2</option>
-			<option value="3">Option 3</option>
-		</select>
-	</div>
-
-
-	<hr>
-	<h2>block select</h2>
-
-	<label for="select3">What option?</label>
-
-	<div class="uikit-select uikit-select-block">
-		<select id="select3" class="uikit-select__element">
-			<option value="">Please select</option>
-			<option value="1">Option 1</option>
-			<option value="2">Option 2</option>
-			<option value="3">Option 3</option>
-		</select>
-	</div>
-
 </body>
 </html>

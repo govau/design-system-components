@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -17,41 +17,39 @@ import PropTypes from 'prop-types';
 // [replace-imports]
 
 /**
- * An item inside the LinkList component
+ * An item inside the AUlinkList component
  *
- * @param  {object}   item         - The link list item
- * @param  {string}   item.link    - The link URL, optional
- * @param  {string}   item.text    - The link Text
- * @param  {function} item.onClick - An onClick event, optional
+ * @param  {string} link             - The link URL, optional
+ * @param  {string} text             - The link Text
+ * @param  {object} li               - An additional object to be spread into the wrapping element, optional
+ * @param  {object} attributeOptions - Any other attribute options, optional
  */
-export const LinkListItem = ({ item }) => {
-	const attributeOptions = {};
+export const AUlinkListItem = ({ text, link, li = {}, ...attributeOptions }) => {
 
-	if( typeof item.onClick === 'function' ) {
-		attributeOptions.onClick = item.onClick;
+	if( typeof onClick === 'function' ) {
+		attributeOptions.onClick = onClick;
 
 		// if we find an onClick event but no link we make it a link so onClick can be added (no button support yet)
-		if( !item.link ) {
-			item.link = '#';
+		if( !link ) {
+			link = '#';
 		}
 	}
 
 	return (
-		<li>
-			{ item.link === undefined
-				? ( item.text )
-				: ( <a href={ item.link } { ...attributeOptions }>{ item.text }</a> )
+		<li { ...li }>
+			{
+				link === undefined
+					? text
+					: <a href={ link } { ...attributeOptions }>{ text }</a>
 			}
 		</li>
 	);
 };
 
-LinkListItem.propTypes = {
-	item: PropTypes.shape({
-		link: PropTypes.string,
-		text: PropTypes.string.isRequired,
-		onClick: PropTypes.func,
-	}),
+AUlinkListItem.propTypes = {
+	text: PropTypes.string.isRequired,
+	link: PropTypes.string,
+	li: PropTypes.object,
 };
 
 
@@ -59,26 +57,29 @@ LinkListItem.propTypes = {
  * DEFAULT
  * The Link List component
  *
- * @param  {boolean} inverted - Inverted option, optional
- * @param  {boolean} inverted - Inline option, optional
- * @param  {array}   items    - All items inside the link list to be passed to LinkListItem, format: { link: '', text: '', onClick: () }
+ * @param  {array}   items            - All items inside the link list to be passed to AUlinkListItem, format: { link: '', text: '', onClick: () }
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options, optional
  */
-const LinkList = ({ inverted, inline, items }) => (
-	<ul className={ `uikit-link-list${ inverted ? ' uikit-link-list--inverted' : '' }${ inline ? ' uikit-link-list--inline' : '' }` }>
-		{ items.map( ( item, i ) => <LinkListItem key={ i } item={ item } /> ) }
+const AUlinkList = ({ inline, items, className = '', ...attributeOptions }) => (
+	<ul className={ `au-link-list ${ className }${ inline ? ' au-link-list--inline' : '' }` } { ...attributeOptions }>
+		{
+			items.map(
+				( item, i ) => <AUlinkListItem key={ i } { ...item } />
+			)
+		}
 	</ul>
 );
 
-LinkList.propTypes = {
-	inverted: PropTypes.bool,
+AUlinkList.propTypes = {
 	inline: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
-			onClick: PropTypes.func,
+			li: PropTypes.object,
 		})
-		).isRequired,
+	).isRequired,
 };
 
-export default LinkList;
+export default AUlinkList;

@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,20 +52,21 @@ npm install @gov.au/headings --save-dev
 Usage:
 
 ```jsx
-import Heading from './headings.js';
+import AUheading from './headings.js';
 
-<Heading size="2" level="2" text="Display 2 on h2" />
+<AUheading size="xl" level="2">Display 2 on h2</AUheading>
 ```
 
 All props:
 
 ```jsx
-<Heading
-	size="1"              {/* The display size, 1 = smallest; 6 = largest */}
-	level="1"             {/* The semantic headline tag level, h1-h6 */}
-	text="Headline text"  {/* The text of the headline */}
+<AUheading
+  size="xl"             {/* The display size, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' */}
+  level="1"             {/* The semantic headline tag level, h1-h6 */}
+  attributeOptions      {/* Any other attribute options */}
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/headings/tests/react/index.js).
 
@@ -91,18 +91,9 @@ headings
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/headings/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/headings/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -113,6 +104,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/headings/test
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing, moved to system fonts
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version

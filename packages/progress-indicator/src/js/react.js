@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
@@ -21,53 +21,46 @@ import PropTypes from 'prop-types';
  *
  * @type {Object}
  */
-const statusText = {
+const StatusText = {
 	doing: 'Doing',
 	todo: 'Todo',
 	done: 'Done',
 };
 
+
 /**
- * An item inside the ProgressIndicator component
+ * An item inside the AUprogressIndicator component
  *
- * @param  {array}    item            - The item array with all progress items
- * @param  {string}   item.link       - The link URL, If no link is passed we render a button instead of a link tag, optional
- * @param  {string}   item.text       - The text of this item
- * @param  {string}   item.status     - The status of this item
- * @param  {string}   item.statusText - The status text of this item, optional
- * @param  {function} item.onClick    - An onClick function, optional
+ * @param  {string}   link             - The link URL, If no link is passed we render a button instead of a link tag, optional
+ * @param  {string}   text             - The text of this item
+ * @param  {string}   status           - The status of this item
+ * @param  {string}   statusText       - The status text of this item, optional
+ * @param  {string}   className        - An additional class, optional
+ * @param  {object}   li               - An additional object to be spread into the wrapping element, optional
+ * @param  {object}   attributeOptions - Any other attribute options
  */
-export const ProgressIndicatorItem = ({ item }) => {
-	const attributeOptions = {};
-
-	if( typeof item.onClick === 'function' ) {
-		attributeOptions.onClick = item.onClick;
-	}
-
-	return (
-		<li>
-			{ item.link
-				? <a className={`progress-indicator__link progress-indicator__link--${ item.status }`} href={ item.link } { ...attributeOptions }>
-						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
-						{ item.text }
+export const AUprogressIndicatorItem = ({ link, text, status, statusText, className = '', li = {}, ...attributeOptions }) => (
+	<li { ...li }>
+		{
+			link
+				? <a className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} href={ link } { ...attributeOptions }>
+						<span className="au-progress-indicator__status">{ statusText ? statusText : StatusText[ status ] }</span>
+						{ text }
 					</a>
-				: <button className={`progress-indicator__link progress-indicator__link--${ item.status }`} { ...attributeOptions }>
-						<span className="progress-indicator__status">{ item.statusText ? item.statusText : statusText[ item.status ] }</span>
-						{ item.text }
+				: <button className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} { ...attributeOptions }>
+						<span className="au-progress-indicator__status">{ statusText ? statusText : StatusText[ status ] }</span>
+						{ text }
 					</button>
-			}
-		</li>
-	);
-};
+		}
+	</li>
+);
 
-ProgressIndicatorItem.propTypes = {
-	item: PropTypes.shape({
-		link: PropTypes.string,
-		text: PropTypes.string.isRequired,
-		status: PropTypes.PropTypes.oneOf([ 'doing', 'todo', 'done' ]).isRequired,
-		statusText: PropTypes.string,
-		onclick: PropTypes.func,
-	}),
+AUprogressIndicatorItem.propTypes = {
+	link: PropTypes.string,
+	text: PropTypes.string.isRequired,
+	status: PropTypes.PropTypes.oneOf([ 'doing', 'todo', 'done' ]).isRequired,
+	statusText: PropTypes.string,
+	li: PropTypes.object,
 };
 
 
@@ -75,24 +68,32 @@ ProgressIndicatorItem.propTypes = {
  * DEFAULT
  * The progress-indicator component
  *
- * @param  {array} items - All items for this progress indicator
+ * @param  {string} dark             - Add the dark variation class
+ * @param  {array}  items            - All items for this progress indicator
+ * @param  {string} className        - An additional class, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
-const ProgressIndicator = ({ items }) => (
-	<ul className="progress-indicator">
-		{ items.map( ( item, i ) => <ProgressIndicatorItem key={ i } item={ item } /> ) }
+const AUprogressIndicator = ({ dark, items, className = '', ...attributeOptions }) => (
+	<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' } ${ className }` } { ...attributeOptions }>
+		{
+			items.map(
+				( item, i ) => <AUprogressIndicatorItem key={ i } { ...item } />
+			)
+		}
 	</ul>
 );
 
-ProgressIndicator.propTypes = {
+AUprogressIndicator.propTypes = {
+	dark: PropTypes.bool,
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
 			status: PropTypes.PropTypes.oneOf([ 'doing', 'todo', 'done' ]).isRequired,
 			statusText: PropTypes.string,
-			onclick: PropTypes.func,
+			li: PropTypes.object,
 		})
-		).isRequired,
+	).isRequired,
 };
 
-export default ProgressIndicator;
+export default AUprogressIndicator;

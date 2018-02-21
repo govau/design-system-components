@@ -9,7 +9,6 @@
 * [Install](#install)
 * [Usage](#usage)
 * [Dependency graph](#dependency-graph)
-* [Build](#build)
 * [Tests](#tests)
 * [Release History](#release-history)
 * [License](#license)
@@ -53,39 +52,39 @@ npm install @gov.au/select --save-dev
 Usage:
 
 ```jsx
-import Select from './select.js';
+import AUselect from './select.js';
 
-<Select id="exampleSelect" options={[
-	{
-		value: '',
-		text: 'Please select',
-	},
-	{
-		value: '1',
-		text: 'Option 1',
-	},
-	{
-		value: '2',
-		text: 'Option 2',
-	},
+<AUselect id="exampleSelect" options={[
+  {
+    value: '',
+    text: 'Please select',
+  },
+  {
+    value: '1',
+    text: 'Option 1',
+  },
+  {
+    value: '2',
+    text: 'Option 2',
+  },
 ]} />
 ```
 
 All props:
 
 ```jsx
-<Select
-	id="unique"            {/* Unique ID, a must so you can tie a label to it */}
-	block={ true }         {/* The block option to make the select fill the available width, optional */}
-	onChange={ () => {} }  {/* A function to execute when the select value is changed, optional */}
-	options={[             {/* All options in a neat array */}
-		{
-			value: '1',        {/* The value attribute of the option */}
-			text: 'Option 1',  {/* The text of the option */}
-		},
-	]}
+<AUselect
+  dark={ false }         {/* A dark variation of the component */}
+  block={ true }         {/* The block option to make the select fill the available width, optional */}
+  options={[             {/* All options in a neat array */}
+    {
+      value: '1',        {/* The value attribute of the option */}
+      text: 'Option 1',  {/* The text of the option */}
+    },
+  ]},
 />
 ```
+_(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/select/tests/react/index.js).
 
@@ -110,18 +109,9 @@ select
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Build
-
-
-**[⬆ back to top](#contents)**
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Tests
 
-The visual test: http://uikit.apps.staging.digital.gov.au/packages/select/tests/site/
+The visual test: https://uikit.apps.b.cld.gov.au/packages/select/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -132,6 +122,7 @@ The visual test: http://uikit.apps.staging.digital.gov.au/packages/select/tests/
 
 ## Release History
 
+* v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component
 * v0.1.0 - 💥 Initial version
