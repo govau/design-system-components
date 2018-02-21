@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/buttons",
-	"version": "1.0.0-next.7",
+	"version": "1.0.0",
 	"description": "Buttons signal action. Use them to move the user through the service.",
 	"keywords": [
 		"uikit",
@@ -59,10 +59,10 @@
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": ">1.0.0-next.0"
+		"@gov.au/core": ">=1.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": ">1.0.0-next.0"
+		"@gov.au/core": ">=1.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",

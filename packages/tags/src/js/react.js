@@ -19,23 +19,15 @@ import PropTypes from 'prop-types';
  * @param  {object}  li               - An additional object to be spread into the wrapping element, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtagItem = ({ link, text, li = {}, ...attributeOptions }) => {
-
-	// if we find an onClick event but no link we make it a link so onClick can be added (no button support yet)
-	if( !link ) {
-		link = '#';
-	}
-
-	return (
-		<li { ...li }>
-			{
-				link
-					? <a href={ link } { ...attributeOptions }>{ text }</a>
-					: text
-			}
-		</li>
-	);
-};
+const AUtagItem = ({ link, text, li = {}, ...attributeOptions }) => (
+	<li { ...li }>
+		{
+			link
+				? <a href={ link } { ...attributeOptions }>{ text }</a>
+				: <span { ...attributeOptions }>{ text }</span>
+		}
+	</li>
+);
 
 AUtagItem.propTypes = {
 	link: PropTypes.string,

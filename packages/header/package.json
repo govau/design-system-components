@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/header",
-	"version": "2.0.0-next.7",
+	"version": "2.0.0",
 	"description": "Headers provide a consistent start to pages.",
 	"keywords": [
 		"uikit",
@@ -61,10 +61,10 @@
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": ">1.0.0-next.0"
+		"@gov.au/core": ">=1.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": ">1.0.0-next.0"
+		"@gov.au/core": ">=1.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
