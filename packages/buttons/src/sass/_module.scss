@@ -33,6 +33,11 @@ a.au-btn {
 	vertical-align: middle;
 	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
 
+	.au-body & {
+		color: $AU-color-background;
+		text-decoration: none;
+	}
+
 	&.au-btn--block + .au-btn.au-btn--block,
 	&.au-btn--block + a.au-btn.au-btn--block {
 		@include AU-space( margin-top, 0.5unit );
@@ -81,6 +86,10 @@ a.au-btn {
 		background-color: $AU-colordark-foreground-action;
 		border-color: $AU-colordark-foreground-action;
 
+		.au-body & {
+			color: $AU-colordark-background;
+		}
+
 		&:hover:not(:disabled) {
 			color: $AU-colordark-background;
 			border-color: $AU-colordark-foreground-text;
@@ -103,9 +112,13 @@ a.au-btn {
 	* SECONDARY
 	*/
 	&.au-btn--secondary {
+		color: $AU-color-foreground-action;
 		background-color: transparent;
 		border-color: $AU-color-foreground-action;
-		color: $AU-color-foreground-action;
+
+		.au-body & {
+			color: $AU-color-foreground-action;
+		}
 
 		&:hover:not(:disabled) {
 			background-color: transparent;
@@ -128,8 +141,8 @@ a.au-btn {
 	* TERTIARY
 	*/
 	&.au-btn--tertiary {
-		background-color: transparent;
 		color: $AU-color-foreground-action;
+		background-color: transparent;
 		border-color: transparent;
 		text-decoration: underline;
 
