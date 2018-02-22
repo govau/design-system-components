@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.1 - Fixed specificity issue when combined with body](v101)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
 * [v0.5.0 - Added pancake-react plugin, ES5 main file](v050)
 * [v0.4.0 - Added react component](v040)
@@ -27,6 +28,11 @@
 
 
 ## Release History
+
+### v1.0.1
+
+- Fixed specificity issue when combined with body [197](https://github.com/govau/uikit/issues/197)
+
 
 ### v1.0.0
 
