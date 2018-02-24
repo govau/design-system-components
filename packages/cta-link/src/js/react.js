@@ -21,11 +21,11 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The cta link component
  *
- * @param  {string} dark             - Add the dark variation class
- * @param  {string} link             - The link target, if not supplied this will render as a button, optional
- * @param  {string} text             - The text of the CTA link
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {string}  link             - The link target, if not supplied this will render as a button, optional
+ * @param  {string}  text             - The text of the CTA link
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUctaLink = ({ dark, link, text, className = '', ...attributeOptions }) => {
 

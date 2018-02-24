@@ -20,12 +20,12 @@ import PropTypes from 'prop-types';
 /**
  * Default callout
  *
- * @param  {string} dark             - Add the dark variation class
- * @param  {string} alt              - Add the alt variation class
- * @param  {string} description      - A description of the content of the callout for a11y
- * @param  {string} children         - Anything inside
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} alt              - Add the alt variation class, optional
+ * @param  {string}  description      - A description of the content of the callout for a11y
+ * @param  {string}  children         - Anything inside
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 export const AUcallout = ({ dark, alt, description, children, className = '', ...attributeOptions }) => (
 	<section
@@ -49,15 +49,15 @@ AUcallout.propTypes = {
 /**
  * Calendar callout
  *
- * @param  {string} dark             - Add the dark variation class
- * @param  {string} alt              - Add the alt variation class
- * @param  {string} description      - A description of the content of the callout for a11y
- * @param  {string} subline          - The subline of the event, optional
- * @param  {string} datetime         - The datetime of the event as ISO datetime
- * @param  {string} time             - The time that appears on the page
- * @param  {string} name             - The name of the event, optional
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} alt              - Add the alt variation class, optional
+ * @param  {string}  description      - A description of the content of the callout for a11y
+ * @param  {string}  subline          - The subline of the event, optional
+ * @param  {string}  datetime         - The datetime of the event as ISO datetime
+ * @param  {string}  time             - The time that appears on the page
+ * @param  {string}  name             - The name of the event, optional
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 export const AUcalloutCalendar = ({ dark, alt, description, subline, datetime, time, name, className = '', ...attributeOptions }) => (
 	<section

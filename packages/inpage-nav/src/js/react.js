@@ -41,11 +41,11 @@ AUinpageNavLinksItem.propTypes = {
 /**
  * The inpage-nav component
  *
- * @param  {string} dark             - Add the dark variation class
- * @param  {string} title            - The title of the content link block, default: Contents
- * @param  {array}  sections         - An array of objects of all sections, sample: { link: '', title: '', onClick: () }
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {string}  title            - The title of the content link block, default: Contents
+ * @param  {array}   sections         - An array of objects of all sections, sample: { link: '', title: '', onClick: () }
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 export const AUinpageNavLinks = ({ dark, title, sections, className = '', ...attributeOptions }) => (
 	<nav className={ `au-inpage-nav-links ${ className }${ dark ? ' au-inpage-nav-links--dark' : '' }` } { ...attributeOptions }>
