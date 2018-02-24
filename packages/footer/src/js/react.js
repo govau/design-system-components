@@ -60,11 +60,11 @@ AUfooterEnd.propTypes = {
  * DEFAULT
  * The footer component
  *
- * @param  {string} dark             - Add the dark variation class
- * @param  {string} alt              - Add the alt variation class
- * @param  {node}   children         - The inside of this section
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} alt              - Add the alt variation class, optional
+ * @param  {node}    children         - The inside of this section
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUfooter = ({ dark, alt, children, className = '', ...attributeOptions }) => (
 	<footer

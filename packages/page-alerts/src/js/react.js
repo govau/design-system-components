@@ -33,12 +33,12 @@ const options = {
  * DEFAULT
  * Page alert
  *
- * @param  {string} dark             - Add the dark variation class
- * @param  {string} alt              - Add the alt variation class
- * @param  {string} as               - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
- * @param  {node}   children         - Anything inside the component
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} alt              - Add the alt variation class, optional
+ * @param  {string}  as               - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'
+ * @param  {node}    children         - Anything inside the component
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUpageAlert = ({ as, alt, dark, children, className = '', ...attributeOptions }) => (
 	<div

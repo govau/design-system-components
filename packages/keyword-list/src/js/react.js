@@ -58,11 +58,11 @@ AUkeywordListItem.propTypes = {
  * DEFAULT
  * The keyword-list component
  *
- * @param  {string} repeatedName     - The repeated bit in each item
- * @param  {array}  items            - All items in this list, format: { link: '', name: '', onClick: () }
- * @param  {string} dark             - Add the dark variation class
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {string}  repeatedName     - The repeated bit in each item
+ * @param  {array}   items            - All items in this list, format: { link: '', name: '', onClick: () }
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUkeywordList = ({ repeatedName, items, dark, className = '', ...attributeOptions }) => (
 	<ul className={ `au-keyword-list au-link-list ${ className }${ dark ? ' au-keyword-list--dark' : '' } `} { ...attributeOptions }>

@@ -21,15 +21,15 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The header component
  *
- * @param  {string}  title            - The title of the header
- * @param  {string}  level            - The tag level (<h1/> <h2/> etc), default: '1'
- * @param  {string}  subline          - An optional subline, optional
- * @param  {boolean} hero             - The hero option, optional
- * @param  {string}  dark             - Add the dark variation class
- * @param  {string}  alt              - Add the alt variation class
- * @param  {node}    children         - The inside of this section
- * @param  {string}  className        - An additional class, optional
- * @param  {object}  attributeOptions - Any other attribute options
+ * @param  {string}   title            - The title of the header
+ * @param  {string}   level            - The tag level (<h1/> <h2/> etc), default: '1'
+ * @param  {string}   subline          - An optional subline, optional
+ * @param  {boolean}  hero             - The hero option, optional
+ * @param  {boolean}  dark             - Add the dark variation class, optional
+ * @param  {boolean}  alt              - Add the alt variation class, optional
+ * @param  {node}     children         - The inside of this section
+ * @param  {string}   className        - An additional class, optional
+ * @param  {object}   attributeOptions - Any other attribute options
  */
 const AUheader = ({ title, level, subline, hero, dark, alt, children, className = '', ...attributeOptions }) => {
 	const HeadingTag = `h${ level }`;

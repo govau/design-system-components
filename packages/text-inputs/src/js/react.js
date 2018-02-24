@@ -21,13 +21,13 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The AUtextInput component
  *
- * @param  {string} as               - The kind of input, can be either 'input' or 'textarea', default: 'input'
- * @param  {string} dark             - Add the dark variation class, optional
- * @param  {string} block            - Add the block variation class, optional
- * @param  {string} status           - Mark this field as either 'valid' or 'invalid', optional
- * @param  {string} type             - The type of the field, optional, default: text
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {string}  as               - The kind of input, can be either 'input' or 'textarea', default: 'input'
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} block            - Add the block variation class, optional
+ * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional
+ * @param  {string}  type             - The type of the field, optional, default: text
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUtextInput = ({ as, dark, block, status, type = 'text', className = '', ...attributeOptions }) => (
 	as === 'textarea'
