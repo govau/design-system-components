@@ -40,10 +40,10 @@ AUtagItem.propTypes = {
  * DEFAULT
  * The tags component
  *
- * @param  {string} dark             - Add the dark variation class
- * @param  {array}  tags             - The tags, format: { link: '', text: '', onClick: () }
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {array}   tags             - The tags, format: { link: '', text: '', onClick: () }
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUtags = ({ dark, tags, className = '', ...attributeOptions }) => (
 	<ul className={ `au-tags ${ className } ${ dark ? 'au-tags--dark' : '' }` } { ...attributeOptions }>

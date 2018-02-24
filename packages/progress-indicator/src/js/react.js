@@ -68,10 +68,10 @@ AUprogressIndicatorItem.propTypes = {
  * DEFAULT
  * The progress-indicator component
  *
- * @param  {string} dark             - Add the dark variation class
- * @param  {array}  items            - All items for this progress indicator
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {array}   items            - All items for this progress indicator
+ * @param  {string}  className        - An additional class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUprogressIndicator = ({ dark, items, className = '', ...attributeOptions }) => (
 	<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' } ${ className }` } { ...attributeOptions }>

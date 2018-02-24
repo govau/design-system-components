@@ -20,8 +20,8 @@ import PropTypes from 'prop-types';
 /**
  * The checkbox component
  *
- * @param  {boolean} dark             - Add the dark variation class
- * @param  {boolean} alt              - Add the alt variation class
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} alt              - Add the alt variation class, optional
  * @param  {boolean} small            - Add the small variation class
  * @param  {boolean} block            - Add the block variation class
  * @param  {string}  label            - The label
@@ -61,8 +61,8 @@ AUcheckbox.propTypes = {
 /**
  * The radio component
  *
- * @param  {boolean} dark             - Add the dark variation class
- * @param  {boolean} alt              - Add the alt variation class
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} alt              - Add the alt variation class, optional
  * @param  {boolean} small            - Add the small variation class
  * @param  {boolean} block            - Add the block variation class
  * @param  {string}  label            - The label
