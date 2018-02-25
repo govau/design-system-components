@@ -38,7 +38,7 @@
 
 ### v1.0.2
 
-- Fixed issue with secondary button hover IE8 [312](https://github.com/govau/uikit/issues/197)
+- Fixed issue with secondary button hover IE8 [312](https://github.com/govau/uikit/issues/312)
 
 
 ### v1.0.1

@@ -36,7 +36,7 @@
 
 ### v1.0.1
 
-- IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/197)
+- IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/309)
 
 
 ### v1.0.0
