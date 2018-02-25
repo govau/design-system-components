@@ -107,6 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/buttons/tests/site/
 
 ## Release History
 
+* v1.0.2 - Fixed issue with secondary button hover IE8 [312](https://github.com/govau/uikit/issues/312)
 * v1.0.1 - Fixed specificity issue when combined with body [197](https://github.com/govau/uikit/issues/197)
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.5.0 - Added pancake-react plugin, ES5 main file

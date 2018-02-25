@@ -103,7 +103,6 @@
 	.lt-ie8 & {
 		&:after {
 			content: ' ▼ ';
-			@include AU-space( margin-top, 1unit );
 		}
 
 		&.au-accordion--open:after {

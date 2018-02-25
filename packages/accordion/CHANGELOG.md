@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.1 - IE8 spacing above triangle fixed](v101)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
 * [v0.3.0 - Added pancake-react plugin, ES5 main file](v030)
 * [v0.2.0 - Added react and jQuery component](v020)
@@ -25,6 +26,11 @@
 
 
 ## Release History
+
+### v1.0.1
+
+- IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/309)
+
 
 ### v1.0.0
 

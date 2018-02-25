@@ -71,13 +71,11 @@ a.au-btn {
 		color: $AU-color-background;
 	}
 
-	.ie8 & {
-		&:hover {
-			background-color: $AU-color-foreground-text;
-			border-color: $AU-color-foreground-text;
-			text-decoration: underline;
-			color: $AU-color-background;
-		}
+	.ie8 &:hover {
+		background-color: $AU-color-foreground-text;
+		border-color: $AU-color-foreground-text;
+		color: $AU-color-background;
+		text-decoration: underline;
 	}
 
 	// dark
@@ -96,12 +94,10 @@ a.au-btn {
 			background-color:  $AU-colordark-foreground-text;
 		}
 
-		.ie8 & {
-			&:hover {
-				color: $AU-colordark-background;
-				border-color: $AU-colordark-foreground-text;
-				background-color:  $AU-colordark-foreground-text;
-			}
+		.ie8 &:hover {
+			color: $AU-colordark-background;
+			border-color: $AU-colordark-foreground-text;
+			background-color:  $AU-colordark-foreground-text;
 		}
 
 		@include AU-focus( 'dark' );
@@ -120,6 +116,10 @@ a.au-btn {
 			color: $AU-color-foreground-action;
 		}
 
+		.ie8 .au-body &:hover {
+			color: $AU-color-background;
+		}
+
 		&:hover:not(:disabled) {
 			background-color: transparent;
 			border-color: $AU-color-foreground-text;
@@ -133,6 +133,10 @@ a.au-btn {
 			&:hover:not(:disabled) {
 				border-color: $AU-colordark-foreground-text;
 				color: $AU-colordark-foreground-text;
+			}
+
+			.ie8 .au-body &:hover {
+				color: $AU-colordark-background;
 			}
 		}
 	}
