@@ -252,7 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
-* v1.0.1 - IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/197)
+* v1.0.1 - IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/309)
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react and jQuery component
