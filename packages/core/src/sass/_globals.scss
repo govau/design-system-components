@@ -756,8 +756,8 @@ $AU-color-foreground-border-suggestion:    mix( $AU-color-foreground-text, darke
 $AU-color-background-shade:     AU-color-a11y( $AU-color-background-shade-suggestion, $AU-color-foreground-text ) !global;
 $AU-color-background-alt:       AU-color-a11y( $AU-color-background-alt-suggestion, $AU-color-foreground-text ) !global;
 $AU-color-background-alt-shade: AU-color-a11y( $AU-color-background-alt-shade-suggestion, $AU-color-foreground-text ) !global;
-$AU-color-foreground-muted:     AU-color-a11y( $AU-color-foreground-muted-suggestion, darken( $AU-color-background, 12% ) ) !global;
-$AU-color-foreground-border:    AU-color-a11y( $AU-color-foreground-border-suggestion, darken( $AU-color-background, 12% ), 'large') !global;
+$AU-color-foreground-muted:     AU-color-a11y( $AU-color-foreground-muted-suggestion, $AU-color-background-alt-shade ) !global;
+$AU-color-foreground-border:    AU-color-a11y( $AU-color-foreground-border-suggestion, $AU-color-background-alt-shade, 'large') !global;
 
 
 /**
