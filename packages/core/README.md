@@ -255,6 +255,7 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v1.0.1 - Adjusting how colors are generated from other colors
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.1.3 - Moved to System fonts
 * v0.1.2 - Fixed newly introduced uikit-svguri bug; ups
