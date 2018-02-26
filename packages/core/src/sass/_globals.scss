@@ -746,18 +746,18 @@ $AU-color-foreground-focus:  #ea4200 !default;
 $AU-color-background:        #ffffff !default;
 
 // Suggestion colors for Non-user definable color palette
-$AU-color-background-shade-suggestion:     #f5f5f5 !default;
-$AU-color-background-alt-suggestion:       #ebebeb !default;
-$AU-color-background-alt-shade-suggestion: #e0e0e0 !default;
-$AU-color-foreground-muted-suggestion:     #636363 !default;
-$AU-color-foreground-border-suggestion:    #7f7f7f !default;
+$AU-color-background-shade-suggestion:     darken( $AU-color-background, 4% ) !default;
+$AU-color-background-alt-suggestion:       darken( $AU-color-background, 8% ) !default;
+$AU-color-background-alt-shade-suggestion: darken( $AU-color-background, 12% ) !default;
+$AU-color-foreground-muted-suggestion:     mix( $AU-color-foreground-text, darken( $AU-color-background, 12% ), 70% ) !default;
+$AU-color-foreground-border-suggestion:    mix( $AU-color-foreground-text, darken( $AU-color-background, 12% ), 52% ) !default;
 
 // Non-user definable color palette
 $AU-color-background-shade:     AU-color-a11y( $AU-color-background-shade-suggestion, $AU-color-foreground-text ) !global;
 $AU-color-background-alt:       AU-color-a11y( $AU-color-background-alt-suggestion, $AU-color-foreground-text ) !global;
 $AU-color-background-alt-shade: AU-color-a11y( $AU-color-background-alt-shade-suggestion, $AU-color-foreground-text ) !global;
-$AU-color-foreground-muted:     AU-color-a11y( $AU-color-foreground-muted-suggestion, $AU-color-background ) !global;
-$AU-color-foreground-border:    AU-color-a11y( $AU-color-foreground-border-suggestion, $AU-color-background, 'large') !global;
+$AU-color-foreground-muted:     AU-color-a11y( $AU-color-foreground-muted-suggestion, darken( $AU-color-background, 12% ) ) !global;
+$AU-color-foreground-border:    AU-color-a11y( $AU-color-foreground-border-suggestion, darken( $AU-color-background, 12% ), 'large') !global;
 
 
 /**
@@ -769,11 +769,11 @@ $AU-colordark-foreground-focus:  #ff8629 !default;
 $AU-colordark-background:        #135E70 !default;
 
 // Suggestion colors for Non-user definable color palette
-$AU-colordark-background-shade-suggestion:     #104f5f !default;
-$AU-colordark-background-alt-suggestion:       #0d414d !default;
-$AU-colordark-background-alt-shade-suggestion: #0a323c !default;
-$AU-colordark-foreground-muted-suggestion:     #b7cfd5 !default;
-$AU-colordark-foreground-border-suggestion:    #8bacb3 !default;
+$AU-colordark-background-shade-suggestion:     darken( $AU-colordark-background, 4% ) !default;
+$AU-colordark-background-alt-suggestion:       darken( $AU-colordark-background, 8% ) !default;
+$AU-colordark-background-alt-shade-suggestion: darken( $AU-colordark-background, 12% ) !default;
+$AU-colordark-foreground-muted-suggestion:     mix( $AU-colordark-foreground-text, $AU-colordark-background, 70% ) !default;
+$AU-colordark-foreground-border-suggestion:    mix( $AU-colordark-foreground-text, $AU-colordark-background, 52% ) !default;
 
 // Non-user definable color palette
 $AU-colordark-background-shade:     AU-color-a11y( $AU-colordark-background-shade-suggestion, $AU-colordark-foreground-text ) !global;
