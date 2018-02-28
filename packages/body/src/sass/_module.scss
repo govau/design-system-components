@@ -359,6 +359,10 @@
 		background: $AU-colordark-background;
 		color: $AU-colordark-foreground-text;
 
+		::selection {
+			background-color: mix( $AU-color-warning, $AU-colordark-background, 30% );
+		}
+
 		a {
 			color: $AU-colordark-foreground-action;
 
