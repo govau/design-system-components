@@ -124,6 +124,7 @@
 	::selection {
 		color: $AU-color-background;
 		background-color: rgba( $AU-color-foreground-action, 0.99 );
+		// Why RGBA 0.99? https://stackoverflow.com/a/7224621
 	}
 
 	/**
@@ -363,6 +364,7 @@
 		::selection {
 			color: $AU-colordark-background;
 			background-color: rgba( $AU-colordark-foreground-action, 0.99 );
+			// Why RGBA 0.99? https://stackoverflow.com/a/7224621
 		}
 
 		a {
