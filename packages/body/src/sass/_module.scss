@@ -122,7 +122,9 @@
 	 * Text selection styling
 	 */
 	::selection {
-		background-color: mix( $AU-color-warning, $AU-color-background, 30% );
+		color: $AU-color-background;
+		background-color: rgba( $AU-color-foreground-action, 0.99 );
+		// Why RGBA 0.99? https://stackoverflow.com/a/7224621
 	}
 
 	/**
@@ -358,6 +360,12 @@
 	&.au-body--dark {
 		background: $AU-colordark-background;
 		color: $AU-colordark-foreground-text;
+
+		::selection {
+			color: $AU-colordark-background;
+			background-color: rgba( $AU-colordark-foreground-action, 0.99 );
+			// Why RGBA 0.99? https://stackoverflow.com/a/7224621
+		}
 
 		a {
 			color: $AU-colordark-foreground-action;
