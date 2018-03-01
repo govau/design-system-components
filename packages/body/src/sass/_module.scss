@@ -122,7 +122,8 @@
 	 * Text selection styling
 	 */
 	::selection {
-		background-color: mix( $AU-color-warning, $AU-color-background, 30% );
+		color: $AU-color-background;
+		background-color: rgba( $AU-color-foreground-action, 0.99 );
 	}
 
 	/**
@@ -360,7 +361,8 @@
 		color: $AU-colordark-foreground-text;
 
 		::selection {
-			background-color: mix( $AU-color-warning, $AU-colordark-background, 30% );
+			color: $AU-colordark-background;
+			background-color: rgba( $AU-colordark-foreground-action, 0.99 );
 		}
 
 		a {
