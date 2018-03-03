@@ -98,7 +98,7 @@ looking at some of these things in the future and provide guidance around them.
 
 ## Development
 
-### Is the UI-Kit available with my content management system or javascript framework?
+### Is the UI-Kit available with my content management system or JavaScript framework?
 The UI-Kit is built to be system agnostic. This means that it can work with any system, development environment, build tools or stack.
 Currently we support three different entry-points:
 
@@ -106,7 +106,7 @@ Currently we support three different entry-points:
 - [jQuery](https://jquery.com/)
 - [ReactJS](https://reactjs.org/)
 
-There are also many communities which are connecting content management systems and other javascript frameworks to the UI-Kit. If you would like to do
+There are also many communities which are connecting content management systems and other JavaScript frameworks to the UI-Kit. If you would like to do
 the same we recommend having a look at the question
 [How do I add the UI-Kit to my build process? How do I add custom code/variables/overrides?](#how-do-i-add-the-ui-kit-to-my-build-process-how-do-i-add-custom-codevariablesoverrides).
 
@@ -179,14 +179,14 @@ request is:
 
 
 ### What code standards do I need to follow for a pull request?
-while we want to be open to the community and allow collaboration to happen without barriers, we do follow a strict set of
+While we want to be open to the community and allow collaboration to happen without barriers, we do follow a strict set of
 [rules](https://github.com/govau/uikit#checklist-and-browser-support) for code that ends up into the UI-Kit. It would be a great help if you could test
 or specify what you have tested against that list. Please also work with the code style, not against it.
 
 
 ### Where can I get help implementing the UI-Kit with my project?
-We currently have a community on [slack](http://guides.service.gov.au/join-slack/) and [github](https://github.com/govau/uikit). If you’re working on a
-specific implementation with a javascript framework or content management system there may also be communities external to the UI-Kit.
+We currently have a community on [Slack](http://guides.service.gov.au/join-slack/) and [Github](https://github.com/govau/uikit). If you’re working on a
+specific implementation with a JavaScript framework or content management system there may also be communities external to the UI-Kit.
 
 
 **[⬆ back to top](#contents)**
