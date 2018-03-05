@@ -37,7 +37,7 @@ Npm requires [node.js](https://nodejs.org/en/) and the UI-Kit needs a node.js 5 
 To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`.)
 Inside your working folder install any module and [pancake](https://github.com/govau/pancake/) will make sure you have all assets ready to use.
 
-Run `npm install @gov.au/body` to install the body module. To install several modules just chain them like:
+Run `npm install @gov.au/body` to install the body module. To install several modules, chain them like:
 
 ```shell
 npm install @gov.au/body @gov.au/header @gov.au/footer @gov.au/buttons
