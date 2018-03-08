@@ -27,7 +27,7 @@ jobs:
       - run: sudo apt-get install tree
       - run: sudo apt-get install cf-cli
       - run: sudo apt-get install -qy apache2-utils
-      - run: htpasswd -cb Staticfile.auth gold gold # the password and username is not a secret. It is just to prevent spiders from indexing
+      - run: htpasswd -cb Staticfile.auth uikit uikit # the password and username is not a secret. It is just to prevent spiders from indexing
       - run: cf install-plugin https://github.com/govau/autopilot/releases/download/0.0.5-venapp/autopilot-linux -f
       - run: cf version                             # log what version we are running
       - run: cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
