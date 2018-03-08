@@ -1,11 +1,14 @@
 GOV.AU UI-Kit
 =============
 
-> The UI-Kit for the Australian Government.
+## Looking for our documentation site?
 
-## Documentation
+**We’ve chosen to temporarily take down the Design System documentation site.**
 
-## <p align="center">[https://gold.service.gov.au](https://gold.service.gov.au)</p>
+We appreciate all the feedback we've received about our upcoming documentation site, it's been enormously useful. We've got some more work to do and we look forward to sharing it with you as soon as possible.
+
+Meanwhile, we will keep updating this repository.
+
 
 ## Visual unit tests
 
