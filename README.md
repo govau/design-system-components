@@ -5,7 +5,8 @@ GOV.AU UI-Kit
 
 **We’ve chosen to temporarily take down the Design System documentation site.**
 
-We appreciate all the feedback we've received about our upcoming documentation site, it's been enormously useful. We've got some more work to do and we look forward to sharing it with you as soon as possible.
+We appreciate all the feedback we've received about our upcoming documentation site, it's been enormously useful. We've got some more work to do and we look
+forward to sharing it with you as soon as possible.
 
 Meanwhile, we will keep updating this repository.
 
@@ -15,7 +16,7 @@ Meanwhile, we will keep updating this repository.
 | Production [![CircleCI](https://circleci.com/gh/govau/uikit/tree/master.svg?style=svg)](https://circleci.com/gh/govau/uikit/tree/master) | Staging [![CircleCI](https://circleci.com/gh/govau/uikit/tree/develop.svg?style=svg)](https://circleci.com/gh/govau/uikit/tree/develop) |
 |------------------------------|--------------------------------------|
 | https://uikit.service.gov.au | https://uikit.staging.service.gov.au |
-|                              | user: `gold`, pass: `gold`           |
+|                              | user: `uikit`, pass: `uikit`         |
 
 
 ## Contents
