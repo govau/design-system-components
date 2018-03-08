@@ -1,18 +1,22 @@
 GOV.AU UI-Kit
 =============
 
-> The UI-Kit for the Australian Government.
+## Looking for our documentation site?
 
-## Documentation
+**We’ve chosen to temporarily take down the Design System documentation site.**
 
-## <p align="center">[https://gold.service.gov.au](https://gold.service.gov.au)</p>
+We appreciate all the feedback we've received about our upcoming documentation site, it's been enormously useful. We've got some more work to do and we look
+forward to sharing it with you as soon as possible.
+
+Meanwhile, we will keep updating this repository.
+
 
 ## Visual unit tests
 
 | Production [![CircleCI](https://circleci.com/gh/govau/uikit/tree/master.svg?style=svg)](https://circleci.com/gh/govau/uikit/tree/master) | Staging [![CircleCI](https://circleci.com/gh/govau/uikit/tree/develop.svg?style=svg)](https://circleci.com/gh/govau/uikit/tree/develop) |
 |------------------------------|--------------------------------------|
 | https://uikit.service.gov.au | https://uikit.staging.service.gov.au |
-|                              | user: `gold`, pass: `gold`           |
+|                              | user: `uikit`, pass: `uikit`         |
 
 
 ## Contents
@@ -37,7 +41,7 @@ Npm requires [node.js](https://nodejs.org/en/) and the UI-Kit needs a node.js 5 
 To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`.)
 Inside your working folder install any module and [pancake](https://github.com/govau/pancake/) will make sure you have all assets ready to use.
 
-Run `npm install @gov.au/body` to install the body module. To install several modules just chain them like:
+Run `npm install @gov.au/body` to install the body module. To install several modules, chain them like:
 
 ```shell
 npm install @gov.au/body @gov.au/header @gov.au/footer @gov.au/buttons
