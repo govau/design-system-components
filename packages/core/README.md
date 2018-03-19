@@ -255,6 +255,7 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v1.0.2 - Changing mix values for border and muted, focus colour, adding offset to focus
 * v1.0.1 - Adjusting how colors are generated from other colors
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.1.3 - Moved to System fonts
