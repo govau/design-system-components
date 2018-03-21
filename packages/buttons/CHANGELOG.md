@@ -33,7 +33,7 @@
 
 ### v2.0.0
 
-- Change to focus colour and border/muted color mix
+- Bumped core version which changed to focus color and border/muted color mix
 
 
 ### v1.0.2

@@ -15,7 +15,6 @@
 
 ## Versions
 
-* [v2.0.0 - Change to focus colour and border/muted color mix](v200)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
 * [v0.1.1 - Used percentage sass function over magic numbers](v011)
 * [v0.1.0 - 💥 Initial version](v010)
@@ -25,11 +24,6 @@
 
 
 ## Release History
-
-### v2.0.0
-
-- Change to focus colour and border/muted color mix
-
 
 ### v1.0.0
 
