@@ -117,6 +117,7 @@ The visual test: https://uikit.service.gov.au/packages/skip-link/tests/site/
 
 ## Release History
 
+* v2.0.0 - Change to focus colour and border/muted color mix
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react component

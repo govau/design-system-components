@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/body",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Basic body styles for body HTML elements",
 	"keywords": [
 		"uikit",

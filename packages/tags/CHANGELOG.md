@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.0 - Change to focus colour and border/muted color mix](v200)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
 * [v0.3.0 - Added pancake-react plugin, ES5 main file](v030)
 * [v0.2.0 - Added react component](v020)
@@ -26,6 +27,11 @@
 
 
 ## Release History
+
+### v2.0.0
+
+- Change to focus colour and border/muted color mix
+
 
 ### v1.0.0
 

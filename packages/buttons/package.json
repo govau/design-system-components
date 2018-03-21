@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/buttons",
-	"version": "1.0.2",
+	"version": "2.0.0",
 	"description": "Buttons signal action. Use them to move the user through the service.",
 	"keywords": [
 		"uikit",
