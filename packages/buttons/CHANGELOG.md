@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.0 - Change to focus colour and border/muted color mix](v200)
 * [v1.0.2 - Fixed issue with secondary button hover IE8](v102)
 * [v1.0.1 - Fixed specificity issue when combined with body](v101)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
@@ -29,6 +30,11 @@
 
 
 ## Release History
+
+### v2.0.0
+
+- Bumped core version which changed to focus color and border/muted color mix
+
 
 ### v1.0.2
 

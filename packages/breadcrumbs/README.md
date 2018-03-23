@@ -129,6 +129,7 @@ The visual test: https://uikit.service.gov.au/packages/breadcrumbs/tests/site/
 
 ## Release History
 
+* v2.0.0 - Change to focus colour and border/muted color mix
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.1 - Fixed interdependency with link-list
 * v0.3.0 - Fixed react pipeline, background repeat

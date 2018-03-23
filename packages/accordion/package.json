@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/accordion",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"description": "Allow the user to toggle the visibility of an element",
 	"keywords": [
 		"uikit",
