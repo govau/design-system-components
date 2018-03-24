@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.0 - Changing mix values for border and muted, focus colour, adding offset to focus](v200)
 * [v1.0.1 - Adjusting how colors are generated from other colors](v101)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
 * [v0.1.3 - Moved to System fonts](v013)
@@ -27,6 +28,18 @@
 
 
 ## Release History
+
+### v2.0.0
+
+- Bumped core version which changed to focus color and border/muted color mix
+
+
+### v1.0.2
+
+- Changing mix value for $AU-color-foreground-muted and $AU-color-foreground-border
+- Moving away from error color red for focus
+- Adding offset back to focus
+
 
 ### v1.0.1
 

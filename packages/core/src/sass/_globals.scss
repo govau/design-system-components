@@ -615,6 +615,7 @@ $dependencies: (
 @mixin AU-focus( $theme: 'light' ) {
 	&:focus {
 		@include AU-outline( $theme );
+		outline-offset: 2px;
 	}
 
 	// Remove Modzilla inner HTML dotted line. github.com/necolas/normalize.css/blob/master/normalize.css#L285
@@ -741,15 +742,15 @@ $AU-maxwidth: 42em !default; // Answer to life, the universe, and everything (ke
  */
 $AU-color-foreground-text:   #313131 !default;
 $AU-color-foreground-action: #00698f !default;
-$AU-color-foreground-focus:  #ea4200 !default;
+$AU-color-foreground-focus:  #9263DE !default;
 $AU-color-background:        #ffffff !default;
 
 // Suggestion colors for Non-user definable color palette
 $AU-color-background-shade-suggestion:     darken( $AU-color-background, 4% ) !default;
 $AU-color-background-alt-suggestion:       darken( $AU-color-background, 8% ) !default;
 $AU-color-background-alt-shade-suggestion: darken( $AU-color-background, 12% ) !default;
-$AU-color-foreground-muted-suggestion:     mix( $AU-color-foreground-text, darken( $AU-color-background, 12% ), 70% ) !default;
-$AU-color-foreground-border-suggestion:    mix( $AU-color-foreground-text, darken( $AU-color-background, 12% ), 52% ) !default;
+$AU-color-foreground-muted-suggestion:     mix( $AU-color-foreground-text, darken( $AU-color-background, 12% ), 72% ) !default;
+$AU-color-foreground-border-suggestion:    mix( $AU-color-foreground-text, darken( $AU-color-background, 12% ), 55% ) !default;
 
 // Non-user definable color palette
 $AU-color-background-shade:     AU-color-a11y( $AU-color-background-shade-suggestion, $AU-color-foreground-text ) !global;
@@ -764,15 +765,15 @@ $AU-color-foreground-border:    AU-color-a11y( $AU-color-foreground-border-sugge
  */
 $AU-colordark-foreground-text:   #ffffff !default;
 $AU-colordark-foreground-action: #61daff !default;
-$AU-colordark-foreground-focus:  #ff8629 !default;
+$AU-colordark-foreground-focus:  #C390F9 !default;
 $AU-colordark-background:        #135E70 !default;
 
 // Suggestion colors for Non-user definable color palette
 $AU-colordark-background-shade-suggestion:     darken( $AU-colordark-background, 4% ) !default;
 $AU-colordark-background-alt-suggestion:       darken( $AU-colordark-background, 8% ) !default;
 $AU-colordark-background-alt-shade-suggestion: darken( $AU-colordark-background, 12% ) !default;
-$AU-colordark-foreground-muted-suggestion:     mix( $AU-colordark-foreground-text, $AU-colordark-background, 70% ) !default;
-$AU-colordark-foreground-border-suggestion:    mix( $AU-colordark-foreground-text, $AU-colordark-background, 52% ) !default;
+$AU-colordark-foreground-muted-suggestion:     mix( $AU-colordark-foreground-text, $AU-colordark-background, 72% ) !default;
+$AU-colordark-foreground-border-suggestion:    mix( $AU-colordark-foreground-text, $AU-colordark-background, 55% ) !default;
 
 // Non-user definable color palette
 $AU-colordark-background-shade:     AU-color-a11y( $AU-colordark-background-shade-suggestion, $AU-colordark-foreground-text ) !global;
