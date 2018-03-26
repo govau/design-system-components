@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/grid-12/tests/site/
 
 ## Release History
 
+* v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix
 * v1.0.0 - Moved to AU namespace
 * v0.1.1 - Fixed sass rounding precision

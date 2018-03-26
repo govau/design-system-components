@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/body",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Basic body styles for body HTML elements",
 	"keywords": [
 		"uikit",
@@ -55,10 +55,10 @@
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": ">=2.0.0"
+		"@gov.au/core": "^2.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": ">=2.0.0"
+		"@gov.au/core": "^2.0.0"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.18.13",

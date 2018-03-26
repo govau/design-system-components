@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/page-alerts",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Use page alerts to notify users of important information and state changes to the page.",
 	"keywords": [
 		"uikit",
@@ -66,12 +66,12 @@
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": ">=2.0.0",
-		"@gov.au/body": ">=2.0.0"
+		"@gov.au/core": "^2.0.0",
+		"@gov.au/body": "^2.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": ">=2.0.0",
-		"@gov.au/body": ">=2.0.0"
+		"@gov.au/core": "^2.0.0",
+		"@gov.au/body": "^2.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
