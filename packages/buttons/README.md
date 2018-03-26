@@ -107,6 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/buttons/tests/site/
 
 ## Release History
 
+* v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix
 * v1.0.2 - Fixed issue with secondary button hover IE8 [312](https://github.com/govau/uikit/issues/312)
 * v1.0.1 - Fixed specificity issue when combined with body [197](https://github.com/govau/uikit/issues/197)

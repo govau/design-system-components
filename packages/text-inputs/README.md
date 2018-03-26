@@ -107,6 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/text-inputs/tests/site/
 
 ## Release History
 
+* v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.1.1 - Fixed print background in disabled inputs
