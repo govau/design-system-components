@@ -15,6 +15,7 @@
 
 ## Versions
 
+
 * [v2.0.2 - Tweak selection opacity for images, video and iframes](v202)
 * [v2.0.1 - Fix dependencies ](v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](v200)
