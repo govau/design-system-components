@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.2 - Added a responsive media wrapper class ](v202)
 * [v2.0.1 - Fix dependencies ](v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](v200)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
@@ -26,6 +27,11 @@
 
 
 ## Release History
+
+### v2.0.2
+
+- Images without classes can be wrapped in the `.au-responsive-media` class to make them responsive
+
 
 ### v2.0.1
 

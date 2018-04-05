@@ -127,6 +127,13 @@
 		// Why RGBA 0.99? https://stackoverflow.com/a/7224621
 	}
 
+	// Decrease the opacity for certain elements
+	img::selection,
+	video::selection,
+	iframe::selection {
+		background-color: rgba( $AU-color-foreground-action, 0.75 );
+	}
+
 	/**
 	 * Vertical spacing of common text elements.
 	 */
