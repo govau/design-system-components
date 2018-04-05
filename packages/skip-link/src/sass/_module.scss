@@ -41,4 +41,10 @@
 		text-decoration-skip: ink;
 		z-index: 600;
 	}
+
+	.au-body &:hover,
+	&:hover {
+		text-decoration: none;
+		color: $AU-color-background;
+	}
 }
