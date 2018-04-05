@@ -53,11 +53,13 @@
 // Responsive image
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-responsive-media-img,
-.au-body img {
+.au-body img,
+.au-responsive-media img {
 	max-width: 100%;
 }
 
 * + .au-responsive-media-img,
-.au-body * + img {
+.au-body * + img,
+.au-responsive-media * + img {
 	@include AU-space( margin-top, 1unit );
 }
