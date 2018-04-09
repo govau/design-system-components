@@ -87,7 +87,6 @@
 	@include AU-focus();
 
 	&:focus {
-		outline-offset: 0;
 		border-radius: 0;
 		background-color: $AU-color-background; // Keep the light-bg when focusing on success/error
 	}
