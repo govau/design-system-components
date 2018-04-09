@@ -90,6 +90,7 @@
 	// focus
 	&:focus + .au-control-input__text:before,
 	&:focus + .au-control-input__text:after {
+		// Not using AU-focus as we are not applying :focus to this element
 		@include AU-outline();
 		outline-offset: 2px;
 	}
@@ -97,6 +98,7 @@
 	.au-control-input--dark & {
 		&:focus + .au-control-input__text:before,
 		&:focus + .au-control-input__text:after {
+			// Not using AU-focus as we are not applying :focus to this element
 			@include AU-outline( 'dark' );
 			outline-offset: 2px;
 		}
