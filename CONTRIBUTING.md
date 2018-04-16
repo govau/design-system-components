@@ -11,8 +11,163 @@ Wherever you are, and whatever your discipline is, you are invited to contribute
 
 ## Contents
 
-* [Reporting Bugs, Sending Suggestions](#reporting-bugs-sending-suggestions)
+* [Making a new component contribution](#making-a-new-component-contribution)
+  * [Useful](#useful)
+  * [Unique](#unique)
+  * [Usable](#usable)
+  * [Consistent](#consistent)
+  * [Versatile](#versatile)
+  * [Coded](#coded)
+  * [Tested](#tested)
+  * [considered](#considered)	
+* [Reporting Bugs, Sending Suggestions](#reporting-bugs-asking-questions-sending-suggestions)
 * [Installing UI-Kit locally](#installing-ui-kit-locally)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Making a new component contribution
+
+The Australian Government’s Design System is not ours, it is yours.
+
+The Digital Transformation Agency are just caretakers of the design system. To help us with the caretaking we need a few things from newly proposed component contributions.
+One of our goals is to ensure a welcoming environment for all contributors to our projects. If you’re unsure about anything, just ask — or submit your issue or pull request anyway. The worst that can happen is we’ll politely ask you to change something.
+
+We appreciate all well intended contributions.
+
+
+### Overview
+
+#### Suggested components
+
+To be considered for inclusion in the design system, components and patterns must be:
+
+| Criteria | Description |
+|---|---|
+| [Useful](#useful) | It addresses a user need that’s shared by multiple services or products |
+| [Unique](#unique) | It doesn’t duplicate something which already exists in the design system, unless it’s intended to replace it. |
+
+
+#### Before publication
+
+Before new components and patterns are published into the design system, the team of core contributors will review them to make sure that they are:
+
+| Criteria |  Description |
+|---|---|
+| [Usable](#usable) | It’s been tested and shown to work with a representative sample of users, including those with disabilities. |
+| [Consistent](#consistent) | It uses existing styles and components in the design system where relevant. |
+| [Versatile](#versatile) | It can be easily applied in different contexts. |
+| [Coded](#coded) | Components are ready to merge in the UI-Kit |
+| [Tested](#tested) | It’s been tested and shown to work with a range of browsers, assistive technologies and devices. |
+| [Considered](#considered) | TBC |
+
+
+### Details
+
+#### Useful
+
+**This is for everyone.** We can’t accept components that are for just one project or one specific use-case. 
+
+If a component is going to be added into the system it must be designed with the intention of being reusable in a variety of circumstances by many teams or departments.
+
+We ask contributors to provide examples of the versatility of a proposed component or provide reference to community discussion about it’s wider intended use.
+
+_If you have a specific need for your project, consider customising an existing component to suit your needs. If you aren’t sure how to do this, we’re happy to help teach you._
+
+
+#### Unique
+
+Components shouldn’t duplicate the functionality of another component.
+
+We need to keep the system slim; the more components that are in the system, the harder it is to maintain and the possibility for code-bloat and technical debt is increased.
+
+If a component is similar in function consider extending it rather than duplicating it.
+
+#### Usable
+
+We need to know that any new components are working as intended for the end user.
+
+Task based testing for a specific component is prefered. But at a minimum components in the design system should be tested as part of a product or service and have been operating in a live or beta environment for a period of time before being integrated into the system.
+
+#### Consistent
+
+Components that follow the system are much more themeable and reusable by other teams.
+
+New components must follow the system as closely as possible, particularly the specifics of colour, spacing, and typescale in core.
+
+
+#### Versatile
+
+##### Responsive
+
+All components should fill the width of their parent element. This is so that layouts aren’t dictated by components, but rather components fit the required layouts.
+
+##### Robust
+
+Components should accommodate varied content and varied content lengths.
+For example, what happens with a navigation component that has too many items?
+
+
+#### Coded
+
+##### Code is for humans
+
+Please look at the coding style and work with it, not against it.
+
+We write comments, add spacing, and prefer readable code over clever code. Yes, code is actually for computers, but it is humans that need to maintain it.
+
+##### Code comments
+
+Code should be commented so that it is as usable as possible. Try to provide reasoning or links to documentation about any peculiar decisions that had to be made. [For example.](https://github.com/govau/uikit/blob/master/packages/body/src/sass/_module.scss#L127)
+
+##### Follow the folder structure
+
+New components should follow the same folder structure as the [existing components.](https://github.com/govau/uikit/tree/master/.templates/new-module)
+
+##### CSS
+CSS can be dependent on other components, but must use core functions and mixins at a minimum.
+
+* For spacing, padding, or other metrics like border-width, use [AU-space()](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L475)
+* For font-sizes and line-height, use [AU-fontgrid()](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L629)
+* For colours, use the [core colour variables](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L741)
+
+##### JS
+The Design System supports; **JavaScript, JQuery, and React.** To make integration easier any javascript supplied for a component should be written in at least one of these.
+
+
+#### Tested
+
+##### Accessibility
+
+A component on its own must be accessible to WCAG 2.1 level AA. 
+
+Some documentation on how this has been checked, tested, or decisions made to support accessibility should be supplied.
+
+##### Browser and device tested
+
+All components should meet our browser support requirements.
+
+##### No JavaScript fallbacks
+
+All components must degrade _gracefully_ when javascript is disabled.
+
+We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when javascript is disabled so that users can still use the content.
+
+
+#### Considered
+
+##### Description
+
+Include a high-level description for what the pattern is, and what it’s for.
+
+##### Rationale
+
+The more the better, we aim to explain design and code decisions as openly as possible.
+
+Explanations about why decisions have been made help others understand the work involved but also help them understand the consequences of overriding.
+
+**[⬆ back to top](#contents)**
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -62,6 +217,18 @@ npm run scaffolding
 ```
 
 _❗ After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Attribution
+
+This Contribution guide is adapted from:
+
+https://github.com/alphagov/govuk-design-system-backlog/blob/master/docs/CRITERIA.md
 
 
 **[⬆ back to top](#contents)**
