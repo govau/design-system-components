@@ -19,7 +19,7 @@ Wherever you are, and whatever your discipline is, you are invited to contribute
   * [Versatile](#versatile)
   * [Coded](#coded)
   * [Tested](#tested)
-  * [considered](#considered)	
+  * [considered](#considered)
 * [Reporting Bugs, Sending Suggestions](#reporting-bugs-asking-questions-sending-suggestions)
 * [Installing UI-Kit locally](#installing-ui-kit-locally)
 
@@ -60,7 +60,7 @@ Before new components and patterns are published into the design system, the tea
 | [Versatile](#versatile) | It can be easily applied in different contexts. |
 | [Coded](#coded) | Components are ready to merge in the UI-Kit |
 | [Tested](#tested) | It’s been tested and shown to work with a range of browsers, assistive technologies and devices. |
-| [Considered](#considered) | TBC |
+| [Considered](#considered) | Documentation and rationale have been provided. |
 
 
 ### Details
@@ -84,11 +84,13 @@ We need to keep the system slim; the more components that are in the system, the
 
 If a component is similar in function consider extending it rather than duplicating it.
 
+
 #### Usable
 
 We need to know that any new components are working as intended for the end user.
 
 Task based testing for a specific component is prefered. But at a minimum components in the design system should be tested as part of a product or service and have been operating in a live or beta environment for a period of time before being integrated into the system.
+
 
 #### Consistent
 
@@ -99,73 +101,43 @@ New components must follow the system as closely as possible, particularly the s
 
 #### Versatile
 
-##### Responsive
+**Responsive** All components should fill the width of their parent element. This is so that layouts aren’t dictated by components, but rather components fit the required layouts.
 
-All components should fill the width of their parent element. This is so that layouts aren’t dictated by components, but rather components fit the required layouts.
-
-##### Robust
-
-Components should accommodate varied content and varied content lengths.
-For example, what happens with a navigation component that has too many items?
+**Robust** Components should accommodate varied content and varied content lengths.
+For example, what happens with a navigation component that more items than demonstrated?
 
 
 #### Coded
 
-##### Code is for humans
+**Code is for humans.** Please look at the coding style and work with it, not against it. We write comments, add spacing, and prefer readable code over clever code. Yes, code is actually for computers, but it is humans that need to maintain it.
 
-Please look at the coding style and work with it, not against it.
+**Code comments.** Code should be commented so that it is as usable as possible. Try to provide reasoning or links to documentation about any peculiar decisions that had to be made. [For example.](https://github.com/govau/uikit/blob/master/packages/body/src/sass/_module.scss#L127)
 
-We write comments, add spacing, and prefer readable code over clever code. Yes, code is actually for computers, but it is humans that need to maintain it.
+**Follow the folder structure.** New components should follow the same folder structure as the [existing components.](https://github.com/govau/uikit/tree/master/.templates/new-module)
 
-##### Code comments
-
-Code should be commented so that it is as usable as possible. Try to provide reasoning or links to documentation about any peculiar decisions that had to be made. [For example.](https://github.com/govau/uikit/blob/master/packages/body/src/sass/_module.scss#L127)
-
-##### Follow the folder structure
-
-New components should follow the same folder structure as the [existing components.](https://github.com/govau/uikit/tree/master/.templates/new-module)
-
-##### CSS
-CSS can be dependent on other components, but must use core functions and mixins at a minimum.
+**CS.S** can be dependent on other components, but must use core functions and mixins at a minimum.
 
 * For spacing, padding, or other metrics like border-width, use [AU-space()](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L475)
 * For font-sizes and line-height, use [AU-fontgrid()](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L629)
 * For colours, use the [core colour variables](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L741)
 
-##### JS
-The Design System supports; **JavaScript, JQuery, and React.** To make integration easier any javascript supplied for a component should be written in at least one of these.
+**JavaScript.** The Design System supports; **JavaScript, JQuery, and React.** To make integration easier any javascript supplied for a component should be written in at least one of these.
 
 
 #### Tested
 
-##### Accessibility
+**Accessibility.** A component on its own must be accessible to [WCAG 2.1 level AA.](https://www.w3.org/TR/WCAG21/) Some documentation on how this has been checked, tested, or decisions made to support accessibility should be supplied.
 
-A component on its own must be accessible to WCAG 2.1 level AA. 
+**Browser and device tested.** All components should meet our [browser support requirements.](https://github.com/govau/uikit#browser-support)
 
-Some documentation on how this has been checked, tested, or decisions made to support accessibility should be supplied.
-
-##### Browser and device tested
-
-All components should meet our browser support requirements.
-
-##### No JavaScript fallbacks
-
-All components must degrade _gracefully_ when javascript is disabled.
-
-We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when javascript is disabled so that users can still use the content.
+**No JavaScript fallbacks** All components must degrade _gracefully_ when javascript is disabled. We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when javascript is disabled so that users can still use the content.
 
 
 #### Considered
 
-##### Description
-
 Include a high-level description for what the pattern is, and what it’s for.
 
-##### Rationale
-
-The more the better, we aim to explain design and code decisions as openly as possible.
-
-Explanations about why decisions have been made help others understand the work involved but also help them understand the consequences of overriding.
+Provide rationale, The more the better, we aim to explain design and code decisions as openly as possible. Explanations about why decisions have been made help others understand the work involved but also help them understand the consequences of overriding.
 
 **[⬆ back to top](#contents)**
 
@@ -223,6 +195,7 @@ _❗ After you have filled out all the blanks and added your dependencies into y
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Attribution
 
