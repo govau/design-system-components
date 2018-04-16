@@ -21,7 +21,7 @@ Wherever you are, and whatever your discipline is, you are invited to contribute
     * [Versatile](#versatile)
     * [Coded](#coded)
     * [Tested](#tested)
-    * [considered](#considered)
+    * [Considered](#considered)
 * [Reporting Bugs, Sending Suggestions](#reporting-bugs-asking-questions-sending-suggestions)
 * [Installing UI-Kit locally](#installing-ui-kit-locally)
 
