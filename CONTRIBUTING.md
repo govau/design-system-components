@@ -24,7 +24,7 @@ Wherever you are, and whatever your discipline is, you are invited to contribute
 * [Installing UI-Kit locally](#installing-ui-kit-locally)
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 
 ## Making a new component contribution
@@ -60,6 +60,7 @@ Before new components and patterns are published into the design system, the tea
 | [Tested](#tested) | It’s been tested and shown to work with a range of browsers, assistive technologies and devices. |
 | [Considered](#considered) | Documentation and rationale have been provided. |
 
+-------------------------------------------------------------------------------------------------
 
 ### Useful
 
@@ -71,6 +72,9 @@ We ask contributors to provide examples of the versatility of a proposed compone
 
 _If you have a specific need for your project, consider customising an existing component to suit your needs. If you aren’t sure how to do this, we’re happy to help teach you._
 
+**[⬆ back to top](#contents)**
+
+-------------------------------------------------------------------------------------------------
 
 ### Unique
 
@@ -80,6 +84,9 @@ We need to keep the system slim; the more components that are in the system, the
 
 If a component is similar in function consider extending it rather than duplicating it.
 
+**[⬆ back to top](#contents)**
+
+-------------------------------------------------------------------------------------------------
 
 ### Usable
 
@@ -87,6 +94,9 @@ We need to know that any new components are working as intended for the end user
 
 Task based testing for a specific component is prefered. But at a minimum components in the design system should be tested as part of a product or service and have been operating in a live or beta environment for a period of time before being integrated into the system.
 
+**[⬆ back to top](#contents)**
+
+-------------------------------------------------------------------------------------------------
 
 ### Consistent
 
@@ -94,6 +104,9 @@ Components that follow the system are much more themeable and reusable by other 
 
 New components must follow the system as closely as possible, particularly the specifics of colour, spacing, and typescale in core.
 
+**[⬆ back to top](#contents)**
+
+-------------------------------------------------------------------------------------------------
 
 ### Versatile
 
@@ -102,6 +115,9 @@ New components must follow the system as closely as possible, particularly the s
 **Robust** Components should accommodate varied content and varied content lengths.
 For example, what happens with a navigation component that more items than demonstrated?
 
+**[⬆ back to top](#contents)**
+
+-------------------------------------------------------------------------------------------------
 
 ### Coded
 
@@ -119,6 +135,9 @@ For example, what happens with a navigation component that more items than demon
 
 **JavaScript.** The Design System supports; **JavaScript, JQuery, and React.** To make integration easier any javascript supplied for a component should be written in at least one of these.
 
+**[⬆ back to top](#contents)**
+
+-------------------------------------------------------------------------------------------------
 
 ### Tested
 
@@ -128,6 +147,9 @@ For example, what happens with a navigation component that more items than demon
 
 **No JavaScript fallbacks** All components must degrade _gracefully_ when javascript is disabled. We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when javascript is disabled so that users can still use the content.
 
+**[⬆ back to top](#contents)**
+
+-------------------------------------------------------------------------------------------------
 
 ### Considered
 
@@ -138,7 +160,7 @@ Provide rationale, The more the better, we aim to explain design and code decisi
 **[⬆ back to top](#contents)**
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 
 ## Reporting Bugs, asking Questions, sending Suggestions
@@ -153,7 +175,7 @@ happened instead. For more infos look at our [issue template](./ISSUE_TEMPLATE.m
 **[⬆ back to top](#contents)**
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 
 ## Installing UI-Kit locally
@@ -190,7 +212,7 @@ _❗ After you have filled out all the blanks and added your dependencies into y
 **[⬆ back to top](#contents)**
 
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 
 
 ## Attribution
