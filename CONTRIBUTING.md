@@ -37,9 +37,7 @@ One of our goals is to ensure a welcoming environment for all contributors to ou
 We appreciate all well intended contributions.
 
 
-### Overview
-
-#### Suggested components
+### Suggested components
 
 To be considered for inclusion in the design system, components and patterns must be:
 
@@ -49,7 +47,7 @@ To be considered for inclusion in the design system, components and patterns mus
 | [Unique](#unique) | It doesn’t duplicate something which already exists in the design system, unless it’s intended to replace it. |
 
 
-#### Before publication
+### Before publication
 
 Before new components and patterns are published into the design system, the team of core contributors will review them to make sure that they are:
 
@@ -63,9 +61,7 @@ Before new components and patterns are published into the design system, the tea
 | [Considered](#considered) | Documentation and rationale have been provided. |
 
 
-### Details
-
-#### Useful
+### Useful
 
 **This is for everyone.** We can’t accept components that are for just one project or one specific use-case. 
 
@@ -76,7 +72,7 @@ We ask contributors to provide examples of the versatility of a proposed compone
 _If you have a specific need for your project, consider customising an existing component to suit your needs. If you aren’t sure how to do this, we’re happy to help teach you._
 
 
-#### Unique
+### Unique
 
 Components shouldn’t duplicate the functionality of another component.
 
@@ -85,21 +81,21 @@ We need to keep the system slim; the more components that are in the system, the
 If a component is similar in function consider extending it rather than duplicating it.
 
 
-#### Usable
+### Usable
 
 We need to know that any new components are working as intended for the end user.
 
 Task based testing for a specific component is prefered. But at a minimum components in the design system should be tested as part of a product or service and have been operating in a live or beta environment for a period of time before being integrated into the system.
 
 
-#### Consistent
+### Consistent
 
 Components that follow the system are much more themeable and reusable by other teams.
 
 New components must follow the system as closely as possible, particularly the specifics of colour, spacing, and typescale in core.
 
 
-#### Versatile
+### Versatile
 
 **Responsive** All components should fill the width of their parent element. This is so that layouts aren’t dictated by components, but rather components fit the required layouts.
 
@@ -107,7 +103,7 @@ New components must follow the system as closely as possible, particularly the s
 For example, what happens with a navigation component that more items than demonstrated?
 
 
-#### Coded
+### Coded
 
 **Code is for humans.** Please look at the coding style and work with it, not against it. We write comments, add spacing, and prefer readable code over clever code. Yes, code is actually for computers, but it is humans that need to maintain it.
 
@@ -124,7 +120,7 @@ For example, what happens with a navigation component that more items than demon
 **JavaScript.** The Design System supports; **JavaScript, JQuery, and React.** To make integration easier any javascript supplied for a component should be written in at least one of these.
 
 
-#### Tested
+### Tested
 
 **Accessibility.** A component on its own must be accessible to [WCAG 2.1 level AA.](https://www.w3.org/TR/WCAG21/) Some documentation on how this has been checked, tested, or decisions made to support accessibility should be supplied.
 
@@ -133,7 +129,7 @@ For example, what happens with a navigation component that more items than demon
 **No JavaScript fallbacks** All components must degrade _gracefully_ when javascript is disabled. We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when javascript is disabled so that users can still use the content.
 
 
-#### Considered
+### Considered
 
 Include a high-level description for what the pattern is, and what it’s for.
 
