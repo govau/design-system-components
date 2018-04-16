@@ -11,15 +11,17 @@ Wherever you are, and whatever your discipline is, you are invited to contribute
 
 ## Contents
 
-* [Making a new component contribution](#making-a-new-component-contribution)
-  * [Useful](#useful)
-  * [Unique](#unique)
-  * [Usable](#usable)
-  * [Consistent](#consistent)
-  * [Versatile](#versatile)
-  * [Coded](#coded)
-  * [Tested](#tested)
-  * [considered](#considered)
+* [Contributing a new component](#contributing-a-new-component)
+  * [Suggested components](#suggested-components)
+    * [Useful](#useful)
+    * [Unique](#unique)
+  * [Before publication](#before-publication)
+    * [Usable](#usable)
+    * [Consistent](#consistent)
+    * [Versatile](#versatile)
+    * [Coded](#coded)
+    * [Tested](#tested)
+    * [considered](#considered)
 * [Reporting Bugs, Sending Suggestions](#reporting-bugs-asking-questions-sending-suggestions)
 * [Installing UI-Kit locally](#installing-ui-kit-locally)
 
@@ -27,7 +29,7 @@ Wherever you are, and whatever your discipline is, you are invited to contribute
 -------------------------------------------------------------------------------------------------
 
 
-## Making a new component contribution
+## Contributing a new component
 
 The Australian Government’s Design System is not ours, it is yours.
 
