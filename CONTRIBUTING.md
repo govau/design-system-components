@@ -147,7 +147,7 @@ For example, what happens with a navigation component that has more items than d
 
 **Browser and device tested.** All components should meet our [browser support requirements.](https://github.com/govau/uikit#browser-support)
 
-**No JavaScript fallbacks** All components must degrade _gracefully_ when JavaScript is disabled. We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when JavaScript is disabled so that users can still use the content.
+**No JavaScript fallbacks.** All components must degrade _gracefully_ when JavaScript is disabled. We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when JavaScript is disabled so that users can still use the content.
 
 **[⬆ back to top](#contents)**
 
