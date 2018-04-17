@@ -104,7 +104,7 @@ Task based testing for a specific component is prefered. But at a minimum compon
 
 Components that follow the system are much more themeable and reusable by other teams.
 
-New components must follow the system as closely as possible, particularly the specifics of colour, spacing, and typescale in core.
+New components must follow the system as closely as possible, particularly the specifics of colour, spacing, and typescale in `core`.
 
 **[⬆ back to top](#contents)**
 
@@ -112,10 +112,10 @@ New components must follow the system as closely as possible, particularly the s
 
 ### Versatile
 
-**Responsive** All components should fill the width of their parent element. This is so that layouts aren’t dictated by components, but rather components fit the required layouts.
+**Responsive.** All components should fill the width of their parent element. This is so that layouts aren’t dictated by components, but rather components fit the required layouts.
 
-**Robust** Components should accommodate varied content and varied content lengths.
-For example, what happens with a navigation component that more items than demonstrated?
+**Robust.** Components should accommodate varied content and varied content lengths.
+For example, what happens with a navigation component that has more items than demonstrated?
 
 **[⬆ back to top](#contents)**
 
@@ -129,13 +129,13 @@ For example, what happens with a navigation component that more items than demon
 
 **Follow the folder structure.** New components should follow the same folder structure as the [existing components.](https://github.com/govau/uikit/tree/master/.templates/new-module)
 
-**CS.S** can be dependent on other components, but must use core functions and mixins at a minimum.
+**CSS** can be dependent on other components, but must use core functions and mixins at a minimum.
 
 * For spacing, padding, or other metrics like border-width, use [AU-space()](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L475)
 * For font-sizes and line-height, use [AU-fontgrid()](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L629)
 * For colours, use the [core colour variables](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L741)
 
-**JavaScript.** The Design System supports; **JavaScript, JQuery, and React.** To make integration easier any javascript supplied for a component should be written in at least one of these.
+**JavaScript.** The Design System supports **JavaScript, JQuery, and React.** To make integration easier any JavaScript supplied for a component should be written in at least one of these.
 
 **[⬆ back to top](#contents)**
 
@@ -147,7 +147,7 @@ For example, what happens with a navigation component that more items than demon
 
 **Browser and device tested.** All components should meet our [browser support requirements.](https://github.com/govau/uikit#browser-support)
 
-**No JavaScript fallbacks** All components must degrade _gracefully_ when javascript is disabled. We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when javascript is disabled so that users can still use the content.
+**No JavaScript fallbacks** All components must degrade _gracefully_ when JavaScript is disabled. We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when JavaScript is disabled so that users can still use the content.
 
 **[⬆ back to top](#contents)**
 
@@ -157,7 +157,7 @@ For example, what happens with a navigation component that more items than demon
 
 Include a high-level description for what the pattern is, and what it’s for.
 
-Provide rationale, The more the better, we aim to explain design and code decisions as openly as possible. Explanations about why decisions have been made help others understand the work involved but also help them understand the consequences of overriding.
+Provide rationale; the more the better. We aim to explain design and code decisions as openly as possible. Explanations about why decisions have been made help others understand the work involved but also help them understand the consequences of overriding.
 
 **[⬆ back to top](#contents)**
 
@@ -165,14 +165,14 @@ Provide rationale, The more the better, we aim to explain design and code decisi
 -------------------------------------------------------------------------------------------------
 
 
-## Reporting Bugs, asking Questions, sending Suggestions
+## Reporting Bugs, Asking Questions, Sending Suggestions
 
 Use the search in [issues](https://github.com/govau/uikit/issues) to see if the same bug, question or suggestion has already been raised.
 
 If you’re requesting a new module, prefix the title with `new module: `.
 
 If you’re filing a bug, specific steps to reproduce are helpful. Please reference the module that has the bug, along with what you expected to see and what
-happened instead. For more infos look at our [issue template](./ISSUE_TEMPLATE.md).
+happened instead. For more info look at our [issue template](./ISSUE_TEMPLATE.md).
 
 **[⬆ back to top](#contents)**
 
@@ -195,7 +195,7 @@ npm run bootstrap
 npm run build
 ```
 
-To make changes to an existing module, cd into the folder and run the watch:
+To make changes to an existing module, `cd` into the folder and run the watch:
 
 ```shell
 cd packages/body
@@ -219,7 +219,7 @@ _❗ After you have filled out all the blanks and added your dependencies into y
 
 ## Attribution
 
-This Contribution guide is adapted from:
+This Contribution Guide is adapted from:
 
 https://github.com/alphagov/govuk-design-system-backlog/blob/master/docs/CRITERIA.md
 
