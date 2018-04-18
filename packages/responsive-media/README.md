@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/responsive-media/tests/si
 
 ## Release History
 
+* v2.0.3 - Removing unecessary double up of sass
 * v2.0.2 - Added a responsive media wrapper class
 * v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix

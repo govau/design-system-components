@@ -22,10 +22,6 @@
 	padding: 0;
 	overflow: hidden;
 
-	* + & {
-		@include AU-space ( margin-top, 1unit );
-	}
-
 	> .au-responsive-media-vid__item {
 		position: absolute;
 		top: 0;
