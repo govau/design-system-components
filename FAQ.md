@@ -54,19 +54,6 @@ We’ve provided an [issue template](./ISSUE_TEMPLATE.md) to make this process e
 
 ## Design
 
-### Why is the whitespace in the typography large or inconsistent?
-The current spacing in the UI-Kit is going through a change which we hope to implement in the coming months. Currently the spacing is based on
-`font-size` (em) which has caused some unexpected behaviour for our users. We’re planning to move from using `em` in the uikit-space function to
-`rem`’s. We’re also moving to one font (previously we had two font families one for headings and one for the body) which will allow a consistent line-height.
-These changes in spacing will also influence our typographic rhythm for the spacing under headers and paragraphs which we’ve also had feedback on.
-
-
-### Why do you use system fonts?
-During research we have met many Australians who live in rural and remote areas where internet access is limited but government services are still required.
-Using system fonts makes the load times faster with only a slight compromise on aesthetics. System fonts have come a long way. Manufacturers are now shipping
-some elegant fonts as default in their operating systems.
-
-
 ### Why is there a `max-width` on elements inside the body?
 To optimise readability we have set a `max-width` on certain elements inside the body. This creates a consistent and easy to use user interface. You can
 override the code as necessary, but please understand your users needs.
@@ -111,15 +98,9 @@ the same we recommend having a look at the question
 
 
 ### Why are my HTML elements NOT automatically styled (`h1`, `input`, `blockquote`, etc.)?
-From our learnings in version 1 of the UI-Kit, we decided it was best to provide our users with css classes which they can then invoke onto the
-HTML output their system provides. This means that by default a `<h1>` will not get the `.uikit-display-6` styles as you may decide to make your `<h1>`’s look
-like `<h2>`’s. Where possible we recommend adding the UI-Kit classes directly into the HTML.
+The `body` and `headings` components are likely what you're looking for.
 
-
-### Why are the classes on the headings backwards? (`.uikit-display-6` for the biggest)?
-The reverse number system was implemented because when headings can get bigger but can’t really get smaller. To be able to scale the system up further you need
-to have room: (`uikit-display-6`, `uikit-display-7`, `uikit-display-8`). That being said we have identified this as very confusing.
-We’re going to be changing to a more sensible `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, `xxl` system.
+HTML elements no longer get styling from the UI-Kit by default. From our learnings in version 1, we decided it was best to provide our users with css classes which they can then invoke onto the HTML output their system provides.
 
 
 ### Why should I use the UI-Kit if I still have to write custom code?
@@ -142,9 +123,9 @@ Users can then choose to upgrade their components when necessary. A great
 
 
 ### How do I request a new component to be added to the system?
-New components can be requested in lots of ways. Our preferred approach is currently through Github. Please take a look at the Github
-[issue queue](https://github.com/govau/uikit/issues), if you find a relevant component please join the conversation and note down any additional requirements or
-variations. If it’s a new issue please [create a new issue](https://github.com/govau/uikit/issues/new) and provide detailed instructions of the component.
+
+The best place to start is by looking for existing conversation in [the community forums](community.service.gov.au), followed by reviewing the [Contribution Guidelines.](https://github.com/govau/uikit/blob/master/CONTRIBUTING.md)
+
 
 
 ### How do I add the UI-Kit to my build process? How do I add custom code/variables/overrides?
