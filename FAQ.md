@@ -20,12 +20,11 @@ If you can’t find the answer to your question, you can email guides@digital.go
 ## General
 
 ### Is there any documentation or list of components?
-You can view our current [unit tests](https://uikit.service.gov.au/). We’re creating a new version which will make it easier to get started
-with the UI-Kit.
+You can find the Design System documentation at [designsystem.gov.au](http://designsystem.gov.au/). For further examples of our tests you can also see the [UI-kit unit tests](https://uikit.service.gov.au/).
 
 
 ### What are you working on?
-You can view our [project backlog](https://github.com/govau/uikit/projects/) to see an up to date list of tasks. We generally try to balance 50% community
+You can view our [project backlog](https://github.com/orgs/govau/projects/7) to see an up to date list of tasks. We generally try to balance 50% community
 engagement (capability uplift and understanding user needs) and 50% product (maintenance and building).
 
 
