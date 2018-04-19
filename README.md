@@ -1,15 +1,13 @@
 GOV.AU UI-Kit
 =============
 
-## Looking for our documentation site?
+> The UI-Kit for the Australian Government Design System.
 
-**We’ve chosen to temporarily take down the Design System documentation site.**
+## Documentation
 
-We appreciate all the feedback we've received about our upcoming documentation site, it's been enormously useful. We've got some more work to do and we look
-forward to sharing it with you as soon as possible.
+**Full documentation at [designsystem.gov.au](http://designsystem.gov.au/)**
 
-Meanwhile, we will keep updating this repository.
-
+---
 
 ## Visual unit tests
 
@@ -77,15 +75,16 @@ We use the below checklist to ensure new modules or updates to existing modules 
 
 #### General checks
 - [x] Semantic HTML and non semantic test?
-- [x] No js fallback?
+- [x] No JavaScript fallback?
 - [x] SVG fallback, functional without SVG?
 - [x] IE9, IE10, IE11 legacy test
 - [x] IE8 functional test
 
-#### A11y checks
-- [x] A11y color contrast
-- [x] Keyboard accessible?
-- [x] A11y expert review
+#### Accessibility checks
+- [x] Accessibility colour contrast
+- [x] Keyboard accessible
+- [x] Tested with screen reader
+- [x] Accessibility expert review
 
 #### CSS / Sass
 - [x] Never nest anything that is not either an overwrite or a child element.
@@ -96,7 +95,7 @@ We use the below checklist to ensure new modules or updates to existing modules 
 - [x] Using `AU-fontgrid()` for `font-size` and `line-height` to snap typography to the grid.
 - [x] Print style sheets
 
-#### Js
+#### JavaScript
 - [x] `var AU = AU || {};` in top?
 - [x] Each module has it’s own name-space prefixed with `AU` e.g.: `AU.modulename.function1`, `AU.modulename.function2`
 - [x] Keep public API small, use private functions where you can
