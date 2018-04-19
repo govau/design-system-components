@@ -15,12 +15,12 @@
 
 ## Versions
 
-* [v2.0.2 - Adding focus offset back to text inputs ](v202)
-* [v2.0.1 - Fix dependencies ](v201)
-* [v2.0.0 - Change to focus colour and border/muted color mix](v200)
-* [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
-* [v0.1.1 - Fixed print background in disabled inputs](v011)
-* [v0.1.0 - 💥 Initial version](v010)
+* [v2.0.2 - Adding focus offset back to text inputs ](#v202)
+* [v2.0.1 - Fix dependencies ](#v201)
+* [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
+* [v1.0.0 - Moved to AU namespace, added new color themes and spacing](#v100)
+* [v0.1.1 - Fixed print background in disabled inputs](#v011)
+* [v0.1.0 - 💥 Initial version](#v010)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
