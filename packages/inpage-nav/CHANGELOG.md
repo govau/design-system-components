@@ -15,13 +15,13 @@
 
 ## Versions
 
-* [v2.0.1 - Fix dependencies ](v201)
-* [v2.0.0 - Change to focus colour and border/muted color mix](v200)
-* [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
-* [v0.3.0 - Added pancake-react plugin, ES5 main file](v030)
-* [v0.2.0 - Added react component](v020)
-* [v0.1.1 - Fixed a11y contrast issue](v011)
-* [v0.1.0 - 💥 Initial version](v010)
+* [v2.0.1 - Fix dependencies ](#v201)
+* [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
+* [v1.0.0 - Moved to AU namespace, added new color themes and spacing](#v100)
+* [v0.3.0 - Added pancake-react plugin, ES5 main file](#v030)
+* [v0.2.0 - Added react component](#v020)
+* [v0.1.1 - Fixed a11y contrast issue](#v011)
+* [v0.1.0 - 💥 Initial version](#v010)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1088,7 +1088,7 @@ HELPER.test = (() => {
 					if( !changelog.split('## Versions\n\n* [v')[ 1 ].startsWith( version ) ) {
 						error += `The module ${ module } does not have the current version in it’s changelog "Versions" section.\n`;
 					}
-					else if( !changelog.split('## Versions\n\n* [v')[ 1 ].split('](v')[ 1 ].startsWith( version.replace(/[.]/g, '') ) ) {
+					else if( !changelog.split('## Versions\n\n* [v')[ 1 ].split('](#v')[ 1 ].startsWith( version.replace(/[.]/g, '') ) ) {
 						error += `The module ${ module } has the wrong link for the current version ${ version } in the changelog "Versions" section.\n`;
 					}
 					else if( !changelog.split('## Release History\n\n### v')[ 1 ].startsWith( version ) ) {
