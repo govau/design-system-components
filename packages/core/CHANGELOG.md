@@ -15,13 +15,13 @@
 
 ## Versions
 
-* [v2.0.0 - Changing mix values for border and muted, focus colour, adding offset to focus](v200)
-* [v1.0.1 - Adjusting how colors are generated from other colors](v101)
-* [v1.0.0 - Moved to AU namespace, added new color themes and spacing](v100)
-* [v0.1.3 - Moved to System fonts](v013)
-* [v0.1.2 - Fixed newly introduced uikit-svguri bug; ups](v012)
-* [v0.1.1 - Fixed uikit-svguri bug](v011)
-* [v0.1.0 - 💥 Initial version](v010)
+* [v2.0.0 - Changing mix values for border and muted, focus colour, adding offset to focus](#v200)
+* [v1.0.1 - Adjusting how colors are generated from other colors](#v101)
+* [v1.0.0 - Moved to AU namespace, added new color themes and spacing](#v100)
+* [v0.1.3 - Moved to System fonts](#v013)
+* [v0.1.2 - Fixed newly introduced uikit-svguri bug; ups](#v012)
+* [v0.1.1 - Fixed uikit-svguri bug](#v011)
+* [v0.1.0 - 💥 Initial version](#v010)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
