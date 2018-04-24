@@ -1,0 +1,103 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// local-navigation module
+// A vertical navigation menu.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Local-navigation styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.uikit-local-navigation {
+  padding-top: 0;
+
+  @include uikit-media( sm ) {
+    padding: uikit-space( 1 ) 0;
+  }
+}
+
+.uikit-local-navigation {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &> li > ul {
+      margin: 0;
+    }
+    ul {
+      li {
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+      ul {
+        a {
+          padding-left: uikit-space( 1 );
+          border-bottom: 0;
+        }
+        ul {
+          a {
+            padding-left: uikit-space( 1 ) + uikit-space( 0.5 );
+            background-repeat: no-repeat;
+            background-position: uikit-space( 1 ) center;
+            background-size: uikit-space( 0.5 ) auto;
+            &:after {
+              content: ' ';
+              display: inline-block;
+              width: 0.9em;
+              height: 0.8em;
+              margin: 0 uikit-space( 0.25 ) 0 uikit-space( 0.25 );
+              background-image: uikit-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                  <path fill="#{ $uikit-colour-Primary }" d="M128 64l-64 64-16-16 64-64"/>
+                  <path fill="#{ $uikit-colour-Primary }" d="M128 64l-16 16-64-64L64 0"/>
+                </svg>');
+              transition: margin 0.1s ease-in;
+
+              .ie8 &,
+              .lt-ie8 & {
+                content: ' > ';
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    li {
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid $uikit-colour-Border-40;
+      &:first-child {
+        border-top: 1px solid $uikit-colour-Border-40;
+      }
+    }
+    a {
+      display: block;
+      border: none;
+      border-left: 4px solid transparent;
+      border-bottom: none;
+      padding: uikit-space( 0.5 );
+      text-decoration: none;
+      transition: border-color border-color 0.1s ease-in-out;
+      &:focus,
+      &:hover {
+        outline: none;
+        border-color: $uikit-colour-Primary;
+        background-color: $uikit-colour-Primary-20;
+      }
+      &.is-active {
+        font-weight: 700;
+      }
+      &.is-current {
+        background-color: $uikit-colour-Primary-20;
+      }
+    }
+  }
+}
