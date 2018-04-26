@@ -2,16 +2,13 @@
 - [ ] I’ve read and agree to the [Code of Conduct](./CODE_OF_CONDUCT.md).
 - [ ] I’ve searched for any related issues and avoided creating a duplicate issue.
 
-
-# Description
-
-## What happened
+# What happened
 
 <!--
 	What happened that makes you think this is a bug or missing feature?
 -->
 
-## What I expected to happen
+# What I expected to happen
 
 <!--
 	What did you expect to happen. You can skip this section if this is a feature request.
