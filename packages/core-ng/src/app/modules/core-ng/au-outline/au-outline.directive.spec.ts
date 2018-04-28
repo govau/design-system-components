@@ -75,7 +75,6 @@ describe("AuOutlineDirective", () => {
     fixture.detectChanges();
     tick();
 
-    console.log(fixture.nativeElement);
     expect(fixture.nativeElement.querySelector("div").classList.length).toBe(1);
     expect(fixture.nativeElement.querySelector("div").classList[0]).toBe("au-outline");
   }));
