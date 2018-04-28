@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { CoreNgModule } from "./modules/core-ng/core-ng.module";
+import { AuOutlineDirective } from './modules/core-ng/au-outline/au-outline.directive';
 
 
 @NgModule({
@@ -10,7 +12,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CoreNgModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

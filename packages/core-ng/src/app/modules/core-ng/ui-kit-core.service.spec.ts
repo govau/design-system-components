@@ -1,15 +1,80 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { fakeAsync, inject, TestBed, tick } from "@angular/core/testing";
 
-import { UiKitCoreService } from './ui-kit-core.service';
+import { UiKitCoreService } from "./ui-kit-core.service";
+import { CoreNgModule } from "./core-ng.module";
+import { Component } from "@angular/core";
 
-describe('UiKitCoreService', () => {
+describe("UiKitCoreService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [UiKitCoreService]
+      imports: [CoreNgModule.forRoot()]
     });
   });
 
-  it('should be created', inject([UiKitCoreService], (service: UiKitCoreService) => {
+  it("should be created", inject([UiKitCoreService], (service: UiKitCoreService) => {
     expect(service).toBeTruthy();
   }));
+
+  it("default palette should be light", inject([UiKitCoreService], (service: UiKitCoreService) => {
+    expect(service.isUsingLightPalette()).toBeTruthy();
+    expect(service.isUsingDarkPalette()).toBeFalsy();
+  }));
+
+  it("switching default palette should work", inject([UiKitCoreService], (service: UiKitCoreService) => {
+    service.setColorPalette("dark");
+    expect(service.isUsingLightPalette()).toBeFalsy();
+    expect(service.isUsingDarkPalette()).toBeTruthy();
+  }));
+
+  it("switching palette multiple times should work", inject([UiKitCoreService], (service: UiKitCoreService) => {
+    service.setColorPalette("dark");
+    expect(service.isUsingLightPalette()).toBeFalsy();
+    expect(service.isUsingDarkPalette()).toBeTruthy();
+
+    service.setColorPalette("light");
+    expect(service.isUsingLightPalette()).toBeTruthy();
+    expect(service.isUsingDarkPalette()).toBeFalsy();
+
+    service.setColorPalette("dark");
+    expect(service.isUsingLightPalette()).toBeFalsy();
+    expect(service.isUsingDarkPalette()).toBeTruthy();
+  }));
+
+  it("palette swithcing should trigger change in component", fakeAsync(() => {
+
+    @Component({
+      selector: "temp",
+      template: `
+        <div [ngClass] = "{'au-body--dark':isDarkBody}">Test</div>`
+    })
+    class TestComponent {
+      constructor(private s: UiKitCoreService) {
+
+      }
+
+      get isDarkBody(): boolean {
+        return this.s.isUsingDarkPalette();
+      }
+    }
+
+
+    TestBed.configureTestingModule({
+      imports: [CoreNgModule.forRoot()],
+      declarations: [TestComponent]
+    }).compileComponents();
+
+    const fixture = TestBed.createComponent(TestComponent);
+    expect(fixture.nativeElement.querySelector("div").classList.length).toBe(0);
+
+    const service: UiKitCoreService = fixture.debugElement.injector.get(UiKitCoreService);
+    service.setColorPalette("dark");
+
+    fixture.detectChanges();
+    tick();
+
+    expect(fixture.nativeElement.querySelector("div").classList.length).toBe(1);
+    expect(fixture.nativeElement.querySelector("div").classList[0]).toBe('au-body--dark');
+
+  }));
+
 });

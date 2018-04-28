@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/core-ng",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Angular implementation of the core module",
 	"keywords": [
 		"uikit",
@@ -19,7 +19,9 @@
 		"postinstall": "pancake",
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:helper": "node ../../scripts/helper.js test",
-		"test": "npm-run-all --parallel test:*",
+		"test": "ng test",
+		"lint": "ng lint -fix",
+    "tsfmt": "tsfmt -r",
 		"prepublish": "npm run test:helper && npm run build:pre",
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "node ../../scripts/helper.js compile",
@@ -121,12 +123,14 @@
 		"karma-coverage-istanbul-reporter": "^1.2.1",
 		"karma-jasmine": "~1.1.0",
 		"karma-jasmine-html-reporter": "^0.2.2",
+		"karma-spec-reporter": "0.0.32",
 		"ng-packagr": "^2.4.2",
 		"ngx-highlight-js": "^1.0.3",
 		"protractor": "~5.1.2",
 		"ts-node": "~4.1.0",
 		"tslint": "~5.9.1",
-		"typescript": "~2.5.3"
+		"typescript": "~2.5.3",
+		"typescript-formatter": "^7.2.0"
 	},
 	"files": [
 		"lib/*"
