@@ -29,7 +29,6 @@ export class AuOutlineDirective {
         this._auOutlineDark = false;
         (this.elementRef.nativeElement as HTMLElement).classList.add(value);
       }
-      console.log("au-outline value - " + value);
     }
   }
 }
