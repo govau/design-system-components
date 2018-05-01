@@ -44,14 +44,14 @@ export class UiKitCoreService {
         throw new Error(`Color palette name ${name} is not recognised`);
       }
     }
-  };
+  }
 
   /**
    * Indicates if the light color palette is being used
    */
   isUsingLightPalette = (): boolean => {
     return UiKitCoreService.LIGHT_COLOR_PALETTE === this._colorPalette;
-  };
+  }
 
 
   /**
@@ -59,7 +59,7 @@ export class UiKitCoreService {
    */
   isUsingDarkPalette = (): boolean => {
     return UiKitCoreService.DARK_COLOR_PALETTE === this._colorPalette;
-  };
+  }
 
 
 }

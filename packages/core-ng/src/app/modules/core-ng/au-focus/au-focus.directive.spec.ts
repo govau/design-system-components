@@ -1,7 +1,7 @@
-import {fakeAsync, TestBed, tick} from "@angular/core/testing";
-import {CoreNgModule} from "../core-ng.module";
-import {TestComponent} from "../test.component";
-import {UiKitCoreService} from "../ui-kit-core.service";
+import { fakeAsync, TestBed, tick } from "@angular/core/testing";
+import { CoreNgModule } from "../core-ng.module";
+import { TestComponent } from "../test.component";
+import { UiKitCoreService } from "../ui-kit-core.service";
 
 describe("AuFocusDirective", () => {
   it("should work with any html element", fakeAsync(() => {

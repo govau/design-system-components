@@ -1,5 +1,5 @@
-import {Directive, HostBinding, Input, ElementRef} from "@angular/core";
-import {UiKitCoreService} from "../ui-kit-core.service";
+import { Directive, HostBinding, Input, ElementRef } from "@angular/core";
+import { UiKitCoreService } from "../ui-kit-core.service";
 
 @Directive({
   selector: "[au-focus]"
