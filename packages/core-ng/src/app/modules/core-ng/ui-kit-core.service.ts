@@ -9,7 +9,7 @@ export class UiKitCoreService {
   public static readonly LIGHT_COLOR_PALETTE = "light";
   public static readonly DARK_COLOR_PALETTE = "dark";
 
-  readonly POSSIBLE_VALUES = [
+  public static readonly POSSIBLE_VALUES = [
     UiKitCoreService.LIGHT_COLOR_PALETTE,
     UiKitCoreService.DARK_COLOR_PALETTE
   ];
@@ -24,12 +24,6 @@ export class UiKitCoreService {
    * TODO: Font grid
    */
 
-
-  /**
-   * TODO: AU-Focus
-   */
-
-
   constructor() {
   }
 
@@ -38,7 +32,7 @@ export class UiKitCoreService {
    */
   setColorPalette = (name: string): void => {
     if (name && name.length > 0) {
-      if (this.POSSIBLE_VALUES.indexOf(name) > -1) {
+      if (UiKitCoreService.POSSIBLE_VALUES.indexOf(name) > -1) {
         this._colorPalette = name;
       } else {
         throw new Error(`Color palette name ${name} is not recognised`);

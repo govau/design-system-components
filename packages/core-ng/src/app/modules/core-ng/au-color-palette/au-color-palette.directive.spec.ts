@@ -1,6 +1,6 @@
 import { fakeAsync, TestBed, tick } from "@angular/core/testing";
 
-import { AuColorPaletteComponent } from "./au-color-palette.component";
+import { AuColorPaletteComponent } from "./au-color-palette.directive";
 import { CoreNgModule } from "../core-ng.module";
 import { UiKitCoreService } from "../ui-kit-core.service";
 import { TestComponent } from "../test.component";

@@ -1,11 +1,8 @@
-import { Component, HostBinding, Input } from "@angular/core";
-import { UiKitCoreService } from "../ui-kit-core.service";
+import {Directive, HostBinding, Input} from "@angular/core";
+import {UiKitCoreService} from "../ui-kit-core.service";
 
-@Component({
-  selector: "body[au-color-palette], div[au-color-palette]",
-  exportAs: "auColorPalette",
-  templateUrl: "au-color-palette.component.html",
-  styleUrls: ["au-color-palette.component.css"]
+@Directive({
+  selector: "[au-color-palette]"
 })
 export class AuColorPaletteComponent {
 

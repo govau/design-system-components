@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { AuColorPaletteComponent } from "./au-color-palette/au-color-palette.component";
+import { AuColorPaletteComponent } from "./au-color-palette/au-color-palette.directive";
 import { UiKitCoreService } from "./ui-kit-core.service";
 import { AuOutlineDirective } from "./au-outline/au-outline.directive";
 import { AuFocusDirective } from "./au-focus/au-focus.directive";
