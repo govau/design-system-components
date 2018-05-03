@@ -1,4 +1,4 @@
-import { Directive, HostBinding, Input, ElementRef } from "@angular/core";
+import { Directive, HostBinding, Input } from "@angular/core";
 import { UiKitCoreService } from "../ui-kit-core.service";
 
 @Directive({
@@ -8,7 +8,7 @@ export class AuFocusDirective {
 
   private _auFocusDark: boolean = undefined;
 
-  constructor(private elementRef: ElementRef, private coreService: UiKitCoreService) {
+  constructor(private coreService: UiKitCoreService) {
   }
 
   @HostBinding("class")
@@ -28,7 +28,6 @@ export class AuFocusDirective {
         this._auFocusDark = true;
       } else {
         this._auFocusDark = false;
-        (this.elementRef.nativeElement as HTMLElement).classList.add(value);
       }
     }
   }

@@ -1,5 +1,5 @@
-import {Component} from "@angular/core";
-import {UiKitCoreService} from "./modules/core-ng/ui-kit-core.service";
+import { Component } from "@angular/core";
+import { UiKitCoreService } from "./modules/core-ng/ui-kit-core.service";
 
 @Component({
   selector: "app-root",

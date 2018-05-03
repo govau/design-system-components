@@ -1,5 +1,5 @@
-import {Directive, HostBinding, Input} from "@angular/core";
-import {UiKitCoreService} from "../ui-kit-core.service";
+import { Directive, HostBinding, Input } from "@angular/core";
+import { UiKitCoreService } from "../ui-kit-core.service";
 
 @Directive({
   selector: "[au-color-palette]"
@@ -19,7 +19,7 @@ export class AuColorPaletteComponent {
 
   @Input("au-color-palette")
   set _palette(value: string) {
-    if (value && value.length > 0) {
+    if (value) {
       this.coreService.setColorPalette(value);
     }
   }
