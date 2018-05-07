@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/core-ng/tests/site/
 
 ## Release History
 
+* v0.4.0 - added directives
 * v0.1.0 - 💥 Initial version
 
 

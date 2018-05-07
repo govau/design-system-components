@@ -237,6 +237,16 @@ All modules have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/core-ng</summary>
+	<br><code>npm install @gov.au/core-ng</code><br>
+	<br>See the <a href="https://uikit.service.gov.au/packages/core-ng/tests/site/">visual test file for core-ng</a>
+	<br>See the <a href="https://github.com/govau/uikit/blob/master/packages/core-ng/README.md">readme file for core-ng</a><br><br>
+	<i>No dependencies</i>
+
+----------
+</details>
+
+<details>
 	<summary>@gov.au/cta-link</summary>
 	<br><code>npm install @gov.au/cta-link</code><br>
 	<br>See the <a href="https://uikit.service.gov.au/packages/cta-link/tests/site/">visual test file for cta-link</a>

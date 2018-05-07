@@ -929,130 +929,133 @@ HELPER.test = (() => {
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
 					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
-					const hasSass = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`) );
-					const hasJS = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`) );
-					const hasReact = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/react.js`) );
-					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
+					if(packagesPKG.name.indexOf('-ng') === -1) {
+						const hasSass = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`));
+						const hasJS = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`));
+						const hasReact = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/js/react.js`));
+						// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
 
-					// testing lifecycle script
-					if( packagesPKG.scripts.postinstall !== 'pancake' ) {
-						error += `The module ${ module } is missing the postinstall lifecycle script "pancake".\n`;
-					}
+						// testing lifecycle script
+						if (packagesPKG.scripts.postinstall !== 'pancake') {
+							error += `The module ${ module } is missing the postinstall lifecycle script "pancake".\n`;
+						}
 
-					// testing pancake object
-					if( packagesPKG.pancake === undefined ) {
-						error += `The module ${ module } is missing the pancake object.\n`;
+						// testing pancake object
+						if (packagesPKG.pancake === undefined) {
+							error += `The module ${ module } is missing the pancake object.\n`;
 
-						packagesPKG.pancake = {};
-						packagesPKG.pancake['pancake-module'] = {};
-						packagesPKG.pancake['pancake-module'].plugins = [];
-					}
+							packagesPKG.pancake = {};
+							packagesPKG.pancake['pancake-module'] = {};
+							packagesPKG.pancake['pancake-module'].plugins = [];
+						}
 
-					// testing build scripts
-					if( hasReact && !packagesPKG.scripts['build:react'] ) {
-						error += `The module ${ module } is missing the "build:react" script.\n`;
-					}
+						// testing build scripts
+						if (hasReact && !packagesPKG.scripts['build:react']) {
+							error += `The module ${ module } is missing the "build:react" script.\n`;
+						}
 
-					if( hasReact && !packagesPKG.scripts['build'].includes('npm run build:react') ) {
-						error += `The module ${ module } is missing the "build:react" task inside the build script.\n`;
-					}
+						if (hasReact && !packagesPKG.scripts['build'].includes('npm run build:react')) {
+							error += `The module ${ module } is missing the "build:react" task inside the build script.\n`;
+						}
 
-					// testing pancake plugins
-					if( !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-json') ) {
-						error += `The module ${ module } is missing the "pancake-json" plugin inside the pancake object.\n`;
-					}
+						// testing pancake plugins
 
-					if( hasSass && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-sass') ) {
-						error += `The module ${ module } is missing the "pancake-sass" plugin inside the pancake object.\n`;
-					}
+						if (!packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-json')) {
+							error += `The module ${ module } is missing the "pancake-json" plugin inside the pancake object.\n`;
+						}
 
-					if( hasJS && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-js') ) {
-						error += `The module ${ module } is missing the "pancake-js" plugin inside the pancake object.\n`;
-					}
+						if (hasSass && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-sass')) {
+							error += `The module ${ module } is missing the "pancake-sass" plugin inside the pancake object.\n`;
+						}
 
-					if( hasReact && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-react') ) {
-						error += `The module ${ module } is missing the "pancake-js" plugin inside the pancake object.\n`;
-					}
+						if (hasJS && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-js')) {
+							error += `The module ${ module } is missing the "pancake-js" plugin inside the pancake object.\n`;
+						}
 
-					// testing pancake plugin settings
-					if( hasSass && packagesPKG.pancake['pancake-module'].sass === undefined ) {
-						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
-					}
+						if (hasReact && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-react')) {
+							error += `The module ${ module } is missing the "pancake-js" plugin inside the pancake object.\n`;
+						}
 
-					if( hasJS && packagesPKG.pancake['pancake-module'].js === undefined ) {
-						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
-					}
+						// testing pancake plugin settings
+						if (hasSass && packagesPKG.pancake['pancake-module'].sass === undefined) {
+							error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
+						}
 
-					if( hasReact && packagesPKG.pancake['pancake-module'].react === undefined ) {
-						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
-					}
+						if (hasJS && packagesPKG.pancake['pancake-module'].js === undefined) {
+							error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
+						}
 
-					// testing react modules have a main entry point
-					if( hasReact && packagesPKG.main === undefined ) {
-						error += `The module ${ module } is missing the main entry point for react.\n`;
-					}
+						if (hasReact && packagesPKG.pancake['pancake-module'].react === undefined) {
+							error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
+						}
 
-					// testing all pancake plugins are also a dependency
-					if( packagesPKG.dependencies['@gov.au/pancake'] === undefined ) {
-						error += `The module ${ module } is missing "pancake" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake'];
-					}
+						// testing react modules have a main entry point
+						if (hasReact && packagesPKG.main === undefined) {
+							error += `The module ${ module } is missing the main entry point for react.\n`;
+						}
 
-					if( packagesPKG.dependencies['@gov.au/pancake-json'] === undefined ) {
-						error += `The module ${ module } is missing "pancake-json" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-json'];
-					}
+						// testing all pancake plugins are also a dependency
+						if (packagesPKG.dependencies['@gov.au/pancake'] === undefined) {
+							error += `The module ${ module } is missing "pancake" as a dependency.\n`;
+						}
+						else {
+							delete packagesPKG.dependencies['@gov.au/pancake'];
+						}
 
-					if( hasSass && packagesPKG.dependencies['@gov.au/pancake-sass'] === undefined ) {
-						error += `The module ${ module } is missing "pancake-sass" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-sass'];
-					}
+						if (packagesPKG.dependencies['@gov.au/pancake-json'] === undefined) {
+							error += `The module ${ module } is missing "pancake-json" as a dependency.\n`;
+						}
+						else {
+							delete packagesPKG.dependencies['@gov.au/pancake-json'];
+						}
 
-					if( hasJS && packagesPKG.dependencies['@gov.au/pancake-js'] === undefined ) {
-						error += `The module ${ module } is missing "pancake-js" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-js'];
-					}
+						if (hasSass && packagesPKG.dependencies['@gov.au/pancake-sass'] === undefined) {
+							error += `The module ${ module } is missing "pancake-sass" as a dependency.\n`;
+						}
+						else {
+							delete packagesPKG.dependencies['@gov.au/pancake-sass'];
+						}
 
-					if( hasReact && packagesPKG.dependencies['@gov.au/pancake-react'] === undefined ) {
-						error += `The module ${ module } is missing "pancake-react" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-react'];
-					}
+						if (hasJS && packagesPKG.dependencies['@gov.au/pancake-js'] === undefined) {
+							error += `The module ${ module } is missing "pancake-js" as a dependency.\n`;
+						}
+						else {
+							delete packagesPKG.dependencies['@gov.au/pancake-js'];
+						}
 
-					// testing all remaining dependencies are also in peerdependencies
-					if( module === 'core' ) { // the exception to the rule is sass-versioning inside core
-						delete packagesPKG.dependencies['sass-versioning'];
-					}
+						if (hasReact && packagesPKG.dependencies['@gov.au/pancake-react'] === undefined) {
+							error += `The module ${ module } is missing "pancake-react" as a dependency.\n`;
+						}
+						else {
+							delete packagesPKG.dependencies['@gov.au/pancake-react'];
+						}
 
-					if( JSON.stringify( packagesPKG.dependencies ) !== JSON.stringify( packagesPKG.peerDependencies ) ) {
-						error += `The module ${ module } has inconsistent dependencies/peerDependencies.\n`;
-					}
+						// testing all remaining dependencies are also in peerdependencies
+						if (module === 'core') { // the exception to the rule is sass-versioning inside core
+							delete packagesPKG.dependencies['sass-versioning'];
+						}
 
-					// testing devDependencies
-					if( hasReact && packagesPKG.devDependencies['react'] === undefined ) {
-						error += `The module ${ module } is missing "react" as devDependency.\n`;
-					}
+						if (JSON.stringify(packagesPKG.dependencies) !== JSON.stringify(packagesPKG.peerDependencies)) {
+							error += `The module ${ module } has inconsistent dependencies/peerDependencies.\n`;
+						}
 
-					if( hasReact && Object.keys( packagesPKG.devDependencies ).length !== 13 ) {
-						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
-					}
+						// testing devDependencies
+						if (hasReact && packagesPKG.devDependencies['react'] === undefined) {
+							error += `The module ${ module } is missing "react" as devDependency.\n`;
+						}
 
-					if( !hasReact && Object.keys( packagesPKG.devDependencies ).length > 4 ) {
-						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
-					}
+						if (hasReact && Object.keys(packagesPKG.devDependencies).length !== 13) {
+							error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
+						}
 
-					// testing for pancake config
-					if( packagesPKG.pancake['auto-save'] !== undefined ) {
-						error += `The module ${ module } has the pancake config saved though we don’t want that…\n`;
+						if (!hasReact && Object.keys(packagesPKG.devDependencies).length > 4) {
+							error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
+						}
+
+						// testing for pancake config
+						if (packagesPKG.pancake['auto-save'] !== undefined) {
+							error += `The module ${ module } has the pancake config saved though we don’t want that…\n`;
+						}
 					}
 
 				}

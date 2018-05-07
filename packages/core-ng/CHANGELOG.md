@@ -15,13 +15,20 @@
 
 ## Versions
 
+* [v0.4.0 - added directives](v040) 
 * [v0.1.0 - 💥 Initial version](v010)
-
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Release History
+
+### v0.4.0
+
+- added au-color-palette directive
+- added au-focus directive
+- added au-fontgrid directive
+- added au-outline directive
 
 ### v0.1.0
 
