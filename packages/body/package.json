@@ -76,7 +76,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://gold.service.gov.au/",
+	"homepage": "https://designsystem.gov.au/component/body",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"
