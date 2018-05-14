@@ -250,6 +250,8 @@ class AUaccordion extends React.PureComponent {
 	 */
 	accordionOpen( elements, speed ) {
 
+		const ToggleClasses = this.toggleClasses;
+
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
@@ -292,7 +294,7 @@ class AUaccordion extends React.PureComponent {
 					endSize: 'auto',
 					speed: speed || 250,
 					callback: function() {
-						this.toggleClasses( element, 'opening' );
+						ToggleClasses( element, 'opening' );
 					},
 				});
 			})( target, speed, element );
@@ -309,6 +311,8 @@ class AUaccordion extends React.PureComponent {
 	 *
 	 */
 	accordionClose( elements, speed ) {
+
+		const ToggleClasses = this.toggleClasses;
 
 		// stop event propagation
 		try {
@@ -338,7 +342,7 @@ class AUaccordion extends React.PureComponent {
 					speed: speed || 250,
 					callback: function() {
 						target.style.display = 'none';
-						this.toggleClasses( target, 'close' );
+						ToggleClasses( target, 'close' );
 					},
 				});
 			})( target, speed );
