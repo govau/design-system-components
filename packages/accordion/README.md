@@ -252,6 +252,8 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v2.0.3 - Update homepage link
+* v2.0.2 - Fix issue with scope inside AU.animate.Run
 * v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix
 * v1.0.1 - IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/309)

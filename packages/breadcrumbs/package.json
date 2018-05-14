@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/breadcrumbs",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Breadcrumbs help users understand where they are in the service and how they got there.",
 	"keywords": [
 		"uikit",
@@ -94,7 +94,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://gold.service.gov.au/",
+	"homepage": "https://designsystem.gov.au/components/breadcrumbs",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"

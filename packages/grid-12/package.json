@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/grid-12",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Implementation of the Bootstrap 3 grid.",
 	"keywords": [
 		"uikit",
@@ -76,7 +76,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://gold.service.gov.au/",
+	"homepage": "https://designsystem.gov.au/components/grid-12",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"

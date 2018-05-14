@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/footer",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Footers help users who reach the bottom of a page without finding what they want.",
 	"keywords": [
 		"uikit",
@@ -93,7 +93,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://gold.service.gov.au/",
+	"homepage": "https://designsystem.gov.au/components/footer",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"
