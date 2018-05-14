@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/animate",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A JavaScript function to animate CSS properties of page elements.",
 	"keywords": [
 		"uikit",
@@ -90,7 +90,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://gold.service.gov.au/",
+	"homepage": "https://designsystem.gov.au/component/animate",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"

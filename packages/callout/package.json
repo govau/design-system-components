@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/callout",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Use callout to notify and alert users of important snippets of information.",
 	"keywords": [
 		"uikit",
@@ -94,7 +94,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://gold.service.gov.au/",
+	"homepage": "https://designsystem.gov.au/component/callout",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"

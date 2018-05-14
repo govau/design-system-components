@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.5 - Change homepage links ](#v205)
 * [v2.0.4 - Adding height: auto to responsive images ](#v204)
 * [v2.0.3 - Removing unecessary double up of sass ](#v203)
 * [v2.0.2 - Added a responsive media wrapper class ](#v202)
@@ -29,6 +30,11 @@
 
 
 ## Release History
+
+### v2.0.5
+
+- Change homepage links
+
 
 ### v2.0.4
 
