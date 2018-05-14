@@ -94,7 +94,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://designsystem.gov.au/component/skip-link",
+	"homepage": "https://designsystem.gov.au/components/skip-link",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/body",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"description": "Basic body styles for body HTML elements",
 	"keywords": [
 		"uikit",
@@ -76,7 +76,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://designsystem.gov.au/component/body",
+	"homepage": "https://designsystem.gov.au/components/body",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"
