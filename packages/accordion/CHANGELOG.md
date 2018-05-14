@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.3 - Update homepage link](#v203)
 * [v2.0.2 - Fix issue with scope inside AU.animate.Run](#v202)
 * [v2.0.1 - Fix dependencies](#v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
@@ -29,6 +30,11 @@
 
 
 ## Release History
+
+### v2.0.3
+
+- Update homepage link
+
 
 ### v2.0.2
 

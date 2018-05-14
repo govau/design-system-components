@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.2 - Fix typo in homepage link](#v102)
 * [v1.0.1 - Changing homepage link](#v101)
 * [v1.0.0 - Moved to AU namespace, fixed export](#v100)
 * [v0.1.5 - Fixed pancake config](#v015)
@@ -28,6 +29,11 @@
 
 
 ## Release History
+
+### v1.0.2
+
+- Fix typo in homepage link
+
 
 ### v1.0.1
 
