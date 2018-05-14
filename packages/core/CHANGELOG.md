@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.1 - Change homepage link](#v201)
 * [v2.0.0 - Changing mix values for border and muted, focus colour, adding offset to focus](#v200)
 * [v1.0.1 - Adjusting how colors are generated from other colors](#v101)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](#v100)
@@ -28,6 +29,11 @@
 
 
 ## Release History
+
+### v2.0.1
+
+- Change homepage link
+
 
 ### v2.0.0
 

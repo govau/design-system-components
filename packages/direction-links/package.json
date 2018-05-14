@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/direction-links",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Use direction links to link up and down within the DOM or back to a parent page.",
 	"keywords": [
 		"uikit",

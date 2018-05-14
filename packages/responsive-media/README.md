@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/responsive-media/tests/si
 
 ## Release History
 
+* v2.0.5 - Change homepage link
 * v2.0.4 - Adding height: auto to responsive images
 * v2.0.3 - Removing unecessary double up of sass
 * v2.0.2 - Added a responsive media wrapper class
