@@ -107,6 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v3.0.2 - Change homepage link
 * v3.0.1 - Fix dependencies
 * v3.0.0 - Change to focus colour and border/muted color mix
 * v2.0.0 - Moved to AU namespace, added new color themes and spacing

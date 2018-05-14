@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.3 - Change homepage links ](#v203)
 * [v2.0.2 - Adding focus offset back to text inputs ](#v202)
 * [v2.0.1 - Fix dependencies ](#v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
@@ -27,6 +28,11 @@
 
 
 ## Release History
+
+### v2.0.3
+
+- Change homepage links
+
 
 ### v2.0.2
 

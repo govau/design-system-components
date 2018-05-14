@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.2 - Change homepage links ](#v302)
 * [v3.0.1 - Fix dependencies ](#v301)
 * [v3.0.0 - Change to focus colour and border/muted color mix](#v300)
 * [v2.0.0 - Moved to AU namespace, added new color themes and spacing](#v200)
@@ -28,6 +29,11 @@
 
 
 ## Release History
+
+### v3.0.2
+
+- Change homepage links
+
 
 ### v3.0.1
 

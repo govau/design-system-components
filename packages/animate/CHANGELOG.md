@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.1 - Changing homepage link](#v101)
 * [v1.0.0 - Moved to AU namespace, fixed export](#v100)
 * [v0.1.5 - Fixed pancake config](#v015)
 * [v0.1.4 - Pinned pancake plugins](#v014)
@@ -27,6 +28,11 @@
 
 
 ## Release History
+
+### v1.0.1
+
+- Changing homepage link
+
 
 ### v1.0.0
 
