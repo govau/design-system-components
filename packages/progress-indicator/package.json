@@ -90,7 +90,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://designsystem.gov.au/component/progress-indicator",
+	"homepage": "https://designsystem.gov.au/components/progress-indicator",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"
