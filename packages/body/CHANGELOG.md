@@ -32,7 +32,7 @@
 
 ### v2.0.3
 
-- Chagning homepage link
+- Changing homepage link
 
 
 ### v2.0.2
