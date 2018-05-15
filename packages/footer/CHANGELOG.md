@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.0 - Allow footer end to not be a `nav` element](#v210)
 * [v2.0.2 - Change homepage link ](#v202)
 * [v2.0.1 - Fix dependencies ](#v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
@@ -28,6 +29,11 @@
 
 
 ## Release History
+
+### v2.1.0
+
+- Allow footerEnd to not be a `nav` element
+
 
 ### v2.0.2
 

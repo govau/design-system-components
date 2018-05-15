@@ -45,9 +45,9 @@ AUfooterNav.propTypes = {
  * @param  {object} attributeOptions - Any other attribute options
  */
 export const AUfooterEnd = ({ children, className = '', ...attributeOptions }) => (
-	<nav className={`au-footer__end ${ className }`} { ...attributeOptions }>
+	<div className={`au-footer__end ${ className }`} { ...attributeOptions }>
 		{ children }
-	</nav>
+	</div>
 );
 
 AUfooterEnd.propTypes = {

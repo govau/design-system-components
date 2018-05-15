@@ -111,6 +111,7 @@ The visual test: https://uikit.service.gov.au/packages/footer/tests/site/
 
 ## Release History
 
+* v2.1.0 - Allow footer end to not be a `nav` element
 * v2.0.2 - Change homepage link
 * v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix
