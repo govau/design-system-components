@@ -252,6 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v3.0.0 - React accordion open by default
 * v2.0.3 - Update homepage link
 * v2.0.2 - Fix issue with scope inside AU.animate.Run
 * v2.0.1 - Fix dependencies
