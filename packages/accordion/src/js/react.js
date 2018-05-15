@@ -31,24 +31,24 @@ class AUaccordion extends React.PureComponent {
 	constructor( props ) {
 		super( props );
 
-		const { header, open, speed, onOpen, afterOpen, onClose, afterClose, dark, className = '', children, ...attributeOptions } = props;
+		const { header, closed, speed, onOpen, afterOpen, onClose, afterClose, dark, className = '', children, ...attributeOptions } = props;
 
-		this.setAriaRoles = this.setAriaRoles.bind( this );
-		this.toggleClasses = this.toggleClasses.bind( this );
-		this.removeClass = this.removeClass.bind( this );
-		this.addClass = this.addClass.bind( this );
-		this.accordionToggle = this.accordionToggle.bind( this );
-		this.accordionOpen = this.accordionOpen.bind( this );
-		this.accordionClose = this.accordionClose.bind( this );
-		this.toggle = this.toggle.bind( this );
-		this.className = className;
+		this.setAriaRoles     = this.setAriaRoles.bind( this );
+		this.toggleClasses    = this.toggleClasses.bind( this );
+		this.removeClass      = this.removeClass.bind( this );
+		this.addClass         = this.addClass.bind( this );
+		this.accordionToggle  = this.accordionToggle.bind( this );
+		this.accordionOpen    = this.accordionOpen.bind( this );
+		this.accordionClose   = this.accordionClose.bind( this );
+		this.toggle           = this.toggle.bind( this );
+		this.className        = className;
 		this.attributeOptions = attributeOptions;
 
 		// Generate a unique ID and our css class
 		IDstart ++;
 
 		this.ID = `accordion${ IDstart }`;
-		this.closeClass = this.props.open ? '' : 'au-accordion--closed';
+		this.closeClass = this.props.closed ? 'au-accordion--closed' : '';
 	}
 
 
@@ -374,8 +374,8 @@ class AUaccordion extends React.PureComponent {
 				<a href={`#${ this.ID }`}
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
-					aria-expanded={ this.props.open }
-					aria-selected={ this.props.open }
+					aria-expanded={ this.props.closed }
+					aria-selected={ this.props.closed }
 					role="tab"
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
 					onClick={ ( event ) => this.toggle( event ) }>
@@ -385,7 +385,7 @@ class AUaccordion extends React.PureComponent {
 				<div
 					className={`au-accordion__body ${ this.closeClass }`}
 					id={ this.ID }
-					aria-hidden={ this.props.open ? 'false' : 'true' }>
+					aria-hidden={ this.props.closed ? 'false' : 'true' }>
 					<div className="au-accordion__body-wrapper">
 
 						{ this.props.children }
@@ -400,7 +400,7 @@ class AUaccordion extends React.PureComponent {
 AUaccordion.propTypes = {
 	children: PropTypes.node.isRequired,
 	header: PropTypes.string.isRequired,
-	open: PropTypes.bool,
+	closed: PropTypes.bool,
 	speed: PropTypes.number,
 	dark: PropTypes.bool,
 	onOpen: PropTypes.func,
@@ -411,7 +411,7 @@ AUaccordion.propTypes = {
 };
 
 AUaccordion.defaultProps = {
-	open: false,
+	closed: false,
 };
 
 export default AUaccordion;

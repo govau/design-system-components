@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.0 - React accordion open by default](#v300)
 * [v2.0.3 - Update homepage link](#v203)
 * [v2.0.2 - Fix issue with scope inside AU.animate.Run](#v202)
 * [v2.0.1 - Fix dependencies](#v201)
@@ -30,6 +31,12 @@
 
 
 ## Release History
+
+### v3.0.0
+
+- React accordion open by default
+- Removed open property replaced it with closed
+
 
 ### v2.0.3
 
