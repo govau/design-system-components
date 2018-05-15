@@ -706,25 +706,27 @@ HELPER.generate = (() => {
 			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const pkg = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
-					let jquery = '';
-					let react = '';
+					const pkg = require(Path.normalize(`${__dirname}/../packages/${module}/package.json`));
+					if (pkg.name.indexOf('ngx') === -1) {
+						let jquery = '';
+						let react = '';
+					
+						if (pkg.pancake['pancake-module'].jquery) {
+							jquery = `<a class="link" href="packages/${module}/tests/jquery/">jquery</a>`;
+						}
 
-					if( pkg.pancake['pancake-module'].jquery ) {
-						jquery = `<a class="link" href="packages/${ module }/tests/jquery/">jquery</a>`;
+						if (pkg.pancake['pancake-module'].react) {
+							react = `<a class="link" href="packages/${module}/tests/react/">react</a>`;
+						}
+
+						replacement += `<li>` +
+							`	<a class="module-list__headline" href="packages/${module}/tests/">${module}</a>` +
+							`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${module}.svg?label=%20&colorA=ffffff&colorB=00698f&style=flat-square" alt="${module} version">` +
+							`	<br>` +
+							`	<a class="link" href="packages/${module}/tests/site/">site</a> ${jquery} ${react}` +
+							`	<a class="link" href="https://github.com/govau/uikit/blob/master/packages/${module}/README.md">readme</a>` +
+							`</li>\n`;
 					}
-
-					if( pkg.pancake['pancake-module'].react ) {
-						react = `<a class="link" href="packages/${ module }/tests/react/">react</a>`;
-					}
-
-					replacement += `<li>` +
-						`	<a class="module-list__headline" href="packages/${ module }/tests/">${ module }</a>` +
-						`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=%20&colorA=ffffff&colorB=00698f&style=flat-square" alt="${ module } version">` +
-						`	<br>` +
-						`	<a class="link" href="packages/${ module }/tests/site/">site</a> ${ jquery } ${ react }` +
-						`	<a class="link" href="https://github.com/govau/uikit/blob/master/packages/${ module }/README.md">readme</a>` +
-						`</li>\n`;
 				}
 			}
 
@@ -929,11 +931,11 @@ HELPER.test = (() => {
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
 					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
-					if(packagesPKG.name.indexOf('-ng') === -1) {
+					if(packagesPKG.name.indexOf('ngx') === -1) {
 						const hasSass = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`));
 						const hasJS = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`));
 						const hasReact = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/js/react.js`));
-						// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
+						const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
 
 						// testing lifecycle script
 						if (packagesPKG.scripts.postinstall !== 'pancake') {
