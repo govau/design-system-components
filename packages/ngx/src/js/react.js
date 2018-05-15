@@ -1,7 +1,7 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * core-ng function
+ * ngx function
  *
  * Angular implementation of the core module
  *
@@ -9,10 +9,10 @@
 
 import React from 'react';
 
-const Core-ng = () => (
-	<div className="uikit-core-ng">
+const ngx = () => (
+	<div className="uikit-ngx">
 		<strong>Yay!</strong>
 	</div>
 );
 
-export default Core-ng;
+export default ngx;

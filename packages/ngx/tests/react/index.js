@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Core-ng from './core-ng.js';
+import ngx from './ngx.js';
 
 
 ReactDOM.render(
 	<div>
-		<Core-ng>
-		</Core-ng>
+		<ngx>
+		</ngx>
 	</div>,
 
 	document.getElementById('root'),

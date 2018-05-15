@@ -1,4 +1,4 @@
-@gov.au/core-ng CHANGELOG
+@gov.au/ngx CHANGELOG
 ======================
 
 > Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
