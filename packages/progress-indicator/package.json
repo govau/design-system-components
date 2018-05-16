@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/progress-indicator",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"description": "Indicator of progress through a multitude of pages mostly used for forms.",
 	"keywords": [
 		"uikit",
@@ -120,6 +120,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Nathan Davison",
+			"email": "me@nathandavison.com",
+			"url": "https://github.com/ndavison"
 		}
 	],
 	"license": "MIT"

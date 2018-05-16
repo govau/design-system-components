@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.3 - Change React "Todo" label to "To do"](#v303)
 * [v3.0.2 - Change homepage links ](#v302)
 * [v3.0.1 - Fix dependencies ](#v301)
 * [v3.0.0 - Change to focus colour and border/muted color mix](#v300)
@@ -29,6 +30,10 @@
 
 
 ## Release History
+
+### v3.0.3
+
+- Change React "Todo" label to "To do"
 
 ### v3.0.2
 

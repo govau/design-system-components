@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
  */
 const StatusText = {
 	doing: 'Doing',
-	todo: 'Todo',
+	todo: 'To do',
 	done: 'Done',
 };
 
