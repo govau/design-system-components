@@ -34,16 +34,22 @@
 	cursor: pointer;
 
 	.au-control-input--small & {
-		@include AU-space( left, -0.2unit );
-		@include AU-space( top, -0.1unit );
+		left: 0;
+		top: 0;
 	}
 
 	& + .au-control-input__text {
 		cursor: pointer;
 	}
 
-	// state styling
-	&:invalid + .au-control-input__text,
+	&:invalid + .au-control-input__text {
+		background-color: mix( $AU-color-error, $AU-color-background, 5% );
+
+		&:after {
+			border-color: $AU-color-error;
+		}
+	}
+
 	.au-control-input--invalid & + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-color-background, 5% );
 
@@ -52,20 +58,26 @@
 		}
 	}
 
-	.au-control-input--dark &:invalid + .au-control-input__text,
+	.au-control-input--dark &:invalid + .au-control-input__text, {
+		background-color: mix( $AU-color-error, $AU-colordark-background, 15% );
+	}
+
 	.au-control-input--dark.au-control-input--invalid & + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-colordark-background, 15% );
 	}
 
-	.au-control-input--alt.au-control-input--alt &:invalid + .au-control-input__text,
-	.au-control-input--alt.au-control-input--alt.au-control-input--invalid & + .au-control-input__text {
+	.au-control-input--alt.au-control-input--invalid & + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-color-background-shade, 15% );
 	}
 
-	.au-control-input--dark.au-control-input--alt &:invalid + .au-control-input__text,
-	.au-control-input--dark.au-control-input--alt.au-control-input--invalid & + .au-control-input__text {
+	.au-control-input--dark.au-control-input--alt &:invalid + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-colordark-background-alt, 15% );
 	}
+
+	.au-control-input--alt.au-control-input--dark.au-control-input--invalid & + .au-control-input__text {
+		background-color: mix( $AU-color-error, $AU-colordark-background-alt, 15% );
+	}
+
 
 	.au-control-input--valid & + .au-control-input__text {
 		background-color: mix( $AU-color-success, $AU-color-background, 5% );
@@ -326,8 +338,9 @@
  * The label text
  */
 .au-control-input__text {
-	@include AU-fontgrid( sm, nospace );
-	@include AU-space( padding, 0.5unit 0.5unit 0.5unit 2.5unit );
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 0.25unit 0.5unit 0.5unit 2.5unit );
+	@include AU-space( margin-right, 1unit );
 	display: block;
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
@@ -348,13 +361,15 @@
 		border: 3px solid transparent;
 
 		.au-control-input--small & {
-			@include AU-space( width, 1.375unit );
-			@include AU-space( height, 1.375unit );
+			@include AU-space( width, 1.75unit );
+			@include AU-space( height, 1.75unit );
 		}
 	}
 
 	.au-control-input--small & {
-		@include AU-space( padding, 0 0.5unit 0 1.3unit );
+		@include AU-space( padding, 0.2unit 0.5unit 0 1.75unit );
+		@include AU-space( margin-right, 1unit );
+		@include AU-fontgrid( sm, nospace );
 	}
 
 	&:after {
