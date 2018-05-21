@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.0 - Adjust spacing, size and lineheight and fixed errors ](#v210)
 * [v2.0.3 - Change homepage link ](#v203)
 * [v2.0.2 - Adding focus offset back to control inputs ](#v202)
 * [v2.0.1 - Fix dependencies ](#v201)
@@ -30,6 +31,14 @@
 
 
 ## Release History
+
+### v2.1.0
+
+- Adjusted small variation
+- Added lineheight for multiline control inputs
+- Increased spacing to right for inline control inputs
+- Fixed errors not showing in IE9 and IE8
+
 
 ### v2.0.3
 

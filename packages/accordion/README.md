@@ -166,7 +166,7 @@ All props:
 ```jsx
 <AUaccordion
   header="Headline"        {/* The headline of the accordion */}
-  open={ true }            {/* Open state, optional */}
+  closed={ true }          {/* Closed state, optional */}
   speed="250"              {/* Speed of the animation in ms, optional */}
   onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
   afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
@@ -252,6 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v3.0.1 - Updating documentation
 * v3.0.0 - React accordion open by default
 * v2.0.3 - Update homepage link
 * v2.0.2 - Fix issue with scope inside AU.animate.Run
