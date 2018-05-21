@@ -42,6 +42,7 @@
 		cursor: pointer;
 	}
 
+	// :invalid is split a part for IE8
 	&:invalid + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-color-background, 5% );
 
@@ -50,6 +51,7 @@
 		}
 	}
 
+	// :invalid is split a part for IE8
 	.au-control-input--invalid & + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-color-background, 5% );
 
@@ -58,22 +60,27 @@
 		}
 	}
 
+	// :invalid is split a part for IE8
 	.au-control-input--dark &:invalid + .au-control-input__text, {
 		background-color: mix( $AU-color-error, $AU-colordark-background, 15% );
 	}
 
+	// :invalid is split a part for IE8
 	.au-control-input--dark.au-control-input--invalid & + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-colordark-background, 15% );
 	}
 
+	// :invalid is split a part for IE8
 	.au-control-input--alt.au-control-input--invalid & + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-color-background-shade, 15% );
 	}
 
+	// :invalid is split a part for IE8
 	.au-control-input--dark.au-control-input--alt &:invalid + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-colordark-background-alt, 15% );
 	}
 
+	// :invalid is split a part for IE8
 	.au-control-input--alt.au-control-input--dark.au-control-input--invalid & + .au-control-input__text {
 		background-color: mix( $AU-color-error, $AU-colordark-background-alt, 15% );
 	}
