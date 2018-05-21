@@ -1084,14 +1084,31 @@ HELPER.test = (() => {
 					const readme = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/README.md`), 'utf8' );
 					const version = packagesPKG.version.split('-next')[ 0 ];
 
+					const currentVersion = changelog.split('## Versions\n\n* [v')[ 1 ];
+					const currentChange  = changelog.split('## Release History\n\n### v')[ 1 ];
+
+					// Check that there is a current version content
+					if( !currentVersion ){
+						HELPER.log.error( `Could not find the Version content for ${ module }` );
+						HELPER.log.error( `> Note: This is usually due to incorrect spacing` );
+						process.exit( 1 );
+					}
+
+					// Check that there is a current changelog content
+					if( !currentChange ){
+						HELPER.log.error( `Could not find the Changelog content for ${ module }` );
+						HELPER.log.error( `> Note: This is usually due to incorrect spacing` );
+						process.exit( 1 );
+					}
+
 					// testing CHANGELOG.md file for latest version
-					if( !changelog.split('## Versions\n\n* [v')[ 1 ].startsWith( version ) ) {
+					if( !currentVersion.startsWith( version ) ) {
 						error += `The module ${ module } does not have the current version in it’s changelog "Versions" section.\n`;
 					}
-					else if( !changelog.split('## Versions\n\n* [v')[ 1 ].split('](#v')[ 1 ].startsWith( version.replace(/[.]/g, '') ) ) {
+					else if( !currentVersion.split('](#v')[ 1 ].startsWith( version.replace(/[.]/g, '') ) ) {
 						error += `The module ${ module } has the wrong link for the current version ${ version } in the changelog "Versions" section.\n`;
 					}
-					else if( !changelog.split('## Release History\n\n### v')[ 1 ].startsWith( version ) ) {
+					else if( !currentChange.startsWith( version ) ) {
 						error += `The module ${ module } does not have the current version in it’s changelog "Release History" section.\n`;
 					}
 

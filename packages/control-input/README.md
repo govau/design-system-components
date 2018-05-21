@@ -116,6 +116,7 @@ The visual test: https://uikit.service.gov.au/packages/control-input/tests/site/
 
 ## Release History
 
+* v2.1.0 - Adjust spacing, size and lineheight and fixed errors
 * v2.0.3 - Change homepage link
 * v2.0.2 - Adding focus offset back to control inputs
 * v2.0.1 - Fix dependencies
