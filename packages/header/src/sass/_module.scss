@@ -22,24 +22,25 @@
  */
 .au-header {
 	@include AU-fontgrid( sm );
-	@include AU-space( padding, 1.5unit 0 2unit 0 ); // 0.5 for optical alignment
+	@include AU-space( padding, 1.5unit 0 );
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 	background: $AU-color-background;
 
-	@include AU-media( sm ) {
-		@include AU-fontgrid( md );
+	// &.au-header--hero {
+	// 	@include AU-space( padding, 1unit 0 );
+	// }
+
+	.au-header-blurb {
+		color: $AU-color-foreground-muted;
+		@include AU-space( max-width, 32unit );
 	}
 
-	&.au-header--hero {
-		@include AU-space( padding, 3unit 0 3.5unit 0 );
-	}
-
-	@include AU-media( sm ) {
-		@include AU-space( padding, 3unit 0 3.5unit 0 );
+	@include AU-media( md ) {
+		@include AU-space( padding, 3unit 0 );
 
 		&.au-header--hero {
-			@include AU-space( padding, 6unit 0 6.5unit 0 );
+			@include AU-space( padding, 3unit 0 3.5unit 0 ); // Bottom +0.5 for optical alignment
 		}
 	}
 
@@ -50,6 +51,14 @@
 	&.au-header--dark {
 		color: $AU-colordark-foreground-text;
 		background-color:  $AU-colordark-background;
+
+		.au-header-text {
+			border-left-color: $AU-colordark-foreground-border;
+		}
+
+		.au-header-blurb {
+			color: $AU-colordark-foreground-muted;
+		}
 	}
 
 	&.au-header--alt.au-header--dark {
@@ -58,17 +67,133 @@
 	}
 }
 
+
+
+
+
 .au-header-heading {
 	@include AU-fontgrid( md );
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
 
-	@include AU-media( sm ) {
-		@include AU-fontgrid( xxl, heading );
+	@include AU-media( xs ) {
+		@include AU-fontgrid( lg, heading );
+	}
+
+	@include AU-media( md ) {
+		@include AU-fontgrid( xl, heading );
 	}
 }
 
-.au-header-subline {
-	max-width: $AU-maxwidth;
+
+$au-logo-width-sm: 12;
+$au-logo-width-md: 16;
+
+
+.au-header-banner {
+	@include AU-clearfix();
+
+	@include AU-media( xs ) {
+		@include AU-space( padding-left, ($au-logo-width-sm+1)*1unit );
+
+		// New Skool for Vertical Centering
+		display: flex;
+		align-items: center;
+	}
+
+	@include AU-media( md ) {
+		@include AU-space( padding-left, ($au-logo-width-md+1) * 1unit );
+	}
+}
+
+
+.au-header-brand {
+	box-sizing: border-box;
+
+	@include AU-media( xs ) {
+		float: left;
+		@include AU-space( width, ($au-logo-width-sm+1)*1unit );
+		@include AU-space( padding-right, 1unit );
+		@include AU-space( margin-left, -(($au-logo-width-sm+1) * 1unit) );
+	}
+
+	@include AU-media( md ) {
+		@include AU-space( width, ($au-logo-width-md+1)*1unit );
+		@include AU-space( margin-left, -(($au-logo-width-md+1) * 1unit) );
+	}
+}
+
+
+.au-header-brand-logo {
+	@include AU-space( max-width, $au-logo-width-sm*1unit );
+
+	@include AU-media( xs ) {
+		max-width: 100%;
+	}
+}
+
+
+.au-header-text {
+	@include AU-space( margin-top, 1unit );
+
+	@include AU-media( xs ) {
+		@include AU-space( padding-left, 1unit );
+		margin-top: 0; // reset mobile
+		box-sizing: border-box;
+		float: left;
+		border-left: solid 1px $AU-color-foreground-border;
+		width: 100%;
+	}
+}
+
+.au-header--hero {
+	.au-header-banner {
+		display: block; //Reset Flexbox
+		padding-left: 0;
+	}
+	.au-header-brand {
+		float: none;
+		margin-left: 0;
+	}
+	.au-header-text {
+		float: none;
+		padding-left: 0;
+		border-left: none;
+		@include AU-media( xs ) {
+			@include AU-space( margin-top, 2unit );
+		}
+	}
+	.au-header-heading {
+		@include AU-media( md ) {
+			@include AU-fontgrid( xxl, heading );
+		}
+	}
+	.au-header-blurb {
+		@include AU-space( margin-top, 0.75unit );
+		@include AU-fontgrid( md );
+	}
+}
+
+
+.au-header-homelink {
+	display: block;
+	text-decoration: none;
+	color: $AU-color-foreground-text;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&:focus {
+		@include AU-outline(light);
+	}
+
+	.au-header--dark & {
+		color: $AU-colordark-foreground-text;
+
+		&:focus {
+			@include AU-outline(dark);
+		}
+	}
 }
