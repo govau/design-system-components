@@ -22,26 +22,17 @@
  */
 .au-header {
 	@include AU-fontgrid( sm );
-	@include AU-space( padding, 1.5unit 0 );
+	@include AU-space( padding, 1.5unit 0 ); // 0.5 for optical alignment
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 	background: $AU-color-background;
 
-	// &.au-header--hero {
-	// 	@include AU-space( padding, 1unit 0 );
-	// }
-
-	.au-header-blurb {
-		color: $AU-color-foreground-muted;
-		@include AU-space( max-width, 32unit );
+	@include AU-media( sm ) {
+		@include AU-fontgrid( md );
 	}
 
-	@include AU-media( md ) {
-		@include AU-space( padding, 3unit 0 );
-
-		&.au-header--hero {
-			@include AU-space( padding, 3unit 0 3.5unit 0 ); // Bottom +0.5 for optical alignment
-		}
+	@include AU-media( sm ) {
+		@include AU-space( padding, 3unit 0 3unit 0 );
 	}
 
 	&.au-header--alt {
@@ -51,14 +42,6 @@
 	&.au-header--dark {
 		color: $AU-colordark-foreground-text;
 		background-color:  $AU-colordark-background;
-
-		.au-header-text {
-			border-left-color: $AU-colordark-foreground-border;
-		}
-
-		.au-header-blurb {
-			color: $AU-colordark-foreground-muted;
-		}
 	}
 
 	&.au-header--alt.au-header--dark {
@@ -67,133 +50,112 @@
 	}
 }
 
-
-
-
-
-.au-header-heading {
+.au-header__heading {
 	@include AU-fontgrid( md );
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
 
-	@include AU-media( xs ) {
-		@include AU-fontgrid( lg, heading );
+	@include AU-media( sm ) {
+		@include AU-fontgrid( xl );
 	}
+}
 
-	@include AU-media( md ) {
-		@include AU-fontgrid( xl, heading );
+.au-header__subline {
+	max-width: $AU-maxwidth;
+	color: $AU-color-foreground-muted;
+
+	.au-header--dark & {
+		color: $AU-colordark-foreground-muted;
 	}
 }
 
 
-$au-logo-width-sm: 12;
-$au-logo-width-md: 16;
-
-
-.au-header-banner {
+.au-header__brand {
 	@include AU-clearfix();
+	@include AU-space( min-width, $AU-logo-width );
 
-	@include AU-media( xs ) {
-		@include AU-space( padding-left, ($au-logo-width-sm+1)*1unit );
-
-		// New Skool for Vertical Centering
-		display: flex;
-		align-items: center;
+	img {
+		display: block;
+		@include AU-space( max-width, $AU-logo-width );
 	}
 
-	@include AU-media( md ) {
-		@include AU-space( padding-left, ($au-logo-width-md+1) * 1unit );
-	}
-}
-
-
-.au-header-brand {
-	box-sizing: border-box;
-
-	@include AU-media( xs ) {
-		float: left;
-		@include AU-space( width, ($au-logo-width-sm+1)*1unit );
-		@include AU-space( padding-right, 1unit );
-		@include AU-space( margin-left, -(($au-logo-width-sm+1) * 1unit) );
+	img + .au-header__text {
+		@include AU-space( margin-top, 1unit );
 	}
 
-	@include AU-media( md ) {
-		@include AU-space( width, ($au-logo-width-md+1)*1unit );
-		@include AU-space( margin-left, -(($au-logo-width-md+1) * 1unit) );
-	}
-}
+	@include AU-media( sm ){
+		@include AU-space( min-width, $AU-logo-width-sm );
 
+		img {
+			float: left;
+			@include AU-space( max-width, $AU-logo-width-sm );
+			@include AU-space( margin-right, -1 * $AU-logo-width-sm );
+		}
 
-.au-header-brand-logo {
-	@include AU-space( max-width, $au-logo-width-sm*1unit );
+		img + .au-header__text {
+			@include AU-space( padding-left, 1unit );
+			@include AU-space( margin-left, $AU-logo-width-sm + 1unit );
+			margin-top: 0;
+			float: left;
+			border-left: 1px solid $AU-color-foreground-border;
 
-	@include AU-media( xs ) {
-		max-width: 100%;
-	}
-}
-
-
-.au-header-text {
-	@include AU-space( margin-top, 1unit );
-
-	@include AU-media( xs ) {
-		@include AU-space( padding-left, 1unit );
-		margin-top: 0; // reset mobile
-		box-sizing: border-box;
-		float: left;
-		border-left: solid 1px $AU-color-foreground-border;
-		width: 100%;
-	}
-}
-
-.au-header--hero {
-	.au-header-banner {
-		display: block; //Reset Flexbox
-		padding-left: 0;
-	}
-	.au-header-brand {
-		float: none;
-		margin-left: 0;
-	}
-	.au-header-text {
-		float: none;
-		padding-left: 0;
-		border-left: none;
-		@include AU-media( xs ) {
-			@include AU-space( margin-top, 2unit );
+			.au-header--dark & {
+				border-left-color: $AU-colordark-foreground-border;
+			}
 		}
 	}
-	.au-header-heading {
-		@include AU-media( md ) {
-			@include AU-fontgrid( xxl, heading );
-		}
-	}
-	.au-header-blurb {
-		@include AU-space( margin-top, 0.75unit );
-		@include AU-fontgrid( md );
-	}
 }
 
 
-.au-header-homelink {
-	display: block;
-	text-decoration: none;
+a.au-header__brand {
+	@include AU-focus();
+	display: inline-block;
 	color: $AU-color-foreground-text;
+	text-decoration: none;
 
-	&:hover {
+	&:hover .au-header__text {
 		text-decoration: underline;
-	}
-
-	&:focus {
-		@include AU-outline(light);
+		text-decoration-skip: ink;
 	}
 
 	.au-header--dark & {
+		@include AU-focus( 'dark' );
 		color: $AU-colordark-foreground-text;
+	}
+}
 
-		&:focus {
-			@include AU-outline(dark);
+
+// Hero styles
+.au-header.au-header--hero {
+	@include AU-space( padding, 3unit 0 3.5unit 0 );
+
+	// Reset the floated logo
+	.au-header__brand img {
+		float: none;
+	}
+
+	// Reset the floated title
+	img + .au-header__text {
+		@include AU-space( margin-top, 2unit );
+		border: 0;
+		margin: 0;
+		padding: 0;
+
+		.au-header__heading {
+			@include AU-space( margin-top, 2unit );
 		}
+	}
+
+	.au-header__heading {
+		@include AU-fontgrid( md );
+
+		@include AU-media( sm ) {
+			@include AU-fontgrid( xxl );
+		}
+	}
+
+	.au-header__heading + .au-header__subline {
+		@include AU-space( margin-top, 0.75unit );
 	}
 }
