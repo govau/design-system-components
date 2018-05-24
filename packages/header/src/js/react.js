@@ -23,13 +23,19 @@ import PropTypes from 'prop-types';
  * @param  {string}   title            - The title of the header
  * @param  {string}   level            - The tag level (<h1/> <h2/> etc), default: '1'
  * @param  {string}   subline          - An optional subline, optional
+ * @param  {string}   crestImage       - An optional crest image, optional
+ * @param  {string}   crestAlt         - Crest alt tag
+ * @param  {string}   link             - An optional link for the header brand, optional
+ * @param  {node}     children         - The inside of this section
+ * @param  {string}   className        - An additional class, optional
+ * @param  {object}   attributeOptions - Any other attribute options
  */
 export const AUheaderBrand = ({
 	title,
 	level,
 	subline,
 	crestImage,
-	crestAlt = 'Australian Government Crest',
+	crestAlt,
 	link,
 	children,
 	className = '',
@@ -45,7 +51,7 @@ export const AUheaderBrand = ({
 
 	let crest = crestImage
 		? <img alt={ crestAlt } src={ crestImage } />
-		: '';
+		: null;
 
 	return (
 		<BrandTag className={ `au-header__brand ${ className }` } { ...attributeOptions }>
@@ -55,10 +61,14 @@ export const AUheaderBrand = ({
 					?
 						<div className="au-header__text">
 							{
-								title ? <HeadingTag className="au-header__heading">{ title }</HeadingTag> : ''
+								title
+									? <HeadingTag className="au-header__heading">{ title }</HeadingTag>
+									: null
 							}
 							{
-								subline ? <div className="au-header__subline">{ subline }</div> : ''
+								subline
+									? <div className="au-header__subline">{ subline }</div>
+									: null
 							}
 							{ children }
 						</div>
@@ -74,12 +84,15 @@ AUheaderBrand.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]),
 	subline: PropTypes.node,
 	link: PropTypes.string,
+	crestImage: PropTypes.string,
+	crestAlt: PropTypes.string,
 	children: PropTypes.node,
 	className: PropTypes.string,
 }
 
 AUheaderBrand.defaultProps = {
 	level: '1',
+	crestAlt: 'Australian Government Crest',
 };
 
 

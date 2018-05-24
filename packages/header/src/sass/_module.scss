@@ -4,9 +4,9 @@
 //
 // Content:
 // - Header styles
-// - Logo container styling
-// - Logomark styling
-// - Logotype styling
+// - Header heading styles
+// - Brand styling
+// - Hero styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -32,7 +32,7 @@
 	}
 
 	@include AU-media( sm ) {
-		@include AU-space( padding, 3unit 0 3unit 0 );
+		@include AU-space( padding, 3unit 0 );
 	}
 
 	&.au-header--alt {
@@ -50,6 +50,10 @@
 	}
 }
 
+
+/**
+ * Header heading styles
+ */
 .au-header__heading {
 	@include AU-fontgrid( md );
 	font-weight: bold;
@@ -71,6 +75,9 @@
 }
 
 
+/**
+ * Header brand styles
+ */
 .au-header__brand {
 	@include AU-clearfix();
 	@include AU-space( min-width, $AU-logo-width );
@@ -126,7 +133,9 @@ a.au-header__brand {
 }
 
 
-// Hero styles
+/**
+ * Header hero styles and resets
+ */
 .au-header.au-header--hero {
 	@include AU-space( padding, 3unit 0 3.5unit 0 );
 
