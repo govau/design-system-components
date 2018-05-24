@@ -23,8 +23,8 @@ import PropTypes from 'prop-types';
  * @param  {string}   title            - The title of the header
  * @param  {string}   level            - The tag level (<h1/> <h2/> etc), default: '1'
  * @param  {string}   subline          - An optional subline, optional
- * @param  {string}   crestImage       - An optional crest image, optional
- * @param  {string}   crestAlt         - Crest alt tag
+ * @param  {string}   brandImage       - An optional brand image, optional
+ * @param  {string}   brandImageAlt    - Brand image alt tag
  * @param  {string}   link             - An optional link for the header brand, optional
  * @param  {node}     children         - The inside of this section
  * @param  {string}   className        - An additional class, optional
@@ -34,8 +34,8 @@ export const AUheaderBrand = ({
 	title,
 	level,
 	subline,
-	crestImage,
-	crestAlt,
+	brandImage,
+	brandImageAlt,
 	link,
 	children,
 	className = '',
@@ -49,13 +49,13 @@ export const AUheaderBrand = ({
 		attributeOptions.href = link;
 	}
 
-	let crest = crestImage
-		? <img alt={ crestAlt } src={ crestImage } />
+	let brand = brandImage
+		? <img className="au-header__brand-image" alt={ brandImageAlt } src={ brandImage } />
 		: null;
 
 	return (
 		<BrandTag className={ `au-header__brand ${ className }` } { ...attributeOptions }>
-			{ crest }
+			{ brand }
 			{
 				title || subline
 					?
@@ -84,15 +84,15 @@ AUheaderBrand.propTypes = {
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]),
 	subline: PropTypes.node,
 	link: PropTypes.string,
-	crestImage: PropTypes.string,
-	crestAlt: PropTypes.string,
+	brandImage: PropTypes.string,
+	brandImageAlt: PropTypes.string,
 	children: PropTypes.node,
 	className: PropTypes.string,
 }
 
 AUheaderBrand.defaultProps = {
 	level: '1',
-	crestAlt: 'Australian Government Crest',
+	brandImageAlt: 'Australian Government Crest',
 };
 
 

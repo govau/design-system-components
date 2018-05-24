@@ -22,7 +22,7 @@
  */
 .au-header {
 	@include AU-fontgrid( sm );
-	@include AU-space( padding, 1.5unit 0 ); // 0.5 for optical alignment
+	@include AU-space( padding, 1.5unit 0 );
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 	background: $AU-color-background;
@@ -82,25 +82,25 @@
 	@include AU-clearfix();
 	@include AU-space( min-width, $AU-logo-width );
 
-	img {
+	.au-header__brand-image {
 		display: block;
 		@include AU-space( max-width, $AU-logo-width );
 	}
 
-	img + .au-header__text {
+	.au-header__brand-image + .au-header__text {
 		@include AU-space( margin-top, 1unit );
 	}
 
-	@include AU-media( sm ){
+	@include AU-media( sm ) {
 		@include AU-space( min-width, $AU-logo-width-sm );
 
-		img {
+		.au-header__brand-image {
 			float: left;
 			@include AU-space( max-width, $AU-logo-width-sm );
 			@include AU-space( margin-right, -1 * $AU-logo-width-sm );
 		}
 
-		img + .au-header__text {
+		.au-header__brand-image + .au-header__text {
 			@include AU-space( padding-left, 1unit );
 			@include AU-space( margin-left, $AU-logo-width-sm + 1unit );
 			margin-top: 0;
@@ -140,12 +140,12 @@ a.au-header__brand {
 	@include AU-space( padding, 3unit 0 3.5unit 0 );
 
 	// Reset the floated logo
-	.au-header__brand img {
+	.au-header__brand .au-header__brand-image {
 		float: none;
 	}
 
 	// Reset the floated title
-	img + .au-header__text {
+	.au-header__brand-image + .au-header__text {
 		@include AU-space( margin-top, 2unit );
 		border: 0;
 		margin: 0;

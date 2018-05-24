@@ -107,7 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
-* v4.0.0 - Added crest, and optional grid layout
+* v4.0.0 - Added placeholder for Australian Government logo and optional grid layout
 * v3.0.2 - Change homepage link
 * v3.0.1 - Fix dependencies
 * v3.0.0 - Change to focus colour and border/muted color mix
