@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import MainNav from './main-nav.js';
+import AUmainNav from './main-nav.js';
 
 
 ReactDOM.render(
 	<div>
-		<MainNav>
-		</MainNav>
+		<AUmainNav>
+		</AUmainNav>
 	</div>,
 
 	document.getElementById('root'),

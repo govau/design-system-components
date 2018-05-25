@@ -9,10 +9,10 @@
 
 import React from 'react';
 
-const MainNav = () => (
+const AUmainNav = () => (
 	<div className="uikit-main-nav">
 		<strong>Yay!</strong>
 	</div>
 );
 
-export default MainNav;
+export default AUmainNav;

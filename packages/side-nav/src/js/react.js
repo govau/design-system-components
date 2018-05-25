@@ -9,10 +9,10 @@
 
 import React from 'react';
 
-const SideNav = () => (
+const AUsideNav = () => (
 	<div className="uikit-side-nav">
 		<strong>Yay!</strong>
 	</div>
 );
 
-export default SideNav;
+export default AUsideNav;
