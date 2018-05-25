@@ -1,5 +1,5 @@
 {
-	"name": "@gov.au/local-nav",
+	"name": "@gov.au/side-nav",
 	"version": "0.1.0",
 	"description": "A vertical list of links for site navigation typically placed next to the body content.",
 	"keywords": [
@@ -93,7 +93,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://designsystem.gov.au/components/local-nav",
+	"homepage": "https://designsystem.gov.au/components/side-nav",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"

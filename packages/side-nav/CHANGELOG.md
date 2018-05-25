@@ -1,4 +1,4 @@
-@gov.au/local-nav CHANGELOG
+@gov.au/side-nav CHANGELOG
 ======================
 
 > Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.

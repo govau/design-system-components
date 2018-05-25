@@ -1,4 +1,4 @@
-@gov.au/local-nav
+@gov.au/side-nav
 ============
 
 > A vertical list of links for site navigation typically placed next to the body content.
@@ -20,11 +20,11 @@
 
 
 ```shell
-yarn add @gov.au/local-nav
+yarn add @gov.au/side-nav
 ```
 
 ```shell
-npm install @gov.au/local-nav --save-dev
+npm install @gov.au/side-nav --save-dev
 ```
 
 
@@ -37,7 +37,7 @@ npm install @gov.au/local-nav --save-dev
 ## Dependency graph
 
 ```shell
-local-nav
+side-nav
 ```
 
 
@@ -49,7 +49,7 @@ local-nav
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/local-nav/tests/site/
+The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
 
 
 **[⬆ back to top](#contents)**

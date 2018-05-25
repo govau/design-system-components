@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Local-nav from './local-nav.js';
+import Side-nav from './side-nav.js';
 
 
 ReactDOM.render(
 	<div>
-		<Local-nav>
-		</Local-nav>
+		<Side-nav>
+		</Side-nav>
 	</div>,
 
 	document.getElementById('root'),
