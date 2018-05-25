@@ -1,7 +1,7 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * side-nav function
+ * sideNav function
  *
  * A vertical list of links for site navigation typically placed next to the body content.
  *
@@ -9,10 +9,10 @@
 
 import React from 'react';
 
-const Side-nav = () => (
+const SideNav = () => (
 	<div className="uikit-side-nav">
 		<strong>Yay!</strong>
 	</div>
 );
 
-export default Side-nav;
+export default SideNav;

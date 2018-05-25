@@ -1,14 +1,14 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * side-nav function
+ * sideNav function
  *
  * A vertical list of links for site navigation typically placed next to the body content.
  *
  **************************************************************************************************************************************************************/
 
 
-$.fn.uikitSide-nav = function() {
+$.fn.uikitSideNav = function() {
 	var $elements = this;
 
 	return {

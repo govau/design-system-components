@@ -1,14 +1,14 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * main-nav function
+ * mainNav function
  *
  * Horizontal list of links to key areas on the website. Usually located in the header.
  *
  **************************************************************************************************************************************************************/
 
 
-$.fn.uikitMain-nav = function() {
+$.fn.uikitMainNav = function() {
 	var $elements = this;
 
 	return {
