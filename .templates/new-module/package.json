@@ -62,10 +62,10 @@
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
 
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": "^2.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^0.1.0"
+		"@gov.au/core": "^2.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.1",
