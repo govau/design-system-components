@@ -38,6 +38,11 @@ npm install @gov.au/main-nav --save-dev
 
 ```shell
 main-nav
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
 ```
 
 
