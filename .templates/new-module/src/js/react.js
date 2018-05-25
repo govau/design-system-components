@@ -9,10 +9,10 @@
 
 import React from 'react';
 
-const [-replace-name-capital-] = () => (
+const AU[-replace-name-capital-] = () => (
 	<div className="uikit-[-replace-name-]">
 		<strong>Yay!</strong>
 	</div>
 );
 
-export default [-replace-name-capital-];
+export default AU[-replace-name-capital-];
