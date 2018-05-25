@@ -41,7 +41,8 @@
 			"plugins": [
 				"@gov.au/pancake-sass",
 				"@gov.au/pancake-js",
-				"@gov.au/pancake-react"
+				"@gov.au/pancake-react",
+				"@gov.au/pancake-json"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
@@ -61,6 +62,7 @@
 		"@gov.au/pancake-js": "~1",
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": "^2.0.0"
 	},
