@@ -817,17 +817,17 @@ HELPER.scaffolding = (() => {
 			{
 				type: 'input',
 				name: 'contributor_name',
-				message: `What is your name?`
+				message: `Please provide your name for contributor details:`
 			},
 			{
 				type: 'input',
 				name: 'contributor_email',
-				message: `What is your email?`
+				message: `Please provide your email for contributor details:`
 			},
 			{
 				type: 'input',
 				name: 'contributor_website',
-				message: `What is your website?`
+				message: `Please provide your website for contributor details:`
 			}
 			]).then(( answers ) => {
 
