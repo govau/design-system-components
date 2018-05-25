@@ -1,0 +1,114 @@
+{
+	"name": "@gov.au/local-nav",
+	"version": "0.1.0",
+	"description": "A vertical list of links for site navigation typically placed next to the body content.",
+	"keywords": [
+		"uikit",
+		"pancake",
+		"pancake-module",
+		"sass",
+		"scss",
+		"css",
+		"gov.au",
+		"Commonwealth of Australia",
+		"design guide",
+		"design system"
+	],
+	"scripts": {
+		"postinstall": "pancake",
+
+		"test:a11y": "node ../../scripts/a11y.js",
+		"test:helper": "node ../../scripts/helper.js test",
+		"test": "npm-run-all --parallel test:*",
+
+		"prepublish": "npm run test:helper && npm run build:pre",
+
+		"build:pre": "node ../../scripts/helper.js precompile publish",
+		"build:js": "node ../../scripts/helper.js compile",
+		"build:react": "cd tests/react/ && webpack",
+		"build": "npm run build:pre && npm run build:js && npm run build:react",
+
+		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
+
+		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
+		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
+		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
+		"watch": "npm run build && npm-run-all --parallel serve watch:*"
+	},
+	"pancake": {
+		"pancake-module": {
+			"version": "1.0.0",
+			"plugins": [
+				"@gov.au/pancake-sass",
+				"@gov.au/pancake-js",
+				"@gov.au/pancake-react"
+			],
+			"sass": {
+				"path": "lib/sass/_module.scss",
+				"sass-versioning": true
+			},
+			"js": {
+				"path": "lib/js/module.js"
+			},
+			"react": {
+				"path": "lib/js/react.js"
+			}
+		}
+	},
+	"main": "lib/js/react.es5.js",
+	"dependencies": {
+		"@gov.au/pancake": "~1",
+		"@gov.au/pancake-js": "~1",
+		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-react": "~1",
+
+		"@gov.au/core": "^0.1.0"
+	},
+	"peerDependencies": {
+		"@gov.au/core": "^0.1.0"
+	},
+	"devDependencies": {
+		"babel-core": "^6.24.1",
+		"babel-loader": "^7.0.0",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"browser-sync": "^2.18.6",
+		"npm-run-all": "^4.0.1",
+		"onchange": "^3.2.1",
+		"react": "^15.5.4",
+		"react-dom": "^15.5.4",
+		"webpack": "^2.2.1",
+		"webpack-dev-server": "^2.4.1"
+	},
+	"files": [
+		"lib/*"
+	],
+	"engines": {
+		"node": ">=0.12.0",
+		"npm": "^3.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/govau/uikit.git"
+	},
+	"homepage": "https://designsystem.gov.au/components/local-nav",
+	"bugs": {
+		"url": "https://github.com/govau/uikit/issues",
+		"email": "uikit@digital.gov.au"
+	},
+	"author": {
+		"name": "Commonwealth of Australia, DTA",
+		"email": "uikit@digital.gov.au",
+		"url": "https://www.dta.gov.au/"
+	},
+	"contributors": [
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "https://alexpage.com.au"
+		}
+	],
+	"license": "MIT"
+}
