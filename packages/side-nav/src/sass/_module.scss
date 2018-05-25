@@ -17,19 +17,24 @@
 
 	a {
 		display: block;
-		text-decoration: none;
 	}
 }
 
 .au-side-nav > .au-link-list {
+	@include AU-space( padding, 1unit 0 );
+	margin: 0;
+	border-top: solid 1px $AU-color-foreground-border;
+	border-bottom: solid 1px $AU-color-foreground-border;
+
+	li {
+		margin: 0;
+	}
 
 	ul {
 		margin: 0;
 		padding: 0;
-	}
-
-	li {
-		margin: 0;
+		@include AU-space( margin-left, 1unit );
+		border-left: 1px solid $AU-color-foreground-border;
 	}
 
 	a {
@@ -39,8 +44,7 @@
 		&:hover {
 			@include AU-space( padding-left, 1unit ); // remove 0.25 for active
 			@include AU-space( border-left, solid 0.25unit $AU-color-foreground-action );
-			text-decoration: underline;
-			text-decoration-skip-ink: ink;
+			text-decoration: none;
 			background-color: $AU-color-background-shade;
 		}
 	}
@@ -52,21 +56,15 @@
 		color: $AU-color-foreground-text;
 		font-weight: 500;
 		background-color: $AU-color-background-shade;
-
-		&:hover {
-			text-decoration: none;
-		}
+		text-decoration: none;
 	}
 
 	// First children list
-	ul {
-		@include AU-space( margin-left, 1unit );
-
-		a {
-			 // 1px less then 1.25
-			@include AU-space( padding-left, 1.25unit - ( 1 / 16 ) * 1unit );
-			border-left: 1px solid $AU-color-foreground-border;
-		}
+	ul a {
+		// 1px less then 1.25
+		margin-left: -1px;
+		@include AU-space( padding-left, 1.25unit - ( 1 / 16 ) * 1unit );
+		border-left: 1px solid $AU-color-foreground-border;
 	}
 }
 
