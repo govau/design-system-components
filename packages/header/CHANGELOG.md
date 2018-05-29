@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.0.1 - Added missing documentation ](#v401)
 * [v4.0.0 - Added placeholder for Australian Government logo and optional grid layout ](#v400)
 * [v3.0.2 - Change homepage link ](#v302)
 * [v3.0.1 - Fix dependencies ](#v301)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v4.0.1
+
+- Added missing documentation
+
 
 ### v4.0.0
 
