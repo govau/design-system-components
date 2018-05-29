@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
 import AUheader, { AUheaderBrand } from './header.js';
@@ -166,6 +166,23 @@ ReactDOM.render(
 				<div className="row">
 					<div className="col-md-9">
 						<AUheaderBrand level="5" link="#" title="Page title" subline="Service sub-title" />
+					</div>
+				</div>
+			</div>
+		</AUheader>
+
+		<hr />
+		<h2>header with extra html inside title and subline <code>--hero</code></h2>
+
+		<AUheader hero dark className="au-grid">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-9">
+						<AUheaderBrand
+							link="#"
+							title={ <Fragment>Page title <span class="testing">beta</span></Fragment> }
+							subline={ <Fragment>Service sub-title <span class="testing">i'm here aswell</span></Fragment> }
+						/>
 					</div>
 				</div>
 			</div>
