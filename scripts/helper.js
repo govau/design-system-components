@@ -814,6 +814,21 @@ HELPER.scaffolding = (() => {
 				name: 'description',
 				message: `What's the description of the module?`
 			},
+			{
+				type: 'input',
+				name: 'contributor_name',
+				message: `Please provide your name for contributor details:`
+			},
+			{
+				type: 'input',
+				name: 'contributor_email',
+				message: `Please provide your email for contributor details:`
+			},
+			{
+				type: 'input',
+				name: 'contributor_website',
+				message: `Please provide your website for contributor details:`
+			}
 			]).then(( answers ) => {
 
 				const template = `${ HELPER.TEMPLATES }/new-module/`;
@@ -830,6 +845,9 @@ HELPER.scaffolding = (() => {
 										thisCharacter
 									), ''
 							),
+					'[-replace-contrib-name-]': answers.contributor_name,
+					'[-replace-contrib-email-]': answers.contributor_email,
+					'[-replace-contrib-website-]': answers.contributor_website,
 					'[-replace-description-]': answers.description,
 					'[-replace-URL-]': `${ HELPER.URL }/packages/${ answers.name }/tests/site/`,
 					'[-replace-version-]': '0.1.0',

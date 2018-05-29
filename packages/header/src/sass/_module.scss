@@ -4,9 +4,9 @@
 //
 // Content:
 // - Header styles
-// - Logo container styling
-// - Logomark styling
-// - Logotype styling
+// - Header heading styles
+// - Brand styling
+// - Hero styling
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -22,7 +22,7 @@
  */
 .au-header {
 	@include AU-fontgrid( sm );
-	@include AU-space( padding, 1.5unit 0 2unit 0 ); // 0.5 for optical alignment
+	@include AU-space( padding, 1.5unit 0 );
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 	background: $AU-color-background;
@@ -31,16 +31,8 @@
 		@include AU-fontgrid( md );
 	}
 
-	&.au-header--hero {
-		@include AU-space( padding, 3unit 0 3.5unit 0 );
-	}
-
 	@include AU-media( sm ) {
-		@include AU-space( padding, 3unit 0 3.5unit 0 );
-
-		&.au-header--hero {
-			@include AU-space( padding, 6unit 0 6.5unit 0 );
-		}
+		@include AU-space( padding, 3unit 0 );
 	}
 
 	&.au-header--alt {
@@ -58,17 +50,121 @@
 	}
 }
 
-.au-header-heading {
+
+/**
+ * Header heading styles
+ */
+.au-header__heading {
 	@include AU-fontgrid( md );
 	font-weight: bold;
 	margin: 0;
 	padding: 0;
 
 	@include AU-media( sm ) {
-		@include AU-fontgrid( xxl, heading );
+		@include AU-fontgrid( xl );
 	}
 }
 
-.au-header-subline {
+.au-header__subline {
 	max-width: $AU-maxwidth;
+	color: $AU-color-foreground-muted;
+
+	.au-header--dark & {
+		color: $AU-colordark-foreground-muted;
+	}
+}
+
+
+/**
+ * Header brand styles
+ */
+.au-header__brand {
+	@include AU-clearfix();
+	@include AU-space( min-width, $AU-logo-width );
+
+	.au-header__brand-image {
+		display: block;
+		@include AU-space( max-width, $AU-logo-width );
+	}
+
+	.au-header__brand-image + .au-header__text {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	@include AU-media( sm ) {
+		@include AU-space( min-width, $AU-logo-width-sm );
+
+		.au-header__brand-image {
+			float: left;
+			@include AU-space( max-width, $AU-logo-width-sm );
+			@include AU-space( margin-right, -1 * $AU-logo-width-sm );
+		}
+
+		.au-header__brand-image + .au-header__text {
+			@include AU-space( padding-left, 1unit );
+			@include AU-space( margin-left, $AU-logo-width-sm + 1unit );
+			margin-top: 0;
+			float: left;
+			border-left: 1px solid $AU-color-foreground-border;
+
+			.au-header--dark & {
+				border-left-color: $AU-colordark-foreground-border;
+			}
+		}
+	}
+}
+
+
+a.au-header__brand {
+	@include AU-focus();
+	display: inline-block;
+	color: $AU-color-foreground-text;
+	text-decoration: none;
+
+	&:hover .au-header__text {
+		text-decoration: underline;
+		text-decoration-skip: ink;
+	}
+
+	.au-header--dark & {
+		@include AU-focus( 'dark' );
+		color: $AU-colordark-foreground-text;
+	}
+}
+
+
+/**
+ * Header hero styles and resets
+ */
+.au-header.au-header--hero {
+	@include AU-space( padding, 3unit 0 3.5unit 0 );
+
+	// Reset the floated logo
+	.au-header__brand .au-header__brand-image {
+		float: none;
+	}
+
+	// Reset the floated title
+	.au-header__brand-image + .au-header__text {
+		@include AU-space( margin-top, 2unit );
+		border: 0;
+		margin: 0;
+		padding: 0;
+
+		.au-header__heading {
+			@include AU-space( margin-top, 2unit );
+		}
+	}
+
+	.au-header__heading {
+		@include AU-fontgrid( md );
+
+		@include AU-media( sm ) {
+			@include AU-fontgrid( xxl );
+		}
+	}
+
+	.au-header__heading + .au-header__subline {
+		@include AU-space( margin-top, 0.75unit );
+	}
 }
