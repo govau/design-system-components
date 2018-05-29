@@ -457,10 +457,13 @@ All modules have to work on the below browsers:
 
 ```shell
 ├─ core
-└─ link-list
-   ├─ core
-   └─ body
-      └─ core
+├─ link-list
+│  ├─ core
+│  └─ body
+│     └─ core
+└─ accordion
+   ├─ animate
+   └─ core
 ```
 ----------
 </details>

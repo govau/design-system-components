@@ -39,10 +39,13 @@ npm install @gov.au/side-nav --save-dev
 ```shell
 side-nav
 ├─ core
-└─ link-list
-   ├─ core
-   └─ body
-      └─ core
+├─ link-list
+│  ├─ core
+│  └─ body
+│     └─ core
+└─ accordion
+   ├─ animate
+   └─ core
 ```
 
 
