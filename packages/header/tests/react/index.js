@@ -181,7 +181,7 @@ ReactDOM.render(
 						<AUheaderBrand
 							link="#"
 							title={ <Fragment>Page title <span class="testing">beta</span></Fragment> }
-							subline={ <Fragment>Service sub-title <span class="testing">i'm here aswell</span></Fragment> }
+							subline={ <Fragment>Service sub-title <span class="testing">i am here as well</span></Fragment> }
 						/>
 					</div>
 				</div>
