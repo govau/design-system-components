@@ -3,3 +3,4 @@
  */
 
 export { CoreModule } from "./app/modules/core/core.module";
+export { AccordionModule } from "./app/modules/accordion/accordion.module";

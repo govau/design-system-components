@@ -1,9 +1,9 @@
-import {fakeAsync, TestBed, tick} from "@angular/core/testing";
+import { fakeAsync, TestBed, tick } from "@angular/core/testing";
 
-import {AuColorPaletteDirective} from "./au-color-palette.directive";
-import {CoreModule} from "../core.module";
-import {UiKitCoreService} from "../ui-kit-core.service";
-import {TestComponent} from "../test.component";
+import { AuColorPaletteDirective } from "./au-color-palette.directive";
+import { CoreModule } from "../core.module";
+import { UiKitCoreService } from "../ui-kit-core.service";
+import { TestComponent } from "../test.component";
 
 
 describe("AuColorPaletteDirective", () => {
