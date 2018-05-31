@@ -130,6 +130,7 @@ The visual test: https://uikit.service.gov.au/packages/link-list/tests/site/
 
 ## Release History
 
+* v2.0.3 - Add support for HTML in link
 * v2.0.2 - Change homepage links
 * v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix

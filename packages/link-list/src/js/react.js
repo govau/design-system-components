@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
  * An item inside the AUlinkList component
  *
  * @param  {string} link             - The link URL, optional
- * @param  {string} text             - The link Text
+ * @param  {node} text               - The link Text or link html
  * @param  {object} li               - An additional object to be spread into the wrapping element, optional
  * @param  {object} attributeOptions - Any other attribute options, optional
  */
@@ -76,7 +76,7 @@ AUlinkList.propTypes = {
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
-			text: PropTypes.string.isRequired,
+			text: PropTypes.node.isRequired,
 			li: PropTypes.object,
 		})
 	).isRequired,

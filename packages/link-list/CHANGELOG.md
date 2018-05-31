@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.3 - Add support for HTML in link ](#v203)
 * [v2.0.2 - Change homepage link ](#v202)
 * [v2.0.1 - Fix dependencies ](#v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
@@ -28,6 +29,12 @@
 
 
 ## Release History
+
+### v2.0.3
+
+- Add support for HTML in link
+- Text parameter changed from string to node
+
 
 ### v2.0.2
 
