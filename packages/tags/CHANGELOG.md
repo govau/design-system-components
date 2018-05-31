@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.0 - Remove support for Description List <DL> for accessibility](#v300)
 * [v2.0.2 - Change homepage links ](#v202)
 * [v2.0.1 - Fix dependencies ](#v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
@@ -29,6 +30,11 @@
 
 
 ## Release History
+
+### v3.0.0
+
+- Remove support for Description List <DL> for accessibility
+
 
 ### v2.0.2
 

@@ -125,6 +125,7 @@ The visual test: https://uikit.service.gov.au/packages/tags/tests/site/
 
 ## Release History
 
+* v3.0.0 - Remove support for Description List <DL> for accessibility
 * v2.0.2 - Change homepage links
 * v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix
