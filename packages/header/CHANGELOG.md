@@ -15,10 +15,11 @@
 
 ## Versions
 
-* [v4.0.1 - Added missing documentation ](#v401)
-* [v4.0.0 - Added placeholder for Australian Government logo and optional grid layout ](#v400)
-* [v3.0.2 - Change homepage link ](#v302)
-* [v3.0.1 - Fix dependencies ](#v301)
+* [v4.0.2 - Update dependencies](#v402)
+* [v4.0.1 - Added missing documentation](#v401)
+* [v4.0.0 - Added placeholder for Australian Government logo and optional grid layout](#v400)
+* [v3.0.2 - Change homepage link](#v302)
+* [v3.0.1 - Fix dependencies](#v301)
 * [v3.0.0 - Change to focus colour and border/muted color mix](#v300)
 * [v2.0.0 - Moved to AU namespace, added new color themes and spacing](#v200)
 * [v1.2.0 - Added pancake-react plugin, ES5 main file, added children](#v120)
@@ -31,6 +32,11 @@
 
 
 ## Release History
+
+### v4.0.2
+
+- Update dependencies
+
 
 ### v4.0.1
 
