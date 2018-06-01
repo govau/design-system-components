@@ -62,12 +62,12 @@ export const AUheaderBrand = ({
 						<div className="au-header__text">
 							{
 								title
-									? <HeadingTag className="au-header__heading">{ title }</HeadingTag>
+									? <HeadingTag className="au-header__heading" children={ title } />
 									: null
 							}
 							{
 								subline
-									? <div className="au-header__subline">{ subline }</div>
+									? <div className="au-header__subline" children={ subline } />
 									: null
 							}
 							{ children }

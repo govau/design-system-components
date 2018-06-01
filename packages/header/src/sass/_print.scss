@@ -10,6 +10,10 @@
 @media print {
 	.au-header {
 		background: #fff !important;
+
+		a img {
+			border: 0 !important;
+		}
 	}
 
 	.au-header,
