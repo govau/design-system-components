@@ -153,6 +153,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
+* v1.0.3 - Update dependencies
 * v1.0.2 - Fix typo in homepage link
 * v1.0.1 - Changing homepage link
 * v1.0.0 - Moved to AU namespace, fixed export
