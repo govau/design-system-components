@@ -252,6 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v3.0.2 - Update dependencies
 * v3.0.1 - Updating documentation
 * v3.0.0 - React accordion open by default
 * v2.0.3 - Update homepage link

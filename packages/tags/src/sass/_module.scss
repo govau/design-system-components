@@ -24,16 +24,12 @@
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 
-	> dt {
-		display: inline-block;
-	}
 	&.au-tags--dark {
 		color: $AU-colordark-foreground-text;
 	}
 }
 
-.au-tags > li,
-.au-tags > dd {
+.au-tags > li {
 	@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
 	@include AU-space ( padding, 0 0.5unit );
 	border: 1px solid $AU-color-foreground-action;
@@ -62,8 +58,7 @@
 	}
 }
 
-.au-tags.au-tags--dark > li,
-.au-tags.au-tags--dark > dd {
+.au-tags.au-tags--dark > li {
 	border-color: $AU-colordark-foreground-action;
 
 	> a,
@@ -78,5 +73,3 @@
 		@include AU-focus( 'dark' );
 	}
 }
-
-
