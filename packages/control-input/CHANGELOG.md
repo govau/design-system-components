@@ -15,10 +15,11 @@
 
 ## Versions
 
-* [v2.1.0 - Adjust spacing, size and lineheight and fixed errors ](#v210)
-* [v2.0.3 - Change homepage link ](#v203)
-* [v2.0.2 - Adding focus offset back to control inputs ](#v202)
-* [v2.0.1 - Fix dependencies ](#v201)
+* [v2.1.1 - Update dependencies](#v211)
+* [v2.1.0 - Adjust spacing, size and lineheight and fixed errors](#v210)
+* [v2.0.3 - Change homepage link](#v203)
+* [v2.0.2 - Adding focus offset back to control inputs](#v202)
+* [v2.0.1 - Fix dependencies](#v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](#v100)
 * [v0.3.0 - Added pancake-react plugin, ES5 main file](#v030)
@@ -31,6 +32,11 @@
 
 
 ## Release History
+
+### v2.1.1
+
+- Update dependencies
+
 
 ### v2.1.0
 

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/callout",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "Use callout to notify and alert users of important snippets of information.",
 	"keywords": [
 		"uikit",

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.2 - Update dependencies](#v302)
 * [v3.0.1 - React accordion open by default](#v301)
 * [v3.0.0 - React accordion open by default](#v300)
 * [v2.0.3 - Update homepage link](#v203)
@@ -32,6 +33,11 @@
 
 
 ## Release History
+
+### v3.0.2
+
+- Update dependencies
+
 
 ### v3.0.1
 
