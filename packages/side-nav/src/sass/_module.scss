@@ -11,54 +11,112 @@
 
 
 .au-side-nav {
+	@include AU-clearfix();
+	@include AU-fontgrid( sm );
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
 
 	ul {
-		.au-body & {
-			padding-top: 0;
-		}
+		margin: 0;
 	}
 
 	li {
 		margin: 0;
 	}
 
+	a {
+		color: $AU-color-foreground-action;
+		text-decoration: none;
+
+		&:hover{
+			text-decoration: underline;
+			text-decoration-skip: ink;
+		}
+
+		@include AU-focus();
+	}
+
+	// Apply a border bottom to the first menu
+	& > .au-link-list {
+		border-bottom: 1px solid $AU-color-foreground-border;
+	}
+
 	.au-link-list {
 		@include AU-side-nav-indent( $AU-side-nav-depth, 1 );
+		padding: 0;
 
 		a {
+			border-top: 1px solid $AU-color-foreground-border;
 			@include AU-fontgrid( xs );
 			@include AU-space( padding, 1unit );
 			display: block;
+
+			&:hover {
+				background: $AU-color-background-shade;
+			}
+		}
+	}
+
+	.au-body.au-body--alt & {
+		.au-link-list a:hover {
+			background: $AU-color-background-alt-shade;
+		}
+	}
+
+	.au-body--dark & {
+		.au-link-list a:hover {
+			background: $AU-colordark-background-shade;
+		}
+	}
+
+	.au-body--alt.au-body--dark & {
+		.au-link-list a:hover {
+			background: $AU-colordark-background-alt-shade;
 		}
 	}
 }
 
 
+// Alt color scheme
+.au-side-nav.au-side-nav--alt {
+	background-color: $AU-color-background-alt;
 
-// // Fix the border-top border-bottom combo
-// li + li,
-// a + ul {
-// 	margin-top: -1px;
-// }
+	.au-link-list a:hover {
+		background: $AU-color-background-alt-shade;
+	}
+}
 
-// a {
-// 	@include AU-fontgrid( xs );
-// 	@include AU-space( padding, 1unit );
-// 	border-top: solid 1px $AU-color-foreground-border;
-// 	border-bottom: solid 1px $AU-color-foreground-border;
+// Dark colour scheme
+.au-side-nav.au-side-nav--dark {
+	background-color: $AU-colordark-background;
 
-// 	&:hover {
-// 		background-color: $AU-color-background-alt;
-// 	}
-// }
+	a {
+		color: $AU-colordark-foreground-action;
 
-// .active a {
-// 	border-left: solid 4px $AU-color-foreground-action;
-// 	color: $AU-color-foreground-text;
+		@include AU-focus( 'dark' );
+	}
 
-// 	&:hover {
-// 		background: transparent;
-// 		text-decoration: none;
-// 	}
+	.au-link-list a {
+		border-color: $AU-colordark-foreground-border;
 
-// @include AU-side-nav-spacing( $AU-side-nav-depth );
+		&:hover {
+			background: $AU-colordark-background-shade;
+		}
+	}
+}
+
+// Alternate dark colour scheme
+.au-side-nav.au-side-nav--alt.au-side-nav--dark {
+	background-color: $AU-colordark-background-alt;
+
+	.au-link-list a:hover {
+		background: $AU-colordark-background-alt-shade;
+	}
+}
+
+
+// Title above navigation
+.au-sidenav__title {
+	@include AU-space( padding-left, 1unit );
+	display: block;
+}

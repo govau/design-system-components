@@ -41,7 +41,7 @@ $AU-side-nav-depth: 3 !default;
     $chain: 'ul ' + $chain;
 
     & #{$chain} {
-      @include AU-space( padding-left, ( $indent-size * $i ) + 'unit' );
+      @include AU-space( padding-left, ( $indent-size * $i + 1 ) * 1unit );
     }
   }
 }
