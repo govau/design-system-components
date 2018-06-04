@@ -107,6 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/text-inputs/tests/site/
 
 ## Release History
 
+* v2.0.4 - Update dependencies
 * v2.0.3 - Change homepage links
 * v2.0.2 - Adding focus offset back to text inputs
 * v2.0.1 - Fix dependencies

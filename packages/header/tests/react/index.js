@@ -180,8 +180,8 @@ ReactDOM.render(
 					<div className="col-md-9">
 						<AUheaderBrand
 							link="#"
-							title={ <Fragment>Page title <span class="testing">beta</span></Fragment> }
-							subline={ <Fragment>Service sub-title <span class="testing">i am here as well</span></Fragment> }
+							title={ <Fragment>Page title <span className="testing">beta</span></Fragment> }
+							subline={ <Fragment>Service sub-title <span className="testing">i am here as well</span></Fragment> }
 						/>
 					</div>
 				</div>

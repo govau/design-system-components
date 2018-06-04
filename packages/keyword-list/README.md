@@ -1,7 +1,7 @@
 @gov.au/keyword-list
 ============
 
-> A list style for emphasising parts of a list item, useful for repeating phrases across that list’s items. 
+> A list style for emphasising parts of a list item, useful for repeating phrases across that list’s items.
 
 
 ## Contents
@@ -133,6 +133,7 @@ The visual test: https://uikit.service.gov.au/packages/keyword-list/tests/site/
 
 ## Release History
 
+* v2.0.3 - Update dependencies
 * v2.0.2 - Change homepage links
 * v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix

@@ -15,11 +15,12 @@
 
 ## Versions
 
-* [v2.0.5 - Change homepage links ](#v205)
-* [v2.0.4 - Adding height: auto to responsive images ](#v204)
-* [v2.0.3 - Removing unecessary double up of sass ](#v203)
-* [v2.0.2 - Added a responsive media wrapper class ](#v202)
-* [v2.0.1 - Fix dependencies ](#v201)
+* [v2.0.6 - Update dependencies](#v206)
+* [v2.0.5 - Change homepage links](#v205)
+* [v2.0.4 - Adding height: auto to responsive images](#v204)
+* [v2.0.3 - Removing unecessary double up of sass](#v203)
+* [v2.0.2 - Added a responsive media wrapper class](#v202)
+* [v2.0.1 - Fix dependencies](#v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](#v100)
 * [v0.1.1 - Used percentage sass function over magic numbers](#v011)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v2.0.6
+
+- Update dependencies
+
 
 ### v2.0.5
 
