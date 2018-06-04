@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
 import AUlinkList from './link-list.js';
@@ -11,11 +11,11 @@ ReactDOM.render(
 			<AUlinkList items={[
 				{
 					link: '#options',
-					text: 'Options',
+					text: <span>text <strong>with HTML</strong></span>,
 				},
 				{
 					link: '#help',
-					text: 'Help',
+					text: <Fragment>Service sub-title <strong className="testing">i am here as well</strong></Fragment>,
 				},
 				{
 					link: '#signout',

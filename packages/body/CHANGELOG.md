@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.5 - Update dependencies](#v205)
 * [v2.0.4 - Fix typo in homepage link](#v204)
 * [v2.0.3 - Changing homepage link](#v203)
 * [v2.0.2 - Tweak selection opacity for images, video and iframes](#v202)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v2.0.5
+
+- Update dependencies
+
 
 ### v2.0.4
 
