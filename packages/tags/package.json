@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/tags",
-	"version": "2.0.3",
+	"version": "3.0.0",
 	"description": "Use tags to apply a taxonomy and link to similar content.",
 	"keywords": [
 		"uikit",
