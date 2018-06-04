@@ -1,5 +1,5 @@
-import { Directive, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
-import { coerceBooleanProperty } from "@angular/cdk/coercion";
+import {Directive, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
+import {coerceBooleanProperty} from "@angular/cdk/coercion";
 
 @Directive({
   selector: '[au-accordion-header]'
@@ -56,11 +56,19 @@ export class AuAccordionHeaderDirective {
     this._selected = !this.selected;
   };
 
-  @HostListener('click')
+
+  @HostListener("click")
   onClick() {
     this._toggleExpanded();
     this._toggleSelected();
     this._clickEventEmitter.emit();
+  }
+
+  @HostListener("keydown", ["$event"])
+  onKeyPress(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      this.onClick();
+    }
   }
 
 }

@@ -1,8 +1,8 @@
-import { AuAccordionHeaderDirective } from './au-accordion-header.directive';
-import { fakeAsync, TestBed, tick } from "@angular/core/testing";
-import { TestComponent } from "../core/test.component";
-import { By } from "@angular/platform-browser";
-import { AccordionModule } from '../../../public_api';
+import {AuAccordionHeaderDirective} from './au-accordion-header.directive';
+import {fakeAsync, TestBed, tick} from "@angular/core/testing";
+import {TestComponent} from "../core/test.component";
+import {By} from "@angular/platform-browser";
+import {AccordionModule} from '../../../public_api';
 
 describe('AuAccordionHeaderDirective', () => {
   it("should attach the default CSS class", fakeAsync(() => {
@@ -131,4 +131,39 @@ describe('AuAccordionHeaderDirective', () => {
     expect(headerDirective._clickEventEmitter.emit).toHaveBeenCalledTimes(1);
     expect(fixture.nativeElement.querySelector("a").attributes.getNamedItem("aria-expanded").value).toBe("true");
   }));
+
+
+  it("should handle enter keyboard event", fakeAsync(() => {
+
+    TestBed.configureTestingModule({
+      imports: [AccordionModule],
+      declarations: [TestComponent],
+    }).overrideTemplate(TestComponent, `<a au-accordion-header></a>`)
+      .compileComponents();
+
+    const fixture = TestBed.createComponent(TestComponent);
+    const headerDirectiveEl = fixture.debugElement.query(By.directive(AuAccordionHeaderDirective));
+    const headerDirective = headerDirectiveEl.injector.get(AuAccordionHeaderDirective);
+    fixture.detectChanges();
+    tick();
+
+    spyOn(headerDirective._clickEventEmitter, "emit");
+    const anchor = fixture.debugElement.query(By.css("a")).nativeElement;
+    anchor.dispatchEvent(new KeyboardEvent("keydown", {key: 'Enter'}));
+
+    fixture.detectChanges();
+    tick();
+
+    expect(headerDirective._clickEventEmitter.emit).toHaveBeenCalledTimes(1);
+    expect(fixture.nativeElement.querySelector("a").attributes.getNamedItem("aria-expanded").value).toBe("true");
+
+    anchor.dispatchEvent(new KeyboardEvent("keydown", {key: 'Enter'}));
+
+    fixture.detectChanges();
+    tick();
+
+    expect(headerDirective._clickEventEmitter.emit).toHaveBeenCalledTimes(2);
+    expect(fixture.nativeElement.querySelector("a").attributes.getNamedItem("aria-expanded").value).toBe("false");
+  }));
+
 });
