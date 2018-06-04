@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/animate",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "A JavaScript function to animate CSS properties of page elements.",
 	"keywords": [
 		"uikit",

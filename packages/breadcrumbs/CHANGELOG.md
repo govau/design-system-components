@@ -15,8 +15,9 @@
 
 ## Versions
 
-* [v2.0.2 - Changing homepage link ](#v202)
-* [v2.0.1 - Fix dependencies ](#v201)
+* [v2.0.3 - Update dependencies](#v203)
+* [v2.0.2 - Changing homepage link](#v202)
+* [v2.0.1 - Fix dependencies](#v201)
 * [v2.0.0 - Change to focus colour and border/muted color mix](#v200)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](#v100)
 * [v0.3.1 - Fixed interdependency with link-list](#v031)
@@ -30,9 +31,14 @@
 
 ## Release History
 
+### v2.0.3
+
+- Update dependencies
+
+
 ### v2.0.2
 
-- Chagning homepage link
+- Changing homepage link
 
 
 ### v2.0.1

@@ -121,6 +121,7 @@ The visual test: https://uikit.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v4.0.2 - Update dependencies
 * v4.0.1 - Added missing documentation
 * v4.0.0 - Added placeholder for Australian Government logo and optional grid layout
 * v3.0.2 - Change homepage link
