@@ -28,9 +28,17 @@
 		@include AU-space( margin-top, 1unit );
 	}
 
+	.au-accordion__title {
+		background-color: $AU-color-background-shade;
+	}
+
 	&.au-accordion--dark {
 		border-color: $AU-colordark-foreground-border;
 		color: $AU-colordark-foreground-text;
+
+		.au-accordion__title {
+			background-color: $AU-colordark-background-shade;
+		}
 	}
 }
 
@@ -114,6 +122,7 @@
 .au-body.au-body--dark .au-accordion__title,
 .au-accordion.au-accordion--dark .au-accordion__title {
 	color: $AU-colordark-foreground-action;
+
 
 	&:hover {
 		color: $AU-colordark-foreground-text;
