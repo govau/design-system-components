@@ -50,7 +50,6 @@
 	width: 100%;
 	box-sizing: border-box;
 	font-weight: bold;
-	background-color: $AU-color-background-shade;
 	position: relative;
 	cursor: pointer;
 
@@ -109,30 +108,31 @@
 			content: ' ▲ ';
 		}
 	}
+}
 
-	.au-accordion--dark & {
-		color: $AU-colordark-foreground-action;
-		background-color: $AU-colordark-background-shade;
+// Dark title styles
+.au-body.au-body--dark .au-accordion__title,
+.au-accordion.au-accordion--dark .au-accordion__title {
+	color: $AU-colordark-foreground-action;
 
-		&:hover {
-			color: $AU-colordark-foreground-text;
+	&:hover {
+		color: $AU-colordark-foreground-text;
 
-			&:after {
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-					'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
-					'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
-					'</svg>');
-			}
-		}
-
-		@include AU-focus( 'dark' );
-
-		&:after{
+		&:after {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-				'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
-				'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+				'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
 				'</svg>');
 		}
+	}
+
+	@include AU-focus( 'dark' );
+
+	&:after {
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+			'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+			'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
 	}
 }
 
