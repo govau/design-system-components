@@ -45,16 +45,25 @@
 	<h1>Test: side-nav</h1>
 
 	<div class="split-wrapper">
-		<div class="split">
+		<div class="split au-body">
 
 			<h2>Test: default</h2>
+			<nav class="au-side-nav">
 
-			<div class="au-body">
-				<nav class="au-side-nav">
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-default"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-default" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
 					<h2 class="au-sidenav__title">
 						<a href="#">Lodging your tax return</a>
 					</h2>
-
 					<ul class="au-link-list">
 						<li><a href="#">Do you need to lodge a tax return?</a></li>
 						<li><a href="#">Lodging your first tax return</a></li>
@@ -91,14 +100,27 @@
 								<li><a href="#">Tax: what you need to know</a></li>
 							</ul>
 						</li>
-					</ul>
-				</nav>
-			</div>
+						</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="split au-body au-body--alt">
 
 			<h2>Test: <code>alt</code></h2>
 
-			<div class="au-body au-body--alt">
-				<nav class="au-side-nav">
+			<nav class="au-side-nav au-side-nav--alt">
+
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-alt"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-alt" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
 					<h2 class="au-sidenav__title">
 						<a href="#">Lodging your tax return</a>
 					</h2>
@@ -138,14 +160,26 @@
 								<li><a href="#">Tax: what you need to know</a></li>
 							</ul>
 						</li>
-					</ul>
-				</nav>
-			</div>
+						</ul>
+				</div>
+			</nav>
 		</div>
-		<div class="split">
+	</div>
+	<div class="split-wrapper">
+		<div class="split au-body au-body--dark">
 			<h2>Test: <code>dark</code></h2>
-			<div class="au-body au-body--dark">
-				<nav class="au-side-nav">
+			<nav class="au-side-nav au-side-nav--dark">
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-dark"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-dark" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
 					<h2 class="au-sidenav__title">
 						<a href="#">Lodging your tax return</a>
 					</h2>
@@ -185,14 +219,26 @@
 								<li><a href="#">Tax: what you need to know</a></li>
 							</ul>
 						</li>
-					</ul>
-				</nav>
-			</div>
+						</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="split au-body au-body--alt au-body--dark">
 
 			<h2>Test: <code>dark</code> <code>alt</code></h2>
 
-			<div class="au-body au-body--alt au-body--dark">
-				<nav class="au-side-nav">
+			<nav class="au-side-nav au-side-nav--alt au-side-nav--dark">
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-dark-alt"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-dark-alt" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
 					<h2 class="au-sidenav__title">
 						<a href="#">Lodging your tax return</a>
 					</h2>
@@ -232,9 +278,9 @@
 								<li><a href="#">Tax: what you need to know</a></li>
 							</ul>
 						</li>
-					</ul>
-				</nav>
-			</div>
+						</ul>
+				</div>
+			</nav>
 		</div>
 	</div>
 

@@ -10,30 +10,24 @@
 @import '_print.scss';
 
 
+.au-body .au-side-nav,
 .au-side-nav {
 	@include AU-clearfix();
 	@include AU-fontgrid( sm );
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 
-	ul {
-		margin: 0;
-	}
-
+	ul,
 	li {
 		margin: 0;
 	}
 
 	a {
-		color: $AU-color-foreground-action;
-		text-decoration: none;
-
-		&:hover{
-			text-decoration: underline;
-			text-decoration-skip: ink;
-		}
-
 		@include AU-focus();
+
+		&:focus {
+			outline-offset: -3px; // Accordion body adds overflow hidden, this counters it
+		}
 	}
 
 	// Apply a border bottom to the first menu
@@ -46,77 +40,115 @@
 		padding: 0;
 
 		a {
-			border-top: 1px solid $AU-color-foreground-border;
 			@include AU-fontgrid( xs );
 			@include AU-space( padding, 1unit );
+			border-top: 1px solid $AU-color-foreground-border;
 			display: block;
 
 			&:hover {
 				background: $AU-color-background-shade;
 			}
 		}
-	}
 
-	.au-body.au-body--alt & {
-		.au-link-list a:hover {
-			background: $AU-color-background-alt-shade;
+		// Active styles, li is added to keep background transparent on different colour schemes
+		li.active {
+			@include AU-space( border-left, $AU-color-foreground-action solid 0.25unit );
+
+			a {
+				@include AU-space( margin-left, -0.25unit );
+				font-weight: bold;
+				text-decoration: none;
+				color: $AU-color-foreground-text;
+
+				&:hover {
+					background: transparent;
+				}
+			}
 		}
 	}
 
-	.au-body--dark & {
-		.au-link-list a:hover {
-			background: $AU-colordark-background-shade;
-		}
-	}
-
-	.au-body--alt.au-body--dark & {
-		.au-link-list a:hover {
-			background: $AU-colordark-background-alt-shade;
-		}
+	.au-accordion__title {
+		background: transparent;
 	}
 }
 
 
-// Alt color scheme
+// Alternate colour styles
+.au-body.au-body--alt .au-side-nav,
 .au-side-nav.au-side-nav--alt {
-	background-color: $AU-color-background-alt;
-
 	.au-link-list a:hover {
 		background: $AU-color-background-alt-shade;
 	}
 }
 
-// Dark colour scheme
+// Dark colour styles
+.au-body.au-body--dark .au-side-nav,
 .au-side-nav.au-side-nav--dark {
-	background-color: $AU-colordark-background;
-
 	a {
-		color: $AU-colordark-foreground-action;
-
 		@include AU-focus( 'dark' );
+
+		&:focus {
+			outline-offset: -3px; // Accordion body adds overflow hidden, this counters it
+		}
 	}
 
-	.au-link-list a {
-		border-color: $AU-colordark-foreground-border;
+	.au-link-list {
+		a {
+			border-color: $AU-colordark-foreground-border;
 
-		&:hover {
-			background: $AU-colordark-background-shade;
+			&:hover {
+				background: $AU-colordark-background-shade;
+			}
+		}
+
+		.active {
+			border-color: $AU-colordark-foreground-action;
+
+			a {
+				color: $AU-colordark-foreground-text;
+			}
 		}
 	}
 }
 
-// Alternate dark colour scheme
-.au-side-nav.au-side-nav--alt.au-side-nav--dark {
-	background-color: $AU-colordark-background-alt;
-
+// Dark alternate colour styles
+.au-body.au-body-dark.au-body--alt .au-side-nav,
+.au-side-nav.au-side-nav--dark.au-side-nav--alt {
 	.au-link-list a:hover {
 		background: $AU-colordark-background-alt-shade;
 	}
 }
 
 
+
 // Title above navigation
 .au-sidenav__title {
 	@include AU-space( padding-left, 1unit );
 	display: block;
+	color: $AU-color-foreground-text;
+	text-decoration: none;
+}
+
+// Always hide unless there is javascript
+.au-side-nav__toggle {
+	display: none;
+}
+
+// Show the toggle for mobile dimensions
+.js .au-side-nav__toggle {
+	display: block;
+
+	@include AU-media( sm ){
+		display: none;
+	}
+}
+
+// Show the content for desktop
+.js .au-side-nav__content.au-accordion--closed {
+	display: none;
+
+	@include AU-media( sm ){
+		display: block;
+		height: auto;
+	}
 }
