@@ -14,6 +14,7 @@
 .au-side-nav {
 	@include AU-clearfix();
 	@include AU-fontgrid( sm );
+	overflow: hidden;
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 
@@ -68,10 +69,18 @@
 	}
 
 	.au-accordion__title {
-		background: transparent;
+		background: $AU-color-foreground-action;
+		color: $AU-color-background;
+		border-radius: $AU-border-radius;
+
+		&:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'	<path fill="#{ $AU-color-background }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-color-background }" d="M64 0l16 16-64 64L0 64"/>' +
+				'</svg>');
+		}
 	}
 }
-
 
 // Alternate colour styles
 .au-body.au-body--alt .au-side-nav,
@@ -109,6 +118,18 @@
 			}
 		}
 	}
+
+	.au-accordion__title {
+		background: $AU-colordark-foreground-action;
+		color: $AU-colordark-background;
+
+		&:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'	<path fill="#{ $AU-colordark-background }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-colordark-background }" d="M64 0l16 16-64 64L0 64"/>' +
+				'</svg>');
+		}
+	}
 }
 
 // Dark alternate colour styles
@@ -134,21 +155,53 @@
 	display: none;
 }
 
-// Show the toggle for mobile dimensions
-.js .au-side-nav__toggle {
-	display: block;
 
-	@include AU-media( sm ){
+// Show the content for desktop
+.js {
+	.au-side-nav__content {
+		@include AU-space( padding, 0 1unit 1unit );
+		border-bottom-left-radius: $AU-border-radius;
+		border-bottom-right-radius: $AU-border-radius;
+		border-left: 2px solid $AU-color-foreground-border;
+		border-bottom: 2px solid $AU-color-foreground-border;
+		border-right: 2px solid $AU-color-foreground-border;
+
+		@include AU-media( sm ){
+			border: 0;
+			border-radius: 0;
+			padding: 0;
+		}
+	}
+
+	.au-body.au-body--dark .au-side-nav .au-side-nav__content,
+	.au-side-nav.au-side-nav--dark .au-side-nav__content {
+		border-color: $AU-colordark-foreground-border;
+	}
+
+	.au-side-nav__content.au-accordion--closed {
 		display: none;
+
+		@include AU-media( sm ){
+			display: block;
+			height: auto;
+		}
+	}
+
+	// Show the toggle for mobile dimensions
+	.au-side-nav__toggle {
+		display: block;
+
+		&.au-accordion--open {
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		@include AU-media( sm ){
+			display: none;
+		}
 	}
 }
 
-// Show the content for desktop
-.js .au-side-nav__content.au-accordion--closed {
+.no-js .au-side-nav__toggle {
 	display: none;
-
-	@include AU-media( sm ){
-		display: block;
-		height: auto;
-	}
 }
