@@ -10,3 +10,13 @@
 
 @import '_globals.scss';
 @import '_print.scss';
+
+
+.au-main-nav {
+	background: red;
+}
+
+.no-js .au-main-nav__toggle {
+	display: none;
+}
+
