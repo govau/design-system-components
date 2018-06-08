@@ -1,8 +1,8 @@
-import {AuAccordionHeaderDirective} from './au-accordion-header.directive';
-import {fakeAsync, TestBed, tick} from "@angular/core/testing";
-import {TestComponent} from "../core/test.component";
-import {By} from "@angular/platform-browser";
-import {AccordionModule} from '../../../public_api';
+import { AuAccordionHeaderDirective } from './au-accordion-header.directive';
+import { fakeAsync, TestBed, tick } from "@angular/core/testing";
+import { TestComponent } from "../core/test.component";
+import { By } from "@angular/platform-browser";
+import { AccordionModule } from '../../../public_api';
 
 describe('AuAccordionHeaderDirective', () => {
   it("should attach the default CSS class", fakeAsync(() => {
@@ -149,7 +149,7 @@ describe('AuAccordionHeaderDirective', () => {
 
     spyOn(headerDirective._clickEventEmitter, "emit");
     const anchor = fixture.debugElement.query(By.css("a")).nativeElement;
-    anchor.dispatchEvent(new KeyboardEvent("keydown", {key: 'Enter'}));
+    anchor.dispatchEvent(new KeyboardEvent("keydown", { key: 'Enter' }));
 
     fixture.detectChanges();
     tick();
@@ -157,7 +157,7 @@ describe('AuAccordionHeaderDirective', () => {
     expect(headerDirective._clickEventEmitter.emit).toHaveBeenCalledTimes(1);
     expect(fixture.nativeElement.querySelector("a").attributes.getNamedItem("aria-expanded").value).toBe("true");
 
-    anchor.dispatchEvent(new KeyboardEvent("keydown", {key: 'Enter'}));
+    anchor.dispatchEvent(new KeyboardEvent("keydown", { key: 'Enter' }));
 
     fixture.detectChanges();
     tick();

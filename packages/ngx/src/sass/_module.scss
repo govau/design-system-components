@@ -8,5 +8,11 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-@import '_globals.scss';
-@import '_print.scss';
+//@import '_globals.scss';
+//@import '_print.scss';
+
+@import "~sass-versioning/dist/_index.scss";
+@import "~@gov.au/core/lib/sass/_module.scss";
+@import "~@gov.au/accordion/lib/sass/_module.scss";
+@import "~@gov.au/body/lib/sass/_module.scss";
+@import "~@gov.au/link-list/lib/sass/_module.scss";

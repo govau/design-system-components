@@ -3,10 +3,105 @@
 <head>
   <meta charset="utf-8">
   <title>CoreNg</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 6.4em 3.2em 3.2em 3.2em;
+      overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    }
+
+    body::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        #222,
+        #222 10px,
+        #333 10px,
+        #333 20px
+      );
+      padding: 0.8em 3.2em 0.8em 1.6em;
+      content: "🏠 Index of test files";
+      font-family: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace;
+      color: white;
+    }
+
+    .module-list > li {
+      margin-bottom: 2.5rem;
+    }
+
+    .module-list {
+      padding: 0 0 0 1.5em;
+      margin: 0;
+      column-count: 1;
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+      -webkit-column-gap: 2em;
+      -moz-column-gap: 2em;
+      column-gap: 2em;
+    }
+
+    .module-list__headline {
+      display: inline-block;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 0.25em;
+    }
+
+    @media (min-width: 576px) {
+      .module-list {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .module-list {
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .module-list {
+        column-count: 3;
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .module-list {
+        column-count: 4;
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      height: 20px;
+    }
+
+    .link {
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  </style>
   <base href="/">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/atom-one-dark.min.css">
-  <link rel="stylesheet" href="assets/au_govkit-core_body.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>

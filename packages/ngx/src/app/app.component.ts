@@ -4,7 +4,7 @@ import { UiKitCoreService } from "./modules/core/ui-kit-core.service";
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.css"]
+  styleUrls: []
 })
 export class AppComponent {
   title = "app";
@@ -13,9 +13,13 @@ export class AppComponent {
 
   dropDownValue = "light";
 
+  constructor(private uiKitCoreService: UiKitCoreService){
+  }
+
 
   onChange(value) {
     this.dropDownValue = value;
+    this.uiKitCoreService.setColorPalettes(value);
   }
 
 }

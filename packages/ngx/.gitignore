@@ -42,3 +42,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/package-lock.json
+src/app/demo/core/core.component.html
+src/app/demo/core/core.component.spec.ts
+src/app/demo/core/core.component.ts

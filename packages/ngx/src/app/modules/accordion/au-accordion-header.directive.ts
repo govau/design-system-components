@@ -1,5 +1,5 @@
-import {Directive, EventEmitter, HostBinding, HostListener, Input, Output} from '@angular/core';
-import {coerceBooleanProperty} from "@angular/cdk/coercion";
+import { Directive, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
+import { coerceBooleanProperty } from "@angular/cdk/coercion";
 
 @Directive({
   selector: '[au-accordion-header]'
