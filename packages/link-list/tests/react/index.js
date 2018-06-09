@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUlinkList from './link-list.js';
 
@@ -84,6 +85,25 @@ ReactDOM.render(
 					onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
 				},
 			]} />
+
+			<hr />
+			<h2>Link list with Link router</h2>
+			<BrowserRouter>
+				<Fragment>
+					<AUlinkList linkComponent={ Link } items={[
+						{
+							link: 'one',
+							text: 'Change to route one',
+						},
+						{
+							link: 'two',
+							text: 'Change to route two',
+						},
+					]} />
+					<Route path="/tests/react/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/tests/react/two" render={ () => ( <p>Route two</p> )} />
+				</Fragment>
+			</BrowserRouter>
 		</div>
 		<div className="split au-body au-body--dark">
 			<h2>Link list</h2>
@@ -163,8 +183,27 @@ ReactDOM.render(
 					onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
 				},
 			]} />
+
+			<hr />
+			<h2>Link list with Link router</h2>
+			<BrowserRouter>
+				<Fragment>
+					<AUlinkList linkComponent={ Link } items={[
+						{
+							link: 'one',
+							text: 'Change to route one',
+						},
+						{
+							link: 'two',
+							text: 'Change to route two',
+						},
+					]} />
+					<Route path="/tests/react/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/tests/react/two" render={ () => ( <p>Route two</p> )} />
+				</Fragment>
+			</BrowserRouter>
 		</div>
 	</div>,
 
-	document.getElementById('root'),
+	document.getElementById( 'root' ),
 );

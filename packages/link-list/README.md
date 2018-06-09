@@ -71,6 +71,11 @@ import AUlinkList from './link-list.js';
     text: 'Link 3',
     onClick: () => console.log('You clicked me!'),
   },
+  {
+    linkComponent: 'a',
+    link: 'link/four/',
+    text: 'Link 4',
+  },
 ]} />
 ```
 
@@ -79,6 +84,7 @@ All props:
 ```jsx
 <AUlinkList
   inline={ false }            {/* The inline option to make the list inline, optional */}
+  linkComponent={ 'a' }       {/* The component used for the link */}
   items={[                    {/* All links in a neat array */}
     {
       link: 'link/to/',       {/* The link for this item, optional */}
@@ -130,6 +136,7 @@ The visual test: https://uikit.service.gov.au/packages/link-list/tests/site/
 
 ## Release History
 
+* v2.1.0 - Support react router
 * v2.0.3 - Add support for HTML in link, Update dependencies
 * v2.0.2 - Change homepage links
 * v2.0.1 - Fix dependencies

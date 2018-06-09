@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.0 - Support react router ](#v210)
 * [v2.0.3 - Add support for HTML in link, Update dependencies ](#v203)
 * [v2.0.2 - Change homepage link](#v202)
 * [v2.0.1 - Fix dependencies](#v201)
@@ -29,6 +30,11 @@
 
 
 ## Release History
+
+### v2.1.0
+
+- Support react router
+
 
 ### v2.0.3
 
