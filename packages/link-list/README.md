@@ -84,7 +84,7 @@ All props:
 ```jsx
 <AUlinkList
   inline={ false }            {/* The inline option to make the list inline, optional */}
-  linkComponent={ 'a' }       {/* The component used for the link */}
+  linkComponent="a"           {/* The component used for the link, optional */}
   items={[                    {/* All links in a neat array */}
     {
       link: 'link/to/',       {/* The link for this item, optional */}
