@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.1.0 - React router support](#v310)
 * [v3.0.0 - Remove support for Description List <DL> for accessibility, Update dependencies](#v300)
 * [v2.0.2 - Change homepage links](#v202)
 * [v2.0.1 - Fix dependencies](#v201)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v3.1.0
+
+- React router support
+
 
 ### v3.0.0
 
