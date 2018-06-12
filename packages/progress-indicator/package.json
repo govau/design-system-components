@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/progress-indicator",
-	"version": "3.0.4",
+	"version": "3.1.0",
 	"description": "Indicator of progress through a multitude of pages mostly used for forms.",
 	"keywords": [
 		"uikit",
@@ -28,7 +28,7 @@
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:js && npm run build:react",
 
-		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
+		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 
 		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
 		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",

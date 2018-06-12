@@ -38,6 +38,7 @@
 ### v3.0.0
 
 - Add react router support
+- Change npm run watch browser-sync location
 
 
 ### v2.0.3

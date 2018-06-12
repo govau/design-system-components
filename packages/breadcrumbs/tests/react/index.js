@@ -97,8 +97,8 @@ ReactDOM.render(
 								text: 'Sign Out2',
 							},
 					]} />
-					<Route path="/tests/react/one" render={ () => ( <p>Route one</p> )} />
-					<Route path="/tests/react/two" render={ () => ( <p>Route two</p> )} />
+					<Route path="/tests/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/tests/two" render={ () => ( <p>Route two</p> )} />
 				</Fragment>
 			</BrowserRouter>
 

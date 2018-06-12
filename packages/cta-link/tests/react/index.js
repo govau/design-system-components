@@ -76,8 +76,8 @@ ReactDOM.render(
 					<AUctaLink linkComponent={ Link } link="one" dark text="Page one" />&nbsp;
 					<AUctaLink linkComponent={ Link } link="two" dark text="Page two" />
 					<br />
-					<Route path="/tests/react/one" render={ () => ( <p>Route one</p> )} />
-					<Route path="/tests/react/two" render={ () => ( <p>Route two</p> )} />
+					<Route path="/tests/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/tests/two" render={ () => ( <p>Route two</p> )} />
 				</Fragment>
 			</BrowserRouter>
 

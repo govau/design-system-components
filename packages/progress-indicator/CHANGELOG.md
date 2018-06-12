@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.1.0 - React router support](#v310)
 * [v3.0.4 - Update dependencies](#v304)
 * [v3.0.3 - Change React "Todo" label to "To do"](#v303)
 * [v3.0.2 - Change homepage links ](#v302)
@@ -31,6 +32,12 @@
 
 
 ## Release History
+
+### v3.1.0
+
+- Add support for react router
+- Change npm run watch browser-sync location
+
 
 ### v3.0.4
 

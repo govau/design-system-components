@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/body/tests/site/
 
 ## Release History
 
+* v2.0.6 - Change npm run watch browser-sync location
 * v2.0.5 - Update dependencies
 * v2.0.4 - Fix typo in homepage link
 * v2.0.3 - Changing homepage link
