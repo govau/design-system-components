@@ -44,7 +44,7 @@ const options = {
  * @param  {object}   attributeOptions - Any other attribute options
  */
 const AUbutton = ({ linkComponent, link, children, as, dark, type, block, className = '', ...attributeOptions }) => {
-	if( link !== undefined ) {
+	if( link ) {
 		const LinkComponent = linkComponent;
 
 		// If we are using a normal link
@@ -86,7 +86,7 @@ AUbutton.propTypes = {
 	type: PropTypes.string,
 	block: PropTypes.bool,
 	className: PropTypes.string,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
 AUbutton.defaultProps = {

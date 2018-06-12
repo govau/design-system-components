@@ -53,7 +53,6 @@ AUbreadcrumbs.propTypes = {
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 
-
 AUbreadcrumbs.defaultProps = {
 	linkComponent: 'a',
 };
