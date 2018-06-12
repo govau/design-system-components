@@ -39,14 +39,21 @@ export const AUheaderBrand = ({
 	link,
 	children,
 	className = '',
+	linkComponent,
 	...attributeOptions
 }) => {
 	const HeadingTag = `h${ level }`;
+	const LinkComponent = linkComponent;
 
-	let BrandTag = 'div';
-	if( link !== undefined ) {
-		BrandTag = 'a';
-		attributeOptions.href = link;
+	if( link ) {
+		// If we are using a normal link
+		if( LinkComponent === 'a' ) {
+			attributeOptions.href = link;
+		}
+		// If we are using a link component
+		else if( typeof LinkComponent === 'function' ) {
+			attributeOptions.to = link;
+		}
 	}
 
 	let brand = brandImage
@@ -54,7 +61,7 @@ export const AUheaderBrand = ({
 		: null;
 
 	return (
-		<BrandTag className={ `au-header__brand ${ className }` } { ...attributeOptions }>
+		<LinkComponent className={ `au-header__brand ${ className }` } { ...attributeOptions }>
 			{ brand }
 			{
 				title || subline
@@ -75,7 +82,7 @@ export const AUheaderBrand = ({
 					: ''
 			}
 
-		</BrandTag>
+		</LinkComponent>
 	);
 }
 
@@ -88,11 +95,13 @@ AUheaderBrand.propTypes = {
 	brandImageAlt: PropTypes.string,
 	children: PropTypes.node,
 	className: PropTypes.string,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 }
 
 AUheaderBrand.defaultProps = {
 	level: '1',
 	brandImageAlt: 'Australian Government Crest',
+	linkComponent: 'a',
 };
 
 

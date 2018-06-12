@@ -189,6 +189,37 @@ ReactDOM.render(
 			</div>
 		</AUheader>
 
+		<hr />
+		<h2>headerBrand with router</h2>
+
+		<BrowserRouter>
+			<Fragment>
+				<AUheader alt className="au-grid">
+					<div className="container">
+						<div className="row">
+							<div className="col-md-6">
+								<AUheaderBrand
+									link="one"
+									title="One"
+									linkComponent={ Link }
+								/>
+							</div>
+							<div className="col-md-6">
+								<AUheaderBrand
+									link="two"
+									title="Two"
+									linkComponent={ Link }
+								/>
+							</div>
+						</div>
+					</div>
+				</AUheader>
+				<br />
+				<Route path="/tests/react/one" render={ () => ( <p>Route one</p> )} />
+				<Route path="/tests/react/two" render={ () => ( <p>Route two</p> )} />
+			</Fragment>
+		</BrowserRouter>
+
 	</div>,
 
 	document.getElementById('root'),
