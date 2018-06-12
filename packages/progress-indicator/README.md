@@ -81,9 +81,11 @@ All props:
 ```jsx
 <AUprogressIndicator
   dark={ false }             {/* A dark variation of the component */}
+  linkComponent="a"          {/* The component used for the link, optional */}
   items={[                   {/* All steps in a neat array */}
     {
       link: 'forms/intro/',  {/* The link to this step, optional */}
+      linkComponent: 'a',    {/* The component used for the link, optional */}
       text: 'Introduction',  {/* The name of this step */}
       status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
       li: {},                {/* An object that will be spread onto the <li> tag, optional */}

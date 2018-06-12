@@ -78,9 +78,11 @@ All props:
 ```jsx
 <AUtags
   dark={ false }           {/* A dark variation of the component */}
+  linkComponent="a"       {/* The component used for the link, optional */}
   tags={[
     {
       link: 'url/to/tag',  {/* The href link of this tag, optional */}
+      linkComponent: 'a',  {/* The component used for the link, optional */}
       text: 'tagname',     {/* The text of the tag */}
       li: {},              {/* An object that will be spread onto the <li> tag, optional */}
     },

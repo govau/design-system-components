@@ -64,6 +64,7 @@ All props:
   text="Sign up"    {/* The text of the CTA link */}
   dark={ false }    {/* A dark variation of the component */}
   link="/signup"    {/* The location the CTA link takes the user */}
+  linkComponent="a" {/* The component used for the link, optional */}
   attributeOptions  {/* Any other attribute options */}
 />
 ```

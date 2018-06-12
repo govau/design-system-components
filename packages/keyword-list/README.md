@@ -82,9 +82,11 @@ All props:
 <AUkeywordList
   dark={ false }                                {/* A dark variation of the component */}
   repeatedName="Department of"                  {/* The text That is repeated in each item */}
+  linkComponent="a"                             {/* The component used for the link, optional */}
   items={[                                      {/* All items in a neat array */}
     {
       link: 'http://www.agriculture.gov.au/',   {/* The URL of this item, optional */}
+      linkComponent: 'a',                       {/* The component used for the link, optional */}
       name: 'Agriculture and Water Resources',  {/* The name of the item */}
       li: {},                                   {/* An object that will be spread onto the <li> tag, optional */}
     },

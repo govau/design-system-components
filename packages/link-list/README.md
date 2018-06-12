@@ -88,6 +88,7 @@ All props:
   items={[                    {/* All links in a neat array */}
     {
       link: 'link/to/',       {/* The link for this item, optional */}
+      linkComponent: 'a',     {/* The component used for the link, optional */}
       text: 'Link title',     {/* The text for this item */}
       li: {},                 {/* An object that will be spread onto the <li> tag, optional */}
       onClick={ () => {} }    {/* A function to execute when this link is clicked, optional */}

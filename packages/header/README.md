@@ -78,7 +78,8 @@ All props:
   subline="Subline"       {/* The subline content, optional */}
   brandImage="Page title" {/* The headline content, optional */}
   brandImageAlt="1"       {/* Brand image alt tag */}
-  link="Subline"          {/* An optional link for the header brand, optional */}
+  link="/"                {/* An optional link for the header brand, optional */}
+  linkComponent="a"       {/* The component used for the link, optional */}
   children                {/* Anything inside */}
   attributeOptions        {/* Any other attribute options */}
 ></AUheaderBrand>
