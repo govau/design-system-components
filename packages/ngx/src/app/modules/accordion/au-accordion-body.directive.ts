@@ -42,7 +42,7 @@ export class AuAccordionBodyDirective {
 
   get expanded() {
     return this._expanded;
-  };
+  }
 
   /* change the expanded state */
   toggle(): void {

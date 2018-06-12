@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "./sass/_module.scss"
+        "./sass/_module.scss",
+        "../node_modules/@fortawesome/fontawesome/styles.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

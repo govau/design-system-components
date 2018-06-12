@@ -13,7 +13,7 @@ export class AppComponent {
 
   dropDownValue = "light";
 
-  constructor(private uiKitCoreService: UiKitCoreService){
+  constructor(private uiKitCoreService: UiKitCoreService) {
   }
 
 

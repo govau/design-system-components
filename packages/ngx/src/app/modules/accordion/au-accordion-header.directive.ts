@@ -34,7 +34,7 @@ export class AuAccordionHeaderDirective {
 
   get expanded() {
     return this._expanded;
-  };
+  }
 
   /** ARIA expanded property */
   private _selected = false;
@@ -54,7 +54,7 @@ export class AuAccordionHeaderDirective {
 
   private _toggleSelected() {
     this._selected = !this.selected;
-  };
+  }
 
 
   @HostListener("click")
