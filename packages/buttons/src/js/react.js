@@ -33,7 +33,7 @@ const options = {
  * DEFAULT
  * The primary button
  *
- * @param  {string}   href             - The href attribute to make this a link
+ * @param  {string}   link             - If this is a link the location it goes
  * @param  {string}   children         - Anything inside
  * @param  {string}   as               - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
  * @param  {boolean}  dark             - Add the dark variation class, optional
@@ -42,16 +42,26 @@ const options = {
  * @param  {string}   className        - An additional class, optional
  * @param  {object}   attributeOptions - Any other attribute options
  */
-const AUbutton = ({ href, children, as, dark, type, block, className = '', ...attributeOptions }) => {
-	if( href !== undefined ) {
+const AUbutton = ({ linkComponent, link, children, as, dark, type, block, className = '', ...attributeOptions }) => {
+	if( link !== undefined ) {
+		const LinkComponent = linkComponent;
+
+		// If we are using a normal link
+		if( LinkComponent === 'a' ) {
+			attributeOptions.href = link;
+		}
+		// If we are using a link component
+		else if( typeof LinkComponent === 'function' ) {
+			attributeOptions.to = link;
+		}
+
 		return (
-			<a
-				href={ href }
+			<LinkComponent
 				className={ `au-btn ${ className } ${ options[ as ] }${ block ? ' au-btn--block' : '' }${ dark ? ' au-btn--dark' : '' }` }
 				{ ...attributeOptions }
 			>
 				{ children }
-			</a>
+			</LinkComponent>
 		);
 	}
 	else {
@@ -68,18 +78,20 @@ const AUbutton = ({ href, children, as, dark, type, block, className = '', ...at
 };
 
 AUbutton.propTypes = {
-	href: PropTypes.string,
+	link: PropTypes.string,
 	children: PropTypes.node.isRequired,
 	as: PropTypes.oneOf([ 'primary', 'secondary', 'tertiary' ]).isRequired,
 	dark: PropTypes.bool,
 	type: PropTypes.string,
 	block: PropTypes.bool,
 	className: PropTypes.string,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 
 AUbutton.defaultProps = {
 	type: 'button',
 	as: 'primary',
+	linkComponent: 'a',
 };
 
 export default AUbutton;

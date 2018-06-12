@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUbutton from './buttons.js';
 
@@ -61,9 +62,9 @@ ReactDOM.render(
 
 				<hr />
 				<h2>buttons as link</h2>
-				<AUbutton href="#">Primary</AUbutton>&nbsp;
-				<AUbutton href="#" as='secondary'>Secondary</AUbutton>&nbsp;
-				<AUbutton href="#" as='tertiary'>Tertiary</AUbutton>
+				<AUbutton link="#">Primary</AUbutton>&nbsp;
+				<AUbutton link="#" as='secondary'>Secondary</AUbutton>&nbsp;
+				<AUbutton link="#" as='tertiary'>Tertiary</AUbutton>
 
 			</div>
 			<div className="split split--dark">
@@ -120,9 +121,21 @@ ReactDOM.render(
 
 				<hr />
 				<h2>buttons as link</h2>
-				<AUbutton href="#" dark>Primary</AUbutton>&nbsp;
-				<AUbutton href="#" dark as='secondary'>Secondary</AUbutton>&nbsp;
-				<AUbutton href="#" dark as='tertiary'>Tertiary</AUbutton>
+				<AUbutton link="#" dark>Primary</AUbutton>&nbsp;
+				<AUbutton link="#" dark as='secondary'>Secondary</AUbutton>&nbsp;
+				<AUbutton link="#" dark as='tertiary'>Tertiary</AUbutton>
+
+				<hr />
+				<h2>Button with Link router</h2>
+				<BrowserRouter>
+					<Fragment>
+						<AUbutton dark linkComponent={ Link } link="one" >One</AUbutton>&nbsp;
+						<AUbutton dark linkComponent={ Link } link="two" >Two</AUbutton>
+						<br />
+						<Route path="/tests/react/one" render={ () => ( <p>Route one</p> )} />
+						<Route path="/tests/react/two" render={ () => ( <p>Route two</p> )} />
+					</Fragment>
+				</BrowserRouter>
 			</div>
 		</div>
 	</form>,
