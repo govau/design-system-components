@@ -65,6 +65,7 @@ AUkeywordListItem.propTypes = {
 	link: PropTypes.string,
 	name: PropTypes.string.isRequired,
 	li: PropTypes.object,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
 
