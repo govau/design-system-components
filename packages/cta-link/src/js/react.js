@@ -42,7 +42,7 @@ const AUctaLink = ({ linkComponent, dark, link, text, className = '', ...attribu
 		}
 
 		return (
-			<a className={ `au-cta-link ${ className }${ dark ? ` au-cta-link--dark` : '' }` } { ...attributeOptions }>{ text }</a>
+			<LinkComponent className={ `au-cta-link ${ className }${ dark ? ` au-cta-link--dark` : '' }` } { ...attributeOptions }>{ text }</LinkComponent>
 		);
 	}
 	else {
