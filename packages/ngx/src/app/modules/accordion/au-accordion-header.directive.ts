@@ -36,6 +36,22 @@ export class AuAccordionHeaderDirective {
     return this._expanded;
   }
 
+  /*Default href to get focus from tabbing*/
+  @HostBinding("attr.href")
+  _defaultHref = "#";
+
+  /** class to use when the accordion is in open state*/
+  @HostBinding("class.au-accordion--open")
+  get _isAccordionOpen(): boolean {
+    return this.expanded === true;
+  }
+
+  /** class to use when the accordion is in closed state*/
+  @HostBinding("class.au-accordion--closed")
+  get _isAccordionClosed(): boolean {
+    return this.expanded === false;
+  }
+
   /** ARIA expanded property */
   private _selected = false;
   @HostBinding("attr.aria-selected")
@@ -58,17 +74,21 @@ export class AuAccordionHeaderDirective {
 
 
   @HostListener("click")
-  onClick() {
-    this._toggleExpanded();
-    this._toggleSelected();
-    this._clickEventEmitter.emit();
+  onClick(): boolean {
+    return this._simulateClick();
   }
 
   @HostListener("keydown", ["$event"])
   onKeyPress(event: KeyboardEvent) {
     if (event.key === "Enter") {
-      this.onClick();
+      return this._simulateClick();
     }
   }
 
+  private _simulateClick(): boolean {
+    this._toggleExpanded();
+    this._toggleSelected();
+    this._clickEventEmitter.emit();
+    return false;
+  }
 }

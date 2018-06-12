@@ -121,4 +121,8 @@ describe("AuAccordionDirective", () => {
 
   }));
 
+  it("should work with open input binding", () => {
+
+  });
+
 });

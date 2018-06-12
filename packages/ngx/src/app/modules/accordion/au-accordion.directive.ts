@@ -40,6 +40,17 @@ export class AuAccordionDirective extends CdkAccordionItem implements AfterConte
     }
   }
 
+  /* The default accordion behavior to stay closed*/
+  private _accordion_open = false;
+
+  @Input("open")
+  set _open_accordion(value: boolean) {
+    if (value) {
+      this._accordion_open = value;
+    }
+  }
+
+
   /** Whether we should use dark theme or not */
   @HostBinding("class.au-accordion--dark")
   get _usingDarkPalette(): boolean {
@@ -64,6 +75,10 @@ export class AuAccordionDirective extends CdkAccordionItem implements AfterConte
     /** Listen to the click event from the hearder directive*/
     this._headerClickEventSubscription = this._headerDirective._clickEventEmitter
       .subscribe(() => this._bodyDirective.toggle());
+
+    if (this._accordion_open) {
+      this._headerDirective.onClick();
+    }
 
   }
 

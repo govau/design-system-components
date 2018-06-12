@@ -17,8 +17,7 @@ describe('AuAccordionHeaderDirective', () => {
     fixture.detectChanges();
     tick();
 
-    expect(fixture.nativeElement.querySelector("a").classList.length).toBe(1);
-    expect(fixture.nativeElement.querySelector("a").classList[0]).toBe("au-accordion__title");
+    expect(fixture.nativeElement.querySelector("a").classList[0]).toContain("au-accordion__title");
 
   }));
 
@@ -165,5 +164,41 @@ describe('AuAccordionHeaderDirective', () => {
     expect(headerDirective._clickEventEmitter.emit).toHaveBeenCalledTimes(2);
     expect(fixture.nativeElement.querySelector("a").attributes.getNamedItem("aria-expanded").value).toBe("false");
   }));
+
+  it("should attach the right open and close class", fakeAsync(() => {
+    TestBed.configureTestingModule({
+      imports: [AccordionModule],
+      declarations: [TestComponent],
+    }).overrideTemplate(TestComponent, `<a au-accordion-header></a>`)
+      .compileComponents();
+
+    const fixture = TestBed.createComponent(TestComponent);
+    const headerDirectiveEl = fixture.debugElement.query(By.directive(AuAccordionHeaderDirective));
+    const headerDirective = headerDirectiveEl.injector.get(AuAccordionHeaderDirective);
+    fixture.detectChanges();
+    tick();
+
+    expect(fixture.nativeElement.querySelector("a").classList).toContain("au-accordion--closed");
+
+    spyOn(headerDirective._clickEventEmitter, "emit");
+    const anchor = fixture.debugElement.query(By.css("a")).nativeElement;
+    anchor.dispatchEvent(new KeyboardEvent("keydown", { key: 'Enter' }));
+
+    fixture.detectChanges();
+    tick();
+
+    expect(fixture.nativeElement.querySelector("a").classList).toContain("au-accordion--open");
+    expect(fixture.nativeElement.querySelector("a").classList).not.toContain("au-accordion--closed");
+
+    anchor.dispatchEvent(new KeyboardEvent("keydown", { key: 'Enter' }));
+
+    fixture.detectChanges();
+    tick();
+
+    expect(fixture.nativeElement.querySelector("a").classList).not.toContain("au-accordion--open");
+    expect(fixture.nativeElement.querySelector("a").classList).toContain("au-accordion--closed");
+
+  }));
+
 
 });
