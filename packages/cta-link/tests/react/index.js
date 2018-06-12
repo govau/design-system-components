@@ -73,7 +73,7 @@ ReactDOM.render(
 			<h2>cta-link as with router</h2>
 			<BrowserRouter>
 				<Fragment>
-					<AUctaLink linkComponent={ Link } link="one" dark text="Page one" />
+					<AUctaLink linkComponent={ Link } link="one" dark text="Page one" />&nbsp;
 					<AUctaLink linkComponent={ Link } link="two" dark text="Page two" />
 					<br />
 					<Route path="/tests/react/one" render={ () => ( <p>Route one</p> )} />

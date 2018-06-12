@@ -84,6 +84,18 @@ ReactDOM.render(
 			<h2>direction-link as button with onclick</h2>
 
 			<AUdirectionLink dark text="Log it" direction="up" onClick={ () => console.log('This function will be called on click') } />
+
+			<hr />
+			<h2>direction-link as with router</h2>
+			<BrowserRouter>
+				<Fragment>
+					<AUdirectionLink linkComponent={ Link } link="one" dark text="Page one" />&nbsp;
+					<AUdirectionLink linkComponent={ Link } link="two" dark text="Page two" />
+					<br />
+					<Route path="/tests/react/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/tests/react/two" render={ () => ( <p>Route two</p> )} />
+				</Fragment>
+			</BrowserRouter>
 		</div>
 	</div>,
 
