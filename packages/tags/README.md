@@ -78,9 +78,11 @@ All props:
 ```jsx
 <AUtags
   dark={ false }           {/* A dark variation of the component */}
+  linkComponent="a"       {/* The component used for the link, optional */}
   tags={[
     {
       link: 'url/to/tag',  {/* The href link of this tag, optional */}
+      linkComponent: 'a',  {/* The component used for the link, optional */}
       text: 'tagname',     {/* The text of the tag */}
       li: {},              {/* An object that will be spread onto the <li> tag, optional */}
     },
@@ -125,6 +127,7 @@ The visual test: https://uikit.service.gov.au/packages/tags/tests/site/
 
 ## Release History
 
+* v3.1.0 - React router support
 * v3.0.0 - Remove support for Description List <DL> for accessibility, Update dependencies
 * v2.0.2 - Change homepage links
 * v2.0.1 - Fix dependencies

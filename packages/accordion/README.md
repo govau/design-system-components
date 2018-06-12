@@ -252,6 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v3.0.4 - Change npm run watch browser-sync location
 * v3.0.3 - au-body--dark now changes accordion title colour
 * v3.0.2 - Update dependencies
 * v3.0.1 - Updating documentation

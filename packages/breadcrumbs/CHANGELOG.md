@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.0 - Support react router](#v210)
 * [v2.0.3 - Update dependencies](#v203)
 * [v2.0.2 - Changing homepage link](#v202)
 * [v2.0.1 - Fix dependencies](#v201)
@@ -30,6 +31,12 @@
 
 
 ## Release History
+
+### v2.1.0
+
+- Support react router
+- Change npm run watch browser-sync location
+
 
 ### v2.0.3
 

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUheader, { AUheaderBrand } from './header.js';
 
@@ -187,6 +188,37 @@ ReactDOM.render(
 				</div>
 			</div>
 		</AUheader>
+
+		<hr />
+		<h2>headerBrand with router</h2>
+
+		<BrowserRouter>
+			<Fragment>
+				<AUheader alt className="au-grid">
+					<div className="container">
+						<div className="row">
+							<div className="col-md-6">
+								<AUheaderBrand
+									link="one"
+									title="One"
+									linkComponent={ Link }
+								/>
+							</div>
+							<div className="col-md-6">
+								<AUheaderBrand
+									link="two"
+									title="Two"
+									linkComponent={ Link }
+								/>
+							</div>
+						</div>
+					</div>
+				</AUheader>
+				<br />
+				<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
+				<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+			</Fragment>
+		</BrowserRouter>
 
 	</div>,
 

@@ -124,6 +124,7 @@ The visual test: https://uikit.service.gov.au/packages/callout/tests/site/
 
 ## Release History
 
+* v2.0.4 - Change npm run watch browser-sync location
 * v2.0.3 - Update dependencies
 * v2.0.2 - Change homepage link
 * v2.0.1 - Fix dependencies

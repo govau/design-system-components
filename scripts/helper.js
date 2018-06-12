@@ -1060,7 +1060,7 @@ HELPER.test = (() => {
 						error += `The module ${ module } is missing "react" as devDependency.\n`;
 					}
 
-					if( hasReact && Object.keys( packagesPKG.devDependencies ).length !== 13 ) {
+					if( hasReact && Object.keys( packagesPKG.devDependencies ).length < 13 ) {
 						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
 					}
 

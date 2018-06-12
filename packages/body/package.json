@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/body",
-	"version": "2.0.5",
+	"version": "2.0.6",
 	"description": "Basic body styles for body HTML elements",
 	"keywords": [
 		"uikit",
@@ -30,7 +30,7 @@
 		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
 		"build": "npm run build:js",
 
-		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
+		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 
 		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
 		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",

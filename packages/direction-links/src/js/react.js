@@ -34,6 +34,7 @@ const directions = {
  * DEFAULT
  * The direction-links component
  *
+ * @param  {string}  linkComponent    - The component used for the link
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {string}  link             - The link target, optional
  * @param  {string}  text             - The text of the CTA link
@@ -41,10 +42,21 @@ const directions = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUdirectionLink = ({ dark, link, text, direction, className = '', ...attributeOptions }) => {
+const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className = '', ...attributeOptions }) => {
+	const LinkComponent = linkComponent;
+
 	if( link ) {
+		// If we are using a normal link
+		if( LinkComponent === 'a' ) {
+			attributeOptions.href = link;
+		}
+		// If we are using a link component
+		else if( typeof LinkComponent === 'function' ) {
+			attributeOptions.to = link;
+		}
+
 		return (
-			<a className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } href={ link } { ...attributeOptions }>{ text }</a>
+			<LinkComponent className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</LinkComponent>
 		);
 	}
 	else {
@@ -60,10 +72,12 @@ AUdirectionLink.propTypes = {
 	text: PropTypes.string.isRequired,
 	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,
 	className: PropTypes.string,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 
 AUdirectionLink.defaultProps = {
 	direction: 'right',
+	linkComponent: 'a',
 };
 
 export default AUdirectionLink;

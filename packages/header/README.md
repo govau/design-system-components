@@ -78,7 +78,8 @@ All props:
   subline="Subline"       {/* The subline content, optional */}
   brandImage="Page title" {/* The headline content, optional */}
   brandImageAlt="1"       {/* Brand image alt tag */}
-  link="Subline"          {/* An optional link for the header brand, optional */}
+  link="/"                {/* An optional link for the header brand, optional */}
+  linkComponent="a"       {/* The component used for the link, optional */}
   children                {/* Anything inside */}
   attributeOptions        {/* Any other attribute options */}
 ></AUheaderBrand>
@@ -121,6 +122,7 @@ The visual test: https://uikit.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v4.1.0 - React router support
 * v4.0.2 - Update dependencies
 * v4.0.1 - Added missing documentation
 * v4.0.0 - Added placeholder for Australian Government logo and optional grid layout

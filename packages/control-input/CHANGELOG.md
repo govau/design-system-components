@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.2 - Change npm run watch browser-sync location](#v212)
 * [v2.1.1 - Update dependencies](#v211)
 * [v2.1.0 - Adjust spacing, size and lineheight and fixed errors](#v210)
 * [v2.0.3 - Change homepage link](#v203)
@@ -32,6 +33,11 @@
 
 
 ## Release History
+
+### v2.1.2
+
+- Change npm run watch browser-sync location
+
 
 ### v2.1.1
 

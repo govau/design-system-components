@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.4 - Change npm run watch browser-sync location](#v104)
 * [v1.0.3 - Update dependencies](#v103)
 * [v1.0.2 - Fix typo in homepage link](#v102)
 * [v1.0.1 - Changing homepage link](#v101)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v1.0.4
+
+- Change npm run watch browser-sync location
+
 
 ### v1.0.3
 
