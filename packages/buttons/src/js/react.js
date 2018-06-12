@@ -33,6 +33,7 @@ const options = {
  * DEFAULT
  * The primary button
  *
+ * @param  {string}   linkComponent    - The component used for the link
  * @param  {string}   link             - If this is a link the location it goes
  * @param  {string}   children         - Anything inside
  * @param  {string}   as               - The kind of button, can be either 'primary', 'secondary', 'tertiary', default: 'primary'
