@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/responsive-media/tests/si
 
 ## Release History
 
+* v2.0.7 - Change npm run watch browser-sync location
 * v2.0.6 - Update dependencies
 * v2.0.5 - Change homepage link
 * v2.0.4 - Adding height: auto to responsive images

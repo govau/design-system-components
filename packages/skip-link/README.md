@@ -117,6 +117,7 @@ The visual test: https://uikit.service.gov.au/packages/skip-link/tests/site/
 
 ## Release History
 
+* v2.0.5 - Change npm run watch browser-sync location
 * v2.0.4 - Update dependencies
 * v2.0.3 - Change homepage links
 * v2.0.2 - Fix hover inside body

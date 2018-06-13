@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUbreadcrumbs from './breadcrumbs.js';
 
@@ -74,6 +75,32 @@ ReactDOM.render(
 					text: 'Sign Out2',
 				},
 			]} />
+
+			<hr />
+			<h2>breadcrumbs with Link router</h2>
+			<BrowserRouter>
+				<Fragment>
+					<AUbreadcrumbs
+						dark
+						linkComponent={ Link }
+						label="Breadcrumb with router"
+						items={[
+							{
+								link: 'one',
+								text: 'Options2',
+							},
+							{
+								link: 'two',
+								text: 'Help2',
+							},
+							{
+								text: 'Sign Out2',
+							},
+					]} />
+					<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+				</Fragment>
+			</BrowserRouter>
 
 		</div>
 	</div>,

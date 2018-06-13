@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.0 - React router support](#v410)
 * [v4.0.2 - Update dependencies](#v402)
 * [v4.0.1 - Added missing documentation](#v401)
 * [v4.0.0 - Added placeholder for Australian Government logo and optional grid layout](#v400)
@@ -32,6 +33,12 @@
 
 
 ## Release History
+
+### v4.1.0
+
+- Add support for react router
+- Change npm run watch browser-sync location
+
 
 ### v4.0.2
 

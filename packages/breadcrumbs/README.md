@@ -78,6 +78,7 @@ All props:
 <AUbreadcrumbs
   label="The aria-label"        {/* Provide the aria label is a must */}
   dark={ false }                {/* A dark variation of the component */}
+  linkComponent="a"             {/* The component used for the link, optional */}
   items={[                      {/* An array of all breadcrumbs */}
     {
       link: 'breadcrumb/one/',  {/* The link of the breadcrumb, optional */}
@@ -129,6 +130,7 @@ The visual test: https://uikit.service.gov.au/packages/breadcrumbs/tests/site/
 
 ## Release History
 
+* v2.1.0 - Support react router
 * v2.0.3 - Update dependencies
 * v2.0.2 - Changing homepage link
 * v2.0.1 - Fix dependencies

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/text-inputs",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "Single and multi-line text inputs.",
 	"keywords": [
 		"uikit",
@@ -32,7 +32,7 @@
 		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:js && npm run build:react",
-		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
+		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
 		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
 		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUprogressIndicator from './progress-indicator.js';
 
@@ -282,6 +283,30 @@ ReactDOM.render(
 		<h2>progress-indicator with state <code>--dark</code></h2>
 
 		<ProgressIndicatorWrapper dark />
+
+
+		<hr />
+		<h2>progress-indicator with router</h2>
+
+		<BrowserRouter>
+			<Fragment>
+				<AUprogressIndicator linkComponent={ Link } dark items={[
+					{
+						text: 'One',
+						status: 'done',
+						link: 'one'
+					},
+					{
+						text: 'Two',
+						status: 'doing',
+						link: 'two'
+					},
+				]} />
+				<br />
+				<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
+				<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+			</Fragment>
+		</BrowserRouter>
 	</div>
 </div>,
 

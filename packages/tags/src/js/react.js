@@ -19,20 +19,41 @@ import PropTypes from 'prop-types';
  * @param  {object}  li               - An additional object to be spread into the wrapping element, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtagItem = ({ link, text, li = {}, ...attributeOptions }) => (
-	<li { ...li }>
-		{
-			link
-				? <a href={ link } { ...attributeOptions }>{ text }</a>
-				: <span { ...attributeOptions }>{ text }</span>
+const AUtagItem = ({ link, linkComponent, text, li = {}, ...attributeOptions }) => {
+	const LinkComponent = linkComponent;
+
+	if( link ){
+		// If we are using a normal link
+		if( LinkComponent === 'a' ) {
+			attributeOptions.href = link;
 		}
-	</li>
-);
+		// If we are using a link component
+		else if( typeof LinkComponent === 'function' ) {
+			attributeOptions.to = link;
+		}
+	}
+
+	return (
+		<li { ...li }>
+			{
+				link
+					? <LinkComponent { ...attributeOptions }>{ text }</LinkComponent>
+					: <span { ...attributeOptions }>{ text }</span>
+			}
+		</li>
+	)
+};
+
 
 AUtagItem.propTypes = {
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	li: PropTypes.object,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+};
+
+AUtagItem.defaultProps = {
+	linkComponent: 'a',
 };
 
 
@@ -45,11 +66,11 @@ AUtagItem.propTypes = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtags = ({ dark, tags, className = '', ...attributeOptions }) => (
+const AUtags = ({ dark, linkComponent, tags, className = '', ...attributeOptions }) => (
 	<ul className={ `au-tags ${ className } ${ dark ? 'au-tags--dark' : '' }` } { ...attributeOptions }>
 		{
 			tags.map(
-				( tag, i ) => <AUtagItem key={ i } { ...tag } />
+				( tag, i ) => <AUtagItem linkComponent={ linkComponent } key={ i } { ...tag } />
 			)
 		}
 	</ul>
@@ -65,6 +86,11 @@ AUtags.propTypes = {
 		})
 	).isRequired,
 	className: PropTypes.string,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+};
+
+AUtags.defaultProps = {
+	linkComponent: 'a',
 };
 
 export default AUtags;

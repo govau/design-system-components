@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.2 - Change npm run watch browser-sync location](#v212)
 * [v2.1.1 - Update dependencies](#v211)
 * [v2.1.0 - Allow footer end to not be a `nav` element](#v210)
 * [v2.0.2 - Change homepage link](#v202)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v2.1.2
+
+- Change npm run watch browser-sync location
+
 
 ### v2.1.1
 

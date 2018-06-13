@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/breadcrumbs",
-	"version": "2.0.3",
+	"version": "2.1.0",
 	"description": "Breadcrumbs help users understand where they are in the service and how they got there.",
 	"keywords": [
 		"uikit",
@@ -30,7 +30,7 @@
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:js && npm run build:react",
 
-		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
+		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 
 		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
 		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
@@ -62,11 +62,11 @@
 		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": "^2.0.0",
-		"@gov.au/link-list": "^2.0.0"
+		"@gov.au/link-list": "^2.1.0"
 	},
 	"peerDependencies": {
 		"@gov.au/core": "^2.0.0",
-		"@gov.au/link-list": "^2.0.0"
+		"@gov.au/link-list": "^2.1.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
@@ -80,6 +80,7 @@
 		"onchange": "^3.2.1",
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
+		"react-router-dom": "^4.3.1",
 		"webpack": "^3.8.1",
 		"webpack-dev-server": "^2.9.4"
 	},

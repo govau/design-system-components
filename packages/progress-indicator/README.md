@@ -81,9 +81,11 @@ All props:
 ```jsx
 <AUprogressIndicator
   dark={ false }             {/* A dark variation of the component */}
+  linkComponent="a"          {/* The component used for the link, optional */}
   items={[                   {/* All steps in a neat array */}
     {
       link: 'forms/intro/',  {/* The link to this step, optional */}
+      linkComponent: 'a',    {/* The component used for the link, optional */}
       text: 'Introduction',  {/* The name of this step */}
       status: 'done',        {/* The status of this step, can be: 'done', 'doing', 'todo' */}
       li: {},                {/* An object that will be spread onto the <li> tag, optional */}
@@ -130,6 +132,7 @@ The visual test: https://uikit.service.gov.au/packages/progress-indicator/tests/
 
 ## Release History
 
+* v3.1.0 - Add support for react router
 * v3.0.4 - Update dependencies
 * v3.0.3 - Change React "Todo" label to "To do"
 * v3.0.2 - Change homepage links

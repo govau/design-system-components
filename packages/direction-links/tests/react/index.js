@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUdirectionLink from './direction-links.js';
 
@@ -83,6 +84,18 @@ ReactDOM.render(
 			<h2>direction-link as button with onclick</h2>
 
 			<AUdirectionLink dark text="Log it" direction="up" onClick={ () => console.log('This function will be called on click') } />
+
+			<hr />
+			<h2>direction-link as with router</h2>
+			<BrowserRouter>
+				<Fragment>
+					<AUdirectionLink linkComponent={ Link } link="one" dark text="Page one" />&nbsp;
+					<AUdirectionLink linkComponent={ Link } link="two" dark text="Page two" />
+					<br />
+					<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+				</Fragment>
+			</BrowserRouter>
 		</div>
 	</div>,
 

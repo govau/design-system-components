@@ -21,11 +21,13 @@ import PropTypes from 'prop-types';
  *
  * @param  {string}   repeatedName     - The repeated bit in each item
  * @param  {string}   link             - The link URL, optional
+ * @param  {string}   linkComponent    - The component used for the link
  * @param  {string}   name             - The name of the item
  * @param  {object}   li               - An additional object to be spread into the wrapping element, optional
  * @param  {object}   attributeOptions - Any other attribute options
  */
-export const AUkeywordListItem = ({ repeatedName, link, name, li = {}, ...attributeOptions }) => {
+export const AUkeywordListItem = ({ linkComponent, repeatedName, link, name, li = {}, ...attributeOptions }) => {
+	const LinkComponent = linkComponent;
 
 	if( typeof attributeOptions.onClick === 'function' ) {
 
@@ -35,11 +37,23 @@ export const AUkeywordListItem = ({ repeatedName, link, name, li = {}, ...attrib
 		}
 	}
 
+	if( link ){
+
+		// If we are using a normal link
+		if( LinkComponent === 'a' ) {
+			attributeOptions.href = link;
+		}
+		// If we are using a link component
+		else if( typeof LinkComponent === 'function' ) {
+			attributeOptions.to = link;
+		}
+	}
+
 	return (
 		<li { ...li }>
 			{
 				link
-					? <a href={ link } { ...attributeOptions }><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</a>
+					? <LinkComponent { ...attributeOptions }><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</LinkComponent>
 					: <span><small className="au-keyword-list__small">{ repeatedName }</small>{ name }</span>
 			}
 		</li>
@@ -51,6 +65,12 @@ AUkeywordListItem.propTypes = {
 	link: PropTypes.string,
 	name: PropTypes.string.isRequired,
 	li: PropTypes.object,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+};
+
+
+AUkeywordListItem.defaultProps = {
+	linkComponent: 'a',
 };
 
 
@@ -62,13 +82,14 @@ AUkeywordListItem.propTypes = {
  * @param  {array}   items            - All items in this list, format: { link: '', name: '', onClick: () }
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {string}  className        - An additional class, optional
+ * @param  {string}  linkComponent    - The component used for the link
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUkeywordList = ({ repeatedName, items, dark, className = '', ...attributeOptions }) => (
+const AUkeywordList = ({ repeatedName, linkComponent, items, dark, className = '', ...attributeOptions }) => (
 	<ul className={ `au-keyword-list au-link-list ${ className }${ dark ? ' au-keyword-list--dark' : '' } `} { ...attributeOptions }>
 		{
 			items.map(
-				( item, i ) => <AUkeywordListItem key={ i } repeatedName={ repeatedName } { ...item } />
+				( item, i ) => <AUkeywordListItem linkComponent={ linkComponent } key={ i } repeatedName={ repeatedName } { ...item } />
 			)
 		}
 	</ul>
@@ -85,6 +106,13 @@ AUkeywordList.propTypes = {
 		})
 	).isRequired,
 	className: PropTypes.string,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
+
+
+AUkeywordList.defaultProps = {
+	linkComponent: 'a',
+};
+
 
 export default AUkeywordList;
