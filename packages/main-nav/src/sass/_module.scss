@@ -12,11 +12,78 @@
 @import '_print.scss';
 
 
-.au-main-nav {
-	background: red;
+.au-navigation {
+	font-family: $AU-font;
+	@include AU-fontgrid( sm );
+	color: $AU-color-foreground-text;
+	@include AU-space( border-bottom, solid 0.5unit rgba( 0, 0, 0, 0.2 ) );
+
+	ul {
+		@include AU-clearfix();
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		position: relative;
+
+		& > li {
+			display: block;
+			margin-bottom: -8px;
+			float: left;
+			background: $AU-color-background;
+		}
+	}
+
+	a {
+		background: red;
+		display: block;
+		text-decoration: none;
+		color: $AU-color-foreground-action;
+		@include AU-space( padding, 1.5unit 1unit );
+
+		&:hover {
+			text-decoration: underline;
+			text-decoration-skip: ink;
+			background: $AU-color-background-shade;
+		}
+
+		@include AU-focus();
+	}
+
+	.active {
+		border-color: $AU-color-background;
+	}
 }
 
-.no-js .au-main-nav__toggle {
+
+
+// Always hide unless there is javascript
+.au-navigation__toggle {
 	display: none;
 }
 
+
+.no-js .au-side-nav__toggle {
+	display: none;
+}
+
+
+.js {
+	.au-navigation__content.au-accordion--closed {
+		display: none;
+
+		@include AU-media( sm ){
+			display: block;
+			height: auto;
+			overflow: auto;
+		}
+	}
+
+	// Show the toggle for mobile dimensions
+	.au-navigation__toggle {
+		display: block;
+
+		@include AU-media( sm ){
+			display: none;
+		}
+	}
+}

@@ -44,9 +44,9 @@
 
 	<h1>Test: main-nav</h1>
 
-	<nav class="au-main-nav">
+	<nav class="au-navigation">
 		<a
-			class="au-main-nav__toggle au-accordion__title au-accordion--closed"
+			class="au-navigation__toggle au-accordion__title au-accordion--closed"
 			aria-controls="nav-default"
 			aria-expanded="false"
 			aria-selected="false"
@@ -54,11 +54,11 @@
 			onClick="return AU.accordion.Toggle( this )">
 			In this section
 		</a>
-		<div class="au-main-nav__content au-accordion--closed au-accordion__body">
-			<ul class="au-link-list" aria-hidden="true">
+		<div class="au-navigation__content au-accordion--closed au-accordion__body">
+			<ul aria-hidden="true">
 				<li><a href="#">About</a></li>
 				<li><a href="#">Get started</a></li>
-				<li><a href="#">Components</a></li>
+				<li class="active"><a href="#">Components</a></li>
 				<li><a href="#">Templates</a></li>
 				<li><a href="#">Community</a></li>
 				<li><a href="#">Support</a></li>
