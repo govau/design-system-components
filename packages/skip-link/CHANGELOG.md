@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.5 - Change npm run watch browser-sync location](#v205)
 * [v2.0.4 - Update dependencies](#v204)
 * [v2.0.3 - Change homepage links](#v203)
 * [v2.0.2 - Fix hover inside body](#v202)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v2.0.5
+
+- Change npm run watch browser-sync location
+
 
 ### v2.0.4
 

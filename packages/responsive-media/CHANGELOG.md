@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.7 - Change npm run watch browser-sync location](#v207)
 * [v2.0.6 - Update dependencies](#v206)
 * [v2.0.5 - Change homepage links](#v205)
 * [v2.0.4 - Adding height: auto to responsive images](#v204)
@@ -31,6 +32,11 @@
 
 
 ## Release History
+
+### v2.0.7
+
+- Change npm run watch browser-sync location
+
 
 ### v2.0.6
 

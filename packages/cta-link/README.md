@@ -64,6 +64,7 @@ All props:
   text="Sign up"    {/* The text of the CTA link */}
   dark={ false }    {/* A dark variation of the component */}
   link="/signup"    {/* The location the CTA link takes the user */}
+  linkComponent="a" {/* The component used for the link, optional */}
   attributeOptions  {/* Any other attribute options */}
 />
 ```
@@ -104,6 +105,7 @@ The visual test: https://uikit.service.gov.au/packages/cta-link/tests/site/
 
 ## Release History
 
+* v2.1.0 - Add support for react router
 * v2.0.3 - Update dependencies
 * v2.0.2 - Change homepage link
 * v2.0.1 - Fix dependencies

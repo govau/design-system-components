@@ -61,12 +61,13 @@ All props:
 
 ```jsx
 <AUbutton
-  href            {/* If an href is set the button will render as a link */}
-  children        {/* Anything inside */}
-  as=""           {/* The kind of button, 'secondary','tertiary', optional */}
-  block={ true }  {/* The block option to make the button fill the available width, optional */}
-  type="submit"   {/* The type attribute, optional */}
-  dark={ false }  {/* A dark variation of the component */}
+  children          {/* Anything inside */}
+  as=""             {/* The kind of button, 'secondary','tertiary', optional */}
+  block={ true }    {/* The block option to make the button fill the available width, optional */}
+  type="submit"     {/* The type attribute, optional */}
+  dark={ false }    {/* A dark variation of the component */}
+  link              {/* If a link is set the button will render as a link */}
+  linkComponent="a" {/* The component used for the link, optional */}
 ></AUbutton>
 ```
 _(💡 additional props are spread onto the component)_
@@ -107,6 +108,7 @@ The visual test: https://uikit.service.gov.au/packages/buttons/tests/site/
 
 ## Release History
 
+* v3.0.0 - Add react router support
 * v2.0.3 - Update dependencies
 * v2.0.2 - Change homepage link
 * v2.0.1 - Fix dependencies

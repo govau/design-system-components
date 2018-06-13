@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUctaLink from './cta-link.js';
 
@@ -67,6 +68,19 @@ ReactDOM.render(
 			</p>
 
 			<AUctaLink dark text="Log it" onClick={ () => console.log('This function will be called when the button is clicked') } />
+
+			<hr />
+			<h2>cta-link as with router</h2>
+			<BrowserRouter basename={ window.location.pathname }>
+				<Fragment>
+					<AUctaLink linkComponent={ Link } link="one" dark text="Page one" />&nbsp;
+					<AUctaLink linkComponent={ Link } link="two" dark text="Page two" />
+					<br />
+					<Route path="/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/two" render={ () => ( <p>Route two</p> )} />
+				</Fragment>
+			</BrowserRouter>
+
 		</div>
 	</div>,
 

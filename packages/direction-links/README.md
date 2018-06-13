@@ -61,11 +61,12 @@ All props:
 
 ```jsx
 <AUdirectionLink
- text="Submitting"    {/* The text of the link */}
- link="link/to/page"  {/* The href link, optional */}
- direction="top"      {/* The direction the link goes */}
- dark={ false }       {/* A dark variation of the component */}
- attributeOptions     {/* Any other attribute options */}
+  text="Submitting"    {/* The text of the link */}
+  link="link/to/page"  {/* The href link, optional */}
+  direction="top"      {/* The direction the link goes */}
+  dark={ false }       {/* A dark variation of the component */}
+  linkComponent="a"    {/* The component used for the link, optional */}
+  attributeOptions     {/* Any other attribute options */}
 />
 ```
 _(💡 additional props are spread onto the component)_
@@ -106,6 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/direction-links/tests/sit
 
 ## Release History
 
+* v2.1.0 - React router support
 * v2.0.3 - Update dependencies
 * v2.0.2 - Change homepage link
 * v2.0.1 - Fix dependencies

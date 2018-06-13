@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUkeywordList from './keyword-list.js';
 
@@ -177,6 +178,30 @@ ReactDOM.render(
 					onClick: event => { event.preventDefault(); console.log('This function is called when the second item is clicked') },
 				},
 			]} />
+
+
+			<hr />
+			<h2>keyword-list with router</h2>
+
+			<BrowserRouter basename={ window.location.pathname }>
+				<Fragment>
+					<AUkeywordList linkComponent={ Link } dark repeatedName='Links' items={[
+						{
+							link: 'one',
+							name: 'With one',
+						},
+						{
+							link: 'two',
+							name: 'Without two',
+						},
+					]} />
+					<br />
+					<Route path="/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/two" render={ () => ( <p>Route two</p> )} />
+				</Fragment>
+			</BrowserRouter>
+
+
 		</div>
 	</div>,
 

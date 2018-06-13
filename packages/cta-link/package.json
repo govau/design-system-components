@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/cta-link",
-	"version": "2.0.3",
+	"version": "2.1.0",
 	"description": "Use cta links to draw attention to a primary call to action.",
 	"keywords": [
 		"uikit",
@@ -19,20 +19,15 @@
 	],
 	"scripts": {
 		"postinstall": "pancake",
-
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
-
 		"prepublish": "npm run test:helper && npm run build:pre",
-
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:js && npm run build:react",
-
-		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
-
+		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
 		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
 		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
@@ -61,7 +56,6 @@
 		"@gov.au/pancake-sass": "~1",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
-
 		"@gov.au/core": "^2.0.0"
 	},
 	"peerDependencies": {
@@ -79,6 +73,7 @@
 		"onchange": "^3.2.1",
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
+		"react-router-dom": "^4.3.1",
 		"webpack": "^3.8.1",
 		"webpack-dev-server": "^2.9.4"
 	},
