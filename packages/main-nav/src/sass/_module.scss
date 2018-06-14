@@ -13,32 +13,22 @@
 
 
 .au-navigation {
-	font-family: $AU-font;
 	@include AU-fontgrid( sm );
+	font-family: $AU-font;
 	color: $AU-color-foreground-text;
-	@include AU-space( border-bottom, solid 0.5unit rgba( 0, 0, 0, 0.2 ) );
 
 	ul {
 		@include AU-clearfix();
 		padding: 0;
 		margin: 0;
 		list-style: none;
-		position: relative;
-
-		& > li {
-			display: block;
-			margin-bottom: -8px;
-			float: left;
-			background: $AU-color-background;
-		}
 	}
 
 	a {
-		background: red;
 		display: block;
 		text-decoration: none;
 		color: $AU-color-foreground-action;
-		@include AU-space( padding, 1.5unit 1unit );
+		@include AU-space( padding, 1unit );
 
 		&:hover {
 			text-decoration: underline;
@@ -49,8 +39,22 @@
 		@include AU-focus();
 	}
 
-	.active {
-		border-color: $AU-color-background;
+	@include AU-media( sm ) {
+		@include AU-space( border-bottom, solid 0.5unit $AU-color-foreground-action );
+
+		ul > li {
+			display: block;
+			margin-bottom: -8px;
+			float: left;
+		}
+
+		a {
+			@include AU-space( padding, 1.5unit 1unit );
+		}
+
+		.active {
+			@include AU-space( border-bottom, solid 0.5unit $AU-color-background );
+		}
 	}
 }
 
@@ -62,7 +66,7 @@
 }
 
 
-.no-js .au-side-nav__toggle {
+.no-js .au-navigation__toggle {
 	display: none;
 }
 
@@ -71,10 +75,10 @@
 	.au-navigation__content.au-accordion--closed {
 		display: none;
 
-		@include AU-media( sm ){
+		@include AU-media( sm ) {
 			display: block;
 			height: auto;
-			overflow: auto;
+			overflow: inherit;
 		}
 	}
 
@@ -82,7 +86,7 @@
 	.au-navigation__toggle {
 		display: block;
 
-		@include AU-media( sm ){
+		@include AU-media( sm ) {
 			display: none;
 		}
 	}

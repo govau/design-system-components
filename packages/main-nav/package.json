@@ -28,7 +28,7 @@
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:pre && npm run build:js && npm run build:react",
 
-		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
+		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
 
 		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
 		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
@@ -64,10 +64,12 @@
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
+		"@gov.au/accordion": "^3.0.0",
 		"@gov.au/core": "^2.0.0",
 		"@gov.au/link-list": "^2.0.0"
 	},
 	"peerDependencies": {
+		"@gov.au/accordion": "^3.0.0",
 		"@gov.au/core": "^2.0.0",
 		"@gov.au/link-list": "^2.0.0"
 	},
