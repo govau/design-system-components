@@ -88,7 +88,7 @@ ReactDOM.render(
 
 			<hr />
 			<h2>Link list with Link router</h2>
-			<BrowserRouter>
+			<BrowserRouter basename={ window.location.pathname }>
 				<Fragment>
 					<AUlinkList linkComponent={ Link } items={[
 						{
@@ -100,8 +100,8 @@ ReactDOM.render(
 							text: 'Change to route two',
 						},
 					]} />
-					<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
-					<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+					<Route path="/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/two" render={ () => ( <p>Route two</p> )} />
 				</Fragment>
 			</BrowserRouter>
 		</div>
@@ -186,7 +186,7 @@ ReactDOM.render(
 
 			<hr />
 			<h2>Link list with Link router</h2>
-			<BrowserRouter>
+			<BrowserRouter basename={ window.location.pathname }>
 				<Fragment>
 					<AUlinkList linkComponent={ Link } items={[
 						{
@@ -198,8 +198,8 @@ ReactDOM.render(
 							text: 'Change to route two',
 						},
 					]} />
-					<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
-					<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+					<Route path="/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/two" render={ () => ( <p>Route two</p> )} />
 				</Fragment>
 			</BrowserRouter>
 		</div>

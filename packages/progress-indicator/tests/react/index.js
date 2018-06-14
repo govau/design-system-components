@@ -288,7 +288,7 @@ ReactDOM.render(
 		<hr />
 		<h2>progress-indicator with router</h2>
 
-		<BrowserRouter>
+		<BrowserRouter basename={ window.location.pathname }>
 			<Fragment>
 				<AUprogressIndicator linkComponent={ Link } dark items={[
 					{
@@ -303,8 +303,8 @@ ReactDOM.render(
 					},
 				]} />
 				<br />
-				<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
-				<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+				<Route path="/one" render={ () => ( <p>Route one</p> )} />
+				<Route path="/two" render={ () => ( <p>Route two</p> )} />
 			</Fragment>
 		</BrowserRouter>
 	</div>

@@ -87,13 +87,13 @@ ReactDOM.render(
 
 			<hr />
 			<h2>direction-link as with router</h2>
-			<BrowserRouter>
+			<BrowserRouter basename={ window.location.pathname }>
 				<Fragment>
 					<AUdirectionLink linkComponent={ Link } link="one" dark text="Page one" />&nbsp;
 					<AUdirectionLink linkComponent={ Link } link="two" dark text="Page two" />
 					<br />
-					<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
-					<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+					<Route path="/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/two" render={ () => ( <p>Route two</p> )} />
 				</Fragment>
 			</BrowserRouter>
 		</div>

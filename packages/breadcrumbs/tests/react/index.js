@@ -78,7 +78,7 @@ ReactDOM.render(
 
 			<hr />
 			<h2>breadcrumbs with Link router</h2>
-			<BrowserRouter>
+			<BrowserRouter basename={ window.location.pathname }>
 				<Fragment>
 					<AUbreadcrumbs
 						dark
@@ -97,8 +97,8 @@ ReactDOM.render(
 								text: 'Sign Out2',
 							},
 					]} />
-					<Route path="/react/one" render={ () => ( <p>Route one</p> )} />
-					<Route path="/react/two" render={ () => ( <p>Route two</p> )} />
+					<Route path="/one" render={ () => ( <p>Route one</p> )} />
+					<Route path="/two" render={ () => ( <p>Route two</p> )} />
 				</Fragment>
 			</BrowserRouter>
 
