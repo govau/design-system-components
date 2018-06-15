@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/cta-link",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Use cta links to draw attention to a primary call to action.",
 	"keywords": [
 		"uikit",
@@ -53,7 +53,7 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 		"@gov.au/core": "^2.0.0"

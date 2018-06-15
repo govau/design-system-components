@@ -16,6 +16,7 @@ Update dependenciesalerts CH3NGELOG
 
 ## Versions
 
+* [v2.0.5 - Replace node-sass with sass](#v205)
 * [v2.0.4 - Change npm run watch browser-sync location](#v204)
 * [v2.0.3 - Update dependencies](#v203)
 * [v2.0.2 - Change homepage links](#v202)
@@ -32,6 +33,11 @@ Update dependenciesalerts CH3NGELOG
 
 
 ## Release History
+
+### v2.0.5
+
+- Replace node-sass with sass
+
 
 ### v2.0.4
 - Change npm run watch browser-sync location

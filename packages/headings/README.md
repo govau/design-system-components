@@ -104,6 +104,7 @@ The visual test: https://uikit.service.gov.au/packages/headings/tests/site/
 
 ## Release History
 
+* v2.0.5 - Replace node-sass with sass
 * v2.0.4 - Change npm run watch browser-sync location
 * v2.0.3 - Update dependencies
 * v2.0.2 - Change headings link

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/header",
-	"version": "4.1.0",
+	"version": "4.1.1",
 	"description": "Headers provide a consistent start to pages.",
 	"keywords": [
 		"uikit",
@@ -57,7 +57,7 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 

@@ -132,6 +132,7 @@ The visual test: https://uikit.service.gov.au/packages/progress-indicator/tests/
 
 ## Release History
 
+* v3.1.1 - Replace node-sass with sass
 * v3.1.0 - Add support for react router
 * v3.0.4 - Update dependencies
 * v3.0.3 - Change React "Todo" label to "To do"

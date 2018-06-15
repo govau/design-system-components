@@ -105,6 +105,7 @@ The visual test: https://uikit.service.gov.au/packages/cta-link/tests/site/
 
 ## Release History
 
+* v2.1.1 - Replace node-sass with sass
 * v2.1.0 - Add support for react router
 * v2.0.3 - Update dependencies
 * v2.0.2 - Change homepage link

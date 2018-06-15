@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.5 - Replace node-sass with sass](#v305)
 * [v3.0.4 - Change npm run watch browser-sync location](#v304)
 * [v3.0.3 - au-body--dark now changes accordion title colour](#v303)
 * [v3.0.2 - Update dependencies](#v302)
@@ -35,6 +36,11 @@
 
 
 ## Release History
+
+### v3.0.5
+
+- Replace node-sass with sass
+
 
 ### v3.0.4
 

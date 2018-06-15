@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.3 - Replace node-sass with sass](#v213)
 * [v2.1.2 - Change npm run watch browser-sync location](#v212)
 * [v2.1.1 - Update dependencies](#v211)
 * [v2.1.0 - Allow footer end to not be a `nav` element](#v210)
@@ -31,6 +32,11 @@
 
 
 ## Release History
+
+### v2.1.3
+
+- Replace node-sass with sass
+
 
 ### v2.1.2
 

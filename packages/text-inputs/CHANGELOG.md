@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.6 - Replace node-sass with sass](#v206)
 * [v2.0.5 - Change npm run watch browser-sync location](#v205)
 * [v2.0.4 - Update dependencies](#v204)
 * [v2.0.3 - Change homepage links](#v203)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v2.0.6
+
+- Replace node-sass with sass
+
 
 ### v2.0.5
 

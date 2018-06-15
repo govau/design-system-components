@@ -108,6 +108,7 @@ The visual test: https://uikit.service.gov.au/packages/buttons/tests/site/
 
 ## Release History
 
+* v3.0.1 - Replace node-sass with sass
 * v3.0.0 - Add react router support
 * v2.0.3 - Update dependencies
 * v2.0.2 - Change homepage link
