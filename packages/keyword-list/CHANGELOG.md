@@ -32,7 +32,7 @@
 
 ## Release History
 
-### v2.1.0
+### v2.1.1
 
 - Replace node-sass with sass
 
