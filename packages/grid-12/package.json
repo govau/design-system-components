@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/grid-12",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "Implementation of the Bootstrap 3 grid.",
 	"keywords": [
 		"uikit",

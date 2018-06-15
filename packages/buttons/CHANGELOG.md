@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.1 - Replace node-sass with sass](#v301)
 * [v3.0.0 - React router support](#v300)
 * [v2.0.3 - Update dependencies](#v203)
 * [v2.0.2 - Change homepage link](#v202)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v3.0.1
+
+- Replace node-sass with sass
+
 
 ### v3.0.0
 

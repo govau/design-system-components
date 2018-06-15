@@ -7,7 +7,6 @@
 		"inquirer": "4.0.0",
 		"jest-cli": "^22.4.3",
 		"lerna": "^2.11.0",
-		"node-sass": "^4.9.0",
 		"pa11y": "^4.13.1",
 		"postcss": "^6.0.14",
 		"semver": "^5.4.1",
@@ -37,5 +36,8 @@
 				"statements": 0
 			}
 		}
+	},
+	"dependencies": {
+		"sass": "^1.5.1"
 	}
 }

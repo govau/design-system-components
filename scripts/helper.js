@@ -12,7 +12,7 @@
  */
 const Autoprefixer = require('autoprefixer');
 const Postcss = require('postcss');
-const Sass = require('node-sass');
+const Sass = require('sass');
 const Chalk = require(`chalk`);
 const Path = require(`path`);
 const Fs = require(`fs`);
@@ -179,7 +179,7 @@ const Sassify = ( scss, css ) => {
 		indentType: 'tab',
 		precision: 8,
 		includePaths: [ './lib/sass/' ],
-		outputStyle: 'compressed',
+		style: 'compressed',
 	});
 
 	Fs.writeFileSync( css, compiled.css );

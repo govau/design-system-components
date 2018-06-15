@@ -111,6 +111,7 @@ The visual test: https://uikit.service.gov.au/packages/footer/tests/site/
 
 ## Release History
 
+* v2.1.3 - Replace node-sass with sass
 * v2.1.2 - Change npm run watch browser-sync location
 * v2.1.1 - Update dependencies
 * v2.1.0 - Allow footer end to not be a `nav` element

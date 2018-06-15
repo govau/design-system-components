@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/page-alerts",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "Use page alerts to notify users of important information and state changes to the page.",
 	"keywords": [
 		"uikit",

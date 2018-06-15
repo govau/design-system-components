@@ -123,8 +123,7 @@ $dependencies: (
 
 		$chunk: AU-replace( $chunk,'"', "'" );
 		$chunk: AU-replace( $chunk,'	', " " );
-		$chunk: AU-replace( $chunk,"
-", " " );
+		$chunk: AU-replace( $chunk,"\n", " " );
 		$chunk: AU-replace( $chunk,"\a", " " );
 		$chunk: AU-replace( $chunk,'  ', " " );
 		$chunk: AU-replace( $chunk,'%', '%25' );
@@ -434,15 +433,17 @@ $dependencies: (
 	@while $ratioLighter < $ratio and $ratioDarker < $ratio and $i < 100 {
 		$i: $i + $steps; // iterate by increasing our step
 
-		$colorLighter: hsl( $hue, $saturation, $lightness + $i );   // then we lighten a new color
-		$colorDarker:  hsl( $hue, $saturation, $lightness - $i );   // and darken another
+		@if $lightness + $i < 100 {
+			$colorLighter: hsl( $hue, $saturation, $lightness + $i );
+			$resetLight: mix( $colorLighter, $colorLighter );
+			$ratioLighter: AU-color-contrast( $resetLight, $background );
+		}
 
-		// Reset the colors so it compares HEX not HSL
-		$resetLight: mix( $colorLighter, $colorLighter );
-		$resetDark:  mix( $colorDarker, $colorDarker );
-
-		$ratioLighter: AU-color-contrast( $resetLight, $background, true, false ); // now we assign the new ratios; the loop will break
-		$ratioDarker:  AU-color-contrast( $resetDark, $background, true, false );  // when one of these is beyond the defined ration
+		@if $lightness - $i > 0 {
+			$colorDarker:  hsl( $hue, $saturation, $lightness - $i );
+			$resetDark:  mix( $colorDarker, $colorDarker );
+			$ratioDarker:  AU-color-contrast( $resetDark, $background );
+		}
 	}
 
 
