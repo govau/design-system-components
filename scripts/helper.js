@@ -179,7 +179,7 @@ const Sassify = ( scss, css ) => {
 		indentType: 'tab',
 		precision: 8,
 		includePaths: [ './lib/sass/' ],
-		style: 'compressed',
+		outputStyle: 'compressed',
 	});
 
 	Fs.writeFileSync( css, compiled.css );

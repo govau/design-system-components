@@ -58,7 +58,7 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
