@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.0.4 - Replace node-sass with sass](#v204)
+* [v3.0.0 - Binary search a11y color, replace node-sass with sass](#v300)
 * [v2.0.3 - Change npm run watch browser-sync location](#v203)
 * [v2.0.2 - Update dependencies](#v202)
 * [v2.0.1 - Change homepage link](#v201)
@@ -33,8 +33,11 @@
 
 ## Release History
 
-### v2.0.4
+### v3.0.0
 
+- A11yColor uses a binary search making it blazing fast
+- Removed step property from A11yColor
+- Made contrast tests silent by default
 - Replace node-sass with sass
 
 
