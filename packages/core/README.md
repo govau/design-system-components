@@ -255,6 +255,7 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v3.0.0 - Binary search a11y color, replace node-sass with sass
 * v2.0.3 - Change npm run watch browser-sync location
 * v2.0.2 - Update dependencies
 * v2.0.1 - Change homepage link

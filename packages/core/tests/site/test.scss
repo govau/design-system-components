@@ -348,11 +348,11 @@ html {
 	width: 24px;
 	height: 24px;
 	background-repeat: no-repeat;
-	background: AU-svguri('<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-			<path fill="#{ $AU-color-foreground-text }" d="M1408 928v320q0 119-84.5 203.5T1120 1536H288q-119' +
-		'	0-203.5-84.5T0 1248V416q0-119 84.5-203.5T288 128h704q14 0 23 9t9 23v64q0 14-9 23t-23 9H288q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0' +
-		'	113-47t47-113V928q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10L695' +
-		'	983q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z"/>' +
+	background: AU-svguri('<svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">' +
+			'<path fill="#{ $AU-color-foreground-text }" d="M1408 928v320q0 119-84.5 203.5T1120 1536H288q-119' +
+			'	0-203.5-84.5T0 1248V416q0-119 84.5-203.5T288 128h704q14 0 23 9t9 23v64q0 14-9 23t-23 9H288q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0' +
+			'	113-47t47-113V928q0-14 9-23t23-9h64q14 0 23 9t9 23zm384-864v512q0 26-19 45t-45 19-45-19l-176-176-652 652q-10 10-23 10t-23-10L695' +
+			'	983q-10-10-10-23t10-23l652-652-176-176q-19-19-19-45t19-45 45-19h512q26 0 45 19t19 45z"/>' +
 		'</svg>');
 
 	.ie8 &:after,
@@ -474,31 +474,31 @@ html {
 // function AU-color-contrast
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 .au-color-contrast1:after {
-	content: " #{ AU-color-contrast( #fff, #000 ) }";
+	content: " #{ AU-color-contrast( #fff, #000, true ) }";
 	display: inline;
 	color: rebeccapurple;
 }
 
 .au-color-contrast2:after {
-	content: " #{ AU-color-contrast( #fff, #f00 ) }";
+	content: " #{ AU-color-contrast( #fff, #f00, true ) }";
 	display: inline;
 	color: rebeccapurple;
 }
 
 .au-color-contrast3:after {
-	content: " #{ AU-color-contrast( #000, #f00 ) }";
+	content: " #{ AU-color-contrast( #000, #f00, true ) }";
 	display: inline;
 	color: rebeccapurple;
 }
 
 .au-color-contrast4:after {
-	content: " #{ AU-color-contrast( #000, #ff0 ) }";
+	content: " #{ AU-color-contrast( #000, #ff0, true ) }";
 	display: inline;
 	color: rebeccapurple;
 }
 
 .au-color-contrast5:after {
-	content: " #{ AU-color-contrast( #fff, #ff0 ) }";
+	content: " #{ AU-color-contrast( #fff, #ff0, true ) }";
 	display: inline;
 	color: rebeccapurple;
 }
@@ -507,59 +507,47 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // function AU-color-a11y
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-// .au-color-a11y1:after {
-// 	content: " #{ AU-color-a11y( red, blue ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y1:after {
+	content: " #{ AU-color-a11y( red, blue ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y2:after {
-// 	content: " #{ AU-color-a11y( green, blue ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y2:after {
+	content: " #{ AU-color-a11y( green, blue ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y3:after {
-// 	content: " #{ AU-color-a11y( pink, blue ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y3:after {
+	content: " #{ AU-color-a11y( pink, blue ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y4:after {
-// 	content: " #{ AU-color-a11y( blue, blue ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y4:after {
+	content: " #{ AU-color-a11y( blue, blue ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y5:after {
-// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y5:after {
+	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0 ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y6:after {
-// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 1 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y6:after {
+	content: " #{ AU-color-a11y( #231284, #ccc ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
-// .au-color-a11y7:after {
-// 	content: " #{ AU-color-a11y( #c0c0c0, #c0c0c0, small, 50 ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .au-color-a11y8:after {
-// 	content: " #{ AU-color-a11y( #231284, #ccc ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
-
-// .au-color-a11y9:after {
-// 	content: " #{ AU-color-a11y( #fff, #fff ) }";
-// 	display: inline;
-// 	color: rebeccapurple;
-// }
+.au-color-a11y7:after {
+	content: " #{ AU-color-a11y( #fff, #fff ) }";
+	display: inline;
+	color: rebeccapurple;
+}
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // palettes
@@ -917,19 +905,19 @@ html {
 		background-color: $AU-color-background;
 	}
 	.contrast-box--action:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-action ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-action, true ) );
 	}
 	.contrast-box--focus:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-focus ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-focus, true ) );
 	}
 	.contrast-box--text:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-text ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-text, true ) );
 	}
 	.contrast-box--muted:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-muted ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-muted, true ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-border ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background, $AU-color-foreground-border, true ) );
 	}
 }
 
@@ -938,19 +926,19 @@ html {
 		background-color: $AU-color-background-shade;
 	}
 	.contrast-box--action:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-action ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-action, true ) );
 	}
 	.contrast-box--focus:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-focus ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-focus, true ) );
 	}
 	.contrast-box--text:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-text ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-text, true ) );
 	}
 	.contrast-box--muted:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-muted ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-muted, true ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-border ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-shade, $AU-color-foreground-border, true ) );
 	}
 }
 
@@ -959,19 +947,19 @@ html {
 		background-color: $AU-color-background-alt;
 	}
 	.contrast-box--action:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-action ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-action, true ) );
 	}
 	.contrast-box--focus:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-focus ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-focus, true ) );
 	}
 	.contrast-box--text:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-text ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-text, true ) );
 	}
 	.contrast-box--muted:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-muted ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-muted, true ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-border ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt, $AU-color-foreground-border, true ) );
 	}
 }
 
@@ -980,19 +968,19 @@ html {
 		background-color: $AU-color-background-alt-shade;
 	}
 	.contrast-box--action:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-action ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-action, true ) );
 	}
 	.contrast-box--focus:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-focus ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-focus, true ) );
 	}
 	.contrast-box--text:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-text ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-text, true ) );
 	}
 	.contrast-box--muted:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-muted ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-muted, true ) );
 	}
 	.contrast-box--border:after {
-		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-border ) );
+		@include check-contrast( AU-color-contrast( $AU-color-background-alt-shade, $AU-color-foreground-border, true ) );
 	}
 }
 
@@ -1022,19 +1010,19 @@ html {
 			background-color: $AU-colordark-background;
 		}
 		.contrast-box--action:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-action ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-action, true ) );
 		}
 		.contrast-box--focus:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-focus ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-focus, true ) );
 		}
 		.contrast-box--text:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-text ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-text, true ) );
 		}
 		.contrast-box--muted:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-muted ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-muted, true ) );
 		}
 		.contrast-box--border:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-border ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background, $AU-colordark-foreground-border, true ) );
 		}
 	}
 
@@ -1043,19 +1031,19 @@ html {
 			background-color: $AU-colordark-background-shade;
 		}
 		.contrast-box--action:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-action ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-action, true ) );
 		}
 		.contrast-box--focus:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-focus ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-focus, true ) );
 		}
 		.contrast-box--text:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-text ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-text, true ) );
 		}
 		.contrast-box--muted:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-muted ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-muted, true ) );
 		}
 		.contrast-box--border:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-border ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-shade, $AU-colordark-foreground-border, true ) );
 		}
 	}
 
@@ -1064,19 +1052,19 @@ html {
 			background-color: $AU-colordark-background-alt;
 		}
 		.contrast-box--action:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-action ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-action, true ) );
 		}
 		.contrast-box--focus:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-focus ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-focus, true ) );
 		}
 		.contrast-box--text:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-text ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-text, true ) );
 		}
 		.contrast-box--muted:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-muted ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-muted, true ) );
 		}
 		.contrast-box--border:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-border ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt, $AU-colordark-foreground-border, true ) );
 		}
 	}
 
@@ -1085,19 +1073,19 @@ html {
 			background-color: $AU-colordark-background-alt-shade;
 		}
 		.contrast-box--action:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-action ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-action, true ) );
 		}
 		.contrast-box--focus:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-focus ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-focus, true ) );
 		}
 		.contrast-box--text:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-text ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-text, true ) );
 		}
 		.contrast-box--muted:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-muted ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-muted, true ) );
 		}
 		.contrast-box--border:after {
-			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-border ) );
+			@include check-contrast( AU-color-contrast( $AU-colordark-background-alt-shade, $AU-colordark-foreground-border, true ) );
 		}
 	}
 }

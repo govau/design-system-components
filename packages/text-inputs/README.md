@@ -107,6 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/text-inputs/tests/site/
 
 ## Release History
 
+* v2.0.6 - Replace node-sass with sass
 * v2.0.5 - Change npm run watch browser-sync location
 * v2.0.4 - Update dependencies
 * v2.0.3 - Change homepage links

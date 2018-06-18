@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/headings",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "Class styles for display headings.",
 	"keywords": [
 		"uikit",
@@ -59,14 +59,14 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": "^2.0.0"
+		"@gov.au/core": "^3.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^2.0.0"
+		"@gov.au/core": "^3.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",

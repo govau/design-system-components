@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/breadcrumbs",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Breadcrumbs help users understand where they are in the service and how they got there.",
 	"keywords": [
 		"uikit",
@@ -57,15 +57,15 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": "^2.0.0",
+		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^2.1.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^2.0.0",
+		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^2.1.0"
 	},
 	"devDependencies": {

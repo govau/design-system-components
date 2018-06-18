@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/direction-links",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Use direction links to link up and down within the DOM or back to a parent page.",
 	"keywords": [
 		"uikit",
@@ -56,13 +56,13 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
-		"@gov.au/core": "^2.0.0"
+		"@gov.au/core": "^3.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^2.0.0"
+		"@gov.au/core": "^3.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
