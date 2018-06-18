@@ -153,7 +153,6 @@ Run `jest` for the unit tests
 
 ## Release History
 
-* v1.0.5 - Replace node-sass with sass
 * v1.0.4 - Change npm run watch browser-sync location
 * v1.0.3 - Update dependencies
 * v1.0.2 - Fix typo in homepage link

@@ -123,7 +123,6 @@ $dependencies: (
 
 		$chunk: AU-replace( $chunk,'"', "'" );
 		$chunk: AU-replace( $chunk,'	', " " );
-		$chunk: AU-replace( $chunk,"\n", " " );
 		$chunk: AU-replace( $chunk,"\a", " " );
 		$chunk: AU-replace( $chunk,'  ', " " );
 		$chunk: AU-replace( $chunk,'%', '%25' );
@@ -390,82 +389,93 @@ $dependencies: (
  *
  * @return {Color}                                 - Returns the nearest accessible color
  */
-@function AU-color-a11y( $toMakeA11y, $background, $ratioKey: 'small', $steps: 0.1 ) {
+@function AU-color-a11y( $toMakeA11y, $background, $ratioKey: 'small' ) {
 	@if type-of( $toMakeA11y ) != 'color' {
-		@error "Where we’re going, we don’t need roads; the AU-color-a11y function only takes a color as the first attribute!";
+		@error "Where we’re going, we don’t need roads; the AU-a11ycolor function only takes a color as the first attribute!";
 	}
 
 	@if type-of( $background ) != 'color' {
-		@error "You shall not pass; the AU-color-a11y function only takes a color as the second attribute!";
+		@error "You shall not pass; the AU-a11ycolor function only takes a color as the second attribute!";
 	}
 
 	@if $ratioKey != 'small' and $ratioKey != 'large' {
-		@error "I have always depended on the kindness of strangers; the AU-color-a11y function only takes 'small' or 'large' as third attribute.";
+		@error "I have always depended on the kindness of strangers; the AU-a11ycolor function only takes 'small' or 'large' as third attribute.";
 	}
 
-	@if type-of( $steps ) != 'number' {
-		@error "You’re tearing me apart, Lisa; the AU-color-a11y function only takes a number as the forth attribute!";
-	}
-
-	@if $steps >= 100 or $steps < 0.1 {
-		@error "Toto, I’ve got a feeling we’re not in Kansas anymore; the AU-color-a11y function only takes a number between 0.1 and 100 as the forth attribute!";
-	}
 
 	$ratios: (
 		'large': 3,
 		'small': 4.5,
 	);
-
 	$ratio: map-get( $ratios, $ratioKey );
 
-	$currentRatio: AU-color-contrast( $toMakeA11y, $background, true, false ); // Get the current ratio
-	$colorLighter: $toMakeA11y;   // We have to scope those variables outside the loop
-	$ratioLighter: $currentRatio; // so that we have access to them after the loop finished
-	$colorDarker: $toMakeA11y;    // doing it for all of them
-	$ratioDarker: $currentRatio;  // just ever so slightly boring :)
-
-	$hue: hue( $toMakeA11y );               // Split the color into HSL
-	$saturation: saturation( $toMakeA11y ); // so we can make changes
-	$lightness: lightness( $toMakeA11y );   // the only the lightness of the color
-
-
-	$i: 0;
-	@while $ratioLighter < $ratio and $ratioDarker < $ratio and $i < 100 {
-		$i: $i + $steps; // iterate by increasing our step
-
-		@if $lightness + $i < 100 {
-			$colorLighter: hsl( $hue, $saturation, $lightness + $i );
-			$resetLight: mix( $colorLighter, $colorLighter );
-			$ratioLighter: AU-color-contrast( $resetLight, $background );
-		}
-
-		@if $lightness - $i > 0 {
-			$colorDarker:  hsl( $hue, $saturation, $lightness - $i );
-			$resetDark:  mix( $colorDarker, $colorDarker );
-			$ratioDarker:  AU-color-contrast( $resetDark, $background );
-		}
+	// Check the ratio straight away, if it passes return the value as hex
+	@if AU-color-contrast( $toMakeA11y, $background, true, false ) >= $ratio {
+		@return $toMakeA11y;
 	}
 
+	// Ratio didn't pass so we need to find the nearest color
+	$a11yLightness: lightness( $toMakeA11y );
+	$bgLightness: lightness( $background );
+	$minHexDiff: 0.39215686274;
+	$minLightness: 0;
+	$maxLightness: 100;
 
-	@if $ratioLighter >= $ratio {
-		@if $i > 0 {
-			@warn 'Try not. Do - or do not. There is no try; the color ' + $toMakeA11y +
-				' had to be tweaked via AU-color-a11y to make accessible in ' + ( $i / $steps ) + ' iterations and came out as ' + $colorLighter;
-		}
-
-		@return $colorLighter;
+	// If our colour passes contrast on black
+	@if AU-color-contrast( hsl(
+		hue( $toMakeA11y ),
+		saturation( $toMakeA11y ),
+		$bgLightness
+	), $background, true, false ) >= $ratio {
+		$minLightness: $a11yLightness;
+		$maxLightness: $bgLightness;
 	}
-	@else if $ratioDarker >= $ratio {
-		@if $i > 0 {
-			@warn 'Try not. Do - or do not. There is no try; the color ' + $toMakeA11y +
-				' had to be tweaked via AU-color-a11y to make accessible in ' + ( $i / $steps ) + ' iterations and came out as ' + $colorDarker;
-		}
-
-		@return $colorDarker;
+	@else if AU-color-contrast( #000, $background, true, false ) >= $ratio {
+		$maxLightness: if( $a11yLightness > $bgLightness, $bgLightness, $a11yLightness );
 	}
+	// It didn't pass on black
 	@else {
-		@error 'E.T. phone home; AU-color-a11y was unable to find an accessible color for you.';
+		$minLightness: if( $a11yLightness > $bgLightness, $a11yLightness, $bgLightness );
 	}
+
+	$direction: $minLightness != 0;
+	$foundColor: '';
+
+	// Binary search until we find the colour that meets contrast
+	@while( $foundColor == '' ) {
+		$midLightness: ( $minLightness + $maxLightness ) / 2;
+		$midColor: hsl(
+			hue( $toMakeA11y ),
+			saturation( $toMakeA11y ),
+			$midLightness
+		);
+		$resetColor: mix( $midColor, $midColor );
+
+
+		// If we meet contrast
+		@if AU-color-contrast( $resetColor, $background, true, false ) >= $ratio {
+			// The colour is in the minimal lightness range for one hexadecimal
+			@if	$maxLightness - $minLightness < $minHexDiff {
+				$foundColor: $resetColor;
+			}
+
+			@if $direction {
+				$maxLightness: $midLightness;
+			}
+			@else {
+				$minLightness: $midLightness;
+			}
+		}
+		// We don't meet contrast
+		@else if( $direction ) {
+			$minLightness: $midLightness;
+		}
+		@else {
+			$maxLightness: $midLightness;
+		}
+	}
+
+	@return $foundColor;
 }
 
 
