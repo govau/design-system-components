@@ -122,6 +122,7 @@ The visual test: https://uikit.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v4.1.1 - Replace node-sass with sass
 * v4.1.0 - React router support
 * v4.0.2 - Update dependencies
 * v4.0.1 - Added missing documentation

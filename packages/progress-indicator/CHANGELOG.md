@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.1.1 - Replace node-sass with sass](#v311)
 * [v3.1.0 - React router support](#v310)
 * [v3.0.4 - Update dependencies](#v304)
 * [v3.0.3 - Change React "Todo" label to "To do"](#v303)
@@ -32,6 +33,11 @@
 
 
 ## Release History
+
+### v3.1.1
+
+- Replace node-sass with sass
+
 
 ### v3.1.0
 

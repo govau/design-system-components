@@ -107,6 +107,7 @@ The visual test: https://uikit.service.gov.au/packages/direction-links/tests/sit
 
 ## Release History
 
+* v2.1.1 - Replace node-sass with sass
 * v2.1.0 - React router support
 * v2.0.3 - Update dependencies
 * v2.0.2 - Change homepage link

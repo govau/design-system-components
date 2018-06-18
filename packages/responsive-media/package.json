@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/responsive-media",
-	"version": "2.0.7",
+	"version": "2.0.8",
 	"description": "Caters for video/slideshow dimensions and aspect ratios across various viewports/widths.",
 	"keywords": [
 		"uikit",
@@ -56,7 +56,7 @@
 	},
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": "^2.0.0"
