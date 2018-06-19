@@ -32,40 +32,57 @@
 	}
 
 	// Apply a border bottom to the first menu
-	& > .au-link-list {
+	.au-side-nav__content > .au-link-list {
 		border-bottom: 1px solid $AU-color-foreground-border;
 	}
 
+	.au-link-list li:first-child a {
+		border-top: none;
+	}
+
 	.au-link-list {
-		@include AU-side-nav-indent( $AU-side-nav-depth, 1 );
+		@include AU-side-nav-indent( $AU-side-nav-depth, 1.25 );
 		padding: 0;
 
 		a {
 			@include AU-fontgrid( xs );
 			@include AU-space( padding, 1unit );
+			color: $AU-color-foreground-muted;
+			text-decoration: none;
 			border-top: 1px solid $AU-color-foreground-border;
 			display: block;
 
 			&:hover {
-				background: $AU-color-background-shade;
+				background-color: $AU-color-background-shade;
+				text-decoration: underline;
 			}
+		}
+
+		ul a {
+			border-top: none;
 		}
 
 		// Active styles, li is added to keep background transparent on different colour schemes
 		li.active {
-			@include AU-space( border-left, $AU-color-foreground-action solid 0.25unit );
+			// @include AU-space( border-left, $AU-color-foreground-action solid 0.25unit );
 
 			a {
-				@include AU-space( margin-left, -0.25unit );
 				font-weight: bold;
-				text-decoration: none;
 				color: $AU-color-foreground-text;
-
-				&:hover {
-					background: transparent;
-				}
 			}
 		}
+	}
+
+	// FIXME @pagey
+	ul ul ul a {
+		background-repeat: no-repeat;
+		background-position: 2.25rem center;
+		padding-left: 3.75rem;
+		background-size: 1rem 1rem;
+
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
+		  '<path fill="#{ $AU-color-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
+		'</svg>');
 	}
 
 	.au-accordion__title {
@@ -82,42 +99,61 @@
 	}
 }
 
+
+
+
 // Alternate colour styles
 .au-body.au-body--alt .au-side-nav,
 .au-side-nav.au-side-nav--alt {
-	.au-link-list a:hover {
-		background: $AU-color-background-alt-shade;
+	.au-side-nav__content a{
+		&:hover {
+			background-color: $AU-color-background-alt-shade;
+		}
 	}
 }
 
 // Dark colour styles
 .au-body.au-body--dark .au-side-nav,
 .au-side-nav.au-side-nav--dark {
-	a {
-		@include AU-focus( 'dark' );
 
-		&:focus {
-			outline-offset: -3px; // Accordion body adds overflow hidden, this counters it
+		ul ul ul a {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
+			  '<path fill="#{ $AU-colordark-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
+			'</svg>');
 		}
-	}
 
-	.au-link-list {
-		a {
-			border-color: $AU-colordark-foreground-border;
+		.au-side-nav__content a {
+			@include AU-focus( 'dark' );
+			color: $AU-colordark-foreground-muted;
+
+			&:focus {
+				outline-offset: -3px; // Accordion body adds overflow hidden, this counters it
+			}
 
 			&:hover {
-				background: $AU-colordark-background-shade;
+				background-color: $AU-colordark-background-shade;
 			}
 		}
 
-		.active {
-			border-color: $AU-colordark-foreground-action;
+		.au-sidenav__title {
+			border-bottom-color: $AU-colordark-foreground-text;
 
 			a {
 				color: $AU-colordark-foreground-text;
 			}
 		}
-	}
+
+		.au-link-list {
+			border-bottom-color: $AU-colordark-foreground-border;
+
+			a {
+				border-color: $AU-colordark-foreground-border;
+			}
+
+			.active a {
+					color: $AU-colordark-foreground-text;
+			}
+		}
 
 	.au-accordion__title {
 		background: $AU-colordark-foreground-action;
@@ -135,19 +171,35 @@
 // Dark alternate colour styles
 .au-body.au-body-dark.au-body--alt .au-side-nav,
 .au-side-nav.au-side-nav--dark.au-side-nav--alt {
-	.au-link-list a:hover {
-		background: $AU-colordark-background-alt-shade;
+
+	.au-side-nav__content a:hover {
+		background-color:	$AU-colordark-background-alt-shade;
 	}
+
 }
 
 
 
 // Title above navigation
 .au-sidenav__title {
-	@include AU-space( padding-left, 1unit );
-	display: block;
-	color: $AU-color-foreground-text;
-	text-decoration: none;
+	@include AU-fontgrid( md, heading );
+	margin: 0;
+	padding: 0;
+	border-bottom: solid 2px $AU-color-foreground-text;
+
+	//
+	a {
+		@include AU-space( padding, 1unit );
+		display: block;
+		color: $AU-color-foreground-text;
+		text-decoration: none;
+
+		&:hover {
+			color: $AU-color-foreground-text;
+			background-color: $AU-color-background-shade;
+			text-decoration: underline;
+		}
+	}
 }
 
 // Always hide unless there is javascript
@@ -173,6 +225,10 @@
 		}
 	}
 
+	.au-sidenav__title {
+		@include AU-fontgrid( sm, heading );
+	}
+
 	.au-body.au-body--dark .au-side-nav .au-side-nav__content,
 	.au-side-nav.au-side-nav--dark .au-side-nav__content {
 		border-color: $AU-colordark-foreground-border;
@@ -189,6 +245,8 @@
 
 	// Show the toggle for mobile dimensions
 	.au-side-nav__toggle {
+		@include AU-fontgrid( sm, heading );
+		font-weight: normal;
 		display: block;
 
 		&.au-accordion--open {
