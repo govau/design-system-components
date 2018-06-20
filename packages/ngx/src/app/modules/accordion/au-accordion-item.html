@@ -1,0 +1,6 @@
+<section [class]="defaultCSSClass"
+         [attr.id]="id"
+         [class.au-accordion--dark]="isUsingDarkPalette">
+  <ng-content select="au-accordion-title"></ng-content>
+  <ng-content select="au-accordion-body"></ng-content>
+</section>

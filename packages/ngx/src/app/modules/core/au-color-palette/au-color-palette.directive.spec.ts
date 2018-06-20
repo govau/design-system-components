@@ -5,52 +5,58 @@ import { CoreModule } from "../core.module";
 import { UiKitCoreService } from "../ui-kit-core.service";
 import { TestComponent } from "../test.component";
 
-
 describe("AuColorPaletteDirective", () => {
+  it(
+    "attaching to html div element should work",
+    fakeAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [CoreModule.forRoot()],
+        declarations: [TestComponent]
+      })
+        .overrideTemplate(TestComponent, `<div au-color-palette></div>`)
+        .compileComponents();
 
-  it("attaching to html div element should work", fakeAsync(() => {
+      const fixture = TestBed.createComponent(TestComponent);
 
-    TestBed.configureTestingModule({
-      imports: [CoreModule.forRoot()],
-      declarations: [TestComponent],
-    }).overrideTemplate(TestComponent, `<div au-color-palette></div>`)
-      .compileComponents();
+      const service: UiKitCoreService = fixture.debugElement.injector.get(
+        UiKitCoreService
+      );
+      service.setColorPalettes("dark");
 
-    const fixture = TestBed.createComponent(TestComponent);
+      fixture.detectChanges();
+      tick();
 
-    const service: UiKitCoreService = fixture.debugElement.injector.get(UiKitCoreService);
-    service.setColorPalettes("dark");
+      expect(service.isUsingDarkPalette()).toBeTruthy();
+      expect(service.isUsingLightPalette()).toBeFalsy();
+      expect(service.isUsingAltPalette()).toBeFalsy();
+    })
+  );
 
-    fixture.detectChanges();
-    tick();
+  it(
+    "setting multiple color palette value should work",
+    fakeAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [CoreModule.forRoot()],
+        declarations: [TestComponent]
+      })
+        .overrideTemplate(
+          TestComponent,
+          `<div au-color-palette = 'dark, alt'></div>`
+        )
+        .compileComponents();
 
-    expect(service.isUsingDarkPalette()).toBeTruthy();
-    expect(service.isUsingLightPalette()).toBeFalsy();
-    expect(service.isUsingAltPalette()).toBeFalsy();
+      const fixture = TestBed.createComponent(TestComponent);
 
-  }));
+      fixture.detectChanges();
+      tick();
 
+      const service: UiKitCoreService = fixture.debugElement.injector.get(
+        UiKitCoreService
+      );
 
-  it("setting multiple color palette value should work", fakeAsync(() => {
-
-    TestBed.configureTestingModule({
-      imports: [CoreModule.forRoot()],
-      declarations: [TestComponent],
-    }).overrideTemplate(TestComponent, `<div au-color-palette = 'dark, alt'></div>`)
-      .compileComponents();
-
-    const fixture = TestBed.createComponent(TestComponent);
-
-    fixture.detectChanges();
-    tick();
-
-    const service: UiKitCoreService = fixture.debugElement.injector.get(UiKitCoreService);
-
-    expect(service.isUsingDarkPalette()).toBeTruthy();
-    expect(service.isUsingLightPalette()).toBeFalsy();
-    expect(service.isUsingAltPalette()).toBeTruthy();
-
-
-  }));
-
+      expect(service.isUsingDarkPalette()).toBeTruthy();
+      expect(service.isUsingLightPalette()).toBeFalsy();
+      expect(service.isUsingAltPalette()).toBeTruthy();
+    })
+  );
 });

@@ -7,12 +7,12 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React from "react";
 
 const ngx = () => (
-	<div className="uikit-ngx">
-		<strong>Yay!</strong>
-	</div>
+  <div className="uikit-ngx">
+    <strong>Yay!</strong>
+  </div>
 );
 
 export default ngx;

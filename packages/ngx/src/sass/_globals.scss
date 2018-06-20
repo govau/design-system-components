@@ -14,11 +14,13 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 $name: "[replace-name]";
 $version: "[replace-version]";
-$dependencies: (
-	[replace-dependencies]
-);
+$dependencies: ([replace-dependencies]);
 
-@include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
+@include versioning-add(
+  $name,
+  $version,
+  $dependencies
+); //adding dependencies to global scope
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL VARIABLES

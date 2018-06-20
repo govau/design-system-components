@@ -5,9 +5,7 @@ import { UiKitCoreService } from "../ui-kit-core.service";
   selector: "[au-color-palette]"
 })
 export class AuColorPaletteDirective {
-
-  constructor(private coreService: UiKitCoreService) {
-  }
+  constructor(private coreService: UiKitCoreService) {}
 
   @Input("au-color-palette")
   set _palette(value: string) {
@@ -15,6 +13,4 @@ export class AuColorPaletteDirective {
       this.coreService.setColorPalettes(value);
     }
   }
-
-
 }

@@ -8,21 +8,21 @@ import { AuFontgridDirective } from "./au-fontgrid/au-fontgrid.directive";
 import { AuBodyDirective } from "./au-body/au-body.directive";
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   declarations: [
     AuColorPaletteDirective,
     AuOutlineDirective,
     AuFocusDirective,
     AuFontgridDirective,
-    AuBodyDirective],
+    AuBodyDirective
+  ],
   exports: [
     AuColorPaletteDirective,
     AuOutlineDirective,
     AuFocusDirective,
     AuFontgridDirective,
-    AuBodyDirective],
+    AuBodyDirective
+  ],
   providers: [UiKitCoreService]
 })
 export class CoreModule {

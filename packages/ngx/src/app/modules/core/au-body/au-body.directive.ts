@@ -5,28 +5,27 @@ import { UiKitCoreService } from "../ui-kit-core.service";
   selector: "[au-body]"
 })
 export class AuBodyDirective {
-
   private _auBody = {
     dark: undefined,
     alt: undefined
   };
 
-  constructor(private coreService: UiKitCoreService) {
-  }
+  constructor(private coreService: UiKitCoreService) {}
 
-  @HostBinding("class")
-  _defaultCSSClass = "au-body";
+  @HostBinding("class") _defaultCSSClass = "au-body";
 
   @HostBinding("class.au-body--dark")
   get _usingDarkPalette(): boolean {
     return this._auBody.dark !== undefined
-      ? this._auBody.dark : this.coreService.isUsingDarkPalette();
+      ? this._auBody.dark
+      : this.coreService.isUsingDarkPalette();
   }
 
   @HostBinding("class.au-body--alt")
   get _usingAltPalette(): boolean {
     return this._auBody.alt !== undefined
-      ? this._auBody.alt : this.coreService.isUsingAltPalette();
+      ? this._auBody.alt
+      : this.coreService.isUsingAltPalette();
   }
 
   @Input("au-body")

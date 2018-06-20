@@ -13,13 +13,10 @@ export class AppComponent {
 
   dropDownValue = "light";
 
-  constructor(private uiKitCoreService: UiKitCoreService) {
-  }
-
+  constructor(private uiKitCoreService: UiKitCoreService) {}
 
   onChange(value) {
     this.dropDownValue = value;
     this.uiKitCoreService.setColorPalettes(value);
   }
-
 }

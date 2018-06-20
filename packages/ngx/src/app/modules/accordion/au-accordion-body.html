@@ -1,0 +1,9 @@
+<div [class]="defaultCSSClass"
+     [class.au-accordion--open]="isAccordionOpen"
+     [class.au-accordion--closed]="isAccordionClosed"
+     [attr.id]="id"
+     [attr.aria-hidden]="isAriaHidden">
+  <div class="au-accordion__body-wrapper">
+    <ng-content></ng-content>
+  </div>
+</div>

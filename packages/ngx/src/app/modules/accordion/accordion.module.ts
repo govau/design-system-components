@@ -1,19 +1,34 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { CoreModule } from "../core/core.module";
-import { AuAccordionDirective } from './au-accordion.directive';
-import { AuAccordionHeaderDirective } from './au-accordion-header.directive';
-import { AuAccordionBodyDirective } from './au-accordion-body.directive';
-import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { AuAccordionItem, AuAccordionItemContainer } from "./au-accordion-item";
+import {
+  AuAccordionTitle,
+  AuAccordionTitleContainer
+} from "./au-accordion-title";
+import { AuAccordionBody, AuAccordionBodyContainer } from "./au-accordion-body";
+import { CdkAccordionModule } from "@angular/cdk/accordion";
+import { AuAccordionGroup } from "./au-accordion-group";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    CoreModule.forRoot(),
-    CdkAccordionModule
+  imports: [CommonModule, CoreModule.forRoot(), CdkAccordionModule],
+  declarations: [
+    AuAccordionItem,
+    AuAccordionItemContainer,
+    AuAccordionTitle,
+    AuAccordionTitleContainer,
+    AuAccordionBody,
+    AuAccordionBodyContainer,
+    AuAccordionGroup
   ],
-  declarations: [AuAccordionDirective, AuAccordionHeaderDirective, AuAccordionBodyDirective],
-  exports: [AuAccordionDirective, AuAccordionHeaderDirective, AuAccordionBodyDirective]
+  exports: [
+    AuAccordionItem,
+    AuAccordionItemContainer,
+    AuAccordionTitle,
+    AuAccordionTitleContainer,
+    AuAccordionBody,
+    AuAccordionBodyContainer,
+    AuAccordionGroup
+  ]
 })
-export class AccordionModule {
-}
+export class AccordionModule {}

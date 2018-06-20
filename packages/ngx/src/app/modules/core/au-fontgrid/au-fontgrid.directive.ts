@@ -4,14 +4,11 @@ import { Directive, ElementRef, HostBinding, Input } from "@angular/core";
   selector: "[au-fontgrid]"
 })
 export class AuFontgridDirective {
-
   private _font_grid: string;
 
-  constructor() {
-  }
+  constructor() {}
 
-  @HostBinding("class")
-  _defaultCSSClass = "au-fontgrid";
+  @HostBinding("class") _defaultCSSClass = "au-fontgrid";
 
   @HostBinding("class.au-fontgrid-0")
   get _au_font_grid_0() {
@@ -54,5 +51,4 @@ export class AuFontgridDirective {
       this._font_grid = value;
     }
   }
-
 }

@@ -5,21 +5,18 @@ import { UiKitCoreService } from "../ui-kit-core.service";
   selector: "[au-focus]"
 })
 export class AuFocusDirective {
-
   private _auFocusDark: boolean = undefined;
 
-  constructor(private coreService: UiKitCoreService) {
-  }
+  constructor(private coreService: UiKitCoreService) {}
 
-  @HostBinding("class")
-  _defaultCSSClass = "au-focus";
+  @HostBinding("class") _defaultCSSClass = "au-focus";
 
   @HostBinding("class.dark")
   get _usingDarkPalette(): boolean {
     return this._auFocusDark === undefined
-      ? this.coreService.isUsingDarkPalette() : this._auFocusDark;
+      ? this.coreService.isUsingDarkPalette()
+      : this._auFocusDark;
   }
-
 
   @Input("au-focus")
   set _au_focus(value: string) {

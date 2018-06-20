@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class UiKitCoreService {
-
   /**
    * Available color palettes
    */
@@ -21,8 +20,7 @@ export class UiKitCoreService {
    */
   private _colorPalette = UiKitCoreService.LIGHT_COLOR_PALETTE;
 
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Sets the color palette for the page.
@@ -38,27 +36,28 @@ export class UiKitCoreService {
         }
       });
     }
-  }
+  };
 
   /**
    * Indicates if the light color palette is being used
    */
   isUsingLightPalette = (): boolean => {
-    return this._colorPalette.indexOf(UiKitCoreService.LIGHT_COLOR_PALETTE) > -1;
-  }
+    return (
+      this._colorPalette.indexOf(UiKitCoreService.LIGHT_COLOR_PALETTE) > -1
+    );
+  };
 
   /**
    * Indicates if the dark color palette is being used
    */
   isUsingDarkPalette = (): boolean => {
     return this._colorPalette.indexOf(UiKitCoreService.DARK_COLOR_PALETTE) > -1;
-  }
+  };
 
   /**
    * Indicates if the alt color palette is being used
    */
   isUsingAltPalette = (): boolean => {
     return this._colorPalette.indexOf(UiKitCoreService.ALT_COLOR_PALETTE) > -1;
-  }
-
+  };
 }

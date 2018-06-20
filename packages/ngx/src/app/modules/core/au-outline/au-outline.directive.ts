@@ -5,19 +5,20 @@ import { UiKitCoreService } from "../ui-kit-core.service";
   selector: "[au-outline]"
 })
 export class AuOutlineDirective {
-
   private _auOutlineDark: boolean = undefined;
 
-  constructor(private elementRef: ElementRef, private coreService: UiKitCoreService) {
-  }
+  constructor(
+    private elementRef: ElementRef,
+    private coreService: UiKitCoreService
+  ) {}
 
-  @HostBinding("class")
-  _defaultCSSClass = "au-outline";
+  @HostBinding("class") _defaultCSSClass = "au-outline";
 
   @HostBinding("class.dark")
   get _usingDarkPalette(): boolean {
     return this._auOutlineDark === undefined
-      ? this.coreService.isUsingDarkPalette() : this._auOutlineDark;
+      ? this.coreService.isUsingDarkPalette()
+      : this._auOutlineDark;
   }
 
   @Input("au-outline")

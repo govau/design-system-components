@@ -1,0 +1,10 @@
+<a [attr.href]="attributeHref"
+   [attr.class]="cssClasses"
+   [class.au-accordion--open] = "isAccordionOpen"
+   [class.au-accordion--closed] = "isAccordionClosed"
+   [attr.aria-controls]="controllingAccordionBodyId"
+   [attr.aria-expanded]="expanded"
+   [attr.aria-selected]="selected"
+   role="tab">
+  <ng-content></ng-content>
+</a>

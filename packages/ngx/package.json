@@ -1,7 +1,7 @@
 {
 	"name": "@gov.au/ngx",
 	"version": "0.6.0",
-	"description": "Angular implementation of all UI-Kit modules",
+	"description": "Angular implementation of GOV.AU UI-Kit modules using CDK",
 	"keywords": [
 		"uikit",
 		"pancake",
@@ -14,16 +14,22 @@
 		"design guide",
 		"design system",
 		"Angular",
+    "Angular Component Development Kit",
+    "Angular CDK",
 		"Angular module"
 	],
 	"scripts": {
-		"test": "ng test",
+		"test": "ng test --sourcemaps=false",
 		"lint": "ng lint -fix",
-		"tsfmt": "tsfmt -r",
+		"format": "prettier --write 'src/**/*.ts'",
 		"prepublish": "npm run test && npm run build",
 		"build": "ng-packagr -p package.json",
-		"watch": "ng serve"
+		"watch": "ng serve --extract-css"
 	},
+  "pre-commit": [
+    "format",
+    "test"
+  ],
 	"dependencies": {
 		"@gov.au/core": "^2.0.0",
 		"@angular/core": "^5.2.0",
@@ -62,6 +68,8 @@
 		"ng-packagr": "^2.4.2",
 		"ngx-highlight-js": "^1.0.3",
 		"node-sass": "^4.9.0",
+		"pre-commit": "^1.2.2",
+		"prettier": "^1.13.5",
 		"protractor": "~5.1.2",
 		"rxjs": "^5.5.6",
 		"sass-versioning": "^0.3.0",
