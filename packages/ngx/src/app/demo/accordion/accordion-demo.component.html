@@ -1,0 +1,66 @@
+<a class="test-link" href="../">&larr; back to the module index</a>
+
+<h1 id="url">Test: accordion</h1>
+
+<div class="split-wrapper">
+  <div class="split">
+
+    <h2>Without body</h2>
+
+    <h3>Accordion open by default</h3>
+
+    <section au-accordion-item [open]="true">
+      <a au-accordion-title>Accordion title</a>
+      <div au-accordion-body>
+        <div class="au-accordion__body-wrapper">
+          <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    <h3>Accordion closed by default</h3>
+    <section au-accordion-item>
+      <a au-accordion-title>Accordion title</a>
+      <div au-accordion-body>
+        <div class="au-accordion__body-wrapper">
+          <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    <h3>Accordion disabled</h3>
+    <section au-accordion-item [disabled] = "true" [open]="true">
+      <a au-accordion-title>Accordion title</a>
+      <div au-accordion-body>
+        <div class="au-accordion__body-wrapper">
+          <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    <h3>Accordion disabled and closed</h3>
+    <section au-accordion-item [disabled] = "true">
+      <a au-accordion-title>Accordion title</a>
+      <div au-accordion-body>
+        <div class="au-accordion__body-wrapper">
+          <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    <h3>Accordion used as a component</h3>
+    <au-accordion-item [open]="true">
+      <au-accordion-title>Accordion title</au-accordion-title>
+      <au-accordion-body>
+        <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+      </au-accordion-body>
+    </au-accordion-item>
+
+
+
+  </div>
+</div>
