@@ -23,7 +23,6 @@ export class AuAccordionTitleBase {
       : this._default_disabled_class;
   }
 
-
   controllingAccordionBodyId = "";
 
   /** Event emitted every time the AccordionItem is clicked. */
@@ -115,7 +114,7 @@ export class AuAccordionTitleBase {
     "[class]": "cssClasses",
     "[class.au-accordion--open]": "isAccordionOpen",
     "[class.au-accordion--closed]": "isAccordionClosed",
-    "role": "tab",
+    role: "tab",
     "[attr.aria-controls]": "controllingAccordionBodyId",
     "[attr.aria-expanded]": "expanded",
     "[attr.aria-selected]": "selected"
@@ -128,8 +127,7 @@ export class AuAccordionTitleBase {
   ],
   encapsulation: ViewEncapsulation.None
 })
-export class AuAccordionTitle extends AuAccordionTitleBase {
-}
+export class AuAccordionTitle extends AuAccordionTitleBase {}
 
 @Component({
   selector: "au-accordion-title",
@@ -143,5 +141,4 @@ export class AuAccordionTitle extends AuAccordionTitleBase {
   ],
   encapsulation: ViewEncapsulation.None
 })
-export class AuAccordionTitleContainer extends AuAccordionTitleBase {
-}
+export class AuAccordionTitleContainer extends AuAccordionTitleBase {}

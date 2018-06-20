@@ -246,7 +246,6 @@ describe("AuAccordionItem", () => {
       tick();
 
       expect(headerDirective._clickEventEmitter.emit).toHaveBeenCalledTimes(0);
-
     })
   );
 
@@ -277,5 +276,4 @@ describe("AuAccordionItem", () => {
       console.log(fixture.nativeElement);
     })
   );
-
 });

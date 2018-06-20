@@ -9,7 +9,7 @@
 
     <h3>Accordion open by default</h3>
 
-    <section au-accordion-item [open]="true">
+    <section au-accordion-item [expanded]="true">
       <a au-accordion-title>Accordion title</a>
       <div au-accordion-body>
         <div class="au-accordion__body-wrapper">
@@ -31,7 +31,7 @@
 
     <hr>
     <h3>Accordion disabled</h3>
-    <section au-accordion-item [disabled] = "true" [open]="true">
+    <section au-accordion-item [disabled] = "true" [expanded]="true">
       <a au-accordion-title>Accordion title</a>
       <div au-accordion-body>
         <div class="au-accordion__body-wrapper">
@@ -53,13 +53,71 @@
 
     <hr>
     <h3>Accordion used as a component</h3>
-    <au-accordion-item [open]="true">
+    <au-accordion-item [expanded]="true">
       <au-accordion-title>Accordion title</au-accordion-title>
       <au-accordion-body>
         <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
       </au-accordion-body>
     </au-accordion-item>
 
+
+    <hr>
+    <h3>Accordion group with multiple expansion not allowed</h3>
+    <au-accordion-group>
+    <section au-accordion-item >
+      <a au-accordion-title>Accordion title</a>
+      <div au-accordion-body>
+        <div class="au-accordion__body-wrapper">
+          <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+        </div>
+      </div>
+    </section>
+      <section au-accordion-item >
+        <a au-accordion-title>Accordion title</a>
+        <div au-accordion-body>
+          <div class="au-accordion__body-wrapper">
+            <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+          </div>
+        </div>
+      </section>
+      <section au-accordion-item>
+        <a au-accordion-title>Accordion title</a>
+        <div au-accordion-body>
+          <div class="au-accordion__body-wrapper">
+            <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+          </div>
+        </div>
+      </section>
+    </au-accordion-group>
+
+    <hr>
+    <h3>Accordion group with multiple expansion allowed</h3>
+    <au-accordion-group [multi] = "true">
+      <section au-accordion-item >
+        <a au-accordion-title>Accordion title</a>
+        <div au-accordion-body>
+          <div class="au-accordion__body-wrapper">
+            <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+          </div>
+        </div>
+      </section>
+      <section au-accordion-item >
+        <a au-accordion-title>Accordion title</a>
+        <div au-accordion-body>
+          <div class="au-accordion__body-wrapper">
+            <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+          </div>
+        </div>
+      </section>
+      <section au-accordion-item>
+        <a au-accordion-title>Accordion title</a>
+        <div au-accordion-body>
+          <div class="au-accordion__body-wrapper">
+            <div class="no-a11y-test">Here <a href="#url">is</a> some accordion content</div>
+          </div>
+        </div>
+      </section>
+    </au-accordion-group>
 
 
   </div>
