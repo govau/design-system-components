@@ -38,10 +38,16 @@ $AU-side-nav-depth: 3 !default;
 @mixin AU-side-nav-indent( $depth: $AU-side-nav-depth, $indent-size: 1 ) {
   $chain: 'a';
   @for $i from 1 to $depth + 1 {
-    $chain: 'ul ' + $chain;
+		$chain: 'ul ' + $chain;
+		// $indent: ( $indent-size * $i + 1 ) * 1unit;
+		$indent: if(
+			$i < 2,
+			( $indent-size * $i + 1 ) * 1unit,
+			( $indent-size * $i + 1 ) * 1.25unit
+		);
 
     & #{$chain} {
-      @include AU-space( padding-left, ( $indent-size * $i + 1 ) * 1unit );
+      @include AU-space( padding-left, $indent );
     }
   }
 }

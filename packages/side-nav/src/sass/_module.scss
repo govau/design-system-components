@@ -10,252 +10,187 @@
 @import '_print.scss';
 
 
-.au-body .au-side-nav,
 .au-side-nav {
-	@include AU-clearfix();
 	@include AU-fontgrid( sm );
+	background-color: $AU-color-background-alt;
+	border-radius: $AU-border-radius;
 	overflow: hidden;
-	font-family: $AU-font;
-	color: $AU-color-foreground-text;
-
-	ul,
-	li {
-		margin: 0;
-	}
 
 	a {
-		@include AU-focus();
+		@include AU-space( padding, 1unit );
+		@include AU-fontgrid( xs );
+		color: $AU-color-foreground-muted;
+		display: block;
 
-		&:focus {
-			outline-offset: -3px; // Accordion body adds overflow hidden, this counters it
+		&:hover {
+			background-color: $AU-color-background-alt-shade;
 		}
 	}
 
-	// Apply a border bottom to the first menu
-	.au-side-nav__content > .au-link-list {
-		border-bottom: 1px solid $AU-color-foreground-border;
-	}
+	a,
+	.au-accordion__title {
+		text-decoration: none;
 
-	.au-link-list li:first-child a {
-		border-top: none;
+		&:hover {
+			text-decoration: underline;
+			text-decoration-skip: ink;
+		}
 	}
 
 	.au-link-list {
-		@include AU-side-nav-indent( $AU-side-nav-depth, 1.25 );
 		padding: 0;
 
-		a {
-			@include AU-fontgrid( xs );
-			@include AU-space( padding, 1unit );
-			color: $AU-color-foreground-muted;
-			text-decoration: none;
-			border-top: 1px solid $AU-color-foreground-border;
-			display: block;
-
-			&:hover {
-				background-color: $AU-color-background-shade;
-				text-decoration: underline;
-			}
+		li {
+			margin: 0;
 		}
-
-		ul a {
-			border-top: none;
-		}
-
-		// Active styles, li is added to keep background transparent on different colour schemes
-		li.active {
-			// @include AU-space( border-left, $AU-color-foreground-action solid 0.25unit );
-
-			a {
-				font-weight: bold;
-				color: $AU-color-foreground-text;
-			}
-		}
-	}
-
-	// FIXME @pagey
-	ul ul ul a {
-		background-repeat: no-repeat;
-		background-position: 2.25rem center;
-		padding-left: 3.75rem;
-		background-size: 1rem 1rem;
-
-		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
-		  '<path fill="#{ $AU-color-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
-		'</svg>');
 	}
 
 	.au-accordion__title {
-		background: $AU-color-foreground-action;
-		color: $AU-color-background;
-		border-radius: $AU-border-radius;
+		@include AU-fontgrid( sm );
+		font-weight: normal;
+	}
 
-		&:after {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-				'	<path fill="#{ $AU-color-background }" d="M64 0l64 64-16 16-64-64"/>' +
-				'	<path fill="#{ $AU-color-background }" d="M64 0l16 16-64 64L0 64"/>' +
+	.au-side-nav__content {
+		@include AU-space( margin, 0 1unit );
+
+		ul {
+			@include AU-side-nav-indent( 5 );
+		}
+
+		.active a {
+			font-weight: bold;
+			color: $AU-color-foreground-text;
+		}
+
+		ul ul ul a {
+			&:before {
+				content: " ";
+				@include AU-space( width, 1unit );
+				@include AU-space( height, 1unit );
+				@include AU-space( background-size, 1unit );
+				@include AU-space( margin-left, -1.5unit );
+				display: block;
+				float: left;
+				background-repeat: no-repeat;
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
+					'<path fill="#{ $AU-color-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
 				'</svg>');
+			}
+		}
+
+		& > ul > li {
+			border-bottom: 1px solid $AU-color-foreground-border;
+
+			&:last-of-type {
+				border: none;
+			}
+		}
+	}
+
+	.au-sidenav__title {
+		margin: 0;
+
+		a {
+			@include AU-fontgrid( sm );
+			color: $AU-color-foreground-text;
+			border-bottom: 2px solid $AU-color-foreground-border;
+		}
+	}
+
+	@include AU-media( sm ){
+		background: transparent;
+		border-radius: 0;
+		overflow: visible;
+
+		// Open the menu on desktop
+		.au-accordion__body.au-accordion--closed {
+			display: block;
+			height: auto;
+		}
+
+		a:hover {
+			background-color: $AU-color-background-shade;
+		}
+
+		.au-accordion__title {
+			display: none;
 		}
 	}
 }
 
 
-
-
-// Alternate colour styles
-.au-body.au-body--alt .au-side-nav,
 .au-side-nav.au-side-nav--alt {
-	.au-side-nav__content a{
-		&:hover {
+	background: $AU-color-background;
+
+	a:hover {
+		background: $AU-color-background-shade;
+	}
+
+	@include AU-media( sm ){
+		background: transparent;
+
+		a:hover {
 			background-color: $AU-color-background-alt-shade;
 		}
 	}
 }
 
-// Dark colour styles
-.au-body.au-body--dark .au-side-nav,
+
 .au-side-nav.au-side-nav--dark {
+	background: $AU-colordark-background-alt;
 
-		ul ul ul a {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
-			  '<path fill="#{ $AU-colordark-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
-			'</svg>');
-		}
-
-		.au-side-nav__content a {
-			@include AU-focus( 'dark' );
-			color: $AU-colordark-foreground-muted;
-
-			&:focus {
-				outline-offset: -3px; // Accordion body adds overflow hidden, this counters it
-			}
-
-			&:hover {
-				background-color: $AU-colordark-background-shade;
-			}
-		}
-
-		.au-sidenav__title {
-			border-bottom-color: $AU-colordark-foreground-text;
-
-			a {
-				color: $AU-colordark-foreground-text;
-			}
-		}
-
-		.au-link-list {
-			border-bottom-color: $AU-colordark-foreground-border;
-
-			a {
-				border-color: $AU-colordark-foreground-border;
-			}
-
-			.active a {
-					color: $AU-colordark-foreground-text;
-			}
-		}
-
-	.au-accordion__title {
-		background: $AU-colordark-foreground-action;
-		color: $AU-colordark-background;
-
-		&:after {
-			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
-				'	<path fill="#{ $AU-colordark-background }" d="M64 0l64 64-16 16-64-64"/>' +
-				'	<path fill="#{ $AU-colordark-background }" d="M64 0l16 16-64 64L0 64"/>' +
-				'</svg>');
-		}
-	}
-}
-
-// Dark alternate colour styles
-.au-body.au-body-dark.au-body--alt .au-side-nav,
-.au-side-nav.au-side-nav--dark.au-side-nav--alt {
-
-	.au-side-nav__content a:hover {
-		background-color:	$AU-colordark-background-alt-shade;
-	}
-
-}
-
-
-
-// Title above navigation
-.au-sidenav__title {
-	@include AU-fontgrid( md, heading );
-	margin: 0;
-	padding: 0;
-	border-bottom: solid 2px $AU-color-foreground-text;
-
-	//
 	a {
-		@include AU-space( padding, 1unit );
-		display: block;
-		color: $AU-color-foreground-text;
-		text-decoration: none;
+		color: $AU-colordark-foreground-muted;
 
 		&:hover {
-			color: $AU-color-foreground-text;
-			background-color: $AU-color-background-shade;
-			text-decoration: underline;
+			background: $AU-colordark-background-alt-shade;
 		}
 	}
-}
 
-// Always hide unless there is javascript
-.au-side-nav__toggle {
-	display: none;
-}
-
-
-// Show the content for desktop
-.js {
 	.au-side-nav__content {
-		@include AU-space( padding, 0 1unit 1unit );
-		border-bottom-left-radius: $AU-border-radius;
-		border-bottom-right-radius: $AU-border-radius;
-		border-left: 2px solid $AU-color-foreground-border;
-		border-bottom: 2px solid $AU-color-foreground-border;
-		border-right: 2px solid $AU-color-foreground-border;
+		.active a {
+			color: $AU-colordark-foreground-text;
+		}
 
-		@include AU-media( sm ){
-			border: 0;
-			border-radius: 0;
-			padding: 0;
+		ul ul ul a {
+			&:before {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
+					'<path fill="#{ $AU-colordark-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
+				'</svg>');
+			}
+		}
+
+		& > ul > li {
+			border-color: $AU-colordark-foreground-border;
 		}
 	}
 
-	.au-sidenav__title {
-		@include AU-fontgrid( sm, heading );
-	}
-
-	.au-body.au-body--dark .au-side-nav .au-side-nav__content,
-	.au-side-nav.au-side-nav--dark .au-side-nav__content {
+	.au-sidenav__title a {
 		border-color: $AU-colordark-foreground-border;
+		color: $AU-colordark-foreground-text;
 	}
 
-	.au-side-nav__content.au-accordion--closed {
-		display: none;
+	@include AU-media( sm ){
+		background: transparent;
 
-		@include AU-media( sm ){
-			display: block;
-			height: auto;
+		a:hover {
+			background-color: $AU-colordark-background-shade;
 		}
 	}
+}
 
-	// Show the toggle for mobile dimensions
-	.au-side-nav__toggle {
-		@include AU-fontgrid( sm, heading );
-		font-weight: normal;
-		display: block;
+.au-side-nav.au-side-nav--dark.au-side-nav--alt {
+	background: $AU-colordark-background;
 
-		&.au-accordion--open {
-			border-bottom-right-radius: 0;
-			border-bottom-left-radius: 0;
-		}
+	a:hover {
+		background: $AU-colordark-background-shade;
+	}
 
-		@include AU-media( sm ){
-			display: none;
+	@include AU-media( sm ){
+		background: transparent;
+
+		a:hover {
+			background-color: $AU-colordark-background-alt-shade;
 		}
 	}
 }
