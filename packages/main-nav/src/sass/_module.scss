@@ -31,6 +31,7 @@
 		@include AU-space( padding, 1unit );
 
 		&:hover {
+			color: $AU-color-foreground-text;
 			text-decoration: underline;
 			text-decoration-skip: ink;
 			background: $AU-color-background-shade;
@@ -49,12 +50,58 @@
 		}
 
 		a {
-			@include AU-space( padding, 1.5unit 1unit );
+			@include AU-space( padding, 1unit 1unit );
 		}
 
 		.active {
 			@include AU-space( border-bottom, solid 0.5unit $AU-color-background );
 		}
+	}
+}
+
+
+.au-navigation--alt {
+	background-color: $AU-color-background-alt;
+
+	.active {
+		border-bottom-color: $AU-color-background-alt;
+	}
+
+	a:hover {
+		background-color: $AU-color-background-alt-shade;
+	}
+}
+
+
+.au-navigation--dark {
+	background-color: $AU-colordark-background;
+	border-bottom-color: $AU-colordark-foreground-action;
+
+	.active {
+		border-bottom-color: $AU-colordark-background;
+	}
+
+	a {
+		color: $AU-colordark-foreground-action;
+		@include AU-focus( dark );
+	}
+
+	a:hover {
+		color: $AU-colordark-foreground-text;
+		background-color: $AU-colordark-background-shade;
+	}
+}
+
+
+.au-navigation--alt.au-navigation--dark {
+	background-color: $AU-colordark-background-alt;
+
+	.active {
+		border-bottom-color: $AU-colordark-background-alt;
+	}
+
+	a:hover {
+		background-color: $AU-colordark-background-alt-shade;
 	}
 }
 
