@@ -38,9 +38,6 @@ npm install @gov.au/main-nav --save-dev
 
 ```shell
 main-nav
-├─ accordion
-│  ├─ animate
-│  └─ core
 ├─ core
 └─ link-list
    ├─ core

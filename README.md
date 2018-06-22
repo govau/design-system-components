@@ -380,9 +380,6 @@ All modules have to work on the below browsers:
 	<br>
 
 ```shell
-├─ accordion
-│  ├─ animate
-│  └─ core
 ├─ core
 └─ link-list
    ├─ core
