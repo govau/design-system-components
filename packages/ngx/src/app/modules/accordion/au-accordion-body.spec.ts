@@ -1,10 +1,10 @@
-import { AuAccordionBody } from "./au-accordion-body";
+import { AuAccordionBodyDirective } from "./au-accordion-body";
 import { fakeAsync, TestBed, tick } from "@angular/core/testing";
 import { TestComponent } from "../core/test.component";
 import { AccordionModule } from "./accordion.module";
 import { By } from "@angular/platform-browser";
 
-describe("AuAccordionBody", () => {
+describe("AuAccordionBodyDirective", () => {
   it(
     "should attach the default CSS classes",
     fakeAsync(() => {
@@ -72,10 +72,10 @@ describe("AuAccordionBody", () => {
       ).toBe("true");
 
       const auAccordionBodyDirectiveEl = fixture.debugElement.query(
-        By.directive(AuAccordionBody)
+        By.directive(AuAccordionBodyDirective)
       );
       const directiveInstance = auAccordionBodyDirectiveEl.injector.get(
-        AuAccordionBody
+        AuAccordionBodyDirective
       );
 
       directiveInstance.expanded = true;

@@ -273,7 +273,7 @@ describe("AuAccordionItem", () => {
         "au-accordion"
       );
 
-      console.log(fixture.nativeElement);
+      // console.log(fixture.nativeElement);
     })
   );
 });

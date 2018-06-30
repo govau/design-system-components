@@ -13,7 +13,10 @@ import {
 import { CdkAccordionItem } from "@angular/cdk/accordion";
 import { UiKitCoreService } from "../core/ui-kit-core.service";
 import { AuAccordionTitle, AuAccordionTitleBase } from "./au-accordion-title";
-import { AuAccordionBody, AuAccordionBodyBase } from "./au-accordion-body";
+import {
+  AuAccordionBodyDirective,
+  AuAccordionBodyBase
+} from "./au-accordion-body";
 import { UniqueSelectionDispatcher } from "@angular/cdk/collections";
 import { AuAccordionGroup } from "./au-accordion-group";
 
@@ -23,7 +26,7 @@ export class AuAccordionItemBase extends CdkAccordionItem
   private _titleContentChild: AuAccordionTitle;
 
   /** Reference to the body directive */
-  private _bodyContentChild: AuAccordionBody;
+  private _bodyContentChild: AuAccordionBodyDirective;
 
   /** Reference to the listeners*/
   private _headerClickEventSubscription: any;

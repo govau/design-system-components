@@ -6,18 +6,27 @@ import {
   AuAccordionTitle,
   AuAccordionTitleContainer
 } from "./au-accordion-title";
-import { AuAccordionBody, AuAccordionBodyContainer } from "./au-accordion-body";
+import {
+  AuAccordionBodyDirective,
+  AuAccordionBodyContainer
+} from "./au-accordion-body";
 import { CdkAccordionModule } from "@angular/cdk/accordion";
 import { AuAccordionGroup } from "./au-accordion-group";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
-  imports: [CommonModule, CoreModule.forRoot(), CdkAccordionModule],
+  imports: [
+    CommonModule,
+    CoreModule.forRoot(),
+    CdkAccordionModule,
+    BrowserAnimationsModule
+  ],
   declarations: [
     AuAccordionItem,
     AuAccordionItemContainer,
     AuAccordionTitle,
     AuAccordionTitleContainer,
-    AuAccordionBody,
+    AuAccordionBodyDirective,
     AuAccordionBodyContainer,
     AuAccordionGroup
   ],
@@ -26,7 +35,7 @@ import { AuAccordionGroup } from "./au-accordion-group";
     AuAccordionItemContainer,
     AuAccordionTitle,
     AuAccordionTitleContainer,
-    AuAccordionBody,
+    AuAccordionBodyDirective,
     AuAccordionBodyContainer,
     AuAccordionGroup
   ]
