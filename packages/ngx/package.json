@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/ngx",
-	"version": "0.6.0",
+	"version": "0.6.5",
 	"description": "Angular implementation of GOV.AU UI-Kit modules using CDK",
 	"keywords": [
 		"uikit",
