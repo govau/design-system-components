@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 
 import AUaccordion from './accordion.js';
@@ -9,22 +9,23 @@ class AccordionWrapper extends React.Component {
 	// for an example on what a state change might look like we have to add a state
 	constructor() {
 		super();
+		this.state = {};
 	}
 
 	// let’s change the state in the absence of more complex application code
 	changeAccordion( item ) {
-		this.setState({ [item]: !this.state[ item ] });
+		this.setState({ [ item ]: !this.state[ item ] });
 	}
 
 	render() {
 		return (
-			<div>
+			<Fragment>
 				<AUaccordion header="State controlled accordion open">
 					Some content of the accordion <a href="#url">here</a>
 				</AUaccordion>
 
-				<button type="button" onClick={ () => { this.changeAccordion('accordionOpen') } }>Toggle accordion via state</button>
-			</div>
+				<button type="button" onClick={ () => { this.changeAccordion( 'accordionClose' ) } }>Toggle accordion via state</button>
+			</Fragment>
 		);
 	}
 }
