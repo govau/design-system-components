@@ -41,6 +41,7 @@ side-nav
 ├─ accordion
 │  ├─ animate
 │  └─ core
+├─ animate
 ├─ core
 └─ link-list
    ├─ core

@@ -65,13 +65,15 @@
 		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/accordion": "^3.0.0",
+		"@gov.au/animate": "^1.0.0",
 		"@gov.au/core": "^3.0.0",
-		"@gov.au/link-list": "^2.0.0"
+		"@gov.au/link-list": "^3.0.0"
 	},
 	"peerDependencies": {
 		"@gov.au/accordion": "^3.0.0",
+		"@gov.au/animate": "^1.0.0",
 		"@gov.au/core": "^3.0.0",
-		"@gov.au/link-list": "^2.0.0"
+		"@gov.au/link-list": "^3.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.24.1",
@@ -85,6 +87,7 @@
 		"onchange": "^3.2.1",
 		"react": "^15.5.4",
 		"react-dom": "^15.5.4",
+		"react-router-dom": "^4.3.1",
 		"webpack": "^2.2.1",
 		"webpack-dev-server": "^2.4.1"
 	},

@@ -12,9 +12,11 @@
 
 .au-side-nav {
 	@include AU-fontgrid( sm );
+	font-family: $AU-font;
 	background-color: $AU-color-background-alt;
 	border-radius: $AU-border-radius;
 	overflow: hidden;
+	border: 0;
 
 	a {
 		@include AU-space( padding, 1unit );
@@ -28,21 +30,48 @@
 			text-decoration-skip: ink;
 			background-color: $AU-color-background-alt-shade;
 		}
+
+		@include AU-focus();
 	}
 
+	// Link list
 	.au-link-list {
 		padding: 0;
+		margin: 0;
 
 		li {
 			margin: 0;
 		}
 	}
 
-	.au-accordion__title {
-		@include AU-fontgrid( sm );
-		font-weight: normal;
+	// Accordion styles
+	.au-accordion__body {
+		overflow: visible;
 	}
 
+	.au-accordion__title {
+		@include AU-fontgrid( sm );
+		color: $AU-color-foreground-action;
+		font-weight: normal;
+		text-decoration: underline;
+		text-decoration-skip: ink;
+		background-color: inherit;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:focus {
+			outline-offset: -3px;
+		}
+	}
+
+	.au-accordion__body-wrapper {
+		border: 0;
+		padding: 0;
+	}
+
+	// Side nav menu and title
 	.au-side-nav__content {
 		@include AU-space( margin, 0 1unit );
 
@@ -90,6 +119,7 @@
 		}
 	}
 
+	// Desktop styles
 	@include AU-media( sm ){
 		background: transparent;
 		border-radius: 0;
@@ -132,12 +162,19 @@
 .au-side-nav.au-side-nav--dark {
 	background: $AU-colordark-background-alt;
 
+	.au-accordion__title {
+		color: $AU-colordark-foreground-action;
+		background-color: inherit;
+	}
+
 	a {
 		color: $AU-colordark-foreground-muted;
 
 		&:hover {
 			background: $AU-colordark-background-alt-shade;
 		}
+
+		@include AU-focus( 'dark' );
 	}
 
 	.au-side-nav__content {

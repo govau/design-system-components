@@ -44,7 +44,488 @@
 
 	<h1>JQuery test: side-nav</h1>
 
-	code here
+	<h1>Test: side-nav</h1>
+
+	<div class="split-wrapper">
+		<div class="split au-body">
+
+			<h2>Test: default</h2>
+			<nav class="au-side-nav au-accordion">
+
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-default"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-default" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
+					<h2 class="au-sidenav__title">
+						<a href="#">Lodging your tax return</a>
+					</h2>
+					<ul class="au-link-list">
+						<li><a href="#">Do you need to lodge a tax return?</a></li>
+						<li><a href="#">Lodging your first tax return</a></li>
+						<li><a href="#">Lodge online</a>
+							<ul class="au-link-list">
+								<li><a href="#">Pre-filling your online tax return</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lodge with a registered tax agent</a></li>
+						<li><a href="#">Lodge a paper tax return</a></li>
+						<li><a href="#">Tax Help program</a>
+							<ul class="au-link-list">
+								<li><a href="#">Become a Tax Help volunteer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">What's new for individuals</a></li>
+						<li><a href="#">Why you may receive a tax bill</a></li>
+						<li><a href="#">Tracking your refund or fixing a mistake</a></li>
+						<li><a href="#">Prior year returns</a></li>
+						<li><a href="#">In detail</a>
+							<ul class="au-link-list">
+								<li><a href="#">Record keeping</a>
+									<ul class="au-link-list">
+										<li class="active"><a href="#">Keeping your tax records</a></li>
+										<li><a href="#">Incorrect amounts at reportable employer super contributions on payment summaries</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Your notice of assessment</a></li>
+								<li><a href="#">MyTax replaces e-tax</a></li>
+								<li><a href="#">What is income?</a></li>
+								<li><a href="#">Certainty letter</a></li>
+								<li><a href="#">Tax receipt</a></li>
+								<li><a href="#">Pre-fill availability</a></li>
+								<li><a href="#">Tax: what you need to know</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="split au-body au-body--alt">
+
+			<h2>Test: <code>alt</code></h2>
+
+			<nav class="au-side-nav au-side-nav--alt au-accordion au-accordion--alt">
+
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-alt"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-alt" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
+					<h2 class="au-sidenav__title">
+						<a href="#">Lodging your tax return</a>
+					</h2>
+					<ul class="au-link-list">
+						<li><a href="#">Do you need to lodge a tax return?</a></li>
+						<li><a href="#">Lodging your first tax return</a></li>
+						<li><a href="#">Lodge online</a>
+							<ul class="au-link-list">
+								<li><a href="#">Pre-filling your online tax return</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lodge with a registered tax agent</a></li>
+						<li><a href="#">Lodge a paper tax return</a></li>
+						<li><a href="#">Tax Help program</a>
+							<ul class="au-link-list">
+								<li><a href="#">Become a Tax Help volunteer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">What's new for individuals</a></li>
+						<li><a href="#">Why you may receive a tax bill</a></li>
+						<li><a href="#">Tracking your refund or fixing a mistake</a></li>
+						<li><a href="#">Prior year returns</a></li>
+						<li><a href="#">In detail</a>
+							<ul class="au-link-list">
+								<li><a href="#">Record keeping</a>
+									<ul class="au-link-list">
+										<li class="active"><a href="#">Keeping your tax records</a></li>
+										<li><a href="#">Incorrect amounts at reportable employer super contributions on payment summaries</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Your notice of assessment</a></li>
+								<li><a href="#">MyTax replaces e-tax</a></li>
+								<li><a href="#">What is income?</a></li>
+								<li><a href="#">Certainty letter</a></li>
+								<li><a href="#">Tax receipt</a></li>
+								<li><a href="#">Pre-fill availability</a></li>
+								<li><a href="#">Tax: what you need to know</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="split-wrapper">
+		<div class="split au-body au-body--dark">
+			<h2>Test: <code>dark</code></h2>
+			<nav class="au-side-nav au-side-nav--dark au-accordion au-accordion--dark">
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-dark"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-dark" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
+					<h2 class="au-sidenav__title">
+						<a href="#">Lodging your tax return</a>
+					</h2>
+					<ul class="au-link-list" class="au-link-list">
+						<li><a href="#">Do you need to lodge a tax return?</a></li>
+						<li><a href="#">Lodging your first tax return</a></li>
+						<li><a href="#">Lodge online</a>
+							<ul class="au-link-list">
+								<li><a href="#">Pre-filling your online tax return</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lodge with a registered tax agent</a></li>
+						<li><a href="#">Lodge a paper tax return</a></li>
+						<li><a href="#">Tax Help program</a>
+							<ul class="au-link-list">
+								<li><a href="#">Become a Tax Help volunteer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">What's new for individuals</a></li>
+						<li><a href="#">Why you may receive a tax bill</a></li>
+						<li><a href="#">Tracking your refund or fixing a mistake</a></li>
+						<li><a href="#">Prior year returns</a></li>
+						<li><a href="#">In detail</a>
+							<ul class="au-link-list">
+								<li><a href="#">Record keeping</a>
+									<ul class="au-link-list">
+										<li class="active"><a href="#">Keeping your tax records</a></li>
+										<li><a href="#">Incorrect amounts at reportable employer super contributions on payment summaries</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Your notice of assessment</a></li>
+								<li><a href="#">MyTax replaces e-tax</a></li>
+								<li><a href="#">What is income?</a></li>
+								<li><a href="#">Certainty letter</a></li>
+								<li><a href="#">Tax receipt</a></li>
+								<li><a href="#">Pre-fill availability</a></li>
+								<li><a href="#">Tax: what you need to know</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="split au-body au-body--alt au-body--dark">
+
+			<h2>Test: <code>dark</code> <code>alt</code></h2>
+
+			<nav class="au-accordion au-accordion--dark au-side-nav au-side-nav--alt au-side-nav--dark">
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-dark-alt"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-dark-alt" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
+					<h2 class="au-sidenav__title">
+						<a href="#">Lodging your tax return</a>
+					</h2>
+					<ul class="au-link-list">
+						<li><a href="#">Do you need to lodge a tax return?</a></li>
+						<li><a href="#">Lodging your first tax return</a></li>
+						<li><a href="#">Lodge online</a>
+							<ul class="au-link-list">
+								<li><a href="#">Pre-filling your online tax return</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lodge with a registered tax agent</a></li>
+						<li><a href="#">Lodge a paper tax return</a></li>
+						<li><a href="#">Tax Help program</a>
+							<ul class="au-link-list">
+								<li><a href="#">Become a Tax Help volunteer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">What's new for individuals</a></li>
+						<li><a href="#">Why you may receive a tax bill</a></li>
+						<li><a href="#">Tracking your refund or fixing a mistake</a></li>
+						<li><a href="#">Prior year returns</a></li>
+						<li><a href="#">In detail</a>
+							<ul class="au-link-list">
+								<li><a href="#">Record keeping</a>
+									<ul class="au-link-list">
+										<li class="active"><a href="#">Keeping your tax records</a></li>
+										<li><a href="#">Incorrect amounts at reportable employer super contributions on payment summaries</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Your notice of assessment</a></li>
+								<li><a href="#">MyTax replaces e-tax</a></li>
+								<li><a href="#">What is income?</a></li>
+								<li><a href="#">Certainty letter</a></li>
+								<li><a href="#">Tax receipt</a></li>
+								<li><a href="#">Pre-fill availability</a></li>
+								<li><a href="#">Tax: what you need to know</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+
+	<div class="split-wrapper">
+		<div class="split">
+
+			<h2>Test: default</h2>
+			<nav class="au-side-nav au-accordion">
+
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-default-nobody"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-default-nobody" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
+					<h2 class="au-sidenav__title">
+						<a href="#">Lodging your tax return</a>
+					</h2>
+					<ul class="au-link-list">
+						<li><a href="#">Do you need to lodge a tax return?</a></li>
+						<li><a href="#">Lodging your first tax return</a></li>
+						<li><a href="#">Lodge online</a>
+							<ul class="au-link-list">
+								<li><a href="#">Pre-filling your online tax return</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lodge with a registered tax agent</a></li>
+						<li><a href="#">Lodge a paper tax return</a></li>
+						<li><a href="#">Tax Help program</a>
+							<ul class="au-link-list">
+								<li><a href="#">Become a Tax Help volunteer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">What's new for individuals</a></li>
+						<li><a href="#">Why you may receive a tax bill</a></li>
+						<li><a href="#">Tracking your refund or fixing a mistake</a></li>
+						<li><a href="#">Prior year returns</a></li>
+						<li><a href="#">In detail</a>
+							<ul class="au-link-list">
+								<li><a href="#">Record keeping</a>
+									<ul class="au-link-list">
+										<li class="active"><a href="#">Keeping your tax records</a></li>
+										<li><a href="#">Incorrect amounts at reportable employer super contributions on payment summaries</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Your notice of assessment</a></li>
+								<li><a href="#">MyTax replaces e-tax</a></li>
+								<li><a href="#">What is income?</a></li>
+								<li><a href="#">Certainty letter</a></li>
+								<li><a href="#">Tax receipt</a></li>
+								<li><a href="#">Pre-fill availability</a></li>
+								<li><a href="#">Tax: what you need to know</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="split split--alt">
+
+			<h2>Test: <code>alt</code></h2>
+
+			<nav class="au-side-nav au-side-nav--alt au-accordion au-accordion--alt">
+
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-alt-nobody"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-alt-nobody" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
+					<h2 class="au-sidenav__title">
+						<a href="#">Lodging your tax return</a>
+					</h2>
+					<ul class="au-link-list">
+						<li><a href="#">Do you need to lodge a tax return?</a></li>
+						<li><a href="#">Lodging your first tax return</a></li>
+						<li><a href="#">Lodge online</a>
+							<ul class="au-link-list">
+								<li><a href="#">Pre-filling your online tax return</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lodge with a registered tax agent</a></li>
+						<li><a href="#">Lodge a paper tax return</a></li>
+						<li><a href="#">Tax Help program</a>
+							<ul class="au-link-list">
+								<li><a href="#">Become a Tax Help volunteer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">What's new for individuals</a></li>
+						<li><a href="#">Why you may receive a tax bill</a></li>
+						<li><a href="#">Tracking your refund or fixing a mistake</a></li>
+						<li><a href="#">Prior year returns</a></li>
+						<li><a href="#">In detail</a>
+							<ul class="au-link-list">
+								<li><a href="#">Record keeping</a>
+									<ul class="au-link-list">
+										<li class="active"><a href="#">Keeping your tax records</a></li>
+										<li><a href="#">Incorrect amounts at reportable employer super contributions on payment summaries</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Your notice of assessment</a></li>
+								<li><a href="#">MyTax replaces e-tax</a></li>
+								<li><a href="#">What is income?</a></li>
+								<li><a href="#">Certainty letter</a></li>
+								<li><a href="#">Tax receipt</a></li>
+								<li><a href="#">Pre-fill availability</a></li>
+								<li><a href="#">Tax: what you need to know</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="split-wrapper">
+		<div class="split split--dark">
+			<h2>Test: <code>dark</code></h2>
+			<nav class="au-side-nav au-side-nav--dark  au-accordion au-accordion--dark">
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-dark-nobody"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-dark-nobody" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
+					<h2 class="au-sidenav__title">
+						<a href="#">Lodging your tax return</a>
+					</h2>
+					<ul class="au-link-list">
+						<li><a href="#">Do you need to lodge a tax return?</a></li>
+						<li><a href="#">Lodging your first tax return</a></li>
+						<li><a href="#">Lodge online</a>
+							<ul class="au-link-list">
+								<li><a href="#">Pre-filling your online tax return</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lodge with a registered tax agent</a></li>
+						<li><a href="#">Lodge a paper tax return</a></li>
+						<li><a href="#">Tax Help program</a>
+							<ul class="au-link-list">
+								<li><a href="#">Become a Tax Help volunteer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">What's new for individuals</a></li>
+						<li><a href="#">Why you may receive a tax bill</a></li>
+						<li><a href="#">Tracking your refund or fixing a mistake</a></li>
+						<li><a href="#">Prior year returns</a></li>
+						<li><a href="#">In detail</a>
+							<ul class="au-link-list">
+								<li><a href="#">Record keeping</a>
+									<ul class="au-link-list">
+										<li class="active"><a href="#">Keeping your tax records</a></li>
+										<li><a href="#">Incorrect amounts at reportable employer super contributions on payment summaries</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Your notice of assessment</a></li>
+								<li><a href="#">MyTax replaces e-tax</a></li>
+								<li><a href="#">What is income?</a></li>
+								<li><a href="#">Certainty letter</a></li>
+								<li><a href="#">Tax receipt</a></li>
+								<li><a href="#">Pre-fill availability</a></li>
+								<li><a href="#">Tax: what you need to know</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="split split--dark split--alt">
+
+			<h2>Test: <code>dark</code> <code>alt</code></h2>
+
+			<nav class="au-side-nav au-side-nav--alt au-side-nav--dark au-accordion au-accordion--alt au-accordion--dark">
+				<a
+					class="au-side-nav__toggle au-accordion__title au-accordion--closed"
+					aria-controls="nav-dark-alt-nobody"
+					aria-expanded="false"
+					aria-selected="false"
+					role="tab"
+					onClick="return AU.accordion.Toggle( this )">
+					In this section
+				</a>
+
+				<div id="nav-dark-alt-nobody" class="au-side-nav__content au-accordion--closed au-accordion__body" aria-hidden="true">
+					<h2 class="au-sidenav__title">
+						<a href="#">Lodging your tax return</a>
+					</h2>
+					<ul class="au-link-list">
+						<li><a href="#">Do you need to lodge a tax return?</a></li>
+						<li><a href="#">Lodging your first tax return</a></li>
+						<li><a href="#">Lodge online</a>
+							<ul class="au-link-list">
+								<li><a href="#">Pre-filling your online tax return</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lodge with a registered tax agent</a></li>
+						<li><a href="#">Lodge a paper tax return</a></li>
+						<li><a href="#">Tax Help program</a>
+							<ul class="au-link-list">
+								<li><a href="#">Become a Tax Help volunteer</a></li>
+							</ul>
+						</li>
+						<li><a href="#">What's new for individuals</a></li>
+						<li><a href="#">Why you may receive a tax bill</a></li>
+						<li><a href="#">Tracking your refund or fixing a mistake</a></li>
+						<li><a href="#">Prior year returns</a></li>
+						<li><a href="#">In detail</a>
+							<ul class="au-link-list">
+								<li><a href="#">Record keeping</a>
+									<ul class="au-link-list">
+										<li class="active"><a href="#">Keeping your tax records</a></li>
+										<li><a href="#">Incorrect amounts at reportable employer super contributions on payment summaries</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Your notice of assessment</a></li>
+								<li><a href="#">MyTax replaces e-tax</a></li>
+								<li><a href="#">What is income?</a></li>
+								<li><a href="#">Certainty letter</a></li>
+								<li><a href="#">Tax receipt</a></li>
+								<li><a href="#">Pre-fill availability</a></li>
+								<li><a href="#">Tax: what you need to know</a></li>
+							</ul>
+						</li>
+						</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
 
 	<script type="text/javascript" src="script.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
