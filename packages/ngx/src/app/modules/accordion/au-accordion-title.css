@@ -1,0 +1,34 @@
+.au-body .au-accordion__title_disabled,
+.au-accordion__title_disabled {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  padding: 16px 40px 16px 16px;
+  padding: 1rem 2.5rem 1rem 1rem;
+  display: block;
+  color: #00698f;
+  text-decoration: underline;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: bold;
+  position: relative;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.au-body .au-accordion__title_disabled:hover,
+.au-accordion__title_disabled:hover {
+  text-decoration: none;
+  color: #313131;
+}
+
+.au-body .au-accordion__title_disabled:hover:after,
+.au-accordion__title_disabled:hover:after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23313131' fill-opacity='0.0' d='M64 0l64 64-16 16-64-64'/%3E%3Cpath fill='%23313131' fill-opacity='0.0' d='M64 0l16 16-64 64L0 64'/%3E%3C/svg%3E");
+}
+

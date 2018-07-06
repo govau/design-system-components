@@ -108,7 +108,7 @@ export class AuAccordionTitleBase {
 @Component({
   selector: "[au-accordion-title]",
   template: "<ng-content></ng-content>",
-  styleUrls: ["au-accordion-header.css"],
+  styleUrls: ["au-accordion-title.css"],
   host: {
     "[attr.href]": "attributeHref",
     "[class]": "cssClasses",
@@ -132,7 +132,7 @@ export class AuAccordionTitle extends AuAccordionTitleBase {}
 @Component({
   selector: "au-accordion-title",
   templateUrl: "au-accordion-title.html",
-  styleUrls: ["au-accordion-header.css"],
+  styleUrls: ["au-accordion-title.css"],
   providers: [
     {
       provide: AuAccordionTitleBase,

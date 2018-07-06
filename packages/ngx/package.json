@@ -14,8 +14,8 @@
 		"design guide",
 		"design system",
 		"Angular",
-    "Angular Component Development Kit",
-    "Angular CDK",
+		"Angular Component Development Kit",
+		"Angular CDK",
 		"Angular module"
 	],
 	"scripts": {
@@ -26,10 +26,10 @@
 		"build": "ng-packagr -p package.json",
 		"watch": "ng serve --extract-css"
 	},
-  "pre-commit": [
-    "format",
-    "test"
-  ],
+	"pre-commit": [
+		"format",
+		"test"
+	],
 	"dependencies": {
 		"@gov.au/core": "^2.0.0",
 		"@angular/core": "^5.2.0",
@@ -77,6 +77,7 @@
 		"tslint": "~5.9.1",
 		"typescript": "~2.5.3",
 		"typescript-formatter": "^7.2.0",
+		"web-animations-js": "^2.3.1",
 		"zone.js": "^0.8.19"
 	},
 	"files": [

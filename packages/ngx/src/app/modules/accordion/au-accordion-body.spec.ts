@@ -127,7 +127,6 @@ describe("AuAccordionBodyDirective", () => {
       fixture.detectChanges();
       tick();
 
-      // console.log(fixture.nativeElement.querySelector("div.au-accordion__body-wrapper"));
       expect(fixture.nativeElement.querySelector("div").id).toMatch(
         "au-accordion-body"
       );
