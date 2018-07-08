@@ -707,7 +707,7 @@ HELPER.generate = (() => {
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
 					const pkg = require(Path.normalize(`${__dirname}/../packages/${module}/package.json`));
-					if (pkg.name.indexOf('ngx') === -1) {
+					if (!pkg.notYourRegularUiKitModule) {
 						let jquery = '';
 						let react = '';
 					
@@ -931,7 +931,7 @@ HELPER.test = (() => {
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
 					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
-					if(packagesPKG.name.indexOf('ngx') === -1) {
+					if (!packagesPKG.notYourRegularUiKitModule) {
 						const hasSass = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`));
 						const hasJS = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`));
 						const hasReact = Fs.existsSync(Path.normalize(`${ __dirname }/../packages/${ module }/src/js/react.js`));
@@ -1083,26 +1083,29 @@ HELPER.test = (() => {
 			let error = ''; // let’s assume the best
 
 			if( allModules !== undefined && allModules.length > 0 ) {
-				for( let module of allModules ) {
-					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
-					const changelog = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/CHANGELOG.md`), 'utf8' );
-					const readme = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/README.md`), 'utf8' );
-					const version = packagesPKG.version.split('-next')[ 0 ];
+				for (let module of allModules) {
+					
+					const packagesPKG = require(Path.normalize(`${__dirname}/../packages/${module}/package.json`));
+					if (!packagesPKG.notYourRegularUiKitModule) {
+						const changelog = Fs.readFileSync(Path.normalize(`${__dirname}/../packages/${module}/CHANGELOG.md`), 'utf8');
+						const readme = Fs.readFileSync(Path.normalize(`${__dirname}/../packages/${module}/README.md`), 'utf8');
+						const version = packagesPKG.version.split('-next')[0];
 
-					// testing CHANGELOG.md file for latest version
-					if( !changelog.split('## Versions\n\n* [v')[ 1 ].startsWith( version ) ) {
-						error += `The module ${ module } does not have the current version in it’s changelog "Versions" section.\n`;
-					}
-					else if( !changelog.split('## Versions\n\n* [v')[ 1 ].split('](v')[ 1 ].startsWith( version.replace(/[.]/g, '') ) ) {
-						error += `The module ${ module } has the wrong link for the current version ${ version } in the changelog "Versions" section.\n`;
-					}
-					else if( !changelog.split('## Release History\n\n### v')[ 1 ].startsWith( version ) ) {
-						error += `The module ${ module } does not have the current version in it’s changelog "Release History" section.\n`;
-					}
+						// testing CHANGELOG.md file for latest version
+						if (!changelog.split('## Versions\n\n* [v')[1].startsWith(version)) {
+							error += `The module ${module} does not have the current version in it’s changelog "Versions" section.\n`;
+						}
+						else if (!changelog.split('## Versions\n\n* [v')[1].split('](v')[1].startsWith(version.replace(/[.]/g, ''))) {
+							error += `The module ${module} has the wrong link for the current version ${version} in the changelog "Versions" section.\n`;
+						}
+						else if (!changelog.split('## Release History\n\n### v')[1].startsWith(version)) {
+							error += `The module ${module} does not have the current version in it’s changelog "Release History" section.\n`;
+						}
 
-					// testing README.md file for latest version
-					if( !readme.split('## Release History\n\n* v')[ 1 ].startsWith( version ) ) {
-						error += `The module ${ module } does not have the current version in it’s readme "Release History" section.\n`;
+						// testing README.md file for latest version
+						if (!readme.split('## Release History\n\n* v')[1].startsWith(version)) {
+							error += `The module ${module} does not have the current version in it’s readme "Release History" section.\n`;
+						}
 					}
 				}
 			}

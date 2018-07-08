@@ -16,7 +16,7 @@
 	"scripts": {
 		"clean": "lerna clean",
 		"scaffolding": "node ./scripts/helper.js scaffolding",
-		"bootstrap": "lerna bootstrap --loglevel verbose",
+		"bootstrap": "lerna bootstrap",
 		"build": "lerna run build --concurrency 1",
 		"publish": "lerna publish --skip-git",
 		"nuke": "npm run delete:node_modules | npm run delete:lib",
