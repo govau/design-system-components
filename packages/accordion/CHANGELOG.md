@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.0.0 - State change more specific, remove style set on html, componentDidUpdate](#v400)
 * [v3.0.5 - Replace node-sass with sass](#v305)
 * [v3.0.4 - Change npm run watch browser-sync location](#v304)
 * [v3.0.3 - au-body--dark now changes accordion title colour](#v303)
@@ -36,6 +37,13 @@
 
 
 ## Release History
+
+### v4.0.0
+
+- Open and close accordion when specific state changes
+- Remove style set on html when closed in react
+- Fix react test
+
 
 ### v3.0.5
 
