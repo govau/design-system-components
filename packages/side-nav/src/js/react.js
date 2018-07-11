@@ -22,8 +22,14 @@ import PropTypes from 'prop-types';
 // [replace-imports]
 
 
+/**
+ * A menu inside the AUsideNav
+ *
+ * @param  {array}  items            - The link Text or link html
+ * @param  {string} linkComponent    - The component used for the link
+ */
 const AUsideNavMenu = ({ items, linkComponent }) => {
-
+	// Recursively re generate the menu with children as necessary
 	const GenerateMenu = ( items ) => {
 		const menu = items.map( item => {
 			const link = {
@@ -31,16 +37,19 @@ const AUsideNavMenu = ({ items, linkComponent }) => {
 				text: item.text,
 			};
 
+			// If it has children create a menu again
 			if( item.children ){
 				link.children = <AUlinkList items={ GenerateMenu( item.children ) } linkComponent={ item.linkComponent } />
 			}
 
+			// return the link, maybe with children
 			return link;
 		});
 
 		return menu;
 	}
 
+	// Create the menu with children
 	return (
 		<AUlinkList items={ GenerateMenu( items ) } linkComponent={ linkComponent } />
 	);
@@ -93,7 +102,18 @@ const AUsideNav = ({
 AUsideNav.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
+	accordionHeader: PropTypes.string.isRequired,
+	menuHeader: PropTypes.string,
+	menuHeaderLink: PropTypes.string,
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+	items: PropTypes.arrayOf(
+		PropTypes.shape({
+			link: PropTypes.string,
+			text: PropTypes.node.isRequired,
+			children: PropTypes.node,
+		})
+	).isRequired,
+	className: PropTypes.string,
 };
 
 AUsideNav.defaultProps = {
