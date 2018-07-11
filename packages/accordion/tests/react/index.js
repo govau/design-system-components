@@ -11,7 +11,7 @@ class AccordionWrapper extends React.Component {
 		super();
 
 		this.state = {
-			accordionClosed: false
+			closed: false
 		};
 	}
 
@@ -27,7 +27,7 @@ class AccordionWrapper extends React.Component {
 					Some content of the accordion <a href="#url">here</a>
 				</AUaccordion>
 
-				<button type="button" onClick={ () => { this.changeAccordion( 'accordionClosed' ) } }>Toggle accordion via state</button>
+				<button type="button" onClick={ () => { this.changeAccordion( 'closed' ) } }>Toggle accordion via state</button>
 			</Fragment>
 		);
 	}
