@@ -1,50 +1,49 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
-
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 
 import AUsideNav from './side-nav.js';
 
 
 const menu = [
 	{
-		link: 'one#1',
+		link: '#',
 		text: 'Change to route one',
 	},
 	{
-		link: 'two#1',
+		link: '#',
 		text: 'Change to route two',
 		children: [
 			{
-				link: 'one#2',
+				link: '#',
 				text: 'Change to route one',
 			},
 			{
-				link: 'two#2',
+				link: '#',
 				text: 'Change to route two',
 				children: [
 					{
-						link: 'one#3',
+						link: '#',
 						text: 'Change to route one',
 					},
 					{
-						link: 'two#3',
+						link: '#',
 						text: 'Change to route two',
 						children: [
 							{
-								link: 'one#4',
+								link: '#',
 								text: 'Change to route one',
 							},
 							{
-								link: 'two#4',
+								link: '#',
 								text: 'Change to route two',
 								children: [
 									{
-										link: 'one#5',
+										link: '#',
 										text: 'Change to route one',
 									},
 									{
-										link: 'two#5',
+										link: '#',
 										text: 'Change to route two',
 									},
 								],
@@ -56,28 +55,29 @@ const menu = [
 		],
 	},
 	{
-		link: 'three#1',
+		link: '#',
 		text: 'Change to route three',
 	},
 	{
-		link: 'four#1',
+		link: '#',
 		text: 'Change to route four',
 		children: [
 			{
-				link: 'one#2',
+				link: '#',
 				text: 'Change to route one',
 			},
 			{
-				link: 'two#2',
+				link: '#',
 				text: 'Change to route two',
 			},
 		],
 	},
 	{
-		link: 'five#1',
+		link: '#',
 		text: 'Change to route five',
 	},
 ];
+
 
 ReactDOM.render(
 	<div>
@@ -111,14 +111,32 @@ ReactDOM.render(
 				/>
 			</div>
 			<div className="split au-body au-body--dark au-body--alt">
-				<AUsideNav
-					dark
-					alt
-					accordionHeader="In this section"
-					menuHeaderLink="#"
-					menuHeader="Lodging your tax return"
-					items={ menu }
-				/>
+				<BrowserRouter basename={ window.location.pathname }>
+					<Fragment>
+						<AUsideNav
+							dark
+							alt
+							linkComponent={ Link }
+							accordionHeader="In this section"
+							menuHeaderLink="#"
+							menuHeader="Lodging your tax return"
+							items={[
+								{
+									link: 'one',
+									text: 'Change to route one',
+								},
+								{
+									link: 'two',
+									text: 'Change to route two',
+								},
+							]}
+						/>
+						<Switch>
+							<Route path="/one" render={ () => ( <p>Route one</p> )} />
+							<Route path="/two" render={ () => ( <p>Route two</p> )} />
+						</Switch>
+					</Fragment>
+				</BrowserRouter>
 			</div>
 		</div>
 	</div>,

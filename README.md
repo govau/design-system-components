@@ -459,6 +459,7 @@ All modules have to work on the below browsers:
 ├─ accordion
 │  ├─ animate
 │  └─ core
+├─ animate
 ├─ core
 └─ link-list
    ├─ core
