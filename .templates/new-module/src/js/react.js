@@ -8,11 +8,19 @@
  **************************************************************************************************************************************************************/
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const [-replace-name-capital-] = () => (
-	<div className="uikit-[-replace-name-]">
+
+const AU[-replace-name-capital-] = () => (
+	<div className="au-[-replace-name-]">
 		<strong>Yay!</strong>
 	</div>
 );
 
-export default [-replace-name-capital-];
+AU[-replace-name-capital-].propTypes = {
+	dark: PropTypes.bool
+};
+
+AU[-replace-name-capital-].defaultProps = {};
+
+export default AU[-replace-name-capital-];
