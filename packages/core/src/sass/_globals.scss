@@ -616,9 +616,6 @@ $dependencies: (
 	}
 	@else {
 		outline: 3px solid $AU-color-foreground-focus;
-
-		// Only add the offset if it's the default style
-		outline-offset: 2px;
 	}
 }
 
@@ -629,6 +626,7 @@ $dependencies: (
 @mixin AU-focus( $theme: 'light' ) {
 	&:focus {
 		@include AU-outline( $theme );
+		outline-offset: 2px;
 	}
 
 	// Remove Modzilla inner HTML dotted line. github.com/necolas/normalize.css/blob/master/normalize.css#L285
