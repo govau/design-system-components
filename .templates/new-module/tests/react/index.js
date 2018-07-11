@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AU[-replace-name-capital-] from './AU[-replace-name-].js';
+import [-replace-name-capital-] from './[-replace-name-].js';
 
 
 ReactDOM.render(
 	<div>
-		<AU[-replace-name-capital-]>
-		</AU[-replace-name-capital-]>
+		<[-replace-name-capital-]>
+		</[-replace-name-capital-]>
 	</div>,
 
 	document.getElementById('root'),
