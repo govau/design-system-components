@@ -15,7 +15,6 @@
 
 ## Versions
 
-* [v2.0.6 - Updated version of link-list](#v206)
 * [v2.0.5 - Replace node-sass with sass](#v205)
 * [v2.0.4 - Add react router support](#v204)
 * [v2.0.3 - Update dependencies](#v203)
@@ -33,11 +32,6 @@
 
 
 ## Release History
-
-### v2.0.6
-
-- Updated version of link-list
-
 
 ### v2.0.5
 

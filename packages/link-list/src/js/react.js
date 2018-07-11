@@ -50,8 +50,7 @@ export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, .
 	if( link ){
 		return (
 			<li { ...li }>
-				<LinkComponent { ...attributeOptions }>{ text }</LinkComponent>
-				{ children }
+				<LinkComponent { ...attributeOptions }>{ text }{ children }</LinkComponent>
 			</li>
 		)
 	}

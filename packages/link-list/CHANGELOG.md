@@ -15,7 +15,6 @@
 
 ## Versions
 
-* [v3.0.0 - Move react children location](#v300)
 * [v2.1.1 - Replace node-sass with sass](#v211)
 * [v2.1.0 - Support react router ](#v210)
 * [v2.0.3 - Add support for HTML in link, Update dependencies ](#v203)
@@ -32,11 +31,6 @@
 
 
 ## Release History
-
-### v3.0.0
-
-- Move react children location
-
 
 ### v2.1.1
 

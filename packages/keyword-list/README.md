@@ -135,7 +135,6 @@ The visual test: https://uikit.service.gov.au/packages/keyword-list/tests/site/
 
 ## Release History
 
-* v2.1.2 - Update link-list
 * v2.1.1 - Replace node-sass with sass
 * v2.1.0 - React router support
 * v2.0.3 - Update dependencies

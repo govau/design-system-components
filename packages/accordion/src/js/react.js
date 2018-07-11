@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import AU from '@gov.au/animate'; // interdependency with our animate lib
@@ -55,15 +55,14 @@ class AUaccordion extends React.PureComponent {
 	/**
 	 * Handle state if supplied
 	 */
-	componentDidUpdate( prevProps, prevState ) {
-		if( prevProps.state.closed !== undefined ) {
+	componentWillReceiveProps( nextProps ) {
+		const open = nextProps.open;
 
-			if( prevProps.state.closed ) {
-				this.accordionOpen( this.accordionHeader );
-			}
-			else {
-				this.accordionClose( this.accordionHeader );
-			}
+		if( open ) {
+			this.accordionOpen( this.accordionHeader );
+		}
+		else {
+			this.accordionClose( this.accordionHeader );
 		}
 	}
 
@@ -215,7 +214,7 @@ class AUaccordion extends React.PureComponent {
 					},
 					postfunction: function( target, state ) {
 						if( state === 'closed' ) {
-							target.removeAttribute( 'style' );
+							target.style.display = '';
 
 							// run after opening
 							if( typeof callbacks.afterOpen === 'function' ) {
@@ -342,7 +341,7 @@ class AUaccordion extends React.PureComponent {
 					endSize: 0,
 					speed: speed || 250,
 					callback: function() {
-						target.removeAttribute( 'style' );
+						target.style.display = 'none';
 						ToggleClasses( target, 'close' );
 					},
 				});
