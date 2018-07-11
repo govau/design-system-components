@@ -55,10 +55,10 @@ class AUaccordion extends React.PureComponent {
 	/**
 	 * Handle state if supplied
 	 */
-	componentWillReceiveProps( nextProps ) {
-		const open = nextProps.open;
+	componentDidUpdate( prevProps, prevState ) {
+		let closed = prevProps.state.accordionClosed;
 
-		if( open ) {
+		if( closed ) {
 			this.accordionOpen( this.accordionHeader );
 		}
 		else {

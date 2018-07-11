@@ -9,7 +9,10 @@ class AccordionWrapper extends React.Component {
 	// for an example on what a state change might look like we have to add a state
 	constructor() {
 		super();
-		this.state = {};
+
+		this.state = {
+			accordionClosed: false
+		};
 	}
 
 	// let’s change the state in the absence of more complex application code
@@ -20,11 +23,11 @@ class AccordionWrapper extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<AUaccordion header="State controlled accordion open">
+				<AUaccordion header="State controlled accordion open" state={ this.state }>
 					Some content of the accordion <a href="#url">here</a>
 				</AUaccordion>
 
-				<button type="button" onClick={ () => { this.changeAccordion( 'accordionClose' ) } }>Toggle accordion via state</button>
+				<button type="button" onClick={ () => { this.changeAccordion( 'accordionClosed' ) } }>Toggle accordion via state</button>
 			</Fragment>
 		);
 	}
