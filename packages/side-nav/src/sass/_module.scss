@@ -66,57 +66,14 @@
 		}
 	}
 
+	// Hide the accordion title without javascript
+	.no-js & .au-accordion__title {
+		display: none;
+	}
+
 	.au-accordion__body-wrapper {
 		border: 0;
 		padding: 0;
-	}
-
-	// Side nav menu and title
-	.au-side-nav__content {
-		@include AU-space( margin, 0 1unit );
-
-		ul {
-			@include AU-side-nav-indent( 3 );
-		}
-
-		.active a {
-			font-weight: bold;
-			color: $AU-color-foreground-text;
-		}
-
-		ul ul ul a {
-			&:before {
-				content: " ";
-				@include AU-space( width, 1unit );
-				@include AU-space( height, 1unit );
-				@include AU-space( background-size, 1unit );
-				@include AU-space( margin-left, -1.5unit );
-				display: block;
-				float: left;
-				background-repeat: no-repeat;
-				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
-					'<path fill="#{ $AU-color-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
-				'</svg>');
-			}
-		}
-
-		& > ul > li {
-			border-bottom: 1px solid $AU-color-foreground-border;
-
-			&:last-of-type {
-				border: none;
-			}
-		}
-	}
-
-	.au-sidenav__title {
-		margin: 0;
-
-		a {
-			@include AU-fontgrid( sm );
-			color: $AU-color-foreground-text;
-			border-bottom: 2px solid $AU-color-foreground-border;
-		}
 	}
 
 	// Desktop styles
@@ -155,6 +112,55 @@
 		a:hover {
 			background-color: $AU-color-background-alt-shade;
 		}
+	}
+}
+
+
+// Side nav menu and title
+.au-side-nav__content {
+	@include AU-space( margin, 0 1unit );
+
+	ul {
+		@include AU-side-nav-indent( 3 );
+	}
+
+	.active a {
+		font-weight: bold;
+		color: $AU-color-foreground-text;
+	}
+
+	ul ul ul a {
+		&:before {
+			content: " ";
+			@include AU-space( width, 1unit );
+			@include AU-space( height, 1unit );
+			@include AU-space( background-size, 1unit );
+			@include AU-space( margin-left, -1.5unit );
+			display: block;
+			float: left;
+			background-repeat: no-repeat;
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
+				'<path fill="#{ $AU-color-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
+			'</svg>');
+		}
+	}
+
+	& > ul > li {
+		border-bottom: 1px solid $AU-color-foreground-border;
+
+		&:last-of-type {
+			border: none;
+		}
+	}
+}
+
+.au-sidenav__title {
+	margin: 0;
+
+	a {
+		@include AU-fontgrid( sm );
+		color: $AU-color-foreground-text;
+		border-bottom: 2px solid $AU-color-foreground-border;
 	}
 }
 
