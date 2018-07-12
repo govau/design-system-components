@@ -63,6 +63,12 @@ const AUsideNavMenu = ({ items, linkComponent }) => {
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {boolean} alt              - Add the alternate variation class, optional
  * @param  {string}  accordionHeader  - The accordion header
+ * @param  {boolean} closed           - The accordions default state
+ * @param  {func}    speed            - Speed of the animation in ms, optional
+ * @param  {func}    onOpen           - Executed when the accordion opens, optional
+ * @param  {func}    afterOpen        - Executed after the accordion opened, optional
+ * @param  {func}    onClose          - Executed when the accordion closes, optional
+ * @param  {func}    afterClose       - Executed after the accordion opened, optional
  * @param  {string}  menuHeader       - The header text for the menu
  * @param  {string}  menuHeaderLink   - The link for the header in the menu
  * @param  {array}   items            - The menu items and their children
@@ -73,6 +79,12 @@ const AUsideNav = ({
 	dark,
 	alt,
 	accordionHeader,
+	speed,
+  onOpen,
+  afterOpen,
+  onClose,
+	afterClose,
+	closed,
 	menuHeader,
 	menuHeaderLink,
 	linkComponent,
@@ -81,7 +93,12 @@ const AUsideNav = ({
 	attributeOptions
 }) => (
 	<AUaccordion
-		closed
+		closed={ closed }
+		speed={ speed }
+		onOpen={ onOpen }
+		afterOpen={ afterOpen }
+		afterClose={ afterClose }
+		onClose={ onClose }
 		className={ 'au-side-nav au-accordion ' +
 			`${ dark ? 'au-side-nav--dark au-accordion--dark ' : '' }` +
 			`${ alt ? 'au-side-nav--alt au-accordion--alt ' : '' }` +
@@ -103,14 +120,20 @@ AUsideNav.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
 	accordionHeader: PropTypes.string.isRequired,
+	onOpen: PropTypes.func,
+	afterOpen: PropTypes.func,
+	onClose: PropTypes.func,
+	afterClose: PropTypes.func,
 	menuHeader: PropTypes.string,
 	menuHeaderLink: PropTypes.string,
+	closed: PropTypes.bool,
+	speed: PropTypes.number,
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.node.isRequired,
-			children: PropTypes.node,
+			children: PropTypes.array,
 		})
 	).isRequired,
 	className: PropTypes.string,
@@ -118,6 +141,7 @@ AUsideNav.propTypes = {
 
 AUsideNav.defaultProps = {
 	linkComponent: 'a',
+	closed: true,
 };
 
 export default AUsideNav;

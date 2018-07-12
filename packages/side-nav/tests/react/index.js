@@ -104,10 +104,15 @@ ReactDOM.render(
 			<div className="split au-body au-body--dark">
 				<AUsideNav
 					dark
+					speed={ 2000 }
 					accordionHeader="In this section"
 					menuHeaderLink="#"
 					menuHeader="Lodging your tax return"
 					items={ menu }
+					onOpen={ () => console.log( 'open started' )}
+					onClose={ () => console.log( 'close started' )}
+					afterOpen={ () => console.log( 'open completed' )}
+					afterClose={ () => console.log( 'close completed' )}
 				/>
 			</div>
 			<div className="split au-body au-body--dark au-body--alt">
