@@ -255,7 +255,7 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
-* v3.0.1 - Focus outline offset to only apply on the default focus state
+* v3.0.1 - Focus outline offset to only apply on the default focus state, build scripts for Windows
 * v3.0.0 - Binary search a11y color, replace node-sass with sass
 * v2.0.3 - Change npm run watch browser-sync location
 * v2.0.2 - Update dependencies

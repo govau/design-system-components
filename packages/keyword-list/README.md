@@ -135,7 +135,7 @@ The visual test: https://uikit.service.gov.au/packages/keyword-list/tests/site/
 
 ## Release History
 
-* v3.0.0 - Updated dependency version of link-list
+* v3.0.0 - Updated dependency version of link-list, build scripts for Windows
 * v2.1.1 - Replace node-sass with sass
 * v2.1.0 - React router support
 * v2.0.3 - Update dependencies

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.8 - Fixed build scripts for Windows](#v208)
 * [v2.0.7 - Replace node-sass with sass](#v207)
 * [v2.0.6 - Change npm run watch browser-sync location](#v206)
 * [v2.0.5 - Update dependencies](#v205)
@@ -33,6 +34,11 @@
 
 
 ## Release History
+
+### v2.0.8
+
+- Fixed build scripts for Windows
+
 
 ### v2.0.7
 
