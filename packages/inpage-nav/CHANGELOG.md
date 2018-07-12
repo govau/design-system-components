@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.0.6 - Updated version of link-list](#v206)
+* [v3.0.0 - Updated dependency version of link-list](#v300)
 * [v2.0.5 - Replace node-sass with sass](#v205)
 * [v2.0.4 - Add react router support](#v204)
 * [v2.0.3 - Update dependencies](#v203)
@@ -34,9 +34,10 @@
 
 ## Release History
 
-### v2.0.6
+### v3.0.0
 
-- Updated version of link-list
+- Updated dependency version of link-list
+- Moved location of link-list children from inside `a` to inside parent `li`
 
 
 ### v2.0.5
