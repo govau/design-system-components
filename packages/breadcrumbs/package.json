@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/breadcrumbs",
-	"version": "2.1.1",
+	"version": "3.0.0",
 	"description": "Breadcrumbs help users understand where they are in the service and how they got there.",
 	"keywords": [
 		"uikit",
@@ -62,11 +62,11 @@
 		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": "^3.0.0",
-		"@gov.au/link-list": "^2.1.0"
+		"@gov.au/link-list": "^3.0.0"
 	},
 	"peerDependencies": {
 		"@gov.au/core": "^3.0.0",
-		"@gov.au/link-list": "^2.1.0"
+		"@gov.au/link-list": "^3.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
