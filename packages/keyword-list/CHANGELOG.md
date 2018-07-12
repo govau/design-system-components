@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v3.0.0 - Updated dependency version of link-list](#v300)
+* [v3.0.0 - Updated dependency version of link-list, build scripts for Windows](#v300)
 * [v2.1.1 - Replace node-sass with sass](#v211)
 * [v2.1.0 - Add react router support](#v210)
 * [v2.0.3 - Update dependencies](#v203)
@@ -35,6 +35,7 @@
 
 ### v3.0.0
 
+- Fixed build scripts for Windows
 - Updated dependency version of link-list
 - Moved location of link-list children from inside `a` to inside parent `li`
 

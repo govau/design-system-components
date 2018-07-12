@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.5 - Fixed build scripts for Windows](#v105)
 * [v1.0.4 - Change npm run watch browser-sync location](#v104)
 * [v1.0.3 - Update dependencies](#v103)
 * [v1.0.2 - Fix typo in homepage link](#v102)
@@ -31,6 +32,11 @@
 
 
 ## Release History
+
+### v1.0.5
+
+- Fixed build scripts for Windows
+
 
 ### v1.0.4
 
