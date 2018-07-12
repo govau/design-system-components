@@ -56,7 +56,7 @@ class AUaccordion extends React.PureComponent {
 	 * Handle state if supplied
 	 */
 	componentDidUpdate( prevProps ) {
-		if( prevProps.state.closed !== undefined ) {
+		if( prevProps.state && prevProps.state.closed !== undefined ) {
 
 			if( prevProps.state.closed ) {
 				this.accordionOpen( this.accordionHeader );
@@ -215,7 +215,8 @@ class AUaccordion extends React.PureComponent {
 					},
 					postfunction: function( target, state ) {
 						if( state === 'closed' ) {
-							target.removeAttribute( 'style' );
+							target.style.display = '';
+							target.style.height = '';
 
 							// run after opening
 							if( typeof callbacks.afterOpen === 'function' ) {
@@ -342,7 +343,8 @@ class AUaccordion extends React.PureComponent {
 					endSize: 0,
 					speed: speed || 250,
 					callback: function() {
-						target.removeAttribute( 'style' );
+						target.style.display = 'none';
+						target.style.height = '';
 						ToggleClasses( target, 'close' );
 					},
 				});
