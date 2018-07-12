@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.2 - Fixed build scripts for Windows](#v212)
 * [v2.1.1 - Replace node-sass with sass](#v211)
 * [v2.1.0 - Support react router ](#v210)
 * [v2.0.3 - Add support for HTML in link, Update dependencies ](#v203)
@@ -31,6 +32,11 @@
 
 
 ## Release History
+
+### v2.1.2
+
+- Fixed build scripts for Windows
+
 
 ### v2.1.1
 

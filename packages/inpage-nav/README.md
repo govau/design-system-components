@@ -141,6 +141,7 @@ The visual test: https://uikit.service.gov.au/packages/inpage-nav/tests/site/
 
 ## Release History
 
+* v2.0.6 - Fixed build scripts for Windows
 * v2.0.5 - Replace node-sass with sass
 * v2.0.4 - Change npm run watch browser-sync location
 * v2.0.3 - Update dependencies

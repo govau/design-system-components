@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.1 - Fixed build scripts for Windows](#v301)
 * [v3.0.0 - Binary search a11y color, replace node-sass with sass](#v300)
 * [v2.0.3 - Change npm run watch browser-sync location](#v203)
 * [v2.0.2 - Update dependencies](#v202)
@@ -32,6 +33,11 @@
 
 
 ## Release History
+
+### v3.0.1
+
+- Fixed build scripts for Windows
+
 
 ### v3.0.0
 
