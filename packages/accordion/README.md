@@ -252,7 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
-* v3.0.6 - Fixed build scripts for Windows
+* v4.0.0 - State change more specific, remove style set on html, componentDidUpdate, build scripts for Windows
 * v3.0.5 - Replace node-sass with sass
 * v3.0.4 - Change npm run watch browser-sync location
 * v3.0.3 - au-body--dark now changes accordion title colour
