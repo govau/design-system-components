@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/core",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "The core module all UI-Kit modules depend on",
 	"keywords": [
 		"uikit",
@@ -24,10 +24,10 @@
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
 		"build": "npm run build:js",
-		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
-		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
-		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
-		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
+    "serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
+		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
+		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
+		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
 		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},
 	"pancake": {

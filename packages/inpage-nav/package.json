@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/inpage-nav",
-	"version": "2.0.5",
+	"version": "3.0.0",
 	"description": "Use inpage-nav links to help users scan and jump to content of a page.",
 	"keywords": [
 		"uikit",
@@ -32,11 +32,11 @@
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:js && npm run build:react",
 
-		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
+    "serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
 
-		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
-		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
-		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
+		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
+		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
+		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
 		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},
 	"pancake": {
@@ -64,11 +64,11 @@
 		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": "^3.0.0",
-		"@gov.au/link-list": "^2.1.0"
+		"@gov.au/link-list": "^3.0.0"
 	},
 	"peerDependencies": {
 		"@gov.au/core": "^3.0.0",
-		"@gov.au/link-list": "^2.1.0"
+		"@gov.au/link-list": "^3.0.0"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
