@@ -343,8 +343,8 @@ class AUaccordion extends React.PureComponent {
 					endSize: 0,
 					speed: speed || 250,
 					callback: function() {
+						target.style.display = 'none';
 						target.style.height = '';
-						target.style.display = '';
 						ToggleClasses( target, 'close' );
 					},
 				});
