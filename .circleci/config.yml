@@ -27,6 +27,8 @@ jobs:
             - ./node_modules/
             - ./packages
       - run: npm run build                          # build all packages
+      - run: find . -name "lib" -exec rm -rf '{}' + # removing all lib/ folders
+      - run: find . -name "src" -exec rm -rf '{}' + # removing all src/ folder
       - run: npm test                               # run all tests
       - persist_to_workspace:
           root: ~/project # /home/circleci/project
