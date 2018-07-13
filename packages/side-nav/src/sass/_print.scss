@@ -1,0 +1,40 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// side-nav module
+// A vertical list of links for site navigation typically placed next to the body content.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-side-nav {
+		background: transparent !important;
+
+		a {
+			color: #000 !important;
+			text-decoration: underline !important;
+
+			&:hover {
+				background: transparent !important;
+			}
+		}
+
+		.au-accordion__title {
+			display: none;
+		}
+	}
+
+	.au-side-nav__content {
+
+		ul ul ul a:before {
+			background-image: AU-svguri( '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
+				'<path fill="#000" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
+			'</svg>') !important;
+		}
+
+		& > ul > li {
+			border-color: #000 !important;
+		}
+	}
+}

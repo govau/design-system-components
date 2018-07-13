@@ -61,9 +61,10 @@ body {
 
 @media print {
 	body,
-	.split--dark {
-		background: #fff !important;
-		color: #000 !important;
+	.split--dark,
+	.split--alt,
+	.split--alt.split--dark {
+		background: transparent !important;
 	}
 	.split {
 		padding: 0 !important;
