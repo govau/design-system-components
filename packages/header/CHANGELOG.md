@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.3 - AUheaderBrand without a link now defaults to div](#v413)
 * [v4.1.2 - Fixed build scripts for Windows](#v412)
 * [v4.1.1 - Replace node-sass with sass](#v411)
 * [v4.1.0 - React router support](#v410)
@@ -35,6 +36,11 @@
 
 
 ## Release History
+
+### v4.1.2
+
+- AUheaderBrand without a link now defaults to div
+
 
 ### v4.1.2
 
