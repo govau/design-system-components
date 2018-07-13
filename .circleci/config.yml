@@ -14,10 +14,10 @@ jobs:
           name: Restore package cache
           keys:
             - m1-npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "packages" }}
-      - run: 
+      - run:
           name: Install dependencies
           command: npm install                            # duh
-      - run: 
+      - run:
           name: Package our packages
           command: npm run bootstrap                      # installing all dependencies of all packages
       - save_cache:
@@ -59,7 +59,7 @@ jobs:
           command: |
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
             cf zero-downtime-push uikit-$CIRCLE_BRANCH -f deploy/manifest-testing.yml
-            
+
   deploy-prod:
     docker:
       - image: govau/cf-cli
@@ -71,6 +71,38 @@ jobs:
           command: |
             cf login -a api.system.b.cld.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
             cf zero-downtime-push uikit -f deploy/manifest-production.yml
+
+  # DEPLOY-TEST JOB
+  # installing dependencies, building assets and deploying to test branches
+  deploy-test:
+    docker:
+      - image: circleci/node:8.9.1
+
+    steps:
+      - checkout                                    # get the files from the repo (why would you ever not want the files????)
+      - run: rm -rf node_modules                    # delete node_modules folder because we need to bust the cache
+      - run: npm install                            # duh
+      - run: npm run bootstrap                      # installing all dependencies of all packages
+      - run: npm run build                          # build all packages
+      - run: npm test                               # run all tests
+      - run: rm -rf node_modules                    # delete node_modules folder again to not push it to cf
+      - run: find . -name "lib" -exec rm -rf '{}' + # removing all lib/ folders
+      - run: find . -name "src" -exec rm -rf '{}' + # removing all src/ folder
+      # install packages: cf-cli and tree
+      - run: sudo apt-get install apt-transport-https
+      - run: wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+      - run: echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+      - run: sudo apt-get update
+      - run: sudo apt-get install tree
+      - run: sudo apt-get install cf-cli
+      - run: sudo apt-get install -qy apache2-utils
+      - run: htpasswd -cb Staticfile.auth uikit uikit # the password and username is not a secret. It is just to prevent spiders from indexing
+      - run: cf install-plugin https://github.com/govau/autopilot/releases/download/0.0.5-venapp/autopilot-linux -f
+      - run: cf version                             # log what version we are running
+      - run: cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
+      - run: tree -C                                # log all files before we push
+      - run: cf zero-downtime-push uikit-$CIRCLE_BRANCH -f manifest-testing.yml
+
 
 # OUR WORKFLOW
 # this is where we orchestrate our jobs
@@ -84,12 +116,14 @@ workflows:
               only: develop # and only on the `develop` branch
           requires:
             - build-and-test-uikit
+
       -  deploy-testing:    # run test branches
           filters:
             branches:
               only: /.*-test/ # and only on the branches that end with `-test`
           requires:
             - build-and-test-uikit
+
       - deploy-prod:        # run deploy production
           filters:
             branches:

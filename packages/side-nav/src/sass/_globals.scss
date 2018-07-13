@@ -1,0 +1,57 @@
+/*! [replace-name] v[replace-version] */
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// side-nav module globals
+// A vertical list of links for site navigation typically placed next to the body content.
+//
+// Content:
+// - Sass versioning
+// - Global variables: none so far
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SASS VERSIONING
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+$name: "[replace-name]";
+$version: "[replace-version]";
+$dependencies: (
+	[replace-dependencies]
+);
+
+@include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
+
+@include versioning-remove( '@gov.au/animate' ); //removing animate as a dependency as it doesn’t come with sass
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL VARIABLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$AU-side-nav-depth: 3 !default;
+$AU-side-nav-breakpoint: sm !default;
+
+
+/**
+ * AU-side-nav-indent - Mixin for creating indent based off depth
+ *
+ * @param  {number} $depth         - How deep the menu goes
+ * @param  {number} $indent-size   - Size of the indent in units
+ *
+ * @return {number}          - The indented menu items
+ */
+@mixin AU-side-nav-indent( $depth: $AU-side-nav-depth, $indent-size: 1 ) {
+  $chain: 'a';
+  @for $i from 1 to $depth + 1 {
+		$chain: 'ul ' + $chain;
+		$indent: if(
+			$i < 2,
+			( $indent-size * $i + 1 ) * 1unit,
+			( $indent-size * $i + 1 ) * 1.25unit
+		);
+
+    & #{$chain} {
+      @include AU-space( padding-left, $indent );
+    }
+  }
+}
+

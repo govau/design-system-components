@@ -16,6 +16,7 @@ Update dependenciesalerts CH3NGELOG
 
 ## Versions
 
+* [v2.0.6 - Fixed build scripts for Windows](#v206)
 * [v2.0.5 - Replace node-sass with sass](#v205)
 * [v2.0.4 - Change npm run watch browser-sync location](#v204)
 * [v2.0.3 - Update dependencies](#v203)
@@ -33,6 +34,11 @@ Update dependenciesalerts CH3NGELOG
 
 
 ## Release History
+
+### v2.0.6
+
+- Fixed build scripts for Windows
+
 
 ### v2.0.5
 

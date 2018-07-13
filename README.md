@@ -430,6 +430,28 @@ All modules have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/side-nav</summary>
+	<br><code>npm install @gov.au/side-nav</code><br>
+	<br>See the <a href="https://uikit.service.gov.au/packages/side-nav/tests/site/">visual test file for side-nav</a>
+	<br>See the <a href="https://github.com/govau/uikit/blob/master/packages/side-nav/README.md">readme file for side-nav</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+├─ accordion
+│  ├─ animate
+│  └─ core
+├─ animate
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/skip-link</summary>
 	<br><code>npm install @gov.au/skip-link</code><br>
 	<br>See the <a href="https://uikit.service.gov.au/packages/skip-link/tests/site/">visual test file for skip-link</a>
