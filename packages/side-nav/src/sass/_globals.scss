@@ -43,7 +43,6 @@ $AU-side-nav-breakpoint: sm !default;
   $chain: 'a';
   @for $i from 1 to $depth + 1 {
 		$chain: 'ul ' + $chain;
-		// $indent: ( $indent-size * $i + 1 ) * 1unit;
 		$indent: if(
 			$i < 2,
 			( $indent-size * $i + 1 ) * 1unit,
