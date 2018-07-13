@@ -39,7 +39,7 @@
 
 ### v4.1.2
 
-- AUheaderBrand without a link now defaults to div
+- AUheaderBrand without a link will now default to use a div element
 
 
 ### v4.1.2
