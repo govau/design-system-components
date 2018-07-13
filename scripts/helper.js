@@ -16,6 +16,7 @@ const Sass = require('sass');
 const Chalk = require(`chalk`);
 const Path = require(`path`);
 const Fs = require(`fs`);
+const Os = require(`os`);
 
 const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
 
@@ -1102,8 +1103,8 @@ HELPER.test = (() => {
 					const readme = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/README.md`), 'utf8' );
 					const version = packagesPKG.version.split('-next')[ 0 ];
 
-					const currentVersion = changelog.split('## Versions\n\n* [v')[ 1 ];
-					const currentChange  = changelog.split('## Release History\n\n### v')[ 1 ];
+					const currentVersion = changelog.split('## Versions' + Os.EOL + Os.EOL + '* [v')[ 1 ];
+					const currentChange  = changelog.split('## Release History' + Os.EOL + Os.EOL + '### v')[ 1 ];
 
 					// Check that there is a current version content
 					if( !currentVersion ){
@@ -1131,7 +1132,7 @@ HELPER.test = (() => {
 					}
 
 					// testing README.md file for latest version
-					if( !readme.split('## Release History\n\n* v')[ 1 ].startsWith( version ) ) {
+					if( !readme.split('## Release History' + Os.EOL + Os.EOL + '* v')[ 1 ].startsWith( version ) ) {
 						error += `The module ${ module } does not have the current version in it’s readme "Release History" section.\n`;
 					}
 				}

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/direction-links",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "Use direction links to link up and down within the DOM or back to a parent page.",
 	"keywords": [
 		"uikit",
@@ -22,18 +22,23 @@
 	],
 	"scripts": {
 		"postinstall": "pancake",
+
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
+
 		"prepublish": "npm run test:helper && npm run build:pre",
+
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:js && npm run build:react",
-		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
-		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
-		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
-		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
+
+		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
+
+		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
+		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
+		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
 		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},
 	"pancake": {

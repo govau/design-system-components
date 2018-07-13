@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.1.2 - Fixed build scripts for Windows](#v312)
 * [v3.1.1 - Replace node-sass with sass](#v311)
 * [v3.1.0 - React router support](#v310)
 * [v3.0.4 - Update dependencies](#v304)
@@ -33,6 +34,11 @@
 
 
 ## Release History
+
+### v3.1.2
+
+- Fixed build scripts for Windows
+
 
 ### v3.1.1
 

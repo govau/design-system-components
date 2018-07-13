@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/skip-link",
-	"version": "2.0.6",
+	"version": "2.0.7",
 	"description": "Provide skip links to navigation and content.",
 	"keywords": [
 		"uikit",
@@ -32,11 +32,11 @@
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:js && npm run build:react",
 
-		"serve": "browser-sync tests --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
+		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
 
-		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
-		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
-		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
+		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
+		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
+		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
 		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},
 	"pancake": {
