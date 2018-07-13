@@ -1,7 +1,0 @@
----
-applications:
-- name: uikit
-  buildpack: staticfile_buildpack
-  memory: 64M
-  instances: 1
-  path: ./
