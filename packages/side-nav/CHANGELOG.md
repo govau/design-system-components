@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v0.1.1 - Add missing contributors](#v011)
+* [v0.1.1 - Screen reader fix for side navigation content, add missing contributors](#v011)
 * [v0.1.0 - 💥 Initial version](#v010)
 
 
@@ -26,6 +26,7 @@
 
 ### v0.1.1
 
+- Made the content readable by a screenreader on desktop
 - Added Dominik and Trevor to contributors list in package.json
 
 

@@ -141,7 +141,7 @@ The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
 
 ## Release History
 
-* v0.1.1 - Added missing contributors
+* v0.1.1 - Screen reader fix for side navigation content, add missing contributors
 * v0.1.0 - 💥 Initial version
 
 
