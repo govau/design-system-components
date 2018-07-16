@@ -34,33 +34,6 @@ var AU = AU || {};
 		)[ property ]; // avoid getPropertyValue altogether
 	}
 
-	/**
-	 * PRIVATE
-	 * Debounce function to run a function after it has stopped being called for a certain amount of time
-	 */
-	function Debounce( runThisFunction, wait, immediate ) {
-		var timeout;
-
-		return function() {
-			var context = this;
-			var args    = arguments;
-
-			var later = function() {
-				timeout = null;
-				if (!immediate) runThisFunction.apply( context, args );
-			};
-
-			var callNow = immediate && !timeout;
-
-			clearTimeout( timeout );
-			timeout = setTimeout( later, wait );
-
-			if ( callNow ) {
-				runThisFunction.apply( context, args );
-			};
-		};
-	};
-
 
 	/**
 	 * PRIVATE
@@ -80,6 +53,7 @@ var AU = AU || {};
 	};
 
 
+	var sideNavResizing = false;
 	var sideNavContent = document.querySelectorAll( '.au-side-nav__content' );
 
 
@@ -87,10 +61,22 @@ var AU = AU || {};
 	ToggleAriaRoles( sideNavContent );
 
 
-	// Run PageResize function on resize
+	// On resize
 	window.onresize = function() {
-		Debounce( ToggleAriaRoles( sideNavContent ), 250 );
-	}
+		// If we are already resizing don't toggle aria roles
+		if( sideNavResizing ){
+			return;
+		}
+
+		sideNavResizing = true; // We are resizing
+
+		// Debounce the toggle functionality
+		setTimeout( function(){
+			ToggleAriaRoles( sideNavContent ); // Toggle the aria roles
+			sideNavResizing = false;           // Get ready for next resize
+		}, 250 );
+	};
+
 
 	AU.sideNav = sideNav;
 
