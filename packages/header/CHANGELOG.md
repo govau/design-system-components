@@ -37,7 +37,7 @@
 
 ## Release History
 
-### v4.1.2
+### v4.1.3
 
 - AUheaderBrand without a link will now default to use a div element
 
