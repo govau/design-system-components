@@ -10,31 +10,38 @@ jobs:
       - image: circleci/node:8.11.3                       # NodeLTS as of 07/2018
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
+      - run: 
+          name: Writing cache checksum for uikit modules to file, using package-lock.json
+          command: |
+            find packages/*/package-lock.json -type f | md5sum | awk {'print $1'} > _PACKAGE_CHECKSUM_FILE
       - restore_cache:
           name: Restore package cache
           keys:
-            - m1-npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "packages" }}
-      - run:
+            - npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
+      - run: 
           name: Install dependencies
           command: npm install                            # duh
-      - run:
+      - run: 
           name: Package our packages
           command: npm run bootstrap                      # installing all dependencies of all packages
       - save_cache:
           name: Save package cache
-          key: m1-npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "packages" }}
+          key: npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
           paths:
             - ./node_modules/
             - ./packages
-      - run: npm run build                          # build all packages
-      - run: find . -name "lib" -exec rm -rf '{}' + # removing all lib/ folders
-      - run: find . -name "src" -exec rm -rf '{}' + # removing all src/ folder
-      - run: npm test                               # run all tests
+      - run: 
+          name: Build all packages
+          command: npm run build                          # installing all dependencies of all packages
+      - run: 
+          name: Run all tests
+          command: npm test
       - persist_to_workspace:
           root: ~/project # /home/circleci/project
           paths:
             - ./packages
             - ./deploy
+            - ./index.html
 
   deploy-staging:
     docker:
@@ -59,7 +66,7 @@ jobs:
           command: |
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
             cf zero-downtime-push uikit-$CIRCLE_BRANCH -f deploy/manifest-testing.yml
-
+            
   deploy-prod:
     docker:
       - image: govau/cf-cli
@@ -72,30 +79,28 @@ jobs:
             cf login -a api.system.b.cld.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
             cf zero-downtime-push uikit -f deploy/manifest-production.yml
 
-
 # OUR WORKFLOW
 # this is where we orchestrate our jobs
 workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - deploy-staging:       # run deploy staging
+      - build-and-test-uikit
+      - deploy-staging:     # run deploy staging
           filters:
             branches:
-              only: develop   # and only on the `develop` branch
+              only: develop # and only on the `develop` branch
           requires:
             - build-and-test-uikit
-
-      -  deploy-testing:      # run test branches
+      -  deploy-testing:    # run test branches
           filters:
             branches:
               only: /.*-test/ # and only on the branches that end with `-test`
           requires:
             - build-and-test-uikit
-
-      - deploy-prod:          # run deploy production
+      - deploy-prod:        # run deploy production
           filters:
             branches:
-              only: master    # and only on the `master` branch
+              only: master  # and only on the `master` branch
           requires:
             - build-and-test-uikit
