@@ -377,8 +377,8 @@ class AUaccordion extends React.PureComponent {
 				<a href={`#${ this.ID }`}
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
-					aria-expanded={ this.props.closed }
-					aria-selected={ this.props.closed }
+					aria-expanded={ !this.props.closed }
+					aria-selected={ !this.props.closed }
 					role="tab"
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
 					onClick={ ( event ) => this.toggle( event ) }>
@@ -388,7 +388,7 @@ class AUaccordion extends React.PureComponent {
 				<div
 					className={`au-accordion__body ${ this.closeClass }`}
 					id={ this.ID }
-					aria-hidden={ this.props.closed ? 'false' : 'true' }>
+					aria-hidden={ this.props.closed ? 'true' : 'false' }>
 					<div className="au-accordion__body-wrapper">
 
 						{ this.props.children }
