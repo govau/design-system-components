@@ -17,7 +17,7 @@ jobs:
       - restore_cache:
           name: Restore package cache
           keys:
-            - npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
+            - m1-npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
       - run: 
           name: Install dependencies
           command: npm install                            # duh
@@ -26,7 +26,7 @@ jobs:
           command: npm run bootstrap                      # installing all dependencies of all packages
       - save_cache:
           name: Save package cache
-          key: npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
+          key: m1-npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
           paths:                                          # save_cache doesn't support 'paths' globbing as of 07/2018 :(
             - node_modules
             - packages/accordion/node_modules/
