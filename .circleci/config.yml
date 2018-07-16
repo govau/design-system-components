@@ -63,7 +63,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project # /home/circleci/project
           paths:
-            - packages/
+            - packages/*/tests/
             - deploy/
             - index.html
 
