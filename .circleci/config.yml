@@ -13,22 +13,21 @@ jobs:
       - run: 
           name: Writing cache checksum for uikit modules to file, using package-lock.json
           command: |
-            find packages/*/package-lock.json -type f | md5sum | awk {'print $1'} > _PACKAGE_CHECKSUM_FILE
+            find packages/*/package-lock.json -type f | md5sum | awk {'print $1'} > /tmp/_PACKAGE_CHECKSUM_FILE
       - restore_cache:
           name: Restore package cache
           keys:
-            - m1-npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
+            - m4-packages-{{ checksum "/tmp/_PACKAGE_CHECKSUM_FILE" }}
       - run: 
           name: Install dependencies
           command: npm install                            # duh
       - run: 
-          name: Package our packages
+          name: Bootstrap the packages
           command: npm run bootstrap                      # installing all dependencies of all packages
       - save_cache:
           name: Save package cache
-          key: m1-npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
+          key: m4-packages-{{ checksum "/tmp/_PACKAGE_CHECKSUM_FILE" }}
           paths:                                          # save_cache doesn't support 'paths' globbing as of 07/2018 :(
-            - node_modules
             - packages/accordion/node_modules/
             - packages/animate/node_modules/
             - packages/body/node_modules/
