@@ -60,8 +60,7 @@ override the code as necessary, but please understand your users needs.
 
 
 ### Are there `.psd` or `.sketch` files of the UI-Kit?
-We currently don’t provide any design files. In the future we’d love to provide users with variations of files to allow them to access the latest
-components in the UI-Kit.
+Yep! Head to the [downloads page](https://designsystem.gov.au/download/) on our documentation site to get the latest version. We're updating them frequently to add new features and fix any issues, but if you'd like to contribute new functionality or bug fixes, please create an issue or open a pull request in the [design system repository](https://github.com/govau/designsystem).
 
 
 ### Why no carousels, tabs, and dropdowns?

@@ -43,7 +43,9 @@ export const AUheaderBrand = ({
 	...attributeOptions
 }) => {
 	const HeadingTag = `h${ level }`;
-	const LinkComponent = linkComponent;
+	const LinkComponent = link
+		? linkComponent
+		: 'div';
 
 	if( link ) {
 		// If we are using a normal link
