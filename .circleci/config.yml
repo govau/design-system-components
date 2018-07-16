@@ -27,9 +27,33 @@ jobs:
       - save_cache:
           name: Save package cache
           key: npm-modules-{{ checksum "package-lock.json" }}-packages-{{ checksum "_PACKAGE_CHECKSUM_FILE" }}
-          paths:
-            - ./node_modules/
-            - ./packages
+          paths:                                          # save_cache doesn't support 'paths' globbing as of 07/2018 :(
+            - node_modules
+            - packages/accordion/node_modules/
+            - packages/animate/node_modules/
+            - packages/body/node_modules/
+            - packages/breadcrumbs/node_modules/
+            - packages/buttons/node_modules/
+            - packages/callout/node_modules/
+            - packages/control-input/node_modules/
+            - packages/core/node_modules/
+            - packages/cta-link/node_modules/
+            - packages/direction-links/node_modules/
+            - packages/footer/node_modules/
+            - packages/grid-12/node_modules/
+            - packages/header/node_modules/
+            - packages/headings/node_modules/
+            - packages/inpage-nav/node_modules/
+            - packages/keyword-list/node_modules/
+            - packages/link-list/node_modules/
+            - packages/page-alerts/node_modules/
+            - packages/progress-indicator/node_modules/
+            - packages/responsive-media/node_modules/
+            - packages/select/node_modules/
+            - packages/side-nav/node_modules/
+            - packages/skip-link/node_modules/
+            - packages/tags/node_modules/
+            - packages/text-inputs/node_modules/
       - run: 
           name: Build all packages
           command: npm run build                          # installing all dependencies of all packages
@@ -39,9 +63,9 @@ jobs:
       - persist_to_workspace:
           root: ~/project # /home/circleci/project
           paths:
-            - ./packages
-            - ./deploy
-            - ./index.html
+            - packages/
+            - deploy/
+            - index.html
 
   deploy-staging:
     docker:
@@ -86,21 +110,21 @@ workflows:
   build-and-deploy:
     jobs:
       - build-and-test-uikit
-      - deploy-staging:     # run deploy staging
+      - deploy-staging:       # run deploy staging
           filters:
             branches:
-              only: develop # and only on the `develop` branch
+              only: develop   # and only on the `develop` branch
           requires:
             - build-and-test-uikit
-      -  deploy-testing:    # run test branches
+      -  deploy-testing:      # run test branches
           filters:
             branches:
               only: /.*-test/ # and only on the branches that end with `-test`
           requires:
             - build-and-test-uikit
-      - deploy-prod:        # run deploy production
+      - deploy-prod:          # run deploy production
           filters:
             branches:
-              only: master  # and only on the `master` branch
+              only: master    # and only on the `master` branch
           requires:
             - build-and-test-uikit
