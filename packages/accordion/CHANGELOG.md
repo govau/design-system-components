@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v4.0.1 - Fix aria roles for react accordion](#401)
+* [v4.0.1 - Fix aria roles for react accordion](#v401)
 * [v4.0.0 - State change more specific, remove style set on html, componentDidUpdate, build scripts for Windows](#v400)
 * [v3.0.5 - Replace node-sass with sass](#v305)
 * [v3.0.4 - Change npm run watch browser-sync location](#v304)
