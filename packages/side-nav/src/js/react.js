@@ -75,46 +75,93 @@ const AUsideNavMenu = ({ items, linkComponent }) => {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUsideNav = ({
-	dark,
-	alt,
-	accordionHeader,
-	speed,
-  onOpen,
-  afterOpen,
-  onClose,
-	afterClose,
-	closed,
-	menuHeader,
-	menuHeaderLink,
-	linkComponent,
-	items,
-	className = '',
-	attributeOptions
-}) => (
-	<AUaccordion
-		closed={ closed }
-		speed={ speed }
-		onOpen={ onOpen }
-		afterOpen={ afterOpen }
-		afterClose={ afterClose }
-		onClose={ onClose }
-		className={ 'au-side-nav au-accordion ' +
-			`${ dark ? 'au-side-nav--dark au-accordion--dark ' : '' }` +
-			`${ alt ? 'au-side-nav--alt au-accordion--alt ' : '' }` +
-			`${ className }`
+class AUsideNav extends React.PureComponent {
+	constructor( props ){
+		super( props );
+
+		// Setting props
+		const { dark, alt, accordionHeader, speed, onOpen, afterOpen, onClose, afterClose, closed, menuHeader, menuHeaderLink, linkComponent, items, className = '', ...attributeOptions } = props;
+
+		// Functions bound
+		this.onResize        = this.onResize.bind( this );
+		this.toggleAriaRoles = this.toggleAriaRoles.bind( this );
+		this.sideNavContent  = [];
+
+		// Component variables
+		this.windowResizing = false;
+
+		// Adding event listeners
+		window.addEventListener( 'resize', this.onResize );
+	}
+
+
+	componentDidMount(){
+		this.sideNavContent = document.querySelectorAll( '.au-side-nav .au-accordion__body' );
+		this.toggleAriaRoles(); // Set the correct aria roles
+	}
+
+
+	toggleAriaRoles( elements = this.sideNavContent ) {
+		console.log( 'running function' );
+		for( var i = 0; i < elements.length; i++ ){
+
+			if( elements[ i ].style.display !== 'none' ) {
+				elements[ i ].setAttribute( "aria-hidden", "true" );
+			}
+			else {
+				elements[ i ].setAttribute( "aria-hidden", "false" );
+			}
 		}
-		{ ...attributeOptions }
-		header={ accordionHeader }
-	>
-		<div className="au-side-nav__content">
-			<h2 className="au-sidenav__title">
-				<a href={ menuHeaderLink }>{ menuHeader }</a>
-			</h2>
-			<AUsideNavMenu items={ items } linkComponent={ linkComponent } />
-		</div>
-	</AUaccordion>
-);
+	};
+
+
+	onResize( event ) {
+		console.log( 'resize happened' );
+		console.log( event );
+		var self = this;
+
+		// If we are already resizing don't toggle aria roles
+		if( self.windowResizing ){
+			return;
+		}
+
+		self.windowResizing = true; // We are resizing
+
+		// Debounce the toggle functionality
+		setTimeout( function(){
+			self.toggleAriaRoles();         // Toggle the aria roles
+			self.windowResizing = false;  // Get ready for next resize
+		}, 250 );
+	}
+
+
+	render() {
+		return (
+			<AUaccordion
+				closed={ this.props.closed }
+				speed={ this.props.speed }
+				onOpen={ this.props.onOpen }
+				afterOpen={ this.props.afterOpen }
+				afterClose={ this.props.afterClose }
+				onClose={ this.props.onClose }
+				className={ 'au-side-nav au-accordion ' +
+					`${ this.props.dark ? 'au-side-nav--dark au-accordion--dark ' : '' }` +
+					`${ this.props.alt ? 'au-side-nav--alt au-accordion--alt ' : '' }` +
+					`${ this.props.className }`
+				}
+				{ ...this.props.attributeOptions }
+				header={ this.props.accordionHeader }
+			>
+				<div className="au-side-nav__content">
+					<h2 className="au-sidenav__title">
+						<a href={ this.props.menuHeaderLink }>{ this.props.menuHeader }</a>
+					</h2>
+					<AUsideNavMenu items={ this.props.items } linkComponent={ this.props.linkComponent } />
+				</div>
+			</AUaccordion>
+		);
+	};
+}
 
 AUsideNav.propTypes = {
 	dark: PropTypes.bool,
