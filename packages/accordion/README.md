@@ -252,7 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
-* v4.0.1 - Removing unecessary aria-hidden as css display toggles screen reader ability
+* v5.0.0 - Removing unecessary aria-hidden as css display toggles screen reader ability
 * v4.0.0 - State change more specific, remove style set on html, componentDidUpdate, build scripts for Windows
 * v3.0.5 - Replace node-sass with sass
 * v3.0.4 - Change npm run watch browser-sync location

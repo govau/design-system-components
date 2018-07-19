@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v4.0.1 - Removing unecessary aria-hidden as css display toggles screen reader ability](#v401)
+* [v5.0.0 - Removing unecessary aria-hidden as css display toggles screen reader ability](#v500)
 * [v4.0.0 - State change more specific, remove style set on html, componentDidUpdate, build scripts for Windows](#v400)
 * [v3.0.5 - Replace node-sass with sass](#v305)
 * [v3.0.4 - Change npm run watch browser-sync location](#v304)
@@ -39,7 +39,7 @@
 
 ## Release History
 
-### v4.0.1
+### v5.0.0
 
 - Removing unecessary aria-hidden as css display toggles screen reader ability
 

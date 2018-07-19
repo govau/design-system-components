@@ -64,13 +64,13 @@
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/accordion": "^4.0.0",
+		"@gov.au/accordion": "^5.0.0",
 		"@gov.au/animate": "^1.0.0",
 		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^3.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/accordion": "^4.0.0",
+		"@gov.au/accordion": "^5.0.0",
 		"@gov.au/animate": "^1.0.0",
 		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^3.0.0"
