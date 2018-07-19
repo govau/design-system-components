@@ -46,9 +46,6 @@ $.fn.AUaccordion = function( callbacks ) {
 						.attr( 'aria-expanded', 'true' )
 						.attr( 'aria-selected', 'true' )
 						.attr( 'role', 'tab' );
-
-					$body
-						.attr( 'aria-hidden', 'false' );
 				}
 				else {
 					$controls
@@ -56,9 +53,6 @@ $.fn.AUaccordion = function( callbacks ) {
 						.attr( 'aria-expanded', 'false' )
 						.attr( 'aria-selected', 'false' )
 						.attr( 'role', 'tab' );
-
-					$body
-						.attr( 'aria-hidden', 'true' );
 				}
 			});
 

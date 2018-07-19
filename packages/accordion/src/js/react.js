@@ -78,12 +78,10 @@ class AUaccordion extends React.PureComponent {
 	setAriaRoles( element, target, state ) {
 
 		if( state === 'closing' ) {
-			target.setAttribute( 'aria-hidden', true );
 			element.setAttribute( 'aria-expanded', false );
 			element.setAttribute( 'aria-selected', false );
 		}
 		else {
-			target.setAttribute( 'aria-hidden', false );
 			element.setAttribute( 'aria-expanded', true );
 			element.setAttribute( 'aria-selected', true );
 		}
@@ -377,8 +375,8 @@ class AUaccordion extends React.PureComponent {
 				<a href={`#${ this.ID }`}
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
-					aria-expanded={ this.props.closed }
-					aria-selected={ this.props.closed }
+					aria-expanded={ !this.props.closed }
+					aria-selected={ !this.props.closed }
 					role="tab"
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
 					onClick={ ( event ) => this.toggle( event ) }>
@@ -387,8 +385,7 @@ class AUaccordion extends React.PureComponent {
 
 				<div
 					className={`au-accordion__body ${ this.closeClass }`}
-					id={ this.ID }
-					aria-hidden={ this.props.closed ? 'false' : 'true' }>
+					id={ this.ID }>
 					<div className="au-accordion__body-wrapper">
 
 						{ this.props.children }
