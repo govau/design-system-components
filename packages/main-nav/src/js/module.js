@@ -23,28 +23,6 @@ var AU = AU || {};
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	/**
 	 * PRIVATE
-	 * Set the correct Aria roles for given element on the main-nav title and body
-	 *
-	 * @param  {object} element - The DOM element we want to set attributes for
-	 * @param  {object} target  - The DOM element we want to set attributes for
-	 * @param  {string} state   - The DOM element we want to set attributes for
-	 */
-	function setAriaRoles( element, target, state ) {
-		if( state === 'closing' ) {
-			target.setAttribute( 'aria-hidden', true );
-			element.setAttribute( 'aria-expanded', false );
-			element.setAttribute( 'aria-selected', false );
-		}
-		else {
-			target.setAttribute( 'aria-hidden', false );
-			element.setAttribute( 'aria-expanded', true );
-			element.setAttribute( 'aria-selected', true );
-		}
-	}
-
-
-	/**
-	 * PRIVATE
 	 * IE8 compatible function for replacing classes on a DOM node
 	 *
 	 * @param  {object} element      - The DOM element we want to toggle classes on
@@ -126,6 +104,7 @@ var AU = AU || {};
 			var element = elements[ i ];
 			var targetId = element.getAttribute( 'aria-controls' );
 			var target = document.getElementById( targetId );
+			var overlay = element.querySelector( '.overlay' );
 
 			if( target == null ) {
 				throw new Error(
@@ -139,7 +118,7 @@ var AU = AU || {};
 
 			toggleClasses( element, state );
 			toggleClasses( target, state );
-			setAriaRoles( element, target, state );
+			toggleClasses( document.body, state, 'au-overlay--closed', 'au-overlay--open' );
 		}
 
 		return false;

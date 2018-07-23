@@ -168,28 +168,64 @@
 
 
 .js {
+	// This sucks fix it
+	.au-overlay--open .au-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba( 0, 0, 0, 0.9 );
+		// z-index: 10;
+	}
+
+	.au-overlay--open {
+		overflow: hidden;
+	}
+
+	.au-overlay--closed .au-overlay {
+		display: none;
+	}
+
+	@include AU-media( md ) {
+		// This sucks aswell fix this
+		.au-overlay,
+		.au-overlay--open .au-overlay {
+			display: none;
+		}
+	}
+
 	.au-main-nav__content {
 		position: fixed;
 		top: 0;
 		bottom: 0;
-		left: 0;
-		width: 80%;
-		z-index: 10;
+		left: -85%;
+		display: none;
+		width: 85%;
+		z-index: 20;
 		background: $AU-color-background;
-		transform: translateX( -100% );
-		// transition: transform 0.15s ease-in-out;
+		overflow: auto;
 
+		.au-main-nav__content-inner {
+			@include AU-space( padding, 1unit );
+		}
+
+		// Reset for desktop
 		@include AU-media( md ) {
 			position: static;
-			transform: none;
 			display: block;
 			width: auto;
 			overflow: inherit;
+
+			.au-main-nav__content-inner {
+				padding: 0;
+			}
 		}
 	}
 
 	.au-main-nav__content.au-main-nav--open {
-		transform: none;
+		left: 0;
+		display: block;
 	}
 
 	// Show the toggle for mobile dimensions
