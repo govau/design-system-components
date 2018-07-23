@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/main-nav",
-	"version": "0.1.0",
-	"description": "Horizontal list of links to key areas on the website. Usually located in the header.",
+	"name": "@gov.au/side-nav",
+	"version": "0.1.1",
+	"description": "A vertical list of links for site navigation typically placed next to the body content.",
 	"keywords": [
 		"uikit",
 		"pancake",
@@ -64,10 +64,14 @@
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
+		"@gov.au/accordion": "^5.0.0",
+		"@gov.au/animate": "^1.0.0",
 		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^3.0.0"
 	},
 	"peerDependencies": {
+		"@gov.au/accordion": "^5.0.0",
+		"@gov.au/animate": "^1.0.0",
 		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^3.0.0"
 	},
@@ -98,7 +102,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://designsystem.gov.au/components/main-nav",
+	"homepage": "https://designsystem.gov.au/components/side-nav",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"

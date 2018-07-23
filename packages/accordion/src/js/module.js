@@ -31,12 +31,10 @@ var AU = AU || {};
 	function setAriaRoles( element, target, state ) {
 
 		if( state === 'closing' ) {
-			target.setAttribute( 'aria-hidden', true );
 			element.setAttribute( 'aria-expanded', false );
 			element.setAttribute( 'aria-selected', false );
 		}
 		else {
-			target.setAttribute( 'aria-hidden', false );
 			element.setAttribute( 'aria-expanded', true );
 			element.setAttribute( 'aria-selected', true );
 		}

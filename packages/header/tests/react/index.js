@@ -189,6 +189,23 @@ ReactDOM.render(
 			</div>
 		</AUheader>
 
+		<h2>header no link</h2>
+
+		<AUheader className="au-grid">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-9">
+						<AUheaderBrand
+							title="Page title"
+							subline="Service sub-title"
+							brandImage="http://placehold.it/256x80"
+							brandImageAlt="Digital Transformation Agency"
+						/>
+					</div>
+				</div>
+			</div>
+		</AUheader>
+
 		<hr />
 		<h2>headerBrand with router</h2>
 

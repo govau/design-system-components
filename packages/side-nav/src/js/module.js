@@ -1,18 +1,19 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * mainNav function
+ * sideNav function
  *
- * Horizontal list of links to key areas on the website. Usually located in the header.
+ * A vertical list of links for site navigation typically placed next to the body content.
  *
  **************************************************************************************************************************************************************/
 
-import React from 'react';
+var AU = AU || {};
 
-const AUmainNav = () => (
-	<div className="uikit-main-nav">
-		<strong>Yay!</strong>
-	</div>
-);
 
-export default AUmainNav;
+// This is necessary to use accordion javascript
+( function( AU ) {}( AU ));
+
+
+if( typeof module !== 'undefined' ) {
+	module.exports = AU;
+}

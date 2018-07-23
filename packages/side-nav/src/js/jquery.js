@@ -1,16 +1,9 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * mainNav function
+ * sideNav function
  *
- * Horizontal list of links to key areas on the website. Usually located in the header.
+ * A vertical list of links for site navigation typically placed next to the body content.
  *
  **************************************************************************************************************************************************************/
 
-
-$.fn.AUmainNav = function() {
-	var $elements = this;
-
-	return {
-	};
-};
