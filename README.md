@@ -372,6 +372,24 @@ All modules have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/main-nav</summary>
+	<br><code>npm install @gov.au/main-nav</code><br>
+	<br>See the <a href="https://uikit.service.gov.au/packages/main-nav/tests/site/">visual test file for main-nav</a>
+	<br>See the <a href="https://github.com/govau/uikit/blob/master/packages/main-nav/README.md">readme file for main-nav</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/page-alerts</summary>
 	<br><code>npm install @gov.au/page-alerts</code><br>
 	<br>See the <a href="https://uikit.service.gov.au/packages/page-alerts/tests/site/">visual test file for page-alerts</a>
