@@ -381,6 +381,7 @@ All modules have to work on the below browsers:
 
 ```shell
 ├─ core
+├─ animate
 └─ link-list
    ├─ core
    └─ body
