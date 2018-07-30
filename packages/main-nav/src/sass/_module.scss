@@ -168,62 +168,20 @@
 
 
 .js {
-	// This sucks fix it
-	.au-overlay--open .au-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: rgba( 0, 0, 0, 0.9 );
-		// z-index: 10;
-	}
-
-	.au-overlay--open {
-		overflow: hidden;
-	}
-
-	.au-overlay--closed .au-overlay {
-		display: none;
-	}
-
-	@include AU-media( md ) {
-		// This sucks aswell fix this
-		.au-overlay,
-		.au-overlay--open .au-overlay {
-			display: none;
-		}
-	}
-
+	// Move the content off the screen for mobile and js enabled
 	.au-main-nav__content {
 		position: fixed;
 		top: 0;
 		bottom: 0;
-		left: -85%;
+		left: -300px;
+		width: 300px;
 		display: none;
-		width: 85%;
 		z-index: 20;
 		background: $AU-color-background;
 		overflow: auto;
-
-		.au-main-nav__content-inner {
-			@include AU-space( padding, 1unit );
-		}
-
-		// Reset for desktop
-		@include AU-media( md ) {
-			position: static;
-			display: block;
-			width: auto;
-			overflow: inherit;
-
-			.au-main-nav__content-inner {
-				padding: 0;
-			}
-		}
 	}
 
-	.au-main-nav__content.au-main-nav--open {
+	.au-main-nav--open .au-main-nav__content {
 		left: 0;
 		display: block;
 	}
@@ -231,27 +189,60 @@
 	// Show the toggle for mobile dimensions
 	.au-main-nav__toggle {
 		display: inline-block;
+	}
 
-		@include AU-media( md ) {
+	// Add inner padding for the content area
+	.au-main-nav__content-inner {
+		@include AU-space( padding, 1unit );
+	}
+
+	.au-main-nav__overlay {
+		transition: opacity 0.3s ease-out;
+		background-color: rgba( 0, 0, 0, 0.9 );
+		cursor: pointer;
+		position: fixed;
+		top: 0;
+		left: -100%;
+		bottom: 0;
+		width: 100%;
+		z-index: 10;
+		opacity: 0;
+	}
+
+	.au-main-nav--open .au-main-nav__overlay {
+		left: 0;
+		opacity: 1;
+	}
+
+	// Lock the scroll
+	&.js-au-main-nav__scroll--locked {
+		overflow: hidden;
+	}
+
+	// On desktop
+	@include AU-media( md ) {
+		// Remove the toggle button and overlay
+		.au-main-nav__overlay,
+		.au-main-nav__toggle {
 			display: none;
 		}
-	}
-}
 
+		// Unlock scroll lock
+		&.js-au-main-nav__scroll--locked {
+			overflow: visible;
+		}
 
+		// Reset the mobile menu styling
+		.au-main-nav__content {
+			position: static;
+			display: block;
+			width: auto;
+			overflow: inherit;
+		}
 
-
-
-// Delete this now
-body {
-	margin: 0;
-	background: grey;
-
-	img {
-		max-width: 100%;
-	}
-
-	.au-main-nav {
-		margin-top: 200px;
+		// Remove padding on inner
+		.au-main-nav__content-inner {
+			padding: 0;
+		}
 	}
 }

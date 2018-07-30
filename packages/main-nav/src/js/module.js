@@ -87,8 +87,14 @@ var AU = AU || {};
 	/**
 	 * PUBLIC
 	 */
-	mainNav.Toggle = function( elements, speed ) {
-
+	/**
+	 * Open a mainNav element
+	 *
+	 * @param  {string}  element  - The toggle for the main nav
+	 * @param  {integer} speed    - The speed in ms for the animation
+	 *
+	 */
+	mainNav.Open = function( element, speed ) {
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
@@ -96,32 +102,71 @@ var AU = AU || {};
 		}
 		catch( error ) {}
 
-		if( elements.length === undefined ) {
-			elements = [ elements ];
+		var targetId = element.getAttribute('aria-controls');
+		var target   = document.getElementById( targetId );
+		var targetContent = target.querySelector( '.au-main-nav__content' );
+		var targetOverlay = target.querySelector( '.au-main-nav__overlay' );
+
+		targetContent.style.display = 'block';
+		targetOverlay.style.left    = 0;
+		targetOverlay.style.opacity = 1;
+
+		(function( target, overlay, speed ) {
+			AU.animate.Run({
+				element: targetContent,
+				property: 'left',
+				endSize: 0,
+				speed: speed || 300,
+				callback: function() {
+					toggleClasses( target, 'open' );
+					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
+					targetContent.style.display = '';
+					targetContent.style.left    = '';
+					targetOverlay.style.display = '';
+					targetOverlay.style.left    = '';
+				},
+			});
+		})( target, targetOverlay, speed );
+	}
+
+
+	/**
+	 * Close a mainNav element
+	 *
+	 * @param  {string}  elements - The DOM node/s to toggle
+	 * @param  {integer} speed    - The speed in ms for the animation
+	 *
+	 */
+	mainNav.Close = function( element, speed ) {
+		// stop event propagation
+		try {
+			window.event.cancelBubble = true;
+			event.stopPropagation();
 		}
+		catch( error ) {}
 
-		for( var i = 0; i < elements.length; i++ ) {
-			var element = elements[ i ];
-			var targetId = element.getAttribute( 'aria-controls' );
-			var target = document.getElementById( targetId );
-			var overlay = element.querySelector( '.overlay' );
+		var targetId      = element.getAttribute('aria-controls');
+		var target        = document.getElementById( targetId );
+		var targetContent = target.querySelector( '.au-main-nav__content' );
+		var targetOverlay = target.querySelector( '.au-main-nav__overlay' );
 
-			if( target == null ) {
-				throw new Error(
-					'AU.mainNav.Toggle cannot find the target to be toggled from inside aria-controls.\n' +
-					'Make sure the first argument you give AU.mainNav.Toggle is the DOM element (a button or a link) that has an aria-controls attribute that points ' +
-					'to a div that you want to toggle.'
-				);
-			}
+		targetOverlay.style.opacity = '0';
 
-			var state = element.getAttribute( 'aria-expanded' ) === 'true' ? 'closing' : 'opening';
-
-			toggleClasses( element, state );
-			toggleClasses( target, state );
-			toggleClasses( document.body, state, 'au-overlay--closed', 'au-overlay--open' );
-		}
-
-		return false;
+		(function( target, speed ) {
+			AU.animate.Run({
+				element: targetContent,
+				property: 'left',
+				endSize: -300,
+				speed: speed || 300,
+				callback: function() {
+					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
+					toggleClasses( target, 'close' );
+					targetContent.style.display = '';
+					targetContent.style.left    = '';
+					targetOverlay.style.opacity = '';
+				},
+			});
+		})( target, speed );
 	}
 
 
