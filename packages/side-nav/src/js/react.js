@@ -51,7 +51,7 @@ const AUsideNavMenu = ({ items, linkComponent }) => {
 
 	// Create the menu with children
 	return (
-		<AUlinkList items={GenerateMenu(items)} linkComponent={linkComponent} />
+		<AUlinkList items={ GenerateMenu( items ) } linkComponent={ linkComponent } />
 	);
 }
 
@@ -130,7 +130,7 @@ AUsideNav.propTypes = {
 	menuHeaderLink: PropTypes.string,
 	closed: PropTypes.bool,
 	speed: PropTypes.number,
-	linkComponent: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
