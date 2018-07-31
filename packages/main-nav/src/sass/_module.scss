@@ -22,34 +22,57 @@
 	a {
 		@include AU-space( padding, 1unit );
 		@include AU-fontgrid( xs );
-		color: $AU-color-foreground-muted;
+		@include AU-focus();
+		color: $AU-color-foreground-action;
 		display: block;
 		text-decoration: none;
 
 		&:hover {
 			text-decoration: underline;
 			text-decoration-skip: ink;
-			background-color: $AU-color-background-alt-shade;
+			color: $AU-color-foreground-text;
+			background-color: $AU-color-background-shade;
 		}
 	}
 
 	@include AU-media( md ) {
 		a {
 			@include AU-fontgrid( sm );
-			display: block;
-			text-decoration: none;
-			color: $AU-color-foreground-action;
-
-			&:hover {
-				color: $AU-color-foreground-text;
-				text-decoration: underline;
-				text-decoration-skip: ink;
-				background: $AU-color-background-shade;
-			}
-
-			@include AU-focus();
 		}
 	}
+}
+
+.au-main-nav__toggle {
+	@include AU-space( padding, 0.5unit 1unit 0.5unit );
+	@include AU-fontgrid( xs, nospace );
+	@include AU-focus();
+	border: 0;
+	appearance: none;
+	background: transparent;
+	font-family: $AU-font;
+	color: $AU-color-foreground-action;
+
+	&:hover {
+		text-decoration: underline;
+		text-decoration-skip: ink;
+		background-color: $AU-color-background-shade;
+		color: $AU-color-foreground-text;
+	}
+
+	&:before {
+		@include AU-fontgrid( sm, nospace );
+		@include AU-space( margin-bottom, 0.25unit );
+		display: block;
+		text-align: center;
+	}
+}
+
+.au-main-nav__toggle--menu:before {
+	content: "☰";
+}
+
+.au-main-nav__toggle--close:before {
+	content: "✕";
 }
 
 .au-main-nav__content {
@@ -60,11 +83,7 @@
 		list-style: none;
 
 		& > li {
-			border-bottom: 1px solid $AU-color-foreground-border;
-
-			&:last-of-type {
-				border: none;
-			}
+			border-top: 1px solid $AU-color-foreground-border;
 		}
 	}
 
@@ -166,6 +185,24 @@
 	display: none;
 }
 
+#au-main-nav__overlay {
+	transition: opacity 0.25s ease-out;
+	background-color: rgba( 0, 0, 0, 0.5 );
+	cursor: pointer;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	bottom: 0;
+	width: 100%;
+	z-index: 10;
+	opacity: 0.4;
+	display: none;
+
+	.ie8 & {
+		opacity: 1;
+	}
+}
+
 
 .js {
 	// Move the content off the screen for mobile and js enabled
@@ -196,20 +233,11 @@
 		@include AU-space( padding, 1unit );
 	}
 
-	.au-main-nav__overlay {
-		transition: opacity 0.3s ease-out;
-		background-color: rgba( 0, 0, 0, 0.9 );
-		cursor: pointer;
-		position: fixed;
-		top: 0;
-		left: -100%;
-		bottom: 0;
-		width: 100%;
-		z-index: 10;
-		opacity: 0;
+	#au-main-nav__overlay {
+		display: block;
 	}
 
-	.au-main-nav--open .au-main-nav__overlay {
+	.au-main-nav--open #au-main-nav__overlay {
 		left: 0;
 		opacity: 1;
 	}
@@ -222,7 +250,8 @@
 	// On desktop
 	@include AU-media( md ) {
 		// Remove the toggle button and overlay
-		.au-main-nav__overlay,
+		// This is used to see if the menu is open or closed in JS
+		#au-main-nav__overlay,
 		.au-main-nav__toggle {
 			display: none;
 		}
@@ -238,6 +267,7 @@
 			display: block;
 			width: auto;
 			overflow: inherit;
+			background: transparent;
 		}
 
 		// Remove padding on inner

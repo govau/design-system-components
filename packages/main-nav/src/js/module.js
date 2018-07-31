@@ -80,7 +80,6 @@ var AU = AU || {};
 	}
 
 
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // PUBLIC FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -102,31 +101,47 @@ var AU = AU || {};
 		}
 		catch( error ) {}
 
-		var targetId = element.getAttribute('aria-controls');
-		var target   = document.getElementById( targetId );
-		var targetContent = target.querySelector( '.au-main-nav__content' );
-		var targetOverlay = target.querySelector( '.au-main-nav__overlay' );
+		// Elements we modify
+		var target   = document.getElementById( element );
+		var content  = target.querySelector( '.au-main-nav__content' );
+		var overlay  = target.querySelector( '#au-main-nav__overlay' );
+		// var focusableItems = content.querySelectorAll( 'a, button' );
 
-		targetContent.style.display = 'block';
-		targetOverlay.style.left    = 0;
-		targetOverlay.style.opacity = 1;
+		// Set these value immediately for clean transitions
+		content.style.display = 'block';
+		overlay.style.left    = 0;
+		overlay.style.opacity = 1;
 
-		(function( target, overlay, speed ) {
+		(function( target, element, speed ) {
 			AU.animate.Run({
-				element: targetContent,
+				element: content,
 				property: 'left',
 				endSize: 0,
-				speed: speed || 300,
+				speed: speed || 250,
 				callback: function() {
 					toggleClasses( target, 'open' );
 					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
-					targetContent.style.display = '';
-					targetContent.style.left    = '';
-					targetOverlay.style.display = '';
-					targetOverlay.style.left    = '';
+
+					// Add key listener
+					document.addEventListener( 'keyup', function( event ){
+						event = event || window.event;
+						overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
+
+						// Check the menu is open and visible and the escape key is pressed
+						if( event.keyCode === 27 && overlayOpen === 'block' ) {
+							mainNav.Close( element );
+							event.target.removeEventListener( event.type, arguments.callee );
+						}
+					});
+
+					// Reset inline styles
+					content.style.display = '';
+					content.style.left    = '';
+					overlay.style.display = '';
+					overlay.style.left    = '';
 				},
 			});
-		})( target, targetOverlay, speed );
+		})( target, element, speed );
 	}
 
 
@@ -145,25 +160,26 @@ var AU = AU || {};
 		}
 		catch( error ) {}
 
-		var targetId      = element.getAttribute('aria-controls');
-		var target        = document.getElementById( targetId );
-		var targetContent = target.querySelector( '.au-main-nav__content' );
-		var targetOverlay = target.querySelector( '.au-main-nav__overlay' );
+		var target   = document.getElementById( element );
+		var content  = target.querySelector( '.au-main-nav__content' );
+		var overlay  = target.querySelector( '#au-main-nav__overlay' );
 
-		targetOverlay.style.opacity = '0';
+		overlay.style.opacity = '0';
 
 		(function( target, speed ) {
 			AU.animate.Run({
-				element: targetContent,
+				element: content,
 				property: 'left',
 				endSize: -300,
-				speed: speed || 300,
+				speed: speed || 250,
 				callback: function() {
 					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
 					toggleClasses( target, 'close' );
-					targetContent.style.display = '';
-					targetContent.style.left    = '';
-					targetOverlay.style.opacity = '';
+
+					// Reset inline styles
+					content.style.display = '';
+					content.style.left    = '';
+					overlay.style.opacity = '';
 				},
 			});
 		})( target, speed );

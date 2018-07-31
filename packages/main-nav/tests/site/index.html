@@ -49,18 +49,19 @@
 			<div class="row">
 				<div class="col-md-12">
 					<button
-						class="au-main-nav__toggle"
 						aria-controls="main-nav-default"
-						onClick="return AU.mainNav.Open( this )">
-						Open menu
+						class="au-main-nav__toggle au-main-nav__toggle--menu"
+						onClick="return AU.mainNav.Open( 'main-nav-default' )">
+						Menu
 					</button>
 					<div class="au-main-nav__content">
 						<div class="au-main-nav__content-inner">
+							<div id="au-main-nav__focus-trap-top"></div>
 							<button
-								class="au-main-nav__toggle"
 								aria-controls="main-nav-default"
-								onClick="return AU.mainNav.Close( this )">
-								Close menu
+								class="au-main-nav__toggle  au-main-nav__toggle--close"
+								onClick="return AU.mainNav.Close( 'main-nav-default' )">
+								Close
 							</button>
 							<ul>
 								<li><a href="#">About</a></li>
@@ -72,12 +73,13 @@
 								<li><a href="#">Github</a></li>
 								<li><a href="#">Download</a></li>
 							</ul>
+							<div id="au-main-nav__focus-trap-top"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="au-main-nav__overlay" onClick="return AU.mainNav.Close( this )" aria-controls="main-nav-default"></div>
+		<div id="au-main-nav__overlay" onClick="return AU.mainNav.Close( 'main-nav-default' )"></div>
 	</nav>
 
 	<script type="text/javascript" src="script.js"></script>
