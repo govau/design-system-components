@@ -104,8 +104,11 @@ var AU = AU || {};
 		// Elements we modify
 		var target   = document.getElementById( element );
 		var content  = target.querySelector( '.au-main-nav__content' );
-		var overlay  = target.querySelector( '#au-main-nav__overlay' );
-		// var focusableItems = content.querySelectorAll( 'a, button' );
+		var overlay  = document.getElementById( 'au-main-nav__overlay' );
+		var closeButton = target.querySelector( '.au-main-nav__toggle--close' );
+		var focustrapTop    = document.getElementById( 'au-main-nav__focus-trap-top' );
+		var focustrapBottom = document.getElementById( 'au-main-nav__focus-trap-bottom' );
+		var focusableItems  = content.querySelectorAll( 'a, button' );
 
 		// Set these value immediately for clean transitions
 		content.style.display = 'block';
@@ -121,6 +124,20 @@ var AU = AU || {};
 				callback: function() {
 					toggleClasses( target, 'open' );
 					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
+
+					// Enable the focus trap
+					closeButton.focus();
+					focustrapTop.setAttribute( "tabindex", 0 );
+					focustrapBottom.setAttribute( "tabindex", 0 );
+
+					// Move the focus to the correct item when it lands on a trap
+					focustrapTop.addEventListener( 'focus', function( event ) {
+						focusableItems[ focusableItems.length - 1 ].focus();
+					});
+
+					focustrapBottom.addEventListener( 'focus', function( event ) {
+						focusableItems[ 0 ].focus();
+					});
 
 					// Add key listener
 					document.addEventListener( 'keyup', function( event ){
@@ -160,9 +177,10 @@ var AU = AU || {};
 		}
 		catch( error ) {}
 
-		var target   = document.getElementById( element );
-		var content  = target.querySelector( '.au-main-nav__content' );
-		var overlay  = target.querySelector( '#au-main-nav__overlay' );
+		var target     = document.getElementById( element );
+		var content    = target.querySelector( '.au-main-nav__content' );
+		var overlay    = target.querySelector( '#au-main-nav__overlay' );
+		var menuButton = target.querySelector( '.au-main-nav__toggle--menu' );
 
 		overlay.style.opacity = '0';
 
@@ -175,6 +193,8 @@ var AU = AU || {};
 				callback: function() {
 					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
 					toggleClasses( target, 'close' );
+
+					menuButton.focus();
 
 					// Reset inline styles
 					content.style.display = '';
