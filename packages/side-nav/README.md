@@ -141,6 +141,7 @@ The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
 
 ## Release History
 
+* v2.0.0 - Update side-nav to use `<aside>` instead of `<nav>`
 * v1.0.0 - Update pancake dependency, release first version
 * v0.1.1 - Updating dependency in accordion
 * v0.1.0 - 💥 Initial version
