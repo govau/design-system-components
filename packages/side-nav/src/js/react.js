@@ -30,15 +30,15 @@ import PropTypes from 'prop-types';
  */
 const AUsideNavMenu = ({ items, linkComponent }) => {
 	// Recursively re generate the menu with children as necessary
-	const GenerateMenu = (items) => {
-		const menu = items.map(item => {
+	const GenerateMenu = ( items ) => {
+		const menu = items.map( item => {
 			const link = {
 				link: item.link,
 				text: item.text,
 			};
 
 			// If it has children create a menu again
-			if (item.children) {
+			if( item.children ) {
 				link.children = <AUlinkList items={GenerateMenu(item.children)} linkComponent={item.linkComponent} />
 			}
 
