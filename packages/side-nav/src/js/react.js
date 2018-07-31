@@ -39,7 +39,7 @@ const AUsideNavMenu = ({ items, linkComponent }) => {
 
 			// If it has children create a menu again
 			if( item.children ) {
-				link.children = <AUlinkList items={GenerateMenu(item.children)} linkComponent={item.linkComponent} />
+				link.children = <AUlinkList items={ GenerateMenu( item.children ) } linkComponent={ item.linkComponent } />
 			}
 
 			// return the link, maybe with children
