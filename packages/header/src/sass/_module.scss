@@ -84,6 +84,7 @@
 
 	.au-header__brand-image {
 		display: block;
+		border-style: none;
 		@include AU-space( max-width, $AU-logo-width );
 	}
 
