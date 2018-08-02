@@ -101,19 +101,22 @@ var AU = AU || {};
 		}
 		catch( error ) {}
 
-		// Elements we modify
-		var target   = document.getElementById( element );
-		var content  = target.querySelector( '.au-main-nav__content' );
-		var overlay  = document.getElementById( 'au-main-nav__overlay' );
-		var closeButton = target.querySelector( '.au-main-nav__toggle--close' );
-		var focustrapTop    = document.getElementById( 'au-main-nav__focus-trap-top' );
-		var focustrapBottom = document.getElementById( 'au-main-nav__focus-trap-bottom' );
-		var focusableItems  = content.querySelectorAll( 'a, button' );
 
-		// Set these value immediately for clean transitions
+		// Elements we modify
+		var target          = document.getElementById( element );
+		var content         = target.querySelector( '.au-main-nav__content' );
+		var overlay         = target.querySelector( '.au-main-nav__overlay' );
+		var closeButton     = target.querySelector( '.au-main-nav__toggle--close' );
+		var focustrapTop    = target.querySelector( '.au-main-nav__focus-trap-top' );
+		var focustrapBottom = target.querySelector( '.au-main-nav__focus-trap-bottom' );
+		var focusContent    = content.querySelectorAll( 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])' );
+
+
+		// Set these value immediately for transitions
 		content.style.display = 'block';
 		overlay.style.left    = 0;
 		overlay.style.opacity = 1;
+
 
 		(function( target, element, speed ) {
 			AU.animate.Run({
@@ -122,32 +125,39 @@ var AU = AU || {};
 				endSize: 0,
 				speed: speed || 250,
 				callback: function() {
+					// Toggle classes
 					toggleClasses( target, 'open' );
+
+
+					// Lock scrolling on the body
 					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
 
-					// Enable the focus trap
+
+					// Move the focus to the close button
 					closeButton.focus();
+
+
+					// Focus trap enabled
 					focustrapTop.setAttribute( "tabindex", 0 );
 					focustrapBottom.setAttribute( "tabindex", 0 );
 
-					// Move the focus to the correct item when it lands on a trap
-					focustrapTop.addEventListener( 'focus', function( event ) {
-						focusableItems[ focusableItems.length - 1 ].focus();
+
+					focustrapTop.addEventListener( 'focus', auFocusTrapListener = function() {
+						focusContent[ focusContent.length - 1 ].focus();
 					});
 
-					focustrapBottom.addEventListener( 'focus', function( event ) {
-						focusableItems[ 0 ].focus();
+					focustrapBottom.addEventListener( 'focus', auFocusTrapListener = function() {
+						focusContent[ 0 ].focus();
 					});
 
 					// Add key listener
-					document.addEventListener( 'keyup', function( event ){
+					document.addEventListener( 'keyup', auKeyListener = function( event ) {
 						event = event || window.event;
 						overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
 
 						// Check the menu is open and visible and the escape key is pressed
 						if( event.keyCode === 27 && overlayOpen === 'block' ) {
 							mainNav.Close( element );
-							event.target.removeEventListener( event.type, arguments.callee );
 						}
 					});
 
@@ -177,12 +187,18 @@ var AU = AU || {};
 		}
 		catch( error ) {}
 
-		var target     = document.getElementById( element );
-		var content    = target.querySelector( '.au-main-nav__content' );
-		var overlay    = target.querySelector( '#au-main-nav__overlay' );
-		var menuButton = target.querySelector( '.au-main-nav__toggle--menu' );
+		// Elements we modify
+		var target          = document.getElementById( element );
+		var content         = target.querySelector( '.au-main-nav__content' );
+		var overlay         = target.querySelector( '.au-main-nav__overlay' );
+		var menuButton      = target.querySelector( '.au-main-nav__toggle--menu' );
+		var focustrapTop    = target.querySelector( '.au-main-nav__focus-trap-top' );
+		var focustrapBottom = target.querySelector( '.au-main-nav__focus-trap-bottom' );
 
+
+		// Set these value immediately for transitions
 		overlay.style.opacity = '0';
+
 
 		(function( target, speed ) {
 			AU.animate.Run({
@@ -191,10 +207,27 @@ var AU = AU || {};
 				endSize: -300,
 				speed: speed || 250,
 				callback: function() {
+					// Toggle the classes
 					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
 					toggleClasses( target, 'close' );
 
+
+					// Move the focus back to the menu button
 					menuButton.focus();
+
+
+					// Remove the focus trap
+					focustrapTop.removeAttribute( "tabindex" );
+					focustrapBottom.removeAttribute( "tabindex" );
+
+					// Remove the event listeners
+					focustrapTop.removeEventListener( 'focus', auFocusTrapListener );
+					focustrapBottom.removeEventListener( 'focus', auFocusTrapListener );
+
+
+					// Remove the event listener for the keypress
+					document.removeEventListener( 'keyup', auKeyListener );
+
 
 					// Reset inline styles
 					content.style.display = '';

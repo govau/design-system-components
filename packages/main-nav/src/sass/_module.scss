@@ -185,7 +185,7 @@
 	display: none;
 }
 
-#au-main-nav__overlay {
+.au-main-nav__overlay {
 	transition: opacity 0.25s ease-out;
 	background-color: rgba( 0, 0, 0, 0.5 );
 	cursor: pointer;
@@ -233,11 +233,11 @@
 		@include AU-space( padding, 1unit );
 	}
 
-	#au-main-nav__overlay {
+	.au-main-nav__overlay {
 		display: block;
 	}
 
-	.au-main-nav--open #au-main-nav__overlay {
+	.au-main-nav--open .au-main-nav__overlay {
 		left: 0;
 		opacity: 1;
 	}
@@ -251,7 +251,7 @@
 	@include AU-media( md ) {
 		// Remove the toggle button and overlay
 		// This is used to see if the menu is open or closed in JS
-		#au-main-nav__overlay,
+		.au-main-nav__overlay,
 		.au-main-nav__toggle {
 			display: none;
 		}
