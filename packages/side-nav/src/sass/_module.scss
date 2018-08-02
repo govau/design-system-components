@@ -103,6 +103,10 @@
 .au-side-nav__content {
 	@include AU-space( margin, 0 1unit );
 
+	@include AU-media( sm ) {
+		margin: 0;
+	}
+
 	ul {
 		@include AU-side-nav-indent( 3 );
 	}
