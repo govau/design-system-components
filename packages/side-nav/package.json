@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/side-nav",
-	"version": "0.1.1",
+	"version": "2.0.0",
 	"description": "A vertical list of links for site navigation typically placed next to the body content.",
 	"keywords": [
 		"uikit",
@@ -60,7 +60,7 @@
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-js": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
@@ -117,6 +117,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://alexpage.com.au"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		}
 	],
 	"license": "MIT"

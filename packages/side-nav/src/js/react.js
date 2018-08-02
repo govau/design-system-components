@@ -80,9 +80,9 @@ const AUsideNav = ({
 	alt,
 	accordionHeader,
 	speed,
-  onOpen,
-  afterOpen,
-  onClose,
+	onOpen,
+	afterOpen,
+	onClose,
 	afterClose,
 	closed,
 	menuHeader,
@@ -92,29 +92,31 @@ const AUsideNav = ({
 	className = '',
 	attributeOptions
 }) => (
-	<AUaccordion
-		closed={ closed }
-		speed={ speed }
-		onOpen={ onOpen }
-		afterOpen={ afterOpen }
-		afterClose={ afterClose }
-		onClose={ onClose }
-		className={ 'au-side-nav au-accordion ' +
-			`${ dark ? 'au-side-nav--dark au-accordion--dark ' : '' }` +
-			`${ alt ? 'au-side-nav--alt au-accordion--alt ' : '' }` +
-			`${ className }`
-		}
-		{ ...attributeOptions }
-		header={ accordionHeader }
-	>
-		<div className="au-side-nav__content">
-			<h2 className="au-sidenav__title">
-				<a href={ menuHeaderLink }>{ menuHeader }</a>
-			</h2>
-			<AUsideNavMenu items={ items } linkComponent={ linkComponent } />
-		</div>
-	</AUaccordion>
-);
+		<aside>
+			<AUaccordion
+				closed={closed}
+				speed={speed}
+				onOpen={onOpen}
+				afterOpen={afterOpen}
+				afterClose={afterClose}
+				onClose={onClose}
+				className={'au-side-nav au-accordion ' +
+					`${dark ? 'au-side-nav--dark au-accordion--dark ' : ''}` +
+					`${alt ? 'au-side-nav--alt au-accordion--alt ' : ''}` +
+					`${className}`
+				}
+				{...attributeOptions}
+				header={accordionHeader}
+			>
+				<div className="au-side-nav__content">
+					<h2 className="au-sidenav__title">
+						<a href={menuHeaderLink}>{menuHeader}</a>
+					</h2>
+					<AUsideNavMenu items={items} linkComponent={linkComponent} />
+				</div>
+			</AUaccordion>
+		</aside>
+	);
 
 AUsideNav.propTypes = {
 	dark: PropTypes.bool,
