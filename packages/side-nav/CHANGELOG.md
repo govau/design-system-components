@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.0.1 - Remove left margin from side-nav on larger devices](#v201)
+* [v2.0.1 - Removed incorrect margin from desktop side navigation](#v201)
 * [v2.0.0 - Update side-nav to use `<aside>` instead of `<nav>`](#v200)
 * [v1.0.0 - Update pancake dependency, release first version](#v100)
 * [v0.1.1 - Updating dependency in accordion](#v011)
@@ -29,7 +29,7 @@
 
 ### v2.0.1
 
-- v2.0.1 - Remove left margin from side-nav on larger devices
+- v2.0.1 - Removed incorrect margin from desktop side navigation
 
 
 ### v2.0.0
