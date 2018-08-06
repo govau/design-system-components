@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.4 - Removed border from header brand image on ie8, ie9 and ie10](#v414)
 * [v4.1.3 - AUheaderBrand without a link now defaults to div](#v413)
 * [v4.1.2 - Fixed build scripts for Windows](#v412)
 * [v4.1.1 - Replace node-sass with sass](#v411)
@@ -36,6 +37,11 @@
 
 
 ## Release History
+
+### v4.1.4
+
+- Removed border from header brand image on ie8, ie9 and ie10
+
 
 ### v4.1.3
 
