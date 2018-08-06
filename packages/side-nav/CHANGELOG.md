@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.2 - Added active state for react](#v202)
 * [v2.0.1 - Removed incorrect margin from desktop side navigation](#v201)
 * [v2.0.0 - Update side-nav to use `<aside>` instead of `<nav>`](#v200)
 * [v1.0.0 - Update pancake dependency, release first version](#v100)
@@ -26,6 +27,11 @@
 
 
 ## Release History
+
+### v2.0.2
+
+- v2.0.2 - Added active state for react
+
 
 ### v2.0.1
 
