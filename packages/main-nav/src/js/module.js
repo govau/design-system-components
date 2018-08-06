@@ -26,7 +26,6 @@ var AU = AU || {};
 	 * IE8 compatible function for replacing classes on a DOM node
 	 *
 	 * @param  {object} element      - The DOM element we want to toggle classes on
-	 * @param  {object} target       - The DOM element we want to toggle classes on
 	 * @param  {object} state        - The current state of the animation on the element
 	 * @param  {string} openingClass - The firstClass you want to toggle on the DOM node
 	 * @param  {string} closingClass - The secondClass you want to toggle on the DOM node
@@ -101,14 +100,15 @@ var AU = AU || {};
 		}
 		catch( error ) {}
 
+		console.log( element );
+
 
 		// Elements we modify
-		var target          = document.getElementById( element );
-		var content         = target.querySelector( '.au-main-nav__content' );
-		var overlay         = target.querySelector( '.au-main-nav__overlay' );
-		var closeButton     = target.querySelector( '.au-main-nav__toggle--close' );
-		var focustrapTop    = target.querySelector( '.au-main-nav__focus-trap-top' );
-		var focustrapBottom = target.querySelector( '.au-main-nav__focus-trap-bottom' );
+		var content         = element.querySelector( '.au-main-nav__content' );
+		var overlay         = element.querySelector( '.au-main-nav__overlay' );
+		var closeButton     = element.querySelector( '.au-main-nav__toggle--close' );
+		var focustrapTop    = element.querySelector( '.au-main-nav__focus-trap-top' );
+		var focustrapBottom = element.querySelector( '.au-main-nav__focus-trap-bottom' );
 		var focusContent    = content.querySelectorAll( 'a, .au-main-nav__toggle' );
 
 
@@ -118,7 +118,7 @@ var AU = AU || {};
 		overlay.style.opacity = 1;
 
 
-		(function( target, element, speed ) {
+		(function( element, speed ) {
 			AU.animate.Run({
 				element: content,
 				property: 'left',
@@ -168,7 +168,7 @@ var AU = AU || {};
 					overlay.style.left    = '';
 				},
 			});
-		})( target, element, speed );
+		})( element, speed );
 	}
 
 
@@ -188,19 +188,18 @@ var AU = AU || {};
 		catch( error ) {}
 
 		// Elements we modify
-		var target          = document.getElementById( element );
-		var content         = target.querySelector( '.au-main-nav__content' );
-		var overlay         = target.querySelector( '.au-main-nav__overlay' );
-		var menuButton      = target.querySelector( '.au-main-nav__toggle--menu' );
-		var focustrapTop    = target.querySelector( '.au-main-nav__focus-trap-top' );
-		var focustrapBottom = target.querySelector( '.au-main-nav__focus-trap-bottom' );
+		var content         = element.querySelector( '.au-main-nav__content' );
+		var overlay         = element.querySelector( '.au-main-nav__overlay' );
+		var menuButton      = element.querySelector( '.au-main-nav__toggle--menu' );
+		var focustrapTop    = element.querySelector( '.au-main-nav__focus-trap-top' );
+		var focustrapBottom = element.querySelector( '.au-main-nav__focus-trap-bottom' );
 
 
 		// Set these value immediately for transitions
 		overlay.style.opacity = '0';
 
 
-		(function( target, speed ) {
+		(function( speed ) {
 			AU.animate.Run({
 				element: content,
 				property: 'left',
@@ -221,6 +220,7 @@ var AU = AU || {};
 					focustrapTop.removeAttribute( "tabindex" );
 					focustrapBottom.removeAttribute( "tabindex" );
 
+
 					// Remove the event listeners
 					focustrapTop.removeEventListener( 'focus', auFocusTrapListener );
 					focustrapBottom.removeEventListener( 'focus', auFocusTrapListener );
@@ -236,7 +236,7 @@ var AU = AU || {};
 					overlay.style.opacity = '';
 				},
 			});
-		})( target, speed );
+		})( speed );
 	}
 
 

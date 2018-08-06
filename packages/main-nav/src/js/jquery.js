@@ -19,23 +19,21 @@ $.fn.AUmainNav = function() {
 
 	var mainNavObject = {
 		addListeners: function() {
-			console.log( 'hello' );
 
-			$('.au-main-nav__toggle--open').on('click', function() {
-				var selector = $( this ).closest('.au-main-nav');
-				console.log( selector );
+			// Open the menu
+			$('.au-main-nav__toggle--menu').on('click', function() {
+				var selector = $( this ).closest('.au-main-nav')[ 0 ];
 				var speed = $( this ).attr('data-speed');
 
-				AU.mainNav.Open( $( selector ), speed );
+				AU.mainNav.Open( selector, speed );
 			});
 
-			// close all
-			$('.au-main-nav__toggle--close').not('.js-au-accordion-rendered').on('click', function() {
-				var selector = $( this ).closest('.au-main-nav');
-				console.log( selector );
+			// Close the menu
+			$('.au-main-nav__toggle--close, .au-main-nav__overlay').on('click', function() {
+				var selector = $( this ).closest('.au-main-nav')[ 0 ];
 				var speed = $( this ).attr('data-speed');
 
-				AU.mainNav.Close( $( selector ), speed );
+				AU.mainNav.Close( selector, speed );
 			}).addClass('js-au-accordion-rendered');
 
 			return this;
