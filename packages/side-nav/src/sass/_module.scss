@@ -135,6 +135,10 @@
 			border: none;
 		}
 	}
+
+	@include AU-media( $AU-side-nav-breakpoint ) {
+		margin: 0;
+	}
 }
 
 
