@@ -28,13 +28,9 @@
 			content: " (" attr(href) ")" !important;
 		}
 
-		abbr[title]:after {
-			content: " (" attr(title) ")";
-		}
-
 		a[href^="javascript:"]:after,
 		a[href^="#"]:after {
-			content: "";
+			content: "" !important;
 		}
 
 		a[rel~='external']:after {
@@ -42,6 +38,10 @@
 			height: auto !important;
 			margin: auto !important;
 			background-image: none !important;
+		}
+
+		abbr[title]:after {
+			content: " (" attr(title) ")";
 		}
 
 		pre,
