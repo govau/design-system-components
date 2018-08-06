@@ -25,7 +25,7 @@
 		}
 
 		a[href]:after {
-			content: " (" attr(href) ")";
+			content: " (" attr(href) ")" !important;
 		}
 
 		abbr[title]:after {
@@ -38,7 +38,10 @@
 		}
 
 		a[rel~='external']:after {
-			display: none !important;
+			width: auto !important;
+			height: auto !important;
+			margin: auto !important;
+			background-image: none !important;
 		}
 
 		pre,
