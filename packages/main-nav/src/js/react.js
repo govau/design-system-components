@@ -11,10 +11,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const AUmainNav = () => (
-	<div className="au-main-nav">
-		<strong>Yay!</strong>
-	</div>
+const AUmainNav = ({ dark, alt, menu, children }) => (
+	<nav
+		className={
+			'au-main-nav' +
+			`${ dark ? 'au-main-nav--dark ' : '' }` +
+			`${ alt ? 'au-main-nav--alt ' : '' }` +
+			`${ className }`
+		}
+		id="main-nav-default"
+	>
+		{ children }
+		<div class="au-main-nav__overlay" onClick="return AU.mainNav.Close( document.getElementById( 'main-nav-default' ) )"></div>
+	</nav>
 );
 
 AUmainNav.propTypes = {
