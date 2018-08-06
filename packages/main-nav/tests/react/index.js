@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AUmainNav from './main-nav.js';
+import AUmainNav, { AUmainNavContent } from './main-nav.js';
 
 
 const menu = [
@@ -16,6 +16,7 @@ const menu = [
 	{
 		link: '#',
 		text: 'Components',
+		active: true
 	},
 	{
 		link: '#',
