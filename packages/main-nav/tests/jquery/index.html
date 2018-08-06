@@ -44,7 +44,165 @@
 
 	<h1>JQuery test: main-nav</h1>
 
-	code here
+	<h2>Test: main-nav default</h2>
+
+	<nav class="au-main-nav" id="main-nav-default">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<button
+						aria-controls="main-nav-default"
+						class="au-main-nav__toggle au-main-nav__toggle--menu"
+						onClick="return AU.mainNav.Open( 'main-nav-default' )">
+						Menu
+					</button>
+					<div class="au-main-nav__content">
+						<div class="au-main-nav__content-inner">
+							<div class="au-main-nav__focus-trap-top"></div>
+							<button
+								aria-controls="main-nav-default"
+								class="au-main-nav__toggle au-main-nav__toggle--close"
+								onClick="return AU.mainNav.Close( 'main-nav-default' )">
+								Close
+							</button>
+							<ul class="au-link-list">
+								<li><a href="#">About</a></li>
+								<li><a href="#">Get started</a></li>
+								<li class="active"><a href="#">Components</a></li>
+								<li><a href="#">Templates</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Github</a></li>
+								<li><a href="#">Download</a></li>
+							</ul>
+							<div class="au-main-nav__focus-trap-bottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="au-main-nav__overlay" onClick="return AU.mainNav.Close( 'main-nav-default' )"></div>
+	</nav>
+
+
+	<h2>Test: main-nav <code>alt</code></h2>
+	<nav class="au-main-nav au-main-nav--alt" id="main-nav-default-alt">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<button
+						aria-controls="main-nav-default-alt"
+						class="au-main-nav__toggle au-main-nav__toggle--menu"
+						onClick="return AU.mainNav.Open( 'main-nav-default-alt' )">
+						Menu
+					</button>
+					<div class="au-main-nav__content">
+						<div class="au-main-nav__content-inner">
+							<div class="au-main-nav__focus-trap-top"></div>
+							<button
+								aria-controls="main-nav-default-alt"
+								class="au-main-nav__toggle au-main-nav__toggle--close"
+								onClick="return AU.mainNav.Close( 'main-nav-default-alt' )">
+								Close
+							</button>
+							<ul class="au-link-list">
+								<li><a href="#">About</a></li>
+								<li><a href="#">Get started</a></li>
+								<li class="active"><a href="#">Components</a></li>
+								<li><a href="#">Templates</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Github</a></li>
+								<li><a href="#">Download</a></li>
+							</ul>
+							<div class="au-main-nav__focus-trap-bottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="au-main-nav__overlay" onClick="return AU.mainNav.Close( 'main-nav-default-alt' )"></div>
+	</nav>
+
+
+	<h2>Test: main-nav <code>dark</code></h2>
+	<nav class="au-main-nav au-main-nav--dark" id="main-nav-default-dark">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<button
+						aria-controls="main-nav-default-dark"
+						class="au-main-nav__toggle au-main-nav__toggle--menu"
+						onClick="return AU.mainNav.Open( 'main-nav-default-dark' )">
+						Menu
+					</button>
+					<div class="au-main-nav__content">
+						<div class="au-main-nav__content-inner">
+							<div class="au-main-nav__focus-trap-top"></div>
+							<button
+								aria-controls="main-nav-default-dark"
+								class="au-main-nav__toggle au-main-nav__toggle--close"
+								onClick="return AU.mainNav.Close( 'main-nav-default-dark' )">
+								Close
+							</button>
+							<ul class="au-link-list">
+								<li><a href="#">About</a></li>
+								<li><a href="#">Get started</a></li>
+								<li class="active"><a href="#">Components</a></li>
+								<li><a href="#">Templates</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Github</a></li>
+								<li><a href="#">Download</a></li>
+							</ul>
+							<div class="au-main-nav__focus-trap-bottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="au-main-nav__overlay" onClick="return AU.mainNav.Close( 'main-nav-default-dark' )"></div>
+	</nav>
+
+
+	<h2>Test: main-nav <code>alt</code> <code>dark</code></h2>
+	<nav class="au-main-nav au-main-nav--alt au-main-nav--dark" id="main-nav-default-dark-alt">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<button
+						aria-controls="main-nav-default-dark-alt"
+						class="au-main-nav__toggle au-main-nav__toggle--menu"
+						onClick="return AU.mainNav.Open( 'main-nav-default-dark-alt' )">
+						Menu
+					</button>
+					<div class="au-main-nav__content">
+						<div class="au-main-nav__content-inner">
+							<div class="au-main-nav__focus-trap-top"></div>
+							<button
+								aria-controls="main-nav-default-dark-alt"
+								class="au-main-nav__toggle au-main-nav__toggle--close"
+								onClick="return AU.mainNav.Close( 'main-nav-default-dark-alt' )">
+								Close
+							</button>
+							<ul class="au-link-list">
+								<li><a href="#">About</a></li>
+								<li><a href="#">Get started</a></li>
+								<li class="active"><a href="#">Components</a></li>
+								<li><a href="#">Templates</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="#">Support</a></li>
+								<li><a href="#">Github</a></li>
+								<li><a href="#">Download</a></li>
+							</ul>
+							<div class="au-main-nav__focus-trap-bottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="au-main-nav__overlay" onClick="return AU.mainNav.Close( 'main-nav-default-dark-alt' )"></div>
+	</nav>
 
 	<script type="text/javascript" src="script.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

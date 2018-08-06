@@ -44,6 +44,8 @@
 
 	<h1>Test: main-nav</h1>
 
+	<h2>Test: main-nav default</h2>
+
 	<nav class="au-main-nav" id="main-nav-default">
 		<div class="container">
 			<div class="row">
@@ -63,7 +65,7 @@
 								onClick="return AU.mainNav.Close( 'main-nav-default' )">
 								Close
 							</button>
-							<ul>
+							<ul class="au-link-list">
 								<li><a href="#">About</a></li>
 								<li><a href="#">Get started</a></li>
 								<li class="active"><a href="#">Components</a></li>
@@ -83,6 +85,7 @@
 	</nav>
 
 
+	<h2>Test: main-nav <code>alt</code></h2>
 	<nav class="au-main-nav au-main-nav--alt" id="main-nav-default-alt">
 		<div class="container">
 			<div class="row">
@@ -102,7 +105,7 @@
 								onClick="return AU.mainNav.Close( 'main-nav-default-alt' )">
 								Close
 							</button>
-							<ul>
+							<ul class="au-link-list">
 								<li><a href="#">About</a></li>
 								<li><a href="#">Get started</a></li>
 								<li class="active"><a href="#">Components</a></li>
@@ -122,6 +125,7 @@
 	</nav>
 
 
+	<h2>Test: main-nav <code>dark</code></h2>
 	<nav class="au-main-nav au-main-nav--dark" id="main-nav-default-dark">
 		<div class="container">
 			<div class="row">
@@ -141,7 +145,7 @@
 								onClick="return AU.mainNav.Close( 'main-nav-default-dark' )">
 								Close
 							</button>
-							<ul>
+							<ul class="au-link-list">
 								<li><a href="#">About</a></li>
 								<li><a href="#">Get started</a></li>
 								<li class="active"><a href="#">Components</a></li>
@@ -161,7 +165,8 @@
 	</nav>
 
 
-	<nav class="au-main-nav au-main-nav--dark--alt au-main-nav--dark" id="main-nav-default-dark-alt">
+	<h2>Test: main-nav <code>alt</code> <code>dark</code></h2>
+	<nav class="au-main-nav au-main-nav--alt au-main-nav--dark" id="main-nav-default-dark-alt">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -198,7 +203,6 @@
 		</div>
 		<div class="au-main-nav__overlay" onClick="return AU.mainNav.Close( 'main-nav-default-dark-alt' )"></div>
 	</nav>
-
 
 
 	<script type="text/javascript" src="script.js"></script>

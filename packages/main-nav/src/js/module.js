@@ -109,7 +109,7 @@ var AU = AU || {};
 		var closeButton     = target.querySelector( '.au-main-nav__toggle--close' );
 		var focustrapTop    = target.querySelector( '.au-main-nav__focus-trap-top' );
 		var focustrapBottom = target.querySelector( '.au-main-nav__focus-trap-bottom' );
-		var focusContent    = content.querySelectorAll( 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])' );
+		var focusContent    = content.querySelectorAll( 'a, .au-main-nav__toggle' );
 
 
 		// Set these value immediately for transitions
@@ -126,11 +126,11 @@ var AU = AU || {};
 				speed: speed || 250,
 				callback: function() {
 					// Toggle classes
-					toggleClasses( target, 'open' );
-
+					toggleClasses( content, 'open', 'au-main-nav__content--closed', 'au-main-nav__content--open' );
+					toggleClasses( overlay, 'open', 'au-main-nav__overlay--closed', 'au-main-nav__overlay--open' );
 
 					// Lock scrolling on the body
-					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
+					toggleClasses( document.documentElement, 'open', 'au-main-nav__scroll--unlocked', 'au-main-nav__scroll--locked' );
 
 
 					// Move the focus to the close button
@@ -208,8 +208,9 @@ var AU = AU || {};
 				speed: speed || 250,
 				callback: function() {
 					// Toggle the classes
-					toggleClasses( document.documentElement, 'closing', 'js-au-main-nav__scroll--unlocked', 'js-au-main-nav__scroll--locked' );
-					toggleClasses( target, 'close' );
+					toggleClasses( document.documentElement, 'closing', 'au-main-nav__scroll--unlocked', 'au-main-nav__scroll--locked' );
+					toggleClasses( content, 'closing', 'au-main-nav__content--closed', 'au-main-nav__content--open' );
+					toggleClasses( overlay, 'closing', 'au-main-nav__overlay--closed', 'au-main-nav__overlay--open' );
 
 
 					// Move the focus back to the menu button
