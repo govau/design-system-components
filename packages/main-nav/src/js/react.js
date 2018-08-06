@@ -10,6 +10,15 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
+// ES5 dependency: import AUlinkList from '@gov.au/link-list';
+// ES6 dependency: import AUlinkList from './link-list';
+
+
+// The following line will be replaced automatically with generic imports for the ES5 pipeline.
+// You can safely ignore this bit if you use this module with pancake
+//
+// [replace-imports]
+
 
 /**
  * A menu inside the AUsideNav
@@ -39,23 +48,23 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 }
 
 
-export const AUmainNavContent = ({ menu }) => (
+export const AUmainNavContent = ({ items }) => (
 	<Fragment>
 		<button
 			aria-controls="main-nav-default"
-			class="au-main-nav__toggle au-main-nav__toggle--menu">
+			className="au-main-nav__toggle au-main-nav__toggle--menu">
 			Menu
 		</button>
-		<div class="au-main-nav__content">
-			<div class="au-main-nav__content-inner">
-				<div class="au-main-nav__focus-trap-top"></div>
+		<div className="au-main-nav__content">
+			<div className="au-main-nav__content-inner">
+				<div className="au-main-nav__focus-trap-top"></div>
 				<button
 					aria-controls="main-nav-default"
-					class="au-main-nav__toggle au-main-nav__toggle--close">
+					className="au-main-nav__toggle au-main-nav__toggle--close">
 					Close
 				</button>
-				<AUmainNavMenu items={ menu } />
-				<div class="au-main-nav__focus-trap-bottom"></div>
+				<AUmainNavMenu items={ items } />
+				<div className="au-main-nav__focus-trap-bottom"></div>
 			</div>
 		</div>
 	</Fragment>
@@ -73,7 +82,7 @@ const AUmainNav = ({ dark, alt, children, className = '' }) => (
 		id="main-nav-default"
 	>
 		{ children }
-		<div class="au-main-nav__overlay"></div>
+		<div className="au-main-nav__overlay"></div>
 	</nav>
 );
 
