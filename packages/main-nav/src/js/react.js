@@ -11,7 +11,35 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 
-export const AUmainNavContet = ({ menu }) => (
+/**
+ * A menu inside the AUsideNav
+ *
+ * @param  {array}  items            - The link Text or link html
+ */
+const AUmainNavMenu = ({ items, linkComponent }) => {
+	// Generate the menu
+	const GenerateMenu = ( items ) => {
+		const menu = items.map( item => {
+			const link = {
+				link: item.link,
+				text: item.text,
+			};
+
+			// return the link, maybe with children
+			return link;
+		});
+
+		return menu;
+	}
+
+	// Create the menu with children
+	return (
+		<AUlinkList items={ GenerateMenu( items ) } linkComponent={ linkComponent } />
+	);
+}
+
+
+export const AUmainNavContent = ({ menu }) => (
 	<Fragment>
 		<button
 			aria-controls="main-nav-default"
@@ -26,16 +54,7 @@ export const AUmainNavContet = ({ menu }) => (
 					class="au-main-nav__toggle au-main-nav__toggle--close">
 					Close
 				</button>
-				<ul class="au-link-list">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Get started</a></li>
-					<li class="active"><a href="#">Components</a></li>
-					<li><a href="#">Templates</a></li>
-					<li><a href="#">Community</a></li>
-					<li><a href="#">Support</a></li>
-					<li><a href="#">Github</a></li>
-					<li><a href="#">Download</a></li>
-				</ul>
+				<AUmainNavMenu items={ menu } />
 				<div class="au-main-nav__focus-trap-bottom"></div>
 			</div>
 		</div>
@@ -43,13 +62,13 @@ export const AUmainNavContet = ({ menu }) => (
 );
 
 
-const AUmainNav = ({ dark, alt, children }) => (
+const AUmainNav = ({ dark, alt, children, className = '' }) => (
 	<nav
 		className={
 			'au-main-nav' +
-			`${ dark ? 'au-main-nav--dark ' : '' }` +
-			`${ alt ? 'au-main-nav--alt ' : '' }` +
-			`${ className }`
+			`${ dark ? ' au-main-nav--dark ' : '' }` +
+			`${ alt ? ' au-main-nav--alt ' : '' }` +
+			` ${ className }`
 		}
 		id="main-nav-default"
 	>
