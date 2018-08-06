@@ -23,7 +23,8 @@ import PropTypes from 'prop-types';
 /**
  * A menu inside the AUsideNav
  *
- * @param  {array}  items            - The link Text or link html
+ * @param  {array}  items            - The links in an array containing text, location and active status
+ * @param  {string} linkComponent    - The component used for the link
  */
 const AUmainNavMenu = ({ items, linkComponent }) => {
 	// Generate the menu
@@ -32,6 +33,9 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 			const link = {
 				link: item.link,
 				text: item.text,
+				li: {
+					className: item.active ? 'active' : '',
+				},
 			};
 
 			// return the link, maybe with children
