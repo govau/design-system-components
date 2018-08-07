@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/progress-indicator",
-	"version": "3.1.2",
+	"version": "3.1.3",
 	"description": "Indicator of progress through a multitude of pages mostly used for forms.",
 	"keywords": [
 		"uikit",

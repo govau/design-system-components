@@ -153,6 +153,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
+* v1.0.6 - Removing web pack dev server, updating dependencies
 * v1.0.5 - Fixed build scripts for Windows
 * v1.0.4 - Change npm run watch browser-sync location
 * v1.0.3 - Update dependencies

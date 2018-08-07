@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.3 - Removing web pack dev server, updating dependencies](#v213)
 * [v2.1.2 - Fixed build scripts for Windows](#v212)
 * [v2.1.1 - Replace node-sass with sass](#v211)
 * [v2.1.0 - React router support](#v210)
@@ -32,6 +33,11 @@
 
 
 ## Release History
+
+### v2.1.3
+
+- Removing web pack dev server, updating dependencies
+
 
 ### v2.1.2
 

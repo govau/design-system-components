@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/responsive-media/tests/si
 
 ## Release History
 
+* v2.0.10 - Removing web pack dev server, updating dependencies
 * v2.0.9 - Fixed build scripts for Windows
 * v2.0.8 - Replace node-sass with sass
 * v2.0.7 - Change npm run watch browser-sync location
