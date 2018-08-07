@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.10 - Removing web pack dev server, updating dependencies](#v2010)
 * [v2.0.9 - Made URL for external links visible in print preview](#v209)
 * [v2.0.8 - Fixed build scripts for Windows](#v208)
 * [v2.0.7 - Replace node-sass with sass](#v207)
@@ -35,6 +36,11 @@
 
 
 ## Release History
+
+### v2.0.10
+
+- Removing web pack dev server, updating dependencies
+
 
 ### v2.0.9
 

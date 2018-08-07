@@ -25,7 +25,7 @@ import PropTypes from 'prop-types';
 /**
  * A menu inside the AUsideNav
  *
- * @param  {array}  items            - The link Text or link html
+ * @param  {array}  items            - The links in an array containing text, location and active status
  * @param  {string} linkComponent    - The component used for the link
  */
 const AUsideNavMenu = ({ items, linkComponent }) => {
@@ -35,6 +35,9 @@ const AUsideNavMenu = ({ items, linkComponent }) => {
 			const link = {
 				link: item.link,
 				text: item.text,
+				li: {
+					className: item.active ? 'active' : '',
+				},
 			};
 
 			// If it has children create a menu again

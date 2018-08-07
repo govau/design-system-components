@@ -33,6 +33,7 @@ const menu = [
 							{
 								link: '#',
 								text: 'Change to route one',
+								active: true,
 							},
 							{
 								link: '#',
