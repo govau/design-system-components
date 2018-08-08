@@ -89,9 +89,6 @@ class AUmainNav extends React.PureComponent {
 		this.mainNavClose     = this.mainNavClose.bind( this );
 
 		this.closeClass = this.props.closed ? 'au-accordion--closed' : '';
-
-		console.log( '------------------------' );
-		console.log( this.children );
 	}
 
 
@@ -164,8 +161,6 @@ class AUmainNav extends React.PureComponent {
 			event.stopPropagation();
 		}
 		catch( error ) {}
-
-		console.log( element );
 
 
 		// Elements we modify
@@ -310,14 +305,14 @@ class AUmainNav extends React.PureComponent {
 			<nav
 				className={
 					'au-main-nav' +
-					`${ this.dark ? ' au-main-nav--dark ' : '' }` +
-					`${ this.alt ? ' au-main-nav--alt ' : '' }` +
-					` ${ this.className }`
+					`${ this.props.dark ? ' au-main-nav--dark ' : '' }` +
+					`${ this.props.alt ? ' au-main-nav--alt ' : '' }` +
+					` ${ this.props.className }`
 				}
 				id="main-nav-default"
-				{ ...this.attributeOptions }
+				{ ...this.props.attributeOptions }
 			>
-				{ this.children }
+				{ this.props.children }
 			</nav>
 		);
 	}
