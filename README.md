@@ -438,11 +438,11 @@ All modules have to work on the below browsers:
 	<br>
 
 ```shell
+├─ core
+├─ animate
 ├─ accordion
 │  ├─ animate
 │  └─ core
-├─ animate
-├─ core
 └─ link-list
    ├─ core
    └─ body

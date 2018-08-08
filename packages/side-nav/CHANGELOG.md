@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.3 - Fixing order of dependencies](#v203)
 * [v2.0.2 - Added active state for react, Removing web pack dev server, updating dependencies](#v202)
 * [v2.0.1 - Removed incorrect margin from desktop side navigation](#v201)
 * [v2.0.0 - Update side-nav to use `<aside>` instead of `<nav>`](#v200)
@@ -27,6 +28,11 @@
 
 
 ## Release History
+
+### v2.0.3
+
+- Fixing order of dependencies
+
 
 ### v2.0.2
 
