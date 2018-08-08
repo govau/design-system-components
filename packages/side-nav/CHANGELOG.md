@@ -15,6 +15,8 @@
 
 ## Versions
 
+* [v2.0.3 - Fixing order of dependencies](#v203)
+* [v2.0.2 - Added active state for react, Removing web pack dev server, updating dependencies](#v202)
 * [v2.0.1 - Removed incorrect margin from desktop side navigation](#v201)
 * [v2.0.0 - Update side-nav to use `<aside>` instead of `<nav>`](#v200)
 * [v1.0.0 - Update pancake dependency, release first version](#v100)
@@ -27,14 +29,25 @@
 
 ## Release History
 
+### v2.0.3
+
+- Fixing order of dependencies
+
+
+### v2.0.2
+
+- Added active state for react
+- Removing web pack dev server, updating dependencies
+
+
 ### v2.0.1
 
-- v2.0.1 - Removed incorrect margin from desktop side navigation
+- Removed incorrect margin from desktop side navigation
 
 
 ### v2.0.0
 
-- v2.0.0 - Update side-nav to use `<aside>` instead of `<nav>`
+- Update side-nav to use `<aside>` instead of `<nav>`
 
 
 ### v1.0.0

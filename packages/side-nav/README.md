@@ -65,6 +65,7 @@ import AUsideNav from './side-nav.js';
     {
       link: 'one',
       text: 'Change to route one',
+      active: true,
     },
     {
       link: 'two',
@@ -90,7 +91,7 @@ All props:
   menuHeader="Tax return"     {/* The menu title */}
   menuHeaderLink="/tax"       {/* The menu link */}
   linkComponent="a"           {/* The link component */}
-  items={}                    {/* The menu items */}
+  items={}                    {/* The menu items, link locations and active state */}
 >
   Some content for this accordion.
 </AUaccordion>
@@ -110,11 +111,11 @@ For more details have a look at the [usage example](https://github.com/govau/uik
 
 ```shell
 side-nav
+├─ core
+├─ animate
 ├─ accordion
 │  ├─ animate
 │  └─ core
-├─ animate
-├─ core
 └─ link-list
    ├─ core
    └─ body
@@ -141,6 +142,8 @@ The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
 
 ## Release History
 
+* v2.0.3 - Fixing order of dependencies
+* v2.0.2 - Added active state for react, Removing web pack dev server, updating dependencies
 * v2.0.1 - Removed incorrect margin from desktop side navigation
 * v2.0.0 - Update side-nav to use `<aside>` instead of `<nav>`
 * v1.0.0 - Update pancake dependency, release first version

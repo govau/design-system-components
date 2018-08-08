@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.8 - Removing web pack dev server, updating dependencies](#v208)
 * [v2.0.7 - Fixed build scripts for Windows](#v207)
 * [v2.0.6 - Replace node-sass with sass](#v206)
 * [v2.0.5 - Change npm run watch browser-sync location](#v205)
@@ -32,6 +33,11 @@
 
 
 ## Release History
+
+### v2.0.8
+
+- Removing web pack dev server, updating dependencies
+
 
 ### v2.0.7
 

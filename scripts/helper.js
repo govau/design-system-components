@@ -198,7 +198,7 @@ const Autoprefix = ( file ) => {
 	const data = Fs.readFileSync( file, 'utf-8' );
 
 	Postcss([ Autoprefixer({ browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ie 10'] }) ])
-		.process( data )
+		.process( data, { from: file, to: file } )
 		.then( ( prefixed ) => {
 			prefixed
 				.warnings()

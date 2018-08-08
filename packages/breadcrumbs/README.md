@@ -130,6 +130,7 @@ The visual test: https://uikit.service.gov.au/packages/breadcrumbs/tests/site/
 
 ## Release History
 
+* v3.0.1 - Removing web pack dev server, updating dependencies
 * v3.0.0 - Updated dependency version of link-list, build scripts for Windows
 * v2.1.1 - Replace node-sass with sass
 * v2.1.0 - Support react router
