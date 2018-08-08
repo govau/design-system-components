@@ -100,8 +100,6 @@ var AU = AU || {};
 		}
 		catch( error ) {}
 
-		console.log( element );
-
 
 		// Elements we modify
 		var content         = element.querySelector( '.au-main-nav__content' );
