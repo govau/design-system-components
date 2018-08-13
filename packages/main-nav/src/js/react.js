@@ -7,8 +7,11 @@
  *
  **************************************************************************************************************************************************************/
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+
+import AU from '@gov.au/animate'; // interdependency with our animate lib
+
 
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
 // ES6 dependency: import AUlinkList from './link-list';
@@ -52,43 +55,41 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 }
 
 
-export const AUmainNavContent = ({ items, toggleState }) => (
-	<Fragment>
-		<button
-			aria-controls="main-nav-default"
-			className="au-main-nav__toggle au-main-nav__toggle--menu">
-			Menu
-		</button>
-		<div className="au-main-nav__content">
-			<div className="au-main-nav__content-inner">
-				<div className="au-main-nav__focus-trap-top"></div>
-				<button
-					aria-controls="main-nav-default"
-					className="au-main-nav__toggle au-main-nav__toggle--close">
-					Close
-				</button>
-				<AUmainNavMenu items={ items } />
-				<div className="au-main-nav__focus-trap-bottom"></div>
-			</div>
-		</div>
-		<div className="au-main-nav__overlay"></div>
-	</Fragment>
-);
+// This value gets increased for each navigation component
+let IDvalue = 0;
 
 
-class AUmainNav extends React.PureComponent {
+export class AUmainNavContent extends React.PureComponent {
 	constructor( props ) {
 		super( props );
 
-		const { dark, alt, closed = true, speed, className = '', children, ...attributeOptions } = props;
+		const { items, className = '', children, ...attributeOptions } = props;
 
+		// Functions
 		this.toggleClasses    = this.toggleClasses.bind( this );
 		this.removeClass      = this.removeClass.bind( this );
 		this.addClass         = this.addClass.bind( this );
-		this.mainNavOpen      = this.mainNavOpen.bind( this );
-		this.mainNavClose     = this.mainNavClose.bind( this );
+		this.mainNavToggle    = this.mainNavToggle.bind( this );
 
-		this.closeClass = this.props.closed ? 'au-accordion--closed' : '';
+		// Variables
+		this.state = { closed: true };
+
+		// Increase the ID so it's unique for each instance
+		IDvalue += 1;
+		this.id = `au-main-nav-${ IDvalue }`;
+	}
+
+
+	componentDidUpdate(){
+		console.log( 'component updated' );
+		console.log( this.state.closed );
+
+		this.mainNavToggle( this.mainNavContent, !this.state.closed, this.props.speed, {
+			onOpen: this.props.onOpen,
+			afterOpen: this.props.afterOpen,
+			onClose: this.props.onClose,
+			afterClose: this.props.afterClose,
+		});
 	}
 
 
@@ -96,22 +97,21 @@ class AUmainNav extends React.PureComponent {
 	 * IE8 compatible function for replacing classes on a DOM node
 	 *
 	 * @param  {object} element       - The DOM element we want to toggle classes on
-	 * @param  {object} state         - The current state of the animation on the element
 	 * @param  {string} openingClass  - The firstClass you want to toggle on the DOM node
 	 * @param  {string} closingClass  - The secondClass you want to toggle on the DOM node
 	 */
 	toggleClasses( element, state, openingClass, closingClass ) {
 		if( state === 'opening' || state === 'open' ) {
-			var oldClass = openingClass || 'au-main-nav--closed';
-			var newClass = closingClass || 'au-main-nav--open';
+			var oldClass = openingClass || 'au-main-nav__content--closed';
+			var newClass = closingClass || 'au-main-nav__content--open';
 		}
 		else {
-			var oldClass = closingClass || 'au-main-nav--open';
-			var newClass = openingClass || 'au-main-nav--closed';
+			var oldClass = closingClass || 'au-main-nav__content--open';
+			var newClass = openingClass || 'au-main-nav__content--closed';
 		}
 
-		removeClass( element, oldClass );
-		addClass( element, newClass );
+		this.removeClass( element, oldClass );
+		this.addClass( element, newClass );
 	}
 
 
@@ -147,14 +147,16 @@ class AUmainNav extends React.PureComponent {
 	}
 
 
+
 	/**
-	 * Open a mainNav element
+	 * Toggle a mainNav element
 	 *
 	 * @param  {string}  element  - The toggle for the main nav
 	 * @param  {integer} speed    - The speed in ms for the animation
 	 *
 	 */
-	mainNavOpen( element, speed ) {
+	mainNavToggle( element, speed, callbacks ) {
+
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
@@ -162,68 +164,115 @@ class AUmainNav extends React.PureComponent {
 		}
 		catch( error ) {}
 
+		// check this once
+		if( typeof callbacks != 'object' ) {
+			callbacks = {};
+		}
+
 
 		// Elements we modify
-		var content         = element.querySelector( '.au-main-nav__content' );
+		var menu            = element.querySelector( '.au-main-nav__menu' );
 		var overlay         = element.querySelector( '.au-main-nav__overlay' );
 		var closeButton     = element.querySelector( '.au-main-nav__toggle--close' );
+		var openButton      = element.querySelector( '.au-main-nav__toggle--open' );
 		var focustrapTop    = element.querySelector( '.au-main-nav__focus-trap-top' );
 		var focustrapBottom = element.querySelector( '.au-main-nav__focus-trap-bottom' );
-		var focusContent    = content.querySelectorAll( 'a, .au-main-nav__toggle' );
+		var focusContent    = menu.querySelectorAll( 'a, .au-main-nav__toggle' );
+
+		var closed          = !this.state.closed;
+		var state           = closed ? 'opening' : '';
+
+
+		console.log( closed ? 0 : -300 );
+
+
+		// Functions
+		var AUfocusTrapListener = () => {};
+		var AUkeyListener       = () => {};
+		var ToggleClasses       = this.toggleClasses;
 
 
 		// Set these value immediately for transitions
-		content.style.display = 'block';
-		overlay.style.left    = 0;
-		overlay.style.opacity = 1;
+		if( closed ) {
+			menu.style.display = 'block';
+			overlay.style.left    = 0;
+			overlay.style.opacity = 1;
+		}
+		else {
+			overlay.style.opacity = '0';
+		}
 
 
 		(function( element, speed ) {
 			AU.animate.Run({
-				element: content,
+				element: menu,
 				property: 'left',
-				endSize: 0,
+				endSize: closed ? 0 : -300,
 				speed: speed || 250,
 				callback: function() {
+
+					if ( closed ){
+
+						// Move the focus to the close button
+						closeButton.focus();
+
+
+						// Focus trap enabled
+						focustrapTop.setAttribute( "tabindex", 0 );
+						focustrapBottom.setAttribute( "tabindex", 0 );
+
+
+						focustrapTop.addEventListener( 'focus', AUfocusTrapListener = function() {
+							focusContent[ focusContent.length - 1 ].focus();
+						});
+
+						focustrapBottom.addEventListener( 'focus', AUfocusTrapListener = function() {
+							focusContent[ 0 ].focus();
+						});
+
+						// Add key listener
+						document.addEventListener( 'keyup', AUkeyListener = function( event ) {
+							event = event || window.event;
+							overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
+
+							// Check the menu is open and visible and the escape key is pressed
+							if( event.keyCode === 27 && overlayOpen === 'block' ) {
+								mainNav.Toggle( element );
+							}
+						});
+					}
+					else {
+						// Move the focus back to the menu button
+						openButton.focus();
+
+						// Remove the focus trap
+						focustrapTop.removeAttribute( "tabindex" );
+						focustrapBottom.removeAttribute( "tabindex" );
+
+
+						// Remove the event listeners
+						focustrapTop.removeEventListener( 'focus', AUfocusTrapListener );
+						focustrapBottom.removeEventListener( 'focus', AUfocusTrapListener );
+
+
+						// Remove the event listener for the keypress
+						document.removeEventListener( 'keyup', AUkeyListener );
+					}
+
+
 					// Toggle classes
-					toggleClasses( content, 'open', 'au-main-nav__content--closed', 'au-main-nav__content--open' );
-					toggleClasses( overlay, 'open', 'au-main-nav__overlay--closed', 'au-main-nav__overlay--open' );
+					ToggleClasses( element, state );
+					ToggleClasses(
+						document.body,
+						state,
+						'au-main-nav__scroll--unlocked',
+						'au-main-nav__scroll--locked',
+					);
 
-					// Lock scrolling on the body
-					toggleClasses( document.documentElement, 'open', 'au-main-nav__scroll--unlocked', 'au-main-nav__scroll--locked' );
-
-
-					// Move the focus to the close button
-					closeButton.focus();
-
-
-					// Focus trap enabled
-					focustrapTop.setAttribute( "tabindex", 0 );
-					focustrapBottom.setAttribute( "tabindex", 0 );
-
-
-					focustrapTop.addEventListener( 'focus', auFocusTrapListener = function() {
-						focusContent[ focusContent.length - 1 ].focus();
-					});
-
-					focustrapBottom.addEventListener( 'focus', auFocusTrapListener = function() {
-						focusContent[ 0 ].focus();
-					});
-
-					// Add key listener
-					document.addEventListener( 'keyup', auKeyListener = function( event ) {
-						event = event || window.event;
-						overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
-
-						// Check the menu is open and visible and the escape key is pressed
-						if( event.keyCode === 27 && overlayOpen === 'block' ) {
-							mainNav.Close( element );
-						}
-					});
 
 					// Reset inline styles
-					content.style.display = '';
-					content.style.left    = '';
+					menu.style.display = '';
+					menu.style.left    = '';
 					overlay.style.display = '';
 					overlay.style.left    = '';
 				},
@@ -233,90 +282,65 @@ class AUmainNav extends React.PureComponent {
 
 
 	/**
-	 * Close a mainNav element
+	 * Toggle an main navigation on click
 	 *
-	 * @param  {string}  elements - The DOM node/s to toggle
-	 * @param  {integer} speed    - The speed in ms for the animation
-	 *
+	 * @param  {event object} event - The event object of the click
 	 */
-	mainNavClose( element, speed ) {
-		// stop event propagation
-		try {
-			window.event.cancelBubble = true;
-			event.stopPropagation();
-		}
-		catch( error ) {}
+	toggle( event ) {
+		event.preventDefault();
 
-		// Elements we modify
-		var content         = element.querySelector( '.au-main-nav__content' );
-		var overlay         = element.querySelector( '.au-main-nav__overlay' );
-		var menuButton      = element.querySelector( '.au-main-nav__toggle--menu' );
-		var focustrapTop    = element.querySelector( '.au-main-nav__focus-trap-top' );
-		var focustrapBottom = element.querySelector( '.au-main-nav__focus-trap-bottom' );
-
-
-		// Set these value immediately for transitions
-		overlay.style.opacity = '0';
-
-
-		(function( speed ) {
-			AU.animate.Run({
-				element: content,
-				property: 'left',
-				endSize: -300,
-				speed: speed || 250,
-				callback: function() {
-					// Toggle the classes
-					toggleClasses( document.documentElement, 'closing', 'au-main-nav__scroll--unlocked', 'au-main-nav__scroll--locked' );
-					toggleClasses( content, 'closing', 'au-main-nav__content--closed', 'au-main-nav__content--open' );
-					toggleClasses( overlay, 'closing', 'au-main-nav__overlay--closed', 'au-main-nav__overlay--open' );
-
-
-					// Move the focus back to the menu button
-					menuButton.focus();
-
-
-					// Remove the focus trap
-					focustrapTop.removeAttribute( "tabindex" );
-					focustrapBottom.removeAttribute( "tabindex" );
-
-
-					// Remove the event listeners
-					focustrapTop.removeEventListener( 'focus', auFocusTrapListener );
-					focustrapBottom.removeEventListener( 'focus', auFocusTrapListener );
-
-
-					// Remove the event listener for the keypress
-					document.removeEventListener( 'keyup', auKeyListener );
-
-
-					// Reset inline styles
-					content.style.display = '';
-					content.style.left    = '';
-					overlay.style.opacity = '';
-				},
-			});
-		})( speed );
+		// Change the menu closed state
+		this.setState({ closed: !this.state.closed });
 	}
 
 
-	render() {
+	render(){
 		return (
-			<nav
-				className={
-					'au-main-nav' +
-					`${ this.props.dark ? ' au-main-nav--dark ' : '' }` +
-					`${ this.props.alt ? ' au-main-nav--alt ' : '' }` +
-					` ${ this.props.className }`
-				}
-				id="main-nav-default"
-				{ ...this.props.attributeOptions }
-			>
-				{ this.props.children }
-			</nav>
+			<div
+				id={ this.id }
+				className="au-main-nav__content"
+				ref={ mainNavContent => { this.mainNavContent = mainNavContent }}>
+				<button
+					aria-controls={ this.id }
+					onClick={ ( event ) => this.toggle( event ) }
+					className="au-main-nav__toggle au-main-nav__toggle--open">
+					Menu
+				</button>
+				<div className="au-main-nav__menu">
+					<div className="au-main-nav__menu-inner">
+						<div className="au-main-nav__focus-trap-top"></div>
+						<button
+							aria-controls={ this.id }
+							onClick={ ( event ) => this.toggle( event ) }
+							className="au-main-nav__toggle au-main-nav__toggle--close">
+							Close
+						</button>
+						<AUmainNavMenu items={ this.props.items } />
+						<div className="au-main-nav__focus-trap-bottom"></div>
+					</div>
+				</div>
+				<div
+					onClick={ ( event ) => this.toggle( event ) }
+					className="au-main-nav__overlay"></div>
+			</div>
 		);
 	}
 };
+
+
+const AUmainNav = ({ dark, alt, className, attributeOptions, children }) => (
+	<nav
+		className={
+			'au-main-nav ' +
+			`${ dark ? ' au-main-nav--dark' : '' }` +
+			`${ alt ? ' au-main-nav--alt' : '' }` +
+			`${ className ? ' ' + className : '' }`
+		}
+		{ ...attributeOptions }
+	>
+		{ children }
+	</nav>
+);
 
 AUmainNav.propTypes = {
 	dark: PropTypes.bool

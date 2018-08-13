@@ -20,21 +20,12 @@ $.fn.AUmainNav = function() {
 	var mainNavObject = {
 		addListeners: function() {
 
-			// Open the menu
-			$('.au-main-nav__toggle--menu').on('click', function() {
-				var selector = $( this ).closest('.au-main-nav')[ 0 ];
+			// Toggle the menu
+			$( '.au-main-nav__toggle--open, .au-main-nav__toggle--close, .au-main-nav__overlay' ).on('click', function() {
 				var speed = $( this ).attr('data-speed');
 
-				AU.mainNav.Open( selector, speed );
+				AU.mainNav.Toggle( this, speed );
 			});
-
-			// Close the menu
-			$('.au-main-nav__toggle--close, .au-main-nav__overlay').on('click', function() {
-				var selector = $( this ).closest('.au-main-nav')[ 0 ];
-				var speed = $( this ).attr('data-speed');
-
-				AU.mainNav.Close( selector, speed );
-			}).addClass('js-au-accordion-rendered');
 
 			return this;
 		},

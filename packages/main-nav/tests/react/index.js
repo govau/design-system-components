@@ -45,9 +45,9 @@ ReactDOM.render(
 	<div>
 		<h2>main-nav</h2>
 		<AUmainNav>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-12">
 						<AUmainNavContent items={ menu } />
 					</div>
 				</div>
@@ -56,9 +56,9 @@ ReactDOM.render(
 
 		<h2>main-nav <code>alt</code></h2>
 		<AUmainNav alt>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-12">
 						<AUmainNavContent items={ menu } />
 					</div>
 				</div>
@@ -67,9 +67,9 @@ ReactDOM.render(
 
 		<h2>main-nav <code>dark</code></h2>
 		<AUmainNav dark>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-12">
 						<AUmainNavContent items={ menu } />
 					</div>
 				</div>
@@ -78,9 +78,9 @@ ReactDOM.render(
 
 		<h2>main-nav <code>dark</code> <code>alt</code></h2>
 		<AUmainNav alt dark>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-12">
 						<AUmainNavContent items={ menu } />
 					</div>
 				</div>
@@ -89,9 +89,9 @@ ReactDOM.render(
 
 		<h2>main-nav with children</h2>
 		<AUmainNav>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
+			<div className="container">
+				<div className="row">
+					<div className="col-md-12">
 						<AUmainNavContent items={ menu }>
 							<p>Some extra magic</p>
 						</AUmainNavContent>

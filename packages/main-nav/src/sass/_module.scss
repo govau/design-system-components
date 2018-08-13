@@ -169,7 +169,7 @@
 	}
 
 	// Menu icon
-	&.au-main-nav__toggle--menu:before {
+	&.au-main-nav__toggle--open:before {
 		content: "☰";
 	}
 
@@ -191,9 +191,25 @@
 	}
 }
 
+// Open and close functionality
+.js .au-main-nav__content.au-main-nav__content--open {
 
-// The content area that becomes the mobile menu
-.au-main-nav__content {
+	// Show the content when the menu gets opened
+	.au-main-nav__menu {
+		left: 0;
+		display: block;
+	}
+
+	// Move the overlay and animate the transparency
+	.au-main-nav__overlay {
+		left: 0;
+		opacity: 1;
+	}
+}
+
+
+// The content area that becomes the menu menu
+.au-main-nav__menu {
 
 	// Move the menu content off the screen so it can slide in
 	.js & {
@@ -208,14 +224,8 @@
 		z-index: 20;
 
 		// Add inner padding for the content area
-		.au-main-nav__content-inner {
+		.au-main-nav__menu-inner {
 			@include AU-space( padding, 1unit );
-		}
-
-		// Show the content when the menu gets opened
-		&.au-main-nav__content--open {
-			left: 0;
-			display: block;
 		}
 	}
 
@@ -232,7 +242,7 @@
 	}
 
 	@include AU-media( md ) {
-		// Reset the mobile menu styling
+		// Reset the menu styling
 		.js & {
 			position: static;
 			display: block;
@@ -241,7 +251,7 @@
 			background-color: transparent;
 
 			// Remove padding on the content
-			.au-main-nav__content-inner {
+			.au-main-nav__menu-inner {
 				padding: 0;
 			}
 		}
@@ -249,7 +259,7 @@
 }
 
 
-// The overlay that shows when the mobile menu is open
+// The overlay that shows when the menu is open
 .au-main-nav__overlay {
 	transition: opacity 0.25s ease-out;
 	background-color: rgba( 0, 0, 0, 0.5 );
@@ -270,17 +280,11 @@
 	// Render the overlay
 	.js & {
 		display: block;
-	}
 
-	// Move the overlay and animate the transparency
-	.js &.au-main-nav__overlay--open {
-		left: 0;
-		opacity: 1;
-	}
-
-	// Hide on desktop
-	@include AU-media( md ) {
-		display: none;
+		// Hide on desktop
+		@include AU-media( md ) {
+			display: none;
+		}
 	}
 }
 
