@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "amd",
+        "target": "es2015",
+        "outFile": "./lib/js/angular.es2015.js",
+        "skipLibCheck": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "inlineSourceMap": true
+    },
+    "files": [
+        "./src/ts/direction-link.module.ts"
+    ],
+    "angularCompilerOptions": {
+        "enableResourceInlining": true,
+        "skipTemplateCodegen": true,
+        "skipMetadataEmit": true
+    }
+}

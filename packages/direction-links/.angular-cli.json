@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "@gov.au/direction-link-angular-demo"
+  },
+  "apps": [
+    {
+      "root": "tests/angular/src",
+      "outDir": ".ng_dist",
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "tsconfig": "tsconfig.demo.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ]
+    }
+  ],
+  "defaults": {
+    "styleExt": "css",
+    "component": {
+      "changeDetection" : "OnPush"
+    }
+  }
+}

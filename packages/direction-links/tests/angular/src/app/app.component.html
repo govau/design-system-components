@@ -1,0 +1,91 @@
+<div className="split-wrapper">
+  <div className="split">
+    <h2>bare</h2>
+    <au-direction-link link="#url" text="Continue"></au-direction-link>
+
+
+    <hr>
+    <h2>with additional classes</h2>
+    <au-direction-link link="#url" text="Continue" className="testing"></au-direction-link>
+
+
+    <hr>
+    <h2>
+      <code>--right</code> variant</h2>
+
+    <au-direction-link link="#url" text="Next" direction="right"></au-direction-link>
+
+
+    <hr>
+    <h2>
+      <code>--left</code> variant</h2>
+
+    <au-direction-link link="#url" text="Back" direction="left"></au-direction-link>
+
+
+    <hr>
+    <h2>
+      <code>--up</code> variant</h2>
+
+    <au-direction-link link="#url" text="Top" direction="up"></au-direction-link>
+
+
+    <hr>
+    <h2>
+      <code>--down</code> variant</h2>
+
+    <au-direction-link link="#url" text="Skip to footer" direction="down" (click)="triggerClickAlert()"></au-direction-link>
+
+
+    <hr>
+    <h2>direction-link as button with onclick</h2>
+
+    <au-direction-link text="Log it" direction="up" (click)="triggerClickAlert()"></au-direction-link>
+  </div>
+  <div className="split split--dark">
+    <h2>bare</h2>
+    <au-direction-link dark link="#url" text="Continue"></au-direction-link>
+
+
+    <hr>
+    <h2>with additional classes</h2>
+    <au-direction-link dark link="#url" text="Continue" className="testing"></au-direction-link>
+
+
+    <hr>
+    <h2>
+      <code>--dark</code>
+      <code>--right</code> variant</h2>
+
+    <au-direction-link dark link="#url" text="Next" direction="right"></au-direction-link>
+
+
+    <hr>
+    <h2>
+      <code>--dark</code>
+      <code>--left</code> variant</h2>
+
+    <au-direction-link dark link="#url" text="Back" direction="left"></au-direction-link>
+
+
+    <hr>
+    <h2>
+      <code>--dark</code>
+      <code>--up</code> variant</h2>
+
+    <au-direction-link dark link="#url" text="Top" direction="up" ></au-direction-link>
+
+
+    <hr>
+    <h2>
+      <code>--dark</code>
+      <code>--down</code> variant</h2>
+
+    <au-direction-link dark link="#url" text="Skip to footer" direction="down"></au-direction-link>
+
+
+    <hr>
+    <h2>direction-link as button with onclick</h2>
+
+    <au-direction-link dark text="Log it" direction="up" (click)="triggerClickAlert()"></au-direction-link>
+  </div>

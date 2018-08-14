@@ -22,20 +22,18 @@
 	],
 	"scripts": {
 		"postinstall": "pancake",
-
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:helper": "node ../../scripts/helper.js test",
+		"test:angular": "ng build --prod --output-hashing=none && mv .ng_dist/*.* tests/angular && rimraf .ng_dist",
 		"test": "npm-run-all --parallel test:*",
-
+		"test:unit-test": "jest",
 		"prepublish": "npm run test:helper && npm run build:pre",
-
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
-		"build": "npm run build:js && npm run build:react",
-
+		"build:angular": "ngc -p tsconfig.json",
+		"build": "npm run build:js && npm run build:react && npm run build:angular",
 		"serve": "browser-sync start --server --startPath 'tests/' --files 'tests/**/*.html, tests/**/*.css, tests/**/*.js'",
-
 		"watch:js": "onchange 'src/js/*.js' -- npm run build:js",
 		"watch:jsx": "onchange 'src/js/react.js' 'tests/react/index.js' -- npm run build",
 		"watch:sass": "onchange 'src/sass/*.scss' 'tests/site/test.scss' -- npm run build",
@@ -60,17 +58,27 @@
 	},
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
+		"@gov.au/core": "^2.0.0",
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~1",
-		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
-
-		"@gov.au/core": "^2.0.0"
+		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-sass": "~1",
+		"@angular/core": "^5.2.0",
+		"@angular/common": "^5.2.0",
+		"zone.js": "^0.8.19"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^2.0.0"
+		"@gov.au/core": "^2.0.0",
+		"@angular/core": "^5.2.0",
+		"@angular/common": "^5.2.0"
 	},
 	"devDependencies": {
+		"@angular/cli": "^1.7.3",
+		"@angular/compiler": "^5.2.0",
+		"@angular/compiler-cli": "^5.2.0",
+		"@angular/platform-browser": "^5.2.0",
+		"@angular/platform-browser-dynamic": "^5.2.0",
+		"@types/jest": "^23.3.1",
 		"babel-core": "^6.26.0",
 		"babel-loader": "^7.1.2",
 		"babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -78,16 +86,34 @@
 		"babel-preset-react": "^6.24.1",
 		"babel-preset-stage-0": "^6.24.1",
 		"browser-sync": "^2.18.13",
+		"jest": "^23.4.2",
+		"jest-cli": "^23.4.2",
+		"jest-preset-angular": "^6.0.0",
 		"npm-run-all": "^4.1.2",
 		"onchange": "^3.2.1",
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
+		"rxjs": "^5.5.6",
+		"tslib": "^1.7.1",
+		"typescript": "~2.5.3",
 		"webpack": "^3.8.1",
 		"webpack-dev-server": "^2.9.4"
 	},
 	"files": [
 		"lib/*"
 	],
+	"jest": {
+		"preset": "jest-preset-angular",
+		"globals": {
+			"ts-jest": {
+				"tsConfigFile": "tsconfig.jest.json"
+			},
+			"__TRANSFORM_HTML__": true
+		},
+		"setupTestFrameworkScriptFile": "<rootDir>/setup-jest.ts",
+		"verbose": true,
+		"testURL": "http://localhost/"
+	},
 	"engines": {
 		"node": ">=0.12.0",
 		"npm": "^3.0.0"
@@ -126,6 +152,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Shakil Siraj",
+			"email": "shakil.siraj@gmail.com",
+			"url": "https://github.com/shakilsiraj"
 		}
 	],
 	"license": "MIT"
