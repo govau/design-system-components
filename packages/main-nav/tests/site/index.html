@@ -217,6 +217,65 @@
 	</nav>
 
 
+	<h2>main-nav with header</h2>
+	<header class="au-grid au-header au-header--alt au-header--dark" role="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<a class="au-header__brand" href="#">
+						<img class="au-header__brand-image" alt="Australian Government Crest" src="http://placehold.it/256x80">
+						<div class="au-header__text">
+							<h1 class="au-header__heading">Site title</h1>
+							<div class="au-header__subline">
+								Service description that could be a little longer
+							</div>
+						</div>
+					</a>
+				</div>
+				<!-- <div class="col-md-3">Extras</div> -->
+			</div>
+		</div>
+	</header>
+	<nav class="au-main-nav au-main-nav--alt au-main-nav--dark">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="main-nav-header" class="au-main-nav__content">
+						<button
+							aria-controls="main-nav-header"
+							class="au-main-nav__toggle au-main-nav__toggle--open"
+							onClick="return AU.mainNav.Toggle( this )">
+							Menu
+						</button>
+						<div class="au-main-nav__menu">
+							<div class="au-main-nav__menu-inner">
+								<div class="au-main-nav__focus-trap-top"></div>
+								<button
+									aria-controls="main-nav-header"
+									class="au-main-nav__toggle au-main-nav__toggle--close"
+									onClick="return AU.mainNav.Toggle( this )">
+									Close
+								</button>
+								<ul class="au-link-list">
+									<li><a href="#">About</a></li>
+									<li><a href="#">Get started</a></li>
+									<li class="active"><a href="#">Components</a></li>
+									<li><a href="#">Templates</a></li>
+									<li><a href="#">Community</a></li>
+									<li><a href="#">Support</a></li>
+									<li><a href="#">GitHub</a></li>
+									<li><a href="#">Download</a></li>
+								</ul>
+								<div class="au-main-nav__focus-trap-bottom"></div>
+							</div>
+						</div>
+						<div class="au-main-nav__overlay" aria-controls="main-nav-header" onClick="return AU.mainNav.Toggle( this )"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
