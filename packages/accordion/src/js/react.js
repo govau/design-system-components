@@ -187,6 +187,7 @@ class AUaccordion extends React.PureComponent {
 
 			target.style.display = 'block';
 
+
 			(function( element ) {
 				AU.animate.Toggle({
 					element: target,

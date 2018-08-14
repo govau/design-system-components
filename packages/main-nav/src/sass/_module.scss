@@ -202,8 +202,13 @@
 
 	// Move the overlay and animate the transparency
 	.au-main-nav__overlay {
-		left: 0;
 		opacity: 1;
+		display: block;
+
+		// Hide on desktop
+		@include AU-media( md ) {
+			display: none;
+		}
 	}
 }
 
@@ -266,7 +271,7 @@
 	cursor: pointer;
 	position: fixed;
 	top: 0;
-	left: -100%;
+	left: 0;
 	bottom: 0;
 	width: 100%;
 	z-index: 10;
@@ -276,21 +281,11 @@
 	.ie8 & {
 		opacity: 1;
 	}
-
-	// Render the overlay
-	.js & {
-		display: block;
-
-		// Hide on desktop
-		@include AU-media( md ) {
-			display: none;
-		}
-	}
 }
 
 
 // Lock the scroll on the whole page when the menu is open
-.js.au-main-nav__scroll--locked {
+.js .au-main-nav__scroll--locked {
 	overflow: hidden;
 
 	// Remove the scroll lock on a desktop computer

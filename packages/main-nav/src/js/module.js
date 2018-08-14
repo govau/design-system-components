@@ -118,7 +118,8 @@ var AU = AU || {};
 
 		// Set these values immediately for transitions
 		if( closed ) {
-			menu.style.display = 'block';
+			menu.style.display    = 'block';
+			overlay.style.display = 'block';
 			overlay.style.left    = 0;
 			overlay.style.opacity = 1;
 		}
@@ -157,7 +158,7 @@ var AU = AU || {};
 						// Add key listener
 						document.addEventListener( 'keyup', auKeyListener = function( event ) {
 							event = event || window.event;
-							overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
+							var overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
 
 							// Check the menu is open and visible and the escape key is pressed
 							if( event.keyCode === 27 && overlayOpen === 'block' ) {
@@ -197,6 +198,7 @@ var AU = AU || {};
 					menu.style.left       = '';
 					overlay.style.display = '';
 					overlay.style.left    = '';
+					overlay.style.opacity = '';
 				},
 			});
 		})( target, speed );
