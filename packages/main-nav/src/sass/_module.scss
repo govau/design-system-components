@@ -21,13 +21,12 @@
 	color: $AU-color-foreground-text;
 
 	a,
-	button {
+	.au-main-nav__toggle {
 		@include AU-space( padding, 1unit );
 		@include AU-fontgrid( xs );
 		@include AU-focus();
 		color: $AU-color-foreground-action;
 		text-decoration: none;
-		display: block;
 
 		&:hover {
 			text-decoration: underline;
@@ -36,6 +35,11 @@
 			background-color: $AU-color-background-shade;
 		}
 	}
+
+	a {
+		display: block;
+	}
+
 
 	.active a {
 		font-weight: bold;
@@ -66,7 +70,7 @@
 		background-color: $AU-color-background-alt;
 
 		a,
-		button {
+		.au-main-nav__toggle {
 			&:hover {
 				background-color: $AU-color-background-alt-shade;
 			}
@@ -87,7 +91,7 @@
 		border-color: $AU-colordark-foreground-action;
 
 		a,
-		button {
+		.au-main-nav__toggle {
 			@include AU-focus( 'dark' );
 			color: $AU-colordark-foreground-action;
 
@@ -115,7 +119,7 @@
 		background-color: $AU-colordark-background-alt;
 
 		a,
-		button {
+		.au-main-nav__toggle {
 			&:hover {
 				background-color: $AU-colordark-background-alt-shade;
 			}
@@ -130,7 +134,7 @@
 		}
 	}
 
-	@include AU-media( md ) {
+	@include AU-media( $AU-main-nav-breakpoint ) {
 		.au-link-list > li {
 			display: block;
 			float: left;
@@ -138,7 +142,7 @@
 		}
 
 		a,
-		button {
+		.au-main-nav__toggle {
 			@include AU-fontgrid( sm );
 			@include AU-space( padding, 1unit );
 		}
@@ -160,6 +164,7 @@
 	appearance: none;
 	background-color: transparent;
 	cursor: pointer;
+	display: none;
 
 	&:before {
 		@include AU-fontgrid( sm, nospace );
@@ -181,11 +186,9 @@
 	// Show the open and close toggles when there is javascript
 	.js & {
 		display: inline-block;
-	}
 
-	// Always hide the toggles on desktop
-	@include AU-media( md ) {
-		.js & {
+		// Always hide the toggles on desktop
+		@include AU-media( $AU-main-nav-breakpoint ) {
 			display: none;
 		}
 	}
@@ -206,7 +209,7 @@
 		display: block;
 
 		// Hide on desktop
-		@include AU-media( md ) {
+		@include AU-media( $AU-main-nav-breakpoint ) {
 			display: none;
 		}
 	}
@@ -246,7 +249,7 @@
 		background-color: $AU-colordark-background-alt;
 	}
 
-	@include AU-media( md ) {
+	@include AU-media( $AU-main-nav-breakpoint ) {
 		// Reset the menu styling
 		.js & {
 			position: static;
@@ -289,7 +292,7 @@
 	overflow: hidden;
 
 	// Remove the scroll lock on a desktop computer
-	@include AU-media( md ) {
+	@include AU-media( $AU-main-nav-breakpoint ) {
 		overflow: visible;
 	}
 }

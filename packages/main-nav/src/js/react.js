@@ -222,25 +222,26 @@ export class AUmainNavContent extends React.PureComponent {
 		var AUfocusTrapListenerBottom = this.auFocusTrapListenerBottom;
 
 
-		// Set these value immediately for transitions
-		if( closed ) {
-			menu.style.display = 'block';
-			overlay.style.display = 'block';
-			overlay.style.left    = 0;
-			overlay.style.opacity = 1;
-		}
-		else {
-			overlay.style.opacity = '0';
-		}
-
-
 		(function( menu ) {
-			AU.animate.Run({
+			AU.animate.Toggle({
 				element: menu,
 				property: 'left',
-				endSize: closed ? 0 : -300,
-				speed: speed || 250,
-				callback: function(){
+				openSize: 0,
+				closeSize: -300,
+				speed: speed || 3000,
+				prefunction: function( ) {
+					// Set these value immediately for transitions
+					if( closed ) {
+						menu.style.display = 'block';
+						overlay.style.display = 'block';
+						overlay.style.left    = 0;
+						overlay.style.opacity = 1;
+					}
+					else {
+						overlay.style.opacity = '0';
+					}
+				},
+				postfunction: function(){
 					if ( closed ){
 
 						// Move the focus to the close button

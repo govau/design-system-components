@@ -129,11 +129,12 @@ var AU = AU || {};
 
 
 		(function( target, speed ) {
-			AU.animate.Run({
+			AU.animate.Toggle({
 				element: menu,
 				property: 'left',
-				endSize: closed ? 0 : -300,
-				speed: speed || 250,
+				openSize: 0,
+				closeSize: -300,
+				speed: speed || 3000,
 				callback: function() {
 
 					if ( closed ){
