@@ -245,8 +245,8 @@ var AU = AU || {};
 		var elements = options.element;
 		var property = options.property || 'height';
 		var speed = options.speed || 250;
-		var closeSize = options.closeSize === 'undefined' ? 0 : options.closeSize;
-		var openSize = options.openSize === 'undefined' ? 'auto' : options.openSize;
+		var closeSize = options.closeSize === undefined ? 0 : options.closeSize;
+		var openSize = options.openSize === undefined ? 'auto' : options.openSize;
 
 		// making a single DOM element iteratable
 		if( elements.length === undefined ) {
