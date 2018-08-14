@@ -149,9 +149,6 @@ var AU = AU || {};
 		var elements = options.element;
 		var speed = options.speed || 250;
 
-
-		console.log( options.endSize );
-
 		// making a single DOM element iteratable
 		if( elements.length === undefined ) {
 			elements = [ elements ];
