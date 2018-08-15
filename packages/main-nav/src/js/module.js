@@ -92,13 +92,19 @@ var AU = AU || {};
 	 * @param  {integer} speed    - The speed in ms for the animation
 	 *
 	 */
-	mainNav.Toggle = function( element, speed ) {
+	mainNav.Toggle = function( element, speed, callbacks ) {
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
 			event.stopPropagation();
 		}
 		catch( error ) {}
+
+
+		// check this once
+		if( typeof callbacks != 'object' ) {
+			callbacks = {};
+		}
 
 
 		// Elements we modify
@@ -111,21 +117,12 @@ var AU = AU || {};
 		var focustrapTop    = target.querySelector( '.au-main-nav__focus-trap-top' );
 		var focustrapBottom = target.querySelector( '.au-main-nav__focus-trap-bottom' );
 		var focusContent    = menu.querySelectorAll( 'a, .au-main-nav__toggle' );
-
 		var closed          = !target.classList.contains( 'au-main-nav__content--open' );
+
 		var state           = closed ? 'opening' : '';
 
 
-		// Set these values immediately for transitions
-		if( closed ) {
-			menu.style.display    = 'block';
-			overlay.style.display = 'block';
-			overlay.style.left    = 0;
-			overlay.style.opacity = 1;
-		}
-		else {
-			overlay.style.opacity = '0';
-		}
+		overlay.style.display = 'block';
 
 
 		(function( target, speed ) {
@@ -134,10 +131,30 @@ var AU = AU || {};
 				property: 'left',
 				openSize: 0,
 				closeSize: -300,
-				speed: speed || 3000,
-				callback: function() {
+				speed: speed || 250,
+				prefunction: function(){
+					// Set these values immediately for transitions
+					if( state === 'opening' ) {
+						menu.style.display    = 'block';
+						overlay.style.left    = 0;
+						overlay.style.opacity = 0.5;
 
-					if ( closed ){
+						// run when opening
+						if( typeof callbacks.onOpen === 'function' ) {
+							callbacks.onOpen();
+						}
+					}
+					else {
+						overlay.style.opacity = '0';
+
+						// run when closing
+						if( typeof callbacks.onClose === 'function' ) {
+							callbacks.onClose();
+						}
+					}
+				},
+				postfunction: function(){
+					if ( state === 'opening' ){
 
 						// Move the focus to the close button
 						closeButton.focus();
@@ -163,9 +180,13 @@ var AU = AU || {};
 
 							// Check the menu is open and visible and the escape key is pressed
 							if( event.keyCode === 27 && overlayOpen === 'block' ) {
-								mainNav.Toggle( element );
+								mainNav.Toggle( element, speed, callbacks );
 							}
 						});
+
+						if( typeof callbacks.afterOpen === 'function' ) {
+							callbacks.afterOpen();
+						}
 					}
 					else {
 						// Move the focus back to the menu button
@@ -183,7 +204,12 @@ var AU = AU || {};
 
 						// Remove the event listener for the keypress
 						document.removeEventListener( 'keyup', auKeyListener );
+
+						if( typeof callbacks.afterClose === 'function' ) {
+							callbacks.afterClose();
+						}
 					}
+
 
 					// Toggle classes
 					toggleClasses( target, state );
@@ -193,6 +219,7 @@ var AU = AU || {};
 						'au-main-nav__scroll--unlocked',
 						'au-main-nav__scroll--locked',
 					);
+
 
 					// Reset inline styles
 					menu.style.display    = '';

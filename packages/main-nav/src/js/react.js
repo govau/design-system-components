@@ -82,12 +82,29 @@ export class AUmainNavContent extends React.PureComponent {
 		// Variables
 		this.state = { closed: true };
 
+
 		// Increase the ID so it's unique for each instance
 		IDvalue += 1;
 		this.id = `au-main-nav-${ IDvalue }`;
 	}
 
 
+	/**
+	 * Toggle an main navigation on click
+	 *
+	 * @param  {event object} event - The event object of the click
+	 */
+	toggle( event ) {
+		event.preventDefault();
+
+		// Change the menu closed state
+		this.setState({ closed: !this.state.closed });
+	}
+
+
+	/**
+	 * Update the component when it changes
+	 */
 	componentDidUpdate(){
 		this.mainNavToggle( this.mainNavContent, this.props.speed, {
 			onOpen: this.props.onOpen,
@@ -105,9 +122,7 @@ export class AUmainNavContent extends React.PureComponent {
 	 * @param  {string} openingClass  - The firstClass you want to toggle on the DOM node
 	 * @param  {string} closingClass  - The secondClass you want to toggle on the DOM node
 	 */
-	toggleClasses( element, openingClass, closingClass ) {
-		var state = !this.state.closed ? 'opening' : '';
-
+	toggleClasses( element, state, openingClass, closingClass ) {
 		if( state === 'opening' || state === 'open' ) {
 			var oldClass = openingClass || 'au-main-nav__content--closed';
 			var newClass = closingClass || 'au-main-nav__content--open';
@@ -154,20 +169,34 @@ export class AUmainNavContent extends React.PureComponent {
 	}
 
 
-	// Event listeners
+	/**
+	 * auFocusTrapListenerTop - What happens when the focus trap top gets focus
+	 *
+	 * @param {event} event - the event
+	 */
 	auFocusTrapListenerTop( event ) {
 		var focusContent = this.mainNavMenu.querySelectorAll( 'a, .au-main-nav__toggle' );
 		focusContent[ focusContent.length - 1 ].focus();
 	}
 
+
+	/**
+	 * auFocusTrapListenerBottom - What happens when the focus trap bottom gets focus
+	 *
+	 * @param {event} event - the event
+	 */
 	auFocusTrapListenerBottom( event ) {
 		var focusContent = this.mainNavMenu.querySelectorAll( 'a, .au-main-nav__toggle' );
 		focusContent[ 0 ].focus();
 	}
 
-	auKeyListener( event ) {
-		event = event || window.event;
 
+	/**
+	 * auKeyListener - What happens when a key gets pressed and the menu is open
+	 *
+	 * @param {event} event - the event
+	 */
+	auKeyListener( event ) {
 		// This should only close the menu when the menu is visibly open
 		var overlayOpen = window.getComputedStyle( this.mainNavOverlay ).getPropertyValue( 'display' );
 
@@ -176,7 +205,6 @@ export class AUmainNavContent extends React.PureComponent {
 			this.toggle( event );
 		}
 	}
-
 
 
 	/**
@@ -210,6 +238,8 @@ export class AUmainNavContent extends React.PureComponent {
 		var focustrapBottom = element.querySelector( '.au-main-nav__focus-trap-bottom' );
 
 		var closed          = !this.state.closed;
+		var state           = closed ? 'opening' : '';
+
 
 		// Functions
 		var ToggleClasses       = this.toggleClasses;
@@ -222,27 +252,39 @@ export class AUmainNavContent extends React.PureComponent {
 		var AUfocusTrapListenerBottom = this.auFocusTrapListenerBottom;
 
 
+		overlay.style.display = 'block';
+
+
 		(function( menu ) {
 			AU.animate.Toggle({
 				element: menu,
 				property: 'left',
 				openSize: 0,
 				closeSize: -300,
-				speed: speed || 3000,
+				speed: speed || 250,
 				prefunction: function( ) {
 					// Set these value immediately for transitions
-					if( closed ) {
-						menu.style.display = 'block';
-						overlay.style.display = 'block';
+					if( state === 'opening' ) {
+						menu.style.display    = 'block';
 						overlay.style.left    = 0;
-						overlay.style.opacity = 1;
+						overlay.style.opacity = 0.5;
+
+						// run when opening
+						if( typeof callbacks.onOpen === 'function' ) {
+							callbacks.onOpen();
+						}
 					}
 					else {
 						overlay.style.opacity = '0';
+
+						// run when closing
+						if( typeof callbacks.onClose === 'function' ) {
+							callbacks.onClose();
+						}
 					}
 				},
 				postfunction: function(){
-					if ( closed ){
+					if ( state === 'opening' ){
 
 						// Move the focus to the close button
 						closeButton.focus();
@@ -258,6 +300,10 @@ export class AUmainNavContent extends React.PureComponent {
 
 						// Add key listener
 						document.addEventListener( 'keyup', AUkeyListener );
+
+						if( typeof callbacks.afterOpen === 'function' ) {
+							callbacks.afterOpen();
+						}
 					}
 					else {
 						// Move the focus back to the menu button
@@ -275,13 +321,18 @@ export class AUmainNavContent extends React.PureComponent {
 
 						// Remove the event listener for the keypress
 						document.removeEventListener( 'keyup', AUkeyListener );
+
+						if( typeof callbacks.afterClose === 'function' ) {
+							callbacks.afterClose();
+						}
 					}
 
 
 					// Toggle classes
-					ToggleClasses( element );
+					ToggleClasses( element, state );
 					ToggleClasses(
 						document.body,
+						state,
 						'au-main-nav__scroll--unlocked',
 						'au-main-nav__scroll--locked',
 					);
@@ -296,19 +347,6 @@ export class AUmainNavContent extends React.PureComponent {
 				},
 			});
 		})( menu );
-	}
-
-
-	/**
-	 * Toggle an main navigation on click
-	 *
-	 * @param  {event object} event - The event object of the click
-	 */
-	toggle( event ) {
-		event.preventDefault();
-
-		// Change the menu closed state
-		this.setState({ closed: !this.state.closed });
 	}
 
 

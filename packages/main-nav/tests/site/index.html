@@ -217,8 +217,96 @@
 	</nav>
 
 
+	<h2>Test: main-nav <code>slow</code></h2>
+	<nav class="au-main-nav au-main-nav--alt">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="main-nav-slow" class="au-main-nav__content">
+						<button
+							aria-controls="main-nav-slow"
+							class="au-main-nav__toggle au-main-nav__toggle--open"
+							onClick="return AU.mainNav.Toggle( this, 1000 )">
+							Menu
+						</button>
+						<div class="au-main-nav__menu">
+							<div class="au-main-nav__menu-inner">
+								<div class="au-main-nav__focus-trap-top"></div>
+								<button
+									aria-controls="main-nav-slow"
+									class="au-main-nav__toggle au-main-nav__toggle--close"
+									onClick="return AU.mainNav.Toggle( this, 1000 )">
+									Close
+								</button>
+								<ul class="au-link-list">
+									<li><a href="#">About</a></li>
+									<li><a href="#">Get started</a></li>
+									<li class="active"><a href="#">Components</a></li>
+									<li><a href="#">Templates</a></li>
+									<li><a href="#">Community</a></li>
+									<li><a href="#">Support</a></li>
+									<li><a href="#">GitHub</a></li>
+									<li><a href="#">Download</a></li>
+								</ul>
+								<div class="au-main-nav__focus-trap-bottom"></div>
+							</div>
+						</div>
+						<div class="au-main-nav__overlay" aria-controls="main-nav-slow" onClick="return AU.mainNav.Toggle( this, 1000 )"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+	<h2>Test: main-nav with callbacks</h2>
+	<nav class="au-main-nav au-main-nav--alt au-main-nav--dark">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div id="main-nav-header" class="au-main-nav__content">
+							<button
+								aria-controls="main-nav-header"
+								class="au-main-nav__toggle au-main-nav__toggle--open"
+								onClick="return MainNavCallback( this )">
+								Menu
+							</button>
+							<div class="au-main-nav__menu">
+								<div class="au-main-nav__menu-inner">
+									<div class="au-main-nav__focus-trap-top"></div>
+									<button
+										aria-controls="main-nav-header"
+										class="au-main-nav__toggle au-main-nav__toggle--close"
+										onClick="return MainNavCallback( this )">
+										Close
+									</button>
+									<ul class="au-link-list">
+										<li><a href="#">About</a></li>
+										<li><a href="#">Get started</a></li>
+										<li class="active"><a href="#">Components</a></li>
+										<li><a href="#">Templates</a></li>
+										<li><a href="#">Community</a></li>
+										<li><a href="#">Support</a></li>
+										<li><a href="#">GitHub</a></li>
+										<li><a href="#">Download</a></li>
+									</ul>
+									<div class="au-main-nav__focus-trap-bottom"></div>
+								</div>
+							</div>
+							<div
+								class="au-main-nav__overlay"
+								aria-controls="main-nav-header"
+								onClick="return MainNavCallback( this )"
+							></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+
 	<h2>main-nav with header</h2>
-	<header class="au-grid au-header au-header--alt au-header--dark" role="banner">
+	<header class="au-grid au-header au-header--dark" role="banner">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
@@ -236,7 +324,7 @@
 			</div>
 		</div>
 	</header>
-	<nav class="au-main-nav au-main-nav--alt au-main-nav--dark">
+	<nav class="au-main-nav au-main-nav--dark">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -277,5 +365,23 @@
 	</nav>
 
 	<script type="text/javascript" src="script.js"></script>
+	<script>
+			var MainNavCallback = function( element ) {
+				return AU.mainNav.Toggle( element, undefined, {
+					onOpen: function() {
+						console.log('This function will run when an main nav opens');
+					},
+					afterOpen: function() {
+						console.log('This function will run after an main nav has opened');
+					},
+					onClose: function() {
+						console.log('This function will run when an main nav closes');
+					},
+					afterClose: function() {
+						console.log('This function will run after an main nav has closed');
+					},
+				});
+			};
+		</script>
 </body>
 </html>

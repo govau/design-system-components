@@ -205,7 +205,8 @@
 
 	// Move the overlay and animate the transparency
 	.au-main-nav__overlay {
-		opacity: 1;
+		opacity: 0.8;
+		left: 0;
 		display: block;
 
 		// Hide on desktop
@@ -270,7 +271,7 @@
 // The overlay that shows when the menu is open
 .au-main-nav__overlay {
 	transition: opacity 0.25s ease-out;
-	background-color: rgba( 0, 0, 0, 0.5 );
+	background-color: #000;
 	cursor: pointer;
 	position: fixed;
 	top: 0;
