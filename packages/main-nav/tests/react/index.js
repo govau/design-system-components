@@ -92,9 +92,7 @@ ReactDOM.render(
 			<div className="container">
 				<div className="row">
 					<div className="col-md-12">
-						<AUmainNavContent speed={ 1000 } items={ menu }>
-							<p>Some extra magic</p>
-						</AUmainNavContent>
+						<AUmainNavContent speed={ 1000 } items={ menu } />
 					</div>
 				</div>
 			</div>
@@ -107,13 +105,12 @@ ReactDOM.render(
 					<div className="col-md-12">
 						<AUmainNavContent
 							items={ menu }
-							onOpen={ () => { console.log('This function will run when the main menu opens'); } }
-							afterOpen={ () => { console.log('This function will run after the main menu has opened'); } }
-							onClose={ () => { console.log('This function will run when the main menu closes'); } }
-							afterClose={ () => { console.log('This function will run after the main menu has closed'); } }
-						>
-							<p>Some extra magic</p>
-						</AUmainNavContent>
+							speed={ 1000 }
+							onOpen={ () => console.log('This function will run when the main menu opens') }
+							afterOpen={ () => console.log('This function will run after the main menu has opened') }
+							onClose={ () => console.log('This function will run when the main menu closes') }
+							afterClose={ () => console.log('This function will run after the main menu has closed') }
+						/>
 					</div>
 				</div>
 			</div>
@@ -125,6 +122,10 @@ ReactDOM.render(
 				<div className="row">
 					<div className="col-md-12">
 						<AUmainNavContent items={ menu }>
+							<ul>
+								<li><a href="">Some extra thing</a></li>
+								<li><a href="">Another thing</a></li>
+							</ul>
 						</AUmainNavContent>
 					</div>
 				</div>

@@ -79,6 +79,71 @@ var AU = AU || {};
 	}
 
 
+	/**
+	 * PRIVATE
+	 * IE8 compatible function for adding an event
+	 *
+	 * @param  {object} element   - The DOM element we want to manipulate
+	 * @param  {object} className - The name of the class to be added
+	 */
+	function addEvent( elements, event, onEvent ) {
+		if( elements ) {
+			// Create an array of elements if a singular or array of elements is passed in
+			if( elements.length === undefined ) {
+				elements = [ elements ];
+			}
+
+			// For each element add the correct event listener
+			for( var i = 0; i < elements.length; i++ ) {
+				if( typeof Element.prototype.addEventListener === "undefined" ) {
+
+					// Make sure that we pass this
+					( function( element, event ) {
+						element.attachEvent( "on" + event, function( actualEvent ) {
+							onEvent( actualEvent, element );
+						});
+					})( elements[ i ], event );
+				}
+				else {
+					( function( element, event ) {
+						element.addEventListener( event, function( actualEvent ) {
+							onEvent( actualEvent, element );
+						});
+					})( elements[ i ], event );
+				}
+			}
+		}
+	}
+
+
+	/**
+	 * PRIVATE
+	 * IE8 compatible function for adding an event
+	 *
+	 * @param  {object} element   - The DOM element we want to manipulate
+	 * @param  {object} className - The name of the class to be added
+	 */
+	function removeEvent( elements, event, eventID ) {
+		if( elements ) {
+			// Create an array of elements if a singular or array of elements is passed in
+			if( elements.length === undefined ) {
+				elements = [ elements ];
+			}
+
+			// For each element add the correct event listener
+			for( var i = 0; i < elements.length; i++ ) {
+				if( typeof Element.prototype.removeEventListener === "undefined" ) {
+					element.detachEvent( "on" + event, eventID );
+				}
+				else {
+					element.removeEventListener( event, eventID );
+				}
+			}
+		}
+	}
+
+
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // PUBLIC FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -117,9 +182,29 @@ var AU = AU || {};
 		var focustrapTop    = target.querySelector( '.au-main-nav__focus-trap-top' );
 		var focustrapBottom = target.querySelector( '.au-main-nav__focus-trap-bottom' );
 		var focusContent    = menu.querySelectorAll( 'a, .au-main-nav__toggle' );
-		var closed          = !target.classList.contains( 'au-main-nav__content--open' );
+		var closed          = target.className.indexOf( 'au-main-nav__content--open' ) === -1;
 
 		var state           = closed ? 'opening' : '';
+
+
+		var auFocusTrapListenerBottom = function( event ) {
+			focusContent[ 0 ].focus();
+		}
+
+		var auFocusTrapListenerTop = function( event ) {
+			focusContent[ focusContent.length - 1 ].focus();
+		}
+
+
+		var auKeyListener = function( event ) {
+			event = event || window.event;
+			var overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
+
+			// Check the menu is open and visible and the escape key is pressed
+			if( event.keyCode === 27 && overlayOpen === 'block' ) {
+				mainNav.Toggle( element, speed, callbacks );
+			}
+		}
 
 
 		overlay.style.display = 'block';
@@ -165,24 +250,14 @@ var AU = AU || {};
 						focustrapBottom.setAttribute( "tabindex", 0 );
 
 
-						focustrapTop.addEventListener( 'focus', auFocusTrapListener = function() {
-							focusContent[ focusContent.length - 1 ].focus();
-						});
+						// Add event
+						addEvent( focustrapTop, 'focus', auFocusTrapListenerTop );
+						addEvent( focustrapBottom, 'focus', auFocusTrapListenerBottom );
 
-						focustrapBottom.addEventListener( 'focus', auFocusTrapListener = function() {
-							focusContent[ 0 ].focus();
-						});
 
 						// Add key listener
-						document.addEventListener( 'keyup', auKeyListener = function( event ) {
-							event = event || window.event;
-							var overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
+						addEvent( document, 'keyup', auKeyListener );
 
-							// Check the menu is open and visible and the escape key is pressed
-							if( event.keyCode === 27 && overlayOpen === 'block' ) {
-								mainNav.Toggle( element, speed, callbacks );
-							}
-						});
 
 						if( typeof callbacks.afterOpen === 'function' ) {
 							callbacks.afterOpen();
@@ -198,12 +273,12 @@ var AU = AU || {};
 
 
 						// Remove the event listeners
-						focustrapTop.removeEventListener( 'focus', auFocusTrapListener );
-						focustrapBottom.removeEventListener( 'focus', auFocusTrapListener );
+						removeEvent( focustrapTop, 'focus', auFocusTrapListenerTop );
+						removeEvent( focustrapBottom, 'focus', auFocusTrapListenerBottom );
 
 
 						// Remove the event listener for the keypress
-						document.removeEventListener( 'keyup', auKeyListener );
+						removeEvent( document, 'keyup', auKeyListener );
 
 						if( typeof callbacks.afterClose === 'function' ) {
 							callbacks.afterClose();
@@ -217,7 +292,7 @@ var AU = AU || {};
 						document.body,
 						state,
 						'au-main-nav__scroll--unlocked',
-						'au-main-nav__scroll--locked',
+						'au-main-nav__scroll--locked'
 					);
 
 

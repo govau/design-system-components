@@ -14,18 +14,22 @@
  *
  * Public functions are:
  */
-$.fn.AUmainNav = function() {
-	var $elements = this;
+$.fn.AUmainNav = function( callbacks ) {
 
 	var mainNavObject = {
 		addListeners: function() {
 
 			// Toggle the menu
-			$( '.au-main-nav__toggle--open, .au-main-nav__toggle--close, .au-main-nav__overlay' ).on('click', function() {
-				var speed = $( this ).attr('data-speed');
+			$( '.au-main-nav__toggle--open, .au-main-nav__toggle--close, .au-main-nav__overlay' )
+				.not( '.js-au-main-nav-rendered' )
+				.on( 'click', function() {
+					// Get the speed
+					var speed = $( this ).closest( '.au-main-nav__content' ).attr( 'data-speed' );
 
-				AU.mainNav.Toggle( this, speed );
-			});
+					// Run the open close toggle
+					AU.mainNav.Toggle( this, speed, callbacks );
+
+			}).addClass( 'js-au-main-nav-rendered' );
 
 			return this;
 		},
