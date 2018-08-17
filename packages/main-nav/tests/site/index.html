@@ -261,48 +261,48 @@
 
 	<h2>Test: main-nav with callbacks</h2>
 	<nav class="au-main-nav au-main-nav--alt au-main-nav--dark">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div id="main-nav-header" class="au-main-nav__content">
-							<button
-								aria-controls="main-nav-header"
-								class="au-main-nav__toggle au-main-nav__toggle--open"
-								onClick="return MainNavCallback( this )">
-								Menu
-							</button>
-							<div class="au-main-nav__menu">
-								<div class="au-main-nav__menu-inner">
-									<div class="au-main-nav__focus-trap-top"></div>
-									<button
-										aria-controls="main-nav-header"
-										class="au-main-nav__toggle au-main-nav__toggle--close"
-										onClick="return MainNavCallback( this )">
-										Close
-									</button>
-									<ul class="au-link-list">
-										<li><a href="#">About</a></li>
-										<li><a href="#">Get started</a></li>
-										<li class="active"><a href="#">Components</a></li>
-										<li><a href="#">Templates</a></li>
-										<li><a href="#">Community</a></li>
-										<li><a href="#">Support</a></li>
-										<li><a href="#">GitHub</a></li>
-										<li><a href="#">Download</a></li>
-									</ul>
-									<div class="au-main-nav__focus-trap-bottom"></div>
-								</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="main-nav-callbacks" class="au-main-nav__content">
+						<button
+							aria-controls="main-nav-callbacks"
+							class="au-main-nav__toggle au-main-nav__toggle--open"
+							onClick="return MainNavCallback( this )">
+							Menu
+						</button>
+						<div class="au-main-nav__menu">
+							<div class="au-main-nav__menu-inner">
+								<div class="au-main-nav__focus-trap-top"></div>
+								<button
+									aria-controls="main-nav-callbacks"
+									class="au-main-nav__toggle au-main-nav__toggle--close"
+									onClick="return MainNavCallback( this )">
+									Close
+								</button>
+								<ul class="au-link-list">
+									<li><a href="#">About</a></li>
+									<li><a href="#">Get started</a></li>
+									<li class="active"><a href="#">Components</a></li>
+									<li><a href="#">Templates</a></li>
+									<li><a href="#">Community</a></li>
+									<li><a href="#">Support</a></li>
+									<li><a href="#">GitHub</a></li>
+									<li><a href="#">Download</a></li>
+								</ul>
+								<div class="au-main-nav__focus-trap-bottom"></div>
 							</div>
-							<div
-								class="au-main-nav__overlay"
-								aria-controls="main-nav-header"
-								onClick="return MainNavCallback( this )"
-							></div>
 						</div>
+						<div
+							class="au-main-nav__overlay"
+							aria-controls="main-nav-callbacks"
+							onClick="return MainNavCallback( this )"
+						></div>
 					</div>
 				</div>
 			</div>
-		</nav>
+		</div>
+	</nav>
 
 
 	<h2>main-nav with header</h2>

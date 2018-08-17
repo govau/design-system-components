@@ -283,7 +283,7 @@
 	display: none; // Hidden by default
 
 	.ie8 & {
-		opacity: 1;
+		filter: alpha(opacity=80);
 	}
 }
 

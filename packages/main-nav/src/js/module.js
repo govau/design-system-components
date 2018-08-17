@@ -14,8 +14,9 @@ var AU = AU || {};
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // NAMESPACE MODULE
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-	var mainNav = {}
+	var mainNav = {};
 
+	var mainNavEvents = {};
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -57,7 +58,7 @@ var AU = AU || {};
 			element.classList.remove( className );
 		}
 		else {
-			element.className = element.className.replace( new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " " );
+			element.className = element.className.replace( new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ' );
 		}
 	}
 
@@ -74,7 +75,7 @@ var AU = AU || {};
 			element.classList.add( className );
 		}
 		else {
-			element.className = element.className + " " + className;
+			element.className = element.className + ' ' + className;
 		}
 	}
 
@@ -82,64 +83,82 @@ var AU = AU || {};
 	/**
 	 * PRIVATE
 	 * IE8 compatible function for adding an event
+	 * https://stackoverflow.com/questions/10149963/adding-event-listener-cross-browser
 	 *
-	 * @param  {object} element   - The DOM element we want to manipulate
-	 * @param  {object} className - The name of the class to be added
+	 * @param  {object} element - The DOM element to add the listener
+	 * @param  {object} event   - The event data
+	 * @param  {object} handler - The function to run when triggered
+	 *
+	 * @returns {object}        -  The token for removal of listener
 	 */
-	function addEvent( elements, event, onEvent ) {
-		if( elements ) {
-			// Create an array of elements if a singular or array of elements is passed in
-			if( elements.length === undefined ) {
-				elements = [ elements ];
-			}
-
-			// For each element add the correct event listener
-			for( var i = 0; i < elements.length; i++ ) {
-				if( typeof Element.prototype.addEventListener === "undefined" ) {
-
-					// Make sure that we pass this
-					( function( element, event ) {
-						element.attachEvent( "on" + event, function( actualEvent ) {
-							onEvent( actualEvent, element );
-						});
-					})( elements[ i ], event );
+	function addEvent( element, event, rawHandler ) {
+		// Using local functions instead of anonymous for event handler
+		function listenHandler( event ) {
+				var handler = rawHandler.apply( this, arguments );
+				if ( handler === false) {
+					event.stopPropagation();
+					event.preventDefault();
 				}
-				else {
-					( function( element, event ) {
-						element.addEventListener( event, function( actualEvent ) {
-							onEvent( actualEvent, element );
-						});
-					})( elements[ i ], event );
-				}
+				return( handler );
+		}
+
+		// Make sure attachHandler is also going to work
+		function attachHandler() {
+			var handler = rawHandler.call( element, window.event );
+			if ( handler === false ) {
+				window.event.returnValue = false;
+				window.event.cancelBubble = true;
 			}
+			return( handler );
+		}
+
+		// Return the token and add the correct listener
+		if ( element.addEventListener ) {
+			element.addEventListener( event, listenHandler, false );
+			return {
+				element: element,
+				handler: listenHandler,
+				event: event
+			};
+		} else {
+			element.attachEvent( 'on' + event, attachHandler );
+			return {
+				element: element,
+				handler: attachHandler,
+				event: event
+			};
 		}
 	}
 
 
 	/**
 	 * PRIVATE
-	 * IE8 compatible function for adding an event
+	 * IE8 compatible function for removing an event
 	 *
-	 * @param  {object} element   - The DOM element we want to manipulate
-	 * @param  {object} className - The name of the class to be added
+	 * @param  {object} token - The token from the add listener function
 	 */
-	function removeEvent( elements, event, eventID ) {
-		if( elements ) {
-			// Create an array of elements if a singular or array of elements is passed in
-			if( elements.length === undefined ) {
-				elements = [ elements ];
-			}
-
-			// For each element add the correct event listener
-			for( var i = 0; i < elements.length; i++ ) {
-				if( typeof Element.prototype.removeEventListener === "undefined" ) {
-					element.detachEvent( "on" + event, eventID );
-				}
-				else {
-					element.removeEventListener( event, eventID );
-				}
-			}
+	function removeEvent( token ) {
+		if ( token.element.removeEventListener ) {
+			token.element.removeEventListener( token.event, token.handler );
+		} else {
+			token.element.detachEvent( 'on' + token.event, token.handler );
 		}
+	}
+
+
+	/**
+	 * PRIVATE
+	 * IE8 compatible function for getting elements style
+	 *
+	 * @param  {object} element  - element to check style
+	 * @param  {object} property - property to return value
+	 */
+	function getStyle( element, property ) {
+		return (
+			typeof getComputedStyle !== 'undefined'
+				? getComputedStyle( element, null)
+				: element.currentStyle
+		)[ property ]; // avoid getPropertyValue altogether
 	}
 
 
@@ -186,27 +205,6 @@ var AU = AU || {};
 
 		var state           = closed ? 'opening' : '';
 
-
-		var auFocusTrapListenerBottom = function( event ) {
-			focusContent[ 0 ].focus();
-		}
-
-		var auFocusTrapListenerTop = function( event ) {
-			focusContent[ focusContent.length - 1 ].focus();
-		}
-
-
-		var auKeyListener = function( event ) {
-			event = event || window.event;
-			var overlayOpen = window.getComputedStyle( overlay ).getPropertyValue( 'display' );
-
-			// Check the menu is open and visible and the escape key is pressed
-			if( event.keyCode === 27 && overlayOpen === 'block' ) {
-				mainNav.Toggle( element, speed, callbacks );
-			}
-		}
-
-
 		overlay.style.display = 'block';
 
 
@@ -246,17 +244,28 @@ var AU = AU || {};
 
 
 						// Focus trap enabled
-						focustrapTop.setAttribute( "tabindex", 0 );
-						focustrapBottom.setAttribute( "tabindex", 0 );
+						focustrapTop.setAttribute( 'tabindex', 0 );
+						focustrapBottom.setAttribute( 'tabindex', 0 );
 
+						// Add event listeners
+						mainNavEvents.focusTop = addEvent( focustrapTop, 'focus', function(){
+							focusContent[ focusContent.length - 1 ].focus();
+						});
 
-						// Add event
-						addEvent( focustrapTop, 'focus', auFocusTrapListenerTop );
-						addEvent( focustrapBottom, 'focus', auFocusTrapListenerBottom );
-
+						mainNavEvents.focusBottom = addEvent( focustrapBottom, 'focus', function(){
+								focusContent[ 0 ].focus();
+						});
 
 						// Add key listener
-						addEvent( document, 'keyup', auKeyListener );
+						mainNavEvents.escKey = addEvent( document, 'keyup', function(){
+							var event = event || window.event;
+							var overlayOpen = getStyle( overlay, 'display' );
+
+							// Check the menu is open and visible and the escape key is pressed
+							if( event.keyCode === 27 && overlayOpen === 'block' ) {
+								mainNav.Toggle( element, speed, callbacks );
+							}
+						});
 
 
 						if( typeof callbacks.afterOpen === 'function' ) {
@@ -268,17 +277,17 @@ var AU = AU || {};
 						openButton.focus();
 
 						// Remove the focus trap
-						focustrapTop.removeAttribute( "tabindex" );
-						focustrapBottom.removeAttribute( "tabindex" );
+						focustrapTop.removeAttribute( 'tabindex' );
+						focustrapBottom.removeAttribute( 'tabindex' );
 
 
 						// Remove the event listeners
-						removeEvent( focustrapTop, 'focus', auFocusTrapListenerTop );
-						removeEvent( focustrapBottom, 'focus', auFocusTrapListenerBottom );
+						removeEvent( mainNavEvents.focusTop );
+						removeEvent( mainNavEvents.focusBottom );
 
 
 						// Remove the event listener for the keypress
-						removeEvent( document, 'keyup', auKeyListener );
+						removeEvent( mainNavEvents.escKey );
 
 						if( typeof callbacks.afterClose === 'function' ) {
 							callbacks.afterClose();
