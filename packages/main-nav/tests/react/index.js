@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import AUmainNav, { AUmainNavContent } from './main-nav.js';
 
@@ -122,7 +123,7 @@ ReactDOM.render(
 				<div className="row">
 					<div className="col-md-12">
 						<AUmainNavContent items={ menu }>
-							<ul>
+							<ul className="au-link-list au-link-list--inline">
 								<li><a href="">Some extra thing</a></li>
 								<li><a href="">Another thing</a></li>
 							</ul>
@@ -131,6 +132,33 @@ ReactDOM.render(
 				</div>
 			</div>
 		</AUmainNav>
+
+
+		<h2>main-nav with router</h2>
+		<BrowserRouter basename={ window.location.pathname }>
+			<Fragment>
+				<AUmainNav>
+					<div className="container">
+						<div className="row">
+							<div className="col-md-12">
+								<AUmainNavContent linkComponent={ Link } items={[
+									{
+										link: 'one',
+										text: 'One please',
+									},
+									{
+										link: 'two',
+										text: 'Two please',
+									},
+								]} />
+							</div>
+						</div>
+					</div>
+				</AUmainNav>
+				<Route path="/one" render={ () => ( <p>Route one</p> )} />
+				<Route path="/two" render={ () => ( <p>Route two</p> )} />
+			</Fragment>
+		</BrowserRouter>
 	</div>,
 
 	document.getElementById('root'),

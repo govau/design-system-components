@@ -63,7 +63,13 @@ export class AUmainNavContent extends React.PureComponent {
 	constructor( props ) {
 		super( props );
 
-		const { items, className = '', children, ...attributeOptions } = props;
+		const {
+			items,
+			className = '',
+			children,
+			linkComponent,
+			...attributeOptions
+		} = props;
 
 		// Functions
 		this.toggleClasses    = this.toggleClasses.bind( this );
@@ -242,12 +248,8 @@ export class AUmainNavContent extends React.PureComponent {
 
 
 		// Functions
-		var ToggleClasses       = this.toggleClasses;
-		var Toggle              = this.toggle;
-
-		var ToggleClasses       = this.toggleClasses;
-		var Toggle              = this.toggle;
-		var AUkeyListener       = this.auKeyListener;
+		var ToggleClasses             = this.toggleClasses;
+		var AUkeyListener             = this.auKeyListener;
 		var AUfocusTrapListenerTop    = this.auFocusTrapListenerTop;
 		var AUfocusTrapListenerBottom = this.auFocusTrapListenerBottom;
 
@@ -374,7 +376,11 @@ export class AUmainNavContent extends React.PureComponent {
 							className="au-main-nav__toggle au-main-nav__toggle--close">
 							Close
 						</button>
-						<AUmainNavMenu items={ this.props.items } />
+						<AUmainNavMenu
+							linkComponent={ this.props.linkComponent }
+							items={ this.props.items }
+						/>
+						{ this.props.children }
 						<div className="au-main-nav__focus-trap-bottom"></div>
 					</div>
 				</div>
@@ -388,7 +394,7 @@ export class AUmainNavContent extends React.PureComponent {
 };
 
 
-const AUmainNav = ({ dark, alt, className, attributeOptions, children }) => (
+const AUmainNav = ({ dark, alt, className, children, attributeOptions }) => (
 	<nav
 		className={
 			'au-main-nav ' +

@@ -151,7 +151,8 @@ All props:
   onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
   afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
   onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
-  afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
+	afterClose={ () => {} }  {/* A function executed after the accordion opened, optional */}
+  linkComponent="a"        {/* The component used for the link, optional */}
 >
 </AUmainNavContent>
 ```
