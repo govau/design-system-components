@@ -55,7 +55,7 @@ Accordion has 3 public functions:
 
 - [`AU.accordion.Open( elements, speed )`](#open)
 - [`AU.accordion.Close( elements, speed )`](#close)
-- [`AU.accordion.Toggle( elements, speed )`](#toggle)
+- [`AU.accordion.Toggle( elements, speed, callbacks )`](#toggle)
 
 
 #### Open
@@ -167,7 +167,7 @@ All props:
 <AUaccordion
   header="Headline"        {/* The headline of the accordion */}
   closed={ true }          {/* Closed state, optional */}
-  speed="250"              {/* Speed of the animation in ms, optional */}
+  speed={ 250 }            {/* Speed of the animation in ms, optional */}
   onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
   afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
   onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
