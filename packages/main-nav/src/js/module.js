@@ -15,8 +15,8 @@ var AU = AU || {};
 // NAMESPACE MODULE
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	var mainNav = {};
-
 	var mainNavEvents = {};
+	var mainNavAnimating = false;
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -177,6 +177,13 @@ var AU = AU || {};
 	 *
 	 */
 	mainNav.Toggle = function( element, speed, callbacks ) {
+		// Stop the main nav from being toggled if it is already being toggled
+		if( mainNavAnimating ){
+			return;
+		}
+
+		mainNavAnimating = true;
+
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
@@ -203,7 +210,8 @@ var AU = AU || {};
 		var focusContent    = menu.querySelectorAll( 'a, .au-main-nav__toggle' );
 		var closed          = target.className.indexOf( 'au-main-nav__content--open' ) === -1;
 
-		var state           = closed ? 'opening' : '';
+		var menuWidth = menu.offsetWidth;
+		var state = closed ? 'opening' : '';
 
 		overlay.style.display = 'block';
 
@@ -213,7 +221,7 @@ var AU = AU || {};
 				element: menu,
 				property: 'left',
 				openSize: 0,
-				closeSize: -300,
+				closeSize: -1 * menuWidth,
 				speed: speed || 250,
 				prefunction: function(){
 					// Set these values immediately for transitions
@@ -311,6 +319,8 @@ var AU = AU || {};
 					overlay.style.display = '';
 					overlay.style.left    = '';
 					overlay.style.opacity = '';
+
+					mainNavAnimating = false;
 				},
 			});
 		})( target, speed );
