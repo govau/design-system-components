@@ -16,20 +16,29 @@
  */
 $.fn.AUmainNav = function( callbacks ) {
 
+	$elements = this;
+	$callbacks = callbacks;
+
 	var mainNavObject = {
 		addListeners: function() {
 
 			// Toggle the menu
-			$( '.au-main-nav__toggle--open, .au-main-nav__toggle--close, .au-main-nav__overlay' )
+			$( $elements )
 				.not( '.js-au-main-nav-rendered' )
-				.on( 'click', function() {
-					// Get the speed
-					var speed = $( this ).closest( '.au-main-nav__content' ).attr( 'data-speed' );
+				.each( function( i, mainNav ) {
+					$( mainNav ).find( '.au-main-nav__toggle--open, .au-main-nav__toggle--close, .au-main-nav__overlay' )
+						.on( 'click', function() {
+							event.preventDefault();
 
-					// Run the open close toggle
-					AU.mainNav.Toggle( this, speed, callbacks );
+							// Get the speed
+							var speed = $( this ).closest( '.au-main-nav__content' ).attr( 'data-speed' );
 
-			}).addClass( 'js-au-main-nav-rendered' );
+							// Run the open close toggle
+							AU.mainNav.Toggle( this, speed, $callbacks );
+						});
+
+					$( mainNav ).addClass( 'js-au-main-nav-rendered' );
+			});
 
 			return this;
 		},
