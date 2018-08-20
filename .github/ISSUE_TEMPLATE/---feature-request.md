@@ -1,6 +1,6 @@
 ---
-name: "\U0001F31F Feature request"
-about: "Suggest an idea for the product \U0001F4A1"
+name: "\U0001F4A1 Feature request"
+about: "Suggest an idea for the product"
 
 ---
 
