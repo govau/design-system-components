@@ -1,6 +1,6 @@
 ---
 name: "❓Support Question"
-about: "If you need support using the ui-kit (we are here to help \U0001F638)"
+about: "If you need support using the ui-kit (we are here to help)"
 
 ---
 
