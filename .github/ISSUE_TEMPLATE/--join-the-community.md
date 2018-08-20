@@ -1,6 +1,6 @@
 ---
 name: "\U0001F91DJoin the Community"
-about: "If you would like to contribute and support the product \U0001F63B"
+about: "If you would like to contribute and support the product"
 
 ---
 
