@@ -11,8 +11,8 @@ about: "Suggest an idea for the product"
 - [ ] I've searched the [community forums](https://community.digital.gov.au/c/designsystem) to check for related issues or feature requests
 
 ## Is this feature request relating to an existing component? Please describe.
-- Module name:
-- Module version:
+- Component name:
+- Component version:
 
 <!--
         Describe the feature. E.g. I would like to have the option to do XYZ on component ABC
