@@ -228,9 +228,9 @@
 		position: fixed;
 		top: 0;
 		bottom: 0;
-		left: -300px;
-		width: 300px;
-		z-index: 20;
+		left: -1 * $AU-main-nav-width;
+		width: $AU-main-nav-width;
+		z-index: $AU-main-nav-z-index;
 
 		// Add inner padding for the content area
 		.au-main-nav__menu-inner {
@@ -278,7 +278,7 @@
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	z-index: 10;
+	z-index: $AU-main-nav-z-index - 10;
 	opacity: 0.4;
 	display: none; // Hidden by default
 
