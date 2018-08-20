@@ -72,11 +72,14 @@ export class AUmainNavContent extends React.PureComponent {
 		} = props;
 
 		// Functions
-		this.toggleClasses    = this.toggleClasses.bind( this );
-		this.removeClass      = this.removeClass.bind( this );
-		this.addClass         = this.addClass.bind( this );
-		this.mainNavToggle    = this.mainNavToggle.bind( this );
-		this.toggle           = this.toggle.bind( this );
+		this.toggleClasses        = this.toggleClasses.bind( this );
+		this.removeClass          = this.removeClass.bind( this );
+		this.addClass             = this.addClass.bind( this );
+		this.mainNavToggle        = this.mainNavToggle.bind( this );
+		this.toggle               = this.toggle.bind( this );
+		this.toggleAnimationState = function() {
+			this.setState({ animating: !this.state.animating } )
+		}.bind( this );
 
 
 		// Event listeners
@@ -86,7 +89,10 @@ export class AUmainNavContent extends React.PureComponent {
 
 
 		// Variables
-		this.state = { closed: true };
+		this.state = {
+			closed: true,
+			animating: false,
+		};
 
 
 		// Increase the ID so it's unique for each instance
@@ -103,21 +109,34 @@ export class AUmainNavContent extends React.PureComponent {
 	toggle( event ) {
 		event.preventDefault();
 
-		// Change the menu closed state
-		this.setState({ closed: !this.state.closed });
+		// If the main menu is animating don't change toggle the menu
+		if( this.state.animating ){
+			return;
+		}
+
+		// Toggle the menu's current state
+		this.setState({
+			closed: !this.state.closed,
+			animating: true,
+		});
 	}
 
 
 	/**
-	 * Update the component when it changes
+	 * componentDidUpdate - Update the component when it changes
+	 *
+	 * @param {*} prevProps - The previous property values
+	 * @param {*} prevState - The previous state values
 	 */
-	componentDidUpdate(){
-		this.mainNavToggle( this.mainNavContent, this.props.speed, {
-			onOpen: this.props.onOpen,
-			afterOpen: this.props.afterOpen,
-			onClose: this.props.onClose,
-			afterClose: this.props.afterClose,
-		});
+	componentDidUpdate( prevProps, prevState ){
+		if( prevState !== undefined && this.state !== undefined && this.state.closed !== prevState.closed ) {
+			this.mainNavToggle( this.mainNavContent, this.props.speed, {
+				onOpen: this.props.onOpen,
+				afterOpen: this.props.afterOpen,
+				onClose: this.props.onClose,
+				afterClose: this.props.afterClose,
+			});
+		}
 	}
 
 
@@ -221,7 +240,6 @@ export class AUmainNavContent extends React.PureComponent {
 	 *
 	 */
 	mainNavToggle( element, speed, callbacks ) {
-
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
@@ -245,6 +263,7 @@ export class AUmainNavContent extends React.PureComponent {
 
 		var closed          = !this.state.closed;
 		var state           = closed ? 'opening' : '';
+		var menuWidth       = menu.offsetWidth;
 
 
 		// Functions
@@ -252,6 +271,7 @@ export class AUmainNavContent extends React.PureComponent {
 		var AUkeyListener             = this.auKeyListener;
 		var AUfocusTrapListenerTop    = this.auFocusTrapListenerTop;
 		var AUfocusTrapListenerBottom = this.auFocusTrapListenerBottom;
+		var ToggleAnimationState      = this.toggleAnimationState;
 
 
 		overlay.style.display = 'block';
@@ -262,7 +282,7 @@ export class AUmainNavContent extends React.PureComponent {
 				element: menu,
 				property: 'left',
 				openSize: 0,
-				closeSize: -300,
+				closeSize: -1 * menuWidth,
 				speed: speed || 250,
 				prefunction: function( ) {
 					// Set these value immediately for transitions
@@ -346,6 +366,10 @@ export class AUmainNavContent extends React.PureComponent {
 					overlay.style.display = '';
 					overlay.style.left    = '';
 					overlay.style.opacity = '';
+
+
+					// Toggle the animating state to false so that we can allow toggling again
+					ToggleAnimationState();
 				},
 			});
 		})( menu );
