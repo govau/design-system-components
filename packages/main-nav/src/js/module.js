@@ -174,7 +174,7 @@ var AU = AU || {};
 	 *
 	 * @param  {string}  element   - The toggle for the main nav
 	 * @param  {integer} speed     - The speed in ms for the animation
-	 * @param  {object}  callbacks - The speed in ms for the animation
+	 * @param  {object}  callbacks - An object of four optional callbacks: { onOpen, afterOpen, onClose, afterClose }
 	 *
 	 */
 	mainNav.Toggle = function( element, speed, callbacks ) {
