@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.11 - Update dependencies](#v2011)
 * [v2.0.10 - Removing web pack dev server, updating dependencies](#v2010)
 * [v2.0.9 - Fixed build scripts for Windows](#v209)
 * [v2.0.8 - Replace node-sass with sass](#v208)
@@ -35,6 +36,11 @@
 
 
 ## Release History
+
+### v2.0.11
+
+- Update dependencies
+
 
 ### v2.0.10
 

@@ -142,6 +142,7 @@ The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
 
 ## Release History
 
+* v2.0.4 - Update dependencies
 * v2.0.3 - Fixing order of dependencies
 * v2.0.2 - Added active state for react, Removing web pack dev server, updating dependencies
 * v2.0.1 - Removed incorrect margin from desktop side navigation

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.3 - Update dependencies](#V303)
 * [v3.0.2 - Removing web pack dev server, updating dependencies](#v302)
 * [v3.0.1 - Focus outline offset to only apply on the default focus state, build scripts for Windows](#v301)
 * [v3.0.0 - Binary search a11y color, replace node-sass with sass](#v300)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v3.0.3
+
+- Update dependencies
+
 
 ### v3.0.2
 
