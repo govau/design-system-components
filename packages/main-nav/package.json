@@ -99,7 +99,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/uikit.git"
 	},
-	"homepage": "https://designsystem.gov.au/components/[-replace-name-]",
+	"homepage": "https://designsystem.gov.au/components/main-nav",
 	"bugs": {
 		"url": "https://github.com/govau/uikit/issues",
 		"email": "uikit@digital.gov.au"
@@ -111,9 +111,14 @@
 	},
 	"contributors": [
 		{
-			"name": "[-replace-contrib-name-]",
-			"email": "[-replace-contrib-email-]",
-			"url": "[-replace-contrib-website-]"
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "https://alexpage.com.au"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		}
 	],
 	"license": "MIT"
