@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.1.4 - Update dependencies](#v314)
 * [v3.1.3 - Removing web pack dev server, updating dependencies](#v313)
 * [v3.1.2 - Fixed build scripts for Windows](#v312)
 * [v3.1.1 - Replace node-sass with sass](#v311)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v3.1.4
+
+- Update dependencies
+
 
 ### v3.1.3
 

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.8 - Update dependencies](#v108)
 * [v1.0.7 - Fixing bug where openSize of 0 gets turned into auto](#v107)
 * [v1.0.6 - Removing web pack dev server, updating dependencies](#v106)
 * [v1.0.5 - Fixed build scripts for Windows](#v105)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v1.0.8
+
+- Update dependencies
+
 
 ### v1.0.7
 
