@@ -4,7 +4,7 @@
 > Allow the user to toggle the visibility of an element
 
 
-## Contents
+## Contents 
 
 * [Install](#install)
 * [Usage](#usage)
