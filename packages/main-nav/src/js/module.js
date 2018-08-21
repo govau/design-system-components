@@ -1,7 +1,7 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * mainNav function
+ * Main nav function
  *
  * Horizontal list of links to key areas on the website. Usually located in the header.
  *

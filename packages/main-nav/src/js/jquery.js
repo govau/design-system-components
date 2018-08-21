@@ -1,7 +1,7 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * mainNav function
+ * Main nav function
  *
  * Horizontal list of links to key areas on the website. Usually located in the header.
  *
@@ -13,6 +13,7 @@
  * The main nav jquery function to add attributes and event listeners
  *
  * Public functions are:
+ * $('.js-au-main-nav').AUmainNav().addListeners()
  */
 $.fn.AUmainNav = function( callbacks ) {
 
