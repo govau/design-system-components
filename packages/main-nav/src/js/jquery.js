@@ -17,28 +17,26 @@
 $.fn.AUmainNav = function( callbacks ) {
 
 	$elements = this;
-	$callbacks = callbacks;
 
 	var mainNavObject = {
 		addListeners: function() {
 
-			// Toggle the menu
-			$( $elements )
-				.not( '.js-au-main-nav-rendered' )
+			// each main navigation event handlers
+			$elements
+				.not('.js-au-main-nav-rendered') // making sure we only add the event listeners once
 				.each( function( i, mainNav ) {
-					$( mainNav ).find( '.au-main-nav__toggle--open, .au-main-nav__toggle--close, .au-main-nav__overlay' )
-						.on( 'click', function() {
+					var speed = $( mainNav ).attr('data-speed');
+
+					$( mainNav ).addClass('js-au-main-nav-rendered'); // marking as processed
+
+					$( mainNav )
+						.find( '.au-main-nav__toggle--open, .au-main-nav__toggle--close, .au-main-nav__overlay' )
+						.on( 'click', function( event ) {
 							event.preventDefault();
 
-							// Get the speed
-							var speed = $( this ).closest( '.au-main-nav__content' ).attr( 'data-speed' );
-
-							// Run the open close toggle
-							AU.mainNav.Toggle( this, speed, $callbacks );
-						});
-
-					$( mainNav ).addClass( 'js-au-main-nav-rendered' );
-			});
+							return AU.mainNav.Toggle( $( this )[ 0 ], speed, callbacks );
+						})
+				});
 
 			return this;
 		},

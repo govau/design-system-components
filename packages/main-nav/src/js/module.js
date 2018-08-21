@@ -261,7 +261,7 @@ var AU = AU || {};
 						});
 
 						mainNavEvents.focusBottom = addEvent( focustrapBottom, 'focus', function(){
-								focusContent[ 0 ].focus();
+							focusContent[ 0 ].focus();
 						});
 
 						// Add key listener
