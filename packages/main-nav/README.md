@@ -172,14 +172,14 @@ To initialize the [jQuery](https://jquery.com/) plugin make sure you have jQuery
 
 ```js
 $(function() {
-  $('.js-au-main-nav-wrapper').AUmainNav();
+  $('.js-au-main-nav').AUmainNav();
 });
 ```
 
 You can optionally add functions to each event like so:
 
 ```js
-$('.js-au-main-nav-wrapper').AUmainNav({
+$('.js-au-main-nav').AUmainNav({
   onOpen: function() {
     console.log('This function will run when an main nav opens');
   },
