@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.6 - Update dependencies](#v416)
 * [v4.1.5 - Removing web pack dev server, updating dependencies](#v415)
 * [v4.1.4 - Removed border from header brand image on ie8, ie9 and ie10](#v414)
 * [v4.1.3 - AUheaderBrand without a link now defaults to div](#v413)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v4.1.6
+
+- Update dependencies
+
 
 ### v4.1.5
 

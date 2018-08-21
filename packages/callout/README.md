@@ -124,6 +124,7 @@ The visual test: https://uikit.service.gov.au/packages/callout/tests/site/
 
 ## Release History
 
+* v2.0.8 - Update dependencies
 * v2.0.7 - Removing web pack dev server, updating dependencies
 * v2.0.6 - Fixed build scripts for Windows
 * v2.0.5 - Replace node-sass with sass
