@@ -24,7 +24,7 @@ import AU from '@gov.au/animate'; // interdependency with our animate lib
 
 
 /**
- * A menu inside the AUsideNav
+ * A menu inside the AUmainNav
  *
  * @param  {array}  items            - The links in an array containing text, location and active status
  * @param  {string} linkComponent    - The component used for the link
