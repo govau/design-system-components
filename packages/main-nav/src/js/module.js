@@ -85,11 +85,11 @@ var AU = AU || {};
 	 * IE8 compatible function for adding an event
 	 * https://stackoverflow.com/questions/10149963/adding-event-listener-cross-browser
 	 *
-	 * @param  {object} element - The DOM element to add the listener
-	 * @param  {object} event   - The event data
-	 * @param  {object} handler - The function to run when triggered
+	 * @param  {object} element    - The DOM element to add the listener
+	 * @param  {object} event      - The event data
+	 * @param  {object} rawHandler - The function to run when triggered
 	 *
-	 * @returns {object}        -  The token for removal of listener
+	 * @returns {object}           -  The token for removal of listener
 	 */
 	function addEvent( element, event, rawHandler ) {
 		// Using local functions instead of anonymous for event handler
@@ -172,8 +172,9 @@ var AU = AU || {};
 	/**
 	 * Toggle a mainNav element
 	 *
-	 * @param  {string}  element  - The toggle for the main nav
-	 * @param  {integer} speed    - The speed in ms for the animation
+	 * @param  {string}  element   - The toggle for the main nav
+	 * @param  {integer} speed     - The speed in ms for the animation
+	 * @param  {object}  callbacks - The speed in ms for the animation
 	 *
 	 */
 	mainNav.Toggle = function( element, speed, callbacks ) {
