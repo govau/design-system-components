@@ -12,7 +12,7 @@
  */
 const Autoprefixer = require('autoprefixer');
 const Postcss = require('postcss');
-const Sass = require('sass');
+const Sass = require('node-sass');
 const Chalk = require(`chalk`);
 const Path = require(`path`);
 const Fs = require(`fs`);
