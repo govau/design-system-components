@@ -52,20 +52,19 @@ npm install @gov.au/main-nav --save-dev
 ### API
 
 
-Main navigation has 1 public functions:
+Main navigation has 1 public function:
 
-- [`AU.accordion.Toggle( elements, speed, callbacks )`](#toggle)
+- [`AU.accordion.Toggle( element, speed, callbacks )`](#toggle)
 
 
 #### Toggle
 
-`AU.mainNav.Toggle( elements, speed, callbacks )`
+`AU.mainNav.Toggle( element, speed, callbacks )`
 
 The parameters are:
 
-`elements`
-The DOM element (not the container you want to toggle) like a button or a link;
-Usually DOM node/s of open and close buttons you want to toggle. They need to have the `aria-controls` attribute that points to the main navigation content element.
+`element`
+The DOM element that triggers the main navigation to open, like a button or a link. They need to have the `aria-controls` attribute that points to the main navigation content element.
 
 `speed`
 Animation speed in milliseconds (optional, defaults to `250ms`)
