@@ -38,7 +38,6 @@ $.fn.AUaccordion = function( callbacks ) {
 				var $accordion = $( accordion );
 				var _isOpen = accordionObject.isOpen();
 				var $controls = $accordion.children('.js-au-accordion');
-				var $body = $accordion.children('.js-au-accordion-body');
 
 				if( _isOpen ) {
 					$controls
