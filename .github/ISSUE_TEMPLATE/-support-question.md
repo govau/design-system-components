@@ -1,6 +1,6 @@
 ---
-name: "❓Support Question"
-about: "If you need support using the ui-kit (we are here to help)"
+name: "💬 Support question"
+about: "If you need support using the design system (the community is here to help)"
 
 ---
 
@@ -16,7 +16,7 @@ about: "If you need support using the ui-kit (we are here to help)"
         Describe what you are stuck on, what you have tried and how you would like us to help. 
 -->
  
-## What you've tried:
+## What you have tried:
 
 <!--
        Describe in detail what you have tried and what you have found from any research you 
