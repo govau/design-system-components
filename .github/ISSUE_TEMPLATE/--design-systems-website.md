@@ -1,5 +1,5 @@
 ---
-name: "📃 Documentation webite issue"
+name: "📃 Documentation website issue"
 about: "Report a problem with the designsystem.gov.au website"
 
 ---
