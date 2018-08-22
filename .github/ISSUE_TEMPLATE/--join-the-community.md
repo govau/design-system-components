@@ -1,11 +1,11 @@
 ---
-name: "\U0001F91DJoin the Community"
+name: "\U0001F91DJoin the community"
 about: "If you would like to contribute and support the product"
 
 ---
 
 <!-- Click "Preview" for a nicer view! -->
-# Help support the Australiang Government Design System
+# Help support the Australian Government Design System
 
 We want the Design System to be a community orientated open-source product. To encourage developers and designers to engage in the community, we accept contributions from anyone willing to donate their time.
 
