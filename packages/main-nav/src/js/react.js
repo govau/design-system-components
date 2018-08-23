@@ -449,8 +449,6 @@ AUmainNavContent.propTypes = {
 	className: PropTypes.string,
 };
 
-AUmainNav.defaultProps = {};
-
 
 const AUmainNav = ({ dark, alt, className, children, attributeOptions }) => (
 	<nav
