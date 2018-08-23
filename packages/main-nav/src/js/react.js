@@ -429,6 +429,7 @@ export class AUmainNavContent extends React.PureComponent {
 					</div>
 				</div>
 				<div
+					aria-controls={ this.id }
 					ref={ mainNavOverlay => { this.mainNavOverlay = mainNavOverlay }}
 					onClick={ ( event ) => this.toggle( event ) }
 					className="au-main-nav__overlay"></div>
