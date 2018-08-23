@@ -55,6 +55,22 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 }
 
 
+AUmainNavContent.propTypes = {
+	items: PropTypes.arrayOf(
+		PropTypes.shape({
+			link: PropTypes.string,
+			text: PropTypes.node.isRequired,
+			children: PropTypes.array,
+		})
+	).isRequired,
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+};
+
+AUmainNavContent.defaultProps = {
+	linkComponent: 'a',
+};
+
+
 // This value gets increased for each navigation component
 let IDvalue = 0;
 
@@ -68,6 +84,10 @@ export class AUmainNavContent extends React.PureComponent {
 			className = '',
 			children,
 			linkComponent,
+			onOpen,
+			afterOpen,
+			onClose,
+			afterClose,
 			...attributeOptions
 		} = props;
 
@@ -417,6 +437,20 @@ export class AUmainNavContent extends React.PureComponent {
 	}
 };
 
+AUmainNavContent.propTypes = {
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
+	children: PropTypes.node,
+	speed: PropTypes.number,
+	onOpen: PropTypes.func,
+	afterOpen: PropTypes.func,
+	onClose: PropTypes.func,
+	afterClose: PropTypes.func,
+	className: PropTypes.string,
+};
+
+AUmainNav.defaultProps = {};
+
 
 const AUmainNav = ({ dark, alt, className, children, attributeOptions }) => (
 	<nav
@@ -433,7 +467,9 @@ const AUmainNav = ({ dark, alt, className, children, attributeOptions }) => (
 );
 
 AUmainNav.propTypes = {
-	dark: PropTypes.bool
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
+	children: PropTypes.node.isRequired,
 };
 
 AUmainNav.defaultProps = {};
