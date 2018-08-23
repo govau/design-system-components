@@ -55,7 +55,7 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 }
 
 
-AUmainNavContent.propTypes = {
+AUmainNavMenu.propTypes = {
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -66,7 +66,7 @@ AUmainNavContent.propTypes = {
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
-AUmainNavContent.defaultProps = {
+AUmainNavMenu.defaultProps = {
 	linkComponent: 'a',
 };
 
