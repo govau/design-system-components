@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.5 - Fix active state children getting active style](#v205)
 * [v2.0.4 - Update dependencies](#v204)
 * [v2.0.3 - Fixing order of dependencies](#v203)
 * [v2.0.2 - Added active state for react, Removing web pack dev server, updating dependencies](#v202)
@@ -29,6 +30,11 @@
 
 
 ## Release History
+
+### v2.0.5
+
+- Fix active state children getting active style
+
 
 ### v2.0.4
 
