@@ -21,11 +21,8 @@
 	@include AU-fontgrid( sm );
 	display: block;
 	list-style-type: none;
-
-	.au-body & {
-		margin: 0;
-		@include AU-space( padding, 0.25unit 0 );
-	}
+	margin: 0;
+	@include AU-space( padding, 0.25unit 0 );
 
 	> li {
 		display: block;
