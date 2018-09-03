@@ -29,7 +29,7 @@ jobs:
           name: Save package cache
           key: m4-packages-{{ checksum "/tmp/_PACKAGE_CHECKSUM_FILE" }}
           paths:
-            - packages/*/node_modules/
+            - $(find node_modules/ packages/*/node_modules/ -maxdepth 0 -type d)
       - run: 
           name: Build all packages
           command: npm run build                          # installing all dependencies of all packages
