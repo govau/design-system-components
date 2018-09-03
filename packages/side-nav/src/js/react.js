@@ -77,6 +77,7 @@ const AUsideNavMenu = ({ items, linkComponent }) => {
  * @param  {array}   items            - The menu items and their children
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
+ * @param  {string}  ariaLabel        - The aria-label attribute, optional
  */
 const AUsideNav = ({
 	dark,
@@ -93,9 +94,10 @@ const AUsideNav = ({
 	linkComponent,
 	items,
 	className = '',
-	attributeOptions
+	attributeOptions,
+	ariaRole = 'side navigation',
 }) => (
-		<aside>
+		<aside aria-role={ ariaRole }>
 			<AUaccordion
 				closed={closed}
 				speed={speed}
