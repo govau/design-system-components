@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v3.0.3 - Added an aria-label attribute to the nav element](#v302)
+* [v3.0.3 - Added an aria-label attribute to the nav element](#v303)
 * [v3.0.2 - Update dependencies](#v302)
 * [v3.0.1 - Removing web pack dev server, updating dependencies](#v301)
 * [v3.0.0 - Updated dependency version of link-list, build scripts for Windows](#v300)
