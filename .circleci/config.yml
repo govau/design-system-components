@@ -13,7 +13,7 @@ jobs:
       - restore_cache:
           name: Restore package cache
           keys:
-            - m5-packages-{{ checksum "deploy/PACKAGE_LOCK_CHECKSUMS" }}
+            - m5-packages-{{ checksum ".circleci/PACKAGE_LOCK_CHECKSUMS" }}
       - run: 
           name: Install dependencies
           command: npm install                            # duh
@@ -22,7 +22,7 @@ jobs:
           command: npm run bootstrap                      # installing all dependencies of all packages
       - save_cache:
           name: Save package cache
-          key: m5-packages-{{ checksum "deploy/PACKAGE_LOCK_CHECKSUMS" }}
+          key: m5-packages-{{ checksum ".circleci/PACKAGE_LOCK_CHECKSUMS" }}
           paths:
             - node_modules/
             - packages/keyword-list/node_modules
