@@ -15,6 +15,8 @@
 
 ## Versions
 
+* [v3.0.2 - Update dependencies](#v302)
+* [v3.0.1 - Removing web pack dev server, updating dependencies](#v301)
 * [v3.0.0 - Updated dependency version of link-list, build scripts for Windows](#v300)
 * [v2.0.5 - Replace node-sass with sass](#v205)
 * [v2.0.4 - Add react router support](#v204)
@@ -33,6 +35,16 @@
 
 
 ## Release History
+
+### v3.0.2
+
+- Update dependencies
+
+
+### v3.0.1
+
+- Removing web pack dev server, updating dependencies
+
 
 ### v3.0.0
 

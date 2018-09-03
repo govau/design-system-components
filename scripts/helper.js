@@ -12,7 +12,7 @@
  */
 const Autoprefixer = require('autoprefixer');
 const Postcss = require('postcss');
-const Sass = require('sass');
+const Sass = require('node-sass');
 const Chalk = require(`chalk`);
 const Path = require(`path`);
 const Fs = require(`fs`);
@@ -198,7 +198,7 @@ const Autoprefix = ( file ) => {
 	const data = Fs.readFileSync( file, 'utf-8' );
 
 	Postcss([ Autoprefixer({ browsers: ['last 2 versions', 'ie 8', 'ie 9', 'ie 10'] }) ])
-		.process( data )
+		.process( data, { from: file, to: file } )
 		.then( ( prefixed ) => {
 			prefixed
 				.warnings()
@@ -1061,7 +1061,7 @@ HELPER.test = (() => {
 						error += `The module ${ module } is missing "react" as devDependency.\n`;
 					}
 
-					if( hasReact && Object.keys( packagesPKG.devDependencies ).length < 13 ) {
+					if( hasReact && Object.keys( packagesPKG.devDependencies ).length < 12 ) {
 						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
 					}
 

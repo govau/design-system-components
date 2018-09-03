@@ -137,6 +137,9 @@ The visual test: https://uikit.service.gov.au/packages/link-list/tests/site/
 
 ## Release History
 
+* v3.0.3 - Fixing bug in link-list au-body
+* v3.0.2 - Update dependencies
+* v3.0.1 - Removing web pack dev server, updating dependencies
 * v3.0.0 - Move children location in react, build scripts for Windows
 * v2.1.1 - Replace node-sass with sass
 * v2.1.0 - Support react router

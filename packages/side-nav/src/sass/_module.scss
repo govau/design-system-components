@@ -107,7 +107,7 @@
 		@include AU-side-nav-indent( 3 );
 	}
 
-	.active a {
+	.active > a {
 		font-weight: bold;
 		color: $AU-color-foreground-text;
 	}
@@ -134,6 +134,10 @@
 		&:last-of-type {
 			border: none;
 		}
+	}
+
+	@include AU-media( $AU-side-nav-breakpoint ) {
+		margin: 0;
 	}
 }
 

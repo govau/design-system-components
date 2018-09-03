@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/header",
-	"version": "4.1.2",
+	"version": "4.1.6",
 	"description": "Headers provide a consistent start to pages.",
 	"keywords": [
 		"uikit",
@@ -79,8 +79,7 @@
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
 		"react-router-dom": "^4.3.1",
-		"webpack": "^3.8.1",
-		"webpack-dev-server": "^2.9.4"
+		"webpack": "^3.8.1"
 	},
 	"files": [
 		"lib/*"
@@ -123,6 +122,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		}
 	],
 	"license": "MIT"

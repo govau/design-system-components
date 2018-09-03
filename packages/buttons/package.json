@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/buttons",
-	"version": "3.0.2",
+	"version": "3.0.4",
 	"description": "Buttons signal action. Use them to move the user through the service.",
 	"keywords": [
 		"uikit",
@@ -77,8 +77,7 @@
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
 		"react-router-dom": "^4.3.1",
-		"webpack": "^3.8.1",
-		"webpack-dev-server": "^2.9.4"
+		"webpack": "^3.8.1"
 	},
 	"files": [
 		"lib/*"

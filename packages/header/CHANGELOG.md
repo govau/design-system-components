@@ -15,6 +15,10 @@
 
 ## Versions
 
+* [v4.1.6 - Update dependencies](#v416)
+* [v4.1.5 - Removing web pack dev server, updating dependencies](#v415)
+* [v4.1.4 - Removed border from header brand image on ie8, ie9 and ie10](#v414)
+* [v4.1.3 - AUheaderBrand without a link now defaults to div](#v413)
 * [v4.1.2 - Fixed build scripts for Windows](#v412)
 * [v4.1.1 - Replace node-sass with sass](#v411)
 * [v4.1.0 - React router support](#v410)
@@ -35,6 +39,26 @@
 
 
 ## Release History
+
+### v4.1.6
+
+- Update dependencies
+
+
+### v4.1.5
+
+- Removing web pack dev server, updating dependencies
+
+
+### v4.1.4
+
+- Removed border from header brand image on ie8, ie9 and ie10
+
+
+### v4.1.3
+
+- AUheaderBrand without a link will now default to use a div element
+
 
 ### v4.1.2
 

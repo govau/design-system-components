@@ -15,6 +15,9 @@
 
 ## Versions
 
+* [v5.0.2 - Update dependencies](#v502)
+* [v5.0.1 - Removing web pack dev server, updating dependencies](#v501)
+* [v5.0.0 - Removing unecessary aria-hidden as css display toggles screen reader ability](#v500)
 * [v4.0.0 - State change more specific, remove style set on html, componentDidUpdate, build scripts for Windows](#v400)
 * [v3.0.5 - Replace node-sass with sass](#v305)
 * [v3.0.4 - Change npm run watch browser-sync location](#v304)
@@ -37,6 +40,21 @@
 
 
 ## Release History
+
+### v5.0.2
+
+- Update dependencies
+
+
+### v5.0.1
+
+- Removing web pack dev server, updating dependencies
+
+
+### v5.0.0
+
+- Removing unecessary aria-hidden as css display toggles screen reader ability
+
 
 ### v4.0.0
 

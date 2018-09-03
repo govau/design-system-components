@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/side-nav",
-	"version": "0.1.0",
+	"version": "2.0.5",
 	"description": "A vertical list of links for site navigation typically placed next to the body content.",
 	"keywords": [
 		"uikit",
@@ -60,19 +60,19 @@
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-js": "~1",
-		"@gov.au/pancake-sass": "~1",
+		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/accordion": "^4.0.0",
-		"@gov.au/animate": "^1.0.0",
 		"@gov.au/core": "^3.0.0",
+		"@gov.au/animate": "^1.0.0",
+		"@gov.au/accordion": "^5.0.0",
 		"@gov.au/link-list": "^3.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/accordion": "^4.0.0",
-		"@gov.au/animate": "^1.0.0",
 		"@gov.au/core": "^3.0.0",
+		"@gov.au/animate": "^1.0.0",
+		"@gov.au/accordion": "^5.0.0",
 		"@gov.au/link-list": "^3.0.0"
 	},
 	"devDependencies": {
@@ -88,8 +88,7 @@
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
 		"react-router-dom": "^4.3.1",
-		"webpack": "^3.8.1",
-		"webpack-dev-server": "^2.9.4"
+		"webpack": "^3.8.1"
 	},
 	"files": [
 		"lib/*"
@@ -117,6 +116,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://alexpage.com.au"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		}
 	],
 	"license": "MIT"

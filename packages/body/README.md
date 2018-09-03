@@ -61,6 +61,9 @@ The visual test: https://uikit.service.gov.au/packages/body/tests/site/
 
 ## Release History
 
+* v2.0.11 - Update Dependencies
+* v2.0.10 - Removing web pack dev server, updating dependencies
+* v2.0.9 - Made URL for external links visible in print preview
 * v2.0.8 - Fixed build scripts for Windows
 * v2.0.7 - Replace node-sass with sass
 * v2.0.6 - Change npm run watch browser-sync location

@@ -55,7 +55,7 @@ Accordion has 3 public functions:
 
 - [`AU.accordion.Open( elements, speed )`](#open)
 - [`AU.accordion.Close( elements, speed )`](#close)
-- [`AU.accordion.Toggle( elements, speed )`](#toggle)
+- [`AU.accordion.Toggle( elements, speed, callbacks )`](#toggle)
 
 
 #### Open
@@ -167,7 +167,7 @@ All props:
 <AUaccordion
   header="Headline"        {/* The headline of the accordion */}
   closed={ true }          {/* Closed state, optional */}
-  speed="250"              {/* Speed of the animation in ms, optional */}
+  speed={ 250 }            {/* Speed of the animation in ms, optional */}
   onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
   afterOpen={ () => {} }   {/* A function executed after the accordion opened, optional */}
   onClose={ () => {} }     {/* A function executed when the accordion closes, optional */}
@@ -252,6 +252,9 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v5.0.2 - Update dependencies
+* v5.0.1 - Removing web pack dev server, updating dependencies
+* v5.0.0 - Removing unecessary aria-hidden as css display toggles screen reader ability
 * v4.0.0 - State change more specific, remove style set on html, componentDidUpdate, build scripts for Windows
 * v3.0.5 - Replace node-sass with sass
 * v3.0.4 - Change npm run watch browser-sync location

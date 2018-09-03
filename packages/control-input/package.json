@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/control-input",
-	"version": "2.1.4",
+	"version": "2.1.6",
 	"description": "Control inputs include radio buttons and checkboxes. They allow users to select one or more options.",
 	"keywords": [
 		"uikit",
@@ -76,8 +76,7 @@
 		"onchange": "^3.2.1",
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
-		"webpack": "^3.8.1",
-		"webpack-dev-server": "^2.9.4"
+		"webpack": "^3.8.1"
 	},
 	"files": [
 		"lib/*"

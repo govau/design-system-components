@@ -122,6 +122,10 @@ The visual test: https://uikit.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v4.1.6 - Update dependencies
+* v4.1.5 - Removing web pack dev server, updating dependencies
+* v4.1.4 - Removed border from header brand image on ie8, ie9 and ie10
+* v4.1.3 - AUheaderBrand without a link now defaults to div
 * v4.1.2 - Fixed build scripts for Windows
 * v4.1.1 - Replace node-sass with sass
 * v4.1.0 - React router support

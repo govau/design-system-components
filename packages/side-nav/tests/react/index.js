@@ -29,6 +29,7 @@ const menu = [
 					{
 						link: '#',
 						text: 'Change to route two',
+						active: true,
 						children: [
 							{
 								link: '#',

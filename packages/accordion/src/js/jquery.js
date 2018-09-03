@@ -38,7 +38,6 @@ $.fn.AUaccordion = function( callbacks ) {
 				var $accordion = $( accordion );
 				var _isOpen = accordionObject.isOpen();
 				var $controls = $accordion.children('.js-au-accordion');
-				var $body = $accordion.children('.js-au-accordion-body');
 
 				if( _isOpen ) {
 					$controls
@@ -46,9 +45,6 @@ $.fn.AUaccordion = function( callbacks ) {
 						.attr( 'aria-expanded', 'true' )
 						.attr( 'aria-selected', 'true' )
 						.attr( 'role', 'tab' );
-
-					$body
-						.attr( 'aria-hidden', 'false' );
 				}
 				else {
 					$controls
@@ -56,9 +52,6 @@ $.fn.AUaccordion = function( callbacks ) {
 						.attr( 'aria-expanded', 'false' )
 						.attr( 'aria-selected', 'false' )
 						.attr( 'role', 'tab' );
-
-					$body
-						.attr( 'aria-hidden', 'true' );
 				}
 			});
 

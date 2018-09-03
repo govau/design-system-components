@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/footer",
-	"version": "2.1.4",
+	"version": "2.1.6",
 	"description": "Footers help users who reach the bottom of a page without finding what they want.",
 	"keywords": [
 		"uikit",
@@ -79,8 +79,7 @@
 		"onchange": "^3.2.1",
 		"react": "^16.1.1",
 		"react-dom": "^16.1.1",
-		"webpack": "^3.8.1",
-		"webpack-dev-server": "^2.9.4"
+		"webpack": "^3.8.1"
 	},
 	"files": [
 		"lib/*"
