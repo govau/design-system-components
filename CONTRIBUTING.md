@@ -207,6 +207,7 @@ To add a new module run the scaffolding helper:
 ```shell
 npm run scaffolding
 ```
+> NOTE: Ensure your newly created module is appended to the CirclCI configuration file `save_cache` key path.
 
 _❗ After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 

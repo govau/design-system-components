@@ -13,12 +13,12 @@ jobs:
       - run: 
           name: Create a checksum for all package-lock.json files to see what we need cache.
           command: |
-            md5sum $(find . -type f -name "package-lock.json") > /tmp/_PACKAGE_CHECKSUM_FILE
-            md5sum /tmp/_PACKAGE_CHECKSUM_FILE | awk {'print $1'}
+            md5sum $(find . packages -maxdepth 2 -type f -name "package-lock.json") > /tmp/_TEMP_PACKAGE_CHECKSUM_FILE
+            md5sum /tmp/_TEMP_PACKAGE_CHECKSUM_FILE | awk {'print $1'}
       - restore_cache:
           name: Restore package cache
           keys:
-            - m5-packages-{{ checksum "/tmp/_PACKAGE_CHECKSUM_FILE" }}
+            - m5-packages-{{ checksum "/tmp/_TEMP_PACKAGE_CHECKSUM_FILE" }}
       - run: 
           name: Install dependencies
           command: npm install                            # duh
@@ -27,7 +27,7 @@ jobs:
           command: npm run bootstrap                      # installing all dependencies of all packages
       - save_cache:
           name: Save package cache
-          key: m5-packages-{{ checksum "/tmp/_PACKAGE_CHECKSUM_FILE" }}
+          key: m5-packages-{{ checksum "/tmp/_TEMP_PACKAGE_CHECKSUM_FILE" }}
           paths:
             - node_modules/
             - packages/keyword-list/node_modules
