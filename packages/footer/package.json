@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/footer",
-	"version": "2.1.6",
+	"version": "2.1.7",
 	"description": "Footers help users who reach the bottom of a page without finding what they want.",
 	"keywords": [
 		"uikit",
@@ -122,6 +122,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Christopher Rodriguez",
+			"email": "christopher.rodriguez@digital.gov.au",
+			"url": "https://github.com/xochi"
 		}
 	],
 	"license": "MIT"

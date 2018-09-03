@@ -23,10 +23,11 @@ import PropTypes from 'prop-types';
  *
  * @param  {node}   children         - The inside of this section
  * @param  {string} className        - An additional class, optional
+ * @param  {string} ariaLabel        - The aria-label attribute, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUfooterNav = ({ children, className = '', ...attributeOptions }) => (
-	<nav className={`au-footer__navigation ${ className }`} { ...attributeOptions }>
+export const AUfooterNav = ({ children, className = '', ariaLabel = 'footer navigation', ...attributeOptions }) => (
+	<nav className={`au-footer__navigation ${ className }`} aria-label={ ariaLabel } { ...attributeOptions }>
 		{ children }
 	</nav>
 );
@@ -34,6 +35,7 @@ export const AUfooterNav = ({ children, className = '', ...attributeOptions }) =
 AUfooterNav.propTypes = {
 	children: PropTypes.node.isRequired,
 	className: PropTypes.string,
+	ariaLabel: PropTypes.string,
 };
 
 
