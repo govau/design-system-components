@@ -48,8 +48,8 @@ AUinpageNavLinksItem.propTypes = {
  * @param  {string}  ariaLabel        - The aria-label attribute, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUinpageNavLinks = ({ dark, title, sections, ariaLabel = 'in page navigation', className = '', ...attributeOptions }) => (
-	<nav className={ `au-inpage-nav-links ${ className }${ dark ? ' au-inpage-nav-links--dark' : '' }` } aria-label={ ariaLabel } { ...attributeOptions }>
+export const AUinpageNavLinks = ({ dark, title, sections, ariaLabel, className = '', ...attributeOptions }) => (
+	<nav className={ `au-inpage-nav-links ${ className }${ dark ? ' au-inpage-nav-links--dark' : '' }` } ariaLabel={ ariaLabel } { ...attributeOptions }>
 		<h2 className="au-inpage-nav-links__heading au-display-sm">{ title }</h2>
 
 		<ul className="au-link-list">
@@ -73,6 +73,7 @@ AUinpageNavLinks.propTypes = {
 
 AUinpageNavLinks.defaultProps = {
 	title: 'Contents',
+	ariaLabel: 'in page navigation',
 };
 
 

@@ -95,9 +95,9 @@ const AUsideNav = ({
 	items,
 	className = '',
 	attributeOptions,
-	ariaRole = 'side navigation',
+	ariaLabel,
 }) => (
-		<aside aria-role={ ariaRole }>
+		<aside aria-label={ ariaLabel }>
 			<AUaccordion
 				closed={closed}
 				speed={speed}
@@ -149,6 +149,7 @@ AUsideNav.propTypes = {
 AUsideNav.defaultProps = {
 	linkComponent: 'a',
 	closed: true,
+	ariaLabel: 'side navigation',
 };
 
 export default AUsideNav;

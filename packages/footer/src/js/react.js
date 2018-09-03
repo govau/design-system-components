@@ -26,7 +26,7 @@ import PropTypes from 'prop-types';
  * @param  {string} ariaLabel        - The aria-label attribute, optional
  * @param  {object} attributeOptions - Any other attribute options
  */
-export const AUfooterNav = ({ children, className = '', ariaLabel = 'footer navigation', ...attributeOptions }) => (
+export const AUfooterNav = ({ children, className = '', ariaLabel, ...attributeOptions }) => (
 	<nav className={`au-footer__navigation ${ className }`} aria-label={ ariaLabel } { ...attributeOptions }>
 		{ children }
 	</nav>
@@ -37,6 +37,10 @@ AUfooterNav.propTypes = {
 	className: PropTypes.string,
 	ariaLabel: PropTypes.string,
 };
+
+AUfooterNav.defaultProps = {
+	ariaLabel: 'footer navigation',
+}
 
 
 /**
