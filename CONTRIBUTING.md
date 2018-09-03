@@ -207,7 +207,11 @@ To add a new module run the scaffolding helper:
 ```shell
 npm run scaffolding
 ```
-> NOTE: Ensure your newly created module is appended to the CirclCI configuration file `save_cache` key path.
+> NOTE: Ensure your newly created module is appended to the CirclCI configuration file `save_cache` key path. Additionally, append or modify the checksum value, using the command listed below for a newly created or updated module respectfully.
+
+```bash
+md5sum $(find . packages -maxdepth 2 -type f -name 'package-lock.json') > .circleci/PACKAGE_LOCK_CHECKSUMS
+```
 
 _❗ After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 
