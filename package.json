@@ -18,7 +18,6 @@
 		"bootstrap": "lerna bootstrap",
 		"build": "lerna run build --concurrency 1",
 		"publish": "lerna publish --skip-git",
-		"preinstall": "md5sum $(find . packages -maxdepth 2 -type f -name 'package-lock.json') > .circleci/PACKAGE_LOCK_CHECKSUMS",
 		"nuke": "npm run delete:node_modules | npm run delete:lib",
 		"delete:node_modules": "rm -rf packages/*/node_modules | rm -rf node_modules",
 		"delete:lib": "rm -rf packages/*/lib/**",
