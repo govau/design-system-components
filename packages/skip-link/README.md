@@ -117,6 +117,7 @@ The visual test: https://uikit.service.gov.au/packages/skip-link/tests/site/
 
 ## Release History
 
+* v2.0.10 - Added an aria-label attribute to the nav element
 * v2.0.9 - Update dependencies
 * v2.0.8 - Removing web pack dev server, updating dependencies
 * v2.0.7 - Fixed build scripts for Windows

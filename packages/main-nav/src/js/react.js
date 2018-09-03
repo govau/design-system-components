@@ -451,7 +451,7 @@ AUmainNavContent.propTypes = {
 };
 
 
-const AUmainNav = ({ dark, alt, className, children, attributeOptions }) => (
+const AUmainNav = ({ dark, alt, className, ariaLabel, children, attributeOptions }) => (
 	<nav
 		className={
 			'au-main-nav ' +
@@ -459,6 +459,7 @@ const AUmainNav = ({ dark, alt, className, children, attributeOptions }) => (
 			`${ alt ? ' au-main-nav--alt' : '' }` +
 			`${ className ? ' ' + className : '' }`
 		}
+		aria-label = { ariaLabel }
 		{ ...attributeOptions }
 	>
 		{ children }
@@ -468,9 +469,12 @@ const AUmainNav = ({ dark, alt, className, children, attributeOptions }) => (
 AUmainNav.propTypes = {
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
+	ariaLabel: PropTypes.string,
 	children: PropTypes.node.isRequired,
 };
 
-AUmainNav.defaultProps = {};
+AUmainNav.defaultProps = {
+	ariaLabel: 'main navigation',
+};
 
 export default AUmainNav;

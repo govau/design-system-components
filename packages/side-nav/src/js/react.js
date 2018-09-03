@@ -144,6 +144,7 @@ AUsideNav.propTypes = {
 		})
 	).isRequired,
 	className: PropTypes.string,
+	ariaLabel: PropTypes.string,
 };
 
 AUsideNav.defaultProps = {
