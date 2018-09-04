@@ -23,7 +23,7 @@ jobs:
           name: Run all tests
           command: npm test
       - persist_to_workspace:
-          root: ~/project # /home/circleci/project
+          root: ~/project                                 # /home/circleci/project
           paths:
             - packages/*/tests/
             - deploy/
@@ -34,7 +34,7 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/project # /home/root/project
+          at: ~/project                                   # /home/root/project
       - run:
           name: Deploying to y.cld.gov.au
           command: |
@@ -46,7 +46,7 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/project # /home/root/project
+          at: ~/project                                   # /home/root/project
       - run:
           name: Deploying to y.cld.gov.au
           command: |
@@ -72,21 +72,21 @@ workflows:
   build-and-deploy:
     jobs:
       - build-and-test-uikit
-      - deploy-staging:       # run deploy staging
+      - deploy-staging:                                   # run deploy staging
           filters:
             branches:
-              only: develop   # and only on the `develop` branch
+              only: develop                               # and only on the `develop` branch
           requires:
             - build-and-test-uikit
-      -  deploy-testing:      # run test branches
+      -  deploy-testing:                                  # run test branches
           filters:
             branches:
-              only: /.*-test/ # and only on the branches that end with `-test`
+              only: /.*-test/                             # and only on the branches that end with `-test`
           requires:
             - build-and-test-uikit
-      - deploy-prod:          # run deploy production
+      - deploy-prod:                                      # run deploy production
           filters:
             branches:
-              only: master    # and only on the `master` branch
+              only: master                                # and only on the `master` branch
           requires:
             - build-and-test-uikit
