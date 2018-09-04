@@ -210,6 +210,13 @@ npm run scaffolding
 
 _❗ After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
 
+> NOTE: As of 09/18 `CirclCI` doesn't easily support caching multiple keys and folders seamlessly, as a temporary workaround: 
+
+Ensure your newly created module is appended to the CirclCI configuration file `save_cache` key path. Additionally, append or modify the checksum values, using the command listed below for a newly created or updated module respectfully.
+ 
+ ```bash
+md5sum $(find . packages -maxdepth 2 -type f -name 'package-lock.json') > .circleci/PACKAGE_LOCK_CHECKSUMS
+```
 
 **[⬆ back to top](#contents)**
 
