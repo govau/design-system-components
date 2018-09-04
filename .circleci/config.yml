@@ -10,47 +10,12 @@ jobs:
       - image: circleci/node:8.11.4                       # NodeLTS as of 09/2018
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
-      - restore_cache:
-          name: Restore package cache
-          keys:
-            - m5-packages-{{ checksum ".circleci/PACKAGE_LOCK_CHECKSUMS" }}
       - run: 
           name: Install dependencies
           command: npm install                            # duh
       - run: 
           name: Bootstrap the packages
           command: npm run bootstrap                      # installing all dependencies of all packages
-      - save_cache:
-          name: Save package cache
-          key: m5-packages-{{ checksum ".circleci/PACKAGE_LOCK_CHECKSUMS" }}
-          paths:
-            - node_modules/
-            - packages/keyword-list/node_modules
-            - packages/core/node_modules/
-            - packages/main-nav/node_modules/
-            - packages/body/node_modules/
-            - packages/inpage-nav/node_modules/
-            - packages/tags/node_modules/
-            - packages/direction-links/node_modules/
-            - packages/text-inputs/node_modules/
-            - packages/side-nav/node_modules/
-            - packages/breadcrumbs/node_modules/
-            - packages/animate/node_modules/
-            - packages/buttons/node_modules/
-            - packages/header/node_modules/
-            - packages/footer/node_modules/
-            - packages/link-list/node_modules/
-            - packages/progress-indicator/node_modules/
-            - packages/grid-12/node_modules/
-            - packages/skip-link/node_modules/
-            - packages/page-alerts/node_modules/
-            - packages/callout/node_modules/
-            - packages/cta-link/node_modules/
-            - packages/accordion/node_modules/
-            - packages/headings/node_modules/
-            - packages/select/node_modules/
-            - packages/control-input/node_modules/
-            - packages/responsive-media/node_modules/
       - run: 
           name: Build all packages
           command: npm run build                          # installing all dependencies of all packages
