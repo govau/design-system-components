@@ -10,16 +10,16 @@ jobs:
       - image: circleci/node:8.11.4                       # NodeLTS as of 09/2018
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
-      - run: 
+      - run:
           name: Install dependencies
           command: npm install                            # duh
-      - run: 
+      - run:
           name: Bootstrap the packages
           command: npm run bootstrap                      # installing all dependencies of all packages
-      - run: 
+      - run:
           name: Build all packages
           command: npm run build                          # installing all dependencies of all packages
-      - run: 
+      - run:
           name: Run all tests
           command: npm test
       - persist_to_workspace:
@@ -28,6 +28,7 @@ jobs:
             - packages/*/tests/
             - deploy/
             - index.html
+
 
   deploy-staging:
     docker:
@@ -41,6 +42,7 @@ jobs:
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
             cf zero-downtime-push uikit -f deploy/manifest-staging.yml
 
+
   deploy-testing:
     docker:
       - image: govau/cf-cli
@@ -52,7 +54,8 @@ jobs:
           command: |
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
             cf zero-downtime-push uikit-$CIRCLE_BRANCH -f deploy/manifest-testing.yml
-            
+
+
   deploy-prod:
     docker:
       - image: govau/cf-cli
@@ -64,6 +67,7 @@ jobs:
           command: |
             cf login -a api.system.b.cld.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
             cf zero-downtime-push uikit -f deploy/manifest-production.yml
+
 
 # OUR WORKFLOW
 # this is where we orchestrate our jobs
