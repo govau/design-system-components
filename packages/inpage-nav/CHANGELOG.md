@@ -41,6 +41,7 @@
 
 - Added an aria-label attribute to the nav element
 
+
 ### v3.0.2
 
 - Update dependencies

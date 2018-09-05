@@ -36,6 +36,7 @@
 
 - Added an aria-label attribute to the aside element
 
+
 ### v2.0.5
 
 - Fix active state children getting active style
