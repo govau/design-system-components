@@ -37,9 +37,10 @@ AUskipLinkItem.propTypes = {
  * @param  {array}  links            - The links, format: { url: '', text: '' }
  * @param  {string} className        - An additional class, optional
  * @param  {object} attributeOptions - Any other attribute options
+ * @param  {string} ariaLabel        - The aria-label attribute, optional
  */
-const AUskipLink = ({ links, className = '', ...attributeOptions }) => (
-	<nav className={`au-skip-link ${ className }`} { ...attributeOptions }>
+const AUskipLink = ({ links, className = '', ariaLabel, ...attributeOptions }) => (
+	<nav className={`au-skip-link ${ className }`} aria-label={ ariaLabel } { ...attributeOptions }>
 		{
 			links.map(
 				( link, i ) => <AUskipLinkItem key={ i } { ...link } />
@@ -55,6 +56,11 @@ AUskipLink.propTypes = {
 			text: PropTypes.string.isRequired,
 		})
 	).isRequired,
+	ariaLabel: PropTypes.string,
 };
+
+AUskipLink.defaultProps = {
+	ariaLabel: 'skip links navigation',
+}
 
 export default AUskipLink;

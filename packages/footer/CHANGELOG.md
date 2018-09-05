@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.7 - Added an aria-label attribute to the nav element](#v217)
 * [v2.1.6 - Update dependencies](#v216)
 * [v2.1.5 - Removing web pack dev server, updating dependencies](#v215)
 * [v2.1.4 - Fixed build scripts for Windows](#v214)
@@ -35,6 +36,11 @@
 
 
 ## Release History
+
+### v2.1.7
+
+- Added an aria-label attribute to the nav element
+
 
 ### v2.1.6
 
