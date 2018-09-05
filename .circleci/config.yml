@@ -26,7 +26,7 @@ jobs:
           root: ~/project                                 # /home/circleci/project
           paths:
             - packages/*/tests/
-            - deploy/
+            - .deploy/
             - index.html
 
 
@@ -36,11 +36,12 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/project                                   # /home/root/project
+      - run: htpasswd -cb Staticfile.auth uikit uikit     # the password and username is not a secret. It is just to prevent spiders from indexing
       - run:
           name: Deploying to y.cld.gov.au
           command: |
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push uikit -f deploy/manifest-staging.yml
+            cf zero-downtime-push uikit -f .deploy/manifest-staging.yml
 
 
   deploy-testing:
@@ -49,11 +50,12 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/project                                   # /home/root/project
+      - run: htpasswd -cb Staticfile.auth uikit uikit     # the password and username is not a secret. It is just to prevent spiders from indexing
       - run:
           name: Deploying to y.cld.gov.au
           command: |
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push uikit-$CIRCLE_BRANCH -f deploy/manifest-testing.yml
+            cf zero-downtime-push uikit-$CIRCLE_BRANCH -f .deploy/manifest-testing.yml
 
 
   deploy-prod:
@@ -66,7 +68,7 @@ jobs:
           name: Deploying to b.cld.gov.au
           command: |
             cf login -a api.system.b.cld.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
-            cf zero-downtime-push uikit -f deploy/manifest-production.yml
+            cf zero-downtime-push uikit -f .deploy/manifest-production.yml
 
 
 # OUR WORKFLOW
