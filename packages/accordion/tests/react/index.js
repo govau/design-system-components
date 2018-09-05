@@ -23,7 +23,7 @@ class AccordionWrapper extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<AUaccordion header="State controlled accordion open" closed={ this.state.closed }>
+				<AUaccordion header="State controlled accordion open" state={ this.state }>
 					Some content of the accordion <a href="#url">here</a>
 				</AUaccordion>
 

@@ -48,6 +48,7 @@ class AUaccordion extends React.PureComponent {
 		IDstart ++;
 
 		this.ID = `accordion${ IDstart }`;
+		this.closeClass = this.props.closed ? 'au-accordion--closed' : '';
 	}
 
 
@@ -55,21 +56,15 @@ class AUaccordion extends React.PureComponent {
 	 * Handle state if supplied
 	 */
 	componentDidUpdate( prevProps ) {
-		if ( this.props.closed !== prevProps.closed && this.props.closed !== undefined ) {
-			if ( this.props.closed ) {
-				this.accordionClose( this.accordionHeader );
-			}
-			else {
+		if( prevProps.state && prevProps.state.closed !== undefined ) {
+
+			if( prevProps.state.closed ) {
 				this.accordionOpen( this.accordionHeader );
 			}
+			else {
+				this.accordionClose( this.accordionHeader );
+			}
 		}
-	}
-
-	/**
-	 * The CSS class name to use when the state is closed
-	 */
-	getClosedClass() {
-		return 'au-accordion--closed'
 	}
 
 
@@ -379,7 +374,7 @@ class AUaccordion extends React.PureComponent {
 		return (
 			<div className={ `au-accordion ${ this.className }${ this.props.dark ? ' au-accordion--dark' : '' }` } { ...this.attributeOptions }>
 				<a href={`#${ this.ID }`}
-					className={`au-accordion__title js-au-accordion ${ this.props.closed ? this.getClosedClass() : '' }`}
+					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
 					aria-expanded={ !this.props.closed }
 					aria-selected={ !this.props.closed }
@@ -390,7 +385,7 @@ class AUaccordion extends React.PureComponent {
 				</a>
 
 				<div
-					className={`au-accordion__body ${ this.props.closed ? this.getClosedClass() : '' }`}
+					className={`au-accordion__body ${ this.closeClass }`}
 					id={ this.ID }>
 					<div className="au-accordion__body-wrapper">
 
