@@ -36,7 +36,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/project                                   # /home/root/project
-      - run: echo 'uikit:uikit' > Staticfile.auth         # the password and username is not a secret. It is just to prevent spiders from indexing
+      - run: echo 'uikit:$apr1$1L7jRN5s$rZ1johNREOkXwc7pGWxZK1' > Staticfile.auth         # the password and username is not a secret. It is just to prevent spiders from indexing
       - run:
           name: Deploying to y.cld.gov.au
           command: |
@@ -50,7 +50,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/project                                   # /home/root/project
-      - run: echo 'uikit:uikit' > Staticfile.auth         # the password and username is not a secret. It is just to prevent spiders from indexing
+      - run: echo 'uikit:$apr1$1L7jRN5s$rZ1johNREOkXwc7pGWxZK1' > Staticfile.auth         # the password and username is not a secret. It is just to prevent spiders from indexing
       - run:
           name: Deploying to y.cld.gov.au
           command: |
