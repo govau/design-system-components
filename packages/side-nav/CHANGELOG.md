@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.6 - Added an aria-label attribute to the aside element](#v206)
 * [v2.0.5 - Fix active state children getting active style](#v205)
 * [v2.0.4 - Update dependencies](#v204)
 * [v2.0.3 - Fixing order of dependencies](#v203)
@@ -30,6 +31,11 @@
 
 
 ## Release History
+
+### v2.0.6
+
+- Added an aria-label attribute to the aside element
+
 
 ### v2.0.5
 

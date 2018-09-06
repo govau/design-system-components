@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/skip-link",
-	"version": "2.0.9",
+	"version": "2.0.10",
 	"description": "Provide skip links to navigation and content.",
 	"keywords": [
 		"uikit",

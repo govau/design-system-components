@@ -76,6 +76,7 @@ const AUsideNavMenu = ({ items, linkComponent }) => {
  * @param  {string}  menuHeaderLink   - The link for the header in the menu
  * @param  {array}   items            - The menu items and their children
  * @param  {string}  className        - An additional class, optional
+ * @param  {string}  ariaLabel        - The aria-label attribute, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUsideNav = ({
@@ -93,9 +94,10 @@ const AUsideNav = ({
 	linkComponent,
 	items,
 	className = '',
-	attributeOptions
+	ariaLabel,
+	attributeOptions,
 }) => (
-		<aside>
+		<aside aria-label={ ariaLabel }>
 			<AUaccordion
 				closed={closed}
 				speed={speed}
@@ -142,11 +144,13 @@ AUsideNav.propTypes = {
 		})
 	).isRequired,
 	className: PropTypes.string,
+	ariaLabel: PropTypes.string,
 };
 
 AUsideNav.defaultProps = {
 	linkComponent: 'a',
 	closed: true,
+	ariaLabel: 'side navigation',
 };
 
 export default AUsideNav;
