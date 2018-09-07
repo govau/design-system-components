@@ -36,8 +36,8 @@ AUskipLinkItem.propTypes = {
  *
  * @param  {array}  links            - The links, format: { url: '', text: '' }
  * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
  * @param  {string} ariaLabel        - The aria-label attribute, optional
+ * @param  {object} attributeOptions - Any other attribute options
  */
 const AUskipLink = ({ links, className = '', ariaLabel, ...attributeOptions }) => (
 	<nav className={`au-skip-link ${ className }`} aria-label={ ariaLabel } { ...attributeOptions }>

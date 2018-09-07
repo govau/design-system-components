@@ -139,8 +139,9 @@ All props:
 
 ```jsx
 <AUmainNav
-	dark={ false }           {/* A dark variation of the component */}
-	alt={ false }            {/* An alternate variation of the component */}
+	dark={ false }                  {/* A dark variation of the component */}
+	alt={ false }                   {/* An alternate variation of the component */}
+	ariaLabel={ 'main navigation' } {/* Aria-label attribute on the <nav> element */}
 >
 </AUmainNav>
 
