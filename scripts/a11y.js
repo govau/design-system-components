@@ -51,21 +51,22 @@ const displayResults = results => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // RUN TESTS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-const Pa11yTest = Pa11y( OPTIONS )
-const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) )
+const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
 
-const App = Express()
-const Server = App.listen('8080')
+const App = Express();
+const Server = App.listen( '8080' );
 
-App.use( Express.static('tests/site') )
+App.use( Express.static( 'tests/site' ) );
 
-Pa11yTest.run( TestURL, ( error, results ) => {
-	CFonts.say( `${ PKG.name.substring( 8 ) }`, {
-		font: 'chrome',
-		space: false,
-		colors: ['red', 'magenta', 'blue'],
+Pa11y( TestURL, OPTIONS )
+	.then( ( results ) => {
+		CFonts.say( `${ PKG.name.substring( 8 ) }`, {
+			font: 'chrome',
+			space: false,
+			colors: ['red', 'magenta', 'blue'],
+		})
 	})
-
-	error ? Helper.log( error ) : displayResults( results )
-	Server.close()
-})
+	.catch( ( error ) => {
+		error ? Helper.log( error ) : displayResults( results );
+		Server.close();
+	});
