@@ -70,11 +70,12 @@ All props:
 
 ```jsx
 <AUskipLink
-  links={[                         {/* All links inside a neat array */}
+  ariaLabel="skip links navigation" {/* Aria-label attribute on the root element */}
+  links={[                          {/* All links inside a neat array */}
     {
-      link: '#nav',                {/* The href link of this link */}
-      text: 'Skip to navigation',  {/* The text of the link */}
-      onClick={ () => {} }         {/* A function to execute when the link is clicked, optional */},
+      link: '#nav',                 {/* The href link of this link */}
+      text: 'Skip to navigation',   {/* The text of the link */}
+      onClick={ () => {} }          {/* A function to execute when the link is clicked, optional */},
     },
   ]},
 />
