@@ -114,7 +114,6 @@ We use the below checklist to ensure new modules or updates to existing modules 
 
 All modules have to work on the below browsers:
 
-|-------------------|-------------------|---------------|----------|
 | Browser           | Version           | Platform      | Engine   |
 |-------------------|-------------------|---------------|----------|
 | Internet Explorer | 8                 | Windows 7     | Trident  |
