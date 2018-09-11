@@ -112,7 +112,7 @@ We use the below checklist to ensure new modules or updates to existing modules 
 
 ### Browser support
 
-All modules have to work on the below browsers:
+All components have to work on the below browsers:
 
 | Browser           | Version           | Platform      | Engine   |
 |-------------------|-------------------|---------------|----------|
