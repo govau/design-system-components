@@ -10,11 +10,11 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Dependencies
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-const Helper = require('./helper.js')
-const Express = require('express')
-const CFonts = require(`cfonts`)
-const Pa11y = require('pa11y')
-const Path = require('path')
+const Helper  = require( './helper.js' );
+const Express = require( 'express' );
+const CFonts  = require( 'cfonts' );
+const Pa11y   = require( 'pa11y' );
+const Path    = require( 'path' );
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -36,14 +36,14 @@ const displayResults = results => {
 
 	if( errors.length ) {
 		errors.map( error => {
-			Helper.log.error(`Error found at ${ error.selector }`)
-			console.log(`${ error.context }\n ${ error.message }\n`)
+			Helper.log.error( `Error found at ${ error.selector }`)
+			console.log(`${ error.context }\n ${ error.message }\n` );
 		})
 
-		process.exit( 1 )
+		process.exit( 1 );
 	}
 	else {
-		Helper.log.success('No errors')
+		Helper.log.success( 'No errors' );
 	}
 }
 
@@ -51,7 +51,7 @@ const displayResults = results => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // RUN TESTS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
+const PKG = require( Path.normalize( `${ process.cwd() }/package.json` ) );
 
 const App = Express();
 const Server = App.listen( '8080' );
@@ -63,8 +63,8 @@ Pa11y( TestURL, OPTIONS )
 		CFonts.say( `${ PKG.name.substring( 8 ) }`, {
 			font: 'chrome',
 			space: false,
-			colors: ['red', 'magenta', 'blue'],
-		})
+			colors: [ 'red', 'magenta', 'blue' ],
+		});
 	})
 	.catch( ( error ) => {
 		error ? Helper.log( error ) : displayResults( results );
