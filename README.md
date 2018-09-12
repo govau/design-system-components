@@ -112,10 +112,32 @@ We use the below checklist to ensure new modules or updates to existing modules 
 
 ### Browser support
 
-All modules have to work on the below browsers:
+All components have to work on the below browsers:
 
-- `>= IE8`
-- All modern browsers 2 version back; one version up
+| Browser           | Version           | Platform      | Engine   |
+|-------------------|-------------------|---------------|----------|
+| Internet Explorer | 8                 | Windows 7     | Trident  |
+| Internet Explorer | 9                 | Windows 7     | Trident  |
+| Internet Explorer | 10                | Windows 7     | Trident  |
+| Internet Explorer | 11                | Windows 8.1   | Trident  |
+| Edge              | Latest            | Windows 10    | EdgeHTML |
+| Firefox           | Latest            | OS X          | Gecko    |
+| Firefox           | Latest            | Windows 10    | Gecko    |
+| Firefox           | Latest            | Android 6     | Gecko    |
+| Chrome            | Latest            | OS X          | Blink    |
+| Chrome            | Latest            | Windows 10    | Blink    |
+| Chrome            | Latest            | Android 4.0   | Blink    |
+| Chrome            | Latest            | Android 6     | Blink    |
+| Safari            | Latest (11)       | OS X          | WebKit   |
+| Safari            | Latest - 1 ( 10 ) | iOS           | WebKit   |
+| Samsung           |                   | G S8          |          |
+| Samsung           |                   | G S7          |          |
+| Samsung           |                   | G S6          |          |
+| Chrome            |                   | pixel 7.1     |          |
+| Native browser    |                   | Lumia 930 8.1 |          |
+| Chome +1          |                   |               |          |
+| Safari +1         |                   |               |          |
+| Firefox +1        |                   |               |          |
 
 
 **[⬆ back to top](#contents)**
