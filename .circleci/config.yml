@@ -11,6 +11,9 @@ jobs:
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
       - run:
+          name: Install packages for puppeteer
+          command: ldd chrome | grep not
+      - run:
           name: Install dependencies
           command: npm install                            # duh
       - run:
