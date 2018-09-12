@@ -22,7 +22,7 @@
 		"delete:node_modules": "rm -rf packages/*/node_modules | rm -rf node_modules",
 		"delete:lib": "rm -rf packages/*/lib/**",
 		"test:unit-test": "jest",
-		"test": "node scripts/helper.js test && lerna run test:a11y --concurrency 1"
+		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},
 	"jest": {
 		"testRegex": "\\.spec.js$",
@@ -37,5 +37,8 @@
 				"statements": 0
 			}
 		}
+	},
+	"dependencies": {
+		"puppeteer": "^1.8.0"
 	}
 }
