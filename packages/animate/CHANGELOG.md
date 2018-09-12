@@ -41,6 +41,7 @@
 
 - Update browser-sync dependency
 
+
 ### v1.0.8
 
 - Update dependencies
