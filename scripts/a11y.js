@@ -10,11 +10,12 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Dependencies
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-const Helper = require('./helper.js')
-const Express = require('express')
-const CFonts = require(`cfonts`)
-const Pa11y = require('pa11y')
-const Path = require('path')
+const Helper    = require( './helper.js' );
+const Express   = require( 'express' );
+const Pa11y     = require( 'pa11y' );
+const Puppeteer = require( 'puppeteer' );
+const Fs        = require( 'fs' );
+const Path      = require( 'path' );
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -25,25 +26,20 @@ const OPTIONS = {
 	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test, .uikit-page-alerts__sronly, .uikit-skip-link',
 }
 
-const TestURL = 'http://localhost:8080'
-
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // CLI OUTPUT FORMATTING
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-const displayResults = results => {
-	let errors = results.filter( result => result.type === 'error' )
-
-	if( errors.length ) {
-		errors.map( error => {
-			Helper.log.error(`Error found at ${ error.selector }`)
-			console.log(`${ error.context }\n ${ error.message }\n`)
+const DisplayResults = results => {
+	if( results.issues.length ) {
+		results.issues.map( issue => {
+			Helper.log.error( `Error found at ${ issue.selector }`)
+			console.log( `${ issue.context }\n ${ issue.message }\n` );
 		})
 
-		process.exit( 1 )
+		process.exit( 1 );
 	}
 	else {
-		Helper.log.success('No errors')
+		Helper.log.success( 'No errors' );
 	}
 }
 
@@ -51,21 +47,67 @@ const displayResults = results => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // RUN TESTS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-const Pa11yTest = Pa11y( OPTIONS )
-const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) )
+const RunPa11y = async ( urls ) => {
+	// Start the browser
+	const browser = await Puppeteer.launch();
 
-const App = Express()
-const Server = App.listen('8080')
+	// For each url create a new page and run the Pa11y Test
+	const tests = urls.map( async ( url ) => {
+		const page = await browser.newPage();
 
-App.use( Express.static('tests/site') )
+		// Run the Pa11y test
+		await Pa11y( url, {
+			browser,
+			page,
+			...OPTIONS,
+		})
+		.then( result => {
+			console.log( `Pa11y automated ${ result.documentTitle }` );
+			DisplayResults( result );
+		})
+		.catch( error => Helper.log.error( error ) );
 
-Pa11yTest.run( TestURL, ( error, results ) => {
-	CFonts.say( `${ PKG.name.substring( 8 ) }`, {
-		font: 'chrome',
-		space: false,
-		colors: ['red', 'magenta', 'blue'],
-	})
+		// Close the page
+		await page.close();
+	});
 
-	error ? Helper.log( error ) : displayResults( results )
-	Server.close()
-})
+	// Wait for all the tests to finish
+	await Promise.all( tests );
+
+	// Close the browser
+	await browser.close();
+}
+
+
+// Global variables
+const UikitJson = Path.normalize( `${ process.cwd() }/uikit.json` );
+const TestURL   = 'http://localhost:8080';
+
+
+// Start the test - immediatley executed async function
+( async() => {
+	// Start express at port 8080
+	const App    = Express();
+	const Server = App.listen( '8080' );
+
+	// Set up the server localhost:8080 and the current directory
+	App.use( Express.static( './' ) );
+
+	// Default one url to test
+	let urls = [ `${ TestURL }/tests/site` ];
+
+	// If there is a uikit.json file we should test all the components
+	if( Fs.existsSync( UikitJson ) ){
+
+		// Create a url based off the keys in the uikit.json
+		urls = Object.keys( require( UikitJson ) ).map( key => {
+			return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
+		});
+	}
+
+	// Run all of the tests
+	await RunPa11y( urls );
+
+	// Close the express server
+	Server.close();
+})();

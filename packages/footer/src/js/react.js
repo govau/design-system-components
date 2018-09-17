@@ -75,7 +75,6 @@ AUfooterEnd.propTypes = {
 const AUfooter = ({ dark, alt, children, className = '', ...attributeOptions }) => (
 	<footer
 		className={ `au-footer ${ className }${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `}
-		role="contentinfo"
 		{ ...attributeOptions }
 	>
 		{ children }
