@@ -1,6 +1,7 @@
 {
 	"devDependencies": {
 		"autoprefixer": "^7.1.6",
+		"puppeteer": "^1.8.0",
 		"cfonts": "^2.1.2",
 		"chalk": "^2.3.0",
 		"express": "^4.16.2",
@@ -8,7 +9,7 @@
 		"jest-cli": "^22.4.3",
 		"lerna": "^2.11.0",
 		"node-sass": "^4.9.3",
-		"pa11y": "^4.13.1",
+		"pa11y": "^5.0.4",
 		"postcss": "^6.0.14",
 		"semver": "^5.4.1",
 		"treeify": "^1.0.1"
@@ -22,7 +23,7 @@
 		"delete:node_modules": "rm -rf packages/*/node_modules | rm -rf node_modules",
 		"delete:lib": "rm -rf packages/*/lib/**",
 		"test:unit-test": "jest",
-		"test": "node scripts/helper.js test && lerna run test:a11y --concurrency 1"
+		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},
 	"jest": {
 		"testRegex": "\\.spec.js$",

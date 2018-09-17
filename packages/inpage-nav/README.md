@@ -79,13 +79,14 @@ All props:
 
 ```jsx
 <AUinpageNavLinks
-  title="Contents"         {/* The title above all sections */}
-  sections={[              {/* All section in a neat array */}
+  title="Contents"                {/* The title above all sections */}
+  ariaLabel="in page navigation"  {/* Aria-label attribute on the root element */}
+  sections={[                     {/* All section in a neat array */}
     {
-      link: 'section1',    {/* The link to the section, this will be converted to a hash link */}
-      title: 'Section 1',  {/* The link text of this section */}
-      li: {},              {/* An object that will be spread onto the <li> tag, optional */}
-      onClick: () => {},   {/* A function to be executed when a section is clicked, optional */}
+      link: 'section1',           {/* The link to the section, this will be converted to a hash link */}
+      title: 'Section 1',         {/* The link text of this section */}
+      li: {},                     {/* An object that will be spread onto the <li> tag, optional */}
+      onClick: () => {},          {/* A function to be executed when a section is clicked, optional */}
     },
   ]}
 />

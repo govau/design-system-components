@@ -72,6 +72,10 @@ All props:
   dark={ false }    {/* A dark variation of the component */}
   attributeOptions  {/* Any other attribute options */}
 />
+
+<AUfooterNav
+	ariaLabel={ 'footer navigation' } {/* Aria-label attribute on the <nav> element */}
+/>
 ```
 _(💡 additional props are spread onto the component)_
 

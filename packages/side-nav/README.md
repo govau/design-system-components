@@ -61,6 +61,7 @@ import AUsideNav from './side-nav.js';
   accordionHeader="In this section"
   menuHeaderLink="#"
   menuHeader="Lodging your tax return"
+  ariaLabel="side navigation"
   items={[
     {
       link: 'one',
