@@ -15,8 +15,6 @@
 		"design system"
 	],
 	"scripts": {
-		"postinstall": "pancake",
-
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
