@@ -19,9 +19,7 @@
 		"bootstrap": "lerna bootstrap",
 		"build": "lerna run build --concurrency 1",
 		"publish": "lerna publish --skip-git",
-		"nuke": "npm run delete:node_modules | npm run delete:lib",
-		"delete:node_modules": "rm -rf packages/*/node_modules | rm -rf node_modules",
-		"delete:lib": "rm -rf packages/*/lib/**",
+		"nuke": "lerna clean --yes && rm -rf packages/*/lib/** | rm -rf node_modules",
 		"test:unit-test": "jest",
 		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},
@@ -42,51 +40,5 @@
 				"statements": 0
 			}
 		}
-	},
-	"pancake": {
-		"auto-save": true,
-		"plugins": true,
-		"ignore": [],
-		"json": {
-			"enable": false,
-			"location": "pancake/",
-			"name": "pancake",
-			"content": {
-				"name": true,
-				"version": true,
-				"dependencies": true,
-				"path": true,
-				"settings": true
-			}
-		},
-		"css": {
-			"minified": true,
-			"modules": false,
-			"browsers": [
-				"last 2 versions",
-				"ie 8",
-				"ie 9",
-				"ie 10"
-			],
-			"location": "pancake/css/",
-			"name": "pancake.min.css"
-		},
-		"sass": {
-			"modules": false,
-			"location": "pancake/sass/",
-			"name": "pancake.scss"
-		},
-		"js": {
-			"minified": true,
-			"modules": false,
-			"location": "pancake/js/",
-			"name": "pancake.min.js"
-		},
-		"react": {
-			"location": "pancake/react/"
-		}
-	},
-	"dependencies": {
-		"@gov.au/pancake-sass": "^2.1.0"
 	}
 }

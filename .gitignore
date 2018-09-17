@@ -13,6 +13,6 @@ packages/*/tests/*/*.js
 !packages/*/tests/react/index.js
 !packages/*/tests/react/webpack.config.js
 packages/*/lib/
-npm-debug.log
+yarn-error.log
 lerna-debug.log
 /index.html

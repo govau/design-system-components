@@ -16,44 +16,6 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@gov.au/pancake-js@~1":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@gov.au/pancake-js/-/pancake-js-1.0.13.tgz#7cb8d19e6ae5baa658647ab2e187abaf784fa814"
-  dependencies:
-    "@gov.au/pancake" "~1"
-    babel-runtime "6.26.0"
-    uglify-js "3.1.9"
-
-"@gov.au/pancake-json@~1":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@gov.au/pancake-json/-/pancake-json-1.0.7.tgz#f22493df1058d548bdb4fe1ea73498094572161f"
-  dependencies:
-    "@gov.au/pancake" "~1"
-    babel-runtime "6.26.0"
-
-"@gov.au/pancake-react@~1":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@gov.au/pancake-react/-/pancake-react-1.1.4.tgz#c0d52c8df8f3ebec3032969e6f657e9db14ddcf9"
-  dependencies:
-    "@gov.au/pancake" "~1"
-    babel-runtime "6.26.0"
-
-"@gov.au/pancake-sass@^2.1.0", "@gov.au/pancake-sass@~2":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@gov.au/pancake-sass/-/pancake-sass-2.1.0.tgz#00ba892dc849dc95d3cfd0882132c8a524ed7ec4"
-  dependencies:
-    "@gov.au/pancake" "~1"
-    autoprefixer "7.1.6"
-    babel-runtime "6.26.0"
-    node-sass "^4.9.3"
-    postcss "6.0.14"
-
-"@gov.au/pancake@~1":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@gov.au/pancake/-/pancake-1.2.4.tgz#5718c6360116477314c820bb7efc9986fe7b6e2a"
-  dependencies:
-    babel-runtime "6.26.0"
-
 "@lerna/add@^3.3.2":
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.3.2.tgz#767a879ecb117be06414e7e76d4d93bb9934fa57"
@@ -897,17 +859,6 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-autoprefixer@7.1.6:
-  version "7.1.6"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.1.6.tgz#fb933039f74af74a83e71225ce78d9fd58ba84d7"
-  dependencies:
-    browserslist "^2.5.1"
-    caniuse-lite "^1.0.30000748"
-    normalize-range "^0.1.2"
-    num2fraction "^1.2.2"
-    postcss "^6.0.13"
-    postcss-value-parser "^3.2.3"
-
 autoprefixer@^7.1.6:
   version "7.2.6"
   resolved "http://registry.npmjs.org/autoprefixer/-/autoprefixer-7.2.6.tgz#256672f86f7c735da849c4f07d008abb056067dc"
@@ -1614,7 +1565,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.26.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -1895,7 +1846,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@^2.11.3, browserslist@^2.5.1:
+browserslist@^2.11.3:
   version "2.11.3"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.11.3.tgz#fe36167aed1bbcde4827ebfe71347a2cc70b99b2"
   dependencies:
@@ -2035,7 +1986,7 @@ camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
-caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805:
+caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805:
   version "1.0.30000885"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000885.tgz#e889e9f8e7e50e769f2a49634c932b8aee622984"
 
@@ -2263,10 +2214,6 @@ combined-stream@1.0.6, combined-stream@~1.0.5, combined-stream@~1.0.6:
 commander@^2.14.1, commander@^2.2.0:
   version "2.18.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.18.0.tgz#2bf063ddee7c7891176981a2cc798e5754bc6970"
-
-commander@~2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
 commander@~2.17.1:
   version "2.17.1"
@@ -6448,15 +6395,7 @@ postcss-value-parser@^3.2.3:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@6.0.14:
-  version "6.0.14"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.14.tgz#5534c72114739e75d0afcf017db853099f562885"
-  dependencies:
-    chalk "^2.3.0"
-    source-map "^0.6.1"
-    supports-color "^4.4.0"
-
-postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.17:
+postcss@^6.0.14, postcss@^6.0.17:
   version "6.0.23"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
   dependencies:
@@ -7717,7 +7656,7 @@ supports-color@^3.1.2:
   dependencies:
     has-flag "^1.0.0"
 
-supports-color@^4.2.1, supports-color@^4.4.0:
+supports-color@^4.2.1:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-4.5.0.tgz#be7a0de484dec5c5cddf8b3d59125044912f635b"
   dependencies:
@@ -7967,13 +7906,6 @@ typedarray@^0.0.6:
 ua-parser-js@0.7.17:
   version "0.7.17"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
-
-uglify-js@3.1.9:
-  version "3.1.9"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.1.9.tgz#dffca799308cf327ec3ac77eeacb8e196ce3b452"
-  dependencies:
-    commander "~2.11.0"
-    source-map "~0.6.1"
 
 uglify-js@^2.8.29:
   version "2.8.29"

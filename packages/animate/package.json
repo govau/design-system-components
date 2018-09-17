@@ -50,13 +50,6 @@
 		}
 	},
 	"main": "lib/js/module.js",
-	"dependencies": {
-		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-js": "~1",
-		"@gov.au/pancake-json": "~1"
-	},
-	"peerDependencies": {
-	},
 	"devDependencies": {
 		"browser-sync": "^2.24.7",
 		"jest-cli": "^21.2.1",
