@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.4 - Fix passing props to main nav react component](#v014)
 * [v0.1.3 - Added an aria-label attribute to the nav element](#v013)
 * [v0.1.2 - Add missing aria-controls for overlay react](#v012)
 * [v0.1.1 - Fix hover color for dark theme, adding propTypes](#v011)
@@ -25,6 +26,11 @@
 
 
 ## Release History
+
+### v0.1.4 
+
+- Fix passing props to main nav react component
+
 
 ### v0.1.3
 
