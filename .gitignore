@@ -14,5 +14,4 @@ packages/*/tests/*/*.js
 !packages/*/tests/react/webpack.config.js
 packages/*/lib/
 yarn-error.log
-lerna-debug.log
 /index.html

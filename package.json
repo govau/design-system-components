@@ -1,32 +1,48 @@
 {
+	"name": "@gov.au/uikit",
 	"devDependencies": {
 		"autoprefixer": "^7.1.6",
-		"puppeteer": "^1.8.0",
+		"bolt": "^0.22.1",
 		"cfonts": "^2.1.2",
 		"chalk": "^2.3.0",
 		"express": "^4.16.2",
 		"inquirer": "4.0.0",
 		"jest-cli": "^22.4.3",
-		"lerna": "^3.4.0",
 		"node-sass": "^4.9.3",
 		"pa11y": "^5.0.4",
 		"postcss": "^6.0.14",
+		"puppeteer": "^1.8.0",
 		"semver": "^5.4.1",
-		"treeify": "^1.0.1"
+		"treeify": "^1.0.1",
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"browser-sync": "^2.24.7",
+		"npm-run-all": "^4.1.2",
+		"onchange": "^3.2.1",
+		"react": "^16.1.1",
+		"react-dom": "^16.1.1",
+		"react-router-dom": "^4.3.1",
+		"sass-versioning": "^0.3.0",
+		"webpack": "^3.8.1"
 	},
 	"scripts": {
 		"scaffolding": "node ./scripts/helper.js scaffolding",
-		"bootstrap": "lerna bootstrap",
-		"build": "lerna run build --concurrency 1",
-		"publish": "lerna publish --skip-git",
-		"nuke": "lerna clean --yes && rm -rf packages/*/lib/** | rm -rf node_modules",
+		"bootstrap": "bolt",
+		"build": "bolt ws run build",
+		"publish": "bolt ws run publish --skip-git",
+		"nuke": "rm -rf packages/*/node_modules | rm -rf packages/*/lib/** | rm -rf node_modules",
 		"test:unit-test": "jest",
 		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},
-	"private": true,
-	"workspaces": [
-		"packages/*"
-	],
+	"bolt": {
+		"workspaces": [
+			"packages/*"
+		]
+	},
 	"jest": {
 		"testRegex": "\\.spec.js$",
 		"collectCoverageFrom": [
