@@ -50,6 +50,10 @@
 		}
 	},
 	"main": "lib/js/module.js",
+	"dependencies": {
+	},
+	"peerDependencies": {
+	},
 	"devDependencies": {
 		"browser-sync": "^2.24.7",
 		"jest-cli": "^22.4.3",
