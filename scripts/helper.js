@@ -953,11 +953,6 @@ HELPER.test = (() => {
 					const hasReact = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/react.js`) );
 					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
 
-					// testing lifecycle script
-					if( packagesPKG.scripts.postinstall !== 'pancake' ) {
-						error += `The module ${ module } is missing the postinstall lifecycle script "pancake".\n`;
-					}
-
 					// testing pancake object
 					if( packagesPKG.pancake === undefined ) {
 						error += `The module ${ module } is missing the pancake object.\n`;
@@ -1009,42 +1004,6 @@ HELPER.test = (() => {
 					// testing react modules have a main entry point
 					if( hasReact && packagesPKG.main === undefined ) {
 						error += `The module ${ module } is missing the main entry point for react.\n`;
-					}
-
-					// testing all pancake plugins are also a dependency
-					if( packagesPKG.dependencies['@gov.au/pancake'] === undefined ) {
-						error += `The module ${ module } is missing "pancake" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake'];
-					}
-
-					if( packagesPKG.dependencies['@gov.au/pancake-json'] === undefined ) {
-						error += `The module ${ module } is missing "pancake-json" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-json'];
-					}
-
-					if( hasSass && packagesPKG.dependencies['@gov.au/pancake-sass'] === undefined ) {
-						error += `The module ${ module } is missing "pancake-sass" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-sass'];
-					}
-
-					if( hasJS && packagesPKG.dependencies['@gov.au/pancake-js'] === undefined ) {
-						error += `The module ${ module } is missing "pancake-js" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-js'];
-					}
-
-					if( hasReact && packagesPKG.dependencies['@gov.au/pancake-react'] === undefined ) {
-						error += `The module ${ module } is missing "pancake-react" as a dependency.\n`;
-					}
-					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-react'];
 					}
 
 					// testing all remaining dependencies are also in peerdependencies
