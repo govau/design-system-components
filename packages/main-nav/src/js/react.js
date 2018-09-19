@@ -451,7 +451,7 @@ AUmainNavContent.propTypes = {
 };
 
 
-const AUmainNav = ({ dark, alt, className, ariaLabel, children, attributeOptions }) => (
+const AUmainNav = ({ dark, alt, className, ariaLabel, children, ...attributeOptions }) => (
 	<nav
 		className={
 			'au-main-nav ' +
