@@ -15,7 +15,8 @@
 
 ## Versions
 
-* [v2.1.8 - Remove `role="contentinfo"` attribute by on footer](#v218)
+* [v2.1.9 - Add `role="contentinfo"` attribute on footer](#v219)
+* [v2.1.8 - Remove `role="contentinfo"` attribute on footer](#v218)
 * [v2.1.7 - Added an aria-label attribute to the nav element](#v217)
 * [v2.1.6 - Update dependencies](#v216)
 * [v2.1.5 - Removing web pack dev server, updating dependencies](#v215)
@@ -38,9 +39,14 @@
 
 ## Release History
 
+### v2.1.9
+
+- Add `role="contentinfo"` attribute on footer
+
+
 ### v2.1.8 
 
-- Remove `role="contentinfo"` attribute by on footer
+- Remove `role="contentinfo"` attribute on footer
 
 
 ### v2.1.7

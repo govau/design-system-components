@@ -76,6 +76,7 @@ const AUfooter = ({ dark, alt, children, className = '', ...attributeOptions }) 
 	<footer
 		className={ `au-footer ${ className }${ dark ? ' au-footer--dark' : '' }${ alt ? ' au-footer--alt' : '' } `}
 		{ ...attributeOptions }
+		role="contentinfo"
 	>
 		{ children }
 	</footer>
