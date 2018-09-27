@@ -144,6 +144,23 @@ class App extends React.Component {
 						>
 							Some content of the accordion <a href="#url">here</a>
 						</AUaccordion>
+
+						<hr />
+						<h2>Accordion Group <code>--dark </code></h2>
+						<ul class="au-accordion-group">
+							<li>
+								<AUaccordion dark open={ false } header="Accordion group 1">
+									Here <a href="#url">is</a> some accordion content
+								</AUaccordion>
+						</li>
+							<li>
+								<AUaccordion dark open={ false } header="Accordion group 2">
+									Here <a href="#url">is</a> some accordion content
+								</AUaccordion>
+							</li>
+						</ul>
+
+
 					</div>
 				</div>
 			</div>
