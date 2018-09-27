@@ -171,3 +171,8 @@
 		border-top: 1px solid $AU-colordark-foreground-border;
 	}
 }
+
+.au-accordion-group {
+	list-style: none;
+	@include AU-space( padding, 0 );
+}
