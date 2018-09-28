@@ -147,20 +147,18 @@ class App extends React.Component {
 
 						<hr />
 						<h2>Accordion Group <code>--dark </code></h2>
-						<ul class="au-accordion-group">
+						<ul className="au-accordion-group">
 							<li>
 								<AUaccordion dark open={ false } header="Accordion group 1">
 									Here <a href="#url">is</a> some accordion content
 								</AUaccordion>
-						</li>
+							</li>
 							<li>
 								<AUaccordion dark open={ false } header="Accordion group 2">
 									Here <a href="#url">is</a> some accordion content
 								</AUaccordion>
 							</li>
 						</ul>
-
-
 					</div>
 				</div>
 			</div>
