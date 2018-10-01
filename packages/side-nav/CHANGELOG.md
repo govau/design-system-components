@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.0 - Updated accordion, see accordion v6.0.0](#v300)
 * [v2.0.6 - Added an aria-label attribute to the aside element](#v206)
 * [v2.0.5 - Fix active state children getting active style](#v205)
 * [v2.0.4 - Update dependencies](#v204)
@@ -31,6 +32,12 @@
 
 
 ## Release History
+
+### v3.0.0
+
+- Updated accordion dependency
+- Removed role tab from accordion dependency
+
 
 ### v2.0.6
 

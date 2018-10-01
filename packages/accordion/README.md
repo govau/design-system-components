@@ -252,6 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v6.0.0 - Add accordion group in a unordered list, remove `role="rab"`
 * v5.0.2 - Update dependencies
 * v5.0.1 - Removing web pack dev server, updating dependencies
 * v5.0.0 - Removing unecessary aria-hidden as css display toggles screen reader ability

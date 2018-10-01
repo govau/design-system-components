@@ -372,13 +372,12 @@ class AUaccordion extends React.PureComponent {
 
 	render() {
 		return (
-			<div className={ `au-accordion ${ this.className }${ this.props.dark ? ' au-accordion--dark' : '' }` } { ...this.attributeOptions }>
+			<section className={ `au-accordion ${ this.className }${ this.props.dark ? ' au-accordion--dark' : '' }` } { ...this.attributeOptions }>
 				<a href={`#${ this.ID }`}
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
 					aria-expanded={ !this.props.closed }
 					aria-selected={ !this.props.closed }
-					role="tab"
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
 					onClick={ ( event ) => this.toggle( event ) }>
 						{ this.props.header }
@@ -393,7 +392,7 @@ class AUaccordion extends React.PureComponent {
 
 					</div>
 				</div>
-			</div>
+			</section>
 		);
 	}
 };
