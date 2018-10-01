@@ -44,14 +44,12 @@ $.fn.AUaccordion = function( callbacks ) {
 						.attr( 'aria-controls', $controls.attr( 'href' ).substr( 1 ) )
 						.attr( 'aria-expanded', 'true' )
 						.attr( 'aria-selected', 'true' )
-						.attr( 'role', 'tab' );
 				}
 				else {
 					$controls
 						.attr( 'aria-controls', $controls.attr( 'href' ).substr( 1 ) )
 						.attr( 'aria-expanded', 'false' )
 						.attr( 'aria-selected', 'false' )
-						.attr( 'role', 'tab' );
 				}
 			});
 

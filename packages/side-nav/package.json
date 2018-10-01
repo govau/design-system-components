@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/side-nav",
-	"version": "2.0.6",
+	"version": "3.0.0",
 	"description": "A vertical list of links for site navigation typically placed next to the body content.",
 	"keywords": [
 		"uikit",
@@ -66,13 +66,13 @@
 
 		"@gov.au/core": "^3.0.0",
 		"@gov.au/animate": "^1.0.0",
-		"@gov.au/accordion": "^5.0.0",
+		"@gov.au/accordion": "^6.0.0",
 		"@gov.au/link-list": "^3.0.0"
 	},
 	"peerDependencies": {
 		"@gov.au/core": "^3.0.0",
 		"@gov.au/animate": "^1.0.0",
-		"@gov.au/accordion": "^5.0.0",
+		"@gov.au/accordion": "^6.0.0",
 		"@gov.au/link-list": "^3.0.0"
 	},
 	"devDependencies": {
