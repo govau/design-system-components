@@ -326,7 +326,7 @@
 	}
 
 	pre code {
-		@include AU-space( padding, 0.5unit );
+		@include AU-space( padding, 1unit );
 		display:block;
 		tab-size: 4;
 	}
