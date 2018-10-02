@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.12 - Change code background colours](#v2012)
 * [v2.0.11 - Update dependencies](#v2011)
 * [v2.0.10 - Removing web pack dev server, updating dependencies](#v2010)
 * [v2.0.9 - Made URL for external links visible in print preview](#v209)
@@ -37,6 +38,11 @@
 
 
 ## Release History
+
+### v2.0.12
+
+- Change code background colours
+
 
 ### v2.0.11
 
