@@ -317,8 +317,8 @@
 		font-family: $AU-font-monospace;
 		display: inline-block;
 		border-radius: $AU-border-radius;
-		background-color: $AU-color-background-alt-shade;
-		color: $AU-color-foreground-muted;
+		background-color: $AU-color-background-shade;
+		color: $AU-color-foreground-text;
 	}
 
 	pre {
@@ -326,7 +326,7 @@
 	}
 
 	pre code {
-		@include AU-space( padding, 0.5unit );
+		@include AU-space( padding, 1unit );
 		display:block;
 		tab-size: 4;
 	}
@@ -354,6 +354,12 @@
 	 */
 	&.au-body--alt {
 		background: $AU-color-background-alt;
+
+		kbd,
+		code,
+		samp {
+			background-color: $AU-color-background-alt-shade;
+		}
 	}
 
 	&.au-body--dark {
@@ -417,22 +423,25 @@
 			color: $AU-colordark-background;
 		}
 
-		kbd {
-			background-color: $AU-colordark-background-alt-shade;
-		}
-
 		hr {
 			border-top-color: $AU-colordark-foreground-border;
 		}
 
 		code,
-		kbd {
-			color: $AU-colordark-foreground-muted;
-			background-color: $AU-colordark-background-alt-shade;
+		kbd,
+		samp {
+			color: $AU-colordark-foreground-text;
+			background-color: $AU-colordark-background-shade;
 		}
 	}
 
 	&.au-body--dark.au-body--alt {
 		background: $AU-colordark-background-alt;
+
+		code,
+		kbd,
+		samp {
+			background-color: $AU-colordark-background-alt-shade;
+		}
 	}
 }
