@@ -255,6 +255,7 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v3.1.0 - Update font stack to accomodate linux users
 * v3.0.3 - Update dependencies
 * v3.0.2 - Removing web pack dev server, updating dependencies
 * v3.0.1 - Focus outline offset to only apply on the default focus state, build scripts for Windows
