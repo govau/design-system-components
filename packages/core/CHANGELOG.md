@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.1.0 - Update font stack to accomodate linux users](#v310)
 * [v3.0.3 - Update dependencies](#v303)
 * [v3.0.2 - Removing web pack dev server, updating dependencies](#v302)
 * [v3.0.1 - Focus outline offset to only apply on the default focus state, build scripts for Windows](#v301)
@@ -35,6 +36,12 @@
 
 
 ## Release History
+
+### v3.1.0
+
+- Update the monospaced font to use a modern system font stack
+- Update the font family to make the fonts less large and clunky on different linux distributions
+
 
 ### v3.0.3
 
