@@ -712,8 +712,8 @@ $AU-unit: 4 !default;
  * AU-font stack
  * AU-font-monospace stack
  */
-$AU-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
-$AU-font-monospace: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, 'Bitstream Vera Sans Mono', monospace !default;
+$AU-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$AU-font-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !default;
 
 
 /**
