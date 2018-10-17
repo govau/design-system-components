@@ -207,17 +207,17 @@ ReactDOM.render(
 						</div>
 					</AUfooterNav>
 
-					<AUfooterEnd>
-						<div className="row">
-							<div className="col-sm-12">
+					<div className="row">
+						<div className="col-sm-12">
+							<AUfooterEnd>
 								<p>Footer text</p>
 
 								<img className="au-responsive-media-img" src="http://placehold.it/157x80" alt="Commonwealth Coat of Arms crest logo" />
 
 								<p><small>&copy; Commonwealth of Australia, <a href="https://github.com/govau/uikit/blob/master/LICENSE.md" rel="external license">MIT licensed</a></small></p>
-							</div>
+							</AUfooterEnd>
 						</div>
-					</AUfooterEnd>
+					</div>
 				</div>
 			</AUfooter>
 		</div>
