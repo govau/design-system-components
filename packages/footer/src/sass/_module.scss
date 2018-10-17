@@ -57,15 +57,16 @@
 			margin-left: 0;
 		}
 	}
-
-	+ .au-footer__end {
-		@include AU-space( padding-top, 1unit );
-		@include AU-space( margin-top, 1unit );
-		border-top: 1px solid $AU-color-foreground-border;
-	}
 }
 
 
-.au-footer--dark .au-footer__navigation + .au-footer__end {
+.au-footer__end {
+	@include AU-space( padding-top, 1unit );
+	@include AU-space( margin-top, 1unit );
+	border-top: 1px solid $AU-color-foreground-border;
+}
+
+
+.au-footer--dark .au-footer__end {
 	border-top: 1px solid $AU-colordark-foreground-border;
 }
