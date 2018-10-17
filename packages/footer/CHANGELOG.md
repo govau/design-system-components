@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.1 - Placed the `au-footer__end` inside a `row` and `col-sm-12`](#v301)
 * [v3.0.0 - `.au-footer-end` no longer needs to follow `.au-footer-navigation`](#v300)
 * [v2.1.9 - Add `role="contentinfo"` attribute on footer](#v219)
 * [v2.1.8 - Remove `role="contentinfo"` attribute on footer](#v218)
@@ -39,6 +40,11 @@
 
 
 ## Release History
+
+### v3.0.1
+
+- Placed the `au-footer__end` inside a `row` and `col-sm-12`
+
 
 ### v3.0.0
 
