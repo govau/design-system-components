@@ -42,7 +42,7 @@
 
 ### v3.0.0
 
-- Remove dependency of `au-footer_navigation` from `.au-footer__end`
+- `.au-footer-end` no longer needs to follow `.au-footer-navigation`
 
 
 ### v2.1.9
