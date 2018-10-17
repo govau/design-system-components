@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.0 - `.au-footer-end` no longer needs to follow `.au-footer-navigation`](#v300)
 * [v2.1.9 - Add `role="contentinfo"` attribute on footer](#v219)
 * [v2.1.8 - Remove `role="contentinfo"` attribute on footer](#v218)
 * [v2.1.7 - Added an aria-label attribute to the nav element](#v217)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v3.0.0
+
+- `.au-footer-end` no longer needs to follow `.au-footer-navigation`
+
 
 ### v2.1.9
 

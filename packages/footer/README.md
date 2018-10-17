@@ -115,6 +115,7 @@ The visual test: https://uikit.service.gov.au/packages/footer/tests/site/
 
 ## Release History
 
+* v3.0.0 - `.au-footer-end` no longer needs to follow `.au-footer-navigation`
 * v2.1.9 - Add `role="contentinfo"` attribute on footer
 * v2.1.8 - Remove `role="contentinfo"` attribute on `<footer>`
 * v2.1.7 - Added an aria-label attribute to the nav element
