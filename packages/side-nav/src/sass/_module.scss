@@ -203,7 +203,8 @@
 			color: $AU-colordark-foreground-text;
 		}
 
-		ul ul ul a:before {
+		ul ul ul a:before,
+		ul ul ul .active > span:before {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
 				'<path fill="#{ $AU-colordark-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
 			'</svg>');
