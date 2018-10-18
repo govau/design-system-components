@@ -118,7 +118,8 @@
 		color: $AU-color-foreground-text;
 	}
 
-	ul ul ul a {
+	ul ul ul a,
+	ul ul ul .active > span {
 		&:before {
 			content: " ";
 			@include AU-space( width, 1unit );
