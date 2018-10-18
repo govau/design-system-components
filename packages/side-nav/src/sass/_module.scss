@@ -18,11 +18,15 @@
 	overflow: hidden;
 	border: 0;
 
-	a {
+	a,
+	.active > span {
 		@include AU-space( padding, 1unit );
 		@include AU-fontgrid( xs );
 		color: $AU-color-foreground-muted;
 		display: block;
+	}
+
+	a {
 		text-decoration: none;
 
 		&:hover {
@@ -105,9 +109,11 @@
 
 	ul {
 		@include AU-side-nav-indent( 3 );
+		@include AU-side-nav-indent( 3, '.active > span' );
 	}
 
-	.active > a {
+
+	.active > span {
 		font-weight: bold;
 		color: $AU-color-foreground-text;
 	}
@@ -192,7 +198,7 @@
 	}
 
 	.au-side-nav__content {
-		.active a {
+		.active > span {
 			color: $AU-colordark-foreground-text;
 		}
 
