@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.2.0 - Active items are no longer wrapped in `<a>` for accessibility](#v020)
 * [v0.1.4 - Fix passing props to main nav react component](#v014)
 * [v0.1.3 - Added an aria-label attribute to the nav element](#v013)
 * [v0.1.2 - Add missing aria-controls for overlay react](#v012)
@@ -26,6 +27,12 @@
 
 
 ## Release History
+
+### v0.2.0
+
+- Active items are no longer wrapped in `<a>` for accessibility
+- Active items are now wrapped in a `<span>`, this allows for child elements to retain similar spacing
+
 
 ### v0.1.4 
 

@@ -21,13 +21,17 @@
 	color: $AU-color-foreground-text;
 
 	a,
+	.active > span,
 	.au-main-nav__toggle {
 		@include AU-space( padding, 1unit );
 		@include AU-fontgrid( xs );
 		@include AU-focus();
 		color: $AU-color-foreground-action;
 		text-decoration: none;
+	}
 
+	a,
+	.au-main-nav__toggle {
 		&:hover {
 			text-decoration: underline;
 			text-decoration-skip: ink;
@@ -36,18 +40,15 @@
 		}
 	}
 
-	a {
+	a,
+	.active > span {
 		display: block;
 	}
 
 
-	.active a {
+	.active > span {
 		font-weight: bold;
 		color: $AU-color-foreground-text;
-
-		&:hover {
-			border-color: $AU-color-background-shade;
-		}
 	}
 
 	// Reset menus inside main-nav
@@ -76,12 +77,8 @@
 			}
 		}
 
-		.active a {
+		.active > span {
 			border-color: $AU-color-background-alt;
-
-			&:hover {
-				border-color: $AU-color-background-alt-shade;
-			}
 		}
 	}
 
@@ -101,13 +98,9 @@
 			}
 		}
 
-		.active a {
+		.active > span {
 			color: $AU-colordark-foreground-text;
 			border-color: $AU-colordark-background;
-
-			&:hover {
-				border-color: $AU-colordark-background-shade;
-			}
 		}
 
 		.au-link-list > li {
@@ -126,12 +119,8 @@
 			}
 		}
 
-		.active a {
+		.active > span {
 			border-color: $AU-colordark-background-alt;
-
-			&:hover {
-				border-color: $AU-colordark-background-alt-shade;
-			}
 		}
 	}
 
@@ -143,12 +132,13 @@
 		}
 
 		a,
+		.active > span,
 		.au-main-nav__toggle {
 			@include AU-fontgrid( sm );
 			@include AU-space( padding, 1unit );
 		}
 
-		.active a {
+		.active > span {
 			@include AU-space( border-bottom, 0.5unit solid $AU-color-background );
 			@include AU-space( margin-bottom, -0.5unit );
 			font-weight: normal;

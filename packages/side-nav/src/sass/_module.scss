@@ -18,11 +18,15 @@
 	overflow: hidden;
 	border: 0;
 
-	a {
+	a,
+	.active > span {
 		@include AU-space( padding, 1unit );
 		@include AU-fontgrid( xs );
 		color: $AU-color-foreground-muted;
 		display: block;
+	}
+
+	a {
 		text-decoration: none;
 
 		&:hover {
@@ -105,14 +109,17 @@
 
 	ul {
 		@include AU-side-nav-indent( 3 );
+		@include AU-side-nav-indent( 3, '.active > span' );
 	}
 
-	.active > a {
+
+	.active > span {
 		font-weight: bold;
 		color: $AU-color-foreground-text;
 	}
 
-	ul ul ul a {
+	ul ul ul a,
+	ul ul ul .active > span {
 		&:before {
 			content: " ";
 			@include AU-space( width, 1unit );
@@ -192,11 +199,12 @@
 	}
 
 	.au-side-nav__content {
-		.active a {
+		.active > span {
 			color: $AU-colordark-foreground-text;
 		}
 
-		ul ul ul a:before {
+		ul ul ul a:before,
+		ul ul ul .active > span:before {
 			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
 				'<path fill="#{ $AU-colordark-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
 			'</svg>');

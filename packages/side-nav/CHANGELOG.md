@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.0.0 - Active items are no longer wrapped in `<a>` for accessibility](#v400)
 * [v3.0.0 - Updated accordion, see accordion v6.0.0](#v300)
 * [v2.0.6 - Added an aria-label attribute to the aside element](#v206)
 * [v2.0.5 - Fix active state children getting active style](#v205)
@@ -32,6 +33,12 @@
 
 
 ## Release History
+
+### v4.0.0
+
+- Active items are no longer wrapped in `<a>` for accessibility
+- Active items are now wrapped in a `<span>`, this allows for the child links to retain full width interaction
+
 
 ### v3.0.0
 

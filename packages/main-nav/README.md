@@ -235,6 +235,7 @@ The visual test: https://uikit.service.gov.au/packages/main-nav/tests/site/
 
 ## Release History
 
+* v0.2.0 - Active items are no longer wrapped in `<a>` for accessibility
 * v0.1.4 - Fix passing props to main nav react component
 * v0.1.3 - Added an aria-label attribute to the nav element
 * v0.1.2 - Add missing aria-controls for overlay react
