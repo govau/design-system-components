@@ -416,29 +416,36 @@ $dependencies: (
 
 	// Ratio didn't pass so we need to find the nearest color
 	$a11yLightness: lightness( $toMakeA11y );
-	$bgLightness: lightness( $background );
-	$minHexDiff: 0.39215686274;
+	$minHexDiff: 100 / 255; // 255 Colors / 100% HSL
+
+	$isBlackBgContrast: AU-color-contrast( #000, $background, true, false ) >= $ratio;
+	$isWhiteBgContrast: AU-color-contrast( #fff, $background, true, false ) >= $ratio;
 	$minLightness: 0;
 	$maxLightness: 100;
+	$isDarkColor: false;
 
-	// If our colour passes contrast on black
-	@if AU-color-contrast( hsl(
-		hue( $toMakeA11y ),
-		saturation( $toMakeA11y ),
-		$bgLightness
-	), $background, true, false ) >= $ratio {
-		$minLightness: $a11yLightness;
-		$maxLightness: $bgLightness;
+	// If our colour passes contrast on black and white
+	@if $isBlackBgContrast and $isWhiteBgContrast {
+		// Change the min lightness if the color is light
+		@if( $a11yLightness >= 50 ) {
+			$minLightness: $a11yLightness;
+		}
+		// Change the max lightness if the color is dark
+		@else {
+			$maxLightness: $a11yLightness;
+			$isDarkColor: true;
+		}
 	}
-	@else if AU-color-contrast( #000, $background, true, false ) >= $ratio {
-		$maxLightness: if( $a11yLightness > $bgLightness, $bgLightness, $a11yLightness );
+	@else if $isBlackBgContrast {
+		$maxLightness: $a11yLightness;
+		$isDarkColor: true;
 	}
 	// It didn't pass on black
 	@else {
-		$minLightness: if( $a11yLightness > $bgLightness, $a11yLightness, $bgLightness );
+		$minLightness: $a11yLightness;
 	}
 
-	$direction: $minLightness != 0;
+	// The color to return
 	$foundColor: '';
 
 	// Binary search until we find the colour that meets contrast
@@ -451,7 +458,6 @@ $dependencies: (
 		);
 		$resetColor: mix( $midColor, $midColor );
 
-
 		// If we meet contrast
 		@if AU-color-contrast( $resetColor, $background, true, false ) >= $ratio {
 			// The colour is in the minimal lightness range for one hexadecimal
@@ -459,19 +465,19 @@ $dependencies: (
 				$foundColor: $resetColor;
 			}
 
-			@if $direction {
-				$maxLightness: $midLightness;
+			@if $isDarkColor {
+				$minLightness: $midLightness;
 			}
 			@else {
-				$minLightness: $midLightness;
+				$maxLightness: $midLightness;
 			}
 		}
 		// We don't meet contrast
-		@else if( $direction ) {
-			$minLightness: $midLightness;
+		@else if $isDarkColor {
+			$maxLightness: $midLightness;
 		}
 		@else {
-			$maxLightness: $midLightness;
+			$minLightness: $midLightness;
 		}
 	}
 
