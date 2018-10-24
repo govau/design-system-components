@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.1.1 - Fix issue with A11yColor when white and black both pass](#v311)
 * [v3.1.0 - Update font stack to accomodate linux users](#v310)
 * [v3.0.3 - Update dependencies](#v303)
 * [v3.0.2 - Removing web pack dev server, updating dependencies](#v302)
@@ -36,6 +37,11 @@
 
 
 ## Release History
+
+### v3.1.1
+
+- Fix issue with A11yColor when white and black both pass
+
 
 ### v3.1.0
 
