@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.2.0 - Remove suggestions from color scheme, make generated pallette easier to use](#v320)
 * [v3.1.0 - Update font stack to accomodate linux users](#v310)
 * [v3.0.3 - Update dependencies](#v303)
 * [v3.0.2 - Removing web pack dev server, updating dependencies](#v302)
@@ -36,6 +37,12 @@
 
 
 ## Release History
+
+### v3.2.0
+
+- Remove suggestions from color scheme
+- Make generated pallette easier to use
+
 
 ### v3.1.0
 
