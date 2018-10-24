@@ -34,8 +34,8 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 	const GenerateMenu = ( items ) => {
 		const menu = items.map( item => {
 			const link = {
-				link: item.link,
-				text: item.text,
+				link: item.active ? '' : item.link,
+				text: item.active ? <span>{ item.text }</span> : item.text,
 				li: {
 					className: item.active ? 'active' : '',
 				},
