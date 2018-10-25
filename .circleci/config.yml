@@ -53,7 +53,7 @@ jobs:
             mv index.html site/
             mv .deploy/manifest-staging.yml site/
             cd site/
-            cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
+            cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
             cf zero-downtime-push uikit -f manifest-staging.yml
 
 
@@ -75,7 +75,7 @@ jobs:
             mv index.html site/
             mv .deploy/manifest-testing.yml site/
             cd site/
-            cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
+            cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
             cf zero-downtime-push uikit -f manifest-testing.yml
 
 
@@ -96,8 +96,8 @@ jobs:
             mv index.html site/
             mv .deploy/manifest-production.yml site/
             cd site/
-            cf login -a api.system.b.cld.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
-            cf zero-downtime-push uikit -f .deploy/manifest-production.yml
+            cf login -a $CF_API_PROD -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
+            cf zero-downtime-push uikit -f manifest-production.yml
 
 
 # OUR WORKFLOW
