@@ -4,6 +4,6 @@ applications:
   buildpack: nginx_buildpack
   memory: 64M
   instances: 2
-  path: site/
+  path: ./
 routes:
 - route: uikit.service.gov.au
