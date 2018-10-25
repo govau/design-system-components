@@ -7,7 +7,8 @@ jobs:
   # installing dependencies, building assets and deploying to staging
   build-and-test-uikit:
     docker:
-      - image: circleci/node:8.11.4                       # NodeLTS as of 09/2018
+      - image: circleci/node:8.12.0                       # NodeLTS as of 10/2018
+    working_directory: ~/uikit
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
       - run:
@@ -27,7 +28,7 @@ jobs:
           name: Run all tests
           command: npm test
       - persist_to_workspace:
-          root: ~/project                                 # /home/circleci/project
+          root: ~/uikit
           paths:
             - packages/*/tests/
             - .deploy/
@@ -39,7 +40,7 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/project                                   # /home/root/project
+          at: ~/uikit
       - run:
           name: Deploying to y.cld.gov.au
           command: |
@@ -54,7 +55,7 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/project                                   # /home/root/project
+          at: ~/uikit
       - run:
           name: Deploying to y.cld.gov.au
           command: |
@@ -69,7 +70,7 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/project # /home/root/project
+          at: ~/uikit
       - run:
           name: Deploying to b.cld.gov.au
           command: |
