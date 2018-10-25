@@ -44,6 +44,7 @@ jobs:
       - run:
           name: Deploying to y.cld.gov.au
           command: |
+            cd ~/uikit
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
             pwd
             cd uikit
@@ -61,6 +62,7 @@ jobs:
       - run:
           name: Deploying to y.cld.gov.au
           command: |
+            cd ~/uikit
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
             cp -r .deploy/nginx .deploy
             mv .deploy/testing-nginx.conf .deploy/nginx.conf
@@ -76,6 +78,7 @@ jobs:
       - run:
           name: Deploying to b.cld.gov.au
           command: |
+            cd ~/uikit
             cf login -a api.system.b.cld.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
             cp -r .deploy/nginx .deploy
             mv .deploy/prod-nginx.conf .deploy/nginx.conf
