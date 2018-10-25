@@ -46,8 +46,6 @@ jobs:
           command: |
             cd ~/uikit
             cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            pwd
-            cd uikit
             cp -r .deploy/nginx .deploy
             mv .deploy/staging-nginx.conf .deploy/nginx.conf
             cf zero-downtime-push uikit -f .deploy/manifest-staging.yml
