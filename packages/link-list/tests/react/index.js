@@ -12,7 +12,7 @@ ReactDOM.render(
 			<AUlinkList items={[
 				{
 					link: '#options',
-					text: <span>text <strong>with HTML</strong></span>
+					text: <span>text <strong>with HTML</strong></span>,
 				},
 				{
 					link: '#help',
