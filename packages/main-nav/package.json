@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/main-nav",
-	"version": "0.2.0",
+	"version": "1.0.0",
 	"description": "Horizontal list of links to key areas on the website. Usually located in the header.",
 	"keywords": [
 		"uikit",
