@@ -252,7 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
-* v6.0.1 - Added opening and closing states react state controlled accordion
+* v6.0.1 - Added onOpen and onClose props to react state controlled accordion
 * v6.0.0 - Add accordion group in a unordered list, remove `role="rab"`
 * v5.0.2 - Update dependencies
 * v5.0.1 - Removing web pack dev server, updating dependencies
