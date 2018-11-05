@@ -27,7 +27,7 @@ class AccordionWrapper extends React.Component {
 					Some content of the accordion <a href="#url">here</a>
 				</AUaccordion>
 
-				<button type="button" onClick={ () => { this.changeAccordion() } }>Toggle accordion via state</button>
+				<button type="button" onClick={ () => { this.changeAccordion() }}>Toggle accordion via state</button>
 			</Fragment>
 		);
 	}
