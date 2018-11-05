@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v6.0.1 - Added onOpen and onClose props to react state controlled accordion](#v601)
+* [v7.0.0 - Added onOpen and onClose props to react state controlled accordion, fixed accordion closed prop not getting updated](#v601)
 * [v6.0.0 Add accordion group in a unordered list, remove `role="rab"`](#v600)
 * [v5.0.2 - Update dependencies](#v502)
 * [v5.0.1 - Removing web pack dev server, updating dependencies](#v501)
@@ -43,14 +43,15 @@
 
 ## Release History
 
-### v6.0.1
+### v7.0.0
 
 - Added onOpen and onClose props to react state controlled accordion
+- Fixed accordion closed prop not getting updated when accordion is toggled
 
 
 ### v6.0.0
 
-- Add accordion group in a unordered list, remove `role="rab"`
+- Add accordion group in a unordered list, remove `role="tab"`
 
 
 ### v5.0.2
