@@ -299,7 +299,6 @@ var AU = AU || {};
 					endSize: 0,
 					speed: speed || 250,
 					callback: function() {
-						target.style.display = 'none';
 						toggleClasses( target, 'close' );
 					},
 				});

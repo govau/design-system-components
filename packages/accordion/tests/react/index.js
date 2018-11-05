@@ -16,7 +16,7 @@ class AccordionWrapper extends React.Component {
 	}
 
 	// let’s change the state in the absence of more complex application code
-	changeAccordion( item ) {
+	changeAccordion() {
 		this.setState({ closed: !this.state.closed });
 	}
 

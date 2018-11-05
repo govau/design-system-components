@@ -143,6 +143,7 @@ The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
 
 ## Release History
 
+* v4.0.1 - Update accordion version
 * v4.0.0 - Active items are no longer wrapped in `<a>` for accessibility
 * v3.0.0 - Updated accordion, see accordion v6.0.0
 * v2.0.6 - Added an aria-label attribute to the aside element
