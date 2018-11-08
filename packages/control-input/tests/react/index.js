@@ -137,10 +137,68 @@ class App extends React.Component {
 								onChange: () => { console.log('This function will run when the second radio button is changed') },
 							},
 						]} />
+
+						<hr/>
+						<h2>control-inputs with callback for any toggle</h2>
+							<AUcheckboxList toggleCheckBox={this.toggleCheckBox} name="checkbox-ex-rc" items={[
+								{
+									label: 'Phone',
+									value: 'phone',
+									id: 'phoneCheckbox',
+								},
+								{
+									label: 'Tablet',
+									value: 'tablet',
+									checked: true,
+								},
+								{
+									label: 'Laptop',
+									value: 'laptop',
+								},
+								{
+									label: 'Mobile',
+									value: 'mobile',
+									className: 'testing',
+								},
+								{
+									label: 'Fax',
+									value: 'fax',
+									disabled: true,
+									checked: true,
+								},
+							]} />
+							<hr/>
+							<AUradioList toggleRadioBox={this.toggleRadioBox} name="radio-ex-rc" items={[
+								{
+									label: 'Phone',
+									value: 'phone',
+									id: 'phoneRadio',
+								},
+								{
+									label: 'Tablet',
+									value: 'tablet',
+									checked: true,
+								},
+								{
+									label: 'Laptop',
+									value: 'laptop',
+								},
+								{
+									label: 'Mobile',
+									value: 'mobile',
+									className: 'testing',
+								},
+								{
+									label: 'Fax',
+									value: 'fax',
+									disabled: true,
+									checked: true,
+								},
+							]} />
 					</div>
 					<div className="split split--dark">
 						<h2>checkboxes <code>--dark</code></h2>
-						<AUcheckboxList dark name="checkbox-ex-dark" items={[
+						<AUradioList dark name="checkbox-ex-dark" items={[
 							{
 								label: 'Phone',
 								value: 'phone',
@@ -375,9 +433,6 @@ class App extends React.Component {
 						<h2>invalid radio buttons with and without classes <code>--alt --dark</code></h2>
 						<AUradio alt dark label="I agree" status="invalid" checked />
 						<AUradio alt dark label="I agree" required />
-					</div>
-					<div className="split split--alt split--dark">
-							<h2>Checkbox - React State</h2>
 					</div>
 				</div>
 			</div>
