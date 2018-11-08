@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.2.0 - Add checkbox list and radiobox list components](#v220)
 * [v2.1.6 - Update dependencies](#v216)
 * [v2.1.5 - Removing web pack dev server, updating dependencies](#v215)
 * [v2.1.4 - Fixed build scripts for Windows](#v214)
@@ -37,6 +38,11 @@
 
 
 ## Release History
+
+### v2.2.0
+
+- Add checkbox list and radiobox list components
+
 
 ### v2.1.6
 

@@ -99,7 +99,7 @@ AUradio.propTypes = {
 };
 
 
-export class AURadioList extends React.Component {
+export class AUradioList extends React.Component {
 	// for an example on what a state change might look like we have to add a state
 	constructor( props ) {
 		super( props );
@@ -113,7 +113,7 @@ export class AURadioList extends React.Component {
 	}
 
 	toggleRadioBox( item ) {
-		this.setState({ radio: item.Value });
+		this.setState({ radio: item.value });
 		if ( typeof this.props.toggleRadioBox === 'function' ) {
 			this.props.toggleRadioBox( item.value );
 		}
@@ -154,17 +154,19 @@ export class AURadioList extends React.Component {
 	};
 }
 
-AURadioList.propTypes = {
+AUradioList.propTypes = {
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			label: PropTypes.string.isRequired,
 			value: PropTypes.string.isRequired,
+			id: PropTypes.string,
 			className: PropTypes.string,
 			checked: PropTypes.bool,
 			disabled: PropTypes.bool,
-			status: PropTypes.string,
+			status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 			onChange: PropTypes.func
-		}).isRequired),
+		})).isRequired,
+		name: PropTypes.string.isRequired,
 		dark: PropTypes.bool,
 		alt: PropTypes.bool,
 }
@@ -235,7 +237,8 @@ AUcheckboxList.propTypes = {
 			disabled: PropTypes.bool,
 			status: PropTypes.string,
 			onChange: PropTypes.func
-		}).isRequired),
+		})).isRequired,
+		name: PropTypes.string.isRequired,
 		dark: PropTypes.bool,
 		alt: PropTypes.bool,
 }
