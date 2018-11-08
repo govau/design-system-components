@@ -104,17 +104,24 @@ export class AURadioList extends React.Component {
 	constructor( props ) {
 		super( props );
 
-		// set the default select state
 		let radioState = '';
 		this.props.items.map( item => item.checked ? radioState = item.value : '' );
+
 		this.state = {
 			radio: radioState,
 		};
 	}
 
-	toggleRadioBox(radio) {
-		// this.props.toggleRadioBox(radio);
-		console.log(radio);
+	toggleRadioBox( item ) {
+		this.setState({ radio: item.Value });
+		if ( typeof this.props.toggleRadioBox === 'function' ) {
+			this.props.toggleRadioBox( item.value );
+		}
+
+		if ( typeof item.onChange === 'function' ) {
+			item.onChange();
+		}
+
 	}
 
 	render() {
@@ -127,6 +134,7 @@ export class AURadioList extends React.Component {
 						alt={ this.props.alt }
 						label={ item.label }
 						name={ this.props.name }
+						className={ item.className }
 						id={ item.id }
 						block = { this.props.block }
 						full={ this.props.full }
@@ -134,8 +142,9 @@ export class AURadioList extends React.Component {
 						required={ this.required }
 						disabled={ item.disabled }
 						checked={ this.state.radio === item.value }
+						status = { item.status }
 						onChange={ () => {
-							this.toggleRadioBox(item.value);
+							this.toggleRadioBox( item );
 						} }
 						className={ item.className }
 					/>
@@ -146,7 +155,18 @@ export class AURadioList extends React.Component {
 }
 
 AURadioList.propTypes = {
-
+	items: PropTypes.arrayOf(
+		PropTypes.shape({
+			label: PropTypes.string.isRequired,
+			value: PropTypes.string.isRequired,
+			className: PropTypes.string,
+			checked: PropTypes.bool,
+			disabled: PropTypes.bool,
+			status: PropTypes.string,
+			onChange: PropTypes.func
+		}).isRequired),
+		dark: PropTypes.bool,
+		alt: PropTypes.bool,
 }
 
 
@@ -164,9 +184,17 @@ export class AUcheckboxList extends React.Component {
 		this.state = checkboxState;
 	}
 
-	// toggleCheckBox = (checkboxValue) => {
-	// 	this.props.updateCheckbox(checkboxValue);
-	// }
+	toggleCheckBox( item ) {
+		this.setState({ [item.value]: !this.state[ item.value ] });
+		if ( typeof this.props.toggleCheckBox === 'function' ) {
+			this.props.toggleCheckBox( item.value );
+		}
+
+		if ( typeof item.onChange === 'function' ) {
+			item.onChange();
+		}
+
+	}
 
 	render() {
 		return (
@@ -178,19 +206,36 @@ export class AUcheckboxList extends React.Component {
 						alt={ this.props.alt }
 						label={ item.label }
 						name={ this.props.name }
+						className={ item.className }
 						id={ item.id }
+						block = { this.props.block }
 						full={ this.props.full }
 						value={ item.value }
 						required={ this.required }
 						disabled={ item.disabled }
 						checked={ this.state[ item.value ] }
-						// onChange={ () => {
-						// 	this.toggleCheckBox(item.value);
-						// } }
+						status = { item.status }
+						onChange={ () => {
+							this.toggleCheckBox(item);
+						} }
 						className={ item.className }
 					/>
 				) }
 			</div>
 		);
 	};
+}
+AUcheckboxList.propTypes = {
+	items: PropTypes.arrayOf(
+		PropTypes.shape({
+			label: PropTypes.string.isRequired,
+			value: PropTypes.string.isRequired,
+			className: PropTypes.string,
+			checked: PropTypes.bool,
+			disabled: PropTypes.bool,
+			status: PropTypes.string,
+			onChange: PropTypes.func
+		}).isRequired),
+		dark: PropTypes.bool,
+		alt: PropTypes.bool,
 }

@@ -6,12 +6,17 @@ import { AUcheckbox, AUradio, AURadioList, AUcheckboxList } from './control-inpu
 
 // to test a nice list of radio button
 
+class App extends React.Component {
 
-ReactDOM.render(
-	<div>
-		<div className="split-wrapper">
+	toggleCheckBox(a) {
+		console.log( a );
+	}
+
+	render() {
+		return (
+			<div className="split-wrapper">
 			<div className="split">
-			<AURadioList block name="radio-ex" items={[
+			<AUcheckboxList toggleCheckBox={this.toggleCheckBox} block name="radio-ex" items={[
 					{
 						label: 'Yes',
 						value: 'yes',
@@ -25,6 +30,7 @@ ReactDOM.render(
 						label: 'No',
 						value: 'no',
 						className: 'testing',
+						status: 'invalid'
 					},
 					{
 						label: 'What',
@@ -35,7 +41,11 @@ ReactDOM.render(
 				]} />
 				</div>
 		</div>
-	</div>,
+		)
+	}
+}
 
+
+ReactDOM.render( <App />,
 	document.getElementById('root'),
 );
