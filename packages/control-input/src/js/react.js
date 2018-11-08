@@ -97,3 +97,100 @@ AUradio.propTypes = {
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
 };
+
+
+export class AURadioList extends React.Component {
+	// for an example on what a state change might look like we have to add a state
+	constructor( props ) {
+		super( props );
+
+		// set the default select state
+		let radioState = '';
+		this.props.items.map( item => item.checked ? radioState = item.value : '' );
+		this.state = {
+			radio: radioState,
+		};
+	}
+
+	toggleRadioBox(radio) {
+		// this.props.toggleRadioBox(radio);
+		console.log(radio);
+	}
+
+	render() {
+		return (
+			<div>
+				{ this.props.items.map( ( item, i ) =>
+					<AUradio
+						key={ i }
+						dark={ this.props.dark }
+						alt={ this.props.alt }
+						label={ item.label }
+						name={ this.props.name }
+						id={ item.id }
+						block = { this.props.block }
+						full={ this.props.full }
+						value={ item.value }
+						required={ this.required }
+						disabled={ item.disabled }
+						checked={ this.state.radio === item.value }
+						onChange={ () => {
+							this.toggleRadioBox(item.value);
+						} }
+						className={ item.className }
+					/>
+				) }
+			</div>
+		);
+	};
+}
+
+AURadioList.propTypes = {
+
+}
+
+
+
+// to test a nice list of checkboxs
+export class AUcheckboxList extends React.Component {
+	// for an example on what a state change might look like we have to add a state
+	constructor( props ) {
+		super( props );
+
+		// set the default select state
+		let checkboxState = {};
+		this.props.items.map( item => checkboxState[ item.value ] = item.checked ? true : false );
+
+		this.state = checkboxState;
+	}
+
+	// toggleCheckBox = (checkboxValue) => {
+	// 	this.props.updateCheckbox(checkboxValue);
+	// }
+
+	render() {
+		return (
+			<div>
+				{ this.props.items.map( ( item, i ) =>
+					<AUcheckbox
+						key={ i }
+						dark={ this.props.dark }
+						alt={ this.props.alt }
+						label={ item.label }
+						name={ this.props.name }
+						id={ item.id }
+						full={ this.props.full }
+						value={ item.value }
+						required={ this.required }
+						disabled={ item.disabled }
+						checked={ this.state[ item.value ] }
+						// onChange={ () => {
+						// 	this.toggleCheckBox(item.value);
+						// } }
+						className={ item.className }
+					/>
+				) }
+			</div>
+		);
+	};
+}
