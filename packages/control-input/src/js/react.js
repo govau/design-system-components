@@ -99,6 +99,10 @@ AUradio.propTypes = {
 };
 
 
+/**
+ * The radio component
+ *
+ */
 export class AUradioList extends React.Component {
 	// for an example on what a state change might look like we have to add a state
 	constructor( props ) {
@@ -114,10 +118,13 @@ export class AUradioList extends React.Component {
 
 	toggleRadioBox( item ) {
 		this.setState({ radio: item.value });
+
+		// called when any radio box in the group is changed
 		if ( typeof this.props.toggleRadioBox === 'function' ) {
 			this.props.toggleRadioBox( item.value );
 		}
 
+		// when an individual radio box has an on change function
 		if ( typeof item.onChange === 'function' ) {
 			item.onChange();
 		}
@@ -173,7 +180,10 @@ AUradioList.propTypes = {
 
 
 
-// to test a nice list of checkboxs
+/**
+ * The radio component
+ *
+ */
 export class AUcheckboxList extends React.Component {
 	// for an example on what a state change might look like we have to add a state
 	constructor( props ) {
@@ -188,10 +198,13 @@ export class AUcheckboxList extends React.Component {
 
 	toggleCheckBox( item ) {
 		this.setState({ [item.value]: !this.state[ item.value ] });
+
+		// called when any checkbox in the group is changed
 		if ( typeof this.props.toggleCheckBox === 'function' ) {
 			this.props.toggleCheckBox( item.value );
 		}
 
+		// when an individual checkbox has an on change function
 		if ( typeof item.onChange === 'function' ) {
 			item.onChange();
 		}
