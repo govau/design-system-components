@@ -1,0 +1,69 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// [-replace-name-] module
+// [-replace-description-]
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+.au-table {
+    @include AU-fontgrid( md );
+    font-family: $AU-font;
+    border-collapse: unset;
+
+    th {
+        @include AU-space( padding, 1unit );
+        @include AU-space( border-bottom, 0.25unit solid $AU-color-foreground-border );
+    }
+
+    td {
+        @include AU-space( padding, 1unit );
+    }
+
+    caption {
+        text-align: left;
+        font-weight: bold;
+    }
+
+    tfoot{
+        font-weight: bold;
+    }
+
+    tr {
+        margin: 0;
+    }
+
+    tr:nth-child(2) {
+        background-color: $AU-color-background-shade;
+    }
+
+    &.au-table--alt {
+        background-color: $AU-color-background-alt;
+        
+        tr:nth-child(2) {
+            background-color: $AU-color-background-shade;
+        }
+	}
+
+	&.au-table--dark {
+        color: $AU-colordark-foreground-text;
+        background-color:  $AU-colordark-background;
+        
+        caption {
+            color: $AU-colordark-background-alt-shade;
+        }
+
+        th {
+            @include AU-space( border-bottom, 0.25unit solid $AU-colordark-foreground-border );
+        }
+
+        tr:nth-child(2) {
+            background-color: $AU-colordark-background-shade;
+        }
+    }
+}
