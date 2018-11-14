@@ -43,7 +43,9 @@ ReactDOM.render(
 					dark
 					head={[
 						{
-							text: "Heading 1"
+							text: "Heading 1 link",
+							isLink: true,
+							href: "#",
 						},
 						{
 							text: "Heading 2"
@@ -62,6 +64,36 @@ ReactDOM.render(
 						{
 							items: ["item6", "item7", "item8"]
 						},
+					]}
+				/>
+			</div>
+			<div className="col">
+				<h1>Test: table horizontal</h1>
+				<AUTable
+					caption="Caption here"
+					alt
+					firstCellIsHeader={true}
+					head={[
+						{
+							text: "Col Heading"
+						},
+						{
+							text: "Col Group Heading 1"
+						},
+						{
+							text: "Col Group Heading 1"
+						}
+					]}
+					body={[
+						{
+							items: ["Heading 1", "item1", "item2"]
+						},
+						{
+							items: ["Heading 2", "item1", "item2"]
+						},
+						{
+							items: ["Heading 3", "item1", "item2"]
+						}
 					]}
 				/>
 			</div>

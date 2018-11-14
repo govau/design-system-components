@@ -31,28 +31,29 @@ const AUTable = ({ dark, alt, caption, head, body, foot }) => {
 			<caption className="au-table__caption">{caption}</caption>
 			<thead className="au-table__head">
 				<tr className="au-table__row">
-					{head.map((item, i) => {
-						if (item.href && item.isLink == true) {
-							return (
-								<th key={i} className="au-table__header" scope="col">
-									<a
-										rel="noopener noreferrer"
-										target="_blank"
-										title={`Go to ${item.text}`}
-										href={item.href}
-									>
+					{
+						head.map((item, i) => {
+							if (item.href && item.isLink == true) {
+								return (
+									<th key={i} className="au-table__header" scope="row">
+										<a
+											rel="noopener noreferrer"
+											target="_blank"
+											title={`Go to ${item.text}`}
+											href={item.href}
+										>
+											{item.text}
+										</a>
+									</th>
+								);
+							} else {
+								return (
+									<th key={i} className="au-table__header" scope="row">
 										{item.text}
-									</a>
-								</th>
-							);
-						} else {
-							return (
-								<th key={i} className="au-table__header" scope="col">
-									{item.text}
-								</th>
-							);
+									</th>
+								);
+							}})
 						}
-					})}
 				</tr>
 			</thead>
 			<tbody className="au-table__body">
@@ -79,8 +80,8 @@ const AUTable = ({ dark, alt, caption, head, body, foot }) => {
 					))}
 				</tfoot>
 			) : (
-				undefined
-			)}
+					undefined
+				)}
 		</table>
 	);
 };
@@ -106,9 +107,12 @@ AUTable.propTypes = {
 		PropTypes.shape({
 			items: PropTypes.arrayOf(PropTypes.string)
 		})
-	)
+	),
+	firstColIsHeader: PropTypes.bool
 };
 
-AUTable.defaultProps = {};
+AUTable.defaultProps = {
+	firstColIsHeader: false
+};
 
 export default AUTable;

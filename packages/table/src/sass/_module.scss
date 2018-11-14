@@ -16,6 +16,14 @@
     font-family: $AU-font;
     border-collapse: unset;
 
+    a {
+        color: $AU-color-foreground-action;
+        &:hover {
+            text-decoration: none;
+            color: #414141;
+        }
+    }
+
     th {
         @include AU-space( padding, 1unit );
         @include AU-space( border-bottom, 0.25unit solid $AU-color-foreground-border );
@@ -64,6 +72,14 @@
 
         tr:nth-child(2) {
             background-color: $AU-colordark-background-shade;
+        }
+
+        a {
+            color: $AU-colordark-foreground-action;
+            &:hover {
+                text-decoration: none;
+                color: $AU-colordark-foreground-focus;
+            }
         }
     }
 }
