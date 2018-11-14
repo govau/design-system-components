@@ -507,6 +507,20 @@ All components have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/table</summary>
+	<br><code>npm install @gov.au/table</code><br>
+	<br>See the <a href="https://uikit.service.gov.au/packages/table/tests/site/">visual test file for table</a>
+	<br>See the <a href="https://github.com/govau/uikit/blob/master/packages/table/README.md">readme file for table</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+└─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/tags</summary>
 	<br><code>npm install @gov.au/tags</code><br>
 	<br>See the <a href="https://uikit.service.gov.au/packages/tags/tests/site/">visual test file for tags</a>
