@@ -33,12 +33,17 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 	// Generate the menu
 	const GenerateMenu = ( items ) => {
 		const menu = items.map( item => {
-			const link = {
-				link: item.active ? '' : item.link,
-				text: item.active ? <span>{ item.text }</span> : item.text,
+			const link =  item.active ? {
+				link: item.link,
+				text: item.text,
+				'aria-current': 'page',
 				li: {
-					className: item.active ? 'active' : '',
+					className: 'active',
 				},
+			} :
+			{
+				link: item.link,
+				text: item.text,
 			};
 
 			// return the link, maybe with children
