@@ -7,7 +7,8 @@ jobs:
   # installing dependencies, building assets and deploying to staging
   build-and-test-uikit:
     docker:
-      - image: circleci/node:8.11.4                       # NodeLTS as of 09/2018
+      - image: circleci/node:8.12.0                       # NodeLTS as of 10/2018
+    working_directory: ~/uikit
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
       - run:
@@ -27,7 +28,7 @@ jobs:
           name: Run all tests
           command: npm test
       - persist_to_workspace:
-          root: ~/project                                 # /home/circleci/project
+          root: ~/uikit
           paths:
             - packages/*/tests/
             - .deploy/
@@ -39,13 +40,21 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/project                                   # /home/root/project
-      - run: echo 'uikit:$apr1$1L7jRN5s$rZ1johNREOkXwc7pGWxZK1' > Staticfile.auth         # the password and username is not a secret. It is just to prevent spiders from indexing
+          at: ~/uikit
       - run:
           name: Deploying to y.cld.gov.au
           command: |
-            cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push uikit -f .deploy/manifest-staging.yml
+            cd ~/uikit
+            mkdir -p site/
+            cp .deploy/nginx/mime.types site/
+            cp .deploy/nginx/.htpasswd site/
+            mv .deploy/nginx/nginx-staging.conf site/nginx.conf
+            mv packages/ site/
+            mv index.html site/
+            mv .deploy/manifest-staging.yml site/
+            cd site/
+            cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
+            cf zero-downtime-push uikit -f manifest-staging.yml
 
 
   deploy-testing:
@@ -53,13 +62,21 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/project                                   # /home/root/project
-      - run: echo 'uikit:$apr1$1L7jRN5s$rZ1johNREOkXwc7pGWxZK1' > Staticfile.auth         # the password and username is not a secret. It is just to prevent spiders from indexing
+          at: ~/uikit
       - run:
           name: Deploying to y.cld.gov.au
           command: |
-            cf login -a api.system.y.cld.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push uikit-$CIRCLE_BRANCH -f .deploy/manifest-testing.yml
+            cd ~/uikit
+            mkdir -p site/
+            cp .deploy/nginx/mime.types site/
+            cp .deploy/nginx/.htpasswd site/
+            mv .deploy/nginx/nginx-testing.conf site/nginx.conf
+            mv packages/ site/
+            mv index.html site/
+            mv .deploy/manifest-testing.yml site/
+            cd site/
+            cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
+            cf zero-downtime-push uikit -f manifest-testing.yml
 
 
   deploy-prod:
@@ -67,12 +84,20 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/project # /home/root/project
+          at: ~/uikit
       - run:
           name: Deploying to b.cld.gov.au
           command: |
-            cf login -a api.system.b.cld.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
-            cf zero-downtime-push uikit -f .deploy/manifest-production.yml
+            cd ~/uikit
+            mkdir -p site/
+            cp .deploy/nginx/mime.types site/
+            mv .deploy/nginx/nginx-production.conf site/nginx.conf
+            mv packages/ site/
+            mv index.html site/
+            mv .deploy/manifest-production.yml site/
+            cd site/
+            cf login -a $CF_API_PROD -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
+            cf zero-downtime-push uikit -f manifest-production.yml
 
 
 # OUR WORKFLOW

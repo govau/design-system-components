@@ -235,6 +235,7 @@ The visual test: https://uikit.service.gov.au/packages/main-nav/tests/site/
 
 ## Release History
 
+* v1.0.0 - Wrap active item in main-nav in an `<a>` and add `aria-current="page"`
 * v0.2.0 - Active items are no longer wrapped in `<a>` for accessibility
 * v0.1.4 - Fix passing props to main nav react component
 * v0.1.3 - Added an aria-label attribute to the nav element
