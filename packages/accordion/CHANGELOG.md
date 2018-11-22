@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v7.0.0 - Added onOpen and onClose props to react state controlled accordion, fixed accordion closed prop not getting updated, changed accordion title element to use `<button>` instead of `<a>`](#v700)
+* [v7.0.0 - Added onOpen and onClose props to react state controlled accordion, fixed accordion closed prop not getting updated](#v700)
 * [v6.0.0 Add accordion group in a unordered list, remove `role="rab"`](#v600)
 * [v5.0.2 - Update dependencies](#v502)
 * [v5.0.1 - Removing web pack dev server, updating dependencies](#v501)
@@ -47,7 +47,6 @@
 
 - Added onOpen and onClose props to react state controlled accordion
 - Fixed accordion closed prop not getting updated when accordion is toggled
-- Changed accordion title element to use `<button>` instead of `<a>`
 
 
 ### v6.0.0

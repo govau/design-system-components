@@ -41,11 +41,13 @@ $.fn.AUaccordion = function( callbacks ) {
 
 				if( _isOpen ) {
 					$controls
+						.attr( 'aria-controls', $controls.attr( 'href' ).substr( 1 ) )
 						.attr( 'aria-expanded', 'true' )
 						.attr( 'aria-selected', 'true' )
 				}
 				else {
 					$controls
+						.attr( 'aria-controls', $controls.attr( 'href' ).substr( 1 ) )
 						.attr( 'aria-expanded', 'false' )
 						.attr( 'aria-selected', 'false' )
 				}
