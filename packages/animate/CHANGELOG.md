@@ -40,7 +40,7 @@
 
 ### v1.0.10
 
-- Update dependenices
+- Update dependencies
 
 
 ### v1.0.9
