@@ -15,27 +15,33 @@
 
 ## Versions
 
-* [v1.0.9 - Update browser-sync dependency](#v109)
-* [v1.0.8 - Update dependencies](#v108)
-* [v1.0.7 - Fixing bug where openSize of 0 gets turned into auto](#v107)
-* [v1.0.6 - Removing web pack dev server, updating dependencies](#v106)
-* [v1.0.5 - Fixed build scripts for Windows](#v105)
-* [v1.0.4 - Change npm run watch browser-sync location](#v104)
-* [v1.0.3 - Update dependencies](#v103)
-* [v1.0.2 - Fix typo in homepage link](#v102)
-* [v1.0.1 - Changing homepage link](#v101)
-* [v1.0.0 - Moved to AU namespace, fixed export](#v100)
-* [v0.1.5 - Fixed pancake config](#v015)
-* [v0.1.4 - Pinned pancake plugins](#v014)
-* [v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction](#v013)
-* [v0.1.2 - Removed core as dependency](#v012)
-* [v0.1.1 - 💥 Initial version](#v011)
+* [v1.0.10 - Update dependencies](#v1010)
+* [v1.0.9  - Update browser-sync dependency](#v109)
+* [v1.0.8  - Update dependencies](#v108)
+* [v1.0.7  - Fixing bug where openSize of 0 gets turned into auto](#v107)
+* [v1.0.6  - Removing web pack dev server, updating dependencies](#v106)
+* [v1.0.5  - Fixed build scripts for Windows](#v105)
+* [v1.0.4  - Change npm run watch browser-sync location](#v104)
+* [v1.0.3  - Update dependencies](#v103)
+* [v1.0.2  - Fix typo in homepage link](#v102)
+* [v1.0.1  - Changing homepage link](#v101)
+* [v1.0.0  - Moved to AU namespace, fixed export](#v100)
+* [v0.1.5  - Fixed pancake config](#v015)
+* [v0.1.4  - Pinned pancake plugins](#v014)
+* [v0.1.3  - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction](#v013)
+* [v0.1.2  - Removed core as dependency](#v012)
+* [v0.1.1  - 💥 Initial version](#v011)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Release History
+
+### v1.0.10
+
+- Update dependenices
+
 
 ### v1.0.9
 
