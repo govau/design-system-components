@@ -23,11 +23,18 @@ class AccordionWrapper extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<AUaccordion header="State controlled accordion open" state={ this.state }>
+				<AUaccordion
+					header="State controlled accordion open"
+					closed={ this.state.closed }
+					onOpen={ () => { this.changeAccordion( 'closed' ) }}
+					onClose={ () => { this.changeAccordion( 'closed' ) }}
+				>
 					Some content of the accordion <a href="#url">here</a>
 				</AUaccordion>
 
-				<button type="button" onClick={ () => { this.changeAccordion( 'closed' ) } }>Toggle accordion via state</button>
+				<button type="button" onClick={ () => { this.changeAccordion( 'closed' ) }}>
+					Toggle accordion via state
+				</button>
 			</Fragment>
 		);
 	}

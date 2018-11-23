@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.0.1 - Update accordion, add a test with state toggle](#v401)
 * [v4.0.0 - Active items are no longer wrapped in `<a>` for accessibility](#v400)
 * [v3.0.0 - Updated accordion, see accordion v6.0.0](#v300)
 * [v2.0.6 - Added an aria-label attribute to the aside element](#v206)
@@ -33,6 +34,11 @@
 
 
 ## Release History
+
+### v4.0.1
+
+- Update accordion, add a test with state toggle
+
 
 ### v4.0.0
 
