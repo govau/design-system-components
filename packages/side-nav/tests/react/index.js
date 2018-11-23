@@ -92,8 +92,8 @@ class SideNavWrapper extends React.Component {
 	}
 
 	// let’s change the state in the absence of more complex application code
-	changeSideNav( item ) {
-		this.setState({ [ item ]: !this.state[ item ] });
+	changeSideNav() {
+		this.setState({ closed: !this.state.closed });
 	}
 
 	render() {
@@ -114,14 +114,14 @@ class SideNavWrapper extends React.Component {
 							text: 'Change to route two',
 						},
 					]}
-					onOpen={ () => { this.changeSideNav( 'closed' ) }}
-					onClose={ () => { this.changeSideNav( 'closed' ) }}
+					onOpen={ () => { this.changeSideNav() }}
+					onClose={ () => { this.changeSideNav() }}
 				/>
 
 				<button
 					className="au-side-nav-toggle"
 					type="button"
-					onClick={ () => { this.changeSideNav( 'closed' ) }}>
+					onClick={ () => { this.changeSideNav() }}>
 					Toggle side nav via state ( normally hidden on desktop )
 				</button>
 			</Fragment>
