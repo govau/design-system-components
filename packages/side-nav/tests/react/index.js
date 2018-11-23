@@ -5,8 +5,6 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
 import AUsideNav from './side-nav.js';
 
 
-
-
 const menu = [
 	{
 		link: '#',
@@ -81,7 +79,8 @@ const menu = [
 	},
 ];
 
-// To manage an accordion with state just wrap it with a state
+
+// To manage side-nav with state just wrap it with a state
 class SideNavWrapper extends React.Component {
 	// for an example on what a state change might look like we have to add a state
 	constructor() {
@@ -94,14 +93,14 @@ class SideNavWrapper extends React.Component {
 
 	// let’s change the state in the absence of more complex application code
 	changeSideNav( item ) {
-		this.setState({ closed: !this.state.closed });
+		this.setState({ [ item ]: !this.state[ item ] });
 	}
 
 	render() {
 		return (
 			<Fragment>
-			<AUsideNav
-					closed={this.state.closed}
+				<AUsideNav
+					closed={ this.state.closed }
 					accordionHeader="In this section"
 					menuHeaderLink="#"
 					menuHeader="Lodging your tax return"
@@ -115,21 +114,24 @@ class SideNavWrapper extends React.Component {
 							text: 'Change to route two',
 						},
 					]}
-					onOpen={ () => { this.changeSideNav() }}
-					onClose={ () => { this.changeSideNav() }}
+					onOpen={ () => { this.changeSideNav( 'closed' ) }}
+					onClose={ () => { this.changeSideNav( 'closed' ) }}
 				/>
 
-				<button className="au-side-nav-toggle" type="button" onClick={ () => { this.changeSideNav() }}>Toggle side nav via state</button>
+				<button
+					className="au-side-nav-toggle"
+					type="button"
+					onClick={ () => { this.changeSideNav( 'closed' ) }}>
+					Toggle side nav via state ( normally hidden on desktop )
+				</button>
 			</Fragment>
 		);
 	}
 }
 
-class App extends React.Component {
 
-	render() {
-		return (
-			<div>
+ReactDOM.render(
+	<div>
 		<div className="split-wrapper">
 			<div className="split au-body">
 				<AUsideNav
@@ -170,7 +172,6 @@ class App extends React.Component {
 						<AUsideNav
 							dark
 							alt
-							closed={true}
 							linkComponent={ Link }
 							accordionHeader="In this section"
 							menuHeaderLink="#"
@@ -196,18 +197,10 @@ class App extends React.Component {
 		</div>
 		<div className="split-wrapper">
 			<div className="split au-body">
-							<SideNavWrapper />
+				<SideNavWrapper />
 			</div>
 		</div>
-	</div>
-		)
-	}
-
-}
-
-
-ReactDOM.render(
-	<App />,
+	</div>,
 
 	document.getElementById('root'),
 );

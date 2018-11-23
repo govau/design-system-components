@@ -16,18 +16,25 @@ class AccordionWrapper extends React.Component {
 	}
 
 	// let’s change the state in the absence of more complex application code
-	changeAccordion() {
-		this.setState({ closed: !this.state.closed });
+	changeAccordion( item ) {
+		this.setState({ [ item ]: !this.state[ item ] });
 	}
 
 	render() {
 		return (
 			<Fragment>
-				<AUaccordion header="State controlled accordion open" closed={ this.state.closed } onOpen={ () => { this.changeAccordion() }} onClose={ ()=> { this.changeAccordion() }}>
+				<AUaccordion
+					header="State controlled accordion open"
+					closed={ this.state.closed }
+					onOpen={ () => { this.changeAccordion( 'closed' ) }}
+					onClose={ () => { this.changeAccordion( 'closed' ) }}
+				>
 					Some content of the accordion <a href="#url">here</a>
 				</AUaccordion>
 
-				<button type="button" onClick={ () => { this.changeAccordion() }}>Toggle accordion via state</button>
+				<button type="button" onClick={ () => { this.changeAccordion( 'closed' ) }}>
+					Toggle accordion via state
+				</button>
 			</Fragment>
 		);
 	}

@@ -170,13 +170,13 @@ ReactDOM.render(
 
 				<hr />
 				<h2>invalid checkboxes with and without classes</h2>
-				<AUcheckbox label="I agree" status="invalid" checked />
+				<AUcheckbox label="I agree" status="invalid" defaultChecked />
 				<AUcheckbox label="I agree" required />
 
 
 				<hr />
 				<h2>invalid radio buttons with and without classes</h2>
-				<AUradio label="I agree" status="invalid" checked />
+				<AUradio label="I agree" status="invalid" defaultChecked />
 				<AUradio label="I agree" required />
 
 
@@ -281,13 +281,13 @@ ReactDOM.render(
 
 				<hr />
 				<h2>invalid checkboxes with and without classes <code>--dark</code></h2>
-				<AUcheckbox dark label="I agree" status="invalid" checked />
+				<AUcheckbox dark label="I agree" status="invalid" defaultChecked />
 				<AUcheckbox dark label="I agree" required />
 
 
 				<hr />
 				<h2>invalid radio buttons with and without classes <code>--dark</code></h2>
-				<AUradio dark label="I agree" status="invalid" checked />
+				<AUradio dark label="I agree" status="invalid" defaultChecked />
 				<AUradio dark label="I agree" required />
 			</div>
 		</div>
@@ -363,13 +363,13 @@ ReactDOM.render(
 
 				<hr />
 				<h2>invalid checkboxes with and without classes <code>--alt</code></h2>
-				<AUcheckbox alt label="I agree" status="invalid" checked />
+				<AUcheckbox alt label="I agree" status="invalid" defaultChecked />
 				<AUcheckbox alt label="I agree" required />
 
 
 				<hr />
 				<h2>invalid radio buttons with and without classes <code>--alt</code></h2>
-				<AUradio alt label="I agree" status="invalid" checked />
+				<AUradio alt label="I agree" status="invalid" defaultChecked />
 				<AUradio alt label="I agree" required />
 			</div>
 			<div className="split split--alt split--dark">
@@ -441,13 +441,13 @@ ReactDOM.render(
 
 				<hr />
 				<h2>invalid checkboxes with and without classes <code>--alt --dark</code></h2>
-				<AUcheckbox alt dark label="I agree" status="invalid" checked />
+				<AUcheckbox alt dark label="I agree" status="invalid" defaultChecked />
 				<AUcheckbox alt dark label="I agree" required />
 
 
 				<hr />
 				<h2>invalid radio buttons with and without classes <code>--alt --dark</code></h2>
-				<AUradio alt dark label="I agree" status="invalid" checked />
+				<AUradio alt dark label="I agree" status="invalid" defaultChecked />
 				<AUradio alt dark label="I agree" required />
 			</div>
 		</div>

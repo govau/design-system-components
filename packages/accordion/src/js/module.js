@@ -299,6 +299,7 @@ var AU = AU || {};
 					endSize: 0,
 					speed: speed || 250,
 					callback: function() {
+						target.style.display = '';
 						toggleClasses( target, 'close' );
 					},
 				});
