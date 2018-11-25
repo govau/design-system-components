@@ -15,7 +15,8 @@
 
 ## Versions
 
-* [v6.0.0 Add accordion group in a unordered list, remove `role="rab"`](#v600)
+* [v6.0.1 - Fix issues with state not firing](#v601)
+* [v6.0.0 - Add accordion group in a unordered list, remove `role="tab"`](#v600)
 * [v5.0.2 - Update dependencies](#v502)
 * [v5.0.1 - Removing web pack dev server, updating dependencies](#v501)
 * [v5.0.0 - Removing unecessary aria-hidden as css display toggles screen reader ability](#v500)
@@ -42,9 +43,14 @@
 
 ## Release History
 
+### v6.0.1
+
+- Fix issues with state not firing
+
+
 ### v6.0.0
 
-- Add accordion group in a unordered list, remove `role="rab"`
+- Add accordion group in a unordered list, remove `role="tab"`
 
 
 ### v5.0.2

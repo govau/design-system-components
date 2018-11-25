@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/side-nav",
-	"version": "4.0.0",
+	"version": "4.0.1",
 	"description": "A vertical list of links for site navigation typically placed next to the body content.",
 	"keywords": [
 		"uikit",
