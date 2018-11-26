@@ -56,14 +56,11 @@ class AUaccordion extends React.PureComponent {
 	 * Handle state if supplied
 	 */
 	componentDidUpdate( prevProps ) {
-		if( prevProps.state && prevProps.state.closed !== undefined ) {
-
-			if( prevProps.state.closed ) {
-				this.accordionOpen( this.accordionHeader );
-			}
-			else {
-				this.accordionClose( this.accordionHeader );
-			}
+		if( prevProps.closed ) {
+			this.accordionOpen( this.accordionHeader );
+		}
+		else {
+			this.accordionClose( this.accordionHeader );
 		}
 	}
 
@@ -98,7 +95,6 @@ class AUaccordion extends React.PureComponent {
 	 * @param  {string} closingClass  - The secondClass you want to toggle on the DOM node
 	 */
 	toggleClasses( element, state, openingClass, closingClass ) {
-
 		if( state === 'opening' || state === 'open' ) {
 			var oldClass = openingClass || 'au-accordion--closed';
 			var newClass = closingClass || 'au-accordion--open';
@@ -154,7 +150,6 @@ class AUaccordion extends React.PureComponent {
 	 *
 	 */
 	accordionToggle( elements, speed, callbacks ) {
-
 		const SetAriaRoles = this.setAriaRoles;
 		const ToggleClasses = this.toggleClasses;
 
@@ -250,7 +245,6 @@ class AUaccordion extends React.PureComponent {
 	 *
 	 */
 	accordionOpen( elements, speed ) {
-
 		const ToggleClasses = this.toggleClasses;
 
 		// stop event propagation
@@ -342,7 +336,7 @@ class AUaccordion extends React.PureComponent {
 					endSize: 0,
 					speed: speed || 250,
 					callback: function() {
-						target.style.display = 'none';
+						target.style.display = '';
 						target.style.height = '';
 						ToggleClasses( target, 'close' );
 					},

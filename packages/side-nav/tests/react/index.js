@@ -80,6 +80,56 @@ const menu = [
 ];
 
 
+// To manage side-nav with state just wrap it with a state
+class SideNavWrapper extends React.Component {
+	// for an example on what a state change might look like we have to add a state
+	constructor() {
+		super();
+
+		this.state = {
+			closed: false
+		};
+	}
+
+	// let’s change the state in the absence of more complex application code
+	toggleSideNav() {
+		this.setState({ closed: !this.state.closed });
+	}
+
+	render() {
+		return (
+			<Fragment>
+				<AUsideNav
+					closed={ this.state.closed }
+					accordionHeader="In this section"
+					menuHeaderLink="#"
+					menuHeader="Lodging your tax return"
+					items={[
+						{
+							link: 'one',
+							text: 'Change to route one',
+						},
+						{
+							link: 'two',
+							text: 'Change to route two',
+						},
+					]}
+					onOpen={ () => { this.toggleSideNav() }}
+					onClose={ () => { this.toggleSideNav() }}
+				/>
+
+				<button
+					className="au-side-nav-toggle"
+					type="button"
+					onClick={ () => { this.toggleSideNav() }}>
+					Toggle side nav via state ( normally hidden on desktop )
+				</button>
+			</Fragment>
+		);
+	}
+}
+
+
 ReactDOM.render(
 	<div>
 		<div className="split-wrapper">
@@ -143,6 +193,11 @@ ReactDOM.render(
 						</Switch>
 					</Fragment>
 				</BrowserRouter>
+			</div>
+		</div>
+		<div className="split-wrapper">
+			<div className="split au-body">
+				<SideNavWrapper />
 			</div>
 		</div>
 	</div>,
