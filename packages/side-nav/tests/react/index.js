@@ -8,75 +8,55 @@ import AUsideNav from './side-nav.js';
 const menu = [
 	{
 		link: '#',
-		text: 'Change to route one',
+		text: 'Do you need to lodge a tax return?',
 	},
 	{
 		link: '#',
-		text: 'Change to route two',
+		text: 'Lodge online',
 		children: [
 			{
 				link: '#',
-				text: 'Change to route one',
+				text: 'Pre-filling your online tax return',
 			},
 			{
 				link: '#',
-				text: 'Change to route two',
+				text: 'Why you may receive a tax bill'
+			},
+			{
+				link: '#',
+				text: 'What is new for individuals'
+			}
+		]
+	},
+	{
+		link: '#',
+		text: 'In detail',
+		children: [
+			{
+				link: '#',
+				text: 'Record keeping',
 				children: [
 					{
 						link: '#',
-						text: 'Change to route one',
+						text: 'Keeping your tax records',
+						active: true
 					},
 					{
 						link: '#',
-						text: 'Change to route two',
-						active: true,
-						children: [
-							{
-								link: '#',
-								text: 'Change to route one',
-							},
-							{
-								link: '#',
-								text: 'Change to route two',
-								children: [
-									{
-										link: '#',
-										text: 'Change to route one',
-									},
-									{
-										link: '#',
-										text: 'Change to route two',
-									},
-								],
-							},
-						],
-					},
-				],
-			},
-		],
+						text: 'Incorrect amounts',
+					}
+				]
+			}
+		]
 	},
 	{
 		link: '#',
-		text: 'Change to route three',
+		text: 'Tax receipt',
 	},
 	{
 		link: '#',
-		text: 'Change to route four',
-		children: [
-			{
-				link: '#',
-				text: 'Change to route one',
-			},
-			{
-				link: '#',
-				text: 'Change to route two',
-			},
-		],
-	},
-	{
-		link: '#',
-		text: 'Change to route five',
-	},
+		text: 'Pre-fill availability',
+	}
 ];
 
 
@@ -106,12 +86,12 @@ class SideNavWrapper extends React.Component {
 					menuHeader="Lodging your tax return"
 					items={[
 						{
-							link: 'one',
-							text: 'Change to route one',
+							link: '#',
+							text: 'Do you need to lodge a tax return?',
 						},
 						{
-							link: 'two',
-							text: 'Change to route two',
+							link: '#',
+							text: 'Tax receipts',
 						},
 					]}
 					onOpen={ () => { this.toggleSideNav() }}
@@ -175,7 +155,7 @@ ReactDOM.render(
 							linkComponent={ Link }
 							accordionHeader="In this section"
 							menuHeaderLink="#"
-							menuHeader="Lodging your tax return"
+							menuHeader="React Router example"
 							items={[
 								{
 									link: 'one',
