@@ -153,6 +153,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
+* v1.0.11 - Update dependencies
 * v1.0.10 - Update dependencies
 * v1.0.9  - Update browser-sync dependency
 * v1.0.8  - Update dependencies
