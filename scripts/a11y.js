@@ -53,34 +53,50 @@ const DisplayResults = results => {
 // RUN TESTS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const RunPa11y = async ( urls ) => {
-	// Start the browser
-	const browser = await Puppeteer.launch();
+	try {
+		// Start the browser
+		console.log( 'start browser' );
+		const browser = await Puppeteer.launch();
 
-	// For each url create a new page and run the Pa11y Test
-	const tests = urls.map( async ( url ) => {
-		const page = await browser.newPage();
+		// For each url create a new page and run the Pa11y Test
+		const tests = urls.map( async ( url ) => {
+			console.log( 'create a new page' );
+			const page = await browser.newPage();
 
-		// Run the Pa11y test
-		await Pa11y( url, {
-				browser,
-				page,
-				...OPTIONS,
-		})
-		.then( result => {
-			console.log( `Pa11y automated ${ result.documentTitle }` );
-			DisplayResults( result );
-		})
-		.catch( error => Helper.log.error( error ) );
+			// Run the Pa11y test
+			try {
+				console.log( 'run pa11y test' );
+				const result = await Pa11y( url, {
+					browser,
+					page,
+					...OPTIONS,
+				});
 
-		// Close the page
-		await page.close();
-	});
+				console.log( `Pa11y automated ${ result.documentTitle }` );
+				DisplayResults( result );
+			}
+			catch( error ){
+				Helper.log.error( error )
+			}
 
-	// Wait for all the tests to finish
-	await Promise.all( tests );
+			console.log( 'close page' );
+			// Close the page
+			await page.close();
 
-	// Close the browser
-	await browser.close();
+			console.log( 'page closed' );
+		});
+
+		// Wait for all the tests to finish
+		await Promise.all( tests );
+		console.log( 'tests done' );
+
+		// Close the browser
+		await browser.close();
+		console.log( 'browser closed' );
+	}
+	catch( error ){
+		throw new Error( error );
+	}
 }
 
 
@@ -91,28 +107,34 @@ const TestURL   = 'http://localhost:8080';
 
 // Start the test - immediatley executed async function
 ( async() => {
-	// Run all of the tests
-	// Start express at port 8080
-	const App    = Express();
-	const Server = App.listen( '8080' );
+	try {
+		console.log( 'create a server' );
+		// Run all of the tests
+		// Start express at port 8080
+		const App    = Express();
+		const Server = App.listen( '8080' );
 
-	// Set up the server localhost:8080 and the current directory
-	App.use( Express.static( './' ) );
+		// Set up the server localhost:8080 and the current directory
+		App.use( Express.static( './' ) );
 
-	// Default one url to test
-	let urls = [ `${ TestURL }/tests/site` ];
+		// Default one url to test
+		let urls = [ `${ TestURL }/tests/site` ];
 
-	// If there is a uikit.json file we should test all the components
-	if( Fs.existsSync( UikitJson ) ){
+		// If there is a uikit.json file we should test all the components
+		if( Fs.existsSync( UikitJson ) ){
 
-		// Create a url based off the keys in the uikit.json
-		urls = Object.keys( require( UikitJson ) ).map( key => {
-			return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
-		});
+			// Create a url based off the keys in the uikit.json
+			urls = Object.keys( require( UikitJson ) ).map( key => {
+				return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
+			});
+		}
+
+		await RunPa11y( urls );
+
+		// Close the express server
+		await Server.close();
 	}
-
-	await RunPa11y( urls );
-
-	// Close the express server
-	await Server.close();
+	catch( error ){
+		throw new Error( error );
+	}
 })();
