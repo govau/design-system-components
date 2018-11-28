@@ -48,34 +48,39 @@ const DisplayResults = results => {
 // RUN TESTS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const RunPa11y = async ( urls ) => {
-	// Start the browser
-	const browser = await Puppeteer.launch();
+	try {
+		// Start the browser
+		const browser = await Puppeteer.launch();
 
-	// For each url create a new page and run the Pa11y Test
-	const tests = urls.map( async ( url ) => {
-		const page = await browser.newPage();
+		// For each url create a new page and run the Pa11y Test
+		const tests = urls.map( async ( url ) => {
+			const page = await browser.newPage();
 
-		// Run the Pa11y test
-		await Pa11y( url, {
-			browser,
-			page,
-			...OPTIONS,
-		})
-		.then( result => {
-			console.log( `Pa11y automated ${ result.documentTitle }` );
-			DisplayResults( result );
-		})
-		.catch( error => Helper.log.error( error ) );
+			// Run the Pa11y test
+			await Pa11y( url, {
+				browser,
+				page,
+				...OPTIONS,
+			})
+			.then( result => {
+				console.log( `Pa11y automated ${ result.documentTitle }` );
+				DisplayResults( result );
+			})
+			.catch( error => Helper.log.error( error ) );
 
-		// Close the page
-		await page.close();
-	});
+			// Close the page
+			await page.close();
+		});
 
-	// Wait for all the tests to finish
-	await Promise.all( tests );
+		// Wait for all the tests to finish
+		await Promise.all( tests );
 
-	// Close the browser
-	await browser.close();
+		// Close the browser
+		await browser.close();
+	}
+	catch( error ){
+		throw new Error( error );
+	}
 }
 
 
@@ -86,11 +91,9 @@ const TestURL   = 'http://localhost:8080';
 
 // Start the test - immediatley executed async function
 ( async() => {
-
-
-	// Run all of the tests
 	try {
-			// Start express at port 8080
+		// Run all of the tests
+		// Start express at port 8080
 		const App    = Express();
 		const Server = App.listen( '8080' );
 
@@ -108,13 +111,13 @@ const TestURL   = 'http://localhost:8080';
 				return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
 			});
 		}
-		await RunPa11y( urls );
 
+		await RunPa11y( urls );
 
 		// Close the express server
 		await Server.close();
 	}
-	catch( error ){
-		console.error( error );
+	catch( error ) {
+		throw new Error( error );
 	}
 })();
