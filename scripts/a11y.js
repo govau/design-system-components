@@ -60,8 +60,8 @@ const RunPa11y = async ( urls ) => {
 
 		// For each url create a new page and run the Pa11y Test
 		const tests = urls.map( async ( url ) => {
-			console.log( 'create a new page' );
 			const page = await browser.newPage();
+			console.log( 'page finished opening' );
 
 			// Run the Pa11y test
 			try {
