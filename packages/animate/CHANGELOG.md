@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.11 - Update dependencies](#v1011)
 * [v1.0.10 - Update dependencies](#v1010)
 * [v1.0.9  - Update browser-sync dependency](#v109)
 * [v1.0.8  - Update dependencies](#v108)
@@ -37,6 +38,11 @@
 
 
 ## Release History
+
+### v1.0.11
+
+- Update dependencies
+
 
 ### v1.0.10
 
