@@ -16,6 +16,11 @@ const Pa11y     = require( 'pa11y' );
 const Puppeteer = require( 'puppeteer' );
 const Fs        = require( 'fs' );
 const Path      = require( 'path' );
+const Events    = require( 'events' );
+
+
+// Change the limit for max listeners for the number of components
+Events.EventEmitter.defaultMaxListeners = 30;
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,39 +53,34 @@ const DisplayResults = results => {
 // RUN TESTS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const RunPa11y = async ( urls ) => {
-	try {
-		// Start the browser
-		const browser = await Puppeteer.launch();
+	// Start the browser
+	const browser = await Puppeteer.launch();
 
-		// For each url create a new page and run the Pa11y Test
-		const tests = urls.map( async ( url ) => {
-			const page = await browser.newPage();
+	// For each url create a new page and run the Pa11y Test
+	const tests = urls.map( async ( url ) => {
+		const page = await browser.newPage();
 
-			// Run the Pa11y test
-			await Pa11y( url, {
+		// Run the Pa11y test
+		await Pa11y( url, {
 				browser,
 				page,
 				...OPTIONS,
-			})
-			.then( result => {
-				console.log( `Pa11y automated ${ result.documentTitle }` );
-				DisplayResults( result );
-			})
-			.catch( error => Helper.log.error( error ) );
+		})
+		.then( result => {
+			console.log( `Pa11y automated ${ result.documentTitle }` );
+			DisplayResults( result );
+		})
+		.catch( error => Helper.log.error( error ) );
 
-			// Close the page
-			await page.close();
-		});
+		// Close the page
+		await page.close();
+	});
 
-		// Wait for all the tests to finish
-		await Promise.all( tests );
+	// Wait for all the tests to finish
+	await Promise.all( tests );
 
-		// Close the browser
-		await browser.close();
-	}
-	catch( error ){
-		throw new Error( error );
-	}
+	// Close the browser
+	await browser.close();
 }
 
 
@@ -91,33 +91,28 @@ const TestURL   = 'http://localhost:8080';
 
 // Start the test - immediatley executed async function
 ( async() => {
-	try {
-		// Run all of the tests
-		// Start express at port 8080
-		const App    = Express();
-		const Server = App.listen( '8080' );
+	// Run all of the tests
+	// Start express at port 8080
+	const App    = Express();
+	const Server = App.listen( '8080' );
 
-		// Set up the server localhost:8080 and the current directory
-		App.use( Express.static( './' ) );
+	// Set up the server localhost:8080 and the current directory
+	App.use( Express.static( './' ) );
 
-		// Default one url to test
-		let urls = [ `${ TestURL }/tests/site` ];
+	// Default one url to test
+	let urls = [ `${ TestURL }/tests/site` ];
 
-		// If there is a uikit.json file we should test all the components
-		if( Fs.existsSync( UikitJson ) ){
+	// If there is a uikit.json file we should test all the components
+	if( Fs.existsSync( UikitJson ) ){
 
-			// Create a url based off the keys in the uikit.json
-			urls = Object.keys( require( UikitJson ) ).map( key => {
-				return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
-			});
-		}
-
-		await RunPa11y( urls );
-
-		// Close the express server
-		await Server.close();
+		// Create a url based off the keys in the uikit.json
+		urls = Object.keys( require( UikitJson ) ).map( key => {
+			return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
+		});
 	}
-	catch( error ) {
-		throw new Error( error );
-	}
+
+	await RunPa11y( urls );
+
+	// Close the express server
+	await Server.close();
 })();
