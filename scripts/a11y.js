@@ -86,28 +86,35 @@ const TestURL   = 'http://localhost:8080';
 
 // Start the test - immediatley executed async function
 ( async() => {
-	// Start express at port 8080
-	const App    = Express();
-	const Server = App.listen( '8080' );
 
-	// Set up the server localhost:8080 and the current directory
-	App.use( Express.static( './' ) );
-
-	// Default one url to test
-	let urls = [ `${ TestURL }/tests/site` ];
-
-	// If there is a uikit.json file we should test all the components
-	if( Fs.existsSync( UikitJson ) ){
-
-		// Create a url based off the keys in the uikit.json
-		urls = Object.keys( require( UikitJson ) ).map( key => {
-			return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
-		});
-	}
 
 	// Run all of the tests
-	await RunPa11y( urls );
+	try {
+			// Start express at port 8080
+		const App    = Express();
+		const Server = App.listen( '8080' );
 
-	// Close the express server
-	Server.close();
+		// Set up the server localhost:8080 and the current directory
+		App.use( Express.static( './' ) );
+
+		// Default one url to test
+		let urls = [ `${ TestURL }/tests/site` ];
+
+		// If there is a uikit.json file we should test all the components
+		if( Fs.existsSync( UikitJson ) ){
+
+			// Create a url based off the keys in the uikit.json
+			urls = Object.keys( require( UikitJson ) ).map( key => {
+				return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
+			});
+		}
+		await RunPa11y( urls );
+
+
+		// Close the express server
+		await Server.close();
+	}
+	catch( error ){
+		console.error( error );
+	}
 })();
