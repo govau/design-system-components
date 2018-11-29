@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.0 - Remove `margin-bottom`, increase `margin-top` for paragraphs following callout](#v210)
 * [v2.0.8 - Update dependencies](#v208)
 * [v2.0.7 - Removing web pack dev server, updating dependencies](#v207)
 * [v2.0.6 - Fixed build scripts for Windows](#v206)
@@ -35,6 +36,12 @@
 
 
 ## Release History
+
+### v2.1.0
+
+- Remove `margin-bottom`
+- Increase `margin-top` for paragraphs following callout by `0.5`units
+
 
 ### v2.0.8
 
