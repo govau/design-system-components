@@ -76,7 +76,7 @@ jobs:
             mv .deploy/manifest-testing.yml site/
             cd site/
             cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push uikit -f manifest-testing.yml
+            cf zero-downtime-push uikit-$CIRCLE_BRANCH -f manifest-testing.yml
 
 
   deploy-prod:
