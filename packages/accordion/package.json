@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/accordion",
-	"version": "6.0.1",
+	"version": "7.0.0",
 	"description": "Allow the user to toggle the visibility of an element",
 	"keywords": [
 		"uikit",
@@ -131,6 +131,11 @@
 			"name": "Nathan Davison",
 			"email": "me@nathandavison.com",
 			"url": "https://github.com/ndavison"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		}
 	],
 	"license": "MIT"
