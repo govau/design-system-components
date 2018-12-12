@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v7.0.0 - Changed accordion title element to use `<button>` instead of `<a>`](#v700)
 * [v6.0.1 - Fix issues with state not firing](#v601)
 * [v6.0.0 - Add accordion group in a unordered list, remove `role="tab"`](#v600)
 * [v5.0.2 - Update dependencies](#v502)
@@ -42,6 +43,11 @@
 
 
 ## Release History
+
+### v7.0.0
+
+- Changed accordion title element to use `<button>` instead of `<a>`
+
 
 ### v6.0.1
 

@@ -252,6 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v7.0.0 - Changed accordion title element to use `<button>` instead of `<a>`
 * v6.0.1 - Fix issues with state not firing
 * v6.0.0 - Add accordion group in a unordered list, remove `role="tab"`
 * v5.0.2 - Update dependencies
