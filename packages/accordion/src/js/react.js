@@ -367,7 +367,7 @@ class AUaccordion extends React.PureComponent {
 	render() {
 		return (
 			<section className={ `au-accordion ${ this.className }${ this.props.dark ? ' au-accordion--dark' : '' }` } { ...this.attributeOptions }>
-				<button href={`#${ this.ID }`}
+				<button
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
 					aria-expanded={ !this.props.closed }
