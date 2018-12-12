@@ -51,17 +51,21 @@
 .au-accordion__title {
 	@include AU-fontgrid( md, heading );
 	@include AU-space( padding, 1unit 2.5unit 1unit 1unit );
+	width: 100%;
 	display: block;
 	color: $AU-color-foreground-action;
 	text-decoration: underline;
 	text-decoration-skip: ink;
-	width: 100%;
-	box-sizing: border-box;
 	font-weight: bold;
 	position: relative;
+
+	// button resets
+	box-sizing: border-box;
+	margin: 0;
 	cursor: pointer;
 	border: none;
-	text-align: left;
+	text-align: inherit;
+	font-family: inherit;
 
 	&:hover {
 		text-decoration: none;
