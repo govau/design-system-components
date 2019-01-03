@@ -50,7 +50,7 @@ const AUpageAlert = ({ as, alt, dark, children, className = '', ...attributeOpti
 			alt
 				? ' au-page-alerts--alt au-body--alt'
 				: ''
-			} ${ options[ as ] }`} role='alert' { ...attributeOptions }
+			} ${ options[ as ] }`} { ...attributeOptions }
 	>
 		{ children }
 	</div>
