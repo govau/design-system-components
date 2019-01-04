@@ -11,14 +11,14 @@ ReactDOM.render(
 				<h2>Simple callout</h2>
 
 				<AUcallout description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Callout with additional classes</h2>
 
 				<AUcallout className="testing" description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
@@ -57,14 +57,14 @@ ReactDOM.render(
 				<h2>Simple callout <code>--dark</code></h2>
 
 				<AUcallout dark description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Callout with additional classes <code>--dark</code></h2>
 
 				<AUcallout dark className="testing" description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
@@ -108,14 +108,14 @@ ReactDOM.render(
 				<h2>Simple callout <code>--alt</code></h2>
 
 				<AUcallout alt description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Callout with additional classes <code>--alt</code></h2>
 
 				<AUcallout alt className="testing" description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
@@ -157,14 +157,14 @@ ReactDOM.render(
 				<h2>Simple callout <code>--alt</code> <code>--dark</code></h2>
 
 				<AUcallout alt dark description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Callout with additional classes <code>--alt</code> <code>--dark</code></h2>
 
 				<AUcallout alt dark className="testing" description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
