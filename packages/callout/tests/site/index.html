@@ -27,7 +27,7 @@
 	<!--[if lt IE 9]>
 		<script>
 			/* https://github.com/aFarkas/html5shiv HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed */
-			!function(a,b){function c(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function d(){var a=t.elements;return"string"==typeof a?a.split(" "):a}function e(a,b){var c=t.elements;"string"!=typeof c&&(c=c.join(" ")),"string"!=typeof a&&(a=a.join(" ")),t.elements=c+" "+a,j(b)}function f(a){var b=s[a[q]];return b||(b={},r++,a[q]=r,s[r]=b),b}function g(a,c,d){if(c||(c=b),l)return c.createElement(a);d||(d=f(c));var e;return e=d.cache[a]?d.cache[a].cloneNode():p.test(a)?(d.cache[a]=d.createElem(a)).cloneNode():d.createElem(a),!e.canHaveChildren||o.test(a)||e.tagUrn?e:d.frag.appendChild(e)}function h(a,c){if(a||(a=b),l)return a.createDocumentFragment();c=c||f(a);for(var e=c.frag.cloneNode(),g=0,h=d(),i=h.length;i>g;g++)e.createElement(h[g]);return e}function i(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return t.shivMethods?g(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+d().join().replace(/[\w\-:]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(t,b.frag)}function j(a){a||(a=b);var d=f(a);return!t.shivCSS||k||d.hasCSS||(d.hasCSS=!!c(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),l||i(a,d),a}var k,l,m="3.7.3",n=a.html5||{},o=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,p=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,q="_html5shiv",r=0,s={};!function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",k="hidden"in a,l=1==a.childNodes.length||function(){b.createElement("a");var a=b.createDocumentFragment();return"undefined"==typeof a.cloneNode||"undefined"==typeof a.createDocumentFragment||"undefined"==typeof a.createElement}()}catch(c){k=!0,l=!0}}();var t={elements:n.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:m,shivCSS:n.shivCSS!==!1,supportsUnknownElements:l,shivMethods:n.shivMethods!==!1,type:"default",shivDocument:j,createElement:g,createDocumentFragment:h,addElements:e};a.html5=t,j(b),"object"==typeof module&&module.exports&&(module.exports=t)}("undefined"!=typeof window?window:this,document);
+			!function(a,b){function c(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function d(){var a=t.elements;return"string"==typeof a?a.split(" "):a}function e(a,b){var c=t.elements;"string"!=typeof c&&(c=c.join(" ")),"string"!=typeof a&&(a=a.join(" ")),t.elements=c+" "+a,j(b)}function f(a){var b=s[a[q]];return b||(b={},r++,a[q]=r,s[r]=b),b}function g(a,c,d){if(c||(c=b),l)return c.createElement(a);d||(d=f(c));var e;return e=d.cache[a]?d.cache[a].cloneNode():p.test(a)?(d.cache[a]=d.createElem(a)).cloneNode():d.createElem(a),!e.canHaveChildren||o.test(a)||e.tagUrn?e:d.frag.appendChild(e)}function h(a,c){if(a||(a=b),l)return a.createDocumentFragment();c=c||f(a);for(var e=c.frag.cloneNode(),g=0,h=d(),i=h.length;i>g;g++)e.createElement(h[g]);return e}function i(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return t.shivMethods?g(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+d().join().replace(/[\w\-:]+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(t,b.frag)}function j(a){a||(a=b);var d=f(a);return!t.shivCSS||k||d.hasCSS||(d.hasCSS=!!c(a,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),l||i(a,d),a}var k,l,m="3.7.3",n=a.html5||{},o=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,p=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,q="_html5shiv",r=0,s={};!function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",k="sronly"in a,l=1==a.childNodes.length||function(){b.createElement("a");var a=b.createDocumentFragment();return"undefined"==typeof a.cloneNode||"undefined"==typeof a.createDocumentFragment||"undefined"==typeof a.createElement}()}catch(c){k=!0,l=!0}}();var t={elements:n.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:m,shivCSS:n.shivCSS!==!1,supportsUnknownElements:l,shivMethods:n.shivMethods!==!1,type:"default",shivDocument:j,createElement:g,createDocumentFragment:h,addElements:e};a.html5=t,j(b),"object"==typeof module&&module.exports&&(module.exports=t)}("undefined"!=typeof window?window:this,document);
 		</script>
 		<script>
 			/* https://github.com/scottjehl/Respond Respond.js v1.4.2: min/max-width media query polyfill * Copyright 2013 Scott Jehl Licensed under https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT */
@@ -46,24 +46,28 @@
 
 	<div class="split-wrapper">
 		<div class="split">
-			<h2>Generic callout, applied directly to the paragraph</h2>
-
-			<section aria-label="Callout description1" class="au-callout">
-				<p>A callout.</p>
-			</section>
-
-			<hr>
 			<h2>Generic callout applied to a container</h2>
 
 			<p>The following container has the callout class, and holds a number of paragraphs.</p>
 
-			<section class="au-callout" aria-label="Callout description2">
+			<section class="au-callout">
+				<h2 class="au-callout__heading">Description of the callout</h2>
 				<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-				<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
 				<p>Duis condimentum maximus ligula sed tincidunt.</p>
 			</section>
 
 			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias veniam esse, deserunt eius facilis sit laudantium veritatis soluta corrupti repudiandae.</p>
+
+			<hr/>
+			<h2>Callout with screen reader only title</h2>
+
+			<p>The following container has the callout class, and holds a number of paragraphs.</p>
+
+			<section class="au-callout">
+				<h2 class="au-callout__heading au-callout__heading--sronly">Description of the callout</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<p>Eum accusantium fuga libero delectus dolor, dicta eaque obcaecati doloremque corporis ut amet molestias totam a rerum eius vitae, laboriosam soluta unde!</p>
+			</section>
 
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, tempora voluptates aliquid minus minima repellendus est porro facilis numquam excepturi totam quo, deleniti atque voluptas accusantium dicta, incidunt ad? Temporibus.</p>
 
@@ -71,9 +75,10 @@
 			<h2>Generic callout applied to a container with au-body</h2>
 
 			<div class="au-body">
-				<section class="au-callout" aria-label="Callout description3">
+				<section class="au-callout">
+					<h2 class="au-callout__heading">Description of the callout</h2>
 					<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-					<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+
 					<p>Duis condimentum maximus ligula sed tincidunt.</p>
 				</section>
 			</div>
@@ -81,31 +86,36 @@
 			<hr>
 			<h2>Calendar event callout</h2>
 
-			<section class="au-callout au-callout--calendar-event" aria-label="Callout description4">
-				<span class="au-callout--calendar-event__lede">The next public holiday is:</span>
+			<section class="au-callout au-callout--calendar-event">
+				<h2 class="au-callout__heading au-callout__heading--sronly">Description of the callout</h2>
+				<p class="au-callout--calendar-event__lede">The next public holiday is:</p>
 				<time class="au-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
 				<span class="au-callout--calendar-event__name">New Year’s Day</span>
 			</section>
 		</div>
 		<div class="split split--dark">
-			<h2>Generic callout, applied directly to the paragraph <code>--dark</code></h2>
-
-			<section aria-label="Callout description1" class="au-callout au-callout--dark">
-				<p>A callout.</p>
-			</section>
-
-			<hr>
 			<h2>Generic callout applied to a container <code>--dark</code></h2>
 
 			<p>The following container has the callout class, and holds a number of paragraphs.</p>
 
-			<section class="au-callout au-callout--dark" aria-label="Callout description2">
+			<section class="au-callout au-callout--dark">
+				<h2 class="au-callout__heading">Description of the callout</h2>
 				<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-				<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
 				<p>Duis condimentum maximus ligula sed tincidunt.</p>
 			</section>
 
 			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias veniam esse, deserunt eius facilis sit laudantium veritatis soluta corrupti repudiandae.</p>
+
+			<hr/>
+			<h2>Callout with screen reader only title <code>--dark</code></h2>
+
+			<p>The following container has the callout class, and holds a number of paragraphs.</p>
+
+			<section class="au-callout au-callout--dark">
+				<h2 class="au-callout__heading au-callout__heading--sronly">Description of the callout</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<p>Eum accusantium fuga libero delectus dolor, dicta eaque obcaecati doloremque corporis ut amet molestias totam a rerum eius vitae, laboriosam soluta unde!</p>
+			</section>
 
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, tempora voluptates aliquid minus minima repellendus est porro facilis numquam excepturi totam quo, deleniti atque voluptas accusantium dicta, incidunt ad? Temporibus.</p>
 
@@ -113,9 +123,10 @@
 			<h2>Generic callout applied to a container with au-body <code>--dark</code></h2>
 
 			<div class="au-body">
-				<section class="au-callout au-callout--dark" aria-label="Callout description3">
+				<section class="au-callout au-callout--dark">
+					<h2 class="au-callout__heading">Description of the callout</h2>
 					<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-					<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
+
 					<p>Duis condimentum maximus ligula sed tincidunt.</p>
 				</section>
 			</div>
@@ -123,8 +134,9 @@
 			<hr>
 			<h2>Calendar event callout <code>--dark</code></h2>
 
-			<section class="au-callout au-callout--calendar-event au-callout--dark" aria-label="Callout description4">
-				<span class="au-callout--calendar-event__lede">The next public holiday is:</span>
+			<section class="au-callout au-callout--calendar-event au-callout--dark">
+				<h2 class="au-callout__heading au-callout__heading--sronly">Description of the callout</h2>
+				<p class="au-callout--calendar-event__lede">The next public holiday is:</p>
 				<time class="au-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
 				<span class="au-callout--calendar-event__name">New Year’s Day</span>
 			</section>
@@ -132,79 +144,25 @@
 	</div>
 	<div class="split-wrapper">
 		<div class="split split--alt">
-			<h2>Generic callout, applied directly to the paragraph</h2>
-
-			<section aria-label="Callout description1" class="au-callout au-callout--alt">
-				<p>A callout.</p>
-			</section>
-
-			<hr>
-			<h2>Generic callout applied to a container</h2>
+			<h2>Generic callout applied to a container <code>--alt</code></h2>
 
 			<p>The following container has the callout class, and holds a number of paragraphs.</p>
 
-			<section class="au-callout au-callout--alt" aria-label="Callout description2">
+			<section class="au-callout au-callout--alt">
+				<h2 class="au-callout__heading">Description of the callout</h2>
 				<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-				<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
 				<p>Duis condimentum maximus ligula sed tincidunt.</p>
-			</section>
-
-			<hr>
-			<h2>Generic callout applied to a container with au-body</h2>
-
-			<div class="au-body au-body--alt">
-				<section class="au-callout au-callout--alt" aria-label="Callout description3">
-					<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-					<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
-					<p>Duis condimentum maximus ligula sed tincidunt.</p>
-				</section>
-			</div>
-
-			<hr>
-			<h2>Calendar event callout</h2>
-
-			<section class="au-callout au-callout--alt au-callout--calendar-event" aria-label="Callout description4">
-				<span class="au-callout--calendar-event__lede">The next public holiday is:</span>
-				<time class="au-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
-				<span class="au-callout--calendar-event__name">New Year’s Day</span>
 			</section>
 		</div>
 		<div class="split split--alt split--dark">
-			<h2>Generic callout, applied directly to the paragraph <code>--dark</code></h2>
-
-			<section class="au-callout au-callout--dark au-callout--alt" aria-label="Callout description1">
-				<p>A callout.</p>
-			</section>
-
-			<hr>
-			<h2>Generic callout applied to a container <code>--dark</code></h2>
+			<h2>Generic callout applied to a container <code>--dark</code> <code>--alt</code></h2>
 
 			<p>The following container has the callout class, and holds a number of paragraphs.</p>
 
-			<section class="au-callout au-callout--dark au-callout--alt" aria-label="Callout description2">
+			<section class="au-callout au-callout--dark au-callout--alt">
+				<h2 class="au-callout__heading">Description of the callout</h2>
 				<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-				<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
 				<p>Duis condimentum maximus ligula sed tincidunt.</p>
-			</section>
-
-			<hr>
-			<h2>Generic callout applied to a container with au-body <code>--dark</code></h2>
-
-			<div class="au-body au-body--alt au-body--dark">
-				<section class="au-callout au-callout--dark au-callout--alt" aria-label="Callout description3">
-					<p>Nullam quis aliquam massa. Nunc suscipit, nisi in facilisis tempus, lectus quam ullamcorper tellus, in rutrum ipsum tortor sed nisl.</p>
-					<p>Pellentesque porttitor in turpis in ornare. Quisque posuere sapien accumsan malesuada rutrum. Nulla vitae ex lacinia, rutrum est eu, tincidunt justo. Donec et ullamcorper elit, sit amet vulputate ipsum. Nulla porttitor rutrum libero sit amet sodales. Maecenas tincidunt dapibus pretium.</p>
-					<p>Duis condimentum maximus ligula sed tincidunt.</p>
-				</section>
-			</div>
-
-			<hr>
-			<h2>Calendar event callout <code>--dark</code></h2>
-
-			<section class="au-callout au-callout--calendar-event au-callout--alt au-callout--dark" aria-label="Callout description4">
-				<span class="au-callout--calendar-event__lede">The next public holiday is:</span>
-				<time class="au-callout--calendar-event__time" datetime="2017-01-01T00:00:00+00:00">Sunday 1 January</time>
-				<span class="au-callout--calendar-event__name">New Year’s Day</span>
 			</section>
 		</div>
 	</div>

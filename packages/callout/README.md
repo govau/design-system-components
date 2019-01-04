@@ -54,12 +54,12 @@ Usage:
 ```jsx
 import { AUcallout, AUcalloutCalendar } from './callout.js';
 
-<AUcallout description="Description for this callout">
+<AUcallout title="Description for this callout">
   AUcallout content
 </AUcallout>
 
 <AUcalloutCalendar
-  description="description for this callout"
+  title="description for this callout"
   datetime="2017-01-01T00:00:00+00:00"
   time="Sunday 32 Jun"
   subline="Your next appointment is"
@@ -71,14 +71,18 @@ All props:
 
 ```jsx
 <AUcallout
-  description="Description for this callout"  {/* The label is a must for screen readers */}
-  attributeOptions                            {/* Any other attribute options */}
+  title="Description for this callout"        {/* The title is a must for screen readers */}
+	level={ 2 }                                 {/* The tag level (<h1/> <h2/> etc), default: '1' */}
+	srOnlyTitle={ false }                       {/* Title is visible to screen readers only */}
+	attributeOptions                            {/* Any other attribute options */}
 >
   Callout content
 </AUcallout>
 
 <AUcalloutCalendar
-  description="description for this callout"  {/* The label is a must for screen readers */}
+	title="description for this callout"        {/* The title is a must for screen readers */}
+	level={ 2 }                                 {/* The tag level (<h1/> <h2/> etc), default: '1' */}
+	srOnlyTitle={ true }                        {/* Title is visible to screen readers only */}
   datetime="2017-01-01T00:00:00+00:00"        {/* The date time string */}
   time="Sunday 32 Jun"                        {/* The same date but human readable */}
   subline="Your next appointment is"          {/* Your subline, optional */}
