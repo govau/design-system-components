@@ -128,6 +128,7 @@ The visual test: https://uikit.service.gov.au/packages/callout/tests/site/
 
 ## Release History
 
+* v3.0.0 - Replace aria-label with a title
 * v2.1.0 - Remove `margin-bottom`, increase `margin-top` for paragraphs following callout
 * v2.0.8 - Update dependencies
 * v2.0.7 - Removing web pack dev server, updating dependencies
