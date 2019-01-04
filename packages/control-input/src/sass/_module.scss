@@ -106,23 +106,6 @@
 		background-color: mix( $AU-color-success, $AU-colordark-background-alt, 15% );
 	}
 
-	// focus
-	&:focus + .au-control-input__text:before,
-	&:focus + .au-control-input__text:after {
-		// Not using AU-focus as we are not applying :focus to this element
-		@include AU-outline();
-		outline-offset: 2px;
-	}
-
-	.au-control-input--dark & {
-		&:focus + .au-control-input__text:before,
-		&:focus + .au-control-input__text:after {
-			// Not using AU-focus as we are not applying :focus to this element
-			@include AU-outline( 'dark' );
-			outline-offset: 2px;
-		}
-	}
-
 	&[type=radio] {
 		& + .au-control-input__text:before,
 		& + .au-control-input__text:after {
@@ -214,6 +197,12 @@
 			}
 		}
 
+		// Focus
+		&:focus + .au-control-input__text:before {
+			@include AU-outline();
+			outline-offset: 2px;
+		}
+
 		// dark
 		.au-control-input--dark & {
 			& + .au-control-input__text:before {
@@ -234,6 +223,12 @@
 				&:checked + .au-control-input__text:after {
 					@include AU-getControlShape( 'checkbox', 'foreground', mix( $AU-colordark-foreground-text, $AU-colordark-background-shade, 20% ) );
 				}
+			}
+
+			// Focus
+			&:focus + .au-control-input__text:before {
+				@include AU-outline( 'dark' );
+				outline-offset: 2px;
 			}
 		}
 
@@ -299,6 +294,19 @@
 			}
 		}
 
+		// focus
+		&:focus + .au-control-input__text:before {
+			// Add 2px so it doesn't touch green or red
+			@include AU-space( box-shadow, 0 0 0 0.25unit $AU-color-foreground-focus );
+
+			.ie8 &,
+			.lt-ie8 & {
+				// Not using AU-focus as we are not applying :focus to this element
+				@include AU-outline();
+				outline-offset: 2px;
+			}
+		}
+
 		// dark
 		.au-control-input--dark & {
 			& + .au-control-input__text:before {
@@ -318,6 +326,17 @@
 
 				&:checked + .au-control-input__text:after {
 					@include AU-getControlShape( 'radio', 'foreground', mix( $AU-colordark-foreground-text, $AU-colordark-background-shade, 20% ) );
+				}
+			}
+
+			// Focus
+			&:focus + .au-control-input__text:before {
+				@include AU-space( box-shadow, 0 0 0 0.25unit $AU-colordark-foreground-focus );
+
+				.ie8 &,
+				.lt-ie8 & {
+					@include AU-outline( 'dark' );
+					outline-offset: 2px;
 				}
 			}
 		}
