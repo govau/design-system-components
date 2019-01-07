@@ -116,6 +116,7 @@ The visual test: https://uikit.service.gov.au/packages/control-input/tests/site/
 
 ## Release History
 
+* v2.2.0 - Changed focus appearance on radio buttons to be round
 * v2.1.7 - Replace `checked` attribute with `defaultChecked` on control inputs examples
 * v2.1.6 - Update dependencies
 * v2.1.5 - Removing web pack dev server, updating dependencies
