@@ -11,9 +11,19 @@ class AccordionWrapper extends React.Component {
 		super();
 
 		this.state = {
-			closed: false
+			closed: true,
+			count: 1
 		};
+		this.reloadParent = this.reloadParent.bind(this);
 	}
+
+	// causes the parent component to re-render
+	reloadParent() {
+		this.setState({
+			count: this.state.count + 1
+		});
+	}
+
 
 	// let’s change the state in the absence of more complex application code
 	toggleAccordion() {
@@ -34,6 +44,9 @@ class AccordionWrapper extends React.Component {
 
 				<button type="button" onClick={ () => { this.toggleAccordion() }}>
 					Toggle accordion via state
+				</button>
+				<button onClick={this.reloadParent}>
+					Change state without opening/closing accordion ({this.state.count})
 				</button>
 			</Fragment>
 		);
