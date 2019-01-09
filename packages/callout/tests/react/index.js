@@ -10,22 +10,22 @@ ReactDOM.render(
 			<div className="split">
 				<h2>Simple callout</h2>
 
-				<AUcallout description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				<AUcallout title="Description for first callout">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Callout with additional classes</h2>
 
-				<AUcallout className="testing" description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				<AUcallout className="testing" title="Description for first callout">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Calendar callout</h2>
 
 				<AUcalloutCalendar
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
@@ -36,7 +36,7 @@ ReactDOM.render(
 				<h2>Calendar callout with additional classes</h2>
 
 				<AUcalloutCalendar
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
@@ -48,7 +48,7 @@ ReactDOM.render(
 				<h2>Calendar callout without optionals</h2>
 
 				<AUcalloutCalendar
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 				/>
@@ -56,15 +56,15 @@ ReactDOM.render(
 			<div className="split split--dark">
 				<h2>Simple callout <code>--dark</code></h2>
 
-				<AUcallout dark description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				<AUcallout dark title="Description for first callout">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Callout with additional classes <code>--dark</code></h2>
 
-				<AUcallout dark className="testing" description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				<AUcallout dark className="testing" title="Description for first callout">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
@@ -72,7 +72,7 @@ ReactDOM.render(
 
 				<AUcalloutCalendar
 					dark
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
@@ -84,7 +84,7 @@ ReactDOM.render(
 
 				<AUcalloutCalendar
 					dark
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
@@ -97,7 +97,7 @@ ReactDOM.render(
 
 				<AUcalloutCalendar
 					dark
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 				/>
@@ -107,15 +107,15 @@ ReactDOM.render(
 			<div className="split split--alt">
 				<h2>Simple callout <code>--alt</code></h2>
 
-				<AUcallout alt description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				<AUcallout alt title="Description for first callout">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Callout with additional classes <code>--alt</code></h2>
 
-				<AUcallout alt className="testing" description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				<AUcallout alt className="testing" title="Description for first callout">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
@@ -123,7 +123,7 @@ ReactDOM.render(
 
 				<AUcalloutCalendar
 					alt
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
@@ -135,7 +135,7 @@ ReactDOM.render(
 
 				<AUcalloutCalendar
 					alt
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
@@ -148,7 +148,7 @@ ReactDOM.render(
 
 				<AUcalloutCalendar
 					alt
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 				/>
@@ -156,15 +156,15 @@ ReactDOM.render(
 			<div className="split split--alt split--dark">
 				<h2>Simple callout <code>--alt</code> <code>--dark</code></h2>
 
-				<AUcallout alt dark description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				<AUcallout alt dark title="Description for first callout">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
 				<h2>Callout with additional classes <code>--alt</code> <code>--dark</code></h2>
 
-				<AUcallout alt dark className="testing" description="description for first callout">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.
+				<AUcallout alt dark className="testing" title="Description for first callout">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam cupiditate ratione iste blanditiis, asperiores, recusandae, sed natus voluptate.</p>
 				</AUcallout>
 
 				<hr />
@@ -173,7 +173,7 @@ ReactDOM.render(
 				<AUcalloutCalendar
 					alt
 					dark
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
@@ -186,7 +186,7 @@ ReactDOM.render(
 				<AUcalloutCalendar
 					alt
 					dark
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 					subline="Your next appointment is"
@@ -200,7 +200,7 @@ ReactDOM.render(
 				<AUcalloutCalendar
 					alt
 					dark
-					description="description for second callout"
+					title="Description for second callout"
 					datetime="2017-01-01T00:00:00+00:00"
 					time="Sunday 32 Jun"
 				/>
