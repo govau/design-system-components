@@ -1,7 +1,7 @@
 @gov.au/core
 ============
 
-> The core module all [gov.au UI-Kit modules](https://github.com/govau/uikit/) depend on.
+> The core module all [gov.au components modules](https://github.com/govau/design-system-components/) depend on.
 
 
 ## Contents
@@ -283,7 +283,7 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

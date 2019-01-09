@@ -94,11 +94,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/govau/uikit.git"
+		"url": "https://github.com/govau/design-system-components.git"
 	},
 	"homepage": "https://designsystem.gov.au/components/text-inputs",
 	"bugs": {
-		"url": "https://github.com/govau/uikit/issues",
+		"url": "https://github.com/govau/design-system-components/issues",
 		"email": "uikit@digital.gov.au"
 	},
 	"author": {

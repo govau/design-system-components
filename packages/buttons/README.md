@@ -72,7 +72,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/buttons/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/buttons/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -117,8 +117,8 @@ The visual test: https://uikit.service.gov.au/packages/buttons/tests/site/
 * v2.0.2 - Change homepage link
 * v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix
-* v1.0.2 - Fixed issue with secondary button hover IE8 [312](https://github.com/govau/uikit/issues/312)
-* v1.0.1 - Fixed specificity issue when combined with body [197](https://github.com/govau/uikit/issues/197)
+* v1.0.2 - Fixed issue with secondary button hover IE8 [312](https://github.com/govau/design-system-components/issues/312)
+* v1.0.1 - Fixed specificity issue when combined with body [197](https://github.com/govau/design-system-components/issues/197)
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.5.0 - Added pancake-react plugin, ES5 main file
 * v0.4.0 - Added react component
@@ -136,7 +136,7 @@ The visual test: https://uikit.service.gov.au/packages/buttons/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

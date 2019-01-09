@@ -1,7 +1,7 @@
 @gov.au/control-input CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -129,7 +129,7 @@
 
 ### v0.1.1
 
-- Fixed a Safari bug that made the labels break into another line. HastagSafariIsTheNewIE. ([#184](https://github.com/govau/uikit/issues/184))
+- Fixed a Safari bug that made the labels break into another line. HastagSafariIsTheNewIE. ([#184](https://github.com/govau/design-system-components/issues/184))
 
 
 ### v0.1.0

@@ -2,7 +2,7 @@ Update dependenciesalerts CH3NGELOG
 @gov.au/page-aletsCHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -109,7 +109,7 @@ Update dependenciesalerts CH3NGELOG
 
 ### v0.1.1
 
-- Improved print styles ([#156](https://github.com/govau/uikit/issues/156))
+- Improved print styles ([#156](https://github.com/govau/design-system-components/issues/156))
 
 
 ### v0.1.0

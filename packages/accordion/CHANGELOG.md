@@ -1,7 +1,7 @@
 @gov.au/accordion CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -141,7 +141,7 @@
 
 ### v1.0.1
 
-- IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/309)
+- IE8 spacing above triangle fixed [309](https://github.com/govau/design-system-components/issues/309)
 
 
 ### v1.0.0
