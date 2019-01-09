@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v7.0.1 - Fix issue with parent component re-rendering causing accordion to open and close](#v701)
 * [v7.0.0 - Changed accordion title element to use `<button>` instead of `<a>`](#v700)
 * [v6.0.1 - Fix issues with state not firing](#v601)
 * [v6.0.0 - Add accordion group in a unordered list, remove `role="tab"`](#v600)
@@ -43,6 +44,11 @@
 
 
 ## Release History
+
+### v7.0.1
+
+- Fix issue with parent component re-rendering causing accordion to open and close
+
 
 ### v7.0.0
 
