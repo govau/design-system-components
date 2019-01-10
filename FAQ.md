@@ -84,7 +84,7 @@ looking at some of these things in the future and provide guidance around them.
 ## Development
 
 ### Are the components available with my content management system or JavaScript framework?
-The components is built to be system agnostic. This means that it can work with any system, development environment, build tools or stack.
+The components are built to be system agnostic. This means that it can work with any system, development environment, build tools or stack.
 Currently we support three different entry-points:
 
 - [vanilla JavaScript](https://www.w3.org/standards/techs/js)
