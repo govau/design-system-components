@@ -143,6 +143,7 @@ The visual test: https://auds.service.gov.au/packages/side-nav/tests/site/
 
 ## Release History
 
+* v5.0.2 - Removed uikit references
 * v5.0.1 - Update accordion dependency
 * v5.0.0 - Update accordion dependency (use `<button>` instead of `<a>` for title)
 * v4.0.1 - Update accordion, add a test with state toggle, update side-nav react test examples

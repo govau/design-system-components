@@ -137,6 +137,7 @@ The visual test: https://auds.service.gov.au/packages/link-list/tests/site/
 
 ## Release History
 
+* v3.0.4 - Removed uikit references
 * v3.0.3 - Fixing bug in link-list au-body
 * v3.0.2 - Update dependencies
 * v3.0.1 - Removing web pack dev server, updating dependencies

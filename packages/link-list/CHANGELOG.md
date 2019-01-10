@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.4 - Removed uikit references](#v304)
 * [v3.0.3 - Fixing bug in link-list au-body](#v303)
 * [v3.0.2 - Update dependencies](#v302)
 * [v3.0.1 - Removing web pack dev server, updating dependencies](#v301)
@@ -36,9 +37,15 @@
 
 ## Release History
 
+### v3.0.4
+
+- Removed uikit references
+
+
 ### v3.0.3
 
 - Fixing bug in link-list au-body
+
 
 ### v3.0.2
 

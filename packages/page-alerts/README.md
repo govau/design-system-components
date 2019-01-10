@@ -107,6 +107,7 @@ page-alerts
 
 ## Release History
 
+* v2.1.1 - Removed uikit references
 * v2.1.0 - Remove role alert as it interupts the screen reader
 * v2.0.8 - Update dependencies
 * v2.0.7 - Removing web pack dev server, updating dependencies

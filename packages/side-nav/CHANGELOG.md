@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v5.0.2 - Removed uikit references](#v502)
 * [v5.0.1 - Update accordion dependency](#v501)
 * [v5.0.0 - Update accordion dependency (use `<button>` instead of `<a>` for title)](#v500)
 * [v4.0.1 - Update accordion, add a test with state toggle, update side-nav react test examples](#v401)
@@ -36,6 +37,11 @@
 
 
 ## Release History
+
+### v5.0.2
+
+- Removed uikit references
+
 
 ### v5.0.1
 

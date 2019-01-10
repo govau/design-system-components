@@ -135,6 +135,7 @@ The visual test: https://auds.service.gov.au/packages/keyword-list/tests/site/
 
 ## Release History
 
+* v3.0.3 - Removed uikit references
 * v3.0.2 - Update dependencies
 * v3.0.1 - Removing web pack dev server, updating dependencies
 * v3.0.0 - Updated dependency version of link-list, build scripts for Windows

@@ -127,6 +127,7 @@ The visual test: https://auds.service.gov.au/packages/tags/tests/site/
 
 ## Release History
 
+* v3.1.5 - Removed uikit references
 * v3.1.4 - Update dependencies
 * v3.1.3 - Removing web pack dev server, updating dependencies
 * v3.1.2 - Fixed build scripts for Windows
