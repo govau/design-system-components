@@ -6,4 +6,4 @@ applications:
   instances: 2
   path: ./
 routes:
-- route: uikit.service.gov.au
+- route: auds.service.gov.au

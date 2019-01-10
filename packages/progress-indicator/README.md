@@ -121,7 +121,7 @@ progress-indicator
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/progress-indicator/tests/site/
+The visual test: https://auds.service.gov.au/packages/progress-indicator/tests/site/
 
 
 **[⬆ back to top](#contents)**

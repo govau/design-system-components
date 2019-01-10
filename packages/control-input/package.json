@@ -3,7 +3,7 @@
 	"version": "2.2.0",
 	"description": "Control inputs include radio buttons and checkboxes. They allow users to select one or more options.",
 	"keywords": [
-		"uikit",
+		"auds",
 		"pancake",
 		"pancake-module",
 		"sass",
@@ -92,11 +92,11 @@
 	"homepage": "https://designsystem.gov.au/components/control-input",
 	"bugs": {
 		"url": "https://github.com/govau/design-system-components/issues",
-		"email": "uikit@digital.gov.au"
+		"email": "info@dta.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "uikit@digital.gov.au",
+		"email": "info@dta.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [

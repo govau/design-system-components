@@ -105,7 +105,7 @@ control-input
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/control-input/tests/site/
+The visual test: https://auds.service.gov.au/packages/control-input/tests/site/
 
 
 **[⬆ back to top](#contents)**

@@ -23,7 +23,7 @@ const Path      = require( 'path' );
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const OPTIONS = {
 	timeout: 60000,
-	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test, .uikit-page-alerts__sronly, .uikit-skip-link',
+	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test, .auds-page-alerts__sronly, .auds-skip-link',
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,7 +80,7 @@ const RunPa11y = async ( urls ) => {
 
 
 // Global variables
-const UikitJson = Path.normalize( `${ process.cwd() }/uikit.json` );
+const audsJson = Path.normalize( `${ process.cwd() }/auds.json` );
 const TestURL   = 'http://localhost:8080';
 
 
@@ -96,11 +96,11 @@ const TestURL   = 'http://localhost:8080';
 	// Default one url to test
 	let urls = [ `${ TestURL }/tests/site` ];
 
-	// If there is a uikit.json file we should test all the components
-	if( Fs.existsSync( UikitJson ) ){
+	// If there is a auds.json file we should test all the components
+	if( Fs.existsSync( audsJson ) ){
 
-		// Create a url based off the keys in the uikit.json
-		urls = Object.keys( require( UikitJson ) ).map( key => {
+		// Create a url based off the keys in the auds.json
+		urls = Object.keys( require( audsJson ) ).map( key => {
 			return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
 		});
 	}

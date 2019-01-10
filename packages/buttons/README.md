@@ -97,7 +97,7 @@ buttons
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/buttons/tests/site/
+The visual test: https://auds.service.gov.au/packages/buttons/tests/site/
 
 
 **[⬆ back to top](#contents)**

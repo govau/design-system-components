@@ -5,10 +5,10 @@ jobs:
 
   # DEPLOY-STAGING JOB
   # installing dependencies, building assets and deploying to staging
-  build-and-test-uikit:
+  build-and-test-auds:
     docker:
       - image: circleci/node:8.12.0                       # NodeLTS as of 10/2018
-    working_directory: ~/uikit
+    working_directory: ~/auds
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
       - run:
@@ -28,7 +28,7 @@ jobs:
           name: Run all tests
           command: npm test
       - persist_to_workspace:
-          root: ~/uikit
+          root: ~/auds
           paths:
             - packages/*/tests/
             - .deploy/
@@ -40,11 +40,11 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/uikit
+          at: ~/auds
       - run:
           name: Deploying to y.cld.gov.au
           command: |
-            cd ~/uikit
+            cd ~/auds
             mkdir -p site/
             cp .deploy/nginx/mime.types site/
             cp .deploy/nginx/.htpasswd site/
@@ -54,7 +54,7 @@ jobs:
             mv .deploy/manifest-staging.yml site/
             cd site/
             cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push uikit -f manifest-staging.yml
+            cf zero-downtime-push auds -f manifest-staging.yml
 
 
   deploy-testing:
@@ -62,11 +62,11 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/uikit
+          at: ~/auds
       - run:
           name: Deploying to y.cld.gov.au
           command: |
-            cd ~/uikit
+            cd ~/auds
             mkdir -p site/
             cp .deploy/nginx/mime.types site/
             cp .deploy/nginx/.htpasswd site/
@@ -76,7 +76,7 @@ jobs:
             mv .deploy/manifest-testing.yml site/
             cd site/
             cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push uikit-$CIRCLE_BRANCH -f manifest-testing.yml
+            cf zero-downtime-push auds-$CIRCLE_BRANCH -f manifest-testing.yml
 
 
   deploy-prod:
@@ -84,11 +84,11 @@ jobs:
       - image: govau/cf-cli
     steps:
       - attach_workspace:
-          at: ~/uikit
+          at: ~/auds
       - run:
           name: Deploying to b.cld.gov.au
           command: |
-            cd ~/uikit
+            cd ~/auds
             mkdir -p site/
             cp .deploy/nginx/mime.types site/
             mv .deploy/nginx/nginx-production.conf site/nginx.conf
@@ -97,7 +97,7 @@ jobs:
             mv .deploy/manifest-production.yml site/
             cd site/
             cf login -a $CF_API_PROD -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
-            cf zero-downtime-push uikit -f manifest-production.yml
+            cf zero-downtime-push auds -f manifest-production.yml
 
 
 # OUR WORKFLOW
@@ -106,22 +106,22 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build-and-test-uikit
+      - build-and-test-auds
       - deploy-staging:                                   # run deploy staging
           filters:
             branches:
               only: develop                               # and only on the `develop` branch
           requires:
-            - build-and-test-uikit
+            - build-and-test-auds
       -  deploy-testing:                                  # run test branches
           filters:
             branches:
               only: /.*-test/                             # and only on the branches that end with `-test`
           requires:
-            - build-and-test-uikit
+            - build-and-test-auds
       - deploy-prod:                                      # run deploy production
           filters:
             branches:
               only: master                                # and only on the `master` branch
           requires:
-            - build-and-test-uikit
+            - build-and-test-auds

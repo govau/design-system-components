@@ -3,7 +3,7 @@
 	"version": "2.0.9",
 	"description": "Single and multi-line text inputs.",
 	"keywords": [
-		"uikit",
+		"auds",
 		"pancake",
 		"pancake-module",
 		"sass",
@@ -99,11 +99,11 @@
 	"homepage": "https://designsystem.gov.au/components/text-inputs",
 	"bugs": {
 		"url": "https://github.com/govau/design-system-components/issues",
-		"email": "uikit@digital.gov.au"
+		"email": "info@dta.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "uikit@digital.gov.au",
+		"email": "info@dta.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [

@@ -126,7 +126,7 @@ link-list
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/link-list/tests/site/
+The visual test: https://auds.service.gov.au/packages/link-list/tests/site/
 
 
 **[⬆ back to top](#contents)**

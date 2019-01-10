@@ -226,7 +226,7 @@ const HELPER = (() => { // constructor factory
 		VERSION: PKG.version,
 		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/../.templates`),
-		URL: `https://uikit.service.gov.au`,
+		URL: `https://auds.service.gov.au`,
 		GITHUB: `https://github.com/govau/design-system-components/`,
 
 
@@ -636,14 +636,14 @@ HELPER.generate = (() => {
 		 */
 		json: ( allModules ) => {
 			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			let uikitJson = {};   // the uikit.json object
+			let audsJson = {};   // the auds.json object
 
 			// iterate over all packages
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
 					const packageJson = require( Path.normalize( `${ packagesPath }/${ module }/package.json` ) );
 
-					uikitJson[ packageJson.name ] = { // add to uikit.json
+					audsJson[ packageJson.name ] = { // add to auds.json
 						name: packageJson.name,
 						version: packageJson.version,
 						peerDependencies: HELPER.generate.getAllDependencies( packageJson.dependencies ),
@@ -652,12 +652,12 @@ HELPER.generate = (() => {
 				}
 			}
 
-			Fs.writeFile( Path.normalize(`${ __dirname }/../uikit.json`), JSON.stringify( uikitJson ), 'utf8', ( error ) => { // write file
+			Fs.writeFile( Path.normalize(`${ __dirname }/../auds.json`), JSON.stringify( audsJson ), 'utf8', ( error ) => { // write file
 				if( error ) {
 					console.error( error );
 				}
 
-				HELPER.log.success(`Written ${ Chalk.yellow('uikit.json') }`);
+				HELPER.log.success(`Written ${ Chalk.yellow('auds.json') }`);
 			});
 		},
 
@@ -729,7 +729,7 @@ HELPER.generate = (() => {
 				}
 			}
 
-			index = index.replace('[-uikit-modules-]', replacement);
+			index = index.replace('[-auds-modules-]', replacement);
 
 			Fs.writeFile(`${ __dirname }/../index.html`, index, 'utf8', ( error ) => { // write file
 				if( error ) {
