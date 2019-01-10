@@ -35,7 +35,7 @@ This allows users to be more flexible with the HTML they are provided with.
 
 
 ### Who can use the components?
-The components is built for everyone. We want government and private sector to embrace the components. It aims to solve common usability and accessibility
+The components are built for everyone. We want government and private sector to embrace the components. It aims to solve common usability and accessibility
 problems in a simple and robust way.
 
 
