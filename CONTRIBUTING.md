@@ -1,7 +1,7 @@
 Contributing to GOV.AU Design System Components
 ======================
 
-Hi there! Thank you for your interest in contributing to these components, we really appreciate it.
+Hi there! Thank you for your interest in contributing to the design system components, we really appreciate it.
 
 There are many ways to contribute – reporting bugs, fixing bugs, new module suggestions, submitting pull requests for enhancements to modules or even writing
 documentation.
