@@ -68,7 +68,7 @@ unacceptable behavior feel safe. In the context of in-person events, organizers 
 
 ## 7. Addressing Grievances
 
-If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify the components team with a concise description of your
+If you feel you have been falsely or unfairly accused of violating this Code of Conduct, you should notify the design system team with a concise description of your
 grievance. Your grievance will be handled in accordance with our existing governing policies.
 
 ## 8. Scope
