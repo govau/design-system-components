@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.12 - Removed uikit references](#v1012)
 * [v1.0.11 - Update dependencies](#v1011)
 * [v1.0.10 - Update dependencies](#v1010)
 * [v1.0.9  - Update browser-sync dependency](#v109)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v1.0.12
+
+- Removed uikit references
+
 
 ### v1.0.11
 

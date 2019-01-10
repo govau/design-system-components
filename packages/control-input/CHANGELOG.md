@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.2.1 - Removed uikit references](#v221)
 * [v2.2.0 - Changed focus appearance on radio buttons to be round](#v220)
 * [v2.1.7 - Replace `checked` attribute with `defaultChecked` on control inputs examples](#v217)
 * [v2.1.6 - Update dependencies](#v216)
@@ -39,6 +40,11 @@
 
 
 ## Release History
+
+### v2.2.1
+
+- Removed uikit references
+
 
 ### v2.2.0
 

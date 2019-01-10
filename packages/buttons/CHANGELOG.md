@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.5 - Removed uikit references](#v305)
 * [v3.0.4 - Update dependencies](#v304)
 * [v3.0.3 - Removing web pack dev server, updating dependencies](#v303)
 * [v3.0.2 - Fixed build scripts for Windows](#v302)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v3.0.5
+
+- Removed uikit references
+
 
 ### v3.0.4
 
