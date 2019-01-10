@@ -1,7 +1,7 @@
 @gov.au/core
 ============
 
-> The core module all [gov.au UI-Kit modules](https://github.com/govau/uikit/) depend on.
+> The core module all [gov.au components modules](https://github.com/govau/design-system-components/) depend on.
 
 
 ## Contents
@@ -244,7 +244,7 @@ core
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/core/tests/site/
+The visual test: https://auds.service.gov.au/packages/core/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -255,6 +255,7 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v3.1.2 - Removed uikit references
 * v3.1.1 - Fix issue with A11yColor when white and black both pass
 * v3.1.0 - Update font stack to accomodate linux users
 * v3.0.3 - Update dependencies
@@ -269,8 +270,8 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 * v1.0.1 - Adjusting how colors are generated from other colors
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.1.3 - Moved to System fonts
-* v0.1.2 - Fixed newly introduced uikit-svguri bug; ups
-* v0.1.1 - Fixed uikit-svguri bug
+* v0.1.2 - Fixed newly introduced auds-svguri bug; ups
+* v0.1.1 - Fixed auds-svguri bug
 * v0.1.0 - 💥 Initial version
 
 
@@ -283,7 +284,7 @@ The visual test: https://uikit.service.gov.au/packages/core/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

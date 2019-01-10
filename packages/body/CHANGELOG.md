@@ -1,7 +1,7 @@
 @gov.au/body CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.13 - Removed uikit references](#v2013)
 * [v2.0.12 - Change code background colours](#v2012)
 * [v2.0.11 - Update dependencies](#v2011)
 * [v2.0.10 - Removing web pack dev server, updating dependencies](#v2010)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v2.0.13
+
+- Removed uikit references
+
 
 ### v2.0.12
 

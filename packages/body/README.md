@@ -50,7 +50,7 @@ body
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/body/tests/site/
+The visual test: https://auds.service.gov.au/packages/body/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/body/tests/site/
 
 ## Release History
 
+* v2.0.13 - Removed uikit references
 * v2.0.12 - Change code background colours
 * v2.0.11 - Update Dependencies
 * v2.0.10 - Removing web pack dev server, updating dependencies
@@ -89,7 +90,7 @@ The visual test: https://uikit.service.gov.au/packages/body/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

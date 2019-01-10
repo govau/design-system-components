@@ -50,7 +50,7 @@ responsive-media
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/responsive-media/tests/site/
+The visual test: https://auds.service.gov.au/packages/responsive-media/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -61,6 +61,7 @@ The visual test: https://uikit.service.gov.au/packages/responsive-media/tests/si
 
 ## Release History
 
+* v2.0.12 - Removed uikit references
 * v2.0.11 - Update dependencies
 * v2.0.10 - Removing web pack dev server, updating dependencies
 * v2.0.9  - Fixed build scripts for Windows
@@ -87,7 +88,7 @@ The visual test: https://uikit.service.gov.au/packages/responsive-media/tests/si
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

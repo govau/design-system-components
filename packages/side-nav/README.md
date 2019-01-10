@@ -99,7 +99,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/accordion/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/accordion/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -132,7 +132,7 @@ side-nav
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
+The visual test: https://auds.service.gov.au/packages/side-nav/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -143,6 +143,7 @@ The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
 
 ## Release History
 
+* v5.0.2 - Removed uikit references
 * v5.0.1 - Update accordion dependency
 * v5.0.0 - Update accordion dependency (use `<button>` instead of `<a>` for title)
 * v4.0.1 - Update accordion, add a test with state toggle, update side-nav react test examples
@@ -169,7 +170,7 @@ The visual test: https://uikit.service.gov.au/packages/side-nav/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

@@ -1,9 +1,9 @@
 {
 	"name": "@gov.au/side-nav",
-	"version": "5.0.1",
+	"version": "5.0.2",
 	"description": "A vertical list of links for site navigation typically placed next to the body content.",
 	"keywords": [
-		"uikit",
+		"auds",
 		"pancake",
 		"pancake-module",
 		"sass",
@@ -99,16 +99,16 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/govau/uikit.git"
+		"url": "https://github.com/govau/design-system-components.git"
 	},
 	"homepage": "https://designsystem.gov.au/components/side-nav",
 	"bugs": {
-		"url": "https://github.com/govau/uikit/issues",
-		"email": "uikit@digital.gov.au"
+		"url": "https://github.com/govau/design-system-components/issues",
+		"email": "designsystem@digital.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "uikit@digital.gov.au",
+		"email": "designsystem@digital.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [

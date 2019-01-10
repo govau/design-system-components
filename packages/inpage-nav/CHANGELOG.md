@@ -1,7 +1,7 @@
 @gov.au/contents CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.4 - Removed uikit references](#v304)
 * [v3.0.3 - Added an aria-label attribute to the nav element](#v303)
 * [v3.0.2 - Update dependencies](#v302)
 * [v3.0.1 - Removing web pack dev server, updating dependencies](#v301)
@@ -36,6 +37,11 @@
 
 
 ## Release History
+
+### v3.0.4
+
+- Removed uikit references
+
 
 ### v3.0.3
 

@@ -179,7 +179,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/accordion/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/accordion/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -241,7 +241,7 @@ accordion
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
+The visual test: https://auds.service.gov.au/packages/accordion/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -252,6 +252,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v7.0.2 - Removed uikit references
 * v7.0.1 - Fix issue with parent component re-rendering causing accordion to open and close
 * v7.0.0 - Changed accordion title element to use `<button>` instead of `<a>`
 * v6.0.1 - Fix issues with state not firing
@@ -270,7 +271,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 * v2.0.2 - Fix issue with scope inside AU.animate.Run
 * v2.0.1 - Fix dependencies
 * v2.0.0 - Change to focus colour and border/muted color mix
-* v1.0.1 - IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/309)
+* v1.0.1 - IE8 spacing above triangle fixed [309](https://github.com/govau/design-system-components/issues/309)
 * v1.0.0 - Moved to AU namespace, added new color themes and spacing
 * v0.3.0 - Added pancake-react plugin, ES5 main file
 * v0.2.0 - Added react and jQuery component
@@ -286,7 +287,7 @@ The visual test: https://uikit.service.gov.au/packages/accordion/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

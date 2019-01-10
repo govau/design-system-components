@@ -140,7 +140,7 @@ animate
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/animate/tests/site/
+The visual test: https://auds.service.gov.au/packages/animate/tests/site/
 
 Run `jest` for the unit tests
 
@@ -153,6 +153,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
+* v1.0.12 - Removed uikit references
 * v1.0.11 - Update dependencies
 * v1.0.10 - Update dependencies
 * v1.0.9  - Update browser-sync dependency
@@ -181,7 +182,7 @@ Run `jest` for the unit tests
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

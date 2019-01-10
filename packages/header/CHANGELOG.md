@@ -1,7 +1,7 @@
 @gov.au/header CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.7 - Removed uikit references](#v417)
 * [v4.1.6 - Update dependencies](#v416)
 * [v4.1.5 - Removing web pack dev server, updating dependencies](#v415)
 * [v4.1.4 - Removed border from header brand image on ie8, ie9 and ie10](#v414)
@@ -39,6 +40,11 @@
 
 
 ## Release History
+
+### v4.1.7
+
+- Removed uikit references
+
 
 ### v4.1.6
 
@@ -129,7 +135,7 @@
 ### v1.0.0
 
 - Removed the side spacing so you can now use your own grid system to align the headline to your content
-	([#147](https://github.com/govau/uikit/issues/147))
+	([#147](https://github.com/govau/design-system-components/issues/147))
 
 
 ### v0.1.0

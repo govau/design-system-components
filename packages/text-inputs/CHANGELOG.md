@@ -1,7 +1,7 @@
 @gov.au/text-inputs CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.10 - Removed uikit references](#v2010)
 * [v2.0.9 - Update dependencies](#v209)
 * [v2.0.8 - Removing web pack dev server, updating dependencies](#v208)
 * [v2.0.7 - Fixed build scripts for Windows](#v207)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v2.0.10
+
+- Removed uikit references
+
 
 ### v2.0.9
 

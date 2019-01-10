@@ -80,7 +80,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/control-input/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/control-input/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -105,7 +105,7 @@ control-input
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/control-input/tests/site/
+The visual test: https://auds.service.gov.au/packages/control-input/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -116,6 +116,7 @@ The visual test: https://uikit.service.gov.au/packages/control-input/tests/site/
 
 ## Release History
 
+* v2.2.1 - Removed uikit references
 * v2.2.0 - Changed focus appearance on radio buttons to be round
 * v2.1.7 - Replace `checked` attribute with `defaultChecked` on control inputs examples
 * v2.1.6 - Update dependencies
@@ -145,7 +146,7 @@ The visual test: https://uikit.service.gov.au/packages/control-input/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

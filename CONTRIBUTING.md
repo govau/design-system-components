@@ -1,7 +1,7 @@
-Contributing to UI-Kit
+Contributing to GOV.AU Design System Components
 ======================
 
-Hi there! Thank you for your interest in contributing to UI-Kit, we really appreciate it.
+Hi there! Thank you for your interest in contributing to the design system components, we really appreciate it.
 
 There are many ways to contribute – reporting bugs, fixing bugs, new module suggestions, submitting pull requests for enhancements to modules or even writing
 documentation.
@@ -23,7 +23,7 @@ Wherever you are, and whatever your discipline is, you are invited to contribute
     * [Tested](#tested)
     * [Considered](#considered)
 * [Reporting Bugs, Sending Suggestions](#reporting-bugs-asking-questions-sending-suggestions)
-* [Installing UI-Kit locally](#installing-ui-kit-locally)
+* [Installing components locally](#installing-components-locally)
 
 
 -------------------------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ Before new components and patterns are published into the design system, the tea
 | [Usable](#usable) | It’s been tested and shown to work with a representative sample of users, including those with disabilities. |
 | [Consistent](#consistent) | It uses existing styles and components in the design system where relevant. |
 | [Versatile](#versatile) | It can be easily applied in different contexts. |
-| [Coded](#coded) | Components are ready to merge in the UI-Kit |
+| [Coded](#coded) | Components are ready to merge in |
 | [Tested](#tested) | It’s been tested and shown to work with a range of browsers, assistive technologies and devices. |
 | [Considered](#considered) | Documentation and rationale have been provided. |
 
@@ -125,15 +125,15 @@ For example, what happens with a navigation component that has more items than d
 
 **Code is for humans.** Please look at the coding style and work with it, not against it. We write comments, add spacing, and prefer readable code over clever code. Yes, code is actually for computers, but it is humans that need to maintain it.
 
-**Code comments.** Code should be commented so that it is as usable as possible. Try to provide reasoning or links to documentation about any peculiar decisions that had to be made. [For example.](https://github.com/govau/uikit/blob/master/packages/body/src/sass/_module.scss#L127)
+**Code comments.** Code should be commented so that it is as usable as possible. Try to provide reasoning or links to documentation about any peculiar decisions that had to be made. [For example.](https://github.com/govau/design-system-components/blob/master/packages/body/src/sass/_module.scss#L127)
 
-**Follow the folder structure.** New components should follow the same folder structure as the [existing components.](https://github.com/govau/uikit/tree/master/.templates/new-module)
+**Follow the folder structure.** New components should follow the same folder structure as the [existing components.](https://github.com/govau/design-system-components/tree/master/.templates/new-module)
 
 **CSS** can be dependent on other components, but must use core functions and mixins at a minimum.
 
-* For spacing, padding, or other metrics like border-width, use [AU-space()](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L475)
-* For font-sizes and line-height, use [AU-fontgrid()](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L629)
-* For colours, use the [core colour variables](https://github.com/govau/uikit/blob/master/packages/core/src/sass/_globals.scss#L741)
+* For spacing, padding, or other metrics like border-width, use [AU-space()](https://github.com/govau/design-system-components/blob/master/packages/core/src/sass/_globals.scss#L475)
+* For font-sizes and line-height, use [AU-fontgrid()](https://github.com/govau/design-system-components/blob/master/packages/core/src/sass/_globals.scss#L629)
+* For colours, use the [core colour variables](https://github.com/govau/design-system-components/blob/master/packages/core/src/sass/_globals.scss#L741)
 
 **JavaScript.** The Design System supports **JavaScript, JQuery, and React.** To make integration easier any JavaScript supplied for a component should be written in at least one of these.
 
@@ -145,7 +145,7 @@ For example, what happens with a navigation component that has more items than d
 
 **Accessibility.** A component on its own must be accessible to [WCAG 2.1 level AA.](https://www.w3.org/TR/WCAG21/) Some documentation on how this has been checked, tested, or decisions made to support accessibility should be supplied.
 
-**Browser and device tested.** All components should meet our [browser support requirements.](https://github.com/govau/uikit#browser-support)
+**Browser and device tested.** All components should meet our [browser support requirements.](https://github.com/govau/design-system-components#browser-support)
 
 **No JavaScript fallbacks.** All components must degrade _gracefully_ when JavaScript is disabled. We expect that a user can still complete their task without JavaScript enabled, it just might not be beautiful. For example, accordions default to ‘open’ when JavaScript is disabled so that users can still use the content.
 
@@ -167,7 +167,7 @@ Provide rationale; the more the better. We aim to explain design and code decisi
 
 ## Reporting Bugs, Asking Questions, Sending Suggestions
 
-Use the search in [issues](https://github.com/govau/uikit/issues) to see if the same bug, question or suggestion has already been raised.
+Use the search in [issues](https://github.com/govau/design-system-components/issues) to see if the same bug, question or suggestion has already been raised.
 
 If you’re requesting a new module, prefix the title with `new module: `.
 
@@ -180,11 +180,11 @@ happened instead. For more info look at our [issue template](./ISSUE_TEMPLATE.md
 -------------------------------------------------------------------------------------------------
 
 
-## Installing UI-Kit locally
+## Installing components locally
 
-If you’d like to contribute code, first, you will need to run UI-Kit locally.
+If you’d like to contribute code, first, you will need to run the components locally.
 
-💡 Building the UI-Kit is only necessary if you want to contribute to it. If you want to use the modules in your own project, install them via npm as described
+💡 Building the components is only necessary if you want to contribute them. If you want to use the modules in your own project, install them via npm as described
 in [How to use](./README.md#how-to-use).
 
 To build this project you have to install [lerna](https://github.com/lerna/lerna) globally after cloning it via `npm install -g lerna` and run:

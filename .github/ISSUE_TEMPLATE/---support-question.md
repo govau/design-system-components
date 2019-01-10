@@ -6,7 +6,7 @@ about: "If you need support using the design system (the community is here to he
 
 # Support question
 
-- [ ] I’ve read and agree to the [Code of Conduct](https://github.com/govau/uikit/blob/master/CODE_OF_CONDUCT.md).
+- [ ] I’ve read and agree to the [Code of Conduct](https://github.com/govau/design-system-components/blob/master/CODE_OF_CONDUCT.md).
 - [ ] I’ve searched for any related issues/questions on github
 - [ ]  I've searched the [community forums](https://community.digital.gov.au/c/designsystem) to check for related issues or support questions
 
