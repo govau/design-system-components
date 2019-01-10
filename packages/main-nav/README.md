@@ -224,7 +224,7 @@ main-nav
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/main-nav/tests/site/
+The visual test: https://auds.service.gov.au/packages/main-nav/tests/site/
 
 
 **[⬆ back to top](#contents)**

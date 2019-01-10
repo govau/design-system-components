@@ -50,7 +50,7 @@ body
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/body/tests/site/
+The visual test: https://auds.service.gov.au/packages/body/tests/site/
 
 
 **[⬆ back to top](#contents)**

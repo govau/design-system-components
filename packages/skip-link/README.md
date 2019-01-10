@@ -107,7 +107,7 @@ skip-link
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/skip-link/tests/site/
+The visual test: https://auds.service.gov.au/packages/skip-link/tests/site/
 
 
 **[⬆ back to top](#contents)**

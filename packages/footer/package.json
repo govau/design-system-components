@@ -3,7 +3,7 @@
 	"version": "3.0.1",
 	"description": "Footers help users who reach the bottom of a page without finding what they want.",
 	"keywords": [
-		"uikit",
+		"auds",
 		"pancake",
 		"pancake-module",
 		"sass",
@@ -95,11 +95,11 @@
 	"homepage": "https://designsystem.gov.au/components/footer",
 	"bugs": {
 		"url": "https://github.com/govau/design-system-components/issues",
-		"email": "uikit@digital.gov.au"
+		"email": "info@dta.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "uikit@digital.gov.au",
+		"email": "info@dta.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [

@@ -20,7 +20,7 @@ If you can’t find the answer to your question, you can email guides@digital.go
 ## General
 
 ### Is there any documentation or list of components?
-You can find the Design System documentation at [designsystem.gov.au](http://designsystem.gov.au/). For further examples of our tests you can also see the [components unit tests](https://uikit.service.gov.au/).
+You can find the Design System documentation at [designsystem.gov.au](http://designsystem.gov.au/). For further examples of our tests you can also see the [components unit tests](https://auds.service.gov.au/).
 
 
 ### What are you working on?
@@ -137,7 +137,7 @@ files. Looking at the `src/sass/main.scss` file you can see the order:
 
 
 // components
-@import 'uikit';
+@import '@auds';
 
 // CUSTOM SASS
 ```
@@ -154,7 +154,7 @@ request is:
 1. Create a new branch off the development branch for what you’re working on
 1. Do the necessary changes
 1. If possible please test the work, we understand this is not always possible :)
-1. Please submit your PR against the `develop` branch of the govau/uikit repo.
+1. Please submit your PR against the `develop` branch of the govau/design-system-components repo.
 
 
 ### What code standards do I need to follow for a pull request?

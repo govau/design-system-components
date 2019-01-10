@@ -3,7 +3,7 @@
 	"version": "2.0.8",
 	"description": "The form select element for multiple options",
 	"keywords": [
-		"uikit",
+		"auds",
 		"pancake",
 		"pancake-module",
 		"sass",
@@ -94,11 +94,11 @@
 	"homepage": "https://designsystem.gov.au/components/select",
 	"bugs": {
 		"url": "https://github.com/govau/design-system-components/issues",
-		"email": "uikit@digital.gov.au"
+		"email": "info@dta.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "uikit@digital.gov.au",
+		"email": "info@dta.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [

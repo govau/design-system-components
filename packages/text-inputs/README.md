@@ -96,7 +96,7 @@ text-inputs
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/text-inputs/tests/site/
+The visual test: https://auds.service.gov.au/packages/text-inputs/tests/site/
 
 
 **[⬆ back to top](#contents)**

@@ -140,7 +140,7 @@ animate
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/animate/tests/site/
+The visual test: https://auds.service.gov.au/packages/animate/tests/site/
 
 Run `jest` for the unit tests
 

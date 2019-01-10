@@ -3,7 +3,7 @@
 	"version": "2.1.4",
 	"description": "Use direction links to link up and down within the DOM or back to a parent page.",
 	"keywords": [
-		"uikit",
+		"auds",
 		"pancake",
 		"pancake-module",
 		"sass",
@@ -98,11 +98,11 @@
 	"homepage": "https://designsystem.gov.au/components/direction-links",
 	"bugs": {
 		"url": "https://github.com/govau/design-system-components/issues",
-		"email": "uikit@digital.gov.au"
+		"email": "info@dta.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
-		"email": "uikit@digital.gov.au",
+		"email": "info@dta.gov.au",
 		"url": "https://www.dta.gov.au/"
 	},
 	"contributors": [
