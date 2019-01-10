@@ -8,7 +8,7 @@ and religion (or lack thereof).
 
 This code of conduct outlines our expectations for all those who participate in our community, as well as the consequences for unacceptable behavior.
 
-We invite all those who participate in the components to help us create safe and positive experiences for everyone.
+We invite all those who participate and contribute to the design system components to help us create safe and positive experiences for everyone.
 
 ## 2. Open Source Citizenship
 
