@@ -54,7 +54,7 @@ jobs:
             mv .deploy/manifest-staging.yml site/
             cd site/
             cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push auds -f manifest-staging.yml
+            cf zero-downtime-push design-system-components -f manifest-staging.yml
 
 
   deploy-testing:
@@ -76,7 +76,7 @@ jobs:
             mv .deploy/manifest-testing.yml site/
             cd site/
             cf login -a $CF_API_STAGING -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING
-            cf zero-downtime-push auds-$CIRCLE_BRANCH -f manifest-testing.yml
+            cf zero-downtime-push design-system-components-$CIRCLE_BRANCH -f manifest-testing.yml
 
 
   deploy-prod:
@@ -97,7 +97,7 @@ jobs:
             mv .deploy/manifest-production.yml site/
             cd site/
             cf login -a $CF_API_PROD -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
-            cf zero-downtime-push auds -f manifest-production.yml
+            cf zero-downtime-push design-system-components -f manifest-production.yml
 
 
 # OUR WORKFLOW
