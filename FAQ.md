@@ -128,7 +128,7 @@ The best place to start is by looking for existing conversation in [the communit
 
 
 ### How do I add the components to my build process? How do I add custom code/variables/overrides?
-Build processes can be complicated, we recommend first looking at our [components starter pack](https://github.com/govau/design-system-components-starter). This is a simple
+Build processes can be complicated, we recommend first looking at our [design system starter pack](https://github.com/govau/design-system-components-starter). This is a simple
 implementation of the components showing how to include the components into your project. After you `npm install` and run `npm run watch` you should have some generated
 files. Looking at the `src/sass/main.scss` file you can see the order:
 
