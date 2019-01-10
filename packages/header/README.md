@@ -122,6 +122,7 @@ The visual test: https://auds.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v4.1.7 - Removed uikit references
 * v4.1.6 - Update dependencies
 * v4.1.5 - Removing web pack dev server, updating dependencies
 * v4.1.4 - Removed border from header brand image on ie8, ie9 and ie10

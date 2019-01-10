@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/body/tests/site/
 
 ## Release History
 
+* v2.0.13 - Removed uikit references
 * v2.0.12 - Change code background colours
 * v2.0.11 - Update Dependencies
 * v2.0.10 - Removing web pack dev server, updating dependencies

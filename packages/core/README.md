@@ -255,6 +255,7 @@ The visual test: https://auds.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v3.1.2 - Removed uikit references
 * v3.1.1 - Fix issue with A11yColor when white and black both pass
 * v3.1.0 - Update font stack to accomodate linux users
 * v3.0.3 - Update dependencies

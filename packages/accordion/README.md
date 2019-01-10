@@ -252,6 +252,7 @@ The visual test: https://auds.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v7.0.2 - Removed uikit references
 * v7.0.1 - Fix issue with parent component re-rendering causing accordion to open and close
 * v7.0.0 - Changed accordion title element to use `<button>` instead of `<a>`
 * v6.0.1 - Fix issues with state not firing
