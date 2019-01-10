@@ -108,7 +108,7 @@ government projects. As with any framework, there is still an expectation that c
 
 However, we do plan to provide whole page templates in the future which will greatly minimise the need to write custom code.
 
-Our recommendation is to write your custom code in a reusable and robust pattern. If you’re making a new component, follow the same patterns as the components
+Our recommendation is to write your custom code in a reusable and robust pattern. If you’re making a new component, follow the same patterns as the 
 components. That will allow you to contribute back, or replace those components in the future if your team want to implement another solution.
 
 
