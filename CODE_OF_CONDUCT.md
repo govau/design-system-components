@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-A primary goal of the components is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are
+A primary goal of the  design system components is to be inclusive to the largest number of contributors, with the most varied and diverse backgrounds possible. As such, we are
 committed to providing a friendly, safe and welcoming environment for all, regardless of gender, sexual orientation, ability, ethnicity, socioeconomic status,
 and religion (or lack thereof).
 
