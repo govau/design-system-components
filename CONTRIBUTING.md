@@ -184,7 +184,7 @@ happened instead. For more info look at our [issue template](./ISSUE_TEMPLATE.md
 
 If you’d like to contribute code, first, you will need to run the components locally.
 
-💡 Building the components is only necessary if you want to contribute to it. If you want to use the modules in your own project, install them via npm as described
+💡 Building the components is only necessary if you want to contribute them. If you want to use the modules in your own project, install them via npm as described
 in [How to use](./README.md#how-to-use).
 
 To build this project you have to install [lerna](https://github.com/lerna/lerna) globally after cloning it via `npm install -g lerna` and run:
