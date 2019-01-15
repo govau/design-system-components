@@ -54,12 +54,12 @@ Usage:
 ```jsx
 import { AUcallout, AUcalloutCalendar } from './callout.js';
 
-<AUcallout description="Description for this callout">
+<AUcallout title="Description for this callout">
   AUcallout content
 </AUcallout>
 
 <AUcalloutCalendar
-  description="description for this callout"
+  title="description for this callout"
   datetime="2017-01-01T00:00:00+00:00"
   time="Sunday 32 Jun"
   subline="Your next appointment is"
@@ -71,14 +71,18 @@ All props:
 
 ```jsx
 <AUcallout
-  description="Description for this callout"  {/* The label is a must for screen readers */}
-  attributeOptions                            {/* Any other attribute options */}
+  title="Description for this callout"        {/* The title is a must for screen readers */}
+	level={ 2 }                                 {/* The tag level (<h1/> <h2/> etc), default: '1' */}
+	srOnlyTitle={ false }                       {/* Title is visible to screen readers only */}
+	attributeOptions                            {/* Any other attribute options */}
 >
   Callout content
 </AUcallout>
 
 <AUcalloutCalendar
-  description="description for this callout"  {/* The label is a must for screen readers */}
+	title="description for this callout"        {/* The title is a must for screen readers */}
+	level={ 2 }                                 {/* The tag level (<h1/> <h2/> etc), default: '1' */}
+	srOnlyTitle={ true }                        {/* Title is visible to screen readers only */}
   datetime="2017-01-01T00:00:00+00:00"        {/* The date time string */}
   time="Sunday 32 Jun"                        {/* The same date but human readable */}
   subline="Your next appointment is"          {/* Your subline, optional */}
@@ -88,7 +92,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/callout/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/callout/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -113,7 +117,7 @@ callout
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/callout/tests/site/
+The visual test: https://auds.service.gov.au/packages/callout/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -124,6 +128,9 @@ The visual test: https://uikit.service.gov.au/packages/callout/tests/site/
 
 ## Release History
 
+* v3.0.1 - Removed uikit references
+* v3.0.0 - Replace aria-label with a title
+* v2.1.0 - Remove `margin-bottom`, increase `margin-top` for paragraphs following callout
 * v2.0.8 - Update dependencies
 * v2.0.7 - Removing web pack dev server, updating dependencies
 * v2.0.6 - Fixed build scripts for Windows
@@ -149,7 +156,7 @@ The visual test: https://uikit.service.gov.au/packages/callout/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

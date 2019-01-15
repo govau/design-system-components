@@ -140,7 +140,7 @@ animate
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/animate/tests/site/
+The visual test: https://auds.service.gov.au/packages/animate/tests/site/
 
 Run `jest` for the unit tests
 
@@ -153,21 +153,24 @@ Run `jest` for the unit tests
 
 ## Release History
 
-* v1.0.9 - Update browser-sync dependency
-* v1.0.8 - Update dependencies
-* v1.0.7 - Fixing bug where openSize of 0 gets turned into auto
-* v1.0.6 - Removing web pack dev server, updating dependencies
-* v1.0.5 - Fixed build scripts for Windows
-* v1.0.4 - Change npm run watch browser-sync location
-* v1.0.3 - Update dependencies
-* v1.0.2 - Fix typo in homepage link
-* v1.0.1 - Changing homepage link
-* v1.0.0 - Moved to AU namespace, fixed export
-* v0.1.5 - Fixed pancake config
-* v0.1.4 - Pinned pancake plugins
-* v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction
-* v0.1.2 - Removed core as dependency
-* v0.1.1 - 💥 Initial version
+* v1.0.12 - Removed uikit references
+* v1.0.11 - Update dependencies
+* v1.0.10 - Update dependencies
+* v1.0.9  - Update browser-sync dependency
+* v1.0.8  - Update dependencies
+* v1.0.7  - Fixing bug where openSize of 0 gets turned into auto
+* v1.0.6  - Removing web pack dev server, updating dependencies
+* v1.0.5  - Fixed build scripts for Windows
+* v1.0.4  - Change npm run watch browser-sync location
+* v1.0.3  - Update dependencies
+* v1.0.2  - Fix typo in homepage link
+* v1.0.1  - Changing homepage link
+* v1.0.0  - Moved to AU namespace, fixed export
+* v0.1.5  - Fixed pancake config
+* v0.1.4  - Pinned pancake plugins
+* v0.1.3  - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction
+* v0.1.2  - Removed core as dependency
+* v0.1.1  - 💥 Initial version
 
 
 **[⬆ back to top](#contents)**
@@ -179,7 +182,7 @@ Run `jest` for the unit tests
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

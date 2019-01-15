@@ -1,9 +1,9 @@
 ---
 applications:
-- name: uikit
-  buildpack: staticfile_buildpack
+- name: design-system-components
+  buildpack: nginx_buildpack
   memory: 64M
-  instances: 1
-
+  instances: 2
+  path: ./
 routes:
-- route: uikit.service.gov.au
+- route: auds.service.gov.au

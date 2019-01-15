@@ -2,7 +2,7 @@ Update dependenciesalerts CH3NGELOG
 @gov.au/page-aletsCHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -16,6 +16,8 @@ Update dependenciesalerts CH3NGELOG
 
 ## Versions
 
+* [v2.1.1 - Removed uikit references](#v211)
+* [v2.1.0 - Remove role alert as it interupts the screen reader](#v210)
 * [v2.0.8 - Update dependencies](#v208)
 * [v2.0.7 - Removing web pack dev server, updating dependencies](#v207)
 * [v2.0.6 - Fixed build scripts for Windows](#v206)
@@ -36,6 +38,17 @@ Update dependenciesalerts CH3NGELOG
 
 
 ## Release History
+
+### v2.1.1
+
+- Removed uikit references
+
+
+### v2.1.0
+
+- Remove role alert as it interupts the screen reader
+- New documentation added explaining when to use `role="alert"`
+
 
 ### v2.0.8
 
@@ -102,7 +115,7 @@ Update dependenciesalerts CH3NGELOG
 
 ### v0.1.1
 
-- Improved print styles ([#156](https://github.com/govau/uikit/issues/156))
+- Improved print styles ([#156](https://github.com/govau/design-system-components/issues/156))
 
 
 ### v0.1.0

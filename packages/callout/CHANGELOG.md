@@ -1,7 +1,7 @@
 @gov.au/callout CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,9 @@
 
 ## Versions
 
+* [v3.0.1 - Removed uikit references](#v301)
+* [v3.0.0 - Replace aria-label with a title](#v300)
+* [v2.1.0 - Remove `margin-bottom`, increase `margin-top` for paragraphs following callout](#v210)
 * [v2.0.8 - Update dependencies](#v208)
 * [v2.0.7 - Removing web pack dev server, updating dependencies](#v207)
 * [v2.0.6 - Fixed build scripts for Windows](#v206)
@@ -35,6 +38,22 @@
 
 
 ## Release History
+
+### v3.0.1
+
+- Removed uikit references
+
+
+### v3.0.0
+
+- Replace aria-label with a title
+
+
+### v2.1.0
+
+- Remove `margin-bottom`
+- Increase `margin-top` for paragraphs following callout by `0.5`units
+
 
 ### v2.0.8
 

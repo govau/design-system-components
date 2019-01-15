@@ -1,7 +1,7 @@
 @gov.au/select CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.9 - Removed uikit references](#v209)
 * [v2.0.8 - Update dependencies](#v208)
 * [v2.0.7 - Removing web pack dev server, updating dependencies](#v207)
 * [v2.0.6 - Fixed build scripts for Windows](#v206)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v2.0.9
+
+- Removed uikit references
+
 
 ### v2.0.8
 

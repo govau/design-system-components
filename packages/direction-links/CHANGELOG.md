@@ -1,7 +1,7 @@
 @gov.au/direction-links CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.5 - Removed uikit references](#v215)
 * [v2.1.4 - Update dependencies](#v214)
 * [v2.1.3 - Removing web pack dev server, updating dependencies](#v213)
 * [v2.1.2 - Fixed build scripts for Windows](#v212)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v2.1.5
+
+- Removed uikit references
+
 
 ### v2.1.4
 

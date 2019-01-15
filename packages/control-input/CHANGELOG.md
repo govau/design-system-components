@@ -1,7 +1,7 @@
 @gov.au/control-input CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,9 @@
 
 ## Versions
 
+* [v2.2.1 - Removed uikit references](#v221)
+* [v2.2.0 - Changed focus appearance on radio buttons to be round](#v220)
+* [v2.1.7 - Replace `checked` attribute with `defaultChecked` on control inputs examples](#v217)
 * [v2.1.6 - Update dependencies](#v216)
 * [v2.1.5 - Removing web pack dev server, updating dependencies](#v215)
 * [v2.1.4 - Fixed build scripts for Windows](#v214)
@@ -37,6 +40,21 @@
 
 
 ## Release History
+
+### v2.2.1
+
+- Removed uikit references
+
+
+### v2.2.0
+
+- Changed focus appearance on radio buttons to be round
+
+
+### v2.1.7
+
+- Replace `checked` attribute with `defaultChecked` on control inputs examples
+
 
 ### v2.1.6
 
@@ -117,7 +135,7 @@
 
 ### v0.1.1
 
-- Fixed a Safari bug that made the labels break into another line. HastagSafariIsTheNewIE. ([#184](https://github.com/govau/uikit/issues/184))
+- Fixed a Safari bug that made the labels break into another line. HastagSafariIsTheNewIE. ([#184](https://github.com/govau/design-system-components/issues/184))
 
 
 ### v0.1.0

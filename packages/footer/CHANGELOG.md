@@ -1,7 +1,7 @@
 @gov.au/footer CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.2 - Removed uikit references](#v302)
 * [v3.0.1 - Placed the `au-footer__end` inside a `row` and `col-sm-12`](#v301)
 * [v3.0.0 - `.au-footer-end` no longer needs to follow `.au-footer-navigation`](#v300)
 * [v2.1.9 - Add `role="contentinfo"` attribute on footer](#v219)
@@ -40,6 +41,11 @@
 
 
 ## Release History
+
+### v3.0.2
+
+- Removed uikit references
+
 
 ### v3.0.1
 

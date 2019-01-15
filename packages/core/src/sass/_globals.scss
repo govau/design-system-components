@@ -424,7 +424,7 @@ $dependencies: (
 	$maxLightness: 100;
 	$isDarkColor: false;
 
-	// If our colour passes contrast on black
+	// If our colour passes contrast on black and white
 	@if $isBlackBgContrast and $isWhiteBgContrast {
 		// Change the min lightness if the color is light
 		@if( $a11yLightness >= 50 ) {

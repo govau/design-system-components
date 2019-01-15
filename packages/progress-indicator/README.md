@@ -96,7 +96,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/progress-indicator/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/progress-indicator/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -121,7 +121,7 @@ progress-indicator
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/progress-indicator/tests/site/
+The visual test: https://auds.service.gov.au/packages/progress-indicator/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -132,6 +132,7 @@ The visual test: https://uikit.service.gov.au/packages/progress-indicator/tests/
 
 ## Release History
 
+* v3.1.5 - Removed uikit references
 * v3.1.4 - Update dependencies
 * v3.1.3 - Removing web pack dev server, updating dependencies
 * v3.1.2 - Fixed build scripts for Windows
@@ -158,7 +159,7 @@ The visual test: https://uikit.service.gov.au/packages/progress-indicator/tests/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

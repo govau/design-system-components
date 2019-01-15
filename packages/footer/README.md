@@ -79,7 +79,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/footer/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/footer/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -104,7 +104,7 @@ footer
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/footer/tests/site/
+The visual test: https://auds.service.gov.au/packages/footer/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -115,6 +115,7 @@ The visual test: https://uikit.service.gov.au/packages/footer/tests/site/
 
 ## Release History
 
+* v3.0.2 - Removed uikit references
 * v3.0.1 - Placed the `au-footer__end` inside a `row` and `col-sm-12`
 * v3.0.0 - `.au-footer-end` no longer needs to follow `.au-footer-navigation`
 * v2.1.9 - Add `role="contentinfo"` attribute on footer
@@ -145,7 +146,7 @@ The visual test: https://uikit.service.gov.au/packages/footer/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

@@ -22,13 +22,25 @@
 	@include AU-fontgrid( sm );
 	@include AU-space( padding, 1.5unit );
 	@include AU-space( border-left, 0.25unit solid $AU-color-foreground-border );
-	@include AU-space( margin-bottom, 2unit );
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 	background-color: $AU-color-background-shade;
 	word-wrap: break-word;
 
 	* + & {
+		@include AU-space( margin-top, 2unit );
+	}
+
+	p {
+		margin: 0;
+	}
+
+	* + p {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	// Visual treatment for paragraphs following callout
+	& + p {
 		@include AU-space( margin-top, 2unit );
 	}
 
@@ -49,25 +61,32 @@
 
 
 /**
+ * The callout heading.
+ */
+.au-callout__heading {
+	@include AU-fontgrid( md );
+	margin: 0;
+
+	&.au-callout__heading--sronly {
+		@include AU-sronly();
+
+		& + * {
+			margin-top: 0;
+		}
+	}
+}
+
+
+/**
  * The calendar event callout
  */
 .au-callout--calendar-event {
 	background-color: $AU-color-background-shade;
 }
 
-.au-callout--calendar-event__lede,
-.au-callout--calendar-event__time,
-.au-callout--calendar-event__name {
-	display: block; // overrides body, depending on markup (eg. using `p`).
-}
-
-* + .au-callout--calendar-event__time,
-* + .au-callout--calendar-event__name {
-	@include AU-space( margin-top, 0.5unit ); // overrides body, to allow for var. text markup.
-}
-
 .au-callout--calendar-event__lede {
 	@include AU-fontgrid( sm, nospace );
+	margin: 0;
 }
 
 .au-callout--calendar-event__time,
@@ -77,4 +96,16 @@
 
 .au-callout--calendar-event__time {
 	font-weight: bold;
+}
+
+.au-callout--calendar-event__lede,
+.au-callout--calendar-event__time,
+.au-callout--calendar-event__name {
+	display: block; // overrides body, depending on markup (eg. using `p`).
+}
+
+* + .au-callout--calendar-event__time,
+* + .au-callout--calendar-event__name,
+* + .au-callout--calendar-event__lede {
+	@include AU-space( margin-top, 0.5unit ); // overrides body, to allow for var. text markup.
 }

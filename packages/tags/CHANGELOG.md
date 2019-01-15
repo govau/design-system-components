@@ -1,7 +1,7 @@
 @gov.au/tags CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.1.5 - Removed uikit references](#v315)
 * [v3.1.4 - Update dependencies](#v314)
 * [v3.1.3 - Removing web pack dev server, updating dependencies](#v313)
 * [v3.1.2 - Fixed build scripts for Windows](#v312)
@@ -35,6 +36,11 @@
 
 
 ## Release History
+
+### v3.1.5
+
+- Removed uikit references
+
 
 ### v3.1.4
 

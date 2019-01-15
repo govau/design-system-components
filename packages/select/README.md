@@ -86,7 +86,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/select/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/select/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -111,7 +111,7 @@ select
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/select/tests/site/
+The visual test: https://auds.service.gov.au/packages/select/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -122,6 +122,7 @@ The visual test: https://uikit.service.gov.au/packages/select/tests/site/
 
 ## Release History
 
+* v2.0.9 - Removed uikit references
 * v2.0.8 - Update dependencies
 * v2.0.7 - Removing web pack dev server, updating dependencies
 * v2.0.6 - Fixed build scripts for Windows
@@ -146,7 +147,7 @@ The visual test: https://uikit.service.gov.au/packages/select/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

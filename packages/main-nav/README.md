@@ -158,7 +158,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/accordion/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/accordion/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -224,7 +224,7 @@ main-nav
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/main-nav/tests/site/
+The visual test: https://auds.service.gov.au/packages/main-nav/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -235,6 +235,8 @@ The visual test: https://uikit.service.gov.au/packages/main-nav/tests/site/
 
 ## Release History
 
+* v1.0.1 - Removed uikit references
+* v1.0.0 - Wrap active item in main-nav in an `<a>` and add `aria-current="page"`
 * v0.2.0 - Active items are no longer wrapped in `<a>` for accessibility
 * v0.1.4 - Fix passing props to main nav react component
 * v0.1.3 - Added an aria-label attribute to the nav element
@@ -252,7 +254,7 @@ The visual test: https://uikit.service.gov.au/packages/main-nav/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

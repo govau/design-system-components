@@ -1,7 +1,7 @@
 @gov.au/core CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,7 +15,9 @@
 
 ## Versions
 
-* [v3.2.0 - Remove suggestions from color scheme, make generated pallette easier to use](#v320)
+* [v3.2.0 - Add additional colour checks for incaccesble color combinations](#v320)
+* [v3.1.2 - Removed uikit references](#v312)
+* [v3.1.1 - Fix issue with A11yColor when white and black both pass](#v311)
 * [v3.1.0 - Update font stack to accomodate linux users](#v310)
 * [v3.0.3 - Update dependencies](#v303)
 * [v3.0.2 - Removing web pack dev server, updating dependencies](#v302)
@@ -28,8 +30,8 @@
 * [v1.0.1 - Adjusting how colors are generated from other colors](#v101)
 * [v1.0.0 - Moved to AU namespace, added new color themes and spacing](#v100)
 * [v0.1.3 - Moved to System fonts](#v013)
-* [v0.1.2 - Fixed newly introduced uikit-svguri bug; ups](#v012)
-* [v0.1.1 - Fixed uikit-svguri bug](#v011)
+* [v0.1.2 - Fixed newly introduced auds-svguri bug; ups](#v012)
+* [v0.1.1 - Fixed auds-svguri bug](#v011)
 * [v0.1.0 - 💥 Initial version](#v010)
 
 
@@ -40,8 +42,19 @@
 
 ### v3.2.0
 
-- Remove suggestions from color scheme
-- Make generated pallette easier to use
+- Add additional colour checks for incaccesble color combinations
+- If the same colour is entered every time, it will create an accessible palette
+- If foreground colours are not all light or all dark colours it will fail as it cannot create a palette.
+
+
+### v3.1.2
+
+- Removed uikit references
+
+
+### v3.1.1
+
+- Fix issue with A11yColor when white and black both pass
 
 
 ### v3.1.0
@@ -120,12 +133,12 @@
 
 ### v0.1.2
 
-- Fixed uikit-svguri bug that was introduced in 0.1.1. Ups! We swear we make testing more automated :)
+- Fixed auds-svguri bug that was introduced in 0.1.1. Ups! We swear we make testing more automated :)
 
 
 ### v0.1.1
 
-- Fixed uikit-svguri bug where new lines would cause webpack to break CSS.
+- Fixed auds-svguri bug where new lines would cause webpack to break CSS.
 
 
 ### v0.1.0

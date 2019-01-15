@@ -1,7 +1,7 @@
 @gov.au/accordion CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,7 +15,11 @@
 
 ## Versions
 
-* [v6.0.0 Add accordion group in a unordered list, remove `role="rab"`](#v600)
+* [v7.0.2 - Removed uikit references](#v702)
+* [v7.0.1 - Fix issue with parent component re-rendering causing accordion to open and close](#v701)
+* [v7.0.0 - Changed accordion title element to use `<button>` instead of `<a>`](#v700)
+* [v6.0.1 - Fix issues with state not firing](#v601)
+* [v6.0.0 - Add accordion group in a unordered list, remove `role="tab"`](#v600)
 * [v5.0.2 - Update dependencies](#v502)
 * [v5.0.1 - Removing web pack dev server, updating dependencies](#v501)
 * [v5.0.0 - Removing unecessary aria-hidden as css display toggles screen reader ability](#v500)
@@ -42,9 +46,29 @@
 
 ## Release History
 
+### v7.0.2
+
+- Removed uikit references
+
+
+### v7.0.1
+
+- Fix issue with parent component re-rendering causing accordion to open and close
+
+
+### v7.0.0
+
+- Changed accordion title element to use `<button>` instead of `<a>`
+
+
+### v6.0.1
+
+- Fix issues with state not firing
+
+
 ### v6.0.0
 
-- Add accordion group in a unordered list, remove `role="rab"`
+- Add accordion group in a unordered list, remove `role="tab"`
 
 
 ### v5.0.2
@@ -123,7 +147,7 @@
 
 ### v1.0.1
 
-- IE8 spacing above triangle fixed [309](https://github.com/govau/uikit/issues/309)
+- IE8 spacing above triangle fixed [309](https://github.com/govau/design-system-components/issues/309)
 
 
 ### v1.0.0

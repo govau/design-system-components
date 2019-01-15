@@ -1,7 +1,7 @@
 @gov.au/side-nav CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,10 @@
 
 ## Versions
 
+* [v5.0.2 - Removed uikit references](#v502)
+* [v5.0.1 - Update accordion dependency](#v501)
+* [v5.0.0 - Update accordion dependency (use `<button>` instead of `<a>` for title)](#v500)
+* [v4.0.1 - Update accordion, add a test with state toggle, update side-nav react test examples](#v401)
 * [v4.0.0 - Active items are no longer wrapped in `<a>` for accessibility](#v400)
 * [v3.0.0 - Updated accordion, see accordion v6.0.0](#v300)
 * [v2.0.6 - Added an aria-label attribute to the aside element](#v206)
@@ -33,6 +37,27 @@
 
 
 ## Release History
+
+### v5.0.2
+
+- Removed uikit references
+
+
+### v5.0.1
+
+- Update accordion dependency
+
+
+### v5.0.0
+
+- Update accordion dependency (use `<button>` instead of `<a>` for title)
+
+
+### v4.0.1
+
+- Update accordion, add a test with state toggle
+- Update side-nav react test examples
+
 
 ### v4.0.0
 

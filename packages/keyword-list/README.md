@@ -95,7 +95,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/keyword-list/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/keyword-list/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -124,7 +124,7 @@ keyword-list
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/keyword-list/tests/site/
+The visual test: https://auds.service.gov.au/packages/keyword-list/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -135,6 +135,7 @@ The visual test: https://uikit.service.gov.au/packages/keyword-list/tests/site/
 
 ## Release History
 
+* v3.0.3 - Removed uikit references
 * v3.0.2 - Update dependencies
 * v3.0.1 - Removing web pack dev server, updating dependencies
 * v3.0.0 - Updated dependency version of link-list, build scripts for Windows
@@ -159,7 +160,7 @@ The visual test: https://uikit.service.gov.au/packages/keyword-list/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**

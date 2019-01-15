@@ -56,13 +56,12 @@ class AUaccordion extends React.PureComponent {
 	 * Handle state if supplied
 	 */
 	componentDidUpdate( prevProps ) {
-		if( prevProps.state && prevProps.state.closed !== undefined ) {
-
-			if( prevProps.state.closed ) {
-				this.accordionOpen( this.accordionHeader );
+		if ( this.props.closed !== prevProps.closed ) {
+			if ( this.props.closed ) {
+				this.accordionClose( this.accordionHeader );
 			}
 			else {
-				this.accordionClose( this.accordionHeader );
+				this.accordionOpen( this.accordionHeader );
 			}
 		}
 	}
@@ -98,7 +97,6 @@ class AUaccordion extends React.PureComponent {
 	 * @param  {string} closingClass  - The secondClass you want to toggle on the DOM node
 	 */
 	toggleClasses( element, state, openingClass, closingClass ) {
-
 		if( state === 'opening' || state === 'open' ) {
 			var oldClass = openingClass || 'au-accordion--closed';
 			var newClass = closingClass || 'au-accordion--open';
@@ -154,7 +152,6 @@ class AUaccordion extends React.PureComponent {
 	 *
 	 */
 	accordionToggle( elements, speed, callbacks ) {
-
 		const SetAriaRoles = this.setAriaRoles;
 		const ToggleClasses = this.toggleClasses;
 
@@ -250,7 +247,6 @@ class AUaccordion extends React.PureComponent {
 	 *
 	 */
 	accordionOpen( elements, speed ) {
-
 		const ToggleClasses = this.toggleClasses;
 
 		// stop event propagation
@@ -342,7 +338,7 @@ class AUaccordion extends React.PureComponent {
 					endSize: 0,
 					speed: speed || 250,
 					callback: function() {
-						target.style.display = 'none';
+						target.style.display = '';
 						target.style.height = '';
 						ToggleClasses( target, 'close' );
 					},
@@ -373,7 +369,7 @@ class AUaccordion extends React.PureComponent {
 	render() {
 		return (
 			<section className={ `au-accordion ${ this.className }${ this.props.dark ? ' au-accordion--dark' : '' }` } { ...this.attributeOptions }>
-				<a href={`#${ this.ID }`}
+				<button
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
 					aria-expanded={ !this.props.closed }
@@ -381,7 +377,7 @@ class AUaccordion extends React.PureComponent {
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
 					onClick={ ( event ) => this.toggle( event ) }>
 						{ this.props.header }
-				</a>
+				</button>
 
 				<div
 					className={`au-accordion__body ${ this.closeClass }`}

@@ -8,76 +8,106 @@ import AUsideNav from './side-nav.js';
 const menu = [
 	{
 		link: '#',
-		text: 'Change to route one',
+		text: 'Do you need to lodge a tax return?',
 	},
 	{
 		link: '#',
-		text: 'Change to route two',
+		text: 'Lodge online',
 		children: [
 			{
 				link: '#',
-				text: 'Change to route one',
+				text: 'Pre-filling your online tax return',
 			},
 			{
 				link: '#',
-				text: 'Change to route two',
+				text: 'Why you may receive a tax bill'
+			},
+			{
+				link: '#',
+				text: 'What is new for individuals'
+			}
+		]
+	},
+	{
+		link: '#',
+		text: 'In detail',
+		children: [
+			{
+				link: '#',
+				text: 'Record keeping',
 				children: [
 					{
 						link: '#',
-						text: 'Change to route one',
+						text: 'Keeping your tax records',
+						active: true
 					},
 					{
 						link: '#',
-						text: 'Change to route two',
-						active: true,
-						children: [
-							{
-								link: '#',
-								text: 'Change to route one',
-							},
-							{
-								link: '#',
-								text: 'Change to route two',
-								children: [
-									{
-										link: '#',
-										text: 'Change to route one',
-									},
-									{
-										link: '#',
-										text: 'Change to route two',
-									},
-								],
-							},
-						],
-					},
-				],
-			},
-		],
+						text: 'Incorrect amounts',
+					}
+				]
+			}
+		]
 	},
 	{
 		link: '#',
-		text: 'Change to route three',
+		text: 'Tax receipt',
 	},
 	{
 		link: '#',
-		text: 'Change to route four',
-		children: [
-			{
-				link: '#',
-				text: 'Change to route one',
-			},
-			{
-				link: '#',
-				text: 'Change to route two',
-			},
-		],
-	},
-	{
-		link: '#',
-		text: 'Change to route five',
-	},
+		text: 'Pre-fill availability',
+	}
 ];
+
+
+// To manage side-nav with state just wrap it with a state
+class SideNavWrapper extends React.Component {
+	// for an example on what a state change might look like we have to add a state
+	constructor() {
+		super();
+
+		this.state = {
+			closed: false
+		};
+	}
+
+	// let’s change the state in the absence of more complex application code
+	toggleSideNav() {
+		this.setState({ closed: !this.state.closed });
+	}
+
+	render() {
+		return (
+			<Fragment>
+				<AUsideNav
+					closed={ this.state.closed }
+					accordionHeader="In this section"
+					menuHeaderLink="#"
+					menuHeader="Lodging your tax return"
+					items={[
+						{
+							link: '#',
+							text: 'Do you need to lodge a tax return?',
+						},
+						{
+							link: '#',
+							text: 'Tax receipts',
+						},
+					]}
+					onOpen={ () => { this.toggleSideNav() }}
+					onClose={ () => { this.toggleSideNav() }}
+				/>
+
+				<button
+					className="au-side-nav-toggle"
+					type="button"
+					onClick={ () => { this.toggleSideNav() }}>
+					Toggle side nav via state ( normally hidden on desktop )
+				</button>
+			</Fragment>
+		);
+	}
+}
 
 
 ReactDOM.render(
@@ -125,7 +155,7 @@ ReactDOM.render(
 							linkComponent={ Link }
 							accordionHeader="In this section"
 							menuHeaderLink="#"
-							menuHeader="Lodging your tax return"
+							menuHeader="React Router example"
 							items={[
 								{
 									link: 'one',
@@ -143,6 +173,11 @@ ReactDOM.render(
 						</Switch>
 					</Fragment>
 				</BrowserRouter>
+			</div>
+		</div>
+		<div className="split-wrapper">
+			<div className="split au-body">
+				<SideNavWrapper />
 			</div>
 		</div>
 	</div>,

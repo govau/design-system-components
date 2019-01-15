@@ -1,7 +1,7 @@
 @gov.au/keyword-list CHANGELOG
 ======================
 
-> Part of the [gov.au UI-Kit](https://github.com/govau/uikit/) ecosystem.
+> Part of the [gov.au components](https://github.com/govau/design-system-components/) ecosystem.
 
 
 ## Contents
@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.3 - Removed uikit references](#v303)
 * [v3.0.2 - Update dependencies](#v302)
 * [v3.0.1 - Removing web pack dev server, updating dependencies](#v301)
 * [v3.0.0 - Updated dependency version of link-list, build scripts for Windows](#v300)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v3.0.3
+
+- Removed uikit references
+
 
 ### v3.0.2
 

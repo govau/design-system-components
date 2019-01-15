@@ -13,7 +13,7 @@ There are several ways you can contribute:
 
 1. Participate in the discussions on the [community forums](https://community.digital.gov.au/c/designsystem)
 
-2. Donate developer time on the [open issues](https://github.com/govau/uikit/issues)
+2. Donate developer time on the [open issues](https://github.com/govau/design-system-components/issues)
 
 3. Identify any bugs or improvements and create an issue
 

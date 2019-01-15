@@ -82,7 +82,7 @@ All props:
 ```
 _(💡 additional props are spread onto the component)_
 
-For more details have a look at the [usage example](https://github.com/govau/uikit/tree/master/packages/skip-link/tests/react/index.js).
+For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/skip-link/tests/react/index.js).
 
 
 **[⬆ back to top](#contents)**
@@ -107,7 +107,7 @@ skip-link
 
 ## Tests
 
-The visual test: https://uikit.service.gov.au/packages/skip-link/tests/site/
+The visual test: https://auds.service.gov.au/packages/skip-link/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -118,6 +118,7 @@ The visual test: https://uikit.service.gov.au/packages/skip-link/tests/site/
 
 ## Release History
 
+* v2.0.11 - Removed uikit references
 * v2.0.10 - Added an aria-label attribute to the nav element
 * v2.0.9 - Update dependencies
 * v2.0.8 - Removing web pack dev server, updating dependencies
@@ -144,7 +145,7 @@ The visual test: https://uikit.service.gov.au/packages/skip-link/tests/site/
 ## License
 
 Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/uikit/packages/core/master/LICENSE).
+Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
 
 
 **[⬆ back to top](#contents)**
