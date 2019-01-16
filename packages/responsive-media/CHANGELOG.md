@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.13 - Add `title` attribute to iframe examples](#v2013)
 * [v2.0.12 - Removed uikit references](#v2012)
 * [v2.0.11 - Update dependencies](#v2011)
 * [v2.0.10 - Removing web pack dev server, updating dependencies](#v2010)
@@ -37,6 +38,11 @@
 
 
 ## Release History
+
+### v2.0.13
+
+- Add `title` attribute to iframe examples. This describes the contents of each frame and provides screenreader users detail so they can decide if they would like to enter the frame.
+
 
 ### v2.0.12
 
