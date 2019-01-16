@@ -1,4 +1,4 @@
-GOV.AU Design System Components
+Australian Government Design System Components
 =============
 
 > The components for the Australian Government Design System.
@@ -33,7 +33,7 @@ GOV.AU Design System Components
 
 ## How to use
 
-The GOV.AU components is distributed through the [npm](https://www.npmjs.com) ecosystem and can only be installed through the `npm` command.
+The design system components are distributed through the [npm](https://www.npmjs.com) ecosystem and can only be installed through the `npm` command.
 Npm requires [node.js](https://nodejs.org/en/) and the components needs node.js 8 or higher.
 
 To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`.)
