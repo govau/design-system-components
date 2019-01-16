@@ -78,11 +78,9 @@ class AUaccordion extends React.PureComponent {
 
 		if( state === 'closing' ) {
 			element.setAttribute( 'aria-expanded', false );
-			element.setAttribute( 'aria-selected', false );
 		}
 		else {
 			element.setAttribute( 'aria-expanded', true );
-			element.setAttribute( 'aria-selected', true );
 		}
 	}
 
@@ -373,7 +371,6 @@ class AUaccordion extends React.PureComponent {
 					className={`au-accordion__title js-au-accordion ${ this.closeClass }`}
 					aria-controls={ this.ID }
 					aria-expanded={ !this.props.closed }
-					aria-selected={ !this.props.closed }
 					ref={ accordionHeader => { this.accordionHeader = accordionHeader } }
 					onClick={ ( event ) => this.toggle( event ) }>
 						{ this.props.header }
