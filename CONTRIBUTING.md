@@ -1,4 +1,4 @@
-Contributing to GOV.AU Design System Components
+Contributing to Australian Government Design System Components
 ======================
 
 Hi there! Thank you for your interest in contributing to the design system components, we really appreciate it.
