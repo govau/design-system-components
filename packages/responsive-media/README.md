@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/responsive-media/tests/sit
 
 ## Release History
 
+* v2.0.13 - Add `title` attribute to iframe examples.
 * v2.0.12 - Removed uikit references
 * v2.0.11 - Update dependencies
 * v2.0.10 - Removing web pack dev server, updating dependencies
