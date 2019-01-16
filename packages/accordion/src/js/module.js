@@ -32,11 +32,9 @@ var AU = AU || {};
 
 		if( state === 'closing' ) {
 			element.setAttribute( 'aria-expanded', false );
-			element.setAttribute( 'aria-selected', false );
 		}
 		else {
 			element.setAttribute( 'aria-expanded', true );
-			element.setAttribute( 'aria-selected', true );
 		}
 	}
 

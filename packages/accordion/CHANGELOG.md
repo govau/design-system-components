@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v7.0.3 - Remove aria-selected from accordion button](#v703)
 * [v7.0.2 - Removed uikit references](#v702)
 * [v7.0.1 - Fix issue with parent component re-rendering causing accordion to open and close](#v701)
 * [v7.0.0 - Changed accordion title element to use `<button>` instead of `<a>`](#v700)
@@ -45,6 +46,11 @@
 
 
 ## Release History
+
+### v7.0.3
+
+- Remove aria-selected from accordion button
+
 
 ### v7.0.2
 
