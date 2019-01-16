@@ -42,12 +42,10 @@ $.fn.AUaccordion = function( callbacks ) {
 				if( _isOpen ) {
 					$controls
 						.attr( 'aria-expanded', 'true' )
-						.attr( 'aria-selected', 'true' )
 				}
 				else {
 					$controls
 						.attr( 'aria-expanded', 'false' )
-						.attr( 'aria-selected', 'false' )
 				}
 			});
 
