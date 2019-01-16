@@ -49,7 +49,7 @@
 
 ### v7.0.3
 
-- Remove aria-selected from accordion button
+- Remove aria-selected from accordion button, as [`role="button"` doesn't support `aria-selected`](https://www.w3.org/TR/wai-aria-1.1/#button)
 
 
 ### v7.0.2
