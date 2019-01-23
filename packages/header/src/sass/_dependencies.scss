@@ -1,9 +1,8 @@
 //sass-versioning
-@import '../../../core/node_modules/sass-versioning/dist/_index.scss';
-
+@import '../../../../node_modules/sass-versioning/dist/_index.scss';
 //dependencies
 @import '../../../core/src/sass/_module.scss';
-@import '../../../grid-12/lib/sass/_module.scss';
+@import '../../../grid-12/src/sass/_module.scss';
 
 //this module
 @import '../../src/sass/_module.scss';

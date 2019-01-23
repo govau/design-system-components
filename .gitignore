@@ -16,3 +16,4 @@ packages/*/lib/
 npm-debug.log
 lerna-debug.log
 /index.html
+pancake

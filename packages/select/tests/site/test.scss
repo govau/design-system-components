@@ -2,8 +2,8 @@
 @import '../../src/sass/_dependencies.scss';
 
 //testing includes
-@import '../../../text-inputs/lib/sass/_module.scss';
-@import '../../../buttons/lib/sass/_module.scss';
+@import '../../../text-inputs/src/sass/_module.scss';
+@import '../../../buttons/src/sass/_module.scss';;
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';

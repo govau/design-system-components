@@ -389,7 +389,7 @@ HELPER.precompile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		reactSass: () => {
-			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/src/js/react.js`) ) {
 
 				// 1. create directory
 				CreateDir('./lib/css/');
@@ -406,7 +406,7 @@ HELPER.precompile = (() => {
 		 * Transpile react to es5, compile css file and include it into our react component
 		 */
 		react: () => {
-			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/src/js/react.js`) ) {
 				const reactOptions = {
 					ast: false,
 					compact: true,
@@ -559,7 +559,8 @@ HELPER.compile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		sass: () => {
-			let _hasJs = Fs.existsSync( Path.normalize(`${ process.cwd() }/lib/js/module.js`) );
+			
+			let _hasJs = Fs.existsSync( Path.normalize(`${ process.cwd() }/src/js/module.js`) );
 
 			// 1. compile scss
 			Sassify('./tests/site/test.scss', './tests/site/style.css');
