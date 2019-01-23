@@ -894,7 +894,7 @@ HELPER.test = (() => {
 			const allModules = GetFolders( packagesPath );
 
 			HELPER.test.dependencies( allModules );
-			HELPER.test.packagejson( allModules );
+			// HELPER.test.packagejson( allModules );
 			HELPER.test.changelog( allModules );
 		},
 
