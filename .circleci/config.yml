@@ -10,10 +10,10 @@ jobs:
       - image: circleci/node:10.14.0                       # ~NodeLTS as of 01/2019
     working_directory: ~/auds
     steps:
+      - checkout                                          # get the files from the repo (why would you ever not want the files????)
       - restore_cache:
           keys:
             - v1-node-cache-{{ checksum "yarn.lock" }}
-      - checkout                                          # get the files from the repo (why would you ever not want the files????)
       - run:
           # https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
           name: Install packages for puppeteer
