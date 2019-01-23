@@ -416,7 +416,7 @@ HELPER.precompile = (() => {
 						`@babel/preset-react`,
 					],
 					sourceMaps: "both",
-					sourceFileName: `react.es5.js`,
+					sourceFileName: `react.es6.js`,
 				};
 
 				const searches = {
