@@ -51,8 +51,7 @@
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~2",
-		"@gov.au/pancake-json": "~1",
-		"sass-versioning": "^0.3.0"
+		"@gov.au/pancake-json": "~1"
 	},
 	"peerDependencies": {},
 	"devDependencies": {
