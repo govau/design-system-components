@@ -266,7 +266,7 @@ const HELPER = (() => { // constructor factory
 /**
  * Dependencies
  */
-const Babel = require('babel-core');
+const Babel = require('@babel/core');
 const Treeify = require('treeify');
 
 
@@ -290,7 +290,7 @@ HELPER.precompile = (() => {
 		 * Move files from src/ to lib/ and replace placeholders inside
 		 */
 		sass: () => {
-			const _hasSass = Fs.existsSync( `${ process.cwd() }/src/sass/_module.scss` );
+			const _hasSass = Fs.existsSync( `${ process.cwd() }/lib/sass/_module.scss` );
 
 			if( _hasSass ) {
 				// 1. create path
@@ -389,7 +389,7 @@ HELPER.precompile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		reactSass: () => {
-			if( Fs.existsSync(`${ process.cwd() }/src/js/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
 
 				// 1. create directory
 				CreateDir('./lib/css/');
@@ -406,18 +406,17 @@ HELPER.precompile = (() => {
 		 * Transpile react to es5, compile css file and include it into our react component
 		 */
 		react: () => {
-			if( Fs.existsSync(`${ process.cwd() }/src/js/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
 				const reactOptions = {
 					ast: false,
 					compact: true,
 					minified: true,
 					presets: [
-						`es2015`,
-						`react`,
-						`stage-0`,
+						`@babel/preset-env`,
+						`@babel/preset-react`,
 					],
 					sourceMaps: "both",
-					sourceMapTarget: `react.es5.js`,
+					sourceFileName: `react.es5.js`,
 				};
 
 				const searches = {
