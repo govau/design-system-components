@@ -1,10 +1,7 @@
-# Node CircleCI 2.0 configuration file to DTA cloud 2.0
-
 version: 2
 jobs:
 
-  # DEPLOY-STAGING JOB
-  # installing dependencies, building assets and deploying to staging
+  # Installing dependencies, build and test.
   build-and-test-auds:
     docker:
       - image: circleci/node:10.14.0                       # ~NodeLTS as of 01/2019
