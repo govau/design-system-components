@@ -621,8 +621,8 @@ HELPER.generate = (() => {
 		 * Starting off generate
 		 */
 		init: () => {
-			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			const allModules = GetFolders( packagesPath );
+			const componentsPath = Path.normalize(`${ __dirname }/../components/`);
+			const allModules = GetFolders( componentsPath );
 
 			HELPER.generate.json( allModules );
 			HELPER.generate.index( allModules );
@@ -635,13 +635,13 @@ HELPER.generate = (() => {
 		 * @param {array} allModules - An array of all modules
 		 */
 		json: ( allModules ) => {
-			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
+			const componentsPath = Path.normalize(`${ __dirname }/../components/`);
 			let audsJson = {};   // the auds.json object
 
-			// iterate over all packages
+			// iterate over all components
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const packageJson = require( Path.normalize( `${ packagesPath }/${ module }/package.json` ) );
+					const packageJson = require( Path.normalize( `${ componentsPath }/${ module }/package.json` ) );
 
 					audsJson[ packageJson.name ] = { // add to auds.json
 						name: packageJson.name,
@@ -671,13 +671,13 @@ HELPER.generate = (() => {
 		 * @return {array} dependencyBundle   - An object containing all of the dependencies found
 		 */
 		getAllDependencies: ( dependencies, dependencyBundle = {} ) => {
-			const packagesPath = Path.normalize( `${ __dirname }/../packages/` );
+			const componentsPath = Path.normalize( `${ __dirname }/../components/` );
 
 			// For each dependency received go through each of the keys
 			for( const dependency of Object.keys( dependencies ) ) {
 
 				const trimmedDepedency = dependency.replace( '@gov.au/', '' );
-				const dependencyPackagePath = Path.normalize( `${ packagesPath }/${ trimmedDepedency }/package.json` );
+				const dependencyPackagePath = Path.normalize( `${ componentsPath }/${ trimmedDepedency }/package.json` );
 
 				// If there is a package.json file
 				if( Fs.existsSync( dependencyPackagePath ) ) {
@@ -704,27 +704,27 @@ HELPER.generate = (() => {
 			let index = Fs.readFileSync( Path.normalize(`${ __dirname }/../.templates/index/index.html`), 'utf-8'); // this will be the index file
 			let replacement = '';
 
-			// iterate over all packages
+			// iterate over all components
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const pkg = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
+					const pkg = require( Path.normalize(`${ __dirname }/../components/${ module }/package.json`) );
 					let jquery = '';
 					let react = '';
 
 					if( pkg.pancake['pancake-module'].jquery ) {
-						jquery = `<a class="link" href="packages/${ module }/tests/jquery/">jquery</a>`;
+						jquery = `<a class="link" href="components/${ module }/tests/jquery/">jquery</a>`;
 					}
 
 					if( pkg.pancake['pancake-module'].react ) {
-						react = `<a class="link" href="packages/${ module }/tests/react/">react</a>`;
+						react = `<a class="link" href="components/${ module }/tests/react/">react</a>`;
 					}
 
 					replacement += `<li>` +
-						`	<a class="module-list__headline" href="packages/${ module }/tests/">${ module }</a>` +
+						`	<a class="module-list__headline" href="components/${ module }/tests/">${ module }</a>` +
 						`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=%20&colorA=ffffff&colorB=00698f&style=flat-square" alt="${ module } version">` +
 						`	<br>` +
-						`	<a class="link" href="packages/${ module }/tests/site/">site</a> ${ jquery } ${ react }` +
-						`	<a class="link" href="https://github.com/govau/design-system-components/blob/master/packages/${ module }/README.md">readme</a>` +
+						`	<a class="link" href="components/${ module }/tests/site/">site</a> ${ jquery } ${ react }` +
+						`	<a class="link" href="https://github.com/govau/design-system-components/blob/master/components/${ module }/README.md">readme</a>` +
 						`</li>\n`;
 				}
 			}
@@ -756,8 +756,8 @@ HELPER.generate = (() => {
 					list += `<details>\n`;
 					list += `	<summary>@gov.au/${ module }</summary>\n`;
 					list += `	<br><code>npm install @gov.au/${ module }</code><br>\n`;
-					list += `	<br>See the <a href="${ HELPER.URL }/packages/${ module }/tests/site/">visual test file for ${ module }</a>\n`;
-					list += `	<br>See the <a href="${ HELPER.GITHUB }blob/master/packages/${ module }/README.md">readme file for ${ module }</a><br><br>\n`;
+					list += `	<br>See the <a href="${ HELPER.URL }/components/${ module }/tests/site/">visual test file for ${ module }</a>\n`;
+					list += `	<br>See the <a href="${ HELPER.GITHUB }blob/master/components/${ module }/README.md">readme file for ${ module }</a><br><br>\n`;
 
 					if( tree === '' ) {
 						list += `	<i>No dependencies</i>\n\n----------\n`;
@@ -833,7 +833,7 @@ HELPER.scaffolding = (() => {
 			]).then(( answers ) => {
 
 				const template = `${ HELPER.TEMPLATES }/new-module/`;
-				const destination = Path.normalize(`${ __dirname }/../packages/${ answers.name }`);
+				const destination = Path.normalize(`${ __dirname }/../components/${ answers.name }`);
 				const replacements = {
 					'[-replace-name-]': answers.name,
 					'[-replace-name-capital-]':
@@ -850,7 +850,7 @@ HELPER.scaffolding = (() => {
 					'[-replace-contrib-email-]': answers.contributor_email,
 					'[-replace-contrib-website-]': answers.contributor_website,
 					'[-replace-description-]': answers.description,
-					'[-replace-URL-]': `${ HELPER.URL }/packages/${ answers.name }/tests/site/`,
+					'[-replace-URL-]': `${ HELPER.URL }/components/${ answers.name }/tests/site/`,
 					'[-replace-version-]': '0.1.0',
 				};
 
@@ -890,8 +890,8 @@ HELPER.test = (() => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 	return {
 		init: () => {
-			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			const allModules = GetFolders( packagesPath );
+			const componentsPath = Path.normalize(`${ __dirname }/../components/`);
+			const allModules = GetFolders( componentsPath );
 
 			HELPER.test.dependencies( allModules );
 			// HELPER.test.packagejson( allModules );
@@ -909,17 +909,17 @@ HELPER.test = (() => {
 
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
+					const componentsPKG = require( Path.normalize(`${ __dirname }/../components/${ module }/package.json`) );
 
-					pancakes[ packagesPKG.name ] = packagesPKG.version; // adding to our library of pancakes
+					pancakes[ componentsPKG.name ] = componentsPKG.version; // adding to our library of pancakes
 
-					for( const module of Object.keys( packagesPKG.peerDependencies ) ) {
-						let version = packagesPKG.peerDependencies[ module ];
+					for( const module of Object.keys( componentsPKG.peerDependencies ) ) {
+						let version = componentsPKG.peerDependencies[ module ];
 
 						dependencies.push({
 							name: module,
 							version: version,
-							from: packagesPKG.name,
+							from: componentsPKG.name,
 						})
 					}
 				}
@@ -947,130 +947,130 @@ HELPER.test = (() => {
 
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
-					const hasSass = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`) );
-					const hasJS = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`) );
-					const hasReact = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/react.js`) );
-					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
+					const componentsPKG = require( Path.normalize(`${ __dirname }/../components/${ module }/package.json`) );
+					const hasSass = Fs.existsSync( Path.normalize(`${ __dirname }/../components/${ module }/src/sass/_module.scss`) );
+					const hasJS = Fs.existsSync( Path.normalize(`${ __dirname }/../components/${ module }/src/js/module.js`) );
+					const hasReact = Fs.existsSync( Path.normalize(`${ __dirname }/../components/${ module }/src/js/react.js`) );
+					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../components/${ module }/src/js/jquery.js`) );
 
 					// testing lifecycle script
-					if( packagesPKG.scripts.postinstall !== 'pancake' ) {
+					if( componentsPKG.scripts.postinstall !== 'pancake' ) {
 						error += `The module ${ module } is missing the postinstall lifecycle script "pancake".\n`;
 					}
 
 					// testing pancake object
-					if( packagesPKG.pancake === undefined ) {
+					if( componentsPKG.pancake === undefined ) {
 						error += `The module ${ module } is missing the pancake object.\n`;
 
-						packagesPKG.pancake = {};
-						packagesPKG.pancake['pancake-module'] = {};
-						packagesPKG.pancake['pancake-module'].plugins = [];
+						componentsPKG.pancake = {};
+						componentsPKG.pancake['pancake-module'] = {};
+						componentsPKG.pancake['pancake-module'].plugins = [];
 					}
 
 					// testing build scripts
-					if( hasReact && !packagesPKG.scripts['build:react'] ) {
+					if( hasReact && !componentsPKG.scripts['build:react'] ) {
 						error += `The module ${ module } is missing the "build:react" script.\n`;
 					}
 
-					if( hasReact && !packagesPKG.scripts['build'].includes('npm run build:react') ) {
+					if( hasReact && !componentsPKG.scripts['build'].includes('npm run build:react') ) {
 						error += `The module ${ module } is missing the "build:react" task inside the build script.\n`;
 					}
 
 					// testing pancake plugins
-					if( !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-json') ) {
+					if( !componentsPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-json') ) {
 						error += `The module ${ module } is missing the "pancake-json" plugin inside the pancake object.\n`;
 					}
 
-					if( hasSass && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-sass') ) {
+					if( hasSass && !componentsPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-sass') ) {
 						error += `The module ${ module } is missing the "pancake-sass" plugin inside the pancake object.\n`;
 					}
 
-					if( hasJS && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-js') ) {
+					if( hasJS && !componentsPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-js') ) {
 						error += `The module ${ module } is missing the "pancake-js" plugin inside the pancake object.\n`;
 					}
 
-					if( hasReact && !packagesPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-react') ) {
+					if( hasReact && !componentsPKG.pancake['pancake-module'].plugins.includes('@gov.au/pancake-react') ) {
 						error += `The module ${ module } is missing the "pancake-js" plugin inside the pancake object.\n`;
 					}
 
 					// testing pancake plugin settings
-					if( hasSass && packagesPKG.pancake['pancake-module'].sass === undefined ) {
+					if( hasSass && componentsPKG.pancake['pancake-module'].sass === undefined ) {
 						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
 					}
 
-					if( hasJS && packagesPKG.pancake['pancake-module'].js === undefined ) {
+					if( hasJS && componentsPKG.pancake['pancake-module'].js === undefined ) {
 						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
 					}
 
-					if( hasReact && packagesPKG.pancake['pancake-module'].react === undefined ) {
+					if( hasReact && componentsPKG.pancake['pancake-module'].react === undefined ) {
 						error += `The module ${ module } is missing the "pancake-sass" plugin settings inside the pancake object.\n`;
 					}
 
 					// testing react modules have a main entry point
-					if( hasReact && packagesPKG.main === undefined ) {
+					if( hasReact && componentsPKG.main === undefined ) {
 						error += `The module ${ module } is missing the main entry point for react.\n`;
 					}
 
 					// testing all pancake plugins are also a dependency
-					if( packagesPKG.dependencies['@gov.au/pancake'] === undefined ) {
+					if( componentsPKG.dependencies['@gov.au/pancake'] === undefined ) {
 						error += `The module ${ module } is missing "pancake" as a dependency.\n`;
 					}
 					else {
-						delete packagesPKG.dependencies['@gov.au/pancake'];
+						delete componentsPKG.dependencies['@gov.au/pancake'];
 					}
 
-					if( packagesPKG.dependencies['@gov.au/pancake-json'] === undefined ) {
+					if( componentsPKG.dependencies['@gov.au/pancake-json'] === undefined ) {
 						error += `The module ${ module } is missing "pancake-json" as a dependency.\n`;
 					}
 					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-json'];
+						delete componentsPKG.dependencies['@gov.au/pancake-json'];
 					}
 
-					if( hasSass && packagesPKG.dependencies['@gov.au/pancake-sass'] === undefined ) {
+					if( hasSass && componentsPKG.dependencies['@gov.au/pancake-sass'] === undefined ) {
 						error += `The module ${ module } is missing "pancake-sass" as a dependency.\n`;
 					}
 					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-sass'];
+						delete componentsPKG.dependencies['@gov.au/pancake-sass'];
 					}
 
-					if( hasJS && packagesPKG.dependencies['@gov.au/pancake-js'] === undefined ) {
+					if( hasJS && componentsPKG.dependencies['@gov.au/pancake-js'] === undefined ) {
 						error += `The module ${ module } is missing "pancake-js" as a dependency.\n`;
 					}
 					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-js'];
+						delete componentsPKG.dependencies['@gov.au/pancake-js'];
 					}
 
-					if( hasReact && packagesPKG.dependencies['@gov.au/pancake-react'] === undefined ) {
+					if( hasReact && componentsPKG.dependencies['@gov.au/pancake-react'] === undefined ) {
 						error += `The module ${ module } is missing "pancake-react" as a dependency.\n`;
 					}
 					else {
-						delete packagesPKG.dependencies['@gov.au/pancake-react'];
+						delete componentsPKG.dependencies['@gov.au/pancake-react'];
 					}
 
 					// testing all remaining dependencies are also in peerdependencies
 					if( module === 'core' ) { // the exception to the rule is sass-versioning inside core
-						delete packagesPKG.dependencies['sass-versioning'];
+						delete componentsPKG.dependencies['sass-versioning'];
 					}
 
-					if( JSON.stringify( packagesPKG.dependencies ) !== JSON.stringify( packagesPKG.peerDependencies ) ) {
+					if( JSON.stringify( componentsPKG.dependencies ) !== JSON.stringify( componentsPKG.peerDependencies ) ) {
 						error += `The module ${ module } has inconsistent dependencies/peerDependencies.\n`;
 					}
 
 					// testing devDependencies
-					if( hasReact && packagesPKG.devDependencies['react'] === undefined ) {
+					if( hasReact && componentsPKG.devDependencies['react'] === undefined ) {
 						error += `The module ${ module } is missing "react" as devDependency.\n`;
 					}
 
-					if( hasReact && Object.keys( packagesPKG.devDependencies ).length < 12 ) {
+					if( hasReact && Object.keys( componentsPKG.devDependencies ).length < 12 ) {
 						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
 					}
 
-					if( !hasReact && Object.keys( packagesPKG.devDependencies ).length > 4 ) {
+					if( !hasReact && Object.keys( componentsPKG.devDependencies ).length > 4 ) {
 						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
 					}
 
 					// testing for pancake config
-					if( packagesPKG.pancake['auto-save'] !== undefined ) {
+					if( componentsPKG.pancake['auto-save'] !== undefined ) {
 						error += `The module ${ module } has the pancake config saved though we don’t want that…\n`;
 					}
 
@@ -1098,10 +1098,10 @@ HELPER.test = (() => {
 
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
-					const changelog = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/CHANGELOG.md`), 'utf8' );
-					const readme = Fs.readFileSync( Path.normalize(`${ __dirname }/../packages/${ module }/README.md`), 'utf8' );
-					const version = packagesPKG.version.split('-next')[ 0 ];
+					const componentsPKG = require( Path.normalize(`${ __dirname }/../components/${ module }/package.json`) );
+					const changelog = Fs.readFileSync( Path.normalize(`${ __dirname }/../components/${ module }/CHANGELOG.md`), 'utf8' );
+					const readme = Fs.readFileSync( Path.normalize(`${ __dirname }/../components/${ module }/README.md`), 'utf8' );
+					const version = componentsPKG.version.split('-next')[ 0 ];
 
 					const currentVersion = changelog.split('## Versions' + Os.EOL + Os.EOL + '* [v')[ 1 ];
 					const currentChange  = changelog.split('## Release History' + Os.EOL + Os.EOL + '### v')[ 1 ];

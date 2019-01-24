@@ -101,7 +101,7 @@ const TestURL   = 'http://localhost:8080';
 
 		// Create a url based off the keys in the auds.json
 		urls = Object.keys( require( audsJson ) ).map( key => {
-			return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
+			return `${ TestURL }/components/${ key.substring( 8 ) }/tests/site`
 		});
 	}
 

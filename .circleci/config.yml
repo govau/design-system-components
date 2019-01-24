@@ -23,7 +23,7 @@ jobs:
           paths:
             - node_modules                                 # Path globbing isn't supported :'(
       - run:
-          name: Build all packages
+          name: Build all components
           command: yarn build
       - run:
           name: Run all tests
@@ -31,7 +31,7 @@ jobs:
       - persist_to_workspace:
           root: ~/auds
           paths:
-            - packages/*/tests/
+            - components/*/tests/
             - .deploy/
             - index.html
 
@@ -50,7 +50,7 @@ jobs:
             cp .deploy/nginx/mime.types site/
             cp .deploy/nginx/.htpasswd site/
             mv .deploy/nginx/nginx-staging.conf site/nginx.conf
-            mv packages/ site/
+            mv components/ site/
             mv index.html site/
             mv .deploy/manifest-staging.yml site/
             cd site/
@@ -72,7 +72,7 @@ jobs:
             cp .deploy/nginx/mime.types site/
             cp .deploy/nginx/.htpasswd site/
             mv .deploy/nginx/nginx-testing.conf site/nginx.conf
-            mv packages/ site/
+            mv components/ site/
             mv index.html site/
             mv .deploy/manifest-testing.yml site/
             cd site/
@@ -93,7 +93,7 @@ jobs:
             mkdir -p site/
             cp .deploy/nginx/mime.types site/
             mv .deploy/nginx/nginx-production.conf site/nginx.conf
-            mv packages/ site/
+            mv components/ site/
             mv index.html site/
             mv .deploy/manifest-production.yml site/
             cd site/

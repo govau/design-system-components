@@ -1,7 +1,7 @@
-@gov.au/[-replace-name-]
+@gov.au/responsive-media
 ============
 
-> [-replace-description-]
+> Caters for video/slideshow dimensions and aspect ratios across various viewports/widths.
 
 
 ## Contents
@@ -20,11 +20,11 @@
 
 
 ```shell
-yarn add @gov.au/[-replace-name-]
+yarn add @gov.au/responsive-media
 ```
 
 ```shell
-npm install @gov.au/[-replace-name-] --save-dev
+npm install @gov.au/responsive-media --save-dev
 ```
 
 
@@ -37,7 +37,8 @@ npm install @gov.au/[-replace-name-] --save-dev
 ## Dependency graph
 
 ```shell
-[-replace-name-]
+responsive-media
+└─ core
 ```
 
 
@@ -49,7 +50,7 @@ npm install @gov.au/[-replace-name-] --save-dev
 
 ## Tests
 
-The visual test: [-replace-URL-]
+The visual test: https://auds.service.gov.au/components/responsive-media/tests/site/
 
 
 **[⬆ back to top](#contents)**
@@ -60,7 +61,23 @@ The visual test: [-replace-URL-]
 
 ## Release History
 
-* v0.1.0 - 💥 Initial version
+* v2.0.13 - Add `title` attribute to iframe examples.
+* v2.0.12 - Removed uikit references
+* v2.0.11 - Update dependencies
+* v2.0.10 - Removing web pack dev server, updating dependencies
+* v2.0.9  - Fixed build scripts for Windows
+* v2.0.8  - Replace node-sass with sass
+* v2.0.7  - Change npm run watch browser-sync location
+* v2.0.6  - Update dependencies
+* v2.0.5  - Change homepage link
+* v2.0.4  - Adding height: auto to responsive images
+* v2.0.3  - Removing unecessary double up of sass
+* v2.0.2  - Added a responsive media wrapper class
+* v2.0.1  - Fix dependencies
+* v2.0.0  - Change to focus colour and border/muted color mix
+* v1.0.0  - Moved to AU namespace, added new color themes and spacing
+* v0.1.1  - Used percentage sass function over magic numbers
+* v0.1.0  - 💥 Initial version
 
 
 **[⬆ back to top](#contents)**

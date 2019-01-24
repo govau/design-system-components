@@ -9,10 +9,10 @@ node_modules
 validation-report.json
 validation-status.json
 *.css
-packages/*/tests/*/*.js
-!packages/*/tests/react/index.js
-!packages/*/tests/react/webpack.config.js
-packages/*/lib/
+components/*/tests/*/*.js
+!components/*/tests/react/index.js
+!components/*/tests/react/webpack.config.js
+components/*/lib/
 npm-debug.log
 lerna-debug.log
 /index.html

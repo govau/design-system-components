@@ -125,15 +125,15 @@ For example, what happens with a navigation component that has more items than d
 
 **Code is for humans.** Please look at the coding style and work with it, not against it. We write comments, add spacing, and prefer readable code over clever code. Yes, code is actually for computers, but it is humans that need to maintain it.
 
-**Code comments.** Code should be commented so that it is as usable as possible. Try to provide reasoning or links to documentation about any peculiar decisions that had to be made. [For example.](https://github.com/govau/design-system-components/blob/master/packages/body/src/sass/_module.scss#L127)
+**Code comments.** Code should be commented so that it is as usable as possible. Try to provide reasoning or links to documentation about any peculiar decisions that had to be made. [For example.](https://github.com/govau/design-system-components/blob/master/components/body/src/sass/_module.scss#L127)
 
 **Follow the folder structure.** New components should follow the same folder structure as the [existing components.](https://github.com/govau/design-system-components/tree/master/.templates/new-module)
 
 **CSS** can be dependent on other components, but must use core functions and mixins at a minimum.
 
-* For spacing, padding, or other metrics like border-width, use [AU-space()](https://github.com/govau/design-system-components/blob/master/packages/core/src/sass/_globals.scss#L475)
-* For font-sizes and line-height, use [AU-fontgrid()](https://github.com/govau/design-system-components/blob/master/packages/core/src/sass/_globals.scss#L629)
-* For colours, use the [core colour variables](https://github.com/govau/design-system-components/blob/master/packages/core/src/sass/_globals.scss#L741)
+* For spacing, padding, or other metrics like border-width, use [AU-space()](https://github.com/govau/design-system-components/blob/master/components/core/src/sass/_globals.scss#L475)
+* For font-sizes and line-height, use [AU-fontgrid()](https://github.com/govau/design-system-components/blob/master/components/core/src/sass/_globals.scss#L629)
+* For colours, use the [core colour variables](https://github.com/govau/design-system-components/blob/master/components/core/src/sass/_globals.scss#L741)
 
 **JavaScript.** The Design System supports **JavaScript, JQuery, and React.** To make integration easier any JavaScript supplied for a component should be written in at least one of these.
 
@@ -198,7 +198,7 @@ npm run build
 To make changes to an existing module, `cd` into the folder and run the watch:
 
 ```shell
-cd packages/body
+cd components/body
 npm run watch
 ```
 
