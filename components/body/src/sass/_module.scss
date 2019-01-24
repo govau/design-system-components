@@ -50,7 +50,7 @@
 	a {
 		color: $AU-color-foreground-action;
 		text-decoration: underline;
-		text-decoration-skip: ink;
+		text-decoration-skip: auto;
 
 		&[rel~='external']:after {
 			content: ' ';
@@ -228,7 +228,7 @@
 	ins {
 		text-decoration-line: underline;
 		text-decoration-style: dashed; //Waiting on Chrome.
-		text-decoration-skip: ink;
+		text-decoration-skip: auto;
 	}
 
 
