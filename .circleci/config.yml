@@ -27,7 +27,7 @@ jobs:
           command: yarn build
       - run:
           name: Run all tests
-          command: node scripts/helper.js test && node ./scripts/a11y.js
+          command: node ./scripts/a11y.js
       - persist_to_workspace:
           root: ~/auds
           paths:
