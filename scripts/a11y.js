@@ -110,4 +110,6 @@ const TestURL   = 'http://localhost:8080';
 
 	// Close the express server
 	Server.close();
+
+	process.exit( 0 );
 })();
