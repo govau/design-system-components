@@ -34,7 +34,7 @@ Australian Government Design System Components
 ## How to use
 
 The design system components are distributed through the [npm](https://www.npmjs.com) ecosystem and can only be installed through the `npm` command.
-Npm requires [node.js](https://nodejs.org/en/) and the components needs node.js 8 or higher.
+Npm requires [node.js](https://nodejs.org/en/) and the components needs node.js 10 or higher.
 
 To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`.)
 Inside your working folder install any module and [pancake](https://github.com/govau/pancake/) will make sure you have all assets ready to use.
@@ -548,10 +548,10 @@ Visual tests have been built into each module and can be seen in either of the `
 We have also integrated [pa11y](https://github.com/pa11y/pa11y) for accessibility testing and are using [jest](https://facebook.github.io/jest/) for javascript
 tests.
 
-Run all tests with the npm test script:
+Run all tests with the yarn test script:
 
 ```shell
-npm run test
+yarn test
 ```
 
 
