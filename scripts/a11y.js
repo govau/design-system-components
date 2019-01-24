@@ -51,7 +51,7 @@ const RunPa11y = async ( urls ) => {
 	// Start the browser
 	const browser = await Puppeteer.launch({
 		headless: true,
-		dumpio: true,
+		dumpio: false, 
 		devtools: false,
 		args: ["--no-sandbox", "--disable-setuid-sandbox"]
 	});
