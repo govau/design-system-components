@@ -116,6 +116,7 @@ The visual test: https://auds.service.gov.au/packages/control-input/tests/site/
 
 ## Release History
 
+* v2.2.2 - Added css reset and adjusted position of control inputs 
 * v2.2.1 - Removed uikit references
 * v2.2.0 - Changed focus appearance on radio buttons to be round
 * v2.1.7 - Replace `checked` attribute with `defaultChecked` on control inputs examples
