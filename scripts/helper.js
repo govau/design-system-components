@@ -290,7 +290,7 @@ HELPER.precompile = (() => {
 		 * Move files from src/ to lib/ and replace placeholders inside
 		 */
 		sass: () => {
-			const _hasSass = Fs.existsSync( `${ process.cwd() }/lib/sass/_module.scss` );
+			const _hasSass = Fs.existsSync( `${ process.cwd() }/src/sass/_module.scss` );
 
 			if( _hasSass ) {
 				// 1. create path
@@ -300,6 +300,9 @@ HELPER.precompile = (() => {
 				CopyFile('./src/sass/_globals.scss', './lib/sass/_globals.scss');
 				CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
 				CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
+				
+				//@TODO
+				// CopyFile('./src/sass/_dependencies.scss', './lib/sass/_dependencies.scss');
 
 				// Rethingiemajiging the peer dependencies for sass
 				let dependencies = [];
@@ -389,7 +392,7 @@ HELPER.precompile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		reactSass: () => {
-			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/src/js/react.js`) ) {
 
 				// 1. create directory
 				CreateDir('./lib/css/');
@@ -406,7 +409,7 @@ HELPER.precompile = (() => {
 		 * Transpile react to es5, compile css file and include it into our react component
 		 */
 		react: () => {
-			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/src/js/react.js`) ) {
 				const reactOptions = {
 					ast: false,
 					compact: true,
@@ -415,8 +418,11 @@ HELPER.precompile = (() => {
 						`@babel/preset-env`,
 						`@babel/preset-react`,
 					],
+					plugins: [
+						"minify"
+					],
 					sourceMaps: "both",
-					sourceFileName: `react.es6.js`,
+					sourceFileName: `${HELPER.NAME}.min.js`,
 				};
 
 				const searches = {
