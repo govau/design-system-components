@@ -46,6 +46,7 @@
 
 - Added css reset and adjusted position of control inputs
 - Fixed radio input default styles underlapping svg on small inputs
+- Removed margin on inputs, adjusted top/left position on input
 
 ### v2.2.1
 
