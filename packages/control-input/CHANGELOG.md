@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.2.2 - Fixed radio input underlapping svg on small inputs](#v222)
 * [v2.2.1 - Removed uikit references](#v221)
 * [v2.2.0 - Changed focus appearance on radio buttons to be round](#v220)
 * [v2.1.7 - Replace `checked` attribute with `defaultChecked` on control inputs examples](#v217)
@@ -40,6 +41,11 @@
 
 
 ## Release History
+
+### v2.2.2
+
+- Fixed radio input default styles underlapping svg on small inputs
+- Removed margin on inputs, adjusted top/left position on input
 
 ### v2.2.1
 

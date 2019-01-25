@@ -32,10 +32,11 @@
 	@include AU-space( left, 0.5unit );
 	@include AU-space( top, 0.5unit );
 	cursor: pointer;
+	margin: 0;
 
 	.au-control-input--small & {
-		left: 0;
-		top: 0;
+		@include AU-space( left, 0.25unit );
+		@include AU-space( top, 0.25unit );
 	}
 
 	& + .au-control-input__text {
