@@ -55,7 +55,7 @@
 			}
 		}
 	},
-	"main": "src/js/react.js",
+	"main": "lib/js/react.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~2",

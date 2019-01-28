@@ -36,7 +36,7 @@ const DisplayResults = results => {
 			console.log( `${ issue.context }\n ${ issue.message }\n` );
 		})
 
-		// process.exit( 1 );
+		process.exit( 1 );
 	}
 	else {
 		Helper.log.success( 'No errors' );

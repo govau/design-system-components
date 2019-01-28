@@ -49,7 +49,7 @@
 			}
 		}
 	},
-	"main": "src/js/react.js",
+	"main": "lib/js/react.js",
 	"dependencies": {
 		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^3.0.0",
