@@ -418,9 +418,6 @@ HELPER.precompile = (() => {
 						`@babel/preset-env`,
 						`@babel/preset-react`,
 					],
-					plugins: [
-						"minify"
-					],
 					sourceMaps: "both",
 					sourceFileName: `${HELPER.NAME}.min.js`,
 				};
