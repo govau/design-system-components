@@ -60,7 +60,7 @@
 			}
 		}
 	},
-	"main": "lib/js/react.js",
+	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~2",
