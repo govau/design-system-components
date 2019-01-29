@@ -461,7 +461,7 @@ $dependencies: (
 		// If we meet contrast
 		@if AU-color-contrast( $resetColor, $background, true, false ) >= $ratio {
 			// The colour is in the minimal lightness range for one hexadecimal
-			@if	$maxLightness - $minLightness < $minHexDiff {
+			@if $maxLightness - $minLightness < $minHexDiff {
 				$foundColor: $resetColor;
 			}
 
@@ -482,6 +482,32 @@ $dependencies: (
 	}
 
 	@return $foundColor;
+}
+
+
+/**
+ * AU-color-lowest-contrast - Find the lowest contrast color
+ *
+ * @param  {Colors}          $colors     - The color to find the lowest contrast
+ * @param  {Color}           $background - The background color to compare the colors against
+ *
+ * @return {Color}                       - Returns the lowest contrast color
+ */
+ @function AU-color-lowest-contrast( $colors, $background ){
+	$current-lowest: nth( $colors, 1 );
+
+	// Loop through the $colors list
+	@each $color in $colors {
+		$colorContrast: AU-color-contrast( $color, $background, true, false );
+		$lowestContrast: AU-color-contrast( $current-lowest, $background, true, false );
+
+		// If the constast is lower make it the new lowest
+		@if $colorContrast < $lowestContrast {
+			$current-lowest: $color;
+		}
+	}
+
+	@return $current-lowest;
 }
 
 
@@ -764,19 +790,34 @@ $AU-color-foreground-action: #00698f !default;
 $AU-color-foreground-focus:  #9263DE !default;
 $AU-color-background:        #ffffff !default;
 
-// Suggestion colors for Non-user definable color palette
-$AU-color-background-shade-suggestion:     darken( $AU-color-background, 4% ) !default;
-$AU-color-background-alt-suggestion:       darken( $AU-color-background, 8% ) !default;
-$AU-color-background-alt-shade-suggestion: darken( $AU-color-background, 12% ) !default;
-$AU-color-foreground-muted-suggestion:     mix( $AU-color-foreground-text, darken( $AU-color-background, 12% ), 72% ) !default;
-$AU-color-foreground-border-suggestion:    mix( $AU-color-foreground-text, darken( $AU-color-background, 12% ), 55% ) !default;
 
-// Non-user definable color palette
-$AU-color-background-shade:     AU-color-a11y( $AU-color-background-shade-suggestion, $AU-color-foreground-text ) !global;
-$AU-color-background-alt:       AU-color-a11y( $AU-color-background-alt-suggestion, $AU-color-foreground-text ) !global;
-$AU-color-background-alt-shade: AU-color-a11y( $AU-color-background-alt-shade-suggestion, $AU-color-foreground-text ) !global;
-$AU-color-foreground-muted:     AU-color-a11y( $AU-color-foreground-muted-suggestion, $AU-color-background-alt-shade ) !global;
-$AU-color-foreground-border:    AU-color-a11y( $AU-color-foreground-border-suggestion, $AU-color-background-alt-shade, 'large') !global;
+$AU-color-lowest-contrast: AU-color-lowest-contrast(
+	( $AU-color-foreground-text, $AU-color-foreground-action ),
+	$AU-color-background
+);
+
+
+// Override the background if it's not accessible and generate shades
+$AU-color-background:           AU-color-a11y( $AU-color-background, $AU-color-lowest-contrast );
+$AU-color-background-shade:     darken( $AU-color-background, 4% );
+$AU-color-background-alt:       darken( $AU-color-background, 8% );
+$AU-color-background-alt-shade: darken( $AU-color-background, 12% );
+
+
+// Generated border and muted colours
+$AU-color-foreground-muted:  mix( $AU-color-foreground-text, $AU-color-background );
+$AU-color-foreground-border: mix( $AU-color-foreground-text, $AU-color-background );
+
+// If the background is light
+@if ( lightness( $AU-color-background ) > 50 ) {
+	$AU-color-foreground-muted:  AU-color-a11y( $AU-color-foreground-muted, $AU-color-background-alt-shade );
+	$AU-color-foreground-border: AU-color-a11y( $AU-color-foreground-border, $AU-color-background-alt-shade, 'large');
+}
+@else {
+	$AU-color-foreground-muted:  AU-color-a11y( $AU-color-foreground-muted, $AU-color-background );
+	$AU-color-foreground-border: AU-color-a11y( $AU-color-foreground-border, $AU-color-background, 'large');
+}
+
 
 
 /**
@@ -787,20 +828,33 @@ $AU-colordark-foreground-action: #61daff !default;
 $AU-colordark-foreground-focus:  #C390F9 !default;
 $AU-colordark-background:        #135E70 !default;
 
-// Suggestion colors for Non-user definable color palette
-$AU-colordark-background-shade-suggestion:     darken( $AU-colordark-background, 4% ) !default;
-$AU-colordark-background-alt-suggestion:       darken( $AU-colordark-background, 8% ) !default;
-$AU-colordark-background-alt-shade-suggestion: darken( $AU-colordark-background, 12% ) !default;
-$AU-colordark-foreground-muted-suggestion:     mix( $AU-colordark-foreground-text, $AU-colordark-background, 72% ) !default;
-$AU-colordark-foreground-border-suggestion:    mix( $AU-colordark-foreground-text, $AU-colordark-background, 55% ) !default;
+$AU-colordark-lowest-contrast: AU-color-lowest-contrast(
+	(
+		$AU-colordark-foreground-text,
+		$AU-colordark-foreground-action,
+	),
+	$AU-colordark-background
+);
 
-// Non-user definable color palette
-$AU-colordark-background-shade:     AU-color-a11y( $AU-colordark-background-shade-suggestion, $AU-colordark-foreground-text ) !global;
-$AU-colordark-background-alt:       AU-color-a11y( $AU-colordark-background-alt-suggestion, $AU-colordark-foreground-text ) !global;
-$AU-colordark-background-alt-shade: AU-color-a11y( $AU-colordark-background-alt-shade-suggestion, $AU-colordark-foreground-text ) !global;
-$AU-colordark-foreground-muted:     AU-color-a11y( $AU-colordark-foreground-muted-suggestion, $AU-colordark-background ) !global;
-$AU-colordark-foreground-border:    AU-color-a11y( $AU-colordark-foreground-border-suggestion, $AU-colordark-background, 'large') !global;
+// Override the background if it's not accessible and generate shades
+$AU-colordark-background:           AU-color-a11y( $AU-colordark-background, $AU-colordark-lowest-contrast );
+$AU-colordark-background-shade:     darken( $AU-colordark-background, 4% );
+$AU-colordark-background-alt:       darken( $AU-colordark-background, 8% );
+$AU-colordark-background-alt-shade: darken( $AU-colordark-background, 12% );
 
+// Generated border and muted colours
+$AU-colordark-foreground-muted:  mix( $AU-colordark-foreground-text, $AU-colordark-background );
+$AU-colordark-foreground-border: mix( $AU-colordark-foreground-text, $AU-colordark-background );
+
+// If the background is light
+@if ( lightness( $AU-colordark-background ) > 50 ) {
+	$AU-colordark-foreground-muted:  AU-color-a11y( $AU-colordark-foreground-muted, $AU-colordark-background-alt-shade );
+	$AU-colordark-foreground-border: AU-color-a11y( $AU-colordark-foreground-border, $AU-colordark-background-alt-shade, 'large');
+}
+@else {
+	$AU-colordark-foreground-muted:  AU-color-a11y( $AU-colordark-foreground-muted, $AU-colordark-background );
+	$AU-colordark-foreground-border: AU-color-a11y( $AU-colordark-foreground-border, $AU-colordark-background, 'large');
+}
 
 /**
  * Colors system messages
