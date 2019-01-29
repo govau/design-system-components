@@ -11,7 +11,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
-// ES6 dependency: import AUlinkList from '@gov.au/link-list';
+// ES6 dependency: import AUlinkList from './link-list';
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.

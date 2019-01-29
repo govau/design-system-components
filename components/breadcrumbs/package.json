@@ -27,7 +27,7 @@
 
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
-		"build:react": "cd tests/react/ && webpack",
+		"build:react": "cd tests/react/ && webpack --config webpack.config.js",
 		"build": "npm run build:js && npm run build:react",
 
 		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
@@ -57,9 +57,9 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-json": "~1",
 		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-json": "~1",
 
 		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^3.0.0"
