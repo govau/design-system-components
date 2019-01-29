@@ -809,14 +809,11 @@ $AU-color-foreground-muted:  mix( $AU-color-foreground-text, $AU-color-backgroun
 $AU-color-foreground-border: mix( $AU-color-foreground-text, $AU-color-background );
 
 // If the background is light
-@debug lightness( $AU-color-background );
 @if ( lightness( $AU-color-background ) > 50 ) {
-	@debug 'Default light background ' + $AU-color-background;
 	$AU-color-foreground-muted:  AU-color-a11y( $AU-color-foreground-muted, $AU-color-background-alt-shade );
 	$AU-color-foreground-border: AU-color-a11y( $AU-color-foreground-border, $AU-color-background-alt-shade, 'large');
 }
 @else {
-	@debug 'Default dark background ' + $AU-color-background;
 	$AU-color-foreground-muted:  AU-color-a11y( $AU-color-foreground-muted, $AU-color-background );
 	$AU-color-foreground-border: AU-color-a11y( $AU-color-foreground-border, $AU-color-background, 'large');
 }
