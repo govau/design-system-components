@@ -43,8 +43,6 @@
 ### v3.2.0
 
 - Add additional colour checks for incaccesble color combinations
-- If the same colour is entered every time, it will create an accessible palette
-- If foreground colours are not all light or all dark colours it will fail as it cannot create a palette.
 
 
 ### v3.1.2

@@ -461,7 +461,7 @@ $dependencies: (
 		// If we meet contrast
 		@if AU-color-contrast( $resetColor, $background, true, false ) >= $ratio {
 			// The colour is in the minimal lightness range for one hexadecimal
-			@if	$maxLightness - $minLightness < $minHexDiff {
+			@if $maxLightness - $minLightness < $minHexDiff {
 				$foundColor: $resetColor;
 			}
 
