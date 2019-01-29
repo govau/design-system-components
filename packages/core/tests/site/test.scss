@@ -598,23 +598,15 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 @mixin check-contrast( $ratio ) {
 	$result: "✔";
+	border: 3px solid #0CAC78;
 
-	@if( $ratio < 4.5 ) {
-		background-color: rgba( 255, 255, 0, 0.7 );
-		background-image: repeating-linear-gradient(
-			45deg, transparent,
-			transparent 5px,
-			rgba(255,255,255,.5) 5px,
-			rgba(255,255,255,.5) 10px
-		);
-		color: #000;
+	@if( $ratio < 4.5 and $ratio >= 3 ) {
+		border-color: #F69900;
 
 		$result: "!";
 	}
-
-	@if( $ratio < 3 ) {
-		background-color: rgba( 255, 0, 0, 0.7 );
-		color: #fff;
+	@else if( $ratio < 3 ) {
+		border-color: #FF635C;
 
 		$result: "✗";
 	}
@@ -648,8 +640,12 @@ html {
 
 	&:after {
 		display: block;
-		margin: 0.5em;
-		padding: 1em;
+		height: 1.5em;
+		margin-top: 1em;
+		padding: 0.5em;
+		color: #313131;
+		background: #fff;
+		border-radius: 3px;
 	}
 }
 

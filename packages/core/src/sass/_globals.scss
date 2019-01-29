@@ -781,15 +781,6 @@ $AU-lineheight-map: (
  */
 $AU-maxwidth: 42em !default; // Answer to life, the universe, and everything (keeps things readable on wide viewports).
 
-$AU-color-foreground-text:   #000;
-$AU-color-foreground-action: #000;
-$AU-color-foreground-focus:  #000;
-// $AU-color-background:        #fff;
-
-$AU-colordark-foreground-text:   #fff;
-$AU-colordark-foreground-action: #fff;
-$AU-colordark-foreground-focus:  #fff;
-
 
 /**
  * Colors light theme
@@ -801,10 +792,7 @@ $AU-color-background:        #ffffff !default;
 
 
 $AU-color-lowest-contrast: AU-color-lowest-contrast(
-	(
-		$AU-color-foreground-text,
-		$AU-color-foreground-action,
-	),
+	( $AU-color-foreground-text, $AU-color-foreground-action ),
 	$AU-color-background
 );
 
@@ -816,19 +804,23 @@ $AU-color-background-alt:       darken( $AU-color-background, 8% );
 $AU-color-background-alt-shade: darken( $AU-color-background, 12% );
 
 
-// Check that our foreground colours all pass on our new background
-$AU-foreground-on-background:
-	AU-color-contrast( $AU-color-foreground-action, $AU-color-background-alt-shade, true ) >= 4.5 and
-	AU-color-contrast( $AU-color-foreground-text, $AU-color-background-alt-shade, true ) >= 4.5 and
-	AU-color-contrast( $AU-color-foreground-focus, $AU-color-background-alt-shade, true ) >= 3;
-
-@if not $AU-foreground-on-background { @warn "Yo your colours are whack" }
-
 // Generated border and muted colours
-$AU-color-foreground-muted:  mix( $AU-color-foreground-text, $AU-color-background, 72% );
-$AU-color-foreground-muted:  AU-color-a11y( $AU-color-foreground-muted, $AU-color-background );
-$AU-color-foreground-border: mix( $AU-color-foreground-text, $AU-color-background, 55% );
-$AU-color-foreground-border: AU-color-a11y( $AU-color-foreground-border, $AU-color-background, 'large');
+$AU-color-foreground-muted:  mix( $AU-color-foreground-text, $AU-color-background );
+$AU-color-foreground-border: mix( $AU-color-foreground-text, $AU-color-background );
+
+// If the background is light
+@debug lightness( $AU-color-background );
+@if ( lightness( $AU-color-background ) > 50 ) {
+	@debug 'Default light background ' + $AU-color-background;
+	$AU-color-foreground-muted:  AU-color-a11y( $AU-color-foreground-muted, $AU-color-background-alt-shade );
+	$AU-color-foreground-border: AU-color-a11y( $AU-color-foreground-border, $AU-color-background-alt-shade, 'large');
+}
+@else {
+	@debug 'Default dark background ' + $AU-color-background;
+	$AU-color-foreground-muted:  AU-color-a11y( $AU-color-foreground-muted, $AU-color-background );
+	$AU-color-foreground-border: AU-color-a11y( $AU-color-foreground-border, $AU-color-background, 'large');
+}
+
 
 
 /**
@@ -853,12 +845,19 @@ $AU-colordark-background-shade:     darken( $AU-colordark-background, 4% );
 $AU-colordark-background-alt:       darken( $AU-colordark-background, 8% );
 $AU-colordark-background-alt-shade: darken( $AU-colordark-background, 12% );
 
-
 // Generated border and muted colours
-$AU-colordark-foreground-muted:  mix( $AU-colordark-foreground-text, $AU-colordark-background, 72% );
-$AU-colordark-foreground-muted:  AU-color-a11y( $AU-colordark-foreground-muted, $AU-colordark-background );
-$AU-colordark-foreground-border: mix( $AU-colordark-foreground-text, $AU-colordark-background, 55% );
-$AU-colordark-foreground-border: AU-color-a11y( $AU-colordark-foreground-border, $AU-colordark-background, 'large');
+$AU-colordark-foreground-muted:  mix( $AU-colordark-foreground-text, $AU-colordark-background );
+$AU-colordark-foreground-border: mix( $AU-colordark-foreground-text, $AU-colordark-background );
+
+// If the background is light
+@if ( lightness( $AU-colordark-background ) > 50 ) {
+	$AU-colordark-foreground-muted:  AU-color-a11y( $AU-colordark-foreground-muted, $AU-colordark-background-alt-shade );
+	$AU-colordark-foreground-border: AU-color-a11y( $AU-colordark-foreground-border, $AU-colordark-background-alt-shade, 'large');
+}
+@else {
+	$AU-colordark-foreground-muted:  AU-color-a11y( $AU-colordark-foreground-muted, $AU-colordark-background );
+	$AU-colordark-foreground-border: AU-color-a11y( $AU-colordark-foreground-border, $AU-colordark-background, 'large');
+}
 
 /**
  * Colors system messages
