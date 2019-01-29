@@ -301,8 +301,6 @@ HELPER.precompile = (() => {
 				CopyFile('./src/sass/_module.scss', './lib/sass/_module.scss');
 				CopyFile('./src/sass/_print.scss', './lib/sass/_print.scss');
 				
-				//@TODO
-				// CopyFile('./src/sass/_dependencies.scss', './lib/sass/_dependencies.scss');
 
 				// Rethingiemajiging the peer dependencies for sass
 				let dependencies = [];
@@ -419,7 +417,7 @@ HELPER.precompile = (() => {
 						`@babel/preset-react`,
 					],
 					sourceMaps: "both",
-					sourceFileName: `${HELPER.NAME}.min.js`,
+					sourceFileName: `react.es5.js`,
 				};
 
 				const searches = {

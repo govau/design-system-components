@@ -14,7 +14,7 @@ import AU from '@gov.au/animate'; // interdependency with our animate lib
 
 
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
-// ES6 dependency: import AUlinkList from './link-list';
+// ES6 dependency: import AUlinkList from '../../../../pancake/react/link-list';
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.

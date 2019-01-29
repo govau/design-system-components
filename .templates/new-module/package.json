@@ -25,7 +25,7 @@
 
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "node ../../scripts/helper.js compile",
-		"build:react": "cd tests/react/ && webpack",
+		"build:react": "cd tests/react/ && webpack --config webpack.config.js",
 		"build": "npm run build:pre && npm run build:js && npm run build:react",
 
 		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",

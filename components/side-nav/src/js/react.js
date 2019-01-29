@@ -11,7 +11,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
-// ES6 dependency: import AUlinkList from './link-list';
+// ES6 dependency: import AUlinkList from '../../../../pancake/react/link-list';
 // ES5 dependency: import AUaccordion from '@gov.au/accordion';
 // ES6 dependency: import AUaccordion from './accordion';
 

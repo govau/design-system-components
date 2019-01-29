@@ -10,6 +10,7 @@ validation-report.json
 validation-status.json
 *.css
 components/*/tests/*/*.js
+components/*/tests/react/dist
 !components/*/tests/react/index.js
 !components/*/tests/react/webpack.config.js
 components/*/lib/
