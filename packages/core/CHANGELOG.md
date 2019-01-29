@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.2.0 - Add additional colour checks for incaccesble color combinations](#v320)
 * [v3.1.2 - Removed uikit references](#v312)
 * [v3.1.1 - Fix issue with A11yColor when white and black both pass](#v311)
 * [v3.1.0 - Update font stack to accomodate linux users](#v310)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v3.2.0
+
+- Add additional colour checks for incaccesble color combinations
+
 
 ### v3.1.2
 
