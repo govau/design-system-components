@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/control-input",
-	"version": "2.2.1",
+	"version": "2.2.2",
 	"description": "Control inputs include radio buttons and checkboxes. They allow users to select one or more options.",
 	"keywords": [
 		"auds",
@@ -119,6 +119,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		}
 	],
 	"license": "MIT"

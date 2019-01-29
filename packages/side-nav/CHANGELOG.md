@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v5.0.3 - Remove aria-selected from side-nav toggle button](#v503)
 * [v5.0.2 - Removed uikit references](#v502)
 * [v5.0.1 - Update accordion dependency](#v501)
 * [v5.0.0 - Update accordion dependency (use `<button>` instead of `<a>` for title)](#v500)
@@ -37,6 +38,11 @@
 
 
 ## Release History
+
+### v5.0.3
+
+- Remove aria-selected from side-nav toggle button, as [`role="button"` does not support "aria-selected"](https://www.w3.org/TR/wai-aria-1.1/#button)
+
 
 ### v5.0.2
 
