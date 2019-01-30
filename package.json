@@ -20,9 +20,10 @@
 	"scripts": {
 		"build": "yarn workspaces run build",
 		"scaffolding": "node ./scripts/helper.js scaffolding",
-		"nuke": "yarn delete:node_modules | yarn delete:lib",
+		"nuke": "yarn delete:node_modules | yarn delete:lib | yarn delete:pancake",
 		"delete:node_modules": "rimraf components/*/node_modules | rimraf node_modules",
 		"delete:lib": "rimraf components/*/lib/**",
+		"delete:pancake": "rimraf pancake",
 		"test:unit": "mocha components/*/tests/unit/**.spec.js",
 		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},
@@ -31,7 +32,7 @@
 		"components/*"
 	],
 	"pancake": {
-		"auto-save": false
+		"auto-save": true
 	},
 	"dependencies": {
 		"@gov.au/pancake-sass": "^2.1.2"
