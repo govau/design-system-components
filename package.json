@@ -32,7 +32,7 @@
 		"components/*"
 	],
 	"pancake": {
-		"auto-save": true
+		"auto-save": false
 	},
 	"dependencies": {
 		"@gov.au/pancake-sass": "^2.1.2"
