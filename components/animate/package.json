@@ -44,8 +44,7 @@
 				"@gov.au/pancake-sass"
 			],
 			"sass": {
-				"path": "src/sass/_module.scss",
-				"sass-versioning": false
+				"name": false
 			},
 			"js": {
 				"path": "src/js/module.js"
