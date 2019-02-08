@@ -184,28 +184,33 @@ happened instead. For more info look at our [issue template](./ISSUE_TEMPLATE.md
 
 If you’d like to contribute code, first, you will need to run the components locally.
 
-💡 Building the components is only necessary if you want to contribute them. If you want to use the modules in your own project, install them via npm as described
+💡 Building the components is only necessary if you want to contribute to them. If you want to use the modules in your own project, install them via npm as described
 in [How to use](./README.md#how-to-use).
 
-To build this project you have to install [lerna](https://github.com/lerna/lerna) globally after cloning it via `npm install -g lerna` and run:
+To build this project, you'll have to install [Yarn](https://yarnpkg.com/en/). Then run the following commands at the root of the project folder:
 
-```shell
-npm install
-npm run bootstrap
-npm run build
+```bash
+# Install the modules
+yarn install
+
+# Build the components
+yarn build
 ```
 
-To make changes to an existing module, `cd` into the folder and run the watch:
+To make changes to an existing module, `cd` into the folder and run the watch script:
 
-```shell
+```bash
+# Change directory to whatever component e.g `body`
 cd components/body
-npm run watch
+
+# Preview the component, live in your browser
+yarn watch
 ```
 
-To add a new module run the scaffolding helper:
+To add a new module, run the scaffolding helper:
 
 ```shell
-npm run scaffolding
+yarn scaffolding
 ```
 
 _❗ After you have filled out all the blanks and added your dependencies into your package.json make sure you run `lerna bootstrap` again._
