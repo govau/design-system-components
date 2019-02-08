@@ -34,7 +34,7 @@
 	@include AU-space( left, 0.5unit );
 	@include AU-space( top, 0.5unit );
 
-	&--small {
+	.au-control-input--small & {
 		@include AU-space( left, 0.25unit );
 		@include AU-space( top, 0.25unit );
 	}
@@ -387,14 +387,14 @@
 		z-index: 100;
 		border: 3px solid transparent;
 
-		.au-control-input__item--small + & {
+		.au-control-input--small & {
 			@include AU-space( width, 1.75unit );
 			@include AU-space( height, 1.75unit );
 		}
 	}
 
-	.au-control-input__item--small + & {
-		@include AU-space( padding, 0.2unit 0.5unit 0 1.8unit );
+	.au-control-input--small & {
+		@include AU-space( padding, 0.2unit 0.5unit 0 1.95unit );
 		@include AU-space( margin-right, 1unit );
 		@include AU-fontgrid( sm, nospace );
 	}
