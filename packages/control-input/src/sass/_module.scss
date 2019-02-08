@@ -32,7 +32,7 @@
 	@include AU-space( margin-left, 0.25unit );
 
 	&--small {
-		@include AU-space( left, 0.9unit );
+		@include AU-space( left, 0.25unit );
 		@include AU-space( top, 0.25unit );
 	}
 
