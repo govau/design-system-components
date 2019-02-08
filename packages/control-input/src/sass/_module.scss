@@ -30,6 +30,9 @@
 	cursor: pointer;
 	margin: 0;
 	@include AU-space( margin-left, 0.25unit );
+	position: absolute;
+	@include AU-space( left, 0.5unit );
+	@include AU-space( top, 0.5unit );
 
 	&--small {
 		@include AU-space( left, 0.25unit );
@@ -363,7 +366,7 @@
  */
 .au-control-input__text {
 	@include AU-fontgrid( sm );
-	@include AU-space( padding, 0.25unit 0.5unit 0.5unit 1.2unit );
+	@include AU-space( padding, 0.25unit 0.5unit 0.5unit 2.5unit );
 	@include AU-space( margin-right, 1unit );
 	display: inline-block;
 	font-family: $AU-font;
@@ -391,7 +394,7 @@
 	}
 
 	.au-control-input__item--small + & {
-		@include AU-space( padding, 0.2unit 0.5unit 0 0.5unit );
+		@include AU-space( padding, 0.2unit 0.5unit 0 1.8unit );
 		@include AU-space( margin-right, 1unit );
 		@include AU-fontgrid( sm, nospace );
 	}
