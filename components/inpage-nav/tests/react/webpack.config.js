@@ -4,7 +4,7 @@ module.exports = {
 	entry: './index.js',
 	mode: 'development',
 	output: {
-		filename: 'bundle.js',
+		filename: './bundle.js',
 		path: path.resolve( __dirname )
 	},
 	module: {
