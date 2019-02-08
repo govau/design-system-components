@@ -17,7 +17,7 @@
 		"JavaScript"
 	],
 	"scripts": {
-		"postinstall": "pancake --verbose",
+		"postinstall": "pancake",
 
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:helper": "node ../../scripts/helper.js test",
@@ -68,8 +68,8 @@
 		"lib/*"
 	],
 	"engines": {
-		"node": ">=0.12.0",
-		"npm": "^3.0.0"
+		"node": "~10",
+		"npm": "~6"
 	},
 	"repository": {
 		"type": "git",
