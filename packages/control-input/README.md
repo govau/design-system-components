@@ -116,6 +116,7 @@ The visual test: https://auds.service.gov.au/packages/control-input/tests/site/
 
 ## Release History
 
+* v3.0.0 - Use explicit labelling instead of implicit labelling for control inputs
 * v2.2.2 - Fixed radio input underlapping svg on small inputs
 * v2.2.1 - Removed uikit references
 * v2.2.0 - Changed focus appearance on radio buttons to be round
