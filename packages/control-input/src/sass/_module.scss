@@ -27,12 +27,12 @@
 }
 
 .au-control-input__input {
-	cursor: pointer;
-	margin: 0;
-	@include AU-space( margin-left, 0.25unit );
 	position: absolute;
 	@include AU-space( left, 0.5unit );
 	@include AU-space( top, 0.5unit );
+	cursor: pointer;
+	margin: 0;
+	// @include AU-space( margin-left, 0.25unit );
 
 	.au-control-input--small & {
 		@include AU-space( left, 0.25unit );
@@ -368,7 +368,7 @@
 	@include AU-fontgrid( sm );
 	@include AU-space( padding, 0.25unit 0.5unit 0.5unit 2.5unit );
 	@include AU-space( margin-right, 1unit );
-	display: inline-block;
+	display: block;
 	font-family: $AU-font;
 	color: $AU-color-foreground-text;
 
@@ -378,10 +378,10 @@
 		@include AU-space( width, 2.375unit );
 		@include AU-space( height, 2.375unit );
 		content: '';
+		display: block;
 		position: absolute;
 		left: -3px;
 		top: -3px;
-		display: inbline-block;
 		box-sizing: border-box;
 		background-repeat: no-repeat;
 		z-index: 100;
