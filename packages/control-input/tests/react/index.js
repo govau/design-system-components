@@ -456,7 +456,7 @@ ReactDOM.render(
 						disabled: true,
 						checked: true,
 					},
-				]} /> 
+				]} />
 
 
 				<hr/>
