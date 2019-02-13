@@ -283,7 +283,7 @@ ReactDOM.render(
 						checked: true,
 						id: "rl-dark-what"
 					},
-				]} /> 
+				]} />
 
 
 				<hr/>
