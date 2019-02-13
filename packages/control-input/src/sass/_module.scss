@@ -27,12 +27,12 @@
 }
 
 .au-control-input__input {
+	// hiding the native element behind our SVG so for browsers that don’t support SVG have a fallback
 	position: absolute;
 	@include AU-space( left, 0.5unit );
 	@include AU-space( top, 0.5unit );
 	cursor: pointer;
 	margin: 0;
-	// @include AU-space( margin-left, 0.25unit );
 
 	.au-control-input--small & {
 		@include AU-space( left, 0.25unit );
@@ -377,14 +377,14 @@
 	&:after {
 		@include AU-space( width, 2.375unit );
 		@include AU-space( height, 2.375unit );
-		content: '';
+		content: ' ';
 		display: block;
 		position: absolute;
-		left: -3px;
-		top: -3px;
 		box-sizing: border-box;
 		background-repeat: no-repeat;
 		z-index: 100;
+		left: -3px; // offset for 3px border focus
+		top: -3px;  // offset for 3px border focus
 		border: 3px solid transparent;
 
 		.au-control-input--small & {
