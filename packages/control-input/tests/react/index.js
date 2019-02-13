@@ -220,7 +220,7 @@ ReactDOM.render(
 						onChange: () => { console.log('This function will run when the second radio button is changed') },
 						id:"radio-maybe-onchange"
 					},
-				]} /> 
+				]} />
 			</div>
 			<div className="split split--dark">
 				<h2>checkboxes <code>--dark</code></h2>
