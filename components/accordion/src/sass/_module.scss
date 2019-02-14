@@ -1,0 +1,184 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion module
+// Allow the user to toggle the visibility of an element
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion wrapper
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-accordion {
+	@include AU-fontgrid( sm );
+	display: block;
+	border: 1px solid $AU-color-foreground-border;
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+	padding: 0;
+
+	// Add spacing if there is an element before it
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	.au-accordion__title {
+		background-color: $AU-color-background-shade;
+	}
+
+	&.au-accordion--dark {
+		border-color: $AU-colordark-foreground-border;
+		color: $AU-colordark-foreground-text;
+
+		.au-accordion__title {
+			background-color: $AU-colordark-background-shade;
+		}
+	}
+}
+
+.au-accordion + .au-accordion {
+	margin-top: 0;
+	border-top: 0;
+}
+
+.au-body .au-accordion__title,
+.au-accordion__title {
+	@include AU-fontgrid( md, heading );
+	@include AU-space( padding, 1unit 2.5unit 1unit 1unit );
+	width: 100%;
+	display: block;
+	color: $AU-color-foreground-action;
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
+	font-weight: bold;
+	position: relative;
+
+	// button resets
+	box-sizing: border-box;
+	margin: 0;
+	cursor: pointer;
+	border: none;
+	text-align: left;
+	font-family: inherit;
+
+	&:hover {
+		text-decoration: none;
+		color: $AU-color-foreground-text;
+
+		&:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-color-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+				'<path fill="#{ $AU-color-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
+		}
+	}
+
+	@include AU-focus();
+
+	&:focus {
+		z-index: 100;
+	}
+
+	// remove the default details arrow icon
+	&::-webkit-details-marker {
+		display: none;
+	}
+
+	&:after {
+		content: ' ';
+		position: absolute;
+		top: 50%;
+		@include AU-space( margin-top, -0.5unit ); // Pull it up half of it's height
+		@include AU-space( right, 1unit );
+		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 101;
+		transition: transform 0.25s ease-in;
+	}
+
+	&.au-accordion--closed:after {
+		transform: rotate(-180deg);
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			content: ' ▼ ';
+		}
+
+		&.au-accordion--open:after {
+			content: ' ▲ ';
+		}
+	}
+}
+
+// Dark title styles
+.au-body.au-body--dark .au-accordion__title,
+.au-accordion.au-accordion--dark .au-accordion__title {
+	color: $AU-colordark-foreground-action;
+
+
+	&:hover {
+		color: $AU-colordark-foreground-text;
+
+		&:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l64 64-16 16-64-64"/>' +
+				'	<path fill="#{ $AU-colordark-foreground-text }" d="M64 0l16 16-64 64L0 64"/>' +
+				'</svg>');
+		}
+	}
+
+	@include AU-focus( 'dark' );
+
+	&:after {
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+			'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l64 64-16 16-64-64"/>' +
+			'	<path fill="#{ $AU-colordark-foreground-action }" d="M64 0l16 16-64 64L0 64"/>' +
+			'</svg>');
+	}
+}
+
+.au-accordion__body {
+	@include AU-fontgrid( sm );
+	overflow: hidden;
+
+	// only listen to the state classes if js is enabled
+	.js & {
+		&.au-accordion--open {
+			display: block;
+			height: auto;
+		}
+
+		&.au-accordion--closed {
+			display: none;
+			height: 0;
+		}
+	}
+}
+
+.au-accordion__body-wrapper {
+	@include AU-space( padding, 1unit );
+	border-top: 1px solid $AU-color-foreground-border;
+
+	.au-accordion--dark & {
+		border-top: 1px solid $AU-colordark-foreground-border;
+	}
+}
+
+.au-accordion-group {
+	list-style: none;
+	padding: 0;
+}

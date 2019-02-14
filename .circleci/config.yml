@@ -1,36 +1,37 @@
-# Node CircleCI 2.0 configuration file to DTA cloud 2.0
-
 version: 2
 jobs:
 
-  # DEPLOY-STAGING JOB
-  # installing dependencies, building assets and deploying to staging
+  # Installing dependencies, build and test.
   build-and-test-auds:
     docker:
-      - image: circleci/node:8.12.0                       # NodeLTS as of 10/2018
+      - image: circleci/node:10.15.1
     working_directory: ~/auds
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
+      - restore_cache:
+          keys:
+            - v1-node-cache-{{ checksum "yarn.lock" }}
       - run:
           # https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
           name: Install packages for puppeteer
           command: sudo apt install -yq --no-install-recommends gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdbus-1-3 libgconf-2-4 libgtk-3-0 libnspr4 libxcomposite1 libxcursor1 libxi6 libxrandr2 libxss1 libxtst6 fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils
       - run:
           name: Install dependencies
-          command: npm install                            # duh
+          command: yarn install                            # duh
+      - save_cache:
+          key: v1-node-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules                                 # Path globbing isn't supported :'(
       - run:
-          name: Bootstrap the packages
-          command: npm run bootstrap                      # installing all dependencies of all packages
-      - run:
-          name: Build all packages
-          command: npm run build                          # installing all dependencies of all packages
+          name: Build all components
+          command: yarn build
       - run:
           name: Run all tests
-          command: npm test
+          command: yarn test
       - persist_to_workspace:
           root: ~/auds
           paths:
-            - packages/*/tests/
+            - components/*/tests/
             - .deploy/
             - index.html
 
@@ -49,7 +50,7 @@ jobs:
             cp .deploy/nginx/mime.types site/
             cp .deploy/nginx/.htpasswd site/
             mv .deploy/nginx/nginx-staging.conf site/nginx.conf
-            mv packages/ site/
+            mv components/ site/
             mv index.html site/
             mv .deploy/manifest-staging.yml site/
             cd site/
@@ -71,7 +72,7 @@ jobs:
             cp .deploy/nginx/mime.types site/
             cp .deploy/nginx/.htpasswd site/
             mv .deploy/nginx/nginx-testing.conf site/nginx.conf
-            mv packages/ site/
+            mv components/ site/
             mv index.html site/
             mv .deploy/manifest-testing.yml site/
             cd site/
@@ -92,7 +93,7 @@ jobs:
             mkdir -p site/
             cp .deploy/nginx/mime.types site/
             mv .deploy/nginx/nginx-production.conf site/nginx.conf
-            mv packages/ site/
+            mv components/ site/
             mv index.html site/
             mv .deploy/manifest-production.yml site/
             cd site/

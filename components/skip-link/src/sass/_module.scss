@@ -1,0 +1,50 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// skip-link module
+// Provide skip links to navigation and content.
+//
+// Content:
+// - Skip-to links
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Skip-to links
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-skip-link {
+	@include AU-fontgrid( md, nospace );
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+}
+
+.au-skip-link__link {
+	@include AU-sronly;
+
+	&:active,
+	&:focus {
+		@include AU-outline();
+		@include AU-space ( top, 1unit );
+		@include AU-space ( left, 1unit );
+		@include AU-space ( padding, 1.5unit );
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: absolute;
+		width: auto;
+		color: $AU-color-background;
+		background-color: $AU-color-foreground-action;
+		text-decoration: underline;
+		text-decoration-skip-ink: auto;
+		z-index: 600;
+	}
+
+	.au-body &:hover,
+	&:hover {
+		text-decoration: none;
+		color: $AU-color-background;
+	}
+}

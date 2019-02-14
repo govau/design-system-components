@@ -1,0 +1,89 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// cta-link module
+// Use cta links to draw attention to a primary call to action
+//
+// Content:
+// - styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-cta-link {
+	@include AU-fontgrid( md );
+	@include AU-space( margin-top, 1unit );
+	font-weight: bold;
+	font-family: $AU-font;
+
+	// Styles to reset button
+	color: $AU-color-foreground-action;
+	appearance: none;
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
+
+	@include AU-focus();
+
+	&:after {
+		content: ' ';
+		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
+		@include AU-space( margin, 0 0.25unit 0 0.2unit );
+		transition: margin 0.2s ease;
+		display: inline-block;
+		background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
+
+		.ie8 &,
+		.lt-ie8 & {
+			content: ' > ';
+		}
+	}
+
+	&:hover {
+		color: $AU-color-foreground-text;
+		text-decoration: none;
+
+		&:after {
+			@include AU-space( margin-left, 0.4unit );
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-color-foreground-text }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-color-foreground-text }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
+		}
+	}
+
+	&.au-cta-link--dark {
+		color: $AU-colordark-foreground-action;
+
+		@include AU-focus( 'dark' );
+
+		&:after {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+				'<path fill="#{ $AU-colordark-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
+				'<path fill="#{ $AU-colordark-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
+			'</svg>');
+		}
+
+		&:hover {
+			color: $AU-colordark-foreground-text;
+
+			&:after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+					'<path fill="#{ $AU-colordark-foreground-text }" d="M128 64l-64 64-16-16 64-64"/>' +
+					'<path fill="#{ $AU-colordark-foreground-text }" d="M128 64l-16 16-64-64L64 0"/>' +
+				'</svg>');
+			}
+		}
+	}
+}
