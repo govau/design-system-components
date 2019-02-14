@@ -1,0 +1,62 @@
+/*! [replace-name] v[replace-version] */
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// control-input module globals
+// Control inputs include radio buttons and checkboxes. They allow users to select one or more options.
+//
+// Content:
+// - Sass versioning
+// - Global mixin:
+//   - AU-getControlShape
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SASS VERSIONING
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+$name: "[replace-name]";
+$version: "[replace-version]";
+$dependencies: (
+	[replace-dependencies]
+);
+
+// @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// GLOBAL VARIABLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Return the right SVG shape for fore- and background
+ *
+ * @param  {string} $kind                 - Either "checkbox" or "radio"
+ * @param  {string} $part                 - Either "background" or "foreground"
+ * @param  {color} $color1: transparent   - A color to be applied to the first part of the SVG shape
+ * @param  {color} $color2: transparent   - A color to be applied to the second part of the SVG shape
+ *
+ * @return {svg}                          - The SVG shape inside a background-image
+ */
+@mixin AU-getControlShape( $kind, $part, $color1: transparent, $color2: transparent ) {
+	$start: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">';
+	$end: '</svg>';
+
+	$checkbox-background: '<path fill="#{ $color1 }" d="M0,0h32v32H0V0z"/><path fill="#{ $color2 }" d="M2,2h28v28H2V2z"/>';
+	$checkbox-foreground: '<path fill="#{ $color1 }" d="M25.6,11.4c0.2-0.2,0.2-0.5,0-0.7l-2.3-2.3c-0.2-0.2-0.5-0.2-0.7,0L14,17l-3.6-3.6c-0.2-0.2-0.5-0.2-0.7,0l-2.3,2.3 c-0.2,0.2-0.2,0.5,0,0.7l6.3,6.3c0.2,0.2,0.5,0.2,0.7,0L25.6,11.4L25.6,11.4z"/>';
+
+	$radio-background: '<circle fill="#{ $color1 }" cx="16" cy="16" r="16"/><circle fill="#{ $color2 }" cx="16" cy="16" r="14"/>';
+	$radio-foreground: '<circle fill="#{ $color1 }" cx="16" cy="16" r="11"/>';
+
+	@if( $kind == 'checkbox' and $part == 'background' ) {
+		background-image: AU-svguri( $start + $checkbox-background + $end );
+	}
+
+	@if( $kind == 'checkbox' and $part == 'foreground' ) {
+		background-image: AU-svguri( $start + $checkbox-foreground + $end );
+	}
+
+	@if( $kind == 'radio' and $part == 'background' ) {
+		background-image: AU-svguri( $start + $radio-background + $end );
+	}
+
+	@if( $kind == 'radio' and $part == 'foreground' ) {
+		background-image: AU-svguri( $start + $radio-foreground + $end );
+	}
+}

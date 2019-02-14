@@ -1,0 +1,300 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// main-nav module
+// Horizontal list of links to key areas on the website. Usually located in the header.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+// The main navigation
+.au-main-nav {
+	@include AU-fontgrid( sm );
+	@include AU-space( border-bottom, 0.5unit solid $AU-color-foreground-action );
+	background-color: $AU-color-background;
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+
+	a,
+	.au-main-nav__toggle {
+		@include AU-space( padding, 1unit );
+		@include AU-fontgrid( xs );
+		@include AU-focus();
+		color: $AU-color-foreground-action;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+			text-decoration-skip-ink: auto;
+			color: $AU-color-foreground-text;
+			background-color: $AU-color-background-shade;
+		}
+	}
+
+	a {
+		display: block;
+	}
+
+
+	.active a {
+		font-weight: bold;
+		color: $AU-color-foreground-text;
+
+		&:hover {
+			border-color: $AU-color-background-shade;
+		}
+	}
+
+	// Reset menus inside main-nav
+	.au-link-list {
+		@include AU-clearfix();
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+		}
+
+		& > li {
+			border-top: 1px solid $AU-color-foreground-border;
+		}
+	}
+
+	// Alternate colour scheme
+	&.au-main-nav--alt {
+		background-color: $AU-color-background-alt;
+
+		a,
+		.au-main-nav__toggle {
+			&:hover {
+				background-color: $AU-color-background-alt-shade;
+			}
+		}
+
+		.active a {
+			border-color: $AU-color-background-alt;
+
+			&:hover {
+				border-color: $AU-color-background-alt-shade;
+			}
+		}
+	}
+
+	// Dark theme for main navigation
+	&.au-main-nav--dark {
+		background-color: $AU-colordark-background;
+		border-color: $AU-colordark-foreground-action;
+
+		a,
+		.au-main-nav__toggle {
+			@include AU-focus( 'dark' );
+			color: $AU-colordark-foreground-action;
+
+			&:hover {
+				color: $AU-colordark-foreground-text;
+				background-color: $AU-colordark-background-shade;
+			}
+		}
+
+		.active a {
+			color: $AU-colordark-foreground-text;
+			border-color: $AU-colordark-background;
+
+			&:hover {
+				border-color: $AU-colordark-background-shade;
+			}
+		}
+
+		.au-link-list > li {
+			border-color: $AU-colordark-foreground-border;
+		}
+	}
+
+	// Dark alternative colour scheme
+	&.au-main-nav--dark.au-main-nav--alt {
+		background-color: $AU-colordark-background-alt;
+
+		a,
+		.au-main-nav__toggle {
+			&:hover {
+				background-color: $AU-colordark-background-alt-shade;
+			}
+		}
+
+		.active a {
+			border-color: $AU-colordark-background-alt;
+
+			&:hover {
+				border-color: $AU-colordark-background-alt-shade;
+			}
+		}
+	}
+
+	@include AU-media( $AU-main-nav-breakpoint ) {
+		.au-link-list > li {
+			display: block;
+			float: left;
+			border: none;
+		}
+
+		a,
+		.au-main-nav__toggle {
+			@include AU-fontgrid( sm );
+			@include AU-space( padding, 1unit );
+		}
+
+		.active a {
+			@include AU-space( border-bottom, 0.5unit solid $AU-color-background );
+			@include AU-space( margin-bottom, -0.5unit );
+			font-weight: normal;
+		}
+	}
+}
+
+
+// The open and close toggles
+.au-main-nav__toggle {
+	@include AU-space( padding, 0.5unit 1unit 0.5unit );
+	@include AU-fontgrid( xs, nospace );
+	border: 0;
+	appearance: none;
+	background-color: transparent;
+	cursor: pointer;
+	display: none;
+
+	&:before {
+		@include AU-fontgrid( sm, nospace );
+		@include AU-space( margin-bottom, 0.25unit );
+		display: block;
+		text-align: center;
+	}
+
+	// Menu icon
+	&.au-main-nav__toggle--open:before {
+		content: "☰";
+	}
+
+	// Close icon
+	&.au-main-nav__toggle--close:before {
+		content: "✕";
+	}
+
+	// Show the open and close toggles when there is javascript
+	.js & {
+		display: inline-block;
+
+		// Always hide the toggles on desktop
+		@include AU-media( $AU-main-nav-breakpoint ) {
+			display: none;
+		}
+	}
+}
+
+// Open and close functionality
+.js .au-main-nav__content.au-main-nav__content--open {
+
+	// Show the content when the menu gets opened
+	.au-main-nav__menu {
+		left: 0;
+		display: block;
+	}
+
+	// Move the overlay and animate the transparency
+	.au-main-nav__overlay {
+		opacity: 0.8;
+		left: 0;
+		display: block;
+
+		// Hide on desktop
+		@include AU-media( $AU-main-nav-breakpoint ) {
+			display: none;
+		}
+	}
+}
+
+
+// The content area that becomes the menu menu
+.au-main-nav__menu {
+
+	// Move the menu content off the screen so it can slide in
+	.js & {
+		background-color: $AU-color-background;
+		display: none;
+		overflow: auto;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: -1 * $AU-main-nav-width;
+		width: $AU-main-nav-width;
+		z-index: $AU-main-nav-z-index;
+
+		// Add inner padding for the content area
+		.au-main-nav__menu-inner {
+			@include AU-space( padding, 1unit );
+		}
+	}
+
+	.au-main-nav.au-main-nav--alt & {
+		background-color: $AU-color-background-alt;
+	}
+
+	.au-main-nav.au-main-nav--dark & {
+		background-color: $AU-colordark-background;
+	}
+
+	.au-main-nav.au-main-nav--alt.au-main-nav--dark & {
+		background-color: $AU-colordark-background-alt;
+	}
+
+	@include AU-media( $AU-main-nav-breakpoint ) {
+		// Reset the menu styling
+		.js & {
+			position: static;
+			display: block;
+			width: auto;
+			overflow: inherit;
+			background-color: transparent;
+
+			// Remove padding on the content
+			.au-main-nav__menu-inner {
+				padding: 0;
+			}
+		}
+	}
+}
+
+
+// The overlay that shows when the menu is open
+.au-main-nav__overlay {
+	transition: opacity 0.25s ease-out;
+	background-color: #000;
+	cursor: pointer;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: $AU-main-nav-z-index - 10;
+	opacity: 0.4;
+	display: none; // Hidden by default
+
+	.ie8 & {
+		filter: alpha(opacity=80);
+	}
+}
+
+
+// Lock the scroll on the whole page when the menu is open
+.js .au-main-nav__scroll--locked {
+	overflow: hidden;
+
+	// Remove the scroll lock on a desktop computer
+	@include AU-media( $AU-main-nav-breakpoint ) {
+		overflow: visible;
+	}
+}
