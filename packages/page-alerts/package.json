@@ -39,7 +39,7 @@
 
 		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
 		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
-		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
+		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build:js",
 		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},
 	"pancake": {
