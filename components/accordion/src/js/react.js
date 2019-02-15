@@ -10,7 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AU from '@gov.au/animate'; // interdependency with our animate lib
+// import AU from '@gov.au/animate'; // interdependency with our animate lib
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -350,7 +350,7 @@ class AUaccordion extends React.PureComponent {
 	/**
 	 * Toggle an accordion on click
 	 *
-	 * @param  {event object} event - The event object of the click
+	 * @param  {object} event - The event object of the click
 	 */
 	toggle( event ) {
 		event.preventDefault();
@@ -391,16 +391,38 @@ class AUaccordion extends React.PureComponent {
 };
 
 AUaccordion.propTypes = {
-	children: PropTypes.node.isRequired,
+	/**
+	 * The headline of the accordion
+	 */
 	header: PropTypes.string.isRequired,
+	/**
+	 * Closed state, optional
+	 */
 	closed: PropTypes.bool,
+	/**
+	 * Speed of the animation in ms, optional
+	 */
 	speed: PropTypes.number,
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * A function executed when the accordion opens, optional
+	 */
 	onOpen: PropTypes.func,
+	/**
+	 * A function executed after the accordion opened, optional
+	 */
 	afterOpen: PropTypes.func,
+	/**
+	 * A function executed when the accordion closes, optional
+	 */
 	onClose: PropTypes.func,
+	/**
+	 * A function executed when the accordion closes, optional
+	 */
 	afterClose: PropTypes.func,
-	className: PropTypes.string,
 };
 
 AUaccordion.defaultProps = {
