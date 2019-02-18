@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "",
   "main": "src/index.js",
-  "scripts": {
-    "test": ""
-  },
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -13,9 +10,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "jsdoc-to-markdown": "^4.0.1",
-    "marked": "^0.6.0",
     "pkg-dep-tree": "^0.2.1",
-    "prismjs": "^1.15.0",
     "react": "^16.8.2",
     "react-docgen": "^3.0.0",
     "react-dom": "^16.8.2"
