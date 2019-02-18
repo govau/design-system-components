@@ -10,7 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import AU from '@gov.au/animate'; // interdependency with our animate lib
+import AU from '@gov.au/animate'; // interdependency with our animate lib
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
