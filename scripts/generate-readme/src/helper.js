@@ -11,7 +11,6 @@ const IsDirectory = ( source ) => {
 	return Fs.lstatSync( source ).isDirectory();
 }
 
-
 /**
  * GetFolder - Gets all the folders inside a location
  *
@@ -26,4 +25,22 @@ const GetFolders = async ( folderLocation ) => {
 }
 
 
+/**
+ * Return true if a component folder location has a `jquery.js` file.
+ * 
+ * @param {string} folderLocation - Component folder location.
+ */
+const FileExists = async ( fileLocation ) => {
+	try {
+		return ( await Fsp.stat( fileLocation ) ).isFile()
+	}
+	catch( error ) {
+		console.error( error );
+	}
+	return false;
+}
+
+
+
 module.exports.GetFolders = GetFolders;
+module.exports.FileExists = FileExists;
