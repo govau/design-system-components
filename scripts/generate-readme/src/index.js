@@ -5,11 +5,10 @@ const Path = require( 'path' );
 const JSDoc = require( 'jsdoc-to-markdown' );
 const { GetMonoDepTree, PrintTreeTrim } = require( 'pkg-dep-tree' );
 
-
 // Local Dependencies
 const { GetFolders, FileExists } = require( './helper' );
 const Config = require( './config' );
-const { RenderHTML, RenderReactPropsMarkdownTable } = require( './render' );
+const { RenderHTML, RenderReactJSX, RenderReactPropsMarkdownTable } = require( './render' );
 
 
 // Start da fing
@@ -20,7 +19,7 @@ const { RenderHTML, RenderReactPropsMarkdownTable } = require( './render' );
 
 	let hasJS = await FileExists( `${ component }/src/js/module.js` );
 	let hasReact = await FileExists( `${ component }/src/js/react.js` );
-	let hasJquery = await FileExists( `${ component }/src/js/jquery.js` );
+	let hasjQuery = await FileExists( `${ component }/src/js/jquery.js` );
 
 	let packageMeta = JSON.parse( await Fsp.readFile( `${ component }/package.json` ) );
 	let packageNamePlain = packageMeta.name.split('/')[1]
@@ -35,7 +34,7 @@ const { RenderHTML, RenderReactPropsMarkdownTable } = require( './render' );
 	
 	let readme = `${packageMeta.name}
 ---
-${packageMeta.description}
+> ${packageMeta.description}
 
 ## Install
 
@@ -46,27 +45,24 @@ yarn add ${packageMeta.name}
 npm i ${packageMeta.name}
 \`\`\`
 
-## Usage
+
 ${ hasReact
-? `### HTML
+? `## Usage\n### HTML
 \`\`\`html
-${ RenderHTML( sourceFileContent ) }todo
+${ RenderHTML( sourceFileContent ) }
 \`\`\`
+
 ### React
 \`\`\`jsx
-todo
+import AU${ packageNamePlain } from "@gov.au/${packageNamePlain}";
+
+${ RenderReactJSX( sourceFileContent ) }
 \`\`\``
 : ``}
 
-${ hasJquery
-? `### jQuery
-\`\`\`jsx
-todo
-\`\`\``
-: ``}
-
-## Props
-${ await RenderReactPropsMarkdownTable( sourceFileContent ) }
+${ hasReact
+? `## Props\n${ await RenderReactPropsMarkdownTable( sourceFileContent ) }`
+: ""}
 
 ## Dependency graph
 \`\`\`bash
@@ -75,13 +71,13 @@ ${ await( PrintTreeTrim( await GetMonoDepTree( Config.workspace, packageNamePlai
 \`\`\`
 
 ## Latest updates
-For the latest release notes, check out the [CHANGELOG.md](https://github.com/govau/design-system-components/blob/master/packages/${ packageNamePlain }/CHANGELOG.md) file.
+For the latest release notes, check out the [CHANGELOG.md](https://raw.githubusercontent.com/govau/design-system-components/master/packages/${ packageNamePlain }/CHANGELOG.md) file.
 
 ## Test preview
 https://auds.service.gov.au/packages/${ packageNamePlain }/tests/site/
 
 ## License
-Copyright (c) Commonwealth of Australia. Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
+Copyright (c) Commonwealth of Australia. Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/master/packages/${ packageNamePlain }/LICENSE).
 `
 	await Fsp.writeFile( `${ component }/README-GEN.md`, readme ) // @todo - Update output filename.
 })();

@@ -11,8 +11,10 @@
     "@babel/preset-react": "^7.0.0",
     "jsdoc-to-markdown": "^4.0.1",
     "pkg-dep-tree": "^0.2.1",
+    "pretty": "^2.0.0",
     "react": "^16.8.2",
     "react-docgen": "^3.0.0",
-    "react-dom": "^16.8.2"
+    "react-dom": "^16.8.2",
+    "react-element-to-jsx-string": "^14.0.2"
   }
 }
