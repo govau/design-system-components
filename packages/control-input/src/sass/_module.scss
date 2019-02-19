@@ -21,8 +21,11 @@
 
 	&.au-control-input--block {
 		@include AU-clearfix();
-		@include AU-space( margin-top, 1unit );
 		display: block;
+
+		& + .au-control-input--block {
+			@include AU-space( margin-top, 1unit );
+		}
 	}
 }
 
