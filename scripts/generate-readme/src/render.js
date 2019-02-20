@@ -1,6 +1,7 @@
 const { renderToStaticMarkup } = require( 'react-dom/server' );
 const React = require( 'react' );
 const Babel = require( '@babel/core' );
+const BabelRegister = require("@babel/register");
 const ReactDocs = require( 'react-docgen' );
 const Pretty = require( 'pretty' );
 const ReactElementToJSXString = require( 'react-element-to-jsx-string' );
@@ -13,6 +14,18 @@ const ReactElementToJSXString = require( 'react-element-to-jsx-string' );
  * @returns {string} - CommonJS string output
  */
 const TransformCode = ( code ) => {
+	/**
+	 * Enable @babel/register for transpiling imports on the fly
+	 */
+	BabelRegister({
+		only: [
+			/pancake/
+		],
+		presets: [ '@babel/preset-react', '@babel/preset-env' ],
+		minified: true,
+		comments: false
+	});
+
 	return Babel.transform( code, {
 		presets: [ '@babel/preset-react', '@babel/preset-env' ],
 		minified: true,
@@ -88,9 +101,11 @@ const RenderReactPropsMarkdownTable = async ( reactSource ) => {
 	if( reactSource ) {
 		let docs = ReactDocs.parse( reactSource );
 		let result = `Prop name | Type | Description | Required\n--- | --- | --- | ---\n`;
-	
+		
 		Object.entries( docs.props ).forEach( ( [key, value] ) => {
-			result += `${key} | ${value.type.name} | ${value.description} | ${value.required}\n`
+			if( value && value.type ) {
+				result += `${key} | ${value.type.name} | ${value.description} | ${value.required}\n`
+			}
 		})
 	
 		return result;
