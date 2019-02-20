@@ -77,7 +77,13 @@ const AUtags = ({ dark, linkComponent, tags, className = '', ...attributeOptions
 );
 
 AUtags.propTypes = {
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * All tags inside a neat array.
+	 */
 	tags: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -85,12 +91,27 @@ AUtags.propTypes = {
 			li: PropTypes.object,
 		})
 	).isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * The component used for the child links, optional.
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
 AUtags.defaultProps = {
 	linkComponent: 'a',
+	tags: [
+		{
+			link: 'link/to/tag3',
+			text: 'tag3',
+			li: {
+				className: 'li-wrapping-class',
+			},
+		},
+	]
 };
 
 export default AUtags;

@@ -7,11 +7,12 @@
  *
  **************************************************************************************************************************************************************/
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-// ES5 dependency: import AUlinkList from '@gov.au/link-list';
-// ES6 dependency: import AUlinkList from '../../../../pancake/react/link-list';
+// import AUlinkList from '@gov.au/link-list';
+// import AUlinkList from '../../../../pancake/react/link-list';
+import AUlinkList from "../../../pancake/react/link-list";
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
 // You can safely ignore this bit if you use this module with pancake
@@ -41,19 +42,38 @@ const AUbreadcrumbs = ({ dark, label, items, linkComponent, className = '', ...a
 );
 
 AUbreadcrumbs.propTypes = {
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * Provide the aria label.
+	 */
 	label: PropTypes.string.isRequired,
+	/**
+	 * The link, text and props for each of the breadcrumbs.
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
 		})
 	).isRequired,
+	/**
+	 * The component used for the child links, optional.
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 
 AUbreadcrumbs.defaultProps = {
 	linkComponent: 'a',
+	items: [
+		{
+			link: 'breadcrumb/one/',
+			text: 'breadcrumb 1',
+		}
+	],
+	label: 'Breadcrumb for this page'
 };
 
 export default AUbreadcrumbs;

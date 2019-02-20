@@ -53,10 +53,25 @@ const AUctaLink = ({ linkComponent, dark, link, text, className = '', ...attribu
 }
 
 AUctaLink.propTypes = {
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * The link to the location of the cta-link.
+	 */
 	link: PropTypes.string,
+	/**
+	 * Provide the aria label.
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * The component used for the link, optional.
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 

@@ -67,11 +67,29 @@ const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className
 };
 
 AUdirectionLink.propTypes = {
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * The href link, optional.
+	 */
 	link: PropTypes.string,
+	/**
+	 * The text of the link.
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * The direction the link goes.
+	 */
 	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * The component used for the link, optional.
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 
