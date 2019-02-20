@@ -392,7 +392,7 @@ class AUaccordion extends React.PureComponent {
 
 AUaccordion.propTypes = {
 	/**
-	 * todo
+	 * The elements inside.
 	 */
 	children: PropTypes.node.isRequired,
 	/**
