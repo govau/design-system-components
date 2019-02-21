@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v7.0.4 - Updated autoprefixer default](#v704)
 * [v7.0.3 - Remove aria-selected from accordion button](#v703)
 * [v7.0.2 - Removed uikit references](#v702)
 * [v7.0.1 - Fix issue with parent component re-rendering causing accordion to open and close](#v701)
@@ -46,6 +47,11 @@
 
 
 ## Release History
+
+### v7.0.4
+
+- Updated autoprefixer default from `text-decoration-skip: ink;` -> `text-decoration-skip-ink: auto;`
+
 
 ### v7.0.3
 
