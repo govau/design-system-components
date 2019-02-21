@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.0 - Remove external link icon](#v210)
 * [v2.0.13 - Removed uikit references](#v2013)
 * [v2.0.12 - Change code background colours](#v2012)
 * [v2.0.11 - Update dependencies](#v2011)
@@ -39,6 +40,11 @@
 
 
 ## Release History
+
+### v2.1.0 
+
+- Remove external link icon
+
 
 ### v2.0.13
 

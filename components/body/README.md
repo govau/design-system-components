@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/components/body/tests/site/
 
 ## Release History
 
+* v2.1.0 - Remove external link icon
 * v2.0.13 - Removed uikit references
 * v2.0.12 - Change code background colours
 * v2.0.11 - Update Dependencies
