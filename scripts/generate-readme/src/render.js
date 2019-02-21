@@ -3,6 +3,7 @@ const React = require( 'react' );
 const Babel = require( '@babel/core' );
 const BabelRegister = require("@babel/register");
 const ReactDocs = require( 'react-docgen' );
+const ReactDocResolver = require( 'react-docgen' ).resolver;
 const Pretty = require( 'pretty' );
 const ReactElementToJSXString = require( 'react-element-to-jsx-string' );
 
@@ -27,9 +28,9 @@ const TransformCode = ( code ) => {
 	});
 
 	return Babel.transform( code, {
-		presets: [ '@babel/preset-react', '@babel/preset-env' ],
+		presets: [ '@babel/preset-react', [ '@babel/preset-env', { debug: true } ] ],
 		minified: true,
-		comments: false
+		comments: false,
 	}).code;
 }
 
@@ -80,14 +81,26 @@ const RenderReactJSX = ( reactSource ) => {
  * @param {string} reactSource - React source code data.
  */
 const GetRequiredProps = ( reactSource ) => {
-	let docs = ReactDocs.parse( reactSource );
+	let docs = ReactDocs.parse( reactSource, ReactDocResolver.findAllComponentDefinitions );
 	let result = {}
 
-	Object.entries( docs.props ).forEach( ( [ key, value ] ) => {
-		if( value.required == true ){
-			Object.assign( result, { [ key ]: value.description } );
-		}
-	});
+	// Is there more than one component in the source file?
+	if( docs && Array.isArray( docs ) == true ){
+		docs.map( component => {
+			Object.entries( component.props ).forEach( ( [ key, value ] ) => {
+				if( value.required == true ){
+					Object.assign( result, { [ key ]: value.description } );
+				}
+			});	
+		})
+	}
+	else {
+		Object.entries( docs.props ).forEach( ( [ key, value ] ) => {
+			if( value.required == true ){
+				Object.assign( result, { [ key ]: value.description } );
+			}
+		});
+	}
 
 	return result;
 }
