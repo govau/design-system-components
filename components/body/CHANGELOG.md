@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.0.14 - Updated autoprefixer default](#v2014)
+* [v2.0.14 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v2014)
 * [v2.0.13 - Removed uikit references](#v2013)
 * [v2.0.12 - Change code background colours](#v2012)
 * [v2.0.11 - Update dependencies](#v2011)
@@ -43,7 +43,7 @@
 
 ### v2.0.14
 
-- Updated autoprefixer default from `text-decoration-skip: ink;` -> `text-decoration-skip-ink: auto;`
+- Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 
 
 ### v2.0.13

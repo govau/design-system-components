@@ -122,7 +122,7 @@ The visual test: https://auds.service.gov.au/components/header/tests/site/
 
 ## Release History
 
-* v4.1.8 - Updated autoprefixer default
+* v4.1.8 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v4.1.7 - Removed uikit references
 * v4.1.6 - Update dependencies
 * v4.1.5 - Removing web pack dev server, updating dependencies

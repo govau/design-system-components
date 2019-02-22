@@ -252,7 +252,7 @@ The visual test: https://auds.service.gov.au/components/accordion/tests/site/
 
 ## Release History
 
-* v7.0.4 - Updated autoprefixer default
+* v7.0.4 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v7.0.3 - Remove aria-selected from accordion button
 * v7.0.2 - Removed uikit references
 * v7.0.1 - Fix issue with parent component re-rendering causing accordion to open and close
