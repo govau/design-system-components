@@ -350,7 +350,7 @@ class AUaccordion extends React.PureComponent {
 	/**
 	 * Toggle an accordion on click
 	 *
-	 * @param  {event object} event - The event object of the click
+	 * @param  {object} event - The event object of the click
 	 */
 	toggle( event ) {
 		event.preventDefault();
@@ -391,15 +391,45 @@ class AUaccordion extends React.PureComponent {
 };
 
 AUaccordion.propTypes = {
+	/**
+	 * The elements inside.
+	 */
 	children: PropTypes.node.isRequired,
+	/**
+	 * The headline of the accordion
+	 */
 	header: PropTypes.string.isRequired,
+	/**
+	 * Closed state, optional
+	 */
 	closed: PropTypes.bool,
+	/**
+	 * Speed of the animation in ms, optional
+	 */
 	speed: PropTypes.number,
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * A function executed when the accordion opens, optional
+	 */
 	onOpen: PropTypes.func,
+	/**
+	 * A function executed after the accordion opened, optional
+	 */
 	afterOpen: PropTypes.func,
+	/**
+	 * A function executed when the accordion closes, optional
+	 */
 	onClose: PropTypes.func,
+	/**
+	 * A function executed when the accordion closes, optional
+	 */
 	afterClose: PropTypes.func,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 

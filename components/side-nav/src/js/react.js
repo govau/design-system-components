@@ -12,6 +12,9 @@ import PropTypes from 'prop-types';
 
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
 // ES6 dependency: import AUlinkList from '../../../../pancake/react/link-list';
+import AUlinkList from "../../../pancake/react/link-list";
+import AUaccordion from "../../../pancake/react/accordion";
+
 // ES5 dependency: import AUaccordion from '@gov.au/accordion';
 // ES6 dependency: import AUaccordion from './accordion';
 
@@ -124,18 +127,57 @@ const AUsideNav = ({
 	);
 
 AUsideNav.propTypes = {
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * An alternate variation of the component.
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * The headline of the accordion.
+	 */
 	accordionHeader: PropTypes.string.isRequired,
+	/**
+	 * A function executed when the accordion opens, optional.
+	 */
 	onOpen: PropTypes.func,
+	/**
+	 * A function executed after the accordion opens, optional.
+	 */
 	afterOpen: PropTypes.func,
+	/**
+	 * A function executed when the accordion closes, optional.
+	 */
 	onClose: PropTypes.func,
+	/**
+	 * A function executed after the accordion closes, optional.
+	 */
 	afterClose: PropTypes.func,
+	/**
+	 * The headline of the menu.
+	 */
 	menuHeader: PropTypes.string,
+	/**
+	 * The menu headers link.
+	 */
 	menuHeaderLink: PropTypes.string,
+	/**
+	 * Closed state, optional.
+	 */
 	closed: PropTypes.bool,
+	/**
+	 * Speed of the animation in ms, optional.
+	 */
 	speed: PropTypes.number,
+	/**
+	 * The component used for the child links, optional.
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+	/**
+	 * The menu items.
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -143,7 +185,13 @@ AUsideNav.propTypes = {
 			children: PropTypes.array,
 		})
 	).isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * The aria-label attribute, defaults to "side navigation".
+	 */
 	ariaLabel: PropTypes.string,
 };
 
@@ -151,6 +199,26 @@ AUsideNav.defaultProps = {
 	linkComponent: 'a',
 	closed: true,
 	ariaLabel: 'side navigation',
+	items: [
+		{
+		  link: 'one',
+		  text: 'Change to route one',
+		  children: [
+			{
+			  link: 'two',
+			  text: 'Change to route two',
+			},
+			{
+			  link: 'three',
+			  text: 'Change to route three',
+			},
+		  ],
+		},
+		{
+		  link: 'four',
+		  text: 'Change to route four',
+		},
+	],
 };
 
 export default AUsideNav;

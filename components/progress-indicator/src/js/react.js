@@ -74,17 +74,37 @@ export const AUprogressIndicatorItem = ({ link, linkComponent, text, status, sta
 };
 
 AUprogressIndicatorItem.propTypes = {
+	/**
+	 * The link URL, If no link is passed we render a button instead of a link tag.
+	 */
 	link: PropTypes.string,
+	/**
+	 * The text of this item.
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * The status of this item.
+	 */
 	status: PropTypes.PropTypes.oneOf([ 'doing', 'todo', 'done' ]).isRequired,
+	/**
+	 * The status text of this item.
+	 */
 	statusText: PropTypes.string,
+	/**
+	 * An additional object to be spread into the wrapping element.
+	 */
 	li: PropTypes.object,
+	/**
+	 * The component used for the link, optional.
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
 
 AUprogressIndicatorItem.defaultProps = {
 	linkComponent: 'a',
+	status: 'doing',
+	text: 'Case Studies'
 };
 
 
