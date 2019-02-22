@@ -80,7 +80,7 @@
 		"react-dom": "^16.8.3",
 		"react-router-dom": "^4.3.1",
 		"webpack": "^4.29.0",
-		"webpack-cli": "^3.2.1"
+		"webpack-cli": "^3.2.3"
 	},
 	"files": [
 		"lib/*"
