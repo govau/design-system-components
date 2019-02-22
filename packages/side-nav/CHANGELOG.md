@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v5.0.4 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v504)
 * [v5.0.3 - Remove aria-selected from side-nav toggle button](#v503)
 * [v5.0.2 - Removed uikit references](#v502)
 * [v5.0.1 - Update accordion dependency](#v501)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v5.0.4
+
+- Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
+
 
 ### v5.0.3
 

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.8 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v418)
 * [v4.1.7 - Removed uikit references](#v417)
 * [v4.1.6 - Update dependencies](#v416)
 * [v4.1.5 - Removing web pack dev server, updating dependencies](#v415)
@@ -40,6 +41,11 @@
 
 
 ## Release History
+
+### v4.1.8
+
+- Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
+
 
 ### v4.1.7
 
