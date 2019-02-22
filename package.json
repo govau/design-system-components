@@ -1,42 +1,40 @@
 {
+	"name": "auds",
 	"devDependencies": {
-		"autoprefixer": "^7.1.6",
-		"puppeteer": "^1.8.0",
-		"cfonts": "^2.1.2",
-		"chalk": "^2.3.0",
-		"express": "^4.16.2",
-		"inquirer": "4.0.0",
-		"jest-cli": "^22.4.3",
-		"lerna": "^2.11.0",
+		"autoprefixer": "^9.4.6",
+		"cfonts": "^2.4.0",
+		"chai": "^4.2.0",
+		"chalk": "^2.4.2",
+		"express": "^4.16.4",
+		"inquirer": "6.2.2",
+		"mocha": "^6.0.1",
 		"node-sass": "^4.9.3",
-		"pa11y": "^5.0.4",
-		"postcss": "^6.0.14",
+		"pa11y": "^5.1.0",
+		"postcss": "^7.0.14",
+		"puppeteer": "^1.11.0",
+		"rimraf": "^2.6.3",
+		"sass-versioning": "^0.4.0",
 		"semver": "^5.4.1",
 		"treeify": "^1.0.1"
 	},
 	"scripts": {
+		"build": "yarn workspaces run build",
 		"scaffolding": "node ./scripts/helper.js scaffolding",
-		"bootstrap": "lerna bootstrap",
-		"build": "lerna run build --concurrency 1",
-		"publish": "lerna publish --skip-git",
-		"nuke": "npm run delete:node_modules | npm run delete:lib",
-		"delete:node_modules": "rm -rf packages/*/node_modules | rm -rf node_modules",
-		"delete:lib": "rm -rf packages/*/lib/**",
-		"test:unit-test": "jest",
+		"nuke": "yarn delete:node_modules | yarn delete:lib | yarn delete:pancake",
+		"delete:node_modules": "rimraf components/*/node_modules | rimraf node_modules",
+		"delete:lib": "rimraf components/*/lib/**",
+		"delete:pancake": "rimraf pancake",
+		"test:unit": "mocha components/*/tests/unit/**.spec.js",
 		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},
-	"jest": {
-		"testRegex": "\\.spec.js$",
-		"collectCoverageFrom": [
-			"packages/*/lib/js/*.js"
-		],
-		"coverageThreshold": {
-			"global": {
-				"branches": 0,
-				"functions": 0,
-				"lines": 0,
-				"statements": 0
-			}
-		}
+	"private": true,
+	"workspaces": [
+		"components/*"
+	],
+	"pancake": {
+		"auto-save": false
+	},
+	"dependencies": {
+		"@gov.au/pancake-sass": "^2.1.3"
 	}
 }

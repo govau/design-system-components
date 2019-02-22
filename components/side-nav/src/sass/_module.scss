@@ -1,0 +1,248 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// side-nav module
+// A vertical list of links for site navigation typically placed next to the body content.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+@import '_globals.scss';
+@import '_print.scss';
+
+
+.au-side-nav {
+	@include AU-fontgrid( sm );
+	font-family: $AU-font;
+	background-color: $AU-color-background-alt;
+	border-radius: $AU-border-radius;
+	overflow: hidden;
+	border: 0;
+
+	a,
+	.active > span {
+		@include AU-space( padding, 1unit );
+		@include AU-fontgrid( xs );
+		color: $AU-color-foreground-muted;
+		display: block;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+			text-decoration-skip-ink: auto;
+			background-color: $AU-color-background-alt-shade;
+		}
+
+		@include AU-focus();
+	}
+
+	// Link list
+	.au-link-list {
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin: 0;
+		}
+	}
+
+	// Accordion styles
+	.au-accordion__body {
+		overflow: visible;
+	}
+
+	.au-accordion__title {
+		@include AU-fontgrid( sm );
+		color: $AU-color-foreground-action;
+		font-weight: normal;
+		text-decoration: underline;
+		text-decoration-skip-ink: auto;
+		background-color: inherit;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+		&:focus {
+			outline-offset: -3px;
+		}
+
+		// Hide the accordion title without javascript
+		.no-js & {
+			display: none;
+		}
+	}
+
+	.au-accordion__body-wrapper {
+		border: 0;
+		padding: 0;
+	}
+
+	// Desktop styles
+	@include AU-media( $AU-side-nav-breakpoint ){
+		background: transparent;
+		border-radius: 0;
+		overflow: visible;
+
+		// Open the menu on desktop
+		.au-accordion__body.au-accordion--closed {
+			display: block;
+			height: auto;
+		}
+
+		a:hover {
+			background-color: $AU-color-background-shade;
+		}
+
+		.au-accordion__title {
+			display: none;
+		}
+	}
+}
+
+
+// Content inside the side navigation accordion
+.au-side-nav__content {
+	@include AU-space( margin, 0 1unit );
+
+	ul {
+		@include AU-side-nav-indent( 3 );
+		@include AU-side-nav-indent( 3, '.active > span' );
+	}
+
+
+	.active > span {
+		font-weight: bold;
+		color: $AU-color-foreground-text;
+	}
+
+	ul ul ul a,
+	ul ul ul .active > span {
+		&:before {
+			content: " ";
+			@include AU-space( width, 1unit );
+			@include AU-space( height, 1unit );
+			@include AU-space( background-size, 1unit );
+			@include AU-space( margin-left, -1.5unit );
+			display: block;
+			float: left;
+			background-repeat: no-repeat;
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
+				'<path fill="#{ $AU-color-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
+			'</svg>');
+		}
+	}
+
+	& > ul > li {
+		border-bottom: 1px solid $AU-color-foreground-border;
+
+		&:last-of-type {
+			border: none;
+		}
+	}
+
+	@include AU-media( $AU-side-nav-breakpoint ) {
+		margin: 0;
+	}
+}
+
+
+// Side navigation title
+.au-sidenav__title {
+	margin: 0;
+
+	a {
+		@include AU-fontgrid( sm );
+		color: $AU-color-foreground-text;
+		border-bottom: 2px solid $AU-color-foreground-border;
+	}
+}
+
+
+// Alternate colour variation
+.au-side-nav.au-side-nav--alt {
+	background: $AU-color-background;
+
+	a:hover {
+		background: $AU-color-background-shade;
+	}
+
+	@include AU-media( $AU-side-nav-breakpoint ){
+		background: transparent;
+
+		a:hover {
+			background-color: $AU-color-background-alt-shade;
+		}
+	}
+}
+
+
+// Dark colour variation
+.au-side-nav.au-side-nav--dark {
+	background: $AU-colordark-background-alt;
+
+	.au-accordion__title {
+		color: $AU-colordark-foreground-action;
+		background-color: inherit;
+	}
+
+	a {
+		color: $AU-colordark-foreground-muted;
+
+		&:hover {
+			background: $AU-colordark-background-alt-shade;
+		}
+
+		@include AU-focus( 'dark' );
+	}
+
+	.au-side-nav__content {
+		.active > span {
+			color: $AU-colordark-foreground-text;
+		}
+
+		ul ul ul a:before,
+		ul ul ul .active > span:before {
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">' +
+				'<path fill="#{ $AU-colordark-foreground-border }" d="M2 10h12v1H2zM2 5h1v5H2z"/>' +
+			'</svg>');
+		}
+
+		& > ul > li {
+			border-color: $AU-colordark-foreground-border;
+		}
+	}
+
+	.au-sidenav__title a {
+		border-color: $AU-colordark-foreground-border;
+		color: $AU-colordark-foreground-text;
+	}
+
+	@include AU-media( $AU-side-nav-breakpoint ){
+		background: transparent;
+
+		a:hover {
+			background-color: $AU-colordark-background-shade;
+		}
+	}
+}
+
+
+// Dark alternative colour variation
+.au-side-nav.au-side-nav--dark.au-side-nav--alt {
+	background: $AU-colordark-background;
+
+	a:hover {
+		background: $AU-colordark-background-shade;
+	}
+
+	@include AU-media( $AU-side-nav-breakpoint ){
+		background: transparent;
+
+		a:hover {
+			background-color: $AU-colordark-background-alt-shade;
+		}
+	}
+}

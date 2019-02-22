@@ -22,7 +22,7 @@ const Path      = require( 'path' );
 // GLOBALS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const OPTIONS = {
-	timeout: 60000,
+	timeout: 30000,
 	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test, .auds-page-alerts__sronly, .auds-skip-link',
 }
 
@@ -49,7 +49,12 @@ const DisplayResults = results => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const RunPa11y = async ( urls ) => {
 	// Start the browser
-	const browser = await Puppeteer.launch();
+	const browser = await Puppeteer.launch({
+		headless: true,
+		dumpio: false, 
+		devtools: false,
+		args: ["--no-sandbox", "--disable-setuid-sandbox"]
+	});
 
 	// For each url create a new page and run the Pa11y Test
 	const tests = urls.map( async ( url ) => {
@@ -87,8 +92,9 @@ const TestURL   = 'http://localhost:8080';
 // Start the test - immediatley executed async function
 ( async() => {
 	// Start express at port 8080
+	const _PORT = 8080;
 	const App    = Express();
-	const Server = App.listen( '8080' );
+	const Server = App.listen( _PORT );
 
 	// Set up the server localhost:8080 and the current directory
 	App.use( Express.static( './' ) );
@@ -101,7 +107,7 @@ const TestURL   = 'http://localhost:8080';
 
 		// Create a url based off the keys in the auds.json
 		urls = Object.keys( require( audsJson ) ).map( key => {
-			return `${ TestURL }/packages/${ key.substring( 8 ) }/tests/site`
+			return `${ TestURL }/components/${ key.substring( 8 ) }/tests/site`
 		});
 	}
 
@@ -109,5 +115,5 @@ const TestURL   = 'http://localhost:8080';
 	await RunPa11y( urls );
 
 	// Close the express server
-	Server.close();
+	Server.close( 0 );
 })();
