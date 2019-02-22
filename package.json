@@ -35,6 +35,6 @@
 		"auto-save": false
 	},
 	"dependencies": {
-		"@gov.au/pancake-sass": "^2.1.2"
+		"@gov.au/pancake-sass": "^2.1.3"
 	}
 }
