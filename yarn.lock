@@ -5652,10 +5652,10 @@ sass-graph@^2.2.4:
     scss-tokenizer "^0.2.3"
     yargs "^7.0.0"
 
-sass-versioning@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/sass-versioning/-/sass-versioning-0.3.0.tgz#2c222bec23ebc1e48158d7bbba06337ce02cc4bf"
-  integrity sha512-mlmUDG5su4o2l2HbEGSmyO3W+YsnzcKE16Gj6xTKxEgkvMDn5ZD25/B2rnPwT7VoBW57DvS35apWjRhYGUlVvw==
+sass-versioning@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/sass-versioning/-/sass-versioning-0.4.0.tgz#619a735b29d73dd44443b2f6ecda5d4232fd451b"
+  integrity sha512-u2zarJzRPnrON963dupUifX7dnlj40bp2DK1PcG0QUlcb8BNUT4VBNY0xzWXQXYtDMWjt4PdA0dgHlrkUSiFtA==
 
 sax@^1.2.4:
   version "1.2.4"
