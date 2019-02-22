@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/direction-links",
-	"version": "2.1.5",
+	"version": "2.1.6",
 	"description": "Use direction links to link up and down within the DOM or back to a parent page.",
 	"keywords": [
 		"auds",
@@ -124,6 +124,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Adam Zerella",
+			"email": "adam@commandshiftr.co",
+			"url": "https://github.com/adamzerella"
 		}
 	],
 	"license": "MIT"

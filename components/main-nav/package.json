@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/main-nav",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Horizontal list of links to key areas on the website. Usually located in the header.",
 	"keywords": [
 		"auds",
@@ -118,6 +118,11 @@
 			"name": "Sukhraj Ghuman",
 			"email": "sukhrajghuman@live.com",
 			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Adam Zerella",
+			"email": "adam@commandshiftr.co",
+			"url": "https://github.com/adamzerella"
 		}
 	],
 	"license": "MIT"

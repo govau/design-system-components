@@ -105,6 +105,7 @@ The visual test: https://auds.service.gov.au/components/cta-link/tests/site/
 
 ## Release History
 
+* v2.1.6 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v2.1.5 - Removed uikit references
 * v2.1.4 - Update dependencies
 * v2.1.3 - Removing web pack dev server, updating dependencies

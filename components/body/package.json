@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/body",
-	"version": "2.0.13",
+	"version": "2.0.14",
 	"description": "Basic body styles for body HTML elements",
 	"keywords": [
 		"auds",
@@ -111,6 +111,11 @@
 			"name": "Sukhraj Ghuman",
 			"email": "sukhrajghuman@live.com",
 			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Adam Zerella",
+			"email": "adam@commandshiftr.co",
+			"url": "https://github.com/adamzerella"
 		}
 	],
 	"license": "MIT"

@@ -143,6 +143,7 @@ The visual test: https://auds.service.gov.au/components/side-nav/tests/site/
 
 ## Release History
 
+* v5.0.4 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v5.0.3 - Remove aria-selected from side-nav toggle button
 * v5.0.2 - Removed uikit references
 * v5.0.1 - Update accordion dependency

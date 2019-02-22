@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.12 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v2012)
 * [v2.0.11 - Removed uikit references](#v2011)
 * [v2.0.10 - Added an aria-label attribute to the nav element](#v2010)
 * [v2.0.9 - Update dependencies](#v209)
@@ -37,6 +38,11 @@
 
 
 ## Release History
+
+### v2.0.12
+
+- Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
+
 
 ### v2.0.11
 

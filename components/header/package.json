@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/header",
-	"version": "4.1.7",
+	"version": "4.1.8",
 	"description": "Headers provide a consistent start to pages.",
 	"keywords": [
 		"auds",
@@ -126,6 +126,11 @@
 			"name": "Sukhraj Ghuman",
 			"email": "sukhrajghuman@live.com",
 			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Adam Zerella",
+			"email": "adam@commandshiftr.co",
+			"url": "https://github.com/adamzerella"
 		}
 	],
 	"license": "MIT"

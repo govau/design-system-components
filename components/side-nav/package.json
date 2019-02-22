@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/side-nav",
-	"version": "5.0.3",
+	"version": "5.0.4",
 	"description": "A vertical list of links for site navigation typically placed next to the body content.",
 	"keywords": [
 		"auds",
@@ -120,6 +120,11 @@
 			"name": "Sukhraj Ghuman",
 			"email": "sukhrajghuman@live.com",
 			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Adam Zerella",
+			"email": "adam@commandshiftr.co",
+			"url": "https://github.com/adamzerella"
 		}
 	],
 	"license": "MIT"
