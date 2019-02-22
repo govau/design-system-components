@@ -680,10 +680,10 @@
     "@gov.au/pancake" "~1"
     babel-runtime "6.26.0"
 
-"@gov.au/pancake-sass@^2.1.2", "@gov.au/pancake-sass@~2":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@gov.au/pancake-sass/-/pancake-sass-2.1.2.tgz#390cde8254f03e5df422c8c379682e42b2e6ff98"
-  integrity sha512-TRlO285rBod54MZte/0MOG4KgsoN8MT5Loo39Xj8Df1tl8aZ9JgPF+jKEqvxV0WFf/COOjjKYET5ZyZFQfYzOQ==
+"@gov.au/pancake-sass@^2.1.3", "@gov.au/pancake-sass@~2":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@gov.au/pancake-sass/-/pancake-sass-2.1.3.tgz#0a4a70a74c02d13b66e97f2ca60d2b6786d193be"
+  integrity sha512-SWW9U5B/pi6M7wk9lqGzddoV25s6FVMzTHm6IKFGnyfIfB+mC5LIQQWNi8eaUpCSWh0GvAt9HVwR5JCtARffGA==
   dependencies:
     "@gov.au/pancake" "~1"
     autoprefixer "7.1.6"
