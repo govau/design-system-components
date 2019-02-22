@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.6 - Updated autoprefixer default](#v216)
 * [v2.1.5 - Removed uikit references](#v215)
 * [v2.1.4 - Update dependencies](#v214)
 * [v2.1.3 - Removing web pack dev server, updating dependencies](#v213)
@@ -35,6 +36,11 @@
 
 
 ## Release History
+
+### v2.1.6
+
+- Updated autoprefixer default from `text-decoration-skip: ink;` -> `text-decoration-skip-ink: auto;`
+
 
 ### v2.1.5
 
