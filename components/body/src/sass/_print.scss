@@ -36,14 +36,6 @@
 			content: "" !important;
 		}
 
-		// Remove the external SVG on print
-		a[rel~='external']:after {
-			width: auto !important;
-			height: auto !important;
-			margin: auto !important;
-			background-image: none !important;
-		}
-
 		// Add the abbreviation expanded on print
 		abbr[title]:after {
 			content: " (" attr(title) ")";
