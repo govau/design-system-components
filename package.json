@@ -1,6 +1,6 @@
 {
 	"devDependencies": {
-		"autoprefixer": "^7.1.6",
+		"autoprefixer": "^9.4.8",
 		"cfonts": "^2.1.2",
 		"chalk": "^2.3.0",
 		"express": "^4.16.2",
