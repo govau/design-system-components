@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.1.1 - Updated CSS property](#v211)
+* [v2.1.1 - Resolve autoprefixer warning](#v211)
 * [v2.1.0 - Remove external link icon, fix pancake build path](#v210)
 * [v2.0.14 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v2014)
 * [v2.0.13 - Removed uikit references](#v2013)
