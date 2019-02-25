@@ -28,7 +28,7 @@
 	padding: 0;
 	cursor: pointer;
 	text-decoration: underline;
-	text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
 
 	@include AU-focus();
 

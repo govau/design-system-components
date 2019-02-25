@@ -124,7 +124,7 @@ a.au-header__brand {
 
 	&:hover .au-header__text {
 		text-decoration: underline;
-		text-decoration-skip: ink;
+		text-decoration-skip-ink: auto;
 	}
 
 	.au-header--dark & {
