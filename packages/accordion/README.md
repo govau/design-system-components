@@ -252,6 +252,7 @@ The visual test: https://auds.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v7.0.5 - Fix pancake build path
 * v7.0.4 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v7.0.3 - Remove aria-selected from accordion button
 * v7.0.2 - Removed uikit references
