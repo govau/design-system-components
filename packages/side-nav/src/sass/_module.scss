@@ -31,7 +31,7 @@
 
 		&:hover {
 			text-decoration: underline;
-			text-decoration-skip-ink: auto
+			text-decoration-skip-ink: auto;
 			background-color: $AU-color-background-alt-shade;
 		}
 
@@ -58,7 +58,7 @@
 		color: $AU-color-foreground-action;
 		font-weight: normal;
 		text-decoration: underline;
-		text-decoration-skip-ink: auto
+		text-decoration-skip-ink: auto;
 		background-color: inherit;
 
 		&:hover {
