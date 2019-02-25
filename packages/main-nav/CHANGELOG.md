@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.4 - Updated CSS property](#v104)
 * [v1.0.3 - Fix pancake build path](#v103)
 * [v1.0.2 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v102)
 * [v1.0.1 - Removed uikit references](#v101)
@@ -31,6 +32,11 @@
 
 
 ## Release History
+
+### v1.0.4
+
+- Updated CSS property
+
 
 ### v1.0.3
 
