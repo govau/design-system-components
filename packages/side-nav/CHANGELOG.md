@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v5.0.5 - Corrected an issue where certain components were published referencing a `src/` folder rather than `lib/`](#v505)
 * [v5.0.4 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v504)
 * [v5.0.3 - Remove aria-selected from side-nav toggle button](#v503)
 * [v5.0.2 - Removed uikit references](#v502)
@@ -39,6 +40,11 @@
 
 
 ## Release History
+
+### v5.0.5
+
+- Fix pancake build path
+
 
 ### v5.0.4
 
