@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.10 - Resolve autoprefixer warning](#v4110)
 * [v4.1.9 - Fix pancake build path](#v419)
 * [v4.1.8 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v418)
 * [v4.1.7 - Removed uikit references](#v417)
@@ -42,6 +43,11 @@
 
 
 ## Release History
+
+### v4.1.10
+
+- Resolve autoprefixer warning
+
 
 ### v4.1.9
 
