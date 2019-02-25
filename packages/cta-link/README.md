@@ -105,6 +105,7 @@ The visual test: https://auds.service.gov.au/packages/cta-link/tests/site/
 
 ## Release History
 
+* v2.1.7 - Corrected an issue where certain components were published referencing a `src/` folder rather than `lib/`.
 * v2.1.6 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v2.1.5 - Removed uikit references
 * v2.1.4 - Update dependencies

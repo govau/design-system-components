@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.1 - Fix pancake build path](#v211)
 * [v2.1.0 - Remove external link icon](#v210)
 * [v2.0.14 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v2014)
 * [v2.0.13 - Removed uikit references](#v2013)
@@ -42,9 +43,15 @@
 
 ## Release History
 
-### v2.1.0 
+### v2.1.1
+
+- Corrected an issue where certain components were published referencing a `src/` folder rather than `lib/`.
+
+
+### v2.1.0
 
 - Remove external link icon
+
 
 ### v2.0.14
 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
