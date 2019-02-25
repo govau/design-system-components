@@ -122,6 +122,7 @@ The visual test: https://auds.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v4.1.9 - Fix pancake build path
 * v4.1.8 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v4.1.7 - Removed uikit references
 * v4.1.6 - Update dependencies
