@@ -50,7 +50,7 @@
 	a {
 		color: $AU-color-foreground-action;
 		text-decoration: underline;
-		text-decoration-skip-ink: auto
+		text-decoration-skip-ink: auto;
 
 		&:hover {
 			color: $AU-color-foreground-text;
@@ -196,7 +196,7 @@
 	ins {
 		text-decoration-line: underline;
 		text-decoration-style: dashed; //Waiting on Chrome.
-		text-decoration-skip-ink: auto
+		text-decoration-skip-ink: auto;
 	}
 
 
