@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v7.0.5 - Fix pancake build path](#v705)
 * [v7.0.4 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v704)
 * [v7.0.3 - Remove aria-selected from accordion button](#v703)
 * [v7.0.2 - Removed uikit references](#v702)
@@ -47,6 +48,11 @@
 
 
 ## Release History
+
+### v7.0.5
+
+- Corrected an issue where certain components were published referencing a `src/` folder rather than `lib/`.
+
 
 ### v7.0.4
 
