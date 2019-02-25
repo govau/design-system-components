@@ -118,6 +118,7 @@ The visual test: https://auds.service.gov.au/packages/skip-link/tests/site/
 
 ## Release History
 
+* v2.0.13 - Fix pancake build path
 * v2.0.12 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v2.0.11 - Removed uikit references
 * v2.0.10 - Added an aria-label attribute to the nav element

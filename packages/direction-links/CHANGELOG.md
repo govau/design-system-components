@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.7 - Fix pancake build path`](#v217)
 * [v2.1.6 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v216)
 * [v2.1.5 - Removed uikit references](#v215)
 * [v2.1.4 - Update dependencies](#v214)
@@ -36,6 +37,11 @@
 
 
 ## Release History
+
+### v2.1.7
+
+- Corrected an issue where certain components were published referencing a `src/` folder rather than `lib/`.
+
 
 ### v2.1.6
 

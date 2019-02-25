@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.13 - Fix pancake build path](#v2013)
 * [v2.0.12 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v2012)
 * [v2.0.11 - Removed uikit references](#v2011)
 * [v2.0.10 - Added an aria-label attribute to the nav element](#v2010)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v2.0.13
+
+- Corrected an issue where certain components were published referencing a `src/` folder rather than `lib/`
+
 
 ### v2.0.12
 
