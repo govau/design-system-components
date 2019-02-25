@@ -30,7 +30,7 @@
 
 		&:hover {
 			text-decoration: underline;
-			text-decoration-skip: ink;
+			text-decoration-skip-ink: auto
 			color: $AU-color-foreground-text;
 			background-color: $AU-color-background-shade;
 		}
