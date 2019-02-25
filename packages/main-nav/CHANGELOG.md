@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v1.0.4 - Updated CSS property](#v104)
+* [v1.0.4 - Resolve autoprefixer warning](#v104)
 * [v1.0.3 - Fix pancake build path](#v103)
 * [v1.0.2 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v102)
 * [v1.0.1 - Removed uikit references](#v101)
@@ -35,7 +35,7 @@
 
 ### v1.0.4
 
-- Updated CSS property
+- Resolve autoprefixer warning
 
 
 ### v1.0.3

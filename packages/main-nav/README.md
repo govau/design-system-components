@@ -235,7 +235,7 @@ The visual test: https://auds.service.gov.au/packages/main-nav/tests/site/
 
 ## Release History
 
-* v1.0.4 - Updated CSS property
+* v1.0.4 - Resolve autoprefixer warning
 * v1.0.3 - Fix pancake build path
 * v1.0.2 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
 * v1.0.1 - Removed uikit references

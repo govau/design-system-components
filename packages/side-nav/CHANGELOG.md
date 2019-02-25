@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v5.0.6 - Updated CSS property](#v506)
+* [v5.0.6 - Resolve autoprefixer warning](#v506)
 * [v5.0.5 - Corrected an issue where certain components were published referencing a `src/` folder rather than `lib/`](#v505)
 * [v5.0.4 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v504)
 * [v5.0.3 - Remove aria-selected from side-nav toggle button](#v503)
@@ -44,7 +44,7 @@
 
 ### v5.0.6
 
-- Updated CSS property
+- Resolve autoprefixer warning
 
 
 ### v5.0.5
