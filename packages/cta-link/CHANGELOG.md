@@ -41,7 +41,7 @@
 
 ### v2.1.8
 
-- Updated CSS property
+- Resolve autoprefixer warning
 
 
 ### v2.1.7
