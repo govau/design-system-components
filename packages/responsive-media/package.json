@@ -50,7 +50,6 @@
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss"
-				"sass-versioning": true
 			}
 		}
 	},

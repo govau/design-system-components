@@ -50,7 +50,7 @@ $dependencies: (
 	[replace-dependencies]
 );
 
-@include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL FUNCTIONS
