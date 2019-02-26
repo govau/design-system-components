@@ -49,7 +49,7 @@
 				"@gov.au/pancake-json"
 			],
 			"sass": {
-				"path": "lib/sass/_module.scss",
+				"path": "lib/sass/_module.scss"
 				"sass-versioning": true
 			}
 		}
@@ -73,8 +73,8 @@
 		"lib/*"
 	],
 	"engines": {
-		"node": ">=0.12.0",
-		"npm": "^3.0.0"
+		"node": "~10",
+		"npm": "~6"
 	},
 	"repository": {
 		"type": "git",
