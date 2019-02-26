@@ -1,0 +1,119 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// form module
+// 
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+.au-form-group {
+  &--error {
+    border-left: solid 5px $AU-color-error-forgeround-text;
+    padding-left: 15px;
+  }
+  
+  + .au-form-group {
+    @include AU-space( margin-top, 2unit );
+  }
+  
+}
+
+
+.au-label {
+  font-family: $AU-font;
+  color: $AU-color-foreground-text;
+  display: block;
+  margin-bottom: 5px; 
+
+  &--inline {
+    display: inline-block;
+  }
+
+  &--dark {
+    color: $AU-colordark-foreground-text;
+  }
+}
+
+
+.au-hint-text {
+  font-family: $AU-font;
+  color: #6f777b;
+  margin-bottom: 10px;
+  display: block;
+
+  &--inline {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+  &--dark {
+    color: $AU-colordark-foreground-muted;
+  }
+}
+
+
+.au-error-text {
+  font-family: $AU-font;
+  font-weight: bold;
+  @include AU-fontgrid( sm, default );
+  color: $AU-color-error-forgeround-text;
+  margin-bottom: 10px;
+  display: block;
+
+
+  &--hidden {
+    display: none;
+  }
+
+  &--dark {
+    color: #FFBAB6;
+  }
+
+  &:before {
+    content: ' ';
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 0.1em -0.35em 0.05em;
+    background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 23 23">' +
+        '<path fill="none" d="M0 0h24v24H0V0z"/>' + 
+        '<path fill="#{ $AU-color-error-forgeround-text }" d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>' +
+      '</svg>');
+    background-repeat: no-repeat;
+    background-position-y: 0.12em;
+
+    .ie8 &,
+    .lt-ie8 & {
+      content: '!';
+      color: $AU-color-error-forgeround-text;
+    }
+  }
+
+}
+
+
+.au-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  .au-fieldset__legend {
+    // @include AU-space( margin-bottom, .5unit );
+  }
+
+  &__heading {
+    @include AU-space( margin-bottom, .5unit );
+  }
+
+}
+
+.au-text-input.au-text-input--invalid, .au-select.au-select--invalid {
+  border-color: $AU-color-error-forgeround-text;
+  background-color: $AU-color-background;
+}
