@@ -2,7 +2,17 @@
 @import '../../src/sass/_dependencies.scss';
 
 //testing includes
-// @import '../../../body/lib/sass/_module.scss';
+@import '../../../body/lib/sass/_module.scss';
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
+
+@import '../../../text-inputs/lib/sass/_module.scss';
+
+@import '../../../control-input/lib/sass/_module.scss';
+
+@import '../../../grid-12/lib/sass/_module.scss';
+
+@import '../../../headings/lib/sass/_module.scss';
+
+@import '../../../select/lib/sass/_module.scss';
