@@ -1,4 +1,5 @@
 {
+	"name": "auds",
 	"devDependencies": {
 		"autoprefixer": "^7.1.6",
 		"cfonts": "^2.1.2",
@@ -38,5 +39,6 @@
 				"statements": 0
 			}
 		}
-	}
+	},
+	"private": true
 }
