@@ -7,7 +7,7 @@
  *
  **************************************************************************************************************************************************************/
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
