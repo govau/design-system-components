@@ -41,7 +41,7 @@
 	<div class="split-wrapper">
 
 		<div class="split au-body">
-			<h3>Label block</h3>
+			<h3>Label</h3>
 			<p>
 				<label class="au-label" for="text-input-block-label">Password</label>
 				<input type="text" type="text" class="au-text-input" id="text-input-block-label" name="text-input-block-label">
@@ -65,13 +65,13 @@
 			<h3>Error text</h3>
 			<p>
 				<label class="au-label" for="text-input-error">Password</label>
-				<span class="au-error-text au-error-text--show" id="error-text">Password was less than 6 characters </span>
 				<span class="au-hint-text" id="hint-text-e">Minimum 6 characters</span>
+				<span class="au-error-text au-error-text--show" id="error-text">Password was less than 6 characters </span>
 				<input type="text" type="text" class="au-text-input au-text-input--invalid" id="text-input-error" name="text-input-error"
-				 aria-invalid="true" aria-describedby="error-text hint-text-e" />
+				aria-invalid="true" aria-describedby="error-text hint-text-e" />
 			</p>
 
-		<hr>
+			<hr>
 
 			<h3>Form group</h3>
 			<p>
@@ -80,9 +80,7 @@
 					<input type="text" type="text" class="au-text-input" id="text-input-form-group" name="text-input-form-group" />
 				</div>
 			</p>
-			<hr>
 
-			<h3>Form group <code>--error</code></h3>
 			<p>
 				<div class="au-form-group">
 					<label class="au-label" for="text-input-2-form-group">Password</label>
@@ -91,29 +89,30 @@
 					/>
 				</div>
 			</p>
+			<hr>
+			<h3>Form group with <code>--error</code></h3>
 			
+			<p>
 				<div class="au-form-group">
 					<label class="au-label" for="text-input-form-group-2">Username</label>
 					<input type="text" type="text" class="au-text-input" id="text-input-form-group-2" name="text-input-form-group-2" />
 				</div>
 				<div class="au-form-group au-form-group--error">
 					<label class="au-label" for="text-input-form-group-3">Password</label>
-					<span class="au-error-text au-error-text--show" id="error-text-2">Password was less than 6 characters </span>
 					<span class="au-hint-text" id="hint-text-fg-err">Minimum 6 characters</span>
+					<span class="au-error-text au-error-text--show" id="error-text-2">Password was less than 6 characters </span>
 					<input type="text" type="text" class="au-text-input au-text-input--invalid" id="text-input-form-group-3" name="text-input-form-group-3"
 					 aria-invalid="true" aria-describedby="error-text-2 hint-text-fg-err" />
 				</div>
+			</p>
 
-		<br>
-		<br>
-		<hr>
+			<br>
+			<br>
+			<hr>
 
-		<h2>Fieldsets</h2>
-		<br>
+			<h3>Fieldsets</h3>
 
-		<div class="row">
-			<div class="col-sm-3">
-
+			<p>
 				<fieldset class="au-fieldset">
 					<legend class="au-fieldset__legend">
 						<span class="au-fieldset__heading au-display-lg">What is your address?</span>
@@ -139,10 +138,11 @@
 						<label class="au-label" for="fieldset-input-postcode">Postcode</label>
 						<input type="text" type="text" class="au-text-input" id="fieldset-input-postcode" name="fieldset-input-postcode" />
 					</div>
-
 				</fieldset>
-			</div>
-			<div class="col-sm-3 col-sm-offset-1">
+			</p>
+			<hr>
+			<h3>Fieldset control input</h3>
+			<p>
 				<div class="au-form-group">
 					<fieldset class="au-fieldset">
 						<legend class="au-fieldset__legend">
@@ -166,15 +166,10 @@
 						</label>
 					</fieldset>
 				</div>
-			</div>
-		</div>
-		<br>
-		<hr>
-		<br>
-		<h2>Fieldsets with errors</h2>
-		<div class="row">
-			<div class="col-sm-3">
-
+			</p>
+			<hr>
+			<h3>Fieldsets with <code>--error</code></h3>
+			<p>
 				<fieldset class="au-fieldset">
 					<legend class="au-fieldset__legend">
 						<span class=" au-fieldset__heading au-display-lg">
@@ -206,10 +201,12 @@
 					</div>
 
 				</fieldset>
-			</div>
-			<div class="col-sm-3 col-sm-offset-1">
+			</p>
+			<hr>
+			<h3>Fieldset control input <code>--error</code></h3>
+			<p>
 				<div class="au-form-group au-form-group--error">
-					<fieldset class="au-fieldset au-fieldset--error">
+					<fieldset class="au-fieldset">
 						<legend class="au-fieldset__legend">
 							<span class="au-fieldset__heading au-display-lg">Please select your favorite device</span>
 							<span class="au-hint-text">You may select more than one</span>
@@ -232,10 +229,8 @@
 						</label>
 					</fieldset>
 				</div>
-			</div>
+			</p>
 		</div>
-
-
 	</div>
 	<script type="text/javascript" src="script.js"></script>
 </body>
