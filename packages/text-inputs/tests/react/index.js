@@ -71,6 +71,15 @@ ABCZ abcjg liI1 12340" />
 			<h2>Textarea default value disabled</h2>
 			<label htmlFor="8">Hello</label>
 			<AUtextInput id="8" defaultValue="abc" as="textarea" disabled />
+
+			<hr />
+			<h2>Text inputs different widths</h2>
+			<label htmlFor="width-2" className="label">Width 2</label>
+			<AUtextInput id="width-2" defaultValue="07" width="2" />
+			<label htmlFor="width-4" className="label">Width 4</label>
+			<AUtextInput id="width-4" defaultValue="2600" width="4" />
+			<label htmlFor="width-10" className="label">Width 10</label>
+			<AUtextInput id="width-10" defaultValue="0400 000 000" width="10" />
 		</div>
 		<div className="split split--dark">
 			<h2>Default</h2>
@@ -137,6 +146,15 @@ ABCZ abcjg liI1 12340" />
 			<h2>Textarea default value disabled</h2>
 			<label htmlFor="8d">Hello</label>
 			<AUtextInput as="textarea" id="8d" defaultValue="abc" disabled dark />
+
+			<hr />
+			<h2>Textarea default value disabled</h2>
+			<label htmlFor="width-2-dark" className="label">Width 2</label>
+			<AUtextInput id="width-2-dark" defaultValue="07" width="2" />
+			<label htmlFor="width-4-dark" className="label">Width 4</label>
+			<AUtextInput id="width-4-dark" defaultValue="2600" width="4" />
+			<label htmlFor="width-10-dark" className="label">Width 10</label>
+			<AUtextInput id="width-10-dark" defaultValue="0400 000 000" width="10" />
 		</div>
 	</div>,
 
