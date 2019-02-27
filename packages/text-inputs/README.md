@@ -107,6 +107,7 @@ The visual test: https://auds.service.gov.au/packages/text-inputs/tests/site/
 
 ## Release History
 
+* v2.1.0 - Add text inputs of different widths
 * v2.0.10 - Removed uikit references
 * v2.0.9 - Update dependencies
 * v2.0.8 - Removing web pack dev server, updating dependencies

@@ -48,3 +48,11 @@
 .testing {
 	outline: 3px dashed hotpink;
 }
+
+.label {
+	display: block;
+
+	input + & {
+		@include AU-space( margin-top, 0.5unit );
+	}
+}
