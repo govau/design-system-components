@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.0 - Use explicit labelling instead of implicit labelling for control inputs. Remove `margin-top` for control input block that is not followed by another control input block.](#v300)
 * [v2.2.2 - Fixed radio input underlapping svg on small inputs](#v222)
 * [v2.2.1 - Removed uikit references](#v221)
 * [v2.2.0 - Changed focus appearance on radio buttons to be round](#v220)
@@ -41,6 +42,11 @@
 
 
 ## Release History
+
+### v3.0.0
+
+- Use explicit labelling instead of implicit labelling for control inputs
+- Remove `margin-top` for control input block that is not followed by another control input block.
 
 ### v2.2.2
 

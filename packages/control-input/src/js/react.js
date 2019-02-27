@@ -30,9 +30,9 @@ import PropTypes from 'prop-types';
  * @param  {object}  attributeOptions - Any other attribute options
  *
  */
-export const AUcheckbox = ({ dark, alt, small, block, label, status, className = '', ...attributeOptions }) => {
+export const AUcheckbox = ({ dark, alt, small, block, label, status, id, className = '', ...attributeOptions }) => {
 	return (
-		<label className={
+		<div className={
 			`au-control-input ${ className }` +
 			`${ dark ? ' au-control-input--dark' : '' }` +
 			`${ alt ? ' au-control-input--alt' : '' }` +
@@ -41,9 +41,9 @@ export const AUcheckbox = ({ dark, alt, small, block, label, status, className =
 			`${ status === 'valid' ? ' au-control-input--valid' : '' }` +
 			`${ status === 'invalid' ? ' au-control-input--invalid' : '' }`
 		}>
-			<input className="au-control-input__input" type="checkbox" { ...attributeOptions } />
-			<span className="au-control-input__text">{ label }</span>
-		</label>
+			<input className="au-control-input__input" id={ id } type="checkbox" { ...attributeOptions } />
+			<label className="au-control-input__text" htmlFor={ id }>{ label }</label>
+		</div>
 	);
 };
 
@@ -53,6 +53,7 @@ AUcheckbox.propTypes = {
 	small: PropTypes.bool,
 	block: PropTypes.bool,
 	label: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired, 
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
 };
@@ -70,10 +71,10 @@ AUcheckbox.propTypes = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUradio = ({ dark, alt, small, block, label, status, className = '', ...attributeOptions }) => {
+export const AUradio = ({ dark, alt, small, block, label, status, id, className = '', ...attributeOptions }) => {
 
 	return (
-		<label className={
+		<div className={
 			`au-control-input ${ className }` +
 			`${ dark ? ` au-control-input--dark` : '' }` +
 			`${ alt ? ` au-control-input--alt` : '' }` +
@@ -82,9 +83,9 @@ export const AUradio = ({ dark, alt, small, block, label, status, className = ''
 			`${ status === 'valid' ? ' au-control-input--valid' : '' }` +
 			`${ status === 'invalid' ? ' au-control-input--invalid' : '' }`
 		} >
-			<input className="au-control-input__input" type="radio" { ...attributeOptions } />
-			<span className="au-control-input__text">{ label }</span>
-		</label>
+			<input className="au-control-input__input" type="radio" id= { id } { ...attributeOptions } />
+			<label className="au-control-input__text" htmlFor = { id }>{ label }</label>
+		</div>
 	);
 };
 
@@ -94,6 +95,7 @@ AUradio.propTypes = {
 	small: PropTypes.bool,
 	block: PropTypes.bool,
 	label: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
 };
