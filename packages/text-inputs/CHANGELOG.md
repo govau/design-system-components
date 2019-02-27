@@ -14,6 +14,7 @@
 
 
 ## Versions
+
 * [v2.1.0 - Add text inputs of different widths](#v210)
 * [v2.0.10 - Removed uikit references](#v2010)
 * [v2.0.9 - Update dependencies](#v209)
