@@ -1,0 +1,145 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// headings module
+// Class styles for display headings.
+//
+// Content:
+// - Basic styles for all headings
+// - Default spacing
+// - Unique styles for individual headings
+// - Typographic spacing for .au-body only
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// HEADINGS/DISPLAY STYLES
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/**
+ * Basic styles for all headings
+ */
+.au-display-xxxl,
+.au-display-xxl,
+.au-display-xl,
+.au-display-lg,
+.au-display-md,
+.au-display-sm,
+.au-display-xs,
+.au-body h1,
+.au-body h2,
+.au-body h3,
+.au-body h4,
+.au-body h5,
+.au-body h6 {
+	font-family: $AU-font;
+	display: block;
+	font-weight: bold;
+	margin: 0;
+}
+
+
+/**
+ * Unique selectors and font sizes
+ */
+.au-body .au-display-xxxl,
+.au-display-xxxl {
+	@include AU-fontgrid( xxxl, heading );
+}
+
+.au-body h1,
+.au-body .au-display-xxl,
+.au-display-xxl {
+	@include AU-fontgrid( xxl, heading );
+}
+
+.au-body h2,
+.au-body .au-display-xl,
+.au-display-xl {
+	@include AU-fontgrid( xl, heading );
+}
+
+.au-body h3,
+.au-body .au-display-lg,
+.au-display-lg {
+	@include AU-fontgrid( lg, heading );
+}
+
+.au-body h4,
+.au-body .au-display-md,
+.au-display-md {
+	@include AU-fontgrid( md, heading );
+}
+
+.au-body h5,
+.au-body .au-display-sm,
+.au-display-sm  {
+	@include AU-fontgrid( sm, heading );
+}
+
+.au-body h6,
+.au-body .au-display-xs,
+.au-display-xs  {
+	@include AU-fontgrid( xs, heading );
+}
+
+
+/**
+ * Typographic spacing for AU-body only
+ * Larger space for larger headings has been added to improve legibility in large blocks of text.
+ * This provides area's of eye-rest and uses spacing to create visual sections
+ * Also ref. https://github.com/govau/design-system-components/issues/282
+ */
+
+/**
+ * Default margin-top
+ */
+* + .au-display-xxxl,
+* + .au-display-xxl,
+* + .au-display-xl,
+* + .au-display-lg,
+* + .au-display-md,
+* + .au-display-sm,
+* + .au-display-xs {
+	@include AU-space( margin-top, 1unit );
+}
+
+
+.au-body {
+	* + h1,
+	* + .au-display-xxl {
+		@include AU-space( margin-top, 3unit );
+	}
+
+	* + h2,
+	* + .au-display-xl {
+		@include AU-space( margin-top, 3unit );
+	}
+
+	// * + h3,
+	// * + .au-display-lg {
+	// 	@include AU-space( margin-top, 2unit );
+	// }
+
+	h1 + h2,
+	h2 + h3,
+	.au-display-xxl + h2,
+	.au-display-xl + h3,
+	h1 + .au-display-xl,
+	h2 + .au-display-lg,
+	.au-display-xxl + .au-display-xl,
+	.au-display-xl + .au-display-lg,
+
+	* + h3,
+	* + h4,
+	* + h5,
+	* + h6,
+	* + .au-display-md,
+	* + .au-display-sm,
+	* + .au-display-xs {
+		@include AU-space( margin-top, 1.5unit );
+	}
+}

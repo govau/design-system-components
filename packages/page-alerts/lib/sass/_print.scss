@@ -1,0 +1,41 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// page-alerts module
+// Use page alerts to notify users of important information and state changes to the page.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-page-alerts {
+		border-color: #000 !important;
+		background-color: #fff !important;
+		border-left: 2px solid #000 !important;
+		padding-top: 3em !important;
+
+		&:after {
+			background: none !important;
+			content: 'info' !important;
+			top: 1em !important;
+			left: 0 !important;
+			font-size: 12px !important;
+			border-right: 1px solid #000 !important;
+			border-bottom: 1px solid #000 !important;
+			padding: 0.5em !important;
+			width: auto !important;
+		}
+	}
+
+	.au-page-alerts--success:after {
+		content: 'success' !important;
+	}
+
+	.au-page-alerts--warning:after {
+		content: 'warning' !important;
+	}
+
+	.au-page-alerts--error:after {
+		content: 'error' !important;
+	}
+}

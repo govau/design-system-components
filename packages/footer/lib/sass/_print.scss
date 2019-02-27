@@ -1,0 +1,16 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// footer module
+// Footers help users who reach the bottom of a page without finding what they want.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-footer {
+		color: #000 !important;
+		background: #fff !important;
+		border-color: #000 !important;
+	}
+}

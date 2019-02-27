@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "directions",
+    "up",
+    "right",
+    "down",
+    "left",
+    "AUdirectionLink",
+    "linkComponent",
+    "dark",
+    "link",
+    "text",
+    "direction",
+    "className",
+    "attributeOptions",
+    "LinkComponent",
+    "href",
+    "to",
+    "propTypes",
+    "PropTypes",
+    "bool",
+    "string",
+    "isRequired",
+    "oneOf",
+    "oneOfType",
+    "func",
+    "defaultProps"
+  ],
+  "mappings": "oSASA,4B,2CACA,qC,mDAMA,6B,qRAhBA,qCACA;;;;;;gKAYA;AACA;AACA;AAIA;;;;GAKA,GAAMA,YAAa,CAClBC,GAAI,uBADc,CAElBC,MAAO,0BAFW,CAGlBC,KAAM,yBAHY,CAIlBC,KAAM,yBAJY,CAAnB,CAQA;;;;;;;;;;;GAYA,GAAMC,iBAAkB,QAAlBA,gBAAkB,MAAyF,IAAtFC,cAAsF,MAAtFA,aAAsF,CAAvEC,IAAuE,MAAvEA,IAAuE,CAAjEC,IAAiE,MAAjEA,IAAiE,CAA3DC,IAA2D,MAA3DA,IAA2D,CAArDC,SAAqD,MAArDA,SAAqD,qBAA1CC,SAA0C,CAA1CA,SAA0C,4BAA9B,EAA8B,gBAAvBC,gBAAuB,+FAChH,GAAMC,eAAgBP,aAAtB,CAEA,GAAIE,IAAJ,CAAW,CACV;AACA,GAAIK,gBAAkB,GAAtB,CAA4B,CAC3BD,iBAAiBE,IAAjB,CAAwBN,IACxB,CACD;AAHA,IAIK,IAAI,MAAOK,cAAP,GAAyB,UAA7B,CAA0C,CAC9CD,iBAAiBG,EAAjB,CAAsBP,IACtB,CAED,MACC,+BAAC,aAAD,WAAe,+BAAkCG,SAAlC,KAAiDX,WAAYU,SAAZ,CAAjD,EAA6EH,KAAO,0BAAP,CAAoC,EAAjH,CAAf,EAA6IK,gBAA7I,EAAkKH,IAAlK,CAED,CAbD,IAcK,CACJ,MACC,kDAAQ,+BAAkCE,SAAlC,KAAiDX,WAAYU,SAAZ,CAAjD,EAA6EH,KAAO,0BAAP,CAAoC,EAAjH,CAAR,EAAsIK,gBAAtI,EAA2JH,IAA3J,CAED,CACD,CAtBD,CAwBAJ,gBAAgBW,SAAhB,CAA4B,CAC3BT,KAAMU,oBAAUC,IADW,CAE3BV,KAAMS,oBAAUE,MAFW,CAG3BV,KAAMQ,oBAAUE,MAAV,CAAiBC,UAHI,CAI3BV,UAAWO,oBAAUI,KAAV,CAAgB,CAAE,IAAF,CAAQ,OAAR,CAAiB,MAAjB,CAAyB,MAAzB,CAAhB,EAAmDD,UAJnC,CAK3BT,UAAWM,oBAAUE,MALM,CAM3Bb,cAAeW,oBAAUK,SAAV,CAAoB,CAAEL,oBAAUE,MAAZ,CAAoBF,oBAAUM,IAA9B,CAApB,CANY,CAA5B,CASAlB,gBAAgBmB,YAAhB,CAA+B,CAC9Bd,UAAW,OADmB,CAE9BJ,cAAe,GAFe,CAA/B,C,gBAKeD,e",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/direction-links v2.1.7 */\n/***************************************************************************************************************************************************************\n *\n * direction-links function\n *\n * Use direction links to link up and down within the DOM or back to a parent page.\n *\n **************************************************************************************************************************************************************/\n\nimport React, { Fragment } from 'react';\nimport PropTypes from 'prop-types';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n\n/**\n * All direction options\n *\n * @type {Object}\n */\nconst directions = {\n\tup: 'au-direction-link--up',\n\tright: 'au-direction-link--right',\n\tdown: 'au-direction-link--down',\n\tleft: 'au-direction-link--left',\n};\n\n\n/**\n * DEFAULT\n * The direction-links component\n *\n * @param  {string}  linkComponent    - The component used for the link\n * @param  {boolean} dark             - Add the dark variation class, optional\n * @param  {string}  link             - The link target, optional\n * @param  {string}  text             - The text of the CTA link\n * @param  {string}  direction        - The direction for the arrow; can be either: up right down left, default: 'right'\n * @param  {string}  className        - An additional class, optional\n * @param  {object}  attributeOptions - Any other attribute options\n */\nconst AUdirectionLink = ({ linkComponent, dark, link, text, direction, className = '', ...attributeOptions }) => {\n\tconst LinkComponent = linkComponent;\n\n\tif( link ) {\n\t\t// If we are using a normal link\n\t\tif( LinkComponent === 'a' ) {\n\t\t\tattributeOptions.href = link;\n\t\t}\n\t\t// If we are using a link component\n\t\telse if( typeof LinkComponent === 'function' ) {\n\t\t\tattributeOptions.to = link;\n\t\t}\n\n\t\treturn (\n\t\t\t<LinkComponent className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</LinkComponent>\n\t\t);\n\t}\n\telse {\n\t\treturn (\n\t\t\t<button className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button>\n\t\t);\n\t}\n};\n\nAUdirectionLink.propTypes = {\n\tdark: PropTypes.bool,\n\tlink: PropTypes.string,\n\ttext: PropTypes.string.isRequired,\n\tdirection: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,\n\tclassName: PropTypes.string,\n\tlinkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])\n};\n\nAUdirectionLink.defaultProps = {\n\tdirection: 'right',\n\tlinkComponent: 'a',\n};\n\nexport default AUdirectionLink;\n"
+  ]
+}

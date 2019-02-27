@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "StatusText",
+    "doing",
+    "todo",
+    "done",
+    "AUprogressIndicatorItem",
+    "link",
+    "linkComponent",
+    "text",
+    "status",
+    "statusText",
+    "className",
+    "li",
+    "attributeOptions",
+    "LinkComponent",
+    "href",
+    "to",
+    "propTypes",
+    "PropTypes",
+    "string",
+    "isRequired",
+    "oneOf",
+    "object",
+    "oneOfType",
+    "func",
+    "defaultProps",
+    "AUprogressIndicator",
+    "dark",
+    "items",
+    "map",
+    "item",
+    "i",
+    "bool",
+    "arrayOf",
+    "shape"
+  ],
+  "mappings": "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",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/progress-indicator v3.1.5 */\n/***************************************************************************************************************************************************************\n *\n * progress-indicator function\n *\n * Indicator of progress through a multitude of pages mostly used for forms.\n *\n **************************************************************************************************************************************************************/\n\nimport React from 'react';\nimport PropTypes from 'prop-types';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n/**\n * All status options, can be overwritten\n *\n * @type {Object}\n */\nconst StatusText = {\n\tdoing: 'Doing',\n\ttodo: 'To do',\n\tdone: 'Done',\n};\n\n\n/**\n * An item inside the AUprogressIndicator component\n *\n * @param  {string}   link             - The link URL, If no link is passed we render a button instead of a link tag, optional\n * @param  {string}  linkComponent     - The component used for the link\n * @param  {string}   text             - The text of this item\n * @param  {string}   status           - The status of this item\n * @param  {string}   statusText       - The status text of this item, optional\n * @param  {string}   className        - An additional class, optional\n * @param  {object}   li               - An additional object to be spread into the wrapping element, optional\n * @param  {object}   attributeOptions - Any other attribute options\n */\nexport const AUprogressIndicatorItem = ({ link, linkComponent, text, status, statusText, className = '', li = {}, ...attributeOptions }) => {\n\tconst LinkComponent = linkComponent;\n\n\tif( link ){\n\t\t// If we are using a normal link\n\t\tif( LinkComponent === 'a' ) {\n\t\t\tattributeOptions.href = link;\n\t\t}\n\t\t// If we are using a link component\n\t\telse if( typeof LinkComponent === 'function' ) {\n\t\t\tattributeOptions.to = link;\n\t\t}\n\t}\n\n\treturn(\n\t\t<li { ...li }>\n\t\t{\n\t\t\tlink\n\t\t\t\t?\n\t\t\t\t\t<LinkComponent className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} { ...attributeOptions }>\n\t\t\t\t\t\t<span className=\"au-progress-indicator__status\">{ statusText ? statusText : StatusText[ status ] }</span>\n\t\t\t\t\t\t{ text }\n\t\t\t\t\t</LinkComponent>\n\t\t\t\t:\n\t\t\t\t\t<button className={`au-progress-indicator__link au-progress-indicator__link--${ status } ${ className }`} { ...attributeOptions }>\n\t\t\t\t\t\t<span className=\"au-progress-indicator__status\">{ statusText ? statusText : StatusText[ status ] }</span>\n\t\t\t\t\t\t{ text }\n\t\t\t\t\t</button>\n\t\t}\n\t</li>\n\t)\n};\n\nAUprogressIndicatorItem.propTypes = {\n\tlink: PropTypes.string,\n\ttext: PropTypes.string.isRequired,\n\tstatus: PropTypes.PropTypes.oneOf([ 'doing', 'todo', 'done' ]).isRequired,\n\tstatusText: PropTypes.string,\n\tli: PropTypes.object,\n\tlinkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),\n};\n\n\nAUprogressIndicatorItem.defaultProps = {\n\tlinkComponent: 'a',\n};\n\n\n/**\n * DEFAULT\n * The progress-indicator component\n *\n * @param  {boolean} dark             - Add the dark variation class, optional\n * @param  {array}   items            - All items for this progress indicator\n * @param  {string}  className        - An additional class, optional\n * @param  {string}  linkComponent    - The component used for the link\n * @param  {object}  attributeOptions - Any other attribute options\n */\nconst AUprogressIndicator = ({ dark, linkComponent, items, className = '', ...attributeOptions }) => (\n\t<ul className={ `au-progress-indicator${ dark ? ' au-progress-indicator--dark' : '' } ${ className }` } { ...attributeOptions }>\n\t\t{\n\t\t\titems.map(\n\t\t\t\t( item, i ) => <AUprogressIndicatorItem linkComponent={ linkComponent } key={ i } { ...item } />\n\t\t\t)\n\t\t}\n\t</ul>\n);\n\nAUprogressIndicator.propTypes = {\n\tdark: PropTypes.bool,\n\titems: PropTypes.arrayOf(\n\t\tPropTypes.shape({\n\t\t\tlink: PropTypes.string,\n\t\t\ttext: PropTypes.string.isRequired,\n\t\t\tstatus: PropTypes.PropTypes.oneOf([ 'doing', 'todo', 'done' ]).isRequired,\n\t\t\tstatusText: PropTypes.string,\n\t\t\tli: PropTypes.object,\n\t\t})\n\t).isRequired,\n\tlinkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),\n};\n\nAUprogressIndicator.defaultProps = {\n\tlinkComponent: 'a',\n};\n\nexport default AUprogressIndicator;\n"
+  ]
+}

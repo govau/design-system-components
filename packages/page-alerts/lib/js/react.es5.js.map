@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "options",
+    "info",
+    "warning",
+    "error",
+    "success",
+    "AUpageAlert",
+    "as",
+    "alt",
+    "dark",
+    "children",
+    "className",
+    "attributeOptions",
+    "propTypes",
+    "PropTypes",
+    "oneOf",
+    "isRequired",
+    "bool",
+    "node",
+    "string"
+  ],
+  "mappings": "oSASA,4B,2CACA,qC,mDAMA,6B,qRAhBA,iCACA;;;;;;gKAYA;AACA;AACA;AAGA;;;;GAKA,GAAMA,SAAU,CACfC,KAAM,sBADS,CAEfC,QAAS,yBAFM,CAGfC,MAAO,uBAHQ,CAIfC,QAAS,yBAJM,CAAhB,CAQA;;;;;;;;;;GAWA,GAAMC,aAAc,QAAdA,YAAc,UAAGC,GAAH,MAAGA,EAAH,CAAOC,GAAP,MAAOA,GAAP,CAAYC,IAAZ,MAAYA,IAAZ,CAAkBC,QAAlB,MAAkBA,QAAlB,qBAA4BC,SAA5B,CAA4BA,SAA5B,4BAAwC,EAAxC,gBAA+CC,gBAA/C,iFACnB,+CACC,oCAAsCD,SAAtC,MACCF,KACG,qCADH,CAEG,EAHJ,GAKCD,IACG,mCADH,CAEG,EAPJ,MAQMP,QAASM,EAAT,CATP,EAS8BK,gBAT9B,EAWGF,QAXH,CADmB,CAApB,CAgBAJ,YAAYO,SAAZ,CAAwB,CACvBN,GAAIO,oBAAUC,KAAV,CAAgB,CAAE,MAAF,CAAU,SAAV,CAAqB,OAArB,CAA8B,SAA9B,CAAhB,EAA2DC,UADxC,CAEvBR,IAAKM,oBAAUG,IAFQ,CAGvBR,KAAMK,oBAAUG,IAHO,CAIvBP,SAAUI,oBAAUI,IAAV,CAAeF,UAJF,CAKvBL,UAAWG,oBAAUK,MALE,CAAxB,C,gBAQeb,W",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/page-alerts v2.1.1 */\n/***************************************************************************************************************************************************************\n *\n * Page alert function\n *\n * Use page alert to notify and alert users of important application events.\n *\n **************************************************************************************************************************************************************/\n\nimport React, { Fragment } from 'react';\nimport PropTypes from 'prop-types';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n/**\n * All different kind of alerts\n *\n * @type {Object}\n */\nconst options = {\n\tinfo: 'au-page-alerts--info',\n\twarning: 'au-page-alerts--warning',\n\terror: 'au-page-alerts--error',\n\tsuccess: 'au-page-alerts--success',\n};\n\n\n/**\n * DEFAULT\n * Page alert\n *\n * @param  {boolean} dark             - Add the dark variation class, optional\n * @param  {boolean} alt              - Add the alt variation class, optional\n * @param  {string}  as               - What kind of alert this is, takes: 'info', 'warning', 'error', 'success'\n * @param  {node}    children         - Anything inside the component\n * @param  {string}  className        - An additional class, optional\n * @param  {object}  attributeOptions - Any other attribute options\n */\nconst AUpageAlert = ({ as, alt, dark, children, className = '', ...attributeOptions }) => (\n\t<div\n\t\tclassName={`au-body au-page-alerts ${ className } ${\n\t\t\tdark\n\t\t\t\t? ' au-page-alerts--dark au-body--dark'\n\t\t\t\t: ''\n\t\t\t}${\n\t\t\talt\n\t\t\t\t? ' au-page-alerts--alt au-body--alt'\n\t\t\t\t: ''\n\t\t\t} ${ options[ as ] }`} { ...attributeOptions }\n\t>\n\t\t{ children }\n\t</div>\n);\n\nAUpageAlert.propTypes = {\n\tas: PropTypes.oneOf([ 'info', 'warning', 'error', 'success' ]).isRequired,\n\talt: PropTypes.bool,\n\tdark: PropTypes.bool,\n\tchildren: PropTypes.node.isRequired,\n\tclassName: PropTypes.string,\n};\n\nexport default AUpageAlert;\n"
+  ]
+}

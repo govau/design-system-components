@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "AUtextInput",
+    "as",
+    "dark",
+    "block",
+    "status",
+    "type",
+    "className",
+    "attributeOptions",
+    "propTypes",
+    "PropTypes",
+    "oneOf",
+    "bool",
+    "string",
+    "defaultProps"
+  ],
+  "mappings": "oSASA,4B,2CACA,qC,mDAMA,6B,qRAhBA,kCACA;;;;;;gKAYA;AACA;AACA;AAIA;;;;;;;;;;;GAYA,GAAMA,aAAc,QAAdA,YAAc,UAAGC,GAAH,MAAGA,EAAH,CAAOC,IAAP,MAAOA,IAAP,CAAaC,KAAb,MAAaA,KAAb,CAAoBC,MAApB,MAAoBA,MAApB,gBAA4BC,IAA5B,CAA4BA,IAA5B,uBAAmC,MAAnC,+BAA2CC,SAA3C,CAA2CA,SAA3C,4BAAuD,EAAvD,gBAA8DC,gBAA9D,wFACnBN,MAAO,UAAP,CACG,mDACA,UACC,iBAAkBK,SAAlB,MACIH,MAAQ,uBAAR,CAAkC,EADtC,QAEID,KAAO,sBAAP,CAAgC,EAFpC,QAGIE,SAAW,OAAX,CAAqB,uBAArB,CAA+C,EAHnD,QAIIA,SAAW,SAAX,CAAuB,yBAAvB,CAAmD,EAJvD,EAFD,EAQKG,gBARL,EADH,CAWG,gDAAO,UACN,iBAAkBD,SAAlB,MACIJ,KAAO,sBAAP,CAAgC,EADpC,QAEIC,MAAQ,uBAAR,CAAkC,EAFtC,QAGIC,SAAW,OAAX,CAAqB,uBAArB,CAA+C,EAHnD,QAIIA,SAAW,SAAX,CAAuB,yBAAvB,CAAmD,EAJvD,EADD,CAOA,KAAOC,IAPP,EAOmBE,gBAPnB,EAZgB,CAApB,CAuBAP,YAAYQ,SAAZ,CAAwB,CACvBP,GAAIQ,oBAAUC,KAAV,CAAgB,CAAE,OAAF,CAAW,UAAX,CAAhB,CADmB,CAEvBR,KAAMO,oBAAUE,IAFO,CAGvBR,MAAOM,oBAAUE,IAHM,CAIvBP,OAAQK,oBAAUC,KAAV,CAAgB,CAAE,OAAF,CAAW,SAAX,CAAhB,CAJe,CAKvBJ,UAAWG,oBAAUG,MALE,CAAxB,CAQAZ,YAAYa,YAAZ,CAA2B,CAC1BZ,GAAI,OADsB,CAA3B,C,gBAIeD,W",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/text-inputs v2.0.10 */\n/***************************************************************************************************************************************************************\n *\n * text-input function\n *\n * Text inputs include text inputs, labels, hints and textareas. They allow users to input data into a field.\n *\n **************************************************************************************************************************************************************/\n\nimport React, { Fragment } from 'react';\nimport PropTypes from 'prop-types';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n\n/**\n * DEFAULT\n * The AUtextInput component\n *\n * @param  {string}  as               - The kind of input, can be either 'input' or 'textarea', default: 'input'\n * @param  {boolean} dark             - Add the dark variation class, optional\n * @param  {boolean} block            - Add the block variation class, optional\n * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional\n * @param  {string}  type             - The type of the field, optional, default: text\n * @param  {string}  className        - An additional class, optional\n * @param  {object}  attributeOptions - Any other attribute options\n */\nconst AUtextInput = ({ as, dark, block, status, type = 'text', className = '', ...attributeOptions }) => (\n\tas === 'textarea'\n\t\t? <textarea\n\t\t\t\tclassName={\n\t\t\t\t\t`au-text-input ${ className }` +\n\t\t\t\t\t`${ block ? ' au-text-input--block' : '' }` +\n\t\t\t\t\t`${ dark ? ' au-text-input--dark' : '' }` +\n\t\t\t\t\t`${ status === 'valid' ? ' au-text-input--valid' : '' }` +\n\t\t\t\t\t`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`\n\t\t\t\t}\n\t\t\t\t{ ...attributeOptions } >\n\t\t\t</textarea>\n\t\t: <input className={\n\t\t\t\t\t`au-text-input ${ className }` +\n\t\t\t\t\t`${ dark ? ' au-text-input--dark' : '' }` +\n\t\t\t\t\t`${ block ? ' au-text-input--block' : '' }` +\n\t\t\t\t\t`${ status === 'valid' ? ' au-text-input--valid' : '' }` +\n\t\t\t\t\t`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`\n\t\t\t\t}\n\t\t\t\ttype={ type } { ...attributeOptions }\n\t\t\t/>\n);\n\nAUtextInput.propTypes = {\n\tas: PropTypes.oneOf([ 'input', 'textarea' ]),\n\tdark: PropTypes.bool,\n\tblock: PropTypes.bool,\n\tstatus: PropTypes.oneOf([ 'valid', 'invalid' ]),\n\tclassName: PropTypes.string,\n};\n\nAUtextInput.defaultProps = {\n\tas: 'input',\n};\n\nexport default AUtextInput;\n"
+  ]
+}

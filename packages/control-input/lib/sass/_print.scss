@@ -1,0 +1,19 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// control-input module
+// Control inputs include radio buttons and checkboxes. They allow users to select one or more options.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-control-input__text {
+		color: #000 !important;
+
+		&:before,
+		&:after {
+			display: none !important;
+		}
+	}
+}

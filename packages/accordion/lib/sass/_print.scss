@@ -1,0 +1,34 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// accordion module
+// Allow the user to toggle the visibility of an element
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-accordion {
+		border-color: #000 !important;
+		color: #000 !important;
+	}
+
+	.au-accordion__title {
+		background: #fff !important;
+		color: #000 !important;
+		border: 1px !important;
+
+		&:after {
+			display: none;
+		}
+	}
+
+	.au-accordion__body-wrapper {
+		border-color: #000 !important;
+	}
+
+	.au-accordion__body {
+		height: auto !important;
+		display: block !important;
+	}
+}

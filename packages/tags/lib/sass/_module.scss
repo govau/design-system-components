@@ -1,0 +1,75 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Tags module
+// Use tags to apply a taxonomy and link to similar content.
+//
+// Content:
+// - Tag styles
+// - Tag heading style
+// - Tag item style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Tag styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-tags {
+	@include AU-fontgrid( sm );
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+
+	&.au-tags--dark {
+		color: $AU-colordark-foreground-text;
+	}
+}
+
+.au-tags > li {
+	@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
+	@include AU-space ( padding, 0 0.5unit );
+	border: 1px solid $AU-color-foreground-action;
+	border-radius: $AU-border-radius;
+	display: inline-block;
+
+	> a,
+	> button {
+		@include AU-space ( margin, 0 -0.5unit ); // Negative value to pull a/button out to same size as container
+		@include AU-space ( padding, 0 0.5unit );
+		color: $AU-color-foreground-action;
+		display: inline-block;
+		border-radius: $AU-border-radius;
+
+		&:hover {
+			color: $AU-color-foreground-text;
+			text-decoration: none;
+			background-color: $AU-color-background-shade;
+		}
+
+		@include AU-focus();
+
+		&:focus {
+			outline-offset: -1px;
+		}
+	}
+}
+
+.au-tags.au-tags--dark > li {
+	border-color: $AU-colordark-foreground-action;
+
+	> a,
+	> button {
+		color: $AU-colordark-foreground-action;
+
+		&:hover {
+			color: $AU-colordark-foreground-text;
+			background-color: $AU-colordark-background-shade;
+		}
+
+		@include AU-focus( 'dark' );
+	}
+}

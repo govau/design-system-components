@@ -1,0 +1,59 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// main-nav module
+// Horizontal list of links to key areas on the website. Usually located in the header.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-main-nav {
+		background: transparent !important;
+		border-bottom: none !important;
+
+		a {
+			color: #000 !important;
+
+			&:hover {
+				background: transparent !important;
+			}
+		}
+
+		.active a {
+			text-decoration: underline;
+			border-color: #fff !important;
+			background-color: transparent !important;
+		}
+
+		.au-link-list > li {
+			border-color: #000 !important;
+			&:last-of-type {
+				border-bottom: 1px solid !important;
+			}
+		}
+
+		@include AU-media( $AU-main-nav-breakpoint ) {
+			@include AU-space( border-bottom, 0.5unit solid #000 !important );
+
+			.au-link-list > li:last-of-type {
+				border-bottom: none !important;
+			}
+		}
+	}
+
+	.au-main-nav__toggle {
+		display: none !important;
+	}
+
+	.au-main-nav__menu {
+		background: transparent !important;
+		position: static !important;
+		display: block !important;
+		width: auto !important;
+
+		.au-main-nav__menu-inner {
+			padding: 0 !important;
+		}
+	}
+}

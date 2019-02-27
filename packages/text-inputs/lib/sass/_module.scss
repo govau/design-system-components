@@ -1,0 +1,177 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Text-inputs module
+// Single and multi-line text inputs.
+//
+// Content:
+// - Text input styling, inc:
+//   - labels
+//   - generic text input styling
+//   - states (invalid|valid|disabled)
+//   - textarea styling
+//   - --number variant text input
+//   - --block variant
+//   - hint text
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Text input styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Generic text input styling.
+ *
+ * Also includes variants:
+ * - invalid
+ * - valid
+ * - :focus
+ * - :disabled/[disabled]
+ */
+.au-text-input {
+	box-sizing: border-box;
+	@include AU-fontgrid( sm, nospace ); // using default to make sure we don’t crop descenders and ascenders
+	@include AU-space( padding, 0.5unit 1unit );
+	@include AU-space( height, 2.875unit );
+	border: 3px solid $AU-color-foreground-border;
+	background-color: $AU-color-background;
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+	border-radius: $AU-border-radius;
+	vertical-align: middle;
+	appearance: none;
+
+	// state styling
+	&.au-text-input--dark:invalid,
+	&:invalid {
+		background-color: mix( $AU-color-error, $AU-color-background, 5% );
+		border-color: $AU-color-error;
+	}
+
+	&.au-text-input--dark.au-text-input--invalid,
+	&.au-text-input--invalid {
+		background-color: mix( $AU-color-error, $AU-color-background, 5% );
+		border-color: $AU-color-error;
+	}
+
+	// valid styling
+
+	// disabled :valid pseudo class because all fields would become valid and green too quickly. In the future :valid should be the default styling(not green)
+	// &.au-text-input--dark:valid,
+	// &:valid {
+	// 	background-color: mix( $AU-color-success, $AU-color-background, 5% );
+	// 	border-color: $AU-color-success;
+	// }
+
+	&.au-text-input--dark.au-text-input--valid,
+	&.au-text-input--valid {
+		background-color: mix( $AU-color-success, $AU-color-background, 5% );
+		border-color: $AU-color-success;
+	}
+
+	// disabled styling
+	&[disabled] {
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
+
+	@include AU-focus();
+
+	&:focus {
+		border-radius: 0;
+		background-color: $AU-color-background; // Keep the light-bg when focusing on success/error
+	}
+
+	&.au-text-input--dark {
+		border-color:  $AU-colordark-foreground-text;
+
+		&[disabled] {
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+			opacity: 0.3;
+		}
+
+		&:disabled {
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+			opacity: 0.3;
+		}
+
+
+		@include AU-focus( 'dark' );
+	}
+
+	/**
+	 * Block modifier
+	 */
+	&.au-text-input--block {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	/**
+	 * Number input styling.
+	 *
+	 * Numbers are easier to disambiguate from each other (and letters) when set in
+	 * monospace.
+	 */
+	&.au-text-input--number {
+		font-family: $AU-font-monospace;
+		letter-spacing: 2px;
+	}
+}
+
+
+// We remove label styling as it is too atomic to make calls on spacing. There will be form components that will reintroduce these elements.
+// /**
+//  * Text input labels.
+//  */
+// .au-text-input__label {
+// 	@include AU-fontgrid( sm );
+// 	display: block;
+
+// 	& + .au-text-input {
+// 		@include AU-space( margin-top, 0.5unit );
+// 	}
+
+// 	* + & {
+// 		@include AU-space( margin-top, 1.5unit );
+// 	}
+// }
+
+
+// We remove hint text styling as it is too atomic to make calls on spacing. There will be form components that will reintroduce these elements.
+// /**
+//  * Hint text.
+//  *
+//  * Built so it can sit both in- and outside the `label`.
+//  */
+// .au-text-input__hint {
+// 	@include AU-fontgrid( xs );
+// 	display: block;
+
+// 	// Keeps spacing neat depending on where the hint text is added.
+// 	* + & {
+// 		@include AU-space( margin-top, 0.5unit );
+// 	}
+// }
+
+
+/**
+ * Textarea styling. (Not nested because sass does odd stuff)
+ */
+textarea.au-text-input {
+	@include AU-fontgrid( sm );
+	height: auto;
+	max-width: 100%;
+	min-height: 6em;
+}
+

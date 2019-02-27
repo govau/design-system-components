@@ -1,0 +1,18 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// select module
+// The form select element for multiple options
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-select {
+		border-color: #000 !important;
+		background-image: AU-svguri('<svg fill="#000" width="1.5em" height="auto" viewBox="0 0 28 12" xmlns="http://www.w3.org/2000/svg">' +
+			'<path d="M1.9 1.1L8 7.2l6.1-6.1L16 2.9l-8 8-8-8 1.9-1.8z"/>' +
+			'<path fill="none" d="M2-5.8h24v24H2v-24z"/>' +
+		'</svg>') !important;
+	}
+}

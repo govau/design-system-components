@@ -1,0 +1,43 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "AUlinkListItem",
+    "text",
+    "link",
+    "linkComponent",
+    "li",
+    "children",
+    "attributeOptions",
+    "LinkComponent",
+    "onClick",
+    "href",
+    "to",
+    "propTypes",
+    "PropTypes",
+    "node",
+    "isRequired",
+    "string",
+    "object",
+    "oneOfType",
+    "func",
+    "defaultProps",
+    "AUlinkList",
+    "inline",
+    "items",
+    "className",
+    "map",
+    "item",
+    "i",
+    "bool",
+    "arrayOf",
+    "shape"
+  ],
+  "mappings": "qUASA,4B,2CACA,qC,mDAMA,6B,qRAhBA,+BACA;;;;;;gKAYA;AACA;AACA;AAGA;;;;;;;;GASO,GAAMA,gBAAiB,QAAjBA,eAAiB,MAA2E,IAAxEC,KAAwE,MAAxEA,IAAwE,CAAlEC,IAAkE,MAAlEA,IAAkE,CAA5DC,aAA4D,MAA5DA,aAA4D,cAA7CC,EAA6C,CAA7CA,EAA6C,qBAAxC,EAAwC,SAApCC,QAAoC,MAApCA,QAAoC,CAAvBC,gBAAuB,gFACxG,GAAMC,eAAgBJ,aAAtB,CAEA;AACA,GAAI,MAAOK,QAAP,GAAmB,UAAvB,CAAoC,CACnCF,iBAAiBE,OAAjB,CAA2BA,OAA3B,CAEA;AACA,GAAI,CAACN,IAAL,CAAY,CACXA,KAAO,GACP,CACD,CAED;AACA,GAAIK,gBAAkB,GAAtB,CAA4B,CAC3BD,iBAAiBG,IAAjB,CAAwBP,IACxB,CACD;AAHA,IAIK,IAAI,MAAOK,cAAP,GAAyB,UAA7B,CAA0C,CAC9CD,iBAAiBI,EAAjB,CAAsBR,IACtB,CAED,GAAIA,IAAJ,CAAU,CACT,MACC,oCAASE,EAAT,CACC,8BAAC,aAAD,CAAoBE,gBAApB,CAAyCL,IAAzC,CADD,CAEGI,QAFH,CAKD,CAED,MAAS,oCAASD,EAAT,CAAgBH,IAAhB,CAAwBI,QAAxB,CACT,CAhCM,C,sCAkCPL,eAAeW,SAAf,CAA2B,CAC1BV,KAAMW,oBAAUC,IAAV,CAAeC,UADK,CAE1BZ,KAAMU,oBAAUG,MAFU,CAG1BX,GAAIQ,oBAAUI,MAHY,CAI1Bb,cAAeS,oBAAUK,SAAV,CAAoB,CAAEL,oBAAUG,MAAZ,CAAoBH,oBAAUM,IAA9B,CAApB,CAJW,CAA3B,CAOAlB,eAAemB,YAAf,CAA8B,CAC7BhB,cAAe,GADc,CAA9B,CAKA;;;;;;;;GASA,GAAMiB,YAAa,QAAbA,WAAa,WAAGC,OAAH,OAAGA,MAAH,CAAWC,KAAX,OAAWA,KAAX,CAAkBnB,aAAlB,OAAkBA,aAAlB,uBAAiCoB,SAAjC,CAAiCA,SAAjC,6BAA6C,EAA7C,iBAAoDjB,gBAApD,sFAClB,8CAAI,0BAA6BiB,SAA7B,EAA2CF,OAAS,uBAAT,CAAmC,EAA9E,CAAJ,EAA+Ff,gBAA/F,EAEEgB,MAAME,GAAN,CACC,SAAEC,IAAF,CAAQC,CAAR,QAAe,+BAAC,cAAD,WAAgB,cAAgBvB,aAAhC,CAAgD,IAAMuB,CAAtD,EAA+DD,IAA/D,EAAf,CADD,CAFF,CADkB,CAAnB,CAUAL,WAAWT,SAAX,CAAuB,CACtBU,OAAQT,oBAAUe,IADI,CAEtBL,MAAOV,oBAAUgB,OAAV,CACNhB,oBAAUiB,KAAV,CAAgB,CACf3B,KAAMU,oBAAUG,MADD,CAEfd,KAAMW,oBAAUC,IAAV,CAAeC,UAFN,CAGfV,GAAIQ,oBAAUI,MAHC,CAAhB,CADM,EAMLF,UARoB,CAStBX,cAAeS,oBAAUK,SAAV,CAAoB,CAAEL,oBAAUG,MAAZ,CAAoBH,oBAAUM,IAA9B,CAApB,CATO,CAAvB,CAYAE,WAAWD,YAAX,CAA0B,CACzBhB,cAAe,GADU,CAA1B,C,gBAKeiB,U",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/link-list v3.0.4 */\n/***************************************************************************************************************************************************************\n *\n * link-lists function\n *\n * A simple list of inline links.\n *\n **************************************************************************************************************************************************************/\n\nimport React, { Fragment } from 'react';\nimport PropTypes from 'prop-types';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n/**\n * An item inside the AUlinkList component\n *\n * @param  {node}   text             - The link Text or link html\n * @param  {string} link             - The link URL, optional\n * @param  {string} linkComponent    - The component used for the link\n * @param  {object} li               - An additional object to be spread into the wrapping element, optional\n * @param  {object} attributeOptions - Any other attribute options, optional\n */\nexport const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, ...attributeOptions }) => {\n\tconst LinkComponent = linkComponent;\n\n\t// If there is no link provided and an onClick function\n\tif( typeof onClick === 'function' ) {\n\t\tattributeOptions.onClick = onClick;\n\n\t\t// if we find an onClick event but no link we make it a link so onClick can be added (no button support yet)\n\t\tif( !link ) {\n\t\t\tlink = '#';\n\t\t}\n\t}\n\n\t// If we are using a normal link\n\tif( LinkComponent === 'a' ) {\n\t\tattributeOptions.href = link;\n\t}\n\t// If we are using a link component\n\telse if( typeof LinkComponent === 'function' ) {\n\t\tattributeOptions.to = link;\n\t}\n\n\tif( link ){\n\t\treturn (\n\t\t\t<li { ...li }>\n\t\t\t\t<LinkComponent { ...attributeOptions }>{ text }</LinkComponent>\n\t\t\t\t{ children }\n\t\t\t</li>\n\t\t)\n\t}\n\n\treturn ( <li { ...li }>{ text }{ children }</li> );\n};\n\nAUlinkListItem.propTypes = {\n\ttext: PropTypes.node.isRequired,\n\tlink: PropTypes.string,\n\tli: PropTypes.object,\n\tlinkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])\n};\n\nAUlinkListItem.defaultProps = {\n\tlinkComponent: \"a\",\n};\n\n\n/**\n * DEFAULT\n * The Link List component\n *\n * @param  {array}   items            - All items inside the link list to be passed to AUlinkListItem, format: { link: '', text: '', onClick: () }\n * @param  {string}  className        - An additional class, optional\n * @param  {string}  linkComponent    - The component used for the link\n * @param  {object}  attributeOptions - Any other attribute options, optional\n */\nconst AUlinkList = ({ inline, items, linkComponent, className = '', ...attributeOptions }) => (\n\t<ul className={ `au-link-list ${ className }${ inline ? ' au-link-list--inline' : '' }` } { ...attributeOptions }>\n\t\t{\n\t\t\titems.map(\n\t\t\t\t( item, i ) => <AUlinkListItem linkComponent={ linkComponent } key={ i } { ...item } />\n\t\t\t)\n\t\t}\n\t</ul>\n);\n\nAUlinkList.propTypes = {\n\tinline: PropTypes.bool,\n\titems: PropTypes.arrayOf(\n\t\tPropTypes.shape({\n\t\t\tlink: PropTypes.string,\n\t\t\ttext: PropTypes.node.isRequired,\n\t\t\tli: PropTypes.object,\n\t\t})\n\t).isRequired,\n\tlinkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])\n};\n\nAUlinkList.defaultProps = {\n\tlinkComponent: \"a\",\n};\n\n\nexport default AUlinkList;\n"
+  ]
+}

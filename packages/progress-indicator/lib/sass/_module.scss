@@ -1,0 +1,174 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// progress-indicator module
+// Indicator of progress through a multitude of pages mostly used for forms.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// progress indicator
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-body .au-progress-indicator,
+.au-progress-indicator {
+	@include AU-fontgrid( sm, heading );
+	margin: 0;
+	font-family: $AU-font;
+	list-style: none;
+	padding: 0;
+	border-top: 1px solid $AU-color-foreground-border;
+
+	& > li {
+		margin: 0;
+	}
+
+	&.au-progress-indicator--dark {
+		border-color: $AU-colordark-foreground-border;
+	}
+}
+
+* + .au-progress-indicator,
+.au-body * + .au-progress-indicator, {
+	@include AU-space( margin-top, 1unit );
+}
+
+.au-body .au-progress-indicator__link,
+.au-progress-indicator__link {
+	@include AU-fontgrid( sm, heading ); // Needed for button elements that reset fontsize
+	@include AU-space( padding, .75unit .75unit .75unit 2.75unit );
+	position: relative;
+	display: block;
+	color: $AU-color-foreground-text;
+	text-decoration: none;
+	appearance: none;
+	background: transparent;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	border: none;
+	border-bottom: 1px solid $AU-color-foreground-border;
+	border-left: 3px solid transparent;
+	transition: background-color 0.1s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $AU-color-background-shade;
+	}
+
+	@include AU-focus();
+
+	&:after {
+		@include AU-space( left, .5unit );
+		@include AU-space( width, 1.5unit );
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+				'<path fill="#{ $AU-color-foreground-muted }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>' +
+			'</svg>');
+		background-repeat: no-repeat;
+		background-position: 0 center;
+	}
+
+	.ie8 &,
+	.lt-ie8 & {
+		&:after {
+			top: 6px;
+			content: '-';
+		}
+	}
+
+	&.au-progress-indicator__link--doing {
+		border-left-color: $AU-color-foreground-action;
+		font-weight: bold;
+
+		&:after {
+			background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>' +
+				'<circle fill="#{ $AU-color-foreground-action }" cx="6.5" cy="12" r="1.5"></circle>' +
+				'<circle fill="#{ $AU-color-foreground-action }" cx="12" cy="12" r="1.5"></circle>' +
+				'<circle fill="#{ $AU-color-foreground-action }" cx="17.5" cy="12" r="1.5"></circle>' +
+			'</svg>');
+		}
+
+		.ie8 &,
+		.lt-ie8 & {
+			&:after {
+				content: '...';
+			}
+		}
+	}
+
+	&.au-progress-indicator__link--done {
+		&:after {
+			background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>' +
+				'<path fill="#{ $AU-color-foreground-action }" d="M18.744186,9.23753281 C18.744186,9.48293963 18.6627907,9.71391076 18.5,9.88713911 L11.3895349,17.7257218 C11.2267442,17.8989501 10.996124,18 10.7655039,18 C10.5484496,18 10.3178295,17.8989501 10.1550388,17.7257218 L5.24418605,12.5 C5.08139535,12.3267717 5,12.0958005 5,11.8503937 C5,11.6049869 5.08139535,11.3595801 5.24418605,11.1863517 L6.47868217,9.88713911 C6.64147287,9.71391076 6.85852713,9.61286089 7.08914729,9.61286089 C7.31976744,9.61286089 7.53682171,9.71391076 7.6996124,9.88713911 L10.7655039,13.1496063 L16.0445736,7.27427822 C16.2073643,7.10104987 16.4244186,7 16.6550388,7 C16.8856589,7 17.1027132,7.10104987 17.2655039,7.27427822 L18.5,8.57349081 C18.6627907,8.74671916 18.744186,8.99212598 18.744186,9.23753281 Z"/>' +
+			'</svg>');
+		}
+
+		.ie8 &,
+		.lt-ie8 & {
+			&:after {
+				content: '✓';
+			}
+		}
+	}
+
+	.au-body--dark .au-progress-indicator--dark &,
+	.au-progress-indicator--dark & {
+		color: $AU-colordark-foreground-text;
+		border-bottom-color: $AU-colordark-foreground-border;
+
+		@include AU-focus( 'dark' );
+
+		&:hover {
+			background-color: $AU-colordark-background-shade;
+		}
+
+		&:after {
+			background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+				'<path fill="#{ $AU-colordark-foreground-muted }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>' +
+			'</svg>');
+		}
+
+		&.au-progress-indicator__link--done:after {
+			background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+				'<path fill="#{ $AU-colordark-foreground-action }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>' +
+				'<path fill="#{ $AU-colordark-foreground-action }" d="M18.744186,9.23753281 C18.744186,9.48293963 18.6627907,9.71391076 18.5,9.88713911 L11.3895349,17.7257218 C11.2267442,17.8989501 10.996124,18 10.7655039,18 C10.5484496,18 10.3178295,17.8989501 10.1550388,17.7257218 L5.24418605,12.5 C5.08139535,12.3267717 5,12.0958005 5,11.8503937 C5,11.6049869 5.08139535,11.3595801 5.24418605,11.1863517 L6.47868217,9.88713911 C6.64147287,9.71391076 6.85852713,9.61286089 7.08914729,9.61286089 C7.31976744,9.61286089 7.53682171,9.71391076 7.6996124,9.88713911 L10.7655039,13.1496063 L16.0445736,7.27427822 C16.2073643,7.10104987 16.4244186,7 16.6550388,7 C16.8856589,7 17.1027132,7.10104987 17.2655039,7.27427822 L18.5,8.57349081 C18.6627907,8.74671916 18.744186,8.99212598 18.744186,9.23753281 Z"/>' +
+			'</svg>');
+		}
+
+		&.au-progress-indicator__link--doing {
+			border-left-color: $AU-colordark-foreground-action;
+
+			&:after {
+				background-image: AU-svguri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+						'<path fill="#{ $AU-colordark-foreground-action }" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/>' +
+						'<circle fill="#{ $AU-colordark-foreground-action }" cx="6.5" cy="12" r="1.5"></circle>' +
+						'<circle fill="#{ $AU-colordark-foreground-action }" cx="12" cy="12" r="1.5"></circle>' +
+						'<circle fill="#{ $AU-colordark-foreground-action }" cx="17.5" cy="12" r="1.5"></circle>' +
+					'</svg>');
+			}
+		}
+	}
+}
+
+.au-progress-indicator__status {
+	@include AU-fontgrid( xs, heading );
+	display: block;
+	font-weight: normal;
+	color: $AU-color-foreground-muted;
+
+	.au-progress-indicator--dark & {
+		color: $AU-colordark-foreground-muted;
+	}
+}
+

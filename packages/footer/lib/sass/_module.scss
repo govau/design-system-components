@@ -1,0 +1,72 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// footer module
+// Footers help users who reach the bottom of a page without finding what they want.
+//
+// Content:
+// - Footer styles
+//   -Basic footer block styling
+//   - Footer `nav` navigation styling
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Footer styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+/**
+ * Basic footer block styling.
+ */
+.au-footer {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 3unit 0 3unit );
+	@include AU-space( border-top, 0.25unit solid $AU-color-foreground-border );
+	background-color: $AU-color-background;
+	font-family: $AU-font;
+	color: $AU-color-foreground-text;
+
+	p:last-child {
+		margin: 0;
+	}
+
+	&.au-footer--alt {
+		background-color: $AU-color-background-alt;
+	}
+
+	&.au-footer--dark {
+		color: $AU-colordark-foreground-text;
+		border-color: $AU-colordark-foreground-border;
+		background-color:  $AU-colordark-background;
+	}
+
+	&.au-footer--dark.au-footer--alt {
+		background-color:  $AU-colordark-background-alt;
+	}
+}
+
+
+/**
+ * Footer `nav` navigation styling.
+ */
+.au-footer__navigation {
+
+	.au-link-list {
+		> li {
+			margin-left: 0;
+		}
+	}
+}
+
+
+.au-footer__end {
+	@include AU-space( padding-top, 1unit );
+	@include AU-space( margin-top, 1unit );
+	border-top: 1px solid $AU-color-foreground-border;
+}
+
+
+.au-footer--dark .au-footer__end {
+	border-top: 1px solid $AU-colordark-foreground-border;
+}

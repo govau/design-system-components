@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "AUsideNavMenu",
+    "items",
+    "linkComponent",
+    "GenerateMenu",
+    "menu",
+    "map",
+    "link",
+    "item",
+    "active",
+    "text",
+    "li",
+    "className",
+    "children",
+    "AUsideNav",
+    "dark",
+    "alt",
+    "accordionHeader",
+    "speed",
+    "onOpen",
+    "afterOpen",
+    "onClose",
+    "afterClose",
+    "closed",
+    "menuHeader",
+    "menuHeaderLink",
+    "ariaLabel",
+    "attributeOptions",
+    "propTypes",
+    "PropTypes",
+    "bool",
+    "string",
+    "isRequired",
+    "func",
+    "number",
+    "oneOfType",
+    "arrayOf",
+    "shape",
+    "node",
+    "array",
+    "defaultProps"
+  ],
+  "mappings": "oSAAA,8BACA;;;;;;gKAYA;AAEA;AAGA;AACA;AACA;AAXA,4B,2CACA,qC,mDAEA,2C,iDAEA,4C,mDAOA,6B,kFAGA;;;;;GAMA,GAAMA,eAAgB,QAAhBA,cAAgB,MAA8B,IAA3BC,MAA2B,MAA3BA,KAA2B,CAApBC,aAAoB,MAApBA,aAAoB,CACnD;AACA,GAAMC,cAAe,QAAfA,aAAe,CAAEF,KAAF,CAAa,CACjC,GAAMG,MAAOH,MAAMI,GAAN,CAAW,cAAQ,CAC/B,GAAMC,MAAO,CACZA,KAAMC,KAAKC,MAAL,CAAc,EAAd,CAAmBD,KAAKD,IADlB,CAEZG,KAAMF,KAAKC,MAAL,CAAc,0CAAQD,KAAKE,IAAb,CAAd,CAA2CF,KAAKE,IAF1C,CAGZC,GAAI,CACHC,UAAWJ,KAAKC,MAAL,CAAc,QAAd,CAAyB,EADjC,CAHQ,CAAb,CAQA;AACA,GAAID,KAAKK,QAAT,CAAmB,CAClBN,KAAKM,QAAL,CAAgB,8BAAC,kBAAD,EAAY,MAAQT,aAAcI,KAAKK,QAAnB,CAApB,CAAoD,cAAgBL,KAAKL,aAAzE,EAChB,CAED;AACA,MAAOI,KACP,CAhBY,CAAb,CAkBA,MAAOF,KACP,CApBD,CAsBA;AACA,MACC,+BAAC,kBAAD,EAAY,MAAQD,aAAcF,KAAd,CAApB,CAA4C,cAAgBC,aAA5D,EAED,CA5BD,CA+BA;;;;;;;;;;;;;;;;;;;GAoBA,GAAMW,WAAY,QAAZA,UAAY,WACjBC,KADiB,OACjBA,IADiB,CAEjBC,GAFiB,OAEjBA,GAFiB,CAGjBC,eAHiB,OAGjBA,eAHiB,CAIjBC,KAJiB,OAIjBA,KAJiB,CAKjBC,MALiB,OAKjBA,MALiB,CAMjBC,SANiB,OAMjBA,SANiB,CAOjBC,OAPiB,OAOjBA,OAPiB,CAQjBC,UARiB,OAQjBA,UARiB,CASjBC,MATiB,OASjBA,MATiB,CAUjBC,UAViB,OAUjBA,UAViB,CAWjBC,cAXiB,OAWjBA,cAXiB,CAYjBtB,aAZiB,OAYjBA,aAZiB,CAajBD,KAbiB,OAajBA,KAbiB,uBAcjBU,SAdiB,CAcjBA,SAdiB,6BAcL,EAdK,iBAejBc,SAfiB,OAejBA,SAfiB,CAgBjBC,gBAhBiB,OAgBjBA,gBAhBiB,OAkBhB,wCAAO,aAAaD,SAApB,EACC,8BAAC,mBAAD,WACC,OAAQH,MADT,CAEC,MAAOL,KAFR,CAGC,OAAQC,MAHT,CAIC,UAAWC,SAJZ,CAKC,WAAYE,UALb,CAMC,QAASD,OANV,CAOC,UAAW,iCACPN,KAAO,uCAAP,CAAiD,EAD1C,QAEPC,IAAM,qCAAN,CAA8C,EAFvC,OAGPJ,SAHO,CAPZ,EAYKe,gBAZL,EAaC,OAAQV,eAbT,GAeC,qCAAK,UAAU,sBAAf,EACC,oCAAI,UAAU,mBAAd,EACC,mCAAG,KAAMQ,cAAT,EAA0BD,UAA1B,CADD,CADD,CAIC,8BAAC,aAAD,EAAe,MAAOtB,KAAtB,CAA6B,cAAeC,aAA5C,EAJD,CAfD,CADD,CAlBgB,CAAlB,CA4CAW,UAAUc,SAAV,CAAsB,CACrBb,KAAMc,oBAAUC,IADK,CAErBd,IAAKa,oBAAUC,IAFM,CAGrBb,gBAAiBY,oBAAUE,MAAV,CAAiBC,UAHb,CAIrBb,OAAQU,oBAAUI,IAJG,CAKrBb,UAAWS,oBAAUI,IALA,CAMrBZ,QAASQ,oBAAUI,IANE,CAOrBX,WAAYO,oBAAUI,IAPD,CAQrBT,WAAYK,oBAAUE,MARD,CASrBN,eAAgBI,oBAAUE,MATL,CAUrBR,OAAQM,oBAAUC,IAVG,CAWrBZ,MAAOW,oBAAUK,MAXI,CAYrB/B,cAAe0B,oBAAUM,SAAV,CAAoB,CAAEN,oBAAUE,MAAZ,CAAoBF,oBAAUI,IAA9B,CAApB,CAZM,CAarB/B,MAAO2B,oBAAUO,OAAV,CACNP,oBAAUQ,KAAV,CAAgB,CACf9B,KAAMsB,oBAAUE,MADD,CAEfrB,KAAMmB,oBAAUS,IAAV,CAAeN,UAFN,CAGfnB,SAAUgB,oBAAUU,KAHL,CAAhB,CADM,EAMLP,UAnBmB,CAoBrBpB,UAAWiB,oBAAUE,MApBA,CAqBrBL,UAAWG,oBAAUE,MArBA,CAAtB,CAwBAjB,UAAU0B,YAAV,CAAyB,CACxBrC,cAAe,GADS,CAExBoB,OAAQ,IAFgB,CAGxBG,UAAW,iBAHa,CAAzB,C,gBAMeZ,S",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/side-nav v5.0.5 */\n/***************************************************************************************************************************************************************\n *\n * sideNav function\n *\n * A vertical list of links for site navigation typically placed next to the body content.\n *\n **************************************************************************************************************************************************************/\n\nimport React from 'react';\nimport PropTypes from 'prop-types';\n\nimport AUlinkList from '@gov.au/link-list';\n// ES6 dependency: import AUlinkList from './link-list';\nimport AUaccordion from '@gov.au/accordion';\n// ES6 dependency: import AUaccordion from './accordion';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n\n/**\n * A menu inside the AUsideNav\n *\n * @param  {array}  items            - The links in an array containing text, location and active status\n * @param  {string} linkComponent    - The component used for the link\n */\nconst AUsideNavMenu = ({ items, linkComponent }) => {\n\t// Recursively re generate the menu with children as necessary\n\tconst GenerateMenu = ( items ) => {\n\t\tconst menu = items.map( item => {\n\t\t\tconst link = {\n\t\t\t\tlink: item.active ? '' : item.link,\n\t\t\t\ttext: item.active ? <span>{ item.text }</span> : item.text,\n\t\t\t\tli: {\n\t\t\t\t\tclassName: item.active ? 'active' : '',\n\t\t\t\t},\n\t\t\t};\n\n\t\t\t// If it has children create a menu again\n\t\t\tif( item.children ){\n\t\t\t\tlink.children = <AUlinkList items={ GenerateMenu( item.children ) } linkComponent={ item.linkComponent } />\n\t\t\t}\n\n\t\t\t// return the link, maybe with children\n\t\t\treturn link;\n\t\t});\n\n\t\treturn menu;\n\t}\n\n\t// Create the menu with children\n\treturn (\n\t\t<AUlinkList items={ GenerateMenu( items ) } linkComponent={ linkComponent } />\n\t);\n}\n\n\n/**\n * DEFAULT\n * The side navigation component\n *\n * @param  {boolean} dark             - Add the dark variation class, optional\n * @param  {boolean} alt              - Add the alternate variation class, optional\n * @param  {string}  accordionHeader  - The accordion header\n * @param  {boolean} closed           - The accordions default state\n * @param  {func}    speed            - Speed of the animation in ms, optional\n * @param  {func}    onOpen           - Executed when the accordion opens, optional\n * @param  {func}    afterOpen        - Executed after the accordion opened, optional\n * @param  {func}    onClose          - Executed when the accordion closes, optional\n * @param  {func}    afterClose       - Executed after the accordion opened, optional\n * @param  {string}  menuHeader       - The header text for the menu\n * @param  {string}  menuHeaderLink   - The link for the header in the menu\n * @param  {array}   items            - The menu items and their children\n * @param  {string}  className        - An additional class, optional\n * @param  {string}  ariaLabel        - The aria-label attribute, optional\n * @param  {object}  attributeOptions - Any other attribute options\n */\nconst AUsideNav = ({\n\tdark,\n\talt,\n\taccordionHeader,\n\tspeed,\n\tonOpen,\n\tafterOpen,\n\tonClose,\n\tafterClose,\n\tclosed,\n\tmenuHeader,\n\tmenuHeaderLink,\n\tlinkComponent,\n\titems,\n\tclassName = '',\n\tariaLabel,\n\tattributeOptions,\n}) => (\n\t\t<aside aria-label={ ariaLabel }>\n\t\t\t<AUaccordion\n\t\t\t\tclosed={closed}\n\t\t\t\tspeed={speed}\n\t\t\t\tonOpen={onOpen}\n\t\t\t\tafterOpen={afterOpen}\n\t\t\t\tafterClose={afterClose}\n\t\t\t\tonClose={onClose}\n\t\t\t\tclassName={'au-side-nav au-accordion ' +\n\t\t\t\t\t`${dark ? 'au-side-nav--dark au-accordion--dark ' : ''}` +\n\t\t\t\t\t`${alt ? 'au-side-nav--alt au-accordion--alt ' : ''}` +\n\t\t\t\t\t`${className}`\n\t\t\t\t}\n\t\t\t\t{...attributeOptions}\n\t\t\t\theader={accordionHeader}\n\t\t\t>\n\t\t\t\t<div className=\"au-side-nav__content\">\n\t\t\t\t\t<h2 className=\"au-sidenav__title\">\n\t\t\t\t\t\t<a href={menuHeaderLink}>{menuHeader}</a>\n\t\t\t\t\t</h2>\n\t\t\t\t\t<AUsideNavMenu items={items} linkComponent={linkComponent} />\n\t\t\t\t</div>\n\t\t\t</AUaccordion>\n\t\t</aside>\n\t);\n\nAUsideNav.propTypes = {\n\tdark: PropTypes.bool,\n\talt: PropTypes.bool,\n\taccordionHeader: PropTypes.string.isRequired,\n\tonOpen: PropTypes.func,\n\tafterOpen: PropTypes.func,\n\tonClose: PropTypes.func,\n\tafterClose: PropTypes.func,\n\tmenuHeader: PropTypes.string,\n\tmenuHeaderLink: PropTypes.string,\n\tclosed: PropTypes.bool,\n\tspeed: PropTypes.number,\n\tlinkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),\n\titems: PropTypes.arrayOf(\n\t\tPropTypes.shape({\n\t\t\tlink: PropTypes.string,\n\t\t\ttext: PropTypes.node.isRequired,\n\t\t\tchildren: PropTypes.array,\n\t\t})\n\t).isRequired,\n\tclassName: PropTypes.string,\n\tariaLabel: PropTypes.string,\n};\n\nAUsideNav.defaultProps = {\n\tlinkComponent: 'a',\n\tclosed: true,\n\tariaLabel: 'side navigation',\n};\n\nexport default AUsideNav;\n"
+  ]
+}

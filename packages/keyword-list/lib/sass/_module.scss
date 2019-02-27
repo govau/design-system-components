@@ -1,0 +1,64 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// keyword-list module
+// A list style for emphasising parts of a list item, useful for repeating phrases across that list’s items.
+//
+// Content:
+// - Strong links list style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+//  Strong links style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.au-keyword-list {
+	@include AU-fontgrid( lg );
+
+	&:before, //clear floats without obstructing the outline on focus
+	&:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	.au-body & > li {
+		@include AU-space( margin-top, 1unit );
+		float: left;
+		clear: both;
+		list-style: none;
+		margin-left: 0;
+	}
+
+	& > li {
+		font-weight: bold;
+
+		// Display the link as block as focus doesn't show
+		& > a {
+			display: block;
+		}
+	}
+}
+
+.au-keyword-list__small {
+	@include AU-fontgrid( sm, nospace );
+	display: block;
+	font-weight: normal; // Reset parent weight
+
+	.au-body & {
+		color: $AU-color-foreground-text;
+	}
+
+	.au-keyword-list--dark & {
+		color: $AU-colordark-foreground-text;
+	}
+}

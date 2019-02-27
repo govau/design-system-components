@@ -1,0 +1,62 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// responsive-media module
+// Caters for video/slideshow dimensions and aspect ratios across various viewports/widths
+//
+// Content:
+// - Responsive video embeds
+// - Responsive image
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Responsive video embeds
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-responsive-media-vid {
+	position: relative;
+	display: block;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+
+	> .au-responsive-media-vid__item {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		border: 0;
+	}
+
+	&.au-responsive-media-vid--16x9 {
+		padding-bottom: percentage( 9 / 16 ); // 16:9
+	}
+
+	&.au-responsive-media-vid--4x3 {
+		padding-bottom: percentage( 3 / 4 ); // 4:3
+	}
+
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+}
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Responsive image
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-responsive-media-img,
+.au-body img,
+.au-responsive-media img {
+	max-width: 100%;
+	height: auto;
+}
+
+* + .au-responsive-media-img,
+.au-body * + img,
+.au-responsive-media * + img {
+	@include AU-space( margin-top, 1unit );
+}
