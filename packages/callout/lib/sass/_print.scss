@@ -1,0 +1,17 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// callout module
+// Use callout to notify and alert users of important snippets of information.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-callout {
+		@include AU-space( border-left-width, 1unit !important );
+		border: 1px solid #000 !important;
+		color: #000 !important;
+		background-color: transparent !important;
+	}
+}

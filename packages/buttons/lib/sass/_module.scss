@@ -1,0 +1,196 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// buttons module
+// Buttons signal action. Use them to move the user through the service.
+//
+// Content:
+// - primary
+// - secondary
+// - tertiary
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// buttons
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-btn,
+a.au-btn {
+	// Primary as default
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 0.5unit 1.5unit );
+	display: inline-block;
+	appearance: none;
+	font-family: $AU-font;
+	color: $AU-color-background;
+	text-decoration: none;
+	border-radius: $AU-border-radius;
+	background-color: $AU-color-foreground-action;
+	border: 3px solid $AU-color-foreground-action;
+	cursor: pointer;
+	vertical-align: middle;
+	transition: background 0.1s ease, border 0.1s ease, color 0.1s ease;
+
+	.au-body & {
+		color: $AU-color-background;
+		text-decoration: none;
+	}
+
+	&.au-btn--block + .au-btn.au-btn--block,
+	&.au-btn--block + a.au-btn.au-btn--block {
+		@include AU-space( margin-top, 0.5unit );
+	}
+
+	// focus
+	@include AU-focus();
+
+	&:focus {
+		border-radius: 0;
+	}
+
+	// disabled
+	&[disabled] { // IE8 doesn’t allow proper selectors
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
+
+	// hover
+	&:hover:not(:disabled) {
+		background-color: $AU-color-foreground-text;
+		border-color: $AU-color-foreground-text;
+		text-decoration: underline;
+		color: $AU-color-background;
+	}
+
+	.ie8 &:hover {
+		background-color: $AU-color-foreground-text;
+		border-color: $AU-color-foreground-text;
+		color: $AU-color-background;
+		text-decoration: underline;
+	}
+
+	// dark
+	&.au-btn--dark {
+		color: $AU-colordark-background;
+		background-color: $AU-colordark-foreground-action;
+		border-color: $AU-colordark-foreground-action;
+
+		.au-body & {
+			color: $AU-colordark-background;
+		}
+
+		&:hover:not(:disabled) {
+			color: $AU-colordark-background;
+			border-color: $AU-colordark-foreground-text;
+			background-color:  $AU-colordark-foreground-text;
+		}
+
+		.ie8 &:hover {
+			color: $AU-colordark-background;
+			border-color: $AU-colordark-foreground-text;
+			background-color:  $AU-colordark-foreground-text;
+		}
+
+		@include AU-focus( 'dark' );
+	}
+
+
+	/**
+	* SECONDARY
+	*/
+	&.au-btn--secondary {
+		color: $AU-color-foreground-action;
+		background-color: transparent;
+		border-color: $AU-color-foreground-action;
+
+		.au-body & {
+			color: $AU-color-foreground-action;
+		}
+
+		.ie8 .au-body &:hover {
+			color: $AU-color-background;
+		}
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			border-color: $AU-color-foreground-text;
+			color: $AU-color-foreground-text;
+		}
+
+		&.au-btn--dark {
+			border-color: $AU-colordark-foreground-action;
+			color: $AU-colordark-foreground-action;
+
+			&:hover:not(:disabled) {
+				border-color: $AU-colordark-foreground-text;
+				color: $AU-colordark-foreground-text;
+			}
+
+			.ie8 .au-body &:hover {
+				color: $AU-colordark-background;
+			}
+		}
+	}
+
+	/**
+	* TERTIARY
+	*/
+	&.au-btn--tertiary {
+		color: $AU-color-foreground-action;
+		background-color: transparent;
+		border-color: transparent;
+		text-decoration: underline;
+
+		&:hover:not(:disabled) {
+			background-color: transparent;
+			color: $AU-color-foreground-text;
+			border-color: transparent;
+			text-decoration: none;
+		}
+
+		&.au-btn--dark {
+			color: $AU-colordark-foreground-action;
+
+			&:hover:not(:disabled) {
+				color: $AU-colordark-foreground-text;
+			}
+		}
+	}
+
+	&.au-btn--pride {
+		background: linear-gradient(
+			to bottom,
+			rgba(255, 62, 24, 0.5) 16.66666666666667%,
+			rgba(252, 154, 0, 0.5) 16.66666666666667%,
+			rgba(252, 154, 0, 0.52) 33.33333333333333%,
+			rgba(255, 216, 0, 0.5) 33.33333333333333%,
+			rgba(255, 216, 0, 0.5) 33.33333333333333%,
+			rgba(255, 216, 0, 0.5) 50.00000000000001%,
+			rgba(57, 234, 124, 0.5) 50.00000000000001%,
+			rgba(57, 234, 124, 0.5) 66.66666666666668%,
+			rgba(11, 178, 255, 0.5) 66.66666666666668%,
+			rgba(11, 178, 255, 0.5) 83.33333333333335%,
+			rgba(152, 90, 255, 0.5) 83.33333333333335%
+		);
+		color: $AU-color-foreground-text;
+	}
+
+	/**
+ 	 * BLOCK
+ 	 */
+	&.au-btn--block {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: center;
+	}
+}

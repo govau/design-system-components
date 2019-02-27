@@ -1,0 +1,126 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// select module
+// The form select element for multiple options
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// select style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-select {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding, 0.5unit 2.25unit 0.5unit 0.75unit );
+
+	// 2.875unit = 46px = 40px height + ( 3px border * 2 );
+	// We include the border because we use box-sizing: border-box;
+	// This guarantees that select will be the same height as buttons and text inputs in all browsers
+	@include AU-space( height, 2.875unit );
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	appearance: none;
+	border: 3px solid $AU-color-foreground-border;
+	text-indent: 0.01px;
+	text-overflow: '';
+	background-color: $AU-color-background;
+	box-sizing: border-box;
+	border-radius: $AU-border-radius;
+	cursor: pointer;
+	background-image: AU-svguri('<svg fill="#{ $AU-color-foreground-action }" width="1.5em" height="auto" viewBox="0 0 28 12" xmlns="http://www.w3.org/2000/svg">' +
+			'<path d="M1.9 1.1L8 7.2l6.1-6.1L16 2.9l-8 8-8-8 1.9-1.8z"/>' +
+			'<path fill="none" d="M2-5.8h24v24H2v-24z"/>' +
+		'</svg>');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: 1.5em auto;
+	vertical-align: middle;
+
+	@include AU-focus();
+
+	&:focus {
+		border-radius: 0;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		opacity: 0.3;
+	}
+
+	// state styling
+	&.au-select--dark:invalid,
+	&:invalid {
+		background-color: mix( $AU-color-error, $AU-color-background, 5% );
+		border-color: $AU-color-error;
+	}
+
+	&.au-select--dark.au-select--invalid,
+	&.au-select--invalid {
+		background-color: mix( $AU-color-error, $AU-color-background, 5% );
+		border-color: $AU-color-error;
+	}
+
+	&.au-select--dark.au-select--valid,
+	&.au-select--valid {
+		background-color: mix( $AU-color-success, $AU-color-background, 5% );
+		border-color: $AU-color-success;
+	}
+
+	.ie8 &,
+	.ie9 & {
+		&:after {
+			display: none;
+		}
+	}
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	.ie8 &,
+	.ie9 & {
+		@include AU-space( padding-right, .25unit );
+	}
+
+	&.au-select--dark {
+		border-color: $AU-colordark-foreground-text;
+		@include AU-focus( 'dark' );
+	}
+
+	&.au-select--block {
+		width: 100%;
+	}
+}
+
+
+//firefox hacks...
+//=================
+// https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff
+.au-select:-moz-focusring {
+	color: transparent;
+	text-shadow: 0 0 0 #000;
+}
+
+html>/**/body .au-select, x:-moz-any-link, x:default {
+	@include AU-space( padding-right, 1unit );
+}
+
+@supports (-moz-osx-font-smoothing:auto) {
+	html body .au-select {
+		@include AU-space( padding-right, 2.25unit );
+	}
+}

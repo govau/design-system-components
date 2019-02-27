@@ -1,0 +1,67 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// inpage-nav module
+// Use inpage-nav links to help users scan and jump to content of a page.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// inpage-nav style
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-inpage-nav-links {
+	@include AU-fontgrid( sm );
+	@include AU-space( padding-left, 1.5unit );
+	@include AU-space( margin-bottom, 3unit );
+
+	border-left: 4px solid $AU-color-foreground-action;
+
+	* + & {
+		@include AU-space( margin-top, 3unit );
+	}
+
+	.au-body & > ul,
+	.au-body & > ol {
+		@include AU-space( margin-top, 1unit );
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			margin: 0;
+		}
+
+		* + li {
+			@include AU-space( margin-top, 0.5unit );
+			margin-left: 0;
+		}
+	}
+
+	&.au-inpage-nav-links--dark {
+		border-color: $AU-colordark-foreground-action;
+	}
+}
+
+.au-inpage-nav-links__heading,
+.au-body .au-inpage-nav-links__heading {
+	font-weight: bold;
+	font-size: 1em; //inherit from parent
+}
+
+.au-inpage-nav-section {
+	position: relative;
+	@include AU-space( padding-right, 8unit );
+}
+
+.au-inpage-nav-section-link {
+	@include AU-fontgrid( xs, nospace );
+	@include AU-space( top, 0.25unit );
+	position: absolute;
+	right: 0;
+	font-weight: normal;
+}

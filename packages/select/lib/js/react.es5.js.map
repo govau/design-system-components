@@ -1,0 +1,34 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "AUselectItem",
+    "text",
+    "value",
+    "attributeOptions",
+    "propTypes",
+    "PropTypes",
+    "string",
+    "isRequired",
+    "className",
+    "AUselect",
+    "dark",
+    "options",
+    "block",
+    "status",
+    "map",
+    "option",
+    "i",
+    "bool",
+    "arrayOf",
+    "shape",
+    "oneOf"
+  ],
+  "mappings": "mUASA,4B,2CACA,qC,mDAMA,6B,qRAhBA,4BACA;;;;;;gKAYA;AACA;AACA;AAIA;;;;;;GAOO,GAAMA,cAAe,QAAfA,aAAe,UAAGC,KAAH,MAAGA,IAAH,CAASC,KAAT,MAASA,KAAT,CAAmBC,gBAAnB,uDAC3B,kDAAQ,MAAQD,KAAhB,EAA6BC,gBAA7B,EAAkDF,IAAlD,CAD2B,CAArB,C,kCAIPD,aAAaI,SAAb,CAAyB,CACxBH,KAAMI,oBAAUC,MAAV,CAAiBC,UADC,CAExBL,MAAOG,oBAAUC,MAAV,CAAiBC,UAFA,CAGxBC,UAAWH,oBAAUC,MAHG,CAAzB,CAOA;;;;;;;;;;GAWA,GAAMG,UAAW,QAAXA,SAAW,OAA2E,IAAxEC,KAAwE,OAAxEA,IAAwE,CAAlEC,OAAkE,OAAlEA,OAAkE,CAAzDC,KAAyD,OAAzDA,KAAyD,CAAlDC,MAAkD,OAAlDA,MAAkD,uBAA1CL,SAA0C,CAA1CA,SAA0C,6BAA9B,EAA8B,iBAAvBL,gBAAuB,iFAE3F,MACC,kDAAQ,UACP,aAAcK,SAAd,MACII,4BADJ,QAEIF,KAAO,kBAAP,CAA4B,EAFhC,QAGIG,SAAW,OAAX,CAAqB,mBAArB,CAA2C,EAH/C,QAIIA,SAAW,SAAX,CAAuB,qBAAvB,CAA+C,EAJnD,EADD,EAMOV,gBANP,EAQEQ,QAAQG,GAAR,CACC,SAAEC,MAAF,CAAUC,CAAV,QAAiB,+BAAC,YAAD,WAAc,IAAMA,CAApB,EAA6BD,MAA7B,EAAjB,CADD,CARF,CAcD,CAjBD,CAmBAN,SAASL,SAAT,CAAqB,CACpBM,KAAML,oBAAUY,IADI,CAEpBN,QAASN,oBAAUa,OAAV,CACRb,oBAAUc,KAAV,CAAgB,CACfjB,MAAOG,oBAAUC,MAAV,CAAiBC,UADT,CAEfN,KAAMI,oBAAUC,MAAV,CAAiBC,UAFR,CAAhB,CADQ,EAKPA,UAPkB,CAQpBK,MAAOP,oBAAUY,IARG,CASpBJ,OAAQR,oBAAUe,KAAV,CAAgB,CAAE,OAAF,CAAW,SAAX,CAAhB,CATY,CAUpBZ,UAAWH,oBAAUC,MAVD,CAArB,C,gBAaeG,Q",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/select v2.0.9 */\n/***************************************************************************************************************************************************************\n *\n * select function\n *\n * The form select element for multiple options\n *\n **************************************************************************************************************************************************************/\n\nimport React, { Fragment } from 'react';\nimport PropTypes from 'prop-types';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n\n/**\n * An item inside the Select component\n *\n * @param  {string}   text             - The text of this option\n * @param  {string}   value            - The value of this option\n * @param  {object}   attributeOptions - Any other attribute options\n */\nexport const AUselectItem = ({ text, value, ...attributeOptions }) => (\n\t<option value={ value } { ...attributeOptions }>{ text }</option>\n);\n\nAUselectItem.propTypes = {\n\ttext: PropTypes.string.isRequired,\n\tvalue: PropTypes.string.isRequired,\n\tclassName: PropTypes.string,\n};\n\n\n/**\n * DEFAULT\n * The select component\n *\n * @param  {boolean} dark             - Add the dark variation class, optional\n * @param  {array}   options          - The options for the select, format: { value: '', text: '' }\n * @param  {string}  block            - The block option\n * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional\n * @param  {string}  className        - An additional class, optional\n * @param  {object}  attributeOptions - Any other attribute options\n */\nconst AUselect = ({ dark, options, block, status, className = '', ...attributeOptions }) => {\n\n\treturn (\n\t\t<select className={\n\t\t\t`au-select ${ className }` +\n\t\t\t`${ block ? ` au-select--block` : `` }` +\n\t\t\t`${ dark ? ' au-select--dark' : '' }` +\n\t\t\t`${ status === 'valid' ? ' au-select--valid' : '' }` +\n\t\t\t`${ status === 'invalid' ? ' au-select--invalid' : '' }`\n\t\t} { ...attributeOptions }>\n\t\t\t{\n\t\t\t\toptions.map(\n\t\t\t\t\t( option, i ) => <AUselectItem key={ i } { ...option } />\n\t\t\t\t)\n\t\t\t}\n\t\t</select>\n\t);\n};\n\nAUselect.propTypes = {\n\tdark: PropTypes.bool,\n\toptions: PropTypes.arrayOf(\n\t\tPropTypes.shape({\n\t\t\tvalue: PropTypes.string.isRequired,\n\t\t\ttext: PropTypes.string.isRequired,\n\t\t})\n\t).isRequired,\n\tblock: PropTypes.bool,\n\tstatus: PropTypes.oneOf([ 'valid', 'invalid' ]),\n\tclassName: PropTypes.string,\n};\n\nexport default AUselect;\n"
+  ]
+}

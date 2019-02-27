@@ -1,0 +1,26 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Text-inputs module
+// Single and multi-line text inputs.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-text-input {
+		border-color: #000 !important;
+
+		&[disabled] {
+			color: $AU-color-foreground-muted !important;
+			background-color: #ccc !important;
+			border: 2px solid #ccc !important;
+		}
+
+		&:disabled {
+			color: $AU-color-foreground-muted !important;
+			background-color: #ccc !important;
+			border: 2px solid #ccc !important;
+		}
+	}
+}

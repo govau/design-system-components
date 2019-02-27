@@ -1,0 +1,91 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// direction-links module
+// Use direction links to link up and down within the DOM or back to a parent page.
+//
+// Content:
+// - Direction link base style and the up|down|left|right variations
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Direction links default to pointing right
+//
+// Everyone needs Konami code style links, right? (:
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-direction-link {
+	@include AU-fontgrid( sm );
+	display: inline-block;
+	font-family: $AU-font;
+
+	// Styles to reset button
+	color: $AU-color-foreground-action;
+	appearance: none;
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-skip: ink;
+
+	&:hover {
+		text-decoration: none;
+		color: $AU-color-foreground-text;
+	}
+
+	@include AU-focus();
+
+	&.au-direction-link--dark {
+		color: $AU-colordark-foreground-action;
+
+		&:hover {
+			color: $AU-colordark-foreground-text;
+		}
+
+		@include AU-focus( 'dark' );
+	}
+}
+
+.au-direction-link:after {
+	@include AU-space( width, 1unit );
+	@include AU-space( height, 1unit );
+	@include AU-space( margin, 0 0 0 0.25unit );
+	content: '→';
+	display: inline-block;
+	width: auto;
+	height: auto;
+}
+
+/**
+ * LEFT
+ */
+.au-direction-link--left {
+	&:after {
+		display: none;
+	}
+
+	&:before {
+		content: '←';
+		display: inline-block;
+		@include AU-space( width, 1unit );
+		@include AU-space( height, 1unit );
+		@include AU-space( margin, 0 0.25unit 0 0 );
+	}
+}
+
+/**
+ * UP
+ */
+.au-direction-link--up:after {
+	content: '↑';
+}
+
+/**
+ * DOWN
+ */
+.au-direction-link--down:after {
+	content: '↓';
+}

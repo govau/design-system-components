@@ -1,0 +1,15 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Breadcrumbs module
+// Breadcrumbs help users understand where they are in the service and how they got there.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-breadcrumbs > .au-link-list > li:after {
+		content: ">" !important;
+		background-image: none !important;
+	}
+}

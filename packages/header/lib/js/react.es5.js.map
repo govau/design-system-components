@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "AUheaderBrand",
+    "title",
+    "level",
+    "subline",
+    "brandImage",
+    "brandImageAlt",
+    "link",
+    "children",
+    "className",
+    "linkComponent",
+    "attributeOptions",
+    "HeadingTag",
+    "LinkComponent",
+    "href",
+    "to",
+    "brand",
+    "propTypes",
+    "PropTypes",
+    "node",
+    "oneOf",
+    "string",
+    "oneOfType",
+    "func",
+    "defaultProps",
+    "AUheader",
+    "hero",
+    "dark",
+    "alt",
+    "bool"
+  ],
+  "mappings": "oUASA,4B,2CACA,qC,mDAMA,6B,qRAhBA,4BACA;;;;;;gKAYA;AACA;AACA;AAIA;;;;;;;;;;;;GAaO,GAAMA,eAAgB,QAAhBA,cAAgB,MAWvB,IAVLC,MAUK,MAVLA,KAUK,CATLC,KASK,MATLA,KASK,CARLC,OAQK,MARLA,OAQK,CAPLC,UAOK,MAPLA,UAOK,CANLC,aAMK,MANLA,aAMK,CALLC,IAKK,MALLA,IAKK,CAJLC,QAIK,MAJLA,QAIK,qBAHLC,SAGK,CAHLA,SAGK,4BAHO,EAGP,gBAFLC,aAEK,MAFLA,aAEK,CADFC,gBACE,uIACL,GAAMC,gBAAkBT,KAAxB,CACA,GAAMU,eAAgBN,KACnBG,aADmB,CAEnB,KAFH,CAIA,GAAIH,IAAJ,CAAW,CACV;AACA,GAAIM,gBAAkB,GAAtB,CAA4B,CAC3BF,iBAAiBG,IAAjB,CAAwBP,IACxB,CACD;AAHA,IAIK,IAAI,MAAOM,cAAP,GAAyB,UAA7B,CAA0C,CAC9CF,iBAAiBI,EAAjB,CAAsBR,IACtB,CACD,CAED,GAAIS,OAAQX,WACT,qCAAK,UAAU,wBAAf,CAAwC,IAAMC,aAA9C,CAA8D,IAAMD,UAApE,EADS,CAET,IAFH,CAIA,MACC,+BAAC,aAAD,WAAe,8BAAiCI,SAAhD,EAAoEE,gBAApE,EACGK,KADH,CAGEd,OAASE,OAAT,CAEE,qCAAK,UAAU,iBAAf,EAEEF,MACG,8BAAC,UAAD,EAAY,UAAU,oBAAtB,CAA2C,SAAWA,KAAtD,EADH,CAEG,IAJL,CAOEE,QACG,qCAAK,UAAU,oBAAf,CAAoC,SAAWA,OAA/C,EADH,CAEG,IATL,CAWGI,QAXH,CAFF,CAeG,EAlBL,CAuBD,CAxDM,C,oCA0DPP,cAAcgB,SAAd,CAA0B,CACzBf,MAAOgB,oBAAUC,IADQ,CAEzBhB,MAAOe,oBAAUE,KAAV,CAAgB,CAAE,GAAF,CAAO,GAAP,CAAY,GAAZ,CAAiB,GAAjB,CAAsB,GAAtB,CAA2B,GAA3B,CAAhB,CAFkB,CAGzBhB,QAASc,oBAAUC,IAHM,CAIzBZ,KAAMW,oBAAUG,MAJS,CAKzBhB,WAAYa,oBAAUG,MALG,CAMzBf,cAAeY,oBAAUG,MANA,CAOzBb,SAAUU,oBAAUC,IAPK,CAQzBV,UAAWS,oBAAUG,MARI,CASzBX,cAAeQ,oBAAUI,SAAV,CAAoB,CAAEJ,oBAAUG,MAAZ,CAAoBH,oBAAUK,IAA9B,CAApB,CATU,CAA1B,CAYAtB,cAAcuB,YAAd,CAA6B,CAC5BrB,MAAO,GADqB,CAE5BG,cAAe,6BAFa,CAG5BI,cAAe,GAHa,CAA7B,CAOA;;;;;;;;;;GAWA,GAAMe,UAAW,QAAXA,SAAW,WAAGC,KAAH,OAAGA,IAAH,CAASC,IAAT,OAASA,IAAT,CAAeC,GAAf,OAAeA,GAAf,CAAoBpB,QAApB,OAAoBA,QAApB,uBAA8BC,SAA9B,CAA8BA,SAA9B,6BAA0C,EAA1C,iBAAiDE,gBAAjD,oFAChB,+CACC,uBAAyBF,SAAzB,EAAuCiB,KAAO,kBAAP,CAA4B,EAAnE,GAA0EC,KAAO,kBAAP,CAA4B,EAAtG,GAA6GC,IAAM,iBAAN,CAA0B,EAAvI,CADD,CAEC,KAAK,QAFN,EAEoBjB,gBAFpB,EAGGH,QAHH,CADgB,CAAjB,CAQAiB,SAASR,SAAT,CAAqB,CACpBS,KAAMR,oBAAUW,IADI,CAEpBF,KAAMT,oBAAUW,IAFI,CAGpBD,IAAKV,oBAAUW,IAHK,CAIpBrB,SAAUU,oBAAUC,IAJA,CAKpBV,UAAWS,oBAAUG,MALD,CAArB,C,gBAQeI,Q",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/header v4.1.9 */\n/***************************************************************************************************************************************************************\n *\n * header function\n *\n * Headers provide a consistent start to pages.\n *\n **************************************************************************************************************************************************************/\n\nimport React, { Fragment } from 'react';\nimport PropTypes from 'prop-types';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n\n/**\n * The header brand component\n *\n * @param  {string}   title            - The title of the header\n * @param  {string}   level            - The tag level (<h1/> <h2/> etc), default: '1'\n * @param  {string}   subline          - An optional subline, optional\n * @param  {string}   brandImage       - An optional brand image, optional\n * @param  {string}   brandImageAlt    - Brand image alt tag\n * @param  {string}   link             - An optional link for the header brand, optional\n * @param  {node}     children         - The inside of this section\n * @param  {string}   className        - An additional class, optional\n * @param  {object}   attributeOptions - Any other attribute options\n */\nexport const AUheaderBrand = ({\n\ttitle,\n\tlevel,\n\tsubline,\n\tbrandImage,\n\tbrandImageAlt,\n\tlink,\n\tchildren,\n\tclassName = '',\n\tlinkComponent,\n\t...attributeOptions\n}) => {\n\tconst HeadingTag = `h${ level }`;\n\tconst LinkComponent = link\n\t\t? linkComponent\n\t\t: 'div';\n\n\tif( link ) {\n\t\t// If we are using a normal link\n\t\tif( LinkComponent === 'a' ) {\n\t\t\tattributeOptions.href = link;\n\t\t}\n\t\t// If we are using a link component\n\t\telse if( typeof LinkComponent === 'function' ) {\n\t\t\tattributeOptions.to = link;\n\t\t}\n\t}\n\n\tlet brand = brandImage\n\t\t? <img className=\"au-header__brand-image\" alt={ brandImageAlt } src={ brandImage } />\n\t\t: null;\n\n\treturn (\n\t\t<LinkComponent className={ `au-header__brand ${ className }` } { ...attributeOptions }>\n\t\t\t{ brand }\n\t\t\t{\n\t\t\t\ttitle || subline\n\t\t\t\t\t?\n\t\t\t\t\t\t<div className=\"au-header__text\">\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\ttitle\n\t\t\t\t\t\t\t\t\t? <HeadingTag className=\"au-header__heading\" children={ title } />\n\t\t\t\t\t\t\t\t\t: null\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tsubline\n\t\t\t\t\t\t\t\t\t? <div className=\"au-header__subline\" children={ subline } />\n\t\t\t\t\t\t\t\t\t: null\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t{ children }\n\t\t\t\t\t\t</div>\n\t\t\t\t\t: ''\n\t\t\t}\n\n\t\t</LinkComponent>\n\t);\n}\n\nAUheaderBrand.propTypes = {\n\ttitle: PropTypes.node,\n\tlevel: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]),\n\tsubline: PropTypes.node,\n\tlink: PropTypes.string,\n\tbrandImage: PropTypes.string,\n\tbrandImageAlt: PropTypes.string,\n\tchildren: PropTypes.node,\n\tclassName: PropTypes.string,\n\tlinkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),\n}\n\nAUheaderBrand.defaultProps = {\n\tlevel: '1',\n\tbrandImageAlt: 'Australian Government Crest',\n\tlinkComponent: 'a',\n};\n\n\n/**\n * DEFAULT\n * The header component\n *\n * @param  {boolean}  hero             - The hero option, optional\n * @param  {boolean}  dark             - Add the dark variation class, optional\n * @param  {boolean}  alt              - Add the alt variation class, optional\n * @param  {node}     children         - The inside of this section\n * @param  {string}   className        - An additional class, optional\n * @param  {object}   attributeOptions - Any other attribute options\n */\nconst AUheader = ({ hero, dark, alt, children, className = '', ...attributeOptions }) => (\n\t<div\n\t\tclassName={`au-header ${ className }${ hero ? ' au-header--hero' : '' }${ dark ? ' au-header--dark' : '' }${ alt ? ' au-header--alt' : '' }`}\n\t\trole=\"banner\" { ...attributeOptions }>\n\t\t{ children }\n\t</div>\n);\n\nAUheader.propTypes = {\n\thero: PropTypes.bool,\n\tdark: PropTypes.bool,\n\talt: PropTypes.bool,\n\tchildren: PropTypes.node,\n\tclassName: PropTypes.string,\n};\n\nexport default AUheader;\n"
+  ]
+}

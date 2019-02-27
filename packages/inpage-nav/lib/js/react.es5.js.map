@@ -1,0 +1,43 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "AUinpageNavLinksItem",
+    "link",
+    "title",
+    "li",
+    "attributeOptions",
+    "propTypes",
+    "PropTypes",
+    "string",
+    "isRequired",
+    "object",
+    "AUinpageNavLinks",
+    "dark",
+    "sections",
+    "ariaLabel",
+    "className",
+    "map",
+    "section",
+    "i",
+    "bool",
+    "arrayOf",
+    "shape",
+    "defaultProps",
+    "AUinpageNavSection",
+    "children",
+    "level",
+    "headingClass",
+    "sectionLink",
+    "HeadingTag",
+    "node",
+    "oneOf"
+  ],
+  "mappings": "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",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/inpage-nav v3.0.4 */\n/***************************************************************************************************************************************************************\n *\n * inpage-nav function\n *\n * Use inpage-nav links to help users scan and jump to content of a page.\n *\n **************************************************************************************************************************************************************/\n\nimport React, { Fragment } from 'react';\nimport PropTypes from 'prop-types';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n\n/**\n * The section component for the AUinpageNavLinks component\n *\n * @param  {object} link             - The link of this section\n * @param  {object} title            - The title of the section\n * @param  {object} li               - An additional object to be spread into the wrapping element, optional\n * @param  {object} attributeOptions - Any other attribute options\n */\nexport const AUinpageNavLinksItem = ({ link, title, li = {}, ...attributeOptions }) => (\n\t<li { ...li }>\n\t\t<a href={ `#${ link }` } { ...attributeOptions }>{ title }</a>\n\t</li>\n);\n\nAUinpageNavLinksItem.propTypes = {\n\tlink: PropTypes.string.isRequired,\n\ttitle: PropTypes.string.isRequired,\n\tli: PropTypes.object,\n};\n\n\n/**\n * The inpage-nav component\n *\n * @param  {boolean} dark             - Add the dark variation class, optional\n * @param  {string}  title            - The title of the content link block, default: Contents\n * @param  {array}   sections         - An array of objects of all sections, sample: { link: '', title: '', onClick: () }\n * @param  {string}  className        - An additional class, optional\n * @param  {string}  ariaLabel        - The aria-label attribute, optional\n * @param  {object}  attributeOptions - Any other attribute options\n */\nexport const AUinpageNavLinks = ({ dark, title, sections, ariaLabel, className = '', ...attributeOptions }) => (\n\t<nav className={ `au-inpage-nav-links ${ className }${ dark ? ' au-inpage-nav-links--dark' : '' }` } ariaLabel={ ariaLabel } { ...attributeOptions }>\n\t\t<h2 className=\"au-inpage-nav-links__heading au-display-sm\">{ title }</h2>\n\n\t\t<ul className=\"au-link-list\">\n\t\t\t{ sections.map( ( section, i ) => <AUinpageNavLinksItem key={ i } { ...section } /> ) }\n\t\t</ul>\n\t</nav>\n);\n\nAUinpageNavLinks.propTypes = {\n\tdark: PropTypes.bool,\n\ttitle: PropTypes.string.isRequired,\n\tsections: PropTypes.arrayOf(\n\t\tPropTypes.shape({\n\t\t\tlink: PropTypes.string.isRequired,\n\t\t\ttitle: PropTypes.string.isRequired,\n\t\t\tli: PropTypes.object,\n\t\t})\n\t).isRequired,\n\tclassName: PropTypes.string,\n};\n\nAUinpageNavLinks.defaultProps = {\n\ttitle: 'Contents',\n\tariaLabel: 'in page navigation',\n};\n\n\n/**\n * The inpage-nav component\n *\n * @param  {string}   title            - The title of the section\n * @param  {string}   link             - The link to this section\n * @param  {DOM node} children         - The content of the section, default: '2'\n * @param  {string}   level            - The heading level of the h tag\n * @param  {string}   headingClass     - Any additional heading classes eg 'au-display-sm' etc, optional\n * @param  {string}   sectionLink      - The text for the section link, default: 'Link to section', optional\n * @param  {string}   className        - An additional class, optional\n * @param  {object}   attributeOptions - Any other attribute options\n */\nexport const AUinpageNavSection = ({ title, link, children, level, headingClass, sectionLink, className = '', ...attributeOptions }) => {\n\n\tconst HeadingTag = `h${ level }`;\n\n\treturn (\n\t\t<Fragment>\n\t\t\t<HeadingTag className={ `au-inpage-nav-section ${ className }${ headingClass ? ' ' + headingClass : \"\" }` }>\n\t\t\t\t{ title }\n\n\t\t\t\t<a id={ link } className=\"au-inpage-nav-section-link\" href={ `#${ link }` } { ...attributeOptions }>{ sectionLink }</a>\n\t\t\t</HeadingTag>\n\n\t\t\t{ children }\n\t\t</Fragment>\n\t);\n};\n\nAUinpageNavSection.propTypes = {\n\ttitle: PropTypes.string.isRequired,\n\tlink: PropTypes.string.isRequired,\n\tchildren: PropTypes.node.isRequired,\n\tlevel: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,\n\theadingClass: PropTypes.string,\n\tsectionLink: PropTypes.string,\n\tclassName: PropTypes.string,\n};\n\nAUinpageNavSection.defaultProps = {\n\tlevel: '2',\n\tsectionLink: 'Link to section',\n};\n"
+  ]
+}

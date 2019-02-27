@@ -1,0 +1,28 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// header module
+// Headers provide a consistent start to pages.
+//
+// Content:
+// - print styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@media print {
+	.au-header {
+		background: #fff !important;
+
+		a img {
+			border: 0 !important;
+		}
+	}
+
+	.au-header,
+	.au-header__brand,
+	.au-header__subline {
+		color: #000 !important;
+	}
+
+	.au-header__brand-image {
+		display: none !important;
+	}
+}

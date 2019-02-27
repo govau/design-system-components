@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "sources": [
+    "react.es5.js"
+  ],
+  "names": [
+    "AUbreadcrumbs",
+    "dark",
+    "label",
+    "items",
+    "linkComponent",
+    "className",
+    "attributeOptions",
+    "propTypes",
+    "PropTypes",
+    "bool",
+    "string",
+    "isRequired",
+    "arrayOf",
+    "shape",
+    "link",
+    "text",
+    "oneOfType",
+    "func",
+    "defaultProps"
+  ],
+  "mappings": "oSASA,4B,2CACA,qC,mDAEA,2C,iDAOA,6B,qRAnBA,iCACA;;;;;;gKAYA;AAGA;AACA;AACA;AAIA;;;;;;;;;;GAWA,GAAMA,eAAgB,QAAhBA,cAAgB,UAAGC,KAAH,MAAGA,IAAH,CAASC,KAAT,MAASA,KAAT,CAAgBC,KAAhB,MAAgBA,KAAhB,CAAuBC,aAAvB,MAAuBA,aAAvB,qBAAsCC,SAAtC,CAAsCA,SAAtC,4BAAkD,EAAlD,gBAAyDC,gBAAzD,2FACrB,+CACC,4BAA+BD,SAA/B,EAA6CJ,KAAO,uBAAP,CAAiC,EAA9E,CADD,CAEC,aAAaC,KAFd,EAGMI,gBAHN,EAKC,8BAAC,kBAAD,EAAY,WAAZ,CAAmB,cAAgBF,aAAnC,CAAmD,MAAQD,KAA3D,EALD,CADqB,CAAtB,CAUAH,cAAcO,SAAd,CAA0B,CACzBN,KAAMO,oBAAUC,IADS,CAEzBP,MAAOM,oBAAUE,MAAV,CAAiBC,UAFC,CAGzBR,MAAOK,oBAAUI,OAAV,CACNJ,oBAAUK,KAAV,CAAgB,CACfC,KAAMN,oBAAUE,MADD,CAEfK,KAAMP,oBAAUE,MAAV,CAAiBC,UAFR,CAAhB,CADM,EAKLA,UARuB,CASzBP,cAAeI,oBAAUQ,SAAV,CAAoB,CAAER,oBAAUE,MAAZ,CAAoBF,oBAAUS,IAA9B,CAApB,CATU,CAA1B,CAYAjB,cAAckB,YAAd,CAA6B,CAC5Bd,cAAe,GADa,CAA7B,C,gBAIeJ,a",
+  "file": "react.es5.js",
+  "sourcesContent": [
+    "/*! @gov.au/breadcrumbs v3.0.3 */\n/***************************************************************************************************************************************************************\n *\n * breadcrumbs function\n *\n * Breadcrumbs help users understand where they are in the service and how they got there.\n *\n **************************************************************************************************************************************************************/\n\nimport React, { Fragment } from 'react';\nimport PropTypes from 'prop-types';\n\nimport AUlinkList from '@gov.au/link-list';\n// ES6 dependency: import AUlinkList from './link-list';\n\n\n// The following line will be replaced automatically with generic imports for the ES5 pipeline.\n// You can safely ignore this bit if you use this module with pancake\n//\nimport '../css/styles.css';\n\n\n/**\n * DEFAULT\n * The breadcrumbs component\n *\n * @param  {boolean} dark             - Add the dark variation class, optional\n * @param  {string}  label            - The aria label of the component\n * @param  {array}   items            - Items inside the breadcrumbs passed on to AUlinkList\n * @param  {string}  linkComponent    - The component used for the link\n * @param  {string}  className        - An additional class, optional\n * @param  {object}  attributeOptions - Any other attribute options\n */\nconst AUbreadcrumbs = ({ dark, label, items, linkComponent, className = '', ...attributeOptions }) => (\n\t<nav\n\t\tclassName={ `au-breadcrumbs ${ className }${ dark ? ' au-breadcrumbs--dark' : '' }` }\n\t\taria-label={ label }\n\t\t{ ...attributeOptions }\n\t>\n\t\t<AUlinkList inline linkComponent={ linkComponent } items={ items } />\n\t</nav>\n);\n\nAUbreadcrumbs.propTypes = {\n\tdark: PropTypes.bool,\n\tlabel: PropTypes.string.isRequired,\n\titems: PropTypes.arrayOf(\n\t\tPropTypes.shape({\n\t\t\tlink: PropTypes.string,\n\t\t\ttext: PropTypes.string.isRequired,\n\t\t})\n\t).isRequired,\n\tlinkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])\n};\n\nAUbreadcrumbs.defaultProps = {\n\tlinkComponent: 'a',\n};\n\nexport default AUbreadcrumbs;\n"
+  ]
+}

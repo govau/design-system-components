@@ -1,0 +1,77 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// breadcrumbs module
+// Breadcrumbs help users understand where they are in the service and how they got there.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Breadcrumb styles
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+.au-breadcrumbs {
+	@include AU-fontgrid( xs, nospace );
+	width: 100%;
+	margin: 0;
+	color: $AU-color-foreground-text;
+	font-family: $AU-font;
+
+	* + & {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	@include AU-media( sm ) {
+		display: inline-block;
+	}
+
+	> .au-link-list {
+		> li {
+			margin: 0; //Intentionally flush with the container, as breadcrumbs are designed to sit on a full viewport width bg.
+
+			&:after {
+				content: ' ';
+				display: inline-block;
+				@include AU-space( width, 0.5unit );
+				@include AU-space( height, 0.5unit );
+				@include AU-space( margin, 0 0.5unit );
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">' +
+						'<path fill="#{ $AU-color-foreground-border }" d="M128 64l-64 64-16-16 64-64"/>' +
+						'<path fill="#{ $AU-color-foreground-border }" d="M128 64l-16 16-64-64L64 0"/>' +
+					'</svg>');
+				background-size: 100%;
+				background-repeat: no-repeat;
+			}
+
+			&:last-child:after {
+				display: none;
+			}
+
+			.ie8 &,
+			.lt-ie8 & {
+				&:after {
+					content: ' > ';
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	&.au-breadcrumbs--dark {
+		color: $AU-colordark-foreground-text;
+
+		> .au-link-list {
+			> li:not(:last-child):after {
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">' +
+						'<path fill="#{ $AU-colordark-foreground-border }" d="M128 64l-64 64-16-16 64-64"/>' +
+						'<path fill="#{ $AU-colordark-foreground-border }" d="M128 64l-16 16-64-64L64 0"/>' +
+					'</svg>');
+			}
+		}
+	}
+}
