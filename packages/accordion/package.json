@@ -1,0 +1,147 @@
+{
+	"name": "@gov.au/accordion",
+	"version": "7.0.5",
+	"description": "Allow the user to toggle the visibility of an element",
+	"keywords": [
+		"auds",
+		"pancake",
+		"pancake-module",
+		"sass",
+		"scss",
+		"css",
+		"gov.au",
+		"Commonwealth of Australia",
+		"design guide",
+		"design system"
+	],
+	"scripts": {
+		"postinstall": "pancake",
+
+		"test:a11y": "node ../../scripts/a11y.js",
+		"test:helper": "node ../../scripts/helper.js test",
+		"test": "npm-run-all --parallel test:*",
+
+		"prepublish": "npm run test:helper && npm run build:pre",
+
+		"build:pre": "node ../../scripts/helper.js precompile publish",
+		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
+		"build:react": "cd tests/react/ && webpack",
+		"build": "npm run build:js && npm run build:react",
+
+		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
+
+		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
+		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
+		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
+		"watch": "npm run build && npm-run-all --parallel serve watch:*"
+	},
+	"pancake": {
+		"pancake-module": {
+			"version": "1.0.0",
+			"plugins": [
+				"@gov.au/pancake-sass",
+				"@gov.au/pancake-js",
+				"@gov.au/pancake-react",
+				"@gov.au/pancake-json"
+			],
+			"sass": {
+				"path": "lib/sass/_module.scss",
+				"sass-versioning": true
+			},
+			"js": {
+				"path": "lib/js/module.js"
+			},
+			"react": {
+				"path": "lib/js/react.js"
+			}
+		}
+	},
+	"main": "lib/js/react.es5.js",
+	"dependencies": {
+		"@gov.au/pancake": "~1",
+		"@gov.au/pancake-js": "~1",
+		"@gov.au/pancake-sass": "~2",
+		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-json": "~1",
+
+		"@gov.au/animate": "^1.0.0",
+		"@gov.au/core": "^3.0.0"
+	},
+	"peerDependencies": {
+		"@gov.au/animate": "^1.0.0",
+		"@gov.au/core": "^3.0.0"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"babel-preset-react": "^6.24.1",
+		"babel-preset-stage-0": "^6.24.1",
+		"browser-sync": "^2.18.13",
+		"npm-run-all": "^4.1.2",
+		"onchange": "^3.2.1",
+		"react": "^16.1.1",
+		"react-dom": "^16.1.1",
+		"webpack": "^3.8.1"
+	},
+	"files": [
+		"lib/*"
+	],
+	"engines": {
+		"node": ">=0.12.0",
+		"npm": "^3.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/govau/design-system-components.git"
+	},
+	"homepage": "https://designsystem.gov.au/components/accordion",
+	"bugs": {
+		"url": "https://github.com/govau/design-system-components/issues",
+		"email": "designsystem@digital.gov.au"
+	},
+	"author": {
+		"name": "Commonwealth of Australia, DTA",
+		"email": "designsystem@digital.gov.au",
+		"url": "https://www.dta.gov.au/"
+	},
+	"contributors": [
+		{
+			"name": "Dominik Wilkowski",
+			"email": "hi@dominik-wilkowski.com",
+			"url": "https://github.com/dominikwilkowski"
+		},
+		{
+			"name": "Simon Schwartz",
+			"email": "simon.schwartz0@gmail.com",
+			"url": "https://github.com/simonschwartz"
+		},
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Trevor Brennan",
+			"email": "t@trevorbrennan.com",
+			"url": "https://github.com/TrebBrennan"
+		},
+		{
+			"name": "Nathan Davison",
+			"email": "me@nathandavison.com",
+			"url": "https://github.com/ndavison"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Adam Zerella",
+			"email": "adam@commandshiftr.co",
+			"url": "https://github.com/adamzerella"
+		}
+	],
+	"license": "MIT"
+}

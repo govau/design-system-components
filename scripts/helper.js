@@ -1066,10 +1066,6 @@ HELPER.test = (() => {
 						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
 					}
 
-					if( !hasReact && Object.keys( componentsPKG.devDependencies ).length > 4 ) {
-						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
-					}
-
 					// testing for pancake config
 					if( componentsPKG.pancake['auto-save'] !== undefined ) {
 						error += `The module ${ module } has the pancake config saved though we don’t want that…\n`;
