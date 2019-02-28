@@ -123,7 +123,7 @@
 		@include AU-space( max-width, 5em );
 	}
 
-	//4 character text box. i.e postcode
+	//10 character text box. i.e phone number
 	&.au-text-input--width-10 {
 		@include AU-space( max-width, 10em );
 	}
@@ -196,3 +196,4 @@ textarea.au-text-input {
 	max-width: 100%;
 	min-height: 6em;
 }
+
