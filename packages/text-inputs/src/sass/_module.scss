@@ -112,6 +112,11 @@
 	&.au-text-input--width-2 {
 		@include AU-space( max-width, 4em );
 	}
+
+	// 3 character width text box
+	&.au-text-input--width-3 {
+		@include AU-space( max-width, 3.5em );
+	}
 	
 	//4 character text box. i.e postcode
 	&.au-text-input--width-4 {
