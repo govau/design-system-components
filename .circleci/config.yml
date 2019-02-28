@@ -10,7 +10,7 @@ jobs:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
       - restore_cache:
           keys:
-            - v1-node-cache-{{ checksum "yarn.lock" }}
+            - v2-node-cache-{{ checksum "yarn.lock" }}
       - run:
           # https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md
           name: Install packages for puppeteer
@@ -19,7 +19,7 @@ jobs:
           name: Install dependencies
           command: yarn install                            # duh
       - save_cache:
-          key: v1-node-cache-{{ checksum "yarn.lock" }}
+          key: v2-node-cache-{{ checksum "yarn.lock" }}
           paths:
             - node_modules                                 # Path globbing isn't supported :'(
       - run:
