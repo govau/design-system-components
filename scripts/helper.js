@@ -354,6 +354,19 @@ HELPER.precompile = (() => {
 			}
 
 			if( _hasReact ) {
+				/**
+				 * Copy relative dependencies over for tests.
+				 * e.g Breadcrumbs requires link-list for webpack testing.
+				 */ 
+				for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
+					let moduleName = module.substring( 8 );
+
+					let from = Path.join( __dirname, `/../packages/${ moduleName }/src/js/react.js` );
+					let to = Path.join( __dirname, `/../packages/${ HELPER.NAME.substring( 8 ) }/tests/react/${ moduleName }.js` );
+
+					CopyFile( from, to );
+				}
+
 				CopyFile(`./src/js/react.js`, `./lib/js/react.js`);
 				CopyFile(`./src/js/react.js`, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js`);
 			}

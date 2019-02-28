@@ -46,7 +46,9 @@
 				"path": "lib/js/module.js"
 			},
 			"sass": {
-				"name": false
+				"name": false,
+				"path": false,
+				"sass-versioning": false
 			}
 		}
 	},
