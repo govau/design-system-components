@@ -361,6 +361,12 @@ HELPER.precompile = (() => {
 				for( const module of Object.keys( HELPER.DEPENDENCIES ) ) {
 					let moduleName = module.substring( 8 );
 
+					if ( moduleName == 'animate' ) {
+						let from = Path.join( __dirname, `/../packages/${ moduleName }/src/js/module.js` );
+						let to = Path.join( __dirname, `/../packages/${ HELPER.NAME.substring( 8 ) }/tests/react/${ moduleName }.js` );
+						CopyFile( from, to );
+					}
+
 					let from = Path.join( __dirname, `/../packages/${ moduleName }/src/js/react.js` );
 					let to = Path.join( __dirname, `/../packages/${ HELPER.NAME.substring( 8 ) }/tests/react/${ moduleName }.js` );
 

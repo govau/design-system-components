@@ -22,7 +22,7 @@ const Path      = require( 'path' );
 // GLOBALS
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const OPTIONS = {
-	timeout: 60000,
+	timeout: 30000,
 	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test, .auds-page-alerts__sronly, .auds-skip-link',
 }
 
@@ -49,7 +49,11 @@ const DisplayResults = results => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const RunPa11y = async ( urls ) => {
 	// Start the browser
-	const browser = await Puppeteer.launch();
+	const browser = await Puppeteer.launch({ 
+		headless: true,
+		devtools: false,
+		args: ["--no-sandbox", "--disable-setuid-sandbox"]
+	});
 
 	// For each url create a new page and run the Pa11y Test
 	const tests = urls.map( async ( url ) => {
