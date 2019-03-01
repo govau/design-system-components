@@ -252,6 +252,7 @@ The visual test: https://auds.service.gov.au/packages/accordion/tests/site/
 
 ## Release History
 
+* v7.0.7 - Removed unused `Fragment` React import
 * v7.0.6 - Resolve autoprefixer warning
 * v7.0.5 - Fix pancake build path
 * v7.0.4 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
