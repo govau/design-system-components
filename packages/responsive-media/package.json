@@ -50,13 +50,13 @@
 		}
 	},
 	"dependencies": {
-		"@gov.au/core": "^3.2.1",
+		"@gov.au/core": "~3",
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-json": "~1",
 		"@gov.au/pancake-sass": "~2"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^3.0.0"
+		"@gov.au/core": "~3"
 	},
 	"devDependencies": {
 		"browser-sync": "^2.18.13",

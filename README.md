@@ -208,9 +208,9 @@ All components have to work on the below browsers:
 ```shell
 ├─ core
 └─ link-list
-   ├─ core
-   └─ body
-      └─ core
+   ├─ body
+   │  └─ core
+   └─ core
 ```
 ----------
 </details>
@@ -352,9 +352,9 @@ All components have to work on the below browsers:
 ```shell
 ├─ core
 └─ link-list
-   ├─ core
-   └─ body
-      └─ core
+   ├─ body
+   │  └─ core
+   └─ core
 ```
 ----------
 </details>
@@ -370,9 +370,9 @@ All components have to work on the below browsers:
 ```shell
 ├─ core
 └─ link-list
-   ├─ core
-   └─ body
-      └─ core
+   ├─ body
+   │  └─ core
+   └─ core
 ```
 ----------
 </details>
@@ -386,9 +386,9 @@ All components have to work on the below browsers:
 	<br>
 
 ```shell
-├─ core
-└─ body
-   └─ core
+├─ body
+│  └─ core
+└─ core
 ```
 ----------
 </details>
@@ -402,12 +402,12 @@ All components have to work on the below browsers:
 	<br>
 
 ```shell
-├─ core
 ├─ animate
+├─ core
 └─ link-list
-   ├─ core
-   └─ body
-      └─ core
+   ├─ body
+   │  └─ core
+   └─ core
 ```
 ----------
 </details>
@@ -421,9 +421,9 @@ All components have to work on the below browsers:
 	<br>
 
 ```shell
-├─ core
-└─ body
-   └─ core
+├─ body
+│  └─ core
+└─ core
 ```
 ----------
 </details>
@@ -479,15 +479,15 @@ All components have to work on the below browsers:
 	<br>
 
 ```shell
-├─ core
-├─ animate
 ├─ accordion
 │  ├─ animate
 │  └─ core
+├─ animate
+├─ core
 └─ link-list
-   ├─ core
-   └─ body
-      └─ core
+   ├─ body
+   │  └─ core
+   └─ core
 ```
 ----------
 </details>

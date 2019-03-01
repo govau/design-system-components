@@ -49,6 +49,7 @@
 		"@gov.au/pancake-sass": "~2",
 		"sass-versioning": "^0.3.0"
 	},
+	"peerDependencies": {},
 	"devDependencies": {
 		"browser-sync": "^2.26.3",
 		"npm-run-all": "^4.1.2",

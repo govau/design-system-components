@@ -58,6 +58,7 @@
 		"npm-run-all": "^4.1.2",
 		"onchange": "^3.2.1"
 	},
+	"peerDependencies": {},
 	"files": [
 		"lib/*"
 	],

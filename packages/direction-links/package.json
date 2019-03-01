@@ -55,14 +55,14 @@
 	},
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
-		"@gov.au/core": "^3.2.1",
+		"@gov.au/core": "~3",
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-json": "~1",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-sass": "~2"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^3.0.0"
+		"@gov.au/core": "~3"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",

@@ -53,8 +53,8 @@
 	},
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
-		"@gov.au/animate": "^1.0.13",
-		"@gov.au/core": "^3.2.1",
+		"@gov.au/animate": "~1",
+		"@gov.au/core": "~3",
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-js": "~1",
 		"@gov.au/pancake-json": "~1",
@@ -62,8 +62,8 @@
 		"@gov.au/pancake-sass": "~2"
 	},
 	"peerDependencies": {
-		"@gov.au/animate": "^1.0.0",
-		"@gov.au/core": "^3.0.0"
+		"@gov.au/animate": "~1",
+		"@gov.au/core": "~3"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.0",
