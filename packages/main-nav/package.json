@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/main-nav",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Horizontal list of links to key areas on the website. Usually located in the header.",
 	"keywords": [
 		"auds",
@@ -16,20 +16,15 @@
 	],
 	"scripts": {
 		"postinstall": "pancake",
-
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
-
 		"prepublish": "npm run test:helper && npm run build:pre",
-
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:pre && npm run build:js && npm run build:react",
-
 		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
-
 		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
 		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
 		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
@@ -58,19 +53,18 @@
 	},
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
+		"@gov.au/animate": "^1.0.13",
+		"@gov.au/core": "^3.2.1",
+		"@gov.au/link-list": "^3.0.5",
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-js": "~1",
-		"@gov.au/pancake-sass": "~2",
-		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
-
-		"@gov.au/core": "^3.0.0",
-		"@gov.au/animate": "^1.0.0",
-		"@gov.au/link-list": "^3.0.0"
+		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-sass": "~2"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^3.0.0",
 		"@gov.au/animate": "^1.0.0",
+		"@gov.au/core": "^3.0.0",
 		"@gov.au/link-list": "^3.0.0"
 	},
 	"devDependencies": {
