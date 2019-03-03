@@ -1128,6 +1128,7 @@ HELPER.test = (() => {
 					}
 
 					// testing README.md file for latest version
+					console.log( readme );
 					if( !readme.split('## Release History' + Os.EOL + Os.EOL + '* v')[ 1 ].startsWith( version ) ) {
 						error += `The module ${ module } does not have the current version in it’s readme "Release History" section.\n`;
 					}
