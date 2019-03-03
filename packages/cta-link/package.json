@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/cta-link",
-	"version": "2.1.8",
+	"version": "2.1.9",
 	"description": "Use cta links to draw attention to a primary call to action.",
 	"keywords": [
 		"auds",
