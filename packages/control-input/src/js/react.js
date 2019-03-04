@@ -25,7 +25,7 @@ import PropTypes from 'prop-types';
  * @param  {boolean} small            - Add the small variation class
  * @param  {boolean} block            - Add the block variation class
  * @param  {string}  label            - The label
- * @param  {id}      id               - The id for the control input
+ * @param  {id}      id               - The id of the checkbox
  * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
