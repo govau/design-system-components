@@ -10,7 +10,7 @@
 		"node-sass": "^4.11.0",
 		"pa11y": "^5.0.4",
 		"postcss": "^6.0.14",
-		"puppeteer": "^1.8.0",
+		"puppeteer": "^1.12.2",
 		"rimraf": "^2.6.3",
 		"semver": "^5.4.1",
 		"treeify": "^1.0.1"

@@ -49,7 +49,11 @@ const DisplayResults = results => {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 const RunPa11y = async ( urls ) => {
 	// Start the browser
-	const browser = await Puppeteer.launch();
+	const browser = await Puppeteer.launch({
+		headless: true,
+		devtools: false,
+		args: ["--no-sandbox", "--disable-setuid-sandbox"]
+	});
 
 	// For each url create a new page and run the Pa11y Test
 	const tests = urls.map( async ( url ) => {
