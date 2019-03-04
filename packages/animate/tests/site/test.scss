@@ -2,9 +2,9 @@
 // @import '../../src/sass/_dependencies.scss';
 
 //testing includes
-@import '../../../core/node_modules/sass-versioning/dist/_index.scss';
-@import '../../../core/lib/sass/_module.scss';
-@import '../../../grid-12/lib/sass/_module.scss';
+// @import '../../../../node_modules/sass-versioning/dist/index';
+@import '../../../core/src/sass/_module.scss';
+@import '../../../grid-12/src/sass/_module.scss';
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';

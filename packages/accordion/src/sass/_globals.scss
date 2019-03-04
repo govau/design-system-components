@@ -18,9 +18,9 @@ $dependencies: (
 	[replace-dependencies]
 );
 
-@include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
+// @include versioning-add( $name, $version, $dependencies ); //adding dependencies to global scope
 
-@include versioning-remove( '@gov.au/animate' ); //removing animate as a dependency as it doesn’t come with sass
+// @include versioning-remove( '@gov.au/animate' ); //removing animate as a dependency as it doesn’t come with sass
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // GLOBAL VARIABLES
