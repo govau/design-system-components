@@ -54,11 +54,11 @@ Usage:
 ```jsx
 import { AUcheckbox, AUradio } from './control-input.js';
 
-<AUradio label="Yes" name="has_email" value="yes" />
-<AUradio label="No" name="has_email" value="no" />
-<AUradio label="Maybe" name="has_email" value="maybe" />
+<AUradio label="Yes" name="has_email" value="yes" id="yes" />
+<AUradio label="No" name="has_email" value="no" id="no" />
+<AUradio label="Maybe" name="has_email" value="maybe" id="maybe" />
 
-<AUcheckbox label="Has email?" name="has_email" />
+<AUcheckbox label="Has email?" name="has_email" id="has-email" />
 ```
 
 All props:
@@ -66,6 +66,7 @@ All props:
 ```jsx
 <AUradio
   label="The label"  {/* The label of the radio button */}
+  id="radio-ex"      {/* The id of the radio button*/}
   alt={ false }      {/* An alternate variation of the component */}
   small={ false }    {/* The small variation of the component */}
   dark={ false }     {/* The dark variation of the component */}
@@ -73,6 +74,7 @@ All props:
 
 <AUcheckbox
   label="The label"  {/* The label of the checkbox */}
+  id="checkbox-ex"   {/* The id of the radio button*/}
   alt={ false }      {/* An alternate variation of the component */}
   small={ false }    {/* The small variation of the component */}
   dark={ false }     {/* The dark variation of the component */}
@@ -116,6 +118,7 @@ The visual test: https://auds.service.gov.au/packages/control-input/tests/site/
 
 ## Release History
 
+* v3.0.0 - Use explicit labelling instead of implicit labelling for control inputs. Remove `margin-top` for control input block that is not followed by another control input block. Removed unused `Fragment` React import
 * v2.2.2 - Fixed radio input underlapping svg on small inputs
 * v2.2.1 - Removed uikit references
 * v2.2.0 - Changed focus appearance on radio buttons to be round
