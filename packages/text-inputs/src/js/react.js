@@ -47,7 +47,7 @@ const AUtextInput = ({ as, dark, block, status, width, type = 'text', className 
 					`${ block ? ' au-text-input--block' : '' }` +
 					`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
 					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }` +
-					`${ width ? 'au-text-input--width-' + width : '' }`
+					`${ width ? ' au-text-input--width-' + width : '' }`
 				}
 				type={ type } { ...attributeOptions }
 			/>
@@ -59,7 +59,7 @@ AUtextInput.propTypes = {
 	block: PropTypes.bool,
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
-	width: PropTypes.oneOf(["2", "4", "10"])
+	width: PropTypes.oneOf(["xs", "sm", "md","lg", "xl"])
 };
 
 AUtextInput.defaultProps = {

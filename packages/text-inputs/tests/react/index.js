@@ -74,12 +74,26 @@ ABCZ abcjg liI1 12340" />
 
 			<hr />
 			<h2>Text inputs different widths</h2>
-			<label htmlFor="width-2" className="label">Width 2</label>
-			<AUtextInput id="width-2" defaultValue="07" width="2" />
-			<label htmlFor="width-4" className="label">Width 4</label>
-			<AUtextInput id="width-4" defaultValue="2600" width="4" />
-			<label htmlFor="width-10" className="label">Width 10</label>
-			<AUtextInput id="width-10" defaultValue="0400 000 000" width="10" />
+			<label htmlFor="width-xs" className="label">Width XS</label>
+			<AUtextInput id="width-xs" defaultValue="WW" width="xs" />
+
+			<label htmlFor="width-sm" className="label">Width SM</label>
+			<AUtextInput id="width-sm" defaultValue="WWWW" width="sm" />
+
+			<label htmlFor="width-md" className="label">Width MD</label>
+			<AUtextInput id="width-md" defaultValue="0400 000 000" width="md" />
+
+			<label htmlFor="width-lg" className="label">Default</label>
+			<AUtextInput id="width-lg" defaultValue="+61 400 000 000" />
+
+			<label htmlFor="width-lg" className="label">Width LG</label>
+			<AUtextInput id="width-lg" defaultValue="Level 3, 50 Marcus Clarke St" width="lg" />
+
+			<label htmlFor="width-xl" className="label">Width XL</label>
+			<AUtextInput id="width-xl" defaultValue="Level 3, 50 Marcus Clarke St, Canberra" width="xl" />
+
+			<label htmlFor="width-full" className="label">Width full</label>
+			<AUtextInput id="width-full" block/>
 		</div>
 		<div className="split split--dark">
 			<h2>Default</h2>
@@ -148,13 +162,27 @@ ABCZ abcjg liI1 12340" />
 			<AUtextInput as="textarea" id="8d" defaultValue="abc" disabled dark />
 
 			<hr />
-			<h2>Textarea default value disabled</h2>
-			<label htmlFor="width-2-dark" className="label">Width 2</label>
-			<AUtextInput id="width-2-dark" defaultValue="07" width="2" />
-			<label htmlFor="width-4-dark" className="label">Width 4</label>
-			<AUtextInput id="width-4-dark" defaultValue="2600" width="4" />
-			<label htmlFor="width-10-dark" className="label">Width 10</label>
-			<AUtextInput id="width-10-dark" defaultValue="0400 000 000" width="10" />
+			<h2>Text inputs different widths</h2>
+			<label htmlFor="width-xs-dark" className="label">Width XS</label>
+			<AUtextInput id="width-xs-dark" dark defaultValue="WW" width="xs" />
+
+			<label htmlFor="width-sm-dark" className="label">Width SM</label>
+			<AUtextInput id="width-sm-dark" dark defaultValue="WWWW" width="sm" />
+
+			<label htmlFor="width-md-dark" className="label">Width MD</label>
+			<AUtextInput id="width-md-dark" dark defaultValue="0400 000 000" width="md" />
+
+			<label htmlFor="width-lg-dark" className="label">Default</label>
+			<AUtextInput id="width-lg-dark" dark defaultValue="+61 400 000 000" />
+
+			<label htmlFor="width-lg-dark" className="label">Width LG</label>
+			<AUtextInput id="width-lg-dark" dark defaultValue="Level 3, 50 Marcus Clarke St" width="lg" />
+
+			<label htmlFor="width-xl-dark" className="label">Width XL</label>
+			<AUtextInput id="width-xl-dark" dark defaultValue="Level 3, 50 Marcus Clarke St, Canberra" width="xl" />
+
+			<label htmlFor="width-full-dark" className="label">Width full</label>
+			<AUtextInput id="width-full-dark" dark block/>
 		</div>
 	</div>,
 

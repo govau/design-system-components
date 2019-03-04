@@ -42,7 +42,8 @@
 	border-radius: $AU-border-radius;
 	vertical-align: middle;
 	appearance: none;
-
+	width: 100%;
+	@include AU-space( max-width, 12.8125unit );
 	// state styling
 	&.au-text-input--dark:invalid,
 	&:invalid {
@@ -108,33 +109,36 @@
 		@include AU-focus( 'dark' );
 	}
 
-	// 2 character width text box
-	&.au-text-input--width-2 {
-		@include AU-space( max-width, 4.3em );
-	}
 
-	// 3 character width text box
-	&.au-text-input--width-3 {
-		@include AU-space( max-width, 5.5em );
+	&.au-text-input--width-xs {
+		@include AU-space( max-width, 4.3unit );
 	}
 	
-	//4 character text box. i.e postcode
-	&.au-text-input--width-4 {
-		@include AU-space( max-width, 6.1em );
-	}
-	
-	//20 character text box. i.e Address
-	&.au-text-input--width-4 {
-		width: 100%;
-		@include AU-space( max-width, 21.5em );
+	&.au-text-input--width-sm {
+		@include AU-space( max-width, 6.3unit );
 	}
 
+	&.au-text-input--width-md {
+		@include AU-space( max-width, 10unit );
+	}
+
+	&.au-text-input--width-lg {
+		@include AU-space( max-width, 18unit );
+	}
+
+	&.au-text-input--width-xl {
+		@include AU-space( max-width, 24unit );
+	}
+
+
+	
 	/**
 	 * Block modifier
 	 */
 	&.au-text-input--block {
 		display: block;
 		width: 100%;
+		max-width: 100%;
 		box-sizing: border-box;
 	}
 
