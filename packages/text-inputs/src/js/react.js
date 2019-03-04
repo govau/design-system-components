@@ -37,7 +37,8 @@ const AUtextInput = ({ as, dark, block, status, width, type = 'text', className 
 					`${ block ? ' au-text-input--block' : '' }` +
 					`${ dark ? ' au-text-input--dark' : '' }` +
 					`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
-					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
+					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }` + 
+					`${ width ? ' au-text-input--width-' + width : '' }`					
 				}
 				{ ...attributeOptions } >
 			</textarea>

@@ -109,6 +109,7 @@
 		@include AU-focus( 'dark' );
 	}
 
+	// Au-text-input with different widths
 
 	&.au-text-input--width-xs {
 		@include AU-space( max-width, 4.3unit );
@@ -196,7 +197,6 @@
 textarea.au-text-input {
 	@include AU-fontgrid( sm );
 	height: auto;
-	max-width: 100%;
 	min-height: 6em;
 }
 
