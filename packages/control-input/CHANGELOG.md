@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v3.0.0 - Use explicit labelling instead of implicit labelling for control inputs. Remove `margin-top` for control input block that is not followed by another control input block.](#v300)
+* [v3.0.0 - Use explicit labelling instead of implicit labelling for control inputs. Remove `margin-top` for control input block that is not followed by another control input block. Removed unused `Fragment` React import](#v300)
 * [v2.2.2 - Fixed radio input underlapping svg on small inputs](#v222)
 * [v2.2.1 - Removed uikit references](#v221)
 * [v2.2.0 - Changed focus appearance on radio buttons to be round](#v220)
@@ -47,11 +47,17 @@
 
 - Use explicit labelling instead of implicit labelling for control inputs
 - Remove `margin-top` for control input block that is not followed by another control input block.
+<<<<<<< HEAD
+=======
+- Removed unused `Fragment` React import
+
+>>>>>>> 121a84f0c73dbda4a6191c901dae5277f1a115a2
 
 ### v2.2.2
 
 - Fixed radio input default styles underlapping svg on small inputs
 - Removed margin on inputs, adjusted top/left position on input
+
 
 ### v2.2.1
 

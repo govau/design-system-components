@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.15 - Removed unused `Fragment` React import](#v2015)
 * [v2.0.14 - Resolve autoprefixer warning](#v2014)
 * [v2.0.13 - Fix pancake build path](#v2013)
 * [v2.0.12 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v2012)
@@ -40,6 +41,11 @@
 
 
 ## Release History
+
+### v2.0.15
+
+- Removed unused `Fragment` React import
+
 
 ### v2.0.14
 

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.10 - Removed unused `Fragment` React import](#v2010)
 * [v2.0.9 - Removed uikit references](#v209)
 * [v2.0.8 - Update dependencies](#v208)
 * [v2.0.7 - Removing web pack dev server, updating dependencies](#v207)
@@ -35,6 +36,11 @@
 
 
 ## Release History
+
+### v2.0.10
+
+- Removed unused `Fragment` React import
+
 
 ### v2.0.9
 

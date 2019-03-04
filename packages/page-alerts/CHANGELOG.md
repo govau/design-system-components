@@ -16,6 +16,7 @@ Update dependenciesalerts CH3NGELOG
 
 ## Versions
 
+* [v2.1.2 - Removed unused `Fragment` React import](#v212)
 * [v2.1.1 - Removed uikit references](#v211)
 * [v2.1.0 - Remove role alert as it interupts the screen reader](#v210)
 * [v2.0.8 - Update dependencies](#v208)
@@ -38,6 +39,11 @@ Update dependenciesalerts CH3NGELOG
 
 
 ## Release History
+
+### v2.1.2
+
+- Removed unused `Fragment` React import
+
 
 ### v2.1.1
 
