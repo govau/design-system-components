@@ -40,14 +40,14 @@
 			"version": "1.0.0",
 			"plugins": [
 				"@gov.au/pancake-js",
-				"@gov.au/pancake-json"
+				"@gov.au/pancake-json",
+				"@gov.au/pancake-sass"
 			],
 			"js": {
 				"path": "lib/js/module.js"
 			},
 			"sass": {
-				"path": false,
-				"sass-versioning": true
+				"name": false
 			}
 		}
 	},
