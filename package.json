@@ -11,6 +11,7 @@
 		"pa11y": "^5.0.4",
 		"postcss": "^6.0.14",
 		"puppeteer": "^1.8.0",
+		"rimraf": "^2.6.3",
 		"semver": "^5.4.1",
 		"treeify": "^1.0.1"
 	},
@@ -20,8 +21,9 @@
 		"build": "lerna run build --concurrency 1",
 		"publish": "lerna publish --skip-git",
 		"nuke": "npm run delete:node_modules | npm run delete:lib",
-		"delete:node_modules": "rm -rf packages/*/node_modules | rm -rf node_modules",
-		"delete:lib": "rm -rf packages/*/lib/**",
+		"delete:node_modules": "rimraf packages/*/node_modules | rimraf node_modules",
+		"delete:lib": "rimraf packages/*/lib/**",
+		"delete:pancake": "rimraf pancake",
 		"test:unit-test": "jest",
 		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},
@@ -38,5 +40,12 @@
 				"statements": 0
 			}
 		}
+	},
+	"private": true,
+	"workspaces": [
+		"packages/*"
+	],
+	"pancake": {
+		"auto-save": false
 	}
 }
