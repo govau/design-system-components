@@ -7403,7 +7403,7 @@ pa11y-reporter-json@^1.0.0:
   dependencies:
     bfj "^4.2.3"
 
-pa11y@^5.0.4:
+pa11y@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/pa11y/-/pa11y-5.1.0.tgz#ea57c256b669db2d3999e25a7879dca97051a60d"
   integrity sha512-JoHEEiaamh2dp4Vz/5awOiLMF5nvcEBncrQdPqrv9UbOhkYqG2r16vALiwo30JOcGpaaxCNR7I02VdQ7PxAgCQ==
