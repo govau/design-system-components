@@ -24,6 +24,7 @@ const Path      = require( 'path' );
 const OPTIONS = {
 	timeout: 60000,
 	hideElements: '.sr-only, .is-visuallyhidden, .visuallyhidden, .no-a11y-test, .auds-page-alerts__sronly, .auds-skip-link',
+	threshold: 15
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
