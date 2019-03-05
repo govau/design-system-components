@@ -66,6 +66,7 @@ All props:
   dark={ false }  {/* A dark variation of the component */}
   block           {/* Add the block variation class */}
   status          {/* Mark this field as either 'valid' or 'invalid' */}
+  width           {/* Width of the text input. Can be either 'xs', 'sm', 'md', 'lg', 'xl'. */}
 />
 ```
 _(💡 additional props are spread onto the component)_
@@ -107,6 +108,7 @@ The visual test: https://auds.service.gov.au/packages/text-inputs/tests/site/
 
 ## Release History
 
+* v2.1.0 - Add text inputs of different widths
 * v2.0.11 - Removed unused `Fragment` React import
 * v2.0.10 - Removed uikit references
 * v2.0.9 - Update dependencies
