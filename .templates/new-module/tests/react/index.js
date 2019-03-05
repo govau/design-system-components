@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AU[-replace-name-capital-] from './AU[-replace-name-].js';
