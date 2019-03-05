@@ -47,9 +47,7 @@
 				"path": "lib/js/module.js"
 			},
 			"sass": {
-				"name": false,
-				"path": false,
-				"sass-versioning": false
+				"name": false
 			}
 		}
 	},
@@ -57,7 +55,8 @@
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-js": "~1",
-		"@gov.au/pancake-json": "~1"
+		"@gov.au/pancake-json": "~1",
+		"@gov.au/pancake-sass": "~2"
 	},
 	"peerDependencies": {
 	},
