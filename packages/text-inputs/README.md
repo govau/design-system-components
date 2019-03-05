@@ -66,6 +66,7 @@ All props:
   dark={ false }  {/* A dark variation of the component */}
   block           {/* Add the block variation class */}
   status          {/* Mark this field as either 'valid' or 'invalid' */}
+  width           {/* Width of the text input. Can be either 'xs', 'sm', 'md', 'lg', 'xl'. */}
 />
 ```
 _(💡 additional props are spread onto the component)_
