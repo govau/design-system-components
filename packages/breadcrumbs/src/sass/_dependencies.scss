@@ -1,6 +1,3 @@
-//sass-versioning
-// @import '../../../../node_modules/sass-versioning/dist/index';
-
 //dependencies
 @import '../../../core/src/sass/_module.scss';
 @import '../../../link-list/src/sass/module.scss';
@@ -9,6 +6,3 @@
 
 //this module
 @import '../../src/sass/_module.scss';
-
-//version check with sass-versioning
-// @include versioning-check();
