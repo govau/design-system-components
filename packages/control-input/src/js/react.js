@@ -24,9 +24,9 @@ import PropTypes from 'prop-types';
  * @param  {boolean} alt              - Add the alt variation class, optional
  * @param  {boolean} small            - Add the small variation class
  * @param  {boolean} block            - Add the block variation class
- * @param  {string}  label            - The label
- * @param  {id}      id               - The id for the control input
+ * @param  {string}  label            - The label text
  * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional
+ * @param  {string}  id               - The id of the checkbox input
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  *
@@ -67,8 +67,9 @@ AUcheckbox.propTypes = {
  * @param  {boolean} alt              - Add the alt variation class, optional
  * @param  {boolean} small            - Add the small variation class
  * @param  {boolean} block            - Add the block variation class
- * @param  {string}  label            - The label
+ * @param  {string}  label            - The label text
  * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional
+ * @param  {string}  id               - The id of the radio input
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */

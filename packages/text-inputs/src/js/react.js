@@ -29,7 +29,7 @@ import PropTypes from 'prop-types';
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtextInput = ({ as, dark, block, status, type = 'text', className = '', ...attributeOptions }) => (
+const AUtextInput = ({ as, dark, block, status, width, type = 'text', className = '', ...attributeOptions }) => (
 	as === 'textarea'
 		? <textarea
 				className={
@@ -37,7 +37,8 @@ const AUtextInput = ({ as, dark, block, status, type = 'text', className = '', .
 					`${ block ? ' au-text-input--block' : '' }` +
 					`${ dark ? ' au-text-input--dark' : '' }` +
 					`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
-					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
+					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }` + 
+					`${ width ? ' au-text-input--width-' + width : '' }`					
 				}
 				{ ...attributeOptions } >
 			</textarea>
@@ -46,7 +47,8 @@ const AUtextInput = ({ as, dark, block, status, type = 'text', className = '', .
 					`${ dark ? ' au-text-input--dark' : '' }` +
 					`${ block ? ' au-text-input--block' : '' }` +
 					`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
-					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }`
+					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }` +
+					`${ width ? ' au-text-input--width-' + width : '' }`
 				}
 				type={ type } { ...attributeOptions }
 			/>
@@ -58,6 +60,7 @@ AUtextInput.propTypes = {
 	block: PropTypes.bool,
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
+	width: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl' ])
 };
 
 AUtextInput.defaultProps = {

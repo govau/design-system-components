@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/accordion",
-	"version": "7.0.6",
+	"version": "7.0.7",
 	"description": "Allow the user to toggle the visibility of an element",
 	"keywords": [
 		"auds",
@@ -138,7 +138,7 @@
 		},
 		{
 			"name": "Adam Zerella",
-			"email": "adam@commandshiftr.co",
+			"email": "hello@adamzerella.com",
 			"url": "https://github.com/adamzerella"
 		}
 	],
