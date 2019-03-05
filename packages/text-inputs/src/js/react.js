@@ -60,7 +60,7 @@ AUtextInput.propTypes = {
 	block: PropTypes.bool,
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
-	width: PropTypes.oneOf(["xs", "sm", "md","lg", "xl"])
+	width: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl' ])
 };
 
 AUtextInput.defaultProps = {
