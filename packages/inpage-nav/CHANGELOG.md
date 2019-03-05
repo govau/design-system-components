@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.5 - Removed unused `Fragment` React import](#v305)
 * [v3.0.4 - Removed uikit references](#v304)
 * [v3.0.3 - Added an aria-label attribute to the nav element](#v303)
 * [v3.0.2 - Update dependencies](#v302)
@@ -37,6 +38,11 @@
 
 
 ## Release History
+
+### v3.0.5
+
+- Removed unused `Fragment` React import
+
 
 ### v3.0.4
 

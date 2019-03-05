@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.4 - Removed unused `Fragment` React import](#v304)
 * [v3.0.3 - Removed uikit references](#v303)
 * [v3.0.2 - Update dependencies](#v302)
 * [v3.0.1 - Removing web pack dev server, updating dependencies](#v301)
@@ -36,6 +37,11 @@
 
 
 ## Release History
+
+### v3.0.4
+
+- Removed unused `Fragment` React import
+
 
 ### v3.0.3
 

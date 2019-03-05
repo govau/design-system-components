@@ -105,27 +105,31 @@ ReactDOM.render(
 					{
 						label: 'Phone',
 						value: 'phone',
-						id: 'phoneCheckbox',
+						id: 'cb-phone',
 					},
 					{
 						label: 'Tablet',
 						value: 'tablet',
 						checked: true,
+						id: 'cb-tablet',
 					},
 					{
 						label: 'Laptop',
 						value: 'laptop',
+						id: 'cb-laptop',
 					},
 					{
 						label: 'Mobile',
 						value: 'mobile',
 						className: 'testing',
+						id: 'cb-mobile',
 					},
 					{
 						label: 'Fax',
 						value: 'fax',
 						disabled: true,
 						checked: true,
+						id: 'cb-fax',
 					},
 				]} />
 
@@ -136,64 +140,68 @@ ReactDOM.render(
 					{
 						label: 'Yes',
 						value: 'yes',
-						id: 'yesRadio',
+						id: 'radio-yes',
 					},
 					{
 						label: 'Maybe',
 						value: 'maybe',
+						id: "radio-maybe"
 					},
 					{
 						label: 'No',
 						value: 'no',
 						className: 'testing',
+						id: "radio-no"
 					},
 					{
 						label: 'What',
 						value: 'what',
 						disabled: true,
 						checked: true,
+						id: "radio-what"
 					},
 				]} />
 
 
 				<hr/>
-				<h2>control-inputs <code>--dark --block</code></h2>
-				<AUcheckbox label="I agree" block />
-				<AUradio label="Maybe" block />
+				<h2>control-inputs <code> --block</code></h2>
+				<AUcheckbox id="cb-block" label="I agree" block />
+				<AUradio id="radio-block" label="Maybe" block />
 
 
 				<hr/>
 				<h2>control-inputs <code>--small</code></h2>
-				<AUcheckbox label="I agree" small />
-				<AUradio label="Maybe" small />
+				<AUcheckbox id="cb-small" label="I agree" small />
+				<AUradio id="radio-small" label="Maybe" small />
 
 
 				<hr />
 				<h2>invalid checkboxes with and without classes</h2>
-				<AUcheckbox label="I agree" status="invalid" defaultChecked />
-				<AUcheckbox label="I agree" required />
+				<AUcheckbox id="cb-invalid-class" label="I agree" status="invalid" defaultChecked />
+				<AUcheckbox id="cb-invalid" label="I agree" required />
 
 
 				<hr />
 				<h2>invalid radio buttons with and without classes</h2>
-				<AUradio label="I agree" status="invalid" defaultChecked />
-				<AUradio label="I agree" required />
+				<AUradio id="radio-invalid-class" label="I agree" status="invalid" defaultChecked />
+				<AUradio id="radio-invalid" label="I agree" required />
 
 
 				<hr />
 				<h2>control-inputs with <code>onChange</code></h2>
-
 				<CheckboxList name="checkbox-ex2" items={[
 					{
 						label: 'Phone',
 						value: 'phone',
 						onChange: () => { console.log('This function will run when the first checkbox is changed') },
+						id:"cb-phone-onchange"
 					},
 					{
 						label: 'Tablet',
 						value: 'tablet',
 						checked: true,
 						onChange: () => { console.log('This function will run when the second checkbox is changed') },
+						id:"cb-tablet-onchange"
 					},
 				]} />
 
@@ -204,11 +212,13 @@ ReactDOM.render(
 						label: 'Yes',
 						value: 'yes',
 						onChange: () => { console.log('This function will run when the first radio button is changed') },
+						id:"radio-yes-onchange"
 					},
 					{
 						label: 'Maybe',
 						value: 'maybe',
 						onChange: () => { console.log('This function will run when the second radio button is changed') },
+						id:"radio-maybe-onchange"
 					},
 				]} />
 			</div>
@@ -218,24 +228,29 @@ ReactDOM.render(
 					{
 						label: 'Phone',
 						value: 'phone',
+						id:"dark-cbl-phone"
 					},
 					{
 						label: 'Tablet',
 						value: 'tablet',
 						checked: true,
+						id: "dark-cbl-tab"
 					},
 					{
 						label: 'Laptop',
 						value: 'laptop',
+						id:"dark-cbl-lap"
 					},
 					{
 						label: 'Mobile',
 						value: 'mobile',
 						className: 'testing',
+						id:"dark-cbl-mob"
 					},
 					{
 						label: 'Fax',
 						value: 'fax',
+						id:"dark-cbl-fax",
 						disabled: true,
 						checked: true,
 					},
@@ -248,47 +263,51 @@ ReactDOM.render(
 					{
 						label: 'Yes',
 						value: 'yes',
+						id: "rl-dark-yes"
 					},
 					{
 						label: 'Maybe',
 						value: 'maybe',
+						id: "rl-dark-maybe"
 					},
 					{
 						label: 'No',
 						value: 'no',
 						className: 'testing',
+						id: "rl-dark-no"
 					},
 					{
 						label: 'What',
 						value: 'what',
 						disabled: true,
 						checked: true,
+						id: "rl-dark-what"
 					},
 				]} />
 
 
 				<hr/>
 				<h2>control-inputs <code>--dark --block</code></h2>
-				<AUcheckbox label="I agree" block dark />
-				<AUradio label="Maybe" block dark />
+				<AUcheckbox id="cb-dark-block" label="I agree" block dark />
+				<AUradio id="radio-dark-block" label="Maybe" block dark />
 
 
 				<hr/>
 				<h2>control-inputs <code>--dark --small</code></h2>
-				<AUcheckbox label="I agree" dark small />
-				<AUradio label="Maybe" dark small />
+				<AUcheckbox id="cb-dark-small" label="I agree" dark small />
+				<AUradio id="radio-dark-block-small" label="Maybe" dark small />
 
 
 				<hr />
 				<h2>invalid checkboxes with and without classes <code>--dark</code></h2>
-				<AUcheckbox dark label="I agree" status="invalid" defaultChecked />
-				<AUcheckbox dark label="I agree" required />
+				<AUcheckbox id="cb-dark-class-invalid" dark label="I agree" status="invalid" defaultChecked />
+				<AUcheckbox id="cb-dark-invalid" dark label="I agree" required />
 
 
 				<hr />
 				<h2>invalid radio buttons with and without classes <code>--dark</code></h2>
-				<AUradio dark label="I agree" status="invalid" defaultChecked />
-				<AUradio dark label="I agree" required />
+				<AUradio id="radio-dark-class-invalid" dark label="I agree" status="invalid" defaultChecked />
+				<AUradio id="radio-dark-invalid" dark label="I agree" required />
 			</div>
 		</div>
 		<div className="split-wrapper">
@@ -298,27 +317,31 @@ ReactDOM.render(
 					{
 						label: 'Phone',
 						value: 'phone',
-						id: 'phoneCheckbox',
+						id: 'cbl-alt-phone',
 					},
 					{
 						label: 'Tablet',
 						value: 'tablet',
 						checked: true,
+						id: 'cbl-alt-tab'
 					},
 					{
 						label: 'Laptop',
 						value: 'laptop',
+						id: 'cbl-alt-lap'
 					},
 					{
 						label: 'Mobile',
 						value: 'mobile',
 						className: 'testing',
+						id: 'cbl-alt-test'
 					},
 					{
 						label: 'Fax',
 						value: 'fax',
 						disabled: true,
 						checked: true,
+						id: 'cbl-alt-fax'
 					},
 				]} />
 
@@ -329,48 +352,52 @@ ReactDOM.render(
 					{
 						label: 'Yes',
 						value: 'yes',
-						id: 'yesRadio'
+						id: 'yesRadio',
+						id: 'rl-alt-yes'
 					},
 					{
 						label: 'Maybe',
 						value: 'maybe',
+						id: 'rl-alt-maybe'
 					},
 					{
 						label: 'No',
 						value: 'no',
 						className: 'testing',
+						id: 'rl-alt-no'
 					},
 					{
 						label: 'What',
 						value: 'what',
 						disabled: true,
 						checked: true,
+						id: 'rl-alt-what'
 					},
 				]} />
 
 
 				<hr/>
 				<h2>control-inputs <code>--alt --block</code></h2>
-				<AUcheckbox label="I agree" alt block />
-				<AUradio label="Maybe" alt block />
+				<AUcheckbox id="cb-alt-block" label="I agree" alt block />
+				<AUradio id="cb-radio-block" label="Maybe" alt block />
 
 
 				<hr/>
 				<h2>control-inputs <code>--alt --small</code></h2>
-				<AUcheckbox label="I agree" alt small />
-				<AUradio label="Maybe" alt small />
+				<AUcheckbox id="cb-alt-small" label="I agree" alt small />
+				<AUradio id="radio-alt-small" label="Maybe" alt small />
 
 
 				<hr />
 				<h2>invalid checkboxes with and without classes <code>--alt</code></h2>
-				<AUcheckbox alt label="I agree" status="invalid" defaultChecked />
-				<AUcheckbox alt label="I agree" required />
+				<AUcheckbox id="cb-alt-invalid-class" alt label="I agree" status="invalid" defaultChecked />
+				<AUcheckbox id="cb-alt-block-invalid" alt label="I agree" required />
 
 
 				<hr />
 				<h2>invalid radio buttons with and without classes <code>--alt</code></h2>
-				<AUradio alt label="I agree" status="invalid" defaultChecked />
-				<AUradio alt label="I agree" required />
+				<AUradio id="radio-alt-invalid-class" alt label="I agree" status="invalid" defaultChecked />
+				<AUradio id="radio-alt-invalid" alt label="I agree" required />
 			</div>
 			<div className="split split--alt split--dark">
 				<h2>checkboxes <code>--alt --dark</code></h2>
@@ -378,26 +405,31 @@ ReactDOM.render(
 					{
 						label: 'Phone',
 						value: 'phone',
+						id: 'cbl-dark-alt-phone'
 					},
 					{
 						label: 'Tablet',
 						value: 'tablet',
 						checked: true,
+						id: 'cbl-dark-alt-tab'
 					},
 					{
 						label: 'Laptop',
 						value: 'laptop',
+						id: 'cbl-dark-alt-lap'
 					},
 					{
 						label: 'Mobile',
 						value: 'mobile',
 						className: 'testing',
+						id: 'cbl-dark-alt-mob'
 					},
 					{
 						label: 'Fax',
 						value: 'fax',
 						disabled: true,
 						checked: true,
+						id: 'cbl-dark-alt-fax'
 					},
 				]} />
 
@@ -429,26 +461,26 @@ ReactDOM.render(
 
 				<hr/>
 				<h2>control-inputs <code>--alt --dark --block</code></h2>
-				<AUcheckbox label="I agree" alt dark block />
-				<AUradio label="Maybe" alt dark block />
+				<AUcheckbox id="cb-alt-dark-block" label="I agree" alt dark block />
+				<AUradio id="radio-alt-dark-block"  label="Maybe" alt dark block />
 
 
 				<hr/>
 				<h2>control-inputs <code>--alt --dark --small</code></h2>
-				<AUcheckbox label="I agree" alt dark small />
-				<AUradio label="Maybe" alt dark small />
+				<AUcheckbox id="cb-alt-dark-small"  label="I agree" alt dark small />
+				<AUradio id="radio-alt-dark-small"  label="Maybe" alt dark small />
 
 
 				<hr />
 				<h2>invalid checkboxes with and without classes <code>--alt --dark</code></h2>
-				<AUcheckbox alt dark label="I agree" status="invalid" defaultChecked />
-				<AUcheckbox alt dark label="I agree" required />
+				<AUcheckbox id="cb-alt-dark-invalid-class"  alt dark label="I agree" status="invalid" defaultChecked />
+				<AUcheckbox id="cb-alt-dark-invalid"  alt dark label="I agree" required />
 
 
 				<hr />
 				<h2>invalid radio buttons with and without classes <code>--alt --dark</code></h2>
-				<AUradio alt dark label="I agree" status="invalid" defaultChecked />
-				<AUradio alt dark label="I agree" required />
+				<AUradio id="radio-alt-dark-invalid-class" alt dark label="I agree" status="invalid" defaultChecked />
+				<AUradio id="radio-alt-dark-invalid" alt dark label="I agree" required />
 			</div>
 		</div>
 	</div>,

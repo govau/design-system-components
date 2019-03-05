@@ -135,6 +135,7 @@ The visual test: https://auds.service.gov.au/packages/keyword-list/tests/site/
 
 ## Release History
 
+* v3.0.4 - Removed unused `Fragment` React import
 * v3.0.3 - Removed uikit references
 * v3.0.2 - Update dependencies
 * v3.0.1 - Removing web pack dev server, updating dependencies
