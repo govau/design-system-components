@@ -363,12 +363,12 @@ $dependencies: (
 		$ratio: 1 / $ratio;
 	}
 
-	@if $ratio < $target and $silent == false {
-		@warn "Houston, we have a problem; contrast ratio of #{ $foreground } on #{ $background } is bad, just #{ $ratio }";
-	}
-
 	@if $rounded == true {
 		$ratio: round( $ratio * 10 ) / 10;
+	}
+
+	@if $ratio < $target and $silent == false {
+		@warn "Houston, we have a problem; contrast ratio of #{ $foreground } on #{ $background } is bad, just #{ $ratio }";
 	}
 
 	@return $ratio;
@@ -808,17 +808,17 @@ $AU-color-forground-palette: (
 // Warn user when a light forground and background color don't meet WCAG AA contrast
 @each $key, $val in $AU-color-forground-palette {
 	@if( $key == 'focus' or $key =='border') {
-		@warn $key;
 		$_: AU-color-contrast( $val, $AU-color-background, false, true, 3 );
 		$_: AU-color-contrast( $val, $AU-color-background-shade, false, true, 3 );
 		$_: AU-color-contrast( $val, $AU-color-background-alt, false, true, 3 );
 		$_: AU-color-contrast( $val, $AU-color-background-alt-shade, false, true, 3 );
 	}
-
-	$_: AU-color-contrast( $val, $AU-color-background, false, true, 4.5 );
-	$_: AU-color-contrast( $val, $AU-color-background-shade, false, true, 4.5 );
-	$_: AU-color-contrast( $val, $AU-color-background-alt, false, true, 4.5 );
-	$_: AU-color-contrast( $val, $AU-color-background-alt-shade, false, true, 4.5 );
+	@else {
+		$_: AU-color-contrast( $val, $AU-color-background, false, true, 4.5 );
+		$_: AU-color-contrast( $val, $AU-color-background-shade, false, true, 4.5 );
+		$_: AU-color-contrast( $val, $AU-color-background-alt, false, true, 4.5 );
+		$_: AU-color-contrast( $val, $AU-color-background-alt-shade, false, true, 4.5 );
+	}
 }
 
 /**
@@ -850,11 +850,12 @@ $AU-colordark-forground-palette: (
 		$_: AU-color-contrast( $val, $AU-colordark-background-alt, false, true, 3 );
 		$_: AU-color-contrast( $val, $AU-colordark-background-alt-shade, false, true, 3 );
 	}
-
-	$_: AU-color-contrast( $val, $AU-colordark-background, false, true, 4.5 );
-	$_: AU-color-contrast( $val, $AU-colordark-background-shade, false, true, 4.5 );
-	$_: AU-color-contrast( $val, $AU-colordark-background-alt, false, true, 4.5 );
-	$_: AU-color-contrast( $val, $AU-colordark-background-alt-shade, false, true, 4.5 );
+	@else{
+		$_: AU-color-contrast( $val, $AU-colordark-background, false, true, 4.5 );
+		$_: AU-color-contrast( $val, $AU-colordark-background-shade, false, true, 4.5 );
+		$_: AU-color-contrast( $val, $AU-colordark-background-alt, false, true, 4.5 );
+		$_: AU-color-contrast( $val, $AU-colordark-background-alt-shade, false, true, 4.5 );
+	}
 }
 
 /**
