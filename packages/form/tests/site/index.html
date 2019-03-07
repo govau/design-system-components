@@ -73,6 +73,19 @@
 
 			<hr>
 
+			<h3>Error text bottom</h3>
+
+			<p>
+				<label class="au-label" for="text-input-error-bottom">Password</label>
+				<span class="au-hint-text" id="hint-text-e-bottom">Minimum 6 characters</span>
+				<input type="text" type="text" class="au-text-input au-text-input--invalid" id="text-input-error-bottom" name="text-input-error"
+				aria-invalid="true" aria-describedby="error-text hint-text-e-bottom" />
+				<span class="au-error-text au-error-text--show" id="error-text-bottom">Password was less than 6 characters </span>
+			</p>
+
+
+			<hr>
+
 			<h3>Form group</h3>
 			<p>
 				<div class="au-form-group">
@@ -100,14 +113,33 @@
 				<div class="au-form-group au-form-group--error">
 					<label class="au-label" for="text-input-form-group-3">Password</label>
 					<span class="au-hint-text" id="hint-text-fg-err">Minimum 6 characters</span>
-					<span class="au-error-text au-error-text--show" id="error-text-2">Password was less than 6 characters </span>
+					<span class="au-error-text" id="error-text-2">Password was less than 6 characters </span>
 					<input type="text" type="text" class="au-text-input au-text-input--invalid" id="text-input-form-group-3" name="text-input-form-group-3"
 					 aria-invalid="true" aria-describedby="error-text-2 hint-text-fg-err" />
 				</div>
 			</p>
 
 			<br>
+
+			<hr>
+			<h3>Form group with <code>--error</code> bottom</h3>
+			
+			<p>
+				<div class="au-form-group">
+					<label class="au-label" for="text-input-form-group-2-bottom">Username</label>
+					<input type="text" type="text" class="au-text-input" id="text-input-form-group-2-bottom" name="text-input-form-group-2" />
+				</div>
+				<div class="au-form-group au-form-group--error">
+					<label class="au-label" for="text-input-form-group-3-bottom">Password</label>
+					<span class="au-hint-text" id="hint-text-fg-err-bottom">Minimum 6 characters</span>
+					<input type="text" type="text" class="au-text-input au-text-input--invalid" id="text-input-form-group-3-bottom" name="text-input-form-group-3"
+					aria-invalid="true" aria-describedby="error-text-2-bottom hint-text-fg-err-bottom" />
+					<span class="au-error-text" id="error-text-2-bottom">Password was less than 6 characters </span>
+				</div>
+			</p>
+
 			<br>
+
 			<hr>
 
 			<h3>Fieldsets</h3>
