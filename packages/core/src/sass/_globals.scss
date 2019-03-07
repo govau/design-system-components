@@ -341,10 +341,12 @@ $dependencies: (
  * @param  {string}   $background - Color two
  * @param  {boolean}  $silent     - If the logs get printed in the terminal
  * @param  {boolean}  $rounded    - If the value is rounded or not
+ * @param  {number}   $target     - Contrast ratio target, e.g 4.5 or 3
+
  *
  * @return {integer}              - The contrast ratio
  */
-@function AU-color-contrast( $foreground, $background, $silent: false, $rounded: true ) {
+@function AU-color-contrast( $foreground, $background, $silent: false, $rounded: true, $target: 4.5 ) {
 	@if type-of( $foreground ) != 'color' {
 		@error "Elementary, my dear Watson; the AU-color-contrast function only takes a color as first argument!";
 	}
@@ -361,7 +363,7 @@ $dependencies: (
 		$ratio: 1 / $ratio;
 	}
 
-	@if $ratio < 4.5 and $silent == false {
+	@if $ratio < $target and $silent == false {
 		@warn "Houston, we have a problem; contrast ratio of #{ $foreground } on #{ $background } is bad, just #{ $ratio }";
 	}
 
@@ -805,10 +807,18 @@ $AU-color-forground-palette: (
 
 // Warn user when a light forground and background color don't meet WCAG AA contrast
 @each $key, $val in $AU-color-forground-palette {
-	$_: AU-color-contrast( $val, $AU-color-background );
-	$_: AU-color-contrast( $val, $AU-color-background-shade );
-	$_: AU-color-contrast( $val, $AU-color-background-alt );
-	$_: AU-color-contrast( $val, $AU-color-background-alt-shade );
+	@if( $key == 'focus' or $key =='border') {
+		@warn $key;
+		$_: AU-color-contrast( $val, $AU-color-background, false, true, 3 );
+		$_: AU-color-contrast( $val, $AU-color-background-shade, false, true, 3 );
+		$_: AU-color-contrast( $val, $AU-color-background-alt, false, true, 3 );
+		$_: AU-color-contrast( $val, $AU-color-background-alt-shade, false, true, 3 );
+	}
+
+	$_: AU-color-contrast( $val, $AU-color-background, false, true, 4.5 );
+	$_: AU-color-contrast( $val, $AU-color-background-shade, false, true, 4.5 );
+	$_: AU-color-contrast( $val, $AU-color-background-alt, false, true, 4.5 );
+	$_: AU-color-contrast( $val, $AU-color-background-alt-shade, false, true, 4.5 );
 }
 
 /**
@@ -834,10 +844,17 @@ $AU-colordark-forground-palette: (
 
 // Warn user when a dark forground and background color don't meet WCAG AA contrast
 @each $key, $val in $AU-colordark-forground-palette {
-	$_: AU-color-contrast( $val, $AU-colordark-background );
-	$_: AU-color-contrast( $val, $AU-colordark-background-shade );
-	$_: AU-color-contrast( $val, $AU-colordark-background-alt );
-	$_: AU-color-contrast( $val, $AU-colordark-background-alt-shade );
+	@if( $key == 'focus' or $key =='border') {
+		$_: AU-color-contrast( $val, $AU-colordark-background, false, true, 3 );
+		$_: AU-color-contrast( $val, $AU-colordark-background-shade, false, true, 3 );
+		$_: AU-color-contrast( $val, $AU-colordark-background-alt, false, true, 3 );
+		$_: AU-color-contrast( $val, $AU-colordark-background-alt-shade, false, true, 3 );
+	}
+
+	$_: AU-color-contrast( $val, $AU-colordark-background, false, true, 4.5 );
+	$_: AU-color-contrast( $val, $AU-colordark-background-shade, false, true, 4.5 );
+	$_: AU-color-contrast( $val, $AU-colordark-background-alt, false, true, 4.5 );
+	$_: AU-color-contrast( $val, $AU-colordark-background-alt-shade, false, true, 4.5 );
 }
 
 /**
