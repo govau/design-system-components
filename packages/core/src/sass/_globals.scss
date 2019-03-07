@@ -794,7 +794,7 @@ $AU-color-background:           #ffffff !default;
 $AU-color-background-shade:     #f5f5f5 !default;
 $AU-color-background-alt:       #ebebeb !default;
 $AU-color-background-alt-shade: #e0e0e0 !default;
-$AU-color-foreground-border:    #808080 !default;
+$AU-color-foreground-border:    #646363 !default;
 $AU-color-foreground-muted:     #626262 !default;
 
 $AU-color-forground-palette: (
@@ -805,19 +805,30 @@ $AU-color-forground-palette: (
 	border: $AU-color-foreground-border
 );
 
+$AU-color-background-palette: (
+	background: $AU-color-background,
+	background-alt: $AU-color-background-alt,
+	background-shade: $AU-color-background-shade,
+	background-alt-shade: $AU-color-background-alt-shade
+);
+
 // Warn user when a light forground and background color don't meet WCAG AA contrast
-@each $key, $val in $AU-color-forground-palette {
-	@if( $key == 'focus' or $key =='border') {
-		$_: AU-color-contrast( $val, $AU-color-background, false, true, 3 );
-		$_: AU-color-contrast( $val, $AU-color-background-shade, false, true, 3 );
-		$_: AU-color-contrast( $val, $AU-color-background-alt, false, true, 3 );
-		$_: AU-color-contrast( $val, $AU-color-background-alt-shade, false, true, 3 );
-	}
-	@else {
-		$_: AU-color-contrast( $val, $AU-color-background, false, true, 4.5 );
-		$_: AU-color-contrast( $val, $AU-color-background-shade, false, true, 4.5 );
-		$_: AU-color-contrast( $val, $AU-color-background-alt, false, true, 4.5 );
-		$_: AU-color-contrast( $val, $AU-color-background-alt-shade, false, true, 4.5 );
+@each $fg-key, $fg-val in $AU-color-forground-palette {
+	@each $bg-key, $bg-val in $AU-color-background-palette {
+		@if( $fg-key == 'focus' or $fg-key =='border') {
+			$score: AU-color-contrast( $fg-val, $bg-val, true, false, 3 );
+			@if( $score < 3) {
+				$newForeground: AU-color-a11y( $fg-val, $bg-val, 'small' );
+				@warn "Ruh roh! The foreground: #{ $fg-val } on background: #{ $bg-val } isn't meeting WCAG 2.1 for a focus or border colour. Try this one: #{ $newForeground }";
+			}
+		}
+		@else {
+			$score: AU-color-contrast( $fg-val, $bg-val, true, false, 4.5 );
+			@if( $score < 4.5) {
+				$newForeground: AU-color-a11y( $fg-val, $bg-val, 'large' );
+				@warn "Ruh roh! The foreground: #{ $fg-val } on background: #{ $bg-val } isn't meeting WCAG 2.1. Try this one: #{ $newForeground }";
+			}
+		}
 	}
 }
 
@@ -842,19 +853,30 @@ $AU-colordark-forground-palette: (
 	border: $AU-colordark-foreground-border
 );
 
-// Warn user when a dark forground and background color don't meet WCAG AA contrast
-@each $key, $val in $AU-colordark-forground-palette {
-	@if( $key == 'focus' or $key =='border') {
-		$_: AU-color-contrast( $val, $AU-colordark-background, false, true, 3 );
-		$_: AU-color-contrast( $val, $AU-colordark-background-shade, false, true, 3 );
-		$_: AU-color-contrast( $val, $AU-colordark-background-alt, false, true, 3 );
-		$_: AU-color-contrast( $val, $AU-colordark-background-alt-shade, false, true, 3 );
-	}
-	@else{
-		$_: AU-color-contrast( $val, $AU-colordark-background, false, true, 4.5 );
-		$_: AU-color-contrast( $val, $AU-colordark-background-shade, false, true, 4.5 );
-		$_: AU-color-contrast( $val, $AU-colordark-background-alt, false, true, 4.5 );
-		$_: AU-color-contrast( $val, $AU-colordark-background-alt-shade, false, true, 4.5 );
+$AU-colordark-background-palette: (
+	background: $AU-colordark-background,
+	background-alt: $AU-colordark-background-alt,
+	background-shade: $AU-colordark-background-shade,
+	background-alt-shade: $AU-colordark-background-alt-shade
+);
+
+// Warn user when a light forground and background color don't meet WCAG AA contrast
+@each $fg-key, $fg-val in $AU-colordark-forground-palette {
+	@each $bg-key, $bg-val in $AU-colordark-background-palette {
+		@if( $fg-key == 'focus' or $fg-key =='border') {
+			$score: AU-color-contrast( $fg-val, $bg-val, true, false, 3 );
+			@if( $score < 3) {
+				$newForeground: AU-color-a11y( $fg-val, $bg-val, 'small' );
+				@warn "Ruh roh! The foreground: #{ $fg-val } on background: #{ $bg-val } isn't meeting WCAG 2.1 for a focus or border colour. Try this one: #{ $newForeground }";
+			}
+		}
+		@else {
+			$score: AU-color-contrast( $fg-val, $bg-val, true, false, 4.5 );
+			@if( $score < 4.5) {
+				$newForeground: AU-color-a11y( $fg-val, $bg-val, 'large' );
+				@warn "Ruh roh! The foreground: #{ $fg-val } on background: #{ $bg-val } isn't meeting WCAG 2.1. Try this one: #{ $newForeground }";
+			}
+		}
 	}
 }
 
