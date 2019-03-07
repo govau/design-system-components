@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/body",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "Basic body styles for body HTML elements",
 	"keywords": [
 		"auds",
@@ -114,7 +114,7 @@
 		},
 		{
 			"name": "Adam Zerella",
-			"email": "adam@commandshiftr.co",
+			"email": "hello@adamzerella.com",
 			"url": "https://github.com/adamzerella"
 		}
 	],

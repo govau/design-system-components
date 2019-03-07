@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/header",
-	"version": "4.1.9",
+	"version": "4.1.11",
 	"description": "Headers provide a consistent start to pages.",
 	"keywords": [
 		"auds",
@@ -130,7 +130,7 @@
 		},
 		{
 			"name": "Adam Zerella",
-			"email": "adam@commandshiftr.co",
+			"email": "hello@adamzerella.com",
 			"url": "https://github.com/adamzerella"
 		}
 	],
