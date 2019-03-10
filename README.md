@@ -286,6 +286,22 @@ All components have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/file-upload</summary>
+	<br><code>npm install @gov.au/file-upload</code><br>
+	<br>See the <a href="https://auds.service.gov.au/packages/file-upload/tests/site/">visual test file for file-upload</a>
+	<br>See the <a href="https://github.com/govau/design-system-components/blob/master/packages/file-upload/README.md">readme file for file-upload</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+├─ core
+└─ buttons
+   └─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/footer</summary>
 	<br><code>npm install @gov.au/footer</code><br>
 	<br>See the <a href="https://auds.service.gov.au/packages/footer/tests/site/">visual test file for footer</a>
