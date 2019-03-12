@@ -134,14 +134,14 @@ AUformGroup.propTypes = {
  * @param  {object}  attributeOptions - Any other attribute options
  */
 export const AUfieldset = ({ dark, className = '', ...attributeOptions }) => (
-	<div
+	<fieldset
 		className={ `au-fieldset ${ className }` +
 		`${ dark ? ' au-fieldset--dark' : '' }`
 		}
 		{ ...attributeOptions }
 	>
 
-	</div>
+	</fieldset>
 );
 
 AUfieldset.propTypes = {
