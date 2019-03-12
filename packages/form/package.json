@@ -64,6 +64,7 @@
 		"@gov.au/core": "^3.0.0"
 	},
 	"devDependencies": {
+		"@gov.au/headings": "^2.0.10",
 		"@gov.au/text-inputs": "^2.1.0",
 		"babel-core": "^6.26.0",
 		"babel-loader": "^7.1.2",
