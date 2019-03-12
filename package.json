@@ -6,7 +6,7 @@
 		"express": "^4.16.4",
 		"inquirer": "6.2.2",
 		"jest-cli": "^24.4.0",
-		"lerna": "^3.13.1",
+		"lerna": "2.11.0",
 		"node-sass": "^4.11.0",
 		"pa11y": "^5.1.0",
 		"postcss": "^7.0.14",
@@ -17,7 +17,7 @@
 	},
 	"scripts": {
 		"scaffolding": "node ./scripts/helper.js scaffolding",
-		"bootstrap": "lerna exec --concurrency 1 -- lerna bootstrap",
+		"bootstrap": "lerna bootstrap",
 		"build": "lerna run build --concurrency 1",
 		"publish": "lerna publish --skip-git",
 		"nuke": "npm run delete:node_modules | npm run delete:lib",
