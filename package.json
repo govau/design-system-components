@@ -1,18 +1,19 @@
 {
 	"devDependencies": {
-		"autoprefixer": "^7.1.6",
-		"cfonts": "^2.1.2",
-		"chalk": "^2.3.0",
-		"express": "^4.16.2",
-		"inquirer": "4.0.0",
-		"jest-cli": "^22.4.3",
-		"lerna": "^2.11.0",
+		"autoprefixer": "^9.4.10",
+		"cfonts": "^2.4.2",
+		"chalk": "^2.4.2",
+		"express": "^4.16.4",
+		"inquirer": "6.2.2",
+		"jest-cli": "^24.4.0",
+		"lerna": "2.11.0",
 		"node-sass": "^4.11.0",
-		"pa11y": "^5.0.4",
-		"postcss": "^6.0.14",
-		"puppeteer": "^1.8.0",
-		"semver": "^5.4.1",
-		"treeify": "^1.0.1"
+		"pa11y": "^5.1.0",
+		"postcss": "^7.0.14",
+		"puppeteer": "^1.13.0",
+		"rimraf": "^2.6.3",
+		"semver": "^5.6.0",
+		"treeify": "^1.1.0"
 	},
 	"scripts": {
 		"scaffolding": "node ./scripts/helper.js scaffolding",
@@ -20,8 +21,8 @@
 		"build": "lerna run build --concurrency 1",
 		"publish": "lerna publish --skip-git",
 		"nuke": "npm run delete:node_modules | npm run delete:lib",
-		"delete:node_modules": "rm -rf packages/*/node_modules | rm -rf node_modules",
-		"delete:lib": "rm -rf packages/*/lib/**",
+		"delete:node_modules": "lerna clean node_modules --yes | rimraf node_modules",
+		"delete:lib": "rimraf packages/*/lib/**",
 		"test:unit-test": "jest",
 		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},

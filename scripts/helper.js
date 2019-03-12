@@ -266,7 +266,7 @@ const HELPER = (() => { // constructor factory
 /**
  * Dependencies
  */
-const Babel = require('babel-core');
+const Babel = require('@babel/core');
 const Treeify = require('treeify');
 
 
@@ -412,12 +412,10 @@ HELPER.precompile = (() => {
 					compact: true,
 					minified: true,
 					presets: [
-						`es2015`,
-						`react`,
-						`stage-0`,
+						`@babel/preset-env`,
+						`@babel/preset-react`
 					],
-					sourceMaps: "both",
-					sourceMapTarget: `react.es5.js`,
+					sourceMaps: "both"
 				};
 
 				const searches = {
@@ -1061,7 +1059,7 @@ HELPER.test = (() => {
 						error += `The module ${ module } is missing "react" as devDependency.\n`;
 					}
 
-					if( hasReact && Object.keys( packagesPKG.devDependencies ).length < 12 ) {
+					if( hasReact && Object.keys( packagesPKG.devDependencies ).length < 10 ) {
 						error += `The module ${ module } doesn’t have the right amount of devDependencies.\n`;
 					}
 
