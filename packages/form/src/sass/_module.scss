@@ -13,7 +13,7 @@
 
 
 .au-form-group {
-  &--error {
+  &--invalid {
     border-left: solid 5px $AU-color-error-forgeround-text;
     padding-left: 15px;
   }
@@ -29,6 +29,7 @@
   font-family: $AU-font;
   color: $AU-color-foreground-text;
   display: block;
+  @include AU-fontgrid( sm, default);
 
   &--inline {
     display: inline-block;
@@ -48,6 +49,7 @@
   font-family: $AU-font;
   color: $AU-color-foreground-muted;
   display: block;
+  @include AU-fontgrid( sm, default);
 
 	* + & {
 		@include AU-space( margin-top, 0.4unit );
@@ -68,6 +70,7 @@
   font-weight: bold;
   color: $AU-color-error-forgeround-text;
   display: block;
+  @include AU-fontgrid( sm, default);
 
   * + & {
 		@include AU-space( margin-top, 0.4unit );
