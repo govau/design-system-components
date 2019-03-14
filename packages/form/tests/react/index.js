@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {AUlabel, AUhintText, AUerrorText, AUformGroup} from './form.js';
-import AUtextInput from '@gov.au/text-inputs';
-import AUheading from '@gov.au/headings';
+import AUtextInput from '../../../text-inputs';
+// import AUheading from '@gov.au/headings';
 import { AUfieldset } from '../../src/js/react';
 
 class App extends React.Component {
@@ -95,9 +95,9 @@ class App extends React.Component {
 					<h3>Fieldset</h3>
 					<AUfieldset>
 						<legend class="au-fieldset--heading">
-							<AUheading level="1" size="xl">
+							{/* <AUheading level="1" size="xl">
 								What is your address?
-							</AUheading>
+							</AUheading> */}
 						</legend>
 						
 
