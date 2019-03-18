@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {AUlabel, AUhintText, AUerrorText, AUformGroup} from './form.js';
+import { AUlabel, AUhintText, AUerrorText, AUformGroup, AUfieldset } from './form.js';
 import AUtextInput from '../../../text-inputs';
-// import AUheading from '@gov.au/headings';
-import { AUfieldset } from '../../src/js/react';
+import AUheading from '../../../headings';
+import AUselect from '../../../select';
+import { AUcheckbox } from '../../../control-input';
 
 class App extends React.Component {
+
 	render() {
+		const states = [
+			{ value: '', text: 'Please select'},
+			{ value: '1', text: 'ACT' },
+			{ value: '2', text: 'VIC' },
+			{ value: '3', text: 'NSW' },
+			];
 		return (
-			<div class="split-wrapper au-body">
+			<div className="split-wrapper au-body">
 				<div className="split">
 					<h3>Label</h3>
 					<p>
@@ -92,16 +100,90 @@ class App extends React.Component {
 						</AUformGroup>
 					<hr/>
 
-					<h3>Fieldset</h3>
+					<h3>Fieldsets</h3>
+					<br/>
 					<AUfieldset>
-						<legend class="au-fieldset--heading">
-							{/* <AUheading level="1" size="xl">
+						<legend className="au-fieldset__legend">
+							<AUheading level="2" size="lg">
 								What is your address?
-							</AUheading> */}
+							</AUheading>
 						</legend>
-						
+						<AUformGroup>
+							<AUlabel htmlFor="address-1" title="Street and number" />
+							<AUtextInput id="address-1" width="lg" />
+						</AUformGroup>
+						<AUformGroup>
+							<AUlabel htmlFor="address-2" title="Suburb" />
+							<AUtextInput id="address-2" width="lg" />
+						</AUformGroup>
+
+						<AUformGroup>
+							<AUlabel htmlFor="select1" title="State" />
+							<AUselect id="select1" options={states} />
+						</AUformGroup>
+
+						<AUformGroup>
+							<AUlabel htmlFor="address-4" title="Postcode" />
+							<AUtextInput id="address-4" width="sm" />
+						</AUformGroup>
 
 					</AUfieldset>
+					<hr/>
+
+					<h3>Fieldsets with <code>--invalid</code></h3>
+					<br/>
+					<AUfieldset>
+						<legend className="au-fieldset__legend">
+							<AUheading level="2" size="lg">
+								What is your address?
+							</AUheading>
+						</legend>
+						<AUformGroup>
+							<AUlabel htmlFor="address-1-err" title="Street and number" />
+							<AUtextInput id="address-1-err" width="lg" />
+						</AUformGroup>
+
+						<AUformGroup>
+							<AUlabel htmlFor="address-2-err" title="Suburb" />
+							<AUtextInput id="address-2-err" width="lg" />
+						</AUformGroup>
+
+						<AUformGroup status="invalid">
+							<AUlabel htmlFor="select1-err" title="State" />
+							<AUerrorText title="A state was not selected" id="fg-error-text-err-bottom" />
+							<AUselect status="invalid" id="select1-err" options={states} />
+						</AUformGroup>
+
+						<AUformGroup>
+							<AUlabel htmlFor="address-4-err" title="Postcode" />
+							<AUtextInput id="address-4-err" width="sm" />
+						</AUformGroup>
+
+					</AUfieldset>
+
+					<hr/>
+
+					<h3>Fieldsets with control inputs <code>--invalid</code></h3>
+					<p></p>
+					<AUformGroup status="invalid">
+						<AUfieldset >
+							<legend className="au-fieldset__legend">
+								<AUheading level="2" size="lg">
+									Please select your favorite device
+								</AUheading>
+								<AUhintText title="Minimum 6 characters" id="device-hint-text-err" />
+								<AUerrorText title="A device was not selected" id="device-cb-err" />
+							</legend>
+
+							<AUcheckbox label="Phone" name="checkbox-ex-err" id="cb-phone-err" block/>
+							<AUcheckbox label="Tablet" name="checkbox-ex-err" id="cb-tablet-err" block/>
+							<AUcheckbox label="Laptop" name="checkbox-ex-err" id="cb-laptop-err" block/>
+
+						</AUfieldset>
+					</AUformGroup>
+					<br/>
+
+
 				</div>
 			</div>
 		);

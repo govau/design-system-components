@@ -125,6 +125,10 @@ AUformGroup.propTypes = {
 	className: PropTypes.string,
 };
 
+AUformGroup.defaultProps = {
+	status: "valid"
+}
+
 
 /**
  * The fieldset component
