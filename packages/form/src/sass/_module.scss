@@ -103,8 +103,8 @@
   padding-block-end: 0;
   min-inline-size: 0;
 
-  &__heading {
-    @include AU-space( margin-bottom, .5unit );
+  &__legend {
+    @include AU-space( margin-bottom, .75unit );    
   }
 }
 
