@@ -255,6 +255,7 @@ The visual test: https://auds.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v4.0.0 - Change error and success alert colours to make them accessible.
 * v3.2.0 - Add additional colour checks for incaccesble color combinations
 * v3.1.2 - Removed uikit references
 * v3.1.1 - Fix issue with A11yColor when white and black both pass
