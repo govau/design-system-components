@@ -20,6 +20,7 @@ class App extends React.Component {
 			<React.Fragment>
 			<div className="split-wrapper">
 				<div className="split">
+				<h2>Normal background</h2>
 					<h3>Label</h3>
 					<p>
 						<AUlabel title="Password" htmlFor="label" />
@@ -186,6 +187,7 @@ class App extends React.Component {
 				</div>
 
 				<div className="split split--dark">
+					<h2><code>--dark</code> background</h2>
 					<h3>Label</h3>
 					<p>
 						<AUlabel title="Password" htmlFor="label-dark" dark/>
@@ -342,9 +344,9 @@ class App extends React.Component {
 								<AUerrorText title="A device was not selected" id="device-cb-err-dark" dark/>
 							</legend>
 
-							<AUcheckbox label="Phone" name="checkbox-ex-err" id="cb-phone-err-dark" block dark/>
-							<AUcheckbox label="Tablet" name="checkbox-ex-err" id="cb-tablet-err-dark" block dark/>
-							<AUcheckbox label="Laptop" name="checkbox-ex-err" id="cb-laptop-err-dark" block dark/>
+							<AUcheckbox label="Phone" name="checkbox-ex-err-dark" id="cb-phone-err-dark" block dark/>
+							<AUcheckbox label="Tablet" name="checkbox-ex-err-dark" id="cb-tablet-err-dark" block dark/>
+							<AUcheckbox label="Laptop" name="checkbox-ex-err-dark" id="cb-laptop-err-dark" block dark/>
 
 						</AUfieldset>
 					</AUformGroup>
@@ -354,6 +356,7 @@ class App extends React.Component {
 			</div>
 			<div className="split-wrapper">
 				<div className="split split--alt">
+				<h2><code>--alt</code> background</h2>
 				<h3>Label</h3>
 					<p>
 						<AUlabel title="Password" htmlFor="label-alt"/>
@@ -474,24 +477,24 @@ class App extends React.Component {
 							</AUheading>
 						</legend>
 						<AUformGroup>
-							<AUlabel htmlFor="address-1-err" title="Street and number"/>
-							<AUtextInput id="address-1-err" width="lg"/>
+							<AUlabel htmlFor="address-1-err-alt" title="Street and number"/>
+							<AUtextInput id="address-1-err-alt" width="lg"/>
 						</AUformGroup>
 
 						<AUformGroup>
-							<AUlabel htmlFor="address-2-err" title="Suburb"/>
-							<AUtextInput id="address-2-err" width="lg"/>
+							<AUlabel htmlFor="address-2-err-alt" title="Suburb"/>
+							<AUtextInput id="address-2-err-alt" width="lg"/>
 						</AUformGroup>
 
 						<AUformGroup status="invalid">
-							<AUlabel htmlFor="select1-err" title="State"/>
+							<AUlabel htmlFor="select1-err-alt" title="State"/>
 							<AUerrorText title="A state was not selected" id="fg-error-text-err-bottom"/>
-							<AUselect status="invalid" id="select1-err" options={states}/>
+							<AUselect status="invalid" id="select1-err-alt" options={states}/>
 						</AUformGroup>
 
 						<AUformGroup>
-							<AUlabel htmlFor="address-4-err" title="Postcode"/>
-							<AUtextInput id="address-4-err" width="sm"/>
+							<AUlabel htmlFor="address-4-err-alt" title="Postcode"/>
+							<AUtextInput id="address-4-err-alt" width="sm"/>
 						</AUformGroup>
 
 					</AUfieldset>
@@ -506,13 +509,13 @@ class App extends React.Component {
 								<AUheading level="2" size="lg">
 									Please select your favorite device
 								</AUheading>
-								<AUhintText title="Minimum 6 characters" id="device-hint-text-err"/>
-								<AUerrorText title="A device was not selected" id="device-cb-err"/>
+								<AUhintText title="Minimum 6 characters" id="device-hint-text-err-alt"/>
+								<AUerrorText title="A device was not selected" id="device-cb-err-alt"/>
 							</legend>
 
-							<AUcheckbox label="Phone" name="checkbox-ex-err" id="cb-phone-err" block/>
-							<AUcheckbox label="Tablet" name="checkbox-ex-err" id="cb-tablet-err" block/>
-							<AUcheckbox label="Laptop" name="checkbox-ex-err" id="cb-laptop-err" block/>
+							<AUcheckbox label="Phone" name="checkbox-ex-err-alt" id="cb-phone-err-alt" block/>
+							<AUcheckbox label="Tablet" name="checkbox-ex-err-alt" id="cb-tablet-err-alt" block/>
+							<AUcheckbox label="Laptop" name="checkbox-ex-err-alt" id="cb-laptop-err-alt" block/>
 
 						</AUfieldset>
 					</AUformGroup>
@@ -520,6 +523,7 @@ class App extends React.Component {
 				</div>
 
 				<div className="split split--dark split--alt">
+				<h2><code>--dark</code> <code>--alt</code> background</h2>
 				<h3>Label</h3>
 					<p>
 						<AUlabel title="Password" htmlFor="label-dark-alt" dark/>
