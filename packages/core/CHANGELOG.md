@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.4.0 - Update error and success alert colours to meet contrast requirements on `--alt` backgrounds](#v340)
 * [v3.3.0 - Change error and success alert colours to make them accessible](#v330)
 * [v3.2.0 - Add additional colour checks for incaccesble color combinations](#v320)
 * [v3.1.2 - Removed uikit references](#v312)
@@ -40,6 +41,11 @@
 
 
 ## Release History
+
+### v3.4.0
+
+- Update error and success alert colours to meet contrast requirements on `--alt` backgrounds
+
 
 ### v3.3.0
 
