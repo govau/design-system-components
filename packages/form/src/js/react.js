@@ -75,7 +75,7 @@ AUhintText.propTypes = {
 
 
 /**
- * The error component
+ * The error text component
  *
  * @param  {string}  title            - Title of the label, required
  * @param  {boolean} dark             - Add the dark variation class, optional

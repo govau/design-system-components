@@ -40,7 +40,7 @@
 	<h1> Form Test page</h1>
 	<div class="split-wrapper">
 
-		<div class="split au-body">
+		<div class="split">
 			<h3>Label</h3>
 			<p>
 				<label class="au-label" for="text-input-block-label">Password</label>
@@ -259,6 +259,231 @@
 							<input class="au-control-input__input" type="checkbox" name="checkbox-ex-1">
 							<span class="au-control-input__text">Laptop</span>
 						</label>
+					</fieldset>
+				</div>
+			</p>
+		</div>
+		<div class="split split--dark">
+			<h3>Label</h3>
+			<p>
+				<label class="au-label au-label--dark" for="text-input-block-label-dark">Password</label>
+				<input type="text" type="text" class="au-text-input au-text-input--dark" id="text-input-block-label-dark" name="text-input-block-label-dark">
+			</p>
+			<hr>
+
+			<h3>Label <code>--inline</code></h3>
+			<p>
+				<label class="au-label au-label--dark au-label--inline" for="text-input-inline-dark">Password</label>
+				<input type="text" type="text" class="au-text-input au-text-input--dark" id="text-input-inline-dark" name="text-input-inline-dark">
+			</p>
+			<hr>
+			<h3>Hint text</h3>
+			<p>
+				<label class="au-label au-label--dark" for="text-input-hint-text-dark">Password</label>
+				<span class="au-hint-text au-hint-text--dark" id="hint-text-dark">Minimum 6 charachters</span>
+				<input type="text" type="text" class="au-text-input au-text-input--dark" id="text-input-hint-text-dark" name="text-input-hint-text-dark" aria-describedby="hint-text-dark"/>
+			</p>
+			<hr>
+
+			<h3>Error text</h3>
+			<p>
+				<label class="au-label au-label--dark" for="text-input-error-dark">Password</label>
+				<span class="au-hint-text au-hint-text--dark" id="hint-text-e-dark">Minimum 6 characters</span>
+				<span class="au-error-text au-error-text--show" id="error-text-dark">Password was less than 6 characters </span>
+				<input type="text" type="text" class="au-text-input au-text-input--dark au-text-input--invalid" id="text-input-error-dark" name="text-input-error-dark"
+				aria-invalid="true" aria-describedby="error-text-dark hint-text-e-dark" />
+			</p>
+
+			<hr>
+
+			<h3>Error text bottom</h3>
+
+			<p>
+				<label class="au-label au-label--dark" for="text-input-error-bottom-dark">Password</label>
+				<span class="au-hint-text au-hint-text--dark" id="hint-text-e-bottom-dark">Minimum 6 characters</span>
+				<input type="text" type="text" class="au-text-input au-text-input--dark au-text-input--invalid" id="text-input-error-bottom-dark" name="text-input-error-dark"
+				aria-invalid="true" aria-describedby="error-text-dark hint-text-e-bottom-dark" />
+				<span class="au-error-text au-error-text--show" id="error-text-bottom-dark">Password was less than 6 characters </span>
+			</p>
+
+
+			<hr>
+
+			<h3>Form group</h3>
+			<p>
+				<div class="au-form-group">
+					<label class="au-label au-label--dark" for="text-input-form-group-dark">Username</label>
+					<input type="text" type="text" class="au-text-input au-text-input--dark" id="text-input-form-group-dark" name="text-input-form-group-dark" />
+				</div>
+			</p>
+
+			<p>
+				<div class="au-form-group">
+					<label class="au-label au-label--dark" for="text-input-2-form-group-dark">Password</label>
+					<span class="au-hint-text au-hint-text--dark" id="hint-text-fg-dark">Minimum 6 characters</span>
+					<input type="text" type="text" class="au-text-input au-text-input--dark" id="text-input-2-form-group-dark" name="text-input-2-form-group-dark" aria-describedby="hint-text-fg-dark"
+					/>
+				</div>
+			</p>
+			<hr>
+			<h3>Form group with <code>--invalid</code></h3>
+			
+			<p>
+				<div class="au-form-group">
+					<label class="au-label au-label--dark" for="text-input-form-group-2-dark">Username</label>
+					<input type="text" type="text" class="au-text-input au-text-input--dark" id="text-input-form-group-2-dark" name="text-input-form-group-2-dark" />
+				</div>
+				<div class="au-form-group au-form-group--invalid">
+					<label class="au-label au-label--dark" for="text-input-form-group-3-dark">Password</label>
+					<span class="au-hint-text au-hint-text--dark" id="hint-text-fg-err-dark">Minimum 6 characters</span>
+					<span class="au-error-text" id="error-text-2">Password was less than 6 characters </span>
+					<input type="text" type="text" class="au-text-input au-text-input--dark au-text-input--invalid" id="text-input-form-group-3-dark" name="text-input-form-group-3-dark"
+					 aria-invalid="true" aria-describedby="error-text-2-dark hint-text-fg-err-dark" />
+				</div>
+			</p>
+
+			<br>
+
+			<hr>
+			<h3>Form group with <code>--invalid</code> bottom</h3>
+			
+			<p>
+				<div class="au-form-group">
+					<label class="au-label au-label--dark" for="text-input-form-group-2-bottom-dark">Username</label>
+					<input type="text" type="text" class="au-text-input au-text-input--dark" id="text-input-form-group-2-bottom-dark" name="text-input-form-group-2-dark" />
+				</div>
+				<div class="au-form-group au-form-group--invalid">
+					<label class="au-label au-label--dark" for="text-input-form-group-3-bottom-dark">Password</label>
+					<span class="au-hint-text au-hint-text--dark" id="hint-text-fg-err-bottom-dark">Minimum 6 characters</span>
+					<input type="text" type="text" class="au-text-input au-text-input--dark au-text-input--invalid" id="text-input-form-group-3-bottom-dark" name="text-input-form-group-3-dark"
+					aria-invalid="true" aria-describedby="error-text-2-bottom-dark hint-text-fg-err-bottom-dark" />
+					<span class="au-error-text" id="error-text-2-bottom-dark">Password was less than 6 characters </span>
+				</div>
+			</p>
+
+			<br>
+
+			<hr>
+
+			<h3>Fieldsets</h3>
+
+			<p>
+				<fieldset class="au-fieldset">
+					<legend class="au-fieldset__legend">
+						<span class="au-display-lg">What is your address?</span>
+					</legend>
+					<div class="au-form-group">
+						<label class="au-label au-label--dark" for="fieldset-input-street">Street and number</label>
+						<input type="text" type="text" class="au-text-input au-text-input--dark" id="fieldset-input-street" name="fieldset-input-street" />
+					</div>
+					<div class="au-form-group">
+						<label class="au-label au-label--dark" for="fieldset-input-city">City or suburb</label>
+						<input type="text" type="text" class="au-text-input au-text-input--dark" id="fieldset-input-city" name="fieldset-input-city" />
+					</div>
+					<div class="au-form-group">
+						<label class="au-label au-label--dark" for="select1">Select state</label>
+						<select id="select1" class="au-select au-select--dark">
+							<option value="">Please select</option>
+							<option value="1">VIC</option>
+							<option value="2">NSW</option>
+							<option value="3">QLD</option>
+						</select>
+					</div>
+					<div class="au-form-group">
+						<label class="au-label au-label--dark" for="fieldset-input-postcode">Postcode</label>
+						<input type="text" type="text" class="au-text-input au-text-input--dark" id="fieldset-input-postcode" name="fieldset-input-postcode" />
+					</div>
+				</fieldset>
+			</p>
+			<hr>
+			<h3>Fieldset control input</h3>
+			<p>
+				<div class="au-form-group">
+					<fieldset class="au-fieldset">
+						<legend class="au-fieldset__legend">
+							<span class="au-display-lg">Please select your favorite device</span>
+							<span class="au-hint-text au-hint-text--dark">You may select more than one</span>
+						</legend>
+
+						<div class="au-control-input au-control-input--dark au-control-input--block">
+							<input class="au-control-input__input" type="checkbox" id="phone-cb-dark" name="checkbox-ex-dark">
+							<label class="au-control-input__text" for="phone-cb-dark">Phone</label>
+						</div>
+
+						<div class="au-control-input au-control-input--dark au-control-input--block">
+							<input class="au-control-input__input" type="checkbox" id="tablet-cb-dark" name="checkbox-ex-dark" checked>
+							<label class="au-control-input__text" for="tablet-cb-dark">Tablet</label>
+						</div>
+
+						<div class="au-control-input au-control-input--dark au-control-input--block">
+							<input class="au-control-input__input" type="checkbox" id="laptop-cb-dark" name="checkbox-ex-dark" checked>
+							<label class="au-control-input__text" for="laptop-cb-dark">Laptop</label>
+						</div>
+					</fieldset>
+				</div>
+			</p>
+			<hr>
+			<h3>Fieldsets with <code>--invalid</code></h3>
+			<p>
+				<fieldset class="au-fieldset">
+					<legend class="au-fieldset__legend">
+						<span class="au-display-lg">
+							What is your address?
+						</span>
+					</legend>
+					<div class="au-form-group">
+						<label class="au-label au-label--dark" for="fieldset-input-street-2-dark">Street and number</label>
+						<input type="text" type="text" class="au-text-input au-text-input--dark" id="fieldset-input-street-2-dark" name="fieldset-input-street-2-dark" />
+					</div>
+					<div class="au-form-group">
+						<label class="au-label au-label--dark" for="fieldset-input-city-2-dark">City or suburb</label>
+						<input type="text" type="text" class="au-text-input au-text-input--dark" id="fieldset-input-city-2-dark" name="fieldset-input-city-2-dark" />
+					</div>
+					<div class="au-form-group au-form-group--invalid">
+						<label class="au-label au-label--dark" for="select2-dark">Select state</label>
+						<span class="au-error-text">A state was not selected</span>
+
+						<select id="select2-dark" class="au-select au-select--invalid" aria-invalid="true">
+							<option value="">Please select</option>
+							<option value="1">VIC</option>
+							<option value="2">NSW</option>
+							<option value="3">QLD</option>
+						</select>
+					</div>
+					<div class="au-form-group">
+						<label class="au-label au-label--dark" for="fieldset-input-postcode-2-dark">Postcode</label>
+						<input type="text" type="text" class="au-text-input au-text-input--dark" id="fieldset-input-postcode-2-dark" name="fieldset-input-postcode-2-dark" />
+					</div>
+				</fieldset>
+			</p>
+			<hr>
+			<h3>Fieldset control input <code>--invalid</code></h3>
+			<p>
+				<div class="au-form-group au-form-group--invalid">
+					<fieldset class="au-fieldset">
+						<legend class="au-fieldset__legend">
+							<span class="au-display-lg">Please select your favorite device</span>
+							<span class="au-hint-text au-hint-text--dark">You may select more than one</span>
+							<span class="au-error-text">A device was not selected</span>
+
+						</legend>
+
+						
+						<div class="au-control-input au-control-input--dark au-control-input--block">
+							<input class="au-control-input__input" type="checkbox" id="phone-cb-dark-2" name="checkbox-ex-dark-2">
+							<label class="au-control-input__text" for="phone-cb-dark-2">Phone</label>
+						</div>
+
+						<div class="au-control-input au-control-input--dark au-control-input--block">
+							<input class="au-control-input__input" type="checkbox" id="tablet-cb-dark-2" name="checkbox-ex-dark-2" checked>
+							<label class="au-control-input__text" for="tablet-cb-dark-2">Tablet</label>
+						</div>
+
+						<div class="au-control-input au-control-input--dark au-control-input--block">
+							<input class="au-control-input__input" type="checkbox" id="laptop-cb-dark-2" name="checkbox-ex-dark-2" checked>
+							<label class="au-control-input__text" for="laptop-cb-dark-2">Laptop</label>
+						</div>
+
 					</fieldset>
 				</div>
 			</p>
