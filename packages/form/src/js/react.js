@@ -31,7 +31,7 @@ export const AUlabel = ({ title, dark, inline, className = '', ...attributeOptio
 	<label
 		className={ `au-label ${ className }` +
 		`${ dark ? ' au-label--dark' : '' }` + 
-		`${ inline ? 'au-label--inline' : ''}`
+		`${ inline ? ' au-label--inline' : ''}`
 		}
 		{ ...attributeOptions }
 	>

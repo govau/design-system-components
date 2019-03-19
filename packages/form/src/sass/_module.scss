@@ -14,7 +14,7 @@
 
 .au-form-group {
   &--invalid {
-    border-left: solid 5px $AU-color-error-forgeround-text;
+    border-left: solid 5px $AU-color-error;
     padding-left: 15px;
   }
   
@@ -68,7 +68,7 @@
 .au-error-text {
   font-family: $AU-font;
   font-weight: bold;
-  color: $AU-color-error-forgeround-text;
+  color: $AU-color-error;
   display: block;
   @include AU-fontgrid( sm, default);
 
@@ -106,9 +106,4 @@
   &__legend {
     @include AU-space( margin-bottom, .75unit );    
   }
-}
-
-.au-text-input.au-text-input--invalid, .au-select.au-select--invalid {
-  border-color: $AU-color-error-forgeround-text;
-  background-color: $AU-color-background;
 }
