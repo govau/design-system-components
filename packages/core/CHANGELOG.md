@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.3.0 - Change error and success alert colours to make them accessible](#v330)
 * [v3.2.0 - Add additional colour checks for incaccesble color combinations](#v320)
 * [v3.1.2 - Removed uikit references](#v312)
 * [v3.1.1 - Fix issue with A11yColor when white and black both pass](#v311)
@@ -39,6 +40,12 @@
 
 
 ## Release History
+
+### v3.3.0
+
+- Update error alert color to meet a 4.5:1 ratio, since this will also be used for error text.
+- Update success alert colour to a ratio of 3:1, for use to indicate successful entry on a form control.
+
 
 ### v3.2.0
 
