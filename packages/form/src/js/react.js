@@ -79,13 +79,15 @@ AUhintText.propTypes = {
  *
  * @param  {string}  title            - Title of the label, required
  * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUerrorText = ({ title, dark, className = '', ...attributeOptions }) => (
+export const AUerrorText = ({ title, dark, inline, className = '', ...attributeOptions }) => (
 	<span
 		className={ `au-error-text ${ className }` +
-		`${ dark ? ' au-error-text--dark' : '' }`
+		`${ dark ? ' au-error-text--dark' : '' }` +
+		`${ inline ? ' au-error-text--inline' : '' }`		
 		}
 		{ ...attributeOptions }
 	>
