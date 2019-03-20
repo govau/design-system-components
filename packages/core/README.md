@@ -255,6 +255,7 @@ The visual test: https://auds.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v3.4.0 - Update error and success alert colours to meet contrast requirements on `--alt` backgrounds
 * v3.3.0 - Change error and success alert colours to make them WCAG contrast requirements
 * v3.2.0 - Add additional colour checks for incaccesble color combinations
 * v3.1.2 - Removed uikit references
