@@ -61,6 +61,15 @@ class App extends React.Component {
 					</p>
 					<hr/>
 
+					<h3>Error text <code>--inline</code></h3>
+					<p>
+						<AUlabel title="Password" htmlFor="pw-with-error-inline" />
+						<AUhintText title="Minimum 6 characters" id="hint-text-with-error-inline"/>
+						<AUtextInput id="pw-with-error-inline" aria-describedby="error-text-inline hint-text-with-error-inline" status="invalid" />
+						<AUerrorText title="Password was not 6 characterts" inline id="error-text-inline" />
+					</p>
+					<hr/>
+
 					<h3>Form group</h3>
 						<AUformGroup>
 							<AUlabel title="Username" htmlFor="fg-username" />
@@ -186,7 +195,7 @@ class App extends React.Component {
 					<br/>
 				</div>
 
-				<div className="split split--dark">
+				{/* <div className="split split--dark">
 					<h2><code>--dark</code> background</h2>
 					<h3>Label</h3>
 					<p>
@@ -225,6 +234,15 @@ class App extends React.Component {
 						<AUhintText title="Minimum 6 characters" id="hint-text-with-error-bottom-dark" dark/>
 						<AUtextInput id="pw-with-error-bottom-dark" aria-describedby="error-text-bottom-dark hint-text-with-error-bottom-dark" status="invalid" dark/>
 						<AUerrorText title="Password was not 6 characterts" id="error-text-bottom-dark" />
+					</p>
+					<hr/>
+
+					<h3>Error text <code>--inline</code></h3>
+					<p>
+						<AUlabel title="Password" htmlFor="pw-with-error-inline-alt" />
+						<AUhintText title="Minimum 6 characters" id="hint-text-with-error-inline-alt"/>
+						<AUtextInput id="pw-with-error-inline-alt" aria-describedby="error-text-inline-alt hint-text-with-error-inline-alt" status="invalid" />
+						<AUerrorText title="Password was not 6 characterts" inline id="error-text-inline-alt" />
 					</p>
 					<hr/>
 
@@ -352,9 +370,9 @@ class App extends React.Component {
 					</AUformGroup>
 					<br/>
 
-				</div>
-			</div>
-			<div className="split-wrapper">
+				</div> */}
+			{/* </div>
+			<div className="split-wrapper"> */}
 				<div className="split split--alt">
 				<h2><code>--alt</code> background</h2>
 				<h3>Label</h3>
@@ -394,6 +412,15 @@ class App extends React.Component {
 						<AUhintText title="Minimum 6 characters" id="hint-text-with-error-bottom-alt"/>
 						<AUtextInput id="pw-with-error-bottom-alt" aria-describedby="error-text-bottom-alt hint-text-with-error-bottom-alt" status="invalid"/>
 						<AUerrorText title="Password was not 6 characterts" id="error-text-bottom-alt" />
+					</p>
+					<hr/>
+
+					<h3>Error text <code>--inline</code></h3>
+					<p>
+						<AUlabel title="Password" htmlFor="pw-with-error-inline-alt" />
+						<AUhintText title="Minimum 6 characters" id="hint-text-with-error-inline-alt"/>
+						<AUtextInput id="pw-with-error-inline-alt" aria-describedby="error-text-inline-alt hint-text-with-error-inline-alt" status="invalid" />
+						<AUerrorText title="Password was not 6 characterts" inline id="error-text-inline-alt" />
 					</p>
 					<hr/>
 
@@ -521,7 +548,7 @@ class App extends React.Component {
 					</AUformGroup>
 
 				</div>
-
+{/* 
 				<div className="split split--dark split--alt">
 				<h2><code>--dark</code> <code>--alt</code> background</h2>
 				<h3>Label</h3>
@@ -686,7 +713,7 @@ class App extends React.Component {
 
 						</AUfieldset>
 					</AUformGroup>
-				</div>
+				</div> */}
 
 			</div>
 			</React.Fragment>
