@@ -19,7 +19,7 @@
   }
   
   + .au-form-group {
-    @include AU-space( margin-top, 2unit );
+    @include AU-space( margin-top, 1.25unit );
   }
   
 }
@@ -47,7 +47,7 @@
 
 .au-hint-text {
   font-family: $AU-font;
-  color: $AU-color-foreground-muted;
+  color: $AU-hint-text;
   display: block;
   @include AU-fontgrid( sm, default);
 
