@@ -145,17 +145,21 @@ const GetDepTree = ( name ) => {
 
 
 /**
- * Get all folders within a given path
+ * Get all modules within a given path.
+ * Module is folder with package.json
  *
  * @param  {string}  thisPath - The path that contains the desired folders
  * @param  {boolean} verbose  - Verbose flag either undefined or true
  *
  * @return {array}            - An array of names of each folder
  */
-const GetFolders = ( thisPath, verbose ) => {
+const GetModules = ( thisPath, verbose ) => {
 	try {
 		let folders = Fs.readdirSync( thisPath ).filter(
-				thisFile => Fs.statSync(`${ thisPath }/${ thisFile }`).isDirectory()
+				thisFile => {
+					let path = `${ thisPath }/${ thisFile }`;
+					return Fs.statSync(path).isDirectory() && Fs.existsSync(`${path}/package.json`)
+				}
 			).filter(
 				thisFile => thisFile !== 'core'
 		);
@@ -620,7 +624,7 @@ HELPER.generate = (() => {
 		 */
 		init: () => {
 			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			const allModules = GetFolders( packagesPath );
+			const allModules = GetModules( packagesPath );
 
 			HELPER.generate.json( allModules );
 			HELPER.generate.index( allModules );
@@ -889,7 +893,7 @@ HELPER.test = (() => {
 	return {
 		init: () => {
 			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			const allModules = GetFolders( packagesPath );
+			const allModules = GetModules( packagesPath );
 
 			HELPER.test.dependencies( allModules );
 			HELPER.test.packagejson( allModules );
