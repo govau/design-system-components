@@ -24,14 +24,14 @@ class App extends React.Component {
 					<h3>Label</h3>
 					<p>
 						<AUlabel title="Password" htmlFor="label" />
-						<AUtextInput id="label" />
+						<AUtextInput type="password" id="label" />
 					</p>
 					<hr/>
 
 					<h3>Label <code>--inline</code> </h3>
 					<p>
 						<AUlabel title="Password" htmlFor="label-inline" inline />
-						<AUtextInput id="label-inline" />
+						<AUtextInput type="password" id="label-inline" />
 					</p>
 					<hr/>
 
@@ -39,7 +39,7 @@ class App extends React.Component {
 					<p>
 						<AUlabel title="Password" htmlFor="pw-with-hint" />
 						<AUhintText title="Minimum 6 characters" id="hint-text"/>
-						<AUtextInput id="pw-with-hint" aria-describedby="hint-text"/>
+						<AUtextInput type="password" id="pw-with-hint" aria-describedby="hint-text"/>
 					</p>
 					<hr/>
 
@@ -47,7 +47,7 @@ class App extends React.Component {
 					<p>
 						<AUlabel title="Password" htmlFor="pw-with-error" />
 						<AUhintText title="Minimum 6 characters" id="hint-text-with-error"/>
-						<AUerrorText title="Password was not 6 characterts" id="error-text" />
+						<AUerrorText type="password" title="Password was not 6 characterts" id="error-text" />
 						<AUtextInput id="pw-with-error" aria-describedby="error-text hint-text-with-error" status="invalid" />
 					</p>
 					<hr/>
@@ -56,7 +56,7 @@ class App extends React.Component {
 					<p>
 						<AUlabel title="Password" htmlFor="pw-with-error-bottom" />
 						<AUhintText title="Minimum 6 characters" id="hint-text-with-error-bottom"/>
-						<AUtextInput id="pw-with-error-bottom" aria-describedby="error-text-bottom hint-text-with-error-bottom" status="invalid" />
+						<AUtextInput type="password" id="pw-with-error-bottom" aria-describedby="error-text-bottom hint-text-with-error-bottom" status="invalid" />
 						<AUerrorText title="Password was not 6 characterts" id="error-text-bottom" />
 					</p>
 					<hr/>
@@ -65,7 +65,7 @@ class App extends React.Component {
 					<p>
 						<AUlabel title="Password" htmlFor="pw-with-error-inline" />
 						<AUhintText title="Minimum 6 characters" id="hint-text-with-error-inline"/>
-						<AUtextInput id="pw-with-error-inline" aria-describedby="error-text-inline hint-text-with-error-inline" status="invalid" />
+						<AUtextInput type="password" id="pw-with-error-inline" aria-describedby="error-text-inline hint-text-with-error-inline" status="invalid" />
 						<AUerrorText title="Password was not 6 characterts" inline id="error-text-inline" />
 					</p>
 					<hr/>
@@ -73,40 +73,40 @@ class App extends React.Component {
 					<h3>Form group</h3>
 						<AUformGroup>
 							<AUlabel title="Username" htmlFor="fg-username" />
-							<AUtextInput id="fg-username"/>
+							<AUtextInput type="password" id="fg-username"/>
 						</AUformGroup>
 
 						<AUformGroup>
 							<AUlabel title="Password" htmlFor="fg-password" />
 							<AUhintText title="Minimum 6 characters" id="fg-hint-text"/>
-							<AUtextInput id="fg-password" aria-describedby="fg-hint-text" />
+							<AUtextInput type="password" id="fg-password" aria-describedby="fg-hint-text" />
 						</AUformGroup>
 					<hr/>
 
 					<h3>Form group with <code>--invalid</code></h3>
 						<AUformGroup>
 							<AUlabel title="Username" htmlFor="fg-username" />
-							<AUtextInput id="fg-username"/>
+							<AUtextInput type="password" id="fg-username"/>
 						</AUformGroup>
 
 						<AUformGroup status="invalid">
 							<AUlabel title="Password" htmlFor="fg-password" />
 							<AUhintText title="Minimum 6 characters" id="fg-hint-text"/>
 							<AUerrorText title="Password was not 6 characters" id="fg-error-text" />
-							<AUtextInput id="fg-password" aria-describedby="fg-hint-text fg-error-text" status="invalid" />
+							<AUtextInput type="password" id="fg-password" aria-describedby="fg-hint-text fg-error-text" status="invalid" />
 						</AUformGroup>
 					<hr/>
 
 					<h3>Form group with <code>--invalid</code> bottom</h3>
 						<AUformGroup>
 							<AUlabel title="Username" htmlFor="fg-username-err-bottom" />
-							<AUtextInput id="fg-username-err-bottom"/>
+							<AUtextInput type="password" id="fg-username-err-bottom"/>
 						</AUformGroup>
 
 						<AUformGroup status="invalid">
 							<AUlabel title="Password" htmlFor="fg-password-err-bottom" />
 							<AUhintText title="Minimum 6 characters" id="fg-hint-text-err-bottom"/>
-							<AUtextInput id="fg-password-err-bottom" aria-describedby="fg-hint-text-err-bottom fg-error-text-err-bottom" status="invalid" />
+							<AUtextInput type="password" id="fg-password-err-bottom" aria-describedby="fg-hint-text-err-bottom fg-error-text-err-bottom" status="invalid" />
 							<AUerrorText title="Password was not 6 characters" id="fg-error-text-err-bottom" />
 						</AUformGroup>
 					<hr/>
@@ -121,11 +121,11 @@ class App extends React.Component {
 						</legend>
 						<AUformGroup>
 							<AUlabel htmlFor="address-1" title="Street and number" />
-							<AUtextInput id="address-1" width="lg" />
+							<AUtextInput type="text" id="address-1" width="lg" />
 						</AUformGroup>
 						<AUformGroup>
 							<AUlabel htmlFor="address-2" title="Suburb" />
-							<AUtextInput id="address-2" width="lg" />
+							<AUtextInput type="text" id="address-2" width="lg" />
 						</AUformGroup>
 
 						<AUformGroup>
@@ -135,7 +135,7 @@ class App extends React.Component {
 
 						<AUformGroup>
 							<AUlabel htmlFor="address-4" title="Postcode" />
-							<AUtextInput id="address-4" width="sm" />
+							<AUtextInput type="number" id="address-4" width="sm" />
 						</AUformGroup>
 
 					</AUfieldset>
@@ -151,12 +151,12 @@ class App extends React.Component {
 						</legend>
 						<AUformGroup>
 							<AUlabel htmlFor="address-1-err" title="Street and number" />
-							<AUtextInput id="address-1-err" width="lg" />
+							<AUtextInput type="text" id="address-1-err" width="lg" />
 						</AUformGroup>
 
 						<AUformGroup>
 							<AUlabel htmlFor="address-2-err" title="Suburb" />
-							<AUtextInput id="address-2-err" width="lg" />
+							<AUtextInput type="text" id="address-2-err" width="lg" />
 						</AUformGroup>
 
 						<AUformGroup status="invalid">
@@ -167,7 +167,7 @@ class App extends React.Component {
 
 						<AUformGroup>
 							<AUlabel htmlFor="address-4-err" title="Postcode" />
-							<AUtextInput id="address-4-err" width="sm" />
+							<AUtextInput type="number" id="address-4-err" width="sm" />
 						</AUformGroup>
 
 					</AUfieldset>
@@ -419,7 +419,7 @@ class App extends React.Component {
 					<p>
 						<AUlabel title="Password" htmlFor="pw-with-error-inline-alt" />
 						<AUhintText title="Minimum 6 characters" id="hint-text-with-error-inline-alt"/>
-						<AUtextInput id="pw-with-error-inline-alt" aria-describedby="error-text-inline-alt hint-text-with-error-inline-alt" status="invalid" />
+						<AUtextInput type="password" id="pw-with-error-inline-alt" aria-describedby="error-text-inline-alt hint-text-with-error-inline-alt" status="invalid" />
 						<AUerrorText title="Password was not 6 characterts" inline id="error-text-inline-alt" />
 					</p>
 					<hr/>
@@ -427,27 +427,27 @@ class App extends React.Component {
 					<h3>Form group</h3>
 						<AUformGroup>
 							<AUlabel title="Username" htmlFor="fg-username-alt"/>
-							<AUtextInput id="fg-username-alt"/>
+							<AUtextInput type="password" id="fg-username-alt"/>
 						</AUformGroup>
 
 						<AUformGroup>
 							<AUlabel title="Password" htmlFor="fg-password-alt"/>
 							<AUhintText title="Minimum 6 characters" id="fg-hint-text-alt"/>
-							<AUtextInput id="fg-password-alt" aria-describedby="fg-hint-text-alt"/>
+							<AUtextInput type="password" id="fg-password-alt" aria-describedby="fg-hint-text-alt"/>
 						</AUformGroup>
 					<hr/>
 
 					<h3>Form group with <code>--invalid</code></h3>
 						<AUformGroup>
 							<AUlabel title="Username" htmlFor="fg-username-invalid-alt"/>
-							<AUtextInput id="fg-username-invalid-alt"/>
+							<AUtextInput type="password" id="fg-username-invalid-alt"/>
 						</AUformGroup>
 
 						<AUformGroup status="invalid">
 							<AUlabel title="Password" htmlFor="fg-password-alt"/>
 							<AUhintText title="Minimum 6 characters" id="fg-hint-text-alt"/>
 							<AUerrorText title="Password was not 6 characters" id="fg-error-text-alt"/>
-							<AUtextInput id="fg-password-alt" aria-describedby="fg-hint-text-alt fg-error-text-alt" status="invalid"/>
+							<AUtextInput type="password" id="fg-password-alt" aria-describedby="fg-hint-text-alt fg-error-text-alt" status="invalid"/>
 						</AUformGroup>
 					<hr/>
 
@@ -460,7 +460,7 @@ class App extends React.Component {
 						<AUformGroup status="invalid">
 							<AUlabel title="Password" htmlFor="fg-password-err-bottom-alt"/>
 							<AUhintText title="Minimum 6 characters" id="fg-hint-text-err-bottom-alt"/>
-							<AUtextInput id="fg-password-err-bottom-alt" aria-describedby="fg-hint-text-err-bottom-alt fg-error-text-err-bottom-alt" status="invalid" dark/>
+							<AUtextInput type="password" id="fg-password-err-bottom-alt" aria-describedby="fg-hint-text-err-bottom-alt fg-error-text-err-bottom-alt" status="invalid" dark/>
 							<AUerrorText title="Password was not 6 characters" id="fg-error-text-err-bottom-alt" />
 						</AUformGroup>
 					<hr/>
