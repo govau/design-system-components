@@ -145,8 +145,8 @@ const GetDepTree = ( name ) => {
 
 
 /**
- * Get all modules within a given path.
- * Module is folder with package.json
+ * Get all modules within a given path
+ * The 'module' is a component folder
  *
  * @param  {string}  thisPath - The path that contains the desired folders
  * @param  {boolean} verbose  - Verbose flag either undefined or true
@@ -157,8 +157,8 @@ const GetModules = ( thisPath, verbose ) => {
 	try {
 		let folders = Fs.readdirSync( thisPath ).filter(
 				thisFile => {
-					let path = `${ thisPath }/${ thisFile }`;
-					return Fs.statSync(path).isDirectory() && Fs.existsSync(`${path}/package.json`)
+					let path = Path.normalize( `${ thisPath }/${ thisFile }` );
+					return Fs.statSync( path ).isDirectory() && Fs.existsSync( Path.normalize( `${path}/package.json` ) )
 				}
 			).filter(
 				thisFile => thisFile !== 'core'
