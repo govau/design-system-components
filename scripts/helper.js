@@ -17,8 +17,10 @@ const Chalk = require(`chalk`);
 const Path = require(`path`);
 const Fs = require(`fs`);
 const Os = require(`os`);
+const Util = require('util');
 
 const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
+const Readdir = Util.promisify(Fs.readdir);
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -151,24 +153,23 @@ const GetDepTree = ( name ) => {
  * @param  {string}  thisPath - The path that contains the desired folders
  * @param  {boolean} verbose  - Verbose flag either undefined or true
  *
- * @return {array}            - An array of names of each folder
+ * @return {Promise<array>}   - A promise to an array of names of each folder
  */
 const GetModules = ( thisPath, verbose ) => {
-	try {
-		let folders = Fs.readdirSync( thisPath ).filter(
-				thisFile => {
-					let path = Path.normalize( `${ thisPath }/${ thisFile }` );
-					return Fs.statSync( path ).isDirectory() && Fs.existsSync( Path.normalize( `${path}/package.json` ) )
-				}
-			).filter(
-				thisFile => thisFile !== 'core'
-		);
+	return new Promise(resolve => {
+		Readdir(thisPath)
+			.then(dirContent => {
+				let folders = dirContent
+					.filter(folder => {
+						let path = Path.normalize( `${ thisPath }/${ folder }` );
+						return Fs.statSync( path ).isDirectory() && Fs.existsSync( Path.normalize( `${path}/package.json` ) )
+					})
+					.filter(folder => folder !== 'core');
 
-		return ['core', ...folders ]; // moving core to top
-	}
-	catch( error ) {
-		return [];
-	}
+				resolve(['core', ...folders ]); // moving core to top
+			})
+			.catch(() => resolve([]))
+	})
 };
 
 
@@ -624,11 +625,11 @@ HELPER.generate = (() => {
 		 */
 		init: () => {
 			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			const allModules = GetModules( packagesPath );
-
-			HELPER.generate.json( allModules );
-			HELPER.generate.index( allModules );
-			HELPER.generate.readme( allModules );
+			GetModules( packagesPath ).then(allModules => {
+				HELPER.generate.json( allModules );
+				HELPER.generate.index( allModules );
+				HELPER.generate.readme( allModules );
+			});
 		},
 
 		/**
@@ -893,11 +894,11 @@ HELPER.test = (() => {
 	return {
 		init: () => {
 			const packagesPath = Path.normalize(`${ __dirname }/../packages/`);
-			const allModules = GetModules( packagesPath );
-
-			HELPER.test.dependencies( allModules );
-			HELPER.test.packagejson( allModules );
-			HELPER.test.changelog( allModules );
+			GetModules( packagesPath ).then(allModules => {
+				HELPER.test.dependencies( allModules );
+				HELPER.test.packagejson( allModules );
+				HELPER.test.changelog( allModules );
+			});
 		},
 
 		/**
