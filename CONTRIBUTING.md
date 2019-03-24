@@ -153,7 +153,6 @@ For example, what happens with a navigation component that has more items than d
 
 **[⬆ back to top](#contents)**
 
-
 -------------------------------------------------------------------------------------------------
 
 ### Considered
