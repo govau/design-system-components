@@ -170,7 +170,7 @@ Provide rationale; the more the better. We aim to explain design and code decisi
 
 As mentioned previously, we try to make our code very easy to understand and readable for the human user. Here are some do's and don'ts
 
-#### Function declaration
+#### Describe the function
 
 Make sure to include docs that gives details on the parameters and returns of the function. The name of the function should help make clear the intention of the function. This standard applies for any SASS, JS, JQuery or React JS functions.
 
@@ -197,7 +197,7 @@ function CalculateAnimationSpecs( initialSize, endSize, speed ) {
 
 ```
 
-#### Space between code
+#### Space out the code
 
 Add space when there is code between round, square or curly brackets.
 
