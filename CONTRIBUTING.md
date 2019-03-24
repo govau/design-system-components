@@ -62,6 +62,8 @@ Before new components and patterns are published into the design system, the tea
 | [Tested](#tested) | It’s been tested and shown to work with a range of browsers, assistive technologies and devices. |
 | [Considered](#considered) | Documentation and rationale have been provided. |
 
+We would be very greatful if you post the research, design decisions, use for the component to the community forum. This may be in the form of a code snippet, screenshot or written text on some of the research you have done. 
+
 -------------------------------------------------------------------------------------------------
 
 ### Useful
