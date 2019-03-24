@@ -214,6 +214,28 @@ Do:
 $isBlackBgContrast: AU-color-contrast( #000, $background, true, false ) >= $ratio;
 ```
 
+#### Use new lines
+When HTML or React tags have several attributes (or props), it can be easier to separate these onto a new line.
+
+Don't:
+
+```jsx
+<div className={`au-control-input ${ className }` + `${ dark ? ` au-control-input--dark` : '' }` + `${ alt ? ` au-control-input--alt` : '' }` + `${ small ? ` au-control-input--small` : '' }` + `${ block ? ` au-control-input--block` : '' }` + `${ status === 'valid' ? ' au-control-input--valid' : '' }` + `${ status === 'invalid' ? ' au-control-input--invalid' : '' }` } >
+```
+
+Do:
+```jsx
+<div className={
+  `au-control-input ${ className }` +
+  `${ dark ? ` au-control-input--dark` : '' }` +
+  `${ alt ? ` au-control-input--alt` : '' }` +
+  `${ small ? ` au-control-input--small` : '' }` +
+  `${ block ? ` au-control-input--block` : '' }` +
+  `${ status === 'valid' ? ' au-control-input--valid' : '' }` +
+  `${ status === 'invalid' ? ' au-control-input--invalid' : '' }`
+} >
+```
+
 **[⬆ back to top](#contents)**
 
 
