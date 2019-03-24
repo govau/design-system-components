@@ -153,6 +153,7 @@ For example, what happens with a navigation component that has more items than d
 
 **[⬆ back to top](#contents)**
 
+
 -------------------------------------------------------------------------------------------------
 
 ### Considered
@@ -166,6 +167,58 @@ Provide rationale; the more the better. We aim to explain design and code decisi
 
 -------------------------------------------------------------------------------------------------
 
+### Code Standard
+
+As mentioned previously, we try to make our code very easy to understand and readable for the human user. Here are some do's and don'ts
+
+#### Function declaration
+
+Make sure to include docs that gives details on the parameters and returns of the function. The name of the function should help make clear the intention of the function. This standard applies for any SASS, JS, JQuery or React JS functions.
+
+Don't:
+
+```js
+function CalculateSpecs(initialSize,endSize,speed){
+  ...
+}
+```
+
+Do
+
+```js
+* @param  {integer} initialSize - The initial size of the element to animate
+* @param  {integer} endSize     - The size the element after the animation completes
+* @param  {string}  speed       - The speed of the animation in ms
+*
+* @return {object}              - Required steps, stepSize and intervalTime for the animation
+*/
+function CalculateAnimationSpecs( initialSize, endSize, speed ) {
+  ...
+}
+
+```
+
+#### Space between code
+
+Add space when there is code between round, square or curly brackets.
+
+Don't:
+
+```scss
+$isBlackBgContrast:AU-color-contrast(#000,$background,true,false)>=$ratio;
+
+```
+
+Do:
+
+```scss
+$isBlackBgContrast: AU-color-contrast( #000, $background, true, false ) >= $ratio;
+```
+
+**[⬆ back to top](#contents)**
+
+
+-------------------------------------------------------------------------------------------------
 
 ## Reporting Bugs, Asking Questions, Sending Suggestions
 
