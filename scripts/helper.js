@@ -21,6 +21,7 @@ const Util = require('util');
 
 const PKG = require( Path.normalize(`${ process.cwd() }/package.json`) );
 const Readdir = Util.promisify(Fs.readdir);
+const Access = Util.promisify(Fs.access);
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -155,21 +156,27 @@ const GetDepTree = ( name ) => {
  *
  * @return {Promise<array>}   - A promise to an array of names of each folder
  */
-const GetModules = ( thisPath, verbose ) => {
-	return new Promise(resolve => {
-		Readdir(thisPath)
-			.then(dirContent => {
-				let folders = dirContent
-					.filter(folder => {
-						let path = Path.normalize( `${ thisPath }/${ folder }` );
-						return Fs.statSync( path ).isDirectory() && Fs.existsSync( Path.normalize( `${path}/package.json` ) )
-					})
-					.filter(folder => folder !== 'core');
+const GetModules = async ( thisPath, verbose ) => {
+	try {
+		let dirContent = await Readdir( thisPath );
+		let folders = ( await Promise.all(
+			dirContent.map( dirItem => {
+				let pkg = Path.normalize( `${ thisPath }/${ dirItem }/package.json` );
+				return ( async () => {
+					try {
+						return await Access( pkg ) || dirItem;
+					} catch ( e ) {
+						return ''
+					}
+				} )()
+			} )
+		) )
+		.filter( folder => folder !== '' && folder !== 'core' );
 
-				resolve(['core', ...folders ]); // moving core to top
-			})
-			.catch(() => resolve([]))
-	})
+		return [ 'core', ...folders ]; // moving core to top
+	} catch (e) {
+		return [];
+	}
 };
 
 
