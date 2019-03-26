@@ -174,7 +174,7 @@ As mentioned previously, we try to make our code very easy to understand and rea
 
 #### Describe the function
 
-Make sure to include docs that gives details on the parameters and returns of the function. The name of the function should help make clear the intention of the function. This standard applies for any SASS, JS, JQuery or React JS functions.
+Make sure to include function and parameter definitions where appropriate. The name of the function should help make clear the intention of the function. This standard applies for any SASS, JS, JQuery or React JS functions. We adhere to [JSDoc](http://usejsdoc.org/about-getting-started.html) styling
 
 Don't:
 
