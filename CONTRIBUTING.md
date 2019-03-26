@@ -62,7 +62,9 @@ Before new components and patterns are published into the design system, the tea
 | [Tested](#tested) | It’s been tested and shown to work with a range of browsers, assistive technologies and devices. |
 | [Considered](#considered) | Documentation and rationale have been provided. |
 
-When making a new component, we would be very greatful if you post the research, design decisions, use cases for the component, accessibility considerations to the [community forum](https://community.digital.gov.au/c/designsystem) before submitting a pull request. This may be in the form of a code snippet, screenshots, sketch files or written text on your research with references. This gives a chance for members of the community to respond and share any work they may have done in the past on a similar component.
+When making a new component, we would be very grateful if you post the research, design decisions and use cases for the component. Accessibility considerations should be documented or sourced from the [community forum](https://community.digital.gov.au/c/designsystem) before submitting a pull request. 
+
+This may be in the form of a code snippet, screenshots, sketch files or written text on your research with references. This gives a chance for members of the community to respond and share any work they may have done in the past on a similar component.
 
 -------------------------------------------------------------------------------------------------
 
