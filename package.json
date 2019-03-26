@@ -1,8 +1,11 @@
 {
 	"devDependencies": {
 		"autoprefixer": "^9.4.10",
+		"babel-eslint": "^8.2.6",
 		"cfonts": "^2.4.2",
 		"chalk": "^2.4.2",
+		"eslint": "^5.15.3",
+		"eslint-plugin-react": "^7.12.4",
 		"express": "^4.16.4",
 		"inquirer": "6.2.2",
 		"jest-cli": "^24.4.0",
@@ -24,7 +27,10 @@
 		"delete:node_modules": "lerna clean node_modules --yes | rimraf node_modules",
 		"delete:lib": "rimraf packages/*/lib/**",
 		"test:unit-test": "jest",
-		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
+		"test": "node scripts/helper.js test && node ./scripts/a11y.js",
+		"lint:react": "eslint -c ./eslintconfigs/react.js ./packages/*/src/js/react.js",
+		"lint:module": "eslint -c ./eslintconfigs/module.js ./packages/*/src/js/module.js",
+		"lint": "npm run lint:react && npm run lint:module"
 	},
 	"jest": {
 		"testRegex": "\\.spec.js$",
