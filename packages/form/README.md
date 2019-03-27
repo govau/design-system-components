@@ -1,7 +1,7 @@
 @gov.au/form
 ============
 
-> 
+> Forms contain interactive controls for submitting information to a web server
 
 
 ## Contents
