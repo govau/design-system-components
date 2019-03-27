@@ -1,7 +1,7 @@
 {
 	"name": "@gov.au/form",
 	"version": "0.1.0",
-	"description": "",
+	"description": "Forms contain interactive controls for submitting information to a web server",
 	"keywords": [
 		"auds",
 		"pancake",
