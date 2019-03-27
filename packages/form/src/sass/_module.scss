@@ -1,0 +1,113 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// form module
+// 
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+.au-form-group {
+  &--invalid {
+    border-left: solid 5px $AU-color-error;
+    padding-left: 15px;
+  }
+  
+  + .au-form-group {
+    @include AU-space( margin-top, 1.25unit );
+  }
+  
+}
+
+
+.au-label {
+  font-family: $AU-font;
+  color: $AU-color-foreground-text;
+  display: block;
+  @include AU-fontgrid( sm, default);
+
+  &--inline {
+    display: inline-block;
+  }
+
+  &--dark {
+    color: $AU-colordark-foreground-text;
+  }
+
+  & + .au-text-input, + .au-select, + .au-control-input {
+		@include AU-space( margin-top, 0.25unit );
+  }
+}
+
+
+.au-hint-text {
+  font-family: $AU-font;
+  color: $AU-hint-text;
+  display: block;
+  @include AU-fontgrid( sm, default);
+
+	* + & {
+		@include AU-space( margin-top, 0.4unit );
+  }
+  
+  & + .au-text-input, + .au-select, + .au-control-input {
+		@include AU-space( margin-top, 0.25unit );
+  }
+
+  &--dark {
+    color: $AU-colordark-foreground-muted;
+  }
+
+  &--alt {
+    color: $AU-hint-text-alt;
+  }
+}
+
+
+.au-error-text {
+  font-family: $AU-font;
+  font-weight: bold;
+  color: $AU-color-error;
+  display: block;
+  @include AU-fontgrid( sm, default);
+
+  * + & {
+		@include AU-space( margin-top, 0.4unit );
+  }
+  
+  & + .au-text-input, + .au-select, + .au-control-input {
+		@include AU-space( margin-top, 0.25unit );
+  }
+
+  &--inline {
+    display: inline-block;
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+
+.au-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  padding-block-end: 0;
+  min-inline-size: 0;
+
+  &__legend {
+    @include AU-space( margin-bottom, .75unit );    
+  }
+}
