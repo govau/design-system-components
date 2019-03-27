@@ -174,7 +174,8 @@ const GetModules = async ( thisPath, verbose ) => {
 		.filter( folder => folder !== '' && folder !== 'core' );
 
 		return [ 'core', ...folders ]; // moving core to top
-	} catch (e) {
+	} catch ( error ) {
+		console.error(error);
 		return [];
 	}
 };
