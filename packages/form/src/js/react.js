@@ -40,7 +40,7 @@ export const AUlabel = ({ text, dark, inline, className = '', ...attributeOption
 );
 
 AUlabel.propTypes = {
-	title: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
 	dark: PropTypes.bool,
 	inline: PropTypes.bool,
 	className: PropTypes.string,
@@ -66,17 +66,16 @@ export const AUhintText = ({ text, dark,  className = '', ...attributeOptions })
 );
 
 AUhintText.propTypes = {
-	title: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
 	dark: PropTypes.bool,
 	className: PropTypes.string,
 };
 
 
-
 /**
  * The error text component
  *
- * @param  {string}  title            - Title of the label, required
+ * @param  {string}  text            - Text of the label, required
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {string}  className        - An additional class, optional
@@ -96,7 +95,7 @@ export const AUerrorText = ({ text, dark, inline, className = '', ...attributeOp
 
 AUerrorText.propTypes = {
 	dark: PropTypes.bool,
-	title: PropTypes.string.isRequired,
+	text: PropTypes.string.isRequired,
 	className: PropTypes.string,
 };
 
