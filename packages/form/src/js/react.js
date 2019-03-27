@@ -46,6 +46,7 @@ AUlabel.propTypes = {
 	className: PropTypes.string,
 };
 
+
 /**
  * DEFAULT
  * The hint text component
@@ -154,3 +155,14 @@ AUfieldset.propTypes = {
 	dark: PropTypes.bool,
 	className: PropTypes.string,
 };
+
+
+
+/**
+ * The form component wrapper
+ * 
+ * @param  {object}  attributeOptions - Any other attribute options
+ */
+export const AUForm = ({...attributeOptions }) => (
+	<form { ...attributeOptions } ></form>
+);
