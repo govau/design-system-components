@@ -128,4 +128,7 @@ inline={ true }              {/* Label inline*/}
 <AUhintText
 title="We will only use this email to respond to your query."
 />
+
+<AUerrorText  />
+
 ```

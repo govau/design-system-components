@@ -21,13 +21,13 @@ import PropTypes from 'prop-types';
  * DEFAULT
  * The label component
  *
- * @param  {string}  title            - Title of the label, required
+ * @param  {string}  text            - Text of the label, required
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {boolean} inline           - Display the label inline, optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUlabel = ({ title, dark, inline, className = '', ...attributeOptions }) => (
+export const AUlabel = ({ text, dark, inline, className = '', ...attributeOptions }) => (
 	<label
 		className={ `au-label ${ className }` +
 		`${ dark ? ' au-label--dark' : '' }` + 
@@ -35,7 +35,7 @@ export const AUlabel = ({ title, dark, inline, className = '', ...attributeOptio
 		}
 		{ ...attributeOptions }
 	>
-    {title}
+    { text }
 	</label>
 );
 
@@ -51,19 +51,17 @@ AUlabel.propTypes = {
  * DEFAULT
  * The hint text component
  *
- * @param  {string}  title            - Title of the label, required
+ * @param  {string}  text            - Text of the label, required
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUhintText = ({ title, dark,  className = '', ...attributeOptions }) => (
-	<span
-		className={ `au-hint-text ${ className }` +
-		`${ dark ? ' au-hint-text--dark' : '' }`
+export const AUhintText = ({ text, dark,  className = '', ...attributeOptions }) => (
+	<span className={ `au-hint-text ${ className }` + `${ dark ? ' au-hint-text--dark' : '' }`
 		}
 		{ ...attributeOptions }
 	>
-    {title}
+    { text }
 	</span>
 );
 
@@ -84,7 +82,7 @@ AUhintText.propTypes = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUerrorText = ({ title, dark, inline, className = '', ...attributeOptions }) => (
+export const AUerrorText = ({ text, dark, inline, className = '', ...attributeOptions }) => (
 	<span
 		className={ `au-error-text ${ className }` +
 		`${ dark ? ' au-error-text--dark' : '' }` +
@@ -92,7 +90,7 @@ export const AUerrorText = ({ title, dark, inline, className = '', ...attributeO
 		}
 		{ ...attributeOptions }
 	>
-    {title}
+	{ text }
 	</span>
 );
 
