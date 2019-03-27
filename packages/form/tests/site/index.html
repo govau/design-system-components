@@ -45,7 +45,7 @@
 			<p>
 				<form>
 					<label class="au-label" for="text-input-block-label">Email</label>
-					<input type="text" type="text" class="au-text-input" id="text-input-block-label" name="text-input-block-label">
+					<input type="text" class="au-text-input" id="text-input-block-label" name="text-input-block-label">
 				</form>
 			</p>
 			<hr>
@@ -54,16 +54,16 @@
 			<p>
 				<form>
 					<label class="au-label au-label--inline" for="text-input-inline">Email</label>
-					<input type="text" type="text" class="au-text-input" id="text-input-inline" name="text-input-inline">
+					<input type="text" class="au-text-input" id="text-input-inline" name="text-input-inline">
 				</form>
 			</p>
 			<hr>
 			<h3>Hint text</h3>
 			<p>
 				<form>
-					<label class="au-label" for="text-input-hint-text">Password</label>
-					<span class="au-hint-text" id="hint-text">Minimum 6 characters</span>
-					<input class="au-text-input" id="text-input-hint-text" name="text-input-hint-text" type="password" aria-describedby="hint-text"/>
+					<label class="au-label" for="text-input-hint-text">Email</label>
+					<span class="au-hint-text" id="hint-text">We will only use this to respond to your request</span>
+					<input class="au-text-input" id="text-input-hint-text" name="text-input-hint-text" type="email" aria-describedby="hint-text"/>
 				</form>
 			</p>
 			<hr>
@@ -71,10 +71,10 @@
 			<h3>Error text</h3>
 			<p>
 				<form>
-					<label class="au-label" for="text-input-error">Password</label>
-					<span class="au-hint-text" id="hint-text-e">Minimum 6 characters</span>
-					<span class="au-error-text" id="error-text">Password was less than 6 characters</span>
-					<input type="password" class="au-text-input au-text-input--invalid" id="text-input-error" name="text-input-error"
+					<label class="au-label" for="text-input-error">Email</label>
+					<span class="au-hint-text" id="hint-text-e">We will only use this to respond to your request</span>
+					<span class="au-error-text" id="error-text">Enter an email address in the correct format, like name@example.com</span>
+					<input type="email" class="au-text-input au-text-input--invalid" id="text-input-error" name="text-input-error"
 					aria-invalid="true" aria-describedby="error-text hint-text-e" />
 				</form>
 			</p>
@@ -85,11 +85,12 @@
 
 			<p>
 				<form>
-					<label class="au-label" for="text-input-error-bottom">Password</label>
-					<span class="au-hint-text" id="hint-text-e-bottom">Minimum 6 characters</span>
-					<input type="password" class="au-text-input au-text-input--invalid" id="text-input-error-bottom" name="text-input-error"
+					<label class="au-label" for="text-input-error-bottom">Email</label>
+					<span class="au-hint-text" id="hint-text-e-bottom">We will only use this to respond to your request</span>
+					<input type="email" class="au-text-input au-text-input--invalid" id="text-input-error-bottom" name="text-input-error"
 					aria-invalid="true" aria-describedby="error-text hint-text-e-bottom" />
-					<span class="au-error-text" id="error-text-bottom">Password was less than 6 characters </span>
+					<span class="au-error-text" id="error-text-bottom">Enter an email address in the correct format, like name@example.com
+ </span>
 				</form>
 			</p>
 
@@ -100,11 +101,12 @@
 
 			<p>
 				<form>
-					<label class="au-label" for="text-input-error-inline">Password</label>
-					<span class="au-hint-text" id="hint-text-e-inline">Minimum 6 characters</span>
-					<input type="text" type="text" class="au-text-input au-text-input--invalid" id="text-input-error-inline" name="text-input-error"
+					<label class="au-label" for="text-input-error-inline">Email</label>
+					<span class="au-hint-text" id="hint-text-e-inline">We will only use this to respond to your request</span>
+					<input type="text" class="au-text-input au-text-input--invalid" id="text-input-error-inline" name="text-input-error"
 					aria-invalid="true" aria-describedby="error-text hint-text-e-inline" />
-					<span class="au-error-text au-error-text--inline" id="error-text-inline">Password was less than 6 characters </span>
+					<span class="au-error-text au-error-text--inline" id="error-text-inline">Enter an email address in the correct format, like name@example.com
+ </span>
 				</form>
 			</p>
 
@@ -121,9 +123,9 @@
 
 			<div class="au-form-group">
 				<form>
-					<label class="au-label" for="text-input-2-form-group">Password</label>
-					<span class="au-hint-text" id="hint-text-fg">Minimum 6 characters</span>
-					<input type="password" class="au-text-input" id="text-input-2-form-group" name="text-input-2-form-group" aria-describedby="hint-text-fg"/>
+					<label class="au-label" for="text-input-2-form-group">Email</label>
+					<span class="au-hint-text" id="hint-text-fg">We will only use this to respond to your request</span>
+					<input type="email" class="au-text-input" id="text-input-2-form-group" name="text-input-2-form-group" aria-describedby="hint-text-fg"/>
 				</form>
 			</div>
 			<hr>
@@ -131,13 +133,14 @@
 			<form>
 				<div class="au-form-group">
 					<label class="au-label" for="text-input-form-group-2">Username</label>
-					<input type="text" type="text" class="au-text-input" id="text-input-form-group-2" name="text-input-form-group-2" />
+					<input type="text" class="au-text-input" id="text-input-form-group-2" name="text-input-form-group-2" />
 				</div>
 				<div class="au-form-group au-form-group--invalid">
-					<label class="au-label" for="text-input-form-group-3">Password</label>
-					<span class="au-hint-text" id="hint-text-fg-err">Minimum 6 characters</span>
-					<span class="au-error-text" id="error-text-2">Password was less than 6 characters </span>
-					<input type="password" class="au-text-input au-text-input--invalid" id="text-input-form-group-3" name="text-input-form-group-3"
+					<label class="au-label" for="text-input-form-group-3">Email</label>
+					<span class="au-hint-text" id="hint-text-fg-err">We will only use this to respond to your request</span>
+					<span class="au-error-text" id="error-text-2">Enter an email address in the correct format, like name@example.com
+ </span>
+					<input type="email" class="au-text-input au-text-input--invalid" id="text-input-form-group-3" name="text-input-form-group-3"
 					 aria-invalid="true" aria-describedby="error-text-2 hint-text-fg-err" />
 				</div>
 			</form>
@@ -149,14 +152,15 @@
 			<form>
 				<div class="au-form-group">
 					<label class="au-label" for="text-input-form-group-2-bottom">Username</label>
-					<input type="text" type="text" class="au-text-input" id="text-input-form-group-2-bottom" name="text-input-form-group-2" />
+					<input type="text" class="au-text-input" id="text-input-form-group-2-bottom" name="text-input-form-group-2" />
 				</div>
 				<div class="au-form-group au-form-group--invalid">
-					<label class="au-label" for="text-input-form-group-3-bottom">Password</label>
-					<span class="au-hint-text" id="hint-text-fg-err-bottom">Minimum 6 characters</span>
-					<input type="password" class="au-text-input au-text-input--invalid" id="text-input-form-group-3-bottom" name="text-input-form-group-3"
+					<label class="au-label" for="text-input-form-group-3-bottom">Email</label>
+					<span class="au-hint-text" id="hint-text-fg-err-bottom">We will only use this to respond to your request</span>
+					<input type="email" class="au-text-input au-text-input--invalid" id="text-input-form-group-3-bottom" name="text-input-form-group-3"
 					aria-invalid="true" aria-describedby="error-text-2-bottom hint-text-fg-err-bottom" />
-					<span class="au-error-text" id="error-text-2-bottom">Password was less than 6 characters </span>
+					<span class="au-error-text" id="error-text-2-bottom">Enter an email address in the correct format, like name@example.com
+ </span>
 				</div>
 			</form>
 
@@ -173,11 +177,11 @@
 					</legend>
 					<div class="au-form-group">
 						<label class="au-label" for="fieldset-input-street">Street and number</label>
-						<input type="text" type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-street" name="fieldset-input-street" />
+						<input type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-street" name="fieldset-input-street" />
 					</div>
 					<div class="au-form-group">
 						<label class="au-label" for="fieldset-input-city">City or suburb</label>
-						<input type="text" type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-city" name="fieldset-input-city" />
+						<input type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-city" name="fieldset-input-city" />
 					</div>
 					<div class="au-form-group">
 						<label class="au-label" for="select1">Select state</label>
@@ -190,7 +194,7 @@
 					</div>
 					<div class="au-form-group">
 						<label class="au-label" for="fieldset-input-postcode">Postcode</label>
-						<input type="text" type="text" class="au-text-input au-text-input--width-sm" id="fieldset-input-postcode" name="fieldset-input-postcode" />
+						<input type="text" class="au-text-input au-text-input--width-sm" id="fieldset-input-postcode" name="fieldset-input-postcode" />
 					</div>
 				</fieldset>
 			</form>
@@ -235,11 +239,11 @@
 						</legend>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-street-2">Street and number</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-street-2" name="fieldset-input-street-2" />
+							<input type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-street-2" name="fieldset-input-street-2" />
 						</div>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-city-2">City or suburb</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-city-2" name="fieldset-input-city-2" />
+							<input type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-city-2" name="fieldset-input-city-2" />
 						</div>
 						<div class="au-form-group au-form-group--invalid">
 							<label class="au-label" for="select2">Select state</label>
@@ -254,7 +258,7 @@
 						</div>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-postcode-2">Postcode</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-sm" id="fieldset-input-postcode-2" name="fieldset-input-postcode-2" />
+							<input type="text" class="au-text-input au-text-input--width-sm" id="fieldset-input-postcode-2" name="fieldset-input-postcode-2" />
 						</div>
 					</fieldset>
 				</form>
@@ -294,8 +298,8 @@
 			<h3>Label</h3>
 			<p>
 				<form>
-					<label class="au-label" for="text-input-block-label-alt">Password</label>
-					<input type="password" class="au-text-input" id="text-input-block-label-alt" name="text-input-block-label-alt">
+					<label class="au-label" for="text-input-block-label-alt">Email</label>
+					<input type="email" class="au-text-input" id="text-input-block-label-alt" name="text-input-block-label-alt">
 				</form>
 			</p>
 			<hr>
@@ -303,17 +307,17 @@
 			<h3>Label <code>--inline</code></h3>
 			<p>
 				<form>
-					<label class="au-label au-label--inline" for="text-input-inline-alt">Password</label>
-					<input type="password" class="au-text-input" id="text-input-inline-alt" name="text-input-inline-alt">
+					<label class="au-label au-label--inline" for="text-input-inline-alt">Email</label>
+					<input type="email" class="au-text-input" id="text-input-inline-alt" name="text-input-inline-alt">
 				</form>
 			</p>
 			<hr>
 			<h3>Hint text</h3>
 			<p>
 				<form>
-					<label class="au-label" for="text-input-hint-text-alt">Password</label>
-					<span class="au-hint-text au-hint-text--alt" id="hint-text-alt">Minimum 6 characters</span>
-					<input type="password" class="au-text-input" id="text-input-hint-text-alt" name="text-input-hint-text-alt" aria-describedby="hint-text-alt"/>
+					<label class="au-label" for="text-input-hint-text-alt">Email</label>
+					<span class="au-hint-text au-hint-text--alt" id="hint-text-alt">We will only use this to respond to your request</span>
+					<input type="email" class="au-text-input" id="text-input-hint-text-alt" name="text-input-hint-text-alt" aria-describedby="hint-text-alt"/>
 				</form>
 			</p>
 			<hr>
@@ -321,10 +325,11 @@
 			<h3>Error text</h3>
 			<p>
 				<form>
-					<label class="au-label" for="text-input-error-alt">Password</label>
-					<span class="au-hint-text au-hint-text--alt" id="hint-text-e-alt">Minimum 6 characters</span>
-					<span class="au-error-text" id="error-text-alt">Password was less than 6 characters </span>
-					<input type="password" class="au-text-input au-text-input--invalid" id="text-input-error-alt" name="text-input-error-alt"
+					<label class="au-label" for="text-input-error-alt">Email</label>
+					<span class="au-hint-text au-hint-text--alt" id="hint-text-e-alt">We will only use this to respond to your request</span>
+					<span class="au-error-text" id="error-text-alt">Enter an email address in the correct format, like name@example.com
+ </span>
+					<input type="email" class="au-text-input au-text-input--invalid" id="text-input-error-alt" name="text-input-error-alt"
 					aria-invalid="true" aria-describedby="error-text-alt hint-text-e-alt" />
 				</form>
 			</p>
@@ -335,11 +340,12 @@
 
 			<p>
 				<form>
-					<label class="au-label" for="text-input-error-bottom-alt">Password</label>
-					<span class="au-hint-text au-hint-text--alt" id="hint-text-e-bottom-alt">Minimum 6 characters</span>
-					<input type="password" class="au-text-input au-text-input--invalid" id="text-input-error-bottom-alt" name="text-input-error-alt"
+					<label class="au-label" for="text-input-error-bottom-alt">Email</label>
+					<span class="au-hint-text au-hint-text--alt" id="hint-text-e-bottom-alt">We will only use this to respond to your request</span>
+					<input type="email" class="au-text-input au-text-input--invalid" id="text-input-error-bottom-alt" name="text-input-error-alt"
 					aria-invalid="true" aria-describedby="error-tex-altt hint-text-e-bottom-alt" />
-					<span class="au-error-text" id="error-text-bottom-alt">Password was less than 6 characters </span>
+					<span class="au-error-text" id="error-text-bottom-alt">Enter an email address in the correct format, like name@example.com
+ </span>
 				</form>
 			</p>
 
@@ -350,11 +356,12 @@
 
 			<p>
 				<form>
-					<label class="au-label" for="text-input-error-inline-alt" type="password">Password</label>
-					<span class="au-hint-text au-hint-text--alt" id="hint-text-e-inline-alt">Minimum 6 characters</span>
-					<input type="password" class="au-text-input au-text-input--invalid" id="text-input-error-inline-alt" name="text-input-error"
+					<label class="au-label" for="text-input-error-inline-alt" type="email">Email</label>
+					<span class="au-hint-text au-hint-text--alt" id="hint-text-e-inline-alt">We will only use this to respond to your request</span>
+					<input type="email" class="au-text-input au-text-input--invalid" id="text-input-error-inline-alt" name="text-input-error"
 					aria-invalid="true" aria-describedby="error-text-inline-alt hint-text-e-inline-alt" />
-					<span class="au-error-text au-error-text--inline" id="error-text-inline-alt">Password was less than 6 characters </span>
+					<span class="au-error-text au-error-text--inline" id="error-text-inline-alt">Enter an email address in the correct format, like name@example.com
+ </span>
 				</form>
 			</p>
 
@@ -368,9 +375,9 @@
 						<input type="text" class="au-text-input" id="text-input-form-group-alt" name="text-input-form-group-alt" />
 					</div>
 				<div class="au-form-group">
-					<label class="au-label" for="text-input-2-form-group-alt">Password</label>
-					<span class="au-hint-text au-hint-text--alt" id="hint-text-fg-alt">Minimum 6 characters</span>
-					<input type="password" class="au-text-input" id="text-input-2-form-group-alt" name="text-input-2-form-group-alt" aria-describedby="hint-text-fg-alt"
+					<label class="au-label" for="text-input-2-form-group-alt">Email</label>
+					<span class="au-hint-text au-hint-text--alt" id="hint-text-fg-alt">We will only use this to respond to your request</span>
+					<input type="email" class="au-text-input" id="text-input-2-form-group-alt" name="text-input-2-form-group-alt" aria-describedby="hint-text-fg-alt"
 					/>
 				</div>
 				</form>
@@ -383,10 +390,11 @@
 						<input type="text" class="au-text-input" id="text-input-form-group-2-alt" name="text-input-form-group-2-alt" />
 					</div>
 					<div class="au-form-group au-form-group--invalid">
-						<label class="au-label" for="text-input-form-group-3-alt">Password</label>
-						<span class="au-hint-text au-hint-text--alt" id="hint-text-fg-err-alt">Minimum 6 characters</span>
-						<span class="au-error-text" id="error-text-2-alt">Password was less than 6 characters </span>
-						<input type="password" class="au-text-input au-text-input--invalid" id="text-input-form-group-3-alt" name="text-input-form-group-3-alt"
+						<label class="au-label" for="text-input-form-group-3-alt">Email</label>
+						<span class="au-hint-text au-hint-text--alt" id="hint-text-fg-err-alt">We will only use this to respond to your request</span>
+						<span class="au-error-text" id="error-text-2-alt">Enter an email address in the correct format, like name@example.com
+ </span>
+						<input type="email" class="au-text-input au-text-input--invalid" id="text-input-form-group-3-alt" name="text-input-form-group-3-alt"
 							aria-invalid="true" aria-describedby="error-text-2-alt hint-text-fg-err-alt" />
 					</div>
 				</form>
@@ -400,11 +408,12 @@
 						<input type="text" class="au-text-input" id="text-input-form-group-2-bottom-alt" name="text-input-form-group-2-alt" />
 					</div>
 					<div class="au-form-group au-form-group--invalid">
-						<label class="au-label" for="text-input-form-group-3-bottom-alt">Password</label>
-						<span class="au-hint-text au-hint-text--alt" id="hint-text-fg-err-bottom-alt">Minimum 6 characters</span>
-						<input type="password" class="au-text-input au-text-input--invalid" id="text-input-form-group-3-bottom-alt" name="text-input-form-group-3-alt"
+						<label class="au-label" for="text-input-form-group-3-bottom-alt">Email</label>
+						<span class="au-hint-text au-hint-text--alt" id="hint-text-fg-err-bottom-alt">We will only use this to respond to your request</span>
+						<input type="email" class="au-text-input au-text-input--invalid" id="text-input-form-group-3-bottom-alt" name="text-input-form-group-3-alt"
 						aria-invalid="true" aria-describedby="error-text-2-bottom-alt hint-text-fg-err-bottom-alt" />
-						<span class="au-error-text" id="error-text-2-bottom-alt">Password was less than 6 characters </span>
+						<span class="au-error-text" id="error-text-2-bottom-alt">Enter an email address in the correct format, like name@example.com
+ </span>
 					</div>
 				</form>
 
@@ -420,11 +429,11 @@
 						</legend>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-street-alt">Street and number</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-street-alt" name="fieldset-input-street-alt" />
+							<input type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-street-alt" name="fieldset-input-street-alt" />
 						</div>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-city-alt">City or suburb</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-city-alt" name="fieldset-input-city-alt" />
+							<input type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-city-alt" name="fieldset-input-city-alt" />
 						</div>
 						<div class="au-form-group">
 							<label class="au-label" for="select1-alt">Select state</label>
@@ -437,7 +446,7 @@
 						</div>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-postcode-alt">Postcode</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-sm" id="fieldset-input-postcode-alt" name="fieldset-input-postcode-alt" />
+							<input type="text" class="au-text-input au-text-input--width-sm" id="fieldset-input-postcode-alt" name="fieldset-input-postcode-alt" />
 						</div>
 					</fieldset>
 				</form>
@@ -483,11 +492,11 @@
 						</legend>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-street-2-alt">Street and number</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-street-2-alt" name="fieldset-input-street-2-alt" />
+							<input type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-street-2-alt" name="fieldset-input-street-2-alt" />
 						</div>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-city-2-alt">City or suburb</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-city-2-alt" name="fieldset-input-city-2-alt" />
+							<input type="text" class="au-text-input au-text-input--width-lg" id="fieldset-input-city-2-alt" name="fieldset-input-city-2-alt" />
 						</div>
 						<div class="au-form-group au-form-group--invalid">
 							<label class="au-label" for="select2-alt">Select state</label>
@@ -502,7 +511,7 @@
 						</div>
 						<div class="au-form-group">
 							<label class="au-label" for="fieldset-input-postcode-2-alt">Postcode</label>
-							<input type="text" type="text" class="au-text-input au-text-input--width-sm" id="fieldset-input-postcode-2-alt" name="fieldset-input-postcode-2-alt" />
+							<input type="text" class="au-text-input au-text-input--width-sm" id="fieldset-input-postcode-2-alt" name="fieldset-input-postcode-2-alt" />
 						</div>
 					</fieldset>
 				</form>
