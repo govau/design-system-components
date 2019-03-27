@@ -13,11 +13,14 @@
 
 
 .au-form-group {
+  
+  // Error state for form group
   &--invalid {
     border-left: solid 5px $AU-color-error;
     padding-left: 15px;
   }
   
+  //Add space above form consecutive
   + .au-form-group {
     @include AU-space( margin-top, 1.25unit );
   }
@@ -39,6 +42,7 @@
     color: $AU-colordark-foreground-text;
   }
 
+  //add space between form control and label
   & + .au-text-input, + .au-select, + .au-control-input {
 		@include AU-space( margin-top, 0.25unit );
   }
@@ -54,7 +58,8 @@
 	* + & {
 		@include AU-space( margin-top, 0.4unit );
   }
-  
+
+    //add space between form control and hint text
   & + .au-text-input, + .au-select, + .au-control-input {
 		@include AU-space( margin-top, 0.25unit );
   }
@@ -72,14 +77,15 @@
 .au-error-text {
   font-family: $AU-font;
   font-weight: bold;
+  @include AU-fontgrid( sm, default);
   color: $AU-color-error;
   display: block;
-  @include AU-fontgrid( sm, default);
 
   * + & {
 		@include AU-space( margin-top, 0.4unit );
   }
   
+  //add space between form control and hint text
   & + .au-text-input, + .au-select, + .au-control-input {
 		@include AU-space( margin-top, 0.25unit );
   }
@@ -88,26 +94,19 @@
     display: inline-block;
   }
 
+  // toggle class to show/hide error text
   &--hidden {
     display: none;
   }
 }
 
-
+// Reset fieldset styling to avoid inconsistency across different browsers
 .au-fieldset {
-  border: none;
   margin: 0;
   padding: 0;
-  display: block;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
-  padding-block-start: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-  padding-block-end: 0;
-  min-inline-size: 0;
+  border: 0;
 
   &__legend {
-    @include AU-space( margin-bottom, .75unit );    
+    @include AU-space( margin-bottom, .75unit );
   }
 }
