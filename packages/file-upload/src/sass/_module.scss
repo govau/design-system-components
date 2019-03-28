@@ -1,0 +1,43 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// file-upload module
+// Upload file control
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+.au-file-upload {
+	@include AU-fontgrid( sm );
+
+	&__input {
+		&:focus,
+			// focus-within - firefox input file bug workaround: see https://bugzilla.mozilla.org/show_bug.cgi?id=1430196
+		&:focus-within {
+			@include AU-outline();
+
+			& + .au-file-upload__label {
+				@include AU-outline()
+			}
+		}
+
+		&::-moz-focus-inner {
+			border: 0;
+		}
+
+		&--visually-hidden {
+			@include AU-sronly()
+		}
+	}
+
+	&__files-item {
+	}
+
+	&__files-item-remove-button {
+	}
+}
