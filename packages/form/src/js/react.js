@@ -51,8 +51,9 @@ AUlabel.propTypes = {
  * DEFAULT
  * The hint text component
  *
- * @param  {string}  text            - Text of the label, required
+ * @param  {string}  text             - Text of the label, required
  * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} alt              - Add the alt variation class, optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
@@ -81,7 +82,7 @@ AUhintText.propTypes = {
  *
  * @param  {string}  text            - Text of the label, required
  * @param  {boolean} dark             - Add the dark variation class, optional
- * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {boolean} inline           - Display the error text inline, optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
@@ -135,12 +136,6 @@ AUformGroup.defaultProps = {
 }
 
 
-export const AUlegend = ({...attributeOptions}) => (
-	<legend class="au-fieldset__legend" {...attributeOptions}>
-
-	</legend>
-)
-
 /**
  * The fieldset component
  *
@@ -164,7 +159,6 @@ AUfieldset.propTypes = {
 };
 
 
-
 /**
  * The form component wrapper
  * 
@@ -172,4 +166,16 @@ AUfieldset.propTypes = {
  */
 export const AUForm = ({...attributeOptions }) => (
 	<form { ...attributeOptions }></form>
+);
+
+
+/**
+ * The legend component
+ *
+ * @param  {object}  attributeOptions - Any other attribute options
+ */
+export const AUlegend = ({...attributeOptions}) => (
+	<legend class="au-fieldset__legend" {...attributeOptions}>
+
+	</legend>
 );

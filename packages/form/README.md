@@ -100,7 +100,7 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 Usage:
 
 ```jsx
-import { AUForm, AUlabel, AUhintText, AUerrorText, AUfieldset } from '@gov.au/form';
+import { AUForm, AUlabel, AUhintText, AUerrorText, AUfieldset, AUlegend } from '@gov.au/form';
 
 <AUForm>
     <AUlabel text="Email" />
@@ -114,7 +114,12 @@ import { AUForm, AUlabel, AUhintText, AUerrorText, AUfieldset } from '@gov.au/fo
     </AUformGroup>
 
     <AUfieldset>
-        // legend, form controls in here.
+        <AUlegend>
+        // labels/hint text here
+        </AUlegend>
+
+        // form controls here
+        
     </AUfieldset>
 </AUForm>
 ```
@@ -124,13 +129,28 @@ All props:
 ```jsx
 <AUlabel 
 text="Email"                 {/* The text of the label */}
-dark = { true }              {/* The dark variation of the component */}
+dark={ true }                {/* The dark variation of the component */}
 inline={ true }              {/* Label inline*/}
 />
 
 <AUhintText
-text="We will only use this email to respond to your query."
+text="We will only use this email to respond to your query." {/* The hint text */}
+dark = { true }                                              {/* The dark variation of the component */}
+alt={ false }                                                {/* The alt variation of the component */}
 />
 
-<AUerrorText  />
+<AUerrorText
+text="Enter an email in the valid format."  {/* The error text */}
+dark={ true }                               {/* The dark variation of the component */}
+inline={ true }                             {/* Display the error text inline*/}
+/>
+
+<AUformGroup
+status="invalid"            {/* Adds invalid state to form group */}
+dark = { true }             {/* The dark variation of the component */}
+/>
+
+<AUfieldset 
+dark = { true }             {/* The dark variation of the component */}
+/>
 ```
