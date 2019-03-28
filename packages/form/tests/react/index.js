@@ -327,7 +327,7 @@ class App extends React.Component {
 
 						<AUformGroup>
 							<AUlabel htmlFor="address-4-alt" text="Postcode"/>
-							<AUtextInput id="address-4-alt" width="sm"/>
+							<AUtextInput type="number" id="address-4-alt" width="sm"/>
 						</AUformGroup>
 					</AUfieldset>
 
@@ -359,7 +359,7 @@ class App extends React.Component {
 
 						<AUformGroup>
 							<AUlabel htmlFor="address-4-err-alt" text="Postcode"/>
-							<AUtextInput id="address-4-err-alt" width="sm"/>
+							<AUtextInput id="address-4-err-alt" type="number" width="sm"/>
 						</AUformGroup>
 					</AUfieldset>
 
