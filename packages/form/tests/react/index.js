@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { AUlabel, AUhintText, AUerrorText, AUformGroup, AUfieldset, AUForm } from './form.js';
+import { AUlabel, AUhintText, AUerrorText, AUformGroup, AUfieldset, AUForm, AUlegend } from './form.js';
 import AUtextInput from '../../../text-inputs';
 import AUheading from '../../../headings';
 import AUselect from '../../../select';
@@ -123,11 +123,11 @@ class App extends React.Component {
 					<h3>Fieldsets</h3>
 					<br/>
 					<AUfieldset>
-						<legend className="au-fieldset__legend">
+						<AUlegend>
 							<AUheading level="2" size="lg">
 								What is your address?
 							</AUheading>
-						</legend>
+						</AUlegend>
 						<AUformGroup>
 							<AUlabel htmlFor="address-1" text="Street and number" />
 							<AUtextInput type="text" id="address-1" width="lg" />
@@ -153,11 +153,11 @@ class App extends React.Component {
 					<h3>Fieldsets with <code>--invalid</code></h3>
 					<br/>
 					<AUfieldset>
-						<legend className="au-fieldset__legend">
+						<AUlegend>
 							<AUheading level="2" size="lg">
 								What is your address?
 							</AUheading>
-						</legend>
+						</AUlegend>
 						<AUformGroup>
 							<AUlabel htmlFor="address-1-err" text="Street and number" />
 							<AUtextInput type="text" id="address-1-err" width="lg" />
@@ -185,13 +185,13 @@ class App extends React.Component {
 					<p></p>
 						<AUformGroup status="invalid">
 							<AUfieldset >
-								<legend className="au-fieldset__legend">
+								<AUlegend>
 									<AUheading level="2" size="lg">
 										Please select your favorite device
 									</AUheading>
 									<AUhintText text="Minimum 6 characters" id="device-hint-text-err" />
 									<AUerrorText text="A device was not selected" id="device-cb-err" />
-								</legend>
+								</AUlegend>
 
 								<AUcheckbox label="Phone" name="checkbox-ex-err" id="cb-phone-err" block/>
 								<AUcheckbox label="Tablet" name="checkbox-ex-err" id="cb-tablet-err" block/>
@@ -306,11 +306,11 @@ class App extends React.Component {
 					<h3>Fieldsets</h3>
 					<br/>
 					<AUfieldset>
-						<legend className="au-fieldset__legend">
+						<AUlegend>
 							<AUheading level="2" size="lg">
 								What is your address?
 							</AUheading>
-						</legend>
+						</AUlegend>
 						<AUformGroup>
 							<AUlabel htmlFor="address-1-alt" text="Street and number"/>
 							<AUtextInput id="address-1-alt" width="lg"/>
@@ -336,11 +336,11 @@ class App extends React.Component {
 					<h3>Fieldsets with <code>--invalid</code></h3>
 					<br/>
 					<AUfieldset>
-						<legend className="au-fieldset__legend">
+						<AUlegend>
 							<AUheading level="2" size="lg">
 								What is your address?
 							</AUheading>
-						</legend>
+						</AUlegend>
 						<AUformGroup>
 							<AUlabel htmlFor="address-1-err-alt" text="Street and number"/>
 							<AUtextInput id="address-1-err-alt" width="lg"/>
@@ -369,13 +369,13 @@ class App extends React.Component {
 					<p></p>
 					<AUformGroup status="invalid">
 						<AUfieldset>
-							<legend className="au-fieldset__legend">
+							<AUlegend>
 								<AUheading level="2" size="lg">
 									Please select your favorite device
 								</AUheading>
 								<AUhintText text="Minimum 6 characters" id="device-hint-text-err-alt"/>
 								<AUerrorText text="A device was not selected" id="device-cb-err-alt"/>
-							</legend>
+							</AUlegend>
 
 							<AUcheckbox label="Phone" name="checkbox-ex-err-alt" id="cb-phone-err-alt" block/>
 							<AUcheckbox label="Tablet" name="checkbox-ex-err-alt" id="cb-tablet-err-alt" block/>

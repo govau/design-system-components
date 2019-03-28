@@ -100,7 +100,7 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 Usage:
 
 ```jsx
-import { AUForm, AUlabel, AUhintText, AUerrorText } from '@gov.au/form';
+import { AUForm, AUlabel, AUhintText, AUerrorText, AUfieldset } from '@gov.au/form';
 
 <AUForm>
     <AUlabel text="Email" />

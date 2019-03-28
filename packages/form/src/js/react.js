@@ -107,6 +107,7 @@ AUerrorText.propTypes = {
 /**
  * The form group component
  *
+ * @param  {string}  status           - Adds invalid state to form group
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
@@ -134,6 +135,12 @@ AUformGroup.defaultProps = {
 }
 
 
+export const AUlegend = ({...attributeOptions}) => (
+	<legend class="au-fieldset__legend" {...attributeOptions}>
+
+	</legend>
+)
+
 /**
  * The fieldset component
  *
@@ -148,7 +155,6 @@ export const AUfieldset = ({ dark, className = '', ...attributeOptions }) => (
 		}
 		{ ...attributeOptions }
 	>
-
 	</fieldset>
 );
 
