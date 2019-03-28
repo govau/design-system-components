@@ -1,7 +1,7 @@
 @gov.au/form
 ============
 
-> Forms contain interactive controls for submitting information to a web server
+> The form component contains layout, labelling and inline validations for form fields
 
 
 ## Contents
