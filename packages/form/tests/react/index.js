@@ -23,55 +23,55 @@ class App extends React.Component {
 				<h2>Normal background</h2>
 					<h3>Label</h3>
 					<p>
-						<AUlabel text="Password" htmlFor="label" />
-						<AUtextInput type="password" id="label" />
+						<AUlabel text="Email" htmlFor="label" />
+						<AUtextInput type="email" id="label" />
 					</p>
 
 					<hr/>
 
 					<h3>Label <code>--inline</code> </h3>
 					<p>
-						<AUlabel text="Password" htmlFor="label-inline" inline />
-						<AUtextInput type="password" id="label-inline" />
+						<AUlabel text="Email" htmlFor="label-inline" inline />
+						<AUtextInput type="email" id="label-inline" />
 					</p>
 
 					<hr/>
 
 					<h3>Hint Text</h3>
 					<p>
-						<AUlabel text="Password" htmlFor="pw-with-hint" />
-						<AUhintText text="Minimum 6 characters" id="hint-text"/>
-						<AUtextInput type="password" id="pw-with-hint" aria-describedby="hint-text"/>
+						<AUlabel text="Email" htmlFor="email-with-hint" />
+						<AUhintText text="We will only use this to respond to your request" id="hint-text"/>
+						<AUtextInput type="email" id="email-with-hint" aria-describedby="hint-text"/>
 					</p>
 
 					<hr/>
 
 					<h3>Error text</h3>
 					<p>
-							<AUlabel text="Password" htmlFor="pw-with-error" />
-							<AUhintText text="Minimum 6 characters" id="hint-text-with-error"/>
-							<AUerrorText type="password" text="Password was not 6 characterts" id="error-text" />
-							<AUtextInput id="pw-with-error" aria-describedby="error-text hint-text-with-error" status="invalid" />
+							<AUlabel text="Email" htmlFor="email-with-error" />
+							<AUhintText text="We will only use this to respond to your request" id="hint-text-with-error"/>
+							<AUerrorText type="email" text="Enter an email address in the correct format, like name@example.com" id="error-text" />
+							<AUtextInput id="email-with-error" aria-describedby="error-text hint-text-with-error" status="invalid" />
 					</p>
 
 					<hr/>
 
 					<h3>Error text bottom</h3>
 					<p>
-							<AUlabel text="Password" htmlFor="pw-with-error-bottom" />
-							<AUhintText text="Minimum 6 characters" id="hint-text-with-error-bottom"/>
-							<AUtextInput type="password" id="pw-with-error-bottom" aria-describedby="error-text-bottom hint-text-with-error-bottom" status="invalid" />
-							<AUerrorText text="Password was not 6 characterts" id="error-text-bottom" />
+							<AUlabel text="Email" htmlFor="email-with-error-bottom" />
+							<AUhintText text="We will only use this to respond to your request" id="hint-text-with-error-bottom"/>
+							<AUtextInput type="email" id="email-with-error-bottom" aria-describedby="error-text-bottom hint-text-with-error-bottom" status="invalid" />
+							<AUerrorText text="Enter an email address in the correct format, like name@example.com" id="error-text-bottom" />
 					</p>
 
 					<hr/>
 
 					<h3>Error text <code>--inline</code></h3>
 					<p>
-							<AUlabel text="Password" htmlFor="pw-with-error-inline" />
-							<AUhintText text="Minimum 6 characters" id="hint-text-with-error-inline"/>
-							<AUtextInput type="password" id="pw-with-error-inline" aria-describedby="error-text-inline hint-text-with-error-inline" status="invalid" />
-							<AUerrorText text="Password was not 6 characterts" inline id="error-text-inline" />
+							<AUlabel text="Email" htmlFor="email-with-error-inline" />
+							<AUhintText text="We will only use this to respond to your request" id="hint-text-with-error-inline"/>
+							<AUtextInput type="email" id="email-with-error-inline" aria-describedby="error-text-inline hint-text-with-error-inline" status="invalid" />
+							<AUerrorText text="Enter an email address in the correct format, like name@example.com" inline id="error-text-inline" />
 					</p>
 
 					<hr/>
@@ -79,13 +79,13 @@ class App extends React.Component {
 					<h3>Form group</h3>
 					<AUformGroup>
 						<AUlabel text="Username" htmlFor="fg-username" />
-						<AUtextInput type="password" id="fg-username"/>
+						<AUtextInput type="email" id="fg-username"/>
 					</AUformGroup>
 
 					<AUformGroup>
-						<AUlabel text="Password" htmlFor="fg-password" />
-						<AUhintText text="Minimum 6 characters" id="fg-hint-text"/>
-						<AUtextInput type="password" id="fg-password" aria-describedby="fg-hint-text" />
+						<AUlabel text="Email" htmlFor="fg-password" />
+						<AUhintText text="We will only use this to respond to your request" id="fg-hint-text"/>
+						<AUtextInput type="email" id="fg-password" aria-describedby="fg-hint-text" />
 					</AUformGroup>
 
 					<hr/>
@@ -93,14 +93,14 @@ class App extends React.Component {
 					<h3>Form group with <code>--invalid</code></h3>
 					<AUformGroup>
 						<AUlabel text="Username" htmlFor="fg-username" />
-						<AUtextInput type="password" id="fg-username"/>
+						<AUtextInput type="email" id="fg-username"/>
 					</AUformGroup>
 
 					<AUformGroup status="invalid">
-						<AUlabel text="Password" htmlFor="fg-password" />
-						<AUhintText text="Minimum 6 characters" id="fg-hint-text"/>
+						<AUlabel text="Email" htmlFor="fg-password" />
+						<AUhintText text="We will only use this to respond to your request" id="fg-hint-text"/>
 						<AUerrorText text="Password was not 6 characters" id="fg-error-text" />
-						<AUtextInput type="password" id="fg-password" aria-describedby="fg-hint-text fg-error-text" status="invalid" />
+						<AUtextInput type="email" id="fg-password" aria-describedby="fg-hint-text fg-error-text" status="invalid" />
 					</AUformGroup>
 
 					<hr/>
@@ -108,13 +108,13 @@ class App extends React.Component {
 					<h3>Form group with <code>--invalid</code> bottom</h3>
 					<AUformGroup>
 						<AUlabel text="Username" htmlFor="fg-username-err-bottom" />
-						<AUtextInput type="password" id="fg-username-err-bottom"/>
+						<AUtextInput type="email" id="fg-username-err-bottom"/>
 					</AUformGroup>
 
 					<AUformGroup status="invalid">
-						<AUlabel text="Password" htmlFor="fg-password-err-bottom" />
-						<AUhintText text="Minimum 6 characters" id="fg-hint-text-err-bottom"/>
-						<AUtextInput type="password" id="fg-password-err-bottom" aria-describedby="fg-hint-text-err-bottom fg-error-text-err-bottom" status="invalid" />
+						<AUlabel text="Email" htmlFor="fg-password-err-bottom" />
+						<AUhintText text="We will only use this to respond to your request" id="fg-hint-text-err-bottom"/>
+						<AUtextInput type="email" id="fg-password-err-bottom" aria-describedby="fg-hint-text-err-bottom fg-error-text-err-bottom" status="invalid" />
 						<AUerrorText text="Password was not 6 characters" id="fg-error-text-err-bottom" />
 					</AUformGroup>
 
@@ -189,7 +189,7 @@ class App extends React.Component {
 									<AUheading level="2" size="lg">
 										Please select your favorite device
 									</AUheading>
-									<AUhintText text="Minimum 6 characters" id="device-hint-text-err" />
+									<AUhintText text="We will only use this to respond to your request" id="device-hint-text-err" />
 									<AUerrorText text="A device was not selected" id="device-cb-err" />
 								</AUlegend>
 
@@ -206,7 +206,7 @@ class App extends React.Component {
 					<h2><code>--alt</code> background</h2>
 					<h3>Label</h3>
 					<p>
-						<AUlabel text="Password" htmlFor="label-alt"/>
+						<AUlabel text="Email" htmlFor="label-alt"/>
 						<AUtextInput id="label-alt"/>
 					</p>
 
@@ -214,7 +214,7 @@ class App extends React.Component {
 
 					<h3>Label <code>--inline</code> </h3>
 					<p>
-							<AUlabel text="Password" htmlFor="label-inline-alt" inline/>
+							<AUlabel text="Email" htmlFor="label-inline-alt" inline/>
 							<AUtextInput id="label-inline-alt"/>
 					</p>
 
@@ -222,39 +222,39 @@ class App extends React.Component {
 
 					<h3>Hint Text</h3>
 					<p>
-							<AUlabel text="Password" htmlFor="pw-with-hint-alt"/>
-							<AUhintText text="Minimum 6 characters" id="hint-text-alt"/>
-							<AUtextInput id="pw-with-hint-alt" aria-describedby="hint-text-alt"/>
+							<AUlabel text="Email" htmlFor="email-with-hint-alt"/>
+							<AUhintText text="We will only use this to respond to your request" id="hint-text-alt"/>
+							<AUtextInput id="email-with-hint-alt" aria-describedby="hint-text-alt"/>
 					</p>
 
 					<hr/>
 
 					<h3>Error text</h3>
 					<p>
-							<AUlabel text="Password" htmlFor="pw-with-error-alt"/>
-							<AUhintText text="Minimum 6 characters" id="hint-text-with-error-alt"/>
-							<AUerrorText text="Password was not 6 characterts" id="error-text-alt"/>
-							<AUtextInput id="pw-with-error" aria-describedby="error-text-alt hint-text-with-error-alt" status="invalid" dark/>
+							<AUlabel text="Email" htmlFor="email-with-error-alt"/>
+							<AUhintText text="We will only use this to respond to your request" id="hint-text-with-error-alt"/>
+							<AUerrorText text="Enter an email address in the correct format, like name@example.com" id="error-text-alt"/>
+							<AUtextInput id="email-with-error" aria-describedby="error-text-alt hint-text-with-error-alt" status="invalid" dark/>
 					</p>
 
 					<hr/>
 
 					<h3>Error text bottom</h3>
 					<p>
-							<AUlabel text="Password" htmlFor="pw-with-error-bottom-alt"/>
-							<AUhintText text="Minimum 6 characters" id="hint-text-with-error-bottom-alt"/>
-							<AUtextInput id="pw-with-error-bottom-alt" aria-describedby="error-text-bottom-alt hint-text-with-error-bottom-alt" status="invalid"/>
-							<AUerrorText text="Password was not 6 characterts" id="error-text-bottom-alt" />
+							<AUlabel text="Email" htmlFor="email-with-error-bottom-alt"/>
+							<AUhintText text="We will only use this to respond to your request" id="hint-text-with-error-bottom-alt"/>
+							<AUtextInput id="email-with-error-bottom-alt" aria-describedby="error-text-bottom-alt hint-text-with-error-bottom-alt" status="invalid"/>
+							<AUerrorText text="Enter an email address in the correct format, like name@example.com" id="error-text-bottom-alt" />
 					</p>
 
 					<hr/>
 
 					<h3>Error text <code>--inline</code></h3>
 					<p>
-							<AUlabel text="Password" htmlFor="pw-with-error-inline-alt" />
-							<AUhintText text="Minimum 6 characters" id="hint-text-with-error-inline-alt"/>
-							<AUtextInput type="password" id="pw-with-error-inline-alt" aria-describedby="error-text-inline-alt hint-text-with-error-inline-alt" status="invalid" />
-							<AUerrorText text="Password was not 6 characterts" inline id="error-text-inline-alt" />
+							<AUlabel text="Email" htmlFor="email-with-error-inline-alt" />
+							<AUhintText text="We will only use this to respond to your request" id="hint-text-with-error-inline-alt"/>
+							<AUtextInput type="email" id="email-with-error-inline-alt" aria-describedby="error-text-inline-alt hint-text-with-error-inline-alt" status="invalid" />
+							<AUerrorText text="Enter an email address in the correct format, like name@example.com" inline id="error-text-inline-alt" />
 					</p>
 
 					<hr/>
@@ -262,13 +262,13 @@ class App extends React.Component {
 					<h3>Form group</h3>
 					<AUformGroup>
 						<AUlabel text="Username" htmlFor="fg-username-alt"/>
-						<AUtextInput type="password" id="fg-username-alt"/>
+						<AUtextInput type="email" id="fg-username-alt"/>
 					</AUformGroup>
 
 					<AUformGroup>
-						<AUlabel text="Password" htmlFor="fg-password-alt"/>
-						<AUhintText text="Minimum 6 characters" id="fg-hint-text-alt"/>
-						<AUtextInput type="password" id="fg-password-alt" aria-describedby="fg-hint-text-alt"/>
+						<AUlabel text="Email" htmlFor="fg-password-alt"/>
+						<AUhintText text="We will only use this to respond to your request" id="fg-hint-text-alt"/>
+						<AUtextInput type="email" id="fg-password-alt" aria-describedby="fg-hint-text-alt"/>
 					</AUformGroup>
 					
 					<hr/>
@@ -276,14 +276,14 @@ class App extends React.Component {
 					<h3>Form group with <code>--invalid</code></h3>
 					<AUformGroup>
 						<AUlabel text="Username" htmlFor="fg-username-invalid-alt"/>
-						<AUtextInput type="password" id="fg-username-invalid-alt"/>
+						<AUtextInput type="email" id="fg-username-invalid-alt"/>
 					</AUformGroup>
 
 					<AUformGroup status="invalid">
-						<AUlabel text="Password" htmlFor="fg-password-alt"/>
-						<AUhintText text="Minimum 6 characters" id="fg-hint-text-alt"/>
+						<AUlabel text="Email" htmlFor="fg-password-alt"/>
+						<AUhintText text="We will only use this to respond to your request" id="fg-hint-text-alt"/>
 						<AUerrorText text="Password was not 6 characters" id="fg-error-text-alt"/>
-						<AUtextInput type="password" id="fg-password-alt" aria-describedby="fg-hint-text-alt fg-error-text-alt" status="invalid"/>
+						<AUtextInput type="email" id="fg-password-alt" aria-describedby="fg-hint-text-alt fg-error-text-alt" status="invalid"/>
 					</AUformGroup>
 
 					<hr/>
@@ -295,9 +295,9 @@ class App extends React.Component {
 					</AUformGroup>
 
 					<AUformGroup status="invalid">
-						<AUlabel text="Password" htmlFor="fg-password-err-bottom-alt"/>
-						<AUhintText text="Minimum 6 characters" id="fg-hint-text-err-bottom-alt"/>
-						<AUtextInput type="password" id="fg-password-err-bottom-alt" aria-describedby="fg-hint-text-err-bottom-alt fg-error-text-err-bottom-alt" status="invalid" dark/>
+						<AUlabel text="Email" htmlFor="fg-password-err-bottom-alt"/>
+						<AUhintText text="We will only use this to respond to your request" id="fg-hint-text-err-bottom-alt"/>
+						<AUtextInput type="email" id="fg-password-err-bottom-alt" aria-describedby="fg-hint-text-err-bottom-alt fg-error-text-err-bottom-alt" status="invalid" dark/>
 						<AUerrorText text="Password was not 6 characters" id="fg-error-text-err-bottom-alt" />
 					</AUformGroup>
 
@@ -373,7 +373,7 @@ class App extends React.Component {
 								<AUheading level="2" size="lg">
 									Please select your favorite device
 								</AUheading>
-								<AUhintText text="Minimum 6 characters" id="device-hint-text-err-alt"/>
+								<AUhintText text="We will only use this to respond to your request" id="device-hint-text-err-alt"/>
 								<AUerrorText text="A device was not selected" id="device-cb-err-alt"/>
 							</AUlegend>
 
