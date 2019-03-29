@@ -128,29 +128,29 @@ All props:
 
 ```jsx
 <AUlabel 
-text="Email"                 {/* The text of the label */}
-dark={ true }                {/* The dark variation of the component */}
-inline={ true }              {/* Label inline*/}
+    text="Email"                 {/* The text of the label */}
+    dark={ true }                {/* The dark variation of the component */}
+    inline={ true }              {/* Label inline*/}
 />
 
 <AUhintText
-text="We will only use this email to respond to your query." {/* The hint text */}
-dark = { true }                                              {/* The dark variation of the component */}
-alt={ false }                                                {/* The alt variation of the component */}
+    text="We will only use this email to respond to your query." {/* The hint text */}
+    dark = { true }                                              {/* The dark variation of the component */}
+    alt={ false }                                                {/* The alt variation of the component */}
 />
 
 <AUerrorText
-text="Enter an email in the valid format."  {/* The error text */}
-dark={ true }                               {/* The dark variation of the component */}
-inline={ true }                             {/* Display the error text inline*/}
+    text="Enter an email in the valid format."  {/* The error text */}
+    dark={ true }                               {/* The dark variation of the component */}
+    inline={ true }                             {/* Display the error text inline*/}
 />
 
 <AUformGroup
-status="invalid"            {/* Adds invalid state to form group */}
-dark = { true }             {/* The dark variation of the component */}
+    status="invalid"            {/* Adds invalid state to form group */}
+    dark = { true }             {/* The dark variation of the component */}
 />
 
 <AUfieldset 
-dark = { true }             {/* The dark variation of the component */}
+    dark = { true }             {/* The dark variation of the component */}
 />
 ```
