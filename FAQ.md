@@ -3,7 +3,7 @@ FAQs
 
 > This page contains frequently asked questions from our community.
 
-If you can’t find the answer to your question, you can email guides@digital.gov.au or join our conversation on
+If you can’t find the answer to your question, you can email designsystem@digital.gov.au, post a message on the [community forum](https://community.digital.gov.au/c/designsystem) or join our conversation on
 [Slack](http://guides.service.gov.au/join-slack/).
 
 
