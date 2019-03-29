@@ -1,14 +1,8 @@
-//sass-versioning
-@import '../../../core/node_modules/sass-versioning/dist/_index.scss';
-
 //dependencies
-@import '../../../core/lib/sass/_module.scss';
-@import '../../../link-list/lib/sass/module.scss';
+@import '../../../core/src/sass/_module.scss';
+@import '../../../link-list/src/sass/module.scss';
 
-@import '../../../body/lib/sass/_module.scss'; //link-list dependency
+@import '../../../body/src/sass/_module.scss'; //link-list dependency
 
 //this module
-@import '../../lib/sass/_module.scss';
-
-//version check with sass-versioning
-@include versioning-check();
+@import '_module.scss';
