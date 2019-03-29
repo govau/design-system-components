@@ -24,7 +24,7 @@
 	"scripts": {
 		"scaffolding": "node ./scripts/helper.js scaffolding",
 		"bootstrap": "lerna bootstrap",
-		"build": "lerna run build --concurrency 1",
+		"build": "lerna run build",
 		"publish": "lerna publish --skip-git",
 		"nuke": "npm run delete:node_modules | npm run delete:lib",
 		"delete:node_modules": "lerna clean --yes && rimraf node_modules",
