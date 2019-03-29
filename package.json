@@ -23,15 +23,9 @@
 	},
 	"scripts": {
 		"scaffolding": "node ./scripts/helper.js scaffolding",
-<<<<<<< HEAD
 		"bootstrap": "lerna bootstrap --hoist",
 		"build": "lerna run build",
 		"publish": "lerna version --no-git-tag-version --no-push",
-=======
-		"bootstrap": "lerna bootstrap",
-		"build": "lerna run build",
-		"publish": "lerna publish --skip-git",
->>>>>>> Removed thread limit for lerna
 		"nuke": "npm run delete:node_modules | npm run delete:lib",
 		"delete:node_modules": "lerna clean --yes && rimraf node_modules",
 		"delete:lib": "rimraf packages/*/lib",
