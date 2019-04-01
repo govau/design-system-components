@@ -1,4 +1,10 @@
 {
+	"name": "auds",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/govau/design-system-components"
+	},
 	"devDependencies": {
 		"autoprefixer": "^9.4.10",
 		"cfonts": "^2.4.2",
@@ -6,7 +12,7 @@
 		"express": "^4.16.4",
 		"inquirer": "6.2.2",
 		"jest-cli": "^24.4.0",
-		"lerna": "2.11.0",
+		"lerna": "3.13.1",
 		"node-sass": "^4.11.0",
 		"pa11y": "^5.1.0",
 		"postcss": "^7.0.14",
@@ -17,12 +23,12 @@
 	},
 	"scripts": {
 		"scaffolding": "node ./scripts/helper.js scaffolding",
-		"bootstrap": "lerna bootstrap",
-		"build": "lerna run build --concurrency 1",
-		"publish": "lerna publish --skip-git",
+		"bootstrap": "lerna bootstrap --hoist",
+		"build": "lerna run build",
+		"publish": "lerna version --no-git-tag-version --no-push",
 		"nuke": "npm run delete:node_modules | npm run delete:lib",
-		"delete:node_modules": "lerna clean node_modules --yes | rimraf node_modules",
-		"delete:lib": "rimraf packages/*/lib/**",
+		"delete:node_modules": "lerna clean --yes && rimraf node_modules",
+		"delete:lib": "rimraf packages/*/lib",
 		"test:unit-test": "jest",
 		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
 	},
