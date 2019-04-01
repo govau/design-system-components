@@ -36,6 +36,11 @@ The Australian Government’s Design System is not ours, it is yours.
 The Digital Transformation Agency are just caretakers of the design system. To help us with the caretaking we need a few things from newly proposed component contributions.
 One of our goals is to ensure a welcoming environment for all contributors to our projects. If you’re unsure about anything, just ask — or submit your issue or pull request anyway. The worst that can happen is we’ll politely ask you to change something.
 
+When making a new component, we would be very grateful if you post the research, design decisions and use cases for the component. Accessibility considerations should be documented or sourced from the [community forum](https://community.digital.gov.au/c/designsystem) before submitting a pull request. 
+
+This may be in the form of a code snippet, screenshots, sketch files or written text on your research with references. This gives a chance for members of the community to respond and share any work they may have done in the past on a similar component.
+
+
 We appreciate all well intended contributions.
 
 
