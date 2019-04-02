@@ -390,20 +390,54 @@ class AUaccordion extends React.PureComponent {
 	}
 };
 
+
 AUaccordion.propTypes = {
+	/**
+	 * 
+	 */
 	children: PropTypes.node.isRequired,
+	/**
+	 * 
+	 */
 	header: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	closed: PropTypes.bool,
+	/**
+	 * 
+	 */
 	speed: PropTypes.number,
+	/**
+	 * 
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	onOpen: PropTypes.func,
+	/**
+	 * 
+	 */
 	afterOpen: PropTypes.func,
+	/**
+	 * 
+	 */
 	onClose: PropTypes.func,
+	/**
+	 * 
+	 */
 	afterClose: PropTypes.func,
+	/**
+	 * 
+	 */
 	className: PropTypes.string,
 };
 
 AUaccordion.defaultProps = {
+	/**
+	 * 
+	 */
 	closed: false,
 };
 

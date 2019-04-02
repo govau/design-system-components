@@ -29,7 +29,7 @@ import PropTypes from 'prop-types';
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtextInput = ({ as, dark, block, status, width, type = 'text', className = '', ...attributeOptions }) => (
+const AUtextInput = ( { as, dark, block, status, width, type = 'text', className = '', ...attributeOptions } ) => (
 	as === 'textarea'
 		? <textarea
 				className={
