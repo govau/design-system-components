@@ -23,7 +23,16 @@ export const AUselectItem = ({ text, value, ...attributeOptions }) => (
 );
 
 AUselectItem.propTypes = {
+	/**
+	 * 
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	value: PropTypes.string.isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };

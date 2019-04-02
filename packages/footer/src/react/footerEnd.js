@@ -25,6 +25,12 @@ export const AUfooterEnd = ({ children, className = '', ...attributeOptions }) =
 );
 
 AUfooterEnd.propTypes = {
+	/**
+	 * The elements inside.
+	 */
 	children: PropTypes.node.isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };

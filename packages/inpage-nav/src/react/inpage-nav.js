@@ -47,12 +47,33 @@ export const AUinpageNavSection = ({ title, link, children, level, headingClass,
 };
 
 AUinpageNavSection.propTypes = {
+	/**
+	 * 
+	 */
 	title: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	link: PropTypes.string.isRequired,
+	/**
+	 * The elements inside.
+	 */
 	children: PropTypes.node.isRequired,
+	/**
+	 * 
+	 */
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
+	/**
+	 * 
+	 */
 	headingClass: PropTypes.string,
+	/**
+	 * 
+	 */
 	sectionLink: PropTypes.string,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 

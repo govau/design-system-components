@@ -26,7 +26,16 @@ export const AUinpageNavLinksItem = ({ link, title, li = {}, ...attributeOptions
 );
 
 AUinpageNavLinksItem.propTypes = {
+	/**
+	 * 
+	 */
 	link: PropTypes.string.isRequired,
+	/**
+	 * The title of the link
+	 */
 	title: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	li: PropTypes.object,
 };

@@ -42,14 +42,26 @@ const AUbreadcrumbs = ({ dark, label, items, linkComponent, className = '', ...a
 );
 
 AUbreadcrumbs.propTypes = {
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * Provide the aria label
+	 */
 	label: PropTypes.string.isRequired,
+	/**
+	 * The link, text and props for each of the breadcrumbs
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
 			text: PropTypes.string.isRequired,
 		})
 	).isRequired,
+	/**
+	 * The component used for the link, optional.
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 

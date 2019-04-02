@@ -56,10 +56,25 @@ export const AUkeywordListItem = ({ linkComponent, repeatedName, link, name, li 
 };
 
 AUkeywordListItem.propTypes = {
+	/**
+	 * 
+	 */
 	repeatedName: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	link: PropTypes.string,
+	/**
+	 * 
+	 */
 	name: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	li: PropTypes.object,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 

@@ -48,15 +48,30 @@ const AUselect = ({ dark, options, block, status, className = '', ...attributeOp
 };
 
 AUselect.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	options: PropTypes.arrayOf(
 		PropTypes.shape({
 			value: PropTypes.string.isRequired,
 			text: PropTypes.string.isRequired,
 		})
 	).isRequired,
+	/**
+	 * 
+	 */
 	block: PropTypes.bool,
+	/**
+	 * 
+	 */
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 

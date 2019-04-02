@@ -24,8 +24,17 @@ export const AUskipLinkItem = ({ link, text, className = '', ...attributeOptions
 );
 
 AUskipLinkItem.propTypes = {
+	/**
+	 * 
+	 */
 	link: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 
@@ -50,12 +59,18 @@ const AUskipLink = ({ links, className = '', ariaLabel, ...attributeOptions }) =
 );
 
 AUskipLink.propTypes = {
+	/**
+	 * 
+	 */
 	links: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string.isRequired,
 			text: PropTypes.string.isRequired,
 		})
 	).isRequired,
+	/**
+	 * 
+	 */
 	ariaLabel: PropTypes.string,
 };
 

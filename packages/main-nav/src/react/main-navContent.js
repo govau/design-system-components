@@ -381,13 +381,84 @@ export class AUmainNavContent extends React.PureComponent {
 };
 
 AUmainNavContent.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * An alternate variation of the component
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * 
+	 */
 	children: PropTypes.node,
+	/**
+	 * 
+	 */
 	speed: PropTypes.number,
+	/**
+	 * 
+	 */
 	onOpen: PropTypes.func,
+	/**
+	 * 
+	 */
 	afterOpen: PropTypes.func,
+	/**
+	 * 
+	 */
 	onClose: PropTypes.func,
+	/**
+	 * 
+	 */
 	afterClose: PropTypes.func,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
+<<<<<<< HEAD:packages/main-nav/src/react/main-navContent.js
+=======
+
+
+const AUmainNav = ({ dark, alt, className, ariaLabel, children, ...attributeOptions }) => (
+	<nav
+		className={
+			'au-main-nav ' +
+			`${ dark ? ' au-main-nav--dark' : '' }` +
+			`${ alt ? ' au-main-nav--alt' : '' }` +
+			`${ className ? ' ' + className : '' }`
+		}
+		aria-label = { ariaLabel }
+		{ ...attributeOptions }
+	>
+		{ children }
+	</nav>
+);
+
+AUmainNav.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
+	dark: PropTypes.bool,
+	/**
+	 * An alternate variation of the component
+	 */
+	alt: PropTypes.bool,
+	/**
+	 * 
+	 */
+	ariaLabel: PropTypes.string,
+	/**
+	 * The elements inside.
+	 */
+	children: PropTypes.node.isRequired,
+};
+
+AUmainNav.defaultProps = {
+	ariaLabel: 'main',
+};
+
+export default AUmainNav;
+>>>>>>> Added basic react proptype jsdoc:packages/main-nav/src/react/react.js

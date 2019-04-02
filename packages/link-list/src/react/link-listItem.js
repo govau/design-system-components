@@ -55,9 +55,21 @@ export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, .
 };
 
 AUlinkListItem.propTypes = {
+	/**
+	 * 
+	 */
 	text: PropTypes.node.isRequired,
+	/**
+	 * 
+	 */
 	link: PropTypes.string,
+	/**
+	 * 
+	 */
 	li: PropTypes.object,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 

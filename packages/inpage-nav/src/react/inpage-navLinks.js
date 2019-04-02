@@ -32,8 +32,17 @@ export const AUinpageNavLinks = ({ dark, title, sections, ariaLabel, className =
 );
 
 AUinpageNavLinks.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	title: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	sections: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string.isRequired,
@@ -41,6 +50,9 @@ AUinpageNavLinks.propTypes = {
 			li: PropTypes.object,
 		})
 	).isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 

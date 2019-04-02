@@ -42,12 +42,36 @@ export const AUradio = ({ dark, alt, small, block, label, status, id, className 
 };
 
 AUradio.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * An alternate variation of the component
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * The small variation of the component
+	 */
 	small: PropTypes.bool,
+	/**
+	 * 
+	 */
 	block: PropTypes.bool,
+	/**
+	 * The label of the radio button
+	 */
 	label: PropTypes.string.isRequired,
+	/**
+	 * The label of the checkbox button
+	 */
 	id: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
