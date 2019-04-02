@@ -335,9 +335,11 @@ HELPER.precompile = (() => {
 		},
 
 		js: () => {
+			let componentName = HELPER.NAME.substring( 8 );
+
 			const _hasJS = Fs.existsSync( `${ process.cwd() }/src/js/module.js` );
 			const _hasJquery = Fs.existsSync( `${ process.cwd() }/src/js/jquery.js` );
-			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/react/react.js` );
+			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/react/${ componentName }.js` );
 
 			// 1. create path
 			if( _hasJS || _hasJquery || _hasReact ) {
@@ -355,8 +357,8 @@ HELPER.precompile = (() => {
 			}
 
 			if( _hasReact ) {
-				CopyFile(`./src/react/react.js`, `./lib/react/react.js`);
-				CopyFile(`./src/react/react.js`, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js`);
+				CopyFile(`./src/react/${ componentName }.js`, `./lib/react/${ componentName }.js`);
+				CopyFile(`./src/react/${ componentName }.js`, `./tests/react/${ componentName }.js`);
 			}
 
 			// 3.replace strings inside new files in lib
@@ -375,22 +377,16 @@ HELPER.precompile = (() => {
 			}
 
 			if( _hasReact ) {
-				ReplaceFileContent( searches, `./lib/react/react.js` );
-				ReplaceFileContent( searches, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js` );
+				ReplaceFileContent( searches, `./lib/react/${ componentName }.js` );
+				ReplaceFileContent( searches, `./tests/react/${ componentName }.js` );
 			}
-		},
-
-		img: () => {
-		},
-
-		svg: () => {
 		},
 
 		/**
 		 * Compile and autoprefix Sass
 		 */
 		reactSass: () => {
-			if( Fs.existsSync(`${ process.cwd() }/lib/react/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/lib/react/${ HELPER.NAME.substring( 8 ) }.js`) ) {
 
 				// 1. create directory
 				CreateDir('./lib/css/');
@@ -407,7 +403,9 @@ HELPER.precompile = (() => {
 		 * Transpile react to es5, compile css file and include it into our react component
 		 */
 		react: () => {
-			if( Fs.existsSync(`${ process.cwd() }/lib/react/react.js`) ) {
+			let componentName = HELPER.NAME.substring( 8 );
+
+			if( Fs.existsSync(`${ process.cwd() }/lib/react/${ componentName }.js`) ) {
 				const reactOptions = {
 					ast: false,
 					compact: true,
@@ -427,20 +425,20 @@ HELPER.precompile = (() => {
 				};
 
 				// 1. Copy files
-				CopyFile('./src/react/react.js', './lib/react/react.es5.js');
+				CopyFile( `./src/react/${ componentName }.js`, `./lib/react/${ componentName }.es6.js`);
 
 				// 2. Replace the comment with an import statement
-				ReplaceFileContent( searches, `${ process.cwd() }/lib/react/react.es5.js` );
+				ReplaceFileContent( searches, `${ process.cwd() }/lib/react/${ componentName }.es6.js` );
 
 				// 3. Compile /lib/react.js to react.es5.js
-				Babel.transformFile( `./lib/react/react.es5.js`, reactOptions, ( error, result ) => {
+				Babel.transformFile( `./lib/react/${ componentName }.es6.js`, reactOptions, ( error, result ) => {
 					if( error ) {
 						HELPER.log.error(`We encountered an error when transpiling the react file in ${ Chalk.yellow( `${ process.cwd() }/lib/react/react.es5.js` ) }`);
 						HELPER.log.error( error );
 					}
 					else {
-						Fs.writeFileSync( `./lib/react/react.es5.js`, result.code );
-						Fs.writeFileSync( `./lib/react/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
+						Fs.writeFileSync( `./lib/react/${ componentName }.es6.js`, result.code );
+						Fs.writeFileSync( `./lib/react/${ componentName }.es6.js.map`, JSON.stringify( result.map, null, 2 ) );
 					}
 				});
 			}
@@ -584,7 +582,7 @@ HELPER.compile = (() => {
 			getAllJs( '/lib/js/module.js', '/tests/jquery/script.js' );
 
 			// get all react scripts
-			getAllReact( '/lib/react/react.js', '/tests/react/' );
+			getAllReact( `/lib/react/${ HELPER.NAME.substring( 8 ) }.js`, '/tests/react/' );
 		},
 
 		img: () => {
@@ -946,10 +944,10 @@ HELPER.test = (() => {
 
 			if( allModules !== undefined && allModules.length > 0 ) {
 				for( let module of allModules ) {
-					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
-					const hasSass = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`) );
-					const hasJS = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`) );
-					const hasReact = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/react/react.js`) );
+					const packagesPKG = require( Path.normalize( `${ __dirname }/../packages/${ module }/package.json` ) );
+					const hasSass = Fs.existsSync( Path.normalize( `${ __dirname }/../packages/${ module }/src/sass/_module.scss` ) );
+					const hasJS = Fs.existsSync( Path.normalize( `${ __dirname }/../packages/${ module }/src/js/module.js` ) );
+					const hasReact = Fs.existsSync( Path.normalize( `${ __dirname }/../packages/${ module }/src/react/${ HELPER.NAME.substring( 8 ) }.js` ) );
 					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
 
 					// testing lifecycle script
