@@ -52,11 +52,11 @@
 				"sass-versioning": true
 			},
 			"react": {
-				"path": "lib/react/react.js"
+				"path": "lib/react/inpage-nav.js"
 			}
 		}
 	},
-	"main": "lib/react/react.es5.js",
+	"main": "lib/react/inpage-nav.es6.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~2",

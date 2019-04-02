@@ -52,11 +52,11 @@
 				"path": "lib/js/module.js"
 			},
 			"react": {
-				"path": "lib/react/react.js"
+				"path": "lib/react/side-nav.js"
 			}
 		}
 	},
-	"main": "lib/react/react.es5.js",
+	"main": "lib/react/side-nav.es6.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-js": "~1",

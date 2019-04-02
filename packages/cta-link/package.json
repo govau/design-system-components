@@ -51,11 +51,11 @@
 				"sass-versioning": true
 			},
 			"react": {
-				"path": "lib/react/react.js"
+				"path": "lib/react/cta-link.js"
 			}
 		}
 	},
-	"main": "lib/react/react.es5.js",
+	"main": "lib/react/cta-link.es6.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
 		"@gov.au/pancake-sass": "~2",
