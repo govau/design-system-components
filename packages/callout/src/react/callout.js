@@ -47,12 +47,33 @@ export const AUcallout = ({ title, level, srOnlyTitle, dark, alt, description, c
 };
 
 AUcallout.propTypes = {
+	/**
+	 * Title of the callout.
+	 */
 	title: PropTypes.string.isRequired,
+	/**
+	 * The tag level (<h1/> <h2/> etc), default: '1'.
+	 */
 	level: PropTypes.number,
+	/**
+	 * Make title screen reader visible.
+	 */
 	srOnlyTitle: PropTypes.bool,
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * A alternate variation of the component.
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * Anything inside.
+	 */
 	children: PropTypes.node.isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 

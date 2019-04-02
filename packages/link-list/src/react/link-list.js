@@ -37,7 +37,13 @@ const AUlinkList = ({ inline, items, linkComponent, className = '', ...attribute
 );
 
 AUlinkList.propTypes = {
+	/**
+	 * 
+	 */
 	inline: PropTypes.bool,
+	/**
+	 * 
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -45,6 +51,9 @@ AUlinkList.propTypes = {
 			li: PropTypes.object,
 		})
 	).isRequired,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 

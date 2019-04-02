@@ -38,9 +38,21 @@ const AUfooter = ({ dark, alt, children, className = '', ...attributeOptions }) 
 );
 
 AUfooter.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * A alternate variation of the component
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * The elements inside.
+	 */
 	children: PropTypes.node.isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 

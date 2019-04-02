@@ -39,8 +39,17 @@ const AUkeywordList = ({ repeatedName, linkComponent, items, dark, className = '
 );
 
 AUkeywordList.propTypes = {
+	/**
+	 * 
+	 */
 	repeatedName: PropTypes.string.isRequired,
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -48,7 +57,13 @@ AUkeywordList.propTypes = {
 			li: PropTypes.object,
 		})
 	).isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 

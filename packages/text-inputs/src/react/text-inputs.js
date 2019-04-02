@@ -55,11 +55,29 @@ const AUtextInput = ({ as, dark, block, status, width, type = 'text', className 
 );
 
 AUtextInput.propTypes = {
+	/**
+	 * The kind of input, can be either 'input' or 'textarea', default: 'input'.
+	 */
 	as: PropTypes.oneOf([ 'input', 'textarea' ]),
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * Add the block variation class.
+	 */
 	block: PropTypes.bool,
+	/**
+	 * Mark this field as either 'valid' or 'invalid'.
+	 */
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * 
+	 */
 	width: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl' ])
 };
 

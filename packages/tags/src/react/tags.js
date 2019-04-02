@@ -46,9 +46,21 @@ const AUtagItem = ({ link, linkComponent, text, li = {}, ...attributeOptions }) 
 
 
 AUtagItem.propTypes = {
+	/**
+	 * 
+	 */
 	link: PropTypes.string,
+	/**
+	 * 
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	li: PropTypes.object,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
@@ -77,7 +89,13 @@ const AUtags = ({ dark, linkComponent, tags, className = '', ...attributeOptions
 );
 
 AUtags.propTypes = {
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * All tags inside a neat array.
+	 */
 	tags: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -85,7 +103,13 @@ AUtags.propTypes = {
 			li: PropTypes.object,
 		})
 	).isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * The component used for the child links, optional.
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 

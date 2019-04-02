@@ -52,6 +52,9 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 
 
 AUmainNavMenu.propTypes = {
+	/**
+	 * 
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -59,6 +62,9 @@ AUmainNavMenu.propTypes = {
 			children: PropTypes.array,
 		})
 	).isRequired,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 

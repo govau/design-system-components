@@ -83,14 +83,41 @@ export const AUheaderBrand = ({
 }
 
 AUheaderBrand.propTypes = {
+	/**
+	 * 
+	 */
 	title: PropTypes.node,
+	/**
+	 * 
+	 */
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]),
+	/**
+	 * 
+	 */
 	subline: PropTypes.node,
+	/**
+	 * 
+	 */
 	link: PropTypes.string,
+	/**
+	 * 
+	 */
 	brandImage: PropTypes.string,
+	/**
+	 * 
+	 */
 	brandImageAlt: PropTypes.string,
+	/**
+	 * 
+	 */
 	children: PropTypes.node,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 }
 

@@ -51,9 +51,18 @@ const AUheading = ({ level, size, children, className = '', ...attributeOptions 
 };
 
 AUheading.propTypes = {
+	/**
+	 * The semantic headline tag level, h1-h6.
+	 */
 	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
+	/**
+	 * The display size, 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'.
+	 */
 	size: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl' ]).isRequired,
 	children: PropTypes.node.isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 

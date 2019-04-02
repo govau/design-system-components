@@ -46,19 +46,52 @@ export const AUcalloutCalendar = ({ title, level, srOnlyTitle, dark, alt, sublin
 }
 
 AUcalloutCalendar.propTypes = {
+	/**
+	 * Title of the callout.
+	 */
 	title: PropTypes.string.isRequired,
+	/**
+	 * The tag level (<h1/> <h2/> etc), default: '1'.
+	 */
 	level: PropTypes.number,
+	/**
+	 * Make title screen reader visible.
+	 */
 	srOnlyTitle: PropTypes.bool,
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * A alternate variation of the component.
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * The subline of the event, optional.
+	 */
 	subline: PropTypes.string,
+	/**
+	 * The date time string.
+	 */
 	datetime: PropTypes.string.isRequired,
+	/**
+	 * The same date but human readable.
+	 */
 	time: PropTypes.string.isRequired,
+	/**
+	 * The name of the event, optional.
+	 */
 	name: PropTypes.string,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 
 AUcalloutCalendar.defaultProps = {
+	title: 'Title of the calendar callout',
+	datetime: '2017-01-01T00:00:00+00:00',
+	time: 'Sunday 32 Jun',
 	level: 2,
 	srOnlyTitle: true,
 };
