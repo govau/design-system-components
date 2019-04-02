@@ -60,9 +60,21 @@ export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, .
 };
 
 AUlinkListItem.propTypes = {
+	/**
+	 * 
+	 */
 	text: PropTypes.node.isRequired,
+	/**
+	 * 
+	 */
 	link: PropTypes.string,
+	/**
+	 * 
+	 */
 	li: PropTypes.object,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 
@@ -91,7 +103,13 @@ const AUlinkList = ({ inline, items, linkComponent, className = '', ...attribute
 );
 
 AUlinkList.propTypes = {
+	/**
+	 * 
+	 */
 	inline: PropTypes.bool,
+	/**
+	 * 
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -99,6 +117,9 @@ AUlinkList.propTypes = {
 			li: PropTypes.object,
 		})
 	).isRequired,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 

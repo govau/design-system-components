@@ -61,6 +61,9 @@ const AUmainNavMenu = ({ items, linkComponent }) => {
 
 
 AUmainNavMenu.propTypes = {
+	/**
+	 * 
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -68,6 +71,9 @@ AUmainNavMenu.propTypes = {
 			children: PropTypes.array,
 		})
 	).isRequired,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
@@ -444,14 +450,41 @@ export class AUmainNavContent extends React.PureComponent {
 };
 
 AUmainNavContent.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * An alternate variation of the component
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * 
+	 */
 	children: PropTypes.node,
+	/**
+	 * 
+	 */
 	speed: PropTypes.number,
+	/**
+	 * 
+	 */
 	onOpen: PropTypes.func,
+	/**
+	 * 
+	 */
 	afterOpen: PropTypes.func,
+	/**
+	 * 
+	 */
 	onClose: PropTypes.func,
+	/**
+	 * 
+	 */
 	afterClose: PropTypes.func,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 
@@ -472,9 +505,21 @@ const AUmainNav = ({ dark, alt, className, ariaLabel, children, ...attributeOpti
 );
 
 AUmainNav.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * An alternate variation of the component
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * 
+	 */
 	ariaLabel: PropTypes.string,
+	/**
+	 * The elements inside.
+	 */
 	children: PropTypes.node.isRequired,
 };
 

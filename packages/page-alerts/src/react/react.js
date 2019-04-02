@@ -57,10 +57,25 @@ const AUpageAlert = ({ as, alt, dark, children, className = '', ...attributeOpti
 );
 
 AUpageAlert.propTypes = {
+	/**
+	 * One of four kinds: 'info', 'success', 'warning', 'error'.
+	 */
 	as: PropTypes.oneOf([ 'info', 'warning', 'error', 'success' ]).isRequired,
+	/**
+	 * An alternate variation of the component.
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * A dark variation of the component.
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * Anything inside.
+	 */
 	children: PropTypes.node.isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
 };
 

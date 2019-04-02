@@ -61,10 +61,25 @@ export const AUkeywordListItem = ({ linkComponent, repeatedName, link, name, li 
 };
 
 AUkeywordListItem.propTypes = {
+	/**
+	 * 
+	 */
 	repeatedName: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	link: PropTypes.string,
+	/**
+	 * 
+	 */
 	name: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	li: PropTypes.object,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
@@ -96,8 +111,17 @@ const AUkeywordList = ({ repeatedName, linkComponent, items, dark, className = '
 );
 
 AUkeywordList.propTypes = {
+	/**
+	 * 
+	 */
 	repeatedName: PropTypes.string.isRequired,
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	items: PropTypes.arrayOf(
 		PropTypes.shape({
 			link: PropTypes.string,
@@ -105,7 +129,13 @@ AUkeywordList.propTypes = {
 			li: PropTypes.object,
 		})
 	).isRequired,
+	/**
+	 * The class name for the element, optional.
+	 */
 	className: PropTypes.string,
+	/**
+	 * 
+	 */
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
