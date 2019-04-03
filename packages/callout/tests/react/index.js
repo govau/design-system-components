@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { AUcallout, AUcalloutCalendar } from './callout.js';
+import { AUcallout } from './callout.js';
+import { AUcalloutCalendar } from './calloutCalendar.js';
 
 
 ReactDOM.render(
