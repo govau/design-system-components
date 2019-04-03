@@ -46,7 +46,7 @@
 
 ### v3.0.4
 
-- Removed word `navigation` from aria label
+- Removed word `navigation` from `aria-label` in `<footer>` element
 
 
 ### v3.0.3
