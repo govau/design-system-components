@@ -81,7 +81,7 @@ the potential to adversely affect the safety and well-being of community members
 
 ## 9. Contact info
 
-designsystem@digital.gov.au
+designsystem@dta.gov.au
 
 ## 10. License and attribution
 
