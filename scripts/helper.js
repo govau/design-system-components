@@ -99,6 +99,28 @@ const CopyFile = ( source, target ) => {
 
 
 /**
+ * Copy files from one directory to another
+ * 
+ * @param {string} sourceDir - The folder to copy from
+ * @param {string} targetDir - The folder to copy to
+ */
+const CopyFiles = ( sourceDir, targetDir ) => {
+	let files = Fs.readdirSync( sourceDir, `utf-8` );
+
+	files.forEach( item => {
+		let componentPath = Path.join( `${ __dirname }`, `/../packages/${ HELPER.NAME.substring( 8 ) }/${ sourceDir }/${ item }` );
+		let testPath = Path.join( `${ __dirname }`, `/../packages/${ HELPER.NAME.substring( 8 ) }/${ targetDir }/${ item }` );
+
+		let data = Fs.readFileSync( componentPath, 'utf-8' );
+
+		Fs.writeFileSync( testPath, data );
+
+		HELPER.log.success( `Moved file: ${ item } to ${ Chalk.yellow( targetDir ) }` );
+	})
+};
+
+
+/**
  * Replace a string with a another globally in the file
  *
  * @param  {object} searches - What is replaced with what, Key = the text to be replaced, value = the replacement text.
@@ -341,9 +363,13 @@ HELPER.precompile = (() => {
 			const _hasJquery = Fs.existsSync( `${ process.cwd() }/src/js/jquery.js` );
 			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/react/${ componentName }.js` );
 
-			// 1. create path
-			if( _hasJS || _hasJquery || _hasReact ) {
+			// 1. create path for js/jquery
+			if( _hasJS || _hasJquery ) {
 				CreateDir(`./lib/js/`);
+			}
+
+			// 1.1 create path for react
+			if( _hasReact ) {
 				CreateDir(`./lib/react/`);
 			}
 
@@ -357,8 +383,9 @@ HELPER.precompile = (() => {
 			}
 
 			if( _hasReact ) {
-				CopyFile(`./src/react/${ componentName }.js`, `./lib/react/${ componentName }.js`);
-				CopyFile(`./src/react/${ componentName }.js`, `./tests/react/${ componentName }.js`);
+				CopyFile( `./src/react/${ componentName }.js`, `./lib/react/${ componentName }.js` );
+				CopyFiles( `src/react`, `tests/react`)
+
 			}
 
 			// 3.replace strings inside new files in lib
@@ -408,13 +435,13 @@ HELPER.precompile = (() => {
 			if( Fs.existsSync(`${ process.cwd() }/lib/react/${ componentName }.js`) ) {
 				const reactOptions = {
 					ast: false,
-					compact: true,
 					minified: true,
+					comments: false,
 					presets: [
 						`@babel/preset-env`,
 						`@babel/preset-react`
 					],
-					sourceMaps: "both"
+					sourceMaps: "both",
 				};
 
 				const searches = {
@@ -520,14 +547,12 @@ HELPER.compile = (() => {
 	 * @param  {string} to   - The file to write to
 	 */
 	const getAllReact = ( from, to ) => {
-		if( Fs.existsSync( Path.normalize(`${ process.cwd() }${ from }`) ) ) {
+		if( Fs.existsSync( Path.normalize(`${ process.cwd() }${ from }` ) ) ) {
 			const allDependencies = GetDepTree( HELPER.NAME );
 			const dependencies = [ ...new Set( flatten( allDependencies ) ) ];
 
 			let code = '';
 			dependencies.forEach( dependency => {
-				console.log( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) );
-
 				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
 					const fileLocation = Path.normalize(`${ to }/${ dependency }.js`);
 					CopyFile( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`), `.${ fileLocation }` );
@@ -583,12 +608,6 @@ HELPER.compile = (() => {
 
 			// get all react scripts
 			getAllReact( `/lib/react/${ HELPER.NAME.substring( 8 ) }.js`, '/tests/react/' );
-		},
-
-		img: () => {
-		},
-
-		svg: () => {
 		},
 	}
 
