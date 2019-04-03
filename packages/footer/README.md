@@ -74,7 +74,7 @@ All props:
 />
 
 <AUfooterNav
-	ariaLabel={ 'footer navigation' } {/* Aria-label attribute on the <nav> element */}
+	ariaLabel={ 'footer' } {/* Aria-label attribute on the <nav> element */}
 />
 ```
 _(💡 additional props are spread onto the component)_
@@ -115,7 +115,7 @@ The visual test: https://auds.service.gov.au/packages/footer/tests/site/
 
 ## Release History
 
-* v3.0.4 - Removed word `navigation` from `aria-label` in `<footer>` element
+* v3.0.4 - Removed word `navigation` from `aria-label` in `<nav>` element
 * v3.0.3 - Removed unused `Fragment` React import
 * v3.0.2 - Removed uikit references
 * v3.0.1 - Placed the `au-footer__end` inside a `row` and `col-sm-12`
