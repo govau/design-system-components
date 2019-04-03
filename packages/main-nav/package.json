@@ -123,6 +123,11 @@
 			"name": "Adam Zerella",
 			"email": "adam@commandshiftr.co",
 			"url": "https://github.com/adamzerella"
+		},
+		{
+			"name": "Kiri Hoy",
+			"email": "kiri.zobel@gmail.com",
+			"url": "https://github.com/kirihoy"
 		}
 	],
 	"license": "MIT"
