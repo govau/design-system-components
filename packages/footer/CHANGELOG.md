@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.4 - Removed word `navigation` from aria label](#v304)
 * [v3.0.3 - Removed unused `Fragment` React import](#v303)
 * [v3.0.2 - Removed uikit references](#v302)
 * [v3.0.1 - Placed the `au-footer__end` inside a `row` and `col-sm-12`](#v301)
@@ -42,6 +43,11 @@
 
 
 ## Release History
+
+### v3.0.4
+
+- Removed word `navigation` from aria label
+
 
 ### v3.0.3
 

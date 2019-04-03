@@ -39,7 +39,7 @@ AUfooterNav.propTypes = {
 };
 
 AUfooterNav.defaultProps = {
-	ariaLabel: 'footer navigation',
+	ariaLabel: 'footer',
 }
 
 
