@@ -37,7 +37,7 @@
 
 ### v1.0.6
 
-- Removed word `navigation` from aria label
+- Removed word `navigation` from `aria-label` in `<nav>` element
 
 
 ### v1.0.5
