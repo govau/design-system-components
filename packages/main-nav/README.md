@@ -141,7 +141,7 @@ All props:
 <AUmainNav
 	dark={ false }                  {/* A dark variation of the component */}
 	alt={ false }                   {/* An alternate variation of the component */}
-	ariaLabel={ 'main navigation' } {/* Aria-label attribute on the <nav> element */}
+	ariaLabel={ 'main' }            {/* Aria-label attribute on the <nav> element */}
 >
 </AUmainNav>
 
@@ -235,6 +235,7 @@ The visual test: https://auds.service.gov.au/packages/main-nav/tests/site/
 
 ## Release History
 
+* v1.0.6 - Removed word `navigation` from `aria-label` in `<nav>` element
 * v1.0.5 - Removed unused `Fragment` React import
 * v1.0.4 - Resolve autoprefixer warning
 * v1.0.3 - Fix pancake build path

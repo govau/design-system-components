@@ -479,7 +479,7 @@ AUmainNav.propTypes = {
 };
 
 AUmainNav.defaultProps = {
-	ariaLabel: 'main navigation',
+	ariaLabel: 'main',
 };
 
 export default AUmainNav;

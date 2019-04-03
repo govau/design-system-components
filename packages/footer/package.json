@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/footer",
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"description": "Footers help users who reach the bottom of a page without finding what they want.",
 	"keywords": [
 		"auds",
@@ -131,6 +131,11 @@
 			"name": "Sukhraj Ghuman",
 			"email": "sukhrajghuman@live.com",
 			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Kiri Hoy",
+			"email": "kiri.hoy@gmail.com",
+			"url": "https://github.com/kirihoy"
 		}
 	],
 	"license": "MIT"

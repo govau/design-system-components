@@ -61,7 +61,7 @@ or permanent expulsion from the community without warning (and without refund in
 ## 6. Reporting Guidelines
 
 If you are subject to or witness unacceptable behavior, or have any other concerns, please notify a community organizer as soon as possible via
-guides@digital.gov.au.
+designsystem@dta.gov.au.
 
 Additionally, community organizers are available to help community members engage with local law enforcement or to otherwise help those experiencing
 unacceptable behavior feel safe. In the context of in-person events, organizers will also provide escorts as desired by the person experiencing distress.
@@ -81,7 +81,7 @@ the potential to adversely affect the safety and well-being of community members
 
 ## 9. Contact info
 
-guides@digital.gov.au
+designsystem@dta.gov.au
 
 ## 10. License and attribution
 

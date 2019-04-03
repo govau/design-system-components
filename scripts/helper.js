@@ -1102,7 +1102,7 @@ HELPER.test = (() => {
 
 					// Check that there is a current version content
 					if( !currentVersion ){
-						HELPER.log.error( `Could not find the Version content for ${ module }` );
+						HELPER.log.error( `Could not find the Version content in changelog for ${ module }` );
 						HELPER.log.error( `> Note: This is usually due to incorrect spacing` );
 						process.exit( 1 );
 					}
