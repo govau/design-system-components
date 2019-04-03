@@ -23,7 +23,7 @@ class App extends React.Component {
 				<h2>Normal background</h2>
 					<h3>Label</h3>
 					<p>
-						<AUlabel text="Email" htmlFor="label" />
+						<AUlabel htmlFor="label" text="Email"></AUlabel>
 						<AUtextInput type="email" id="label" />
 					</p>
 
@@ -270,7 +270,7 @@ class App extends React.Component {
 						<AUhintText text="We will only use this to respond to your request" id="fg-hint-text-alt"/>
 						<AUtextInput type="email" id="fg-password-alt" aria-describedby="fg-hint-text-alt"/>
 					</AUformGroup>
-					
+
 					<hr/>
 
 					<h3>Form group with <code>--invalid</code></h3>

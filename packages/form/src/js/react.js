@@ -29,7 +29,7 @@ import PropTypes from 'prop-types';
 export const AUlabel = ( { text, dark, inline, className, ...attributeOptions } ) => (
 	<label className={
 			`au-label ${ className }` +
-			`${ dark ? ' au-label--dark' : '' }` + 
+			`${ dark ? ' au-label--dark' : '' }` +
 			`${ inline ? ' au-label--inline' : ''}`
 		}
 		{ ...attributeOptions }
@@ -38,22 +38,21 @@ export const AUlabel = ( { text, dark, inline, className, ...attributeOptions } 
 	</label>
 );
 
-
 AUlabel.propTypes = {
 	/**
-	 * 
+	 * Text of the label, required
 	 */
 	text: PropTypes.string.isRequired,
 	/**
-	 * 
+	 * Add the dark variation class, optional
 	 */
 	dark: PropTypes.bool,
 	/**
-	 * 
+	 * Display the label inline, optional
 	 */
 	inline: PropTypes.bool,
 	/**
-	 * 
+	 * An additional class, optional
 	 */
 	className: PropTypes.string,
 };
@@ -74,7 +73,7 @@ AUlabel.defaultProps = {
  * @param  {object}  attributeOptions - Any other attribute options
  */
 export const AUhintText = ( { text, dark, alt, className, ...attributeOptions } ) => (
-	<span className={ 
+	<span className={
 		`au-hint-text ${ className }` +
 		`${ alt ? ' au-hint-text--alt' : '' }` +
 		`${ dark ? ' au-hint-text--dark' : '' }`
@@ -88,19 +87,19 @@ export const AUhintText = ( { text, dark, alt, className, ...attributeOptions } 
 
 AUhintText.propTypes = {
 	/**
-	 * 
+	 * Text of the label, required
 	 */
 	text: PropTypes.string.isRequired,
 	/**
-	 * 
+	 * Add the dark variation class, optional
 	 */
 	alt: PropTypes.bool,
 	/**
-	 * 
+	 * Add the alt variation class, optional
 	 */
 	dark: PropTypes.bool,
 	/**
-	 * 
+	 * An additional class, optional
 	 */
 	className: PropTypes.string,
 };
@@ -135,15 +134,19 @@ export const AUerrorText = ( { text, dark, inline, className, ...attributeOption
 
 AUerrorText.propTypes = {
 	/**
-	 * 
+	 * Text of the label, required
 	 */
 	dark: PropTypes.bool,
 	/**
-	 * 
+	 * Add the dark variation class, optional
 	 */
 	text: PropTypes.string.isRequired,
 	/**
-	 * 
+	 * Display the error text inline, optional
+	 */
+	inline: PropTypes.bool,
+	/**
+	 * An additional class, optional
 	 */
 	className: PropTypes.string,
 };
@@ -157,14 +160,12 @@ AUerrorText.defaultProps = {
  * The form group component
  *
  * @param  {string}  status           - Adds invalid state to form group
- * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
 export const AUformGroup = ( { status, dark, className, ...attributeOptions } ) => (
 	<div className={
 		`au-form-group ${ className }` +
-		`${ dark ? ' au-form-group--dark' : '' }` + 
 		`${ status === 'invalid' ? ' au-form-group--invalid ' : ''}`
 		}
 		{ ...attributeOptions }
@@ -174,15 +175,11 @@ export const AUformGroup = ( { status, dark, className, ...attributeOptions } ) 
 
 AUformGroup.propTypes = {
 	/**
-	 * 
+	 * Adds invalid state to form group
 	 */
 	status: PropTypes.oneOf(['valid', 'invalid']),
 	/**
-	 * 
-	 */
-	dark: PropTypes.bool,
-	/**
-	 * 
+	 * An additional class, optional
 	 */
 	className: PropTypes.string,
 };
@@ -196,12 +193,11 @@ AUformGroup.defaultProps = {
 /**
  * The fieldset component
  *
- * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
 export const AUfieldset = ( { dark, className, ...attributeOptions } ) => (
-	<fieldset className={ 
+	<fieldset className={
 			`au-fieldset ${ className }` +
 			`${ dark ? ' au-fieldset--dark' : '' }`
 		}
@@ -213,11 +209,7 @@ export const AUfieldset = ( { dark, className, ...attributeOptions } ) => (
 
 AUfieldset.propTypes = {
 	/**
-	 * 
-	 */
-	dark: PropTypes.bool,
-	/**
-	 * 
+	 * An additional class, optional
 	 */
 	className: PropTypes.string,
 };
@@ -234,5 +226,5 @@ AUfieldset.defaultProps = {
  * @param  {object}  attributeOptions - Any other attribute options
  */
 export const AUlegend = ( {...attributeOptions} ) => (
-	<legend class="au-fieldset__legend" { ...attributeOptions }></legend>
+	<legend className="au-fieldset__legend" { ...attributeOptions }></legend>
 );

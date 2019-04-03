@@ -103,6 +103,16 @@
 			"name": "Adam Zerella",
 			"email": "hello@adamzerella.com",
 			"url": "https://adamzerella.com"
+		},
+		{
+			"name": "Sarah Pulis",
+			"email": "sarah@intopia.digital",
+			"url": "https://github.com/sarahpulis"
+		},
+		{
+			"name": "Andrew Arch",
+			"email": "andrew@intopia.digital",
+			"url": "https://github.com/AndrewArch"
 		}
 	],
 	"license": "MIT"
