@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v1.0.6 - Removed word `navigation` from aria label](#v106)
+* [v1.0.6 - Removed word `navigation` from `aria-label` in `<nav>` element](#v106)
 * [v1.0.5 - Removed unused `Fragment` React import](#v105)
 * [v1.0.4 - Resolve autoprefixer warning](#v104)
 * [v1.0.3 - Fix pancake build path](#v103)
