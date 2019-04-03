@@ -100,28 +100,26 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 Usage:
 
 ```jsx
-import { AUForm, AUlabel, AUhintText, AUerrorText, AUfieldset, AUlegend } from '@gov.au/form';
+import { AUlabel, AUhintText, AUerrorText, AUfieldset, AUlegend } from '@gov.au/form';
 
-<AUForm>
-    <AUlabel text="Email" />
+<AUlabel text="Email" />
 
-    <AUhintText text="We will only use this email to respond to your query." />
+<AUhintText text="We will only use this email to respond to your query." />
 
-    <AUerrorText text="Enter an email address in the correct format, like name@example.com" />
+<AUerrorText text="Enter an email address in the correct format, like name@example.com" />
 
-    <AUformGroup>
-        // labels, hint text, and form controls here
-    </AUformGroup>
+<AUformGroup>
+    // labels, hint text, and form controls here
+</AUformGroup>
 
-    <AUfieldset>
-        <AUlegend>
-        // labels/hint text here
-        </AUlegend>
+<AUfieldset>
+    <AUlegend>
+    // labels/hint text here
+    </AUlegend>
 
-        // form controls here
-        
-    </AUfieldset>
-</AUForm>
+    // form controls here
+    
+</AUfieldset>
 ```
 
 All props:

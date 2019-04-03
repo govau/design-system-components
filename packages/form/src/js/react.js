@@ -1,9 +1,9 @@
 /*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * footer function
+ * form function
  *
- * Footers help users who reach the bottom of a page without finding what they want.
+ * The form component contains layout, labelling and inline validations for form fields
  *
  **************************************************************************************************************************************************************/
 
@@ -18,7 +18,6 @@ import PropTypes from 'prop-types';
 
 
 /**
- * DEFAULT
  * The label component
  *
  * @param  {string}  text            - Text of the label, required
@@ -27,7 +26,7 @@ import PropTypes from 'prop-types';
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUlabel = ({ text, dark, inline, className = '', ...attributeOptions }) => (
+export const AUlabel = ( { text, dark, inline, className, ...attributeOptions } ) => (
 	<label className={
 			`au-label ${ className }` +
 			`${ dark ? ' au-label--dark' : '' }` + 
@@ -39,16 +38,33 @@ export const AUlabel = ({ text, dark, inline, className = '', ...attributeOption
 	</label>
 );
 
+
 AUlabel.propTypes = {
+	/**
+	 * 
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	inline: PropTypes.bool,
+	/**
+	 * 
+	 */
 	className: PropTypes.string,
 };
 
 
+AUlabel.defaultProps = {
+	className: ''
+}
+
+
 /**
- * DEFAULT
  * The hint text component
  *
  * @param  {string}  text             - Text of the label, required
@@ -57,7 +73,7 @@ AUlabel.propTypes = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUhintText = ({ text, dark, alt, className = '', ...attributeOptions }) => (
+export const AUhintText = ( { text, dark, alt, className, ...attributeOptions } ) => (
 	<span className={ 
 		`au-hint-text ${ className }` +
 		`${ alt ? ' au-hint-text--alt' : '' }` +
@@ -69,12 +85,30 @@ export const AUhintText = ({ text, dark, alt, className = '', ...attributeOption
 	</span>
 );
 
+
 AUhintText.propTypes = {
+	/**
+	 * 
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * 
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	className: PropTypes.string,
 };
+
+
+AUhintText.defaultProps = {
+	className: ''
+}
 
 
 /**
@@ -86,7 +120,7 @@ AUhintText.propTypes = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUerrorText = ({ text, dark, inline, className = '', ...attributeOptions }) => (
+export const AUerrorText = ( { text, dark, inline, className, ...attributeOptions } ) => (
 	<span className={
 		`au-error-text ${ className }` +
 		`${ dark ? ' au-error-text--dark' : '' }` +
@@ -98,12 +132,26 @@ export const AUerrorText = ({ text, dark, inline, className = '', ...attributeOp
 	</span>
 );
 
+
 AUerrorText.propTypes = {
+	/**
+	 * 
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	text: PropTypes.string.isRequired,
+	/**
+	 * 
+	 */
 	className: PropTypes.string,
 };
 
+
+AUerrorText.defaultProps = {
+	className: ''
+}
 
 /**
  * The form group component
@@ -113,26 +161,35 @@ AUerrorText.propTypes = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUformGroup = ({ status, dark, className = '', ...attributeOptions }) => (
+export const AUformGroup = ( { status, dark, className, ...attributeOptions } ) => (
 	<div className={
 		`au-form-group ${ className }` +
 		`${ dark ? ' au-form-group--dark' : '' }` + 
 		`${ status === 'invalid' ? ' au-form-group--invalid ' : ''}`
 		}
 		{ ...attributeOptions }
-	>
-
-	</div>
+	></div>
 );
 
+
 AUformGroup.propTypes = {
+	/**
+	 * 
+	 */
 	status: PropTypes.oneOf(['valid', 'invalid']),
+	/**
+	 * 
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	className: PropTypes.string,
 };
 
 AUformGroup.defaultProps = {
-	status: "valid"
+	status: "valid",
+	className: ''
 }
 
 
@@ -143,7 +200,7 @@ AUformGroup.defaultProps = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUfieldset = ({ dark, className = '', ...attributeOptions }) => (
+export const AUfieldset = ( { dark, className, ...attributeOptions } ) => (
 	<fieldset className={ 
 			`au-fieldset ${ className }` +
 			`${ dark ? ' au-fieldset--dark' : '' }`
@@ -153,20 +210,22 @@ export const AUfieldset = ({ dark, className = '', ...attributeOptions }) => (
 	</fieldset>
 );
 
+
 AUfieldset.propTypes = {
+	/**
+	 * 
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * 
+	 */
 	className: PropTypes.string,
 };
 
 
-/**
- * The form component wrapper
- * 
- * @param  {object}  attributeOptions - Any other attribute options
- */
-export const AUForm = ({...attributeOptions }) => (
-	<form { ...attributeOptions }></form>
-);
+AUfieldset.defaultProps = {
+	className: ''
+}
 
 
 /**
@@ -174,8 +233,6 @@ export const AUForm = ({...attributeOptions }) => (
  *
  * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUlegend = ({...attributeOptions}) => (
-	<legend class="au-fieldset__legend" {...attributeOptions}>
-
-	</legend>
+export const AUlegend = ( {...attributeOptions} ) => (
+	<legend class="au-fieldset__legend" { ...attributeOptions }></legend>
 );

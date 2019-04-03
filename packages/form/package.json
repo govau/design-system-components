@@ -1,7 +1,7 @@
 {
 	"name": "@gov.au/form",
 	"version": "0.1.0",
-	"description": "Forms contain interactive controls for submitting information to a web server",
+	"description": "The form component contains layout, labelling and inline validations for form fields",
 	"keywords": [
 		"auds",
 		"pancake",
