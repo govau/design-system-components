@@ -1,0 +1,13 @@
+//dependencies
+@import '../../src/sass/_dependencies.scss';
+
+//testing includes
+@import '../../../body/src/sass/_module.scss';
+@import '../../../control-input/src/sass/_module.scss';
+@import '../../../grid-12/src/sass/_module.scss';
+@import '../../../headings/src/sass/_module.scss';
+@import '../../../select/src/sass/_module.scss';
+@import '../../../text-inputs/src/sass/_module.scss';
+
+//styling all test files
+@import '../../../../.templates/test-assets/_style.scss';

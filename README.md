@@ -300,6 +300,20 @@ All components have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/form</summary>
+	<br><code>npm install @gov.au/form</code><br>
+	<br>See the <a href="https://auds.service.gov.au/packages/form/tests/site/">visual test file for form</a>
+	<br>See the <a href="https://github.com/govau/design-system-components/blob/master/packages/form/README.md">readme file for form</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+└─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/grid-12</summary>
 	<br><code>npm install @gov.au/grid-12</code><br>
 	<br>See the <a href="https://auds.service.gov.au/packages/grid-12/tests/site/">visual test file for grid-12</a>

@@ -1,0 +1,112 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// form module
+// 
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+.au-form-group {
+  
+  // Error state for form group
+  &--invalid {
+    border-left: solid 5px $AU-color-error;
+    padding-left: 15px;
+  }
+  
+  //Add space above form consecutive
+  + .au-form-group {
+    @include AU-space( margin-top, 1.25unit );
+  }
+  
+}
+
+
+.au-label {
+  font-family: $AU-font;
+  color: $AU-color-foreground-text;
+  display: block;
+  @include AU-fontgrid( sm, default);
+
+  &--inline {
+    display: inline-block;
+  }
+
+  &--dark {
+    color: $AU-colordark-foreground-text;
+  }
+
+  //add space between form control and label
+  & + .au-text-input, + .au-select, + .au-control-input {
+		@include AU-space( margin-top, 0.25unit );
+  }
+}
+
+
+.au-hint-text {
+  font-family: $AU-font;
+  color: $AU-hint-text;
+  display: block;
+  @include AU-fontgrid( sm, default);
+
+	* + & {
+		@include AU-space( margin-top, 0.4unit );
+  }
+
+    //add space between form control and hint text
+  & + .au-text-input, + .au-select, + .au-control-input {
+		@include AU-space( margin-top, 0.25unit );
+  }
+
+  &--dark {
+    color: $AU-colordark-foreground-muted;
+  }
+
+  &--alt {
+    color: $AU-hint-text-alt;
+  }
+}
+
+
+.au-error-text {
+  font-family: $AU-font;
+  font-weight: bold;
+  @include AU-fontgrid( sm, default);
+  color: $AU-color-error;
+  display: block;
+
+  * + & {
+		@include AU-space( margin-top, 0.4unit );
+  }
+  
+  //add space between form control and hint text
+  & + .au-text-input, + .au-select, + .au-control-input {
+		@include AU-space( margin-top, 0.25unit );
+  }
+
+  &--inline {
+    display: inline-block;
+  }
+
+  // toggle class to show/hide error text
+  &--hidden {
+    display: none;
+  }
+}
+
+// Reset fieldset styling to avoid inconsistency across different browsers
+.au-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  &__legend {
+    @include AU-space( margin-bottom, .75unit );
+  }
+}
