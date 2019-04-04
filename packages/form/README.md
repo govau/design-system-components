@@ -24,7 +24,7 @@ yarn add @gov.au/form
 ```
 
 ```shell
-npm install @gov.au/form --save-dev
+npm install @gov.au/form
 ```
 
 
