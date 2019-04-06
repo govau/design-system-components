@@ -1,61 +1,46 @@
-@gov.au/main-nav
-============
+# @gov.au/main-nav
 
 > Horizontal list of links to key areas on the website. Usually located in the header.
 
-
 ## Contents
 
-* [Install](#install)
-* [Dependency graph](#dependency-graph)
-* [Tests](#tests)
-* [Release History](#release-history)
-* [License](#license)
+- [Install](#install)
+- [Dependency graph](#dependency-graph)
+- [Tests](#tests)
+- [Release History](#release-history)
+- [License](#license)
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Install
-
 
 ```shell
 yarn add @gov.au/main-nav
 ```
 
 ```shell
-npm install @gov.au/main-nav --save-dev
+npm install @gov.au/main-nav
 ```
-
 
 **[⬆ back to top](#contents)**
 
-
-
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Usage
 
-
-* [API](#api)
-* [React](#react)
-* [jQuery](#jquery)
-
+- [API](#api)
+- [React](#react)
+- [jQuery](#jquery)
 
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 ### API
-
 
 Main navigation has 1 public function:
 
 - [`AU.accordion.Toggle( element, speed, callbacks )`](#toggle)
-
 
 #### Toggle
 
@@ -74,65 +59,62 @@ Animation speed in milliseconds (optional, defaults to `250ms`)
 Example:
 
 ```js
-AU.mainNav.Toggle( document.getElementById( 'main-nav-content' ), 500,
-  {
-    onOpen: function() {
-      console.log('This function will run when an main nav opens');
-    },
-    afterOpen: function() {
-      console.log('This function will run after an main nav has opened');
-    },
-    onClose: function() {
-      console.log('This function will run when an main nav closes');
-    },
-    afterClose: function() {
-      console.log('This function will run after an main nav has closed');
-    },
-  }
-);
+AU.mainNav.Toggle(document.getElementById("main-nav-content"), 500, {
+	onOpen: function() {
+		console.log("This function will run when an main nav opens");
+	},
+	afterOpen: function() {
+		console.log("This function will run after an main nav has opened");
+	},
+	onClose: function() {
+		console.log("This function will run when an main nav closes");
+	},
+	afterClose: function() {
+		console.log("This function will run after an main nav has closed");
+	}
+});
 ```
-
 
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ### React
 
 Usage:
 
 ```jsx
-import AUmainNav, { AUmainNavContent } from './main-nav.js';
+import AUmainNav, { AUmainNavContent } from "./main-nav.js";
 
 <AUmainNav>
 	<div className="container">
 		<div className="row">
 			<div className="col-md-12">
-				<AUmainNavContent items={[
-					{
-						link: '#',
-						text: 'About',
-					},
-					{
-						link: '#',
-						text: 'Get started',
-					},
-					{
-						link: '#',
-						text: 'Components',
-						active: true
-					},
-					{
-						link: '#',
-						text: 'Templates',
-					},
-				]} />
+				<AUmainNavContent
+					items={[
+						{
+							link: "#",
+							text: "About"
+						},
+						{
+							link: "#",
+							text: "Get started"
+						},
+						{
+							link: "#",
+							text: "Components",
+							active: true
+						},
+						{
+							link: "#",
+							text: "Templates"
+						}
+					]}
+				/>
 			</div>
 		</div>
 	</div>
-</AUmainNav>
+</AUmainNav>;
 ```
 
 All props:
@@ -145,7 +127,7 @@ All props:
 >
 </AUmainNav>
 
-<AUmainNavContent 
+<AUmainNavContent
   items={ [] }
   speed={ 250 }            {/* Speed of the animation in ms, optional */}
   onOpen={ () => {} }      {/* A function executed when the accordion opens, optional */}
@@ -156,16 +138,14 @@ All props:
 >
 </AUmainNavContent>
 ```
+
 _(💡 additional props are spread onto the component)_
 
 For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/accordion/tests/react/index.js).
 
-
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ### jQuery
 
@@ -173,35 +153,32 @@ To initialize the [jQuery](https://jquery.com/) plugin make sure you have jQuery
 
 ```js
 $(function() {
-  $('.js-au-main-nav').AUmainNav();
+	$(".js-au-main-nav").AUmainNav();
 });
 ```
 
 You can optionally add functions to each event like so:
 
 ```js
-$('.js-au-main-nav').AUmainNav({
-  onOpen: function() {
-    console.log('This function will run when an main nav opens');
-  },
-  afterOpen: function() {
-    console.log('This function will run after an main nav has opened');
-  },
-  onClose: function() {
-    console.log('This function will run when an main nav closes');
-  },
-  afterClose: function() {
-    console.log('This function will run after an main nav has closed');
-  },
+$(".js-au-main-nav").AUmainNav({
+	onOpen: function() {
+		console.log("This function will run when an main nav opens");
+	},
+	afterOpen: function() {
+		console.log("This function will run after an main nav has opened");
+	},
+	onClose: function() {
+		console.log("This function will run when an main nav closes");
+	},
+	afterClose: function() {
+		console.log("This function will run after an main nav has closed");
+	}
 });
 ```
 
-
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Dependency graph
 
@@ -215,52 +192,42 @@ main-nav
       └─ core
 ```
 
-
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Tests
 
 The visual test: https://auds.service.gov.au/packages/main-nav/tests/site/
 
-
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Release History
 
-* v1.0.6 - Removed word `navigation` from `aria-label` in `<nav>` element
-* v1.0.5 - Removed unused `Fragment` React import
-* v1.0.4 - Resolve autoprefixer warning
-* v1.0.3 - Fix pancake build path
-* v1.0.2 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
-* v1.0.1 - Removed uikit references
-* v1.0.0 - Wrap active item in main-nav in an `<a>` and add `aria-current="page"`
-* v0.2.0 - Active items are no longer wrapped in `<a>` for accessibility
-* v0.1.4 - Fix passing props to main nav react component
-* v0.1.3 - Added an aria-label attribute to the nav element
-* v0.1.2 - Add missing aria-controls for overlay react
-* v0.1.1 - Fix hover color for dark theme, adding propTypes
-* v0.1.0 - 💥 Initial version
-
+- v1.0.6 - Removed word `navigation` from `aria-label` in `<nav>` element
+- v1.0.5 - Removed unused `Fragment` React import
+- v1.0.4 - Resolve autoprefixer warning
+- v1.0.3 - Fix pancake build path
+- v1.0.2 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
+- v1.0.1 - Removed uikit references
+- v1.0.0 - Wrap active item in main-nav in an `<a>` and add `aria-current="page"`
+- v0.2.0 - Active items are no longer wrapped in `<a>` for accessibility
+- v0.1.4 - Fix passing props to main nav react component
+- v0.1.3 - Added an aria-label attribute to the nav element
+- v0.1.2 - Add missing aria-controls for overlay react
+- v0.1.1 - Fix hover color for dark theme, adding propTypes
+- v0.1.0 - 💥 Initial version
 
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## License
 
 Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
-
 
 **[⬆ back to top](#contents)**
 

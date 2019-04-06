@@ -1,49 +1,39 @@
-@gov.au/animate
-============
+# @gov.au/animate
 
 > A JavaScript function to open, close and toggle the display of page elements.
 
-
 ## Contents
 
-* [Install](#install)
-* [API](#api)
-* [Dependency graph](#dependency-graph)
-* [Tests](#tests)
-* [Release History](#release-history)
-* [License](#license)
+- [Install](#install)
+- [API](#api)
+- [Dependency graph](#dependency-graph)
+- [Tests](#tests)
+- [Release History](#release-history)
+- [License](#license)
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Install
-
 
 ```shell
 yarn add @gov.au/animate
 ```
 
 ```shell
-npm install @gov.au/animate --save-dev
+npm install @gov.au/animate
 ```
-
 
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## API
-
 
 Animate has 3 public functions:
 
 - [`AU.animate.Run( options )`](#run)
 - [`AU.animate.Stop( options )`](#stop)
 - [`AU.animate.Toggle( options )`](#toggle)
-
 
 ### Run
 
@@ -69,7 +59,6 @@ AU.animate.Run(
 )
 ```
 
-
 ### Stop
 
 `AU.animate.Stop( options )`
@@ -85,7 +74,6 @@ AU.animate.Stop(
   element: document.getElementById('elementId'),
 )
 ```
-
 
 ### Toggle
 
@@ -117,13 +105,9 @@ AU.animate.Toggle(
 )
 ```
 
-
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
+---
 
 ## Dependency graph
 
@@ -131,12 +115,9 @@ AU.animate.Toggle(
 animate
 ```
 
-
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Tests
 
@@ -144,46 +125,39 @@ The visual test: https://auds.service.gov.au/packages/animate/tests/site/
 
 Run `jest` for the unit tests
 
-
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## Release History
 
-* v1.0.12 - Removed uikit references
-* v1.0.11 - Update dependencies
-* v1.0.10 - Update dependencies
-* v1.0.9  - Update browser-sync dependency
-* v1.0.8  - Update dependencies
-* v1.0.7  - Fixing bug where openSize of 0 gets turned into auto
-* v1.0.6  - Removing web pack dev server, updating dependencies
-* v1.0.5  - Fixed build scripts for Windows
-* v1.0.4  - Change npm run watch browser-sync location
-* v1.0.3  - Update dependencies
-* v1.0.2  - Fix typo in homepage link
-* v1.0.1  - Changing homepage link
-* v1.0.0  - Moved to AU namespace, fixed export
-* v0.1.5  - Fixed pancake config
-* v0.1.4  - Pinned pancake plugins
-* v0.1.3  - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction
-* v0.1.2  - Removed core as dependency
-* v0.1.1  - 💥 Initial version
-
+- v1.0.12 - Removed uikit references
+- v1.0.11 - Update dependencies
+- v1.0.10 - Update dependencies
+- v1.0.9 - Update browser-sync dependency
+- v1.0.8 - Update dependencies
+- v1.0.7 - Fixing bug where openSize of 0 gets turned into auto
+- v1.0.6 - Removing web pack dev server, updating dependencies
+- v1.0.5 - Fixed build scripts for Windows
+- v1.0.4 - Change npm run watch browser-sync location
+- v1.0.3 - Update dependencies
+- v1.0.2 - Fix typo in homepage link
+- v1.0.1 - Changing homepage link
+- v1.0.0 - Moved to AU namespace, fixed export
+- v0.1.5 - Fixed pancake config
+- v0.1.4 - Pinned pancake plugins
+- v0.1.3 - Exposed GetCSSPropertyBecauseIE publicly, added prefunction, postfunction
+- v0.1.2 - Removed core as dependency
+- v0.1.1 - 💥 Initial version
 
 **[⬆ back to top](#contents)**
 
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---
 
 ## License
 
 Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
-
 
 **[⬆ back to top](#contents)**
 
