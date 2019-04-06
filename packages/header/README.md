@@ -25,7 +25,7 @@ yarn add @gov.au/header
 ```
 
 ```shell
-npm install @gov.au/header --save-dev
+npm install @gov.au/header 
 ```
 
 
