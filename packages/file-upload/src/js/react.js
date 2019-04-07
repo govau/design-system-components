@@ -29,13 +29,17 @@ const AUfileUpload = ( { id, name, text, ...attributeOptions } ) => (
 
 AUfileUpload.propTypes = {
 	/**
-	 * 
+	 * The file input ID
 	 */
-	id: PropTypes.string,
+	id: PropTypes.string.isRequired,
 	/**
-	 * 
+	 * The label name to match the ID
 	 */
-	name: PropTypes.string,
+	name: PropTypes.string.isRequired,
+	/**
+	 * The label text description
+	 */
+	text: PropTypes.string.isRequired,
 };
 
 
