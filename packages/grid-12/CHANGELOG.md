@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.0 - Removed developer dependecies of the packages](#v210)
 * [v2.0.9 - Removed uikit references](#v209)
 * [v2.0.8 - Update dependencies](#v208)
 * [v2.0.7 - Removing web pack dev server, updating dependencies](#v207)
@@ -34,6 +35,11 @@
 
 
 ## Release History
+
+### v2.1.0
+
+- Removed developer dependecies of the packages
+
 
 ### v2.0.9
 

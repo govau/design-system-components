@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.14 - Removed developer dependecies of the packages](#v2014)
 * [v2.0.13 - Add `title` attribute to iframe examples](#v2013)
 * [v2.0.12 - Removed uikit references](#v2012)
 * [v2.0.11 - Update dependencies](#v2011)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v2.0.14
+
+- Removed developer dependecies of the packages
+
 
 ### v2.0.13
 
