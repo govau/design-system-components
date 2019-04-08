@@ -16,62 +16,6 @@ import PropTypes from 'prop-types';
 //
 // [replace-imports]
 
-/**
- * An item inside the AUlinkList component
- *
- * @param  {node}   text             - The link Text or link html
- * @param  {string} link             - The link URL, optional
- * @param  {string} linkComponent    - The component used for the link
- * @param  {object} li               - An additional object to be spread into the wrapping element, optional
- * @param  {object} onClick          - The onClick event handler
- * @param  {object} attributeOptions - Any other attribute options, optional
- */
-export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, onClick, ...attributeOptions }) => {
-	const LinkComponent = linkComponent;
-
-	// If there is no link provided and an onClick function
-	if( typeof onClick === 'function' ) {
-		attributeOptions.onClick = onClick;
-
-		// if we find an onClick event but no link we make it a link so onClick can be added (no button support yet)
-		if( !link ) {
-			link = '#';
-		}
-	}
-
-	// If we are using a normal link
-	if( LinkComponent === 'a' ) {
-		attributeOptions.href = link;
-	}
-	// If we are using a link component
-	else if( typeof LinkComponent === 'function' ) {
-		attributeOptions.to = link;
-	}
-
-	if( link ){
-		return (
-			<li { ...li }>
-				<LinkComponent { ...attributeOptions }>{ text }</LinkComponent>
-				{ children }
-			</li>
-		)
-	}
-
-	return ( <li { ...li }>{ text }{ children }</li> );
-};
-
-AUlinkListItem.propTypes = {
-	text: PropTypes.node.isRequired,
-	link: PropTypes.string,
-	li: PropTypes.object,
-	onClick: PropTypes.object,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
-};
-
-AUlinkListItem.defaultProps = {
-	linkComponent: "a",
-};
-
 
 /**
  * DEFAULT
