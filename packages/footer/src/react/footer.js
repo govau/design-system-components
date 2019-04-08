@@ -17,51 +17,6 @@ import PropTypes from 'prop-types';
 // [replace-imports]
 
 
-
-/**
- * A section for the footer that contains navigational elements
- *
- * @param  {node}   children         - The inside of this section
- * @param  {string} className        - An additional class, optional
- * @param  {string} ariaLabel        - The aria-label attribute, optional
- * @param  {object} attributeOptions - Any other attribute options
- */
-export const AUfooterNav = ({ children, className = '', ariaLabel, ...attributeOptions }) => (
-	<nav className={`au-footer__navigation ${ className }`} aria-label={ ariaLabel } { ...attributeOptions }>
-		{ children }
-	</nav>
-);
-
-AUfooterNav.propTypes = {
-	children: PropTypes.node.isRequired,
-	className: PropTypes.string,
-	ariaLabel: PropTypes.string,
-};
-
-AUfooterNav.defaultProps = {
-	ariaLabel: 'footer',
-}
-
-
-/**
- * A section for the footer that sits at the end
- *
- * @param  {node}   children         - The inside of this section
- * @param  {string} className        - An additional class, optional
- * @param  {object} attributeOptions - Any other attribute options
- */
-export const AUfooterEnd = ({ children, className = '', ...attributeOptions }) => (
-	<div className={`au-footer__end ${ className }`} { ...attributeOptions }>
-		{ children }
-	</div>
-);
-
-AUfooterEnd.propTypes = {
-	children: PropTypes.node.isRequired,
-	className: PropTypes.string,
-};
-
-
 /**
  * DEFAULT
  * The footer component

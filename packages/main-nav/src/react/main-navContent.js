@@ -1,80 +1,17 @@
-/*! [replace-name] v[replace-version] */
 /***************************************************************************************************************************************************************
  *
- * mainNav function
+ * mainNav content function
  *
  * Horizontal list of links to key areas on the website. Usually located in the header.
  *
  **************************************************************************************************************************************************************/
 
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import AU from '@gov.au/animate'; // interdependency with our animate lib
-
-
-// ES5 dependency: import AUlinkList from '@gov.au/link-list';
-// ES6 dependency: import AUlinkList from './link-list';
-
-
-// The following line will be replaced automatically with generic imports for the ES5 pipeline.
-// You can safely ignore this bit if you use this module with pancake
-//
-// [replace-imports]
-
-
-/**
- * A menu inside the AUmainNav
- *
- * @param  {array}  items            - The links in an array containing text, location and active status
- * @param  {string} linkComponent    - The component used for the link
- */
-const AUmainNavMenu = ({ items, linkComponent }) => {
-	// Generate the menu
-	const GenerateMenu = ( items ) => {
-		const menu = items.map( item => {
-			const link =  item.active ? {
-				link: item.link,
-				text: item.text,
-				'aria-current': 'page',
-				li: {
-					className: 'active',
-				},
-			} :
-			{
-				link: item.link,
-				text: item.text,
-			};
-
-			// return the link, maybe with children
-			return link;
-		});
-
-		return menu;
-	}
-
-	// Create the menu with children
-	return (
-		<AUlinkList items={ GenerateMenu( items ) } linkComponent={ linkComponent } />
-	);
-}
-
-
-AUmainNavMenu.propTypes = {
-	items: PropTypes.arrayOf(
-		PropTypes.shape({
-			link: PropTypes.string,
-			text: PropTypes.node.isRequired,
-			children: PropTypes.array,
-		})
-	).isRequired,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
-};
-
-AUmainNavMenu.defaultProps = {
-	linkComponent: 'a',
-};
-
+// ES5 dependency: import AU from '@gov.au/animate';
+// ES6 dependency: import AU from './animate';
 
 // This value gets increased for each navigation component
 let IDvalue = 0;
@@ -454,32 +391,3 @@ AUmainNavContent.propTypes = {
 	afterClose: PropTypes.func,
 	className: PropTypes.string,
 };
-
-
-const AUmainNav = ({ dark, alt, className, ariaLabel, children, ...attributeOptions }) => (
-	<nav
-		className={
-			'au-main-nav ' +
-			`${ dark ? ' au-main-nav--dark' : '' }` +
-			`${ alt ? ' au-main-nav--alt' : '' }` +
-			`${ className ? ' ' + className : '' }`
-		}
-		aria-label = { ariaLabel }
-		{ ...attributeOptions }
-	>
-		{ children }
-	</nav>
-);
-
-AUmainNav.propTypes = {
-	dark: PropTypes.bool,
-	alt: PropTypes.bool,
-	ariaLabel: PropTypes.string,
-	children: PropTypes.node.isRequired,
-};
-
-AUmainNav.defaultProps = {
-	ariaLabel: 'main',
-};
-
-export default AUmainNav;
