@@ -223,6 +223,7 @@ const HELPER = (() => { // constructor factory
 // Settings
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 		NAME: PKG.name,
+		SHORTNAME: PKG.name.substring( 8 ),
 		VERSION: PKG.version,
 		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/../.templates`),
@@ -325,7 +326,7 @@ HELPER.precompile = (() => {
 		 */
 		readme: () => {
 			const depTree = GetDepTree( HELPER.NAME );
-			const prettyTree = `${ HELPER.NAME.substring( 8 ) }\n${ Treeify.asTree( depTree ) }`;
+			const prettyTree = `${ HELPER.SHORTNAME }\n${ Treeify.asTree( depTree ) }`;
 
 			let readme = Fs.readFileSync( `./README.md`, `utf-8`);
 			readme = readme.replace(/## Dependency graph\n\n```shell[\s\S]*?```/, `## Dependency graph\n\n\`\`\`shell\n${ prettyTree }\`\`\``);
@@ -356,7 +357,7 @@ HELPER.precompile = (() => {
 				CreateDir(`./lib/react/`);
 
 				CopyFile(`./src/react/react.js`, `./lib/react/react.js`);
-				CopyFile(`./src/react/react.js`, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js`);
+				CopyFile(`./src/react/react.js`, `./tests/react/${ HELPER.SHORTNAME }.js`);
 			}
 
 			// 3.replace strings inside new files in lib
@@ -376,7 +377,7 @@ HELPER.precompile = (() => {
 
 			if( _hasReact ) {
 				ReplaceFileContent( searches, `./lib/react/react.js` );
-				ReplaceFileContent( searches, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js` );
+				ReplaceFileContent( searches, `./tests/react/${ HELPER.SHORTNAME }.js` );
 			}
 		},
 
@@ -1185,7 +1186,7 @@ HELPER.init = () => {
 
 
 	if( process.argv.indexOf( 'precompile' ) !== -1 ) {
-		CFonts.say( `Precompile ${ PKG.name.substring( 8 ) }`, {
+		CFonts.say( `Precompile ${ HELPER.SHORTNAME }`, {
 			font: 'chrome',
 			space: false,
 			colors: ['red', 'magenta', 'blue'],
@@ -1202,7 +1203,7 @@ HELPER.init = () => {
 
 
 	if( process.argv.indexOf( 'compile' ) !== -1 ) {
-		CFonts.say( `Compiling ${ PKG.name.substring( 8 ) }`, {
+		CFonts.say( `Compiling ${ HELPER.SHORTNAME }`, {
 			font: 'chrome',
 			space: false,
 			colors: ['red', 'magenta', 'blue'],
