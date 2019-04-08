@@ -1,47 +1,61 @@
-# @gov.au/core
+@gov.au/core
+============
 
 > The core module all [gov.au components modules](https://github.com/govau/design-system-components/) depend on.
 
+
 ## Contents
 
-- [Install](#install)
-- [Usage](#usage)
-- [Dependency graph](#dependency-graph)
-- [Tests](#tests)
-- [Release History](#release-history)
-- [License](#license)
+* [Install](#install)
+* [Usage](#usage)
+* [Dependency graph](#dependency-graph)
+* [Tests](#tests)
+* [Release History](#release-history)
+* [License](#license)
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Install
+
 
 ```shell
 yarn add @gov.au/core
 ```
 
 ```shell
-npm install @gov.au/core
+npm install @gov.au/core 
 ```
+
 
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Usage
 
-- [Sass](#sass)
+
+* [Sass](#sass)
+
 
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ### Sass
+
 
 #### AU-color-contrast
 
 Get the contrast ratio of two colors and warn when it is below WCAG 2.0 AA standard 4.5:1
 
 `AU-color-contrast( foreground, background, silent, rounded )`
+
 
 The paramaters are:
 
@@ -53,17 +67,19 @@ The paramaters are:
 
 `rounded` - If the value is rounded or not
 
-Example:
 
+Example:
 ```
 content: AU-color-contrast( red, blue );
 ```
+
 
 #### AU-color-a11y
 
 The function to find the nearest accessible color.
 
 `AU-color-a11y( toMakeA11y, background, ratioKey, steps )`
+
 
 The paramaters are:
 
@@ -75,11 +91,12 @@ The paramaters are:
 
 `steps` - The step size our function is searching for a new color in. The bigger the number the faster the process the rougher the found color. Must be from 0.1 to 100.
 
-Example:
 
+Example:
 ```
 background: AU-color-a11y( red, blue );
 ```
+
 
 #### AU-svguri
 
@@ -87,12 +104,13 @@ Generate an optimized SVG data-uri.
 
 `AU-svguri( svg )`
 
+
 The paramaters are:
 
 `svg` - The SVG data to be converted.
 
-Example:
 
+Example:
 ```
 background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 128 128">
   <path fill="red" d="M128 64l-64 64-16-16 64-64"/>
@@ -100,23 +118,26 @@ background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" width="20" 
 </svg>');
 ```
 
+
 #### AU-media
 
 Create media queries and wraps the @content code inside of it.
 
 `AU-media( breakpoint )`
 
+
 The paramaters are:
 
 `breakpoint` - Either one of the following keywords: `xs`, `sm`, `md`, `lg`
 
-Example:
 
+Example:
 ```
 @include AU-media( sm ) {
   width: 48%;
 }
 ```
+
 
 #### AU-fontgrid
 
@@ -124,17 +145,19 @@ Mixin for setting font-size and line-height that snaps to the grid.
 
 `AU-fontgrid( fontsize, lineheight )`
 
+
 The paramaters are:
 
 `fontsize` - Either one of the following keywords: `xs`, `sm`, `md`, `lg`, `xl`, `xxl`, `xxxl`.
 
 `lineheight` - Either one of the following keywords: `heading`, `nospace`, `default`.
 
-Example:
 
+Example:
 ```
 @include AU-fontgrid( md, heading );
 ```
+
 
 #### AU-space
 
@@ -142,17 +165,19 @@ Mixin for setting a properties value to snap to the grid, with a fallback for RE
 
 `AU-space( property, value )`
 
+
 The paramaters are:
 
 `property` - The css property to apply the spacing ( `padding`, `margin`, `border` )
 
 `value` - The values of the property ( `0`, `20px`, `1unit`, `5%` )
 
-Example:
 
+Example:
 ```
 @include AU-space( margin, 1unit 10% );
 ```
+
 
 #### AU-focus
 
@@ -160,15 +185,17 @@ Add the outline to focus.
 
 `AU-focus( dark )`
 
+
 The paramaters are:
 
 `theme` - Either one of the following keywords: `light` or `dark`.
 
-Example:
 
+Example:
 ```
 @include AU-focus();
 ```
+
 
 #### AU-sronly
 
@@ -176,11 +203,12 @@ Hide an element from the screen but not a screen reader.
 
 `AU-sronly()`
 
-Example:
 
+Example:
 ```
 @include AU-sronly();
 ```
+
 
 #### AU-clearfix
 
@@ -188,15 +216,18 @@ Clearing floats.
 
 `AU-clearfix()`
 
-Example:
 
+Example:
 ```
 @include AU-clearfix();
 ```
 
+
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Dependency graph
 
@@ -204,20 +235,27 @@ Example:
 core
 ```
 
+
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Tests
 
 The visual test: https://auds.service.gov.au/packages/core/tests/site/
 
+
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Release History
 
+* v3.4.2 - Removed developer dependecies for the package
 * v3.4.1 - Add two new colours: `hint-text` and `hint-text-alt`.
 * v3.4.0 - Update error and success alert colours to meet contrast requirements on `--alt` backgrounds
 * v3.3.0 - Change error and success alert colours to make them WCAG contrast requirements
@@ -244,12 +282,15 @@ The visual test: https://auds.service.gov.au/packages/core/tests/site/
 
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## License
 
 Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
+
 
 **[⬆ back to top](#contents)**
 

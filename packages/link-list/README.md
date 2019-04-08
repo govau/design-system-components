@@ -1,72 +1,82 @@
-# @gov.au/link-list
+@gov.au/link-list
+============
 
 > A simple list of inline links..
 
+
 ## Contents
 
-- [Install](#install)
-- [Usage](#usage)
-- [Dependency graph](#dependency-graph)
-- [Tests](#tests)
-- [Release History](#release-history)
-- [License](#license)
+* [Install](#install)
+* [Usage](#usage)
+* [Dependency graph](#dependency-graph)
+* [Tests](#tests)
+* [Release History](#release-history)
+* [License](#license)
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Install
+
 
 ```shell
 yarn add @gov.au/link-list
 ```
 
 ```shell
-npm install @gov.au/link-list
+npm install @gov.au/link-list 
 ```
+
 
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Usage
 
-- [React](#react)
+
+* [React](#react)
+
 
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ### React
 
 Usage:
 
 ```jsx
-import AUlinkList from "./link-list.js";
+import AUlinkList from './link-list.js';
 
-<AUlinkList
-	items={[
-		{
-			link: "link/one/",
-			text: "Link 1"
-		},
-		{
-			link: "link/two/",
-			text: "Link 2",
-			className: "is-active",
-			li: {
-				className: "li-wrapping-class"
-			}
-		},
-		{
-			text: "Link 3",
-			onClick: () => console.log("You clicked me!")
-		},
-		{
-			linkComponent: "a",
-			link: "link/four/",
-			text: "Link 4"
-		}
-	]}
-/>;
+<AUlinkList items={[
+  {
+    link: 'link/one/',
+    text: 'Link 1',
+  },
+  {
+    link: 'link/two/',
+    text: 'Link 2',
+    className: 'is-active',
+    li: {
+      className: 'li-wrapping-class',
+    },
+  },
+  {
+    text: 'Link 3',
+    onClick: () => console.log('You clicked me!'),
+  },
+  {
+    linkComponent: 'a',
+    link: 'link/four/',
+    text: 'Link 4',
+  },
+]} />
 ```
 
 All props:
@@ -86,14 +96,17 @@ All props:
   ]},
 />
 ```
-
 _(💡 additional props are spread onto the component)_
+
 
 For more details have a look at the [usage example](https://github.com/govau/design-system-components/tree/master/packages/link-list/tests/react/index.js).
 
+
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Dependency graph
 
@@ -104,20 +117,27 @@ link-list
    └─ core
 ```
 
+
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Tests
 
 The visual test: https://auds.service.gov.au/packages/link-list/tests/site/
 
+
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Release History
 
+* v3.0.7 - Removed developer dependecies for the package
 * v3.0.6 - Added `onClick` event handler prop
 * v3.0.5 - Removed unused `Fragment` React import
 * v3.0.4 - Removed uikit references
@@ -139,12 +159,15 @@ The visual test: https://auds.service.gov.au/packages/link-list/tests/site/
 
 **[⬆ back to top](#contents)**
 
----
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## License
 
 Copyright (c) Commonwealth of Australia.
 Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/packages/core/master/LICENSE).
+
 
 **[⬆ back to top](#contents)**
 
