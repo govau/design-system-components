@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.7 - Removed developer dependecies of the packages](#v307)
 * [v3.0.6 - Removed unused `Fragment` React import](#v306)
 * [v3.0.5 - Removed uikit references](#v305)
 * [v3.0.4 - Update dependencies](#v304)

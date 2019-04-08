@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.13 - Removed developer dependecies of the package](#v1013)
 * [v1.0.12 - Removed uikit references](#v1012)
 * [v1.0.11 - Update dependencies](#v1011)
 * [v1.0.10 - Update dependencies](#v1010)

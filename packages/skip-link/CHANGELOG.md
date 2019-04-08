@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.16 - Removed developer dependecies of the packages](#v2016)
 * [v2.0.15 - Removed unused `Fragment` React import](#v2015)
 * [v2.0.14 - Resolve autoprefixer warning](#v2014)
 * [v2.0.13 - Fix pancake build path](#v2013)
@@ -41,6 +42,11 @@
 
 
 ## Release History
+
+### v2.0.16
+
+- Removed developer dependecies of the packages
+
 
 ### v2.0.15
 

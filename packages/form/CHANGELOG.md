@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.1 - Removed developer dependecies of the packages]
 * [v0.1.0 - 💥 Initial version](#v010)
 
 
@@ -22,6 +23,11 @@
 
 
 ## Release History
+
+### v0.1.1
+
+- Removed developer dependecies of the packages
+
 
 ### v0.1.0
 
