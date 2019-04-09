@@ -11,13 +11,6 @@
 @import '_globals.scss';
 @import '_print.scss';
 
-.au-file-upload{
-
-    .au-label {
-        margin-bottom: 0.25rem;
-    }
-
-    .au-file-input {
-        display: block;
-    }
+.au-file-input {
+	@include AU-fontgrid( sm, 'nospace' );
 }
