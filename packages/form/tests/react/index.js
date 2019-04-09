@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { AUlabel, AUhintText, AUerrorText, AUformGroup, AUfieldset, AUlegend } from './form.js';
-import AUtextInput from '../../../text-inputs/src/react/react';
-import AUheading from '../../../headings/src/react/react';
-import AUselect from '../../../select/src/react/react';
+import AUtextInput from '../../../text-inputs';
+import AUheading from '../../../headings';
+import AUselect from '../../../select';
 import { AUcheckbox } from '../../../control-input';
 
 class App extends React.Component {
