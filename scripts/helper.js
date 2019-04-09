@@ -338,7 +338,7 @@ HELPER.precompile = (() => {
 		js: () => {
 			const _hasJS = Fs.existsSync( `${ process.cwd() }/src/js/module.js` );
 			const _hasJquery = Fs.existsSync( `${ process.cwd() }/src/jquery/jquery.js` );
-			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/react/react.js` );
+			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/react/${ HELPER.SHORTNAME }.js` );
 			
 			// 2. copy files
 			if( _hasJS ) {
@@ -354,10 +354,26 @@ HELPER.precompile = (() => {
 			}
 
 			if( _hasReact ) {
-				CreateDir(`./lib/react/`);
+				CreateDir( `./lib/react/` );
 
-				CopyFile(`./src/react/react.js`, `./lib/react/react.js`);
-				CopyFile(`./src/react/react.js`, `./tests/react/${ HELPER.SHORTNAME }.js`);
+				CopyFile( `./src/react/${ HELPER.SHORTNAME }.js`, `./lib/react/react.js` );
+
+				// Inject seperate react files into main component file
+				let reactFiles = Fs.readdirSync( `${ process.cwd() }/src/react/`, `utf-8` )
+					// Remove the main component file from our list
+					.filter( item => item !== `${ HELPER.SHORTNAME }.js` );
+					
+				reactFiles.forEach( item => {
+					let reactFile = `${ process.cwd() }/src/react/${ item }`;
+					let reactFileData = Fs.readFileSync( reactFile, `utf-8` );
+					
+					reactFileData = reactFileData.replace( /^import React from (\'|\")react(\'|\");/gm, '');
+					reactFileData = reactFileData.replace( /^import PropTypes from (\'|\")prop-types(\'|\");/gm, '');
+
+					Fs.appendFileSync( `${ process.cwd() }/lib/react/react.js`, reactFileData );
+				})
+
+				CopyFile( `./lib/react/react.js`, `./tests/react/${ HELPER.SHORTNAME }.js` );
 			}
 
 			// 3.replace strings inside new files in lib
@@ -376,7 +392,6 @@ HELPER.precompile = (() => {
 			}
 
 			if( _hasReact ) {
-				ReplaceFileContent( searches, `./lib/react/react.js` );
 				ReplaceFileContent( searches, `./tests/react/${ HELPER.SHORTNAME }.js` );
 			}
 		},
@@ -411,7 +426,6 @@ HELPER.precompile = (() => {
 			if( Fs.existsSync(`${ process.cwd() }/lib/react/react.js`) ) {
 				const reactOptions = {
 					ast: false,
-					compact: true,
 					minified: true,
 					presets: [
 						`@babel/preset-env`,
@@ -428,7 +442,7 @@ HELPER.precompile = (() => {
 				};
 
 				// 1. Copy files
-				CopyFile('./src/react/react.js', './lib/react/react.es5.js');
+				CopyFile('./lib/react/react.js', './lib/react/react.es5.js');
 
 				// 2. Replace the comment with an import statement
 				ReplaceFileContent( searches, `${ process.cwd() }/lib/react/react.es5.js` );
@@ -585,7 +599,7 @@ HELPER.compile = (() => {
 			getAllJs( '/lib/js/module.js', '/tests/jquery/script.js' );
 
 			// get all react scripts
-			getAllReact( '/lib/react/react.js', '/tests/react/' );
+			getAllReact( '/src/react/react.js', '/tests/react/' );
 		},
 
 		img: () => {
