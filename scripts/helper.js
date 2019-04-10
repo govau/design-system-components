@@ -449,7 +449,7 @@ HELPER.precompile = (() => {
 				ReplaceFileContent( searches, `${ process.cwd() }/lib/react/react.es5.js` );
 
 				// 3. Compile /lib/react.js to react.es5.js
-				Babel.transformFile( `./lib/react/react.es5.js`, reactOptions, ( error, result ) => {
+				Babel.transformFile( `./lib/react/react.js`, reactOptions, ( error, result ) => {
 					if( error ) {
 						HELPER.log.error(`We encountered an error when transpiling the react file in ${ Chalk.yellow( `${ process.cwd() }/lib/react/react.es5.js` ) }`);
 						HELPER.log.error( error );
