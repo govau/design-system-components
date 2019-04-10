@@ -118,7 +118,7 @@ The visual test: https://auds.service.gov.au/packages/skip-link/tests/site/
 
 ## Release History
 
-* v2.0.16 - Removed developer dependecies of the package
+* v2.0.16 - Remove --save-dev flag from readme instructions
 * v2.0.15 - Removed unused `Fragment` React import
 * v2.0.14 - Resolve autoprefixer warning
 * v2.0.13 - Fix pancake build path

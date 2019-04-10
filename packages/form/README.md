@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/form/tests/site/
 
 ## Release History
 
+* v0.1.1 - Remove --save-dev flag from readme instructions
 * v0.1.0 - 💥 Initial version
 
 

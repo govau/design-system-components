@@ -61,7 +61,7 @@ The visual test: https://auds.service.gov.au/packages/responsive-media/tests/sit
 
 ## Release History
 
-* v2.0.14 - Removed developer dependecies of the package
+* v2.0.14 - Remove --save-dev flag from readme instructions
 * v2.0.13 - Add `title` attribute to iframe examples.
 * v2.0.12 - Removed uikit references
 * v2.0.11 - Update dependencies
