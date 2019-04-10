@@ -25,7 +25,7 @@ import PropTypes from 'prop-types';
  * @param  {object} li               - An additional object to be spread into the wrapping element, optional
  * @param  {object} attributeOptions - Any other attribute options, optional
  */
-export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, ...attributeOptions }) => {
+export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, onClick, ...attributeOptions }) => {
 	const LinkComponent = linkComponent;
 
 	// If there is no link provided and an onClick function
