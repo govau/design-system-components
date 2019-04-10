@@ -42,8 +42,8 @@
     color: $AU-colordark-foreground-text;
   }
 
-  //add space between form control and label
-  & + .au-text-input, + .au-select, + .au-control-input {
+  // Add space between any <input> type
+  & + input {
 		@include AU-space( margin-top, 0.25unit );
   }
 }
