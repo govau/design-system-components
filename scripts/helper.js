@@ -428,6 +428,7 @@ HELPER.precompile = (() => {
 				const reactOptions = {
 					ast: false,
 					minified: true,
+					comments: false,
 					presets: [
 						`@babel/preset-env`,
 						`@babel/preset-react`
