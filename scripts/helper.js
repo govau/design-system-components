@@ -599,7 +599,7 @@ HELPER.compile = (() => {
 			getAllJs( '/lib/js/module.js', '/tests/jquery/script.js' );
 
 			// get all react scripts
-			getAllReact( '/src/react/react.js', '/tests/react/' );
+			getAllReact( `/lib/react/react.js`, '/tests/react/' );
 		},
 
 		img: () => {
