@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/breadcrumbs",
-	"version": "3.0.4",
+	"version": "3.0.5",
 	"description": "Breadcrumbs help users understand where they are in the service and how they got there.",
 	"keywords": [
 		"auds",
