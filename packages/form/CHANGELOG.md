@@ -26,7 +26,7 @@
 
 ### v0.1.1
 
-- Updated HTMLInputElement selector for top margin
+- Update selector to add `margin-top` for all `input` elements that are preceded by a label element
 
 
 ### v0.1.0
