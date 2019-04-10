@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v3.0.6 - Removed developer dependecies of the packages](#v306)
+* [v3.0.6 - Remove --save-dev flag from readme instructions](#v306)
 * [v3.0.5 - Removed unused `Fragment` React import](#v305)
 * [v3.0.4 - Removed uikit references](#v304)
 * [v3.0.3 - Added an aria-label attribute to the nav element](#v303)
@@ -42,7 +42,7 @@
 
 ### v3.0.6
 
-- Removed developer dependecies of the packages
+- Remove --save-dev flag from readme instructions
 
 
 ### v3.0.5

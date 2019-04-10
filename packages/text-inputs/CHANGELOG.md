@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.1.1 - Removed developer dependecies of the packages](#v211)
+* [v2.1.1 - Remove --save-dev flags from readme instructions](#v211)
 * [v2.1.0 - Add text inputs of different widths](#v210)
 * [v2.0.11 - Removed unused `Fragment` React import](#v2011)
 * [v2.0.10 - Removed uikit references](#v2010)
@@ -41,7 +41,7 @@
 
 ### v2.1.1
 
-- Removed developer dependecies of the packages
+- Remove --save-dev flags from readme instructions
 
 
 ### v2.1.0

@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v3.4.1 - Removed developer dependecies of the packages](#v341)
+* [v3.4.1 - Remove --save-dev flag from readme instructions](#v341)
 * [v3.4.0 - Update error and success alert colours to meet contrast requirements on `--alt` backgrounds](#v340)
 * [v3.3.0 - Change error and success alert colours to make them accessible](#v330)
 * [v3.2.0 - Add additional colour checks for incaccesble color combinations](#v320)
@@ -42,6 +42,11 @@
 
 
 ## Release History
+
+### v3.4.1
+
+- Remove --save-dev flag from readme instructions
+
 
 ### v3.4.0
 
