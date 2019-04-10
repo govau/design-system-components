@@ -392,6 +392,7 @@ HELPER.precompile = (() => {
 			}
 
 			if( _hasReact ) {
+				ReplaceFileContent( searches, `./lib/react/react.js` );
 				ReplaceFileContent( searches, `./tests/react/${ HELPER.SHORTNAME }.js` );
 			}
 		},
@@ -969,7 +970,7 @@ HELPER.test = (() => {
 					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
 					const hasSass = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`) );
 					const hasJS = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`) );
-					const hasReact = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/react/react.js`) );
+					const hasReact = Fs.existsSync( Path.normalize( `${ __dirname }/../packages/${ module }/src/react/${ HELPER.SHORTNAME }.js` ) );
 					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/jquery/jquery.js`) );
 
 					// testing lifecycle script
