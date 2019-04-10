@@ -104,7 +104,7 @@ The visual test: https://auds.service.gov.au/packages/headings/tests/site/
 
 ## Release History
 
-* v2.0.11 - Removed developer dependecies of the package
+* v2.0.11 - Remove --save-dev flag from readme instructions
 * v2.0.10 - Removed unused `Fragment` React import
 * v2.0.9 - Removed uikit references
 * v2.0.8 - Update dependencies

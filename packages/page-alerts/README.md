@@ -107,7 +107,7 @@ page-alerts
 
 ## Release History
 
-* v2.1.3 - Removed developer dependecies of the package
+* v2.1.3 - Remove --save-dev flag from readme instructions
 * v2.1.2 - Removed unused `Fragment` React import
 * v2.1.1 - Removed uikit references
 * v2.1.0 - Remove role alert as it interupts the screen reader

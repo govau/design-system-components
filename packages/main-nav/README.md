@@ -235,7 +235,7 @@ The visual test: https://auds.service.gov.au/packages/main-nav/tests/site/
 
 ## Release History
 
-* v1.0.7 - Removed developer dependecies of the packages
+* v1.0.7 - Remove --save-dev flag from readme instructions
 * v1.0.6 - Removed word `navigation` from `aria-label` in `<nav>` element
 * v1.0.5 - Removed unused `Fragment` React import
 * v1.0.4 - Resolve autoprefixer warning

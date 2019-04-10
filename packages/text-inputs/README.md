@@ -108,7 +108,7 @@ The visual test: https://auds.service.gov.au/packages/text-inputs/tests/site/
 
 ## Release History
 
-* v2.1.1 - Removed developer dependecis of the package
+* v2.1.1 - Remove --save-dev flag from readme instructions
 * v2.1.0 - Add text inputs of different widths
 * v2.0.11 - Removed unused `Fragment` React import
 * v2.0.10 - Removed uikit references
