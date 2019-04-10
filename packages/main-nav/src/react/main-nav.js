@@ -33,9 +33,21 @@ const AUmainNav = ({ dark, alt, className, ariaLabel, children, ...attributeOpti
 );
 
 AUmainNav.propTypes = {
+	/**
+	 * A dark variation of the component
+	 */
 	dark: PropTypes.bool,
+	/**
+	 * An alternate variation of the component
+	 */
 	alt: PropTypes.bool,
+	/**
+	 * 
+	 */
 	ariaLabel: PropTypes.string,
+	/**
+	 * The elements inside.
+	 */
 	children: PropTypes.node.isRequired,
 };
 
