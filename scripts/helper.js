@@ -544,12 +544,17 @@ HELPER.compile = (() => {
 			let code = '';
 
 			dependencies.forEach( dependency => {
-				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
-					const fileLocation = Path.normalize(`${ to }/${ dependency }.js`);
+				const fileLocation = Path.normalize(`${ to }/${ dependency }.js`);
 
+				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
 					CopyFile( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`), `.${ fileLocation }` );
 
 					HELPER.log.success(`Written file ${ Chalk.yellow( `.${ fileLocation }` ) }`);
+				}
+				else if( dependency == 'animate' ) {
+					CopyFile( Path.normalize(`${ process.cwd() }/../${ dependency }/lib/js/module.js`), `.${ fileLocation }` );
+
+					HELPER.log.success(`WARNING: Writing custom JS file 'animate' ${ Chalk.yellow( `.${ fileLocation }` ) } `);
 				}
 			});
 
