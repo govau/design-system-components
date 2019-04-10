@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v1.0.7 - Removed developer dependecies of the packages](#v107)
+* [v1.0.7 - Remove --save-dev flags from readme instructions](#v107)
 * [v1.0.6 - Removed word `navigation` from `aria-label` in `<nav>` element](#v106)
 * [v1.0.5 - Removed unused `Fragment` React import](#v105)
 * [v1.0.4 - Resolve autoprefixer warning](#v104)
@@ -38,7 +38,7 @@
 
 ### v1.0.7
 
-- Removed developer dependecies of the packages
+- Remove --save-dev flags from readme instructions
 
 
 ### v1.0.6

@@ -28,7 +28,7 @@
 
 ### v0.1.3
 
-- Removed developer dependecies of the packages
+- Remove --save-dev flag from readme instructions
 
 
 ### v0.1.2
