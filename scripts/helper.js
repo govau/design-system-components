@@ -992,7 +992,8 @@ HELPER.test = (() => {
 						error += `The module ${ module } is missing the "build:react" script.\n`;
 					}
 
-					if( hasReact && !packagesPKG.scripts['build'].includes('npm run build:react') ) {
+					// If we isolate a component like this again we need to refactor.
+					if( hasReact && module !== 'form' && !packagesPKG.scripts['build'].includes('npm run build:react' ) ) {
 						error += `The module ${ module } is missing the "build:react" task inside the build script.\n`;
 					}
 
