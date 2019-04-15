@@ -34,17 +34,21 @@
   display: block;
   @include AU-fontgrid( sm, default);
 
+  // Add space between any <input> element and `.au-select class
+  & + .au-select, + input {
+    @include AU-space( margin-top, 0.25unit );
+  }
+
   &--inline {
     display: inline-block;
+
+    & + .au-select, + input { 
+      margin-top: 0;
+    }
   }
 
   &--dark {
     color: $AU-colordark-foreground-text;
-  }
-
-  // Add space between any <input> type
-  & + .au-select, + input {
-		@include AU-space( margin-top, 0.25unit );
   }
 }
 
@@ -60,7 +64,7 @@
   }
 
     //add space between form control and hint text
-  & + .au-text-input, + .au-select, + .au-control-input {
+  & + .au-select, + input {
 		@include AU-space( margin-top, 0.25unit );
   }
 
@@ -86,12 +90,16 @@
   }
   
   //add space between form control and hint text
-  & + .au-text-input, + .au-select, + .au-control-input {
+  & + .au-select, + input {
 		@include AU-space( margin-top, 0.25unit );
   }
 
   &--inline {
     display: inline-block;
+
+    & + .au-select, + input { 
+      margin-top: 0;
+    }
   }
 
   // toggle class to show/hide error text
