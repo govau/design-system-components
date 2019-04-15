@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/form",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "The form component contains layout, labelling and inline validations for form fields",
 	"keywords": [
 		"auds",
