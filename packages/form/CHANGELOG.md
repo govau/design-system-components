@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.1 - Update selector to add `margin-top` for all `input` elements that are preceded by a label element](#v011)
 * [v0.1.0 - 💥 Initial version](#v010)
 
 
@@ -22,6 +23,11 @@
 
 
 ## Release History
+
+### v0.1.1
+
+- Update selector to add `margin-top` for all `input` elements that are preceded by a label element
+
 
 ### v0.1.0
 
