@@ -137,6 +137,7 @@ The visual test: https://auds.service.gov.au/packages/link-list/tests/site/
 
 ## Release History
 
+* v3.0.6 - Added `onClick` event handler prop
 * v3.0.5 - Removed unused `Fragment` React import
 * v3.0.4 - Removed uikit references
 * v3.0.3 - Fixing bug in link-list au-body
