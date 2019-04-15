@@ -786,6 +786,7 @@ $AU-maxwidth: 42em !default; // Answer to life, the universe, and everything (ke
 $AU-color-foreground-text:   #313131 !default;
 $AU-color-foreground-action: #00698f !default;
 $AU-color-foreground-focus:  #9263DE !default;
+$AU-color-foreground-hint:   #6f777b !default;
 $AU-color-background:        #ffffff !default;
 
 
@@ -796,10 +797,11 @@ $AU-color-lowest-contrast: AU-color-lowest-contrast(
 
 
 // Override the background if it's not accessible and generate shades
-$AU-color-background:           AU-color-a11y( $AU-color-background, $AU-color-lowest-contrast );
-$AU-color-background-shade:     darken( $AU-color-background, 4% );
-$AU-color-background-alt:       darken( $AU-color-background, 8% );
-$AU-color-background-alt-shade: darken( $AU-color-background, 12% );
+$AU-color-background:              AU-color-a11y( $AU-color-background, $AU-color-lowest-contrast );
+$AU-color-background-shade:        darken( $AU-color-background, 4% );
+$AU-color-background-alt:          darken( $AU-color-background, 8% );
+$AU-color-background-alt-shade:    darken( $AU-color-background, 12% );
+$AU-color-foreground-alt-hint:     #61696B !default;
 
 
 // Generated border and muted colours
