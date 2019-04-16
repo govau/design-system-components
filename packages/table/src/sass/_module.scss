@@ -68,13 +68,10 @@ $AU-colordark-table-row-alt: #104f5f;
 
     &--dark {
         background: $AU-colordark-table-row;
-        color: #bdd2d7;
-
-        th {
-            color: #fff;
-        }
+        color: #fff;
 
         caption {
+            background-color: #fff;
             color: #000;
         }
 
