@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // form module
-// 
+//
 //
 // Content:
 // - sass-versioning
@@ -13,18 +13,18 @@
 
 
 .au-form-group {
-  
+
   // Error state for form group
   &--invalid {
     border-left: solid 5px $AU-color-error;
     padding-left: 15px;
   }
-  
+
   //Add space above form consecutive
   + .au-form-group {
     @include AU-space( margin-top, 1.25unit );
   }
-  
+
 }
 
 
@@ -42,7 +42,7 @@
   &--inline {
     display: inline-block;
 
-    & + .au-select, + input { 
+    & + .au-select, + input {
       margin-top: 0;
     }
   }
@@ -55,7 +55,7 @@
 
 .au-hint-text {
   font-family: $AU-font;
-  color: $AU-hint-text;
+  color: $AU-color-foreground-hint;
   display: block;
   @include AU-fontgrid( sm, default);
 
@@ -73,7 +73,7 @@
   }
 
   &--alt {
-    color: $AU-hint-text-alt;
+    color: $AU-color-foreground-alt-hint;
   }
 }
 
@@ -88,7 +88,7 @@
   * + & {
 		@include AU-space( margin-top, 0.4unit );
   }
-  
+
   //add space between form control and hint text
   & + .au-select, + input {
 		@include AU-space( margin-top, 0.25unit );
@@ -97,7 +97,7 @@
   &--inline {
     display: inline-block;
 
-    & + .au-select, + input { 
+    & + .au-select, + input {
       margin-top: 0;
     }
   }
