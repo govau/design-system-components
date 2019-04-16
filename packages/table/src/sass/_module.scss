@@ -1,0 +1,94 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// table module
+// Table includes styling for arranging data in rows and columns
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+// Light palette
+$AU-color-table-head-border: #CCC;
+$AU-color-table-row-border: #CCC;
+$AU-color-table-row: #F1F1F1;
+$AU-color-table-row-alt: #E0E0E0;
+
+
+// Dark palette
+$AU-colordark-table-row: #135E70;
+$AU-colordark-table-row-alt: #104f5f;
+
+
+.au-table {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    caption {
+        display: table-caption;
+    }
+
+    thead {
+        display: table-header-group;
+        border-bottom: solid 2px $AU-color-table-head-border;
+    }
+
+    tbody {
+        display: table-row-group;
+    }
+
+    tr {
+        display: table-row;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    th,
+    td {
+        @include AU-space( padding, 0.5unit );
+
+        border-bottom: 1px solid $AU-color-table-row-border;
+        text-align: left;
+    }
+
+    &--alt {
+        background-color: $AU-color-table-row;
+
+        tr:nth-child(even) {
+            background: $AU-color-table-row-alt;
+        }
+    }
+
+    &--dark {
+        background: $AU-colordark-table-row;
+        color: #bdd2d7;
+
+        th {
+            color: #fff;
+        }
+
+        caption {
+            color: #000;
+        }
+
+        tr:nth-child(even) {
+            background: $AU-colordark-table-row-alt;
+        }
+    }
+
+    &--stripped {
+        tr:nth-child(even) {
+            background: $AU-color-table-row;
+        }
+    }
+}
