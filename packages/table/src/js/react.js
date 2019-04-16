@@ -10,16 +10,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 /**
  * The table component
  * 
- * @param {string} caption 
- * @param {object[]} headers 
- * @param {object[]} rows 	
+ * @param {string} caption
+ * @param {object[]} headers
+ * @param {object[]} rows
+ * @param {bool} dark
+ * @param {bool} alt
+ * @param {bool} stripped
+ * @param {object} attributeOptions
  */
 const AUTable = ( { caption, headers, rows, dark, alt, stripped, attributeOptions } ) => {
-	return <table className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ stripped ? 'au-table--stripped' : ''}`} {...attributeOptions }>
-		<caption>{caption}</caption>
+	return <table className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ stripped ? 'au-table--stripped' : ''}`} {...attributeOptions } aria-describedby="table_desc">
+		<caption id="table_desc">{caption}</caption>
 		<thead>
 			<tr>
 				{

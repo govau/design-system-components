@@ -34,6 +34,7 @@ $AU-colordark-table-row-alt: #104f5f;
 
     caption {
         display: table-caption;
+        font-weight: bold;
     }
 
     thead {
@@ -47,10 +48,6 @@ $AU-colordark-table-row-alt: #104f5f;
 
     tr {
         display: table-row;
-    }
-
-    th {
-        font-weight: bold;
     }
 
     th,
