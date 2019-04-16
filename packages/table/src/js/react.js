@@ -66,6 +66,34 @@ AUTable.propTypes = {
 	dark: PropTypes.bool
 };
 
-AUTable.defaultProps = {};
+AUTable.defaultProps = {
+	caption: "Title of the table",
+	headers: [
+		{
+			text: "Row 1, heading 1"
+		},
+		{
+			text: "Row 1, heading 2"
+		}
+	],
+	rows: [
+		[
+			{
+				text: "Row 2, heading 1, cell 1"
+			},
+			{
+				text: "Row 2, heading 2, cell 2"
+			}
+		],
+		[
+			{
+				text: "Row 3, heading 1, cell 3"
+			},
+			{
+				text: "Row 3, heading 2, cell 4"
+			}
+		]
+	]
+};
 
 export default AUTable;

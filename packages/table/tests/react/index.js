@@ -6,6 +6,9 @@ import AUTable from './table.js';
 
 ReactDOM.render(
 	<div>
+		<h2>Default <code>no props</code></h2>
+		<AUTable/>
+
 		<h2>Default</h2>
 		<AUTable 
 			caption="Population of Australian states and territories, December 2015"
@@ -324,7 +327,6 @@ ReactDOM.render(
 				]
 			]}
 		/>
-		
 	</div>,
 
 	document.getElementById('root'),
