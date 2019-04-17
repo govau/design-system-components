@@ -15,7 +15,8 @@
 
 ## Versions
 
-* [v3.0.6 - Remove --save-dev flags from readme instructions](#v306)
+* [v3.0.7 - Remove --save-dev flags from readme instructions](#v306)
+* [v3.0.6 - Added `onClick` event handler prop](#v306)
 * [v3.0.5 - Removed unused `Fragment` React import](#v305)
 * [v3.0.4 - Removed uikit references](#v304)
 * [v3.0.3 - Fixing bug in link-list au-body](#v303)
@@ -39,9 +40,15 @@
 
 ## Release History
 
+### v3.0.7
+
+- Remove --save-dev flags from readme instructions
+
+
 ### v3.0.6
 
 - Remove --save-dev flags from readme instructions
+- Added `onClick` event handler prop
 
 
 ### v3.0.5

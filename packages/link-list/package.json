@@ -124,6 +124,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Tengis Batsaikhan",
+			"email": "tengee0411@gmail.com",
+			"url": "https://github.com/tengis"
 		}
 	],
 	"license": "MIT"

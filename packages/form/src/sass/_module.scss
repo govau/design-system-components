@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // form module
-// 
+//
 //
 // Content:
 // - sass-versioning
@@ -13,18 +13,18 @@
 
 
 .au-form-group {
-  
+
   // Error state for form group
   &--invalid {
     border-left: solid 5px $AU-color-error;
     padding-left: 15px;
   }
-  
+
   //Add space above form consecutive
   + .au-form-group {
     @include AU-space( margin-top, 1.25unit );
   }
-  
+
 }
 
 
@@ -34,24 +34,28 @@
   display: block;
   @include AU-fontgrid( sm, default);
 
+  // Add space between any <input> element and `.au-select class
+  & + .au-select, + input {
+    @include AU-space( margin-top, 0.25unit );
+  }
+
   &--inline {
     display: inline-block;
+
+    & + .au-select, + input {
+      margin-top: 0;
+    }
   }
 
   &--dark {
     color: $AU-colordark-foreground-text;
-  }
-
-  //add space between form control and label
-  & + .au-text-input, + .au-select, + .au-control-input {
-		@include AU-space( margin-top, 0.25unit );
   }
 }
 
 
 .au-hint-text {
   font-family: $AU-font;
-  color: $AU-hint-text;
+  color: $AU-color-foreground-hint;
   display: block;
   @include AU-fontgrid( sm, default);
 
@@ -60,7 +64,7 @@
   }
 
     //add space between form control and hint text
-  & + .au-text-input, + .au-select, + .au-control-input {
+  & + .au-select, + input {
 		@include AU-space( margin-top, 0.25unit );
   }
 
@@ -69,7 +73,7 @@
   }
 
   &--alt {
-    color: $AU-hint-text-alt;
+    color: $AU-color-foreground-alt-hint;
   }
 }
 
@@ -84,14 +88,18 @@
   * + & {
 		@include AU-space( margin-top, 0.4unit );
   }
-  
+
   //add space between form control and hint text
-  & + .au-text-input, + .au-select, + .au-control-input {
+  & + .au-select, + input {
 		@include AU-space( margin-top, 0.25unit );
   }
 
   &--inline {
     display: inline-block;
+
+    & + .au-select, + input {
+      margin-top: 0;
+    }
   }
 
   // toggle class to show/hide error text

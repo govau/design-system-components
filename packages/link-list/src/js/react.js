@@ -23,9 +23,10 @@ import PropTypes from 'prop-types';
  * @param  {string} link             - The link URL, optional
  * @param  {string} linkComponent    - The component used for the link
  * @param  {object} li               - An additional object to be spread into the wrapping element, optional
+ * @param  {object} onClick          - The onClick event handler
  * @param  {object} attributeOptions - Any other attribute options, optional
  */
-export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, ...attributeOptions }) => {
+export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, onClick, ...attributeOptions }) => {
 	const LinkComponent = linkComponent;
 
 	// If there is no link provided and an onClick function
@@ -63,6 +64,7 @@ AUlinkListItem.propTypes = {
 	text: PropTypes.node.isRequired,
 	link: PropTypes.string,
 	li: PropTypes.object,
+	onClick: PropTypes.object,
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 

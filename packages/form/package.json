@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/form",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "The form component contains layout, labelling and inline validations for form fields",
 	"keywords": [
 		"auds",
@@ -50,7 +50,7 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-sass": "~2",
+		"@gov.au/pancake-sass": "~2", 
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 		"@gov.au/core": "^3.0.0"
