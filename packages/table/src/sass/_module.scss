@@ -25,6 +25,7 @@ $AU-colordark-table-row-alt: #104f5f;
 
 
 .au-table {
+    overflow: auto;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -84,7 +85,7 @@ $AU-colordark-table-row-alt: #104f5f;
         }
     }
 
-    &--stripped {
+    &--striped {
         tr:nth-child(even) {
             background-color: $AU-color-table-row;
         }
