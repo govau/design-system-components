@@ -56,13 +56,17 @@ $AU-colordark-table-row-alt: #104f5f;
 
         border-bottom: 1px solid $AU-color-table-row-border;
         text-align: left;
+
+        &:focus {
+            outline: 3px solid #C390F9;
+        }
     }
 
     &--alt {
         background-color: $AU-color-table-row;
 
         tr:nth-child(even) {
-            background: $AU-color-table-row-alt;
+            background-color: $AU-color-table-row-alt;
         }
     }
 
@@ -76,13 +80,13 @@ $AU-colordark-table-row-alt: #104f5f;
         }
 
         tr:nth-child(even) {
-            background: $AU-colordark-table-row-alt;
+            background-color: $AU-colordark-table-row-alt;
         }
     }
 
     &--stripped {
         tr:nth-child(even) {
-            background: $AU-color-table-row;
+            background-color: $AU-color-table-row;
         }
     }
 }
