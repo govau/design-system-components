@@ -45,7 +45,7 @@
 	<h1>Test: table</h1>
 
 	<h2>Default</h2>
-	<table class="au-table" aria-describedby="table_desc-1">
+	<table tabindex="0" class="au-table" aria-describedby="table_desc-1">
         <caption id="table_desc-1">Population of Australian states and territories, December 2015</caption>
         <thead>
             <tr>
@@ -89,8 +89,71 @@
         </tbody>
     </table>
 
+	<h2>Default <code>complex data-table</code></h2>
+	<table tabindex="0" class="au-table" aria-describedby="table_desc-1" role="presentation">
+        <caption id="table_desc-1">Population of Australian states and territories, December 2015</caption>
+        <thead>
+            <tr>
+                <th scope="col">Location</th>
+                <th scope="col">Population</th>
+                <th scope="col">Change over previous year %</th>
+                <th scope="col">Change over previous decade %</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Location">New South Wales</td>
+                <td data-label="Population">7,670,700</td>
+                <td data-label="Change over previous year %">3.1%</td>
+                <td data-label="Change over previous decade %">12.9%</td>
+            </tr>
+            <tr>
+                <td data-label="Location">Victoria</td>
+                <td data-label="Population">5,996,400</td>
+                <td data-label="Change over previous year %">2.5%</td>
+                <td data-label="Change over previous decade %">9.3%</td>
+            </tr>
+            <tr>
+                <td data-label="Location">Queensland</td>
+                <td data-label="Population">4,808,800</td>
+                <td data-label="Change over previous year %">1.7%</td>
+                <td data-label="Change over previous decade %">13.3%</td>
+            </tr>
+            <tr>
+                <td data-label="Location">Western Australia</d>
+                <td data-label="Population">2,603,900</td>
+                <td data-label="Change over previous year %">2.3%</td>
+                <td data-label="Change over previous decade %">11.6%</td>
+            </tr>
+            <tr>
+                <td data-label="Location">South Australia</td>
+                <td data-label="Population">1,702,800</td>
+                <td data-label="Change over previous year %">2.0%</td>
+                <td data-label="Change over previous decade %">6.8%</td>
+            </tr>
+            <tr>
+                <td data-label="Location">Tasmania</td>
+                <td data-label="Population">517,400</td>
+                <td data-label="Change over previous year %">4%</td>
+                <td data-label="Change over previous decade %">5.3%</td>
+            </tr>
+            <tr>
+                <td data-label="Location">Northern Territory</td>
+                <td data-label="Population">244,000</td>
+                <td data-label="Change over previous year %">1.2%</td>
+                <td data-label="Change over previous decade %">4.5%</td>
+            </tr>
+            <tr>
+                <td data-label="Location">Australian Capital Territory</td>
+                <td data-label="Population">393,000</td>
+                <td data-label="Change over previous year %">2.4%</td>
+                <td data-label="Change over previous decade %">9.6%</td>
+            </tr>
+        </tbody>
+    </table>
+
     <h2>Default <code>--alt</code></h2>
-	<table class="au-table au-table--alt" aria-describedby="table_desc-2">
+	<table tabindex="0" class="au-table au-table--alt" aria-describedby="table_desc-2">
         <caption id="table_desc-2">Population of Australian states and territories, December 2015</caption>
         <thead>
             <tr>
@@ -135,7 +198,7 @@
     </table>
 
     <h2>Default <code>--dark</code></h2>
-    <table class="au-table au-table--dark" aria-describedby="table_desc-5">
+    <table tabindex="0" class="au-table au-table--dark" aria-describedby="table_desc-5">
         <caption id="table_desc-5">Population of Australian states and territories, December 2015</caption>
         <thead>
             <tr>
@@ -180,7 +243,7 @@
     </table>
 
     <h2>Default <code>--stripped</code></h2>
-    <table class="au-table au-table--stripped" aria-describedby="table_desc-4">
+    <table tabindex="0" class="au-table au-table--stripped" aria-describedby="table_desc-4">
         <caption id="table_desc-4">Population of Australian states and territories, December 2015</caption>
         <thead>
             <tr>

@@ -23,7 +23,7 @@ import PropTypes from 'prop-types';
  * @param {object} attributeOptions
  */
 const AUTable = ( { caption, headers, rows, dark, alt, stripped, attributeOptions } ) => {
-	return <table className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ stripped ? 'au-table--stripped' : ''}`} {...attributeOptions } aria-describedby="table_desc">
+	return <table tabIndex={0} className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ stripped ? 'au-table--stripped' : ''}`} {...attributeOptions } aria-describedby="table_desc">
 		<caption id="table_desc">{caption}</caption>
 		<thead>
 			<tr>
