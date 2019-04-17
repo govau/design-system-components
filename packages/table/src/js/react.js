@@ -28,7 +28,7 @@ const AUTable = ( { caption, headers, rows, dark, alt, stripped, attributeOption
 		<thead>
 			<tr>
 				{
-					headers.map( (item, index) => <th key={index} scope="col">{item.text}</th>)
+					headers.map( (item, index) => <th key={index} title={item.text} scope="col">{item.text}</th>)
 				}
 			</tr>
 		</thead>
