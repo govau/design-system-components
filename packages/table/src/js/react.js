@@ -38,8 +38,7 @@ const AUTable = ( { caption, headers, rows, dark, alt, striped, attributeOptions
 					let result = [];
 
 					item.forEach( ( item, index ) => {
-						result.push( <td 
-							data-label={ headers[ index ].text } 
+						result.push( <td
 							key={ index }>{ item.text }
 						</td> ); 
 					});
