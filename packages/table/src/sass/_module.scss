@@ -77,6 +77,10 @@ $AU-colordark-table-row-alt: #104f5f;
         }
     }
 
+    &--block {
+        width: 100%;
+    }
+
     &--dark {
         background: $AU-colordark-table-row;
         color: #fff;

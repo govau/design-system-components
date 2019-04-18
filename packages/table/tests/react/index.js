@@ -248,9 +248,9 @@ ReactDOM.render(
 			]}
 		/>
 
-		<h2>Default <code>--stripped</code></h2>
+		<h2>Default <code>--striped</code></h2>
 		<AUTable
-			stripped
+			striped
 			caption="Population of Australian states and territories, December 2015"
 			headers={[
 				{
