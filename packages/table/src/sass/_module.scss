@@ -33,11 +33,6 @@ $AU-colordark-table-row-alt: #104f5f;
 		border-spacing: 0;
 		max-width: 100%;
 
-		&--block{
-			// display: block;
-			width: 100%
-		}
-
 		caption {
 				display: table-caption;
 				font-weight: bold;
@@ -68,6 +63,10 @@ $AU-colordark-table-row-alt: #104f5f;
 				}
 		}
 
+	&--block{
+		// display: block;
+		width: 100%
+	}
 
     &--alt {
         background-color: $AU-color-table-row;
@@ -75,10 +74,6 @@ $AU-colordark-table-row-alt: #104f5f;
         tr:nth-child(even) {
             background-color: $AU-color-table-row-alt;
         }
-    }
-
-    &--block {
-        width: 100%;
     }
 
     &--dark {
