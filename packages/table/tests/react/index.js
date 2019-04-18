@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AUTable from './table.js';
+import AUtable from './table.js';
 
 
 ReactDOM.render(
 	<div>
 		<h2>Default <code>no props</code></h2>
-		<AUTable/>
+		<AUtable/>
 
 		<h2>Default</h2>
-		<AUTable 
+		<AUtable 
 			caption="Population of Australian states and territories, December 2015"
 			headers={[
 				{
@@ -89,7 +89,7 @@ ReactDOM.render(
 		/>
 
 		<h2>Default <code>--alt</code></h2>
-		<AUTable
+		<AUtable
 			alt
 			caption="Population of Australian states and territories, December 2015"
 			headers={[
@@ -169,7 +169,7 @@ ReactDOM.render(
 		/>
 
 		<h2>Default <code>--dark</code></h2>
-		<AUTable
+		<AUtable
 			dark
 			caption="Population of Australian states and territories, December 2015"
 			headers={[
@@ -249,7 +249,7 @@ ReactDOM.render(
 		/>
 
 		<h2>Default <code>--striped</code></h2>
-		<AUTable
+		<AUtable
 			striped
 			caption="Population of Australian states and territories, December 2015"
 			headers={[
