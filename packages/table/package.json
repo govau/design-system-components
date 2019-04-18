@@ -1,7 +1,7 @@
 {
 	"name": "@gov.au/table",
 	"version": "0.1.0",
-	"description": "Table includes styling for arranging data in rows and columns",
+	"description": "Used to display tabular data",
 	"keywords": [
 		"auds",
 		"pancake",

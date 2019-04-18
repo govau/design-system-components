@@ -1,7 +1,7 @@
 @gov.au/table
 ============
 
-> Table includes styling for arranging data in rows and columns
+> Used to display tabular data
 
 
 ## Contents
