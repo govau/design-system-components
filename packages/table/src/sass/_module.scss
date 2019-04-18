@@ -25,47 +25,49 @@ $AU-colordark-table-row-alt: #104f5f;
 
 
 .au-table {
-    overflow: auto;
-    display: block;
+		overflow: auto;
+		font-family: $AU-font;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		border-collapse: collapse;
+		border-spacing: 0;
+		max-width: 100%;
 
-    table {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-    
-        caption {
-            display: table-caption;
-            font-weight: bold;
-        }
-    
-        thead {
-            display: table-header-group;
-            border-bottom: solid 2px $AU-color-table-head-border;
-        }
-    
-        tbody {
-            display: table-row-group;
-        }
-    
-        tr {
-            display: table-row;
-        }
-    
-        th,
-        td {
-            @include AU-space( padding, 0.5unit );
-    
-            border-bottom: 1px solid $AU-color-table-row-border;
-            text-align: left;
-    
-            &:focus {
-                outline: 3px solid #C390F9;
-            }
-        }
-    }
+		&--block{
+			// display: block;
+			width: 100%
+		}
+
+		caption {
+				display: table-caption;
+				font-weight: bold;
+		}
+
+		thead {
+				display: table-header-group;
+				border-bottom: solid 2px $AU-color-table-head-border;
+		}
+
+		tbody {
+				display: table-row-group;
+		}
+
+		tr {
+				display: table-row;
+		}
+
+		th,
+		td {
+				@include AU-space( padding, 0.5unit );
+
+				border-bottom: 1px solid $AU-color-table-row-border;
+				text-align: left;
+
+				&:focus {
+						outline: 3px solid #C390F9;
+				}
+		}
+
 
     &--alt {
         background-color: $AU-color-table-row;
