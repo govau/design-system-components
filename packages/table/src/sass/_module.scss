@@ -33,6 +33,13 @@ $AU-colordark-table-row-alt: #104f5f;
 		border-spacing: 0;
 		max-width: 100%;
 
+		&--full-width {
+			display: block;
+			@include AU-media( 'xs' ) {
+				display: table;
+			}
+		}
+
 		caption {
 			display: table-caption;
 			font-weight: bold;
@@ -63,11 +70,6 @@ $AU-colordark-table-row-alt: #104f5f;
 			}
 		}
 
-	&--full-width {
-		@include AU-media( 'xs' ) {
-			display: table;
-		}
-
     &--alt {
         background-color: $AU-color-table-row;
 
@@ -95,5 +97,4 @@ $AU-colordark-table-row-alt: #104f5f;
             background-color: $AU-color-table-row;
         }
     }
-}
 }
