@@ -72,6 +72,7 @@ AUTable.propTypes = {
 	dark: PropTypes.bool
 };
 
+
 AUTable.defaultProps = {
 	caption: "Title of the table",
 	headers: [
@@ -101,5 +102,6 @@ AUTable.defaultProps = {
 		]
 	]
 };
+
 
 export default AUTable;

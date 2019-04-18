@@ -25,51 +25,53 @@ $AU-colordark-table-row-alt: #104f5f;
 
 
 .au-table {
+		@include AU-fontgrid( sm, 'default' );
+
 		overflow: auto;
 		font-family: $AU-font;
-		@include AU-fontgrid( sm, 'default' );
 		border-collapse: collapse;
 		border-spacing: 0;
 		max-width: 100%;
 
-		&--full-width {
-			display: block;
-			width: 100%;
-
-			@include AU-media( 'xs' ) {
-				display: table;
-			}
-		}
-
 		caption {
-				display: table-caption;
-				font-weight: bold;
+			display: table-caption;
+			font-weight: bold;
 		}
 
 		thead {
-				display: table-header-group;
-				border-bottom: solid 2px $AU-color-table-head-border;
+			display: table-header-group;
+			border-bottom: solid 2px $AU-color-table-head-border;
 		}
 
 		tbody {
-				display: table-row-group;
+			display: table-row-group;
 		}
 
 		tr {
-				display: table-row;
+			display: table-row;
 		}
 
 		th,
 		td {
-				@include AU-space( padding, 0.5unit );
+			@include AU-space( padding, 0.5unit );
 
-				border-bottom: 1px solid $AU-color-table-row-border;
-				text-align: left;
+			border-bottom: 1px solid $AU-color-table-row-border;
+			text-align: left;
 
-				&:focus {
-						outline: 3px solid #C390F9;
-				}
+			&:focus {
+					outline: 3px solid #C390F9;
+			}
 		}
+
+	&--full-width {
+		@include AU-media( 'xs' ) {
+			display: table;
+		}
+
+		display: block;
+		width: 100%;
+
+	}
 
 	&--alt {
 		background-color: $AU-color-table-row;
