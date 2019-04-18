@@ -35,6 +35,7 @@ $AU-colordark-table-row-alt: #104f5f;
 		&--full-width {
 			display: block;
 			width: 100%;
+
 			@include AU-media( 'xs' ) {
 				display: table;
 			}
@@ -70,36 +71,31 @@ $AU-colordark-table-row-alt: #104f5f;
 				}
 		}
 
-	&--block{
-		// display: block;
-		width: 100%
+	&--alt {
+		background-color: $AU-color-table-row;
+
+		tr:nth-child(even) {
+			background-color: $AU-color-table-row-alt;
+		}
 	}
 
-    &--alt {
-        background-color: $AU-color-table-row;
+	&--dark {
+		background: $AU-colordark-table-row;
+		color: #fff;
 
-        tr:nth-child(even) {
-            background-color: $AU-color-table-row-alt;
-        }
-    }
+		caption {
+			background-color: #fff;
+			color: #000;
+		}
 
-    &--dark {
-        background: $AU-colordark-table-row;
-        color: #fff;
+		tr:nth-child(even) {
+			background-color: $AU-colordark-table-row-alt;
+		}
+	}
 
-        caption {
-            background-color: #fff;
-            color: #000;
-        }
-
-        tr:nth-child(even) {
-            background-color: $AU-colordark-table-row-alt;
-        }
-    }
-
-    &--striped {
-        tr:nth-child(even) {
-            background-color: $AU-color-table-row;
-        }
-    }
+	&--striped {
+		tr:nth-child(even) {
+			background-color: $AU-color-table-row;
+		}
+	}
 }
