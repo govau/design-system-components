@@ -27,15 +27,17 @@ $AU-colordark-table-row-alt: #104f5f;
 .au-table {
 		overflow: auto;
 		font-family: $AU-font;
-		font-size: 1rem;
-		line-height: 1.5rem;
+		@include AU-fontgrid( sm, 'default' );
 		border-collapse: collapse;
 		border-spacing: 0;
 		max-width: 100%;
 
-		&--block{
-			// display: block;
-			width: 100%
+		&--full-width {
+			display: block;
+			width: 100%;
+			@include AU-media( 'xs' ) {
+				display: table;
+			}
 		}
 
 		caption {
@@ -75,10 +77,6 @@ $AU-colordark-table-row-alt: #104f5f;
         tr:nth-child(even) {
             background-color: $AU-color-table-row-alt;
         }
-    }
-
-    &--block {
-        width: 100%;
     }
 
     &--dark {
