@@ -24,12 +24,12 @@ import PropTypes from 'prop-types';
  * @param {object} attributeOptions
  */
 const AUTable = ( { caption, headers, rows, dark, alt, fullWidth, striped, attributeOptions } ) => {
-	return <table tabIndex={0} className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ striped ? 'au-table--striped' : ''}${ fullWidth ? 'au-table--full-width' : ''}`} aria-describedby="table_desc" {...attributeOptions }>
-		<caption id="table_desc">{caption}</caption>
+	return <table tabIndex={0} className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ striped ? 'au-table--striped' : ''}${ fullWidth ? 'au-table--full-width' : ''}`} {...attributeOptions }>
+		<caption>{caption}</caption>
 		<thead>
 			<tr>
 				{
-					headers.map( (item, index) => <th key={index} title={item.text} scope="col">{item.text}</th>)
+					headers.map( (item, index) => <th key={index} scope="col">{item.text}</th>)
 				}
 			</tr>
 		</thead>
