@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v3.4.2 - Removed developer dependecies for the package](#v342)
+* [v3.4.2 - Remove --save-dev flag from readme instructions](#v342)
 * [v3.4.1 - Add two new colours: `hint-text` and `hint-text-alt`](#v341)
 * [v3.4.0 - Update error and success alert colours to meet contrast requirements on `--alt` backgrounds](#v340)
 * [v3.3.0 - Change error and success alert colours to make them accessible](#v330)
@@ -47,7 +47,7 @@
 <<<<<<< HEAD
 ### v3.4.2
 
-- Removed developer dependecies for the package
+- Remove --save-dev flag from readme instructions
 
 
 ### v3.4.1
