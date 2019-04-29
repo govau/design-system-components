@@ -15,7 +15,7 @@
 
 ## Versions
 
-* v[3.1.7 - Remove --save-dev flags from readme instructions](#v317)
+* [v3.1.7 - Remove --save-dev flags from readme instructions](#v317)
 * [v3.1.6 - Removed unused `Fragment` React import](#v316)
 * [v3.1.5 - Removed uikit references](#v315)
 * [v3.1.4 - Update dependencies](#v314)
