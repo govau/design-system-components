@@ -44,7 +44,6 @@
 
 ## Release History
 
-<<<<<<< HEAD
 ### v3.4.2
 
 - Remove --save-dev flag from readme instructions
@@ -53,11 +52,6 @@
 ### v3.4.1
 
 - Add two new colours: `hint-text` and `hint-text-alt`
-=======
-### v3.4.1
-
-- Remove --save-dev flag from readme instructions
->>>>>>> Updated Release history of packages
 
 
 ### v3.4.0
