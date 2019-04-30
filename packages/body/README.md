@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/body/tests/site/
 
 ## Release History
 
+* v2.2.1 - Switched `background-color` CSS property when printing from `#fff` to `transparent`
 * v2.1.1 - Resolve autoprefixer warning
 * v2.1.0 - Remove external link icon, fix pancake build path
 * v2.0.14 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`
