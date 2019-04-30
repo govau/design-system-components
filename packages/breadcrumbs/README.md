@@ -25,7 +25,7 @@ yarn add @gov.au/breadcrumbs
 ```
 
 ```shell
-npm install @gov.au/breadcrumbs --save-dev
+npm install @gov.au/breadcrumbs 
 ```
 
 
@@ -130,6 +130,7 @@ The visual test: https://auds.service.gov.au/packages/breadcrumbs/tests/site/
 
 ## Release History
 
+* v3.0.5 - Remove --save-dev flag from readme instructions
 * v3.0.4 - Removed unused `Fragment` React import
 * v3.0.3 - Removed uikit references
 * v3.0.2 - Update dependencies

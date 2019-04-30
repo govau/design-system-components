@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v7.0.8 - Remove --save-dev flag from readme instructions](#v708)
 * [v7.0.7 - Removed unused `Fragment` React import](#v707)
 * [v7.0.6 - Resolve autoprefixer warning](#v706)
 * [v7.0.5 - Fix pancake build path](#v705)
@@ -50,6 +51,11 @@
 
 
 ## Release History
+
+### v7.0.8
+
+- Remove --save-dev flag from readme instructions
+
 
 ### v7.0.7
 

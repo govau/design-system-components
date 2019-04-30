@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.2 - Remove --save-dev flag from readme instructions](#v302)
 * [v3.0.1 - Removed uikit references](#v301)
 * [v3.0.0 - Replace aria-label with a title](#v300)
 * [v2.1.0 - Remove `margin-bottom`, increase `margin-top` for paragraphs following callout](#v210)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v3.0.2
+
+- Remove --save-dev flag from readme instructions
+
 
 ### v3.0.1
 

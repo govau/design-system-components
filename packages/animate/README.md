@@ -153,6 +153,7 @@ Run `jest` for the unit tests
 
 ## Release History
 
+* v1.0.13 - Remove --save-dev flag from readme instructions
 * v1.0.12 - Removed uikit references
 * v1.0.11 - Update dependencies
 * v1.0.10 - Update dependencies

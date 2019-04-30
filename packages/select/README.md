@@ -25,7 +25,7 @@ yarn add @gov.au/select
 ```
 
 ```shell
-npm install @gov.au/select --save-dev
+npm install @gov.au/select 
 ```
 
 
@@ -122,6 +122,7 @@ The visual test: https://auds.service.gov.au/packages/select/tests/site/
 
 ## Release History
 
+* v2.0.11 - Remove --save-dev flag from readme instructions
 * v2.0.10 - Removed unused `Fragment` React import
 * v2.0.9 - Removed uikit references
 * v2.0.8 - Update dependencies

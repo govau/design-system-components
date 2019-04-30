@@ -25,7 +25,7 @@ yarn add @gov.au/side-nav
 ```
 
 ```shell
-npm install @gov.au/side-nav --save-dev
+npm install @gov.au/side-nav 
 ```
 
 
@@ -143,6 +143,7 @@ The visual test: https://auds.service.gov.au/packages/side-nav/tests/site/
 
 ## Release History
 
+* v5.0.8 - Remove --save-dev flag from readme instructions
 * v5.0.7 - Removed unused `Fragment` React import
 * v5.0.6 - Resolve autoprefixer warning
 * v5.0.5 - Fix pancake build path

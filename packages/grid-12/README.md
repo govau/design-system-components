@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/grid-12/tests/site/
 
 ## Release History
 
+* v2.1.0 - Remove --save-dev flag from readme instructions
 * v2.0.9 - Removed uikit references
 * v2.0.8 - Update dependencies
 * v2.0.7 - Removing web pack dev server, updating dependencies

@@ -25,7 +25,7 @@ yarn add @gov.au/control-input
 ```
 
 ```shell
-npm install @gov.au/control-input --save-dev
+npm install @gov.au/control-input 
 ```
 
 
@@ -118,6 +118,7 @@ The visual test: https://auds.service.gov.au/packages/control-input/tests/site/
 
 ## Release History
 
+* v3.0.1 - Remove --save-dev flag from readme instructions
 * v3.0.0 - Use explicit labelling instead of implicit labelling for control inputs. Remove `margin-top` for control input block that is not followed by another control input block. Removed unused `Fragment` React import
 * v2.2.2 - Fixed radio input underlapping svg on small inputs
 * v2.2.1 - Removed uikit references

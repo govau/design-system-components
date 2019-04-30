@@ -24,7 +24,7 @@ yarn add @gov.au/page-alerts
 ```
 
 ```shell
-npm install @gov.au/page-alerts --save-dev
+npm install @gov.au/page-alerts 
 ```
 
 
@@ -107,6 +107,7 @@ page-alerts
 
 ## Release History
 
+* v2.1.3 - Remove --save-dev flag from readme instructions
 * v2.1.2 - Removed unused `Fragment` React import
 * v2.1.1 - Removed uikit references
 * v2.1.0 - Remove role alert as it interupts the screen reader
