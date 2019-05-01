@@ -25,7 +25,7 @@ yarn add @gov.au/inpage-nav
 ```
 
 ```shell
-npm install @gov.au/inpage-nav --save-dev
+npm install @gov.au/inpage-nav
 ```
 
 
@@ -142,6 +142,7 @@ The visual test: https://auds.service.gov.au/packages/inpage-nav/tests/site/
 
 ## Release History
 
+* v3.0.6 - Remove --save-dev flag from readme instructions
 * v3.0.5 - Removed unused `Fragment` React import
 * v3.0.4 - Removed uikit references
 * v3.0.3 - Added an aria-label attribute to the nav element

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/page-alerts",
-	"version": "2.1.2",
+	"version": "2.1.3",
 	"description": "Use page alerts to notify users of important information and state changes to the page.",
 	"keywords": [
 		"auds",

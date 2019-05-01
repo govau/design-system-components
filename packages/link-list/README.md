@@ -25,7 +25,7 @@ yarn add @gov.au/link-list
 ```
 
 ```shell
-npm install @gov.au/link-list --save-dev
+npm install @gov.au/link-list
 ```
 
 
@@ -137,6 +137,7 @@ The visual test: https://auds.service.gov.au/packages/link-list/tests/site/
 
 ## Release History
 
+* v3.0.7 - Remove --save-dev flag from readme instructions
 * v3.0.6 - Added `onClick` event handler prop
 * v3.0.5 - Removed unused `Fragment` React import
 * v3.0.4 - Removed uikit references
