@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/main-nav",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "Horizontal list of links to key areas on the website. Usually located in the header.",
 	"keywords": [
 		"auds",

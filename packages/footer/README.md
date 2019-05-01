@@ -25,7 +25,7 @@ yarn add @gov.au/footer
 ```
 
 ```shell
-npm install @gov.au/footer --save-dev
+npm install @gov.au/footer 
 ```
 
 
@@ -115,6 +115,7 @@ The visual test: https://auds.service.gov.au/packages/footer/tests/site/
 
 ## Release History
 
+* v3.0.5 - Remove --save-dev flag from readme instructions
 * v3.0.4 - Removed word `navigation` from `aria-label` in `<nav>` element
 * v3.0.3 - Removed unused `Fragment` React import
 * v3.0.2 - Removed uikit references
