@@ -12,11 +12,11 @@
 
 		*,
 		& {
-			text-shadow: none;
-			color: #000;
-			background: transparent;
-			box-shadow: none;
-			border-color: #000;
+			text-shadow: none !important;
+			color: #000 !important;
+			background-color: transparent !important;
+			box-shadow: none !important;
+			border-color: #000 !important;
 		}
 
 		a,
