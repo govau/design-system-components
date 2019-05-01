@@ -7,9 +7,13 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.4.10",
+		"babel-eslint": "^10.0.1",
 		"cfonts": "^2.4.2",
 		"chalk": "^2.4.2",
+		"eslint": "^5.16.0",
+		"eslint-plugin-react": "^7.12.4",
 		"express": "^4.16.4",
+		"husky": "^1.3.1",
 		"inquirer": "6.2.2",
 		"jest-cli": "^24.4.0",
 		"lerna": "3.13.1",
@@ -30,7 +34,11 @@
 		"delete:node_modules": "lerna clean --yes && rimraf node_modules",
 		"delete:lib": "rimraf packages/*/lib",
 		"test:unit-test": "jest",
-		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
+		"test": "node scripts/helper.js test && node ./scripts/a11y.js",
+		"lint:react": "eslint -c ./.eslint/react.js ./packages/*/src/js/react.js",
+		"lint:module": "eslint -c ./.eslint/module.js ./packages/*/src/js/module.js",
+		"lint:jquery": "eslint -c ./.eslint/module.js ./packages/*/src/js/jquery",
+		"lint": "npm run lint:react && npm run lint:module && npm run lint:jquery"
 	},
 	"jest": {
 		"testRegex": "\\.spec.js$",
@@ -44,6 +52,12 @@
 				"lines": 0,
 				"statements": 0
 			}
+		}
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run lint",
+			"pre-push": "npm test"
 		}
 	}
 }
