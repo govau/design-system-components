@@ -20,11 +20,10 @@ import PropTypes from 'prop-types';
  * @param {bool} dark
  * @param {bool} alt
  * @param {bool} striped
- * @param {bool} fullWidth
  * @param {object} attributeOptions
  */
-const AUTable = ( { caption, headers, rows, dark, alt, fullWidth, striped, attributeOptions } ) => {
-	return <table tabIndex={0} className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ striped ? 'au-table--striped' : ''}${ fullWidth ? 'au-table--full-width' : ''}`} {...attributeOptions }>
+const AUTable = ( { caption, headers, rows, dark, alt, striped, attributeOptions } ) => {
+	return <table tabIndex={0} className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ striped ? 'au-table--striped' : ''}`} {...attributeOptions }>
 		<caption>{caption}</caption>
 		<thead>
 			<tr>
@@ -68,7 +67,6 @@ AUTable.propTypes = {
 	).isRequired,
 	alt: PropTypes.bool,
 	striped: PropTypes.bool,
-	fullWidth: PropTypes.bool,
 	dark: PropTypes.bool
 };
 
