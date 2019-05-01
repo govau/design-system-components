@@ -37,7 +37,7 @@
 		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
 
 		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
-		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
+		"watch:jsx": "onchange \"src/react/*.js\" \"tests/react/index.js\" -- npm run build",
 		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
 		"watch": "npm run build && npm-run-all --parallel serve watch:*"
 	},

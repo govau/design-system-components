@@ -223,6 +223,7 @@ const HELPER = (() => { // constructor factory
 // Settings
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 		NAME: PKG.name,
+		SHORTNAME: PKG.name.substring( 8 ),
 		VERSION: PKG.version,
 		DEPENDENCIES: PKG.peerDependencies,
 		TEMPLATES: Path.normalize(`${ __dirname }/../.templates`),
@@ -325,7 +326,7 @@ HELPER.precompile = (() => {
 		 */
 		readme: () => {
 			const depTree = GetDepTree( HELPER.NAME );
-			const prettyTree = `${ HELPER.NAME.substring( 8 ) }\n${ Treeify.asTree( depTree ) }`;
+			const prettyTree = `${ HELPER.SHORTNAME }\n${ Treeify.asTree( depTree ) }`;
 
 			let readme = Fs.readFileSync( `./README.md`, `utf-8`);
 			readme = readme.replace(/## Dependency graph\n\n```shell[\s\S]*?```/, `## Dependency graph\n\n\`\`\`shell\n${ prettyTree }\`\`\``);
@@ -336,26 +337,43 @@ HELPER.precompile = (() => {
 
 		js: () => {
 			const _hasJS = Fs.existsSync( `${ process.cwd() }/src/js/module.js` );
-			const _hasJquery = Fs.existsSync( `${ process.cwd() }/src/js/jquery.js` );
-			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/js/react.js` );
-
-			// 1. create path
-			if( _hasJS || _hasJquery || _hasReact ) {
-				CreateDir(`./lib/js/`);
-			}
-
+			const _hasJquery = Fs.existsSync( `${ process.cwd() }/src/jquery/jquery.js` );
+			const _hasReact = Fs.existsSync( `${ process.cwd() }/src/react/${ HELPER.SHORTNAME }.js` );
+			
 			// 2. copy files
 			if( _hasJS ) {
+				CreateDir(`./lib/js/`);
+
 				CopyFile(`./src/js/module.js`, `./lib/js/module.js`);
 			}
 
 			if( _hasJquery ) {
-				CopyFile(`./src/js/jquery.js`, `./lib/js/jquery.js`);
+				CreateDir(`./lib/jquery/`);
+
+				CopyFile(`./src/jquery/jquery.js`, `./lib/jquery/jquery.js`);
 			}
 
 			if( _hasReact ) {
-				CopyFile(`./src/js/react.js`, `./lib/js/react.js`);
-				CopyFile(`./src/js/react.js`, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js`);
+				CreateDir( `./lib/react/` );
+
+				CopyFile( `./src/react/${ HELPER.SHORTNAME }.js`, `./lib/react/react.js` );
+
+				// Inject seperate react files into main component file
+				let reactFiles = Fs.readdirSync( `${ process.cwd() }/src/react/`, `utf-8` )
+					// Remove the main component file from our list
+					.filter( item => item !== `${ HELPER.SHORTNAME }.js` );
+					
+				reactFiles.forEach( item => {
+					let reactFile = `${ process.cwd() }/src/react/${ item }`;
+					let reactFileData = Fs.readFileSync( reactFile, `utf-8` );
+					
+					reactFileData = reactFileData.replace( /^import React from (\'|\")react(\'|\");/gm, '');
+					reactFileData = reactFileData.replace( /^import PropTypes from (\'|\")prop-types(\'|\");/gm, '');
+
+					Fs.appendFileSync( `${ process.cwd() }/lib/react/react.js`, reactFileData );
+				})
+
+				CopyFile( `./lib/react/react.js`, `./tests/react/${ HELPER.SHORTNAME }.js` );
 			}
 
 			// 3.replace strings inside new files in lib
@@ -370,12 +388,12 @@ HELPER.precompile = (() => {
 			}
 
 			if( _hasJquery ) {
-				ReplaceFileContent( searches, `./lib/js/jquery.js` );
+				ReplaceFileContent( searches, `./lib/jquery/jquery.js` );
 			}
 
 			if( _hasReact ) {
-				ReplaceFileContent( searches, `./lib/js/react.js` );
-				ReplaceFileContent( searches, `./tests/react/${ HELPER.NAME.substring( 8 ) }.js` );
+				ReplaceFileContent( searches, `./lib/react/react.js` );
+				ReplaceFileContent( searches, `./tests/react/${ HELPER.SHORTNAME }.js` );
 			}
 		},
 
@@ -389,7 +407,7 @@ HELPER.precompile = (() => {
 		 * Compile and autoprefix Sass
 		 */
 		reactSass: () => {
-			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/lib/react/react.js`) ) {
 
 				// 1. create directory
 				CreateDir('./lib/css/');
@@ -406,11 +424,11 @@ HELPER.precompile = (() => {
 		 * Transpile react to es5, compile css file and include it into our react component
 		 */
 		react: () => {
-			if( Fs.existsSync(`${ process.cwd() }/lib/js/react.js`) ) {
+			if( Fs.existsSync(`${ process.cwd() }/lib/react/react.js`) ) {
 				const reactOptions = {
 					ast: false,
-					compact: true,
 					minified: true,
+					comments: false,
 					presets: [
 						`@babel/preset-env`,
 						`@babel/preset-react`
@@ -426,20 +444,20 @@ HELPER.precompile = (() => {
 				};
 
 				// 1. Copy files
-				CopyFile('./src/js/react.js', './lib/js/react.es5.js');
+				CopyFile('./lib/react/react.js', './lib/react/react.es5.js');
 
 				// 2. Replace the comment with an import statement
-				ReplaceFileContent( searches, `${ process.cwd() }/lib/js/react.es5.js` );
+				ReplaceFileContent( searches, `${ process.cwd() }/lib/react/react.es5.js` );
 
 				// 3. Compile /lib/react.js to react.es5.js
-				Babel.transformFile( `./lib/js/react.es5.js`, reactOptions, ( error, result ) => {
+				Babel.transformFile( `./lib/react/react.js`, reactOptions, ( error, result ) => {
 					if( error ) {
-						HELPER.log.error(`We encountered an error when transpiling the react file in ${ Chalk.yellow( `${ process.cwd() }/lib/js/react.es5.js` ) }`);
+						HELPER.log.error(`We encountered an error when transpiling the react file in ${ Chalk.yellow( `${ process.cwd() }/lib/react/react.es5.js` ) }`);
 						HELPER.log.error( error );
 					}
 					else {
-						Fs.writeFileSync( `./lib/js/react.es5.js`, result.code );
-						Fs.writeFileSync( `./lib/js/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
+						Fs.writeFileSync( `./lib/react/react.es5.js`, result.code );
+						Fs.writeFileSync( `./lib/react/react.es5.js.map`, JSON.stringify( result.map, null, 2 ) );
 					}
 				});
 			}
@@ -528,12 +546,17 @@ HELPER.compile = (() => {
 			let code = '';
 
 			dependencies.forEach( dependency => {
-				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
-					const fileLocation = Path.normalize(`${ to }/${ dependency }.js`);
+				const fileLocation = Path.normalize(`${ to }/${ dependency }.js`);
 
+				if( Fs.existsSync( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`) ) ) {
 					CopyFile( Path.normalize(`${ process.cwd() }/../${ dependency }${ from }`), `.${ fileLocation }` );
 
 					HELPER.log.success(`Written file ${ Chalk.yellow( `.${ fileLocation }` ) }`);
+				}
+				else if( dependency == 'animate' ) {
+					CopyFile( Path.normalize(`${ process.cwd() }/../${ dependency }/lib/js/module.js`), `.${ fileLocation }` );
+
+					HELPER.log.success(`WARNING: Writing custom JS file 'animate' ${ Chalk.yellow( `.${ fileLocation }` ) } `);
 				}
 			});
 
@@ -579,11 +602,11 @@ HELPER.compile = (() => {
 			getAllJs( '/lib/js/module.js', '/tests/site/script.js' );
 
 			// get all js for jquery.js
-			getAllJs( '/lib/js/jquery.js', '/tests/jquery/jquery.js' );
+			getAllJs( '/lib/jquery/jquery.js', '/tests/jquery/jquery.js' );
 			getAllJs( '/lib/js/module.js', '/tests/jquery/script.js' );
 
 			// get all react scripts
-			getAllReact( '/lib/js/react.js', '/tests/react/' );
+			getAllReact( `/lib/react/react.js`, '/tests/react/' );
 		},
 
 		img: () => {
@@ -948,8 +971,8 @@ HELPER.test = (() => {
 					const packagesPKG = require( Path.normalize(`${ __dirname }/../packages/${ module }/package.json`) );
 					const hasSass = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/sass/_module.scss`) );
 					const hasJS = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/module.js`) );
-					const hasReact = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/react.js`) );
-					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/js/jquery.js`) );
+					const hasReact = Fs.existsSync( Path.normalize( `${ __dirname }/../packages/${ module }/src/react/${ HELPER.SHORTNAME }.js` ) );
+					// const hasJQuery = Fs.existsSync( Path.normalize(`${ __dirname }/../packages/${ module }/src/jquery/jquery.js`) );
 
 					// testing lifecycle script
 					if( packagesPKG.scripts.postinstall !== 'pancake' ) {
@@ -970,7 +993,8 @@ HELPER.test = (() => {
 						error += `The module ${ module } is missing the "build:react" script.\n`;
 					}
 
-					if( hasReact && !packagesPKG.scripts['build'].includes('npm run build:react') ) {
+					// If we isolate a component like this again we need to refactor.
+					if( hasReact && module !== 'form' && !packagesPKG.scripts['build'].includes('npm run build:react' ) ) {
 						error += `The module ${ module } is missing the "build:react" task inside the build script.\n`;
 					}
 
@@ -1184,7 +1208,7 @@ HELPER.init = () => {
 
 
 	if( process.argv.indexOf( 'precompile' ) !== -1 ) {
-		CFonts.say( `Precompile ${ PKG.name.substring( 8 ) }`, {
+		CFonts.say( `Precompile ${ HELPER.SHORTNAME }`, {
 			font: 'chrome',
 			space: false,
 			colors: ['red', 'magenta', 'blue'],
@@ -1201,7 +1225,7 @@ HELPER.init = () => {
 
 
 	if( process.argv.indexOf( 'compile' ) !== -1 ) {
-		CFonts.say( `Compiling ${ PKG.name.substring( 8 ) }`, {
+		CFonts.say( `Compiling ${ HELPER.SHORTNAME }`, {
 			font: 'chrome',
 			space: false,
 			colors: ['red', 'magenta', 'blue'],
