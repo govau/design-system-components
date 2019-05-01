@@ -12,18 +12,6 @@
 @import '_print.scss';
 
 
-// Light palette
-$AU-color-table-head-border: #CCC;
-$AU-color-table-row-border: #CCC;
-$AU-color-table-row: #F1F1F1;
-$AU-color-table-row-alt: #E0E0E0;
-
-
-// Dark palette
-$AU-colordark-table-row: #135E70;
-$AU-colordark-table-row-alt: #104f5f;
-
-
 .au-table {
 		@include AU-fontgrid( sm, 'default' );
 
