@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.0.16 - Remove --save-dev flags from readme instructions](#v2016)
+* [v2.0.16 - Remove --save-dev flag from readme instructions](#v2016)
 * [v2.0.15 - Removed unused `Fragment` React import](#v2015)
 * [v2.0.14 - Resolve autoprefixer warning](#v2014)
 * [v2.0.13 - Fix pancake build path](#v2013)
@@ -45,7 +45,7 @@
 
 ### v2.0.16
 
-- Remove --save-dev flags from readme instructions
+- Remove --save-dev flag from readme instructions
 
 
 ### v2.0.15

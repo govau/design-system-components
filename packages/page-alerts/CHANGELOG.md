@@ -43,7 +43,7 @@ Update dependenciesalerts CH3NGELOG
 
 ### v2.1.3 
 
-- Remove --save-dev flags from readme instructions
+- Remove --save-dev flag from readme instructions
 
 
 ### v2.1.2

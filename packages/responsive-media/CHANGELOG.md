@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.0.14 - Remove --save-dev flags from readme instructions](#v2014)
+* [v2.0.14 - Remove --save-dev flag from readme instructions](#v2014)
 * [v2.0.13 - Add `title` attribute to iframe examples](#v2013)
 * [v2.0.12 - Removed uikit references](#v2012)
 * [v2.0.11 - Update dependencies](#v2011)
@@ -42,7 +42,7 @@
 
 ### v2.0.14
 
-- Remove --save-dev flags from readme instructions
+- Remove --save-dev flag from readme instructions
 
 
 ### v2.0.13
