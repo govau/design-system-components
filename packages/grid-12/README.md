@@ -24,7 +24,7 @@ yarn add @gov.au/grid-12
 ```
 
 ```shell
-npm install @gov.au/grid-12 --save-dev
+npm install @gov.au/grid-12
 ```
 
 

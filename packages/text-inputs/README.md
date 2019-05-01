@@ -25,7 +25,7 @@ yarn add @gov.au/text-inputs
 ```
 
 ```shell
-npm install @gov.au/text-inputs 
+npm install @gov.au/text-inputs
 ```
 
 

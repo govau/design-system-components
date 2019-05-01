@@ -24,7 +24,7 @@ yarn add @gov.au/page-alerts
 ```
 
 ```shell
-npm install @gov.au/page-alerts 
+npm install @gov.au/page-alerts
 ```
 
 

@@ -25,7 +25,7 @@ yarn add @gov.au/skip-link
 ```
 
 ```shell
-npm install @gov.au/skip-link 
+npm install @gov.au/skip-link
 ```
 
 

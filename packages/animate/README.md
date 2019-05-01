@@ -25,7 +25,7 @@ yarn add @gov.au/animate
 ```
 
 ```shell
-npm install @gov.au/animate --save-dev
+npm install @gov.au/animate
 ```
 
 

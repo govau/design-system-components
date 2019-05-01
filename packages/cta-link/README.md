@@ -21,11 +21,11 @@
 
 
 ```shell
-yarn add @gov.au/more-link
+yarn add @gov.au/cta-link
 ```
 
 ```shell
-npm install @gov.au/more-link --save-dev
+npm install @gov.au/cta-link
 ```
 
 

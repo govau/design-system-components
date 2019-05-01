@@ -25,7 +25,7 @@ yarn add @gov.au/keyword-list
 ```
 
 ```shell
-npm install @gov.au/keyword-list 
+npm install @gov.au/keyword-list
 ```
 
 

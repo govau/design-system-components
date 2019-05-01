@@ -25,7 +25,7 @@ yarn add @gov.au/link-list
 ```
 
 ```shell
-npm install @gov.au/link-list 
+npm install @gov.au/link-list
 ```
 
 

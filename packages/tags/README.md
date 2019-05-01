@@ -25,7 +25,7 @@ yarn add @gov.au/tags
 ```
 
 ```shell
-npm install @gov.au/tags 
+npm install @gov.au/tags
 ```
 
 

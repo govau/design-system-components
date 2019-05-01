@@ -24,7 +24,7 @@ yarn add @gov.au/[-replace-name-]
 ```
 
 ```shell
-npm install @gov.au/[-replace-name-] --save-dev
+npm install @gov.au/[-replace-name-]
 ```
 
 

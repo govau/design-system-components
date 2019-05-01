@@ -24,7 +24,7 @@ yarn add @gov.au/responsive-media
 ```
 
 ```shell
-npm install @gov.au/responsive-media 
+npm install @gov.au/responsive-media
 ```
 
 

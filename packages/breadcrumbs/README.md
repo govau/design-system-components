@@ -25,7 +25,7 @@ yarn add @gov.au/breadcrumbs
 ```
 
 ```shell
-npm install @gov.au/breadcrumbs 
+npm install @gov.au/breadcrumbs
 ```
 
 

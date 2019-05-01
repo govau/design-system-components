@@ -25,7 +25,7 @@ yarn add @gov.au/buttons
 ```
 
 ```shell
-npm install @gov.au/buttons 
+npm install @gov.au/buttons
 ```
 
 

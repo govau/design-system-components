@@ -25,7 +25,7 @@ yarn add @gov.au/progress-indicator
 ```
 
 ```shell
-npm install @gov.au/progress-indicator --save-dev
+npm install @gov.au/progress-indicator
 ```
 
 

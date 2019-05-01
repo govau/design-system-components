@@ -24,7 +24,7 @@ yarn add @gov.au/body
 ```
 
 ```shell
-npm install @gov.au/body 
+npm install @gov.au/body
 ```
 
 

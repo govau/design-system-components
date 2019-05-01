@@ -25,7 +25,7 @@ yarn add @gov.au/control-input
 ```
 
 ```shell
-npm install @gov.au/control-input 
+npm install @gov.au/control-input
 ```
 
 

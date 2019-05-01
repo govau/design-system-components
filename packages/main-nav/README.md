@@ -24,7 +24,7 @@ yarn add @gov.au/main-nav
 ```
 
 ```shell
-npm install @gov.au/main-nav 
+npm install @gov.au/main-nav
 ```
 
 

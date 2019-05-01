@@ -25,7 +25,7 @@ yarn add @gov.au/select
 ```
 
 ```shell
-npm install @gov.au/select 
+npm install @gov.au/select
 ```
 
 

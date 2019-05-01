@@ -25,7 +25,7 @@ yarn add @gov.au/footer
 ```
 
 ```shell
-npm install @gov.au/footer 
+npm install @gov.au/footer
 ```
 
 

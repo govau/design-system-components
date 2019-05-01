@@ -25,7 +25,7 @@ yarn add @gov.au/inpage-nav
 ```
 
 ```shell
-npm install @gov.au/inpage-nav 
+npm install @gov.au/inpage-nav
 ```
 
 

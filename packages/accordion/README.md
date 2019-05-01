@@ -25,7 +25,7 @@ yarn add @gov.au/accordion
 ```
 
 ```shell
-npm install @gov.au/accordion 
+npm install @gov.au/accordion
 ```
 
 

@@ -25,7 +25,7 @@ yarn add @gov.au/direction-links
 ```
 
 ```shell
-npm install @gov.au/direction-links 
+npm install @gov.au/direction-links
 ```
 
 

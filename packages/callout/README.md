@@ -25,7 +25,7 @@ yarn add @gov.au/callout
 ```
 
 ```shell
-npm install @gov.au/callout 
+npm install @gov.au/callout
 ```
 
 
