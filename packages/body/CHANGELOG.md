@@ -15,7 +15,7 @@
 
 ## Versions
 
-* [v2.1.2 - Remove --save-dev flag from readme instructions](#v212)
+* [v2.2.0 - Changed `background-color` CSS property when printing from `#fff` to `transparent` and removed --save-dev flag](#v220)
 * [v2.1.1 - Resolve autoprefixer warning](#v211)
 * [v2.1.0 - Remove external link icon, fix pancake build path](#v210)
 * [v2.0.14 - Updated deprecated `text-decoration-skip` property to `text-decoration-skip-ink`](#v2014)
@@ -44,8 +44,9 @@
 
 ## Release History
 
-### v2.1.2
+### v2.2.0
 
+- Switched `background-color` CSS property when printing from `#fff` to `transparent`
 - Remove --save-dev flag from readme instructions
 
 
