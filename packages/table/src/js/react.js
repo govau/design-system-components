@@ -14,11 +14,11 @@ import PropTypes from 'prop-types';
 /**
  * The table component
  * 
- * @param {string} caption
- * @param {object[]} headers
- * @param {object[]} rows
- * @param {bool} striped
- * @param {object} attributeOptions
+ * @param {string} caption - The description or summary of the table.
+ * @param {object[]} headers - The column headings
+ * @param {object[]} rows - The column data
+ * @param {bool} striped - Colourise every other table row
+ * @param {object} attributeOptions - Default HTML attributes
  */
 const AUTable = ( { caption, headers, rows, striped, attributeOptions } ) => {
 	return <table tabIndex={0} className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
