@@ -68,19 +68,19 @@
 			display: table-row;
 		}
 
-		td {
+		.au-table__cell {
 			@include AU-space( padding, 0.75unit );
+			text-align: left;
 
 			border-bottom: 1px solid $AU-color-table-row-border;
-			text-align: left;
 
 			&:focus {
 					outline: 3px solid #C390F9;
 			}
 		}
 
-	&--striped tbody {
-		tr:nth-child(even) {
+	&--striped .au-table__body {
+		.au-table__row:nth-child(even) {
 			background-color: $AU-color-table-row;
 		}
 	}

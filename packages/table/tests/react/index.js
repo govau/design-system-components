@@ -10,14 +10,16 @@ ReactDOM.render(
 		<AUtable/>
 
 		<h2>Default</h2>
-		<AUtable 
+		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={[
 				{
-					text: "Location"
+					text: "Location",
+					width: "xs"
 				},
 				{
-					text: "Population"
+					text: "Population",
+					width: "sm"
 				}
 			]}
 			rows={[

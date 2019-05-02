@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 
 /**
  * The table component
- * 
+ *
  * @param {string} caption - The description or summary of the table.
  * @param {object[]} headers - The column headings
  * @param {object[]} rows - The column data
@@ -22,26 +22,33 @@ import PropTypes from 'prop-types';
  */
 const AUTable = ( { caption, headers, rows, striped, attributeOptions } ) => {
 	return <table tabIndex={0} className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
-		<caption>{caption}</caption>
-		<thead>
+		<caption className="au-table__caption">{caption}</caption>
+		<thead className="au-table__head">
 			<tr>
 				{
-					headers.map( ( item, index ) => <th key={ index } scope="col">{ item.text }</th> )
+					headers.map( ( header, index ) => (
+					<th
+					key={ index }
+					scope="col"
+					className={`au-table__header au-table__header--width-${header.width}`}>
+					{ header.text }
+					</th>)
+					 )
 				}
 			</tr>
 		</thead>
-		<tbody>
+		<tbody className="au-table__body">
 			{
-				rows.map( ( item, index ) => {
+				rows.map( ( row, index ) => {
 					let result = [];
 
-					item.forEach( ( item, index ) => {
+					row.forEach( ( cell, index ) => {
 						result.push( <td
-							key={ index }>{ item.text }
-						</td> ); 
+							key={ index } className="au-table__cell">{ cell.text }
+						</td> );
 					});
 
-					return <tr key={ index }>{ result }</tr>;
+					return <tr className="au-table__row" key={ index }>{ result }</tr>;
 				})
 			}
 		</tbody>
