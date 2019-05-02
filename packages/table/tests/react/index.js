@@ -41,26 +41,49 @@ ReactDOM.render(
 				],
 				[
 					{
-						text: "Queensland"
+						text: "Tasmania"
 					},
 					{
-						text: "4,808,8000"
+						text: "517,400"
+					}
+				],
+			]}
+		/>
+		<br/>
+		<br/>
+		<hr/>
+
+		<h2>Default table with right aligned header and cells</h2>
+		<AUtable
+			caption="Population of Australian states and territories, December 2015"
+			headers={[
+				{
+					text: "Location",
+					width: "xs"
+				},
+				{
+					text: "Population",
+					width: "sm",
+					alignment: "right"
+				}
+			]}
+			rows={[
+				[
+					{
+						text: "New South Wales"
+					},
+					{
+						text: "7,670,700",
+						alignment: "right"
 					}
 				],
 				[
 					{
-						text: "Western Australia"
+						text: "Victoria"
 					},
 					{
-						text: "2,603,900"
-					}
-				],
-				[
-					{
-						text: "South Australia"
-					},
-					{
-						text: "1,702,800"
+						text: "5,996,400",
+						alignment: "right"
 					}
 				],
 				[
@@ -68,25 +91,10 @@ ReactDOM.render(
 						text: "Tasmania"
 					},
 					{
-						text: "517,400"
+						text: "517,400",
+						alignment: "right"
 					}
 				],
-				[
-					{
-						text: "Northern Territory"
-					},
-					{
-						text: "244,000"
-					}
-				],
-				[
-					{
-						text: "Australian Capital Territory"
-					},
-					{
-						text: "393,000"
-					}
-				]
 			]}
 		/>
 

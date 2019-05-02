@@ -44,7 +44,7 @@ const AUTable = ( { caption, headers, rows, striped, attributeOptions } ) => {
 
 					row.forEach( ( cell, index ) => {
 						result.push( <td
-							key={ index } className="au-table__cell">{ cell.text }
+							key={ index } className={`au-table__cell ${cell.alignment ? 'au-table__cell--align-' + cell.alignment : ' ' }`}>{ cell.text }
 						</td> );
 					});
 

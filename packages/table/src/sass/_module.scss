@@ -49,13 +49,12 @@
 					width: 50%;
 				}
 
-				//SECOND RELEASE
-				// &.au-table__header--align-right {
-				// 	text-align: right;
-				// }
+				&.au-table__header--align-right {
+					text-align: right;
+				}
 
 				&:focus {
-					outline: 3px solid #C390F9;
+					outline: 3px solid $AU-color-foreground-focus;
 				}
 			}
 		}
@@ -74,13 +73,18 @@
 
 			border-bottom: 1px solid $AU-color-table-row-border;
 
+
+			&.au-table__cell--align-right {
+				text-align: right;
+			}
+
 			&:focus {
-					outline: 3px solid #C390F9;
+					outline: 3px solid $AU-color-foreground-focus;
 			}
 		}
 
-	&--striped .au-table__body {
-		.au-table__row:nth-child(even) {
+	&.au-table--striped .au-table__body {
+		.au-table__row:nth-child( even ) {
 			background-color: $AU-color-table-row;
 		}
 	}
