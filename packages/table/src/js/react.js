@@ -17,18 +17,16 @@ import PropTypes from 'prop-types';
  * @param {string} caption
  * @param {object[]} headers
  * @param {object[]} rows
- * @param {bool} dark
- * @param {bool} alt
  * @param {bool} striped
  * @param {object} attributeOptions
  */
-const AUTable = ( { caption, headers, rows, dark, alt, striped, attributeOptions } ) => {
-	return <table tabIndex={0} className={`au-table ${ dark ? 'au-table--dark' : ""}${ alt ? 'au-table--alt' : ''}${ striped ? 'au-table--striped' : ''}`} {...attributeOptions }>
+const AUTable = ( { caption, headers, rows, striped, attributeOptions } ) => {
+	return <table tabIndex={0} className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
 		<caption>{caption}</caption>
 		<thead>
 			<tr>
 				{
-					headers.map( (item, index) => <th key={index} scope="col">{item.text}</th>)
+					headers.map( ( item, index ) => <th key={ index } scope="col">{ item.text }</th> )
 				}
 			</tr>
 		</thead>
@@ -43,7 +41,7 @@ const AUTable = ( { caption, headers, rows, dark, alt, striped, attributeOptions
 						</td> ); 
 					});
 
-					return <tr key={index}>{result}</tr>;
+					return <tr key={ index }>{ result }</tr>;
 				})
 			}
 		</tbody>
@@ -65,9 +63,7 @@ AUTable.propTypes = {
 			})
 		)
 	).isRequired,
-	alt: PropTypes.bool,
 	striped: PropTypes.bool,
-	dark: PropTypes.bool
 };
 
 
