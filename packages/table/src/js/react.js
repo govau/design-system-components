@@ -21,7 +21,7 @@ import PropTypes from 'prop-types';
  * @param {object} attributeOptions - Default HTML attributes
  */
 const AUTable = ( { caption, headers, rows, striped, attributeOptions } ) => {
-	return <table tabIndex={0} className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
+	return <table className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
 		<caption className="au-table__caption">{caption}</caption>
 		<thead className="au-table__head">
 			<tr>
