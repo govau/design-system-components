@@ -19,28 +19,57 @@
 		border-collapse: collapse;
 		border-spacing: 0;
 
-		caption {
+		.au-table__caption {
 			display: table-caption;
 			font-weight: bold;
 			text-align: left;
 		}
 
-		thead {
+		.au-table__head {
 			display: table-header-group;
-			border-bottom: solid 2px $AU-color-table-head-border;
+			border-bottom: solid 3px $AU-color-table-head-border;
+
+			.au-table__header {
+				text-align: left;
+				@include AU-space( padding, 0.75unit );
+
+				& .au-table__header--width-xs {
+					width: 10%;
+				}
+
+				&.au-table__header--width-sm {
+					width: 20%;
+				}
+
+				&.au-table__header--width-md {
+					width: 25%;
+				}
+
+				&.au-table__header--width-lg {
+					width: 50%;
+				}
+
+				//SECOND RELEASE
+				// &.au-table__header--align-right {
+				// 	text-align: right;
+				// }
+
+				&:focus {
+					outline: 3px solid #C390F9;
+				}
+			}
 		}
 
-		tbody {
+		.au-table__body {
 			display: table-row-group;
 		}
 
-		tr {
+		.au-table__row {
 			display: table-row;
 		}
 
-		th,
 		td {
-			@include AU-space( padding, 0.5unit );
+			@include AU-space( padding, 0.75unit );
 
 			border-bottom: 1px solid $AU-color-table-row-border;
 			text-align: left;
@@ -72,8 +101,8 @@
         }
     }
 
-    &--striped {
-        tr:nth-child(even) {
+    &--striped  tbody {
+        tr:nth-child( odd ) {
             background-color: $AU-color-table-row;
         }
     }
