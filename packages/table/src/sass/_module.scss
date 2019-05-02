@@ -14,16 +14,15 @@
 
 .au-table {
 		@include AU-fontgrid( sm, 'default' );
-
-		overflow: auto;
 		font-family: $AU-font;
+
 		border-collapse: collapse;
 		border-spacing: 0;
-
 
 		caption {
 			display: table-caption;
 			font-weight: bold;
+			text-align: left;
 		}
 
 		thead {
