@@ -6,5 +6,13 @@
 
 @import '../../../grid-12/src/sass/_module.scss';
 
+@import '../../../body/src/sass/_module.scss';
+
+
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
+
+
+.table-wrapper {
+	overflow: auto;
+}

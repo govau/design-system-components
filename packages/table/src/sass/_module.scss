@@ -19,14 +19,7 @@
 		font-family: $AU-font;
 		border-collapse: collapse;
 		border-spacing: 0;
-		max-width: 100%;
 
-		&--full-width {
-			display: block;
-			@include AU-media( 'xs' ) {
-				display: table;
-			}
-		}
 
 		caption {
 			display: table-caption;
