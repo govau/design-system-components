@@ -79,31 +79,9 @@
 			}
 		}
 
-    &--alt {
-        background-color: $AU-color-table-row;
-
-        tr:nth-child(even) {
-            background-color: $AU-color-table-row-alt;
-        }
-    }
-
-    &--dark {
-        background: $AU-colordark-table-row;
-        color: #fff;
-
-        caption {
-            background-color: #fff;
-            color: #000;
-        }
-
-        tr:nth-child(even) {
-            background-color: $AU-colordark-table-row-alt;
-        }
-    }
-
-    &--striped  tbody {
-        tr:nth-child( odd ) {
-            background-color: $AU-color-table-row;
-        }
-    }
+	&--striped tbody {
+		tr:nth-child(even) {
+			background-color: $AU-color-table-row;
+		}
+	}
 }
