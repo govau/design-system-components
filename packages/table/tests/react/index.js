@@ -6,20 +6,17 @@ import AUtable from './table.js';
 
 ReactDOM.render(
 	<div>
-		<h2>Default <code>no props</code></h2>
-		<AUtable/>
-
 		<h2>Default</h2>
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={[
 				{
 					text: "Location",
-					width: "xs"
+					width: "75",
 				},
 				{
 					text: "Population",
-					width: "sm"
+					width: "25"
 				}
 			]}
 			rows={[

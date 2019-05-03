@@ -61,13 +61,15 @@ AUTable.propTypes = {
 	headers: PropTypes.arrayOf(
 		PropTypes.shape({
 			text: PropTypes.string.isRequired,
-			width: PropTypes.string
+			width: PropTypes.oneOf(['25','33', '50', '75']),
+			alignment: PropTypes.string
 		})
 	).isRequired,
 	rows: PropTypes.arrayOf(
 		PropTypes.arrayOf(
 			PropTypes.shape({
 				text: PropTypes.string.isRequired,
+				alignment: PropTypes.string
 			})
 		)
 	).isRequired,
