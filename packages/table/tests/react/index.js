@@ -59,11 +59,11 @@ ReactDOM.render(
 			headers={[
 				{
 					text: "Location",
-					width: "xs"
+					width: "75"
 				},
 				{
 					text: "Population",
-					width: "sm",
+					width: "25",
 					alignment: "right"
 				}
 			]}

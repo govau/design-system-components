@@ -33,20 +33,20 @@
 				text-align: left;
 				@include AU-space( padding, 0.75unit );
 
-				& .au-table__header--width-xs {
-					width: 10%;
-				}
-
-				&.au-table__header--width-sm {
-					width: 20%;
-				}
-
-				&.au-table__header--width-md {
+				&.au-table__header--width-25 {
 					width: 25%;
 				}
 
-				&.au-table__header--width-lg {
+				&.au-table__header--width-33 {
+					width: 33%;
+				}
+
+				&.au-table__header--width-50 {
 					width: 50%;
+				}
+
+				&.au-table__header--width-75 {
+					width: 75%;
 				}
 
 				&.au-table__header--align-right {
@@ -84,8 +84,12 @@
 		}
 
 	&.au-table--striped .au-table__body {
-		.au-table__row:nth-child( even ) {
+		.au-table__row:nth-last-child( odd ) {
 			background-color: $AU-color-table-row;
 		}
 	}
+}
+
+.table-wrapper {
+	overflow-x: auto;
 }
