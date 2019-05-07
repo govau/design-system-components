@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AUbutton from '../../../buttons/src/js/react.js';
+import AUtags from '../../../tags/src/js/react.js';
+
 
 import AUtable from './table.js';
 
@@ -31,16 +33,28 @@ const complexHeaders = [
 	{title: "Change over previous decade %"},
 ];
 
-const dataWithLinks = [
+const dataRemoveButton = [
 	{location: "New South Wales", population: "7,670,700", remove: "remove"},
 	{location: "Victoria",        population: "5,996,400", remove: "remove"},
 	{location: "Tasmania",        population: "514,400",   remove: "remove"}
 ];
 
-const headersWithLinks = [
-	{title: "Location"},
+const headersRemoveButton = [
+	{title: "Location", },
 	{title: "Population"},
-	{title: "", render: (text) => (<AUbutton className="au-btn" href="#">{text}</AUbutton>)}
+	{title: "", render: (text) => (<AUbutton>{text}</AUbutton>)}
+];
+
+const dataWithTags = [
+	{location: "New South Wales", population: "7,670,700", tags: [{link: '#', text: "Sydney"}, {link: '#', text: "Opera House"}]},
+	{location: "Victoria",        population: "5,996,400", tags: [{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}]},
+	{location: "Tasmania",        population: "514,400",   tags: [{link: '#', text: "Hobart"}, {link: '#', text: "Cradle Mountain"}]}
+];
+
+const headersWithTags = [
+	{title: "Location", },
+	{title: "Population"},
+	{title: "Tags", render: (tags) => (<AUtags tags={tags}/>)}
 ];
 
 
@@ -77,21 +91,26 @@ ReactDOM.render(
 		<br/>
 		<br/>
 		<hr/>
-		<h2></h2>
+		<h2>Table with custom cell rendering</h2>
 
 		<AUtable
-			headers={[{title:"header1", render: (text) =>  <a href="javascript:;">{text}</a>, width: "50"},{ title: "header2", render: (data) => (data.map((val,i) => (<span key={i}>{val}</span>)))}]}
-			headerContentTypes={["text", "numeric"]}
-			data={[
-							{header1: "hello", header2: ["1"," 2"]},
-							{header1: "one", header2: ["8, ", "word"]}
-						]
-						}
-			/>
+		headers={headersRemoveButton}
+		headerContentTypes={["text", "numeric", "numeric"]}
+		data={dataRemoveButton}
+		/>
+
 
 		<br/>
 		<br/>
 		<hr/>
+		<h2>Table with complex custom cell rendering</h2>
+
+		<AUtable
+		headers={headersWithTags}
+		headerContentTypes={["text", "numeric", "text"]}
+		data={dataWithTags}
+		/>
+
 	</div>,
 
 	document.getElementById('root'),
