@@ -20,61 +20,65 @@ import PropTypes from 'prop-types';
  * @param {bool} striped - Colourise every other table row
  * @param {object} attributeOptions - Default HTML attributes
  */
-const AUTable = ( { caption, headers, rows, striped, attributeOptions } ) => {
+const AUTable = ( { caption, headers, headerContentTypes, data, striped, attributeOptions, render } ) => {
 	return <table className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
 		<caption className="au-table__caption">{caption}</caption>
 		<thead className="au-table__head">
-			<tr>
-				{
-					headers.map( ( header, index ) => (
-					<th
-					key={ index }
-					scope="col"
-					className={`au-table__header au-table__header--width-${header.width}`}>
-					{ header.text }
-					</th>)
-					 )
-				}
-			</tr>
+		<AUTableRow>
+				{headers.map( ( header, index ) => (
+					<AUTableHeader
+						text={ header.title }
+						key={index}
+						type={headerContentTypes[index]}
+						width={header.width}
+						/>
+				))}
+			</AUTableRow>
 		</thead>
 		<tbody className="au-table__body">
-			{
-				rows.map( ( row, index ) => {
-					let result = [];
-
-					row.forEach( ( cell, index ) => {
-						result.push( <td
-							key={ index } className={`au-table__cell ${cell.alignment ? 'au-table__cell--align-' + cell.alignment : ' ' }`}>{ cell.text }
-						</td> );
-					});
-
-					return <tr className="au-table__row" key={ index }>{ result }</tr>;
-				})
-			}
+				{ data.map( (row, index ) => (
+					<AUTableRow key={index}>
+						{
+							Object.values( row ).map( ( data, index ) => (
+									<AUTableCell
+										key={index}
+										data={data}
+										type={headerContentTypes[index]}
+										render={headers[index].render && headers[index].render( data )}
+										/>
+								)
+							)
+						}
+						</AUTableRow>
+							))}
 		</tbody>
 	</table>
 };
 
 
-AUTable.propTypes = {
-	caption: PropTypes.string.isRequired,
-	headers: PropTypes.arrayOf(
-		PropTypes.shape({
-			text: PropTypes.string.isRequired,
-			width: PropTypes.oneOf(['25','33', '50', '75']),
-			alignment: PropTypes.string
-		})
-	).isRequired,
-	rows: PropTypes.arrayOf(
-		PropTypes.arrayOf(
-			PropTypes.shape({
-				text: PropTypes.string.isRequired,
-				alignment: PropTypes.string
-			})
-		)
-	).isRequired,
-	striped: PropTypes.bool,
-};
+const AUTableHeader = ( { text, type, width, ...attributeOptions } ) => {
+return 	<th className={`au-table__header
+						${type === "numeric" ? "au-table__header--align-right": ""}
+						${ width ? "au-table__header--width-" + width : ""}
+						`
+						}
+					{...attributeOptions}> {text} </th>
+}
+
+
+const AUTableCell = ( { data, type, render, ...attributeOptions } ) => {
+	return 	<td className={`au-table__cell
+							${ type === "numeric" ? "au-table__cell--align-right": ""}
+							`
+							}
+						 {...attributeOptions}> { render ? render : data} </td>
+	}
+
+	const AUTableRow = ( { text, ...attributeOptions } ) => {
+		return <tr className="au-table__row" { ...attributeOptions }>
+
+		</tr>
+	};
 
 
 export default AUTable;

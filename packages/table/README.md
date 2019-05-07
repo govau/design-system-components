@@ -24,7 +24,7 @@ yarn add @gov.au/table
 ```
 
 ```shell
-npm install @gov.au/table --save-dev
+npm install @gov.au/table
 ```
 
 
