@@ -57,12 +57,24 @@ const headersWithTags = [
 	{title: "Tags", render: (tags) => (<AUtags tags={tags}/>)}
 ];
 
+const dataCustomClasses = [
+	{location: "New South Wales", population: "7,670,700",},
+	{location: "Victoria",        population: "5,996,400",},
+	{location: "Tasmania",        population: "514,400",}
+];
+
+const headersCustomClasses = [
+	{title: "Location", },
+	{title: "Population", render: ( data ) => (<span className="bold-cell">{ data }</span>)},
+];
+
 
 ReactDOM.render(
 	<div>
 		<h2>Simple Table</h2>
 
 		<AUtable
+		caption="Population of Australian states and territories, December 2015"
 		headers={simpleHeaders}
 		headerContentTypes={["text", "numeric"]}
 		data={simpleData}
@@ -74,14 +86,20 @@ ReactDOM.render(
 		<h2>Simple table with defined widths</h2>
 
 		<AUtable
+		caption="Population of Australian states and territories, December 2015"
 		headers={simpleHeaders}
 		headerContentTypes={["text", "numeric"]}
 		data={simpleData}
 		/>
 
+		<br/>
+		<br/>
+		<hr/>
+
 
 	<h2>Complex table with stripes</h2>
 		<AUtable
+		caption="Population of Australian states and territories, December 2015"
 		striped={true}
 		headers={complexHeaders}
 		headerContentTypes={["text", "numeric", "numeric", "numeric"]}
@@ -94,6 +112,7 @@ ReactDOM.render(
 		<h2>Table with custom cell rendering</h2>
 
 		<AUtable
+		caption="Population of Australian states and territories, December 2015"
 		headers={headersRemoveButton}
 		headerContentTypes={["text", "numeric", "numeric"]}
 		data={dataRemoveButton}
@@ -109,6 +128,19 @@ ReactDOM.render(
 		headers={headersWithTags}
 		headerContentTypes={["text", "numeric", "text"]}
 		data={dataWithTags}
+		/>
+
+
+		<br/>
+		<br/>
+		<hr/>
+		<h2>Table with custom classes on data cells</h2>
+
+
+		<AUtable
+		headers={headersCustomClasses}
+		headerContentTypes={["text", "numeric"]}
+		data={dataCustomClasses}
 		/>
 
 	</div>,

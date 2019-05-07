@@ -105,14 +105,14 @@
 	},
 	"contributors": [
 		{
-			"name": "Adam Zerella",
-			"email": "hello@adamzerella.com",
-			"url": "https://adamzerella.com"
-		},
-		{
 			"name": "Sukhraj Ghuman",
 			"email": "sukhrajghuman@live.com",
 			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Adam Zerella",
+			"email": "hello@adamzerella.com",
+			"url": "https://adamzerella.com"
 		}
 	],
 	"license": "MIT"
