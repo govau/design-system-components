@@ -15,7 +15,7 @@
 .au-table {
 		@include AU-fontgrid( sm, 'default' );
 		font-family: $AU-font;
-
+		width: 100%;
 		border-collapse: collapse;
 		border-spacing: 0;
 
@@ -23,6 +23,8 @@
 			display: table-caption;
 			font-weight: bold;
 			text-align: left;
+			@include AU-space( margin-bottom, .25unit );
+			@include AU-fontgrid( 'md', 'default' )
 		}
 
 		.au-table__head {

@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AUbutton from '../../../buttons/src/js/react.js';
 import AUtags from '../../../tags/src/js/react.js';
 
 
@@ -13,6 +12,8 @@ const simpleData = [
 ];
 
 const simpleHeaders = [{title: "Location"}, {title: "Population"}];
+const simpleHeadersWidths = [{title: "Location", width: "50" }, {title: "Population", width: "50"}];
+
 
 const complexData = [
 	{location: "New South Wales",              population: "7,670,700", changeYear: "3.1%", changeDecade: "12.9%" },
@@ -42,36 +43,46 @@ const dataRemoveButton = [
 const headersRemoveButton = [
 	{title: "Location", },
 	{title: "Population"},
-	{title: "", render: (text) => (<AUbutton>{text}</AUbutton>)}
+	{title: "", render: (text) => (<a href="javascript:;">{text}</a>)}
 ];
 
 const dataWithTags = [
-	{location: "New South Wales", population: "7,670,700", tags: [{link: '#', text: "Sydney"}, {link: '#', text: "Opera House"}]},
-	{location: "Victoria",        population: "5,996,400", tags: [{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}]},
-	{location: "Tasmania",        population: "514,400",   tags: [{link: '#', text: "Hobart"}, {link: '#', text: "Cradle Mountain"}]}
+	{
+		location: "New South Wales",
+		population: "7,670,700",
+		tags: [{link: '#', text: "Sydney"}, {link: '#', text: "Opera House"}]
+	},
+	{
+		location: "Victoria",
+		population: "5,996,400",
+		tags: [{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}]},
+	{
+		location: "Tasmania",
+		population: "514,400",
+		tags: [{link: '#', text: "Hobart"}, {link: '#', text: "Cradle Mountain"}]}
 ];
 
 const headersWithTags = [
 	{title: "Location", },
 	{title: "Population"},
-	{title: "Tags", render: (tags) => (<AUtags tags={tags}/>)}
+	{title: "Tags", render: ( tags ) => (<AUtags tags={tags}/>)}
 ];
 
 const dataCustomClasses = [
-	{location: "New South Wales", population: "7,670,700",},
-	{location: "Victoria",        population: "5,996,400",},
-	{location: "Tasmania",        population: "514,400",}
+	{location: "New South Wales", population: "7,670,700"},
+	{location: "Victoria",        population: "5,996,400"},
+	{location: "Tasmania",        population: "514,400"}
 ];
 
 const headersCustomClasses = [
-	{title: "Location", },
-	{title: "Population", render: ( data ) => (<span className="bold-cell">{ data }</span>)},
+	{title: "Location"},
+	{title: "Population", render: ( data ) => (<span className={`${data.length > "8" ? 'bold-cell': ''}`}>{ data }</span>)},
 ];
 
 
 ReactDOM.render(
 	<div>
-		<h2>Simple Table</h2>
+		<h3>Simple Table</h3>
 
 		<AUtable
 		caption="Population of Australian states and territories, December 2015"
@@ -81,23 +92,25 @@ ReactDOM.render(
 		/>
 		<br/>
 		<br/>
-		<hr/>
+		<br />
+		<br />
 
-		<h2>Simple table with defined widths</h2>
+		<h3>Simple table with defined widths</h3>
 
 		<AUtable
 		caption="Population of Australian states and territories, December 2015"
-		headers={simpleHeaders}
+		headers={simpleHeadersWidths}
 		headerContentTypes={["text", "numeric"]}
 		data={simpleData}
 		/>
 
 		<br/>
 		<br/>
-		<hr/>
+		<br />
+		<br />
 
 
-	<h2>Complex table with stripes</h2>
+	<h3>Complex table with stripes</h3>
 		<AUtable
 		caption="Population of Australian states and territories, December 2015"
 		striped={true}
@@ -108,8 +121,9 @@ ReactDOM.render(
 
 		<br/>
 		<br/>
-		<hr/>
-		<h2>Table with custom cell rendering</h2>
+		<br />
+		<br />
+		<h3>Table with custom cell rendering</h3>
 
 		<AUtable
 		caption="Population of Australian states and territories, December 2015"
@@ -121,10 +135,12 @@ ReactDOM.render(
 
 		<br/>
 		<br/>
-		<hr/>
-		<h2>Table with complex custom cell rendering</h2>
+		<br />
+		<br />
+		<h3>Table with complex custom cell rendering</h3>
 
 		<AUtable
+		caption="Population of Australian states and territories, December 2015"
 		headers={headersWithTags}
 		headerContentTypes={["text", "numeric", "text"]}
 		data={dataWithTags}
@@ -133,11 +149,13 @@ ReactDOM.render(
 
 		<br/>
 		<br/>
-		<hr/>
-		<h2>Table with custom classes on data cells</h2>
+		<br />
+		<br />
+		<h3>Table with custom classes on data cells (ONLY render populations that are in the millions)</h3>
 
 
 		<AUtable
+		caption="Population of Australian states and territories, December 2015"
 		headers={headersCustomClasses}
 		headerContentTypes={["text", "numeric"]}
 		data={dataCustomClasses}
