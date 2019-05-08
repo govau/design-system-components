@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import AUtags from '../../../tags/src/js/react.js';
 
 
-import AUtable, {AUTableWrapper} from './table.js';
+import AUtable, {AUtableWrapper} from './table.js';
 
 const simpleData = [
 	{location: "New South Wales", population: "7,670,700"},
@@ -63,9 +63,9 @@ const dataWithTags = [
 ];
 
 const headersWithTags = [
-	{title: "Location", },
-	{title: "Population"},
-	{title: "Tags", render: ( tags ) => (<AUtags tags={tags}/>)}
+	{title: "Location", width: '50'},
+	{title: "Population", width: '25'},
+	{title: "Tags", width: '25' , render: ( tags ) => (<AUtags tags={tags}/>)}
 ];
 
 const dataCustomClasses = [
@@ -168,7 +168,7 @@ ReactDOM.render(
 		<br />
 		<h3>Responsive Table in a wrapper</h3>
 
-		<AUTableWrapper>
+		<AUtableWrapper>
 			<AUtable
 				caption="Population of Australian states and territories, December 2015"
 				striped={true}
@@ -176,8 +176,7 @@ ReactDOM.render(
 				headerContentTypes={["text", "numeric", "numeric", "numeric"]}
 				data={complexData}
 			/>
-		</AUTableWrapper>
-
+		</AUtableWrapper>
 	</div>,
 
 	document.getElementById('root'),

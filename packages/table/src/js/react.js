@@ -21,27 +21,28 @@ import PropTypes from 'prop-types';
  * @param {bool}                 striped - Colourise every other table row
  * @param {object}               attributeOptions - Default HTML attributes
  */
-const AUTable = ( { caption, headers, headerContentTypes, data, striped, attributeOptions} ) => {
-	return <table className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
-		<caption className="au-table__caption">{caption}</caption>
-		<thead className="au-table__head">
-		<AUTableRow>
+const AUtable = ( { caption, headers, headerContentTypes, data, striped, ...attributeOptions} ) => {
+	return (
+	<table className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
+		<AUtableCaption tableCaption={caption} />
+		<AUtableHead>
+		<AUtableRow>
 				{headers.map( ( header, index ) => (
-					<AUTableHeader
+					<AUtableHeader
 						title={ header.title }
 						key={index}
 						type={headerContentTypes[index]}
 						width={header.width}
 						/>
 				))}
-			</AUTableRow>
-		</thead>
-		<tbody className="au-table__body">
+			</AUtableRow>
+		</AUtableHead>
+		<AUtableBody>
 				{ data.map( (row, index ) => (
-					<AUTableRow key={index}>
+					<AUtableRow key={index}>
 						{
 							Object.values( row ).map( ( data, index ) => (
-									<AUTableCell
+									<AUtableCell
 										key={index}
 										data={data}
 										type={headerContentTypes[index]}
@@ -50,13 +51,14 @@ const AUTable = ( { caption, headers, headerContentTypes, data, striped, attribu
 								)
 							)
 						}
-						</AUTableRow>
+						</AUtableRow>
 							))}
-		</tbody>
+		</AUtableBody>
 	</table>
+	)
 };
 
-AUTable.propTypes = {
+AUtable.propTypes = {
 	caption: PropTypes.string,
 	headers: PropTypes.arrayOf(Object).isRequired,
 	headerContentTypes: PropTypes.array.isRequired,
@@ -64,7 +66,7 @@ AUTable.propTypes = {
 	striped: PropTypes.bool
 };
 
-AUTable.defaultProps = {
+AUtable.defaultProps = {
 	striped: false
 };
 
@@ -77,7 +79,7 @@ AUTable.defaultProps = {
  * @param {string} width - Width of the header and column
  * @param {object} attributeOptions - Default HTML attributes
  */
-export const AUTableHeader = ( { title, type, width, ...attributeOptions } ) => {
+export const AUtableHeader = ( { title, type, width, ...attributeOptions } ) => {
 return 	<th className={`au-table__header
 						${type === "numeric" ? "au-table__header--align-right": ""}
 						${ width ? "au-table__header--width-" + width : ""}
@@ -86,7 +88,7 @@ return 	<th className={`au-table__header
 					scope="col" {...attributeOptions}> {title} </th>
 };
 
-AUTableHeader.propTypes = {
+AUtableHeader.propTypes = {
 	title: PropTypes.string.isRequired,
 	type: PropTypes.oneOf(['text', 'numeric']).isRequired,
 	width: PropTypes.oneOf(['25', '33', '50', '75']),
@@ -98,7 +100,7 @@ AUTableHeader.propTypes = {
  * @param {string}   type - Type of the data, can be either text or numeric for left or right alignment respectively.
  * @param {object} render - The function for customised rendering on all cells in this column
  */
-export const AUTableCell = ( { data, type, render, ...attributeOptions } ) => {
+export const AUtableCell = ( { data, type, render, ...attributeOptions } ) => {
 	return 	<td className={`au-table__cell
 							${ type === "numeric" ? "au-table__cell--align-right": ""}
 							`
@@ -106,7 +108,7 @@ export const AUTableCell = ( { data, type, render, ...attributeOptions } ) => {
 						 {...attributeOptions}> { render ? render : data} </td>
 };
 
-AUTableCell.propTypes = {
+AUtableCell.propTypes = {
 	data: PropTypes.any.isRequired,
 	type: PropTypes.oneOf(['text', 'numeric']).isRequired,
 	render: PropTypes.object
@@ -116,7 +118,7 @@ AUTableCell.propTypes = {
  * The table row component
  * @param {object} attributeOptions - Default HTML attributes
  */
-export const AUTableRow = ( {...attributeOptions } ) => {
+export const AUtableRow = ( {...attributeOptions } ) => {
 	return <tr className="au-table__row" { ...attributeOptions }>
 
 	</tr>
@@ -126,16 +128,41 @@ export const AUTableRow = ( {...attributeOptions } ) => {
  * Table wrapper
  * @param {node} children
  */
-export const AUTableWrapper = ({children}) => {
+export const AUtableWrapper = ({ children }) => {
 	return (
 		<div className="au-table__wrapper">
 			{children}
 		</div>
 	)
-}
+};
 
-AUTableWrapper.propTypes = {
+AUtableWrapper.propTypes = {
 	children: PropTypes.node.isRequired
 };
 
-export default AUTable;
+
+export const AUtableBody = ({ children, ...attributeOptions }) => {
+	return (
+		<tbody className="au-table__body" {...attributeOptions}>
+			{ children }
+		</tbody>
+	)
+};
+
+
+export const AUtableCaption = ({ tableCaption, ...attributeOptions }) => {
+	return (
+		<caption className="au-table__caption" {...attributeOptions}>
+			{ tableCaption }
+		</caption>
+	)
+}
+
+export const AUtableHead = ({ children, ...attributeOptions }) => {
+	return (
+		<thead className="au-table__head" {...attributeOptions}>
+			{children}
+		</thead>
+	)
+}
+export default AUtable;

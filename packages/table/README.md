@@ -79,3 +79,45 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 **[⬆ back to top](#contents)**
 
 # };
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### React
+
+Usage:
+
+```jsx
+<AUTable 
+	caption="Population of Australian states and territories, December 2015"
+	headers={[
+						{title: "Location"},
+						{title: "Population"}
+					]}
+	headerContentTypes={["text", "numeric"]}
+	data = {[
+					{location: "New South Wales", population: "7,670,700"},
+					{location: "Victoria",        population: "5,996,400"},
+					{location: "Tasmania",        population: "514,400"}
+				]}
+/>
+```
+
+All props:
+
+```jsx
+<AUTable
+	caption="Population of Australian states and territories, December 2015"
+	headers={[]}               {/* A dark variation of the component */}
+	headerContentTypes={[]}    {/* A dark variation of the component */}
+	data = {[]}                {/* A dark variation of the component */}
+	striped =                  {/* Striped version of the table*/}
+```
