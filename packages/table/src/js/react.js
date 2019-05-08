@@ -77,7 +77,7 @@ AUTable.defaultProps = {
  * @param {string} width - Width of the header and column
  * @param {object} attributeOptions - Default HTML attributes
  */
-const AUTableHeader = ( { title, type, width, ...attributeOptions } ) => {
+export const AUTableHeader = ( { title, type, width, ...attributeOptions } ) => {
 return 	<th className={`au-table__header
 						${type === "numeric" ? "au-table__header--align-right": ""}
 						${ width ? "au-table__header--width-" + width : ""}
@@ -98,7 +98,7 @@ AUTableHeader.propTypes = {
  * @param {string}   type - Type of the data, can be either text or numeric for left or right alignment respectively.
  * @param {object} render - The function for customised rendering on all cells in this column
  */
-const AUTableCell = ( { data, type, render, ...attributeOptions } ) => {
+export const AUTableCell = ( { data, type, render, ...attributeOptions } ) => {
 	return 	<td className={`au-table__cell
 							${ type === "numeric" ? "au-table__cell--align-right": ""}
 							`
@@ -116,11 +116,26 @@ AUTableCell.propTypes = {
  * The table row component
  * @param {object} attributeOptions - Default HTML attributes
  */
-const AUTableRow = ( {...attributeOptions } ) => {
+export const AUTableRow = ( {...attributeOptions } ) => {
 	return <tr className="au-table__row" { ...attributeOptions }>
 
 	</tr>
 };
 
+/**
+ * Table wrapper
+ * @param {node} children
+ */
+export const AUTableWrapper = ({children}) => {
+	return (
+		<div className="au-table__wrapper">
+			{children}
+		</div>
+	)
+}
+
+AUTableWrapper.propTypes = {
+	children: PropTypes.node.isRequired
+};
 
 export default AUTable;

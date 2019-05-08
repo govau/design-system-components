@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import AUtags from '../../../tags/src/js/react.js';
 
 
-import AUtable from './table.js';
+import AUtable, {AUTableWrapper} from './table.js';
 
 const simpleData = [
 	{location: "New South Wales", population: "7,670,700"},
@@ -85,11 +85,12 @@ ReactDOM.render(
 		<h3>Simple Table</h3>
 
 		<AUtable
-		caption="Population of Australian states and territories, December 2015"
-		headers={simpleHeaders}
-		headerContentTypes={["text", "numeric"]}
-		data={simpleData}
+			caption="Population of Australian states and territories, December 2015"
+			headers={simpleHeaders}
+			headerContentTypes={["text", "numeric"]}
+			data={simpleData}
 		/>
+
 		<br/>
 		<br/>
 		<br />
@@ -98,10 +99,10 @@ ReactDOM.render(
 		<h3>Simple table with defined widths</h3>
 
 		<AUtable
-		caption="Population of Australian states and territories, December 2015"
-		headers={simpleHeadersWidths}
-		headerContentTypes={["text", "numeric"]}
-		data={simpleData}
+			caption="Population of Australian states and territories, December 2015"
+			headers={simpleHeadersWidths}
+			headerContentTypes={["text", "numeric"]}
+			data={simpleData}
 		/>
 
 		<br/>
@@ -112,11 +113,11 @@ ReactDOM.render(
 
 	<h3>Complex table with stripes</h3>
 		<AUtable
-		caption="Population of Australian states and territories, December 2015"
-		striped={true}
-		headers={complexHeaders}
-		headerContentTypes={["text", "numeric", "numeric", "numeric"]}
-		data={complexData}
+			caption="Population of Australian states and territories, December 2015"
+			striped={true}
+			headers={complexHeaders}
+			headerContentTypes={["text", "numeric", "numeric", "numeric"]}
+			data={complexData}
 		/>
 
 		<br/>
@@ -126,10 +127,10 @@ ReactDOM.render(
 		<h3>Table with custom cell rendering</h3>
 
 		<AUtable
-		caption="Population of Australian states and territories, December 2015"
-		headers={headersRemoveButton}
-		headerContentTypes={["text", "numeric", "numeric"]}
-		data={dataRemoveButton}
+			caption="Population of Australian states and territories, December 2015"
+			headers={headersRemoveButton}
+			headerContentTypes={["text", "numeric", "numeric"]}
+			data={dataRemoveButton}
 		/>
 
 
@@ -140,10 +141,10 @@ ReactDOM.render(
 		<h3>Table with complex custom cell rendering</h3>
 
 		<AUtable
-		caption="Population of Australian states and territories, December 2015"
-		headers={headersWithTags}
-		headerContentTypes={["text", "numeric", "text"]}
-		data={dataWithTags}
+			caption="Population of Australian states and territories, December 2015"
+			headers={headersWithTags}
+			headerContentTypes={["text", "numeric", "text"]}
+			data={dataWithTags}
 		/>
 
 
@@ -155,11 +156,27 @@ ReactDOM.render(
 
 
 		<AUtable
-		caption="Population of Australian states and territories, December 2015"
-		headers={headersCustomClasses}
-		headerContentTypes={["text", "numeric"]}
-		data={dataCustomClasses}
+			caption="Population of Australian states and territories, December 2015"
+			headers={headersCustomClasses}
+			headerContentTypes={["text", "numeric"]}
+			data={dataCustomClasses}
 		/>
+
+		<br/>
+		<br/>
+		<br />
+		<br />
+		<h3>Responsive Table in a wrapper</h3>
+
+		<AUTableWrapper>
+			<AUtable
+				caption="Population of Australian states and territories, December 2015"
+				striped={true}
+				headers={complexHeaders}
+				headerContentTypes={["text", "numeric", "numeric", "numeric"]}
+				data={complexData}
+			/>
+		</AUTableWrapper>
 
 	</div>,
 
