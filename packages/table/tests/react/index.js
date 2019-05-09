@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import AUtags from '../../../tags/src/js/react.js';
 
 
-import AUtable, {AUtableWrapper} from './table.js';
+import AUtable, {AUtableWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from './table.js';
 
 const simpleData = [
 	{location: "New South Wales", population: "7,670,700"},
@@ -177,7 +177,37 @@ ReactDOM.render(
 				data={complexData}
 			/>
 		</AUtableWrapper>
-	</div>,
+
+		<br/>
+		<br/>
+		<br />
+		<br />
+		<h3>Table using individual components</h3>
+	<table className="au-table">
+		<AUtableHead>
+			<AUtableRow>
+				<AUtableHeader type="text" title="Location"/>
+				<AUtableHeader type="numeric" title="Population"/>
+				<AUtableHeader type="numeric" title="Change over previous year %"/>
+			</AUtableRow>
+		</AUtableHead>
+		<AUtableBody>
+			<AUtableRow>
+				<AUtableCell data="New South Wales" type="text" />
+				<AUtableCell data="7,670,700" type="numeric"/>
+				<AUtableCell data="3.1%" type="numeric"/>
+			</AUtableRow>
+			<AUtableRow>
+				<AUtableCell data="Victoria" type="text" />
+				<AUtableCell data="5,996,400" type="numeric" className="bold-cell" />
+				<AUtableCell data="2.5%" type="numeric"/>
+			</AUtableRow>
+		</AUtableBody>
+	</table>
+
+
+	</div>
+	,
 
 	document.getElementById('root'),
 );

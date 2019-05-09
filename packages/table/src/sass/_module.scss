@@ -23,7 +23,7 @@
 			display: table-caption;
 			font-weight: bold;
 			text-align: left;
-			@include AU-space( margin-bottom, .25unit );
+			@include AU-space( padding-bottom, 0.5unit );
 			@include AU-fontgrid( 'md', 'default' )
 		}
 
