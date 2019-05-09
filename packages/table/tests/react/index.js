@@ -34,6 +34,7 @@ const complexHeaders = [
 	{title: "Change over previous decade %"},
 ];
 
+//data for table with a remove button
 const dataRemoveButton = [
 	{location: "New South Wales", population: "7,670,700", remove: "remove"},
 	{location: "Victoria",        population: "5,996,400", remove: "remove"},
@@ -46,6 +47,7 @@ const headersRemoveButton = [
 	{title: "", render: (text) => (<a href="javascript:;">{text}</a>)}
 ];
 
+//data for table with a rags
 const dataWithTags = [
 	{
 		location: "New South Wales",
@@ -68,6 +70,7 @@ const headersWithTags = [
 	{title: "Tags", width: '25' , render: ( tags ) => (<AUtags tags={tags}/>)}
 ];
 
+//data for table with a custom classes
 const dataCustomClasses = [
 	{location: "New South Wales", population: "7,670,700"},
 	{location: "Victoria",        population: "5,996,400"},

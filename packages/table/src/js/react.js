@@ -132,7 +132,7 @@ AUtableHead.defaultProps = {
  */
 export const AUtableHeader = ( { title, type, width,className, ...attributeOptions } ) => {
 return 	<th className={`au-table__header ${className}` +
-						`${type === "numeric" ? "au-table__header--align-right": ""}` +
+						`${type === "numeric" ? "au-table__header--numeric": ""}` +
 						`${ width ? "au-table__header--width-" + width : ""}`}
 					scope="col" {...attributeOptions}> {title} </th>
 };
@@ -160,7 +160,7 @@ AUtableHeader.defaultProps = {
  *
  */
 export const AUtableCell = ( { data, type, render, className, ...attributeOptions } ) => {
-	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--align-right": ""}`}
+	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric": ""}`}
 						{...attributeOptions}>
 						{ render ? render : data}
 					</td>

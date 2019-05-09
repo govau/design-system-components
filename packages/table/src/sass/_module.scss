@@ -20,11 +20,11 @@
 		border-spacing: 0;
 
 		.au-table__caption {
-			display: table-caption;
+			@include AU-fontgrid( 'md', 'default' );
 			font-weight: bold;
 			text-align: left;
+			display: table-caption;
 			@include AU-space( padding-bottom, 0.5unit );
-			@include AU-fontgrid( 'md', 'default' )
 		}
 
 		.au-table__head {
@@ -35,6 +35,7 @@
 				text-align: left;
 				@include AU-space( padding, 0.75unit );
 
+				// header widths
 				&.au-table__header--width-25 {
 					width: 25%;
 				}
@@ -51,7 +52,7 @@
 					width: 75%;
 				}
 
-				&.au-table__header--align-right {
+				&.au-table__header--numeric {
 					text-align: right;
 				}
 
@@ -75,8 +76,8 @@
 
 			border-bottom: 1px solid $AU-color-table-row-border;
 
-
-			&.au-table__cell--align-right {
+			//numeric cells should be aligned right
+			&.au-table__cell--numeric {
 				text-align: right;
 			}
 
