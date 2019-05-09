@@ -64,7 +64,7 @@ AUlinkListItem.propTypes = {
 	text: PropTypes.node.isRequired,
 	link: PropTypes.string,
 	li: PropTypes.object,
-	onClick: PropTypes.object,
+	onClick: PropTypes.func,
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
 };
 
