@@ -6,13 +6,16 @@ import AUtags from '../../../tags/src/js/react.js';
 import AUtable, {AUtableWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from './table.js';
 
 const simpleData = [
-	{location: "New South Wales", population: "7,670,700"},
+	{population: "7,670,700",     location: "New South Wales"},
 	{location: "Victoria",        population: "5,996,400"},
 	{location: "Tasmania",        population: "514,400"}
 ];
 
-const simpleHeaders = [{title: "Location"}, {title: "Population"}];
-const simpleHeadersWidths = [{title: "Location", width: "50" }, {title: "Population", width: "50"}];
+const simpleHeaders = [
+	{title: "Location",   key: "location"},
+	{title: "Population", key: "population", type: 'numeric'}
+];
+const simpleHeadersWidths = [{title: "Location", width: "50", key: "location" }, {title: "Population", width: "50", type: 'numeric', key: "population"}];
 
 
 const complexData = [
@@ -28,23 +31,23 @@ const complexData = [
 ];
 
 const complexHeaders = [
-	{title: "Location"},
-	{title: "Population"},
-	{title: "Change over previous year %"},
-	{title: "Change over previous decade %"},
+	{title: "Location",                     key: "location"},
+	{title: "Population",                   key: "population",    type: 'numeric',},
+	{title: "Change over previous year %",  key: "changeYear",    type: 'numeric',},
+	{title: "Change over previous decade %", key: "changeDecade", type: 'numeric',},
 ];
 
 //data for table with a remove button
 const dataRemoveButton = [
-	{location: "New South Wales", population: "7,670,700", remove: "remove"},
-	{location: "Victoria",        population: "5,996,400", remove: "remove"},
-	{location: "Tasmania",        population: "514,400",   remove: "remove"}
+	{location: "New South Wales", population: "7,670,700"},
+	{location: "Victoria",        population: "5,996,400"},
+	{location: "Tasmania",        population: "514,400"}
 ];
 
 const headersRemoveButton = [
-	{title: "Location", },
-	{title: "Population"},
-	{title: "", render: (text) => (<a href="javascript:;">{text}</a>)}
+	{title: "Location",    key: "location" },
+	{title: "Population",  key: "population", type: 'numeric',},
+	{title: "", render: (text) => (<a href="javascript:;">Remove</a>), type: 'numeric'}
 ];
 
 //data for table with a rags
@@ -56,30 +59,47 @@ const dataWithTags = [
 	},
 	{
 		location: "Victoria",
+		tags: [{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}],
 		population: "5,996,400",
-		tags: [{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}]},
+	},
 	{
 		location: "Tasmania",
+		tags: [{link: '#', text: "Hobart"}, {link: '#', text: "Cradle Mountain"}],
 		population: "514,400",
-		tags: [{link: '#', text: "Hobart"}, {link: '#', text: "Cradle Mountain"}]}
+	}
 ];
 
 const headersWithTags = [
-	{title: "Location", width: '50'},
-	{title: "Population", width: '25'},
-	{title: "Tags", width: '25' , render: ( tags ) => (<AUtags tags={tags}/>)}
+	{title: "Location",   width: '50', key: "location"},
+	{title: "Population", width: '25', key: "population", type: 'numeric'},
+	{title: "Tags",       width: '25', render: ( tags ) => (<AUtags tags={tags}/>), key: 'tags'}
 ];
 
-//data for table with a custom classes
+//data for table with a custom classes and change order
 const dataCustomClasses = [
-	{location: "New South Wales", population: "7,670,700"},
-	{location: "Victoria",        population: "5,996,400"},
+	{population: "7,670,700",     location: "New South Wales"},
+	{population: "5,996,400",     location: "Victoria",        },
 	{location: "Tasmania",        population: "514,400"}
 ];
 
 const headersCustomClasses = [
-	{title: "Location"},
-	{title: "Population", render: ( data ) => (<span className={`${data.length > "8" ? 'bold-cell': ''}`}>{ data }</span>)},
+	{title: "Location",   key: "location"},
+	{title: "Population", key: "population", type: 'numeric', render: ( data ) => (
+		<span className={`${data.length > "8" ? 'bold-cell': ''}`}>{ data }</span>
+	)},
+];
+
+const dataUsingRecord = [
+	{name: "Bob",     age: "50"},
+	{name: "Katrina", age: "45"}
+];
+
+const headerUsingRecord = [
+	{title: "Name", key: "name"},
+	{title: "Age",  key: "age"},
+	{title: "Actions", render: ( data, record ) => (
+		<span><a href="#">Remove {record.name}</a> | <a href="#"> Update {record.name}</a></span>
+		)}
 ];
 
 
@@ -90,7 +110,6 @@ ReactDOM.render(
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={simpleHeaders}
-			headerContentTypes={["text", "numeric"]}
 			data={simpleData}
 		/>
 
@@ -104,7 +123,6 @@ ReactDOM.render(
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={simpleHeadersWidths}
-			headerContentTypes={["text", "numeric"]}
 			data={simpleData}
 		/>
 
@@ -119,7 +137,6 @@ ReactDOM.render(
 			caption="Population of Australian states and territories, December 2015"
 			striped={true}
 			headers={complexHeaders}
-			headerContentTypes={["text", "numeric", "numeric", "numeric"]}
 			data={complexData}
 		/>
 
@@ -128,14 +145,11 @@ ReactDOM.render(
 		<br />
 		<br />
 		<h3>Table with custom cell rendering</h3>
-
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={headersRemoveButton}
-			headerContentTypes={["text", "numeric", "numeric"]}
 			data={dataRemoveButton}
 		/>
-
 
 		<br/>
 		<br/>
@@ -146,7 +160,6 @@ ReactDOM.render(
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={headersWithTags}
-			headerContentTypes={["text", "numeric", "text"]}
 			data={dataWithTags}
 		/>
 
@@ -161,7 +174,6 @@ ReactDOM.render(
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={headersCustomClasses}
-			headerContentTypes={["text", "numeric"]}
 			data={dataCustomClasses}
 		/>
 
@@ -176,7 +188,6 @@ ReactDOM.render(
 				caption="Population of Australian states and territories, December 2015"
 				striped={true}
 				headers={complexHeaders}
-				headerContentTypes={["text", "numeric", "numeric", "numeric"]}
 				data={complexData}
 			/>
 		</AUtableWrapper>
@@ -208,6 +219,15 @@ ReactDOM.render(
 		</AUtableBody>
 	</table>
 
+	<br/>
+	<br/>
+	<br />
+	<br />
+	<h3>Table using data from the row</h3>
+	<AUtable
+		headers={headerUsingRecord}
+		data={dataUsingRecord}
+	/>
 
 	</div>
 	,

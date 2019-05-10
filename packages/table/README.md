@@ -99,12 +99,12 @@ Usage:
 <AUTable 
 	caption="Population of Australian states and territories, December 2015"
 	headers={[
-						{title: "Location"},
-						{title: "Population"}
+						{title: "Location", width: '75'},
+						{title: "Population", type: "numeric"},
+						{title: "", render: ( data ) => (<button id="">Remove row</button>)}
 					]}
-	headerContentTypes={["text", "numeric"]}
 	data = {[
-					{location: "New South Wales", population: "7,670,700"},
+					{location: "New South Wales", population: "7,670,700", remove: "remove"},
 					{location: "Victoria",        population: "5,996,400"},
 					{location: "Tasmania",        population: "514,400"}
 				]}
@@ -116,8 +116,7 @@ All props:
 ```jsx
 <AUTable
 	caption="Population of Australian states and territories, December 2015"
-	headers={[]}               {/* A dark variation of the component */}
-	headerContentTypes={[]}    {/* A dark variation of the component */}
-	data = {[]}                {/* A dark variation of the component */}
-	striped =                  {/* Striped version of the table*/}
+	headers={[]}               {/* The table headers */}
+	data = {[]}                {/* the table body data */}
+	striped={true}             {/* Striped version of the table*/} />
 ```

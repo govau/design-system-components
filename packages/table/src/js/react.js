@@ -15,15 +15,14 @@ import PropTypes from 'prop-types';
  * The table component
  *
  * @param {string}   caption            - The description or summary of the table.
- * @param {[object]} headers            - The column headings
- * @param {[]}       headerContentTypes - The types of the data in each column.
- * @param {[object]} data               - The table data in the in the body
+ * @param {Object[]} headers            - The column headings
+ * @param {Object[]} data               - The table data in the in the body
  * @param {bool}     striped            - Colourise every other table row
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUtable = ( { caption, headers, headerContentTypes, data, striped, ...attributeOptions} ) => {
+const AUtable = ( { caption, headers, data, striped, ...attributeOptions} ) => {
 	return (
-	<table className={`au-table ${ striped ? 'au-table--striped' : ''}`} { ...attributeOptions }>
+	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '}`} { ...attributeOptions }>
 		<AUtableCaption tableCaption={caption} />
 		<AUtableHead>
 		<AUtableRow>
@@ -31,25 +30,24 @@ const AUtable = ( { caption, headers, headerContentTypes, data, striped, ...attr
 					<AUtableHeader
 						title={header.title}
 						key={index}
-						type={headerContentTypes[ index ]}
+						type={header.type}
 						width={header.width}
 						/>
 				))}
 			</AUtableRow>
 		</AUtableHead>
 		<AUtableBody>
-				{ data.map( (row, index ) => (
-					<AUtableRow key={index}>
+				{ data.map( (row, rowIndex ) => (
+					<AUtableRow key={rowIndex}>
 						{
-							Object.values( row ).map( ( data, index ) => (
-									<AUtableCell
-										key={index}
-										data={data}
-										type={headerContentTypes[ index ]}
-										render={headers[ index ].render ? headers[ index ].render( data ) : null }
-										/>
-								)
-							)
+							headers.map( (header, columnIndex) => (
+								<AUtableCell
+									key={columnIndex}
+									data={row[header.key]? row[header.key] : ''}
+									type={header.type}
+									render={header.render ? header.render( row[header.key], row ) : null}
+								/>
+							))
 						}
 						</AUtableRow>
 							))}
@@ -61,7 +59,6 @@ const AUtable = ( { caption, headers, headerContentTypes, data, striped, ...attr
 AUtable.propTypes = {
 	caption: PropTypes.string,
 	headers: PropTypes.arrayOf( Object ).isRequired,
-	headerContentTypes: PropTypes.array.isRequired,
 	data: PropTypes.arrayOf( Object ).isRequired,
 	striped: PropTypes.bool
 };
@@ -132,8 +129,8 @@ AUtableHead.defaultProps = {
  */
 export const AUtableHeader = ( { title, type, width,className, ...attributeOptions } ) => {
 return 	<th className={`au-table__header ${className}` +
-						`${type === "numeric" ? "au-table__header--numeric": ""}` +
-						`${ width ? "au-table__header--width-" + width : ""}`}
+						`${type === "numeric" ? "au-table__header--numeric ": ""}` +
+						`${ width ? "au-table__header--width-" + width : ""} `}
 					scope="col" {...attributeOptions}> {title} </th>
 };
 
@@ -145,7 +142,8 @@ AUtableHeader.propTypes = {
 };
 
 AUtableHeader.defaultProps = {
-	className: ''
+	className: '',
+	type: 'text'
 };
 
 
@@ -159,7 +157,7 @@ AUtableHeader.defaultProps = {
  * @param {object} attributeOptions - Default HTML attributes
  *
  */
-export const AUtableCell = ( { data, type, render, className, ...attributeOptions } ) => {
+export const AUtableCell = ( { data, type, className, render,...attributeOptions } ) => {
 	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric": ""}`}
 						{...attributeOptions}>
 						{ render ? render : data}
@@ -173,7 +171,8 @@ AUtableCell.propTypes = {
 };
 
 AUtableCell.defaultProps = {
-	className: ''
+	className: '',
+	type: 'text'
 };
 
 
@@ -216,7 +215,7 @@ export const AUtableCaption = ({ tableCaption, className, ...attributeOptions })
 };
 
 AUtableCaption.propTypes = {
-	tableCaption: PropTypes.string.isRequired,
+	tableCaption: PropTypes.string,
 	className: PropTypes.string
 }
 
