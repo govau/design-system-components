@@ -161,7 +161,9 @@ All props:
 	caption="Population of Australian states and territories, December 2015"
 	headers={[]}               {/* The table headers */}
 	data = {[]}                {/* the table body data */}
-	striped={true}             {/* Striped version of the table*/} />
+	striped={true}             {/* Striped version of the table*/} 
+	className=""               {/*An additional class, optional*/}
+	/>
 
 <AUtableBody 
 className=""                 {/*An additional class, optional*/}

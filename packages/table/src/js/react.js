@@ -18,12 +18,13 @@ import PropTypes from 'prop-types';
  * @param {Object[]} headers            - The column headings
  * @param {Object[]} data               - The table data in the body
  * @param {bool}     striped            - Colourise every other table row
+ * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUtable = ( { caption, headers, data, striped, ...attributeOptions} ) => {
+const AUtable = ( { caption, headers, data, striped, className, ...attributeOptions} ) => {
 	return (
-	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '}`} { ...attributeOptions }>
-		<AUtableCaption tableCaption={caption} />
+	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '} ${className}`} { ...attributeOptions }>
+		{caption && <AUtableCaption tableCaption={caption} />}  {/* Only render caption if passed through */}
 		<AUtableHead>
 		<AUtableRow>
 				{headers.map( ( header, index ) => (
@@ -60,11 +61,13 @@ AUtable.propTypes = {
 	caption: PropTypes.string,
 	headers: PropTypes.arrayOf( Object ).isRequired,
 	data: PropTypes.arrayOf( Object ).isRequired,
-	striped: PropTypes.bool
+	striped: PropTypes.bool,
+	className: PropTypes.string
 };
 
 AUtable.defaultProps = {
-	striped: false
+	striped: false,
+	className: ''
 };
 
 
@@ -127,7 +130,7 @@ AUtableHead.defaultProps = {
  * @param {string} className        - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
  */
-export const AUtableHeader = ( { title, type, width,className, ...attributeOptions } ) => {
+export const AUtableHeader = ( { title, type, width, className, ...attributeOptions } ) => {
 return 	<th className={`au-table__header ${className}` +
 						`${type === "numeric" ? " au-table__header--numeric ": " "}` +
 						`${ width ? " au-table__header--width-" + width : " "} `}
