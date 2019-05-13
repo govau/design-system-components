@@ -163,9 +163,6 @@ All props:
 	data = {[]}                {/* the table body data */}
 	striped={true}             {/* Striped version of the table*/} />
 
-//The below are the individual components that are contained inside a typical table.
-// They should be wrappeed in a <table className="au-table"> element.
-
 <AUtableBody 
 className=""                 {/*An additional class, optional*/}
 />
