@@ -24,7 +24,7 @@ import PropTypes from 'prop-types';
 const AUtable = ( { caption, headers, data, striped, className, ...attributeOptions} ) => {
 	return (
 	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '} ${className}`} { ...attributeOptions }>
-		{caption && <AUtableCaption tableCaption={caption} />}  {/* Only render caption if passed through */}
+		{caption && <AUtableCaption tableCaption={caption} />}
 		<AUtableHead>
 		<AUtableRow>
 				{headers.map( ( header, index ) => (
