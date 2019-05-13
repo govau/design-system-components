@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/link-list",
-	"version": "3.0.8",
-	"description": "A simple list of inline links.",
+	"name": "@gov.au/table",
+	"version": "0.1.0",
+	"description": "Used to display tabular data",
 	"keywords": [
 		"auds",
 		"pancake",
@@ -12,10 +12,7 @@
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
-		"design system",
-		"inline links",
-		"link block",
-		"link list"
+		"design system"
 	],
 	"scripts": {
 		"postinstall": "pancake",
@@ -27,9 +24,9 @@
 		"prepublish": "npm run test:helper && npm run build:pre",
 
 		"build:pre": "node ../../scripts/helper.js precompile publish",
-		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
+		"build:js": "node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
-		"build": "npm run build:js && npm run build:react",
+		"build": "npm run build:pre && npm run build:js && npm run build:react",
 
 		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
 
@@ -43,12 +40,16 @@
 			"version": "1.0.0",
 			"plugins": [
 				"@gov.au/pancake-sass",
+				"@gov.au/pancake-js",
 				"@gov.au/pancake-react",
 				"@gov.au/pancake-json"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
 				"sass-versioning": true
+			},
+			"js": {
+				"path": "lib/js/module.js"
 			},
 			"react": {
 				"path": "lib/js/react.js"
@@ -58,16 +59,15 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
+		"@gov.au/pancake-js": "~1",
 		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": "^3.0.0",
-		"@gov.au/body": "^2.0.0"
+		"@gov.au/core": "^3.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^3.0.0",
-		"@gov.au/body": "^2.0.0"
+		"@gov.au/core": "^3.0.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.3.4",
@@ -79,7 +79,6 @@
 		"onchange": "^5.2.0",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
-		"react-router-dom": "^4.3.1",
 		"webpack": "^4.29.6",
 		"webpack-cli": "^3.2.3"
 	},
@@ -94,10 +93,10 @@
 		"type": "git",
 		"url": "https://github.com/govau/design-system-components.git"
 	},
-	"homepage": "https://designsystem.gov.au/components/link-list",
+	"homepage": "https://designsystem.gov.au/components/table",
 	"bugs": {
 		"url": "https://github.com/govau/design-system-components/issues",
-		"email": "designsystem@digital.gov.au"
+		"email": "designsystem@dta.gov.au"
 	},
 	"author": {
 		"name": "Commonwealth of Australia, DTA",
@@ -106,29 +105,14 @@
 	},
 	"contributors": [
 		{
-			"name": "Dominik Wilkowski",
-			"email": "hi@dominik-wilkowski.com",
-			"url": "https://github.com/dominikwilkowski"
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		},
 		{
-			"name": "Simon Pascal Klein",
-			"email": "klepas@klepas.org",
-			"url": "https://github.com/klepas"
-		},
-		{
-			"name": "Trevor Brennan",
-			"email": "t@trevorbrennan.com",
-			"url": "https://github.com/TrebBrennan"
-		},
-		{
-			"name": "Alex Page",
-			"email": "alex@alexpage.com.au",
-			"url": "https://github.com/alex-page"
-		},
-		{
-			"name": "Tengis Batsaikhan",
-			"email": "tengee0411@gmail.com",
-			"url": "https://github.com/tengis"
+			"name": "Adam Zerella",
+			"email": "hello@adamzerella.com",
+			"url": "https://adamzerella.com"
 		}
 	],
 	"license": "MIT"
