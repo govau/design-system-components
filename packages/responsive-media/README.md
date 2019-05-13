@@ -24,7 +24,7 @@ yarn add @gov.au/responsive-media
 ```
 
 ```shell
-npm install @gov.au/responsive-media --save-dev
+npm install @gov.au/responsive-media
 ```
 
 
@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/responsive-media/tests/sit
 
 ## Release History
 
+* v2.0.14 - Remove --save-dev flag from readme instructions
 * v2.0.13 - Add `title` attribute to iframe examples.
 * v2.0.12 - Removed uikit references
 * v2.0.11 - Update dependencies

@@ -43,7 +43,7 @@ problems in a simple and robust way.
 That’s awesome!
 Please take a look at the Github [issue queue](https://github.com/govau/design-system-components/issues), if you find a relevant issue please join the conversation and note down
 any steps you took to find it. If it’s a new issue please [create a new issue](https://github.com/govau/design-system-components/issues/new) and provide detailed instructions.
-We’ve provided an [issue template](./ISSUE_TEMPLATE.md) to make this process easier.
+We’ve provided an [issue template](https://github.com/govau/design-system-components/blob/master/.github/ISSUE_TEMPLATE/----bug-report.md) to make this process easier.
 
 
 **[⬆ back to top](#contents)**
@@ -114,12 +114,12 @@ Our recommendation is to write your custom code in a reusable and robust pattern
 
 ### How do I request a new component to be added to the system?
 
-The best place to start is by looking for existing conversation in [the community forums](community.service.gov.au), followed by reviewing the [Contribution Guidelines.](https://github.com/govau/design-system-components/blob/master/CONTRIBUTING.md)
+The best place to start is by looking for existing conversation in [the community forums](https://community.digital.gov.au), followed by reviewing the [Contribution Guidelines.](https://github.com/govau/design-system-components/blob/master/CONTRIBUTING.md)
 
 
 
 ### How do I add the components to my build process? How do I add custom code/variables/overrides?
-Build processes can be complicated, we recommend first looking at our [design system starter pack](https://github.com/govau/design-system-components-starter). This is a simple
+Build processes can be complicated, we recommend first looking at our [design system starter pack](https://github.com/govau/design-system-starter). This is a simple
 implementation of the design system showing how to include the components into your project. After you `npm install` and run `npm run watch` you should have some generated
 files. Looking at the `src/sass/main.scss` file you can see the order:
 
@@ -134,7 +134,7 @@ files. Looking at the `src/sass/main.scss` file you can see the order:
 ```
 
 This pattern is how we recommend to apply the components. You are able to overwrite variables as we use the SASS
-[`default`](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#Variable_Defaults___default) flag on our variables. Then when creating or overriding
+[`default`](https://sass-lang.com/documentation/variables#default-values) flag on our variables. Then when creating or overriding
 existing components we recommend adding your code in the custom SASS section.
 
 

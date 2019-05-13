@@ -24,7 +24,7 @@ yarn add @gov.au/[-replace-name-]
 ```
 
 ```shell
-npm install @gov.au/[-replace-name-] --save-dev
+npm install @gov.au/[-replace-name-]
 ```
 
 
@@ -78,3 +78,4 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 **[⬆ back to top](#contents)**
 
 # };
+

@@ -25,7 +25,7 @@ yarn add @gov.au/core
 ```
 
 ```shell
-npm install @gov.au/core --save-dev
+npm install @gov.au/core
 ```
 
 
@@ -255,6 +255,7 @@ The visual test: https://auds.service.gov.au/packages/core/tests/site/
 
 ## Release History
 
+* v3.4.2 - Remove --save-dev flag from readme instructions
 * v3.4.1 - Add two new colours: `hint-text` and `hint-text-alt`.
 * v3.4.0 - Update error and success alert colours to meet contrast requirements on `--alt` backgrounds
 * v3.3.0 - Change error and success alert colours to make them WCAG contrast requirements

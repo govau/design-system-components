@@ -25,7 +25,7 @@ yarn add @gov.au/header
 ```
 
 ```shell
-npm install @gov.au/header --save-dev
+npm install @gov.au/header
 ```
 
 
@@ -122,6 +122,7 @@ The visual test: https://auds.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v4.1.12 - Remove --save-dev flag from readme instructions
 * v4.1.11 - Removed unused `Fragment` React import
 * v4.1.10 - Resolve autoprefixer warning
 * v4.1.9 - Fix pancake build path

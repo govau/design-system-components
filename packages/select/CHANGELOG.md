@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.11 - Remove --save-dev flag from readme instructions](#v2011)
 * [v2.0.10 - Removed unused `Fragment` React import](#v2010)
 * [v2.0.9 - Removed uikit references](#v209)
 * [v2.0.8 - Update dependencies](#v208)
@@ -36,6 +37,11 @@
 
 
 ## Release History
+
+### v2.0.11
+
+- Remove --save-dev flag from readme instructions
+
 
 ### v2.0.10
 

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v5.0.8 - Remove --save-dev flag from readme instructions](#v508)
 * [v5.0.7 - Removed unused `Fragment` React import](#v507)
 * [v5.0.6 - Resolve autoprefixer warning](#v506)
 * [v5.0.5 - Corrected an issue where certain components were published referencing a `src/` folder rather than `lib/`](#v505)
@@ -42,6 +43,11 @@
 
 
 ## Release History
+
+### v5.0.8
+
+- Remove --save-dev flag from readme instructions
+
 
 ### v5.0.7
 

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.12 - Remove --save-dev flag from readme instructions](#v4112)
 * [v4.1.11 - Removed unused `Fragment` React import](#v4111)
 * [v4.1.10 - Resolve autoprefixer warning](#v4110)
 * [v4.1.9 - Fix pancake build path](#v419)
@@ -44,6 +45,11 @@
 
 
 ## Release History
+
+### v4.1.12
+
+- Remove --save-dev flag from readme instructions
+
 
 ### v4.1.11
 
