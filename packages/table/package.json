@@ -1,0 +1,119 @@
+{
+	"name": "@gov.au/table",
+	"version": "0.1.0",
+	"description": "Used to display tabular data",
+	"keywords": [
+		"auds",
+		"pancake",
+		"pancake-module",
+		"sass",
+		"scss",
+		"css",
+		"gov.au",
+		"Commonwealth of Australia",
+		"design guide",
+		"design system"
+	],
+	"scripts": {
+		"postinstall": "pancake",
+
+		"test:a11y": "node ../../scripts/a11y.js",
+		"test:helper": "node ../../scripts/helper.js test",
+		"test": "npm-run-all --parallel test:*",
+
+		"prepublish": "npm run test:helper && npm run build:pre",
+
+		"build:pre": "node ../../scripts/helper.js precompile publish",
+		"build:js": "node ../../scripts/helper.js compile",
+		"build:react": "cd tests/react/ && webpack",
+		"build": "npm run build:pre && npm run build:js && npm run build:react",
+
+		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
+
+		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
+		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
+		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
+		"watch": "npm run build && npm-run-all --parallel serve watch:*"
+	},
+	"pancake": {
+		"pancake-module": {
+			"version": "1.0.0",
+			"plugins": [
+				"@gov.au/pancake-sass",
+				"@gov.au/pancake-js",
+				"@gov.au/pancake-react",
+				"@gov.au/pancake-json"
+			],
+			"sass": {
+				"path": "lib/sass/_module.scss",
+				"sass-versioning": true
+			},
+			"js": {
+				"path": "lib/js/module.js"
+			},
+			"react": {
+				"path": "lib/js/react.js"
+			}
+		}
+	},
+	"main": "lib/js/react.es5.js",
+	"dependencies": {
+		"@gov.au/pancake": "~1",
+		"@gov.au/pancake-js": "~1",
+		"@gov.au/pancake-sass": "~2",
+		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-json": "~1",
+
+		"@gov.au/core": "^3.0.0"
+	},
+	"peerDependencies": {
+		"@gov.au/core": "^3.0.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.3.4",
+		"babel-loader": "^8.0.5",
+		"@babel/preset-react": "^7.0.0",
+		"@babel/preset-env": "^7.3.4",
+		"browser-sync": "^2.26.3",
+		"npm-run-all": "^4.1.5",
+		"onchange": "^5.2.0",
+		"react": "^16.8.4",
+		"react-dom": "^16.8.4",
+		"webpack": "^4.29.6",
+		"webpack-cli": "^3.2.3"
+	},
+	"files": [
+		"lib/*"
+	],
+	"engines": {
+		"node": ">=0.12.0",
+		"npm": "^3.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/govau/design-system-components.git"
+	},
+	"homepage": "https://designsystem.gov.au/components/table",
+	"bugs": {
+		"url": "https://github.com/govau/design-system-components/issues",
+		"email": "designsystem@dta.gov.au"
+	},
+	"author": {
+		"name": "Commonwealth of Australia, DTA",
+		"email": "designsystem@digital.gov.au",
+		"url": "https://www.dta.gov.au/"
+	},
+	"contributors": [
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Adam Zerella",
+			"email": "hello@adamzerella.com",
+			"url": "https://adamzerella.com"
+		}
+	],
+	"license": "MIT"
+}

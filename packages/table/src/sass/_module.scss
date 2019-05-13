@@ -1,0 +1,106 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// table module
+// Used to display tabular data
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+.au-table {
+		@include AU-fontgrid( sm, 'default' );
+		font-family: $AU-font;
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+
+		.au-table__caption {
+			@include AU-fontgrid( 'md', 'default' );
+			font-weight: bold;
+			text-align: left;
+			display: table-caption;
+			@include AU-space( padding-bottom, 0.5unit );
+		}
+
+		.au-table__head {
+			display: table-header-group;
+			border-bottom: solid 3px $AU-color-table-head-border;
+
+			.au-table__header {
+				text-align: left;
+				@include AU-space( padding, 0.75unit );
+
+				// header widths
+				&.au-table__header--width-10 {
+					width: 10%;
+				}
+
+				&.au-table__header--width-20 {
+					width: 20%;
+				}
+
+				&.au-table__header--width-25 {
+					width: 25%;
+				}
+
+				&.au-table__header--width-33 {
+					width: 33%;
+				}
+
+				&.au-table__header--width-50 {
+					width: 50%;
+				}
+
+				&.au-table__header--width-75 {
+					width: 75%;
+				}
+
+				&.au-table__header--numeric {
+					text-align: right;
+				}
+
+				&:focus {
+					outline: 3px solid $AU-color-foreground-focus;
+				}
+			}
+		}
+
+		.au-table__body {
+			display: table-row-group;
+		}
+
+		.au-table__row {
+			display: table-row;
+		}
+
+		.au-table__cell {
+			@include AU-space( padding, 0.75unit );
+			text-align: left;
+
+			border-bottom: 1px solid $AU-color-table-row-border;
+
+			//numeric cells should be aligned right
+			&.au-table__cell--numeric {
+				text-align: right;
+			}
+
+			&:focus {
+					outline: 3px solid $AU-color-foreground-focus;
+			}
+		}
+
+	&.au-table--striped .au-table__body {
+		.au-table__row:nth-last-child( odd ) {
+			background-color: $AU-color-table-row;
+		}
+	}
+}
+
+.au-table__wrapper {
+	overflow-x: auto;
+}
