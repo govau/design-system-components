@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 import AUtags from '../../../tags/src/js/react.js';
 
 
-import AUtable, {AUtableWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from './table.js';
+import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from './table.js';
+
+const renderVicTags = () => (<AUtags tags={[{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}]} />)
+const renderNSWTags = () => (<AUtags tags={[{link: '#', text: "Sydney"}, {link: '#', text: "Opera House"}]} />)
+
 
 const simpleData = [
 	{population: "7,670,700",     location: "New South Wales"},
@@ -183,26 +187,28 @@ ReactDOM.render(
 		<br />
 		<h3>Responsive Table in a wrapper</h3>
 
-		<AUtableWrapper>
+		<AUtableResponsiveWrapper>
 			<AUtable
 				caption="Population of Australian states and territories, December 2015"
 				striped={true}
 				headers={complexHeaders}
 				data={complexData}
 			/>
-		</AUtableWrapper>
+		</AUtableResponsiveWrapper>
 
 		<br/>
 		<br/>
 		<br />
 		<br />
 		<h3>Table using individual components</h3>
+
 	<table className="au-table">
 		<AUtableHead>
 			<AUtableRow>
 				<AUtableHeader type="text" title="Location"/>
 				<AUtableHeader type="numeric" title="Population"/>
 				<AUtableHeader type="numeric" title="Change over previous year %"/>
+				<AUtableHeader title="tags" />
 			</AUtableRow>
 		</AUtableHead>
 		<AUtableBody>
@@ -210,11 +216,13 @@ ReactDOM.render(
 				<AUtableCell data="New South Wales" type="text" />
 				<AUtableCell data="7,670,700" type="numeric"/>
 				<AUtableCell data="3.1%" type="numeric"/>
+				<AUtableCell render={renderNSWTags()} />
 			</AUtableRow>
 			<AUtableRow>
 				<AUtableCell data="Victoria" type="text" />
 				<AUtableCell data="5,996,400" type="numeric" className="bold-cell" />
 				<AUtableCell data="2.5%" type="numeric"/>
+				<AUtableCell render={renderVicTags()} />
 			</AUtableRow>
 		</AUtableBody>
 	</table>

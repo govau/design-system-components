@@ -16,7 +16,7 @@ import PropTypes from 'prop-types';
  *
  * @param {string}   caption            - The description or summary of the table.
  * @param {Object[]} headers            - The column headings
- * @param {Object[]} data               - The table data in the in the body
+ * @param {Object[]} data               - The table data in the body
  * @param {bool}     striped            - Colourise every other table row
  * @param {object}   attributeOptions   - Default HTML attributes
  */
@@ -95,7 +95,7 @@ AUtableBody.defaultProps = {
 
 /**
  * The table head component
- * @param  {string}  className        - An additional class, optional
+ * @param {string} className        - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
  *
  */
@@ -121,16 +121,16 @@ AUtableHead.defaultProps = {
 /**
  * The table header component
  *
- * @param {string} title            - The title of table header
+ * @param {string} title            - The title of table header/column
  * @param {string} type             - Type of the header, can be either text or numeric for left or right alignment respectively.
- * @param {string} width            - Width of the header and column
+ * @param {string} width            - Width of the header/column
  * @param {string} className        - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
  */
 export const AUtableHeader = ( { title, type, width,className, ...attributeOptions } ) => {
 return 	<th className={`au-table__header ${className}` +
-						`${type === "numeric" ? "au-table__header--numeric ": ""}` +
-						`${ width ? "au-table__header--width-" + width : ""} `}
+						`${type === "numeric" ? " au-table__header--numeric ": " "}` +
+						`${ width ? " au-table__header--width-" + width : " "} `}
 					scope="col" {...attributeOptions}> {title} </th>
 };
 
@@ -158,14 +158,14 @@ AUtableHeader.defaultProps = {
  *
  */
 export const AUtableCell = ( { data, type, className, render,...attributeOptions } ) => {
-	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric": ""}`}
+	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric ": " "}`}
 						{...attributeOptions}>
 						{ render ? render : data}
 					</td>
 };
 
 AUtableCell.propTypes = {
-	data: PropTypes.any.isRequired,
+	data: PropTypes.any,
 	type: PropTypes.oneOf(['text', 'numeric']).isRequired,
 	render: PropTypes.object
 };
@@ -203,7 +203,7 @@ AUtableRow.propTypes = {
  * The table caption component
  * @param  {string} tableCaption - An additional class, optional
  * @param  {string} className    - An additional class, optional
- * @param {object} attributeOptions - Default HTML attributes
+ * @param {object}  attributeOptions - Default HTML attributes
  *
  */
 export const AUtableCaption = ({ tableCaption, className, ...attributeOptions }) => {
@@ -226,10 +226,10 @@ AUtableCaption.defaultProps = {
 
 
 /**
- * Table wrapper for responsive tables
+ * Table wrapper for responsive tables with horizontal scrolling on smaller devices
  * @param {node} children
  */
-export const AUtableWrapper = ({ children }) => {
+export const AUtableResponsiveWrapper = ({ children }) => {
 	return (
 		<div className="au-table__wrapper">
 			{children}
@@ -237,7 +237,7 @@ export const AUtableWrapper = ({ children }) => {
 	)
 };
 
-AUtableWrapper.propTypes = {
+AUtableResponsiveWrapper.propTypes = {
 	children: PropTypes.node
 };
 
