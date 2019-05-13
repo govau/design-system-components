@@ -96,21 +96,40 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 Usage:
 
 ```jsx
-<AUTable 
+//simple example
+<AUtable 
 	caption="Population of Australian states and territories, December 2015"
 	headers={[
-						{title: "Location", width: '75'},
-						{title: "Population", type: "numeric"},
-						{title: "", render: ( data ) => (<button id="">Remove row</button>)}
-					]}
-	data = {[
-					{location: "New South Wales", population: "7,670,700", remove: "remove"},
-					{location: "Victoria",        population: "5,996,400"},
-					{location: "Tasmania",        population: "514,400"}
-				]}
+		{title: "Location",   key: "location"},
+		{title: "Population", key: "population", type: 'numeric'}
+	]}
+	data={[
+		{population: "7,670,700",     location: "New South Wales"},
+		{location: "Victoria",        population: "5,996,400"},
+		{location: "Tasmania",        population: "514,400"}
+	]}
 />
 
 
+//complex example
+<AUtable
+	caption="Example table in a col-md-6"
+	headers={[
+						{title: "Name",      width: '50', key: "name" },
+						{title: "Interests", width: '20', key: "interests", render: ( data, row ) => (<ul> {data.map(( data ) => (<li key={data}>{ data }</li>))}</ul>)},
+						{title: "Actions",   width: '20', render: ( data, row ) => (
+							<span><a href="#">Remove {row.name}</a> | <a href="#"> Update {row.name}</a></span>
+							)},
+						{title: "Age",       width: '10', key: "age",type: "numeric"},
+					]}
+	data = {[
+					{name: "Bob Davidson",   age: "48", interests: ["photography", "reading"]},
+					{name: "Jane Williamson",  age: "25", interests: ["basketball", "exercise", "hockey"]},
+					{name: "Sally Robertson", age: "35", interests: ["Road trips", "Painting"]}
+				]}
+/>
+
+//Using individual components
 <table className="au-table">
 	<AUtableHead>
 		<AUtableRow>

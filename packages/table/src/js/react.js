@@ -137,7 +137,7 @@ return 	<th className={`au-table__header ${className}` +
 AUtableHeader.propTypes = {
 	title: PropTypes.string.isRequired,
 	type: PropTypes.oneOf(['text', 'numeric']).isRequired,
-	width: PropTypes.oneOf(['25', '33', '50', '75']),
+	width: PropTypes.oneOf(['10', '20', '25', '33', '50', '75']),
 	className: PropTypes.string
 };
 
@@ -167,7 +167,7 @@ export const AUtableCell = ( { data, type, className, render,...attributeOptions
 AUtableCell.propTypes = {
 	data: PropTypes.any,
 	type: PropTypes.oneOf(['text', 'numeric']).isRequired,
-	render: PropTypes.object
+	render: PropTypes.any
 };
 
 AUtableCell.defaultProps = {

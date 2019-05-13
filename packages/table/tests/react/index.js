@@ -237,6 +237,31 @@ ReactDOM.render(
 		data={dataUsingRecord}
 	/>
 
+<br/>
+<br/>
+<br />
+<br />
+<div className="au-grid row">
+	<div className="au-table__wrapper col-md-6">
+	<AUtable
+		caption="Example table in a col-md-6"
+		headers={[
+							{title: "Name",      width: '50', key: "name" },
+							{title: "Interests", width: '20', key: "interests", render: ( data, row ) => (<ul> {data.map(( data ) => (<li key={data}>{ data }</li>))}</ul>)},
+							{title: "Actions",   width: '20', render: ( data, row ) => (
+								<span><a href="#">Remove {row.name}</a> | <a href="#"> Update {row.name}</a></span>
+								)},
+							{title: "Age",       width: '10', key: "age",type: "numeric"},
+						]}
+		data = {[
+						{name: "Bob Davidson",   age: "48", interests: ["photography", "reading"]},
+						{name: "Jane Williamson",  age: "25", interests: ["basketball", "exercise", "hockey"]},
+						{name: "Sally Robertson", age: "35", interests: ["Road trips", "Painting"]}
+					]}
+	/>
+	</div>
+</div>
+
 	</div>
 	,
 
