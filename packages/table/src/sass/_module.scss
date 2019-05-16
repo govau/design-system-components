@@ -29,7 +29,7 @@
 
 		.au-table__head {
 			display: table-header-group;
-			border-bottom: solid 4px $AU-color-table-head-border;
+			@include AU-space( 'border-bottom', 0.25unit solid $AU-color-table-head-border);
 
 			.au-table__header {
 				text-align: left;
