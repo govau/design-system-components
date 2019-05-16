@@ -59,7 +59,7 @@ An even better experience is using [Syrup](https://github.com/govau/pancake/tree
 
 View our [frequently asked questions page](./FAQ.md) to see common questions from the community.
 
-If you can’t find an answer to a question you have please email us at guides@dta.gov.au or join our conversation on [slack](http://guides.service.gov.au/join-slack/).
+If you can’t find an answer to a question you have please email us at designsystem@dta.gov.au or join our conversation on [slack](http://guides.service.gov.au/join-slack/).
 
 **[⬆ back to top](#contents)**
 
