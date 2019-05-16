@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/table/tests/site/
 
 ## Release History
 
+* v0.1.1 - Update font for numerical cells
 * v0.1.0 - 💥 Initial version
 
 
@@ -113,7 +114,7 @@ Usage:
 
 //complex example
 <AUtable
-	caption="Example table in a col-md-6"
+	caption="Example table"
 	headers={[
 						{title: "Name",      width: '50', key: "name" },
 						{title: "Interests", width: '20', key: "interests", render: ( data, row ) => (<ul> {data.map(( data ) => (<li key={data}>{ data }</li>))}</ul>)},
