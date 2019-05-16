@@ -204,7 +204,7 @@ AUtableRow.propTypes = {
 
 /**
  * The table caption component
- * @param  {string} tableCaption - An additional class, optional
+ * @param  {string} tableCaption - The title of the table caption
  * @param  {string} className    - An additional class, optional
  * @param {object}  attributeOptions - Default HTML attributes
  *

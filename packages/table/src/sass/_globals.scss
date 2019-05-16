@@ -22,9 +22,10 @@ $dependencies: (
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// Boy it sure is quiet here.
 
-// Light palette
-$AU-color-table-head-border: #AAA;
-$AU-color-table-row-border: #CCC;
-$AU-color-table-row: #F1F1F1;
+$AU-color-table-head-border: #BBB;
+$AU-color-table-row-border: #c0c0c0;
+$AU-color-table-row: #F2F2F2;
+
+// Use Verdana system font since it monospaces digits. Use default monospace font as a fallback
+$AU-table-numeric-font: "Verdana" , $AU-font-monospace;

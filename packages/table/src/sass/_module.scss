@@ -29,7 +29,7 @@
 
 		.au-table__head {
 			display: table-header-group;
-			border-bottom: solid 3px $AU-color-table-head-border;
+			border-bottom: solid 4px $AU-color-table-head-border;
 
 			.au-table__header {
 				text-align: left;
@@ -70,29 +70,30 @@
 			}
 		}
 
-		.au-table__body {
-			display: table-row-group;
-		}
 
 		.au-table__row {
 			display: table-row;
 		}
 
+		.au-table__body {
+			display: table-row-group;
+
 		.au-table__cell {
 			@include AU-space( padding, 0.75unit );
 			text-align: left;
-
 			border-bottom: 1px solid $AU-color-table-row-border;
 
 			//numeric cells should be aligned right
 			&.au-table__cell--numeric {
 				text-align: right;
+				font-family: $AU-table-numeric-font;
 			}
 
 			&:focus {
 					outline: 3px solid $AU-color-foreground-focus;
 			}
 		}
+	}
 
 	&.au-table--striped .au-table__body {
 		.au-table__row:nth-last-child( odd ) {
