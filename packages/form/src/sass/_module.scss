@@ -35,14 +35,14 @@
   @include AU-fontgrid( sm, default);
 
   // Add space between any <input> element and `.au-select class
-  & + .au-select, + input {
+  & + .au-select, + input, + textarea {
     @include AU-space( margin-top, 0.25unit );
   }
 
   &--inline {
     display: inline-block;
 
-    & + .au-select, + input {
+    & + .au-select, + input, + textarea {
       margin-top: 0;
     }
   }
@@ -64,7 +64,7 @@
   }
 
     //add space between form control and hint text
-  & + .au-select, + input {
+  & + .au-select, + input, + textarea {
 		@include AU-space( margin-top, 0.25unit );
   }
 
@@ -90,14 +90,14 @@
   }
 
   //add space between form control and hint text
-  & + .au-select, + input {
+  & + .au-select, + input, + textarea {
 		@include AU-space( margin-top, 0.25unit );
   }
 
   &--inline {
     display: inline-block;
 
-    & + .au-select, + input {
+    & + .au-select, + input, + textarea {
       margin-top: 0;
     }
   }

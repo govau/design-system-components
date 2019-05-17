@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/form/tests/site/
 
 ## Release History
 
+* v0.1.4 - Add margin between text area and form labels, hint text and error messages.
 * v0.1.3 - Remove --save-dev flag from readme instructions.
 * v0.1.2 - Remove hint text colours as they are now in core.
 * v0.1.1 - Update selector to add `margin-top` for all `input` elements that are preceded by a label element
