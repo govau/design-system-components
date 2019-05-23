@@ -1,0 +1,15 @@
+//dependencies
+@import '../../src/sass/_dependencies.scss';
+
+//testing includes
+@import '../../../body/src/sass/_module.scss';
+@import '../../../grid-12/src/sass/_module.scss';
+@import '../../../buttons/src/sass/_module.scss';
+@import '../../../cta-link/src/sass/_module.scss';
+@import '../../../responsive-media/src/sass/_module.scss';
+
+
+
+
+//styling all test files
+@import '../../../../.templates/test-assets/_style.scss';

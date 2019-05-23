@@ -244,6 +244,20 @@ All components have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/card</summary>
+	<br><code>npm install @gov.au/card</code><br>
+	<br>See the <a href="https://auds.service.gov.au/packages/card/tests/site/">visual test file for card</a>
+	<br>See the <a href="https://github.com/govau/design-system-components/blob/master/packages/card/README.md">readme file for card</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+└─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/control-input</summary>
 	<br><code>npm install @gov.au/control-input</code><br>
 	<br>See the <a href="https://auds.service.gov.au/packages/control-input/tests/site/">visual test file for control-input</a>

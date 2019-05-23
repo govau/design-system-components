@@ -1,0 +1,166 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// card module
+// A container for all types of content
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+.au-card {
+	display:block;
+	width: 100%;
+	border-radius: $AU-border-radius;
+	border: 1px solid lightgray;
+
+	&.au-card--shadow {
+		border-radius: 4px;
+		overflow:hidden;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		background: $AU-color-background;
+	}
+
+	img,
+	svg {
+		display: block;
+	}
+
+	// Typographic spacing
+	* + hr,
+	* + p,
+	* + .au-card__cta {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	.au-card__divider {
+		border: lightgray 0.5px solid;
+		margin-bottom: 0;
+	}
+
+	.au-card__cta {
+		display: block;
+
+		&.au-card__cta--align-right {
+			float: right;
+			@include AU-space( 'margin-bottom', 1rem );
+
+			&:after {
+				@include AU-clearfix();
+			}
+		}
+	}
+
+	.au-card__image {
+		display: block;
+	}
+
+	.au-card__inner {
+		@include AU-space( padding, 1unit );
+	}
+
+	.lt-ie9 & {
+		border: solid 1px $AU-color-foreground-border;
+	}
+
+	&.au-card--centered {
+		text-align: center;
+
+		img,
+		svg {
+			margin: 0 auto;
+		}
+	}
+
+	.au-card__bg {
+		@include AU-space( padding, 1unit );
+		background-color: $AU-color-background-alt;
+
+		&:not(:first-child) {
+			@include AU-space( margin-top, 1unit );
+		}
+	}
+}
+
+// When the box is a link
+a.au-card {
+	color: $AU-color-foreground-text;
+	cursor: pointer;
+
+	.au-body & {
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: 3px solid $AU-color-foreground-focus;
+		outline-offset: 2px;
+	}
+
+	&.au-card--shadow {
+		&:focus {
+			border-radius: 0;
+		}
+
+		&:hover {
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	.au-card__title,
+	.au-card__link,
+	.au-card__cta {
+		color: $AU-color-foreground-action;
+		text-decoration: underline;
+		text-decoration-skip-ink: auto;
+	}
+
+	&:hover {
+		.au-card__title,
+		.au-card__link {
+			text-decoration: none;
+			color: $AU-color-foreground-text;
+		}
+	}
+}
+
+
+// Card listing match height
+.au-card-list {
+	@include AU-clearfix();
+	list-style: none;
+	padding: 0;
+
+	// Odd issue with safari
+	// https://stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
+	&:before {
+		display: none;
+	}
+
+	li {
+		list-style: none;
+		padding: 0;
+	}
+
+	.au-body & {
+		li {
+			@include AU-space( margin-top, 1.5unit );
+		}
+	}
+
+	&.au-card-list--matchheight {
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			display: flex;
+		}
+
+		.au-card {
+			display: block;
+			flex-direction: column;
+		}
+	}
+}
