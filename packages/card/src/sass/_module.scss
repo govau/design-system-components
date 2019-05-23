@@ -16,6 +16,7 @@
 	width: 100%;
 	border-radius: $AU-border-radius;
 	border: 1px solid lightgray;
+	font-family: $AU-font;
 
 	&.au-card--shadow {
 		border-radius: 4px;
@@ -24,9 +25,13 @@
 		background: $AU-color-background;
 	}
 
-	img,
-	svg {
+	& .au-card__text {
+		@include AU-fontgrid( 'sm', 'default' );
+	}
+
+	& .au-card__image {
 		display: block;
+		max-width: 100%;
 	}
 
 	// Typographic spacing
@@ -43,6 +48,12 @@
 
 	.au-card__cta {
 		display: block;
+
+		&.au-card__cta--link {
+			color: $AU-color-foreground-action;
+			text-decoration: underline;
+			text-decoration-skip-ink: auto;
+		}
 
 		&.au-card__cta--align-right {
 			float: right;
@@ -89,10 +100,7 @@
 a.au-card {
 	color: $AU-color-foreground-text;
 	cursor: pointer;
-
-	.au-body & {
-		text-decoration: none;
-	}
+	text-decoration: none;
 
 	&:focus {
 		outline: 3px solid $AU-color-foreground-focus;
