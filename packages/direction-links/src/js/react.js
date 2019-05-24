@@ -42,7 +42,7 @@ const directions = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUdirectionLink = ({ linkComponent, dark,link, text, direction, className = '', ...attributeOptions }) => {
+const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className = '', ...attributeOptions }) => {
 	const LinkComponent = linkComponent;
 
 	if( link ) {
