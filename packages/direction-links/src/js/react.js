@@ -42,7 +42,7 @@ const directions = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className = '', ...attributeOptions }) => {
+const AUdirectionLink = ({ linkComponent, dark, icon,link, text, direction, className = '', ...attributeOptions }) => {
 	const LinkComponent = linkComponent;
 
 	if( link ) {
@@ -56,12 +56,12 @@ const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className
 		}
 
 		return (
-			<LinkComponent className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</LinkComponent>
+			<LinkComponent className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }<span className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } aria-hidden="true"></span></LinkComponent>
 		);
 	}
 	else {
 		return (
-			<button className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button>
+			<button className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }<span className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } aria-hidden="true"></span></button>
 		);
 	}
 };
