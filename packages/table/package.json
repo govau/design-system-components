@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/table",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Used to display tabular data",
 	"keywords": [
 		"auds",

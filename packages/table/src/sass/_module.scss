@@ -86,7 +86,7 @@
 			//numeric cells should be aligned right
 			&.au-table__cell--numeric {
 				text-align: right;
-				font-family: $AU-table-numeric-font;
+				font-variant: tabular-nums;
 			}
 
 			&:focus {
