@@ -150,12 +150,7 @@ a.au-card {
 	li {
 		list-style: none;
 		padding: 0;
-	}
-
-	.au-body & {
-		li {
-			@include AU-space( margin-top, 1.5unit );
-		}
+		@include AU-space( margin-top, 1.5unit );
 	}
 
 	&.au-card-list--matchheight {
