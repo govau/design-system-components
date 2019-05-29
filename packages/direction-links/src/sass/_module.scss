@@ -51,49 +51,18 @@
 	
 }
 
-.direction-icon{
+.au-direction-link__arrow{
 	@include AU-space( width, 1unit );
 	@include AU-space( height, 1unit );
-	@include AU-space( margin, 0 0 0 0.25unit );
+	@include AU-space( margin, 0 0.25unit 0 0.25unit );
 	text-decoration: none;
 	display: inline-block;
 	width: auto;
 	height: auto;
-}
-
-/**
- * LEFT
- */
-
-.au-direction-link--left{
-	float: left;
-	&:before{
-		
-		content: '←';
-		margin-right: 0.5rem;
-	}
-}
-
-/**
- * RIGHT
- */
- .au-direction-link--right:after {
-	content: '→';
 	
+
 }
 
-/**
- * UP
- */
-.au-direction-link--up:after{
-	content: '↑';
-}
 
-/**
- * DOWN
- */
-.au-direction-link--down:after {
-	content: '↓';
-}
 
 

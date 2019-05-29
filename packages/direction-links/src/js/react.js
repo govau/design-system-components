@@ -23,10 +23,10 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const directions = {
-	up: 'au-direction-link--up',
-	right: 'au-direction-link--right',
-	down: 'au-direction-link--down',
-	left: 'au-direction-link--left',
+	up: '↑',
+	right: '→',
+	down: '↓',
+	left: '←',
 };
 
 
@@ -54,16 +54,34 @@ const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className
 		else if( typeof LinkComponent === 'function' ) {
 			attributeOptions.to = link;
 		}
+		if (direction === 'left'){
+			return (
+				<LinkComponent className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }><span className={ `au-direction-link__arrow ${ className }` } aria-hidden="true">{ directions[ direction ] }</span>{ text }</LinkComponent>
+				
+			);
+		}
+		else{	
+		return (
+			<LinkComponent className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }<span className={ `au-direction-link__arrow ${ className }` } aria-hidden="true">{ directions[ direction ] }</span></LinkComponent>	
+		);
+		}
+	}
+	
+	else if(direction === 'left') {
+		
+		return (
+			<button className={ `au-direction-link ${ className } ` } { ...attributeOptions }><span className={ `au-direction-link__arrow ${ className }` } aria-hidden="true">{ directions[ direction ] }</span>{ text }</button>
+		);
+	}
+	else{
 
 		return (
-			<LinkComponent className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }<span className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } aria-hidden="true"></span></LinkComponent>
+			<button className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }<span className={ `au-direction-link__arrow ${ className }` } aria-hidden="true">{ directions[ direction ] }</span></button>
 		);
+
 	}
-	else {
-		return (
-			<button className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }<span className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } aria-hidden="true"></span></button>
-		);
-	}
+	 
+	 
 };
 
 AUdirectionLink.propTypes = {
