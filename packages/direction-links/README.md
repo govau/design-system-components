@@ -107,6 +107,7 @@ The visual test: https://auds.service.gov.au/packages/direction-links/tests/site
 
 ## Release History
 
+* v3.0.0 - Changed arrow in direction links to an icon inside a `span` instead of rendered in `css`
 * v2.2.0 - Remove --save-dev flag from readme instructions
 * v2.1.9 - Removed unused `Fragment` React import
 * v2.1.8 - Resolve autoprefixer warning
