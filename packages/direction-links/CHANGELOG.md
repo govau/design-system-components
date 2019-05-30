@@ -15,7 +15,6 @@
 
 ## Versions
 
-* [v3.0.0 - Changed arrow in direction links to an icon inside a `span` instead of rendered in `css`](#v300) 
 * [v2.2.0 - Remove --save-dev flag from readme instructions](#v220)
 * [v2.1.9 - Removed unused `Fragment` React import](#v219)
 * [v2.1.8 - Resolve autoprefixer warning](#v218)
@@ -41,10 +40,6 @@
 
 
 ## Release History
-
-### v3.0.0
-
-- Changed arrow in direction links to an icon inside a `span` instead of rendered in `css`
 
 ### v2.2.0
 

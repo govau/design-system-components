@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/direction-links",
-	"version": "3.0.0",
+	"version": "2.2.0",
 	"description": "Use direction links to link up and down within the DOM or back to a parent page.",
 	"keywords": [
 		"auds",
@@ -22,15 +22,20 @@
 	],
 	"scripts": {
 		"postinstall": "pancake",
+
 		"test:a11y": "node ../../scripts/a11y.js",
 		"test:helper": "node ../../scripts/helper.js test",
 		"test": "npm-run-all --parallel test:*",
+
 		"prepublish": "npm run test:helper && npm run build:pre",
+
 		"build:pre": "node ../../scripts/helper.js precompile publish",
 		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
 		"build": "npm run build:js && npm run build:react",
+
 		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
+
 		"watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
 		"watch:jsx": "onchange \"src/js/react.js\" \"tests/react/index.js\" -- npm run build",
 		"watch:sass": "onchange \"src/sass/*.scss\" \"tests/site/test.scss\" -- npm run build",
@@ -55,12 +60,11 @@
 	},
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
-		"@gov.au/core": "^3.0.0",
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-json": "~1",
-		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-sass": "~2",
-		"bootstrap": "^4.3.1"
+		"@gov.au/pancake-react": "~1",
+		"@gov.au/pancake-json": "~1",
+		"@gov.au/core": "^3.0.0"
 	},
 	"peerDependencies": {
 		"@gov.au/core": "^3.0.0"
