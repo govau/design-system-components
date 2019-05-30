@@ -129,6 +129,11 @@
 			"name": "Adam Zerella",
 			"email": "hello@adamzerella.com",
 			"url": "https://github.com/adamzerella"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		}
 	],
 	"license": "MIT"
