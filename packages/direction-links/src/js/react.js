@@ -54,34 +54,24 @@ const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className
 		else if( typeof LinkComponent === 'function' ) {
 			attributeOptions.to = link;
 		}
-		if (direction === 'left'){
-			return (
-				<LinkComponent className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }><span className={ `au-direction-link__arrow ${ className }` } aria-hidden="true">{ directions[ direction ] }</span>{ text }</LinkComponent>
-				
-			);
-		}
-		else{	
 		return (
-			<LinkComponent className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }<span className={ `au-direction-link__arrow ${ className }` } aria-hidden="true">{ directions[ direction ] }</span></LinkComponent>	
+			<LinkComponent
+				className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` }
+				{ ...attributeOptions }>
+										<AUdirectionArrow direction={directions[ direction ]} text={text} />
+			</LinkComponent>
 		);
 		}
-	}
-	
-	else if(direction === 'left') {
-		
+	else {
 		return (
-			<button className={ `au-direction-link ${ className } ` } { ...attributeOptions }><span className={ `au-direction-link__arrow ${ className }` } aria-hidden="true">{ directions[ direction ] }</span>{ text }</button>
+			<button className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` }
+							{ ...attributeOptions }>
+							<AUdirectionArrow direction={directions[direction]} text={text} />
+			</button>
 		);
 	}
-	else{
 
-		return (
-			<button className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }<span className={ `au-direction-link__arrow ${ className }` } aria-hidden="true">{ directions[ direction ] }</span></button>
-		);
 
-	}
-	 
-	 
 };
 
 AUdirectionLink.propTypes = {
@@ -97,5 +87,31 @@ AUdirectionLink.defaultProps = {
 	direction: 'right',
 	linkComponent: 'a',
 };
+
+/**
+ * TO DO JS DOCS!!!!!!!!!!!!!!!!!!!!!!
+ * @param {} param
+ */
+const AUdirectionArrow = ({ direction, text }) => {
+	if (direction=== "←") {
+		return (
+			 <React.Fragment><span className="au-direction-link__arrow" aria-hidden="true">{ direction }</span> {text}</React.Fragment>
+		)
+	}
+	else{
+		return (
+			<React.Fragment>{text} <span className="au-direction-link__arrow" aria-hidden="true">{ direction }</span></React.Fragment>
+		)
+	}
+};
+
+AUdirectionArrow.propTypes = {
+	direction: PropTypes.oneOf([ '←', '↑', '↓', '→' ]).isRequired,
+	text: PropTypes.string.isRequired
+}
+
+AUdirectionArrow.defaultProps = {
+
+}
 
 export default AUdirectionLink;
