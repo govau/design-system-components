@@ -46,4 +46,16 @@ export const AUcardDivider = ({ className, ...attributesOptions }) => (
 	<hr className="au-card__divider" {...attributesOptions} />
 )
 
+export const AUcardTitle = ({ children, className, ...attributesOptions }) => (
+	<div className="au-card__title">
+		{children}
+	</div>
+)
+
+export const AUcardTitleLink = ({ link, text,  className, ...attributesOptions }) => (
+	<a href={link} className="au-card__title--link">
+		{text}
+	</a>
+)
+
 export default AUCard;

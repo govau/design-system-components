@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AUCard, { AUcardInner, AUcardImage, AUcardDivider } from './card.js';
+import AUCard, { AUcardInner, AUcardImage, AUcardDivider, AUcardTitle, AUcardTitleLink } from './card.js';
 
 ReactDOM.render(
 	<div className="split-wrapper">
@@ -41,6 +41,18 @@ ReactDOM.render(
 						Bla
 					</AUcardInner>
 			</AUCard>
+
+			<br/><br/>
+
+			<AUCard className="bla">
+				<AUcardImage src="http://placehold.it/1200x500" />
+					<AUcardInner>
+						<AUcardTitle>
+							<AUcardTitleLink link="#" text="Some link" />
+						</AUcardTitle>
+					</AUcardInner>
+			</AUCard>
+
 
 		</div>
 	</div>,
