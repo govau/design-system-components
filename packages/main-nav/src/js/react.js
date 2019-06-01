@@ -411,7 +411,7 @@ export class AUmainNavContent extends React.PureComponent {
 					aria-controls={ this.id }
 					onClick={ ( event ) => this.toggle( event ) }
 					className="au-main-nav__toggle au-main-nav__toggle--open">
-					Menu
+					{ this.props.ariaLabel }
 				</button>
 				<div
 					className="au-main-nav__menu"
