@@ -11,7 +11,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const AUCard = ({children, link, ...attributesOptions}) => {
+const AUcard = ({children, link, ...attributesOptions}) => {
 	let CardContainer = 'div';
 
 	if( link !== undefined ) {
@@ -26,11 +26,11 @@ const AUCard = ({children, link, ...attributesOptions}) => {
 	)
 };
 
-AUCard.propTypes = {
+AUcard.propTypes = {
 	dark: PropTypes.bool
 };
 
-AUCard.defaultProps = {};
+AUcard.defaultProps = {};
 
 export const AUcardInner = ({ children, ...attributesOptions }) => (
 	<div className="au-card__inner" {...attributesOptions}>
@@ -46,16 +46,10 @@ export const AUcardDivider = ({ className, ...attributesOptions }) => (
 	<hr className="au-card__divider" {...attributesOptions} />
 )
 
-export const AUcardTitle = ({ children, className, ...attributesOptions }) => (
-	<div className="au-card__title">
-		{children}
-	</div>
-)
-
-export const AUcardTitleLink = ({ link, text,  className, ...attributesOptions }) => (
-	<a href={link} className="au-card__title--link">
+export const AUcardLink = ({ link, text,  className, ...attributesOptions }) => (
+	<a href={link} className="au-card__link" {...attributesOptions}>
 		{text}
 	</a>
 )
 
-export default AUCard;
+export default AUcard;
