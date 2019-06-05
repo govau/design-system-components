@@ -83,6 +83,7 @@ AUtable.propTypes = {
 	headers: PropTypes.arrayOf( Object ).isRequired,
 	data: PropTypes.arrayOf( Object ).isRequired,
 	striped: PropTypes.bool,
+	footer: PropTypes.array,
 	className: PropTypes.string
 };
 
@@ -148,6 +149,7 @@ AUtableHead.defaultProps = {
  * @param {string} title            - The title of table header/column
  * @param {string} type             - Type of the header, can be either text or numeric for left or right alignment respectively.
  * @param {string} width            - Width of the header/column
+ * @param {string} scope            - Scope of the header, can be 'row' or 'col'
  * @param {string} className        - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
  */
@@ -227,9 +229,9 @@ AUtableRow.propTypes = {
 
 /**
  * The table caption component
- * @param  {string} tableCaption - The title of the table caption
- * @param  {string} className    - An additional class, optional
- * @param {object}  attributeOptions - Default HTML attributes
+ * @param {string} tableCaption     - The title of the table caption
+ * @param {string} className        - An additional class, optional
+ * @param {object} attributeOptions - Default HTML attributes
  *
  */
 export const AUtableCaption = ({ tableCaption, className, ...attributeOptions }) => {
@@ -270,14 +272,22 @@ AUtableResponsiveWrapper.propTypes = {
 
 /**
  * Table footer
- * @param {node} children
+ *
+ * @param {string} className  - An additional class, optional
+ * @param {object} attributeOptions - Default HTML attributes
+ * @param {node}   children
+ *
  */
-export const AUtableFooter = ({children}) => (
-	<tfoot className="au-table__footer">{ children }</tfoot>
+export const AUtableFooter = ({  className, children, ...attributeOptions }) => (
+	<tfoot className={`au-table__footer ${className}`} {...attributeOptions}>{ children }</tfoot>
 );
 
 AUtableFooter.propTypes = {
 	children: PropTypes.node
+}
+
+AUtableFooter.defaultProps = {
+	className: ''
 }
 
 
