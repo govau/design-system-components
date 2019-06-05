@@ -10,7 +10,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 /**
  * The table component
  *
@@ -19,9 +18,11 @@ import PropTypes from 'prop-types';
  * @param {Object[]} data               - The table data in the body
  * @param {bool}     striped            - Colourise every other table row
  * @param {string}   className          - An additional class, optional
+ * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
+ * @param {[]}       footer             - The footer cells
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUtable = ( { caption, headers, data, striped, className, ...attributeOptions} ) => {
+const AUtable = ( { caption, headers, data, footer, striped, className, firstCellIsHeader, ...attributeOptions} ) => {
 	return (
 	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '} ${className}`} { ...attributeOptions }>
 		{caption && <AUtableCaption tableCaption={caption} />}
@@ -41,18 +42,38 @@ const AUtable = ( { caption, headers, data, striped, className, ...attributeOpti
 				{ data.map( (row, rowIndex ) => (
 					<AUtableRow key={rowIndex}>
 						{
-							headers.map( (header, columnIndex) => (
-								<AUtableCell
-									key={columnIndex}
-									data={row[header.key]? row[header.key] : ''}
-									type={header.type}
-									render={header.render ? header.render( row[header.key], row ) : null}
-								/>
-							))
+							headers.map( (header, columnIndex) => {
+								// check to render first cell in rows as a header or not
+								if( columnIndex === 0 && firstCellIsHeader === true  ) {
+									return (<AUtableHeader key={columnIndex} scope="row" title={row[header.key]? row[header.key] : ''} />)
+								}
+								else {
+									return (
+												<AUtableCell
+													key={columnIndex}
+													data={row[header.key]? row[header.key] : ''}
+													type={header.type}
+													render={header.render ? header.render( row[header.key], row ) : null}
+												/>
+											)
+								}
+								})
 						}
 						</AUtableRow>
 							))}
 		</AUtableBody>
+		{
+			footer &&
+				<AUtableFooter>
+					<AUtableRow>
+								{
+										footer.map( ( data, footerIndex ) => (
+										<AUtableCell key={footerIndex} data={ data } type={headers[footerIndex].type} />)
+								)
+								}
+					</AUtableRow>
+				</AUtableFooter>
+		}
 	</table>
 	)
 };
@@ -130,22 +151,24 @@ AUtableHead.defaultProps = {
  * @param {string} className        - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
  */
-export const AUtableHeader = ( { title, type, width, className, ...attributeOptions } ) => {
+export const AUtableHeader = ( { title, type, width, scope, className, ...attributeOptions } ) => {
 return 	<th className={`au-table__header ${className}` +
 						`${type === "numeric" ? " au-table__header--numeric ": " "}` +
 						`${ width ? " au-table__header--width-" + width : " "} `}
-					scope="col" {...attributeOptions}> {title} </th>
+					scope={scope} {...attributeOptions}> {title} </th>
 };
 
 AUtableHeader.propTypes = {
 	title: PropTypes.string.isRequired,
 	type: PropTypes.oneOf(['text', 'numeric']).isRequired,
 	width: PropTypes.oneOf(['10', '20', '25', '33', '50', '75']),
+	scope: PropTypes.oneOf(['row', 'col']),
 	className: PropTypes.string
 };
 
 AUtableHeader.defaultProps = {
 	className: '',
+	scope: 'col',
 	type: 'text'
 };
 
@@ -243,6 +266,19 @@ export const AUtableResponsiveWrapper = ({ children }) => {
 AUtableResponsiveWrapper.propTypes = {
 	children: PropTypes.node
 };
+
+
+/**
+ * Table footer
+ * @param {node} children
+ */
+export const AUtableFooter = ({children}) => (
+	<tfoot className="au-table__footer">{ children }</tfoot>
+);
+
+AUtableFooter.propTypes = {
+	children: PropTypes.node
+}
 
 
 export default AUtable;

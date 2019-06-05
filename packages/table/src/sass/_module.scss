@@ -70,34 +70,52 @@
 			}
 		}
 
-
 		.au-table__row {
 			display: table-row;
 		}
 
 		.au-table__body {
 			display: table-row-group;
+		}
+
+		.au-table__body, .au-table__footer {
+			.au-table__header {
+				@include AU-space( padding, 0.75unit );
+				text-align: left;
+				border-bottom: 1px solid $AU-color-table-row-border;
+				font-weight: bold;
+
+				&:focus {
+					outline: 3px solid $AU-color-foreground-focus;
+				}
+			}
+		}
 
 		.au-table__cell {
 			@include AU-space( padding, 0.75unit );
 			text-align: left;
 			border-bottom: 1px solid $AU-color-table-row-border;
 
+			&:focus {
+				outline: 3px solid $AU-color-foreground-focus;
+			}
+
 			//numeric cells should be aligned right and have monospaced digits
 			&.au-table__cell--numeric {
 				text-align: right;
 				font-variant: tabular-nums;
 			}
-
-			&:focus {
-					outline: 3px solid $AU-color-foreground-focus;
-			}
 		}
-	}
 
 	&.au-table--striped .au-table__body {
 		.au-table__row:nth-last-child( odd ) {
 			background-color: $AU-color-table-row;
+		}
+	}
+
+	.au-table__footer {
+		.au-table__cell {
+			font-weight: bold;
 		}
 	}
 }
