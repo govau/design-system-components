@@ -24,6 +24,10 @@
 		overflow:hidden;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 		background: $AU-color-background;
+
+		&:hover {
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+		}
 	}
 
 	& .au-card__text {
@@ -65,8 +69,8 @@
 
 	// Typographic spacing
 	* + .au-card__divider,
-	* + p,
-	* + .au-card__link {
+	* + .au-card__link,
+	* + .au-card__footer {
 		@include AU-space( margin-top, 1unit );
 	}
 
