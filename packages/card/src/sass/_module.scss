@@ -30,29 +30,9 @@
 		}
 	}
 
-	& .au-card__text {
-		@include AU-fontgrid( 'sm', 'default' );
-	}
-
 	& .au-card__image {
 		display: block;
 		max-width: 100%;
-	}
-
-	.au-card__link {
-		color: $AU-color-foreground-action;
-		text-decoration: underline;
-		text-decoration-skip-ink: auto;
-
-		&:hover {
-				text-decoration: none;
-				color: $AU-color-foreground-text;
-		}
-
-		&:focus {
-			outline: 3px solid $AU-color-foreground-focus;
-			outline-offset: 2px;
-		}
 	}
 
 	.au-card__title .au-card__link {
@@ -64,12 +44,17 @@
 				bottom: 0;
 				left: 0;
 			}
+
+			&:focus {
+				outline: 3px solid $AU-color-foreground-focus;
+				outline-offset: 2px;
+			}
 	}
 
 
 	// Typographic spacing
 	* + .au-card__divider,
-	* + .au-card__link,
+	* + .au-card__body,
 	* + .au-card__footer {
 		@include AU-space( margin-top, 1unit );
 	}
