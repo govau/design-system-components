@@ -80,3 +80,46 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 
 # };
 
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### React
+
+Usage:
+
+```jsx
+	<AUcard className="au-body">
+		<AUcardImage src="http://placehold.it/1200x500" />
+			<AUcardInner>
+				<span>Image caption or description</span>
+			<AUcardFooter>
+				<a href="#">Call to action</a>
+			</AUcardFooter>
+		</AUcardInner>
+	</AUcard>
+
+	//Entire card clickable and single anchor:
+		<AUcard class="au-body">
+			<AUcardImage src="http://placehold.it/1200x500" />
+				<AUcardInner>
+						<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
+				</AUcardInner>
+		</AUcard>
+
+
+
+```
+
+All props:
+
+```jsx
+
+```
