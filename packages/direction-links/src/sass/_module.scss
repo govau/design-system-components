@@ -60,6 +60,28 @@
 	height: auto;
 }
 
+.au-direction-link__arrow{
+	content:'→';
+	@include AU-space( width, 1unit );
+	@include AU-space( height, 1unit );
+	@include AU-space( margin, 0 0.25unit 0 0.25unit );
+	text-decoration: none;
+	display: inline-block;
+	width: auto;
+	height: auto;
+}
+
+.au-direction-link__arrow--up{
+content: '↑';
+}
+
+.au-direction-link__arrow--down{
+	content: '↓';
+}
+
+.au-direction-link__arrow--left{
+	content: '←';
+}
 
 
 
