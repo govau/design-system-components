@@ -75,10 +75,10 @@ ReactDOM.render(
 		<div className="col-md-4 col-md-offset-2">
 
 		<h2>Card with image and wrappingLink</h2>
-		<AUcard className="au-body">
+		<AUcard className="au-body" clickable>
 			<AUcardImage src="http://placehold.it/1200x500" />
 				<AUcardInner>
-						<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
+						<h3 className=""><AUcardLink link="#" text="Some link" /></h3>
 				</AUcardInner>
 		</AUcard>
 		<br/><br/>
@@ -86,7 +86,7 @@ ReactDOM.render(
 		<AUcard link="#">
 			<AUcardImage src="http://placehold.it/1200x500" />
 				<AUcardInner>
-						<h3 className="au-card__title">Title of article</h3>
+						<h3>Title of article</h3>
 				</AUcardInner>
 		</AUcard>
 		</div>
@@ -96,66 +96,66 @@ ReactDOM.render(
 		<h2>Card List example</h2>
 			<ul className="au-card-list au-card-list--matchheight">
 				<li className="col-sm-3 col-xs-6">
-					<AUcard>
+					<AUcard clickable>
 						<AUcardImage src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-card__title au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard>
+					<AUcard clickable>
 						<AUcardImage src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-card__title au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard>
+					<AUcard clickable>
 						<AUcardImage src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-card__title au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard>
+					<AUcard clickable>
 						<AUcardImage src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-card__title au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard>
+					<AUcard clickable>
 						<AUcardImage src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-card__title au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard>
+					<AUcard clickable>
 						<AUcardImage src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-card__title au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard>
+					<AUcard clickable>
 						<AUcardImage src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-card__title au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard>
+					<AUcard clickable>
 						<AUcardImage src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-card__title au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
 					</AUcard>
 				</li>

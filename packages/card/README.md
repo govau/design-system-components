@@ -122,4 +122,36 @@ All props:
 
 ```jsx
 
+<AUcard 
+link     = "#"                {/* Wraps the card in an anchor, with the provided link*/}
+shadow   ={true}              {/* Adds a box shadow to the card*/}
+centered ={true}              {/* Centers all card content*/}
+className="additional-class"  {/* An additional class, optional*/}
+/>
+
+<AUcardInner
+className=""                 {/* An additional class, optional*/}
+/>
+
+<AUcardImage 
+src=""                       {/* The source of the image*/}
+className=""                 {/* An additional class, optional*/}
+/>
+
+<AUcardDivider 
+className=""                 {/*An additional class, optional*/}
+/>
+
+<AUcardLink 
+className= ""                 {/*An additional class, optional*/}
+link     = ""                 {/**/}
+/>
+
+<AUcardFooter
+className=""                 {/*An additional class, optional*/}
+/>
+
+<AUcardBody
+className=""                 {/*An additional class, optional*/}
+/>
 ```

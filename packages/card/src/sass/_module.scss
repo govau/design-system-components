@@ -19,6 +19,11 @@
 	font-family: $AU-font;
 	position: relative;
 
+	&:focus-within {
+		outline: 3px solid $AU-color-foreground-focus;
+		outline-offset: 2px;
+	}
+
 	&.au-card--shadow {
 		border-radius: 4px;
 		overflow:hidden;
@@ -35,7 +40,12 @@
 		max-width: 100%;
 	}
 
-	.au-card__title .au-card__link {
+	&.au-card--clickable {
+		&:focus-within {
+			outline: 3px solid $AU-color-foreground-focus;
+			outline-offset: 2px;
+		}
+		.au-card__link {
 			&:after {
 				content: '';
 				position: absolute;
@@ -45,11 +55,16 @@
 				left: 0;
 			}
 
-			&:focus {
+			&:focus{
+				outline: none;
+			}
+
+			.lt-ie9 &:focus {
 				outline: 3px solid $AU-color-foreground-focus;
 				outline-offset: 2px;
 			}
 	}
+}
 
 
 	// Typographic spacing
@@ -76,7 +91,7 @@
 		border: solid 1px $AU-color-foreground-border;
 	}
 
-	&.au-card--centered {
+	&.au-card--centred {
 		text-align: center;
 
 		.au-card__image {

@@ -14,12 +14,13 @@ import PropTypes from 'prop-types';
  * The card  component
  *
  * @param {string}   link               - The link that clicking the card goes to
- * @param {string}   shadow             - Adds a box shadow to card if true
- * @param {string}   centered           - Aligns all text to center if true
+ * @param {bool}     shadow             - Adds a box shadow to card if true
+ * @param {bool}     centred           - Aligns all text to center if true
+ * @param {bool}     clickable           - Aligns all text to center if true
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUcard = ({ link, shadow, centered, className, children, ...attributesOptions }) => {
+const AUcard = ({ link, shadow, centred, clickable, className, children, ...attributesOptions }) => {
 	let CardContainer = 'div';
 
 	if( link !== undefined ) {
@@ -31,7 +32,8 @@ const AUcard = ({ link, shadow, centered, className, children, ...attributesOpti
 	return (
 		<CardContainer className={`au-card ${className} ` +
 								`${shadow ? 'au-card--shadow' : ''} ` +
-								`${centered ? 'au-card--centered' : ''}`}
+								`${centred ? 'au-card--centred' : ''}` +
+								`${clickable ? 'au-card--clickable' : ''}`}
 								{...attributesOptions}
 								>
 			{children}
@@ -42,13 +44,14 @@ const AUcard = ({ link, shadow, centered, className, children, ...attributesOpti
 AUcard.propTypes = {
 	link: PropTypes.string,
 	shadow: PropTypes.bool,
-	centered: PropTypes.bool,
+	centred: PropTypes.bool,
 	className: PropTypes.string,
 };
 
 AUcard.defaultProps = {
 	shadow: false,
-	centered: false,
+	centred: false,
+	clickable: false,
 	className: ''
 };
 
