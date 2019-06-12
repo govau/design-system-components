@@ -21,9 +21,9 @@ ReactDOM.render(
 			<br/><br/>
 
 			<h2>Basic card with centered content</h2><br/>
-			<AUcard centered={true}>
+			<AUcard centred={true}>
 			<AUcardImage src="http://placehold.it/1200x500" />
-				A basic card
+				Image Caption
 
 			</AUcard>
 			<br/><br/>
@@ -49,7 +49,7 @@ ReactDOM.render(
 			<br/><br/>
 
 			<h2>Card with full width image</h2>
-			<AUcard className="bla">
+			<AUcard>
 				<AUcardImage src="http://placehold.it/1200x500" />
 					<AUcardInner>
 						<span>Image caption or description</span>
@@ -83,10 +83,11 @@ ReactDOM.render(
 		</AUcard>
 		<br/><br/>
 
+		<h2>Card wrapped around an anchor tag</h2>
 		<AUcard link="#">
 			<AUcardImage src="http://placehold.it/1200x500" />
 				<AUcardInner>
-						<h3>Title of article</h3>
+						<h3 class="au-card__title">Title of article</h3>
 				</AUcardInner>
 		</AUcard>
 		</div>

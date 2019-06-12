@@ -123,34 +123,42 @@ All props:
 ```jsx
 
 <AUcard 
-link     = "#"                {/* Wraps the card in an anchor, with the provided link*/}
-shadow   ={true}              {/* Adds a box shadow to the card*/}
-centered ={true}              {/* Centers all card content*/}
-className="additional-class"  {/* An additional class, optional*/}
+link="#"                     {/* Wraps the card in an anchor, with the provided link*/}
+shadow={true}                {/* Adds a box shadow to the card*/}
+centered={true}              {/* Centers all card content*/}
+clickable={true}             {/* Makes entire card clickable if there is anchor tag that has a class of .au-card__link */}
+className="additional-class" {/* An additional class, optional*/}
 />
 
+// Card inner container 
 <AUcardInner
 className=""                 {/* An additional class, optional*/}
 />
 
+//Card image
 <AUcardImage 
 src=""                       {/* The source of the image*/}
 className=""                 {/* An additional class, optional*/}
 />
 
+// Anchor tag. Useful
+<AUcardLink 
+link="/card-blog"             {/*The anchor tag url*/}
+text="Blog about cards"       {/*The text of the anchor tag*/}
+className= ""                 {/*An additional class, optional*/}
+/>
+
+//Horizontal rule to divide content
 <AUcardDivider 
 className=""                 {/*An additional class, optional*/}
 />
 
-<AUcardLink 
-className= ""                 {/*An additional class, optional*/}
-link     = ""                 {/**/}
-/>
-
+//Footer container
 <AUcardFooter
 className=""                 {/*An additional class, optional*/}
 />
 
+//Card body container
 <AUcardBody
 className=""                 {/*An additional class, optional*/}
 />
