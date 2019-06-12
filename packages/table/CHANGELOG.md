@@ -15,6 +15,8 @@
 
 ## Versions
 
+* [v0.1.3 - Remove pancake js plugin from package json](#v013)
+* [v0.1.2 - Utilise the `font-variant` property for numeric table cells](#v012)
 * [v0.1.1 - Update font for numerical cells](#v011)
 * [v0.1.0 - 💥 Initial version](#v010)
 
@@ -24,11 +26,22 @@
 
 ## Release History
 
+### v0.1.3
+
+- Remove pancake js plugin from package json
+
+
+### v0.1.2
+
+- Utilise the `font-variant` property for numeric table cells
+
+
 ### v0.1.1
 
 - Update font for numerical cells
 - Correct typos in readme and JSdoc for react caption component
 - Adjust colours slightly to match designs
+
 
 ### v0.1.0
 

@@ -61,6 +61,8 @@ The visual test: https://auds.service.gov.au/packages/table/tests/site/
 
 ## Release History
 
+* v0.1.3 - Remove pancake js plugin from package json
+* v0.1.2 - Utilise the `font-variant` property for numeric table cells
 * v0.1.1 - Update font for numerical cells
 * v0.1.0 - 💥 Initial version
 

@@ -26,6 +26,3 @@ $dependencies: (
 $AU-color-table-head-border: #BBB;
 $AU-color-table-row-border: #c0c0c0;
 $AU-color-table-row: #F2F2F2;
-
-// Use Verdana system font since it monospaces digits. Use default monospace font as a fallback
-$AU-table-numeric-font: "Verdana" , $AU-font-monospace;
