@@ -1,0 +1,41 @@
+//dependencies
+@import '../../src/sass/_dependencies.scss';
+
+//testing includes
+@import '../../../body/src/sass/_module.scss';
+@import '../../../grid-12/src/sass/_module.scss';
+@import '../../../buttons/src/sass/_module.scss';
+@import '../../../cta-link/src/sass/_module.scss';
+@import '../../../responsive-media/src/sass/_module.scss';
+
+
+
+
+//styling all test files
+@import '../../../../.templates/test-assets/_style.scss';
+
+
+.au-card-list li {
+	@include AU-space( 'margin-top', 1.5unit );
+}
+
+
+// .au-card__cta {
+// 	display: block;
+
+// 	&.au-card__cta--link {
+// 		color: $AU-color-foreground-action;
+// 		text-decoration: underline;
+// 		text-decoration-skip-ink: auto;
+// 	}
+
+// 	&.au-card__cta--align-right {
+// 		float: right;
+// 		@include AU-space( 'margin-bottom', 1rem );
+
+// 		&:after {
+// 			@include AU-clearfix();
+// 		}
+// 	}
+// }
+
