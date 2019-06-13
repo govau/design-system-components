@@ -19,11 +19,6 @@
 	font-family: $AU-font;
 	position: relative;
 
-	&:focus-within {
-		outline: 3px solid $AU-color-foreground-focus;
-		outline-offset: 2px;
-	}
-
 	&.au-card--shadow {
 		border-radius: 4px;
 		overflow:hidden;
