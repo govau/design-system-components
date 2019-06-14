@@ -50,26 +50,26 @@
 
 }
 
-.au-direction-link__arrow{
-	content:'→';
+.au-direction-link__arrow:after{
 	@include AU-space( width, 1unit );
 	@include AU-space( height, 1unit );
 	@include AU-space( margin, 0 0.25unit 0 0.25unit );
+	content: '→';
 	text-decoration: none;
 	display: inline-block;
 	width: auto;
 	height: auto;
 }
 
-.au-direction-link__arrow--up{
+.au-direction-link__arrow--up:after{
 content: '↑';
 }
 
-.au-direction-link__arrow--down{
+.au-direction-link__arrow--down:after{
 	content: '↓';
 }
 
-.au-direction-link__arrow--left{
+.au-direction-link__arrow--left:after{
 	content: '←';
 }
 

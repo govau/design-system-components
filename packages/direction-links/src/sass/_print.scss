@@ -12,19 +12,19 @@
 		color: #000 !important;
 	}
 
-	.au-direction-right:after {
+	.au-direction-link__arrow--right:after {
 		content: '→' !important;
 	}
 
-	.au-direction-link--left:before {
+	.au-direction-link__arrow--left:before {
 		content: '←' !important;
 	}
 
-	.au-direction-link--up:after {
+	.au-direction-link__arrow--up:after {
 		content: '↑' !important;
 	}
 
-	.au-direction-link--down:after {
+	.au-direction-link__arrow--down:after {
 		content: '↓' !important;
 	}
 }
