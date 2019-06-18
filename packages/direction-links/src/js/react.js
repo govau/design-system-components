@@ -89,24 +89,26 @@ AUdirectionLink.defaultProps = {
 };
 
 /**
- * TO DO JS DOCS!!!!!!!!!!!!!!!!!!!!!!
- * @param {} param
+ * The direction arrow component
+ * 
+ * @param  {string}  text             - The text of the direction link
+ * @param  {string}  direction        - The direction for the arrow; can be either: up right down left, default: 'right'
  */
 const AUdirectionArrow = ({ direction, text }) => {
-	if (direction=== "←") {
+	if (direction=== "left") {
 		return (
-			 <React.Fragment><span className="au-direction-link__arrow" aria-hidden="true">{ direction }</span> {text}</React.Fragment>
+			 <React.Fragment><span className={ `au-direction-link-arrow ${ className } ${ directions[ direction ] } `} aria-hidden="true"></span> {text}</React.Fragment>
 		)
 	}
 	else{
 		return (
-			<React.Fragment>{text} <span className="au-direction-link__arrow" aria-hidden="true">{ direction }</span></React.Fragment>
+			<React.Fragment>{text} <span className={ `au-direction-link-arrow ${ className } ${ directions[ direction ] } `} aria-hidden="true"></span></React.Fragment>
 		)
 	}
 };
 
 AUdirectionArrow.propTypes = {
-	direction: PropTypes.oneOf([ '←', '↑', '↓', '→' ]).isRequired,
+	direction: PropTypes.oneOf([ 'up', 'down', 'left', 'right' ]).isRequired,
 	text: PropTypes.string.isRequired
 }
 
