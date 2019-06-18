@@ -23,10 +23,10 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const directions = {
-	up: '↑',
-	right: '→',
-	down: '↓',
-	left: '←',
+	up: 'au-direction-link__arrow--left',
+	right: 'au-direction-link__arrow',
+	down: 'au-direction-link__arrow--down',
+	left: 'au-direction-link__arrow--left',
 };
 
 
