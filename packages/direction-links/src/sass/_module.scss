@@ -53,7 +53,7 @@
 .au-direction-link__arrow:after {
 	@include AU-space( width, 1unit );
 	@include AU-space( height, 1unit );
-	@include AU-space( margin, 0 0.25unit 0 0.25unit );
+	@include AU-space( margin, 0 0.25unit );
 	content: '→';
 	text-decoration: none;
 	display: inline-block;
