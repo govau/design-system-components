@@ -1,7 +1,7 @@
 @gov.au/card
 ============
 
-> Cards are used to organise information related to a single topic. Cards can contain multiple elements, such as images, links, actions, text and more.
+> Cards are used to organise information related to a single topic. Cards can contain multiple elements, such as images, links, buttons or text.
 
 
 ## Contents
