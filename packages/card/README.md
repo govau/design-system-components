@@ -1,7 +1,7 @@
 @gov.au/card
 ============
 
-> A container for all types of content
+> Cards are used to organise information related to a single topic. Cards can contain multiple elements, such as images, links, buttons or text.
 
 
 ## Contents
@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
+* v0.1.1 - Add background color to card
 * v0.1.0 - 💥 Initial version
 
 
