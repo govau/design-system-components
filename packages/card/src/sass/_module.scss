@@ -15,15 +15,15 @@
 	display:block;
 	width: 100%;
 	border-radius: $AU-border-radius;
-	border: 1px solid lightgray;
+	border: 1px solid $AU-card-divider;
 	font-family: $AU-font;
 	position: relative;
+	background: $AU-color-background;
 
 	&.au-card--shadow {
 		border-radius: 4px;
 		overflow:hidden;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-		background: $AU-color-background;
 
 		&:hover {
 			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -70,7 +70,7 @@
 	}
 
 	.au-card__divider {
-		border: lightgray 0.5px solid;
+		border: $AU-card-divider 0.5px solid;
 		margin-bottom: 0;
 	}
 
