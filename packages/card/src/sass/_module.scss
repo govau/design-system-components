@@ -40,7 +40,7 @@
 			outline: 3px solid $AU-color-foreground-focus;
 			outline-offset: 2px;
 		}
-		.au-card__link {
+		.au-card--clickable__link {
 			&:after {
 				content: '';
 				position: absolute;

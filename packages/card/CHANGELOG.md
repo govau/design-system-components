@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.2 - Remove console log and update naming](#v012)
 * [v0.1.1 - Add background color to card](#v011)
 * [v0.1.0 - 💥 Initial version](#v010)
 
@@ -23,6 +24,10 @@
 
 
 ## Release History
+
+### v0.1.2
+
+- Remove console log and update naming
 
 ### v0.1.1
 
