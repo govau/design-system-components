@@ -114,9 +114,6 @@ Usage:
 						<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
 				</AUcardInner>
 		</AUcard>
-
-
-
 ```
 
 All props:
