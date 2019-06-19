@@ -58,7 +58,7 @@ const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className
 			<LinkComponent
 				className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }`}
 				{ ...attributeOptions }>
-										<AUdirectionArrow direction={directions[ direction ]} text={text} />
+										<AUdirectionLinkInner direction={ direction } text={text} />
 			</LinkComponent>
 		);
 		}
@@ -66,7 +66,7 @@ const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className
 		return (
 			<button className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }`}
 							{ ...attributeOptions }>
-							<AUdirectionArrow direction={directions[direction]} text={text} />
+							<AUdirectionLinkInner direction={ direction } text={text} />
 			</button>
 		);
 	}
@@ -90,29 +90,33 @@ AUdirectionLink.defaultProps = {
 
 /**
  * The direction arrow component
- * 
+ *
  * @param  {string}  text             - The text of the direction link
  * @param  {string}  direction        - The direction for the arrow; can be either: up right down left, default: 'right'
  */
-const AUdirectionArrow = ({ direction, text }) => {
-	if (direction=== "au-direction-link__arrow--left") {
+const AUdirectionLinkInner = ({ direction, text }) => {
+	if ( direction === "left" ) {
 		return (
-			 <React.Fragment><span className={ `au-direction-link__arrow ${ direction } `} aria-hidden="true"></span> {text}</React.Fragment>
+			 <React.Fragment>
+				 <span className={ `au-direction-link__arrow ${ directions[ direction ] } `} aria-hidden="true"></span>{text}
+				</React.Fragment>
 		)
 	}
-	else{
+	else {
 		return (
-			<React.Fragment>{text} <span className={ `au-direction-link__arrow ${ direction } `} aria-hidden="true"></span></React.Fragment>
+			<React.Fragment>
+				{text} <span className={ `au-direction-link__arrow ${ directions[ direction ] } `} aria-hidden="true"></span>
+			</React.Fragment>
 		)
 	}
 };
 
-AUdirectionArrow.propTypes = {
-	direction: PropTypes.oneOf([ 'au-direction-link__arrow--up', 'au-direction-link__arrow--down', 'au-direction-link__arrow--left', 'au-direction-link__arrow--right' ]).isRequired,
+AUdirectionLinkInner.propTypes = {
+	direction: PropTypes.oneOf([ 'up', 'down', 'left', 'right' ]).isRequired,
 	text: PropTypes.string.isRequired
 }
 
-AUdirectionArrow.defaultProps = {
+AUdirectionLinkInner.defaultProps = {
 
 }
 
