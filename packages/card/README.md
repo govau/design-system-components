@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
+* v0.1.2 - Remove console log and update naming
 * v0.1.1 - Add background color to card
 * v0.1.0 - 💥 Initial version
 
