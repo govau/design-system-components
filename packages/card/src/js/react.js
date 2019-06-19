@@ -57,6 +57,7 @@ AUcard.defaultProps = {
 
 
 /**
+ * An inner container for the card, with padding of 1 rem
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
@@ -76,6 +77,7 @@ AUcardInner.defaultProps = {
 
 
 /**
+ * An image inside the card
  * @param {string}   src                - Image source
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
@@ -95,6 +97,7 @@ AUcardImage.defaultProps = {
 
 
 /**
+ * A horizontal rule used to divide content inside the card
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
@@ -113,12 +116,13 @@ AUcardDivider.defaultProps = {
 
 
 /**
+ * Use when making the entire click area of card clickable.
  * @param {string}   link               - The location of the link
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
 export const AUcardLink = ({ link, text, className, ...attributesOptions }) => (
-	<a href={link} className={`au-card__link ${className}`} {...attributesOptions}>
+	<a href={link} className={`au-card__clickable--link ${className}`} {...attributesOptions}>
 		{text}
 	</a>
 );
@@ -138,6 +142,7 @@ AUcardLink.defaultProps = {
 
 
 /**
+ * The footer section of the card
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
@@ -158,6 +163,7 @@ AUcardFooter.defaultProps = {
 
 
 /**
+ * The body section
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
