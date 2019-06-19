@@ -121,7 +121,7 @@ AUcardDivider.defaultProps = {
  * @param {object}   attributeOptions   - Default HTML attributes
  */
 export const AUcardLink = ({ link, text, className, ...attributesOptions }) => (
-	<a href={link} className={`au-card__clickable--link ${className}`} {...attributesOptions}>
+	<a href={link} className={`au-card--clickable__link ${className}`} {...attributesOptions}>
 		{text}
 	</a>
 );
