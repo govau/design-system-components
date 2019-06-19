@@ -90,7 +90,6 @@ AUdirectionLink.defaultProps = {
 
 /**
  * The inner contents of the direction link. Includes the text and and the arrow.
- *
  * @param  {string}  text             - The text of the direction link
  * @param  {string}  direction        - The direction for the arrow; can be either: up right down left, default: 'right'
  */
