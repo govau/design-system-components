@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/direction-links",
-	"version": "2.2.0",
+	"version": "3.0.0",
 	"description": "Use direction links to link up and down within the DOM or back to a parent page.",
 	"keywords": [
 		"auds",
@@ -129,6 +129,16 @@
 			"name": "Adam Zerella",
 			"email": "hello@adamzerella.com",
 			"url": "https://github.com/adamzerella"
+		},
+		{
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Kiri Hoy",
+			"email": "kiri.hoy@gmail.com",
+			"url": "https://github.com/kirihoy"
 		}
 	],
 	"license": "MIT"
