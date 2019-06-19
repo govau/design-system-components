@@ -44,7 +44,7 @@
 
 ### v3.0.0 
 
-- Changed direction links arrow icon to be inside a `span`
+- Changed direction links arrow icon to be inside a `span`, making use of `aria-hidden` so the arrow is not read by screen readers
 
 ### v2.2.0
 
