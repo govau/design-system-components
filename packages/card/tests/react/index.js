@@ -84,10 +84,10 @@ ReactDOM.render(
 		<br/><br/>
 
 		<h2>Card wrapped around an anchor tag</h2>
-		<AUcard link="#">
+		<AUcard shadow link="#">
 			<AUcardImage src="http://placehold.it/1200x500" />
 				<AUcardInner>
-						<h3 class="au-card__title">Title of article</h3>
+						<h3 className="au-card__title">Title of article</h3>
 				</AUcardInner>
 		</AUcard>
 		</div>

@@ -26,7 +26,6 @@ const AUcard = ({ link, shadow, centred, clickable, className, children, ...attr
 	if( link !== undefined ) {
 		CardContainer = 'a';
 		attributesOptions.href = link;
-		console.log(CardContainer);
 	}
 
 	return (
