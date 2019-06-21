@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.3 - Fix bug with spacing of class names in AUcard react component](#v013)
 * [v0.1.2 - Remove console log and update naming](#v012)
 * [v0.1.1 - Add background color to card](#v011)
 * [v0.1.0 - 💥 Initial version](#v010)
@@ -24,6 +25,11 @@
 
 
 ## Release History
+
+### v0.1.3
+
+- Fix bug with spacing of class names in AUcard react component
+
 
 ### v0.1.2
 

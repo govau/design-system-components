@@ -31,7 +31,7 @@ const AUcard = ({ link, shadow, centred, clickable, className, children, ...attr
 	return (
 		<CardContainer className={`au-card ${className} ` +
 								`${shadow ? 'au-card--shadow' : ''} ` +
-								`${centred ? 'au-card--centred' : ''}` +
+								`${centred ? 'au-card--centred' : ''} ` +
 								`${clickable ? 'au-card--clickable' : ''}`}
 								{...attributesOptions}
 								>
