@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AUcard, { AUcardInner, AUcardImage, AUcardDivider, AUcardLink, AUcardFooter } from './card.js';
+import AUcard, { AUcardInner, AUcardDivider, AUcardLink, AUcardFooter } from './card.js';
 
 ReactDOM.render(
 	<div>
@@ -22,7 +22,7 @@ ReactDOM.render(
 
 			<h2>Basic card with centered content</h2><br/>
 			<AUcard centred={true}>
-			<AUcardImage src="http://placehold.it/1200x500" />
+			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
 				Image Caption
 
 			</AUcard>
@@ -41,7 +41,7 @@ ReactDOM.render(
 		<h2>Card with image</h2>
 			<AUcard>
 				<AUcardInner>
-					<AUcardImage src="http://placehold.it/1200x500" />
+					<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
 					Image caption
 				</AUcardInner>
 			</AUcard>
@@ -50,7 +50,7 @@ ReactDOM.render(
 
 			<h2>Card with full width image</h2>
 			<AUcard>
-				<AUcardImage src="http://placehold.it/1200x500" />
+				<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
 					<AUcardInner>
 						<span>Image caption or description</span>
 					</AUcardInner>
@@ -59,8 +59,8 @@ ReactDOM.render(
 			<br/><br/>
 
 			<h2>Card with full width image and footer</h2>
-			<AUcard className="au-body">
-				<AUcardImage src="http://placehold.it/1200x500" />
+			<AUcard className="au-body" shadow={true} centred={false} >
+				<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 					<AUcardInner>
 						<span>Image caption or description</span>
 						<AUcardFooter>
@@ -76,7 +76,7 @@ ReactDOM.render(
 
 		<h2>Card with image and wrappingLink</h2>
 		<AUcard className="au-body" clickable>
-			<AUcardImage src="http://placehold.it/1200x500" />
+			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 				<AUcardInner>
 						<h3 className=""><AUcardLink link="#" text="Some link" /></h3>
 				</AUcardInner>
@@ -85,7 +85,7 @@ ReactDOM.render(
 
 		<h2>Card wrapped around an anchor tag</h2>
 		<AUcard shadow link="#">
-			<AUcardImage src="http://placehold.it/1200x500" />
+			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 				<AUcardInner>
 						<h3 className="au-card__title">Title of article</h3>
 				</AUcardInner>
@@ -98,7 +98,7 @@ ReactDOM.render(
 			<ul className="au-card-list au-card-list--matchheight">
 				<li className="col-sm-3 col-xs-6">
 					<AUcard clickable>
-						<AUcardImage src="http://placehold.it/1200x500" />
+						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
 									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
@@ -106,7 +106,7 @@ ReactDOM.render(
 				</li>
 				<li className="col-sm-3 col-xs-6">
 					<AUcard clickable>
-						<AUcardImage src="http://placehold.it/1200x500" />
+						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
 									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
@@ -114,7 +114,7 @@ ReactDOM.render(
 				</li>
 				<li className="col-sm-3 col-xs-6">
 					<AUcard clickable>
-						<AUcardImage src="http://placehold.it/1200x500" />
+						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
 									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
@@ -122,7 +122,7 @@ ReactDOM.render(
 				</li>
 				<li className="col-sm-3 col-xs-6">
 					<AUcard clickable>
-						<AUcardImage src="http://placehold.it/1200x500" />
+						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
 									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
@@ -130,7 +130,7 @@ ReactDOM.render(
 				</li>
 				<li className="col-sm-3 col-xs-6">
 					<AUcard clickable>
-						<AUcardImage src="http://placehold.it/1200x500" />
+						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
 									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
@@ -138,7 +138,7 @@ ReactDOM.render(
 				</li>
 				<li className="col-sm-3 col-xs-6">
 					<AUcard clickable>
-						<AUcardImage src="http://placehold.it/1200x500" />
+						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
 									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
@@ -146,7 +146,7 @@ ReactDOM.render(
 				</li>
 				<li className="col-sm-3 col-xs-6">
 					<AUcard clickable>
-						<AUcardImage src="http://placehold.it/1200x500" />
+						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
 									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
@@ -154,7 +154,7 @@ ReactDOM.render(
 				</li>
 				<li className="col-sm-3 col-xs-6">
 					<AUcard clickable>
-						<AUcardImage src="http://placehold.it/1200x500" />
+						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
 									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
 							</AUcardInner>
