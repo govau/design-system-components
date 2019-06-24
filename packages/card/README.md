@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
+* v0.1.4 - Remove uneccessary sass code and add comments
 * v0.1.3 - Fix bug with spacing of class names in AUcard react component
 * v0.1.2 - Remove console log and update naming
 * v0.1.1 - Add background color to card

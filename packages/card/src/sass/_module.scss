@@ -20,6 +20,7 @@
 	position: relative;
 	background: $AU-color-background;
 
+	//Shadow attributes
 	&.au-card--shadow {
 		border-radius: 4px;
 		overflow:hidden;
@@ -35,11 +36,16 @@
 		max-width: 100%;
 	}
 
+	// css for making the anchor tag hit area span the entire card
 	&.au-card--clickable {
+
+		// If any element inside the card receives focus, add a focus ring around the wrapper card div
 		&:focus-within {
 			outline: 3px solid $AU-color-foreground-focus;
 			outline-offset: 2px;
 		}
+
+		//make hit area entire card
 		.au-card--clickable__link {
 			&:after {
 				content: '';
@@ -50,6 +56,7 @@
 				left: 0;
 			}
 
+			// don't focus on anchor inside the tag
 			&:focus{
 				outline: none;
 			}
@@ -88,20 +95,8 @@
 
 	&.au-card--centred {
 		text-align: center;
-
-		.au-card__image {
-			margin: 0 auto;
-		}
 	}
 
-	.au-card__bg {
-		@include AU-space( padding, 1unit );
-		background-color: $AU-color-background-alt;
-
-		&:not(:first-child) {
-			@include AU-space( margin-top, 1unit );
-		}
-	}
 }
 
 // When the box is a link
