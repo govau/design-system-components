@@ -31,11 +31,6 @@
 		}
 	}
 
-	& .au-card__image {
-		display: block;
-		max-width: 100%;
-	}
-
 	// css for making the anchor tag hit area span the entire card
 	&.au-card--clickable {
 
@@ -79,10 +74,6 @@
 	.au-card__divider {
 		border: $AU-card-divider 0.5px solid;
 		margin-bottom: 0;
-	}
-
-	.au-card__image {
-		display: block;
 	}
 
 	.au-card__inner {

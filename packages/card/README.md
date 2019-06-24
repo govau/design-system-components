@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
+* v0.2.0 - Remove styling for card image and use responsive media
 * v0.1.4 - Remove uneccessary sass code and add comments
 * v0.1.3 - Fix bug with spacing of class names in AUcard react component
 * v0.1.2 - Remove console log and update naming
@@ -101,7 +102,7 @@ Usage:
 
 ```jsx
 	<AUcard className="au-body">
-		<AUcardImage src="http://placehold.it/1200x500" />
+		<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 			<AUcardInner>
 				<span>Image caption or description</span>
 			<AUcardFooter>
@@ -112,7 +113,7 @@ Usage:
 
 	//Entire card clickable and single anchor:
 		<AUcard class="au-body">
-			<AUcardImage src="http://placehold.it/1200x500" />
+			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 				<AUcardInner>
 						<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
 				</AUcardInner>
@@ -136,11 +137,6 @@ className="additional-class" {/* An additional class, optional*/}
 className=""                 {/* An additional class, optional*/}
 />
 
-//Card image
-<AUcardImage 
-src=""                       {/* The source of the image*/}
-className=""                 {/* An additional class, optional*/}
-/>
 
 // Anchor tag. Useful
 <AUcardLink 
