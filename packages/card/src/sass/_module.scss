@@ -76,6 +76,11 @@
 		margin-bottom: 0;
 	}
 
+	//reset top margin on all headings
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 0;
+	}
+
 	.au-card__header {
 		@include AU-space( padding, 1unit);
 		font-weight: bold;

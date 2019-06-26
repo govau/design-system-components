@@ -43,7 +43,7 @@ ReactDOM.render(
 
 			<h2>Basic card with centered content</h2><br/>
 			<AUcard centred={true}>
-			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
+			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt=""/>
 				Image Caption
 
 			</AUcard>
@@ -62,7 +62,7 @@ ReactDOM.render(
 		<h2>Card with image</h2>
 			<AUcard>
 				<AUcardInner>
-					<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
+					<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt=""/>
 					Image caption
 				</AUcardInner>
 			</AUcard>
@@ -71,7 +71,7 @@ ReactDOM.render(
 
 			<h2>Card with full width image</h2>
 			<AUcard>
-				<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
+				<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt=""/>
 					<AUcardInner>
 						<span>Image caption or description</span>
 					</AUcardInner>
