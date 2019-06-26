@@ -15,8 +15,10 @@ import PropTypes from 'prop-types';
  *
  * @param {string}   link               - The link that clicking the card goes to
  * @param {bool}     shadow             - Adds a box shadow to card if true
- * @param {bool}     centred           - Aligns all text to center if true
- * @param {bool}     clickable           - Aligns all text to center if true
+ * @param {bool}     centred            - Aligns all text to center if true
+ * @param {bool}     clickable          - Aligns all text to center if true
+ * @param {bool}     dark               - Dark theme variation
+ * @param {bool}     alt                - Light theme variation
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
@@ -59,6 +61,8 @@ AUcard.defaultProps = {
 	shadow: false,
 	centred: false,
 	clickable: false,
+	dark: false,
+	alt: false,
 	className: ''
 };
 
