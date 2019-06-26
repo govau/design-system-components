@@ -61,7 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
-* v0.3.0 - Remove AUcardBody export, restyle footers and headers, add light/dark theme variations and tests
+* v0.3.0 - Remove AUcardBody export, add feature footers and headers, add light/dark theme variations and tests
 * v0.2.0 - Remove styling for card image and use responsive media
 * v0.1.4 - Remove uneccessary sass code and add comments
 * v0.1.3 - Fix bug with spacing of class names in AUcard react component
@@ -155,11 +155,23 @@ className=""                 {/*An additional class, optional*/}
 
 //Footer container
 <AUcardFooter
+alt={false}                  {/*alt variation*/}
+dark={false}                 {/*dark body variation*/}
 className=""                 {/*An additional class, optional*/}
 />
 
-//Card header container
+//Used for feature headers
 <AUcardHeader
+level={3}                    {/*The desired heading level. Can be from 1 to 6. Optional*/}
+alt={false}                  {/*alt variation*/}
+dark={false}                 {/*dark body variation*/}
+className=""                 {/*An additional class, optional*/}
+/>
+
+
+// Title inside cards
+<AUcardTitle 
+level={2}                    {/*The desired heading level. Can be from 1 to 6. Optional*/}
 className=""                 {/*An additional class, optional*/}
 />
 ```

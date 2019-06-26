@@ -60,8 +60,8 @@
 				outline: 3px solid $AU-color-foreground-focus;
 				outline-offset: 2px;
 			}
+		}
 	}
-}
 
 
 	// Typographic spacing
@@ -77,9 +77,8 @@
 	}
 
 	//reset margins on headings in cards
-	h1, h2, h3, h4, h5, h6 {
-		margin: 0;
-		@include AU-space( padding, 1unit 1unit 0 1unit);
+	.au-card__title {
+		@include AU-space( margin, 0 0 1rem 0 );
 	}
 
 	.au-card__header {
@@ -101,10 +100,6 @@
 
 	.au-card__inner {
 		@include AU-space( padding, 1unit );
-
-		h1, h2, h3, h4, h5, h6 {
-			padding: 0;
-		}
 	}
 
 	.lt-ie9 & {

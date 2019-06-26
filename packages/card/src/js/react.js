@@ -92,18 +92,41 @@ AUcardInner.defaultProps = {
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-export const AUcardHeader = ({ className, children, ...attributesOptions }) => (
-	<div className={`au-card__header ${className}`} {...attributesOptions}>
-		{children}
-	</div>
-);
+export const AUcardHeader = ({ className, level, alt, dark, children, ...attributesOptions }) => {
+
+	let headerTheme = "";
+
+	if ( dark || alt ) {
+		headerTheme = `au-body ${ dark ? "au-body--dark" : "" } ${ alt ? "au-body--alt" : ""}`
+	};
+
+	if ( level ) {
+		const HeadingTag = `h${ level }`;
+		return (
+			<div className={headerTheme} {...attributesOptions}>
+				<HeadingTag className={`au-card__header`}>{children}</HeadingTag >
+			</div>
+		)
+	} else {
+	return (
+		<div className={`au-card__header ${ headerTheme } ${className}`} {...attributesOptions}>
+			{children}
+		</div>
+	)
+	}
+};
 
 AUcardHeader.propTypes = {
-	className: PropTypes.string
+	className: PropTypes.string,
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
+	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 }
 
 AUcardHeader.defaultProps = {
-	className: ''
+	className: '',
+	dark: false,
+	alt: false,
 }
 
 
@@ -170,24 +193,60 @@ AUcardLink.defaultProps = {
 
 
 
-
-
 /**
  * The footer section of the card
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-export const AUcardFooter = ({ children, className, ...attributesOptions }) => (
-	<div className={`au-card__footer ${className}`} {...attributesOptions}>
-		{children}
-	</div>
-);
+export const AUcardFooter = ({ dark, alt, children, className, ...attributesOptions }) => {
+
+
+	let footerTheme = "";
+
+	if ( dark || alt ) {
+		footerTheme = `au-body ${ dark ? "au-body--dark" : "" } ${ alt ? "au-body--alt" : ""}`
+	};
+
+	return (
+		<div className={`au-card__footer ${footerTheme} ${className}`} {...attributesOptions}>
+			{children}
+		</div>
+)};
 
 AUcardFooter.propTypes = {
+	className: PropTypes.string,
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
+}
+
+AUcardFooter.defaultProps = {
+	className: '',
+	dark: false,
+	alt: false,
+}
+
+
+
+/**
+ * The footer section of the card
+ * @param {string}   level              - The tag level (<h1/> <h2/> etc)
+ * @param {string}   className          - An additional class, optional
+ * @param {object}   attributeOptions   - Default HTML attributes
+ */
+export const AUcardTitle = ({ children, className, level, ...attributeOptions }) => {
+	const HeadingTag = `h${ level }`;
+
+	return (
+		<HeadingTag className={ `au-card__title ${ className }` } { ...attributeOptions }>{ children }</HeadingTag>
+	);
+};
+
+AUcardTitle.propTypes = {
+	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
 	className: PropTypes.string
 };
 
-AUcardFooter.defaultProps = {
+AUcardTitle.defaultProps = {
 	className: ''
 };
 
