@@ -16,7 +16,28 @@ ReactDOM.render(
 
 			<h2>Basic card with shadow</h2><br/>
 			<AUcard shadow={true}>
+				<AUcardInner>
+					<h2>Card title</h2>
+					A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+			<h2>Basic card dark</h2><br/>
+			<AUcard dark alt>
+				<AUcardInner>
+				<h2>Card title</h2>
 				A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+			<h2>Basic card alt</h2><br/>
+			<AUcard alt>
+				<AUcardInner>
+				<h2>Card title</h2>
+				A basic card
+				</AUcardInner>
 			</AUcard>
 			<br/><br/>
 
@@ -63,10 +84,10 @@ ReactDOM.render(
 				<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 					<AUcardInner>
 						<span>Image caption or description</span>
-						<AUcardFooter>
-							<a href="#">Call to action</a>
-						</AUcardFooter>
 					</AUcardInner>
+					<AUcardFooter>
+						<a href="#">Call to action</a>
+					</AUcardFooter>
 			</AUcard>
 
 		</div>

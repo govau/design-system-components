@@ -11,6 +11,7 @@
 @import '_globals.scss';
 @import '_print.scss';
 
+
 .au-card {
 	display:block;
 	width: 100%;
@@ -76,6 +77,27 @@
 		margin-bottom: 0;
 	}
 
+	.au-card__header {
+		@include AU-space( padding, 1unit);
+		font-weight: bold;
+		margin: 0;
+		border-bottom: solid 1px $AU-card-divider;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+
+		h1, h2, h3, h4, h5, h6 {
+			margin: 0;
+		}
+	}
+
+	.au-card__footer {
+		@include AU-space( padding, 1unit);
+		margin: 0;
+		border-top: solid 1px $AU-card-divider;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
 	.au-card__inner {
 		@include AU-space( padding, 1unit );
 	}
@@ -84,7 +106,7 @@
 		border: solid 1px $AU-color-foreground-border;
 	}
 
-	&.au-card--centred {
+	&.au-card--centred, & .au-card--centred {
 		text-align: center;
 	}
 
@@ -95,6 +117,19 @@ a.au-card {
 	color: $AU-color-foreground-text;
 	cursor: pointer;
 	text-decoration: none;
+
+	.au-card__title {
+		color: $AU-color-foreground-action;
+		text-decoration: underline;
+		text-decoration-skip-ink: auto;
+	}
+
+	&:hover {
+		.au-card__title {
+			text-decoration: none;
+			color: $AU-color-foreground-text;
+		}
+	}
 
 	&:focus {
 		outline: 3px solid $AU-color-foreground-focus;
@@ -108,19 +143,6 @@ a.au-card {
 
 		&:hover {
 			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-		}
-	}
-
-	.au-card__title {
-		color: $AU-color-foreground-action;
-		text-decoration: underline;
-		text-decoration-skip-ink: auto;
-	}
-
-	&:hover {
-		.au-card__title {
-			text-decoration: none;
-			color: $AU-color-foreground-text;
 		}
 	}
 }
