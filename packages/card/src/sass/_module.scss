@@ -76,22 +76,19 @@
 		margin-bottom: 0;
 	}
 
-	//reset top margin on all headings
+	//reset margins on headings in cards
 	h1, h2, h3, h4, h5, h6 {
-		margin-top: 0;
+		margin: 0;
+		@include AU-space( padding, 1unit 1unit 0 1unit);
 	}
 
 	.au-card__header {
-		@include AU-space( padding, 1unit);
 		font-weight: bold;
 		margin: 0;
 		border-bottom: solid 1px $AU-card-divider;
 		border-top-left-radius: 3px;
 		border-top-right-radius: 3px;
-
-		h1, h2, h3, h4, h5, h6 {
-			margin: 0;
-		}
+		@include AU-space( padding, 1unit);
 	}
 
 	.au-card__footer {
@@ -104,6 +101,10 @@
 
 	.au-card__inner {
 		@include AU-space( padding, 1unit );
+
+		h1, h2, h3, h4, h5, h6 {
+			padding: 0;
+		}
 	}
 
 	.lt-ie9 & {

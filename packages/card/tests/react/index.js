@@ -16,8 +16,8 @@ ReactDOM.render(
 
 			<h2>Basic card with shadow</h2><br/>
 			<AUcard shadow={true}>
+				<h2>Card title</h2>
 				<AUcardInner>
-					<h2>Card title</h2>
 					A basic card
 				</AUcardInner>
 			</AUcard>
@@ -25,8 +25,8 @@ ReactDOM.render(
 
 			<h2>Basic card dark</h2><br/>
 			<AUcard dark alt>
-				<AUcardInner>
 				<h2>Card title</h2>
+				<AUcardInner>
 				A basic card
 				</AUcardInner>
 			</AUcard>
@@ -34,8 +34,8 @@ ReactDOM.render(
 
 			<h2>Basic card alt</h2><br/>
 			<AUcard alt>
-				<AUcardInner>
 				<h2>Card title</h2>
+				<AUcardInner>
 				A basic card
 				</AUcardInner>
 			</AUcard>
@@ -51,8 +51,8 @@ ReactDOM.render(
 
 			<h2>Card with heading and inner container</h2>
 			<AUcard>
+				<h3>Some Heading</h3>
 				<AUcardInner>
-					<h3>Some Heading</h3>
 					<AUcardDivider />
 					<p>Additional content</p>
 				</AUcardInner>
@@ -98,18 +98,19 @@ ReactDOM.render(
 		<h2>Card with image and wrappingLink</h2>
 		<AUcard className="au-body" clickable>
 			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
-				<AUcardInner>
-						<h3 className=""><AUcardLink link="#" text="Some link" /></h3>
-				</AUcardInner>
+			<h3 className=""><AUcardLink link="#" text="Some link" /></h3>
+			<AUcardInner>
+				<span> Additional text</span>
+			</AUcardInner>
 		</AUcard>
 		<br/><br/>
 
 		<h2>Card wrapped around an anchor tag</h2>
 		<AUcard shadow link="#">
 			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
-				<AUcardInner>
-						<h3 className="au-card__title">Title of article</h3>
-				</AUcardInner>
+			<AUcardInner>
+				<h3 className="au-card__title">Title of article</h3>
+			</AUcardInner>
 		</AUcard>
 		</div>
 	</div>

@@ -49,8 +49,8 @@
 			<h2>Basic card</h2><br>
 
 			<div class="au-card">
+			<h2>Some heading</h2>
 				<div class="au-card__inner">
-					<h2>Some heading</h2>
 					<p>Some text</p>
 					<p>Additional text</p>
 				</div>
@@ -75,8 +75,8 @@
 			<h2>Basic card with centered content</h2><br>
 
 			<div class="au-card au-card--centred">
-				<div class="au-body au-body--alt au-card__header">
-					<h2 class="">Some heading</h2>
+				<div class="au-body au-body--alt">
+					<h2 class="au-card__header">Some heading</h2>
 				</div>
 				<div class="au-card__inner">
 						<p>Some text</p>
@@ -89,8 +89,8 @@
 			<h2>Basic card with centered header but not body</h2><br>
 
 			<div class="au-card ">
-				<div class="au-body au-body--alt au-card__header au-card--centred">
-					<h2 class="">Some heading</h2>
+				<div class="au-body au-body--alt au-card--centred">
+					<h2 class="au-card__header">Some heading</h2>
 				</div>
 				<div class="au-card__inner">
 						<span>Some text</span> <br>
@@ -102,8 +102,8 @@
 			<h2>Dark Card</h2><br>
 
 			<div class="au-card au-body au-body--dark  ">
+				<h2>Some heading</h2>
 				<div class="au-card__inner">
-						<h2 class="">Some heading</h2>
 						<span>Some text</span> <br>
 						<p>Additional text</p>
 				</div>
@@ -114,8 +114,8 @@
 			<h2>Alt card</h2><br>
 
 			<div class="au-card au-body au-body--alt">
+				<h2>Some heading</h2>
 				<div class="au-card__inner">
-						<h2 class="">Some heading</h2>
 						<p>Some text</p>
 						<p>Additional text</p>
 				</div>
@@ -124,8 +124,8 @@
 
 			<h2>Basic card with a box shadow</h2><br>
 			<div class="au-card au-card--shadow">
+				<h2>Some heading</h2>
 				<div class="au-card__inner">
-					<h2>Some heading</h2>
 					<hr class="au-card__divider">
 						<p>Some text</p>
 						<p>Additional text</p>
@@ -134,10 +134,10 @@
 			<br><br>
 
 
-			<h2>Basic card with call to action link</h2><br>
+			<h2>Basic card with call to action link and footer</h2><br>
 			<div class="au-card">
+				<h2>Some heading</h2>
 				<div class="au-card__inner">
-					<h2>Some heading</h2>
 					<div class="au-card__body">
 						<p>Some text</p>
 						<p>Additional text</p>
@@ -152,11 +152,9 @@
 
 			<h2>Basic card with image and CTA</h2><br>
 			<div class="au-card au-card--shadow">
+				<h2>Some heading</h2>
 				<div class="au-card__inner">
 					<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
-				</div>
-				<div class="au-card__inner">
-					<h2>Some heading</h2>
 						<p>Some text</p>
 						<p>Additional text</p>
 						<hr class="au-card__divider"> <br>
@@ -168,8 +166,8 @@
 			<h2>Basic card with full width images</h2><br>
 			<div class="au-card au-card--shadow">
 				<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
+				<h2>Some heading</h2>
 				<div class="au-card__inner">
-						<h2>Some heading</h2>
 						<p>Some text</p>
 						<p>Additional text</p>
 						<div class="au-body">
@@ -184,8 +182,8 @@
 			<h1>Link cards</h1>
 			<h2>Card wrapped around an anchor tag</h2><br>
 			<a class="au-card" href="#">
+				<h2 class="au-card__title">Some heading</h2>
 				<div class="au-card__inner">
-					<h2 class="au-card__title">Some heading</h2>
 					<hr class="au-card__divider">
 					<p>Some text</p>
 					<p>Additional text</p>
@@ -196,8 +194,8 @@
 			<h2>Card wrapped around an anchor tag, with image</h2><br>
 			<a class="au-card au-card--shadow" href="#">
 				<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
+				<h2 class="au-card__title">Some heading</h2>
 				<div class="au-card__inner">
-					<h2 class="au-card__title">Some heading</h2>
 						<p>Some text</p>
 						<p>Additional text</p>
 				</div>
@@ -205,12 +203,10 @@
 			<br><br>
 
 			<h2>Card with a single anchor, with hit area wrapping card </h2><br>
-			<div class="au-card au-card--shadow au-card--clickable" href="#">
+			<div class="au-card au-card--shadow au-card--clickable au-body" href="#">
 				<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
+					<h2><a class="au-card--clickable__link" href="#">Some heading</a></h2>
 				<div class="au-card__inner">
-					<div class="au-body">
-							<h2><a class="au-card--clickable__link" href="#">Some heading</a></h2>
-					</div>
 					<p>Some text</p>
 					<p>Additional text</p>
 				</div>
@@ -238,10 +234,8 @@
 			<ul class="au-card-list au-card-list--matchheight">
 				<li class="col-sm-3 xol-xs-6">
 					<div class="au-card">
+					<h2 class="au-card__header">Card 1</h2>
 					<div class="au-card__inner">
-						<div class="au-card__header">
-								<h2>Card 1</h2>
-						</div>
 						<p>Some text</p>
 						<p>Additional text</p>
 					</div>
@@ -249,10 +243,8 @@
 				</li>
 				<li class="col-sm-3 xol-xs-6">
 					<div class="au-card">
+					<h2 class="au-card__header">Card 2</h2>
 					<div class="au-card__inner">
-						<div class="au-card__header">
-								<h2>Card 2</h2>
-						</div>
 						<p>Some text</p>
 						<p>Additional text</p>
 						<p>More text</p>
@@ -261,10 +253,8 @@
 				</li>
 				<li class="col-sm-3 xol-xs-6">
 					<div class="au-card">
+					<h2 class="au-card__header">Card 3</h2>
 						<div class="au-card__inner">
-							<div class="au-card__header">
-									<h2>Card 3</h2>
-							</div>
 							<p>Some text</p>
 							<p>Additional text</p>
 						</div>
@@ -272,10 +262,8 @@
 				</li>
 				<li class="col-sm-3 xol-xs-6">
 					<div class="au-card">
+					<h2 class="au-card__header">Card 4</h2>
 						<div class="au-card__inner">
-							<div class="au-card__header">
-									<h2>Card 4</h2>
-							</div>
 							<p>Some text</p>
 							<p>Additional text</p>
 						</div>
@@ -284,10 +272,8 @@
 
 				<li class="col-sm-3 xol-xs-6">
 					<div class="au-card">
+					<h2 class="au-card__header">Card 5</h2>
 						<div class="au-card__inner">
-							<div class="au-card__header">
-									<h2>Card 5</h2>
-							</div>
 							<p>Some text</p>
 							<p>Additional text</p>
 						</div>
@@ -295,10 +281,8 @@
 				</li>
 				<li class="col-sm-3 xol-xs-6">
 				<div class="au-card">
+				<h2 class="au-card__header">Card 6</h2>
 					<div class="au-card__inner">
-						<div class="au-card__header">
-								<h2>Card 6</h2>
-						</div>
 						<p>Some text</p>
 						<p>Additional text</p>
 					</div>
@@ -306,10 +290,8 @@
 				</li>
 				<li class="col-sm-3 xol-xs-6">
 					<div class="au-card">
+					<h2 class="au-card__header">Card 7</h2>
 						<div class="au-card__inner">
-							<div class="au-card__header">
-									<h2>Card 7</h2>
-							</div>
 							<p>Some text</p>
 							<p>Additional text</p>
 						</div>
@@ -317,10 +299,8 @@
 				</li>
 				<li class="col-sm-3 xol-xs-6">
 						<div class="au-card">
+						<h2 class="au-card__header">Card 8</h2>
 							<div class="au-card__inner">
-								<div class="au-card__header">
-										<h2>Card 8</h2>
-								</div>
 								<p>Some text</p>
 								<p>Additional text</p>
 							</div>
