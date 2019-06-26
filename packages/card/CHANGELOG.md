@@ -34,10 +34,13 @@
 - Remove AUcardBody export
 - Restyle footer and headers
 - Add dark/light theme variation tests
+- Add top margin reset for all headings
+
 
 ### v0.2.0
 
 - Remove styling for card image and use responsive media
+
 
 ### v0.1.4
 
