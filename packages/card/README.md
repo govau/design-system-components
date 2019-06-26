@@ -117,8 +117,8 @@ import AUcard, { AUcardInner, AUcardHeader, AUcardDivider, AUcardLink, AUcardFoo
 	//Entire card clickable and single anchor:
 		<AUcard class="au-body">
 			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
+				<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
 				<AUcardInner>
-						<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
 				</AUcardInner>
 		</AUcard>
 ```
