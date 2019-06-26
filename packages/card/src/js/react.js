@@ -15,12 +15,14 @@ import PropTypes from 'prop-types';
  *
  * @param {string}   link               - The link that clicking the card goes to
  * @param {bool}     shadow             - Adds a box shadow to card if true
- * @param {bool}     centred           - Aligns all text to center if true
- * @param {bool}     clickable           - Aligns all text to center if true
+ * @param {bool}     centred            - Aligns all text to center if true
+ * @param {bool}     clickable          - Aligns all text to center if true
+ * @param {bool}     dark               - Dark theme variation
+ * @param {bool}     alt                - Light theme variation
  * @param {string}   className          - An additional class, optional
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUcard = ({ link, shadow, centred, clickable, className, children, ...attributesOptions }) => {
+const AUcard = ({ link, shadow, centred, dark, alt, clickable, className, children, ...attributesOptions }) => {
 	let CardContainer = 'div';
 
 	if( link !== undefined ) {
@@ -28,8 +30,14 @@ const AUcard = ({ link, shadow, centred, clickable, className, children, ...attr
 		attributesOptions.href = link;
 	}
 
+	let cardTheme = "";
+
+	if ( dark || alt ) {
+		cardTheme = `au-body ${ dark ? "au-body--dark" : "" } ${ alt ? "au-body--alt" : ""}`
+	}
+
 	return (
-		<CardContainer className={`au-card ${className} ` +
+		<CardContainer className={`au-card ${className} ${cardTheme}` +
 								`${shadow ? 'au-card--shadow' : ''} ` +
 								`${centred ? 'au-card--centred' : ''} ` +
 								`${clickable ? 'au-card--clickable' : ''}`}
@@ -42,6 +50,8 @@ const AUcard = ({ link, shadow, centred, clickable, className, children, ...attr
 
 AUcard.propTypes = {
 	link: PropTypes.string,
+	dark: PropTypes.bool,
+	alt: PropTypes.bool,
 	shadow: PropTypes.bool,
 	centred: PropTypes.bool,
 	className: PropTypes.string,
@@ -51,6 +61,8 @@ AUcard.defaultProps = {
 	shadow: false,
 	centred: false,
 	clickable: false,
+	dark: false,
+	alt: false,
 	className: ''
 };
 
@@ -71,6 +83,26 @@ AUcardInner.propTypes = {
 }
 
 AUcardInner.defaultProps = {
+	className: ''
+}
+
+
+/**
+ * An inner container for the card, with padding of 1 rem
+ * @param {string}   className          - An additional class, optional
+ * @param {object}   attributeOptions   - Default HTML attributes
+ */
+export const AUcardHeader = ({ className, children, ...attributesOptions }) => (
+	<div className={`au-card__header ${className}`} {...attributesOptions}>
+		{children}
+	</div>
+);
+
+AUcardHeader.propTypes = {
+	className: PropTypes.string
+}
+
+AUcardHeader.defaultProps = {
 	className: ''
 }
 
@@ -158,28 +190,6 @@ AUcardFooter.propTypes = {
 AUcardFooter.defaultProps = {
 	className: ''
 };
-
-
-
-/**
- * The body section
- * @param {string}   className          - An additional class, optional
- * @param {object}   attributeOptions   - Default HTML attributes
- */
-export const AUcardBody = ({ children, className, ...attributesOptions }) => (
-	<div className={`au-card__body ${className}`} {...attributesOptions}>
-		{children}
-	</div>
-);
-
-AUcardBody.propTypes = {
-	className: PropTypes.string
-};
-
-AUcardBody.defaultProps = {
-	className: ''
-};
-
 
 
 export default AUcard;

@@ -16,13 +16,34 @@ ReactDOM.render(
 
 			<h2>Basic card with shadow</h2><br/>
 			<AUcard shadow={true}>
+				<h2>Card title</h2>
+				<AUcardInner>
+					A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+			<h2>Basic card dark</h2><br/>
+			<AUcard dark alt>
+				<h2>Card title</h2>
+				<AUcardInner>
 				A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+			<h2>Basic card alt</h2><br/>
+			<AUcard alt>
+				<h2>Card title</h2>
+				<AUcardInner>
+				A basic card
+				</AUcardInner>
 			</AUcard>
 			<br/><br/>
 
 			<h2>Basic card with centered content</h2><br/>
 			<AUcard centred={true}>
-			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
+			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt=""/>
 				Image Caption
 
 			</AUcard>
@@ -30,8 +51,8 @@ ReactDOM.render(
 
 			<h2>Card with heading and inner container</h2>
 			<AUcard>
+				<h3>Some Heading</h3>
 				<AUcardInner>
-					<h3>Some Heading</h3>
 					<AUcardDivider />
 					<p>Additional content</p>
 				</AUcardInner>
@@ -41,7 +62,7 @@ ReactDOM.render(
 		<h2>Card with image</h2>
 			<AUcard>
 				<AUcardInner>
-					<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
+					<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt=""/>
 					Image caption
 				</AUcardInner>
 			</AUcard>
@@ -50,7 +71,7 @@ ReactDOM.render(
 
 			<h2>Card with full width image</h2>
 			<AUcard>
-				<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt/>
+				<img className="au-responsive-media-img" src="http://placehold.it/1200x500" alt=""/>
 					<AUcardInner>
 						<span>Image caption or description</span>
 					</AUcardInner>
@@ -63,10 +84,10 @@ ReactDOM.render(
 				<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 					<AUcardInner>
 						<span>Image caption or description</span>
-						<AUcardFooter>
-							<a href="#">Call to action</a>
-						</AUcardFooter>
 					</AUcardInner>
+					<AUcardFooter>
+						<a href="#">Call to action</a>
+					</AUcardFooter>
 			</AUcard>
 
 		</div>
@@ -77,18 +98,19 @@ ReactDOM.render(
 		<h2>Card with image and wrappingLink</h2>
 		<AUcard className="au-body" clickable>
 			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
-				<AUcardInner>
-						<h3 className=""><AUcardLink link="#" text="Some link" /></h3>
-				</AUcardInner>
+			<h3 className=""><AUcardLink link="#" text="Some link" /></h3>
+			<AUcardInner>
+				<span> Additional text</span>
+			</AUcardInner>
 		</AUcard>
 		<br/><br/>
 
 		<h2>Card wrapped around an anchor tag</h2>
 		<AUcard shadow link="#">
 			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
-				<AUcardInner>
-						<h3 className="au-card__title">Title of article</h3>
-				</AUcardInner>
+			<AUcardInner>
+				<h3 className="au-card__title">Title of article</h3>
+			</AUcardInner>
 		</AUcard>
 		</div>
 	</div>

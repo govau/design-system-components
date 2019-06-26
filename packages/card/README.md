@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
+* v0.3.0 - Remove AUcardBody export, restyle footers and headers, add light/dark theme variations and tests
 * v0.2.0 - Remove styling for card image and use responsive media
 * v0.1.4 - Remove uneccessary sass code and add comments
 * v0.1.3 - Fix bug with spacing of class names in AUcard react component
@@ -101,6 +102,8 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 Usage:
 
 ```jsx
+import AUcard, { AUcardInner, AUcardHeader, AUcardDivider, AUcardLink, AUcardFooter } from '@gov.au/card';
+
 	<AUcard className="au-body">
 		<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 			<AUcardInner>
@@ -114,8 +117,8 @@ Usage:
 	//Entire card clickable and single anchor:
 		<AUcard class="au-body">
 			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
+				<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
 				<AUcardInner>
-						<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
 				</AUcardInner>
 		</AUcard>
 ```
@@ -155,8 +158,8 @@ className=""                 {/*An additional class, optional*/}
 className=""                 {/*An additional class, optional*/}
 />
 
-//Card body container
-<AUcardBody
+//Card header container
+<AUcardHeader
 className=""                 {/*An additional class, optional*/}
 />
 ```

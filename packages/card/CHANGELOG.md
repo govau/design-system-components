@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.3.0 - Remove AUcardBody export, restyle footers and headers, add light/dark theme variations and tests](#v030)
 * [v0.2.0 - Remove styling for card image and use responsive media](#v020)
 * [v0.1.4 - Remove uneccessary sass code and add comments](#v014)
 * [v0.1.3 - Fix bug with spacing of class names in AUcard react component](#v013)
@@ -28,9 +29,18 @@
 
 ## Release History
 
+### v0.3.0
+
+- Remove AUcardBody export
+- Restyle footer and headers
+- Add dark/light theme variation tests
+- Add margin reset for headings inside cards
+
+
 ### v0.2.0
 
 - Remove styling for card image and use responsive media
+
 
 ### v0.1.4
 
