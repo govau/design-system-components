@@ -120,7 +120,7 @@ AUcardHeader.propTypes = {
 	className: PropTypes.string,
 	dark: PropTypes.bool,
 	alt: PropTypes.bool,
-	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]).isRequired,
+	level: PropTypes.oneOf([ '1', '2', '3', '4', '5', '6' ]),
 }
 
 AUcardHeader.defaultProps = {
