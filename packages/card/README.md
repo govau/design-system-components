@@ -102,7 +102,7 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 Usage:
 
 ```jsx
-import AUcard, { AUcardInner, AUcardDivider, AUcardLink, AUcardFooter } from '@gov.au/card';
+import AUcard, { AUcardInner, AUcardHeader, AUcardDivider, AUcardLink, AUcardFooter } from '@gov.au/card';
 
 	<AUcard className="au-body">
 		<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
