@@ -34,7 +34,7 @@
 - Remove AUcardBody export
 - Restyle footer and headers
 - Add dark/light theme variation tests
-- Add top margin reset for all headings
+- Add margin reset for headings inside cards
 
 
 ### v0.2.0
