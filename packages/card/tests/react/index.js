@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AUcard, { AUcardInner, AUcardDivider, AUcardLink, AUcardFooter } from './card.js';
+import AUcard, { AUcardInner, AUcardDivider, AUcardHeader, AUcardTitle, AUcardLink, AUcardFooter } from './card.js';
 
 ReactDOM.render(
 	<div>
@@ -16,7 +16,55 @@ ReactDOM.render(
 
 			<h2>Basic card with shadow</h2><br/>
 			<AUcard shadow={true}>
-				<h2>Card title</h2>
+				<AUcardInner>
+				<AUcardTitle level="2">Card title</AUcardTitle>
+					A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+
+			<h2>Basic card with shadow</h2><br/>
+			<AUcard shadow={true}>
+				<AUcardInner>
+				<AUcardTitle level="2">Card title</AUcardTitle>
+					A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+
+			<h2>Basic card with shadow</h2><br/>
+			<AUcard shadow={true}>
+				<AUcardHeader>Card title</AUcardHeader>
+				<AUcardInner>
+					A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+			<h2>Basic card with shadow alt header</h2><br/>
+			<AUcard shadow={true}>
+				<AUcardHeader alt>Card title</AUcardHeader>
+				<AUcardInner>
+					A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+
+			<h2>Basic card with dark alt header</h2><br/>
+			<AUcard shadow={true}>
+				<AUcardHeader dark>Card title</AUcardHeader>
+				<AUcardInner>
+					A basic card
+				</AUcardInner>
+			</AUcard>
+			<br/><br/>
+
+			<h2>Basic card with header and heading</h2><br/>
+			<AUcard shadow={true}>
+				<AUcardHeader level="2" dark>Card feature title</AUcardHeader>
 				<AUcardInner>
 					A basic card
 				</AUcardInner>
@@ -25,18 +73,18 @@ ReactDOM.render(
 
 			<h2>Basic card dark</h2><br/>
 			<AUcard dark alt>
-				<h2>Card title</h2>
 				<AUcardInner>
-				A basic card
+					<AUcardTitle level="2">Card title</AUcardTitle>
+					A basic card
 				</AUcardInner>
 			</AUcard>
 			<br/><br/>
 
 			<h2>Basic card alt</h2><br/>
 			<AUcard alt>
-				<h2>Card title</h2>
 				<AUcardInner>
-				A basic card
+					<AUcardTitle level="2">Card title</AUcardTitle>
+					A basic card
 				</AUcardInner>
 			</AUcard>
 			<br/><br/>
@@ -51,8 +99,8 @@ ReactDOM.render(
 
 			<h2>Card with heading and inner container</h2>
 			<AUcard>
-				<h3>Some Heading</h3>
 				<AUcardInner>
+					<AUcardTitle level="2">Card title</AUcardTitle>
 					<AUcardDivider />
 					<p>Additional content</p>
 				</AUcardInner>
@@ -90,6 +138,18 @@ ReactDOM.render(
 					</AUcardFooter>
 			</AUcard>
 
+			<br/><br/>
+
+			<h2>Card with alt footer</h2>
+			<AUcard className="au-body" shadow={true} centred={false} >
+					<AUcardInner>
+						<span>Image caption or description</span>
+					</AUcardInner>
+					<AUcardFooter alt>
+						<a href="#">Call to action</a>
+					</AUcardFooter>
+			</AUcard>
+
 		</div>
 
 
@@ -98,8 +158,10 @@ ReactDOM.render(
 		<h2>Card with image and wrappingLink</h2>
 		<AUcard className="au-body" clickable>
 			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
-			<h3 className=""><AUcardLink link="#" text="Some link" /></h3>
 			<AUcardInner>
+			<AUcardTitle level="2">
+				<AUcardLink link="#" text="Some link" />
+			</AUcardTitle>
 				<span> Additional text</span>
 			</AUcardInner>
 		</AUcard>
@@ -119,66 +181,74 @@ ReactDOM.render(
 		<h2>Card List example</h2>
 			<ul className="au-card-list au-card-list--matchheight">
 				<li className="col-sm-3 col-xs-6">
-					<AUcard clickable>
+					<AUcard clickable className="au-body">
 						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<AUcardTitle level="3"><AUcardLink link="#" text="Card title" /></AUcardTitle>
+									<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi!</span>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard clickable>
+					<AUcard clickable className="au-body">
 						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<AUcardTitle level="3"><AUcardLink link="#" text="Card title" /></AUcardTitle>
+									<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi!</span>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard clickable>
+					<AUcard clickable className="au-body">
 						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<AUcardTitle level="3"><AUcardLink link="#" text="Card title" /></AUcardTitle>
+									<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi!</span>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard clickable>
+					<AUcard clickable className="au-body">
 						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<AUcardTitle level="3"><AUcardLink link="#" text="Card title" /></AUcardTitle>
+									<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi!</span>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard clickable>
+					<AUcard clickable className="au-body">
 						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<AUcardTitle level="3"><AUcardLink link="#" text="Card title" /></AUcardTitle>
+									<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi!</span>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard clickable>
+					<AUcard clickable className="au-body">
 						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<AUcardTitle level="3"><AUcardLink link="#" text="Card title" /></AUcardTitle>
+									<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi!</span>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard clickable>
+					<AUcard clickable className="au-body">
 						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<AUcardTitle level="3"><AUcardLink link="#" text="Card title" /></AUcardTitle>
+									<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi!</span>
 							</AUcardInner>
 					</AUcard>
 				</li>
 				<li className="col-sm-3 col-xs-6">
-					<AUcard clickable>
+					<AUcard clickable className="au-body">
 						<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
 							<AUcardInner>
-									<h3 className="au-body"><AUcardLink link="#" text="Some link" /></h3>
+									<AUcardTitle level="3"><AUcardLink link="#" text="Card title" /></AUcardTitle>
+									<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, eligendi!</span>
 							</AUcardInner>
 					</AUcard>
 				</li>

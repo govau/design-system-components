@@ -103,6 +103,16 @@
 			"name": "Sukhraj Ghuman",
 			"email": "sukhrajghuman@live.com",
 			"url": "https://github.com/sukhrajghuman"
+		},
+		{
+			"name": "Alex Page",
+			"email": "alex@alexpage.com.au",
+			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Trevor Brennan",
+			"email": "t@trevorbrennan.com",
+			"url": "https://github.com/TrebBrennan"
 		}
 	],
 	"license": "MIT"
