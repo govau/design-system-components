@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
+* v0.3.1 - Use unit instead of rem
 * v0.3.0 - Remove AUcardBody export, add feature footers and headers, add light/dark theme variations and tests
 * v0.2.0 - Remove styling for card image and use responsive media
 * v0.1.4 - Remove uneccessary sass code and add comments
@@ -117,8 +118,11 @@ import AUcard, { AUcardInner, AUcardHeader, AUcardDivider, AUcardLink, AUcardFoo
 	//Entire card clickable and single anchor:
 		<AUcard class="au-body">
 			<img className="au-responsive-media-img" src="http://placehold.it/1200x500" />
-				<h3 className="au-card__title"><AUcardLink link="#" text="Some link" /></h3>
+				<AUcardTitle level="2">
+       	 <AUcardLink link="#" text="Some link" />
+    		</AUcardTitle>
 				<AUcardInner>
+					<p>Card content</p>
 				</AUcardInner>
 		</AUcard>
 ```
