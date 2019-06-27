@@ -78,7 +78,7 @@
 
 	//reset margins on headings in cards
 	.au-card__title {
-		@include AU-space( margin, 0 0 1rem 0 );
+		@include AU-space( margin, 0 0 1unit 0 );
 	}
 
 	.au-card__header {
