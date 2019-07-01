@@ -139,7 +139,7 @@ AUtableHead.defaultProps = {
  * @param {string} className        - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
  */
-export const AUtableHeader = ( { title, type, width, scope, className, ...attributeOptions } ) => {
+export const AUtableHeader = ({ title, type, width, scope, className, ...attributeOptions }) => {
 return 	<th className={`au-table__header ${className}` +
 						`${type === "numeric" ? " au-table__header--numeric ": " "}` +
 						`${ width ? " au-table__header--width-" + width : " "} `}
