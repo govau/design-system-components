@@ -29,7 +29,7 @@
 
 ### v0.2.0
 
-- Add `<tfoot>` styling, refactor sass, first cell header option
+- Refactor sass, first cell header option
 
 
 ### v0.1.3
