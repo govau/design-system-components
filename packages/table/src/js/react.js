@@ -19,10 +19,9 @@ import PropTypes from 'prop-types';
  * @param {bool}     striped            - Colourise every other table row
  * @param {string}   className          - An additional class, optional
  * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
- * @param {[]}       footer             - The footer cells
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUtable = ( { caption, headers, data, footer, striped, className, firstCellIsHeader, ...attributeOptions} ) => {
+const AUtable = ( {caption, headers, data, striped, className, firstCellIsHeader, ...attributeOptions} ) => {
 	return (
 	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '} ${className}`} { ...attributeOptions }>
 		{caption && <AUtableCaption tableCaption={caption} />}
@@ -62,18 +61,6 @@ const AUtable = ( { caption, headers, data, footer, striped, className, firstCel
 						</AUtableRow>
 							))}
 		</AUtableBody>
-		{
-			footer &&
-				<AUtableFooter>
-					<AUtableRow>
-								{
-										footer.map( ( data, footerIndex ) => (
-										<AUtableCell key={footerIndex} data={ data } type={headers[footerIndex].type} />)
-								)
-								}
-					</AUtableRow>
-				</AUtableFooter>
-		}
 	</table>
 	)
 };
@@ -83,7 +70,6 @@ AUtable.propTypes = {
 	headers: PropTypes.arrayOf( Object ).isRequired,
 	data: PropTypes.arrayOf( Object ).isRequired,
 	striped: PropTypes.bool,
-	footer: PropTypes.array,
 	className: PropTypes.string
 };
 
@@ -268,27 +254,6 @@ export const AUtableResponsiveWrapper = ({ children }) => {
 AUtableResponsiveWrapper.propTypes = {
 	children: PropTypes.node
 };
-
-
-/**
- * Table footer
- *
- * @param {string} className  - An additional class, optional
- * @param {object} attributeOptions - Default HTML attributes
- * @param {node}   children
- *
- */
-export const AUtableFooter = ({  className, children, ...attributeOptions }) => (
-	<tfoot className={`au-table__footer ${className}`} {...attributeOptions}>{ children }</tfoot>
-);
-
-AUtableFooter.propTypes = {
-	children: PropTypes.node
-}
-
-AUtableFooter.defaultProps = {
-	className: ''
-}
 
 
 export default AUtable;

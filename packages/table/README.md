@@ -61,7 +61,7 @@ The visual test: https://auds.service.gov.au/packages/table/tests/site/
 
 ## Release History
 
-* v0.2.0 - Add `<tfoot>` styling, refactor sass, first cell header option
+* v0.2.0 - Refactor sass, first cell header option
 * v0.1.3 - Remove pancake js plugin from package json
 * v0.1.2 - Utilise the `font-variant` property for numeric table cells
 * v0.1.1 - Update font for numerical cells
@@ -100,7 +100,7 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 Usage:
 
 ```jsx
-import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow, AUtableFooter} from '@gov.au/table';
+import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from '@gov.au/table';
 
 //simple example
 <AUtable 
@@ -114,7 +114,6 @@ import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableH
 		{location: "Victoria",        population: "5,996,400"},
 		{location: "Tasmania",        population: "514,400"}
 	]}
-	footer=["total", "13,667,110"]
 />
 
 
@@ -169,7 +168,6 @@ All props:
 	headers={[]}               {/* The table headers */}
 	data={[]}                  {/* The table body data */}
 	firstCellIsHeader={true}   {/* Is first cell in table body rows a header*}
-	footer={[]}                {/* The table footer data*/}
 	striped={true}             {/* Striped version of the table*/}
 	className=""               {/*An additional class, optional*/}
 	/>
@@ -202,10 +200,6 @@ className=""                 {/*An additional class, optional*/}
 
 <AUtableCaption 
 tableCaption="Dates and amounts"     {/*Title of the table*/}
-className=""                         {/*An additional class, optional*/}
-/>
-
-<AUtableFooter
 className=""                         {/*An additional class, optional*/}
 />
 

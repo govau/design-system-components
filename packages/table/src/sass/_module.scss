@@ -78,7 +78,7 @@
 			display: table-row-group;
 		}
 
-		.au-table__body, .au-table__footer {
+		.au-table__body {
 			.au-table__header {
 				@include AU-space( padding, 0.75unit );
 				text-align: left;
@@ -110,12 +110,6 @@
 	&.au-table--striped .au-table__body {
 		.au-table__row:nth-last-child( odd ) {
 			background-color: $AU-color-table-row;
-		}
-	}
-
-	.au-table__footer {
-		.au-table__cell {
-			font-weight: bold;
 		}
 	}
 }

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import AUtags from '../../../tags/src/js/react.js';
 
 
-import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow, AUtableFooter} from './table.js';
+import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from './table.js';
 
 const renderVicTags = () => (<AUtags tags={[{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}]} />)
 const renderNSWTags = () => (<AUtags tags={[{link: '#', text: "Sydney"}, {link: '#', text: "Opera House"}]} />)
@@ -19,8 +19,6 @@ const simpleHeaders = [
 	{title: "Location",   key: "location"},
 	{title: "Population", key: "population", type: 'numeric'}
 ];
-
-const simpleFooter = ["Total", "13,667,110"];
 
 const simpleHeadersWidths = [{title: "Location", width: "50", key: "location" }, {title: "Population", width: "50", type: 'numeric', key: "population"}];
 
@@ -112,13 +110,12 @@ const headerUsingRecord = [
 
 ReactDOM.render(
 	<div>
-		<h3>Simple Table, first cell is header, and with footer row</h3>
+		<h3>Simple Table, first cell is header</h3>
 
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={simpleHeaders}
 			data={simpleData}
-			footer={simpleFooter}
 			firstCellIsHeader={true}
 		/>
 
@@ -267,38 +264,6 @@ ReactDOM.render(
 	</div>
 
 </div>
-
-		<br/>
-		<br/>
-		<br />
-		<br />
-		<h3>Table with footer</h3>
-		<br/>
-
-	<table className="au-table">
-		<AUtableHead>
-			<AUtableRow>
-				<AUtableHeader type="text" title="Location"/>
-				<AUtableHeader type="numeric" title="Population"/>
-			</AUtableRow>
-		</AUtableHead>
-		<AUtableBody>
-			<AUtableRow>
-				<AUtableCell data="New South Wales" type="text" />
-				<AUtableCell data="7,670,700" type="numeric"/>
-			</AUtableRow>
-			<AUtableRow>
-				<AUtableCell data="Victoria" type="text" />
-				<AUtableCell data="5,996,400" type="numeric"  />
-			</AUtableRow>
-		</AUtableBody>
-		<AUtableFooter>
-				<AUtableRow>
-					<AUtableHeader title="Total" scope="row" />
-					<AUtableCell data="13,667,110" type="numeric" className="bold-cell" />
-				</AUtableRow>
-			</AUtableFooter>
-	</table>
 
 	</div>
 	,
