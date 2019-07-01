@@ -19,6 +19,7 @@ const simpleHeaders = [
 	{title: "Location",   key: "location"},
 	{title: "Population", key: "population", type: 'numeric'}
 ];
+
 const simpleHeadersWidths = [{title: "Location", width: "50", key: "location" }, {title: "Population", width: "50", type: 'numeric', key: "population"}];
 
 
@@ -109,12 +110,13 @@ const headerUsingRecord = [
 
 ReactDOM.render(
 	<div>
-		<h3>Simple Table</h3>
+		<h3>Simple Table, first cell is header</h3>
 
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={simpleHeaders}
 			data={simpleData}
+			firstCellIsHeader={true}
 		/>
 
 		<br/>
@@ -241,7 +243,7 @@ ReactDOM.render(
 <br/>
 <br />
 <br />
-<div className="au-grid row">
+<div className="row">
 	<div className="au-table__wrapper col-md-6">
 	<AUtable
 		caption="Example table in a col-md-6"
@@ -260,6 +262,7 @@ ReactDOM.render(
 					]}
 	/>
 	</div>
+
 </div>
 
 	</div>
