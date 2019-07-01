@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/table/tests/site/
 
 ## Release History
 
+* v0.2.0 - Refactor sass, first cell header option
 * v0.1.3 - Remove pancake js plugin from package json
 * v0.1.2 - Utilise the `font-variant` property for numeric table cells
 * v0.1.1 - Update font for numerical cells
@@ -99,6 +100,8 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 Usage:
 
 ```jsx
+import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from '@gov.au/table';
+
 //simple example
 <AUtable 
 	caption="Population of Australian states and territories, December 2015"
@@ -163,8 +166,9 @@ All props:
 <AUTable
 	caption="Population of Australian states and territories, December 2015"
 	headers={[]}               {/* The table headers */}
-	data = {[]}                {/* the table body data */}
-	striped={true}             {/* Striped version of the table*/} 
+	data={[]}                  {/* The table body data */}
+	firstCellIsHeader={true}   {/* Is first cell in table body rows a header*}
+	striped={true}             {/* Striped version of the table*/}
 	className=""               {/*An additional class, optional*/}
 	/>
 
@@ -180,6 +184,7 @@ className=""                 {/*An additional class, optional*/}
 title="Population"           {/*The title of the column/header*/}
 type="numeric"               {/*The type of the column data, 'numeric' for right align, 'text' for left aligned*/}
 width="75"                   {/*Width of the header/column. Can be either 25, 33, 50 or 75*/}
+scope="col"                  {/*Scope of the header, can be either row or column*/}
 className=""                 {/*An additional class, optional*/}
 >
 
