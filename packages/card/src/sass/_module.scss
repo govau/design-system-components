@@ -1,0 +1,182 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// card module
+// A container for all types of content
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+.au-card {
+	display:block;
+	width: 100%;
+	border-radius: $AU-border-radius;
+	border: 1px solid $AU-card-divider;
+	font-family: $AU-font;
+	position: relative;
+	background: $AU-color-background;
+
+	//Shadow attributes
+	&.au-card--shadow {
+		border-radius: 4px;
+		overflow:hidden;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+		&:hover {
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	// css for making the anchor tag hit area span the entire card
+	&.au-card--clickable {
+
+		// If any element inside the card receives focus, add a focus ring around the wrapper card div
+		&:focus-within {
+			outline: 3px solid $AU-color-foreground-focus;
+			outline-offset: 2px;
+		}
+
+		//make hit area entire card
+		.au-card--clickable__link {
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+
+			// don't focus on anchor inside the tag
+			&:focus{
+				outline: none;
+			}
+
+			.lt-ie9 &:focus {
+				outline: 3px solid $AU-color-foreground-focus;
+				outline-offset: 2px;
+			}
+		}
+	}
+
+
+	// Typographic spacing
+	* + .au-card__divider,
+	* + .au-card__body,
+	* + .au-card__footer {
+		@include AU-space( margin-top, 1unit );
+	}
+
+	.au-card__divider {
+		border: $AU-card-divider 0.5px solid;
+		margin-bottom: 0;
+	}
+
+	//reset margins on headings in cards
+	.au-card__title {
+		@include AU-space( margin, 0 0 1unit 0 );
+	}
+
+	.au-card__header {
+		font-weight: bold;
+		margin: 0;
+		border-bottom: solid 1px $AU-card-divider;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		@include AU-space( padding, 1unit);
+	}
+
+	.au-card__footer {
+		@include AU-space( padding, 1unit);
+		margin: 0;
+		border-top: solid 1px $AU-card-divider;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	.au-card__inner {
+		@include AU-space( padding, 1unit );
+	}
+
+	.lt-ie9 & {
+		border: solid 1px $AU-color-foreground-border;
+	}
+
+	&.au-card--centred, & .au-card--centred {
+		text-align: center;
+	}
+
+}
+
+// When the box is a link
+a.au-card {
+	color: $AU-color-foreground-text;
+	cursor: pointer;
+	text-decoration: none;
+
+	.au-card__title {
+		color: $AU-color-foreground-action;
+		text-decoration: underline;
+		text-decoration-skip-ink: auto;
+	}
+
+	&:hover {
+		.au-card__title {
+			text-decoration: none;
+			color: $AU-color-foreground-text;
+		}
+	}
+
+	&:focus {
+		outline: 3px solid $AU-color-foreground-focus;
+		outline-offset: 2px;
+	}
+
+	&.au-card--shadow {
+		&:focus {
+			border-radius: 0;
+		}
+
+		&:hover {
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+		}
+	}
+}
+
+
+// Card listing match height
+.au-card-list {
+	@include AU-clearfix();
+	list-style: none;
+	padding: 0;
+
+	// Odd issue with safari
+	// https://stackoverflow.com/questions/34250282/flexbox-safari-bug-flex-wrap
+	&:before {
+		display: none;
+	}
+
+	li {
+		list-style: none;
+		padding: 0;
+		@include AU-space( margin-top, 1.5unit );
+	}
+
+	&.au-card-list--matchheight {
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			display: flex;
+		}
+
+		.au-card {
+			display: block;
+			flex-direction: column;
+		}
+	}
+}

@@ -1,7 +1,7 @@
 {
-	"name": "@gov.au/direction-links",
-	"version": "3.0.0",
-	"description": "Use direction links to link up and down within the DOM or back to a parent page.",
+	"name": "@gov.au/card",
+	"version": "0.3.1",
+	"description": "A container for all types of content",
 	"keywords": [
 		"auds",
 		"pancake",
@@ -12,13 +12,7 @@
 		"gov.au",
 		"Commonwealth of Australia",
 		"design guide",
-		"design system",
-		"up",
-		"down",
-		"left",
-		"right",
-		"direction links",
-		"links"
+		"design system"
 	],
 	"scripts": {
 		"postinstall": "pancake",
@@ -30,9 +24,9 @@
 		"prepublish": "npm run test:helper && npm run build:pre",
 
 		"build:pre": "node ../../scripts/helper.js precompile publish",
-		"build:js": "npm run build:pre && node ../../scripts/helper.js compile",
+		"build:js": "node ../../scripts/helper.js compile",
 		"build:react": "cd tests/react/ && webpack",
-		"build": "npm run build:js && npm run build:react",
+		"build": "npm run build:pre && npm run build:js && npm run build:react",
 
 		"serve": "browser-sync tests --files \"tests/**/*.html, tests/**/*.css, tests/**/*.js\"",
 
@@ -64,6 +58,7 @@
 		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
+
 		"@gov.au/core": "^3.0.0"
 	},
 	"peerDependencies": {
@@ -79,7 +74,6 @@
 		"onchange": "^5.2.0",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
-		"react-router-dom": "^4.3.1",
 		"webpack": "^4.29.6",
 		"webpack-cli": "^3.2.3"
 	},
@@ -94,7 +88,7 @@
 		"type": "git",
 		"url": "https://github.com/govau/design-system-components.git"
 	},
-	"homepage": "https://designsystem.gov.au/components/direction-links",
+	"homepage": "https://designsystem.gov.au/components/card",
 	"bugs": {
 		"url": "https://github.com/govau/design-system-components/issues",
 		"email": "designsystem@digital.gov.au"
@@ -106,19 +100,9 @@
 	},
 	"contributors": [
 		{
-			"name": "Dominik Wilkowski",
-			"email": "hi@dominik-wilkowski.com",
-			"url": "https://github.com/dominikwilkowski"
-		},
-		{
-			"name": "Simon Pascal Klein",
-			"email": "klepas@klepas.org",
-			"url": "https://github.com/klepas"
-		},
-		{
-			"name": "Trevor Brennan",
-			"email": "t@trevorbrennan.com",
-			"url": "https://github.com/TrebBrennan"
+			"name": "Sukhraj Ghuman",
+			"email": "sukhrajghuman@live.com",
+			"url": "https://github.com/sukhrajghuman"
 		},
 		{
 			"name": "Alex Page",
@@ -126,19 +110,9 @@
 			"url": "https://github.com/alex-page"
 		},
 		{
-			"name": "Adam Zerella",
-			"email": "hello@adamzerella.com",
-			"url": "https://github.com/adamzerella"
-		},
-		{
-			"name": "Sukhraj Ghuman",
-			"email": "sukhrajghuman@live.com",
-			"url": "https://github.com/sukhrajghuman"
-		},
-		{
-			"name": "Kiri Hoy",
-			"email": "kiri.hoy@gmail.com",
-			"url": "https://github.com/kirihoy"
+			"name": "Trevor Brennan",
+			"email": "t@trevorbrennan.com",
+			"url": "https://github.com/TrebBrennan"
 		}
 	],
 	"license": "MIT"

@@ -16,7 +16,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 
-	<title>Test: direction-links</title>
+	<title>Test: card</title>
 
 	<script type="text/javascript">
 		var $html=document.documentElement;if($html.classList)$html.classList.remove("no-js"),$html.classList.add("js");else{var className="no-js";$html.className=$html.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),$html.className+=" js"}
@@ -35,152 +35,275 @@
 		</script>
 	<![endif]-->
 </head>
-<body>
+<body class="au-grid">
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
 
 	<a class="test-link" href="../">&larr; back to the module index</a>
 
-	<h1>Test: direction-links</h1>
+	<h1>Test: card</h1>
 
-	<div class="split-wrapper">
-		<div class="split">
+	<div class="row">
+		<div class="col-md-4">
+			<h2>Basic card</h2><br>
+			<div class="au-card">
+				<div class="au-card__inner">
+					<h2 class="au-card__title">Card Title</h2>
+					<p>Some text</p>
+					<p>Additional text</p>
+				</div>
+			</div>
+			<br><br>
 
-			<h2>bare</h2>
-			<a class="au-direction-link" href="#">Continue<span class="au-direction-link__arrow" aria-hidden="true"></span></a>
+			<h2>Basic card with feature title</h2><br>
 
-			<hr>
-			<h2><code>--right</code> variant</h2>
+			<div class="au-card">
+				<div class="au-card__header au-body au-body--alt">
+					Some heading
+				</div>
+				<div class="au-card__inner">
+					<div class="au-card__body">
+						<p>Some text</p>
+						<p>Additional text</p>
+					</div>
+				</div>
+			</div>
+			<br><br>
 
-			<a class="au-direction-link" href="#">Next<span class="au-direction-link__arrow" aria-hidden="true"></span></a>
+			<h2>Basic card with centered content</h2><br>
 
-			<hr>
-			<h2><code>--left</code> variant</h2>
+			<div class="au-card au-card--centred au-body">
+				<div class="au-body au-body--alt">
+					<h2 class="au-card__header">Some heading</h2>
+				</div>
+				<div class="au-card__inner">
+						<p>Some text</p>
+						<p>Additional text</p>
+				</div>
+			</div>
+			<br><br>
 
-			<a class="au-direction-link" href="#"><span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back</a>
 
-			<hr>
-			<h2><code>--up</code> variant</h2>
+			<h2>Basic card with centered header but not body</h2><br>
 
-			<a class="au-direction-link" href="#">Top<span class="au-direction-link__arrow au-direction-link__arrow--up" aria-hidden="true"></span></a>
+			<div class="au-card au-body">
+				<div class="au-body au-body--alt au-card--centred">
+					<h2 class="au-card__header">Some heading</h2>
+				</div>
+				<div class="au-card__inner">
+						<span>Some text</span> <br>
+						<p>Additional text</p>
+				</div>
+			</div>
+			<br><br>
 
-			<hr>
-			<h2><code>--down</code> variant</h2>
+			<h2>Dark Card</h2><br>
 
-			<a class="au-direction-link" href="#">Skip to footer<span class="au-direction-link__arrow au-direction-link__arrow--down" aria-hidden="true"></span></a>
+			<div class="au-card au-body au-body--dark  ">
+				<div class="au-card__inner">
+						<h2 class="au-card__title">Card title</h2>
+						<span>Some text</span> <br>
+				</div>
+			</div>
+			<br><br>
 
-			<hr>
-			<h2>direction-links as button</h2>
 
-			<button class="au-direction-link">Next<span class="au-direction-link__arrow" aria-hidden="true"></span></button>
-			<button class="au-direction-link">Back<span class=" au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span></button>
-			<button class="au-direction-link">Top<span class="au-direction-link__arrow au-direction-link__arrow--up" aria-hidden="true"></span></button>
-			<button class="au-direction-link">Skip to footer<span class="au-direction-link__arrow au-direction-link__arrow--down" aria-hidden="true"></span></button>
-		</div>
+			<h2>Alt card</h2><br>
 
-		<div class="split split--dark">
+			<div class="au-card au-body au-body--alt">
+				<div class="au-card__inner">
+					<h2 class="au-card__title">Card title</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, assumenda?</p>
+				</div>
+			</div>
+			<br><br>
 
-			<h2>bare <code>--dark</code></h2>
-			<a class="au-direction-link au-direction-link--dark" href="#">Continue<span class="au-direction-link__arrow" aria-hidden="true"></span></a>
+			<h2>Basic card with a box shadow</h2><br>
+			<div class="au-card au-card--shadow">
+				<div class="au-card__inner">
+					<h2 class="au-card__title">Card title</h2>
+					<hr class="au-card__divider">
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam illum illo quis magnam sapiente ipsum quos aperiam quas. Tempora delectus nemo sequi quisquam sapiente sed nesciunt! Amet, voluptatem. Dolore, corrupti?</p>
+				</div>
+			</div>
+			<br><br>
 
-			<hr>
-			<h2><code>--right</code> <code>--dark</code> variant</h2>
 
-			<a class="au-direction-link au-direction-link--dark" href="#">Next<span class="au-direction-link__arrow" aria-hidden="true"></span></a>
+			<h2>Basic card with call to action link and footer</h2><br>
+			<div class="au-card au-body">
+				<div class="au-card__inner">
+					<h2 class="au-card__title">Some heading</h2>
+					<div class="au-card__body">
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, voluptatibus.</p>
+					</div>
+				</div>
+					<div class="au-card__footer">
+						<a class="au-cta-link au-cta-link--alt" href="#">Sign up</a>
+					</div>
+			</div>
+			<br><br>
 
-			<hr>
-			<h2><code>--left</code> <code>--dark</code> variant</h2>
 
-			<a class="au-direction-link au-direction-link--dark" href="#"><span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back</a>
+			<h2>Basic card with image and CTA</h2><br>
+			<div class="au-card au-card--shadow">
+				<div class="au-card__inner">
+					<h2 class="au-card__title">Some heading</h2>
+					<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
+						<p>Some text</p>
+						<p>Additional text</p>
+						<hr class="au-card__divider"> <br>
+						<a class="au-cta-link" href="#">Sign up</a>
+				</div>
+				</div>
+			<br><br>
 
-			<hr>
-			<h2><code>--up</code> <code>--dark</code> variant</h2>
+			<h2>Basic card with full width images</h2><br>
+			<div class="au-card au-card--shadow">
+				<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
+				<div class="au-card__inner">
+						<h2 class="au-card__title">Card title</h2>
+						<p>Some text</p>
+						<p>Additional text</p>
+						<div class="au-body">
+							<a href="#">Sign up</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br>
 
-			<a class=" au-direction-link au-direction-link--dark" href="#">Top<span class="au-direction-link__arrow au-direction-link__arrow--up" aria-hidden="true"></span></a>
+		<div class="col-md-4 col-md-offset-2">
+			<h1>Link cards</h1>
+			<h2>Card wrapped around an anchor tag</h2><br>
+			<a class="au-card" href="#">
+				<div class="au-card__inner">
+					<h2 class="au-card__title">Card title</h2>
+					<hr class="au-card__divider">
+					<p>Some text</p>
+					<p>Additional text</p>
+				</div>
+			</a>
+			<br><br>
 
-			<hr>
-			<h2><code>--down</code> <code>--dark</code> variant</h2>
+			<h2>Card wrapped around an anchor tag, with image</h2><br>
+			<a class="au-card au-card--shadow au-body" href="#">
+				<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
+				<div class="au-card__inner">
+						<h2 class="au-card__title">Card title</h2>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia voluptatibus nemo excepturi adipisci accusamus aut.</p>
+				</div>
+			</a>
+			<br><br>
 
-			<a class="au-direction-link au-direction-link--dark" href="#">Skip to footer<span class="au-direction-link__arrow au-direction-link__arrow--down" aria-hidden="true"></span></a>
+			<h2>Card with a single anchor, with hit area wrapping card </h2><br>
+			<div class="au-card au-card--shadow au-card--clickable au-body" href="#">
+				<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
+				<div class="au-card__inner">
+					<h2 class="au-card__title"><a class="au-card--clickable__link" href="#">Some heading</a></h2>
+					<p>Some text</p>
+					<p>Additional text</p>
+				</div>
+			</div>
+			<br><br>
 
-			<hr>
-			<h2>direction-links as button <code>--dark</code></h2>
+			<h2>Card with a single anchor, with hit area wrapping card <code>--alt</code> </h2><br>
+			<div class="au-card au-card--shadow au-card--clickable au-body au-body--alt" href="#">
+				<img class="au-responsive-media-img" src="http://placehold.it/1200x500" alt="Placeholder image 1200 by 500"/>
+				<h2 class="au-card__header"><a class="au-card--clickable__link" href="#">Some heading</a></h2>
+				<div class="au-card__inner">
+					<p>Some text</p>
+					<p>Additional text</p>
+				</div>
+			</div>
+			<br><br>
 
-			<button class="au-direction-link au-direction-link--dark">Next<span class="au-direction-link__arrow" aria-hidden="true"></span></button>
-			<button class="au-direction-link au-direction-link--dark"><span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back</button>
-			<button class="au-direction-link au-direction-link--dark">Top<span class="au-direction-link__arrow au-direction-link__arrow--up" aria-hidden="true"></span></button>
-			<button class="au-direction-link au-direction-link--dark">Skip to footer<span class="au-direction-link__arrow au-direction-link__arrow--down" aria-hidden="true"></span></button>
 		</div>
 	</div>
-	<div class="split-wrapper">
-		<div class="split split--alt">
 
-			<h2>bare</h2>
-			<a class="au-direction-link" href="#">Continue<span class="au-direction-link__arrow" aria-hidden="true"></span></a>
+	<div>
+		<h1>Card List example</h1>
 
-			<hr>
-			<h2><code>--right</code> variant</h2>
+		<div class="row">
+			<ul class="au-card-list au-card-list--matchheight">
+				<li class="col-sm-3 xol-xs-6">
+					<div class="au-card">
+					<h2 class="au-card__header">Card 1</h2>
+					<div class="au-card__inner">
+						<p>Some text</p>
+						<p>Additional text</p>
+					</div>
+				</div>
+				</li>
+				<li class="col-sm-3 xol-xs-6">
+					<div class="au-card">
+					<h2 class="au-card__header">Card 2</h2>
+					<div class="au-card__inner">
+						<p>Some text</p>
+						<p>Additional text</p>
+						<p>More text</p>
+					</div>
+				</div>
+				</li>
+				<li class="col-sm-3 xol-xs-6">
+					<div class="au-card">
+					<h2 class="au-card__header">Card 3</h2>
+						<div class="au-card__inner">
+							<p>Some text</p>
+							<p>Additional text</p>
+						</div>
+					</div>
+				</li>
+				<li class="col-sm-3 xol-xs-6">
+					<div class="au-card">
+					<h2 class="au-card__header">Card 4</h2>
+						<div class="au-card__inner">
+							<p>Some text</p>
+							<p>Additional text</p>
+						</div>
+					</div>
+				</li>
 
-			<a class="au-direction-link" href="#">Next<span class="au-direction-link__arrow" aria-hidden="true"></span></a>
-
-			<hr>
-			<h2><code>--left</code> variant</h2>
-
-			<a class="au-direction-link" href="#"><span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back</a>
-
-			<hr>
-			<h2><code>--up</code> variant</h2>
-
-			<a class="au-direction-link" href="#">Top<span class="au-direction-link__arrow au-direction-link--up" aria-hidden="true"></span></a>
-
-			<hr>
-			<h2><code>--down</code> variant</h2>
-
-			<a class="au-direction-link" href="#">Skip to footer<span class="au-direction-link__arrow au-direction-link--down" aria-hidden="true"></span></a>
-
-			<hr>
-			<h2>direction-links as button</h2>
-
-			<button class="au-direction-link">Next<span class="au-direction-link__arrow au-direction-link__arrow" aria-hidden="true"></span></button>
-			<button class="au-direction-link"><span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back</button>
-			<button class="au-direction-link">Top<span class="au-direction-link__arrow au-direction-link__arrow--up" aria-hidden="true"></span></button>
-			<button class="au-direction-link">Skip to footer<span class="au-direction-link__arrow au-direction-link__arrow--down" aria-hidden="true"></span></button>
-		</div>
-
-		<div class="split au-body split--alt split--dark">
-
-			<h2>bare <code>--dark</code></h2>
-			<a class="au-direction-link au-direction-link--dark" href="#">Continue<span class="au-direction-link__arrow" aria-hidden="true"></span></a>
-
-			<hr>
-			<h2><code>--right</code> <code>--dark</code> variant</h2>
-
-			<a class="au-direction-link au-direction-link--dark" href="#">Next<span class="au-direction-link__arrow" aria-hidden="true"></span></a>
-
-			<hr>
-			<h2><code>--left</code> <code>--dark</code> variant</h2>
-
-			<a class="au-direction-link au-direction-link--dark" href="#"><span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back</a>
-
-			<hr>
-			<h2><code>--up</code> <code>--dark</code> variant</h2>
-
-			<a class="au-direction-link au-direction-link--dark" href="#">Top<span class="au-direction-link__arrow au-direction-link__arrow--up" aria-hidden="true"></span></a>
-
-			<hr>
-			<h2><code>--down</code> <code>--dark</code> variant</h2>
-
-			<a class="au-direction-link au-direction-link--dark" href="#">Skip to footer<span class="au-direction-link__arrow au-direction-link__arrow--down" aria-hidden="true"></span></a>
-
-			<hr>
-			<h2>direction-links as button <code>--dark</code></h2>
-
-			<button class="au-direction-link au-direction-link--dark">Next<span class="au-direction-link__arrow" aria-hidden="true"></span></button>
-			<button class="au-direction-link au-direction-link--dark"><span class="au-direction-link__arrow au-direction-link__arrow--left" aria-hidden="true"></span>Back</button>
-			<button class="au-direction-link au-direction-link--dark">Top<span class="au-direction-link__arrow au-direction-link__arrow--up" aria-hidden="true"></span></button>
-			<button class="au-direction-link au-direction-link--dark">Skip to footer<span class="au-direction-link__arrow au-direction-link__arrow--down" aria-hidden="true"></span></button>
+				<li class="col-sm-3 xol-xs-6">
+					<div class="au-card">
+					<h2 class="au-card__header">Card 5</h2>
+						<div class="au-card__inner">
+							<p>Some text</p>
+							<p>Additional text</p>
+						</div>
+					</div>
+				</li>
+				<li class="col-sm-3 xol-xs-6">
+				<div class="au-card">
+				<h2 class="au-card__header">Card 6</h2>
+					<div class="au-card__inner">
+						<p>Some text</p>
+						<p>Additional text</p>
+					</div>
+				</div>
+				</li>
+				<li class="col-sm-3 xol-xs-6">
+					<div class="au-card">
+					<h2 class="au-card__header">Card 7</h2>
+						<div class="au-card__inner">
+							<p>Some text</p>
+							<p>Additional text</p>
+						</div>
+					</div>
+				</li>
+				<li class="col-sm-3 xol-xs-6">
+						<div class="au-card">
+						<h2 class="au-card__header">Card 8</h2>
+							<div class="au-card__inner">
+								<p>Some text</p>
+								<p>Additional text</p>
+							</div>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

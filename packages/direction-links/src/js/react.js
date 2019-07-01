@@ -23,10 +23,10 @@ import PropTypes from 'prop-types';
  * @type {Object}
  */
 const directions = {
-	up: 'au-direction-link--up',
-	right: 'au-direction-link--right',
-	down: 'au-direction-link--down',
-	left: 'au-direction-link--left',
+	up: 'au-direction-link__arrow--up',
+	right: 'au-direction-link__arrow--right',
+	down: 'au-direction-link__arrow--down',
+	left: 'au-direction-link__arrow--left',
 };
 
 
@@ -54,16 +54,24 @@ const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className
 		else if( typeof LinkComponent === 'function' ) {
 			attributeOptions.to = link;
 		}
-
 		return (
-			<LinkComponent className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</LinkComponent>
+			<LinkComponent
+				className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }`}
+				{ ...attributeOptions }>
+										<AUdirectionLinkInner direction={ direction } text={text} />
+			</LinkComponent>
 		);
-	}
+		}
 	else {
 		return (
-			<button className={ `au-direction-link ${ className } ${ directions[ direction ] }${ dark ? ' au-direction-link--dark' : '' }` } { ...attributeOptions }>{ text }</button>
+			<button className={ `au-direction-link ${ className } ${ dark ? ' au-direction-link--dark' : '' }`}
+							{ ...attributeOptions }>
+							<AUdirectionLinkInner direction={ direction } text={text} />
+			</button>
 		);
 	}
+
+
 };
 
 AUdirectionLink.propTypes = {
@@ -79,5 +87,36 @@ AUdirectionLink.defaultProps = {
 	direction: 'right',
 	linkComponent: 'a',
 };
+
+/**
+ * The inner contents of the direction link. Includes the text and and the arrow.
+ * @param  {string}  text             - The text of the direction link
+ * @param  {string}  direction        - The direction for the arrow; can be either: up right down left, default: 'right'
+ */
+const AUdirectionLinkInner = ({ direction, text }) => {
+	if ( direction === "left" ) {
+		return (
+			 <React.Fragment>
+				 <span className={ `au-direction-link__arrow ${ directions[ direction ] } `} aria-hidden="true"></span>{text}
+				</React.Fragment>
+		)
+	}
+	else {
+		return (
+			<React.Fragment>
+				{text} <span className={ `au-direction-link__arrow ${ directions[ direction ] } `} aria-hidden="true"></span>
+			</React.Fragment>
+		)
+	}
+};
+
+AUdirectionLinkInner.propTypes = {
+	direction: PropTypes.oneOf([ 'up', 'down', 'left', 'right' ]).isRequired,
+	text: PropTypes.string.isRequired
+}
+
+AUdirectionLinkInner.defaultProps = {
+
+}
 
 export default AUdirectionLink;
