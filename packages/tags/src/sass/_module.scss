@@ -49,8 +49,7 @@ a.au-tag {
 	}
 
 	&.au-tag--dark {
-	border-color: $AU-colordark-foreground-action;
-	color: $AU-colordark-foreground-action;
+		color: $AU-colordark-foreground-action;
 
 		&:hover {
 			color: $AU-colordark-foreground-text;
@@ -67,7 +66,8 @@ a.au-tag {
 	padding: 0;
 
 	li {
-	@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
-	display: inline-block;
+		@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
+		display: inline-block;
 	}
+
 }
