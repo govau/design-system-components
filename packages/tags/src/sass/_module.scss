@@ -26,10 +26,6 @@
 	display: inline-block;
 	@include AU-focus();
 
-	&:focus {
-		outline-offset: -1px;
-	}
-
 	&.au-tag--dark {
 		border-color: $AU-colordark-foreground-action;
 		color: $AU-colordark-foreground-text;
@@ -48,6 +44,12 @@ a.au-tag {
 		background-color: $AU-color-background-shade;
 	}
 
+	@include AU-focus();
+
+	&:focus {
+		outline-offset: -1px;
+	}
+
 	&.au-tag--dark {
 		color: $AU-colordark-foreground-action;
 
@@ -57,6 +59,10 @@ a.au-tag {
 		}
 
 		@include AU-focus( 'dark' );
+
+		&:focus {
+			outline-offset: -1px;
+		}
 	}
 }
 
