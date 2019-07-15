@@ -10,51 +10,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 /**
- * A tag item inside the AUtags component
- *
- * @param  {string}  link             - The link for this tag, optional
- * @param  {string}  text             - The text for the tag
- * @param  {object}  li               - An additional object to be spread into the wrapping element, optional
- * @param  {object}  attributeOptions - Any other attribute options
+ * TODO
+ * @param {*} param0
  */
-const AUtagItem = ({ link, linkComponent, text, li = {}, ...attributeOptions }) => {
-	const LinkComponent = linkComponent;
+export const AUtag = ({ link, type, dark, text, linkComponent, className, ...attributeOptions }) => {
 
-	if( link ){
-		// If we are using a normal link
-		if( LinkComponent === 'a' ) {
-			attributeOptions.href = link;
-		}
-		// If we are using a link component
-		else if( typeof LinkComponent === 'function' ) {
-			attributeOptions.to = link;
-		}
+	let TagContainer = 'span';
+	let LinkComponent = linkComponent;
+
+	if( LinkComponent === 'a' ) {
+		attributeOptions.href = link;
+	}
+	// If we are using a link component
+	else if( typeof LinkComponent === 'function' ) {
+		attributeOptions.to = link;
 	}
 
+
 	return (
-		<li { ...li }>
-			{
-				link
-					? <LinkComponent { ...attributeOptions }>{ text }</LinkComponent>
-					: <span { ...attributeOptions }>{ text }</span>
-			}
-		</li>
+		link ?
+				<LinkComponent className={`au-tag ${ dark ? 'au-tag--dark' : ''} ${className}`} { ...attributeOptions }>{ text }</LinkComponent>
+			:
+			<TagContainer {...attributeOptions} className={`au-tag ${ dark ? 'au-tag--dark' : ''} ${className}`}>
+				{text}
+			</TagContainer>
 	)
-};
+}
 
 
-AUtagItem.propTypes = {
+AUtag.propTypes = {
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	li: PropTypes.object,
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
-AUtagItem.defaultProps = {
+AUtag.defaultProps = {
 	linkComponent: 'a',
+	className: ''
 };
+
 
 
 /**
@@ -66,17 +62,17 @@ AUtagItem.defaultProps = {
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtags = ({ dark, linkComponent, tags, className = '', ...attributeOptions }) => (
-	<ul className={ `au-tags ${ className } ${ dark ? 'au-tags--dark' : '' }` } { ...attributeOptions }>
+const AUtagList = ({ dark, linkComponent, tags, className = '', ...attributeOptions }) => (
+	<ul className={ `au-tag-list ${ className }` } { ...attributeOptions }>
 		{
 			tags.map(
-				( tag, i ) => <AUtagItem linkComponent={ linkComponent } key={ i } { ...tag } />
+				( tag, i ) => <li key={i}><AUtag dark={dark} linkComponent={ linkComponent } { ...tag } /></li>
 			)
 		}
 	</ul>
 );
 
-AUtags.propTypes = {
+AUtagList.propTypes = {
 	dark: PropTypes.bool,
 	tags: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -89,8 +85,9 @@ AUtags.propTypes = {
 	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
-AUtags.defaultProps = {
+AUtagList.defaultProps = {
 	linkComponent: 'a',
+	dark: false
 };
 
-export default AUtags;
+export default AUtagList;
