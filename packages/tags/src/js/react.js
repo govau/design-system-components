@@ -12,9 +12,12 @@ import PropTypes from 'prop-types';
 
 /**
  * TODO
- * @param {*} param0
+ * @param  {string}  link             - The link for this tag, optional
+ * @param  {string}  text             - The text for the tag
+ * @param  {boolean} dark             - Add the dark variation class, optional
+ * @param  {object}  attributeOptions - Any other attribute options
  */
-export const AUtag = ({ link, type, dark, text, linkComponent, className, ...attributeOptions }) => {
+export const AUtag = ({ link, dark, text, linkComponent, className, ...attributeOptions }) => {
 
 	let TagContainer = 'span';
 	let LinkComponent = linkComponent;
@@ -26,7 +29,6 @@ export const AUtag = ({ link, type, dark, text, linkComponent, className, ...att
 	else if( typeof LinkComponent === 'function' ) {
 		attributeOptions.to = link;
 	}
-
 
 	return (
 		link ?
@@ -60,13 +62,24 @@ AUtag.defaultProps = {
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {array}   tags             - The tags, format: { link: '', text: '', onClick: () }
  * @param  {string}  className        - An additional class, optional
+ * @param  {object}  li               - An additional object to be spread into the list item
  * @param  {object}  attributeOptions - Any other attribute options
  */
 const AUtagList = ({ dark, linkComponent, tags, className = '', ...attributeOptions }) => (
 	<ul className={ `au-tag-list ${ className }` } { ...attributeOptions }>
 		{
 			tags.map(
-				( tag, i ) => <li key={i}><AUtag dark={dark} linkComponent={ linkComponent } { ...tag } /></li>
+				( tag, i ) => (
+					<li key={i} {...tag.li}>
+						<AUtag
+							dark={dark}
+							linkComponent={ linkComponent }
+							link={tag.link}
+							text={tag.text}
+							{...tag.attributeOptions}
+							/>
+					</li>
+				)
 			)
 		}
 	</ul>

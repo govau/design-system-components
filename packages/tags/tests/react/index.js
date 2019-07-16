@@ -143,14 +143,24 @@ ReactDOM.render(
 				{
 					link: '#url',
 					text: 'bar',
+					attributeOptions: {
+						role: "link",
+						className: "extra class"
+					},
+					li: {
+						className: 'li-wrapping-class',
+					}
 				},
 				{
 					link: '#url',
 					text: 'baz',
 				},
 				{
-					link: '#url',
 					text: 'boing',
+					attributeOptions: {
+						role: "tag",
+						className: "span class"
+					},
 				},
 			]} />
 
