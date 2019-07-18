@@ -250,7 +250,7 @@ var AU = AU || {};
 
 						// Move the focus to the close button
 						closeButton.focus();
-
+						openButton.setAttribute( 'aria-expanded', true );
 
 						// Focus trap enabled
 						focustrapTop.setAttribute( 'tabindex', 0 );
@@ -284,6 +284,7 @@ var AU = AU || {};
 					else {
 						// Move the focus back to the menu button
 						openButton.focus();
+						openButton.setAttribute( 'aria-expanded', false );
 
 						// Remove the focus trap
 						focustrapTop.removeAttribute( 'tabindex' );
