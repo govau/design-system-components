@@ -588,8 +588,8 @@ $dependencies: (
 		@error "Captain I’m giving it all she’s got but; the AU-media mixin only takes a string!";
 	}
 
-	@if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' {
-		@error "There’s no crying in baseball; the AU-media mixin only takes the following breakpoint strings: xs, sm, md, lg";
+	@if $breakpoint != 'xs' and $breakpoint != 'sm' and $breakpoint != 'md' and $breakpoint != 'lg' and $breakpoint != 'xl' {
+		@error "There’s no crying in baseball; the AU-media mixin only takes the following breakpoint strings: xs, sm, md, lg, xl";
 	}
 
 	@if( $breakpoint == "xs" ) {
@@ -615,6 +615,13 @@ $dependencies: (
 			@content;
 		}
 	}
+
+	@if( $breakpoint == "xl" ) {
+		@media (min-width: $AU-media-xl) {
+			@content;
+		}
+	}
+
 }
 
 
@@ -720,10 +727,11 @@ $AU-pixelfallback: true !default;
 /**
  * AU-media Breakpoints
  */
-$AU-media-xs: 576px !default; // media query breakpoints
-$AU-media-sm: 768px !default;
-$AU-media-md: 992px !default;
-$AU-media-lg: 1200px !default;
+ $AU-media-xs: 0px;
+ $AU-media-sm: 576px; // media query breakpoints
+ $AU-media-md: 768px;
+ $AU-media-lg: 992px;
+ $AU-media-xl: 1200px;
 
 
 /**
