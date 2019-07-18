@@ -32,7 +32,7 @@ export const AUtag = ({ link, dark, text, linkComponent, className, ...attribute
 
 	return (
 		link ?
-				<LinkComponent className={`au-tag ${ dark ? 'au-tag--dark' : ''} ${className}`} { ...attributeOptions }>{ text }</LinkComponent>
+			<LinkComponent className={`au-tag ${ dark ? 'au-tag--dark' : ''} ${className}`} { ...attributeOptions }>{ text }</LinkComponent>
 			:
 			<TagContainer {...attributeOptions} className={`au-tag ${ dark ? 'au-tag--dark' : ''} ${className}`}>
 				{text}

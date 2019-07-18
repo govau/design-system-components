@@ -24,7 +24,6 @@
 	border: 1px solid $AU-color-foreground-action;
 	border-radius: $AU-border-radius;
 	display: inline-block;
-	@include AU-focus();
 
 	&.au-tag--dark {
 		border-color: $AU-colordark-foreground-action;
@@ -59,10 +58,6 @@ a.au-tag {
 		}
 
 		@include AU-focus( 'dark' );
-
-		&:focus {
-			outline-offset: -1px;
-		}
 	}
 }
 
@@ -74,6 +69,8 @@ a.au-tag {
 	li {
 		@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
 		display: inline-block;
+		> .au-tag:focus {
+			outline-offset: -1px;
+		}
 	}
-
 }
