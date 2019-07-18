@@ -117,6 +117,7 @@ export class AUmainNavContent extends React.PureComponent {
 		this.state = {
 			closed: true,
 			animating: false,
+			expanded: false
 		};
 
 
@@ -142,6 +143,7 @@ export class AUmainNavContent extends React.PureComponent {
 		// Toggle the menu's current state
 		this.setState({
 			closed: !this.state.closed,
+			expanded: !this.state.expanded,
 			animating: true,
 		});
 	}
@@ -407,12 +409,15 @@ export class AUmainNavContent extends React.PureComponent {
 				id={ this.id }
 				className="au-main-nav__content"
 				ref={ mainNavContent => { this.mainNavContent = mainNavContent }}>
-				<button
-					aria-controls={ this.id }
-					onClick={ ( event ) => this.toggle( event ) }
-					className="au-main-nav__toggle au-main-nav__toggle--open">
-					Menu
-				</button>
+				<div role="heading" aria-level="1">
+					<button
+						aria-controls={ this.id }
+						aria-expanded={this.state.expanded}
+						onClick={ ( event ) => this.toggle( event ) }
+						className="au-main-nav__toggle au-main-nav__toggle--open">
+						Menu
+					</button>
+				</div>
 				<div
 					className="au-main-nav__menu"
 					ref={ mainNavMenu => { this.mainNavMenu = mainNavMenu }}
@@ -434,7 +439,6 @@ export class AUmainNavContent extends React.PureComponent {
 					</div>
 				</div>
 				<div
-					aria-controls={ this.id }
 					ref={ mainNavOverlay => { this.mainNavOverlay = mainNavOverlay }}
 					onClick={ ( event ) => this.toggle( event ) }
 					className="au-main-nav__overlay"></div>
