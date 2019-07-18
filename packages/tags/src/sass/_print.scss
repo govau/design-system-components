@@ -8,13 +8,8 @@
 
 
 @media print {
-	.au-tags {
+	.au-tag {
 		color: #000 !important;
-	}
-	.au-tags__item {
 		border-color: #000 !important;
-		a {
-			color: #000 !important;
-		}
 	}
 }

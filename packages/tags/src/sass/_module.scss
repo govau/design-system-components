@@ -16,53 +16,40 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Tag styles
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.au-tags {
+.au-tag {
 	@include AU-fontgrid( sm );
-	display: block;
-	margin: 0;
-	padding: 0;
 	font-family: $AU-font;
-	color: $AU-color-foreground-text;
-
-	&.au-tags--dark {
-		color: $AU-colordark-foreground-text;
-	}
-}
-
-.au-tags > li {
-	@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
 	@include AU-space ( padding, 0 0.5unit );
+	color: $AU-color-foreground-text;
 	border: 1px solid $AU-color-foreground-action;
 	border-radius: $AU-border-radius;
 	display: inline-block;
 
-	> a,
-	> button {
-		@include AU-space ( margin, 0 -0.5unit ); // Negative value to pull a/button out to same size as container
-		@include AU-space ( padding, 0 0.5unit );
-		color: $AU-color-foreground-action;
-		display: inline-block;
-		border-radius: $AU-border-radius;
-
-		&:hover {
-			color: $AU-color-foreground-text;
-			text-decoration: none;
-			background-color: $AU-color-background-shade;
-		}
-
-		@include AU-focus();
-
-		&:focus {
-			outline-offset: -1px;
-		}
+	&.au-tag--dark {
+		border-color: $AU-colordark-foreground-action;
+		color: $AU-colordark-foreground-text;
 	}
 }
 
-.au-tags.au-tags--dark > li {
-	border-color: $AU-colordark-foreground-action;
+a.au-tag {
+	// @include AU-space ( margin, 0 -0.5unit ); // Negative value to pull a/button out to same size as container
+	color: $AU-color-foreground-action;
+	display: inline-block;
+	border-radius: $AU-border-radius;
 
-	> a,
-	> button {
+	&:hover {
+		color: $AU-color-foreground-text;
+		text-decoration: none;
+		background-color: $AU-color-background-shade;
+	}
+
+	@include AU-focus();
+
+	&:focus {
+		outline-offset: -1px;
+	}
+
+	&.au-tag--dark {
 		color: $AU-colordark-foreground-action;
 
 		&:hover {
@@ -71,5 +58,19 @@
 		}
 
 		@include AU-focus( 'dark' );
+	}
+}
+
+.au-tag-list {
+	display: block;
+	margin: 0;
+	padding: 0;
+
+	li {
+		@include AU-space ( margin, 0.5unit 0.25unit 0 0 );
+		display: inline-block;
+		> .au-tag:focus {
+			outline-offset: -1px;
+		}
 	}
 }
