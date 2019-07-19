@@ -426,6 +426,7 @@ export class AUmainNavContent extends React.PureComponent {
 						<div className="au-main-nav__focus-trap-top"></div>
 						<button
 							aria-controls={ this.id }
+							aria-expanded={this.state.expanded}
 							onClick={ ( event ) => this.toggle( event ) }
 							className="au-main-nav__toggle au-main-nav__toggle--close">
 							Close
@@ -439,6 +440,7 @@ export class AUmainNavContent extends React.PureComponent {
 					</div>
 				</div>
 				<div
+					aria-controls={ this.id }
 					ref={ mainNavOverlay => { this.mainNavOverlay = mainNavOverlay }}
 					onClick={ ( event ) => this.toggle( event ) }
 					className="au-main-nav__overlay"></div>
