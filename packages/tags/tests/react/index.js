@@ -12,7 +12,7 @@ ReactDOM.render(
 
 			<h2>Single tags</h2>
 			<AUtag text="Single tag" /> <br/><br/>
-			<AUtag text="Single tag anchor" type="link" link="#" />
+			<AUtag text="Single tag anchor" link="#" />
 			<h2>tags without links</h2>
 
 			<AUtagList tags={[
@@ -194,14 +194,16 @@ ReactDOM.render(
 
 			<BrowserRouter basename={ window.location.pathname }>
 				<Fragment>
-					<AUtagList dark linkComponent={ Link } tags={[
+					<AUtagList dark tags={[
 						{
 							link: 'one',
 							text: 'one',
+							linkComponent: Link
 						},
 						{
 							link: 'two',
 							text: 'two',
+							linkComponent: Link
 						}
 					]} />
 					<br />

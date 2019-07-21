@@ -22,6 +22,7 @@ export const AUtag = ({ link, dark, text, linkComponent, className, ...attribute
 	let TagContainer = 'span';
 	let LinkComponent = linkComponent;
 
+
 	if( LinkComponent === 'a' ) {
 		attributeOptions.href = link;
 	}
@@ -65,7 +66,7 @@ AUtag.defaultProps = {
  * @param  {object}  li               - An additional object to be spread into the list item
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtagList = ({ dark, linkComponent, tags, className = '', ...attributeOptions }) => (
+const AUtagList = ({ dark, tags, className = '', ...attributeOptions }) => (
 	<ul className={ `au-tag-list ${ className }` } { ...attributeOptions }>
 		{
 			tags.map(
@@ -73,11 +74,11 @@ const AUtagList = ({ dark, linkComponent, tags, className = '', ...attributeOpti
 					<li key={i} {...tag.li}>
 						<AUtag
 							dark={dark}
-							linkComponent={ linkComponent }
+							linkComponent={ tag.linkComponent }
 							link={tag.link}
 							text={tag.text}
 							{...tag.attributeOptions}
-							/>
+						/>
 					</li>
 				)
 			)
@@ -95,11 +96,9 @@ AUtagList.propTypes = {
 		})
 	).isRequired,
 	className: PropTypes.string,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
 };
 
 AUtagList.defaultProps = {
-	linkComponent: 'a',
 	dark: false
 };
 

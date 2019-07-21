@@ -93,12 +93,11 @@ All props:
 <AUtag 
 	text="Single tag anchor" 
 	link="#" 
-	
+	dark={ false }           {/* A dark variation of the component */}
 	/>
 
 <AUtagList
   dark={ false }           {/* A dark variation of the component */}
-  linkComponent="a"       {/* The component used for the link, optional */}
   tags={[
     {
       link: 'url/to/tag',  {/* The href link of this tag, optional */}
