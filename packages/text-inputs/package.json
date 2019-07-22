@@ -125,6 +125,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Kiri Hoy",
+			"email": "Kiri.Zobel@gmail.com",
+			"url": "https://github.com/KiriHoy"
 		}
 	],
 	"license": "MIT"
