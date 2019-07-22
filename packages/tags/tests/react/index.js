@@ -79,20 +79,28 @@ ReactDOM.render(
 				{
 					link: '#url1',
 					text: 'link',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the first tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the first tag is clicked') },
+					}
 				},
 				{
 					link: '#url2',
 					text: 'link',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the second tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the second tag is clicked') }
+					},
 				},
 				{
 					text: 'nolink',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the third tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the third tag is clicked') },
+					}
 				},
 				{
 					text: 'nolink',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the forth tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the forth tag is clicked') },
+					}
 				},
 			]} />
 		</div>
@@ -172,20 +180,28 @@ ReactDOM.render(
 				{
 					link: '#url1',
 					text: 'link',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the first tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the first tag is clicked') },
+					}
 				},
 				{
 					link: '#url2',
 					text: 'link',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the second tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the second tag is clicked') }
+					},
 				},
 				{
 					text: 'nolink',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the third tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the third tag is clicked') },
+					}
 				},
 				{
 					text: 'nolink',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the forth tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the forth tag is clicked') },
+					}
 				},
 			]} />
 

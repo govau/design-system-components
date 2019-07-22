@@ -68,7 +68,9 @@ import AUtag, {AUtagList} from './tags.js';
 			//attribute options on the tag
 			attributeOptions: {
 				role: "link",
-				className: "extra class"
+				className: "extra class",
+				onClick: event => { event.preventDefault(); console.log('This function is called when the tag is clicked') },
+
 			},
 			// attribute options on the li element
 			li: {
