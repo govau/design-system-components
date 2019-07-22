@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.2 - Add `number` as a React prop](#v212)
 * [v2.1.1 - Remove --save-dev flag from readme instructions](#v211)
 * [v2.1.0 - Add text inputs of different widths](#v210)
 * [v2.0.11 - Removed unused `Fragment` React import](#v2011)
@@ -38,6 +39,10 @@
 
 
 ## Release History
+
+### v2.1.2
+
+- Add `number` as a React prop
 
 ### v2.1.1
 

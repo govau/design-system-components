@@ -81,10 +81,10 @@ ABCZ abcjg liI1 12340" />
 			<AUtextInput id="width-sm" defaultValue="WWWW" width="sm" />
 
 			<label htmlFor="width-md" className="label">Width MD</label>
-			<AUtextInput id="width-md" defaultValue="0400 000 000" width="md" />
+			<AUtextInput id="width-md" number defaultValue="0400 000 000" width="md" />
 
 			<label htmlFor="width-lg" className="label">Default</label>
-			<AUtextInput id="width-lg" defaultValue="+61 400 000 000" />
+			<AUtextInput id="width-lg" number defaultValue="+61 400 000 000" />
 
 			<label htmlFor="width-lg" className="label">Width LG</label>
 			<AUtextInput id="width-lg" defaultValue="Level 3, 50 Marcus Clarke St" width="lg" />
@@ -170,10 +170,10 @@ ABCZ abcjg liI1 12340" />
 			<AUtextInput id="width-sm-dark" dark defaultValue="WWWW" width="sm" />
 
 			<label htmlFor="width-md-dark" className="label">Width MD</label>
-			<AUtextInput id="width-md-dark" dark defaultValue="0400 000 000" width="md" />
+			<AUtextInput id="width-md-dark" dark number defaultValue="0400 000 000" width="md" />
 
 			<label htmlFor="width-lg-dark" className="label">Default</label>
-			<AUtextInput id="width-lg-dark" dark defaultValue="+61 400 000 000" />
+			<AUtextInput id="width-lg-dark" dark number defaultValue="+61 400 000 000" />
 
 			<label htmlFor="width-lg-dark" className="label">Width LG</label>
 			<AUtextInput id="width-lg-dark" dark defaultValue="Level 3, 50 Marcus Clarke St" width="lg" />
