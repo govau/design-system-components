@@ -65,6 +65,7 @@ All props:
   as              {/* The kind of input, can be either 'input' or 'textarea', default: 'input' */}
   dark={ false }  {/* A dark variation of the component */}
   block           {/* Add the block variation class */}
+  number          {/* Add number styling class*/}
   status          {/* Mark this field as either 'valid' or 'invalid' */}
   width           {/* Width of the text input. Can be either 'xs', 'sm', 'md', 'lg', 'xl'. */}
 />
