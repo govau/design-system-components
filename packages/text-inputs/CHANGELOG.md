@@ -44,6 +44,7 @@
 
 - Add `number` as a React prop
 
+
 ### v2.1.1
 
 - Remove --save-dev flag from readme instructions
