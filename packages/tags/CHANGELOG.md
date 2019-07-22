@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.0.0 - Update tags so they no longer have to be in a list](#v400)
 * [v3.1.7 - Remove --save-dev flag from readme instructions](#v317)
 * [v3.1.6 - Removed unused `Fragment` React import](#v316)
 * [v3.1.5 - Removed uikit references](#v315)
@@ -38,6 +39,11 @@
 
 
 ## Release History
+
+### v4.0.0
+
+- Update tags so they no longer have to be in a list
+- Refactored single markup
 
 ### v3.1.7 
 

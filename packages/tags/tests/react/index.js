@@ -2,15 +2,20 @@ import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-import AUtags from './tags.js';
+import AUtagList from './tags.js';
+import { AUtag } from './tags.js';
 
 
 ReactDOM.render(
 	<div className="split-wrapper">
 		<div className="split">
+
+			<h2>Single tags</h2>
+			<AUtag text="Single tag" /> <br/><br/>
+			<AUtag text="Single tag anchor" link="#" />
 			<h2>tags without links</h2>
 
-			<AUtags tags={[
+			<AUtagList tags={[
 				{
 					text: 'foo',
 				},
@@ -29,7 +34,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with additional classes</h2>
 
-			<AUtags className="testing" tags={[
+			<AUtagList className="testing" tags={[
 				{
 					text: 'foo',
 				},
@@ -46,7 +51,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with links</h2>
 
-			<AUtags tags={[
+			<AUtagList tags={[
 				{
 					link: '#url',
 					text: 'foo',
@@ -69,31 +74,40 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with onclick</h2>
 
-			<AUtags tags={[
+
+			<AUtagList tags={[
 				{
 					link: '#url1',
 					text: 'link',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the first tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the first tag is clicked') },
+					}
 				},
 				{
 					link: '#url2',
 					text: 'link',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the second tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the second tag is clicked') }
+					},
 				},
 				{
 					text: 'nolink',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the third tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the third tag is clicked') },
+					}
 				},
 				{
 					text: 'nolink',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the forth tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the forth tag is clicked') },
+					}
 				},
 			]} />
 		</div>
 		<div className="split split--dark">
 			<h2>tags without links</h2>
 
-			<AUtags dark tags={[
+			<AUtagList dark tags={[
 				{
 					text: 'foo',
 				},
@@ -112,7 +126,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with additional classes</h2>
 
-			<AUtags dark className="testing" tags={[
+			<AUtagList dark className="testing" tags={[
 				{
 					text: 'foo',
 				},
@@ -129,7 +143,7 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with links</h2>
 
-			<AUtags dark tags={[
+			<AUtagList dark tags={[
 				{
 					link: '#url',
 					text: 'foo',
@@ -137,14 +151,24 @@ ReactDOM.render(
 				{
 					link: '#url',
 					text: 'bar',
+					attributeOptions: {
+						role: "link",
+						className: "extra class"
+					},
+					li: {
+						className: 'li-wrapping-class',
+					}
 				},
 				{
 					link: '#url',
 					text: 'baz',
 				},
 				{
-					link: '#url',
 					text: 'boing',
+					attributeOptions: {
+						role: "tag",
+						className: "span class"
+					},
 				},
 			]} />
 
@@ -152,24 +176,32 @@ ReactDOM.render(
 			<hr />
 			<h2>tags with onclick</h2>
 
-			<AUtags dark tags={[
+			<AUtagList dark tags={[
 				{
 					link: '#url1',
 					text: 'link',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the first tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the first tag is clicked') },
+					}
 				},
 				{
 					link: '#url2',
 					text: 'link',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the second tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the second tag is clicked') }
+					},
 				},
 				{
 					text: 'nolink',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the third tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the third tag is clicked') },
+					}
 				},
 				{
 					text: 'nolink',
-					onClick: event => { event.preventDefault(); console.log('This function is called when the forth tag is clicked') },
+					attributeOptions: {
+						onClick: event => { event.preventDefault(); console.log('This function is called when the forth tag is clicked') },
+					}
 				},
 			]} />
 
@@ -178,14 +210,16 @@ ReactDOM.render(
 
 			<BrowserRouter basename={ window.location.pathname }>
 				<Fragment>
-					<AUtags dark linkComponent={ Link } tags={[
+					<AUtagList dark tags={[
 						{
 							link: 'one',
 							text: 'one',
+							linkComponent: Link
 						},
 						{
 							link: 'two',
 							text: 'two',
+							linkComponent: Link
 						}
 					]} />
 					<br />
