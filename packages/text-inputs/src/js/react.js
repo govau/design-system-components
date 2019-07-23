@@ -24,18 +24,20 @@ import PropTypes from 'prop-types';
  * @param  {string}  as               - The kind of input, can be either 'input' or 'textarea', default: 'input'
  * @param  {boolean} dark             - Add the dark variation class, optional
  * @param  {boolean} block            - Add the block variation class, optional
+ * @param  {boolean} number           - Add the number variation class, optional
  * @param  {string}  status           - Mark this field as either 'valid' or 'invalid', optional
  * @param  {string}  type             - The type of the field, optional, default: text
  * @param  {string}  className        - An additional class, optional
  * @param  {object}  attributeOptions - Any other attribute options
  */
-const AUtextInput = ({ as, dark, block, status, width, type = 'text', className = '', ...attributeOptions }) => (
+const AUtextInput = ({ as, dark, block, number, status, width, type = 'text', className = '', ...attributeOptions }) => (
 	as === 'textarea'
 		? <textarea
 				className={
 					`au-text-input ${ className }` +
 					`${ block ? ' au-text-input--block' : '' }` +
 					`${ dark ? ' au-text-input--dark' : '' }` +
+					`${ number ? ' au-text-input--number' : '' }` +
 					`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
 					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }` + 
 					`${ width ? ' au-text-input--width-' + width : '' }`					
@@ -46,6 +48,7 @@ const AUtextInput = ({ as, dark, block, status, width, type = 'text', className 
 					`au-text-input ${ className }` +
 					`${ dark ? ' au-text-input--dark' : '' }` +
 					`${ block ? ' au-text-input--block' : '' }` +
+					`${ number ? ' au-text-input--number' : '' }` +
 					`${ status === 'valid' ? ' au-text-input--valid' : '' }` +
 					`${ status === 'invalid' ? ' au-text-input--invalid' : '' }` +
 					`${ width ? ' au-text-input--width-' + width : '' }`
@@ -58,6 +61,7 @@ AUtextInput.propTypes = {
 	as: PropTypes.oneOf([ 'input', 'textarea' ]),
 	dark: PropTypes.bool,
 	block: PropTypes.bool,
+	number: PropTypes.bool,
 	status: PropTypes.oneOf([ 'valid', 'invalid' ]),
 	className: PropTypes.string,
 	width: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl' ])

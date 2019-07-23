@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/text-inputs",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "Single and multi-line text inputs.",
 	"keywords": [
 		"auds",
@@ -125,6 +125,11 @@
 			"name": "Alex Page",
 			"email": "alex@alexpage.com.au",
 			"url": "https://github.com/alex-page"
+		},
+		{
+			"name": "Kiri Hoy",
+			"email": "Kiri.Zobel@gmail.com",
+			"url": "https://github.com/KiriHoy"
 		}
 	],
 	"license": "MIT"

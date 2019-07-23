@@ -65,6 +65,7 @@ All props:
   as              {/* The kind of input, can be either 'input' or 'textarea', default: 'input' */}
   dark={ false }  {/* A dark variation of the component */}
   block           {/* Add the block variation class */}
+  number          {/* Add number styling class*/}
   status          {/* Mark this field as either 'valid' or 'invalid' */}
   width           {/* Width of the text input. Can be either 'xs', 'sm', 'md', 'lg', 'xl'. */}
 />
@@ -108,6 +109,7 @@ The visual test: https://auds.service.gov.au/packages/text-inputs/tests/site/
 
 ## Release History
 
+* v2.1.2 - Add `number` as a React prop
 * v2.1.1 - Remove --save-dev flag from readme instructions
 * v2.1.0 - Add text inputs of different widths
 * v2.0.11 - Removed unused `Fragment` React import
