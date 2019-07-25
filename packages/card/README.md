@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
+* v0.4.0 - Add CTA on clickable cards, update padding for inner container
 * v0.3.1 - Use unit instead of rem
 * v0.3.0 - Remove AUcardBody export, add feature footers and headers, add light/dark theme variations and tests
 * v0.2.0 - Remove styling for card image and use responsive media

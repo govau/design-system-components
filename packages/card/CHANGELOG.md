@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.4.0 - Add CTA on clickable cards, update padding for inner container](#v040)
 * [v0.3.1 - Use unit instead of rem](#v031)
 * [v0.3.0 - Remove AUcardBody export, add feature footers and headers, add light/dark theme variations and tests](#v030)
 * [v0.2.0 - Remove styling for card image and use responsive media](#v020)
@@ -29,6 +30,11 @@
 
 
 ## Release History
+
+### v0.4.0
+
+- Add CTA on clickable cards
+- Update padding for inner container
 
 ### v0.3.1
 
