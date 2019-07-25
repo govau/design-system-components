@@ -61,6 +61,64 @@
 				outline-offset: 2px;
 			}
 		}
+
+		// Adding the CTA chevron
+		&:after {
+			content: ' ';
+			@include AU-space( width, 1unit );
+			@include AU-space( height, 1unit );
+
+			position: absolute;
+			display: block;
+			transition: right 0.2s ease;
+			background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+					'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
+					'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
+				'</svg>');
+
+			@include AU-space( bottom, 1unit );
+			@include AU-space( right, 1unit );
+
+			@include AU-media( xs ) {
+				@include AU-space( bottom, 1.5unit );
+				@include AU-space( right, 1.5unit );
+			}
+
+			.ie8 &,
+			.lt-ie8 & {
+				content: ' > ';
+			}
+		}
+
+		// making the chevron move after hover
+		&:hover {
+			&:after {
+				content: ' ';
+				@include AU-space( width, 1unit );
+				@include AU-space( height, 1unit );
+				transition: right 0.2s ease;
+				display: block;
+				position: absolute;
+				background-image: AU-svguri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">' +
+						'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-64 64-16-16 64-64"/>' +
+						'<path fill="#{ $AU-color-foreground-action }" d="M128 64l-16 16-64-64L64 0"/>' +
+					'</svg>');
+
+				@include AU-space( bottom, 1unit );
+				@include AU-space( right, 0.75unit );
+
+				@include AU-media( xs ) {
+					@include AU-space( bottom, 1.5unit );
+					@include AU-space( right, 1unit );
+				}
+
+
+				.ie8 &,
+				.lt-ie8 & {
+					content: ' > ';
+				}
+			}
+		}
 	}
 
 
@@ -87,19 +145,33 @@
 		border-bottom: solid 1px $AU-card-divider;
 		border-top-left-radius: 3px;
 		border-top-right-radius: 3px;
-		@include AU-space( padding, 1unit);
+
+		@include AU-space( padding, 1unit );
+
+		@include AU-media( xs ) {
+			@include AU-space( padding, 1.5unit );
+		}
 	}
 
 	.au-card__footer {
-		@include AU-space( padding, 1unit);
 		margin: 0;
 		border-top: solid 1px $AU-card-divider;
 		border-bottom-left-radius: 3px;
 		border-bottom-right-radius: 3px;
+
+		@include AU-space( padding, 1unit );
+
+		@include AU-media( xs ) {
+			@include AU-space( padding, 1.5unit );
+		}
 	}
 
 	.au-card__inner {
 		@include AU-space( padding, 1unit );
+
+		@include AU-media( xs ) {
+			@include AU-space( padding, 1.5unit );
+		}
 	}
 
 	.lt-ie9 & {
