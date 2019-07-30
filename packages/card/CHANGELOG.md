@@ -31,7 +31,7 @@
 
 ## Release History
 
-### v0.3.1
+### v0.3.2
 
 - Move `overflow:hidden` property from the shadow class to the `.au-card` class
 
