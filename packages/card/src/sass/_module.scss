@@ -19,11 +19,11 @@
 	font-family: $AU-font;
 	position: relative;
 	background: $AU-color-background;
+	overflow:hidden;
 
 	//Shadow attributes
 	&.au-card--shadow {
 		border-radius: 4px;
-		overflow:hidden;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
 		&:hover {

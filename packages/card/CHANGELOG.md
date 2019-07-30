@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.3.2 - Move `overflow:hidden` property from the shadow class to the `.au-card` class](#v032)
 * [v0.3.1 - Use unit instead of rem](#v031)
 * [v0.3.0 - Remove AUcardBody export, add feature footers and headers, add light/dark theme variations and tests](#v030)
 * [v0.2.0 - Remove styling for card image and use responsive media](#v020)
@@ -29,6 +30,10 @@
 
 
 ## Release History
+
+### v0.3.1
+
+- Move `overflow:hidden` property from the shadow class to the `.au-card` class
 
 ### v0.3.1
 
