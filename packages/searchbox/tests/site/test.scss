@@ -1,0 +1,12 @@
+//dependencies
+@import '../../src/sass/_dependencies.scss';
+
+//testing includes
+// @import '../../../body/src/sass/_module.scss';
+@import '../../../text-inputs/src/sass/_module.scss';
+@import '../../../form/src/sass/_module.scss';
+@import '../../../buttons/src/sass/_module.scss';
+
+
+//styling all test files
+@import '../../../../.templates/test-assets/_style.scss';
