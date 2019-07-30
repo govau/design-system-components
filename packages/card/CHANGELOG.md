@@ -35,6 +35,7 @@
 
 - Move `overflow:hidden` property from the shadow class to the `.au-card` class
 
+
 ### v0.3.1
 
 - Use unit instead of rem
