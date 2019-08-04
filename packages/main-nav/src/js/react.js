@@ -409,7 +409,6 @@ export class AUmainNavContent extends React.PureComponent {
 				id={ this.id }
 				className="au-main-nav__content"
 				ref={ mainNavContent => { this.mainNavContent = mainNavContent }}>
-				<div role="heading" aria-level="1">
 					<button
 						aria-controls={ this.id }
 						aria-expanded={this.state.expanded}
@@ -417,7 +416,6 @@ export class AUmainNavContent extends React.PureComponent {
 						className="au-main-nav__toggle au-main-nav__toggle--open">
 						Menu
 					</button>
-				</div>
 				<div
 					className="au-main-nav__menu"
 					ref={ mainNavMenu => { this.mainNavMenu = mainNavMenu }}
