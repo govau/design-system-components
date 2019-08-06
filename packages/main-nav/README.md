@@ -235,6 +235,7 @@ The visual test: https://auds.service.gov.au/packages/main-nav/tests/site/
 
 ## Release History
 
+* v1.0.8 - Add aria-expanded to main nav menu button
 * v1.0.7 - Remove --save-dev flag from readme instructions
 * v1.0.6 - Removed word `navigation` from `aria-label` in `<nav>` element
 * v1.0.5 - Removed unused `Fragment` React import
