@@ -30,27 +30,31 @@
 		display: table-cell;
 		vertical-align: top;
 
+		&:focus {
+			z-index: 2;
+		}
+
 		.ie8 & {
 			display: block;
 			table-layout:fixed;
 		}
 	}
 
-	.au-search__button {
+	.au-search__btn {
 		position: relative;
 		display: table-cell;
 		vertical-align: top;
 		width: 1%;
 	}
 
+	&.au-search--dark .au-search__btn {
+		border-left: solid 2px gray !important;
+	}
+
 	.au-btn {
 		border-bottom-left-radius: 0;
 		border-top-left-radius: 0;
 		margin: 0;
-
-		&--dark {
-			border-left: solid 2px lightgrey !important;
-		}
 	}
 
 	&.au-search--icon {
@@ -77,3 +81,12 @@
 		}
 	}
 }
+
+
+// removing the clear button on type="search"
+// input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+// input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+// input[type="search"]::-webkit-search-decoration,
+// input[type="search"]::-webkit-search-cancel-button,
+// input[type="search"]::-webkit-search-results-button,
+// input[type="search"]::-webkit-search-results-decoration { display: none; }

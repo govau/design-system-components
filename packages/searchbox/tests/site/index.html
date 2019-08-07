@@ -35,7 +35,7 @@
 		</script>
 	<![endif]-->
 </head>
-<body>
+<body class="au-grid">
 	<noscript>
 		<p role="alert">This website needs JavaScript to work properly.</p>
 	</noscript>
@@ -52,7 +52,7 @@
 			<div class="au-search au-form-group">
 				<label for="standard" class="au-search__label">Search</label>
 				<input type="search" id="standard" name="standard" class="au-text-input" />
-				<div class="au-search__button">
+				<div class="au-search__btn">
 					<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 			<div class="au-search au-search--responsive au-form-group">
 				<label for="responsive" class="au-search__label">Search</label>
 				<input type="search" id="responsive" name="responsive" class="au-text-input" />
-				<div class="au-search__button">
+				<div class="au-search__btn">
 					<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
 				</div>
 			</div>
@@ -73,7 +73,7 @@
 			<div class="au-search au-search--icon au-form-group">
 				<label for="icon" class="au-search__label">Search</label>
 				<input type="search" name="icon" id="icon" class="au-text-input" />
-				<div class="au-search__button">
+				<div class="au-search__btn">
 					<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
 				</div>
 			</div>
@@ -83,35 +83,259 @@
 		<div class="split split--dark">
 
 				<h2>Standard</h2>
-				<div class="au-search au-form-group">
+				<div class="au-search au-search--dark au-form-group">
 					<label for="standard-dark" class="au-search__label">Search</label>
 					<input type="search" id="standard-dark" class="au-text-input au-text-input--dark " />
-					<div class="au-search__button">
+					<div class="au-search__btn">
 						<button class="au-btn au-btn--dark"><span class="au-search__submit-btn-text">Search</span></button>
 					</div>
 				</div>
 
 				<h2>Responsive</h2>
 
-			<div class="au-search au-search--responsive au-form-group">
+			<div class="au-search au-search--dark au-search--responsive au-form-group">
 				<label for="resp-dark" class="au-search__label">Search</label>
 				<input type="search" id="resp-dark" class="au-text-input au-text-input--dark" />
-				<div class="au-search__button">
+				<div class="au-search__btn">
 					<button class="au-btn au-btn--dark"><span class="au-search__submit-btn-text">Search</span></button>
 				</div>
 			</div>
 
 			<h2>Icon only</h2>
-			<div class="au-search au-search--icon au-form-group">
+			<div class="au-search au-search--dark au-search--icon au-form-group">
 				<label for="icon-dark" class="au-search__label">Search</label>
 				<input type="search" id="icon-dark" class="au-text-input au-text-input--dark" />
-				<div class="au-search__button">
+				<div class="au-search__btn">
 					<button class="au-btn au-btn--dark"><span class="au-search__submit-btn-text">Search</span></button>
 				</div>
 			</div>
-
-
 	</div>
+	</div>
+
+	<br><br><br>
+
+	<!-- HEADER WITH SEARCH BOX PLAIN-->
+	<h1> AU header with search</h1>
+	<header class="au-grid au-header" role="banner">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-9">
+					<a class="au-header__brand" href="#">
+						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/256x80.png">
+						<div class="au-header__text">
+							<h1 class="au-header__heading">Site title</h1>
+							<div class="au-header__subline">
+								Service description that could be a little longer
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-3">
+					<div class="au-search">
+						<label for="standard" class="au-search__label">Search</label>
+						<input type="search" id="standard" name="standard" class="au-text-input" />
+						<div class="au-search__btn">
+							<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<nav class="au-main-nav" aria-label="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="main-nav-default" class="au-main-nav__content">
+						<button
+							aria-controls="main-nav-default"
+							aria-expanded="false"
+							class="au-main-nav__toggle au-main-nav__toggle--open"
+							onClick="return AU.mainNav.Toggle( this )">
+							Menu
+						</button>
+						<div class="au-main-nav__menu">
+							<div class="au-main-nav__menu-inner">
+								<div class="au-main-nav__focus-trap-top"></div>
+								<button
+									aria-controls="main-nav-default"
+									class="au-main-nav__toggle au-main-nav__toggle--close"
+									onClick="return AU.mainNav.Toggle( this )">
+									Close
+								</button>
+								<ul class="au-link-list">
+									<li><a href="#">About</a></li>
+									<li><a href="#">Get started</a></li>
+									<li class="active"><a href="#" aria-current="page">Components</a></li>
+									<li><a href="#">Templates</a></li>
+									<li><a href="#">Community</a></li>
+									<li><a href="#">Support</a></li>
+								</ul>
+								<div class="au-main-nav__focus-trap-bottom"></div>
+							</div>
+						</div>
+						<div
+							class="au-main-nav__overlay"
+							aria-controls="main-nav-default"
+							onClick="return AU.mainNav.Toggle( this )">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- END HEADER WITH SEARCH BOX PLAIN-->
+	<br><br><br>
+
+	<!-- HEADER WITH SEARCH BOX DARK-->
+
+	<h1> AU header with search DARK</h1>
+	<header class="au-grid au-header au-header--dark" role="banner">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8">
+					<a class="au-header__brand" href="#">
+						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/256x80.png">
+						<div class="au-header__text">
+							<h1 class="au-header__heading">Site title</h1>
+							<div class="au-header__subline">
+								Service description that could be a little longer
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<div class="au-search au-search--dark">
+						<label for="standard" class="au-search__label">Search</label>
+						<input type="search" id="standard" name="standard" class="au-text-input au-text-input--dark" />
+						<div class="au-search__btn">
+							<button class="au-btn au-btn--dark"><span class="au-search__submit-btn-text">Search</span></button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<nav class="au-main-nav au-main-nav--dark" aria-label="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="main-nav-default" class="au-main-nav__content">
+						<button
+							aria-controls="main-nav-default"
+							aria-expanded="false"
+							class="au-main-nav__toggle au-main-nav__toggle--open"
+							onClick="return AU.mainNav.Toggle( this )">
+							Menu
+						</button>
+						<div class="au-main-nav__menu">
+							<div class="au-main-nav__menu-inner">
+								<div class="au-main-nav__focus-trap-top"></div>
+								<button
+									aria-controls="main-nav-default"
+									class="au-main-nav__toggle au-main-nav__toggle--close"
+									onClick="return AU.mainNav.Toggle( this )">
+									Close
+								</button>
+								<ul class="au-link-list">
+									<li><a href="#">About</a></li>
+									<li><a href="#">Get started</a></li>
+									<li class="active"><a href="#" aria-current="page">Components</a></li>
+									<li><a href="#">Templates</a></li>
+									<li><a href="#">Community</a></li>
+									<li><a href="#">Support</a></li>
+								</ul>
+								<div class="au-main-nav__focus-trap-bottom"></div>
+							</div>
+						</div>
+						<div
+							class="au-main-nav__overlay"
+							aria-controls="main-nav-default"
+							onClick="return AU.mainNav.Toggle( this )">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--END SEARCH BOX IN HEADER DARK-->
+
+
+	<!-- HEADER WITH SEARCH BOX RESPONSIVE DARK-->
+
+	<h1> AU header with search responsive DARK</h1>
+	<header class="au-grid au-header au-header--dark" role="banner">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-8 col-xs-12">
+					<a class="au-header__brand" href="#">
+						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/256x80.png">
+						<div class="au-header__text">
+							<h1 class="au-header__heading">Site title</h1>
+							<div class="au-header__subline">
+								Service description that could be a little longer
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4 col-xs-12">
+					<div class="au-search au-search--responsive au-search--dark">
+						<label for="standard" class="au-search__label">Search</label>
+						<input type="search" id="standard" name="standard" class="au-text-input au-text-input--dark" />
+						<div class="au-search__btn">
+							<button class="au-btn au-btn--dark"><span class="au-search__submit-btn-text">Search</span></button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<nav class="au-main-nav au-main-nav--dark" aria-label="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="main-nav-default" class="au-main-nav__content">
+						<button
+							aria-controls="main-nav-default"
+							aria-expanded="false"
+							class="au-main-nav__toggle au-main-nav__toggle--open"
+							onClick="return AU.mainNav.Toggle( this )">
+							Menu
+						</button>
+						<div class="au-main-nav__menu">
+							<div class="au-main-nav__menu-inner">
+								<div class="au-main-nav__focus-trap-top"></div>
+								<button
+									aria-controls="main-nav-default"
+									class="au-main-nav__toggle au-main-nav__toggle--close"
+									onClick="return AU.mainNav.Toggle( this )">
+									Close
+								</button>
+								<ul class="au-link-list">
+									<li><a href="#">About</a></li>
+									<li><a href="#">Get started</a></li>
+									<li class="active"><a href="#" aria-current="page">Components</a></li>
+									<li><a href="#">Templates</a></li>
+									<li><a href="#">Community</a></li>
+									<li><a href="#">Support</a></li>
+								</ul>
+								<div class="au-main-nav__focus-trap-bottom"></div>
+							</div>
+						</div>
+						<div
+							class="au-main-nav__overlay"
+							aria-controls="main-nav-default"
+							onClick="return AU.mainNav.Toggle( this )">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- END HEADER WITH SEARCH BOX RESPONSIVE DARK-->
 
 
 	<script type="text/javascript" src="script.js"></script>
