@@ -493,7 +493,11 @@ All components have to work on the below browsers:
 	<br>
 
 ```shell
-└─ core
+├─ core
+├─ text-inputs
+│  └─ core
+└─ buttons
+   └─ core
 ```
 ----------
 </details>

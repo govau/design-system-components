@@ -38,7 +38,11 @@ npm install @gov.au/searchbox
 
 ```shell
 searchbox
-└─ core
+├─ core
+├─ text-inputs
+│  └─ core
+└─ buttons
+   └─ core
 ```
 
 
