@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AUsearchbox from './searchbox.js';
+import { AUlabel } from '../../../form/src/js/react';
 
 
 ReactDOM.render(
-	<div class="au-grid">
+	<div className="au-grid">
 		<div className="split-wrapper">
 			<div className="split">
 				<h2>Standard</h2>
@@ -16,6 +17,10 @@ ReactDOM.render(
 
 				<h2>Icon only</h2>
 				<AUsearchbox label="Search" btnText="Search" icon id="icon-search"/>
+
+				<h2>Label outside</h2>
+				<AUlabel htmlFor="domain-box" text="Enter a domain"/>
+				<AUsearchbox btnText="Check availability" id="domain-box" />
 			</div>
 			<div className="split split--dark">
 			<h2>Standard</h2>
@@ -27,6 +32,9 @@ ReactDOM.render(
 				<h2>Icon only</h2>
 				<AUsearchbox label="Search" btnText="Search" dark icon id="icon-search-dark"/>
 
+				<h2>Label outside</h2>
+				<AUlabel htmlFor="dom" dark text="Enter a domain"/>
+				<AUsearchbox btnText="Check availability" id="dom" dark />
 			</div>
 		</div>
 	</div>,
