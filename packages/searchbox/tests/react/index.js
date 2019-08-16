@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import AUsearchbox from './searchbox.js';
 import { AUlabel } from '../../../form/src/js/react';
+import { Route, BrowserRouter } from 'react-router-dom';
 
 
 ReactDOM.render(
@@ -40,7 +41,17 @@ ReactDOM.render(
 				<AUsearchbox btnText="Check availability" id="dom" dark />
 
 				<h2>Button with change route</h2>
-				<AUsearchbox label="Search" btnText="Search" id="def-search" onClick={() => console.log('hello')}/>
+
+				<BrowserRouter>
+					<React.Fragment>
+
+						<Route render={({history}) => (
+								<AUsearchbox label="Search" btnText="Search" id="def-search" onClick={() => { history.push('/one') }}/>
+						)} />
+						<Route path="/one" render={ () => ( <p>Route one</p> )} />
+						<Route path="/two" render={ () => ( <p>Route two</p> )} />
+					</React.Fragment>
+				</BrowserRouter>
 			</div>
 		</div>
 	</div>,

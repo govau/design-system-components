@@ -39,7 +39,7 @@ $dependencies: (
 		.lt-ie9 & {
 			background-image: none;
 			&:after {
-				content: "s";
+				content: "Search";
 			}
 		}
 }
