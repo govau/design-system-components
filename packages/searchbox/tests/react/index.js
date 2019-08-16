@@ -22,7 +22,7 @@ ReactDOM.render(
 				<AUlabel htmlFor="domain-box" text="Enter a domain"/>
 				<AUsearchbox btnText="Check availability" id="domain-box" />
 
-				<h2>Button options</h2>
+				<h2>Button with onclick function</h2>
 				<AUsearchbox label="Search" btnText="Search" id="def-search" onClick={() => console.log('hello')}/>
 			</div>
 			<div className="split split--dark">
@@ -38,6 +38,9 @@ ReactDOM.render(
 				<h2>Label outside</h2>
 				<AUlabel htmlFor="dom" dark text="Enter a domain"/>
 				<AUsearchbox btnText="Check availability" id="dom" dark />
+
+				<h2>Button with change route</h2>
+				<AUsearchbox label="Search" btnText="Search" id="def-search" onClick={() => console.log('hello')}/>
 			</div>
 		</div>
 	</div>,
