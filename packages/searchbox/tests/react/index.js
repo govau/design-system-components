@@ -46,7 +46,7 @@ ReactDOM.render(
 					<React.Fragment>
 
 						<Route render={({history}) => (
-								<AUsearchbox label="Search" btnText="Search" id="def-search" onClick={() => { history.push('/one') }}/>
+								<AUsearchbox dark label="Search" btnText="Search" id="def-search" onClick={() => { history.push('/one') }}/>
 						)} />
 						<Route path="/one" render={ () => ( <p>Route one</p> )} />
 						<Route path="/two" render={ () => ( <p>Route two</p> )} />
