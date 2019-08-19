@@ -23,7 +23,18 @@ import PropTypes from 'prop-types';
 // [replace-imports]
 
 
-
+/**
+ * AUsearchBox
+ *
+ * @param  {string} label       - Text on label
+ * @param  {string} btnText     - Text on button
+ * @param  {string} id          - Id of text input, required
+ * @param  {bool}   dark        - Dark variation of search box
+ * @param  {bool}   responsive  - Responsive variation, text turns to icon on smaller devices
+ * @param  {bool}   icon        - Icon only, hides text on button
+ * @param  {func}   onClick     - Click handler for the button
+ *
+ */
 const AUsearchbox = ({ label, btnText, dark, responsive, id, icon, className, onClick, ...attributeOptions}) => (
 <div className={`au-search ` +
 						`${dark ? 'au-search--dark' : ''} ` +
@@ -43,11 +54,18 @@ const AUsearchbox = ({ label, btnText, dark, responsive, id, icon, className, on
 );
 
 AUsearchbox.propTypes = {
+	label: PropTypes.string,
+	btnText: PropTypes.string,
+	id: PropTypes.string.isRequired,
 	dark: PropTypes.bool,
+	icon: PropTypes.bool,
+	responsive: PropTypes.bool,
+	onClick: PropTypes.func
 };
 
 AUsearchbox.defaultProps = {
-	className: ''
+	className: '',
+	btnText: 'Search',
 };
 
 export default AUsearchbox;
