@@ -39,7 +39,8 @@ $dependencies: (
 		.lt-ie9 & {
 			background-image: none;
 			&:after {
-				content: "Search";
+				font-family: Lucida Sans Unicode, Arial Unicode MS, Arial;
+				content: "🔍";
 			}
 		}
 }
