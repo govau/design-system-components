@@ -84,3 +84,47 @@ Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-compo
 
 # };
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Usage
+
+
+* [React](#react)
+
+
+**[⬆ back to top](#contents)**
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+### React
+
+Usage:
+
+```jsx
+import AUsearchbox from '@gov.au/searchbox';
+
+<AUsearchbox 
+	label="Search" 
+	btnText="Search"
+	responsive={true}
+	id="def-search"
+	onClick={() => console.log('hello')}
+/>
+
+All props:
+
+
+<AUsearchbox 
+	label="Search"                        {/* Text of the label */}
+	btnText="Search"                      {/* Text on the button */}
+	responsive={true}                     {/* Responsive variation, text turns to icon on smaller devices*/}
+	icon={false}                          {/* Icon only, hides text on button*/}
+	id="def-search"                       {/* ID of the text input, required */}
+	className=""                          {/* Additional class, optional */}
+	onClick={() => console.log('hello')}  {/* Click handler for the button */}
+/>
+
+
+```

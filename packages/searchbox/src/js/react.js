@@ -43,7 +43,7 @@ const AUsearchbox = ({ label, btnText, dark, responsive, id, icon, className, on
 );
 
 AUsearchbox.propTypes = {
-	dark: PropTypes.bool
+	dark: PropTypes.bool,
 };
 
 AUsearchbox.defaultProps = {
