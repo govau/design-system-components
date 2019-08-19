@@ -24,7 +24,6 @@
 @mixin ieImage( $url ) {
 
 	.ie8 & {
-		background-image: none;
 		background-image: url( $url );
 	}
 }
