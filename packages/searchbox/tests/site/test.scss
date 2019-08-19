@@ -16,3 +16,39 @@
 
 //styling all test files
 @import '../../../../.templates/test-assets/_style.scss';
+
+
+
+// The below is for IE8 search icon. We will give guidance in rationale on how to do this.
+
+@mixin ieImage( $url ) {
+
+	.ie8 & {
+		background-image: none;
+		background-image: url( $url );
+	}
+}
+
+.au-search.au-search--icon {
+
+	.au-btn {
+			@include ieImage( './search.png' );
+	}
+
+	&.au-search--dark .au-btn {
+		@include ieImage( './search--dark.png' );
+	}
+}
+
+.au-search--responsive {
+
+	@media screen and ( max-width: 576px ) {
+		.au-btn {
+			@include ieImage( './search.png' );
+		}
+
+		&.au-search--dark .au-btn {
+			@include ieImage( './search--dark.png' );
+		}
+	}
+}
