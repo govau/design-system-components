@@ -28,6 +28,7 @@ import PropTypes from 'prop-types';
  *
  * @param  {string} label       - Text on label
  * @param  {string} btnText     - Text on button
+ * @param  {string} btnType     - Button type
  * @param  {string} id          - Id of text input, required
  * @param  {bool}   dark        - Dark variation of search box
  * @param  {bool}   responsive  - Responsive variation, text turns to icon on smaller devices
@@ -35,7 +36,7 @@ import PropTypes from 'prop-types';
  * @param  {func}   onClick     - Click handler for the button
  *
  */
-const AUsearchbox = ({ label, btnText, dark, responsive, id, icon, className, onClick, ...attributeOptions}) => (
+const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, className, onClick, ...attributeOptions}) => (
 <div className={`au-search ` +
 						`${dark ? 'au-search--dark' : ''} ` +
 						`${icon ? 'au-search--icon' : ''} ` +
@@ -46,7 +47,9 @@ const AUsearchbox = ({ label, btnText, dark, responsive, id, icon, className, on
 	<div className="au-search__btn">
 		<AUbutton
 			onClick={onClick}
-			dark={dark}>
+			dark={dark}
+			type={btnType}
+			>
 				<span className="au-search__submit-btn-text">{btnText}</span>
 		</AUbutton>
 	</div>
@@ -56,16 +59,18 @@ const AUsearchbox = ({ label, btnText, dark, responsive, id, icon, className, on
 AUsearchbox.propTypes = {
 	label: PropTypes.string,
 	btnText: PropTypes.string,
+	btnType: PropTypes.oneOf( 'submit', 'reset', 'button' ),
 	id: PropTypes.string.isRequired,
 	dark: PropTypes.bool,
 	icon: PropTypes.bool,
 	responsive: PropTypes.bool,
-	onClick: PropTypes.func
+	onClick: PropTypes.func,
 };
 
 AUsearchbox.defaultProps = {
 	className: '',
 	btnText: 'Search',
+	btnType: 'submit'
 };
 
 export default AUsearchbox;

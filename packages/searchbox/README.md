@@ -119,6 +119,7 @@ All props:
 <AUsearchbox 
 	label="Search"                        {/* Text of the label */}
 	btnText="Search"                      {/* Text on the button */}
+	btnType                               {/* Type of button, either 'button', 'reset' or 'submit'*/}
 	dark={true}                           {/* Dark variation */}
 	responsive={true}                     {/* Responsive variation, text turns to icon on smaller devices*/}
 	icon={false}                          {/* Icon only, hides text on button */}
