@@ -126,6 +126,7 @@ All props:
 	id="def-search"                       {/* ID of the text input, required */}
 	className=""                          {/* Additional class, optional */}
 	onClick={() => console.log('hello')}  {/* Click handler for the button */}
+	wrapper="form"                        {/* Wrapper component. Can be a div or form. */}
 />
 
 

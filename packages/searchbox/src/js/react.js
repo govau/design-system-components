@@ -36,25 +36,34 @@ import PropTypes from 'prop-types';
  * @param  {func}   onClick     - Click handler for the button
  *
  */
-const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, className, onClick, ...attributeOptions}) => (
-<form role="search" className={`au-search ` +
-						`${dark ? 'au-search--dark' : ''} ` +
-						`${icon ? 'au-search--icon' : ''} ` +
-						`${responsive ? 'au-search--responsive' : ''} ` +
-						`${className}`} {...attributeOptions}>
-	{ label && <label htmlFor={id } className="au-search__label">{label}</label> }
-	<AUtextInput dark={dark} id={id} />
-	<div className="au-search__btn">
-		<AUbutton
-			onClick={onClick}
-			dark={dark}
-			type={btnType}
-			>
-				<span className="au-search__submit-btn-text">{btnText}</span>
-		</AUbutton>
-	</div>
-</form>
-);
+const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, wrapper, className, onClick, ...attributeOptions}) => {
+
+	let Wrapper = wrapper;
+
+	if ( Wrapper === 'form' ) {
+		attributeOptions.role = "search";
+	}
+
+	return(
+		<Wrapper className={`au-search ` +
+								`${dark ? 'au-search--dark' : ''} ` +
+								`${icon ? 'au-search--icon' : ''} ` +
+								`${responsive ? 'au-search--responsive' : ''} ` +
+								`${className}`} {...attributeOptions}>
+			{ label && <label htmlFor={id } className="au-search__label">{label}</label> }
+			<AUtextInput dark={dark} id={id} />
+			<div className="au-search__btn">
+				<AUbutton
+					onClick={onClick}
+					dark={dark}
+					type={btnType}
+					>
+						<span className="au-search__submit-btn-text">{btnText}</span>
+				</AUbutton>
+			</div>
+		</Wrapper>
+)
+};
 
 AUsearchbox.propTypes = {
 	label: PropTypes.string,
@@ -65,12 +74,14 @@ AUsearchbox.propTypes = {
 	icon: PropTypes.bool,
 	responsive: PropTypes.bool,
 	onClick: PropTypes.func,
+	wrapper: PropTypes.oneOf([ 'div', 'form' ])
 };
 
 AUsearchbox.defaultProps = {
 	className: '',
 	btnText: 'Search',
-	btnType: 'submit'
+	btnType: 'submit',
+	wrapper: 'form'
 };
 
 export default AUsearchbox;

@@ -11,7 +11,7 @@ ReactDOM.render(
 		<div className="split-wrapper">
 			<div className="split">
 				<h2>Standard</h2>
-				<AUsearchbox label="Search" btnText="Search" id="def-search"/>
+				<AUsearchbox wrapper='div' label="Search" btnText="Search" id="def-search"/>
 
 				<h2>Responsive</h2>
 				<AUsearchbox label="Search" responsive btnText="Search" id="resp-search"/>
