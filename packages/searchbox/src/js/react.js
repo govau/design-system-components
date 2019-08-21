@@ -37,7 +37,7 @@ import PropTypes from 'prop-types';
  *
  */
 const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, className, onClick, ...attributeOptions}) => (
-<div className={`au-search ` +
+<form role="search" className={`au-search ` +
 						`${dark ? 'au-search--dark' : ''} ` +
 						`${icon ? 'au-search--icon' : ''} ` +
 						`${responsive ? 'au-search--responsive' : ''} ` +
@@ -53,7 +53,7 @@ const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, clas
 				<span className="au-search__submit-btn-text">{btnText}</span>
 		</AUbutton>
 	</div>
-</div>
+</form>
 );
 
 AUsearchbox.propTypes = {

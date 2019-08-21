@@ -48,7 +48,7 @@
 
 		<div class="split">
 
-			<h2>Standard (example inside a form with role="search")</h2>
+			<h2>Standard</h2>
 			<form role="search" class="au-search au-form-group">
 				<label for="standard" class="au-search__label">Enter a domain</label>
 				<input type="search" id="standard" name="standard" class="au-text-input" />
@@ -60,34 +60,34 @@
 
 			<h2>Responsive</h2>
 
-			<div class="au-search au-search--responsive au-form-group">
+			<form role="search"  class="au-search au-search--responsive au-form-group">
 				<label for="responsive" class="au-search__label">Search</label>
 				<input type="search" id="responsive" name="responsive" class="au-text-input" />
 				<div class="au-search__btn">
 					<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
 				</div>
-			</div>
+			</form>
 
 			<h2>Icon only</h2>
 
-			<div class="au-search au-search--icon au-form-group">
+			<form role="search"  class="au-search au-search--icon au-form-group">
 				<label for="icon" class="au-search__label">Search</label>
 				<input type="search" name="icon" id="icon" class="au-text-input" />
 				<div class="au-search__btn">
 					<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
 				</div>
-			</div>
+			</form>
 
 			<br>
 			<h2>Different text and visible label</h2>
 
 			<label for="vis" class="au-label">Enter a domain</label>
-			<div class="au-search au-form-group">
+			<form role="search"  class="au-search au-form-group">
 				<input type="search" name="vis" id="vis" class="au-text-input" />
 				<div class="au-search__btn">
 					<button class="au-btn"><span class="au-search__submit-btn-text">Check availibility</span></button>
 				</div>
-			</div>
+			<form role="search"rm>
 
 		</div>
 
@@ -103,7 +103,7 @@
 
 				<h2>Responsive</h2>
 
-			<div class="au-search au-search--dark au-search--responsive au-form-group">
+			<form role="search" class="au-search au-search--dark au-search--responsive au-form-group">
 				<label for="resp-dark" class="au-search__label">Search</label>
 				<input type="search" id="resp-dark" class="au-text-input au-text-input--dark" />
 				<div class="au-search__btn">
@@ -112,7 +112,7 @@
 			</div>
 
 			<h2>Icon only</h2>
-			<div class="au-search au-search--dark au-search--icon au-form-group">
+			<form role="search" class="au-search au-search--dark au-search--icon au-form-group">
 				<label for="icon-dark" class="au-search__label">Search</label>
 				<input type="search" id="icon-dark" class="au-text-input au-text-input--dark" />
 				<div class="au-search__btn">
@@ -123,12 +123,12 @@
 			<br>
 			<h2>Different text and visible label</h2>
 			<label for="vis-dark" class="au-label au-label--dark">Enter a domain</label>
-			<div class="au-search au-search--dark au-form-group">
+			<form role="search" class="au-search au-search--dark au-form-group">
 				<input type="search" id="vis-dark" class="au-text-input au-text-input--dark" />
 				<div class="au-search__btn">
 					<button class="au-btn au-btn--dark"><span class="au-search__submit-btn-text">Check availability</span></button>
 				</div>
-			</div>
+			</form>
 
 
 		</div>
@@ -153,13 +153,13 @@
 					</a>
 				</div>
 				<div class="col-md-3">
-					<div class="au-search">
+					<form role="search"  class="au-search">
 						<label for="standard-nav" class="au-search__label">Search</label>
 						<input type="search" id="standard-nav" name="standard" class="au-text-input" />
 						<div class="au-search__btn">
-							<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
+							<button class="au-btn"><spaform role="search"lass="au-search__submit-btn-text">Search</span></button>
 						</div>
-					</div>
+					</form>
 
 				</div>
 			</div>
@@ -228,13 +228,13 @@
 					</a>
 				</div>
 				<div class="col-md-4">
-					<div class="au-search au-search--dark">
+					<form role="search" class="au-search au-search--dark">
 						<label for="dark-nav" class="au-search__label">Search</label>
 						<input type="search" id="dark-nav" name="dark-nav" class="au-text-input au-text-input--dark" />
 						<div class="au-search__btn">
 							<button class="au-btn au-btn--dark"><span class="au-search__submit-btn-text">Search</span></button>
 						</div>
-					</div>
+					</form>
 
 				</div>
 			</div>
@@ -303,13 +303,13 @@
 					</a>
 				</div>
 				<div class="col-sm-4 col-xs-12">
-					<div class="au-search au-search--responsive au-search--dark">
+					<form role="search" class="au-search au-search--responsive au-search--dark">
 						<label for="dark-rsp-nav" class="au-search__label">Search</label>
 						<input type="search" id="dark-rsp-nav" name="dark-rsp-nav" class="au-text-input au-text-input--dark" />
 						<div class="au-search__btn">
 							<button class="au-btn au-btn--dark"><span class="au-search__submit-btn-text">Search</span></button>
 						</div>
-					</div>
+					</form>
 
 				</div>
 			</div>
@@ -364,13 +364,13 @@
 		<div class="row">
 			<h2>Search in a au-grid</h2>
 			<div class="col-md-offset-3 col-md-6">
-					<div class="au-search au-search--responsive au-form-group">
-							<label for="search-in-grid" class="au-search__label">Search</label>
-							<input type="search" id="search-in-grid" class="au-text-input" />
-							<div class="au-search__btn">
-								<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
-							</div>
-						</div>
+				<form role="search" class="au-search au-search--responsive au-form-group">
+					<label for="search-in-grid" class="au-search__label">Search</label>
+					<input type="search" id="search-in-grid" class="au-text-input" />
+					<div class="au-search__btn">
+						<button class="au-btn"><span class="au-search__submit-btn-text">Search</span></button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
