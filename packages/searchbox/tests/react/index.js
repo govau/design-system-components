@@ -24,7 +24,7 @@ ReactDOM.render(
 				<AUsearchbox btnText="Check availability" id="domain-box" />
 
 				<h2>Button with onclick function</h2>
-				<AUsearchbox label="Search" btnText="Search" id="def-search" onClick={() => console.log('hello')}/>
+				<AUsearchbox label="Search" btnText="Search" id="def-search--btn-click" onClick={() => console.log('hello')}/>
 			</div>
 			<div className="split split--dark">
 			<h2>Standard</h2>
@@ -46,7 +46,7 @@ ReactDOM.render(
 					<React.Fragment>
 
 						<Route render={({history}) => (
-								<AUsearchbox dark label="Search" btnText="Search" id="def-search" onClick={() => { history.push('/one') }}/>
+								<AUsearchbox dark label="Search" btnText="Search" id="def-search--click-route" onClick={() => { history.push('/one') }}/>
 						)} />
 						<Route path="/one" render={ () => ( <p>Route one</p> )} />
 						<Route path="/two" render={ () => ( <p>Route two</p> )} />

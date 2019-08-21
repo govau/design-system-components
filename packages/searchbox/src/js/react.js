@@ -59,7 +59,7 @@ const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, clas
 AUsearchbox.propTypes = {
 	label: PropTypes.string,
 	btnText: PropTypes.string,
-	btnType: PropTypes.oneOf( 'submit', 'reset', 'button' ),
+	btnType: PropTypes.oneOf( ['submit', 'reset', 'button'] ),
 	id: PropTypes.string.isRequired,
 	dark: PropTypes.bool,
 	icon: PropTypes.bool,
