@@ -485,6 +485,24 @@ All components have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/searchbox</summary>
+	<br><code>npm install @gov.au/searchbox</code><br>
+	<br>See the <a href="https://auds.service.gov.au/packages/searchbox/tests/site/">visual test file for searchbox</a>
+	<br>See the <a href="https://github.com/govau/design-system-components/blob/master/packages/searchbox/README.md">readme file for searchbox</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+├─ core
+├─ text-inputs
+│  └─ core
+└─ buttons
+   └─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/select</summary>
 	<br><code>npm install @gov.au/select</code><br>
 	<br>See the <a href="https://auds.service.gov.au/packages/select/tests/site/">visual test file for select</a>
