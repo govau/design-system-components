@@ -36,7 +36,7 @@ import PropTypes from 'prop-types';
  * @param  {func}   onClick     - Click handler for the button
  *
  */
-const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, wrapper, className, onClick, ...attributeOptions}) => {
+const AUsearchbox = ({ label, btnText, dark, responsive, id, icon, wrapper, className, inputProps, btnProps, onClick, ...attributeOptions}) => {
 
 	let Wrapper = wrapper;
 
@@ -51,12 +51,11 @@ const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, wrap
 								`${responsive ? 'au-search--responsive' : ''} ` +
 								`${className}`} {...attributeOptions}>
 			{ label && <label htmlFor={id } className="au-search__label">{label}</label> }
-			<AUtextInput dark={dark} id={id} />
+			<AUtextInput dark={dark} id={id} {...inputProps} />
 			<div className="au-search__btn">
 				<AUbutton
-					onClick={onClick}
 					dark={dark}
-					type={btnType}
+					{...btnProps}
 					>
 						<span className="au-search__submit-btn-text">{btnText}</span>
 				</AUbutton>
@@ -68,19 +67,18 @@ const AUsearchbox = ({ label, btnText, dark, btnType, responsive, id, icon, wrap
 AUsearchbox.propTypes = {
 	label: PropTypes.string,
 	btnText: PropTypes.string,
-	btnType: PropTypes.oneOf( ['submit', 'reset', 'button'] ),
 	id: PropTypes.string.isRequired,
 	dark: PropTypes.bool,
 	icon: PropTypes.bool,
 	responsive: PropTypes.bool,
-	onClick: PropTypes.func,
-	wrapper: PropTypes.oneOf([ 'div', 'form' ])
+	wrapper: PropTypes.oneOf([ 'div', 'form' ]),
+	inputProps: PropTypes.object,
+	btnProps: PropTypes.object
 };
 
 AUsearchbox.defaultProps = {
 	className: '',
 	btnText: 'Search',
-	btnType: 'submit',
 	wrapper: 'form'
 };
 

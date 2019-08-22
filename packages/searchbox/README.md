@@ -110,7 +110,7 @@ import AUsearchbox from '@gov.au/searchbox';
 	btnText="Search"
 	responsive={true}
 	id="def-search"
-	onClick={() => console.log('hello')}
+	btnProps={{ onClick: () => console.log('hello'), className: 'blah', type: 'button' }}
 />
 
 All props:
@@ -119,15 +119,13 @@ All props:
 <AUsearchbox 
 	label="Search"                        {/* Text of the label */}
 	btnText="Search"                      {/* Text on the button */}
-	btnType                               {/* Type of button, either 'button', 'reset' or 'submit'*/}
 	dark={true}                           {/* Dark variation */}
 	responsive={true}                     {/* Responsive variation, text turns to icon on smaller devices*/}
 	icon={false}                          {/* Icon only, hides text on button */}
 	id="def-search"                       {/* ID of the text input, required */}
 	className=""                          {/* Additional class, optional */}
-	onClick={() => console.log('hello')}  {/* Click handler for the button */}
 	wrapper="form"                        {/* Wrapper component. Can be a div or form. */}
+	btnProps= {{type: 'button'}}          {/* Additonal props to be spread into the button */}
+	inputProps= {{type: 'text'}}          {/* Additonal props to be spread into the text input */}
 />
-
-
 ```
