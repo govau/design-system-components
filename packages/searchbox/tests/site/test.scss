@@ -52,3 +52,8 @@
 		}
 	}
 }
+
+header form {
+	@include AU-space( margin-top, 2unit );
+	@include AU-space( margin-bottom, -1unit );
+}
