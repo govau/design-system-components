@@ -1,0 +1,95 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// searchbox module
+//
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+
+.au-search {
+
+	display: table;
+	width: 99%;
+	font-family: $AU-font;
+
+	&__label {
+		@include AU-sronly();
+	}
+
+	.au-text-input {
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+		border-right: 0;
+		max-width: 100%;
+		position: relative;
+		display: table-cell;
+		vertical-align: top;
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration { display: none; }
+
+		&:focus {
+			z-index: 2;
+		}
+
+		.ie8 & {
+			display: block;
+			table-layout:fixed;
+		}
+	}
+
+	.au-search__btn {
+		position: relative;
+		display: table-cell;
+		vertical-align: top;
+		width: 1%;
+		white-space: nowrap;
+	}
+
+	&.au-search--dark .au-search__btn {
+		border-left: solid 2px gray !important;
+	}
+
+	.au-btn {
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+		margin: 0;
+		width:100%
+	}
+
+	&.au-search--icon {
+		@extend %search-btn;
+
+		.au-search__submit-btn-text {
+			@include AU-sronly();
+		}
+	}
+
+	&.au-search--responsive {
+			@extend %search-btn;
+
+			@include AU-media( xs ) {
+				.au-btn {
+					background-image: none;
+				}
+			}
+
+		.au-search__submit-btn-text {
+			@media screen and ( max-width: 576px) {
+				@include AU-sronly();
+			}
+		}
+	}
+}
+
+
+// removing the clear button on type="search"
+
