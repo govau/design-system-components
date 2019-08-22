@@ -143,7 +143,7 @@
 			<div class="row">
 				<div class="col-md-9">
 					<a class="au-header__brand" href="#">
-						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/256x80.png">
+						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png">
 						<div class="au-header__text">
 							<h1 class="au-header__heading">Site title</h1>
 							<div class="au-header__subline">
@@ -153,7 +153,7 @@
 					</a>
 				</div>
 				<div class="col-md-3">
-					<form role="search"  class="au-search">
+					<form role="search" class="au-search">
 						<label for="standard-nav" class="au-search__label">Search</label>
 						<input type="search" id="standard-nav" name="standard" class="au-text-input" />
 						<div class="au-search__btn">
@@ -169,9 +169,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<div id="main-nav-default-3" class="au-main-nav__content">
+					<div id="main-nav-default-plain" class="au-main-nav__content">
 						<button
-							aria-controls="main-nav-default"
+							aria-controls="main-nav-default-plain"
 							aria-expanded="false"
 							class="au-main-nav__toggle au-main-nav__toggle--open"
 							onClick="return AU.mainNav.Toggle( this )">
@@ -181,7 +181,7 @@
 							<div class="au-main-nav__menu-inner">
 								<div class="au-main-nav__focus-trap-top"></div>
 								<button
-									aria-controls="main-nav-default"
+									aria-controls="main-nav-default-plain"
 									class="au-main-nav__toggle au-main-nav__toggle--close"
 									onClick="return AU.mainNav.Toggle( this )">
 									Close
@@ -199,7 +199,7 @@
 						</div>
 						<div
 							class="au-main-nav__overlay"
-							aria-controls="main-nav-default"
+							aria-controls="main-nav-default-plain"
 							onClick="return AU.mainNav.Toggle( this )">
 						</div>
 					</div>
@@ -218,7 +218,7 @@
 			<div class="row">
 				<div class="col-md-8">
 					<a class="au-header__brand" href="#">
-						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/256x80.png">
+						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png">
 						<div class="au-header__text">
 							<h1 class="au-header__heading">Site title</h1>
 							<div class="au-header__subline">
@@ -246,7 +246,7 @@
 				<div class="col-md-12">
 					<div id="main-nav-default-2" class="au-main-nav__content">
 						<button
-							aria-controls="main-nav-default"
+							aria-controls="main-nav-default-2"
 							aria-expanded="false"
 							class="au-main-nav__toggle au-main-nav__toggle--open"
 							onClick="return AU.mainNav.Toggle( this )">
@@ -256,7 +256,7 @@
 							<div class="au-main-nav__menu-inner">
 								<div class="au-main-nav__focus-trap-top"></div>
 								<button
-									aria-controls="main-nav-default"
+									aria-controls="main-nav-default-2"
 									class="au-main-nav__toggle au-main-nav__toggle--close"
 									onClick="return AU.mainNav.Toggle( this )">
 									Close
@@ -274,7 +274,7 @@
 						</div>
 						<div
 							class="au-main-nav__overlay"
-							aria-controls="main-nav-default"
+							aria-controls="main-nav-default-2"
 							onClick="return AU.mainNav.Toggle( this )">
 						</div>
 					</div>
@@ -293,7 +293,7 @@
 			<div class="row">
 				<div class="col-sm-8 col-xs-12">
 					<a class="au-header__brand" href="#">
-						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/256x80.png">
+						<img class="au-header__brand-image" alt="Insert alternate text here" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png">
 						<div class="au-header__text">
 							<h1 class="au-header__heading">Site title</h1>
 							<div class="au-header__subline">
@@ -374,5 +374,9 @@
 			</div>
 		</div>
 	</div>
+
+	<script>
+	var AU=AU||{};!function(e){var t={};function n(e,t,n){if(e===t)return{stepSize:0,steps:0,intervalTime:0};var o=t-e,a=n/o,i=o<0?-1:1,l=Math.abs(o/i);return a=n/l,Math.abs(a)<1e3/60&&(a=1e3/60,i=o/(l=Math.ceil(Math.abs(n/a)))),{stepSize:i,steps:l-1,intervalTime:a}}"undefined"!=typeof module&&(t.CalculateAnimationSpecs=n),t.GetCSSPropertyBecauseIE=function(t,n){if("undefined"!=typeof getComputedStyle)return window.getComputedStyle(t)[n];var o=t.currentStyle[n];return"auto"===o&&(o=e.animate.CalculateAuto(t,n)),o},t.CalculateAuto=function(e,t){var n,o;return"height"===t?(n=e.clientHeight,e.style[t]="auto",o=e.clientHeight,e.style[t]=n+"px"):(n=e.clientWidth,e.style[t]="auto",o=e.clientWidth,e.style[t]=n+"px"),parseInt(o)},t.Stop=function(e){clearInterval(e.AUanimation)},t.Run=function(t){var o=t.element,a=t.speed||250;void 0===o.length&&(o=[o]),"function"!=typeof t.callback&&(t.callback=function(){}),o[0].AUinteration=0,o[0].AUinterations=o.length;for(var i=0;i<o.length;i++){var l=o[i];e.animate.Stop(l);var r=parseInt(e.animate.GetCSSPropertyBecauseIE(l,t.property)),u=t.endSize;"auto"===t.endSize&&(u=e.animate.CalculateAuto(l,t.property));var c=n(r,u,a),s=r;c.stepSize<0?l.AUtoggleState="closing":c.stepSize>0&&(l.AUtoggleState="opening"),function(n,a,i,l,r){n.AUanimation=setInterval(function(){if(a===r||0===l.steps){if(e.animate.Stop(n),n.style[t.property]=r+"px",n.AUtoggleState="",o[0].AUinteration++,"auto"===t.endSize&&(n.style[t.property]=""),o[0].AUinteration>=o[0].AUinterations)return t.callback()}else i+=l.stepSize,n.style[t.property]=i+"px",l.steps--},Math.abs(l.intervalTime))}(l,r,s,c,u)}},t.Toggle=function(t){var n=t.element,o=t.property||"height",a=t.speed||250,i=void 0===t.closeSize?0:t.closeSize,l=void 0===t.openSize?"auto":t.openSize;void 0===n.length&&(n=[n]),"function"!=typeof t.prefunction&&(t.prefunction=function(){}),"function"!=typeof t.postfunction&&(t.postfunction=function(){}),"function"!=typeof t.callback&&(t.callback=function(){}),n[0].AUtoggleInteration=0,n[0].AUtoggleInterations=n.length;for(var r=0;r<n.length;r++){var u,c=n[r];e.animate.Stop(c);var s="",p="",f=parseInt(e.animate.GetCSSPropertyBecauseIE(c,t.property));if(f===i||"closing"===c.AUtoggleState)u=l,s="opening",p="open";else{if(f===i&&"opening"!==c.AUtoggleState)throw new Error("AU.animate.Toggle cannot determine state of element");u=i,s="closing",p="closed"}t.prefunction(c,s),e.animate.Run({element:c,endSize:u,property:o,speed:a,callback:function(){if(n[0].AUtoggleInteration++,n[0].AUtoggleInteration===n[0].AUinterations){var e=t.callback(c,p);return t.postfunction(c,p),e}t.postfunction(c,p)}})}},e.animate=t}(AU),"undefined"!=typeof module&&(module.exports=AU),"undefined"!=typeof exports&&(Object.defineProperty(exports,"__esModule",{value:!0}),eval("exports.default = AU"));var AU=AU||{};!function(e){var t={},n={},o=!1;function a(e,t,n,o){if("opening"===t||"open"===t)var a=n||"au-main-nav__content--closed",i=o||"au-main-nav__content--open";else a=o||"au-main-nav__content--open",i=n||"au-main-nav__content--closed";!function(e,t){e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp("(^|\\b)"+t.split(" ").join("|")+"(\\b|$)","gi")," ")}(e,a),function(e,t){e.classList?e.classList.add(t):e.className=e.className+" "+t}(e,i)}function i(e,t,n){function o(e){var t=n.apply(this,arguments);return!1===t&&(e.stopPropagation(),e.preventDefault()),t}function a(){var t=n.call(e,window.event);return!1===t&&(window.event.returnValue=!1,window.event.cancelBubble=!0),t}return e.addEventListener?(e.addEventListener(t,o,!1),{element:e,handler:o,event:t}):(e.attachEvent("on"+t,a),{element:e,handler:a,event:t})}function l(e){e.element.removeEventListener?e.element.removeEventListener(e.event,e.handler):e.element.detachEvent("on"+e.event,e.handler)}t.Toggle=function(r,u,c){if(!o){o=!0;try{window.event.cancelBubble=!0,event.stopPropagation()}catch(e){}"object"!=typeof c&&(c={});var s=r.getAttribute("aria-controls"),p=document.getElementById(s),f=p.querySelector(".au-main-nav__menu"),d=p.querySelector(".au-main-nav__overlay"),y=p.querySelector(".au-main-nav__toggle--close"),v=p.querySelector(".au-main-nav__toggle--open"),m=p.querySelector(".au-main-nav__focus-trap-top"),g=p.querySelector(".au-main-nav__focus-trap-bottom"),S=f.querySelectorAll("a, .au-main-nav__toggle"),A=-1===p.className.indexOf("au-main-nav__content--open"),b=f.offsetWidth,h=A?"opening":"";d.style.display="block",function(u,s){e.animate.Toggle({element:f,property:"left",openSize:0,closeSize:-1*b,speed:s||250,prefunction:function(){"opening"===h?(f.style.display="block",d.style.left=0,d.style.opacity=.5,"function"==typeof c.onOpen&&c.onOpen()):(d.style.opacity="0","function"==typeof c.onClose&&c.onClose())},postfunction:function(){"opening"===h?(y.focus(),v.setAttribute("aria-expanded",!0),y.setAttribute("aria-expanded",!0),m.setAttribute("tabindex",0),g.setAttribute("tabindex",0),n.focusTop=i(m,"focus",function(){S[S.length-1].focus()}),n.focusBottom=i(g,"focus",function(){S[0].focus()}),n.escKey=i(document,"keyup",function(){var e=e||window.event,n=function(e,t){return("undefined"!=typeof getComputedStyle?getComputedStyle(e,null):e.currentStyle)[t]}(d,"display");27===e.keyCode&&"block"===n&&t.Toggle(r,s,c)}),"function"==typeof c.afterOpen&&c.afterOpen()):(v.focus(),v.setAttribute("aria-expanded",!1),y.setAttribute("aria-expanded",!1),m.removeAttribute("tabindex"),g.removeAttribute("tabindex"),l(n.focusTop),l(n.focusBottom),l(n.escKey),"function"==typeof c.afterClose&&c.afterClose()),a(u,h),a(document.body,h,"au-main-nav__scroll--unlocked","au-main-nav__scroll--locked"),f.style.display="",f.style.left="",d.style.display="",d.style.left="",d.style.opacity="",o=!1}})}(p,u)}},e.mainNav=t}(AU),"undefined"!=typeof module&&(module.exports=AU);
+	</script>
 </body>
 </html>
