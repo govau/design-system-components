@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.2.0 - Update padding on button, fix JSdoc](#v020)
 * [v0.1.0 - 💥 Initial version](#v010)
 
 
@@ -22,6 +23,11 @@
 
 
 ## Release History
+
+### v0.2.0 
+
+- Update padding on button, fix JSdoc
+
 
 ### v0.1.0
 
