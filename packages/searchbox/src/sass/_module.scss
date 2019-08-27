@@ -63,14 +63,12 @@
 		border-top-left-radius: 0;
 		margin: 0;
 		width:100%;
-		@include AU-space( height, 2.875unit );
 		@include AU-space( padding-left, 1unit );
 		@include AU-space( padding-right, 1unit );
-
 	}
 
 	&.au-search--icon {
-		@extend %search-btn;
+		@extend %search-icon;
 
 		.au-btn {
 			@include AU-space( padding-left, 1.5unit );
@@ -83,7 +81,7 @@
 	}
 
 	&.au-search--responsive {
-			@extend %search-btn;
+			@extend %search-icon;
 
 			@include AU-media( xs ) {
 				.au-btn {
