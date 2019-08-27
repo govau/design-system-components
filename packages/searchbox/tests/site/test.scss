@@ -35,6 +35,10 @@
 			@include ieImage( './search.png' );
 	}
 
+	.au-btn.au-btn--secondary {
+		@include ieImage( './search--dark.png' );
+	}
+
 	&.au-search--dark .au-btn {
 		@include ieImage( './search--dark.png' );
 	}
@@ -45,6 +49,10 @@
 	@media screen and ( max-width: 576px ) {
 		.au-btn {
 			@include ieImage( './search.png' );
+		}
+
+		.au-btn.au-btn--secondary {
+			@include ieImage( './search--dark.png' );
 		}
 
 		&.au-search--dark .au-btn {
