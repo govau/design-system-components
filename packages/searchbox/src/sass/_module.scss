@@ -86,6 +86,10 @@
 			@include AU-media( xs ) {
 				.au-btn {
 					background-image: none;
+
+					&:hover {
+						background-image: none;
+					}
 				}
 			}
 
