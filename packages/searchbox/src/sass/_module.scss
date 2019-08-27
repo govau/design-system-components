@@ -62,11 +62,20 @@
 		border-bottom-left-radius: 0;
 		border-top-left-radius: 0;
 		margin: 0;
-		width:100%
+		width:100%;
+		@include AU-space( height, 2.875unit );
+		@include AU-space( padding-left, 1unit );
+		@include AU-space( padding-right, 1unit );
+
 	}
 
 	&.au-search--icon {
 		@extend %search-btn;
+
+		.au-btn {
+			@include AU-space( padding-left, 1.5unit );
+			@include AU-space( padding-right, 1.5unit );
+		}
 
 		.au-search__submit-btn-text {
 			@include AU-sronly();
@@ -82,9 +91,14 @@
 				}
 			}
 
-		.au-search__submit-btn-text {
 			@media screen and ( max-width: 576px) {
-				@include AU-sronly();
+				.au-search__submit-btn-text {
+					@include AU-sronly();
+			}
+
+			.au-btn {
+				@include AU-space( padding-left, 1.5unit );
+				@include AU-space( padding-right, 1.5unit );
 			}
 		}
 	}

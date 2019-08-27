@@ -28,12 +28,12 @@ import PropTypes from 'prop-types';
  *
  * @param  {string} label       - Text on label
  * @param  {string} btnText     - Text on button
- * @param  {string} btnType     - Button type
  * @param  {string} id          - Id of text input, required
  * @param  {bool}   dark        - Dark variation of search box
  * @param  {bool}   responsive  - Responsive variation, text turns to icon on smaller devices
  * @param  {bool}   icon        - Icon only, hides text on button
- * @param  {func}   onClick     - Click handler for the button
+ * @param  {object} btnProps    - Props to be passed into the AUbutton
+ * @param  {object} inputProps    - Props to be passed into the AUtextInput
  *
  */
 const AUsearchbox = ({ label, btnText, dark, responsive, id, icon, wrapper, className, inputProps, btnProps, onClick, ...attributeOptions}) => {
