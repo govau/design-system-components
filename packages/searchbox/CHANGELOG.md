@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.2.2 - Increase size for icon](#v022)
 * [v0.2.1 - Add styling for secondary buttons](#v021)
 * [v0.2.0 - Update padding on button, fix JSdoc](#v020)
 * [v0.1.0 - 💥 Initial version](#v010)
@@ -24,6 +25,11 @@
 
 
 ## Release History
+
+### v0.2.2 
+
+- Increase size for icon
+
 
 ### v0.2.1
 
