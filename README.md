@@ -16,26 +16,29 @@ Australian Government Design System Components
 | https://auds.service.gov.au | https://auds.staging.service.gov.au |
 |                              | user: `auds`, pass: `auds`         |
 
-
 ## Contents
 
-* [How to use](#how-to-use)
+* [Installation](#installation)
 * [Frequently asked questions](#frequently-asked-questions)
 * [Checklist and browser support](#checklist-and-browser-support)
 * [Modules](#modules)
 * [Contribute](./CONTRIBUTING.md)
 * [Tests](#tests)
-* [License](#license)
+* [Support](./SUPPORT.md)
+* [Related repositories](#related-repositories)
+* [License](./LICENSE)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## How to use
+## Installation
 
+### Prerequisites
 The design system components are distributed through the [npm](https://www.npmjs.com) ecosystem and can only be installed through the `npm` command.
 Npm requires [node.js](https://nodejs.org/en/) and the components needs node.js 8 or higher.
 
+### Installing modules
 To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`.)
 Inside your working folder install any module and [pancake](https://github.com/govau/pancake/) will make sure you have all assets ready to use.
 
@@ -620,14 +623,10 @@ npm run test
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-## License
-
-Copyright (c) Commonwealth of Australia.
-Licensed under [MIT](https://raw.githubusercontent.com/govau/design-system-components/master/LICENSE).
-
+## Related repositories
+- [govau/design-system-starter](https://github.com/govau/design-system-starter)
+- [govau/design-system-site](https://github.com/govau/design-system-site)
+- [govau/design-system-sketch-file](https://github.com/govau/design-system-sketch-file)
 
 **[⬆ back to top](#contents)**
 
-
-# };
