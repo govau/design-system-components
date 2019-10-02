@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
  * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUtable = ({ caption, headers, data, striped, className, firstCellIsHeader, ...attributeOptions }) => {
+const AUtable = ({ caption, headers, data,footer, striped, className, firstCellIsHeader, ...attributeOptions }) => {
 	return (
 	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '} ${className}`} { ...attributeOptions }>
 		{caption && <AUtableCaption tableCaption={caption} />}
