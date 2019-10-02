@@ -16,13 +16,13 @@ import PropTypes from 'prop-types';
  * @param {string}   caption            - The description or summary of the table.
  * @param {Object[]} headers            - The column headings
  * @param {Object[]} data               - The table data in the body
- * @param {[]}       footer             - The footer cell, optional
  * @param {bool}     striped            - Colourise every other table row
  * @param {string}   className          - An additional class, optional
- * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
+ * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not 
+ * @param {[]}       footer             - The footer cells
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUtable = ({ caption, headers, data,footer, striped, className, firstCellIsHeader, ...attributeOptions }) => {
+const AUtable = ( { caption, headers, data, footer, striped, className, firstCellIsHeader, ...attributeOptions} ) => {
 	return (
 	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '} ${className}`} { ...attributeOptions }>
 		{caption && <AUtableCaption tableCaption={caption} />}
@@ -62,19 +62,18 @@ const AUtable = ({ caption, headers, data,footer, striped, className, firstCellI
 						</AUtableRow>
 							))}
 		</AUtableBody>
-			{
+		{
 			footer &&
 				<AUtableFooter>
 					<AUtableRow>
 								{
 										footer.map( ( data, footerIndex ) => (
-										<AUtableCell key={footerIndex} data={ data }  />)
+										<AUtableCell key={footerIndex} data={ data } type={headers[footerIndex].type} />)
 								)
 								}
 					</AUtableRow>
 				</AUtableFooter>
 		}
-		
 	</table>
 	)
 };
@@ -84,6 +83,7 @@ AUtable.propTypes = {
 	headers: PropTypes.arrayOf( Object ).isRequired,
 	data: PropTypes.arrayOf( Object ).isRequired,
 	striped: PropTypes.bool,
+	footer: PropTypes.array,
 	className: PropTypes.string
 };
 
@@ -153,7 +153,7 @@ AUtableHead.defaultProps = {
  * @param {string} className        - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
  */
-export const AUtableHeader = ({ title, type, width, scope, className, ...attributeOptions }) => {
+export const AUtableHeader = ( { title, type, width, scope, className, ...attributeOptions } ) => {
 return 	<th className={`au-table__header ${className}` +
 						`${type === "numeric" ? " au-table__header--numeric ": " "}` +
 						`${ width ? " au-table__header--width-" + width : " "} `}
@@ -179,14 +179,16 @@ AUtableHeader.defaultProps = {
 /**
  * The data/cell component
  * @param {string} data       - The cell data
+ * @param {number} colSpan    - Number of columns a  table cell should span, optional
+ * @param {number} rowSpan    - Number of rows a  table cell should span, optional
  * @param {string} type       - Type of the data, can be either text or numeric for left or right alignment respectively.
  * @param {string} className  - An additional class, optional
  * @param {object} render     - The function for customised rendering on all cells in this column
  * @param {object} attributeOptions - Default HTML attributes
  *
  */
-export const AUtableCell = ( { data, type, className, render,...attributeOptions } ) => {
-	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric ": " "}`}
+export const AUtableCell = ( { data, colSpan, rowSpan, type, className, render,...attributeOptions } ) => {
+	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric ": " "}`, rowSpan={}, colSpan={}}
 						{...attributeOptions}>
 						{ render ? render : data}
 					</td>
@@ -269,6 +271,7 @@ AUtableResponsiveWrapper.propTypes = {
 	children: PropTypes.node
 };
 
+
 /**
  * Table footer
  *
@@ -288,5 +291,6 @@ AUtableFooter.propTypes = {
 AUtableFooter.defaultProps = {
 	className: ''
 }
+
 
 export default AUtable;
