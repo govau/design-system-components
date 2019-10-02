@@ -62,13 +62,13 @@ const AUtable = ({ caption, headers, data,footer, striped, className, firstCellI
 						</AUtableRow>
 							))}
 		</AUtableBody>
-		{
-			
+			{
+			footer &&
 				<AUtableFooter>
 					<AUtableRow>
 								{
 										footer.map( ( data, footerIndex ) => (
-										<AUtableCell key={footerIndex} data={ data } />)
+										<AUtableCell key={footerIndex} data={ data }  />)
 								)
 								}
 					</AUtableRow>
