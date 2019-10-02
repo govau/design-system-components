@@ -255,5 +255,24 @@ AUtableResponsiveWrapper.propTypes = {
 	children: PropTypes.node
 };
 
+/**
+ * Table footer
+ *
+ * @param {string} className  - An additional class, optional
+ * @param {object} attributeOptions - Default HTML attributes
+ * @param {node}   children
+ *
+ */
+export const AUtableFooter = ({  className, children, ...attributeOptions }) => (
+	<tfoot className={`au-table__footer ${className}`} {...attributeOptions}>{ children }</tfoot>
+);
+
+AUtableFooter.propTypes = {
+	children: PropTypes.node
+}
+
+AUtableFooter.defaultProps = {
+	className: ''
+}
 
 export default AUtable;
