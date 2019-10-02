@@ -16,6 +16,7 @@ import PropTypes from 'prop-types';
  * @param {string}   caption            - The description or summary of the table.
  * @param {Object[]} headers            - The column headings
  * @param {Object[]} data               - The table data in the body
+ * @param {[]}       footer             - The footer cell, optional
  * @param {bool}     striped            - Colourise every other table row
  * @param {string}   className          - An additional class, optional
  * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
