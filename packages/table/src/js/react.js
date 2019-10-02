@@ -62,6 +62,19 @@ const AUtable = ({ caption, headers, data,footer, striped, className, firstCellI
 						</AUtableRow>
 							))}
 		</AUtableBody>
+		{
+			
+				<AUtableFooter>
+					<AUtableRow>
+								{
+										footer.map( ( data, footerIndex ) => (
+										<AUtableCell key={footerIndex} data={ data } />)
+								)
+								}
+					</AUtableRow>
+				</AUtableFooter>
+		}
+		
 	</table>
 	)
 };
