@@ -40,6 +40,9 @@
 			background-color: $AU-colordark-background-shade;
 		}
 	}
+	h3:first-child {
+		margin: 0;
+	}
 }
 
 .au-accordion + .au-accordion {
