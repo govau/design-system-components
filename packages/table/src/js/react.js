@@ -186,7 +186,7 @@ AUtableHeader.defaultProps = {
  *
  */
 export const AUtableCell = ( { data, type, className, render,...attributeOptions } ) => {
-	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric ": " "}`, rowSpan={}, colSpan={}}
+	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric ": " "}`}
 						{...attributeOptions}>
 						{ render ? render : data}
 					</td>
