@@ -112,6 +112,15 @@
 			background-color: $AU-color-table-row;
 		}
 	}
+
+	.au-table__footer {
+		background-color: $AU-color-table-row;
+		.au-table__cell {
+			font-weight: bold;
+		}
+		.au-table__footer--striped {
+			background-color: #ffff
+	}
 }
 
 .au-table__wrapper {
