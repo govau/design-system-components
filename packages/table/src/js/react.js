@@ -68,7 +68,7 @@ const AUtable = ( { caption, headers, data, footer, striped, className, firstCel
 					<AUtableRow>
 								{
 										footer.map( ( data, footerIndex ) => (
-										<AUtableCell key={footerIndex} data={ data } />)
+										<AUtableCell key={footerIndex} data={ data } type={headers[footerIndex].type}/>)
 								)
 								}
 					</AUtableRow>
@@ -275,18 +275,26 @@ AUtableResponsiveWrapper.propTypes = {
  *
  * @param {string} className  - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
+ * @param {bool} stripedTableFooter  - 
+ * @param {string} type       - Type of the data, can be either text or numeric for left or right alignment respectively.
  * @param {node}   children
  *
  */
-export const AUtableFooter = ({  className, children, ...attributeOptions }) => (
-	<tfoot className={`au-table__footer ${className}`} {...attributeOptions}>{ children }</tfoot>
+export const AUtableFooter = ({  stripedTableFooter , type, className, children, ...attributeOptions }) => (
+	<tfoot className={`au-table__footer ${ stripedTableFooter  ? 'au-table__footer--striped ' : ' '} ${className} ${ type === "numeric" ? "au-table__cell--numeric ": " "}`} {...attributeOptions} >{ children }</tfoot>
 );
 
 AUtableFooter.propTypes = {
-	children: PropTypes.node
+	children: PropTypes.node,
+	type: PropTypes.oneOf(['text', 'numeric']).isRequired,
+	className: PropTypes.string,
+	stripedTableFooter: PropTypes.bool,
 }
 
 AUtableFooter.defaultProps = {
+	className: '',
+	stripedTableFooter: false,
+	type:'text',
 	className: ''
 }
 

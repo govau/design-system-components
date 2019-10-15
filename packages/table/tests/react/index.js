@@ -15,7 +15,7 @@ const simpleData = [
 	{location: "Tasmania",        population: "514,400"}
 ];
 
-const simpleFooter = ["Total", "13,667,110"];
+const simpleFooter = ["Total", "14,181,500"];
 
 const simpleHeaders = [
 	{title: "Location",   key: "location"},
@@ -112,7 +112,7 @@ const headerUsingRecord = [
 
 ReactDOM.render(
 	<div>
-		<h3>Simple Table, first cell is header</h3>
+		<h3>Simple Table, first cell is header, and with footer</h3>
 
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
