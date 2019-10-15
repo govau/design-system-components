@@ -20,9 +20,10 @@ import PropTypes from 'prop-types';
  * @param {string}   className          - An additional class, optional
  * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
  * @param {[]}       footer             - The footer cells
+ *  @param {bool}    stripedFooter     - If the footer is for the striped table or not
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUtable = ( { caption, headers, data, footer, striped, className, firstCellIsHeader, ...attributeOptions} ) => {
+const AUtable = ( { caption, headers, data, footer, stripedFooter, striped, className, firstCellIsHeader, ...attributeOptions} ) => {
 	return (
 	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '} ${className}`} { ...attributeOptions }>
 		{caption && <AUtableCaption tableCaption={caption} />}
@@ -64,7 +65,7 @@ const AUtable = ( { caption, headers, data, footer, striped, className, firstCel
 		</AUtableBody>
 		{
 			footer &&
-				<AUtableFooter>
+				stripedFooter && <AUtableFooter stripedTableFooter={stripedFooter}>
 					<AUtableRow>
 								{
 										footer.map( ( data, footerIndex ) => (
@@ -83,6 +84,7 @@ AUtable.propTypes = {
 	headers: PropTypes.arrayOf( Object ).isRequired,
 	data: PropTypes.arrayOf( Object ).isRequired,
 	striped: PropTypes.bool,
+	stripedFooter: PropTypes.bool,
 	footer: PropTypes.array,
 	className: PropTypes.string
 };
@@ -275,12 +277,12 @@ AUtableResponsiveWrapper.propTypes = {
  *
  * @param {string} className  - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
- * @param {bool} stripedTableFooter  - 
+ * @param {bool} stripedTableFooter  - variatin of footer for striped table
  * @param {string} type       - Type of the data, can be either text or numeric for left or right alignment respectively.
  * @param {node}   children
  *
  */
-export const AUtableFooter = ({  stripedTableFooter , type, className, children, ...attributeOptions }) => (
+export const AUtableFooter = ({ type, className, stripedTableFooter, children, ...attributeOptions }) => (
 	<tfoot className={`au-table__footer ${ stripedTableFooter  ? 'au-table__footer--striped ' : ' '} ${className} ${ type === "numeric" ? "au-table__cell--numeric ": " "}`} {...attributeOptions} >{ children }</tfoot>
 );
 
@@ -295,7 +297,6 @@ AUtableFooter.defaultProps = {
 	className: '',
 	stripedTableFooter: false,
 	type:'text',
-	className: ''
 }
 
 

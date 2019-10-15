@@ -119,6 +119,7 @@ ReactDOM.render(
 			headers={simpleHeaders}
 			data={simpleData}
 			footer={simpleFooter}
+			stripedFooter={true}
 			firstCellIsHeader={true}
 		/>
 
