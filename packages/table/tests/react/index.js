@@ -15,7 +15,7 @@ const simpleData = [
 	{location: "Tasmania",        population: "514,400"}
 ];
 
-const simpleFooter = ["Total", "13,667,110", "9.4%"];
+const simpleFooter = ["Total", "13,667,110"];
 
 const simpleHeaders = [
 	{title: "Location",   key: "location"},

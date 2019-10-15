@@ -18,7 +18,7 @@ import PropTypes from 'prop-types';
  * @param {Object[]} data               - The table data in the body
  * @param {bool}     striped            - Colourise every other table row
  * @param {string}   className          - An additional class, optional
- * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not 
+ * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
  * @param {[]}       footer             - The footer cells
  * @param {object}   attributeOptions   - Default HTML attributes
  */
@@ -68,7 +68,7 @@ const AUtable = ( { caption, headers, data, footer, striped, className, firstCel
 					<AUtableRow>
 								{
 										footer.map( ( data, footerIndex ) => (
-										<AUtableCell key={footerIndex} data={ data } type={headers[footerIndex].type} />)
+										<AUtableCell key={footerIndex} data={ data } />)
 								)
 								}
 					</AUtableRow>
