@@ -179,15 +179,13 @@ AUtableHeader.defaultProps = {
 /**
  * The data/cell component
  * @param {string} data       - The cell data
- * @param {number} colSpan    - Number of columns a  table cell should span, optional
- * @param {number} rowSpan    - Number of rows a  table cell should span, optional
  * @param {string} type       - Type of the data, can be either text or numeric for left or right alignment respectively.
  * @param {string} className  - An additional class, optional
  * @param {object} render     - The function for customised rendering on all cells in this column
  * @param {object} attributeOptions - Default HTML attributes
  *
  */
-export const AUtableCell = ( { data, colSpan, rowSpan, type, className, render,...attributeOptions } ) => {
+export const AUtableCell = ( { data, type, className, render,...attributeOptions } ) => {
 	return 	<td className={`au-table__cell ${className} ${ type === "numeric" ? "au-table__cell--numeric ": " "}`, rowSpan={}, colSpan={}}
 						{...attributeOptions}>
 						{ render ? render : data}
