@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import AUtags from '../../../tags/src/js/react.js';
 
 
-import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from './table.js';
+import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow, AUtableFooter} from './table.js';
 
 const renderVicTags = () => (<AUtags tags={[{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}]} />)
 const renderNSWTags = () => (<AUtags tags={[{link: '#', text: "Sydney"}, {link: '#', text: "Opera House"}]} />)
@@ -14,6 +14,8 @@ const simpleData = [
 	{location: "Victoria",        population: "5,996,400"},
 	{location: "Tasmania",        population: "514,400"}
 ];
+
+const simpleFooter = ["Total", "13,667,110", "9.4%"];
 
 const simpleHeaders = [
 	{title: "Location",   key: "location"},
@@ -116,6 +118,7 @@ ReactDOM.render(
 			caption="Population of Australian states and territories, December 2015"
 			headers={simpleHeaders}
 			data={simpleData}
+			footer={simpleFooter}
 			firstCellIsHeader={true}
 		/>
 
