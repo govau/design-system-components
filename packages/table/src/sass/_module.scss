@@ -120,10 +120,13 @@
 			font-weight: bold;
 			
 		}
-		.au-table__footer--striped {
-			background-color: #ffff
-	}
+
+		&.au-table__footer--striped {
+			background-color:  #ffffff;
+		}
 }
+
+
 
 }
 .au-table__wrapper {

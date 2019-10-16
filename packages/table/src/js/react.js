@@ -65,7 +65,7 @@ const AUtable = ( { caption, headers, data, footer, stripedFooter, striped, clas
 		</AUtableBody>
 		{
 			footer &&
-				stripedFooter && <AUtableFooter stripedTableFooter={stripedFooter}>
+				 <AUtableFooter stripedTableFooter={stripedFooter}>
 					<AUtableRow>
 								{
 										footer.map( ( data, footerIndex ) => (

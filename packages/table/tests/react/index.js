@@ -17,6 +17,8 @@ const simpleData = [
 
 const simpleFooter = ["Total", "14,181,500"];
 
+const complexFooter = ["Total", "23,583,700", "19.2%", "73.3%"];
+
 const simpleHeaders = [
 	{title: "Location",   key: "location"},
 	{title: "Population", key: "population", type: 'numeric'}
@@ -119,7 +121,6 @@ ReactDOM.render(
 			headers={simpleHeaders}
 			data={simpleData}
 			footer={simpleFooter}
-			stripedFooter={true}
 			firstCellIsHeader={true}
 		/>
 
@@ -147,6 +148,8 @@ ReactDOM.render(
 			caption="Population of Australian states and territories, December 2015"
 			striped={true}
 			headers={complexHeaders}
+			footer={complexFooter}
+			stripedFooter={true}
 			data={complexData}
 		/>
 
