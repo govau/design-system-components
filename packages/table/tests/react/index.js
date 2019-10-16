@@ -162,6 +162,7 @@ ReactDOM.render(
 			caption="Population of Australian states and territories, December 2015"
 			headers={headersRemoveButton}
 			data={dataRemoveButton}
+			footer={simpleFooter}
 		/>
 
 		<br/>
@@ -234,6 +235,13 @@ ReactDOM.render(
 				<AUtableCell render={renderVicTags()} />
 			</AUtableRow>
 		</AUtableBody>
+		<AUtableFooter>
+			<AUtableRow>
+				<AUtableCell data="Total" type="text" />
+				<AUtableCell data="5,996,400" type="numeric" className="bold-cell" />
+				<AUtableCell data="2.5%" type="numeric"/>
+			</AUtableRow>
+		</AUtableFooter>
 	</table>
 
 	<br/>
