@@ -277,7 +277,7 @@ AUtableResponsiveWrapper.propTypes = {
  *
  * @param {string} className  - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
- * @param {bool} stripedTableFooter  - variatin of footer for striped table
+ * @param {bool}   stripedTableFooter  - variatin of footer for striped table
  * @param {string} type       - Type of the data, can be either text or numeric for left or right alignment respectively.
  * @param {node}   children
  *
