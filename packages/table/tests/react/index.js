@@ -163,6 +163,7 @@ ReactDOM.render(
 			headers={headersRemoveButton}
 			data={dataRemoveButton}
 			footer={simpleFooter}
+			colSpan="2"
 		/>
 
 		<br/>
