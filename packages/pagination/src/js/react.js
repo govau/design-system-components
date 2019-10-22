@@ -9,23 +9,22 @@
 
 /**
  * AUpagination
- * @param  {object[]}   items - 
- * @param  {string}   	alignPagination - Alignment of pagination on page - can be one of 'Left', 'Right', 'Center' 
- * @param  {bool}		displayPreviousBtn - Display previous button or not	  
- * @param  {object} 	pageLimit      - Number of records to be shown per page 
- * @param  {bool}   	dark        - Dark variation of pagination
- *  @param {object}   	attributeOptions   - Default HTML attributes
- * @param  {bool}   	responsive  - Responsive variation, less pagination items show on smaller devices
+ * @param  {object[]}   items 				- items in pagination list
+ * @param  {object} 	pageLimit      		- Number of records to be shown per page 
+ *  @param {object} 	currentPage      	- 
+ * @param  {object}   	attributeOptions   	- Default HTML attributes
  */
 
-const AUPagination = ({ items, alignPagination, pageLimit,responsive , dark, className }) => {
+const AUPagination = ({ items, className }) => {
 	return (
 <ul className={ ` au-link-list ${ className }`} { ...attributeOptions }>
+	<AUPaginationItem  key={ i } >Previous</AUPaginationItem>
 		{
 			items.map(
 				( item, i ) => <AUPaginationItem  key={ i } >{ item }</AUPaginationItem>
 			)
 		}
+	<AUPaginationItem  key={ i } >Next</AUPaginationItem>
 	</ul>
 	)
 };
@@ -46,8 +45,10 @@ AUPagination.defaultProps = {};
  */
 export const AUPaginationItem = ( { children, className,...attributeOptions } ) => {
 	return <li className={` ${ className }`} { ...attributeOptions }>
-		{children}
-	</li>
+				<a>
+					{children}
+				</a>
+			</li>
 };
 
 AUtableRow.defaultProps = {
