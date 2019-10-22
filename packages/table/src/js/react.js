@@ -20,8 +20,8 @@ import PropTypes from 'prop-types';
  * @param {string}   className          - An additional class, optional
  * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
  * @param {[]}       footer             - The footer cells
- *  @param {bool}    stripedFooter     -  If the footer is for the striped table or not
- * @param {string} 	 colSpanFooter - 
+ *  @param {bool}    stripedFooter     	-  If the footer is for the striped table or not
+ * @param {string} 	 colSpanFooter 		- 
  * @param {object}   attributeOptions   - Default HTML attributes
  */
 const AUtable = ( { caption, headers, data, footer, stripedFooter, colSpanFooter, striped, className, firstCellIsHeader, ...attributeOptions} ) => {
