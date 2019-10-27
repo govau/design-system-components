@@ -3,7 +3,7 @@
  *
  * pagination function
  *
- * Pagination allows large amounts of content to be seperated into multiple pages
+ * Pagination allows large amounts of content to be separated into multiple pages.
  *
  **************************************************************************************************************************************************************/
 

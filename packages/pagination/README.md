@@ -1,7 +1,7 @@
 @gov.au/pagination
 ============
 
-> Pagination allows large amounts of content to be seperated into multiple pages
+> Pagination allows large amounts of content to be separated into multiple pages.
 
 
 ## Contents
@@ -38,7 +38,11 @@ npm install @gov.au/pagination
 
 ```shell
 pagination
-└─ core
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
 ```
 
 

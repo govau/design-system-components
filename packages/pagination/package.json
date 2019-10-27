@@ -1,7 +1,7 @@
 {
 	"name": "@gov.au/pagination",
 	"version": "0.1.0",
-	"description": "Pagination allows large amounts of content to be seperated into multiple pages",
+	"description": "Pagination allows large amounts of content to be separated into multiple pages.",
 	"keywords": [
 		"auds",
 		"pancake",
@@ -64,10 +64,12 @@
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": "^3.0.0"
+		"@gov.au/core": "^3.0.0",
+		"@gov.au/link-list": "^3.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^3.0.0"
+		"@gov.au/core": "^3.0.0",
+		"@gov.au/link-list": "^3.0.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.3.4",
