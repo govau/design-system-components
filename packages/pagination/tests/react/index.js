@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AUPagination from './AUpagination.js';
+import AUPagination from './pagination.js';
 
+const paginationNumbers = ["1", "2", "3"];
 
 ReactDOM.render(
 	<div>
-		<AUPagination>
+		<AUPagination items={paginationNumbers}>
 		</AUPagination>
 	</div>,
 
