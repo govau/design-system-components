@@ -10,10 +10,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class AUPagination extends Component {
+class AUPagination extends React.Component {
 
-	constructor(props) {
-	  super(props);
+	/**
+	 * Constructor
+	 * @param  {object}  props - The props object
+	 */
+
+	constructor( props ) {
+	  super( props );
 	  const { totalRecords, recordsPerPage, pageNeighbours, totalPaginationItems, className = '', children, ...attributeOptions } = props;
   
 	  this.recordsPerPage = typeof recordsPerPage === 'number' ? recordsPerPage : 10;
@@ -37,5 +42,9 @@ class AUPagination extends Component {
 	pageNeighbours: PropTypes.number,
 	onPageChanged: PropTypes.func
   };
+
+  AUPagination.defaultProps = {
+	
+};
 
 export default AUPagination;
