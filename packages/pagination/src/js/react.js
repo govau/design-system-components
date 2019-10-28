@@ -23,6 +23,7 @@ const AUPagination = ({ items, className, ...attributeOptions}) => {
 	return (
 			<nav role="navigation" aria-label="Pagination Navigation" className={`au-pagination ` + `${className}`} {...attributeOptions}>
 				<ul className={ ` au-link-list au-link-list--inline ${ className }`} { ...attributeOptions }>
+
 					<AUPaginationItem>Previous</AUPaginationItem>
 						{
 							items.map(
@@ -47,12 +48,14 @@ AUPagination.defaultProps = {
 
 /**
  * The pagination item component
- * @param {string} className        - An additional class, optional
- * @param {object} attributeOptions - Default HTML attributes
- * @param {string} label			- aria-label for pagination items
+ * @param { string } className        - An additional class, optional
+ * @param { object } attributeOptions - Default HTML attributes
+ * @param { string } label			  - aria-label for pagination items
+ * @param { bool } 	 disabled		  - aria-label for pagination items
  */
 export const AUPaginationItem = ( { children, className, label, ...attributeOptions } ) => {
 	
+	// set aria label attribute
 	if ( children === 'Previous' ) {
 		label = "go to previous page";
 		 
