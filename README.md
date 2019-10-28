@@ -465,7 +465,11 @@ All components have to work on the below browsers:
 	<br>
 
 ```shell
-└─ core
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
 ```
 ----------
 </details>

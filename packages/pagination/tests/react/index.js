@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom';
 
 import AUPagination from './pagination.js';
 
-const paginationNumbers = ["1", "2", "3"];
+const paginationNumbers = [];
+for (var i = 1; i <= 10; i++) {
+    paginationNumbers.push(i);
+}
+
 
 ReactDOM.render(
 	<div>

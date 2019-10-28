@@ -12,41 +12,42 @@
 @import '_print.scss';
 
 .au-pagination{
-.au-pagination__item{
-    display: inline-block;
-    padding: 1rem 0.3rem 0.6rem 0.3rem;
-    margin-right: 0.3rem;
-    text-decoration: none;
 
-    &:focus {
-      outline: 0;
-    } 
-}
+    .au-pagination__item{
+        display: inline-block;
+        padding: 1rem 0.3rem 0.6rem 0.3rem;
+        margin-right: 0.3rem;
+        text-decoration: none;
 
-.au-pagination__controls{
+        &:focus {
+          outline: 0;
+        } 
+    }
 
-}
+    .au-pagination__controls{
 
-.au-pagination__link{
-  color: $AU-color-foreground-action;
-  display: inline-block;
-  padding: 0.9rem 1rem 0.9rem 1rem;
-  margin-right: 0.2rem;
-  text-decoration: none;
+    }
 
-  &:hover, &:focus {
-    text-decoration: none;
-    color: $AU-color-foreground-text;
-    outline: 3px solid #d3d3d3;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-  } 
+    .au-pagination__link{
+      color: $AU-color-foreground-action;
+      display: inline-block;
+      padding: 0.9rem 1rem 0.9rem 1rem;
+      margin-right: 0.2rem;
+      text-decoration: none;
 
-  &.current {
-    color: #0B0C0C;
-    font-weight: 700;
-    border: none;
-    pointer-events: none;
-    cursor: default;
-  }
-}
+          &:hover, &:focus {
+            text-decoration: none;
+            color: $AU-color-foreground-text;
+            outline: 3px solid #d3d3d3;
+            padding: 0.7rem 1.1rem 0.7rem 1.1rem;
+          } 
+
+          &.current {
+            color: #0B0C0C;
+            font-weight: 700;
+            border: none;
+            pointer-events: none;
+            cursor: default;
+          }
+    }
 }

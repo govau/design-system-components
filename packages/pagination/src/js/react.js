@@ -52,8 +52,9 @@ AUPagination.defaultProps = {
  * @param { object } attributeOptions - Default HTML attributes
  * @param { string } label			  - aria-label for pagination items
  * @param { bool } 	 disabled		  - aria-label for pagination items
+ * @param  {object}  onChange          - The onChange event handler
  */
-export const AUPaginationItem = ( { children, className, label, ...attributeOptions } ) => {
+export const AUPaginationItem = ( { children, className, label, onClick, ...attributeOptions } ) => {
 	
 	// set aria label attribute
 	if ( children === 'Previous' ) {
