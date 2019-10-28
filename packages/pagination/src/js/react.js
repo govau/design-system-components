@@ -10,81 +10,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+class AUPagination extends Component {
 
-/**
- * AUpagination
- * @param  {object[]}   items 				- items in pagination list
- * @param {object} 	currentPage      	- 
- * @param  {object}   	attributeOptions   	- Default HTML attributes
- */
-
-const AUPagination = ({ items, className, ...attributeOptions}) => {
-
-	return (
-			<nav role="navigation" aria-label="Pagination Navigation" className={`au-pagination ` + `${className}`} {...attributeOptions}>
-				<ul className={ ` au-link-list au-link-list--inline ${ className }`} { ...attributeOptions }>
-
-					<AUPaginationItem>Previous</AUPaginationItem>
-						{
-							items.map(
-								( item, i ) => <AUPaginationItem  key={ i } >{ item }</AUPaginationItem>
-							)
-						}
-					<AUPaginationItem>Next</AUPaginationItem>
-					</ul>
-			</nav>
-	)
-};
-
-AUPagination.propTypes = {
-	dark: PropTypes.bool,
-	className: PropTypes.string
-};
-
-AUPagination.defaultProps = {
-	className: ''
-
-};
-
-/**
- * The pagination item component
- * @param { string } className        - An additional class, optional
- * @param { object } attributeOptions - Default HTML attributes
- * @param { string } label			  - aria-label for pagination items
- * @param { bool } 	 disabled		  - aria-label for pagination items
- * @param  {object}  onChange          - The onChange event handler
- */
-export const AUPaginationItem = ( { children, className, label, onClick, ...attributeOptions } ) => {
-	
-	// set aria label attribute
-	if ( children === 'Previous' ) {
-		label = "go to previous page";
-		 
+	constructor(props) {
+	  super(props);
+	  const { totalRecords, recordsPerPage, pageNeighbours, totalPaginationItems, className = '', children, ...attributeOptions } = props;
+  
+	  this.recordsPerPage = typeof recordsPerPage === 'number' ? recordsPerPage : 10;
+	  this.totalRecords = typeof totalRecords === 'number' ? totalRecords : 0;
+  
+	  // pageNeighbours can be: 0, 1 or 2
+	  this.pageNeighbours = typeof pageNeighbours === 'number'
+		? Math.max(0, Math.min(pageNeighbours, 2))
+		: 0;
+  
+	  this.totalPaginationItems = Math.ceil( this.totalRecords / this.pageLimit );
+  
+	  this.state = { currentPage: 1 };
 	}
-	else if (children === 'Next') {
-
-		label = "go to next page";
-
-	}
-	else {
-		label = "Page " + children;
-	}
-	
-
-	return <li className={`au-pagination__item ${ className }`} { ...attributeOptions }>
-				<a href="#0" className={`au-pagination__link ${ className }`} aria-label={ label }>
-					{children}
-				</a>
-			</li>
-};
-
-AUPaginationItem.propTypes = {
-	children: PropTypes.node,
-	className: PropTypes.string
-}
-
-AUPaginationItem.defaultProps = {
-	className: ''
-};
+  
+  }
+  
+  AUPagination.propTypes = {
+	totalRecords: PropTypes.number.isRequired,
+	pageLimit: PropTypes.number,
+	pageNeighbours: PropTypes.number,
+	onPageChanged: PropTypes.func
+  };
 
 export default AUPagination;

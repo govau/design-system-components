@@ -12,11 +12,10 @@
 @import '_print.scss';
 
 .au-pagination{
-
+  
     .au-pagination__item{
+      @include AU-fontgrid( sm );
         display: inline-block;
-        padding: 1rem 0.3rem 0.6rem 0.3rem;
-        margin-right: 0.3rem;
         text-decoration: none;
 
         &:focus {
@@ -31,7 +30,7 @@
     .au-pagination__link{
       color: $AU-color-foreground-action;
       display: inline-block;
-      padding: 0.9rem 1rem 0.9rem 1rem;
+      padding: 0.7rem 1.1rem 0.7rem 1.1rem;
       margin-right: 0.2rem;
       text-decoration: none;
 
