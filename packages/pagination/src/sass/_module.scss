@@ -24,6 +24,7 @@
     }
 
     .au-pagination__controls{
+      
 
     }
 
@@ -34,7 +35,7 @@
       margin-right: 0.2rem;
       text-decoration: none;
 
-          &:hover, &:focus {
+          &:hover {
             text-decoration: none;
             color: $AU-color-foreground-text;
             outline: 3px solid #d3d3d3;
@@ -48,5 +49,18 @@
             pointer-events: none;
             cursor: default;
           }
+        
     }
+  
+  
+    .disabled {
+      cursor: not-allowed;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+      opacity: 0.5;
+    }
+    .active a {
+      color: $AU-color-foreground-text;
+      outline: 3px solid #d3d3d3;
+  
+    } 
 }
