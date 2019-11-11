@@ -36,7 +36,7 @@ class AUPagination extends React.Component {
 
 	constructor( props ) {
 	  super( props );
-	  const { totalResults, recordsPerPage, totalPaginationItems, className = '' , isDisabled} = props;
+	  const { totalResults, recordsPerPage, className = ''} = props;
   
 	  this.fetchPaginationItems = this.fetchPaginationItems.bind(this);
 	  this.handleClick = this.handleClick.bind(this);
@@ -48,7 +48,7 @@ class AUPagination extends React.Component {
 	  
 	  this.recordsPerPage = typeof recordsPerPage === 'number' ? recordsPerPage : 10;
 	  this.totalResults = typeof totalResults === 'number' ? totalResults : 0;
-
+	  this.className = "";
 	  //calculate number of pagination items
 	  this.totalPaginationItems = Math.ceil( this.totalResults / this.recordsPerPage );
 	  this.state = { currentPage: 1 };
@@ -154,10 +154,10 @@ class AUPagination extends React.Component {
 		const lastItem = this.totalPaginationItems;
 		return (
 		
-			<nav role="navigation" aria-label="Pagination Navigation" className={`au-pagination ` + `${className} `}>
-			<ul className={ ` au-link-list au-link-list--inline ${ className } ` }>
-				<li className={`au-pagination__control ${ className }`}>
-					<a href="#0" className={`au-pagination__link ${ className } ${currentPage === 1? 'disabled' : ''}`} onClick={ this.handlePreviousClick }>
+			<nav role="navigation" aria-label="Pagination Navigation" className={`au-pagination `}>
+			<ul className={ ` au-link-list au-link-list--inline` }>
+				<li className={`au-pagination__control`}>
+					<a href="#0" className={`au-pagination__link ${currentPage === 1? 'disabled' : ''}`} onClick={ this.handlePreviousClick }>
 					Previous
 					</a>
 				</li>
@@ -186,8 +186,8 @@ class AUPagination extends React.Component {
 	
 				}) }
 
-					<li className={`au-pagination__control ${ className }`}>
-						<a href="#0" className={`au-pagination__link ${ className } ${currentPage === lastItem ? 'disabled' : ''} `} onClick={ this.handleNextClick }>
+					<li className={`au-pagination__control`}>
+						<a href="#0" className={`au-pagination__link ${currentPage === lastItem ? 'disabled' : ''} `} onClick={ this.handleNextClick }>
 							Next
 						</a>
 					</li>
