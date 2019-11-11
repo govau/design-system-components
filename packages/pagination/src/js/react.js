@@ -187,7 +187,7 @@ class AUPagination extends React.Component {
 				}) }
 
 					<li className={`au-pagination__control`}>
-						<a href="#0" className={`au-pagination__link ${currentPage === lastItem ? 'disabled' : ''} `} onClick={ this.handleNextClick }>
+						<a href="#" className={`au-pagination__link ${currentPage === lastItem ? 'disabled' : ''} `} onClick={ this.handleNextClick }>
 							Next
 						</a>
 					</li>
@@ -245,7 +245,7 @@ export const AUPaginationItem = ( { children, className, label, ...attributeOpti
 	}
 
 	return <li className={`au-pagination__item ${ className }`}>
-			<a href="#0" className={`au-pagination__link ${ className }`}  { ...attributeOptions }  aria-label={label}>
+			<a href="#" className={`au-pagination__link ${ className }`}  { ...attributeOptions }  aria-label={label}>
 				{children}
 			</a>
 			</li>
