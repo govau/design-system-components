@@ -51,13 +51,19 @@
           }
         
     }
-  
+
+    .au-pagination__link__ellipsis {
+     font-size: 2rem;
+     line-height: 0.5rem;
+    }
   
     .disabled {
+		  pointer-events:none;
       cursor: not-allowed;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
       opacity: 0.5;
     }
+
     .active a {
       color: $AU-color-foreground-text;
       outline: 3px solid #d3d3d3;

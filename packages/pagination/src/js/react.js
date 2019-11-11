@@ -6,14 +6,12 @@
  * Pagination allows large amounts of content to be separated into multiple pages.
  *
  **************************************************************************************************************************************************************/
+import React from 'react';
+ import PropTypes from 'prop-types';
 
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+const LEFT_ELLIPSIS = 'Left';
+const RIGHT_ELLIPSIS = 'Right';
 
-const LEFT_PAGE = '...';
-const RIGHT_PAGE = '...';
-const NEXT = 'Next';
-const PREVIOUS = 'Previous';
 
 //Helper method for creating array of numbers for pagination
 const createPaginationarray = (first, last) => {
@@ -42,7 +40,11 @@ class AUPagination extends React.Component {
   
 	  this.fetchPaginationItems = this.fetchPaginationItems.bind(this);
 	  this.handleClick = this.handleClick.bind(this);
-	  this.handleNextClick = this.handleClick.bind(this);
+	  this.handlePreviousClick = this.handlePreviousClick.bind(this);
+	  this.handleNextClick = this.handleNextClick.bind(this);
+	  this.handleLeftElipses = this.handleLeftElipses.bind(this);
+	  this.handleRightElipses = this.handleRightElipses.bind(this);
+
 	  
 	  this.recordsPerPage = typeof recordsPerPage === 'number' ? recordsPerPage : 10;
 	  this.totalResults = typeof totalResults === 'number' ? totalResults : 0;
@@ -51,8 +53,6 @@ class AUPagination extends React.Component {
 	  this.totalPaginationItems = Math.ceil( this.totalResults / this.recordsPerPage );
 	  this.state = { currentPage: 1 };
 	}
-
-	
 
 	fetchPaginationItems() {
 		const totalPaginationItems = this.totalPaginationItems;
@@ -64,35 +64,35 @@ class AUPagination extends React.Component {
 
       const startPage = Math.max(2, currentPage - 2);
       const endPage = Math.min(totalPaginationItems - 1, currentPage + 2);
-      let pages = createPaginationarray(startPage, endPage);
-      const extraResultsLeft = startPage > 2;
-      const extraResultsRight = (totalPaginationItems - endPage) > 1;
-      const spillOffset = totalNumbers - (pages.length + 1);
+      let results = createPaginationarray(startPage, endPage);
+      const extraItemsLeft = startPage > 2;
+      const extraItemsRight = (totalPaginationItems - endPage) > 1;
+      const spillOffset = totalNumbers - (results.length + 1);
 
       switch (true) {
        
-        case (extraResultsLeft && !extraResultsRight): {
-          const extraPages = createPaginationarray(startPage - spillOffset, startPage - 1);
-          pages = [LEFT_PAGE, ...extraPages, ...pages];
+        case (extraItemsLeft && !extraItemsRight): {
+          const extraItemsRight = createPaginationarray(startPage - spillOffset, startPage - 1);
+          results = [LEFT_ELLIPSIS, ...extraItemsRight, ...results];
           break;
         }
 
         
-        case (!extraResultsLeft && extraResultsRight): {
-          const extraPages = createPaginationarray(endPage + 1, endPage + spillOffset);
-          pages = [...pages, ...extraPages, RIGHT_PAGE];
+        case (!extraItemsLeft && extraItemsRight): {
+          const extraItemsRight = createPaginationarray(endPage + 1, endPage + spillOffset);
+          results = [...results, ...extraItemsRight, RIGHT_ELLIPSIS];
           break;
         }
 
        
-        case (extraResultsLeft && extraResultsRight):
+        case (extraItemsLeft && extraItemsRight):
         default: {
-          pages = [LEFT_PAGE, ...pages, RIGHT_PAGE];
+			results = [LEFT_ELLIPSIS, ...results, RIGHT_ELLIPSIS];
           break;
         }
       }
 
-      return [1, ...pages, totalPaginationItems];
+      return [1, ...results, totalPaginationItems];
 
     }
 
@@ -100,18 +100,46 @@ class AUPagination extends React.Component {
 	  }
 
 	 handleClick() {
-		let listid = Number(event.target.id);
-		const currentPage = listid;
+
+		let itemId = Number(event.target.id);
+		const currentPage = itemId;
+        this.setState({
+		  currentPage
+		});
+		
+	  }
+	  
+	  handleNextClick() {
+	
+		const currentPage = this.state.currentPage + 1;
+        this.setState({
+		  currentPage
+		});
+	  }
+	  
+	  handlePreviousClick() {
+	
+		const currentPage = this.state.currentPage - 1;
+        this.setState({
+		  currentPage
+		});
+	  }
+
+	  handleLeftElipses() {
+	
+		const currentPage = this.state.currentPage - 4;
         this.setState({
 		  currentPage
 		});
 		
       }
 
-	  handleNextClick() {
-		let listid = Number(event.target.id);
-		const currentPage = listid + 1;
+	  handleRightElipses() {
+		
+		const currentPage = this.state.currentPage + 4;
+		console.log(currentPage + "CURRENT");
         this.setState({
+			
 		  currentPage
 		});
 		
@@ -123,21 +151,46 @@ class AUPagination extends React.Component {
 	
 		const { currentPage } = this.state;
 		const items = this.fetchPaginationItems();
-	
+		const lastItem = this.totalPaginationItems;
 		return (
 		
 			<nav role="navigation" aria-label="Pagination Navigation" className={`au-pagination ` + `${className} `}>
 			<ul className={ ` au-link-list au-link-list--inline ${ className } ` }>
-			<AUPaginationItem className ={ `${currentPage === 1? 'disabled' : ''}`} onClick={ this.handleNextClick}>Next</AUPaginationItem>	
+				<li className={`au-pagination__control ${ className }`}>
+					<a href="#0" className={`au-pagination__link ${ className } ${currentPage === 1? 'disabled' : ''}`} onClick={ this.handlePreviousClick }>
+					Previous
+					</a>
+				</li>
 				{ items.map(( item, i ) => {
 						
-				  return (
-					<AUPaginationItem  className ={ `${currentPage === item ? 'active' : ''}`} key={ i } onClick={ this.handleClick}  id={item}  >{ item }</AUPaginationItem>			
-				  );
+					if ( item === LEFT_ELLIPSIS ) return (
+						<li key={item} className="au-pagination__item">
+						  <a className="au-pagination__link" href="#" aria-label="Show next 5 pages" onClick={ this.handleLeftElipses }>
+						  <span className={ `au-pagination__link__ellipsis `} aria-hidden="true">...</span>
+						  </a>
+						</li>
+					  	);
+		
+					  if ( item === RIGHT_ELLIPSIS ) return (
+						<li key={item} className="au-pagination__item">
+						  <a className="au-pagination__link " href="#" aria-label="Show next 5 pages" onClick={ this.handleRightElipses }>
+						  <span className={ `au-pagination__link__ellipsis`} aria-hidden="true">...</span>
+						  </a>
+						</li>
+					  	);
+					
+					return (
+						<AUPaginationItem className ={ `${currentPage === item ? 'active' : ''}`} onClick={ this.handleClick } key={ i } id={item}  >{ item }</AUPaginationItem>
+						);			
+				
 	
 				}) }
-			<AUPaginationItem>Previous</AUPaginationItem>	
-		
+
+					<li className={`au-pagination__control ${ className }`}>
+						<a href="#0" className={`au-pagination__link ${ className } ${currentPage === lastItem ? 'disabled' : ''} `} onClick={ this.handleNextClick }>
+							Next
+						</a>
+					</li>
 			  </ul>
 			</nav>
 			
@@ -152,7 +205,6 @@ class AUPagination extends React.Component {
 	totalResults: PropTypes.number.isRequired,
 	recordsPerPage: PropTypes.number,
 	onClick: PropTypes.func,
-	onPageChanged: PropTypes.func
   };
 
   AUPagination.defaultProps = {
@@ -172,19 +224,25 @@ class AUPagination extends React.Component {
 export const AUPaginationItem = ( { children, className, label, ...attributeOptions } ) => {
 	
 	// set aria label attribute
-	if ( children === 'Previous' ) {
-		label = "go to previous page";
-		 
+	switch(true){
+		case ( children === 'Previous' ):
+			 {
+				label = "go to previous page";
+				break;			 
+			}
+			case (children === 'Next'):
+			 {
+				label = "go to next page";
+				break;			 
+			}
+				default: label = "Page " + children;
+				break;			 
+			
 	}
-	else if (children === 'Next') {
 
-		label = "go to next page";
-
+	if(className.includes('active')){
+		label = "Page " + children + ",curent page";
 	}
-	else {
-		label = "Page " + children;
-	}
-	
 
 	return <li className={`au-pagination__item ${ className }`}>
 			<a href="#0" className={`au-pagination__link ${ className }`}  { ...attributeOptions }  aria-label={label}>
