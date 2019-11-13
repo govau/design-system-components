@@ -240,7 +240,7 @@ ReactDOM.render(
 			<AUtableRow>
 				<AUtableCell data="Total" type="text" />
 				<AUtableCell data="5,996,400" type="numeric" className="bold-cell" />
-				<AUtableCell data="2.5%" type="numeric" colSpan="1"/>
+				<AUtableCell data="2.5%" type="numeric" />
 			</AUtableRow>
 		</AUtableFooter>
 	</table>
