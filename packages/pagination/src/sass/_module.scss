@@ -12,37 +12,41 @@
 @import '_print.scss';
 
 .au-pagination{
-  
-    .au-pagination-item{
-      @include AU-fontgrid( sm );
+  @include AU-fontgrid( xs );
+  font-family: $AU-font;
+
+    .au-pagination-item {
         display: inline-block;
         text-decoration: none;
-
+        
         &:focus {
           outline: 0;
         } 
+
     }
 
-    .au-pagination-controls{
+    .au-pagination-controls {
+      
       
 
     }
 
-    .au-pagination-link{
+    .au-pagination-link {
       color: $AU-color-foreground-action;
-      display: inline-block;
-      padding: 0.7rem 1.1rem 0.7rem 1.1rem;
-      margin-right: 0.2rem;
+      padding: 0;
       text-decoration: none;
-
+      height: 46px;
+      min-width: 46px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
           &:hover {
             text-decoration: none;
             color: $AU-color-foreground-text;
             outline: 3px solid #d3d3d3;
-            padding: 0.7rem 1.1rem 0.7rem 1.1rem;
           } 
 
-          &.current {
+          & .current {
             color: #0B0C0C;
             font-weight: 700;
             border: none;
@@ -55,6 +59,11 @@
     .au-pagination-link--quick-jumper {
      font-size: 2rem;
      line-height: 0.5rem;
+    }
+
+    .au-pagination-controls-link{
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
     }
   
     .disabled {

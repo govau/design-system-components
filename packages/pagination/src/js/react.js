@@ -71,7 +71,7 @@ class AUPagination extends React.Component {
 	fetchPaginationItems() {
 	const totalPaginationItems = this.totalPaginationItems;
 	const currentPage = this.state.currentPage;
-	const totalNumbers = 4; // number of items to show in pagination before displayig elipsis to either the right or left-hand side - i.e. [1], [2], [3] , [4] [...], [10]
+	const totalNumbers = 5; // number of items to show in pagination before displaying elipsis to either the right or left-hand side of the pagination - i.e. [1], [2], [3] , [4] [...], [10]
 	const startPage = Math.max(2, currentPage - 2);
 	const endPage = Math.min(totalPaginationItems - 1, currentPage + 2);
 	let results = createPaginationarray(startPage, endPage);
@@ -105,6 +105,7 @@ class AUPagination extends React.Component {
 
 	setPaging( pageItem ){
 		const currentPage =  pageItem;
+		
 		const Paginationdata = {
 			currentPage,
 			totalResults: this.totalResults,
@@ -280,7 +281,7 @@ export const AUPaginationControls = ( { text, className, label, disabled, ...att
 		}
 
 	return <li className={ `au-pagination-control ${ className }` }>
-				<a href="#" className={ `au-pagination-link ${ className }` } aria-label={ label } aria-disabled={ disabled } 		{ ...attributeOptions } text={ text }>
+				<a href="#" className={ `au-pagination-link au-pagination-controls-link ${ className }` } aria-label={ label } aria-disabled={ disabled } 		{ ...attributeOptions } text={ text }>
 					{ text } 
 				</a>
 			</li>
