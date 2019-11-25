@@ -241,13 +241,11 @@ export const AUPaginationQuickJumper = ( { children, className, label, ...attrib
 
 	// set aria label attribute
 
-		if ( children === 'Left' )
-			 {
+		if ( children === 'Left' ){
 				label = "go to previous page";
 			}
 
-		else if(children === 'Right')
-			 {
+		else if(children === 'Right'){
 				label = "go to next page";
 			}
 
@@ -269,22 +267,24 @@ AUPaginationQuickJumper.defaultProps = {
 	label: ''
 };
 
-export const AUPaginationControls = ( { text, className, label, ...attributeOptions } ) => {
+export const AUPaginationControls = ( { text, className, label, disabled, ...attributeOptions } ) => {
 
-	// set aria label attribute
-
-		if ( text === 'Previous' )
-			 {
+	// set aria-label attribute
+		if ( text === 'Previous' ){
 				label = "Go to previous page";
 			}
 
-		else if( text === 'Next' )
-			 {
+		else if( text === 'Next' ){
 				label = "Go to next page";
 			}
 
+	// set aria-disabled attribute
+		if( className.includes('disabled') ){
+			disabled = true;
+		}
+
 	return <li className={ `au-pagination__control ${ className }` }>
-				<a href="#" className={ `au-pagination__link ${ className }` } label={ label } { ...attributeOptions } text={ text }>
+				<a href="#" className={ `au-pagination__link ${ className }` } aria-label={ label } aria-disabled={ disabled } 		{ ...attributeOptions } text={ text }>
 					{ text } 
 				</a>
 			</li>
@@ -293,12 +293,15 @@ export const AUPaginationControls = ( { text, className, label, ...attributeOpti
 AUPaginationQuickJumper.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
-	label: PropTypes.string
+	label: PropTypes.string,
+	disabled: PropTypes.bool
+
 }
 
 AUPaginationQuickJumper.defaultProps = {
 	className: '',
-	label: ''
+	label: '',
+	disabled: false
 };
 
 export default AUPagination;
