@@ -48,33 +48,33 @@ class AUPagination extends React.Component {
 	  const { totalResults, recordsPerPage } = props;
 
 	  this.fetchPaginationItems = this.fetchPaginationItems.bind(this);
+	  this.setPaging = this.setPaging.bind(this);
 	  this.handleClick = this.handleClick.bind(this);
 	  this.handlePreviousClick = this.handlePreviousClick.bind(this);
 	  this.handleNextClick = this.handleNextClick.bind(this);
 	  this.handleLeftElipses = this.handleLeftElipses.bind(this);
 	  this.handleRightElipses = this.handleRightElipses.bind(this);
 
-
 	  this.recordsPerPage = typeof recordsPerPage === 'number' ? recordsPerPage : 10;
 	  this.totalResults = typeof totalResults === 'number' ? totalResults : 0;
-	  
 
 	  //calculate number of pagination items
 	  this.totalPaginationItems = Math.ceil( this.totalResults / this.recordsPerPage );
 	  this.state = { currentPage: 1 };
 	}
 
+	// function to handle display of elipsis and pagination items 
 	fetchPaginationItems() {
 
 	const totalPaginationItems = this.totalPaginationItems;
 	const currentPage = this.state.currentPage;
-	const totalNumbers = 5;
+	const totalNumbers = 4;
 	const startPage = Math.max(2, currentPage - 2);
 	const endPage = Math.min(totalPaginationItems - 1, currentPage + 2);
 	let results = createPaginationarray(startPage, endPage);
-	const extraItemsLeft = startPage > 2;
-	const extraItemsRight = (totalPaginationItems - endPage) > 1;
-	const spillOffset = totalNumbers - (results.length + 1);
+	const extraItemsLeft = startPage > 2; // items hidden to the left of the pagination 
+	const extraItemsRight = (totalPaginationItems - endPage) > 1; // items hidden to the right of the pagination 
+	const spillOffset = totalNumbers - (results.length + 1); // total number of pages hidden to either the left or right of pagination
 
 	if (extraItemsLeft && !extraItemsRight) {
 		const extraItemsRight = createPaginationarray(startPage - spillOffset, startPage - 1);
@@ -99,50 +99,45 @@ class AUPagination extends React.Component {
   
 	  }
 
-	 handleClick() {
+	setPaging( pageItem ){
 
-		let itemId = Number(event.target.id);
-		const currentPage = itemId;
-        this.setState({
-		  currentPage
+		const currentPage =  pageItem;
+
+		const Paginationdata = {
+			currentPage,
+			totalResults: this.totalResults,
+			recordsPerPage: this.recordsPerPage,
+			totalPaginationItems: this.totalPaginationItems 
+		};
+
+		this.setState({
+			currentPage
 		});
+	  
+	}
 
+	 handleClick(pageItem) {
+		this.setPaging(pageItem);
 	  }
 
 	  handleNextClick() {
-
 		const currentPage = this.state.currentPage + 1;
-        this.setState({
-		  currentPage
-		});
+		this.setPaging(currentPage);
 	  }
 
 	  handlePreviousClick() {
-
 		const currentPage = this.state.currentPage - 1;
-        this.setState({
-		  currentPage
-		});
+        this.setPaging(currentPage);
 	  }
 
 	  handleLeftElipses() {
-
 		const currentPage = this.state.currentPage - 4;
-        this.setState({
-		  currentPage
-		});
-
+        this.setPaging(currentPage);
       }
 
 	  handleRightElipses() {
-
 		const currentPage = this.state.currentPage + 4;
-		console.log(currentPage + "CURRENT");
-        this.setState({
-
-		  currentPage
-		});
-
+		this.setPaging(currentPage);
       }
 
 	render() {
@@ -170,7 +165,7 @@ class AUPagination extends React.Component {
 					  	);
 
 					return (
-							<AUPaginationItem key={ i } className ={ `${currentPage === item ? 'active' : ''}`} onClick={ this.handleClick } key={ i } id={ item }  >{ item }</AUPaginationItem>
+							<AUPaginationItem key={ i } className ={ `${currentPage === item ? 'active' : ''}`} onClick={ () => this.handleClick(item) } key={ i } id={ item }  >{ item }</AUPaginationItem>
 						);			
 
 
@@ -190,7 +185,7 @@ class AUPagination extends React.Component {
   AUPagination.propTypes = {
 	totalResults: PropTypes.number.isRequired,
 	recordsPerPage: PropTypes.number,
-	onClick: PropTypes.func,
+	onChangePage: PropTypes.func.isRequired,
   };
 
   AUPagination.defaultProps = {
