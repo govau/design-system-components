@@ -20,9 +20,13 @@ import PropTypes from 'prop-types';
 
 const LEFT_ELLIPSIS = 'Left';
 const RIGHT_ELLIPSIS = 'Right';
+const directions = {
+	left: 'au-direction-link__arrow--up',
+	right: 'au-direction-link__arrow--right',
+	center: 'au-direction-link__arrow--right',
+};
 
-
-//Helper method for creating array of numbers for pagination
+// Helper method for creating array of numbers 
 const createPaginationarray = (first, last) => {
   let i = first;
   const PaginationItems = [];
@@ -209,8 +213,8 @@ export const AUPaginationItem = ( { children, className, label, current, ...attr
 	}
 
 
-	return <li className={ `au-pagination__item ${ className }` }>
-			<a href="#" className={ `au-pagination__link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
+	return <li className={ `au-pagination-item ${ className }` }>
+			<a href="#" className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
 				{ children }
 			</a>
 			</li>
@@ -232,8 +236,7 @@ AUPaginationItem.defaultProps = {
 
 export const AUPaginationQuickJumper = ( { children, className, label, ...attributeOptions } ) => {
 
-	// set aria label attribute
-
+	// set aria-label attribute
 		if ( children === 'Left' ){
 				label = "go to previous page";
 			}
@@ -242,9 +245,9 @@ export const AUPaginationQuickJumper = ( { children, className, label, ...attrib
 				label = "go to next page";
 			}
 
-	return <li className="au-pagination__item">
-				<a className={ `au-pagination__link ${ className }` }  href="#" aria-label={ label } { ...attributeOptions }>
-				<span className={ `au-pagination__link__quick-jumper ${ className }` } aria-hidden="true">...</span>
+	return <li className="au-pagination-item">
+				<a className={ `au-pagination-link ${ className }` }  href="#" aria-label={ label } { ...attributeOptions }>
+				<span className={ `au-pagination-link--quick-jumper ${ className }` } aria-hidden="true">...</span>
 				</a>
   			</li>
 };
@@ -276,8 +279,8 @@ export const AUPaginationControls = ( { text, className, label, disabled, ...att
 			disabled = true;
 		}
 
-	return <li className={ `au-pagination__control ${ className }` }>
-				<a href="#" className={ `au-pagination__link ${ className }` } aria-label={ label } aria-disabled={ disabled } 		{ ...attributeOptions } text={ text }>
+	return <li className={ `au-pagination-control ${ className }` }>
+				<a href="#" className={ `au-pagination-link ${ className }` } aria-label={ label } aria-disabled={ disabled } 		{ ...attributeOptions } text={ text }>
 					{ text } 
 				</a>
 			</li>

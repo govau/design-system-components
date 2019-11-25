@@ -13,7 +13,7 @@
 
 .au-pagination{
   
-    .au-pagination__item{
+    .au-pagination-item{
       @include AU-fontgrid( sm );
         display: inline-block;
         text-decoration: none;
@@ -23,12 +23,12 @@
         } 
     }
 
-    .au-pagination__controls{
+    .au-pagination-controls{
       
 
     }
 
-    .au-pagination__link{
+    .au-pagination-link{
       color: $AU-color-foreground-action;
       display: inline-block;
       padding: 0.7rem 1.1rem 0.7rem 1.1rem;
@@ -52,7 +52,7 @@
         
     }
 
-    .au-pagination__link__quick-jumper {
+    .au-pagination-link--quick-jumper {
      font-size: 2rem;
      line-height: 0.5rem;
     }
