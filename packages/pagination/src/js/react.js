@@ -63,12 +63,12 @@ class AUPagination extends React.Component {
 	  this.state = { currentPage: 1 };
 	}
 
-	// function to handle display of elipsis and pagination items 
+	// function to handle display of elipsis and pagination items - first and last items in the array are always visible
 	fetchPaginationItems() {
 
 	const totalPaginationItems = this.totalPaginationItems;
 	const currentPage = this.state.currentPage;
-	const totalNumbers = 4;
+	const totalNumbers = 4; // number of items to show in pagination before displayig elipsis to either the right or left-hand side - i.e. [1], [2], [3] , [4] [...], [10]
 	const startPage = Math.max(2, currentPage - 2);
 	const endPage = Math.min(totalPaginationItems - 1, currentPage + 2);
 	let results = createPaginationarray(startPage, endPage);
@@ -77,18 +77,21 @@ class AUPagination extends React.Component {
 	const spillOffset = totalNumbers - (results.length + 1); // total number of pages hidden to either the left or right of pagination
 
 	if (extraItemsLeft && !extraItemsRight) {
+		// example output [1] [...], [7], [8], [9], [10]
 		const extraItemsRight = createPaginationarray(startPage - spillOffset, startPage - 1);
 		results = [LEFT_ELLIPSIS, ...extraItemsRight, ...results];
 		
 	}
 
 	else if (!extraItemsLeft && extraItemsRight) {
+		// example output [1], [2], [3], [4], [...], [10]
 		const extraItemsRight = createPaginationarray(endPage + 1, endPage + spillOffset);
 		results = [...results, ...extraItemsRight, RIGHT_ELLIPSIS];
 		
 	}
 
 	else if(extraItemsLeft && extraItemsRight) {
+		// example output [1], [...], [3], [4], [5], [6], [7], [...], [10]
 		results = [LEFT_ELLIPSIS, ...results, RIGHT_ELLIPSIS];
 		
 	}
