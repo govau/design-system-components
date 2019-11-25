@@ -58,14 +58,13 @@ class AUPagination extends React.Component {
 	  this.recordsPerPage = typeof recordsPerPage === 'number' ? recordsPerPage : 10;
 	  this.totalResults = typeof totalResults === 'number' ? totalResults : 0;
 
-	  //calculate number of pagination items
+	  // calculate number of pagination items
 	  this.totalPaginationItems = Math.ceil( this.totalResults / this.recordsPerPage );
 	  this.state = { currentPage: 1 };
 	}
 
 	// function to handle display of elipsis and pagination items - first and last items in the array are always visible
 	fetchPaginationItems() {
-
 	const totalPaginationItems = this.totalPaginationItems;
 	const currentPage = this.state.currentPage;
 	const totalNumbers = 4; // number of items to show in pagination before displayig elipsis to either the right or left-hand side - i.e. [1], [2], [3] , [4] [...], [10]
@@ -96,16 +95,12 @@ class AUPagination extends React.Component {
 		
 	}
 	
-
       return [1, ...results, totalPaginationItems];
-
   
 	  }
 
 	setPaging( pageItem ){
-
 		const currentPage =  pageItem;
-
 		const Paginationdata = {
 			currentPage,
 			totalResults: this.totalResults,
