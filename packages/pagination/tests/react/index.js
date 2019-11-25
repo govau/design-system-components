@@ -5,9 +5,11 @@ import AUPagination from './pagination.js';
 
 
 
+
+
 ReactDOM.render(
 	<div>
-		 <AUPagination totalResults={500} recordsPerPage={10} />
+		 <AUPagination totalResults={100} recordsPerPage={10} />
 	</div>,
 
 	document.getElementById('root'),
