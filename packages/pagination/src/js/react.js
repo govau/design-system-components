@@ -8,7 +8,7 @@
  **************************************************************************************************************************************************************/
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-
+import { Link } from "react-router-dom";
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
 // ES6 dependency: import AUlinkList from './link-list';
 
@@ -20,11 +20,7 @@ import PropTypes from 'prop-types';
 
 const LEFT_ELLIPSIS = 'Left';
 const RIGHT_ELLIPSIS = 'Right';
-const directions = {
-	left: 'au-direction-link__arrow--up',
-	right: 'au-direction-link__arrow--right',
-	center: 'au-direction-link__arrow--right',
-};
+
 
 // Helper method for creating array of numbers 
 const createPaginationarray = (first, last) => {
@@ -49,8 +45,10 @@ class AUPagination extends React.Component {
 
 	constructor( props ) {
 	  super( props );
-	  const { totalResults, recordsPerPage } = props;
+	  const { totalResults, recordsPerPage, onChange, itemLink } = props;
 
+	  this.onChange = onChange;
+	  this.itemLink = itemLink;
 	  this.fetchPaginationItems = this.fetchPaginationItems.bind(this);
 	  this.setPaging = this.setPaging.bind(this);
 	  this.handleClick = this.handleClick.bind(this);
@@ -67,44 +65,49 @@ class AUPagination extends React.Component {
 	  this.state = { currentPage: 1 };
 	}
 
+	componentDidMount() {
+		this.setPaging(1);
+	  }
+
 	// function to handle display of elipsis and pagination items - first and last items in the array are always visible
 	fetchPaginationItems() {
 	const totalPaginationItems = this.totalPaginationItems;
 	const currentPage = this.state.currentPage;
 	const totalNumbers = 5; // number of items to show in pagination before displaying elipsis to either the right or left-hand side of the pagination - i.e. [1], [2], [3] , [4] [...], [10]
-	const startPage = Math.max(2, currentPage - 2);
-	const endPage = Math.min(totalPaginationItems - 1, currentPage + 2);
-	let results = createPaginationarray(startPage, endPage);
+	const startPage = Math.max( 2, currentPage - 2 );
+	const endPage = Math.min( totalPaginationItems - 1, currentPage + 2 );
+	let results = createPaginationarray( startPage, endPage );
 	const extraItemsLeft = startPage > 2; // items hidden to the left of the pagination 
-	const extraItemsRight = (totalPaginationItems - endPage) > 1; // items hidden to the right of the pagination 
-	const spillOffset = totalNumbers - (results.length + 1); // total number of pages hidden to either the left or right of pagination
+	const extraItemsRight = ( totalPaginationItems - endPage ) > 1; // items hidden to the right of the pagination 
+	const spillOffset = totalNumbers - ( results.length + 1) ; // total number of pages hidden to either the left or right of pagination
 
-	if (extraItemsLeft && !extraItemsRight) {
+	if ( extraItemsLeft && !extraItemsRight ) {
 		// example output [1] [...], [7], [8], [9], [10]
-		const extraItemsRight = createPaginationarray(startPage - spillOffset, startPage - 1);
-		results = [LEFT_ELLIPSIS, ...extraItemsRight, ...results];
+		const extraItemsRight = createPaginationarray( startPage - spillOffset, startPage - 1 );
+		results = [ LEFT_ELLIPSIS, ...extraItemsRight, ...results ];
 		
 	}
 
-	else if (!extraItemsLeft && extraItemsRight) {
+	else if ( !extraItemsLeft && extraItemsRight ) {
 		// example output [1], [2], [3], [4], [...], [10]
-		const extraItemsRight = createPaginationarray(endPage + 1, endPage + spillOffset);
-		results = [...results, ...extraItemsRight, RIGHT_ELLIPSIS];
+		const extraItemsRight = createPaginationarray( endPage + 1, endPage + spillOffset );
+		results = [ ...results, ...extraItemsRight, RIGHT_ELLIPSIS ];
 		
 	}
 
 	else if(extraItemsLeft && extraItemsRight) {
 		// example output [1], [...], [3], [4], [5], [6], [7], [...], [10]
-		results = [LEFT_ELLIPSIS, ...results, RIGHT_ELLIPSIS];
+		results = [ LEFT_ELLIPSIS, ...results, RIGHT_ELLIPSIS ];
 		
 	}
 	
-      return [1, ...results, totalPaginationItems];
+      return [ 1, ...results, totalPaginationItems ];
   
 	  }
 
 	setPaging( pageItem ){
-		const currentPage =  pageItem;
+	
+	const currentPage =  pageItem;
 		
 		const Paginationdata = {
 			currentPage,
@@ -115,32 +118,32 @@ class AUPagination extends React.Component {
 
 		this.setState({
 			currentPage
-		});
+		}, this.props.onChange( Paginationdata ));
 	  
 	}
 
-	 handleClick(pageItem) {
-		this.setPaging(pageItem);
+	 handleClick( pageItem ) {
+		this.setPaging( pageItem );
 	  }
 
 	  handleNextClick() {
 		const currentPage = this.state.currentPage + 1;
-		this.setPaging(currentPage);
+		this.setPaging( currentPage );
 	  }
 
 	  handlePreviousClick() {
 		const currentPage = this.state.currentPage - 1;
-        this.setPaging(currentPage);
+        this.setPaging( currentPage );
 	  }
 
 	  handleLeftElipses() {
 		const currentPage = this.state.currentPage - 4;
-        this.setPaging(currentPage);
+        this.setPaging( currentPage );
       }
 
 	  handleRightElipses() {
 		const currentPage = this.state.currentPage + 4;
-		this.setPaging(currentPage);
+		this.setPaging( currentPage );
       }
 
 	render() {
@@ -150,12 +153,13 @@ class AUPagination extends React.Component {
 		const { currentPage } = this.state;
 		const items = this.fetchPaginationItems();
 		const lastItem = this.totalPaginationItems;
+		
 		return (
 
-			<nav role="navigation" aria-label="Pagination Navigation" className={`au-pagination `}>
+			<nav role="navigation" aria-label="Pagination Navigation" className={ `au-pagination ` }>
 			<ul className={ ` au-link-list au-link-list--inline` }>
 
-			<AUPaginationControls className={`${ currentPage === 1? 'disabled' : '' } `} onClick={ this.handlePreviousClick }text="Previous" />
+			<AUPaginationControls className={ `${ currentPage === 1? 'disabled' : '' } `} onClick={ this.handlePreviousClick } text="Previous" />
 				
 				{ items.map(( item, i ) => {
 
@@ -168,13 +172,13 @@ class AUPagination extends React.Component {
 					  	);
 
 					return (
-							<AUPaginationItem key={ i } className ={ `${currentPage === item ? 'active' : ''}`} onClick={ () => this.handleClick(item) } key={ i } id={ item }  >{ item }</AUPaginationItem>
+							<AUPaginationItem key={ i } to={`/`}  className ={ `${ currentPage === item ? 'active' : '' }`} onClick={ () => this.handleClick( item ) } key={ i } id={ item }  >{ item }</AUPaginationItem>
 						);			
 
 
 				}) }
 
-					<AUPaginationControls className={`${currentPage === lastItem ? 'disabled' : ''} `} onClick={ this.handleNextClick } text="Next" />
+					<AUPaginationControls className={ `${ currentPage === lastItem ? 'disabled' : '' } `} onClick={ this.handleNextClick } text="Next" />
 			  </ul>
 			</nav>
 
@@ -188,7 +192,7 @@ class AUPagination extends React.Component {
   AUPagination.propTypes = {
 	totalResults: PropTypes.number.isRequired,
 	recordsPerPage: PropTypes.number,
-	onChangePage: PropTypes.func.isRequired,
+	onChange: PropTypes.func.isRequired,
   };
 
   AUPagination.defaultProps = {
@@ -203,9 +207,9 @@ class AUPagination extends React.Component {
  * @param { string } className        - An additional class, optional
  * @param { object } attributeOptions - Default HTML attributes
  * @param { string } label			  - aria-label for pagination items
- * @param  {object}  onClick          - The onChange event handler
  */
-export const AUPaginationItem = ( { children, className, label, current, ...attributeOptions } ) => {
+
+export const AUPaginationItem = ( { children, className, label, current, link, ...attributeOptions } ) => {
 
 	label = "Page " + children;
 
@@ -215,9 +219,9 @@ export const AUPaginationItem = ( { children, className, label, current, ...attr
 
 
 	return <li className={ `au-pagination-item ${ className }` }>
-			<a href="#" className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
+			<Link   className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
 				{ children }
-			</a>
+			</Link>
 			</li>
 };
 
@@ -287,7 +291,7 @@ export const AUPaginationControls = ( { text, className, label, disabled, ...att
 			</li>
 };
 
-AUPaginationQuickJumper.propTypes = {
+AUPaginationControls.propTypes = {
 	children: PropTypes.node,
 	className: PropTypes.string,
 	label: PropTypes.string,
@@ -295,7 +299,7 @@ AUPaginationQuickJumper.propTypes = {
 
 }
 
-AUPaginationQuickJumper.defaultProps = {
+AUPaginationControls.defaultProps = {
 	className: '',
 	label: '',
 	disabled: false
