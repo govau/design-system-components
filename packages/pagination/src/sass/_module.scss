@@ -15,6 +15,19 @@
   @include AU-fontgrid( xs );
   font-family: $AU-font;
 
+  &.au-pagination-left{
+
+    text-align: left;
+  }
+
+  &.au-pagination-right{
+text-align: right;
+
+  }
+
+  &.au-pagination-center{
+text-align: center;
+  }
     .au-pagination-item {
         display: inline-block;
         text-decoration: none;
@@ -22,12 +35,6 @@
         &:focus {
           outline: 0;
         } 
-
-    }
-
-    .au-pagination-controls {
-      
-      
 
     }
 
@@ -79,15 +86,15 @@
   
     } 
 
-  //   .pagination-summary {
-  //     opacity: 0.5;
-  // .pagination-summary {
-  //     color: #6f777b;
-  //     font-size: 14px;
-  //     line-height: 16px;
-  //     text-align: center;
-  //     @include AU-space(margin-top, 3unit);
-  //     margin-bottom: 8px;
-  // }
-// }
+    .pagination-summary {
+      opacity: 0.5;
+  .pagination-summary {
+      color: #6f777b;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      @include AU-space(margin-top, 3unit);
+      margin-bottom: 8px;
+  }
+}
 }

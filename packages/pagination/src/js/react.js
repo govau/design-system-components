@@ -21,7 +21,6 @@ import { Link } from "react-router-dom";
 const LEFT_ELLIPSIS = 'Left';
 const RIGHT_ELLIPSIS = 'Right';
 
-
 // Helper method for creating array of numbers 
 const createPaginationarray = (first, last) => {
   let i = first;
@@ -45,10 +44,8 @@ class AUPagination extends React.Component {
 
 	constructor( props ) {
 	  super( props );
-	  const { totalResults, recordsPerPage, onChange, itemLink } = props;
+	  const { totalResults, recordsPerPage, left, right, center} = props;
 
-	  this.onChange = onChange;
-	  this.itemLink = itemLink;
 	  this.fetchPaginationItems = this.fetchPaginationItems.bind(this);
 	  this.setPaging = this.setPaging.bind(this);
 	  this.handleClick = this.handleClick.bind(this);
@@ -63,6 +60,7 @@ class AUPagination extends React.Component {
 	  // calculate number of pagination items
 	  this.totalPaginationItems = Math.ceil( this.totalResults / this.recordsPerPage );
 	  this.state = { currentPage: 1 };
+
 	}
 
 	componentDidMount() {
@@ -154,9 +152,11 @@ class AUPagination extends React.Component {
 		const items = this.fetchPaginationItems();
 		const lastItem = this.totalPaginationItems;
 		
+		
+
 		return (
 			<div>
-			<nav role="navigation" aria-label="Pagination Navigation" className={ `au-pagination ` }>
+			<nav role="navigation" aria-label="Pagination Navigation" className={ `au-pagination ${ this.props.left ? ' au-pagination-left' : '' } ${ this.props.right ? ' au-pagination-right' : '' } ${ this.props.center ? ' au-pagination-center' : '' }` }>
 			<ul className={ ` au-link-list au-link-list--inline` }>
 
 			<AUPaginationControls className={ `${ currentPage === 1? 'disabled' : '' } `} onClick={ this.handlePreviousClick } text="Previous" />
@@ -202,12 +202,18 @@ class AUPagination extends React.Component {
 	totalResults: PropTypes.number.isRequired,
 	recordsPerPage: PropTypes.number,
 	onChange: PropTypes.func.isRequired,
+	left: PropTypes.bool,
+	right: PropTypes.bool,
+	center: PropTypes.bool
   };
 
   AUPagination.defaultProps = {
 	recordsPerPage: 10,
 	totalResults: 0,
-	className: ''
+	className: '',
+	left: false,
+	right:false,
+	center: true
 
 };
 

@@ -17,7 +17,7 @@ class App extends React.Component {
 	
 		return (
 			<div>
-			<AUPagination totalResults={ 100 } recordsPerPage={ 10 } onChange={ this.onChanged } />	
+			<AUPagination totalResults={ 100 } recordsPerPage={ 10 } center onChange={ this.onChanged } />	
 			</div>
 		);
 	}
