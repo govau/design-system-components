@@ -155,7 +155,7 @@ class AUPagination extends React.Component {
 		const lastItem = this.totalPaginationItems;
 		
 		return (
-
+			<div>
 			<nav role="navigation" aria-label="Pagination Navigation" className={ `au-pagination ` }>
 			<ul className={ ` au-link-list au-link-list--inline` }>
 
@@ -172,7 +172,7 @@ class AUPagination extends React.Component {
 					  	);
 
 					return (
-							<AUPaginationItem key={ i } to={`/`}  className ={ `${ currentPage === item ? 'active' : '' }`} onClick={ () => this.handleClick( item ) } key={ i } id={ item }  >{ item }</AUPaginationItem>
+							<AUPaginationItem key={ i } className ={ `${ currentPage === item ? 'active' : '' }`} onClick={ () => this.handleClick( item ) } key={ i } id={ item }  >{ item }</AUPaginationItem>
 						);			
 
 
@@ -181,7 +181,16 @@ class AUPagination extends React.Component {
 					<AUPaginationControls className={ `${ currentPage === lastItem ? 'disabled' : '' } `} onClick={ this.handleNextClick } text="Next" />
 			  </ul>
 			</nav>
-
+			<div className="pagination-summary">
+                    {" "}
+                    {(currentPage - 1) * this.recordsPerPage + 1} -{" "}
+                    {Math.min(
+                        currentPage * this.recordsPerPage,
+                        this.totalResults
+                    )}{" "}
+                    of {this.totalResults} results
+            </div>
+			</div>	
 		);
 
 	  }
@@ -219,9 +228,9 @@ export const AUPaginationItem = ( { children, className, label, current, link, .
 
 
 	return <li className={ `au-pagination-item ${ className }` }>
-			<Link   className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
+			<a   className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
 				{ children }
-			</Link>
+			</a>
 			</li>
 };
 
@@ -251,7 +260,7 @@ export const AUPaginationQuickJumper = ( { children, className, label, ...attrib
 			}
 
 	return <li className="au-pagination-item">
-				<a className={ `au-pagination-link ${ className }` }  href="#" aria-label={ label } { ...attributeOptions }>
+				<a className={ `au-pagination-link ${ className }` } aria-label={ label } { ...attributeOptions }>
 				<span className={ `au-pagination-link--quick-jumper ${ className }` } aria-hidden="true">...</span>
 				</a>
   			</li>
@@ -285,7 +294,7 @@ export const AUPaginationControls = ( { text, className, label, disabled, ...att
 		}
 
 	return <li className={ `au-pagination-control ${ className }` }>
-				<a href="#" className={ `au-pagination-link au-pagination-controls-link ${ className }` } aria-label={ label } aria-disabled={ disabled } 		{ ...attributeOptions } text={ text }>
+				<a className={ `au-pagination-link au-pagination-controls-link ${ className }` } aria-label={ label } aria-disabled={ disabled } 		{ ...attributeOptions } text={ text }>
 					{ text } 
 				</a>
 			</li>

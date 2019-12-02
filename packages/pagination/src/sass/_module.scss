@@ -78,4 +78,16 @@
       outline: 3px solid #d3d3d3;
   
     } 
+
+    .pagination-summary {
+      opacity: 0.5;
+  .pagination-summary {
+      color: #6f777b;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+      @include AU-space(margin-top, 3unit);
+      margin-bottom: 8px;
+  }
+}
 }
