@@ -181,7 +181,7 @@ class AUPagination extends React.Component {
 					<AUPaginationControls className={ `${ currentPage === lastItem ? 'disabled' : '' } `} onClick={ this.handleNextClick } text="Next" />
 			  </ul>
 			</nav>
-			<div className="pagination-summary">
+			{/* <div className="pagination-summary">
                     {" "}
                     {(currentPage - 1) * this.recordsPerPage + 1} -{" "}
                     {Math.min(
@@ -189,7 +189,7 @@ class AUPagination extends React.Component {
                         this.totalResults
                     )}{" "}
                     of {this.totalResults} results
-            </div>
+            </div> */}
 			</div>	
 		);
 
