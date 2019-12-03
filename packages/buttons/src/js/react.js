@@ -50,9 +50,8 @@ const AUbutton = ({ linkComponent, link, children, as, dark, type, block, classN
 		// If we are using a normal link
 		if( LinkComponent === 'a' ) {
 			attributeOptions.href = link;
-		}
-		// If we are using a link component
-		else if( typeof LinkComponent === 'function' ) {
+		} else {
+			// If we are using a link component
 			attributeOptions.to = link;
 		}
 

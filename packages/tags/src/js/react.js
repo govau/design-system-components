@@ -22,12 +22,10 @@ export const AUtag = ({ link, dark, text, linkComponent, className, ...attribute
 	let TagContainer = 'span';
 	let LinkComponent = linkComponent;
 
-
 	if( LinkComponent === 'a' ) {
 		attributeOptions.href = link;
-	}
-	// If we are using a link component
-	else if( typeof LinkComponent === 'function' ) {
+	} else {
+		// If we are using a link component
 		attributeOptions.to = link;
 	}
 

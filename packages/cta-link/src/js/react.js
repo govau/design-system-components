@@ -35,9 +35,8 @@ const AUctaLink = ({ linkComponent, dark, link, text, className = '', ...attribu
 		// If we are using a normal link
 		if( LinkComponent === 'a' ) {
 			attributeOptions.href = link;
-		}
-		// If we are using a link component
-		else if( typeof LinkComponent === 'function' ) {
+		} else {
+			// If we are using a link component
 			attributeOptions.to = link;
 		}
 
