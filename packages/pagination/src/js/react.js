@@ -152,12 +152,11 @@ class AUPagination extends React.Component {
 		const items = this.fetchPaginationItems();
 		const lastItem = this.totalPaginationItems;
 		
-		
 
 		return (
 			<div>
-			<nav role="navigation" aria-label="Pagination Navigation" className={ `au-pagination ${ this.props.left ? ' au-pagination-left' : '' } ${ this.props.right ? ' au-pagination-right' : '' } ${ this.props.center ? ' au-pagination-center' : '' }` }>
-			<ul className={ ` au-link-list au-link-list--inline` }>
+			<nav role="navigation" aria-label="Pagination Navigation" className={ `au-pagination ${ this.props.left ? 'au-pagination-left' : '' } ${ this.props.right ? 'au-pagination-right' : '' } ${ this.props.center ? 'au-pagination-center' : '' }` }>
+			<ul className={ ` au-link-list au-link-list--inline ` }>
 
 			<AUPaginationControls className={ `${ currentPage === 1? 'disabled' : '' } `} onClick={ this.handlePreviousClick } text="Previous" />
 				
@@ -234,7 +233,7 @@ export const AUPaginationItem = ( { children, className, label, current, link, .
 
 
 	return <li className={ `au-pagination-item ${ className }` }>
-			<a   className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
+			<a className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
 				{ children }
 			</a>
 			</li>
