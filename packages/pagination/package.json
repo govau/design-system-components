@@ -40,16 +40,12 @@
 			"version": "1.0.0",
 			"plugins": [
 				"@gov.au/pancake-sass",
-				"@gov.au/pancake-js",
 				"@gov.au/pancake-react",
 				"@gov.au/pancake-json"
 			],
 			"sass": {
 				"path": "lib/sass/_module.scss",
 				"sass-versioning": true
-			},
-			"js": {
-				"path": "lib/js/module.js"
 			},
 			"react": {
 				"path": "lib/js/react.js"
@@ -59,7 +55,6 @@
 	"main": "lib/js/react.es5.js",
 	"dependencies": {
 		"@gov.au/pancake": "~1",
-		"@gov.au/pancake-js": "~1",
 		"@gov.au/pancake-sass": "~2",
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",

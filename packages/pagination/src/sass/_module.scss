@@ -31,7 +31,7 @@
     .au-pagination-item {
         display: inline-block;
         text-decoration: none;
-        @include AU-space( margin, 0.5unit );
+        @include AU-space( margin, 0.4unit );
        
         &:focus {
           outline: 0;
