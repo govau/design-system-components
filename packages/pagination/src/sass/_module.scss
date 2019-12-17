@@ -31,7 +31,6 @@
     .au-pagination-item {
         display: inline-block;
         text-decoration: none;
-        @include AU-space( margin, 0.4unit );
        
         &:focus {
           outline: 0;
@@ -44,7 +43,8 @@
         padding: 0;
         text-decoration: none;
         @include AU-space( padding, 0.77unit 1.2unit 0.77unit 1.2unit );
-      
+        @include AU-space( margin, 0.1unit );
+
           &:hover {
               text-decoration: none;
               color: $AU-color-foreground-text;

@@ -6,9 +6,10 @@
  * Pagination allows large amounts of content to be separated into multiple pages.
  *
  **************************************************************************************************************************************************************/
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+
 // ES5 dependency: import AUlinkList from '@gov.au/link-list';
 // ES6 dependency: import AUlinkList from './link-list';
 
@@ -44,7 +45,7 @@ class AUPagination extends React.Component {
 
 	constructor( props ) {
 	  super( props );
-	  const { totalResults, recordsPerPage, left, right, center} = props;
+	  const { totalResults, recordsPerPage} = props;
 
 	  this.fetchPaginationItems = this.fetchPaginationItems.bind(this);
 	  this.setPaging = this.setPaging.bind(this);
@@ -155,40 +156,30 @@ class AUPagination extends React.Component {
 
 		return (
 			<div>
-			<nav role="navigation" aria-label="Pagination Navigation" className={ `au-pagination ${ this.props.left ? 'au-pagination-left' : '' } ${ this.props.right ? 'au-pagination-right' : '' } ${ this.props.center ? 'au-pagination-center' : '' }` }>
-			<ul className={ ` au-link-list au-link-list--inline ` }>
+				<nav role="navigation" aria-label="Pagination Navigation" className={ `au-pagination ${ this.props.left ? 'au-pagination-left' : '' } ${ this.props.right ? 'au-pagination-right' : '' } ${ this.props.center ? 'au-pagination-center' : '' }` }>
+					<ul className={ ` au-link-list au-link-list--inline ` }>
+						<AUPaginationControls className={ `${ currentPage === 1? 'disabled' : '' } `} onClick={ this.handlePreviousClick } text="Previous" />
+							
+							{ items.map(( item, i ) => {
 
-			<AUPaginationControls className={ `${ currentPage === 1? 'disabled' : '' } `} onClick={ this.handlePreviousClick } text="Previous" />
-				
-				{ items.map(( item, i ) => {
-
-					if ( item === LEFT_ELLIPSIS ) return (
-							<AUPaginationQuickJumper key={ i } onClick={ this.handleLeftElipses }/>
-					  	);
-
-					  if ( item === RIGHT_ELLIPSIS ) return (
-							<AUPaginationQuickJumper key={ i } onClick={ this.handleRightElipses }/>
-					  	);
-
-					return (
-							<AUPaginationItem key={ i } className ={ `${ currentPage === item ? 'active' : '' }`} onClick={ () => this.handleClick( item ) } key={ i } id={ item }  >{ item }</AUPaginationItem>
-						);			
+								if ( item === LEFT_ELLIPSIS ) return (
+										<AUPaginationQuickJumper key={ i }  onClick={ this.handleLeftElipses }/>
+									);
+									console.log(this.state.currentPage - 4);
+								if ( item === RIGHT_ELLIPSIS ) return (
+									
+										<AUPaginationQuickJumper key={ i }  onClick={ this.handleRightElipses }/>
+									);
+								return (
+										<AUPaginationItem  key={ i }  className ={ `${ currentPage === item ? 'active' : '' }`} onClick={ () => this.handleClick( item ) } key={ i } id={ item }  >{ item }</AUPaginationItem>
+									);			
 
 
-				}) }
+							}) }
 
-					<AUPaginationControls className={ `${ currentPage === lastItem ? 'disabled' : '' } `} onClick={ this.handleNextClick } text="Next" />
-			  </ul>
-			</nav>
-			{/* <div className="pagination-summary">
-                    {" "}
-                    {(currentPage - 1) * this.recordsPerPage + 1} -{" "}
-                    {Math.min(
-                        currentPage * this.recordsPerPage,
-                        this.totalResults
-                    )}{" "}
-                    of {this.totalResults} results
-            </div> */}
+						<AUPaginationControls className={ `${ currentPage === lastItem ? 'disabled' : '' } `} onClick={ this.handleNextClick } text="Next" />
+					</ul>
+				</nav>
 			</div>	
 		);
 
@@ -223,17 +214,10 @@ class AUPagination extends React.Component {
  * @param { string } label			  - aria-label for pagination items
  */
 
-export const AUPaginationItem = ( { children, className, label, current, link, ...attributeOptions } ) => {
-
-	label = "Page " + children;
-
-	if( className.includes('active') ){
-		current = true;
-	}
-
+export const AUPaginationItem = ( { children, LinkComponent, className, label, current, link, ...attributeOptions } ) => {
 
 	return <li className={ `au-pagination-item ${ className }` }>
-			<a className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
+			<a  className={ `au-pagination-link ${ className }` }  { ...attributeOptions }  aria-label={ label } aria-current={ current }>
 				{ children }
 			</a>
 			</li>
@@ -249,7 +233,8 @@ AUPaginationItem.propTypes = {
 AUPaginationItem.defaultProps = {
 	className: '',
 	label: '',
-	current: false
+	current: false,
+	LinkComponent: 'a'
 };
 
 
