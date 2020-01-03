@@ -38,7 +38,7 @@
 		"delete:node_modules": "lerna clean --yes && rimraf node_modules",
 		"delete:lib": "rimraf packages/*/lib",
 		"test:unit-test": "jest",
-		"test": "node scripts/helper.js test && node ./scripts/a11y.js",
+		"test": "node scripts/helper.js test && node ./scripts/a11y.js && npm run lint",
 		"lint": "lerna run lint"
 	},
 	"jest": {
