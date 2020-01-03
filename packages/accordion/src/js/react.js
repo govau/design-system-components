@@ -156,7 +156,7 @@ class AUaccordion extends React.PureComponent {
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
-			event.stopPropagation();
+			window.event.stopPropagation();
 		}
 		catch( error ) {}
 
@@ -250,7 +250,7 @@ class AUaccordion extends React.PureComponent {
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
-			event.stopPropagation();
+			window.event.stopPropagation();
 		}
 		catch( error ) {}
 
@@ -312,7 +312,7 @@ class AUaccordion extends React.PureComponent {
 		// stop event propagation
 		try {
 			window.event.cancelBubble = true;
-			event.stopPropagation();
+			window.event.stopPropagation();
 		}
 		catch( error ) {}
 
