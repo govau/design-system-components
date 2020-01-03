@@ -7,8 +7,16 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^9.4.10",
+		"babel-eslint": "^10.0.3",
 		"cfonts": "^2.4.2",
 		"chalk": "^2.4.2",
+		"eslint": "^6.8.0",
+		"eslint-config-react-app": "^5.1.0",
+		"eslint-plugin-flowtype": "^3.13.0",
+		"eslint-plugin-import": "^2.19.1",
+		"eslint-plugin-jsx-a11y": "^6.2.3",
+		"eslint-plugin-react": "^7.17.0",
+		"eslint-plugin-react-hooks": "^1.7.0",
 		"express": "^4.16.4",
 		"inquirer": "6.2.2",
 		"jest-cli": "^24.7.1",
@@ -30,7 +38,8 @@
 		"delete:node_modules": "lerna clean --yes && rimraf node_modules",
 		"delete:lib": "rimraf packages/*/lib",
 		"test:unit-test": "jest",
-		"test": "node scripts/helper.js test && node ./scripts/a11y.js"
+		"test": "node scripts/helper.js test && node ./scripts/a11y.js",
+		"lint": "lerna run lint"
 	},
 	"jest": {
 		"testRegex": "\\.spec.js$",
