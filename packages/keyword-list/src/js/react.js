@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValidElementType } from "react-is";
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -44,7 +45,7 @@ export const AUkeywordListItem = ({ linkComponent, repeatedName, link, name, li 
 			attributeOptions.href = link;
 		}
 		// If we are using a link component
-		else if( typeof LinkComponent === 'function' ) {
+		else if( isValidElementType(LinkComponent) ) {
 			attributeOptions.to = link;
 		}
 	}
@@ -65,7 +66,7 @@ AUkeywordListItem.propTypes = {
 	link: PropTypes.string,
 	name: PropTypes.string.isRequired,
 	li: PropTypes.object,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ]),
 };
 
 
@@ -106,7 +107,7 @@ AUkeywordList.propTypes = {
 		})
 	).isRequired,
 	className: PropTypes.string,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ]),
 };
 
 

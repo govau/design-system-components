@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValidElementType } from "react-is";
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -53,7 +54,7 @@ export const AUheaderBrand = ({
 			attributeOptions.href = link;
 		}
 		// If we are using a link component
-		else if( typeof LinkComponent === 'function' ) {
+		else if( isValidElementType(LinkComponent) ) {
 			attributeOptions.to = link;
 		}
 	}
@@ -97,7 +98,7 @@ AUheaderBrand.propTypes = {
 	brandImageAlt: PropTypes.string,
 	children: PropTypes.node,
 	className: PropTypes.string,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ]),
 }
 
 AUheaderBrand.defaultProps = {

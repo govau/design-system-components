@@ -68,7 +68,7 @@ AUmainNavMenu.propTypes = {
 			children: PropTypes.array,
 		})
 	).isRequired,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ]),
 };
 
 AUmainNavMenu.defaultProps = {

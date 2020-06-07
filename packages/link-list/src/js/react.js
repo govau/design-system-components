@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValidElementType } from "react-is";
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -44,7 +45,7 @@ export const AUlinkListItem = ({ text, link, linkComponent, li = {}, children, o
 		attributeOptions.href = link;
 	}
 	// If we are using a link component
-	else if( typeof LinkComponent === 'function' ) {
+	else if( isValidElementType(LinkComponent) ) {
 		attributeOptions.to = link;
 	}
 
@@ -65,7 +66,7 @@ AUlinkListItem.propTypes = {
 	link: PropTypes.string,
 	li: PropTypes.object,
 	onClick: PropTypes.func,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ])
 };
 
 AUlinkListItem.defaultProps = {
@@ -101,7 +102,7 @@ AUlinkList.propTypes = {
 			li: PropTypes.object,
 		})
 	).isRequired,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ])
 };
 
 AUlinkList.defaultProps = {

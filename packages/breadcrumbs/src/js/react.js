@@ -50,7 +50,7 @@ AUbreadcrumbs.propTypes = {
 			text: PropTypes.string.isRequired,
 		})
 	).isRequired,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ])
 };
 
 AUbreadcrumbs.defaultProps = {
