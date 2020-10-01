@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.13 - Fix unsafe-eval CSP issue](#v1014)
 * [v1.0.13 - Remove --save-dev flag from readme instructions](#v1013)
 * [v1.0.12 - Removed uikit references](#v1012)
 * [v1.0.11 - Update dependencies](#v1011)
@@ -40,6 +41,10 @@
 
 
 ## Release History
+
+### v1.0.14
+
+- Remove eval call from animate module
 
 ### v1.0.13
 
