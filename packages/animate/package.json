@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/animate",
-	"version": "1.0.13",
+	"version": "1.0.14",
 	"description": "A JavaScript function to animate CSS properties of page elements.",
 	"keywords": [
 		"auds",
