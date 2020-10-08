@@ -7,7 +7,7 @@ jobs:
   # installing dependencies, building assets and deploying to staging
   build-and-test-auds:
     docker:
-      - image: circleci/node:10.15.3                      # NodeLTS as of 03/2019
+      - image: circleci/node:12.18.4                      # NodeLTS as of 10/2020
     working_directory: ~/auds
     steps:
       - checkout                                          # get the files from the repo (why would you ever not want the files????)
