@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValidElementType } from "react-is";
 
 /**
  * TODO
@@ -27,7 +28,7 @@ export const AUtag = ({ link, dark, text, linkComponent, className, ...attribute
 		attributeOptions.href = link;
 	}
 	// If we are using a link component
-	else if( typeof LinkComponent === 'function' ) {
+	else if( isValidElementType(LinkComponent) ) {
 		attributeOptions.to = link;
 	}
 
@@ -46,7 +47,7 @@ AUtag.propTypes = {
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	li: PropTypes.object,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ]),
 };
 
 AUtag.defaultProps = {

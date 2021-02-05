@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValidElementType } from "react-is";
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -52,7 +53,7 @@ const AUbutton = ({ linkComponent, link, children, as, dark, type, block, classN
 			attributeOptions.href = link;
 		}
 		// If we are using a link component
-		else if( typeof LinkComponent === 'function' ) {
+		else if( isValidElementType(LinkComponent) ) {
 			attributeOptions.to = link;
 		}
 
@@ -86,7 +87,7 @@ AUbutton.propTypes = {
 	type: PropTypes.string,
 	block: PropTypes.bool,
 	className: PropTypes.string,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ]),
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ]),
 };
 
 AUbutton.defaultProps = {

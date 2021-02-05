@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValidElementType } from "react-is";
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -51,7 +52,7 @@ const AUdirectionLink = ({ linkComponent, dark, link, text, direction, className
 			attributeOptions.href = link;
 		}
 		// If we are using a link component
-		else if( typeof LinkComponent === 'function' ) {
+		else if( isValidElementType(LinkComponent) ) {
 			attributeOptions.to = link;
 		}
 		return (
@@ -80,7 +81,7 @@ AUdirectionLink.propTypes = {
 	text: PropTypes.string.isRequired,
 	direction: PropTypes.oneOf([ 'up', 'right', 'down', 'left' ]).isRequired,
 	className: PropTypes.string,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ])
 };
 
 AUdirectionLink.defaultProps = {

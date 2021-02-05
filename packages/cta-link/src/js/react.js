@@ -9,6 +9,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isValidElementType } from "react-is";
 
 
 // The following line will be replaced automatically with generic imports for the ES5 pipeline.
@@ -37,7 +38,7 @@ const AUctaLink = ({ linkComponent, dark, link, text, className = '', ...attribu
 			attributeOptions.href = link;
 		}
 		// If we are using a link component
-		else if( typeof LinkComponent === 'function' ) {
+		else if( isValidElementType(LinkComponent) ) {
 			attributeOptions.to = link;
 		}
 
@@ -57,7 +58,7 @@ AUctaLink.propTypes = {
 	link: PropTypes.string,
 	text: PropTypes.string.isRequired,
 	className: PropTypes.string,
-	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.func ])
+	linkComponent: PropTypes.oneOfType([ PropTypes.string, PropTypes.elementType ])
 };
 
 AUctaLink.defaultProps = {
