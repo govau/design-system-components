@@ -35,8 +35,18 @@ Australian Government Design System Components
 ## Installation
 
 ### Prerequisites
-The design system components are distributed through the [npm](https://www.npmjs.com) ecosystem and can only be installed through the `npm` command.
-Npm requires [node.js](https://nodejs.org/en/) and the components needs node.js 8 or higher.
+The design system components are distributed through the [npm](https://www.npmjs.com) ecosystem. Npm requires `node.js` and the components needs [node.js](https://nodejs.org/en/) 8 or higher.
+
+If you are not familiar with `npm` and want to use the design system, we have created a [download page](https://designsystem.gov.au/download) to help.
+
+Once on the page you can select the components you wish to use and choose how you want do download them.
+
+* **CSS minified** will bundle the CSS of the components into a single file to be used directly in HTML.
+* **CSS modules** are used with modern JavaScript allowing you to import styles specific component styles.
+* **SASS modules** will create multiple SASS files that can be imported into a main.scss file.
+* **JavaScript minified** will bundle the JavaScript of the components together and minify them for use directly in HTML.
+* **JavaScript modules** are used when you want to break a part the components functionality.
+* **React modules** allow the components to be imported directly into React.
 
 ### Installing modules
 To install a module make sure you have a `package.json` file in the root of your project folders. (You can generate one by running `npm init`.)
