@@ -38,6 +38,12 @@ const CreateDir = ( dir ) => {
 		if( subPath != '.' ) {
 			currentPath = `${ path }/${ subPath }`;
 
+			//fix for #1001 Scaffold build process fails on Windows machine
+			if(process.platform === "win32")
+			{
+				currentPath = currentPath.substring(1);
+			}	
+
 			if( !Fs.existsSync( currentPath ) ){
 				Fs.mkdirSync( currentPath );
 			}
