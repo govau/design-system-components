@@ -39,7 +39,8 @@ const CreateDir = ( dir ) => {
 			currentPath = `${ path }/${ subPath }`;
 
 			//fix for #1001 Scaffold build process fails on Windows machine
-			if(process.platform === "win32")
+			//fix for #1007 Component build process fails on Windows machine
+			if((process.platform === "win32") && (currentPath.substring(0) == "/"))
 			{
 				currentPath = currentPath.substring(1);
 			}	
