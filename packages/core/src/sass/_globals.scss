@@ -1,4 +1,4 @@
-/*! [replace-name] v[replace-version] */
+/*! @gov.au/core v3.4.2 */
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Core module globals
@@ -12,6 +12,7 @@
 //   - AU-color-luminance
 //   - AU-color-contrast
 //   - AU-color-a11y
+//   - AU-color-a11y-override-check
 // - mixins
 //   - AU-space
 //   - AU-clearfix
@@ -44,10 +45,10 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // SASS VERSIONING
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-$name: "[replace-name]";
-$version: "[replace-version]";
+$name: "@gov.au/core";
+$version: "3.4.2";
 $dependencies: (
-	[replace-dependencies]
+	
 );
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -367,10 +368,30 @@ $dependencies: (
 		$ratio: round( $ratio * 10 ) / 10;
 	}
 
+	@if AU-color-a11y-override-check()
+	{
+		$ratio: 4.5;
+	}
+
 	@return $ratio;
 }
 
-
+/**
+* AU-color-a11y-override-check - the function to check for existence of global ($a11y-override) override
+*
+* @author Ross Mullen @MrRossMullen
+*/
+@function AU-color-a11y-override-check() {
+	@if variable-exists(a11y-override)
+	{
+		@if $a11y-override == true
+		{
+			@warn "WCAG 2.1 *** you have overriden the colour contrast checks and are possibly generating inaccessible colours";
+			@return true;
+		}
+	}
+	@return false;
+}
 
 /**
  * AU-color-a11y - The function to find the nearest accessible color
@@ -477,6 +498,12 @@ $dependencies: (
 		@else {
 			$minLightness: $midLightness;
 		}
+	}
+
+	@if AU-color-a11y-override-check()
+	{
+		$foundColor: $toMakeA11y;
+		@warn "WCAG 2.1 *** you have overriden the colour contrast checks and are possibly generating inaccessible colours";
 	}
 
 	@return $foundColor;
@@ -695,6 +722,7 @@ $dependencies: (
 	}
 
 	// Get the value from supplied key for pixel and calculate the rem value
+
 	$fontsize-px: map-get( $AU-fontsize-map, $fontsize-key );
 	$fontsize-rem: $fontsize-px / $AU-rem;
 
@@ -751,7 +779,8 @@ $AU-font-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courie
  *
  * Predetermined pixel sizes from a 1.25 typescale rounded to the nearest $AU-unit (vertical grid)
  */
-$AU-fontsize-map: (
+
+ $AU-fontsize-default-map: (
 	xs:   14,
 	sm:   16,
 	md:   20,
@@ -759,9 +788,28 @@ $AU-fontsize-map: (
 	xl:   32,
 	xxl:  40,
 	xxxl: 48
-) !default;
+);
 
+$AU-fontsize-increased-map: (
+	xs:   15,
+	sm:   18,
+	md:   22,
+	lg:   26,
+	xl:   32,
+	xxl:  38,
+	xxxl: 44
+);
 
+$AU-fontsize-map:$AU-fontsize-default-map;
+
+@if variable-exists(font-override)
+{
+	@if $font-override == true
+	{
+		$AU-fontsize-map: $AU-fontsize-increased-map;
+	}
+
+}
 /**
  * AU-lineheight-map
  *
