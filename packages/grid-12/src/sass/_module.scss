@@ -19,6 +19,10 @@
 	.container {
 		box-sizing: border-box;
 
+		@include AU-media( xs ) {
+			width: ( $AU-media-xs - $AU-grid-12-gutter-width );
+		}
+
 		@include AU-media( sm ) {
 			width: ( $AU-media-sm - $AU-grid-12-gutter-width );
 		}
@@ -29,6 +33,10 @@
 
 		@include AU-media( lg ) {
 			width: ( $AU-media-lg - $AU-grid-12-gutter-width );
+		}
+
+		@include AU-media( xl ) {
+			width: ( $AU-media-xl - $AU-grid-12-gutter-width );
 		}
 	}
 
@@ -58,7 +66,9 @@
 
 
 	//create xs classes
-	@include AU-grid-12-make-grid( xs );
+
+		@include AU-grid-12-make-grid( xs );
+
 
 	//create sm classes
 	@include AU-media( sm ) {
@@ -73,5 +83,10 @@
 	//create lg classes
 	@include AU-media( lg ) {
 		@include AU-grid-12-make-grid( lg );
+	}
+
+	//create lg classes
+	@include AU-media( xl ) {
+		@include AU-grid-12-make-grid( xl );
 	}
 }
