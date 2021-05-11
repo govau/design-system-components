@@ -594,25 +594,25 @@ $dependencies: (
 
 	@if( $breakpoint == "xs" ) {
 
-		@media (max-width: $AU-media-sm - 1) {
+		@media (min-width: $AU-media-sm - 1) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "sm" ) {
-		@media (max-width: $AU-media-sm) {
+		@media (min-width: $AU-media-sm) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "md" ) {
-		@media (max-width: $AU-media-md) {
+		@media (min-width: $AU-media-md) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "lg" ) {
-		@media (max-width: $AU-media-lg) {
+		@media (min-width: $AU-media-lg) {
 			@content;
 		}
 	}
