@@ -593,25 +593,25 @@ $dependencies: (
 	}
 
 	@if( $breakpoint == "xs" ) {
-		@media (min-width: $AU-media-xs) {
+		@media (max-width: $AU-media-xs) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "sm" ) {
-		@media (min-width: $AU-media-sm) {
+		@media (max-width: $AU-media-sm) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "md" ) {
-		@media (min-width: $AU-media-md) {
+		@media (max-width: $AU-media-md) {
 			@content;
 		}
 	}
 
 	@if( $breakpoint == "lg" ) {
-		@media (min-width: $AU-media-lg) {
+		@media (max-width: $AU-media-lg) {
 			@content;
 		}
 	}
@@ -727,6 +727,7 @@ $AU-pixelfallback: true !default;
 /**
  * AU-media Breakpoints
  */
+ 
  $AU-media-xs: 0;
  $AU-media-sm: 576px; // media query breakpoints
  $AU-media-md: 768px;
