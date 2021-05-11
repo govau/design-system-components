@@ -66,9 +66,7 @@
 
 
 	//create xs classes
-
-		@include AU-grid-12-make-grid( xs );
-
+	@include AU-grid-12-make-grid( xs );
 
 	//create sm classes
 	@include AU-media( sm ) {
@@ -85,7 +83,6 @@
 		@include AU-grid-12-make-grid( lg );
 	}
 
-	//create lg classes
 	@include AU-media( xl ) {
 		@include AU-grid-12-make-grid( xl );
 	}
