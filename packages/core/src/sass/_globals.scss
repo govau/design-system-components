@@ -593,7 +593,7 @@ $dependencies: (
 	}
 
 	@if( $breakpoint == "xs" ) {
-		@media (max-width: $AU-media-sm - 1) {
+		@media (min-width: $AU-media-xs) {
 			@content;
 		}
 	}
@@ -734,6 +734,7 @@ $AU-pixelfallback: true !default;
    due to internal logic
  */
 
+ $AU-media-xs: 0;
  $AU-media-sm: 576px; // media query breakpoints
  $AU-media-md: 768px;
  $AU-media-lg: 992px;
