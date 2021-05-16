@@ -20,7 +20,7 @@
 		box-sizing: border-box;
 
 		@include AU-media( xs ) {
-			width: ( 0 - $AU-grid-12-gutter-width );
+			width: ( $AU-media-xs - $AU-grid-12-gutter-width );
 		}
 
 		@include AU-media( sm ) {
