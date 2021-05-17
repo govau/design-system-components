@@ -728,12 +728,6 @@ $AU-pixelfallback: true !default;
  * AU-media Breakpoints
  */
 
-/**
- * value for $AU-media-xs has been removed, as 0 is the minimum size for mobile devices and this is calculated 
-   by specifying the max-width using $AU-media-sm and substracting one. A minimum size of 0 pixels wasn't being applied
-   due to internal logic
- */
-
  $AU-media-xs: 0;
  $AU-media-sm: 576px; // media query breakpoints
  $AU-media-md: 768px;
