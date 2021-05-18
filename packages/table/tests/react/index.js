@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import AUtags from '../../../tags/src/js/react.js';
 
 
-import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow} from './table.js';
+import AUtable, {AUtableResponsiveWrapper, AUtableCaption, AUtableCell, AUtableHead, AUtableHeader, AUtableBody, AUtableRow, AUtableFooter} from './table.js';
 
 const renderVicTags = () => (<AUtags tags={[{link: '#', text: "Melbourne"}, {link: '#', text: "Rialto Tower"}]} />)
 const renderNSWTags = () => (<AUtags tags={[{link: '#', text: "Sydney"}, {link: '#', text: "Opera House"}]} />)
@@ -14,6 +14,10 @@ const simpleData = [
 	{location: "Victoria",        population: "5,996,400"},
 	{location: "Tasmania",        population: "514,400"}
 ];
+
+const simpleFooter = ["Total", "14,181,500"];
+
+const complexFooter = ["Total", "23,583,700", "19.2%", "73.3%"];
 
 const simpleHeaders = [
 	{title: "Location",   key: "location"},
@@ -110,12 +114,13 @@ const headerUsingRecord = [
 
 ReactDOM.render(
 	<div>
-		<h3>Simple Table, first cell is header</h3>
+		<h3>Simple Table, first cell is header, and with footer</h3>
 
 		<AUtable
 			caption="Population of Australian states and territories, December 2015"
 			headers={simpleHeaders}
 			data={simpleData}
+			footer={simpleFooter}
 			firstCellIsHeader={true}
 		/>
 
@@ -143,6 +148,8 @@ ReactDOM.render(
 			caption="Population of Australian states and territories, December 2015"
 			striped={true}
 			headers={complexHeaders}
+			footer={complexFooter}
+			stripedFooter={true}
 			data={complexData}
 		/>
 
@@ -155,6 +162,8 @@ ReactDOM.render(
 			caption="Population of Australian states and territories, December 2015"
 			headers={headersRemoveButton}
 			data={dataRemoveButton}
+			footer={simpleFooter}
+			colSpan="2"
 		/>
 
 		<br/>
@@ -227,6 +236,13 @@ ReactDOM.render(
 				<AUtableCell render={renderVicTags()} />
 			</AUtableRow>
 		</AUtableBody>
+		<AUtableFooter>
+			<AUtableRow>
+				<AUtableCell data="Total" type="text" />
+				<AUtableCell data="5,996,400" type="numeric" className="bold-cell" />
+				<AUtableCell data="2.5%" type="numeric" />
+			</AUtableRow>
+		</AUtableFooter>
 	</table>
 
 	<br/>

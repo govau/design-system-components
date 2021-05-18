@@ -19,9 +19,12 @@ import PropTypes from 'prop-types';
  * @param {bool}     striped            - Colourise every other table row
  * @param {string}   className          - An additional class, optional
  * @param {bool}     firstCellIsHeader  - If first cell is a header cell or not
+ * @param {[]}       footer             - The footer cells
+ *  @param {bool}    stripedFooter     	- If the footer is for the striped table or not
+ * @param {string} 	 colSpanFooter 		- value of colSpan attribute
  * @param {object}   attributeOptions   - Default HTML attributes
  */
-const AUtable = ({ caption, headers, data, striped, className, firstCellIsHeader, ...attributeOptions }) => {
+const AUtable = ( { caption, headers, data, footer, stripedFooter, colSpanFooter, striped, className, firstCellIsHeader, ...attributeOptions} ) => {
 	return (
 	<table className={`au-table ${ striped ? 'au-table--striped ' : ' '} ${className}`} { ...attributeOptions }>
 		{caption && <AUtableCaption tableCaption={caption} />}
@@ -61,6 +64,18 @@ const AUtable = ({ caption, headers, data, striped, className, firstCellIsHeader
 						</AUtableRow>
 							))}
 		</AUtableBody>
+		{
+			footer &&
+				 <AUtableFooter stripedTableFooter={stripedFooter}>
+					<AUtableRow>
+								{
+										footer.map( ( data, footerIndex ) => (
+										<AUtableCell key={footerIndex} data={ data } colSpan={`${colSpanFooter}`} type={headers[footerIndex].type}/>)
+								)
+								}
+					</AUtableRow>
+				</AUtableFooter>
+		}
 	</table>
 	)
 };
@@ -70,12 +85,16 @@ AUtable.propTypes = {
 	headers: PropTypes.arrayOf( Object ).isRequired,
 	data: PropTypes.arrayOf( Object ).isRequired,
 	striped: PropTypes.bool,
+	stripedFooter: PropTypes.bool,
+	colSpanFooter: PropTypes.number,
+	footer: PropTypes.array,
 	className: PropTypes.string
 };
 
 AUtable.defaultProps = {
 	striped: false,
-	className: ''
+	className: '',
+	colSpanFooter: 0
 };
 
 
@@ -139,7 +158,7 @@ AUtableHead.defaultProps = {
  * @param {string} className        - An additional class, optional
  * @param {object} attributeOptions - Default HTML attributes
  */
-export const AUtableHeader = ({ title, type, width, scope, className, ...attributeOptions }) => {
+export const AUtableHeader = ( { title, type, width, scope, className, ...attributeOptions } ) => {
 return 	<th className={`au-table__header ${className}` +
 						`${type === "numeric" ? " au-table__header--numeric ": " "}` +
 						`${ width ? " au-table__header--width-" + width : " "} `}
@@ -254,6 +273,35 @@ export const AUtableResponsiveWrapper = ({ children }) => {
 AUtableResponsiveWrapper.propTypes = {
 	children: PropTypes.node
 };
+
+
+/**
+ * Table footer
+ *
+ * @param {string} className  			- An additional class, optional
+ * @param {object} attributeOptions 	- Default HTML attributes
+ * @param {bool}   stripedTableFooter   - Variation of footer for striped table
+ * @param {string} type       			- Type of the data, can be either text or numeric for left or right alignment respectively.
+ * @param {string} colSpan 				- colSpan attribute
+ * @param {node}   children
+ *
+ */
+export const AUtableFooter = ({ type, colSpan, className, stripedTableFooter, children, ...attributeOptions }) => (
+	<tfoot className={`au-table__footer ${ stripedTableFooter  ? 'au-table__footer--striped ' : ' '} ${ className } ${ colSpan } ${ type === "numeric" ? "au-table__cell--numeric ": " "}`} {...attributeOptions} >{ children }</tfoot>
+);
+
+AUtableFooter.propTypes = {
+	children: PropTypes.node,
+	type: PropTypes.oneOf(['text', 'numeric']).isRequired,
+	className: PropTypes.string,
+	stripedTableFooter: PropTypes.bool,
+}
+
+AUtableFooter.defaultProps = {
+	className: '',
+	stripedTableFooter: false,
+	type:'text',
+}
 
 
 export default AUtable;
