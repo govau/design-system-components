@@ -1,0 +1,88 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// pagination module
+// Pagination allows large amounts of content to be separated into multiple pages.
+//
+// Content:
+// - sass-versioning
+// - globals
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+@import '_globals.scss';
+@import '_print.scss';
+
+.au-pagination{
+  @include AU-fontgrid( xs );
+  font-family: $AU-font;
+  text-align: center;
+    
+  &.au-pagination-left{
+      text-align: left;
+  }
+
+  &.au-pagination-right{
+      text-align: right;
+
+  }
+
+  &.au-pagination-center{
+      text-align: center;
+  }
+    .au-pagination-item {
+        display: inline-block;
+        text-decoration: none;
+       
+        &:focus {
+          outline: 0;
+        } 
+
+    }
+
+    .au-pagination-link {
+        color: $AU-color-foreground-action;
+        padding: 0;
+        text-decoration: none;
+        @include AU-space( padding, 0.77unit 1.2unit 0.77unit 1.2unit );
+        @include AU-space( margin, 0.1unit );
+
+          &:hover {
+              text-decoration: none;
+              color: $AU-color-foreground-text;
+              outline: 3px solid #d3d3d3;
+          } 
+
+          & .current {
+              color: #0B0C0C;
+              font-weight: 700;
+              border: none;
+              pointer-events: none;
+              cursor: default;
+          }
+        
+    }
+
+    .au-pagination-link--quick-jumper {
+        font-size: 2rem;
+        line-height: 0.5rem;
+    }
+
+    .au-pagination-controls-link{
+        @include AU-space( padding-left, 0.5unit );
+        @include AU-space( padding-right, 0.5unit );
+
+    }
+  
+    .disabled {
+		  pointer-events:none;
+      cursor: not-allowed;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+      opacity: 0.5;
+    }
+
+    .active a {
+      color: $AU-color-foreground-text;
+      outline: 3px solid #d3d3d3;
+  
+    } 
+
+}

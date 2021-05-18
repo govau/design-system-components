@@ -470,6 +470,24 @@ All components have to work on the below browsers:
 </details>
 
 <details>
+	<summary>@gov.au/pagination</summary>
+	<br><code>npm install @gov.au/pagination</code><br>
+	<br>See the <a href="https://auds.service.gov.au/packages/pagination/tests/site/">visual test file for pagination</a>
+	<br>See the <a href="https://github.com/govau/design-system-components/blob/master/packages/pagination/README.md">readme file for pagination</a><br><br>
+	Dependencies:
+	<br>
+
+```shell
+├─ core
+└─ link-list
+   ├─ core
+   └─ body
+      └─ core
+```
+----------
+</details>
+
+<details>
 	<summary>@gov.au/progress-indicator</summary>
 	<br><code>npm install @gov.au/progress-indicator</code><br>
 	<br>See the <a href="https://auds.service.gov.au/packages/progress-indicator/tests/site/">visual test file for progress-indicator</a>

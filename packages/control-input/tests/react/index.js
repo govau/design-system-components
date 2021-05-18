@@ -105,6 +105,7 @@ ReactDOM.render(
 					{
 						label: 'Phone',
 						value: 'phone',
+						name: 'names',
 						id: 'cb-phone',
 					},
 					{
