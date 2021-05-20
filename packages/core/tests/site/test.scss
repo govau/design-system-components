@@ -16,7 +16,6 @@ html {
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // BREAKPOINT TEST
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-.xs-only,
 .sm-only,
 .md-only,
 .lg-only,
@@ -26,13 +25,6 @@ html {
 
 @include AU-media( xs ) {
 	.xs-only {
-		display: block;
-	}
-}
-
-@include AU-media( sm ) {
-
-	.xs-only {
 		display: none;
 	}
 
@@ -41,8 +33,7 @@ html {
 	}
 }
 
-@include AU-media( md ) {
-
+@include AU-media( sm ) {
 	.sm-only {
 		display: none;
 	}
@@ -52,8 +43,7 @@ html {
 	}
 }
 
-@include AU-media( lg ) {
-
+@include AU-media( md ) {
 	.md-only {
 		display: none;
 	}
@@ -63,8 +53,7 @@ html {
 	}
 }
 
-@include AU-media( xl ) {
-
+@include AU-media( lg ) {
 	.lg-only {
 		display: none;
 	}
@@ -73,6 +62,7 @@ html {
 		display: block;
 	}
 }
+
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // font families
