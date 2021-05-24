@@ -61,10 +61,10 @@
 		"@gov.au/pancake-react": "~1",
 		"@gov.au/pancake-json": "~1",
 
-		"@gov.au/core": "^3.0.0"
+		"@gov.au/core": "^4.0.0"
 	},
 	"peerDependencies": {
-		"@gov.au/core": "^3.0.0"
+		"@gov.au/core": "^4.0.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.3.4",
