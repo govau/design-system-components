@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.0.0 - Added new breakpoints for xl (extra large) and also xs (extra small)](#v400)
 * [v3.4.2 - Remove --save-dev flag from readme instructions](#v342)
 * [v3.4.1 - Add two new colours: `hint-text` and `hint-text-alt`](#v341)
 * [v3.4.0 - Update error and success alert colours to meet contrast requirements on `--alt` backgrounds](#v340)
@@ -43,6 +44,10 @@
 
 
 ## Release History
+
+### v4.0.0
+
+- Added new breakpoints for xl (extra large) and also xs (extra small)
 
 ### v3.4.2
 
