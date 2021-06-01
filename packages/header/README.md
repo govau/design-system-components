@@ -122,6 +122,7 @@ The visual test: https://auds.service.gov.au/packages/header/tests/site/
 
 ## Release History
 
+* v4.1.13 - Header image should be a block element on XS and SM breakpoints (Fix based on the new grid breakpoints)
 * v4.1.12 - Remove --save-dev flag from readme instructions
 * v4.1.11 - Removed unused `Fragment` React import
 * v4.1.10 - Resolve autoprefixer warning
