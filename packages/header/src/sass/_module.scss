@@ -92,18 +92,18 @@
 		@include AU-space( margin-top, 1unit );
 	}
 
-	@include AU-media( sm ) {
-		@include AU-space( min-width, $AU-logo-width-sm );
+	@include AU-media( md ) {
+		@include AU-space( min-width, $AU-logo-width-md );
 
 		.au-header__brand-image {
 			float: left;
-			@include AU-space( max-width, $AU-logo-width-sm );
-			@include AU-space( margin-right, -1 * $AU-logo-width-sm );
+			@include AU-space( max-width, $AU-logo-width-md );
+			@include AU-space( margin-right, -1 * $AU-logo-width-md );
 		}
 
 		.au-header__brand-image + .au-header__text {
 			@include AU-space( padding-left, 1unit );
-			@include AU-space( margin-left, $AU-logo-width-sm + 1unit );
+			@include AU-space( margin-left, $AU-logo-width-md + 1unit );
 			margin-top: 0;
 			float: left;
 			border-left: 1px solid $AU-color-foreground-border;

@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/main-nav",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "Horizontal list of links to key areas on the website. Usually located in the header.",
 	"keywords": [
 		"auds",
@@ -128,6 +128,11 @@
 			"name": "Kiri Hoy",
 			"email": "kiri.zobel@gmail.com",
 			"url": "https://github.com/kirihoy"
+		},
+		{
+			"name": "Prasanth Ponnapalli",
+			"email": "Prasanth.Ponnapalli@dta.gov.au",
+			"url": "https://github.com/pponnapalli87"
 		}
 	],
 	"license": "MIT"

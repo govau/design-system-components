@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v1.0.9 - main nav to be collapsible upto MD breakpoint (Fix based on the new grid breakpoints)](#v109)
 * [v1.0.8 - Add aria-expanded to main nav menu button](#v108)
 * [v1.0.7 - Remove --save-dev flag from readme instructions](#v107)
 * [v1.0.6 - Removed word `navigation` from `aria-label` in `<nav>` element](#v106)
@@ -36,6 +37,11 @@
 
 
 ## Release History
+
+### v1.0.9
+
+- main nav to be collapsible upto MD breakpoint (Fix based on the new grid breakpoints)
+
 
 ### v1.0.8
 
