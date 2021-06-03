@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/searchbox",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "",
 	"keywords": [
 		"auds",
@@ -123,6 +123,11 @@
 			"name": "Trevor Brennan",
 			"email": "t@trevorbrennan.com",
 			"url": "https://github.com/TrebBrennan"
+		},
+		{
+			"name": "Prasanth Ponnapalli",
+			"email": "Prasanth.Ponnapalli@dta.gov.au",
+			"url": "https://github.com/pponnapalli87"
 		}
 	],
 	"license": "MIT"

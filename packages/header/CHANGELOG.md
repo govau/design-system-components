@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v4.1.13 - Header image should be a block element on XS and SM breakpoints (Fix based on the new grid breakpoints)](#v4113)
 * [v4.1.12 - Remove --save-dev flag from readme instructions](#v4112)
 * [v4.1.11 - Removed unused `Fragment` React import](#v4111)
 * [v4.1.10 - Resolve autoprefixer warning](#v4110)
@@ -45,6 +46,11 @@
 
 
 ## Release History
+
+### v4.1.13
+
+- Header image should be a block element on XS and SM breakpoints (Fix based on the new grid breakpoints)
+
 
 ### v4.1.12
 

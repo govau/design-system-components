@@ -65,6 +65,7 @@ The visual test: https://auds.service.gov.au/packages/searchbox/tests/site/
 
 ## Release History
 
+* v0.2.3 - Display search icon for XS breakpoint when responsive (Fix based on the new grid breakpoints)
 * v0.2.2 - Increase size for icon
 * v0.2.1 - Add styling for secondary buttons
 * v0.2.0 - Update padding on button, fix JSdoc

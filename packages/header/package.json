@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/header",
-	"version": "4.1.12",
+	"version": "4.1.13",
 	"description": "Headers provide a consistent start to pages.",
 	"keywords": [
 		"auds",
@@ -131,6 +131,11 @@
 			"name": "Adam Zerella",
 			"email": "hello@adamzerella.com",
 			"url": "https://github.com/adamzerella"
+		},
+		{
+			"name": "Prasanth Ponnapalli",
+			"email": "Prasanth.Ponnapalli@dta.gov.au",
+			"url": "https://github.com/pponnapalli87"
 		}
 	],
 	"license": "MIT"
