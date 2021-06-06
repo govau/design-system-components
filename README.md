@@ -16,21 +16,7 @@ Australian Government Design System Components
 | https://auds.service.gov.au | https://auds.staging.service.gov.au |
 |                              | user: `auds`, pass: `auds`         |
 
-## Contents
-
-* [Installation](#installation)
-* [Frequently asked questions](#frequently-asked-questions)
-* [Checklist and browser support](#checklist-and-browser-support)
-* [Modules](#modules)
-* [Contribute](./CONTRIBUTING.md)
-* [Tests](#tests)
-* [Support](./SUPPORT.md)
-* [Related repositories](#related-repositories)
-* [License](./LICENSE)
-
-
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 
 ## Installation
 
