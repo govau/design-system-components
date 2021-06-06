@@ -85,11 +85,11 @@ $.fn.AUaccordion = function( callbacks ) {
 					var speed = $( accordion ).attr('data-speed');
 
 					$( accordion )
-						.children('.js-au-accordion')
+						.children().children('.js-au-accordion')
 						.on('click', function( event ) {
 							event.preventDefault();
 
-							AU.accordion.Toggle( $( accordion ).children('.js-au-accordion')[ 0 ], speed, callbacks );
+							AU.accordion.Toggle( $( accordion ).children().children('.js-au-accordion')[ 0 ], speed, callbacks );
 						})
 						.addClass('js-au-accordion-rendered'); // marking as processed
 			});

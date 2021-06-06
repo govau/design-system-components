@@ -89,13 +89,15 @@
 			<h3>Accordion open by default</h3>
 
 			<section class="au-accordion">
-				<button
-					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-default"
-					aria-expanded="true"
-					onClick="return AU.accordion.Toggle( this )">
-						Button Accordion title
-			</button>
+				<h4>
+					<button
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-default"
+						aria-expanded="true"
+						onClick="return AU.accordion.Toggle( this )">
+							Button Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body" id="accordion-default">
 					<div class="au-accordion__body-wrapper">
@@ -111,14 +113,16 @@
 			<h3>Accordion closed by default</h3>
 
 			<section class="au-accordion">
-				<button
-					class="au-accordion__title au-accordion--closed js-au-accordion"
-					aria-controls="accordion-closed"
-					aria-expanded="false"
-					aria-selected="false"
-					onClick="return AU.accordion.Toggle( this )">
-						Accordion title
-				</button>
+				<h4>
+					<button
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-closed"
+						aria-expanded="false"
+						aria-selected="false"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body au-accordion--closed" id="accordion-closed">
 					<div class="au-accordion__body-wrapper">
@@ -134,13 +138,15 @@
 			<h3>Accordion slow</h3>
 
 			<section class="au-accordion">
-				<button
-					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-slow"
-					aria-expanded="true"
-					onClick="return AU.accordion.Toggle( this, 1000 )">
-						Accordion title
-				</button>
+				<h4>
+					<button
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-slow"
+						aria-expanded="true"
+						onClick="return AU.accordion.Toggle( this, 1000 )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body" id="accordion-slow">
 					<div class="au-accordion__body-wrapper">
@@ -156,26 +162,28 @@
 			<h3>Accordion with all callbacks</h3>
 
 			<section class="au-accordion">
-				<button
-					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-callbacks"
-					aria-expanded="true"
-					onClick="return AU.accordion.Toggle( this, undefined, {
-						onOpen: function() {
-							console.log('This function will run when an accordion opens');
-						},
-						afterOpen: function() {
-							console.log('This function will run after an accordion has opened');
-						},
-						onClose: function() {
-							console.log('This function will run when an accordion closes');
-						},
-						afterClose: function() {
-							console.log('This function will run after an accordion has closed');
-						},
-					} )">
-						Accordion title
-				</button>
+				<h4>
+					<button
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-callbacks"
+						aria-expanded="true"
+						onClick="return AU.accordion.Toggle( this, undefined, {
+							onOpen: function() {
+								console.log('This function will run when an accordion opens');
+							},
+							afterOpen: function() {
+								console.log('This function will run after an accordion has opened');
+							},
+							onClose: function() {
+								console.log('This function will run when an accordion closes');
+							},
+							afterClose: function() {
+								console.log('This function will run after an accordion has closed');
+							},
+						} )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body" id="accordion-callbacks">
 					<div class="au-accordion__body-wrapper">
@@ -193,14 +201,16 @@
 			<ul class="au-accordion-group" aria-label="Group of Accordions">
 				<li>
 					<section class="au-accordion">
-						<button
-							class="au-accordion__title au-accordion--closed js-au-accordion"
-							aria-controls="accordion-stacked1"
-							aria-expanded="false"
-							aria-selected="false"
-							onClick="return AU.accordion.Toggle( this )">
-								First accordion title
-						</button>
+						<h4>
+							<button
+								class="au-accordion__title au-accordion--closed js-au-accordion"
+								aria-controls="accordion-stacked1"
+								aria-expanded="false"
+								aria-selected="false"
+								onClick="return AU.accordion.Toggle( this )">
+									First accordion title
+							</button>
+						</h4>
 
 						<div class="au-accordion__body au-accordion--closed" id="accordion-stacked1">
 							<div class="au-accordion__body-wrapper">
@@ -208,13 +218,15 @@
 								<p>Here is some accordion content</p>
 
 								<section class="au-accordion">
-									<button
-										class="au-accordion__title js-au-accordion"
-										aria-controls="inner-accordion"
-										aria-expanded="true"
-										onClick="return AU.accordion.Toggle( this )">
-											A nested accordion
-									</button>
+									<h4>
+										<button
+											class="au-accordion__title js-au-accordion"
+											aria-controls="inner-accordion"
+											aria-expanded="true"
+											onClick="return AU.accordion.Toggle( this )">
+												A nested accordion
+										</button>
+									</h4>
 
 									<div class="au-accordion__body" id="inner-accordion">
 										<div class="au-accordion__body-wrapper">
@@ -235,14 +247,16 @@
 
 				<li>
 					<section class="au-accordion">
-						<button
-							class="au-accordion__title au-accordion--closed js-au-accordion"
-							aria-controls="accordion-stacked2"
-							aria-expanded="false"
-							aria-selected="false"
-							onClick="return AU.accordion.Toggle( this )">
-								Another accordion
-						</button>
+						<h4>
+							<button
+								class="au-accordion__title au-accordion--closed js-au-accordion"
+								aria-controls="accordion-stacked2"
+								aria-expanded="false"
+								aria-selected="false"
+								onClick="return AU.accordion.Toggle( this )">
+									Another accordion
+							</button>
+						</h4>
 
 						<div class="au-accordion__body au-accordion--closed" id="accordion-stacked2">
 							<div class="au-accordion__body-wrapper">
@@ -256,14 +270,16 @@
 
 				<li>
 					<section class="au-accordion">
-						<button
-							class="au-accordion__title au-accordion--closed js-au-accordion"
-							aria-controls="accordion-stacked3"
-							aria-expanded="false"
-							aria-selected="false"
-							onClick="return AU.accordion.Toggle( this )">
-								Accordion with words and words and a very long title so that it can break into several
-						</button>
+						<h4>
+							<button
+								class="au-accordion__title au-accordion--closed js-au-accordion"
+								aria-controls="accordion-stacked3"
+								aria-expanded="false"
+								aria-selected="false"
+								onClick="return AU.accordion.Toggle( this )">
+									Accordion with words and words and a very long title so that it can break into several
+							</button>
+						</h4>
 
 						<div class="au-accordion__body au-accordion--closed" id="accordion-stacked3">
 							<div class="au-accordion__body-wrapper">
@@ -284,13 +300,15 @@
 				<h3>Accordion open by default</h3>
 
 				<section class="au-accordion">
-					<button
-						class="au-accordion__title js-au-accordion"
-						aria-controls="accordion-default-grid"
-						aria-expanded="true"
-						onClick="return AU.accordion.Toggle( this )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title js-au-accordion"
+							aria-controls="accordion-default-grid"
+							aria-expanded="true"
+							onClick="return AU.accordion.Toggle( this )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body" id="accordion-default-grid">
 						<div class="au-accordion__body-wrapper">
@@ -306,14 +324,16 @@
 				<h3>Accordion closed by default</h3>
 
 				<section class="au-accordion">
-					<button
-						class="au-accordion__title au-accordion--closed js-au-accordion"
-						aria-controls="accordion-closed-grid"
-						aria-expanded="false"
-						aria-selected="false"
-						onClick="return AU.accordion.Toggle( this )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title au-accordion--closed js-au-accordion"
+							aria-controls="accordion-closed-grid"
+							aria-expanded="false"
+							aria-selected="false"
+							onClick="return AU.accordion.Toggle( this )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body au-accordion--closed" id="accordion-closed-grid">
 						<div class="au-accordion__body-wrapper">
@@ -329,13 +349,15 @@
 				<h3>Accordion slow</h3>
 
 				<section class="au-accordion">
-					<button
-						class="au-accordion__title js-au-accordion"
-						aria-controls="accordion-slow-grid"
-						aria-expanded="true"
-						onClick="return AU.accordion.Toggle( this, 1000 )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title js-au-accordion"
+							aria-controls="accordion-slow-grid"
+							aria-expanded="true"
+							onClick="return AU.accordion.Toggle( this, 1000 )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body" id="accordion-slow-grid">
 						<div class="au-accordion__body-wrapper">
@@ -351,26 +373,28 @@
 				<h3>Accordion with all callbacks</h3>
 
 				<section class="au-accordion">
-					<button
-						class="au-accordion__title js-au-accordion"
-						aria-controls="accordion-callbacks-grid"
-						aria-expanded="true"
-						onClick="return AU.accordion.Toggle( this, undefined, {
-							onOpen: function() {
-								console.log('This function will run when an accordion opens');
-							},
-							afterOpen: function() {
-								console.log('This function will run after an accordion has opened');
-							},
-							onClose: function() {
-								console.log('This function will run when an accordion closes');
-							},
-							afterClose: function() {
-								console.log('This function will run after an accordion has closed');
-							},
-						} )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title js-au-accordion"
+							aria-controls="accordion-callbacks-grid"
+							aria-expanded="true"
+							onClick="return AU.accordion.Toggle( this, undefined, {
+								onOpen: function() {
+									console.log('This function will run when an accordion opens');
+								},
+								afterOpen: function() {
+									console.log('This function will run after an accordion has opened');
+								},
+								onClose: function() {
+									console.log('This function will run when an accordion closes');
+								},
+								afterClose: function() {
+									console.log('This function will run after an accordion has closed');
+								},
+							} )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body" id="accordion-callbacks-grid">
 						<div class="au-accordion__body-wrapper">
@@ -388,14 +412,16 @@
 				<ul class="au-accordion-group">
 					<li>
 						<section class="au-accordion">
-								<button
-									class="au-accordion__title au-accordion--closed js-au-accordion"
-									aria-controls="accordion-stacked-grid1"
-									aria-expanded="false"
-									aria-selected="false"
-									onClick="return AU.accordion.Toggle( this )">
-										First accordion title
-								</button>
+								<h4>
+									<button
+										class="au-accordion__title au-accordion--closed js-au-accordion"
+										aria-controls="accordion-stacked-grid1"
+										aria-expanded="false"
+										aria-selected="false"
+										onClick="return AU.accordion.Toggle( this )">
+											First accordion title
+									</button>
+								</h4>
 
 								<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid1">
 									<div class="au-accordion__body-wrapper">
@@ -403,13 +429,15 @@
 										<p>Here is some accordion content</p>
 
 										<section class="au-accordion">
-											<button
-												class="au-accordion__title js-au-accordion"
-												aria-controls="inner-accordion-grid"
-												aria-expanded="true"
-												onClick="return AU.accordion.Toggle( this )">
-													A nested accordion
-											</button>
+											<h4>
+												<button
+													class="au-accordion__title js-au-accordion"
+													aria-controls="inner-accordion-grid"
+													aria-expanded="true"
+													onClick="return AU.accordion.Toggle( this )">
+														A nested accordion
+												</button>
+											</h4>
 
 											<div class="au-accordion__body" id="inner-accordion-grid">
 												<div class="au-accordion__body-wrapper">
@@ -428,14 +456,16 @@
 					</li>
 					<li>
 						<section class="au-accordion">
-								<button
-									class="au-accordion__title au-accordion--closed js-au-accordion"
-									aria-controls="accordion-stacked-grid2"
-									aria-expanded="false"
-									aria-selected="false"
-									onClick="return AU.accordion.Toggle( this )">
-										Another accordion
-								</button>
+								<h4>
+									<button
+										class="au-accordion__title au-accordion--closed js-au-accordion"
+										aria-controls="accordion-stacked-grid2"
+										aria-expanded="false"
+										aria-selected="false"
+										onClick="return AU.accordion.Toggle( this )">
+											Another accordion
+									</button>
+								</h4>
 
 								<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid2">
 									<div class="au-accordion__body-wrapper">
@@ -448,14 +478,16 @@
 					</li>
 					<li>
 						<section class="au-accordion">
-							<button
-								class="au-accordion__title au-accordion--closed js-au-accordion"
-								aria-controls="accordion-stacked-grid3"
-								aria-expanded="false"
-								aria-selected="false"
-								onClick="return AU.accordion.Toggle( this )">
-									Accordion with words and words and a very long title so that it can break into several
-							</button>
+							<h4>
+								<button
+									class="au-accordion__title au-accordion--closed js-au-accordion"
+									aria-controls="accordion-stacked-grid3"
+									aria-expanded="false"
+									aria-selected="false"
+									onClick="return AU.accordion.Toggle( this )">
+										Accordion with words and words and a very long title so that it can break into several
+								</button>
+							</h4>
 
 							<div class="au-accordion__body au-accordion--closed" id="accordion-stacked-grid3">
 								<div class="au-accordion__body-wrapper">
@@ -479,13 +511,15 @@
 			<h3>Accordion open by default <code>--dark</code></h3>
 
 			<section class="au-accordion au-accordion--dark">
-				<button
-					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-dark-default"
-					aria-expanded="true"
-					onClick="return AU.accordion.Toggle( this )">
-						Accordion title
-				</button>
+				<h4>
+					<button
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-dark-default"
+						aria-expanded="true"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body" id="accordion-dark-default">
 					<div class="au-accordion__body-wrapper">
@@ -501,14 +535,16 @@
 			<h3>Accordion closed by default <code>--dark</code></h3>
 
 			<section class="au-accordion au-accordion--dark">
-				<button
-					class="au-accordion__title au-accordion--closed js-au-accordion"
-					aria-controls="accordion-dark-closed"
-					aria-expanded="false"
-					aria-selected="false"
-					onClick="return AU.accordion.Toggle( this )">
-						Accordion title
-			</button>
+				<h4>
+					<button
+						class="au-accordion__title au-accordion--closed js-au-accordion"
+						aria-controls="accordion-dark-closed"
+						aria-expanded="false"
+						aria-selected="false"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body au-accordion--closed" id="accordion-dark-closed">
 					<div class="au-accordion__body-wrapper">
@@ -524,13 +560,15 @@
 			<h3>Accordion slow <code>--dark</code></h3>
 
 			<section class="au-accordion au-accordion--dark">
-			<button
-					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-dark-slow"
-					aria-expanded="true"
-					onClick="return AU.accordion.Toggle( this, 1000 )">
-						Accordion title
-				</button>
+				<h4>
+					<button
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-dark-slow"
+						aria-expanded="true"
+						onClick="return AU.accordion.Toggle( this, 1000 )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body" id="accordion-dark-slow">
 					<div class="au-accordion__body-wrapper">
@@ -546,26 +584,28 @@
 			<h3>Accordion with all callbacks <code>--dark</code></h3>
 
 			<section class="au-accordion au-accordion--dark">
-				<button
-					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-dark-callbacks"
-					aria-expanded="true"
-					onClick="return AU.accordion.Toggle( this, undefined, {
-						onOpen: function() {
-							console.log('This function will run when an accordion opens');
-						},
-						afterOpen: function() {
-							console.log('This function will run after an accordion has opened');
-						},
-						onClose: function() {
-							console.log('This function will run when an accordion closes');
-						},
-						afterClose: function() {
-							console.log('This function will run after an accordion has closed');
-						},
-					} )">
-						Accordion title
-				</button>
+				<h4>
+					<button
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-dark-callbacks"
+						aria-expanded="true"
+						onClick="return AU.accordion.Toggle( this, undefined, {
+							onOpen: function() {
+								console.log('This function will run when an accordion opens');
+							},
+							afterOpen: function() {
+								console.log('This function will run after an accordion has opened');
+							},
+							onClose: function() {
+								console.log('This function will run when an accordion closes');
+							},
+							afterClose: function() {
+								console.log('This function will run after an accordion has closed');
+							},
+						} )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body" id="accordion-dark-callbacks">
 					<div class="au-accordion__body-wrapper">
@@ -583,14 +623,16 @@
 			<ul class="au-accordion-group">
 				<li>
 					<section class="au-accordion au-accordion--dark">
-						<button
-							class="au-accordion__title au-accordion--closed js-au-accordion"
-							aria-controls="accordion-dark-stacked1"
-							aria-expanded="false"
-							aria-selected="false"
-							onClick="return AU.accordion.Toggle( this )">
-								First accordion title
-						</button>
+						<h4>
+							<button
+								class="au-accordion__title au-accordion--closed js-au-accordion"
+								aria-controls="accordion-dark-stacked1"
+								aria-expanded="false"
+								aria-selected="false"
+								onClick="return AU.accordion.Toggle( this )">
+									First accordion title
+							</button>
+						</h4>
 
 						<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked1">
 							<div class="au-accordion__body-wrapper">
@@ -598,13 +640,15 @@
 								<p>Here is some accordion content</p>
 
 								<section class="au-accordion au-accordion--dark">
-									<button
-										class="au-accordion__title js-au-accordion"
-										aria-controls="inner-accordion-dark"
-										aria-expanded="true"
-										onClick="return AU.accordion.Toggle( this )">
-											A nested accordion
-									</button>
+									<h4>
+										<button
+											class="au-accordion__title js-au-accordion"
+											aria-controls="inner-accordion-dark"
+											aria-expanded="true"
+											onClick="return AU.accordion.Toggle( this )">
+												A nested accordion
+										</button>
+									</h4>
 
 									<div class="au-accordion__body" id="inner-accordion-dark">
 										<div class="au-accordion__body-wrapper">
@@ -625,14 +669,16 @@
 				</li>
 				<li>
 					<section class="au-accordion au-accordion--dark">
-						<button
-							class="au-accordion__title au-accordion--closed js-au-accordion"
-							aria-controls="accordion-dark-stacked2"
-							aria-expanded="false"
-							aria-selected="false"
-							onClick="return AU.accordion.Toggle( this )">
-								Another accordion
-						</button>
+						<h4>
+							<button
+								class="au-accordion__title au-accordion--closed js-au-accordion"
+								aria-controls="accordion-dark-stacked2"
+								aria-expanded="false"
+								aria-selected="false"
+								onClick="return AU.accordion.Toggle( this )">
+									Another accordion
+							</button>
+						</h4>
 
 						<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked2">
 							<div class="au-accordion__body-wrapper">
@@ -646,14 +692,16 @@
 				<li>
 
 					<section class="au-accordion au-accordion--dark">
-						<button
-							class="au-accordion__title au-accordion--closed js-au-accordion"
-							aria-controls="accordion-dark-stacked3"
-							aria-expanded="false"
-							aria-selected="false"
-							onClick="return AU.accordion.Toggle( this )">
-								Accordion with words and words and a very long title so that it can break into several
-						</button>
+						<h4>
+							<button
+								class="au-accordion__title au-accordion--closed js-au-accordion"
+								aria-controls="accordion-dark-stacked3"
+								aria-expanded="false"
+								aria-selected="false"
+								onClick="return AU.accordion.Toggle( this )">
+									Accordion with words and words and a very long title so that it can break into several
+							</button>
+						</h4>
 
 						<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked3">
 							<div class="au-accordion__body-wrapper">
@@ -674,13 +722,15 @@
 				<h3>Accordion open by default <code>--dark</code></h3>
 
 				<section class="au-accordion au-accordion--dark">
-					<button
-						class="au-accordion__title js-au-accordion"
-						aria-controls="accordion-dark-default-grid"
-						aria-expanded="true"
-						onClick="return AU.accordion.Toggle( this )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title js-au-accordion"
+							aria-controls="accordion-dark-default-grid"
+							aria-expanded="true"
+							onClick="return AU.accordion.Toggle( this )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body" id="accordion-dark-default-grid">
 						<div class="au-accordion__body-wrapper">
@@ -696,14 +746,16 @@
 				<h3>Accordion closed by default <code>--dark</code></h3>
 
 				<section class="au-accordion au-accordion--dark">
-					<button
-						class="au-accordion__title au-accordion--closed js-au-accordion"
-						aria-controls="accordion-dark-closed-grid"
-						aria-expanded="false"
-						aria-selected="false"
-						onClick="return AU.accordion.Toggle( this )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title au-accordion--closed js-au-accordion"
+							aria-controls="accordion-dark-closed-grid"
+							aria-expanded="false"
+							aria-selected="false"
+							onClick="return AU.accordion.Toggle( this )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body au-accordion--closed" id="accordion-dark-closed-grid">
 						<div class="au-accordion__body-wrapper">
@@ -719,13 +771,15 @@
 				<h3>Accordion slow <code>--dark</code></h3>
 
 				<section class="au-accordion au-accordion--dark">
-					<button
-						class="au-accordion__title js-au-accordion"
-						aria-controls="accordion-dark-slow-grid"
-						aria-expanded="true"
-						onClick="return AU.accordion.Toggle( this, 1000 )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title js-au-accordion"
+							aria-controls="accordion-dark-slow-grid"
+							aria-expanded="true"
+							onClick="return AU.accordion.Toggle( this, 1000 )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body" id="accordion-dark-slow-grid">
 						<div class="au-accordion__body-wrapper">
@@ -741,26 +795,28 @@
 				<h3>Accordion with all callbacks <code>--dark</code></h3>
 
 				<section class="au-accordion au-accordion--dark">
-					<button
-						class="au-accordion__title js-au-accordion"
-						aria-controls="accordion-dark-callbacks-grid"
-						aria-expanded="true"
-						onClick="return AU.accordion.Toggle( this, undefined, {
-							onOpen: function() {
-								console.log('This function will run when an accordion opens');
-							},
-							afterOpen: function() {
-								console.log('This function will run after an accordion has opened');
-							},
-							onClose: function() {
-								console.log('This function will run when an accordion closes');
-							},
-							afterClose: function() {
-								console.log('This function will run after an accordion has closed');
-							},
-						} )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title js-au-accordion"
+							aria-controls="accordion-dark-callbacks-grid"
+							aria-expanded="true"
+							onClick="return AU.accordion.Toggle( this, undefined, {
+								onOpen: function() {
+									console.log('This function will run when an accordion opens');
+								},
+								afterOpen: function() {
+									console.log('This function will run after an accordion has opened');
+								},
+								onClose: function() {
+									console.log('This function will run when an accordion closes');
+								},
+								afterClose: function() {
+									console.log('This function will run after an accordion has closed');
+								},
+							} )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body" id="accordion-dark-callbacks-grid">
 						<div class="au-accordion__body-wrapper">
@@ -778,14 +834,16 @@
 				<ul class="au-accordion-group">
 					<li>
 						<section class="au-accordion au-accordion--dark">
-							<button
-								class="au-accordion__title au-accordion--closed js-au-accordion"
-								aria-controls="accordion-dark-stacked-grid1"
-								aria-expanded="false"
-								aria-selected="false"
-								onClick="return AU.accordion.Toggle( this )">
-									First accordion title
-							</button>
+							<h4>
+								<button
+									class="au-accordion__title au-accordion--closed js-au-accordion"
+									aria-controls="accordion-dark-stacked-grid1"
+									aria-expanded="false"
+									aria-selected="false"
+									onClick="return AU.accordion.Toggle( this )">
+										First accordion title
+								</button>
+							</h4>
 
 							<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked-grid1">
 								<div class="au-accordion__body-wrapper">
@@ -818,14 +876,16 @@
 					</li>
 					<li>
 						<section class="au-accordion au-accordion--dark">
-							<button
-								class="au-accordion__title au-accordion--closed js-au-accordion"
-								aria-controls="accordion-dark-stacked-grid2"
-								aria-expanded="false"
-								aria-selected="false"
-								onClick="return AU.accordion.Toggle( this )">
-									Another accordion
-						</button>
+							<h4>
+								<button
+									class="au-accordion__title au-accordion--closed js-au-accordion"
+									aria-controls="accordion-dark-stacked-grid2"
+									aria-expanded="false"
+									aria-selected="false"
+									onClick="return AU.accordion.Toggle( this )">
+										Another accordion
+								</button>
+							</h4>
 
 							<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked-grid2">
 								<div class="au-accordion__body-wrapper">
@@ -838,14 +898,16 @@
 					</li>
 					<li>
 						<section class="au-accordion au-accordion--dark">
-							<button
-								class="au-accordion__title au-accordion--closed js-au-accordion"
-								aria-controls="accordion-dark-stacked-grid3"
-								aria-expanded="false"
-								aria-selected="false"
-								onClick="return AU.accordion.Toggle( this )">
-									Accordion with words and words and a very long title so that it can break into several
-							</button>
+							<h4>
+								<button
+									class="au-accordion__title au-accordion--closed js-au-accordion"
+									aria-controls="accordion-dark-stacked-grid3"
+									aria-expanded="false"
+									aria-selected="false"
+									onClick="return AU.accordion.Toggle( this )">
+										Accordion with words and words and a very long title so that it can break into several
+								</button>
+							</h4>
 
 							<div class="au-accordion__body au-accordion--closed" id="accordion-dark-stacked-grid3">
 								<div class="au-accordion__body-wrapper">
@@ -872,13 +934,15 @@
 			<h3>Accordion open by default on alt</h3>
 
 			<section class="au-accordion">
-				<button
-					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-alt"
-					aria-expanded="true"
-					onClick="return AU.accordion.Toggle( this )">
-						Accordion title
-				</button>
+				<h4>
+					<button
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-alt"
+						aria-expanded="true"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body" id="accordion-alt">
 					<div class="au-accordion__body-wrapper">
@@ -892,13 +956,15 @@
 
 				<h3>Accordion open by default <code>--alt</code></h3>
 				<section class="au-accordion">
-					<button
-						class="au-accordion__title js-au-accordion"
-						aria-controls="accordion-body-alt"
-						aria-expanded="true"
-						onClick="return AU.accordion.Toggle( this )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title js-au-accordion"
+							aria-controls="accordion-body-alt"
+							aria-expanded="true"
+							onClick="return AU.accordion.Toggle( this )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body" id="accordion-body-alt">
 						<div class="au-accordion__body-wrapper">
@@ -916,13 +982,15 @@
 			<h3>Accordion <code>--dark</code> open by default on alt</h3>
 
 			<section class="au-accordion au-accordion--dark">
-				<button
-					class="au-accordion__title js-au-accordion"
-					aria-controls="accordion-altdark"
-					aria-expanded="true"
-					onClick="return AU.accordion.Toggle( this )">
-						Accordion title
-				</button>
+				<h4>
+					<button
+						class="au-accordion__title js-au-accordion"
+						aria-controls="accordion-altdark"
+						aria-expanded="true"
+						onClick="return AU.accordion.Toggle( this )">
+							Accordion title
+					</button>
+				</h4>
 
 				<div class="au-accordion__body" id="accordion-altdark">
 					<div class="au-accordion__body-wrapper">
@@ -936,13 +1004,15 @@
 
 				<h3>Accordion <code>--dark</code> open by default</h3>
 				<section class="au-accordion au-accordion--dark">
-					<button
-						class="au-accordion__title js-au-accordion"
-						aria-controls="accordion-body-altdark"
-						aria-expanded="true"
-						onClick="return AU.accordion.Toggle( this )">
-							Accordion title
-					</button>
+					<h4>
+						<button
+							class="au-accordion__title js-au-accordion"
+							aria-controls="accordion-body-altdark"
+							aria-expanded="true"
+							onClick="return AU.accordion.Toggle( this )">
+								Accordion title
+						</button>
+					</h4>
 
 					<div class="au-accordion__body" id="accordion-body-altdark">
 						<div class="au-accordion__body-wrapper">
