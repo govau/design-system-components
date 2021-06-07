@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/body/tests/site/
 
 ## Release History
 
+* v2.2.1 - Update core package dependency to use the latest version
 * v2.2.0 - Switched `background-color` CSS property when printing from `#fff` to `transparent` and removed --save-dev flag
 * v2.1.1 - Resolve autoprefixer warning
 * v2.1.0 - Remove external link icon, fix pancake build path

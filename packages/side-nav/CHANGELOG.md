@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v5.0.9 - Update core package dependency to use the latest version](#v509)
 * [v5.0.8 - Remove --save-dev flag from readme instructions](#v508)
 * [v5.0.7 - Removed unused `Fragment` React import](#v507)
 * [v5.0.6 - Resolve autoprefixer warning](#v506)
@@ -43,6 +44,11 @@
 
 
 ## Release History
+
+### v5.0.9
+
+- Update core package dependency to use the latest version
+
 
 ### v5.0.8
 

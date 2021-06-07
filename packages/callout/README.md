@@ -128,6 +128,7 @@ The visual test: https://auds.service.gov.au/packages/callout/tests/site/
 
 ## Release History
 
+* v3.0.3 - Update core package dependency to use the latest version
 * v3.0.2 - Remove --save-dev flag from readme instructions
 * v3.0.1 - Removed uikit references
 * v3.0.0 - Replace aria-label with a title

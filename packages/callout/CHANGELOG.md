@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.3 - Update core package dependency to use the latest version](#v303)
 * [v3.0.2 - Remove --save-dev flag from readme instructions](#v302)
 * [v3.0.1 - Removed uikit references](#v301)
 * [v3.0.0 - Replace aria-label with a title](#v300)
@@ -39,6 +40,11 @@
 
 
 ## Release History
+
+### v3.0.3
+
+- Update core package dependency to use the latest version
+
 
 ### v3.0.2
 

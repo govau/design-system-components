@@ -137,6 +137,7 @@ The visual test: https://auds.service.gov.au/packages/link-list/tests/site/
 
 ## Release History
 
+* v3.0.9 - Update core package dependency to use the latest version
 * v3.0.8 - Update incorrect proptype for onClick prop
 * v3.0.7 - Remove --save-dev flag from readme instructions
 * v3.0.6 - Added `onClick` event handler prop
