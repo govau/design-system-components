@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.15 - Update core package dependency to use the latest version](#v2015)
 * [v2.0.14 - Remove --save-dev flag from readme instructions](#v2014)
 * [v2.0.13 - Add `title` attribute to iframe examples](#v2013)
 * [v2.0.12 - Removed uikit references](#v2012)
@@ -39,6 +40,11 @@
 
 
 ## Release History
+
+### v2.0.15
+
+- Update core package dependency to use the latest version
+
 
 ### v2.0.14
 

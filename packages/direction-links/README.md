@@ -107,6 +107,7 @@ The visual test: https://auds.service.gov.au/packages/direction-links/tests/site
 
 ## Release History
 
+* v3.0.1 - Update core package dependency to use the latest version
 * v3.0.0 - Changed direction links arrow icon to be inside a `span`, making use of `aria-hidden` so the arrow is not read by screen readers
 * v2.2.0 - Remove --save-dev flag from readme instructions
 * v2.1.9 - Removed unused `Fragment` React import

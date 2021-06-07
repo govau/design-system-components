@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.1.3 - Update core package dependency to use the latest version](#v213)
 * [v2.1.2 - Add `number` as a React prop](#v212)
 * [v2.1.1 - Remove --save-dev flag from readme instructions](#v211)
 * [v2.1.0 - Add text inputs of different widths](#v210)
@@ -39,6 +40,11 @@
 
 
 ## Release History
+
+### v2.1.3
+
+- Update core package dependency to use the latest version
+
 
 ### v2.1.2
 

@@ -132,6 +132,7 @@ The visual test: https://auds.service.gov.au/packages/progress-indicator/tests/s
 
 ## Release History
 
+* v3.1.8 - Update core package dependency to use the latest version
 * v3.1.7 - Remove --save-dev flag from readme instructions
 * v3.1.6 - Removed unused `Fragment` React import
 * v3.1.5 - Removed uikit references

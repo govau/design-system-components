@@ -152,6 +152,7 @@ The visual test: https://auds.service.gov.au/packages/tags/tests/site/
 
 ## Release History
 
+* v4.0.1 - Update core package dependency to use the latest version
 * v4.0.0 - Refactor tags so they don't have to be in a list
 * v3.1.7 - Remove --save-dev flag from readme instructions
 * v3.1.6 - Removed unused `Fragment` React import

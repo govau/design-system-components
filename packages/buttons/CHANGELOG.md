@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.8 - Update core package dependency to use the latest version](#v308)
 * [v3.0.7 - Remove --save-dev flag from readme instructions](#v307)
 * [v3.0.6 - Removed unused `Fragment` React import](#v306)
 * [v3.0.5 - Removed uikit references](#v305)
@@ -41,6 +42,11 @@
 
 
 ## Release History
+
+### v3.0.8
+
+- Update core package dependency to use the latest version
+
 
 ### v3.0.7
 

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.0.12 - Update core package dependency to use the latest version](#v2012)
 * [v2.0.11 - Remove --save-dev flag from readme instructions](#v2011)
 * [v2.0.10 - Removed unused `Fragment` React import](#v2010)
 * [v2.0.9 - Removed uikit references](#v209)
@@ -37,6 +38,11 @@
 
 
 ## Release History
+
+### v2.0.12
+
+- Update core package dependency to use the latest version
+
 
 ### v2.0.11
 

@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/card/tests/site/
 
 ## Release History
 
+* v0.3.3 - Update core package dependency to use the latest version
 * v0.3.2 - Move `overflow:hidden` property from the shadow class to the `.au-card` class
 * v0.3.1 - Use unit instead of rem
 * v0.3.0 - Remove AUcardBody export, add feature footers and headers, add light/dark theme variations and tests

@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v2.2.1 - Update core package dependency to use the latest version](#v221)
 * [v2.2.0 - Changed `background-color` CSS property when printing from `#fff` to `transparent` and removed --save-dev flag](#v220)
 * [v2.1.1 - Resolve autoprefixer warning](#v211)
 * [v2.1.0 - Remove external link icon, fix pancake build path](#v210)
@@ -43,6 +44,11 @@
 
 
 ## Release History
+
+### v2.2.1
+
+- Update core package dependency to use the latest version
+
 
 ### v2.2.0
 
