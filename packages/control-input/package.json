@@ -1,6 +1,6 @@
 {
 	"name": "@gov.au/control-input",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "Control inputs include radio buttons and checkboxes. They allow users to select one or more options.",
 	"keywords": [
 		"auds",

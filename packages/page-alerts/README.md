@@ -107,6 +107,7 @@ page-alerts
 
 ## Release History
 
+* v2.1.4 - Update core package dependency to use the latest version
 * v2.1.3 - Remove --save-dev flag from readme instructions
 * v2.1.2 - Removed unused `Fragment` React import
 * v2.1.1 - Removed uikit references

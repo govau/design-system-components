@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v0.1.6 - Update core package dependency to use the latest version](#v016)
 * [v0.1.5 - Update version for the dependency: @gov.au/core](#v015)
 * [v0.1.4 - Add margin between text area and form labels, hint text and error messages.](#v014)
 * [v0.1.3 - Remove --save-dev flag from readme instructions](#v013)
@@ -27,6 +28,11 @@
 
 
 ## Release History
+
+### v0.1.6
+
+- Update core package dependency to use the latest version
+
 
 ### v0.1.5
 

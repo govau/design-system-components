@@ -61,6 +61,7 @@ The visual test: https://auds.service.gov.au/packages/table/tests/site/
 
 ## Release History
 
+* v0.2.1 - Update core package dependency to use the latest version
 * v0.2.0 - Refactor sass, first cell header option
 * v0.1.3 - Remove pancake js plugin from package json
 * v0.1.2 - Utilise the `font-variant` property for numeric table cells

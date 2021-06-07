@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.9 - Update core package dependency to use the latest version](#v309)
 * [v3.0.8 - Update incorrect proptype for onClick prop](#v308)
 * [v3.0.7 - Remove --save-dev flag from readme instructions](#v307)
 * [v3.0.6 - Added `onClick` event handler prop](#v306)
@@ -40,6 +41,11 @@
 
 
 ## Release History
+
+### v3.0.9
+
+- Update core package dependency to use the latest version
+
 
 ### v3.0.8
 

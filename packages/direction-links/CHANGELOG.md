@@ -15,6 +15,7 @@
 
 ## Versions
 
+* [v3.0.1 - Update core package dependency to use the latest version](#v301)
 * [v3.0.0 - Changed direction links arrow icon to be inside a `span`, making use of `aria-hidden` so the arrow is not read by screen readers](#v300)
 * [v2.2.0 - Remove --save-dev flag from readme instructions](#v220)
 * [v2.1.9 - Removed unused `Fragment` React import](#v219)
@@ -41,6 +42,11 @@
 
 
 ## Release History
+
+### v3.0.1
+
+- Update core package dependency to use the latest version
+
 
 ### v3.0.0 
 
