@@ -726,7 +726,7 @@ HELPER.generate = (() => {
 
 					replacement += `<li>` +
 						`	<a class="module-list__headline" href="packages/${ module }/tests/">${ module }</a>` +
-						`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=%20&colorA=ffffff&colorB=00698f&style=flat-square" alt="${ module } version">` +
+						`<img class="badge badge--version" src="https://img.shields.io/npm/v/@gov.au/${ module }.svg?label=NPM%20&colorA=ffffff&colorB=00698f&style=flat-square" alt="${ module } version">` +
 						`	<br>` +
 						`	<a class="link" href="packages/${ module }/tests/site/">site</a> ${ jquery } ${ react }` +
 						`	<a class="link" href="https://github.com/govau/design-system-components/blob/master/packages/${ module }/README.md">readme</a>` +
