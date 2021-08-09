@@ -1,3 +1,5 @@
+> **The Australian Government Design System has been decommissioned [Visit our community page for more information](https://community.digital.gov.au/t/dta-design-system-has-been-decommissioned/4649)**
+
 Australian Government Design System Components
 =============
 
