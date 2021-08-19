@@ -11,15 +11,6 @@ Australian Government Design System Components
 
 ---
 
-## Visual unit tests
-
-| Production [![CircleCI](https://circleci.com/gh/govau/design-system-components/tree/master.svg?style=svg)](https://circleci.com/gh/govau/design-system-components/tree/master) | Staging [![CircleCI](https://circleci.com/gh/govau/design-system-components/tree/develop.svg?style=svg)](https://circleci.com/gh/govau/design-system-components/tree/develop) |
-|------------------------------|--------------------------------------|
-| https://auds.service.gov.au | https://auds.staging.service.gov.au |
-|                              | user: `auds`, pass: `auds`         |
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ## Installation
 
 ### Prerequisites
